@@ -1,7 +1,7 @@
 # ============================================================
 # LLM ThreatIntel — Automated Intelligence Collection
 # Option B: GitHub Actions + Claude API
-# Runs daily at 11:10 UTC (6:10 AM EST)
+# Runs daily at 04:00 UTC (5:00 AM BST / UK summer)
 # ============================================================
 #
 # SETUP REQUIRED:
@@ -19,7 +19,7 @@ name: Daily Intelligence Collection
 
 on:
   schedule:
-    - cron: '10 11 * * *'  # 11:10 UTC = 6:10 AM EST
+    - cron: '0 4 * * *'  # 04:00 UTC = 05:00 BST
   workflow_dispatch:  # Manual trigger for testing
 
 permissions:
