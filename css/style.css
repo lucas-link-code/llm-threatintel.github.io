@@ -149,6 +149,7 @@ a:hover { color: var(--ab); }
 }
 
 @media (max-width: 768px) {
+  .site-header { position: relative; }
   .nav-toggle { display: block; }
   .site-nav {
     display: none;
