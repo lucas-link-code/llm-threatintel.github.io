@@ -23,6 +23,9 @@ SEARCH PRIORITY AREAS:
 8. Prompt injection and jailbreak services
 9. MCP server vulnerabilities
 10. Nation-state APT use of generative AI
+11. malware using LLM for C2 or command generation
+12. GenAI vibe coding tools abuse or compromise
+13. Latest trojanised LLM models or GenAI packages
 
 Check these sources:
 ReversingLabs, Socket.dev, Phylum, Mandiant, Unit 42, Microsoft Security, CrowdStrike, Sysdig, BleepingComputer, The Hacker News, Recorded Future, Abnormal Security

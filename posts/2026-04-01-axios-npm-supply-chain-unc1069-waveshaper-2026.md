@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-<cite index="63-13,62-34">Google Threat Intelligence Group attributes the Axios npm package compromise to UNC1069, a North Korea-nexus financially motivated threat actor, based on infrastructure overlaps and use of WAVESHAPER.V2 backdoor</cite>. <cite index="62-11,61-2">The malicious versions were live for approximately 2-3 hours on March 31, 2026, with both latest and legacy tags compromised to maximize blast radius</cite>. Organizations must immediately audit for affected versions and treat any system with exposure as fully compromised.
+Google Threat Intelligence Group attributes the Axios npm package compromise to UNC1069, a North Korea-nexus financially motivated threat actor, based on infrastructure overlaps and use of WAVESHAPER.V2 backdoor. The malicious versions were live for approximately 2-3 hours on March 31, 2026, with both latest and legacy tags compromised to maximize blast radius. Organizations must immediately audit for affected versions and treat any system with exposure as fully compromised.
 
 ## Campaign Summary
 
@@ -21,7 +21,7 @@
 
 ## Detailed Findings
 
-<cite index="62-9,61-11">On March 31, 2026, attackers compromised the npm account of the lead Axios maintainer and published two malicious versions (1.14.1 and 0.30.4) that introduced a hidden dependency delivering a cross-platform Remote Access Trojan</cite>. <cite index="61-3,61-5">The malicious versions introduced plain-crypto-js as a dependency whose postinstall hook downloaded platform-specific RAT implants from sfrclak[.]com:8000, deploying three parallel implementations sharing identical C2 protocol and command structure</cite>. <cite index="62-1,63-13">Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus threat actor, based on use of WAVESHAPER.V2 backdoor and infrastructure overlaps with previous UNC1069 operations</cite>. <cite index="61-18,61-19,61-20">The compromise was evident from npm metadata showing the maintainer email changed from jasonsaayman@gmail.com to ifstap@proton.me and publishing method shifted from trusted OIDC flow to direct CLI publish</cite>. <cite index="65-11,63-12">The second-stage payloads function as lightweight RATs beaconing every 60 seconds with capabilities including remote shell execution, binary injection, directory browsing, process listing, and system reconnaissance</cite>.
+On March 31, 2026, attackers compromised the npm account of the lead Axios maintainer and published two malicious versions (1.14.1 and 0.30.4) that introduced a hidden dependency delivering a cross-platform Remote Access Trojan. The malicious versions introduced plain-crypto-js as a dependency whose postinstall hook downloaded platform-specific RAT implants from sfrclak[.]com:8000, deploying three parallel implementations sharing identical C2 protocol and command structure. Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus threat actor, based on use of WAVESHAPER.V2 backdoor and infrastructure overlaps with previous UNC1069 operations. The compromise was evident from npm metadata showing the maintainer email changed from jasonsaayman@gmail.com to ifstap@proton.me and publishing method shifted from trusted OIDC flow to direct CLI publish. The second-stage payloads function as lightweight RATs beaconing every 60 seconds with capabilities including remote shell execution, binary injection, directory browsing, process listing, and system reconnaissance.
 
 ## MITRE ATT&CK Mapping
 

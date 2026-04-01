@@ -2,6 +2,15 @@
   "last_updated": "2026-04-01",
   "iocs": [
     {
+      "value": "silver.inc",
+      "type": "domain",
+      "context": "Operation Bizarre Bazaar commercial LLMjacking marketplace reselling unauthorized access to 30+ LLM providers",
+      "first_seen": "2025-12-01",
+      "source": "Pillar Security",
+      "campaign": "mcp-protocol-security-tool-poisoning-agentic-risk",
+      "status": "active"
+    },
+    {
       "value": "wormgpt.ai",
       "type": "domain",
       "context": "WormGPT primary distribution site",

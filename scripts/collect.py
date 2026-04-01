@@ -114,6 +114,10 @@ Phase 1 — Broad scan (run ALL of these searches):
 8. prompt injection jailbreak as a service LLM attack
 9. MCP server vulnerability AI agent security exploit
 10. nation state APT generative AI offensive cyber
+11. malware using LLM for C2 or command generation
+12. GenAI vibe coding tools abuse or compromise
+13. Latest trojanised LLM models or GenAI packages
+
 
 Phase 2 — Source-specific checks (search for recent posts from each):
 ReversingLabs AI, Socket.dev AI, Phylum AI, Mandiant GenAI, Unit 42 AI,
@@ -207,6 +211,27 @@ CRITICAL REMINDERS:
 
 
 # ---- File Writers ----
+def strip_citation_markers(text):
+    """Remove Anthropic API citation markers from text."""
+    if not isinstance(text, str):
+        return text
+    # Remove <cite index="..."> and </cite> tags
+    text = re.sub(r'<cite[^>]*>', '', text)
+    text = re.sub(r'</cite>', '', text)
+    return text
+
+
+def clean_finding_citations(finding):
+    """Recursively clean citation markers from all text fields in a finding."""
+    if isinstance(finding, dict):
+        return {k: clean_finding_citations(v) for k, v in finding.items()}
+    elif isinstance(finding, list):
+        return [clean_finding_citations(item) for item in finding]
+    elif isinstance(finding, str):
+        return strip_citation_markers(finding)
+    return finding
+
+
 def save_json(path, data):
     """Save data to JSON file with consistent formatting."""
     with open(path, 'w') as f:
@@ -589,6 +614,9 @@ def main():
     # Process findings
     for i, finding in enumerate(findings, 1):
         print(f"\nProcessing {i}/{len(findings)}: {finding.get('title', 'Untitled')}")
+        
+        # Clean citation markers from all text fields
+        finding = clean_finding_citations(finding)
 
         markdown = generate_post_markdown(finding)
         filename = update_posts_index(finding)

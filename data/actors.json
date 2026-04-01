@@ -2,6 +2,50 @@
   "last_updated": "2026-04-01",
   "entries": [
     {
+      "id": "operation-bizarre-bazaar",
+      "names": ["Operation Bizarre Bazaar", "Hecker", "Sakuya", "LiveGamer101"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2025-12",
+      "status": "active",
+      "distribution": ["Telegram", "Discord", "silver.inc marketplace", "Shodan/Censys scanning"],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1078.003 - Cloud Accounts",
+        "T1496 - Resource Hijacking",
+        "T1082 - System Information Discovery"
+      ],
+      "description": "First publicly attributed LLMjacking campaign with commercial marketplace monetization. Executed 35,000 attack sessions between December 2025 and January 2026 targeting exposed LLM and MCP endpoints. Operates silver.inc as a commercial marketplace reselling unauthorized access to 30+ LLM providers at 40-60% discounts. Pivoted from compute theft to MCP reconnaissance for lateral movement into internal systems.",
+      "attribution": "Attributed to aliases Hecker, Sakuya, and LiveGamer101 by Pillar Security and BleepingComputer (confidence: medium)"
+    },
+    {
+      "id": "rules-file-backdoor",
+      "names": ["Rules File Backdoor"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2025-12",
+      "status": "active",
+      "distribution": ["GitHub repositories", "shared cursor rules files", "developer communities"],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise",
+        "T1027.013 - Obfuscated Files or Information: Unicode Encoding",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "Supply chain attack vector targeting AI coding assistants. Attackers inject hidden malicious instructions into Cursor and GitHub Copilot configuration files using invisible Unicode Tag Characters (U+E0001 to U+E007F). Poisoned rules cause AI to generate code containing vulnerabilities, backdoors, or data exfiltration logic. AgentSeal found 12% of scanned public rules files contained hidden instructions."
+    },
+    {
+      "id": "roguepilot",
+      "names": ["RoguePilot"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-02",
+      "status": "disrupted",
+      "distribution": ["GitHub Issues", "GitHub Codespaces"],
+      "ttps": [
+        "T1528 - Steal Application Access Token",
+        "T1204.001 - User Execution: Malicious Link",
+        "T1213.003 - Data from Information Repositories: Code Repositories"
+      ],
+      "description": "Passive prompt injection vulnerability in GitHub Copilot within Codespaces discovered by Orca Security. Attackers embed hidden instructions in GitHub Issues using HTML comment tags. The attack chain exfiltrates GITHUB_TOKEN through symbolic links and schema-based exfiltration, enabling full repository takeover without social engineering. Patched by GitHub following coordinated disclosure."
+    },
+    {
       "id": "wormgpt",
       "names": [
         "WormGPT",
