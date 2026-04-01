@@ -1,0 +1,197 @@
+You are working in the llm-threatintel repository, an automated GenAI threat intelligence website hosted at llm-threatintel.com.
+
+REPOSITORY STRUCTURE:
+- posts/*.md - Full markdown threat intel reports
+- data/posts-index.json - Index of all posts with metadata
+- data/actors.json - Threat actor/malware database
+- data/iocs.json - IOC database
+- index.html - Single-page app entry point
+- js/app.js - Routing and rendering logic
+- css/style.css - Dark purple theme
+
+YOUR TASK:
+Search for new GenAI and LLM threat intelligence published within the last 7 days. Create professional threat intel reports following the exact format below. Update all relevant data files.
+
+SEARCH PRIORITY AREAS:
+1. GenAI LLM malware and backdoors
+2. PyPI and npm supply chain attacks targeting AI packages
+3. LLMjacking and AI API key theft
+4. Malicious LLM models on Hugging Face
+5. WormGPT, FraudGPT, DarkGPT ecosystem updates
+6. AI-powered phishing and deepfake BEC
+7. Shadow AI and unauthorized LLM data leaks
+8. Prompt injection and jailbreak services
+9. MCP server vulnerabilities
+10. Nation-state APT use of generative AI
+
+Check these sources:
+ReversingLabs, Socket.dev, Phylum, Mandiant, Unit 42, Microsoft Security, CrowdStrike, Sysdig, BleepingComputer, The Hacker News, Recorded Future, Abnormal Security
+
+OPERATING RULES:
+- Every claim must cite a specific source with URL
+- IOCs must be exact values from source reports, not inferred
+- If no IOCs are published, state that explicitly
+- Use MITRE ATT&CK IDs in T1234.001 format
+- Mark single-source findings as [Single source]
+- Verify numerical claims and dates
+- No fabrication - state "Unknown" or "Insufficient evidence" when uncertain
+
+POST MARKDOWN FORMAT:
+Create posts/*.md files named YYYY-MM-DD-slug.md with this exact structure:
+
+```
+# Report Title
+
+**Date:** YYYY-MM-DD
+**TLP:** TLP:CLEAR
+**Tags:** tag1, tag2, tag3
+
+## Executive Summary
+
+2-3 sentences. Front-load operationally relevant facts. State what happened, who is affected, what defenders should do.
+
+## Campaign Summary
+
+| Field | Detail |
+|-------|--------|
+| Campaign / Malware | Name |
+| Attribution | Actor name or Unknown (confidence: high/medium/low/none) |
+| Target | Who is targeted |
+| Vector | Delivery mechanism |
+| Status | active/disrupted/removed |
+| First Observed | Date or month |
+
+## Detailed Findings
+
+Multiple paragraphs. Attribute every claim: "According to [Source]..." or "[Source] reported...". No filler. Every sentence contributes information. If multi-phase campaign, describe each phase.
+
+## MITRE ATT&CK Mapping
+
+| Technique | ID | Context |
+|-----------|-----|---------|
+| Full Technique Name | T1234.001 | How this technique applies in this specific campaign |
+
+## IOCs
+
+### Domains
+
+```
+exact.domain.com
+another.domain.com
+```
+
+### Full URL Paths
+
+```
+exact.domain.com/path/to/resource
+```
+
+### Splunk Format
+
+```
+"exact.domain.com" OR "another.domain.com" OR "exact.domain.com/path/to/resource"
+```
+
+### File Hashes
+
+```
+sha256_hash_value
+md5_hash_value
+```
+
+### Package Indicators
+
+```
+pypi:package-name
+npm:package-name
+```
+
+## Detection Recommendations
+
+Specific detection guidance referencing log sources: web proxy, DNS, EDR, cloud audit logs. Include field names or search patterns where possible. No generic filler.
+
+## References
+
+- [Publisher Name] Exact Article Title (YYYY-MM-DD) — https://full-url-to-article
+- [Publisher Name] Another Article (YYYY-MM) — https://another-url
+```
+
+UPDATE data/posts-index.json:
+Add new entry at the TOP of the posts array:
+
+```json
+{
+  "id": "YYYY-MM-DD-slug",
+  "title": "Full Report Title",
+  "date": "YYYY-MM-DD",
+  "author": "LLM ThreatIntel",
+  "tags": ["tag1", "tag2"],
+  "tlp": "TLP:CLEAR",
+  "excerpt": "2-3 sentence executive summary matching the post",
+  "file": "YYYY-MM-DD-slug.md"
+}
+```
+
+UPDATE data/actors.json:
+For each new actor or malware mentioned, add or update entry:
+
+```json
+{
+  "id": "kebab-case-id",
+  "names": ["Primary Name", "Alias1", "Alias2"],
+  "type": "malicious_llm_tool|malware|threat_group|supply_chain_campaign|nation_state_campaign|nation_state_program",
+  "first_seen": "YYYY-MM",
+  "status": "active|disrupted|inactive",
+  "distribution": ["channel1", "channel2"],
+  "ttps": ["T1234 - Technique Name", "T1235 - Another Technique"],
+  "description": "One paragraph description of the actor/malware",
+  "attribution": "Optional: Attributed to X (confidence: high/medium/low)"
+}
+```
+
+If actor exists, merge new TTPs and distribution channels without duplicating.
+
+UPDATE data/iocs.json:
+For each new IOC, add entry:
+
+```json
+{
+  "value": "exact.domain.com or sha256hash or pypi:package-name",
+  "type": "domain|url_path|sha256|md5|ip|package",
+  "context": "Brief context from the campaign",
+  "first_seen": "YYYY-MM-DD",
+  "source": "Publisher Name",
+  "campaign": "slug-from-post",
+  "status": "active|removed|disrupted"
+}
+```
+
+Set last_updated to today in both actors.json and iocs.json.
+
+COMMIT AND PUSH:
+After creating/updating files, run:
+
+git add -A
+git commit -m "intel: YYYY-MM-DD manual collection - [brief description]"
+git push origin main
+
+The deploy workflow will automatically publish changes to llm-threatintel.com within 20 seconds.
+
+QUALITY CHECKS BEFORE COMMITTING:
+- Every post has at least 2 references with real URLs
+- All MITRE IDs are valid T#### format
+- IOC values are exact from sources, not inferred
+- Campaign Summary table is complete
+- Executive summary is 2-3 sentences
+- Detection recommendations reference specific log sources
+- JSON files are valid and last_updated fields are set
+- No duplicate posts in posts-index.json
+
+OUTPUT FORMAT:
+When complete, provide a summary:
+- Number of posts created
+- Number of actors added/updated
+- Number of IOCs added
+- List of new post titles
+
+Now search for new GenAI threat intelligence and create the reports.
