@@ -1,27 +1,33 @@
 /* ============================================================
    LLM ThreatIntel — Neural Network Background Animation
-   Lightweight constellation: simple filled circles, no gradients,
-   no shadowBlur, visibility-aware pause
+   Lightweight constellation matching promo site approach:
+   simple fills, no CSS mask-image, canvas-drawn fade
    ============================================================ */
 
 (function() {
-  const canvas = document.getElementById('neural-bg');
+  var canvas = document.getElementById('neural-bg');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, nodes = [], animId = null;
+  var ctx = canvas.getContext('2d');
+  var W, H, nodes = [], animId = null;
+  var fadeGrad = null;
 
-  const NODE_COUNT = 50;
-  const CONNECT_DIST = 180;
-  const NODE_SPEED = 0.25;
+  var NODE_COUNT = 50;
+  var CONNECT_DIST = 180;
+  var NODE_SPEED = 0.25;
+  var BG_COLOR = '#0c0a12';
 
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
+    fadeGrad = ctx.createLinearGradient(0, 0, 0, H);
+    fadeGrad.addColorStop(0, 'rgba(12,10,18,0)');
+    fadeGrad.addColorStop(0.35, 'rgba(12,10,18,0.5)');
+    fadeGrad.addColorStop(0.6, BG_COLOR);
   }
   window.addEventListener('resize', resize);
   resize();
 
-  for (let i = 0; i < NODE_COUNT; i++) {
+  for (var i = 0; i < NODE_COUNT; i++) {
     nodes.push({
       x: Math.random() * W,
       y: Math.random() * H * 0.55,
@@ -35,7 +41,7 @@
     animId = requestAnimationFrame(draw);
     ctx.clearRect(0, 0, W, H);
 
-    for (let i = 0; i < nodes.length; i++) {
+    for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
       n.x += n.vx;
       n.y += n.vy;
@@ -43,8 +49,8 @@
       if (n.y < 0 || n.y > H * 0.55) n.vy *= -1;
     }
 
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
         var dx = nodes[i].x - nodes[j].x;
         var dy = nodes[i].y - nodes[j].y;
         var dist = Math.sqrt(dx * dx + dy * dy);
@@ -60,13 +66,17 @@
       }
     }
 
-    for (let i = 0; i < nodes.length; i++) {
+    for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(196,181,253,0.45)';
       ctx.fill();
     }
+
+    // Fade to background color in lower portion (replaces CSS mask-image)
+    ctx.fillStyle = fadeGrad;
+    ctx.fillRect(0, 0, W, H);
   }
 
   function start() {
