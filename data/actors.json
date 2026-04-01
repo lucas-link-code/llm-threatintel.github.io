@@ -1,13 +1,21 @@
 {
-  "last_updated": "2026-03-30",
+  "last_updated": "2026-04-01",
   "entries": [
     {
       "id": "wormgpt",
-      "names": ["WormGPT", "WormGPT v2", "WormGPT v3"],
+      "names": [
+        "WormGPT",
+        "WormGPT v2",
+        "WormGPT v3"
+      ],
       "type": "malicious_llm_tool",
       "first_seen": "2023-07",
       "status": "active",
-      "distribution": ["Telegram", "dark web forums", "HackForums"],
+      "distribution": [
+        "Telegram",
+        "dark web forums",
+        "HackForums"
+      ],
       "ttps": [
         "T1566.001 - Spearphishing Attachment",
         "T1204.001 - User Execution: Malicious Link",
@@ -17,11 +25,16 @@
     },
     {
       "id": "fraudgpt",
-      "names": ["FraudGPT"],
+      "names": [
+        "FraudGPT"
+      ],
       "type": "malicious_llm_tool",
       "first_seen": "2023-07",
       "status": "active",
-      "distribution": ["Telegram", "dark web marketplaces"],
+      "distribution": [
+        "Telegram",
+        "dark web marketplaces"
+      ],
       "ttps": [
         "T1566.001 - Spearphishing Attachment",
         "T1059.001 - PowerShell",
@@ -31,11 +44,15 @@
     },
     {
       "id": "ghostgpt",
-      "names": ["GhostGPT"],
+      "names": [
+        "GhostGPT"
+      ],
       "type": "malicious_llm_tool",
       "first_seen": "2024-01",
       "status": "active",
-      "distribution": ["Telegram"],
+      "distribution": [
+        "Telegram"
+      ],
       "ttps": [
         "T1566 - Phishing",
         "T1059 - Command and Scripting Interpreter",
@@ -45,11 +62,16 @@
     },
     {
       "id": "promptflux",
-      "names": ["PROMPTFLUX"],
+      "names": [
+        "PROMPTFLUX"
+      ],
       "type": "malware",
       "first_seen": "2025-06",
       "status": "active",
-      "distribution": ["phishing campaigns", "trojanized AI tools"],
+      "distribution": [
+        "phishing campaigns",
+        "trojanized AI tools"
+      ],
       "ttps": [
         "T1059 - Command and Scripting Interpreter",
         "T1041 - Exfiltration Over C2 Channel",
@@ -59,11 +81,16 @@
     },
     {
       "id": "promptspy",
-      "names": ["PromptSpy"],
+      "names": [
+        "PromptSpy"
+      ],
       "type": "malware",
       "first_seen": "2025-08",
       "status": "active",
-      "distribution": ["malicious browser extensions", "trojanized AI assistants"],
+      "distribution": [
+        "malicious browser extensions",
+        "trojanized AI assistants"
+      ],
       "ttps": [
         "T1185 - Browser Session Hijacking",
         "T1056.004 - Credential API Hooking",
@@ -73,11 +100,16 @@
     },
     {
       "id": "honestcue",
-      "names": ["HONESTCUE"],
+      "names": [
+        "HONESTCUE"
+      ],
       "type": "malware",
       "first_seen": "2025-09",
       "status": "active",
-      "distribution": ["supply chain compromise", "malicious packages"],
+      "distribution": [
+        "supply chain compromise",
+        "malicious packages"
+      ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
         "T1059.006 - Python",
@@ -87,11 +119,16 @@
     },
     {
       "id": "coinbait",
-      "names": ["COINBAIT"],
+      "names": [
+        "COINBAIT"
+      ],
       "type": "malware",
       "first_seen": "2025-10",
       "status": "active",
-      "distribution": ["fake AI trading bots", "social media campaigns"],
+      "distribution": [
+        "fake AI trading bots",
+        "social media campaigns"
+      ],
       "ttps": [
         "T1204.002 - User Execution: Malicious File",
         "T1555 - Credentials from Password Stores",
@@ -101,11 +138,16 @@
     },
     {
       "id": "lamehug",
-      "names": ["LAMEHUG"],
+      "names": [
+        "LAMEHUG"
+      ],
       "type": "malware",
       "first_seen": "2025-11",
       "status": "active",
-      "distribution": ["spearphishing", "compromised infrastructure"],
+      "distribution": [
+        "spearphishing",
+        "compromised infrastructure"
+      ],
       "ttps": [
         "T1059.006 - Python",
         "T1071.001 - Web Protocols",
@@ -117,26 +159,43 @@
     },
     {
       "id": "teampcp",
-      "names": ["TeamPCP"],
+      "names": [
+        "TeamPCP",
+        "Initial Access Broker"
+      ],
       "type": "supply_chain_campaign",
       "first_seen": "2026-03",
       "status": "active",
-      "distribution": ["PyPI", "malicious packages"],
+      "distribution": [
+        "PyPI",
+        "malicious packages",
+        "npm",
+        "GitHub Actions"
+      ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
         "T1059.006 - Python",
         "T1071.001 - Web Protocols",
-        "T1005 - Data from Local System"
+        "T1005 - Data from Local System",
+        "T1195.002 - Supply Chain Compromise",
+        "T1078.003 - Cloud Accounts",
+        "T1552.001 - Credentials from Files"
       ],
-      "description": "Supply chain campaign distributing malicious Python packages impersonating LiteLLM and Telnyx on PyPI. Packages contain embedded backdoors targeting developers working with LLM orchestration frameworks."
+      "description": "Supply chain campaign distributing malicious Python packages impersonating LiteLLM and Telnyx on PyPI. Packages contain embedded backdoors targeting developers working with LLM orchestration frameworks.",
+      "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, and affected maintainers (confidence: high)"
     },
     {
       "id": "storm-2139",
-      "names": ["Storm-2139"],
+      "names": [
+        "Storm-2139"
+      ],
       "type": "threat_group",
       "first_seen": "2024-06",
       "status": "active",
-      "distribution": ["compromised API keys", "stolen credentials"],
+      "distribution": [
+        "compromised API keys",
+        "stolen credentials"
+      ],
       "ttps": [
         "T1528 - Steal Application Access Token",
         "T1496 - Resource Hijacking",
@@ -146,11 +205,15 @@
     },
     {
       "id": "ru-fortigate-genai",
-      "names": ["Russian GenAI FortiGate Campaign"],
+      "names": [
+        "Russian GenAI FortiGate Campaign"
+      ],
       "type": "nation_state_campaign",
       "first_seen": "2026-02",
       "status": "active",
-      "distribution": ["mass exploitation of FortiGate VPN appliances"],
+      "distribution": [
+        "mass exploitation of FortiGate VPN appliances"
+      ],
       "ttps": [
         "T1190 - Exploit Public-Facing Application",
         "T1133 - External Remote Services",
@@ -161,11 +224,16 @@
     },
     {
       "id": "dprk-genai",
-      "names": ["DPRK GenAI Operations"],
+      "names": [
+        "DPRK GenAI Operations"
+      ],
       "type": "nation_state_program",
       "first_seen": "2024-01",
       "status": "active",
-      "distribution": ["IT worker fraud", "social engineering"],
+      "distribution": [
+        "IT worker fraud",
+        "social engineering"
+      ],
       "ttps": [
         "T1566 - Phishing",
         "T1204 - User Execution",
@@ -173,6 +241,48 @@
       ],
       "attribution": "DPRK / Lazarus Group affiliates",
       "description": "North Korean state-sponsored use of LLMs to support IT worker fraud schemes, generate cover identities, write convincing interview responses, and produce polished code for revenue generation operations."
+    },
+    {
+      "id": "unc1069",
+      "names": [
+        "UNC1069",
+        "North Korea-nexus threat actor"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "npm registry"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise",
+        "T1059.007 - JavaScript",
+        "T1105 - Ingress Tool Transfer",
+        "T1071.001 - Web Protocols",
+        "T1082 - System Information Discovery"
+      ],
+      "description": "<cite index=\"63-13,62-35\">Financially motivated North Korea-nexus threat actor active since at least 2018, characterized by sophisticated supply chain attacks and use of WAVESHAPER family backdoors with infrastructure reuse across campaigns</cite>",
+      "attribution": "Attributed to UNC1069 by Google Threat Intelligence Group (confidence: high)"
+    },
+    {
+      "id": "waveshaper-v2",
+      "names": [
+        "WAVESHAPER.V2",
+        "SILKBELL"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "npm supply chain"
+      ],
+      "ttps": [
+        "T1059.001 - PowerShell",
+        "T1055 - Process Injection",
+        "T1071.001 - Web Protocols"
+      ],
+      "description": "<cite index=\"63-12,63-25\">Cross-platform backdoor with variants for Windows, macOS, and Linux, featuring base64-encoded JSON C2 communications, PE injection capabilities, and script execution functionality</cite>",
+      "attribution": "Linked to UNC1069 operations (confidence: high)"
     }
   ]
 }
