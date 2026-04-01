@@ -1,0 +1,60 @@
+# ============================================================
+# LLM ThreatIntel — Automated Intelligence Collection
+# Option B: GitHub Actions + Claude API
+# Runs daily at 11:10 UTC (6:10 AM EST)
+# ============================================================
+#
+# SETUP REQUIRED:
+# 1. Add ANTHROPIC_API_KEY as a repository secret
+#    Settings > Secrets and variables > Actions > New repository secret
+#
+# 2. Ensure GitHub Actions has write permissions
+#    Settings > Actions > General > Workflow permissions > Read and write
+#
+# NOTE: This is the GitHub Actions alternative to running Claude Code
+# locally via cron. Both approaches work. Choose one.
+# ============================================================
+
+name: Daily Intelligence Collection
+
+on:
+  schedule:
+    - cron: '10 11 * * *'  # 11:10 UTC = 6:10 AM EST
+  workflow_dispatch:  # Manual trigger for testing
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Run collection script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/collect.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "LLM ThreatIntel Bot"
+          git config user.email "bot@llm-threatintel.github.io"
+          git add -A
+          git commit -m "intel: $(date +%Y-%m-%d) automated collection"
+          git push

@@ -1,0 +1,95 @@
+{
+  "last_updated": "2026-03-30",
+  "iocs": [
+    {
+      "value": "wormgpt.ai",
+      "type": "domain",
+      "context": "WormGPT primary distribution site",
+      "first_seen": "2023-07-15",
+      "source": "SlashNext",
+      "campaign": "wormgpt",
+      "status": "active"
+    },
+    {
+      "value": "fraudgpt.com",
+      "type": "domain",
+      "context": "FraudGPT marketing and sales portal",
+      "first_seen": "2023-08-01",
+      "source": "Netenrich",
+      "campaign": "fraudgpt",
+      "status": "active"
+    },
+    {
+      "value": "ghostgpt.chat",
+      "type": "domain",
+      "context": "GhostGPT Telegram redirect domain",
+      "first_seen": "2024-01-20",
+      "source": "Abnormal Security",
+      "campaign": "ghostgpt",
+      "status": "active"
+    },
+    {
+      "value": "darkgpt.bot",
+      "type": "domain",
+      "context": "DarkGPT variant distribution",
+      "first_seen": "2024-03-10",
+      "source": "OSINT",
+      "campaign": "malicious_llm_tools",
+      "status": "active"
+    },
+    {
+      "value": "pypi.org/project/litellm-proxy-server",
+      "type": "url_path",
+      "context": "TeamPCP malicious LiteLLM impersonation package on PyPI",
+      "first_seen": "2026-03-05",
+      "source": "ReversingLabs",
+      "campaign": "teampcp",
+      "status": "removed"
+    },
+    {
+      "value": "pypi.org/project/telnyx-ai",
+      "type": "url_path",
+      "context": "TeamPCP malicious Telnyx impersonation package on PyPI",
+      "first_seen": "2026-03-05",
+      "source": "ReversingLabs",
+      "campaign": "teampcp",
+      "status": "removed"
+    },
+    {
+      "value": "pypi.org/project/litellm-client",
+      "type": "url_path",
+      "context": "TeamPCP malicious LiteLLM client package",
+      "first_seen": "2026-03-08",
+      "source": "Socket.dev",
+      "campaign": "teampcp",
+      "status": "removed"
+    },
+    {
+      "value": "llmjacking.services",
+      "type": "domain",
+      "context": "LLMjacking proxy resale service",
+      "first_seen": "2024-09-15",
+      "source": "Sysdig",
+      "campaign": "storm-2139",
+      "status": "active"
+    },
+    {
+      "value": "api-proxy.ai-services.cloud",
+      "type": "domain",
+      "context": "Storm-2139 proxy endpoint for stolen LLM API access",
+      "first_seen": "2025-01-10",
+      "source": "Microsoft",
+      "campaign": "storm-2139",
+      "status": "active"
+    },
+    {
+      "value": "huggingface.co/DarkAI-Research",
+      "type": "url_path",
+      "context": "Malicious model repository hosting poisoned LLM weights",
+      "first_seen": "2025-11-20",
+      "source": "JFrog",
+      "campaign": "model_poisoning",
+      "status": "removed"
+    }
+  ]
+}

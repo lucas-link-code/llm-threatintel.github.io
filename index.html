@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM ThreatIntel — GenAI Threat Intelligence</title>
+  <meta name="description" content="Automated threat intelligence feed tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, and shadow AI risks.">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="neural-bg"></canvas>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav">
+        <a href="#home" class="active">Intel Feed</a>
+        <a href="#actors">Threat Actors</a>
+        <a href="#ioc-feed">IOC Feed</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- IOC Detail Modal -->
+  <div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)App.closeModal()">
+    <div class="modal">
+      <button class="modal-close" onclick="App.closeModal()">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <main class="main-content" id="app-content">
+    <div class="loading">Initializing threat feed...</div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script src="js/neural-bg.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

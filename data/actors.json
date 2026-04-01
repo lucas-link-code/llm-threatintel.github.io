@@ -1,0 +1,178 @@
+{
+  "last_updated": "2026-03-30",
+  "entries": [
+    {
+      "id": "wormgpt",
+      "names": ["WormGPT", "WormGPT v2", "WormGPT v3"],
+      "type": "malicious_llm_tool",
+      "first_seen": "2023-07",
+      "status": "active",
+      "distribution": ["Telegram", "dark web forums", "HackForums"],
+      "ttps": [
+        "T1566.001 - Spearphishing Attachment",
+        "T1204.001 - User Execution: Malicious Link",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "Jailbroken LLM service marketed for BEC email generation, phishing lure creation, and malware code writing. Built on GPT-J 6B with removed safety guardrails."
+    },
+    {
+      "id": "fraudgpt",
+      "names": ["FraudGPT"],
+      "type": "malicious_llm_tool",
+      "first_seen": "2023-07",
+      "status": "active",
+      "distribution": ["Telegram", "dark web marketplaces"],
+      "ttps": [
+        "T1566.001 - Spearphishing Attachment",
+        "T1059.001 - PowerShell",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Subscription-based malicious AI chatbot for generating phishing pages, writing undetectable malware, and crafting social engineering content."
+    },
+    {
+      "id": "ghostgpt",
+      "names": ["GhostGPT"],
+      "type": "malicious_llm_tool",
+      "first_seen": "2024-01",
+      "status": "active",
+      "distribution": ["Telegram"],
+      "ttps": [
+        "T1566 - Phishing",
+        "T1059 - Command and Scripting Interpreter",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Telegram-based wrapper around jailbroken LLM providing uncensored AI for malware coding, exploit development, and phishing content generation."
+    },
+    {
+      "id": "promptflux",
+      "names": ["PROMPTFLUX"],
+      "type": "malware",
+      "first_seen": "2025-06",
+      "status": "active",
+      "distribution": ["phishing campaigns", "trojanized AI tools"],
+      "ttps": [
+        "T1059 - Command and Scripting Interpreter",
+        "T1041 - Exfiltration Over C2 Channel",
+        "T1071 - Application Layer Protocol"
+      ],
+      "description": "Malware family that leverages LLM prompt injection techniques for dynamic payload generation and C2 command obfuscation."
+    },
+    {
+      "id": "promptspy",
+      "names": ["PromptSpy"],
+      "type": "malware",
+      "first_seen": "2025-08",
+      "status": "active",
+      "distribution": ["malicious browser extensions", "trojanized AI assistants"],
+      "ttps": [
+        "T1185 - Browser Session Hijacking",
+        "T1056.004 - Credential API Hooking",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "description": "Spyware targeting AI platform users to exfiltrate prompts, API keys, and conversation histories from ChatGPT, Claude, and other LLM interfaces."
+    },
+    {
+      "id": "honestcue",
+      "names": ["HONESTCUE"],
+      "type": "malware",
+      "first_seen": "2025-09",
+      "status": "active",
+      "distribution": ["supply chain compromise", "malicious packages"],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
+        "T1059.006 - Python",
+        "T1005 - Data from Local System"
+      ],
+      "description": "Supply chain malware distributed via trojanized AI/ML Python packages targeting data scientists and ML engineers."
+    },
+    {
+      "id": "coinbait",
+      "names": ["COINBAIT"],
+      "type": "malware",
+      "first_seen": "2025-10",
+      "status": "active",
+      "distribution": ["fake AI trading bots", "social media campaigns"],
+      "ttps": [
+        "T1204.002 - User Execution: Malicious File",
+        "T1555 - Credentials from Password Stores",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Infostealer and cryptominer distributed through fake AI-powered cryptocurrency trading platforms and AI investment bot schemes."
+    },
+    {
+      "id": "lamehug",
+      "names": ["LAMEHUG"],
+      "type": "malware",
+      "first_seen": "2025-11",
+      "status": "active",
+      "distribution": ["spearphishing", "compromised infrastructure"],
+      "ttps": [
+        "T1059.006 - Python",
+        "T1071.001 - Web Protocols",
+        "T1132.001 - Standard Encoding",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "attribution": "APT28 / UAC-0001",
+      "description": "First publicly documented malware to integrate a live LLM API for dynamic C2 command generation and response parsing. Attributed to APT28, it uses OpenAI-compatible API calls to generate contextually appropriate commands based on host reconnaissance."
+    },
+    {
+      "id": "teampcp",
+      "names": ["TeamPCP"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-03",
+      "status": "active",
+      "distribution": ["PyPI", "malicious packages"],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
+        "T1059.006 - Python",
+        "T1071.001 - Web Protocols",
+        "T1005 - Data from Local System"
+      ],
+      "description": "Supply chain campaign distributing malicious Python packages impersonating LiteLLM and Telnyx on PyPI. Packages contain embedded backdoors targeting developers working with LLM orchestration frameworks."
+    },
+    {
+      "id": "storm-2139",
+      "names": ["Storm-2139"],
+      "type": "threat_group",
+      "first_seen": "2024-06",
+      "status": "active",
+      "distribution": ["compromised API keys", "stolen credentials"],
+      "ttps": [
+        "T1528 - Steal Application Access Token",
+        "T1496 - Resource Hijacking",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "Financially motivated threat group specializing in LLMjacking operations. Steals and resells cloud AI API keys, operates proxy services for unauthorized access to commercial LLM APIs including Azure OpenAI and AWS Bedrock."
+    },
+    {
+      "id": "ru-fortigate-genai",
+      "names": ["Russian GenAI FortiGate Campaign"],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-02",
+      "status": "active",
+      "distribution": ["mass exploitation of FortiGate VPN appliances"],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1133 - External Remote Services",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "attribution": "Russian-linked actors",
+      "description": "Mass exploitation campaign targeting FortiGate VPN appliances using GenAI-assisted vulnerability discovery and exploit generation. Demonstrates nation-state adoption of LLMs to accelerate exploitation workflows."
+    },
+    {
+      "id": "dprk-genai",
+      "names": ["DPRK GenAI Operations"],
+      "type": "nation_state_program",
+      "first_seen": "2024-01",
+      "status": "active",
+      "distribution": ["IT worker fraud", "social engineering"],
+      "ttps": [
+        "T1566 - Phishing",
+        "T1204 - User Execution",
+        "T1656 - Impersonation"
+      ],
+      "attribution": "DPRK / Lazarus Group affiliates",
+      "description": "North Korean state-sponsored use of LLMs to support IT worker fraud schemes, generate cover identities, write convincing interview responses, and produce polished code for revenue generation operations."
+    }
+  ]
+}

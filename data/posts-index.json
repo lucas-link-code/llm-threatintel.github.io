@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": "2026-03-30-teampcp-supply-chain",
+      "title": "TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages",
+      "date": "2026-03-30",
+      "author": "LLM ThreatIntel",
+      "tags": ["supply-chain"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.",
+      "file": "2026-03-30-teampcp-supply-chain.md"
+    },
+    {
+      "id": "2026-03-28-lamehug-llm-malware",
+      "title": "LAMEHUG: First Malware to Integrate Live LLM for Dynamic C2 Command Generation",
+      "date": "2026-03-28",
+      "author": "LLM ThreatIntel",
+      "tags": ["malware", "apt"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "APT28-attributed malware LAMEHUG represents a milestone in offensive AI adoption. It is the first publicly documented sample that calls an LLM API at runtime to dynamically generate C2 commands based on host reconnaissance data.",
+      "file": "2026-03-28-lamehug-llm-malware.md"
+    },
+    {
+      "id": "2026-03-25-russian-fortigate-genai",
+      "title": "Russian GenAI-Assisted FortiGate Mass Exploitation Campaign",
+      "date": "2026-03-25",
+      "author": "LLM ThreatIntel",
+      "tags": ["nation-state"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Russian-linked threat actors are leveraging generative AI to accelerate vulnerability research and exploit development targeting FortiGate VPN appliances at scale.",
+      "file": "2026-03-25-russian-fortigate-genai.md"
+    },
+    {
+      "id": "2026-03-20-malicious-llm-ecosystem",
+      "title": "The Malicious LLM Ecosystem: WormGPT, FraudGPT, GhostGPT and Beyond",
+      "date": "2026-03-20",
+      "author": "LLM ThreatIntel",
+      "tags": ["malicious-tool"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A comprehensive overview of the underground malicious LLM-as-a-service ecosystem, tracking tool availability, pricing, capabilities, and evolution from mid-2023 through early 2026.",
+      "file": "2026-03-20-malicious-llm-ecosystem.md"
+    },
+    {
+      "id": "2026-03-15-llmjacking-storm2139",
+      "title": "LLMjacking Operations and Storm-2139: Stolen API Keys at Scale",
+      "date": "2026-03-15",
+      "author": "LLM ThreatIntel",
+      "tags": ["llmjacking"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not eliminated the operation.",
+      "file": "2026-03-15-llmjacking-storm2139.md"
+    },
+    {
+      "id": "2026-03-10-shadow-ai-detection",
+      "title": "Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage",
+      "date": "2026-03-10",
+      "author": "LLM ThreatIntel",
+      "tags": ["shadow-ai"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.",
+      "file": "2026-03-10-shadow-ai-detection.md"
+    }
+  ]
+}
