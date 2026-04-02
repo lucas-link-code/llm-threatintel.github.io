@@ -534,7 +534,8 @@ def main():
     try:
         response = client.messages.create(
             model=MODEL,
-            max_tokens=16000,
+            max_tokens=32000,
+            system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
             tools=[{"type": "web_search_20250305", "name": "web_search"}],
             messages=[{"role": "user", "content": prompt}]
         )
@@ -563,26 +564,42 @@ def main():
     print(f"Raw response logged to: {log_path}")
 
     # Parse JSON
+    result = None
+    cleaned = response_text.strip()
+    cleaned = re.sub(r'^```(?:json)?\s*\n?', '', cleaned)
+    cleaned = re.sub(r'\n?\s*```\s*$', '', cleaned)
+
     try:
-        cleaned = response_text.strip()
-        # Remove markdown fencing if present
-        cleaned = re.sub(r'^```(?:json)?\s*\n?', '', cleaned)
-        cleaned = re.sub(r'\n?\s*```\s*$', '', cleaned)
         result = json.loads(cleaned)
-    except json.JSONDecodeError as e:
-        print(f"ERROR: Failed to parse API response as JSON: {e}")
+    except json.JSONDecodeError:
+        pass
+
+    if result is None:
+        # Find the first top-level { and its matching }
+        start = response_text.find('{')
+        if start != -1:
+            depth = 0
+            end = -1
+            for i in range(start, len(response_text)):
+                if response_text[i] == '{':
+                    depth += 1
+                elif response_text[i] == '}':
+                    depth -= 1
+                    if depth == 0:
+                        end = i + 1
+                        break
+            if end > start:
+                try:
+                    result = json.loads(response_text[start:end])
+                    print("Recovered JSON from mixed response content")
+                except json.JSONDecodeError:
+                    pass
+
+    if result is None:
+        print(f"ERROR: Failed to parse API response as JSON")
         print(f"First 500 chars of response:\n{response_text[:500]}")
-        # Try to extract JSON from mixed content
-        json_match = re.search(r'\{[\s\S]*\}', response_text)
-        if json_match:
-            try:
-                result = json.loads(json_match.group())
-                print("Recovered JSON from mixed response content")
-            except json.JSONDecodeError:
-                print("Could not recover JSON. Exiting.")
-                sys.exit(1)
-        else:
-            sys.exit(1)
+        print("Could not recover JSON. Exiting.")
+        sys.exit(1)
 
     # Handle results
     print(f"\nSearch summary: {result.get('search_summary', 'N/A')}")
