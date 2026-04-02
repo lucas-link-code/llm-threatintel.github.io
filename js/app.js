@@ -245,7 +245,7 @@ const App = {
           <span class="post-tag tlp-clear">${post.tlp}</span>
         </div>
         <div class="post-title">${post.title}</div>
-        <div class="post-excerpt">${post.excerpt}</div>
+        <div class="post-excerpt">${this.truncateExcerpt(post.excerpt, 220)}</div>
       </div>
     `).join('');
   },
@@ -438,6 +438,11 @@ const App = {
   },
 
   // ---- HELPERS ----
+  truncateExcerpt(text, max) {
+    if (!text || text.length <= max) return text;
+    return text.substring(0, max).replace(/\s+\S*$/, '') + '...';
+  },
+
   escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   },
