@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-04-01",
+  "last_updated": "2026-04-02",
   "entries": [
     {
       "id": "operation-bizarre-bazaar",
-      "names": ["Operation Bizarre Bazaar", "Hecker", "Sakuya", "LiveGamer101"],
+      "names": [
+        "Operation Bizarre Bazaar",
+        "Hecker",
+        "Sakuya",
+        "LiveGamer101"
+      ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-12",
       "status": "active",
-      "distribution": ["Telegram", "Discord", "silver.inc marketplace", "Shodan/Censys scanning"],
+      "distribution": [
+        "Telegram",
+        "Discord",
+        "silver.inc marketplace",
+        "Shodan/Censys scanning"
+      ],
       "ttps": [
         "T1190 - Exploit Public-Facing Application",
         "T1078.003 - Cloud Accounts",
@@ -19,11 +29,17 @@
     },
     {
       "id": "rules-file-backdoor",
-      "names": ["Rules File Backdoor"],
+      "names": [
+        "Rules File Backdoor"
+      ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-12",
       "status": "active",
-      "distribution": ["GitHub repositories", "shared cursor rules files", "developer communities"],
+      "distribution": [
+        "GitHub repositories",
+        "shared cursor rules files",
+        "developer communities"
+      ],
       "ttps": [
         "T1195.002 - Supply Chain Compromise",
         "T1027.013 - Obfuscated Files or Information: Unicode Encoding",
@@ -33,11 +49,16 @@
     },
     {
       "id": "roguepilot",
-      "names": ["RoguePilot"],
+      "names": [
+        "RoguePilot"
+      ],
       "type": "supply_chain_campaign",
       "first_seen": "2026-02",
       "status": "disrupted",
-      "distribution": ["GitHub Issues", "GitHub Codespaces"],
+      "distribution": [
+        "GitHub Issues",
+        "GitHub Codespaces"
+      ],
       "ttps": [
         "T1528 - Steal Application Access Token",
         "T1204.001 - User Execution: Malicious Link",
@@ -205,7 +226,8 @@
       "id": "teampcp",
       "names": [
         "TeamPCP",
-        "Initial Access Broker"
+        "Initial Access Broker",
+        "CanisterWorm operators"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2026-03",
@@ -214,7 +236,11 @@
         "PyPI",
         "malicious packages",
         "npm",
-        "GitHub Actions"
+        "GitHub Actions",
+        "npm registry",
+        "Kubernetes DaemonSets",
+        "Telegram",
+        "BreachForums"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -223,7 +249,12 @@
         "T1005 - Data from Local System",
         "T1195.002 - Supply Chain Compromise",
         "T1078.003 - Cloud Accounts",
-        "T1552.001 - Credentials from Files"
+        "T1552.001 - Credentials from Files",
+        "T1485 - Data Destruction",
+        "T1543.002 - Systemd Service",
+        "T1102 - C2 via Web Service (ICP blockchain)",
+        "T1021.004 - SSH Lateral Movement",
+        "T1552.004 - Credential Harvesting"
       ],
       "description": "Supply chain campaign distributing malicious Python packages impersonating LiteLLM and Telnyx on PyPI. Packages contain embedded backdoors targeting developers working with LLM orchestration frameworks.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, and affected maintainers (confidence: high)"
@@ -327,6 +358,77 @@
       ],
       "description": "<cite index=\"63-12,63-25\">Cross-platform backdoor with variants for Windows, macOS, and Linux, featuring base64-encoded JSON C2 communications, PE injection capabilities, and script execution functionality</cite>",
       "attribution": "Linked to UNC1069 operations (confidence: high)"
+    },
+    {
+      "id": "hive0163",
+      "names": [
+        "Hive0163",
+        "Interlock ransomware operators"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "ClickFix social engineering",
+        "malvertising",
+        "initial access broker partnerships"
+      ],
+      "ttps": [
+        "T1204.001 - ClickFix User Execution",
+        "T1053.005 - Scheduled Task Persistence",
+        "T1071.001 - HTTP C2",
+        "T1486 - Ransomware Encryption",
+        "T1027 - Obfuscated/AI-Generated Code"
+      ],
+      "description": "Hive0163 is a financially motivated ransomware group tracked by IBM X-Force, associated with Interlock ransomware, NodeSnake, InterlockRAT, and JunkFiction loader. The group employs ClickFix social engineering for initial access and works with initial access brokers. In early 2026, Hive0163 became the first financially motivated group confirmed by a major threat intelligence vendor to deploy likely AI-generated malware (Slopoly) in a live intrusion, indicating the group is actively experimenting with LLM-assisted tooling to accelerate development and generate disposable, hard-to-attribute C2 frameworks.",
+      "attribution": "Financially motivated cybercrime cluster (confidence: high per IBM X-Force); no nation-state attribution"
+    },
+    {
+      "id": "slopoly",
+      "names": [
+        "Slopoly"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "deployed post-exploitation by Hive0163 operators"
+      ],
+      "ttps": [
+        "T1053.005 - Scheduled Task",
+        "T1071.001 - HTTP C2 beaconing",
+        "T1027 - LLM-generated obfuscated code"
+      ],
+      "description": "Slopoly is a likely LLM-generated PowerShell backdoor discovered by IBM X-Force in early 2026 during a Hive0163 ransomware engagement. It functions as a basic C2 client, sending JSON heartbeats to a remote server and executing received commands via cmd.exe. Its LLM origin is evidenced by extensive inline comments, clean error handling, and a self-description as a 'Polymorphic C2 Persistence Client' despite lacking polymorphic capabilities. It is dropped to C:\\ProgramData\\Microsoft\\Windows\\Runtime\\ and persists via a scheduled task named 'Runtime Broker'.",
+      "attribution": "Attributed to Hive0163 (confidence: high)"
+    },
+    {
+      "id": "apt36",
+      "names": [
+        "APT36",
+        "Transparent Tribe",
+        "ProjectM",
+        "Mythic Leopard",
+        "TEMP.Lapis"
+      ],
+      "type": "nation_state_program",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "spear-phishing PDFs",
+        "modified browser shortcuts",
+        "LLM-assisted polyglot implants"
+      ],
+      "ttps": [
+        "T1566.001 - Spearphishing Attachment",
+        "T1036.005 - Browser Shortcut Masquerade",
+        "T1102 - LOTS C2 (Slack/Discord/Supabase/Google Sheets)",
+        "T1027 - Niche Language Obfuscation",
+        "T1053.005 - Scheduled Task",
+        "T1005 - Local Data Collection"
+      ],
+      "description": "APT36 (Transparent Tribe) is a Pakistan-linked state-sponsored threat group that has historically targeted Indian government and defence entities using conventional malware tooling. Beginning in late 2025 and accelerating into early 2026, the group pivoted to an AI-assisted 'vibeware' development model, using LLMs to generate high volumes of disposable, polyglot implants in niche languages (Nim, Zig, Crystal, Rust, Go). The strategy — termed 'Distributed Denial of Detection' by Bitdefender — floods targets with simultaneous multi-language implants to overwhelm security engines and ensure persistence even if individual channels are neutralized. C2 is conducted exclusively via legitimate cloud services (Slack, Discord, Supabase, Google Sheets) to evade network controls.",
+      "attribution": "Pakistan-linked state-sponsored group (confidence: medium per Bitdefender); historically targets Indian government, aerospace, and defence sectors"
     }
   ]
 }

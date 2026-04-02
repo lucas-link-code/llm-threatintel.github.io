@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01",
+  "last_updated": "2026-04-02",
   "iocs": [
     {
       "value": "silver.inc",
@@ -224,6 +224,114 @@
       "first_seen": "2026-04-01",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-supply-chain-campaign-ai-infrastructure-2026",
+      "status": "active"
+    },
+    {
+      "value": "tdtqy-oyaaa-aaaae-af2dq-cai.raw.icp0.io",
+      "type": "domain",
+      "context": "TeamPCP CanisterWorm Evolves: Kubernetes Wiper Deployed Against Iranian Systems via npm Supply Chain",
+      "first_seen": "2026-04-02",
+      "source": "Aikido Security",
+      "campaign": "teampcp-canisterworm-kubernetes-wiper-iran",
+      "status": "active"
+    },
+    {
+      "value": "plurfestivalgalaxy.com",
+      "type": "domain",
+      "context": "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack",
+      "first_seen": "2026-04-02",
+      "source": "IBM X-Force",
+      "campaign": "hive0163-slopoly-ai-generated-malware-ransomware",
+      "status": "active"
+    },
+    {
+      "value": "94.156.181.89",
+      "type": "ip",
+      "context": "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack",
+      "first_seen": "2026-04-02",
+      "source": "IBM X-Force",
+      "campaign": "hive0163-slopoly-ai-generated-malware-ransomware",
+      "status": "active"
+    },
+    {
+      "value": "77.42.75.119",
+      "type": "ip",
+      "context": "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack",
+      "first_seen": "2026-04-02",
+      "source": "IBM X-Force",
+      "campaign": "hive0163-slopoly-ai-generated-malware-ransomware",
+      "status": "active"
+    },
+    {
+      "value": "23.227.203.123",
+      "type": "ip",
+      "context": "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack",
+      "first_seen": "2026-04-02",
+      "source": "IBM X-Force",
+      "campaign": "hive0163-slopoly-ai-generated-malware-ransomware",
+      "status": "active"
+    },
+    {
+      "value": "172.86.68.64",
+      "type": "ip",
+      "context": "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack",
+      "first_seen": "2026-04-02",
+      "source": "IBM X-Force",
+      "campaign": "hive0163-slopoly-ai-generated-malware-ransomware",
+      "status": "active"
+    },
+    {
+      "value": "1b6326857fa635d396851a9031949cfdf6c806130767c399727d78a1c2a0126c",
+      "type": "sha256",
+      "context": "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer",
+      "first_seen": "2026-04-02",
+      "source": "Unit 42 / Palo Alto Networks",
+      "campaign": "unit42-ai-gated-sliver-dropper-ai-theater-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "02ce798981fb2aa68776e53672a24103579ca77a1d3e7f8aaeccf6166d1a9cc6",
+      "type": "sha256",
+      "context": "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer",
+      "first_seen": "2026-04-02",
+      "source": "Unit 42 / Palo Alto Networks",
+      "campaign": "unit42-ai-gated-sliver-dropper-ai-theater-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "7c7b7b99f248662a1f9aea1563e60f90d19b0ee95934e476c423d0bf373f6493",
+      "type": "sha256",
+      "context": "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer",
+      "first_seen": "2026-04-02",
+      "source": "Unit 42 / Palo Alto Networks",
+      "campaign": "unit42-ai-gated-sliver-dropper-ai-theater-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "052d5220529b6bd4b01e5e375b5dc3ffd50c4b137e242bbfb26655fd7f475ac6",
+      "type": "sha256",
+      "context": "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer",
+      "first_seen": "2026-04-02",
+      "source": "Unit 42 / Palo Alto Networks",
+      "campaign": "unit42-ai-gated-sliver-dropper-ai-theater-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "mydofiles.com",
+      "type": "domain",
+      "context": "McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users",
+      "first_seen": "2026-04-02",
+      "source": "McAfee Labs",
+      "campaign": "mcafee-vibe-coded-cryptominer-campaign-winupdatehelper",
+      "status": "active"
+    },
+    {
+      "value": "94de957259c8e23f635989dd793cdfd058883834672b2c8ac0a3e80784fce819",
+      "type": "sha256",
+      "context": "McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users",
+      "first_seen": "2026-04-02",
+      "source": "McAfee Labs",
+      "campaign": "mcafee-vibe-coded-cryptominer-campaign-winupdatehelper",
       "status": "active"
     }
   ]
