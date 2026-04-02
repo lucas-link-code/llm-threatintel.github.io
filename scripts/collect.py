@@ -532,13 +532,14 @@ def main():
     print("Searching for new GenAI threat intelligence...\n")
 
     try:
-        response = client.messages.create(
+        with client.messages.stream(
             model=MODEL,
             max_tokens=32000,
             system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
             tools=[{"type": "web_search_20250305", "name": "web_search"}],
             messages=[{"role": "user", "content": prompt}]
-        )
+        ) as stream:
+            response = stream.get_final_message()
     except anthropic.APIError as e:
         print(f"ERROR: Anthropic API error: {e}")
         sys.exit(1)
