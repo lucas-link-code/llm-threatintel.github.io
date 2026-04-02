@@ -32,7 +32,7 @@ REPO_ROOT = Path(__file__).parent.parent
 DATA_DIR = REPO_ROOT / "data"
 POSTS_DIR = REPO_ROOT / "posts"
 LOGS_DIR = REPO_ROOT / "logs"
-MODEL = "claude-sonnet-4-6"
+MODEL = "claude-haiku-4-5-20251001"
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 DRY_RUN = "--dry-run" in sys.argv
 FORCE = "--force" in sys.argv
@@ -48,30 +48,12 @@ def load_json(path):
 
 
 def get_existing_context():
-    """Build a context string of what we already track so the LLM can avoid duplicates."""
-    actors = load_json(DATA_DIR / "actors.json")
-    iocs = load_json(DATA_DIR / "iocs.json")
+    """Build a compact list of recent post titles so the LLM avoids duplicates."""
     posts = load_json(DATA_DIR / "posts-index.json")
-
-    actor_names = []
-    for entry in actors.get("entries", []):
-        actor_names.extend(entry.get("names", []))
-
-    existing_ioc_values = [i["value"] for i in iocs.get("iocs", [])]
-
-    recent_posts = []
-    for p in posts.get("posts", [])[:20]:
-        recent_posts.append(f"  - {p['date']}: {p['title']}")
-
-    ctx = "## Existing Coverage (do NOT duplicate these)\n\n"
-    ctx += f"### Tracked actors/malware ({len(actor_names)} names):\n"
-    ctx += ", ".join(actor_names[:50]) + "\n\n"
-    ctx += f"### Tracked IOCs ({len(existing_ioc_values)} values):\n"
-    ctx += ", ".join(existing_ioc_values[:30]) + "\n\n"
-    ctx += f"### Recent posts (last {len(recent_posts)}):\n"
-    ctx += "\n".join(recent_posts) + "\n"
-
-    return ctx
+    recent = [f"  - {p['date']}: {p['title']}" for p in posts.get("posts", [])[:15]]
+    if not recent:
+        return ""
+    return "## Already Covered (do NOT duplicate)\n" + "\n".join(recent) + "\n"
 
 
 # ---- The Collection Prompt ----
@@ -80,134 +62,70 @@ def build_prompt():
 
     existing_context = get_existing_context()
 
-    return f"""You are a senior threat intelligence analyst specializing in GenAI, LLM, and AI supply chain threats.
+    year = TODAY[:4]
 
-Your priority order is:
-1. Correctness and truthfulness: every claim must be traceable to a specific published source with a URL
-2. Completeness: cover all significant new findings within the last 7 days
-3. Actionable detail: IOCs must be exact values from source reports, TTPs must use valid MITRE ATT&CK IDs
-4. Zero fabrication: if a source does not publish IOCs, report "No IOCs published by source" rather than inventing them
+    return f"""GenAI threat intelligence analyst. Find NEW intelligence published within the last 7 days. Date: {TODAY}.
 
-Today's date is {TODAY}.
-
-OPERATING RULES:
-- Do not guess. If uncertain, state "Unknown" or "Insufficient evidence" and explain what would confirm it.
-- Prefer verifiable statements over plausible-sounding statements.
-- Use web search to verify any claim that is time-sensitive, numerical, or high-impact.
-- Mark any statement not directly supported by a retrieved source as [Unverified] or [Inference].
-- If sources disagree, represent both positions, state which is better supported, and why.
-- Before finalizing, run a self-check for: contradictions, missing edge cases, and ungrounded claims.
-- When you cite a source, include the full URL. Every critical claim must be supported by a retrieved source.
+Rules: Every claim cites a source URL. Never fabricate IOCs. If none published, state that. Max 3 highest-severity findings.
 
 {existing_context}
 
-SEARCH TASK — Execute these searches using web search:
+SEARCHES — Execute these 6 web searches:
+1. GenAI LLM malware supply chain attack PyPI npm compromise {year}
+2. LLMjacking shadow AI API key theft cloud abuse {year}
+3. AI agent MCP server vulnerability prompt injection {year}
+4. nation state APT generative AI malicious LLM tool {year}
+5. AI security threat news latest {TODAY[:7]}
+6. AI coding assistant trojanised model deepfake vibe coding {year}
 
-Phase 1 — Broad scan (run ALL of these searches):
-1. GenAI LLM malware 2026
-2. malicious PyPI npm AI package supply chain 2026
-3. LLMjacking AI API key theft cloud abuse
-4. malicious LLM model Hugging Face poisoned
-5. WormGPT FraudGPT GhostGPT DarkGPT update
-6. AI phishing deepfake social engineering BEC
-7. shadow AI enterprise unauthorized LLM data leak
-8. prompt injection jailbreak as a service LLM attack
-9. MCP server vulnerability AI agent security exploit
-10. nation state APT generative AI offensive cyber
-11. malware using LLM for C2 or command generation
-12. GenAI vibe coding tools abuse or compromise
-13. Latest trojanised LLM models or GenAI packages
+OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the JSON.
 
-
-Phase 2 — Source-specific checks (search for recent posts from each):
-ReversingLabs AI, Socket.dev AI, Phylum AI, Mandiant GenAI, Unit 42 AI,
-Microsoft Security AI, CrowdStrike AI, Sysdig LLM, BleepingComputer AI malware,
-The Hacker News AI security, Recorded Future AI threat, Abnormal Security AI
-
-Phase 3 — Verification:
-For each finding, search once more to corroborate it with a second source.
-If no corroboration exists, include the finding but mark it [Single source].
-
-OUTPUT FORMAT:
-Respond with a single JSON object. No markdown fencing, no preamble, no explanation outside the JSON.
-
-If new intelligence is found:
 {{
   "status": "new_intel",
   "collection_date": "{TODAY}",
-  "search_summary": "Brief description of what was searched and what was found",
+  "search_summary": "Brief summary of searches and results",
   "findings": [
     {{
-      "title": "Specific descriptive title of the finding",
-      "slug": "kebab-case-slug-for-filename",
+      "title": "Descriptive title",
+      "slug": "kebab-case-slug",
       "tags": ["supply-chain"],
       "tlp": "TLP:CLEAR",
       "confidence": "high|medium|low",
-      "executive_summary": "2-3 sentences. Front-load the operationally relevant fact. State what happened, who is affected, what defenders should do.",
+      "executive_summary": "2-3 sentences. Key fact first.",
       "campaign_summary": {{
-        "campaign_name": "Name of campaign or malware",
-        "attribution": "Actor name or Unknown",
+        "campaign_name": "Name",
+        "attribution": "Actor or Unknown",
         "attribution_confidence": "high|medium|low|none",
         "target": "Who is targeted",
         "vector": "Delivery mechanism",
         "status": "active|disrupted|removed",
-        "first_observed": "Date or month"
+        "first_observed": "Date"
       }},
-      "detailed_findings": "Multiple paragraphs. Attribute every claim: 'According to [Source]...' or '[Source] reported...'. No filler. Every sentence contributes information. If multi-phase campaign, describe each phase.",
-      "mitre_attack": [
-        {{
-          "technique": "Full Technique Name",
-          "id": "T1234.001",
-          "context": "How this technique applies in this specific campaign"
-        }}
-      ],
+      "detailed_findings": "Concise paragraphs with source attribution. No filler.",
+      "mitre_attack": [{{"technique": "Name", "id": "T1234.001", "context": "How it applies"}}],
       "iocs": {{
-        "domains": ["exact.domain.com"],
-        "urls": ["exact.domain.com/path/to/resource"],
-        "hashes": ["sha256_hash_value"],
-        "ips": ["1.2.3.4"],
-        "packages": ["pypi:package-name", "npm:package-name"],
-        "note": "Source of these IOCs or 'No IOCs published by source'"
+        "domains": [], "urls": [], "hashes": [], "ips": [], "packages": [],
+        "note": "Source of IOCs or 'No IOCs published'"
       }},
-      "actors": [
-        {{
-          "name": "Primary Name",
-          "aliases": ["Alias1", "Alias2"],
-          "type": "malicious_llm_tool|malware|threat_group|supply_chain_campaign|nation_state_campaign|nation_state_program",
-          "status": "active|disrupted|inactive",
-          "distribution": ["channel1", "channel2"],
-          "ttps": ["T1234 - Technique Name", "T1235 - Technique Name"],
-          "attribution": "Attributed to X (confidence: high/medium/low) or Unattributed",
-          "description": "One paragraph description of the actor/malware"
-        }}
-      ],
-      "detection_recommendations": "Specific detection guidance referencing log sources: web proxy, DNS, EDR, cloud audit logs. Include field names or search patterns where possible. No generic filler.",
-      "references": [
-        {{
-          "source": "Publisher Name",
-          "title": "Exact Article Title",
-          "url": "https://full-url-to-article",
-          "date": "YYYY-MM-DD or YYYY-MM"
-        }}
-      ]
+      "actors": [{{
+        "name": "Name", "aliases": [],
+        "type": "malicious_llm_tool|malware|threat_group|supply_chain_campaign|nation_state_campaign",
+        "status": "active|disrupted|inactive",
+        "distribution": [],
+        "ttps": ["T1234 - Technique"],
+        "attribution": "Attribution or Unattributed",
+        "description": "One paragraph"
+      }}],
+      "detection_recommendations": "Specific detection guidance for defenders",
+      "references": [{{"source": "Publisher", "title": "Title", "url": "https://...", "date": "YYYY-MM-DD"}}]
     }}
   ]
 }}
 
-If NO new intelligence is found:
-{{
-  "status": "no_new_intel",
-  "collection_date": "{TODAY}",
-  "search_summary": "Searched N sources across M queries. No new GenAI/LLM threat intelligence published since last collection."
-}}
+If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "search_summary": "Summary"}}
 
-CRITICAL REMINDERS:
-- Only include findings genuinely published within the last 7 days
-- Do not duplicate campaigns already listed in the existing coverage section above
-- Every IOC must come from a source, not from inference
-- Every reference URL must be a real URL you actually retrieved during search
-- MITRE ATT&CK IDs must be valid: T followed by 4 digits, optionally .3 digits
-- Respond ONLY with the JSON object, nothing else"""
+Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt.
+Only last 7 days. No duplicates from existing coverage. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 
 # ---- File Writers ----
@@ -534,7 +452,7 @@ def main():
     try:
         with client.messages.stream(
             model=MODEL,
-            max_tokens=32000,
+            max_tokens=16000,
             system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
             tools=[{"type": "web_search_20250305", "name": "web_search"}],
             messages=[{"role": "user", "content": prompt}]
