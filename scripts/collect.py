@@ -37,6 +37,16 @@ TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 DRY_RUN = "--dry-run" in sys.argv
 FORCE = "--force" in sys.argv
 
+VALID_TAGS = {
+    "supply-chain",
+    "malicious-tool",
+    "nation-state",
+    "shadow-ai",
+    "llmjacking",
+    "malware",
+    "apt"
+}
+
 # ---- Load existing state for context injection ----
 def load_json(path):
     """Load a JSON file, return empty dict if not found."""
@@ -125,6 +135,7 @@ OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the J
 If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "search_summary": "Summary"}}
 
 Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt.
+Choose ONLY from these 7 tags. Do not create new tags or use variations.
 Only last 7 days. No duplicates from existing coverage. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 
@@ -148,6 +159,16 @@ def clean_finding_citations(finding):
     elif isinstance(finding, str):
         return strip_citation_markers(finding)
     return finding
+
+
+def filter_tags(tags):
+    """Filter tags to only include valid main categories."""
+    if not isinstance(tags, list):
+        return []
+    filtered = [tag for tag in tags if tag in VALID_TAGS]
+    if not filtered:
+        filtered = ["malware"]
+    return filtered
 
 
 def save_json(path, data):
@@ -315,7 +336,7 @@ def update_posts_index(finding):
         "title": finding['title'],
         "date": TODAY,
         "author": "LLM ThreatIntel",
-        "tags": finding.get('tags', []),
+        "tags": filter_tags(finding.get('tags', [])),
         "tlp": finding.get('tlp', 'TLP:CLEAR'),
         "excerpt": finding['executive_summary'],
         "file": filename

@@ -6,11 +6,7 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "vibe-coding",
-        "cryptominer",
-        "ai-generated-malware",
-        "dll-sideloading",
-        "infostealer"
+        "malware"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "McAfee Labs documented a large-scale cryptominer distribution campaign active in January 2026 where attackers used LLM-assisted 'vibe coding' to generate parts of the malicious PowerShell kill chain, distributing 443 malicious ZIP files across Discord, SourceForge, FOSSHub, and MediaFire impersonating AI tools, game mods, and software utilities. The campaign deployed WinUpdateHelper.dll via DLL sideloading, establishing persistence under the name 'Microsoft Console Host' and mining Ravencoin, Zephyr, and Monero. In some infections the final payload was SalatStealer or a Mesh Agent RAT. Defenders should alert on WinUpdateHelper.dll in non-system directories and monitor for anomalous cryptocurrency mining processes.",
@@ -22,11 +18,7 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "ai-malware",
-        "infostealer",
-        "sliver",
-        "llm-c2",
-        "malware-analysis"
+        "malware"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an 'AI-gated execution' approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.",
@@ -38,12 +30,8 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "agentic-ai",
-        "cloud-security",
-        "gcp",
-        "vertex-ai",
-        "credential-theft",
-        "privilege-escalation"
+        "malware",
+        "shadow-ai"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Palo Alto Networks Unit 42 disclosed on March 31, 2026 that the Per-Project, Per-Product Service Agent (P4SA) assigned by default to Vertex AI Agent Engine deployments carries excessive OAuth permissions, allowing a compromised or malicious AI agent to extract GCP service credentials and pivot from the agent's execution context into the customer's broader cloud environment — granting unrestricted read access to Cloud Storage buckets and restricted Google-owned Artifact Registry repositories containing internal Vertex AI source code. Google has updated documentation and recommends Bring Your Own Service Account (BYOSA) to mitigate. Organizations using Vertex AI Agent Engine should immediately audit all deployed agents and enforce least-privilege service accounts.",
@@ -55,13 +43,9 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "nation-state",
-        "apt36",
-        "transparent-tribe",
-        "vibeware",
-        "ai-malware",
-        "india",
-        "pakistan"
+        "apt",
+        "malware",
+        "nation-state"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Bitdefender Labs confirmed that APT36 (Transparent Tribe), a Pakistan-linked state-sponsored group, has pivoted to an AI-assisted malware development model dubbed 'vibeware', using large language models to mass-produce implants in niche programming languages (Nim, Zig, Crystal) and Living Off Trusted Services (LOTS) C2 channels (Slack, Discord, Supabase, Google Sheets), primarily targeting Indian government entities and diplomatic missions. The strategy prioritises volume over sophistication — a 'Distributed Denial of Detection' approach — generating new malware variants daily to overwhelm EDR baselines. Security teams should implement behavioral detection for anomalous API calls to Slack, Discord, and Supabase from non-developer endpoints.",
@@ -73,11 +57,7 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "ransomware",
-        "ai-generated-malware",
-        "c2",
-        "llm-malware",
-        "hive0163"
+        "malware"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "IBM X-Force discovered 'Slopoly', a likely LLM-generated PowerShell backdoor deployed by the Hive0163 ransomware group during a live intrusion in early 2026, marking the first confirmed use of AI-generated malware in an active ransomware engagement by a financially motivated threat actor. The malware maintained persistent access to a compromised server for over a week before Interlock ransomware was deployed. Defenders should hunt for scheduled tasks named 'Runtime Broker' under C:\\ProgramData\\Microsoft\\Windows\\Runtime\\ and block connections to the identified C2 infrastructure; the entry vector was ClickFix social engineering, requiring enhanced employee awareness.",
@@ -89,11 +69,9 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "supply-chain",
-        "wiper",
-        "kubernetes",
-        "npm",
-        "cloud-infrastructure"
+        "malware",
+        "shadow-ai",
+        "supply-chain"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "TeamPCP deployed a geopolitically targeted destructive wiper payload via its CanisterWorm npm supply chain campaign, first observed on March 20, 2026, that wipes entire Kubernetes clusters when it detects systems configured for Iran (Asia/Tehran timezone or fa_IR locale). On non-Iranian Kubernetes nodes the same malware installs a persistent backdoor; on non-Kubernetes Iranian hosts it executes rm -rf / --no-preserve-root. Organizations running Kubernetes with npm-sourced packages in CI/CD pipelines are at risk of full cluster destruction; defenders must immediately audit npm lockfiles for CanisterWorm-linked packages and inspect Kubernetes for DaemonSets named 'host-provisioner-std' or services named 'pgmon' or 'pgmonitor'.",
@@ -105,9 +83,9 @@
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
       "tags": [
-        "supply-chain",
         "malicious-tool",
-        "shadow-ai"
+        "shadow-ai",
+        "supply-chain"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security's RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.",
@@ -119,10 +97,10 @@
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
       "tags": [
-        "supply-chain",
-        "shadow-ai",
         "llmjacking",
-        "malicious-tool"
+        "malicious-tool",
+        "shadow-ai",
+        "supply-chain"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "The Model Context Protocol has become a high-value attack surface with 43% of MCP servers vulnerable to command injection and OWASP publishing a dedicated MCP Top 10 risk framework. Operation Bizarre Bazaar demonstrated industrialized exploitation with 35,000 attack sessions targeting exposed MCP endpoints between December 2025 and January 2026, while Cyata Research disclosed a chained RCE vulnerability in Anthropic's own official Git MCP server. Organizations deploying agentic AI infrastructure must audit MCP server configurations, restrict tool permissions, and monitor for shadow MCP server deployments.",
@@ -134,11 +112,9 @@
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
       "tags": [
-        "supply-chain",
-        "pypi",
-        "ai-ml",
-        "credential-theft",
-        "multi-stage"
+        "malware",
+        "shadow-ai",
+        "supply-chain"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.",
@@ -150,11 +126,10 @@
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
       "tags": [
-        "supply-chain",
-        "npm",
+        "apt",
         "malware",
         "nation-state",
-        "attribution"
+        "supply-chain"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Google Threat Intelligence Group attributes the Axios npm package compromise to UNC1069, a North Korea-nexus financially motivated threat actor, based on infrastructure overlaps and use of WAVESHAPER.V2 backdoor. The malicious versions were live for approximately 2-3 hours on March 31, 2026, with both latest and legacy tags compromised to maximize blast radius. Organizations must immediately audit for affected versions and treat any system with exposure as fully compromised.",
@@ -178,8 +153,8 @@
       "date": "2026-03-28",
       "author": "LLM ThreatIntel",
       "tags": [
-        "malware",
-        "apt"
+        "apt",
+        "malware"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "APT28-attributed malware LAMEHUG represents a milestone in offensive AI adoption. It is the first publicly documented sample that calls an LLM API at runtime to dynamically generate C2 commands based on host reconnaissance data.",
