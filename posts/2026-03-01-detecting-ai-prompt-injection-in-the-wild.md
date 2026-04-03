@@ -6,7 +6,7 @@ That model is changing. As organisations deploy AI agents that autonomously brow
 
 Unit 42 documented 22 distinct payload construction techniques in production since December 2025. Embrace The Red demonstrated successful exploitation of Claude computer-use agents. MacSync and OCRFix campaigns are actively delivering credential stealers through typosquatted AI tool domains.
 
-I built a detection rule set to address this: 28 EKFiddle regex rules for web traffic analysis and 82 UrlScan.io Pro search queries for proactive threat hunting. All EKFiddle rules were validated against the top 100 most-visited benign websites with zero MED or HIGH severity false positives.
+I built a detection rule set to address this: EKFiddle regex rules for web traffic analysis and other search queries for proactive threat hunting.
 
 ## The attack surface
 
@@ -99,21 +99,3 @@ Bounded repetition in all regex patterns prevents runaway matching. The longest 
 The EKFiddle regex rules deploy directly into the CustomRegexes.txt production file. The UrlScan.io queries load as Saved Searches for persistent alerting, or run as manual queries for periodic threat hunting. Individual phrase queries work best as Saved Searches. The consolidated sweeps work best for manual hunting sessions.
 
 This rule set is a point-in-time snapshot. As LLMs improve their instruction-following boundaries and attackers adapt their evasion techniques, the detection patterns will need continuous refinement. The categories and detection logic, however, represent the structural attack surface and will remain relevant as long as AI agents process untrusted web content.
-
----
-
-## Support LLM ThreatIntel
-
-LLM ThreatIntel is maintained independently. If you find the research useful, you can support hosting, collection, automation, and continued publication.
-
-[Buy me a coffee](https://buymeacoffee.com/lucaslinkowski)
-
-For sponsorship, research partnerships, or tailored briefings: [support@llm-threatintel.com](mailto:support@llm-threatintel.com)
-
-General contact: [contact@lucaslinkowski.com](mailto:contact@lucaslinkowski.com)
-
-Support does not influence editorial decisions, report selection, or technical conclusions.
-
-## Disclaimer
-
-Maintained for defensive security research. All intelligence from public reports. Validate IOCs before production blocking.

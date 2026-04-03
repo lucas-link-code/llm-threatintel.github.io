@@ -579,6 +579,33 @@ a:hover { color: var(--ab); }
   border-radius: 0 var(--rs) var(--rs) 0;
 }
 
+.post-content .post-footer-aside {
+  margin-top: 4.5rem;
+  padding-top: 3.25rem;
+  border-top: 1px solid var(--bds);
+}
+.post-content .post-footer-aside h2.about-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ab);
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--bds);
+}
+.post-content .post-footer-aside h2.about-section-title:first-of-type {
+  margin-top: 0;
+}
+.post-content .post-footer-aside p {
+  color: var(--t2);
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+  font-weight: 300;
+}
+.post-content .post-footer-aside p.post-footer-note {
+  color: var(--t3);
+  font-size: 0.9rem;
+}
+
 .copy-btn {
   position: absolute;
   top: 0.5rem;

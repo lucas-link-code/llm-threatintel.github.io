@@ -396,6 +396,24 @@ const App = {
     }
   },
 
+  blogPostFooterAsideHtml() {
+    return `
+    <div class="post-footer-aside">
+      <h2 class="about-section-title">Support LLM ThreatIntel</h2>
+      <p>LLM ThreatIntel is maintained independently. If you find the research useful, you can support hosting, collection, automation, and continued publication.</p>
+      <p><a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">Buy me a coffee</a></p>
+      <p>For sponsorship, research partnerships, or tailored briefings: <a href="mailto:support@llm-threatintel.com">support@llm-threatintel.com</a></p>
+      <p>General contact: <a href="mailto:contact@lucaslinkowski.com">contact@lucaslinkowski.com</a></p>
+      <p class="post-footer-note">Support does not influence editorial decisions, report selection, or technical conclusions.</p>
+      <h2 class="about-section-title">Disclaimer</h2>
+      <p>Maintained for defensive security research. All intelligence from public reports. Validate IOCs before production blocking.</p>
+    </div>`;
+  },
+
+  stripBlogPostFooterMarkdown(md) {
+    return md.replace(/\r?\n---\s*\r?\n\s*## Support LLM ThreatIntel[\s\S]*$/m, '').trim();
+  },
+
   renderMarkdown(md) {
     let html = md
       .replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => `<pre><code class="language-${lang}">${this.escapeHtml(code.trim())}</code></pre>`)
@@ -568,7 +586,8 @@ const App = {
       const response = await fetch(`posts/${postMeta.file}`);
       if (!response.ok) throw new Error('Blog post file not found');
       const markdown = await response.text();
-      const html = this.renderMarkdown(markdown);
+      const bodyMd = this.stripBlogPostFooterMarkdown(markdown);
+      const html = this.renderMarkdown(bodyMd) + this.blogPostFooterAsideHtml();
       container.innerHTML = `
         <a href="#blog" class="back-link">&larr; Back to blog</a>
         <div class="post-meta" style="margin-bottom:1rem">
