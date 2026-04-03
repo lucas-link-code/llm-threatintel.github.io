@@ -18,7 +18,7 @@ import os
 import sys
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 try:
@@ -36,6 +36,9 @@ MODEL = "claude-haiku-4-5-20251001"
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 DRY_RUN = "--dry-run" in sys.argv
 FORCE = "--force" in sys.argv
+
+# How far back to look for qualifying stories (wider than 7 days reduces empty runs).
+INTEL_LOOKBACK_DAYS = 14
 
 VALID_TAGS = {
     "supply-chain",
@@ -73,20 +76,32 @@ def build_prompt():
     existing_context = get_existing_context()
 
     year = TODAY[:4]
+    end_dt = datetime.strptime(TODAY, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    start_dt = end_dt - timedelta(days=INTEL_LOOKBACK_DAYS)
+    window_label = f"{start_dt.strftime('%Y-%m-%d')} through {TODAY}"
+    month_name = end_dt.strftime("%B")
 
-    return f"""GenAI threat intelligence analyst. Find NEW intelligence published within the last 7 days. Date: {TODAY}.
+    return f"""GenAI threat intelligence analyst. Find NEW intelligence with first publication or major update in the last {INTEL_LOOKBACK_DAYS} days (window: {window_label}). Today UTC: {TODAY}.
 
-Rules: Every claim cites a source URL. Never fabricate IOCs. If none published, state that. Max 3 highest-severity findings.
+Rules: Every claim cites at least one real source URL. Never fabricate IOCs. Max 3 highest-severity findings.
+
+Duplicate policy: Do not re-report the same incident already listed below with the same primary source and headline. It IS new intel if: a different vendor or outlet published analysis; a new CVE, advisory, or technical detail appeared; the story is a distinct campaign or tool even if the theme overlaps shadow AI, supply chain, or malware.
+
+Use status "no_new_intel" ONLY after you have run the web searches below and found no qualifying items in the window above. If searches return any credible GenAI or LLM-related security story in that window, return status "new_intel" with at least one finding and real URLs (use confidence "low" if attribution is thin).
 
 {existing_context}
 
-SEARCHES — Execute these 6 web searches:
-1. GenAI LLM malware supply chain attack PyPI npm compromise {year}
-2. LLMjacking shadow AI API key theft cloud abuse {year}
-3. AI agent MCP server vulnerability prompt injection {year}
-4. nation state APT generative AI malicious LLM tool {year}
-5. AI security threat news latest {TODAY[:7]}
-6. AI coding assistant trojanised model deepfake vibe coding {year}
+SEARCHES — Execute these web searches (read multiple results per query when useful):
+1. GenAI LLM malware supply chain PyPI npm malicious package {year}
+2. LLMjacking shadow AI API key theft cloud abuse LLM {year}
+3. AI agent MCP server vulnerability prompt injection security {year}
+4. APT nation state generative AI malicious LLM tool campaign {year}
+5. AI security news LLM threat {month_name} {year}
+6. AI coding assistant trojanized model Hugging Face malicious model {year}
+7. ChatGPT OpenAI Anthropic Claude abuse malware phishing enterprise {year}
+8. GenAI deepfake voice fraud BEC ransomware {year}
+9. machine learning model poisoning supply chain ML security advisory {year}
+10. CVE LLM AI vulnerability disclosure {year}
 
 OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the JSON.
 
@@ -136,7 +151,7 @@ If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "sear
 
 Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt.
 Choose ONLY from these 7 tags. Do not create new tags or use variations.
-Only last 7 days. No duplicates from existing coverage. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
+Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 
 # ---- File Writers ----

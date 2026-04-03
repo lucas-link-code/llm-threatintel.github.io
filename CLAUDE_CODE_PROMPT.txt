@@ -10,7 +10,7 @@ REPOSITORY STRUCTURE:
 - css/style.css - Dark purple theme
 
 YOUR TASK:
-Search for new GenAI and LLM threat intelligence published within the last 7 days. Create professional threat intel reports following the exact format below. Update all relevant data files.
+Search for new GenAI and LLM threat intelligence published or materially updated within the last 14 days (aligns with automated collect window). Create professional threat intel reports following the exact format below. Update all relevant data files.
 
 SEARCH PRIORITY AREAS:
 1. GenAI LLM malware and backdoors
