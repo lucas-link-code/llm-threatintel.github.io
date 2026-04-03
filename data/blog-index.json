@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "id": "detecting-ai-prompt-injection-in-the-wild",
+      "title": "Detecting AI Prompt Injection in the Wild",
+      "date": "2026-03-01",
+      "author": "Lucas Linkowski",
+      "category": "GenAI Security",
+      "tags": ["prompt-injection", "ai-security", "detection-rules"],
+      "excerpt": "Building 28 EKFiddle rules and 82 UrlScan queries to detect indirect prompt injection, AI ClickFix, CSS hidden text traps, and credential exfiltration targeting autonomous AI agents.",
+      "file": "2026-03-01-detecting-ai-prompt-injection-in-the-wild.md",
+      "readTime": "10 min"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ const App = {
   postsIndex: null,
   actorsData: null,
   iocsData: null,
+  blogIndex: null,
   currentFilter: 'all',
   metaDefaults: {
     siteName: 'LLM ThreatIntel',
@@ -24,14 +25,16 @@ const App = {
 
   async loadData() {
     try {
-      const [posts, actors, iocs] = await Promise.all([
+      const [posts, actors, iocs, blog] = await Promise.all([
         fetch('data/posts-index.json').then(r => r.json()),
         fetch('data/actors.json').then(r => r.json()),
-        fetch('data/iocs.json').then(r => r.json())
+        fetch('data/iocs.json').then(r => r.json()),
+        fetch('data/blog-index.json').then(r => r.json()).catch(() => ({ posts: [] }))
       ]);
       this.postsIndex = posts;
       this.actorsData = actors;
       this.iocsData = iocs;
+      this.blogIndex = blog;
     } catch (e) {
       console.error('Failed to load data:', e);
     }
@@ -127,12 +130,16 @@ const App = {
         this.renderIOCFeed(content);
         break;
       case 'blog':
-        this.setRouteMeta({
-          title: 'Blog | LLM ThreatIntel',
-          description: 'Analysis, commentary, and research notes on the GenAI threat landscape.',
-          url: `${this.metaDefaults.siteUrl}/#blog`
-        });
-        this.renderBlog(content);
+        if (params.length > 0) {
+          this.renderBlogPost(content, params.join('/'));
+        } else {
+          this.setRouteMeta({
+            title: 'Blog | LLM ThreatIntel',
+            description: 'Analysis, commentary, and research notes on the GenAI threat landscape.',
+            url: `${this.metaDefaults.siteUrl}/#blog`
+          });
+          this.renderBlog(content);
+        }
         break;
       case 'about':
         this.setRouteMeta({
@@ -505,14 +512,76 @@ const App = {
 
   // ---- BLOG ----
   renderBlog(container) {
+    if (!this.blogIndex || !this.blogIndex.posts || this.blogIndex.posts.length === 0) {
+      container.innerHTML = `
+        <h1 class="page-title"><span class="title-accent">//</span> Blog</h1>
+        <p class="page-subtitle">Analysis, commentary, and research notes on the GenAI threat landscape</p>
+        <div id="blog-posts">
+          <p style="color:var(--t3);font-size:.85rem;font-style:italic">Blog posts are added manually. Check back for new content.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const posts = this.blogIndex.posts;
     container.innerHTML = `
       <h1 class="page-title"><span class="title-accent">//</span> Blog</h1>
       <p class="page-subtitle">Analysis, commentary, and research notes on the GenAI threat landscape</p>
-      <div id="blog-posts">
-        <p style="color:var(--t3);font-size:.85rem;font-style:italic">Blog posts are added manually. Check back for new content.</p>
+      <div class="posts-grid">
+        ${posts.map(post => `
+          <div class="post-card" onclick="window.location.hash='blog/${post.id}'">
+            <div class="post-meta">
+              <span class="post-date">${post.date}</span>
+              <span class="post-tag tag-blog">${post.category}</span>
+              <span class="post-tag tag-read-time">${post.readTime}</span>
+            </div>
+            <div class="post-title">${post.title}</div>
+            <div class="post-excerpt">${this.truncateExcerpt(post.excerpt, 200)}</div>
+            <div style="margin-top:0.75rem;color:var(--t3);font-size:.8rem">By ${post.author}</div>
+          </div>
+        `).join('')}
       </div>
     `;
-    // Blog posts would be loaded from a blog-index.json file when available
+  },
+
+  async renderBlogPost(container, postId) {
+    container.innerHTML = '<div class="loading">Loading blog post...</div>';
+    const postMeta = this.blogIndex?.posts.find(p => p.id === postId);
+    if (!postMeta) {
+      this.setRouteMeta({
+        title: 'Post Not Found | LLM ThreatIntel',
+        description: this.metaDefaults.description,
+        url: `${this.metaDefaults.siteUrl}/`
+      });
+      container.innerHTML = '<a href="#blog" class="back-link">&larr; Back to blog</a><div class="post-content"><p>Blog post not found.</p></div>';
+      return;
+    }
+
+    this.setRouteMeta({
+      title: `${postMeta.title} | LLM ThreatIntel`,
+      description: postMeta.excerpt || this.metaDefaults.description,
+      url: `${this.metaDefaults.siteUrl}/#blog/${postId}`,
+      type: 'article'
+    });
+
+    try {
+      const response = await fetch(`posts/${postMeta.file}`);
+      if (!response.ok) throw new Error('Blog post file not found');
+      const markdown = await response.text();
+      const html = this.renderMarkdown(markdown);
+      container.innerHTML = `
+        <a href="#blog" class="back-link">&larr; Back to blog</a>
+        <div class="post-meta" style="margin-bottom:1rem">
+          <span class="post-date">${postMeta.date}</span>
+          <span class="post-tag tag-blog">${postMeta.category}</span>
+          <span class="post-tag tag-read-time">${postMeta.readTime}</span>
+        </div>
+        <div class="post-content">${html}</div>
+      `;
+      this.addCopyButtons(container);
+    } catch (e) {
+      container.innerHTML = `<a href="#blog" class="back-link">&larr; Back</a><div class="post-content"><p>Error: ${e.message}</p></div>`;
+    }
   },
 
   // ---- ABOUT ----
