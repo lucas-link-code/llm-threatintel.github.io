@@ -29,8 +29,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
+      - name: Build sitemap, RSS, and static post pages
+        run: python scripts/build_meta.py
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

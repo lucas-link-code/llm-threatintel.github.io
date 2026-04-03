@@ -1,0 +1,9 @@
+{
+  "name": "LLM ThreatIntel",
+  "short_name": "LLM ThreatIntel",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0a12",
+  "theme_color": "#0c0a12",
+  "description": "Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption."
+}

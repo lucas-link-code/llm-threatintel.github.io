@@ -8,6 +8,12 @@ const App = {
   actorsData: null,
   iocsData: null,
   currentFilter: 'all',
+  metaDefaults: {
+    siteName: 'LLM ThreatIntel',
+    siteUrl: 'https://llm-threatintel.com',
+    description: 'Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.',
+    image: 'https://llm-threatintel.com/assets/og/llm-threatintel-home.png'
+  },
 
   async init() {
     await this.loadData();
@@ -42,6 +48,46 @@ const App = {
     });
   },
 
+  upsertMeta(attrName, attrValue, content) {
+    let el = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attrName, attrValue);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  },
+
+  upsertLink(rel, href) {
+    let el = document.head.querySelector(`link[rel="${rel}"]`);
+    if (!el) {
+      el = document.createElement('link');
+      el.setAttribute('rel', rel);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('href', href);
+  },
+
+  setRouteMeta({ title, description, url, type = 'website', image = null }) {
+    const finalTitle = title || `${this.metaDefaults.siteName} | GenAI Threat Intelligence`;
+    const finalDescription = description || this.metaDefaults.description;
+    const finalUrl = url || `${this.metaDefaults.siteUrl}/`;
+    const finalImage = image || this.metaDefaults.image;
+
+    document.title = finalTitle;
+    this.upsertMeta('name', 'description', finalDescription);
+    this.upsertMeta('property', 'og:title', finalTitle);
+    this.upsertMeta('property', 'og:description', finalDescription);
+    this.upsertMeta('property', 'og:url', finalUrl);
+    this.upsertMeta('property', 'og:type', type);
+    this.upsertMeta('property', 'og:image', finalImage);
+    this.upsertMeta('name', 'twitter:card', 'summary_large_image');
+    this.upsertMeta('name', 'twitter:title', finalTitle);
+    this.upsertMeta('name', 'twitter:description', finalDescription);
+    this.upsertMeta('name', 'twitter:image', finalImage);
+    this.upsertLink('canonical', finalUrl);
+  },
+
   route() {
     const hash = window.location.hash || '#home';
     const [page, ...params] = hash.slice(1).split('/');
@@ -53,13 +99,56 @@ const App = {
     const content = document.getElementById('app-content');
 
     switch (page) {
-      case 'home': this.renderHome(content); break;
-      case 'post': this.renderPost(content, params.join('/')); break;
-      case 'actors': this.renderActors(content); break;
-      case 'ioc-feed': this.renderIOCFeed(content); break;
-      case 'blog': this.renderBlog(content); break;
-      case 'about': this.renderAbout(content); break;
-      default: this.renderHome(content);
+      case 'home':
+        this.setRouteMeta({
+          title: 'LLM ThreatIntel | GenAI Threat Intelligence, Malicious LLM Tools, LLMjacking, Shadow AI',
+          description: this.metaDefaults.description,
+          url: `${this.metaDefaults.siteUrl}/`
+        });
+        this.renderHome(content);
+        break;
+      case 'post':
+        this.renderPost(content, params.join('/'));
+        break;
+      case 'actors':
+        this.setRouteMeta({
+          title: 'Threat Actor Tracker | LLM ThreatIntel',
+          description: 'Searchable tracker of malicious LLM tools, threat actors, malware families, and campaigns in the GenAI and LLM threat landscape.',
+          url: `${this.metaDefaults.siteUrl}/#actors`
+        });
+        this.renderActors(content);
+        break;
+      case 'ioc-feed':
+        this.setRouteMeta({
+          title: 'IOC Feed | LLM ThreatIntel',
+          description: 'Copy-paste ready IOC feed with defanged indicators, Splunk/LogScale OR format, and comma-separated quoted formats.',
+          url: `${this.metaDefaults.siteUrl}/#ioc-feed`
+        });
+        this.renderIOCFeed(content);
+        break;
+      case 'blog':
+        this.setRouteMeta({
+          title: 'Blog | LLM ThreatIntel',
+          description: 'Analysis, commentary, and research notes on the GenAI threat landscape.',
+          url: `${this.metaDefaults.siteUrl}/#blog`
+        });
+        this.renderBlog(content);
+        break;
+      case 'about':
+        this.setRouteMeta({
+          title: 'About | LLM ThreatIntel',
+          description: this.metaDefaults.description,
+          url: `${this.metaDefaults.siteUrl}/#about`
+        });
+        this.renderAbout(content);
+        break;
+      default:
+        this.setRouteMeta({
+          title: 'LLM ThreatIntel | GenAI Threat Intelligence, Malicious LLM Tools, LLMjacking, Shadow AI',
+          description: this.metaDefaults.description,
+          url: `${this.metaDefaults.siteUrl}/`
+        });
+        this.renderHome(content);
     }
     window.scrollTo(0, 0);
   },
@@ -263,9 +352,23 @@ const App = {
     container.innerHTML = '<div class="loading">Loading report...</div>';
     const postMeta = this.postsIndex?.posts.find(p => p.id === postId);
     if (!postMeta) {
+      this.setRouteMeta({
+        title: 'Post Not Found | LLM ThreatIntel',
+        description: this.metaDefaults.description,
+        url: `${this.metaDefaults.siteUrl}/`
+      });
       container.innerHTML = '<a href="#home" class="back-link">&larr; Back to feed</a><div class="post-content"><p>Post not found.</p></div>';
       return;
     }
+
+    const postHtml = postMeta.file.replace(/\.md$/i, '.html');
+    this.setRouteMeta({
+      title: `${postMeta.title} | LLM ThreatIntel`,
+      description: postMeta.excerpt || this.metaDefaults.description,
+      url: `${this.metaDefaults.siteUrl}/posts/${postHtml}`,
+      type: 'article'
+    });
+
     try {
       const response = await fetch(`posts/${postMeta.file}`);
       if (!response.ok) throw new Error('Post file not found');
@@ -431,6 +534,12 @@ const App = {
           <li><a href="https://www.bleepingcomputer.com" target="_blank">BleepingComputer</a></li>
           <li><a href="https://thehackernews.com" target="_blank">The Hacker News</a></li>
         </ul>
+        <h2 class="about-section-title">Support LLM ThreatIntel</h2>
+        <p>LLM ThreatIntel is maintained independently. If you find the research useful, you can support hosting, collection, automation, and continued publication.</p>
+        <p><a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">Buy me a coffee</a></p>
+        <p>For sponsorship, research partnerships, or tailored briefings: <a href="mailto:support@llm-threatintel.com">support@llm-threatintel.com</a></p>
+        <p>General contact: <a href="mailto:contact@lucaslinkowski.com">contact@lucaslinkowski.com</a></p>
+        <p style="color:var(--t3);font-size:.9rem">Support does not influence editorial decisions, report selection, or technical conclusions.</p>
         <h2 class="about-section-title">Disclaimer</h2>
         <p>Maintained for defensive security research. All intelligence from public reports. Validate IOCs before production blocking.</p>
       </div>
