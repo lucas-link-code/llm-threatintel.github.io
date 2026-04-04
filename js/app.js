@@ -410,11 +410,28 @@ const App = {
     };
 
     let wasStuck = false;
+    let stateTimer = null;
 
     const syncFilterBar = () => {
       wrap.style.setProperty('--filter-bar-height', `${bar.offsetHeight}px`);
 
-      const isStuck = wrap.getBoundingClientRect().top <= getTopOffset();
+      const topDelta = wrap.getBoundingClientRect().top - getTopOffset();
+      const isMobile = window.innerWidth <= 768;
+      const enterThreshold = isMobile ? -10 : 0;
+      const exitThreshold = isMobile ? 16 : 0;
+
+      const isStuck = wasStuck
+        ? topDelta <= exitThreshold
+        : topDelta <= enterThreshold;
+
+      if (isMobile && isStuck !== wasStuck) {
+        wrap.classList.add('is-animating');
+        window.clearTimeout(stateTimer);
+        stateTimer = window.setTimeout(() => {
+          wrap.classList.remove('is-animating');
+        }, 220);
+      }
+
       wrap.classList.toggle('is-stuck', isStuck);
 
       if (window.innerWidth <= 768 && isStuck && !wasStuck) {
@@ -442,7 +459,9 @@ const App = {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
       resizeObserver?.disconnect();
+      window.clearTimeout(stateTimer);
       wrap.classList.remove('is-stuck');
+      wrap.classList.remove('is-animating');
       wrap.style.removeProperty('--filter-bar-height');
     };
   },
