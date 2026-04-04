@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02",
+  "last_updated": "2026-04-04",
   "iocs": [
     {
       "value": "silver.inc",
@@ -332,6 +332,42 @@
       "first_seen": "2026-04-02",
       "source": "McAfee Labs",
       "campaign": "mcafee-vibe-coded-cryptominer-campaign-winupdatehelper",
+      "status": "active"
+    },
+    {
+      "value": "nanobot < 0.1.6",
+      "type": "package",
+      "context": "CVE-2026-33654: Nanobot AI Assistant Indirect Prompt Injection via Email Channel",
+      "first_seen": "2026-04-04",
+      "source": "CVE Threat Intelligence",
+      "campaign": "nanobot-indirect-prompt-injection-cve-2026-33654",
+      "status": "active"
+    },
+    {
+      "value": "awesome-llm-apps (affected version in commit e46690f99c3f08be80a9877fab52acacf7ab8251, 2026-01-19)",
+      "type": "package",
+      "context": "CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure",
+      "first_seen": "2026-04-04",
+      "source": "MITRE CVE Threat Intelligence",
+      "campaign": "awesome-llm-apps-cross-session-token-disclosure",
+      "status": "active"
+    },
+    {
+      "value": "GitHub repositories masquerading as leaked Claude Code source",
+      "type": "url_path",
+      "context": "Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)",
+      "first_seen": "2026-04-04",
+      "source": "SecurityWeek",
+      "campaign": "claude-code-source-leak-critical-adversa-vulnerability",
+      "status": "active"
+    },
+    {
+      "value": "Claude Code CLI v2.1.88 (npm package, sourcemap exposed)",
+      "type": "package",
+      "context": "Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)",
+      "first_seen": "2026-04-04",
+      "source": "SecurityWeek",
+      "campaign": "claude-code-source-leak-critical-adversa-vulnerability",
       "status": "active"
     }
   ]

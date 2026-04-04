@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02",
+  "last_updated": "2026-04-04",
   "entries": [
     {
       "id": "operation-bizarre-bazaar",
@@ -429,6 +429,49 @@
       ],
       "description": "APT36 (Transparent Tribe) is a Pakistan-linked state-sponsored threat group that has historically targeted Indian government and defence entities using conventional malware tooling. Beginning in late 2025 and accelerating into early 2026, the group pivoted to an AI-assisted 'vibeware' development model, using LLMs to generate high volumes of disposable, polyglot implants in niche languages (Nim, Zig, Crystal, Rust, Go). The strategy — termed 'Distributed Denial of Detection' by Bitdefender — floods targets with simultaneous multi-language implants to overwhelm security engines and ensure persistence even if individual channels are neutralized. C2 is conducted exclusively via legitimate cloud services (Slack, Discord, Supabase, Google Sheets) to evade network controls.",
       "attribution": "Pakistan-linked state-sponsored group (confidence: medium per Bitdefender); historically targets Indian government, aerospace, and defence sectors"
+    },
+    {
+      "id": "unknown",
+      "names": [
+        "Unknown"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Email-based delivery",
+        "Shared Streamlit hosting environments"
+      ],
+      "ttps": [
+        "T1598.003 - Spearphishing Link",
+        "T1203 - Exploitation for Client Execution",
+        "T1555 - Credentials from Password Stores",
+        "T1552 - Unsecured Credentials"
+      ],
+      "description": "An unknown threat actor exploited a design flaw in nanobot's email processing to execute arbitrary commands via prompt injection, demonstrating that personal AI assistants with email integration create an unauthenticated attack surface.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unknown-threat-actors-security-researchers",
+      "names": [
+        "Unknown Threat Actors / Security Researchers",
+        "Chaofan Shou (sourcemap discoverer)",
+        "Sigrid Jin and Yeachan Heo (source reconstruction)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "GitHub trojanized repositories",
+        "Malicious CLAUDE.md in supply chain"
+      ],
+      "ttps": [
+        "T1598 - Phishing",
+        "T1195 - Supply Chain Compromise",
+        "T1134.005 - Process Injection"
+      ],
+      "description": "Unknown actors are likely weaponizing the exposed Claude Code source and the Adversa AI-disclosed permission bypass to craft malicious repository configurations that trick Claude Code users into executing arbitrary commands via prompt injection embedded in CLAUDE.md.",
+      "attribution": "Unattributed (active exploitation expected post-leak)"
     }
   ]
 }
