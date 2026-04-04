@@ -336,7 +336,7 @@
         "T1071.001 - Web Protocols",
         "T1082 - System Information Discovery"
       ],
-      "description": "<cite index=\"63-13,62-35\">Financially motivated North Korea-nexus threat actor active since at least 2018, characterized by sophisticated supply chain attacks and use of WAVESHAPER family backdoors with infrastructure reuse across campaigns</cite>",
+      "description": "Financially motivated North Korea-nexus threat actor active since at least 2018, characterized by sophisticated supply chain attacks and use of WAVESHAPER family backdoors with infrastructure reuse across campaigns",
       "attribution": "Attributed to UNC1069 by Google Threat Intelligence Group (confidence: high)"
     },
     {
@@ -356,7 +356,7 @@
         "T1055 - Process Injection",
         "T1071.001 - Web Protocols"
       ],
-      "description": "<cite index=\"63-12,63-25\">Cross-platform backdoor with variants for Windows, macOS, and Linux, featuring base64-encoded JSON C2 communications, PE injection capabilities, and script execution functionality</cite>",
+      "description": "Cross-platform backdoor with variants for Windows, macOS, and Linux, featuring base64-encoded JSON C2 communications, PE injection capabilities, and script execution functionality",
       "attribution": "Linked to UNC1069 operations (confidence: high)"
     },
     {

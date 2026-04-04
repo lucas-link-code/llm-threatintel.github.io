@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLMjacking Operations and Storm-2139: Stolen API Keys at Scale | LLM ThreatIntel</title>
+  <meta name="description" content="Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not eliminated the operation.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-03-15-llmjacking-storm2139.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LLMjacking Operations and Storm-2139: Stolen API Keys at Scale">
+  <meta property="og:description" content="Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not eliminated the operation.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-03-15-llmjacking-storm2139.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="LLMjacking Operations and Storm-2139: Stolen API Keys at Scale">
+  <meta property="article:published_time" content="2026-03-15T00:00:00Z">
+  <meta property="article:modified_time" content="2026-03-15T00:00:00Z">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LLMjacking Operations and Storm-2139: Stolen API Keys at Scale">
+  <meta name="twitter:description" content="Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not eliminated the operation.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LLMjacking Operations and Storm-2139: Stolen API Keys at Scale",
+  "description": "Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not eliminated the operation.",
+  "datePublished": "2026-03-15T00:00:00Z",
+  "dateModified": "2026-03-15T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-03-15-llmjacking-storm2139.html",
+  "keywords": [
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-03-15</span>
+      <span class="post-tag tag-llmjacking">Llmjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>LLMjacking Operations and Storm-2139: Stolen API Keys at Scale</h1>
+<p><strong>Date:</strong> 2026-03-15<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> LLMjacking, Cloud AI Abuse</p>
+<h2>Executive Summary</h2>
+<p>Storm-2139, a financially motivated threat group tracked by Microsoft, continues to operate large-scale LLMjacking infrastructure. The operation steals cloud AI API keys from Azure OpenAI, AWS Bedrock, and Google Vertex AI, then resells access through proxy services. Despite Microsoft&#x27;s legal action in early 2025 that disrupted parts of the operation, the group has adapted and resumed activity.</p>
+<h2>Detailed Findings</h2>
+<p>LLMjacking refers to the unauthorized use of stolen or compromised API credentials to access cloud-hosted LLM services. Storm-2139 has industrialized this process, operating a multi-tier business model: credential theft at scale, proxy infrastructure to resell access, and customer-facing services marketed on Telegram and underground forums.</p>
+<p>The group acquires API keys through multiple vectors. Exposed credentials in public GitHub repositories are harvested automatically using custom scanners. Infostealer malware logs containing cloud provider credentials are purchased from underground marketplaces. In some cases, social engineering is used to target cloud administrators directly.</p>
+<p>Once API keys are obtained, Storm-2139 operates proxy endpoints that accept requests from paying customers and forward them to the legitimate cloud AI APIs using the stolen credentials. Customers pay a fraction of the legitimate API cost, while the stolen key holders absorb the charges until the keys are revoked.</p>
+<p>Sysdig&#x27;s threat research team has estimated that a single compromised LLM API key can generate over $46,000 in charges per day when used at capacity, making this one of the more lucrative forms of cloud resource abuse.</p>
+<h3>Microsoft Legal Action</h3>
+<p>In January 2025, Microsoft filed a civil lawsuit against ten individuals associated with Storm-2139, seizing several domains used for proxy infrastructure. However, the group adapted by rotating infrastructure to new providers and shifting communication channels. The legal action disrupted but did not eliminate the operation.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Steal Application Access Token</td><td>T1528</td><td>Cloud AI API key theft</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>Unauthorized use of cloud AI compute</td></tr><tr><td>Valid Accounts: Cloud Accounts</td><td>T1078.004</td><td>Using stolen cloud credentials</td></tr><tr><td>Automated Exfiltration</td><td>T1020</td><td>Automated credential scanning from GitHub</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">llmjacking.services
+api-proxy.ai-services.cloud</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;llmjacking.services&quot; OR &quot;api-proxy.ai-services.cloud&quot;</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor cloud AI service usage for anomalous patterns: sudden spikes in API calls, requests from unexpected IP ranges or geographies, and usage outside business hours. Implement API key rotation policies and ensure keys are never committed to source control. GitHub secret scanning and pre-commit hooks can prevent accidental exposure.</p>
+<p>For Splunk environments, correlate cloud provider billing alerts with API usage logs to identify unauthorized consumption. Alert on API calls originating from known proxy or VPN infrastructure.</p>
+<h2>References</h2>
+<ul><li>Microsoft: Legal Action Against Storm-2139 (January 2025)</li><li>Sysdig: LLMjacking Research and Cost Analysis (2024)</li><li>MITRE ATT&amp;CK: T1528, T1496</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

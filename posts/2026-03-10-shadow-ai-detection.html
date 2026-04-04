@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage | LLM ThreatIntel</title>
+  <meta name="description" content="Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-03-10-shadow-ai-detection.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage">
+  <meta property="og:description" content="Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-03-10-shadow-ai-detection.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage">
+  <meta property="article:published_time" content="2026-03-10T00:00:00Z">
+  <meta property="article:modified_time" content="2026-03-10T00:00:00Z">
+  <meta property="article:tag" content="shadow-ai">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage">
+  <meta name="twitter:description" content="Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage",
+  "description": "Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.",
+  "datePublished": "2026-03-10T00:00:00Z",
+  "dateModified": "2026-03-10T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-03-10-shadow-ai-detection.html",
+  "keywords": [
+    "shadow-ai"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-03-10</span>
+      <span class="post-tag tag-shadow-ai">Shadow Ai</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage</h1>
+<p><strong>Date:</strong> 2026-03-10<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> Shadow AI, Detection Engineering</p>
+<h2>Executive Summary</h2>
+<p>Shadow AI, the unauthorized use of AI tools and services by employees, has become one of the fastest-growing security risks in enterprise environments. This report provides practical detection engineering approaches for identifying unauthorized LLM usage, covering DNS indicators, endpoint process detection, proxy log analysis, data exfiltration volume patterns, and user risk scoring methodologies.</p>
+<h2>Detailed Findings</h2>
+<p>The adoption of generative AI tools has outpaced enterprise governance in nearly every sector. Employees use ChatGPT, Claude, Gemini, Copilot, and dozens of smaller AI services to accelerate their work, often uploading proprietary code, internal documents, customer data, and strategic plans into services that are not approved, audited, or covered by enterprise data processing agreements.</p>
+<p>The challenge for security teams is that AI tool usage often looks like normal web browsing. The traffic is HTTPS to well-known domains, the data flows are user-initiated, and the services are legitimate platforms, not malicious infrastructure. Traditional security controls designed to block malicious activity are poorly suited to detecting authorized users sending sensitive data to unauthorized but otherwise legitimate services.</p>
+<h3>Detection Vector 1: DNS and Proxy Log Analysis</h3>
+<p>The most accessible detection surface is DNS resolution and web proxy logs. AI services operate on known domains, and monitoring for resolution of or traffic to these domains provides baseline visibility. Key domain categories to monitor include AI chat services (chat.openai.com, claude.ai, gemini.google.com, poe.com), AI coding assistants (copilot.github.com, cursor.sh, windsurf.ai, codeium.com), AI API endpoints (api.openai.com, api.anthropic.com, api.together.xyz), and local LLM download sources (ollama.com, huggingface.co, lmstudio.ai).</p>
+<p>A simple Splunk query matching web proxy logs against a lookup table of AI service domains provides immediate visibility into which users are accessing which services, how frequently, and how much data they are transferring.</p>
+<h3>Detection Vector 2: Endpoint Process Detection</h3>
+<p>Local LLM inference is a growing blind spot. Tools like Ollama, LM Studio, llama.cpp, and vLLM allow users to run models entirely on their workstation or on local servers, bypassing all network-based detection. Endpoint detection requires looking for process names associated with these frameworks, GPU library loading events, and large model file downloads.</p>
+<p>CrowdStrike Falcon and similar EDR platforms can detect process creation events for known LLM runtime binaries. The key process names to monitor include ollama, llamacpp, llama-server, lms (LM Studio), vllm, and text-generation-server.</p>
+<h3>Detection Vector 3: Data Exfiltration Volume Analysis</h3>
+<p>AI interactions involve sending substantial amounts of text in request bodies. A user uploading a 50-page document to ChatGPT generates a distinctly different traffic pattern than normal web browsing. Monitoring outbound data volume to AI service domains, particularly when it exceeds typical browsing patterns, can identify bulk data uploads.</p>
+<p>Setting a threshold on bytes sent per session to known AI domains, with the threshold calibrated against a baseline of normal usage, provides a practical alerting mechanism.</p>
+<h3>Detection Vector 4: AI Meeting Transcription Services</h3>
+<p>Meeting transcription AI services such as Otter.ai, Fireflies.ai, Fathom, and Grain present a unique risk because they capture and process entire meeting recordings, including confidential discussions. These services often join meetings as bot participants and can be detected through calendar integration monitoring, unusual meeting participant names, and DNS/proxy traffic to transcription service domains.</p>
+<h3>Detection Vector 5: MCP Server Configuration</h3>
+<p>The Model Context Protocol allows AI assistants to connect directly to local tools and data sources. Users configuring MCP servers on their workstations may be granting AI models access to databases, file systems, codebases, and internal APIs without IT approval. Detection involves monitoring for the creation or modification of MCP configuration files across tools like Claude Desktop, Cursor, Windsurf, and VS Code.</p>
+<p>Known MCP configuration file paths include:<br>- Claude Desktop: ~/Library/Application Support/Claude/claude_desktop_config.json (macOS) and %APPDATA%\Claude\claude_desktop_config.json (Windows)<br>- Cursor: ~/.cursor/mcp.json<br>- Windsurf: ~/.windsurf/mcp.json and ~/.codeium/windsurf/mcp_config.json</p>
+<h3>Detection Vector 6: Proxy Bypass and Tunnel Detection</h3>
+<p>Technically sophisticated users may attempt to bypass corporate proxy controls to reach AI services. This includes using SSH tunnels, SOCKS proxies, Cloudflare WARP, Tailscale, and direct DNS resolution bypassing corporate DNS. Detecting these bypass techniques requires monitoring for outbound SSH connections to non-standard ports, DNS queries to public resolvers bypassing enterprise DNS, and process-level network connections from known tunnel software.</p>
+<h3>User Risk Scoring</h3>
+<p>Individual detection signals have limited value in isolation. A user resolving an AI domain once could be accidental. The same user resolving multiple AI domains, uploading large volumes of data, running local LLM processes, and configuring MCP servers represents a compounding risk profile. Implementing a weighted user risk score that aggregates signals across all detection vectors and surfaces the highest-risk users for investigation is the recommended approach.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exfiltration Over Web Service</td><td>T1567</td><td>Data uploaded to AI SaaS platforms</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>AI API communication over HTTPS</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Local files uploaded to AI services</td></tr><tr><td>Proxy: External Proxy</td><td>T1090.002</td><td>Bypass attempts to reach AI services</td></tr><tr><td>Protocol Tunneling</td><td>T1572</td><td>SSH and VPN tunnels to bypass proxy controls</td></tr></tbody></table>
+<h2>Detection Recommendations</h2>
+<p>Start with DNS and proxy log analysis as the lowest-effort, highest-coverage detection vector. Layer endpoint process detection for local LLM usage. Implement data volume thresholds for AI service domains. Build toward a unified risk score that aggregates all signals per user.</p>
+<p>For Splunk environments, a combination of web proxy log analysis using CIM-compliant fields, DNS query logging, and endpoint process creation events provides comprehensive coverage. CrowdStrike LogScale offers similar capability through its process and network telemetry.</p>
+<h2>References</h2>
+<ul><li>OWASP: AI Security Guidelines</li><li>NIST: AI Risk Management Framework</li><li>Multiple vendor threat reports on Shadow AI (2025-2026)</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

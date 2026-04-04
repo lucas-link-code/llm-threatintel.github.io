@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages | LLM ThreatIntel</title>
+  <meta name="description" content="Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-03-30-teampcp-supply-chain.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages">
+  <meta property="og:description" content="Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-03-30-teampcp-supply-chain.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages">
+  <meta property="article:published_time" content="2026-03-30T00:00:00Z">
+  <meta property="article:modified_time" content="2026-03-30T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages">
+  <meta name="twitter:description" content="Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages",
+  "description": "Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.",
+  "datePublished": "2026-03-30T00:00:00Z",
+  "dateModified": "2026-03-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-03-30-teampcp-supply-chain.html",
+  "keywords": [
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-03-30</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages</h1>
+<p><strong>Date:</strong> 2026-03-30  <br><strong>TLP:</strong> TLP:CLEAR  <br><strong>Tags:</strong> Supply Chain, PyPI, LLM Orchestration</p>
+<h2>Executive Summary</h2>
+<p>An active supply chain campaign tracked as TeamPCP is distributing malicious Python packages on PyPI that impersonate legitimate LLM orchestration libraries. The campaign targets developers working with LiteLLM and Telnyx, embedding backdoors that exfiltrate environment variables, API keys, and credentials from development machines.</p>
+<h2>Detailed Findings</h2>
+<p>The campaign was first identified by ReversingLabs in early March 2026 and independently confirmed by Socket.dev. At least three malicious packages have been identified on PyPI, all using typosquatting and namespace confusion techniques to masquerade as official libraries.</p>
+<p>The malicious packages execute a post-install hook that collects environment variables, with particular focus on variables containing API keys for LLM providers such as OPENAI_API_KEY, ANTHROPIC_API_KEY, AWS_ACCESS_KEY_ID, and AZURE_OPENAI_KEY. Collected data is exfiltrated over HTTPS to attacker-controlled infrastructure.</p>
+<p>The targeting is precise. By impersonating LiteLLM, which is a popular proxy layer for routing requests across multiple LLM providers, the attackers position themselves directly in the workflow of teams building GenAI applications. A compromised developer machine running a LiteLLM proxy would expose API keys for every LLM provider the organization uses.</p>
+<h3>Distribution Mechanism</h3>
+<p>All packages were uploaded to PyPI using newly created accounts. Package names were chosen to create confusion with the legitimate litellm and telnyx packages:</p>
+<ul><li>litellm-proxy-server</li><li>litellm-client</li><li>telnyx-ai</li></ul>
+<h3>Post-Install Behavior</h3>
+<p>The setup.py in each package contains a custom install class that executes during pip install. The payload performs the following actions:</p>
+<ol><li>Enumerates all environment variables and filters for keys matching patterns such as API_KEY, SECRET, TOKEN, PASSWORD</li><li>Collects system information including hostname, username, OS version, and Python version</li><li>Reads .env files, .bashrc, and cloud provider credential files if present</li><li>Exfiltrates all collected data via HTTPS POST to a hardcoded C2 endpoint</li><li>Establishes persistence by writing a cron job or scheduled task that re-exfiltrates on a recurring basis</li></ol>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Software Dependencies</td><td>T1195.001</td><td>Malicious PyPI packages impersonating AI libraries</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>Post-install Python execution via setup.py</td></tr><tr><td>Unsecured Credentials: Credentials in Files</td><td>T1552.001</td><td>Harvesting .env files and cloud credential stores</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Environment variable and config file collection</td></tr><tr><td>Exfiltration Over C2 Channel</td><td>T1041</td><td>HTTPS POST exfiltration of stolen credentials</td></tr><tr><td>Scheduled Task/Job</td><td>T1053</td><td>Persistence via cron or scheduled task</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">litellm-proxy-server[.]com
+telnyx-ai-api[.]com
+pypi-cdn-mirror[.]net</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">hxxps://litellm-proxy-server[.]com/api/collect
+hxxps://telnyx-ai-api[.]com/v1/register
+hxxps://pypi-cdn-mirror[.]net/upload/data</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;litellm-proxy-server.com/api/collect&quot; OR &quot;telnyx-ai-api.com/v1/register&quot; OR &quot;pypi-cdn-mirror.net/upload/data&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">PyPI Package: litellm-proxy-server (all versions)
+PyPI Package: litellm-client (all versions)
+PyPI Package: telnyx-ai (all versions)
+SHA256: pending confirmation from source reports</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor pip install logs and package management audit trails for the listed package names. Review CI/CD pipeline dependencies for unexpected additions. Rotate any API keys that may have been exposed on machines where these packages were installed.</p>
+<p>For Splunk environments, query web proxy logs for the listed C2 domains. For endpoint detection, look for Python processes spawning network connections during package installation outside of expected pip operations.</p>
+<h2>References</h2>
+<ul><li>ReversingLabs: TeamPCP Supply Chain Analysis (March 2026)</li><li>Socket.dev: Malicious PyPI Packages Targeting LLM Developers (March 2026)</li><li>MITRE ATT&amp;CK: T1195.001, T1059.006, T1552.001</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

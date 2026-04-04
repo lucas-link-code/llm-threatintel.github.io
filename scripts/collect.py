@@ -362,6 +362,19 @@ def update_posts_index(finding):
     return filename
 
 
+def pick_better_text(old, new):
+    """Choose the better text between old and new, preferring longer content."""
+    old = strip_citation_markers((old or '').strip())
+    new = strip_citation_markers((new or '').strip())
+
+    if not old:
+        return new
+    if not new:
+        return old
+
+    return new if len(new) > len(old) else old
+
+
 def update_actors(finding):
     """Update actors.json with new or updated actor entries."""
     actors_path = DATA_DIR / "actors.json"
@@ -383,14 +396,37 @@ def update_actors(finding):
             for name in all_new_names:
                 if name not in existing['names']:
                     existing['names'].append(name)
+
             for ttp in new_actor.get('ttps', []):
                 if ttp not in existing['ttps']:
                     existing['ttps'].append(ttp)
+
             for dist in new_actor.get('distribution', []):
                 if dist not in existing.get('distribution', []):
                     existing.setdefault('distribution', []).append(dist)
-            if new_actor.get('attribution') and not existing.get('attribution'):
-                existing['attribution'] = new_actor['attribution']
+
+            existing['description'] = pick_better_text(
+                existing.get('description', ''),
+                new_actor.get('description', '')
+            )
+
+            if new_actor.get('status'):
+                existing['status'] = new_actor['status']
+
+            if new_actor.get('type') and not existing.get('type'):
+                existing['type'] = new_actor['type']
+
+            if new_actor.get('first_observed'):
+                old_first = existing.get('first_seen')
+                new_first = new_actor['first_observed']
+                if not old_first or new_first < old_first:
+                    existing['first_seen'] = new_first
+
+            new_attr = strip_citation_markers((new_actor.get('attribution') or '').strip())
+            old_attr = strip_citation_markers((existing.get('attribution') or '').strip())
+            if new_attr and (not old_attr or old_attr.lower() in {'unattributed', 'unknown'}):
+                existing['attribution'] = new_attr
+
             print(f"  Updated actor: {existing['names'][0]}")
         else:
             entry = {
@@ -401,12 +437,17 @@ def update_actors(finding):
                 "status": new_actor.get('status', 'active'),
                 "distribution": new_actor.get('distribution', []),
                 "ttps": new_actor.get('ttps', []),
-                "description": new_actor.get('description', '')
+                "description": strip_citation_markers((new_actor.get('description') or '').strip())
             }
             if new_actor.get('attribution'):
                 entry['attribution'] = new_actor['attribution']
             actors['entries'].append(entry)
             print(f"  Added new actor: {new_actor['name']}")
+
+    for entry in actors['entries']:
+        entry['description'] = strip_citation_markers((entry.get('description') or '').strip())
+        if entry.get('attribution'):
+            entry['attribution'] = strip_citation_markers(entry['attribution']).strip()
 
     actors['last_updated'] = TODAY
     save_json(actors_path, actors)
@@ -490,7 +531,7 @@ def main():
             model=MODEL,
             max_tokens=16000,
             system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
-            tools=[{"type": "web_search_20250305", "name": "web_search"}],
+            tools=[{"type": "web_search", "name": "web_search"}],
             messages=[{"role": "user", "content": prompt}]
         ) as stream:
             response = stream.get_final_message()

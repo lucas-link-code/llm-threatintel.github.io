@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised | LLM ThreatIntel</title>
+  <meta name="description" content="TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised">
+  <meta property="og:description" content="TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised">
+  <meta property="article:published_time" content="2026-04-01T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-01T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised">
+  <meta name="twitter:description" content="TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
+  "description": "TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.",
+  "datePublished": "2026-04-01T00:00:00Z",
+  "dateModified": "2026-04-01T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.html",
+  "keywords": [
+    "malware",
+    "shadow-ai",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-01</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-shadow-ai">Shadow Ai</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised</h1>
+<p><strong>Date:</strong> 2026-04-01<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, pypi, ai-ml, credential-theft, multi-stage</p>
+<h2>Executive Summary</h2>
+<p>TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>TeamPCP Multi-Stage Supply Chain Campaign</td></tr><tr><td>Attribution</td><td>TeamPCP (confidence: high)</td></tr><tr><td>Target</td><td>AI/ML developers, cloud infrastructure, CI/CD pipelines</td></tr><tr><td>Vector</td><td>Compromised maintainer accounts and stolen credentials</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>March 19, 2026</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>TeamPCP operated through five distinct stages, moving from project to project while siphoning credentials and using them to expand the campaign, with each stage reusing access or tradecraft from the previous compromise. The campaign began March 19, 2026 with Trivy compromise using stolen aquasecurity credentials to replace GitHub Action tags, triggering malicious builds across GHCR, ECR Public, Docker Hub, and package repositories. By March 20, the campaign expanded to a self-propagating npm worm across multiple publisher scopes, stealing npm tokens from compromised environments and republishing packages with malicious payloads while preserving original READMEs. The LiteLLM compromise on March 24 involved malicious PyPI versions with credential stealers designed to encrypt and exfiltrate data via POST requests to models.litellm.cloud, targeting API keys, SSH keys, and CI/CD secrets. The campaign concluded with Telnyx Python SDK compromise on March 27, publishing malicious versions 4.87.1 and 4.87.2 before quarantine by 10:13 UTC.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.002</td><td>Multi-stage compromise of software dependencies across PyPI, npm, and GitHub repositories</td></tr><tr><td>Valid Accounts</td><td>T1078.003</td><td>Use of compromised maintainer accounts and stolen publishing credentials to propagate malicious packages</td></tr><tr><td>Credentials from Files</td><td>T1552.001</td><td>Extraction of SSH keys, API tokens, and CI/CD secrets from compromised development environments</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Harvesting of cloud credentials, Kubernetes configuration files, and environment variables</td></tr><tr><td>Encrypted Channel</td><td>T1573</td><td>Encryption and exfiltration of stolen credentials via HTTP POST to attacker-controlled domains</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">models.litellm.cloud</code></pre>
+<h3>Full URL Paths</h3>
+<p>_IOCs confirmed by multiple sources including LiteLLM maintainers, Datadog Security Labs, and Telnyx official security notice_</p>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;models.litellm.cloud&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">pypi:litellm@1.82.7
+pypi:litellm@1.82.8
+pypi:telnyx@4.87.1
+pypi:telnyx@4.87.2</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor PyPI and npm package installation logs for affected versions during March 19-27, 2026 timeframe. Search CI/CD pipeline logs for executions of litellm 1.82.7/1.82.8 and telnyx 4.87.1/4.87.2. Check for presence of litellm_init.pth files in Python environments. Monitor network traffic for POST requests to models.litellm.cloud and unusual TruffleHog reconnaissance activity. Audit AWS CloudTrail logs for unexpected bedrock:InvokeModel, sagemaker:InvokeEndpoint API calls from unfamiliar IP addresses. Review environment variables and configuration files for potential credential exposure on affected systems.</p>
+<h2>References</h2>
+<ul><li>[Datadog Security Labs] LiteLLM and Telnyx compromised on PyPI: Tracing the TeamPCP supply chain campaign (2026-03-25) — https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/</li><li>[LiteLLM] Security Update: Suspected Supply Chain Incident (2026-03-24) — https://docs.litellm.ai/blog/security-update-march-2026</li><li>[Telnyx] Telnyx Python SDK Security Notice: Malicious PyPI Versions Identified (2026-03-27) — https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026</li><li>[Help Net Security] LiteLLM PyPI packages compromised in expanding TeamPCP supply chain attacks (2026-03-25) — https://www.helpnetsecurity.com/2026/03/25/teampcp-supply-chain-attacks/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

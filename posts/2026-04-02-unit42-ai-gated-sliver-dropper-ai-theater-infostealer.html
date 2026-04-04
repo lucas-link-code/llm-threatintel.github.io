@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer | LLM ThreatIntel</title>
+  <meta name="description" content="Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an &#x27;AI-gated execution&#x27; approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer">
+  <meta property="og:description" content="Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an &#x27;AI-gated execution&#x27; approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer">
+  <meta property="article:published_time" content="2026-04-02T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-02T00:00:00Z">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer">
+  <meta name="twitter:description" content="Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an &#x27;AI-gated execution&#x27; approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer",
+  "description": "Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection \u2014 an 'AI-gated execution' approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.",
+  "datePublished": "2026-04-02T00:00:00Z",
+  "dateModified": "2026-04-02T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.html",
+  "keywords": [
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-02</span>
+      <span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer</h1>
+<p><strong>Date:</strong> 2026-04-02<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> ai-malware, infostealer, sliver, llm-c2, malware-analysis</p>
+<h2>Executive Summary</h2>
+<p>Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an &#x27;AI-gated execution&#x27; approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AI-Gated Sliver Dropper / AI-Theater Infostealer</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>Unknown — samples discovered via OSINT; potential victims include enterprise environments where Sliver C2 would be deployed</td></tr><tr><td>Vector</td><td>Unknown initial delivery vector; both samples discovered via open-source intelligence hunting</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-03</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Unit 42&#x27;s report published March 19, 2026, researchers identified two categories of malware demonstrating real-world AI integration, both sourced from OSINT hunting:</p>
+<p><strong>AI Theater: .NET Infostealer Trio.</strong> Three highly similar .NET information stealer samples were found to incorporate the OpenAI GPT-3.5-Turbo model via HTTP API calls. Unit 42 assessed this integration as &#x27;AI theater&#x27; — the LLM API calls do not meaningfully enhance the malware&#x27;s capabilities and appear to provide only an illusion of AI functionality. The samples may have been generated with AI assistance or produced by an inexperienced developer. Unit 42 published three SHA256 hashes: 1b6326857fa635d396851a9031949cfdf6c806130767c399727d78a1c2a0126c, 02ce798981fb2aa68776e53672a24103579ca77a1d3e7f8aaeccf6166d1a9cc6, and 7c7b7b99f248662a1f9aea1563e60f90d19b0ee95934e476c423d0bf373f6493.</p>
+<p><strong>AI-Gated Execution: Golang Sliver Dropper.</strong> A more technically significant sample is a Golang-based malware dropper for Sliver, an open-source adversary emulation framework. This dropper performs a system survey collecting its own process name and parent process name, then decrypts Donut shellcode but — critically — does NOT immediately execute it. Instead, it sends the collected system data to a remote LLM via API and queries whether the environment appears &#x27;safe&#x27; to proceed with infection. Unit 42 published the SHA256 hash for this sample: 052d5220529b6bd4b01e5e375b5dc3ffd50c4b137e242bbfb26655fd7f475ac6.</p>
+<p>Unit 42 noted this AI-gated approach is conceptually more sophisticated than static allow/deny lists because LLMs can make more nuanced contextual connections between data points. The log output of the dropper misleadingly states the Sliver payload is &#x27;AI-powered,&#x27; which Unit 42 confirmed is false — the LLM only gates execution, not the payload itself. The researchers assessed this represents a genuine evolution in malware sandbox evasion: by delegating the sandbox/analyst detection decision to a remote LLM, the dropper avoids hard-coded heuristics that defenders may have signatures for.</p>
+<p>Unit 42 assessed the current landscape as &#x27;characterized by experimentation and uneven integration,&#x27; while noting that a logical next evolution would be locally executing a small language model or ML classifier for environment assessment, removing the dependency on external LLM API calls that could be blocked or monitored.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Virtualization/Sandbox Evasion</td><td>T1497</td><td>The AI-gated Sliver dropper uses a remote LLM to evaluate collected system environment data and decide whether the environment is safe to proceed with infection, replacing static sandbox detection heuristics.</td></tr><tr><td>Command and Control: Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>The Sliver dropper queries a remote LLM API over HTTPS to receive the execution decision before proceeding with Donut shellcode decryption and Sliver deployment.</td></tr><tr><td>Steal or Forge Authentication Certificates</td><td>T1649</td><td>The .NET infostealer samples are designed to harvest sensitive credentials; AI integration via GPT-3.5-Turbo API is assessed as non-functional AI theater.</td></tr><tr><td>Obfuscated Files or Information: Software Packing</td><td>T1027.002</td><td>The Sliver dropper decrypts Donut shellcode but conditions detonation on a remote LLM decision, adding an LLM-based evasion layer over standard shellcode unpacking.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_All four SHA256 hashes sourced directly from Unit 42 report at https://unit42.paloaltonetworks.com/ai-use-in-malware/. Hashes 1b6326..., 02ce79..., and 7c7b7b... are for the three .NET AI-theater infostealer samples. Hash 052d52... is for the Golang AI-gated Sliver dropper. No C2 domains or IPs published by Unit 42 for these samples._</p>
+<h3>Full URL Paths</h3>
+<p>_All four SHA256 hashes sourced directly from Unit 42 report at https://unit42.paloaltonetworks.com/ai-use-in-malware/. Hashes 1b6326..., 02ce79..., and 7c7b7b... are for the three .NET AI-theater infostealer samples. Hash 052d52... is for the Golang AI-gated Sliver dropper. No C2 domains or IPs published by Unit 42 for these samples._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>File Hashes</h3>
+<pre><code class="language-">1b6326857fa635d396851a9031949cfdf6c806130767c399727d78a1c2a0126c
+02ce798981fb2aa68776e53672a24103579ca77a1d3e7f8aaeccf6166d1a9cc6
+7c7b7b99f248662a1f9aea1563e60f90d19b0ee95934e476c423d0bf373f6493
+052d5220529b6bd4b01e5e375b5dc3ffd50c4b137e242bbfb26655fd7f475ac6</code></pre>
+<h2>Detection Recommendations</h2>
+<ol><li>EDR: Add all four published SHA256 hashes to IOC blocklists immediately (hashes above). 2. Network: Monitor for outbound HTTPS connections to api.openai.com from non-browser, non-enterprise-approved processes — particularly from process names associated with newly spawned executables; this is an indicator of either AI-theater infostealer or AI-gated dropper activity. 3. Memory/Behavioral: Alert on Donut shellcode injection patterns in Golang-compiled binaries that perform an outbound HTTPS call immediately before shellcode execution (the LLM decision query step). 4. OSINT Hunting: Unit 42 notes these samples were found via OSINT; security teams should run periodic hunts on VirusTotal and threat intel platforms for Golang binaries making API calls to LLM endpoints before shellcode detonation. 5. Sliver Detection: Ensure existing Sliver C2 detection rules are active in EDR; the AI gating does not change the Sliver payload itself.</li></ol>
+<h2>References</h2>
+<ul><li>[Unit 42 / Palo Alto Networks] Analyzing the Current State of AI Use in Malware (2026-03-19) — https://unit42.paloaltonetworks.com/ai-use-in-malware/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

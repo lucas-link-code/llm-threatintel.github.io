@@ -9,6 +9,9 @@ const App = {
   iocsData: null,
   blogIndex: null,
   currentFilter: 'all',
+  actorFilter: 'all',
+  actorSearch: '',
+  selectedActorId: null,
   metaDefaults: {
     siteName: 'LLM ThreatIntel',
     siteUrl: 'https://llm-threatintel.com',
@@ -455,44 +458,185 @@ const App = {
   },
 
   // ---- ACTORS ----
+  getActorBucket(actor) {
+    if (actor.type === 'malicious_llm_tool') return 'malicious_tools';
+    if (actor.type === 'malware' || actor.type === 'supply_chain_campaign') return 'malware';
+    if (actor.type === 'threat_group' || (actor.type || '').includes('nation')) return 'threat_groups';
+    return 'other';
+  },
+
+  stripHtml(value) {
+    return String(value || '').replace(/<[^>]*>/g, '').trim();
+  },
+
+  getActorSummary(actor, max = 180) {
+    const cleanDescription = this.stripHtml(actor.description);
+    if (cleanDescription) return this.truncateExcerpt(cleanDescription, max);
+
+    const parts = [];
+    if (actor.type) parts.push(this.formatType(actor.type));
+    if (actor.status) parts.push(`status: ${actor.status}`);
+    if (actor.distribution?.length) parts.push(`distribution: ${actor.distribution.slice(0, 2).join(', ')}`);
+    if (actor.ttps?.length) parts.push(`TTPs: ${actor.ttps.slice(0, 2).map(t => t.split(' - ')[0]).join(', ')}`);
+
+    return this.truncateExcerpt(parts.join(' · '), max) || 'No summary available yet.';
+  },
+
+  getFilteredActors() {
+    const term = this.actorSearch.trim().toLowerCase();
+
+    return (this.actorsData?.entries || []).filter(actor => {
+      const matchesFilter =
+        this.actorFilter === 'all' || this.getActorBucket(actor) === this.actorFilter;
+
+      const searchBlob = [
+        ...(actor.names || []),
+        actor.attribution || '',
+        actor.description || '',
+        ...(actor.ttps || []),
+        ...(actor.distribution || [])
+      ].join(' ').toLowerCase();
+
+      const matchesSearch = !term || searchBlob.includes(term);
+      return matchesFilter && matchesSearch;
+    });
+  },
+
   renderActors(container) {
-    if (!this.actorsData) { container.innerHTML = '<div class="loading">Loading...</div>'; return; }
+    if (!this.actorsData) {
+      container.innerHTML = '<div class="loading">Loading...</div>';
+      return;
+    }
+
     const actors = this.actorsData.entries;
+    const filtered = this.getFilteredActors();
+
+    if (!this.selectedActorId || !filtered.some(a => a.id === this.selectedActorId)) {
+      this.selectedActorId = filtered[0]?.id || null;
+    }
+
+    const selected = filtered.find(a => a.id === this.selectedActorId) || null;
+
     container.innerHTML = `
       <h1 class="page-title"><span class="title-accent">//</span> Threat Actor Tracker</h1>
       <p class="page-subtitle">${actors.length} entries tracked across malicious tools, malware, campaigns, and nation-state programs</p>
-      <div class="search-input-wrap"><input type="text" class="search-input" placeholder="Search actors, aliases, TTPs..." id="search-actors"></div>
-      <div class="stats-row">
-        <div class="stat-card"><div class="stat-value">${actors.filter(a => a.status === 'active').length}</div><div class="stat-label">Active</div></div>
-        <div class="stat-card"><div class="stat-value">${actors.filter(a => a.type === 'malicious_llm_tool').length}</div><div class="stat-label">Malicious Tools</div></div>
-        <div class="stat-card"><div class="stat-value">${actors.filter(a => a.type.includes('nation') || a.type === 'threat_group').length}</div><div class="stat-label">Threat Groups</div></div>
-        <div class="stat-card"><div class="stat-value">${actors.filter(a => a.type === 'malware' || a.type === 'supply_chain_campaign').length}</div><div class="stat-label">Malware</div></div>
+
+      <div class="search-input-wrap">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search actors, aliases, TTPs..."
+          id="search-actors"
+          value="${this.escapeHtml(this.actorSearch)}"
+        >
       </div>
+
+      <div class="stats-row actor-filter-row">
+        <div class="stat-card actor-filter-card ${this.actorFilter === 'all' ? 'active-filter' : ''}" data-filter="all">
+          <div class="stat-value">${actors.filter(a => a.status === 'active').length}</div>
+          <div class="stat-label">Active</div>
+        </div>
+        <div class="stat-card actor-filter-card ${this.actorFilter === 'malicious_tools' ? 'active-filter' : ''}" data-filter="malicious_tools">
+          <div class="stat-value">${actors.filter(a => a.type === 'malicious_llm_tool').length}</div>
+          <div class="stat-label">Malicious Tools</div>
+        </div>
+        <div class="stat-card actor-filter-card ${this.actorFilter === 'threat_groups' ? 'active-filter' : ''}" data-filter="threat_groups">
+          <div class="stat-value">${actors.filter(a => a.type === 'threat_group' || (a.type || '').includes('nation')).length}</div>
+          <div class="stat-label">Threat Groups</div>
+        </div>
+        <div class="stat-card actor-filter-card ${this.actorFilter === 'malware' ? 'active-filter' : ''}" data-filter="malware">
+          <div class="stat-value">${actors.filter(a => a.type === 'malware' || a.type === 'supply_chain_campaign').length}</div>
+          <div class="stat-label">Malware</div>
+        </div>
+      </div>
+
+      <div class="feed-card actor-detail-card">
+        ${
+          selected ? `
+            <div class="actor-detail-title-row">
+              <div class="actor-detail-title">${this.escapeHtml(selected.names[0])}</div>
+              <span class="ttp-tag">${this.escapeHtml(this.formatType(selected.type))}</span>
+              <span class="actor-status status-${this.escapeHtml(selected.status)}">${this.escapeHtml(selected.status.toUpperCase())}</span>
+            </div>
+
+            ${selected.names.length > 1 ? `<div class="actor-aliases">aka: ${this.escapeHtml(selected.names.slice(1).join(', '))}</div>` : ''}
+            ${selected.attribution ? `<div class="actor-aliases">Attr: ${this.escapeHtml(this.stripHtml(selected.attribution))}</div>` : ''}
+
+            <p class="actor-detail-summary">${this.escapeHtml(this.stripHtml(selected.description) || this.getActorSummary(selected, 260))}</p>
+
+            <div class="actor-detail-meta">
+              <span class="mitre-badge">First seen ${this.escapeHtml(selected.first_seen || 'unknown')}</span>
+              ${(selected.distribution || []).map(d => `<span class="ttp-tag">${this.escapeHtml(d)}</span>`).join('')}
+            </div>
+
+            <div class="actor-detail-ttps">
+              ${(selected.ttps || []).map(t => `<span class="mitre-badge">${this.escapeHtml(t)}</span>`).join('')}
+            </div>
+          ` : `
+            <p class="page-subtitle" style="margin-bottom:0">No actors match the current filter/search.</p>
+          `
+        }
+      </div>
+
       <div class="actor-table-wrap">
         <table class="actor-table" id="actor-table">
-          <thead><tr><th>Name / Aliases</th><th>Type</th><th>Status</th><th>First Seen</th><th>Distribution</th><th>Key TTPs</th></tr></thead>
-          <tbody>${actors.map(actor => `
-            <tr data-search="${[...actor.names, actor.description, ...actor.ttps, ...(actor.distribution || [])].join(' ').toLowerCase()}">
-              <td><div class="actor-name">${actor.names[0]}</div>${actor.names.length > 1 ? `<div class="actor-aliases">aka: ${actor.names.slice(1).join(', ')}</div>` : ''}${actor.attribution ? `<div class="actor-aliases">Attr: ${actor.attribution}</div>` : ''}</td>
-              <td><span class="ttp-tag">${this.formatType(actor.type)}</span></td>
-              <td><span class="actor-status status-${actor.status}">${actor.status.toUpperCase()}</span></td>
-              <td style="font-family:var(--fm);font-size:.78rem;color:var(--t2)">${actor.first_seen}</td>
-              <td style="font-size:.82rem;color:var(--t2)">${(actor.distribution || []).join(', ')}</td>
-              <td>${actor.ttps.slice(0, 3).map(t => `<span class="mitre-badge">${t.split(' - ')[0]}</span>`).join(' ')}</td>
+          <thead>
+            <tr>
+              <th>Name / Aliases</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>First Seen</th>
+              <th>Distribution</th>
+              <th>Key TTPs</th>
             </tr>
-          `).join('')}</tbody>
+          </thead>
+          <tbody>
+            ${filtered.map(actor => `
+              <tr data-actor-id="${this.escapeHtml(actor.id)}" class="${actor.id === this.selectedActorId ? 'actor-row-selected' : ''}">
+                <td>
+                  <div class="actor-name">${this.escapeHtml(actor.names[0])}</div>
+                  ${actor.names.length > 1 ? `<div class="actor-aliases">aka: ${this.escapeHtml(actor.names.slice(1).join(', '))}</div>` : ''}
+                  ${actor.attribution ? `<div class="actor-aliases">Attr: ${this.escapeHtml(this.stripHtml(actor.attribution))}</div>` : ''}
+                  <div class="actor-summary">${this.escapeHtml(this.getActorSummary(actor))}</div>
+                </td>
+                <td><span class="ttp-tag">${this.escapeHtml(this.formatType(actor.type))}</span></td>
+                <td><span class="actor-status status-${this.escapeHtml(actor.status)}">${this.escapeHtml(actor.status.toUpperCase())}</span></td>
+                <td style="font-family:var(--fm);font-size:.78rem;color:var(--t2)">${this.escapeHtml(actor.first_seen || '')}</td>
+                <td style="font-size:.82rem;color:var(--t2)">${this.escapeHtml((actor.distribution || []).join(', '))}</td>
+                <td>${(actor.ttps || []).slice(0, 3).map(t => `<span class="mitre-badge">${this.escapeHtml(t.split(' - ')[0])}</span>`).join(' ')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
         </table>
       </div>
     `;
-    const searchInput = document.getElementById('search-actors');
+
+    const searchInput = container.querySelector('#search-actors');
     if (searchInput) {
-      searchInput.addEventListener('input', () => {
-        const term = searchInput.value.toLowerCase();
-        document.querySelectorAll('#actor-table tbody tr').forEach(row => {
-          row.style.display = !term || row.dataset.search.includes(term) ? '' : 'none';
-        });
+      searchInput.addEventListener('input', (e) => {
+        this.actorSearch = e.target.value;
+        this.renderActors(container);
+        const next = container.querySelector('#search-actors');
+        if (next) {
+          next.focus();
+          next.setSelectionRange(this.actorSearch.length, this.actorSearch.length);
+        }
       });
     }
+
+    container.querySelectorAll('.actor-filter-card').forEach(card => {
+      card.addEventListener('click', () => {
+        this.actorFilter = card.dataset.filter;
+        this.renderActors(container);
+      });
+    });
+
+    container.querySelectorAll('#actor-table tbody tr').forEach(row => {
+      row.addEventListener('click', () => {
+        this.selectedActorId = row.dataset.actorId;
+        this.renderActors(container);
+      });
+    });
   },
 
   // ---- IOC FEED ----
@@ -641,7 +785,10 @@ const App = {
   },
 
   escapeHtml(str) {
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return String(str ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
   },
 
   formatTag(tag) {

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover | LLM ThreatIntel</title>
+  <meta name="description" content="Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security&#x27;s RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover">
+  <meta property="og:description" content="Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security&#x27;s RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover">
+  <meta property="article:published_time" content="2026-04-01T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-01T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover">
+  <meta name="twitter:description" content="Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security&#x27;s RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover",
+  "description": "Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security's RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.",
+  "datePublished": "2026-04-01T00:00:00Z",
+  "dateModified": "2026-04-01T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.html",
+  "keywords": [
+    "malicious-tool",
+    "shadow-ai",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-01</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-shadow-ai">Shadow Ai</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover</h1>
+<p><strong>Date:</strong> 2026-04-01<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malicious-tool, shadow-ai</p>
+<h2>Executive Summary</h2>
+<p>Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security&#x27;s RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AI Coding Agent Attack Surface (multiple vectors)</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>Software developers and enterprise development environments using AI coding assistants</td></tr><tr><td>Vector</td><td>Poisoned configuration files, indirect prompt injection, malicious websites, GitHub Issues</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2025-12</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Pillar Security disclosed the Rules File Backdoor attack in early 2026, demonstrating how attackers inject hidden malicious instructions into AI coding assistant configuration files. The attack exploits Unicode Tag Characters in the range U+E0001 to U+E007F, which render as invisible in text editors and terminal output but are processed by LLMs during inference. Malicious prompts encoded with these characters instruct the AI to generate code containing vulnerabilities, backdoors, or data exfiltration logic. Because rule files are commonly shared across repositories and developer communities, they are rarely scrutinized before integration.</p>
+<p>AgentSeal conducted an audit of 50 Cursor rules files from public GitHub repositories and found 6 contained hidden instructions, a 12% infection rate. The research identified two primary obfuscation techniques: Unicode Tag Characters for complete instruction hiding, and zero-width characters including U+200B zero-width spaces and U+200D zero-width joiners to obfuscate sensitive paths and break up keywords that might trigger security filters. Both techniques remain readable to LLM tokenizers while being invisible to human reviewers and standard diff tools.</p>
+<p>CVE-2026-31854, rated CVSS 8.8 High, affects Cursor versions up to 1.4.5. The vulnerability allows arbitrary code execution through prompt injection combined with whitelist bypass. When a user visits a malicious website through Cursor&#x27;s built-in browser, crafted instructions on the page can cause the Cursor Agent to execute OS commands without user consent, even when Auto-Run Mode is configured to use an allowlist. The root cause is CWE-78, improper neutralization of special elements in OS commands. Anysphere patched this in Cursor version 2.0.</p>
+<p>Orca Security&#x27;s Research Pod disclosed RoguePilot, a passive prompt injection vulnerability in GitHub Copilot operating within Codespaces. Attackers embed malicious instructions in GitHub Issues using hidden HTML comment tags that are invisible to human readers but processed by Copilot. When a developer opens a Codespace from a poisoned Issue, the attack chain proceeds in three stages: the injected prompt instructs Copilot to execute terminal commands pulling a crafted pull request containing a symbolic link to the user-secrets-envs.json file; Copilot reads the secrets file through the link without triggering workspace boundary restrictions; and a JSON file with a schema property pointing to an attacker-controlled server exfiltrates the GITHUB_TOKEN as a URL parameter. With a valid GITHUB_TOKEN, the attacker gains full read and write access to the repository. GitHub patched this vulnerability following coordinated disclosure.</p>
+<p>The convergence of these vulnerabilities highlights a structural problem: AI coding agents now operate with extensive system access including file reading, command execution, and credential access, while their input channels remain largely unvalidated. Configuration files, web content, and repository metadata all feed into the LLM context without integrity verification, creating multiple indirect prompt injection pathways.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Supply Chain</td><td>T1195.002</td><td>Poisoned rules files distributed through shared repositories</td></tr><tr><td>Command and Scripting Interpreter</td><td>T1059</td><td>Arbitrary command execution via Cursor Agent prompt injection</td></tr><tr><td>Steal Application Access Token</td><td>T1528</td><td>GITHUB_TOKEN exfiltration via RoguePilot attack chain</td></tr><tr><td>User Execution: Malicious Link</td><td>T1204.001</td><td>Developer opens poisoned GitHub Issue in Codespace</td></tr><tr><td>Obfuscated Files or Information: Unicode Encoding</td><td>T1027.013</td><td>Hidden Unicode characters in rules files</td></tr><tr><td>Input Capture</td><td>T1056</td><td>Intercepting developer prompts and AI-generated code</td></tr><tr><td>Data from Information Repositories: Code Repositories</td><td>T1213.003</td><td>Repository takeover via stolen GITHUB_TOKEN</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p><em>No domain IOCs published by sources</em></p>
+<h3>Full URL Paths</h3>
+<p><em>No full URL path IOCs published by sources</em></p>
+<h3>Splunk Format</h3>
+<p><em>No network IOCs published by sources</em></p>
+<h3>File Hashes</h3>
+<p><em>No file hash IOCs published by sources</em></p>
+<h3>Package Indicators</h3>
+<p><em>No package IOCs published by sources</em></p>
+<h2>Detection Recommendations</h2>
+<p>Scan all .cursorrules, .cursor/rules, .github/copilot-instructions.md, and AGENTS.md files in repositories for hidden Unicode characters. In Splunk, detect Unicode Tag Characters in committed files: <code>sourcetype=git_events action=push | rex field=diff &quot;[\x{E0001}-\x{E007F}]&quot; | where match(_raw, &quot;cursorrules|copilot-instructions|AGENTS.md&quot;)</code>. Monitor for Cursor processes making outbound connections to unexpected domains when Auto-Run mode is active. Audit GitHub audit logs for repository permission changes following Codespace sessions: <code>github.audit action=repo.access_granted | stats count by actor, repo</code>. Deploy pre-commit hooks to detect hidden Unicode characters in configuration files using AgentSeal or similar scanning tools. Review endpoint detection for Cursor process spawning child shell processes following web navigation events. Enforce Cursor version 2.0 or later across development environments to remediate CVE-2026-31854.</p>
+<h2>References</h2>
+<ul><li>[Pillar Security] New Vulnerability in GitHub Copilot and Cursor: How Hackers Can Weaponize Code Agents (2026) — https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents</li><li>[Orca Security] RoguePilot: Critical GitHub Copilot Vulnerability Exploit (2026) — https://orca.security/resources/blog/roguepilot-github-copilot-vulnerability/</li><li>[AgentSeal] We Scanned 50 Cursor Rules Files From GitHub. 6 Had Hidden Instructions (2026) — https://agentseal.org/blog/cursor-rules-hidden-instructions</li><li>[GitHub Advisory] CVE-2026-31854: Arbitrary Code Execution via Prompt Injection and Whitelist Bypass (2026) — https://github.com/cursor/cursor/security/advisories/GHSA-hf2x-r83r-qw5q</li><li>[SonarQube] Protecting Your AI Code: How SonarQube Defends Against the Rules File Backdoor (2026) — https://sonarsource.com/blog/protecting-your-ai-code</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
