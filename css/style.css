@@ -32,15 +32,15 @@
   --fd: 'Outfit', system-ui, sans-serif;
   --fm: 'DM Mono', 'Fira Code', monospace;
   --mw: 1240px;
+  --content-pad-x: 2rem;
   --rd: 10px;
   --rs: 6px;
   --tr: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --header-h: 64px;
-  --sticky-gap: 0.75rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 15px; scroll-behavior: smooth; overflow-x: hidden; }
+html { font-size: 15px; scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: var(--fd);
@@ -49,7 +49,7 @@ body {
   line-height: 1.7;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 
@@ -273,37 +273,19 @@ a:hover { color: var(--ab); }
 
 /* Filter bar */
 .filter-bar-wrap {
-  position: sticky;
-  top: calc(var(--header-h) + var(--sticky-gap));
-  z-index: 90;
   margin-bottom: 1.35rem;
-  padding: 0.25rem 0 0.45rem;
-  background:
-    linear-gradient(180deg,
-      rgba(12,10,18,.94) 0%,
-      rgba(12,10,18,.86) 72%,
-      rgba(12,10,18,0) 100%);
-  backdrop-filter: blur(10px);
+  position: relative;
 }
 
 .filter-bar {
   display: flex;
   gap: 0.45rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 0.15rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.filter-bar::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.15rem 0;
 }
 
 .filter-btn {
-  flex: 0 0 auto;
   font-family: var(--fd);
   font-size: 0.75rem;
   font-weight: 500;
@@ -314,6 +296,7 @@ a:hover { color: var(--ab); }
   color: var(--t3);
   cursor: pointer;
   transition: all var(--tr);
+  white-space: nowrap;
 }
 .filter-btn:hover,
 .filter-btn.active {
@@ -323,6 +306,29 @@ a:hover { color: var(--ab); }
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.03),
     0 8px 18px rgba(155,107,255,.10);
+}
+
+.filter-bar-wrap.is-stuck {
+  min-height: var(--filter-bar-height);
+}
+
+.filter-bar-wrap.is-stuck .filter-bar {
+  position: fixed;
+  top: var(--header-h);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(
+    calc(100vw - (var(--content-pad-x) * 2)),
+    calc(var(--mw) - (var(--content-pad-x) * 2))
+  );
+  z-index: 90;
+  padding: 0.25rem 0 0.45rem;
+  background:
+    linear-gradient(180deg,
+      rgba(12,10,18,.94) 0%,
+      rgba(12,10,18,.88) 72%,
+      rgba(12,10,18,0) 100%);
+  backdrop-filter: blur(10px);
 }
 
 /* Post cards */
@@ -807,14 +813,16 @@ a:hover { color: var(--ab); }
   .page-title { font-size: 1.35rem; }
   .header-inner { padding: 0 1rem; }
   .post-content { padding: 1.5rem; }
-  .filter-bar-wrap {
-    top: calc(var(--header-h) + 0.45rem);
-    margin-bottom: 1rem;
-    padding: 0.15rem 0 0.35rem;
-  }
+  :root { --content-pad-x: 1rem; }
+  .filter-bar-wrap { margin-bottom: 1rem; }
+  .filter-bar { gap: 0.38rem; }
   .filter-btn {
     font-size: 0.72rem;
     padding: 0.38rem 0.85rem;
+  }
+  .filter-bar-wrap.is-stuck .filter-bar {
+    top: var(--header-h);
+    padding: 0.15rem 0 0.35rem;
   }
   .scroll-top-btn {
     width: 40px;

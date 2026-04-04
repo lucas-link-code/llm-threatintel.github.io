@@ -35,7 +35,7 @@ Automated daily collection requires a valid Anthropic secret in the repo and suf
 - Animated neural canvas removed; `#neural-bg` is static CSS gradient and subtle pattern for performance.
 - Favicon: LLM purple logo SVG, not thunder.
 - Post card excerpts truncated in `js/app.js` (e.g. ~220 chars) for feed previews.
-- `html, body { overflow-x: hidden }` to stop mobile horizontal rubber-band drift.
+- `html, body { overflow-x: clip }` to stop mobile horizontal rubber-band drift without interfering with sticky positioning.
 - Mobile header: sticky flush top; stat tiles responsive grid adjusted earlier.
 
 ## Ops note

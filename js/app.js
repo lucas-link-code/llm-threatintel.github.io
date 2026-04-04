@@ -9,10 +9,11 @@ const App = {
   iocsData: null,
   blogIndex: null,
   currentFilter: 'all',
-  homeTagOrder: ['supply-chain', 'malicious-tool', 'nation-state', 'shadow-ai', 'llmjacking', 'malware', 'apt'],
+  homeTagOrder: ['malicious-tool', 'supply-chain', 'malware', 'shadow-ai', 'llmjacking', 'nation-state', 'apt'],
   actorFilter: 'all',
   actorSearch: '',
   selectedActorId: null,
+  cleanupHomeFilterBar: null,
   scrollTopButtonHandler: null,
   scrollTopButtonBound: false,
   metaDefaults: {
@@ -101,6 +102,9 @@ const App = {
   route() {
     const hash = window.location.hash || '#home';
     const [page, ...params] = hash.slice(1).split('/');
+
+    this.cleanupHomeFilterBar?.();
+    this.cleanupHomeFilterBar = null;
 
     document.querySelectorAll('.site-nav a').forEach(a => {
       a.classList.toggle('active', a.getAttribute('href') === '#' + page);
@@ -377,6 +381,43 @@ const App = {
     });
 
     this.filterPosts();
+    this.setupHomeFilterBar(container);
+  },
+
+  setupHomeFilterBar(container) {
+    const wrap = container.querySelector('.filter-bar-wrap');
+    const bar = wrap?.querySelector('.filter-bar');
+    if (!wrap || !bar) return;
+    const getTopOffset = () => {
+      return document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
+    };
+
+    const syncFilterBar = () => {
+      wrap.style.setProperty('--filter-bar-height', `${bar.offsetHeight}px`);
+      wrap.classList.toggle('is-stuck', wrap.getBoundingClientRect().top <= getTopOffset());
+    };
+
+    const handleScroll = () => syncFilterBar();
+    const handleResize = () => syncFilterBar();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    let resizeObserver = null;
+    if ('ResizeObserver' in window) {
+      resizeObserver = new ResizeObserver(() => syncFilterBar());
+      resizeObserver.observe(bar);
+    }
+
+    requestAnimationFrame(syncFilterBar);
+
+    this.cleanupHomeFilterBar = () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      resizeObserver?.disconnect();
+      wrap.classList.remove('is-stuck');
+      wrap.style.removeProperty('--filter-bar-height');
+    };
   },
 
   renderPostCards(posts) {

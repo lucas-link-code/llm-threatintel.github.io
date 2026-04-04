@@ -1,0 +1,215 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "LLM LLM ThreatIntel" [ref=e4] [cursor=pointer]:
+        - /url: "#home"
+        - generic [ref=e5]: LLM
+        - generic [ref=e6]: LLM ThreatIntel
+      - navigation [ref=e7]:
+        - link "Intel Feed" [ref=e8] [cursor=pointer]:
+          - /url: "#home"
+        - link "Threat Actors" [ref=e9] [cursor=pointer]:
+          - /url: "#actors"
+        - link "IOC Feed" [ref=e10] [cursor=pointer]:
+          - /url: "#ioc-feed"
+        - link "Blog" [ref=e11] [cursor=pointer]:
+          - /url: "#blog"
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: "#about"
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e17]: OPERATIONAL
+      - generic [ref=e18]:
+        - generic [ref=e19]: Updated
+        - generic [ref=e20]: 2026-04-04
+      - generic [ref=e21]:
+        - generic [ref=e22]: Active IOCs
+        - generic [ref=e23]: "37"
+      - generic [ref=e24]:
+        - generic [ref=e25]: Actors
+        - generic [ref=e26]: "21"
+    - generic [ref=e27]:
+      - generic [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: "19"
+        - generic [ref=e30]: Intel Reports
+      - generic [ref=e31] [cursor=pointer]:
+        - generic [ref=e32]: "21"
+        - generic [ref=e33]: Threat Actors
+      - generic [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: "37"
+        - generic [ref=e36]: Active IOCs
+      - generic [ref=e37] [cursor=pointer]:
+        - generic [ref=e38]: "41"
+        - generic [ref=e39]: Total IOCs
+    - heading "// Latest Intelligence" [level=1] [ref=e40]
+    - paragraph [ref=e41]: Automated GenAI and LLM threat intelligence feed for defenders
+    - group "Post category filters" [ref=e43]:
+      - button "All" [ref=e44] [cursor=pointer]
+      - button "Supply Chain" [ref=e45] [cursor=pointer]
+      - button "Malicious Tool" [ref=e46] [cursor=pointer]
+      - button "Nation State" [ref=e47] [cursor=pointer]
+      - button "Shadow AI" [ref=e48] [cursor=pointer]
+      - button "LLMjacking" [ref=e49] [cursor=pointer]
+      - button "Malware" [ref=e50] [cursor=pointer]
+      - button "APT" [ref=e51] [cursor=pointer]
+    - generic [ref=e52]:
+      - generic [ref=e53] [cursor=pointer]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: 2026-04-04
+          - generic [ref=e56]: Shadow AI
+          - generic [ref=e57]: Malware
+          - generic [ref=e58]: TLP:CLEAR
+        - generic [ref=e59]: Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)
+        - generic [ref=e60]: On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 on npm; within hours, researcher Chaofan Shou discovered the sourcemap and posted it on X, kicking off a global...
+      - generic [ref=e61] [cursor=pointer]:
+        - generic [ref=e62]:
+          - generic [ref=e63]: 2026-04-04
+          - generic [ref=e64]: Shadow AI
+          - generic [ref=e65]: Malware
+          - generic [ref=e66]: TLP:CLEAR
+        - generic [ref=e67]: "CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure"
+        - generic [ref=e68]: A cross-session information disclosure vulnerability in the awesome-llm-apps Streamlit-based GitHub MCP Agent stores user-supplied API tokens in process-wide environment variables without proper session isolation,...
+      - generic [ref=e69] [cursor=pointer]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: 2026-04-04
+          - generic [ref=e72]: Malicious Tool
+          - generic [ref=e73]: Malware
+          - generic [ref=e74]: TLP:CLEAR
+        - generic [ref=e75]: "CVE-2026-33654: Nanobot AI Assistant Indirect Prompt Injection via Email Channel"
+        - generic [ref=e76]: An indirect prompt injection vulnerability in nanobot's email channel processing module allows remote, unauthenticated attackers to execute arbitrary LLM instructions and system tools without user interaction by sending...
+      - generic [ref=e77] [cursor=pointer]:
+        - generic [ref=e78]:
+          - generic [ref=e79]: 2026-04-02
+          - generic [ref=e80]: Malware
+          - generic [ref=e81]: TLP:CLEAR
+        - generic [ref=e82]: "McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users"
+        - generic [ref=e83]: McAfee Labs documented a large-scale cryptominer distribution campaign active in January 2026 where attackers used LLM-assisted 'vibe coding' to generate parts of the malicious PowerShell kill chain, distributing 443...
+      - generic [ref=e84] [cursor=pointer]:
+        - generic [ref=e85]:
+          - generic [ref=e86]: 2026-04-02
+          - generic [ref=e87]: Malware
+          - generic [ref=e88]: TLP:CLEAR
+        - generic [ref=e89]: "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer"
+        - generic [ref=e90]: "Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI..."
+      - generic [ref=e91] [cursor=pointer]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: 2026-04-02
+          - generic [ref=e94]: Malware
+          - generic [ref=e95]: Shadow AI
+          - generic [ref=e96]: TLP:CLEAR
+        - generic [ref=e97]: "Unit 42 Discloses 'Double Agent' Vulnerability in GCP Vertex AI: Overprivileged Service Agents Enable Cloud Data Exfiltration and Google Internal Code Access"
+        - generic [ref=e98]: Palo Alto Networks Unit 42 disclosed on March 31, 2026 that the Per-Project, Per-Product Service Agent (P4SA) assigned by default to Vertex AI Agent Engine deployments carries excessive OAuth permissions, allowing a...
+      - generic [ref=e99] [cursor=pointer]:
+        - generic [ref=e100]:
+          - generic [ref=e101]: 2026-04-02
+          - generic [ref=e102]: APT
+          - generic [ref=e103]: Malware
+          - generic [ref=e104]: Nation State
+          - generic [ref=e105]: TLP:CLEAR
+        - generic [ref=e106]: "APT36 (Transparent Tribe) Adopts AI 'Vibeware' Assembly Line: Pakistan-Linked APT Floods Indian Government Targets with Polyglot Implants"
+        - generic [ref=e107]: Bitdefender Labs confirmed that APT36 (Transparent Tribe), a Pakistan-linked state-sponsored group, has pivoted to an AI-assisted malware development model dubbed 'vibeware', using large language models to mass-produce...
+      - generic [ref=e108] [cursor=pointer]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: 2026-04-02
+          - generic [ref=e111]: Malware
+          - generic [ref=e112]: TLP:CLEAR
+        - generic [ref=e113]: "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack"
+        - generic [ref=e114]: IBM X-Force discovered 'Slopoly', a likely LLM-generated PowerShell backdoor deployed by the Hive0163 ransomware group during a live intrusion in early 2026, marking the first confirmed use of AI-generated malware in an...
+      - generic [ref=e115] [cursor=pointer]:
+        - generic [ref=e116]:
+          - generic [ref=e117]: 2026-04-02
+          - generic [ref=e118]: Malware
+          - generic [ref=e119]: Shadow AI
+          - generic [ref=e120]: Supply Chain
+          - generic [ref=e121]: TLP:CLEAR
+        - generic [ref=e122]: "TeamPCP CanisterWorm Evolves: Kubernetes Wiper Deployed Against Iranian Systems via npm Supply Chain"
+        - generic [ref=e123]: TeamPCP deployed a geopolitically targeted destructive wiper payload via its CanisterWorm npm supply chain campaign, first observed on March 20, 2026, that wipes entire Kubernetes clusters when it detects systems...
+      - generic [ref=e124] [cursor=pointer]:
+        - generic [ref=e125]:
+          - generic [ref=e126]: 2026-04-01
+          - generic [ref=e127]: Malicious Tool
+          - generic [ref=e128]: Shadow AI
+          - generic [ref=e129]: Supply Chain
+          - generic [ref=e130]: TLP:CLEAR
+        - generic [ref=e131]: "AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover"
+        - generic [ref=e132]: Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious...
+      - generic [ref=e133] [cursor=pointer]:
+        - generic [ref=e134]:
+          - generic [ref=e135]: 2026-04-01
+          - generic [ref=e136]: LLMjacking
+          - generic [ref=e137]: Malicious Tool
+          - generic [ref=e138]: Shadow AI
+          - generic [ref=e139]: Supply Chain
+          - generic [ref=e140]: TLP:CLEAR
+        - generic [ref=e141]: "MCP Protocol Security Crisis: Tool Poisoning, Shadow Servers, and Agentic AI Attack Surface"
+        - generic [ref=e142]: The Model Context Protocol has become a high-value attack surface with 43% of MCP servers vulnerable to command injection and OWASP publishing a dedicated MCP Top 10 risk framework. Operation Bizarre Bazaar demonstrated...
+      - generic [ref=e143] [cursor=pointer]:
+        - generic [ref=e144]:
+          - generic [ref=e145]: 2026-04-01
+          - generic [ref=e146]: Malware
+          - generic [ref=e147]: Shadow AI
+          - generic [ref=e148]: Supply Chain
+          - generic [ref=e149]: TLP:CLEAR
+        - generic [ref=e150]: "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised"
+        - generic [ref=e151]: "TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each..."
+      - generic [ref=e152] [cursor=pointer]:
+        - generic [ref=e153]:
+          - generic [ref=e154]: 2026-04-01
+          - generic [ref=e155]: APT
+          - generic [ref=e156]: Malware
+          - generic [ref=e157]: Nation State
+          - generic [ref=e158]: Supply Chain
+          - generic [ref=e159]: TLP:CLEAR
+        - generic [ref=e160]: "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT"
+        - generic [ref=e161]: Google Threat Intelligence Group attributes the Axios npm package compromise to UNC1069, a North Korea-nexus financially motivated threat actor, based on infrastructure overlaps and use of WAVESHAPER.V2 backdoor. The...
+      - generic [ref=e162] [cursor=pointer]:
+        - generic [ref=e163]:
+          - generic [ref=e164]: 2026-03-30
+          - generic [ref=e165]: Supply Chain
+          - generic [ref=e166]: TLP:CLEAR
+        - generic [ref=e167]: TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages
+        - generic [ref=e168]: Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.
+      - generic [ref=e169] [cursor=pointer]:
+        - generic [ref=e170]:
+          - generic [ref=e171]: 2026-03-28
+          - generic [ref=e172]: APT
+          - generic [ref=e173]: Malware
+          - generic [ref=e174]: TLP:CLEAR
+        - generic [ref=e175]: "LAMEHUG: First Malware to Integrate Live LLM for Dynamic C2 Command Generation"
+        - generic [ref=e176]: APT28-attributed malware LAMEHUG represents a milestone in offensive AI adoption. It is the first publicly documented sample that calls an LLM API at runtime to dynamically generate C2 commands based on host...
+      - generic [ref=e177] [cursor=pointer]:
+        - generic [ref=e178]:
+          - generic [ref=e179]: 2026-03-25
+          - generic [ref=e180]: Nation State
+          - generic [ref=e181]: TLP:CLEAR
+        - generic [ref=e182]: Russian GenAI-Assisted FortiGate Mass Exploitation Campaign
+        - generic [ref=e183]: Russian-linked threat actors are leveraging generative AI to accelerate vulnerability research and exploit development targeting FortiGate VPN appliances at scale.
+      - generic [ref=e184] [cursor=pointer]:
+        - generic [ref=e185]:
+          - generic [ref=e186]: 2026-03-20
+          - generic [ref=e187]: Malicious Tool
+          - generic [ref=e188]: TLP:CLEAR
+        - generic [ref=e189]: "The Malicious LLM Ecosystem: WormGPT, FraudGPT, GhostGPT and Beyond"
+        - generic [ref=e190]: A comprehensive overview of the underground malicious LLM-as-a-service ecosystem, tracking tool availability, pricing, capabilities, and evolution from mid-2023 through early 2026.
+      - generic [ref=e191] [cursor=pointer]:
+        - generic [ref=e192]:
+          - generic [ref=e193]: 2026-03-15
+          - generic [ref=e194]: LLMjacking
+          - generic [ref=e195]: TLP:CLEAR
+        - generic [ref=e196]: "LLMjacking Operations and Storm-2139: Stolen API Keys at Scale"
+        - generic [ref=e197]: Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not...
+      - generic [ref=e198] [cursor=pointer]:
+        - generic [ref=e199]:
+          - generic [ref=e200]: 2026-03-10
+          - generic [ref=e201]: Shadow AI
+          - generic [ref=e202]: TLP:CLEAR
+        - generic [ref=e203]: "Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage"
+        - generic [ref=e204]: Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.
+  - button:
+    - generic: ↑
+  - contentinfo [ref=e205]:
+    - text: LLM ThreatIntel — Automated GenAI Threat Intelligence
+    - generic [ref=e206]:
+      - text: Defensive research only · TLP:CLEAR · Automated agentic search · llm-threatintel.com ·
+      - link "Support the project" [ref=e207] [cursor=pointer]:
+        - /url: https://buymeacoffee.com/lucaslinkowski
