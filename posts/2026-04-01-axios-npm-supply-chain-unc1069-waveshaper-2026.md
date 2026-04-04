@@ -1,7 +1,6 @@
 # Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT
 
 **Date:** 2026-04-01
-**TLP:** TLP:CLEAR
 **Tags:** supply-chain, npm, malware, nation-state, attribution
 
 ## Executive Summary

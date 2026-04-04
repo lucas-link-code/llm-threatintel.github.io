@@ -76,7 +76,7 @@
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users</h1>
-<p><strong>Date:</strong> 2026-04-02<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> vibe-coding, cryptominer, ai-generated-malware, dll-sideloading, infostealer</p>
+<p><strong>Date:</strong> 2026-04-02<br><strong>Tags:</strong> vibe-coding, cryptominer, ai-generated-malware, dll-sideloading, infostealer</p>
 <h2>Executive Summary</h2>
 <p>McAfee Labs documented a large-scale cryptominer distribution campaign active in January 2026 where attackers used LLM-assisted &#x27;vibe coding&#x27; to generate parts of the malicious PowerShell kill chain, distributing 443 malicious ZIP files across Discord, SourceForge, FOSSHub, and MediaFire impersonating AI tools, game mods, and software utilities. The campaign deployed WinUpdateHelper.dll via DLL sideloading, establishing persistence under the name &#x27;Microsoft Console Host&#x27; and mining Ravencoin, Zephyr, and Monero. In some infections the final payload was SalatStealer or a Mesh Agent RAT. Defenders should alert on WinUpdateHelper.dll in non-system directories and monitor for anomalous cryptocurrency mining processes.</p>
 <h2>Campaign Summary</h2>

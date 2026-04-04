@@ -18,6 +18,7 @@ import os
 import sys
 import json
 import re
+import subprocess
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -199,7 +200,6 @@ def generate_post_markdown(finding):
     lines.append(f"# {finding['title']}")
     lines.append("")
     lines.append(f"**Date:** {TODAY}")
-    lines.append(f"**TLP:** {finding.get('tlp', 'TLP:CLEAR')}")
     lines.append(f"**Tags:** {', '.join(finding.get('tags', []))}")
     lines.append("")
 
@@ -625,6 +625,7 @@ def main():
         sys.exit(0)
 
     # Process findings
+    any_new_post = False
     for i, finding in enumerate(findings, 1):
         print(f"\nProcessing {i}/{len(findings)}: {finding.get('title', 'Untitled')}")
         
@@ -637,9 +638,18 @@ def main():
             post_path = POSTS_DIR / filename
             post_path.write_text(markdown)
             print(f"  Created post: {post_path}")
+            any_new_post = True
 
         update_actors(finding)
         update_iocs(finding)
+
+    if any_new_post:
+        print("\nGenerating static post pages, sitemap.xml, rss.xml...")
+        subprocess.run(
+            [sys.executable, str(REPO_ROOT / "scripts" / "build_meta.py")],
+            cwd=str(REPO_ROOT),
+            check=True,
+        )
 
     print(f"\n{'='*60}")
     print(f"Collection complete. {len(findings)} report(s) generated.")

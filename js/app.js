@@ -9,9 +9,12 @@ const App = {
   iocsData: null,
   blogIndex: null,
   currentFilter: 'all',
+  homeTagOrder: ['supply-chain', 'malicious-tool', 'nation-state', 'shadow-ai', 'llmjacking', 'malware', 'apt'],
   actorFilter: 'all',
   actorSearch: '',
   selectedActorId: null,
+  scrollTopButtonHandler: null,
+  scrollTopButtonBound: false,
   metaDefaults: {
     siteName: 'LLM ThreatIntel',
     siteUrl: 'https://llm-threatintel.com',
@@ -22,6 +25,7 @@ const App = {
   async init() {
     await this.loadData();
     this.setupNav();
+    this.initScrollTopButton();
     this.route();
     window.addEventListener('hashchange', () => this.route());
   },
@@ -161,6 +165,33 @@ const App = {
         this.renderHome(content);
     }
     window.scrollTo(0, 0);
+    this.scrollTopButtonHandler?.();
+  },
+
+  initScrollTopButton() {
+    const btn = document.getElementById('scroll-top-btn');
+    if (!btn || this.scrollTopButtonBound) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const toggleVisibility = () => {
+      const shouldShow = window.scrollY > 400;
+      btn.classList.toggle('visible', shouldShow);
+      btn.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+      btn.tabIndex = shouldShow ? 0 : -1;
+    };
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+    this.scrollTopButtonHandler = toggleVisibility;
+    this.scrollTopButtonBound = true;
+    toggleVisibility();
   },
 
   // ---- DEFANGING ----
@@ -301,7 +332,16 @@ const App = {
     const posts = this.postsIndex.posts;
     const activeIOCs = this.iocsData ? this.iocsData.iocs.filter(i => i.status === 'active').length : 0;
     const activeActors = this.actorsData ? this.actorsData.entries.filter(e => e.status === 'active').length : 0;
-    const allTags = [...new Set(posts.flatMap(p => p.tags))];
+    const discoveredTags = [...new Set(posts.flatMap(p => p.tags))];
+    const allTags = [
+      ...this.homeTagOrder.filter(tag => discoveredTags.includes(tag)),
+      ...discoveredTags.filter(tag => !this.homeTagOrder.includes(tag))
+    ];
+    const activeFilter = this.currentFilter === 'all' || allTags.includes(this.currentFilter)
+      ? this.currentFilter
+      : 'all';
+
+    this.currentFilter = activeFilter;
 
     container.innerHTML = `
       <div class="status-bar">
@@ -318,9 +358,11 @@ const App = {
       </div>
       <h1 class="page-title"><span class="title-accent">//</span> Latest Intelligence</h1>
       <p class="page-subtitle">Automated GenAI and LLM threat intelligence feed for defenders</p>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        ${allTags.map(tag => `<button class="filter-btn" data-filter="${tag}">${this.formatTag(tag)}</button>`).join('')}
+      <div class="filter-bar-wrap">
+        <div class="filter-bar" role="group" aria-label="Post category filters" aria-controls="posts-grid">
+          <button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" data-filter="all">All</button>
+          ${allTags.map(tag => `<button class="filter-btn ${activeFilter === tag ? 'active' : ''}" data-filter="${tag}">${this.formatTag(tag)}</button>`).join('')}
+        </div>
       </div>
       <div class="posts-grid" id="posts-grid">${this.renderPostCards(posts)}</div>
     `;
@@ -333,6 +375,8 @@ const App = {
         this.filterPosts();
       });
     });
+
+    this.filterPosts();
   },
 
   renderPostCards(posts) {

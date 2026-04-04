@@ -1,7 +1,6 @@
 # MCP Protocol Security Crisis: Tool Poisoning, Shadow Servers, and Agentic AI Attack Surface
 
 **Date:** 2026-04-01
-**TLP:** TLP:CLEAR
 **Tags:** supply-chain, shadow-ai, llmjacking, malicious-tool
 
 ## Executive Summary

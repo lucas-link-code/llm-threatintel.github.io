@@ -1,7 +1,6 @@
 # TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised
 
 **Date:** 2026-04-01
-**TLP:** TLP:CLEAR
 **Tags:** supply-chain, pypi, ai-ml, credential-theft, multi-stage
 
 ## Executive Summary

@@ -1,7 +1,6 @@
 # Unit 42 Discloses 'Double Agent' Vulnerability in GCP Vertex AI: Overprivileged Service Agents Enable Cloud Data Exfiltration and Google Internal Code Access
 
 **Date:** 2026-04-02
-**TLP:** TLP:CLEAR
 **Tags:** agentic-ai, cloud-security, gcp, vertex-ai, credential-theft, privilege-escalation
 
 ## Executive Summary

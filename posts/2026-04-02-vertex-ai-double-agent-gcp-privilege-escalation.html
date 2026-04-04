@@ -78,7 +78,7 @@
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>Unit 42 Discloses &#x27;Double Agent&#x27; Vulnerability in GCP Vertex AI: Overprivileged Service Agents Enable Cloud Data Exfiltration and Google Internal Code Access</h1>
-<p><strong>Date:</strong> 2026-04-02<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> agentic-ai, cloud-security, gcp, vertex-ai, credential-theft, privilege-escalation</p>
+<p><strong>Date:</strong> 2026-04-02<br><strong>Tags:</strong> agentic-ai, cloud-security, gcp, vertex-ai, credential-theft, privilege-escalation</p>
 <h2>Executive Summary</h2>
 <p>Palo Alto Networks Unit 42 disclosed on March 31, 2026 that the Per-Project, Per-Product Service Agent (P4SA) assigned by default to Vertex AI Agent Engine deployments carries excessive OAuth permissions, allowing a compromised or malicious AI agent to extract GCP service credentials and pivot from the agent&#x27;s execution context into the customer&#x27;s broader cloud environment — granting unrestricted read access to Cloud Storage buckets and restricted Google-owned Artifact Registry repositories containing internal Vertex AI source code. Google has updated documentation and recommends Bring Your Own Service Account (BYOSA) to mitigate. Organizations using Vertex AI Agent Engine should immediately audit all deployed agents and enforce least-privilege service accounts.</p>
 <h2>Campaign Summary</h2>

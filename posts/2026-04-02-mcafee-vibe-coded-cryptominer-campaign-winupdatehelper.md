@@ -1,7 +1,6 @@
 # McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users
 
 **Date:** 2026-04-02
-**TLP:** TLP:CLEAR
 **Tags:** vibe-coding, cryptominer, ai-generated-malware, dll-sideloading, infostealer
 
 ## Executive Summary

@@ -80,7 +80,7 @@
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>TeamPCP CanisterWorm Evolves: Kubernetes Wiper Deployed Against Iranian Systems via npm Supply Chain</h1>
-<p><strong>Date:</strong> 2026-04-02<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, wiper, kubernetes, npm, cloud-infrastructure</p>
+<p><strong>Date:</strong> 2026-04-02<br><strong>Tags:</strong> supply-chain, wiper, kubernetes, npm, cloud-infrastructure</p>
 <h2>Executive Summary</h2>
 <p>TeamPCP deployed a geopolitically targeted destructive wiper payload via its CanisterWorm npm supply chain campaign, first observed on March 20, 2026, that wipes entire Kubernetes clusters when it detects systems configured for Iran (Asia/Tehran timezone or fa_IR locale). On non-Iranian Kubernetes nodes the same malware installs a persistent backdoor; on non-Kubernetes Iranian hosts it executes rm -rf / --no-preserve-root. Organizations running Kubernetes with npm-sourced packages in CI/CD pipelines are at risk of full cluster destruction; defenders must immediately audit npm lockfiles for CanisterWorm-linked packages and inspect Kubernetes for DaemonSets named &#x27;host-provisioner-std&#x27; or services named &#x27;pgmon&#x27; or &#x27;pgmonitor&#x27;.</p>
 <h2>Campaign Summary</h2>

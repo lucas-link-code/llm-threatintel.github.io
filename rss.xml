@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 03 Apr 2026 18:11:57 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 13:58:50 +0000</lastBuildDate>
     <item>
+      <title>Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)</title>
+      <link>https://llm-threatintel.com/posts/2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.html</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <description>On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 on npm; within hours, researcher Chaofan Shou discovered the sourcemap and posted it on X, kicking off a global rush to examine the de-obfuscated source code. Days later, Adversa AI discovered a critical vulnerability where malicious CLAUDE.md files can use prompt injection to generate 50+ subcommand pipelines that bypass Claude Code's safety permission system.</description>
+    </item>    <item>
+      <title>CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure</title>
+      <link>https://llm-threatintel.com/posts/2026-04-04-awesome-llm-apps-cross-session-token-disclosure.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-04-awesome-llm-apps-cross-session-token-disclosure.html</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A cross-session information disclosure vulnerability in the awesome-llm-apps Streamlit-based GitHub MCP Agent stores user-supplied API tokens in process-wide environment variables without proper session isolation, allowing attackers to retrieve sensitive GitHub Personal Access Tokens or LLM API keys from subsequent unauthenticated users since Streamlit serves multiple concurrent users from a single Python process.</description>
+    </item>    <item>
+      <title>CVE-2026-33654: Nanobot AI Assistant Indirect Prompt Injection via Email Channel</title>
+      <link>https://llm-threatintel.com/posts/2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654.html</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <description>An indirect prompt injection vulnerability in nanobot's email channel processing module allows remote, unauthenticated attackers to execute arbitrary LLM instructions and system tools without user interaction by sending malicious prompts via email, bypassing channel isolation in a stealthy zero-click attack (CVSS 8.9, HIGH severity).</description>
+    </item>    <item>
       <title>McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users</title>
       <link>https://llm-threatintel.com/posts/2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.html</guid>

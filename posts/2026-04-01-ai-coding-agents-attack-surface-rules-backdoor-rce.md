@@ -1,7 +1,6 @@
 # AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover
 
 **Date:** 2026-04-01
-**TLP:** TLP:CLEAR
 **Tags:** supply-chain, malicious-tool, shadow-ai
 
 ## Executive Summary

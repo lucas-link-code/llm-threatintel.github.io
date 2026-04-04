@@ -1,7 +1,6 @@
 # TeamPCP CanisterWorm Evolves: Kubernetes Wiper Deployed Against Iranian Systems via npm Supply Chain
 
 **Date:** 2026-04-02
-**TLP:** TLP:CLEAR
 **Tags:** supply-chain, wiper, kubernetes, npm, cloud-infrastructure
 
 ## Executive Summary

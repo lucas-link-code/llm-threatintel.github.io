@@ -93,7 +93,6 @@ Structure:
 # {Descriptive Title — be specific, not generic}
 
 **Date:** YYYY-MM-DD
-**TLP:** TLP:CLEAR
 **Tags:** {choose from: Supply Chain, Malware, Malicious Tool, Nation State, Shadow AI, LLMjacking, APT, Phishing, Model Poisoning, Prompt Injection, MCP Security}
 
 ## Executive Summary

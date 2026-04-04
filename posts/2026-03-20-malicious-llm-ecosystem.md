@@ -1,7 +1,6 @@
 # The Malicious LLM Ecosystem: WormGPT, FraudGPT, GhostGPT and Beyond
 
 **Date:** 2026-03-20
-**TLP:** TLP:CLEAR
 **Tags:** Malicious Tool, Underground Economy
 
 ## Executive Summary
