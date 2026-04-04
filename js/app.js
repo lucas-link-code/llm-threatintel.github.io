@@ -377,11 +377,28 @@ const App = {
         container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         this.filterPosts();
+
+        if (window.innerWidth <= 768) {
+          this.scrollActiveFilterIntoView(container);
+        }
       });
     });
 
     this.filterPosts();
     this.setupHomeFilterBar(container);
+  },
+
+  scrollActiveFilterIntoView(container, smooth = true) {
+    const activeBtn = container?.querySelector('.filter-bar .filter-btn.active');
+    const bar = container?.querySelector('.filter-bar-wrap.is-stuck .filter-bar');
+
+    if (!activeBtn || !bar) return;
+
+    activeBtn.scrollIntoView({
+      behavior: smooth ? 'smooth' : 'auto',
+      inline: 'center',
+      block: 'nearest'
+    });
   },
 
   setupHomeFilterBar(container) {
@@ -392,9 +409,19 @@ const App = {
       return document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
     };
 
+    let wasStuck = false;
+
     const syncFilterBar = () => {
       wrap.style.setProperty('--filter-bar-height', `${bar.offsetHeight}px`);
-      wrap.classList.toggle('is-stuck', wrap.getBoundingClientRect().top <= getTopOffset());
+
+      const isStuck = wrap.getBoundingClientRect().top <= getTopOffset();
+      wrap.classList.toggle('is-stuck', isStuck);
+
+      if (window.innerWidth <= 768 && isStuck && !wasStuck) {
+        this.scrollActiveFilterIntoView(container, false);
+      }
+
+      wasStuck = isStuck;
     };
 
     const handleScroll = () => syncFilterBar();

@@ -822,7 +822,20 @@ a:hover { color: var(--ab); }
   }
   .filter-bar-wrap.is-stuck .filter-bar {
     top: var(--header-h);
-    padding: 0.15rem 0 0.35rem;
+    padding: 0.2rem 0 0.35rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: calc(100vw - (var(--content-pad-x) * 2));
+  }
+  .filter-bar-wrap.is-stuck .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-bar-wrap.is-stuck .filter-btn {
+    flex: 0 0 auto;
   }
   .scroll-top-btn {
     width: 40px;
