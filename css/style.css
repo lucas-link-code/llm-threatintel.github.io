@@ -110,7 +110,7 @@ a:hover { color: var(--ab); }
 
 .logo-mark {
   width: 32px; height: 32px;
-  background: linear-gradient(135deg, #233246, #4f46e5, #60a5fa);
+  background: linear-gradient(135deg, #233246, #4f46e5, #8b5cf6);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -815,6 +815,8 @@ a:hover { color: var(--ab); }
   color: var(--ai);
 }
 .source-list li:last-child { border-bottom: none; }
+.source-list li a { color: var(--ai); }
+.source-list li a:hover { color: var(--ab); }
 
 /* Loading */
 .loading {
