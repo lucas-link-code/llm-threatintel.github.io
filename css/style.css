@@ -81,8 +81,8 @@ a:hover { color: var(--ab); }
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--bds);
-  backdrop-filter: blur(20px) saturate(180%);
-  background: rgba(10,14,20,.86);
+  backdrop-filter: blur(16px);
+  background: rgba(10,14,20,.88);
 }
 
 .header-inner {
@@ -146,9 +146,6 @@ a:hover { color: var(--ab); }
   color: var(--t1);
   background: rgba(36,52,71,.72);
   border-color: rgba(99,102,241,.22);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.02),
-    0 8px 18px rgba(0,0,0,.16);
 }
 
 .nav-toggle {
@@ -255,7 +252,7 @@ a:hover { color: var(--ab); }
   background: var(--bg3h);
   border-color: var(--bdg);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0,0,0,.28), 0 0 0 1px rgba(139,92,246,.05) inset;
+  box-shadow: 0 12px 32px rgba(0,0,0,.28);
 }
 .stat-card:hover::before { opacity: 1; }
 
