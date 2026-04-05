@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning | LLM ThreatIntel</title>
+  <meta name="description" content="30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from &quot;promising open standard&quot; to &quot;active threat surface&quot; faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-05-mcp-security-crisis-30-cves-437k-downloads.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning">
+  <meta property="og:description" content="30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from &quot;promising open standard&quot; to &quot;active threat surface&quot; faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-05-mcp-security-crisis-30-cves-437k-downloads.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning">
+  <meta property="article:published_time" content="2026-04-05T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-05T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning">
+  <meta name="twitter:description" content="30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from &quot;promising open standard&quot; to &quot;active threat surface&quot; faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
+  "description": "30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from \"promising open standard\" to \"active threat surface\" faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.",
+  "datePublished": "2026-04-05T00:00:00Z",
+  "dateModified": "2026-04-05T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-05-mcp-security-crisis-30-cves-437k-downloads.html",
+  "keywords": [
+    "malicious-tool",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-05</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning</h1>
+<p><strong>Date:</strong> 2026-04-05<br><strong>Tags:</strong> malicious-tool, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from &quot;promising open standard&quot; to &quot;active threat surface&quot; faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>MCP Protocol Ecosystem Exploitation &amp; AI Agent Supply Chain Poisoning</td></tr><tr><td>Attribution</td><td>Multiple threat actors (autonomous botnets, human operators) (confidence: medium)</td></tr><tr><td>Target</td><td>AI developers, Claude Code users, Cursor IDE users, MCP-integrated development environments</td></tr><tr><td>Vector</td><td>MCP server tool poisoning, prompt injection in tool metadata, trojanized npm/PyPI packages, Supply chain via connector registration</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-01-15</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Researchers demonstrated that the WhatsApp MCP Server was vulnerable to tool poisoning. By injecting malicious instructions into tool descriptions, attackers could trick AI agents into executing unintended operations — specifically, exfiltrating entire chat histories. This was one of the first publicly demonstrated MCP attacks and revealed a fundamental problem: AI agents trust tool descriptions implicitly. The attack required no authentication bypass or code exploitation. The AI agent simply followed the instructions it found in the tool metadata, treating them as authoritative. A separate supply chain attack involved a package masquerading as a legitimate Postmark MCP server. A single line of malicious code directed compromised MCP servers to blind-copy every outgoing email to the attackers — internal project memos, password resets, invoices. This is the 2026 equivalent of an npm supply chain compromise, but with an AI agent as the unwitting delivery mechanism. CVE-2025–6514 disclosed a critical OS command injection bug in mcp-remote, a popular OAuth proxy for connecting local MCP clients to remote servers. It affected over 437,000 environments and effectively turned any unpatched install into a supply chain backdoor capable of executing arbitrary commands, stealing API keys, cloud credentials, SSH keys, and Git repository contents.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Tool Poisoning</td><td>T1201</td><td>Malicious instructions embedded in MCP tool metadata descriptions</td></tr><tr><td>Prompt Injection</td><td>T1190</td><td>Indirect prompt injection via tool descriptions and external content</td></tr><tr><td>Supply Chain Compromise</td><td>T1195</td><td>Trojanized MCP packages on npm/PyPI, compromised registries</td></tr><tr><td>Command Injection</td><td>T1059.007</td><td>OS command injection in mcp-remote OAuth proxy (CVE-2025-6514)</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_30+ CVEs filed Jan–Feb 2026. Postmark imposter and tool-poisoning instances removed. mcp-remote patched but billions of deployments remain vulnerable. See MCP ecosystem registries for validation._</p>
+<h3>Full URL Paths</h3>
+<p>_30+ CVEs filed Jan–Feb 2026. Postmark imposter and tool-poisoning instances removed. mcp-remote patched but billions of deployments remain vulnerable. See MCP ecosystem registries for validation._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">mcp-remote (437K+ affected installations)
+axios (trojanized versions, March 31 2026)
+postmark-mcp-server (imposter package)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Audit all MCP server installations and validate tool descriptions against canonical registries; implement MCP server allowlisting and cryptographic verification (SLSA provenance); scan npm/PyPI for trojanized MCP connectors; monitor for command injection patterns in MCP logs (CVE-2025-6514 exploitation signatures); implement output filtering on MCP tool responses before forwarding to AI models; treat all MCP tool descriptions as untrusted input; maintain offline backups of tool registries to detect poisoning; revoke and rotate all credentials on systems using compromised MCP packages.</p>
+<h2>References</h2>
+<ul><li>[heyuan110.com] MCP Security 2026: 30 CVEs in 60 Days — What Went Wrong (2026-03-10) — https://www.heyuan110.com/posts/ai/2026-03-10-mcp-security-2026/</li><li>[Unit42 / Palo Alto Networks] New Prompt Injection Attack Vectors Through MCP Sampling (2025-12-05) — https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/</li><li>[DEV Community] MCP Connector Poisoning: How Compromised npm Packages Hijack Your AI Agent (2026-04-04) — https://dev.to/toniantunovic/mcp-connector-poisoning-how-compromised-npm-packages-hijack-your-ai-agent-3ha0</li><li>[Medium / InstaTunnel] Securing MCP Servers: The 2026 Guide to AI Tool Tunneling (2026-03-01) — https://medium.com/@instatunnel/securing-mcp-servers-the-2026-guide-to-ai-tool-tunneling-aafa113b08db</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

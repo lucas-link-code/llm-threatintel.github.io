@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-04-05-mercor-data-vendor-ai-training-breach",
+      "title": "Mercor Data Vendor Breach: AI Training Data and Model Development Secrets Exposed; Meta and OpenAI Pause Operations",
+      "date": "2026-04-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:AMBER",
+      "excerpt": "Major AI labs are investigating a security incident that impacted Mercor, a leading data vendor. The incident could have exposed key data about how they train AI models. Major AI labs, including Meta and OpenAI, are investigating a security incident at Mercor while it investigates a security breach; the incident could have exposed key data about how they train AI models. The breach represents a critical threat to the AI supply chain, as Mercor provides datasets and research infrastructure used by leading AI companies for model training and evaluation.",
+      "file": "2026-04-05-mercor-data-vendor-ai-training-breach.md"
+    },
+    {
+      "id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
+      "title": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
+      "date": "2026-04-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from \"promising open standard\" to \"active threat surface\" faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.",
+      "file": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads.md"
+    },
+    {
+      "id": "2026-04-05-claude-code-source-leak-adversa-post-leak-rce",
+      "title": "Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)",
+      "date": "2026-04-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 to npm. Within days of each other, Anthropic first leaked the source code to Claude Code, and then a critical vulnerability was found by Adversa AI. Within hours, researcher Chaofan Shou discovered the sourcemap and posted a link on X. A genuine and critical vulnerability has now been discovered in Claude Code proper by Adversa AI Red Team. Claude Code is a 519,000+ line TypeScript application that allows developers to interact with Claude directly from the command line.",
+      "file": "2026-04-05-claude-code-source-leak-adversa-post-leak-rce.md"
+    },
+    {
       "id": "2026-04-04-claude-code-source-leak-critical-adversa-vulnerability",
       "title": "Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)",
       "date": "2026-04-04",

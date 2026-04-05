@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-04",
+  "last_updated": "2026-04-05",
   "entries": [
     {
       "id": "operation-bizarre-bazaar",
@@ -472,6 +472,65 @@
       ],
       "description": "Unknown actors are likely weaponizing the exposed Claude Code source and the Adversa AI-disclosed permission bypass to craft malicious repository configurations that trick Claude Code users into executing arbitrary commands via prompt injection embedded in CLAUDE.md.",
       "attribution": "Unattributed (active exploitation expected post-leak)"
+    },
+    {
+      "id": "anthropic-accidental",
+      "names": [
+        "Anthropic (accidental)"
+      ],
+      "type": "malicious_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "npm package manager"
+      ],
+      "ttps": [
+        "T1190 - Software Exploitation",
+        "T1533 - Data from Cloud Storage"
+      ],
+      "description": "Anthropic's mistaken inclusion of a sourcemap in the Claude Code npm package led to full source code exposure. The root cause was an unintended debugging artifact in the v2.1.88 release, which was rapidly weaponized by security researchers and attackers to discover and exploit post-leak vulnerabilities.",
+      "attribution": "Anthropic Internal Process Error"
+    },
+    {
+      "id": "mcp-ecosystem-threat-actors-unknown-attribution",
+      "names": [
+        "MCP Ecosystem Threat Actors (Unknown Attribution)",
+        "AI agent automation botnets"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "npm package registry",
+        "PyPI",
+        "GitHub MCP server marketplace"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1201 - Tool Poisoning",
+        "T1190 - Prompt Injection"
+      ],
+      "description": "A coordinated campaign targeting the nascent MCP ecosystem has embedded malicious instructions directly into tool metadata, impersonated legitimate MCP packages, and exploited proxy vulnerabilities affecting hundreds of thousands of development environments. The attack pattern indicates sophisticated understanding of AI agent architecture and the implicit trust model underlying MCP tool registration.",
+      "attribution": "Unattributed (likely financially motivated, possibly nation-state experimentation)"
+    },
+    {
+      "id": "unknown-mercor-breach",
+      "names": [
+        "Unknown (Mercor Breach)"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Data vendor compromise"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1030 - Data Exfiltration",
+        "T1190 - Unauthorized Data Access"
+      ],
+      "description": "A breach of Mercor, a leading AI training data vendor, has exposed sensitive information about how major AI labs (Meta, OpenAI) develop and train their models. The incident is under investigation by the affected companies and represents a critical supply-chain vulnerability in the AI development ecosystem.",
+      "attribution": "Unattributed (motivations unclear: financial, espionage, or insider threat)"
     }
   ]
 }

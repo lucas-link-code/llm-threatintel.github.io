@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-04",
+  "last_updated": "2026-04-05",
   "iocs": [
     {
       "value": "silver.inc",
@@ -368,6 +368,42 @@
       "first_seen": "2026-04-04",
       "source": "SecurityWeek",
       "campaign": "claude-code-source-leak-critical-adversa-vulnerability",
+      "status": "active"
+    },
+    {
+      "value": "claude-code@2.1.88",
+      "type": "package",
+      "context": "Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)",
+      "first_seen": "2026-04-05",
+      "source": "SecurityWeek",
+      "campaign": "claude-code-source-leak-adversa-post-leak-rce",
+      "status": "active"
+    },
+    {
+      "value": "mcp-remote (437K+ affected installations)",
+      "type": "package",
+      "context": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
+      "first_seen": "2026-04-05",
+      "source": "heyuan110.com",
+      "campaign": "mcp-security-crisis-30-cves-437k-downloads",
+      "status": "active"
+    },
+    {
+      "value": "axios (trojanized versions, March 31 2026)",
+      "type": "package",
+      "context": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
+      "first_seen": "2026-04-05",
+      "source": "heyuan110.com",
+      "campaign": "mcp-security-crisis-30-cves-437k-downloads",
+      "status": "active"
+    },
+    {
+      "value": "postmark-mcp-server (imposter package)",
+      "type": "package",
+      "context": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
+      "first_seen": "2026-04-05",
+      "source": "heyuan110.com",
+      "campaign": "mcp-security-crisis-30-cves-437k-downloads",
       "status": "active"
     }
   ]
