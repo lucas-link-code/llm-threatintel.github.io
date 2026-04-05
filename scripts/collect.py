@@ -531,7 +531,7 @@ def main():
             model=MODEL,
             max_tokens=16000,
             system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
-            tools=[{"type": "web_search_20260209", "name": "web_search"}],
+            tools=[{"type": "web_search_20260209", "name": "web_search", "allowed_callers": ["direct"]}],
             messages=[{"role": "user", "content": prompt}]
         ) as stream:
             response = stream.get_final_message()
