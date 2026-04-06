@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-05",
+  "last_updated": "2026-04-06",
   "iocs": [
     {
       "value": "silver.inc",
@@ -404,6 +404,51 @@
       "first_seen": "2026-04-05",
       "source": "heyuan110.com",
       "campaign": "mcp-security-crisis-30-cves-437k-downloads",
+      "status": "active"
+    },
+    {
+      "value": "7658962ae060a222c0058cd4e979bfa1",
+      "type": "md5",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
+      "first_seen": "2026-04-06",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "axios-npm-unc1069-rat-march-2026",
+      "status": "active"
+    },
+    {
+      "value": "142.11.206.73",
+      "type": "ip",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
+      "first_seen": "2026-04-06",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "axios-npm-unc1069-rat-march-2026",
+      "status": "active"
+    },
+    {
+      "value": "axios@1.14.1",
+      "type": "package",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
+      "first_seen": "2026-04-06",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "axios-npm-unc1069-rat-march-2026",
+      "status": "active"
+    },
+    {
+      "value": "axios@0.30.4",
+      "type": "package",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
+      "first_seen": "2026-04-06",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "axios-npm-unc1069-rat-march-2026",
+      "status": "active"
+    },
+    {
+      "value": "plain-crypto-js@4.2.1",
+      "type": "package",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
+      "first_seen": "2026-04-06",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "axios-npm-unc1069-rat-march-2026",
       "status": "active"
     }
   ]

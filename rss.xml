@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 05 Apr 2026 11:46:48 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 05:54:10 +0000</lastBuildDate>
     <item>
+      <title>Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account</title>
+      <link>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <description>On March 31, 2026, an attacker introduced malicious dependencies into axios npm package releases 1.14.1 and 0.30.4 between 00:21 and 03:20 UTC. Axios, the JavaScript ecosystem's most popular HTTP client with over 100 million weekly npm downloads, was weaponized as a delivery vehicle for a cross-platform remote access trojan (RAT). Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus, financially motivated threat actor.</description>
+    </item>    <item>
       <title>Mercor Data Vendor Breach: AI Training Data and Model Development Secrets Exposed; Meta and OpenAI Pause Operations</title>
       <link>https://llm-threatintel.com/posts/2026-04-05-mercor-data-vendor-ai-training-breach.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-05-mercor-data-vendor-ai-training-breach.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-03-25-russian-fortigate-genai.html</guid>
       <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
       <description>Russian-linked threat actors are leveraging generative AI to accelerate vulnerability research and exploit development targeting FortiGate VPN appliances at scale.</description>
-    </item>    <item>
-      <title>The Malicious LLM Ecosystem: WormGPT, FraudGPT, GhostGPT and Beyond</title>
-      <link>https://llm-threatintel.com/posts/2026-03-20-malicious-llm-ecosystem.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-03-20-malicious-llm-ecosystem.html</guid>
-      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <description>A comprehensive overview of the underground malicious LLM-as-a-service ecosystem, tracking tool availability, pricing, capabilities, and evolution from mid-2023 through early 2026.</description>
     </item>
   </channel>
 </rss>

@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-04-06-axios-npm-unc1069-rat-march-2026",
+      "title": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
+      "date": "2026-04-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On March 31, 2026, an attacker introduced malicious dependencies into axios npm package releases 1.14.1 and 0.30.4 between 00:21 and 03:20 UTC. Axios, the JavaScript ecosystem's most popular HTTP client with over 100 million weekly npm downloads, was weaponized as a delivery vehicle for a cross-platform remote access trojan (RAT). Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus, financially motivated threat actor.",
+      "file": "2026-04-06-axios-npm-unc1069-rat-march-2026.md"
+    },
+    {
       "id": "2026-04-05-mercor-data-vendor-ai-training-breach",
       "title": "Mercor Data Vendor Breach: AI Training Data and Model Development Secrets Exposed; Meta and OpenAI Pause Operations",
       "date": "2026-04-05",
