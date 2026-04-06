@@ -535,7 +535,7 @@ const App = {
     <div class="post-footer-aside">
       <h2 class="about-section-title">Project Notes</h2>
       <p>LLM ThreatIntel is maintained independently as a personal defensive-research project focused on the generative AI and LLM threat landscape.</p>
-      <p>If you find the work useful, you can <a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">support it here</a>.</p>
+      <p>If you find the work useful, you can <a class="support-link" href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">support it here</a>.</p>
       <p>General contact: <a href="mailto:contact@lucaslinkowski.com">contact@lucaslinkowski.com</a></p>
       <p class="post-footer-note">Support does not influence editorial decisions, report selection, or technical conclusions.</p>
       <h2 class="about-section-title">Disclaimer</h2>
@@ -899,7 +899,7 @@ const App = {
           <li><a href="https://thehackernews.com" target="_blank">The Hacker News</a></li>
         </ul>
         <h2 class="about-section-title">Support</h2>
-        <p>LLM ThreatIntel is maintained independently. If you find the research useful, you can <a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">support it here</a>.</p>
+        <p>LLM ThreatIntel is maintained independently. If you find the research useful, you can <a class="support-link" href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">support it here</a>.</p>
         <p>Report a bug: <a href="mailto:support@llm-threatintel.com">support@llm-threatintel.com</a></p>
         <p>General contact: <a href="mailto:contact@lucaslinkowski.com">contact@lucaslinkowski.com</a></p>
         <p style="color:var(--t3);font-size:.9rem">Support does not influence editorial decisions, report selection, or technical conclusions.</p>
