@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments | LLM ThreatIntel</title>
+  <meta name="description" content="The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments">
+  <meta property="og:description" content="The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments">
+  <meta property="article:published_time" content="2026-04-07T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-07T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments">
+  <meta name="twitter:description" content="The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments",
+  "description": "The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.",
+  "datePublished": "2026-04-07T00:00:00Z",
+  "dateModified": "2026-04-07T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html",
+  "keywords": ["supply-chain", "malware"]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-07</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments</h1>
+<p><strong>Date:</strong> 2026-04-07
+<strong>TLP:</strong> TLP:CLEAR
+<strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors. Organizations should audit Open VSX extension inventories and block extensions with unverified transitive dependencies.</p>
+<h2>Campaign Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign / Malware</td>
+<td>GlassWorm</td>
+</tr>
+<tr>
+<td>Attribution</td>
+<td>Suspected Russian-speaking threat actors (confidence: low)</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>Software developers using VSCode-compatible IDEs with Open VSX extensions</td>
+</tr>
+<tr>
+<td>Vector</td>
+<td>Compromised developer accounts, transitive dependency poisoning in extension manifests</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>active</td>
+</tr>
+<tr>
+<td>First Observed</td>
+<td>2025-10</td>
+</tr>
+</tbody>
+</table>
+<h2>Detailed Findings</h2>
+<p>According to Socket.dev, the GlassWorm campaign was first identified when researchers discovered malicious loader components injected into established Open VSX extensions via compromised developer accounts or stolen publishing credentials. The initial attack vector involved direct code injection into legitimate extensions during routine updates.</p>
+<p>BleepingComputer reported that as of March 2026, the campaign has expanded to 433 compromised components across multiple platforms, with 72 malicious Open VSX extensions accumulating over 9 million total installs. The campaign spans Open VSX, npm, GitHub, and the Visual Studio Code marketplace, making it one of the broadest developer-targeted supply chain attacks documented.</p>
+<p>CSO Online reported that the campaign evolved its delivery mechanism in late 2025 to abuse extension dependency relationships. By manipulating the extensionPack and extensionDependencies fields in extension manifests, GlassWorm delivers malware through transitive dependencies. A clean-appearing extension pulls malicious payloads automatically after gaining user trust, requiring no direct compromise of the parent extension code.</p>
+<p>According to Rescana, the GlassWorm malware uses heavily obfuscated JavaScript with invisible Unicode characters and locale checks that avoid execution on Russian-configured systems. The loader employs runtime payload decryption and multi-layered C2 infrastructure including direct IP connections, Solana blockchain dead drops for C2 address resolution, and Google Calendar events as a fallback communication channel.</p>
+<p>Socket.dev documented the full credential harvesting scope: npm tokens, GitHub tokens, Git credentials, AWS/GCP/Azure cloud provider keys, and browser-stored passwords. The malware also targets cryptocurrency wallets including MetaMask, Electrum, Exodus, Atomic, Ledger Live, Trezor Suite, Binance, and TonKeeper. On Windows systems, GlassWorm establishes persistence through registry keys and deploys hidden VNC servers and SOCKS proxies for remote access. The self-propagation component compromises additional extensions by reusing harvested developer credentials.</p>
+<p>BleepingComputer noted that while no confirmed APT attribution exists, code analysis, operational security patterns, and the Russian locale exclusion collectively suggest Russian-speaking threat actors.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>ID</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply Chain Compromise: Compromise Software Dependencies</td>
+<td>T1195.001</td>
+<td>Transitive dependency poisoning via extensionPack and extensionDependencies fields</td>
+</tr>
+<tr>
+<td>Supply Chain Compromise</td>
+<td>T1195.002</td>
+<td>Compromised developer accounts used to inject malware into legitimate extensions</td>
+</tr>
+<tr>
+<td>Credentials from Password Stores</td>
+<td>T1555</td>
+<td>Harvesting browser passwords and cryptocurrency wallet data</td>
+</tr>
+<tr>
+<td>Unsecured Credentials: Credentials in Files</td>
+<td>T1552.001</td>
+<td>Stealing npm, GitHub, Git, and cloud provider tokens from config files</td>
+</tr>
+<tr>
+<td>Remote Access Software</td>
+<td>T1219</td>
+<td>Hidden VNC servers and SOCKS proxies deployed on compromised systems</td>
+</tr>
+<tr>
+<td>Obfuscated Files or Information</td>
+<td>T1027</td>
+<td>Invisible Unicode characters, runtime payload decryption</td>
+</tr>
+<tr>
+<td>Boot or Logon Autostart Execution: Registry Run Keys</td>
+<td>T1547.001</td>
+<td>Windows registry persistence for GlassWorm loader</td>
+</tr>
+</tbody>
+</table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p><em>No specific C2 domains published by source. C2 uses direct IP connections, Solana blockchain dead drops, and Google Calendar events.</em></p>
+<h3>Full URL Paths</h3>
+<p><em>No full URL paths published.</em></p>
+<h3>Splunk Format</h3>
+<p><em>No domain or URL IOCs available for Splunk query. Detection should focus on behavioral indicators.</em></p>
+<h3>File Hashes</h3>
+<p><em>No specific file hashes published in the referenced reports.</em></p>
+<h3>Package Indicators</h3>
+<p><em>72 malicious Open VSX extension IDs identified but individual extension names not published in aggregated form. Check Socket.dev advisory for full package list.</em></p>
+<h2>Detection Recommendations</h2>
+<p>Audit Open VSX and VSCode extension inventories for extensions with recent dependency changes in extensionPack or extensionDependencies manifest fields. Monitor EDR for Node.js or Electron processes spawning VNC server binaries or establishing SOCKS proxy listeners on non-standard ports. In web proxy logs, hunt for connections from IDE processes (code, codium, cursor) to Solana RPC endpoints or Google Calendar API endpoints outside normal developer workflow patterns. Query DNS logs for resolution of cryptocurrency exchange domains from developer workstations. Monitor for outbound connections to direct IP addresses from extension host processes. On Windows endpoints, inspect registry Run keys for entries created by VSCode extension processes. Implement extension allowlisting policies in enterprise VSCode deployments to restrict installation to vetted extensions only.</p>
+<h2>References</h2>
+<ul>
+<li>[Socket.dev] GlassWorm Loader Hits Open VSX via Developer Account Compromise (2026-01) — https://socket.dev/blog/glassworm-loader-hits-open-vsx-via-suspected-developer-account-compromise</li>
+<li>[BleepingComputer] GlassWorm malware hits 400+ code repos on GitHub, npm, VSCode, OpenVSX (2026-03) — https://www.bleepingcomputer.com/news/security/glassworm-malware-hits-400-plus-code-repos-on-github-npm-vscode-openvsx/</li>
+<li>[CSO Online] Open VSX extensions hijacked: GlassWorm malware spreads via dependency abuse (2026-03) — https://www.csoonline.com/article/4145579/open-vsx-extensions-hijacked-glassworm-malware-spreads-via-dependency-abuse.html</li>
+<li>[Rescana] GlassWorm Supply Chain Attack Exploits Open VSX Registry to Infect VSCode Extensions with Advanced Malware (2026) — https://www.rescana.com/post/glassworm-supply-chain-attack-exploits-open-vsx-registry-to-infect-vscode-extensions-with-advanced-m</li>
+</ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
