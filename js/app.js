@@ -554,8 +554,13 @@ const App = {
   },
 
   renderMarkdown(md) {
-    let html = md
-      .replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => `<pre><code class="language-${lang}">${this.escapeHtml(code.trim())}</code></pre>`)
+    const codeBlocks = [];
+    let html = md.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
+      const idx = codeBlocks.length;
+      codeBlocks.push({ lang: lang || '', code: code.trim() });
+      return `\n\nCODEBLOCKPLACEHOLDER_${idx}\n\n`;
+    });
+    html = html
       .replace(/^\|(.+)\|\s*\n\|[-| :]+\|\s*\n((?:\|.+\|\s*\n)*)/gm, (match, header, body) => {
         const headers = header.split('|').map(h => h.trim()).filter(Boolean);
         const rows = body.trim().split('\n').map(row => row.split('|').map(c => c.trim()).filter(Boolean));
@@ -575,6 +580,13 @@ const App = {
       .replace(/^(?!<[hlutbp]|<\/|<li|<block|<hr)(.[^\n]+)$/gm, '<p>$1</p>');
     html = html.replace(/((?:<li>.*<\/li>\s*)+)/g, '<ul>$1</ul>');
     html = html.replace(/<p>\s*<\/p>/g, '');
+    const preHtml = (idx) => {
+      const b = codeBlocks[Number(idx)];
+      const lang = this.escapeHtml(b.lang);
+      return `<pre><code class="language-${lang}">${this.escapeHtml(b.code)}</code></pre>`;
+    };
+    html = html.replace(/<p>CODEBLOCKPLACEHOLDER_(\d+)<\/p>/g, (_, idx) => preHtml(idx));
+    html = html.replace(/CODEBLOCKPLACEHOLDER_(\d+)/g, (_, idx) => preHtml(idx));
     return html;
   },
 
