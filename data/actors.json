@@ -1,6 +1,72 @@
 {
-  "last_updated": "2026-04-06",
+  "last_updated": "2026-04-07",
   "entries": [
+    {
+      "id": "malicious-ai-browser-extensions",
+      "names": ["Malicious AI Assistant Extensions", "AITOPIA Impersonators"],
+      "type": "malware",
+      "first_seen": "2025-12",
+      "status": "active",
+      "distribution": ["Chrome Web Store", "Chromium extension ecosystem"],
+      "ttps": ["T1176 - Browser Extensions", "T1185 - Browser Session Hijacking", "T1041 - Exfiltration Over C2 Channel", "T1132.001 - Data Encoding: Standard Encoding", "T1056 - Input Capture"],
+      "description": "Two Chromium-based extensions impersonating the AITOPIA AI assistant accumulated 900,000 installations and harvested chat histories from ChatGPT and DeepSeek via DOM scraping. Data is Base64-encoded and exfiltrated every 30 minutes to C2 domains including deepaichats.com and chatsaigpt.com. Microsoft Defender telemetry confirmed activity across 20,000+ enterprise tenants.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "emerald-sleet",
+      "names": ["Emerald Sleet", "Kimsuky", "VELVET CHOLLIMA"],
+      "type": "nation_state_program",
+      "first_seen": "2024-01",
+      "status": "active",
+      "distribution": ["spearphishing", "LLM-assisted operations"],
+      "ttps": ["T1566.001 - Spearphishing Attachment", "T1203 - Exploitation for Client Execution", "T1583.001 - Acquire Infrastructure: Domains", "T1588.005 - Obtain Capabilities: Exploits", "T1059 - Command and Scripting Interpreter"],
+      "description": "North Korean state-sponsored APT group observed using LLMs to parse disclosed vulnerabilities including CVE-2022-30190 (MSDT Follina) to map exploitation paths. Masquerades as South Korean government officials to deliver spearphishing payloads. Uses generative AI to accelerate the reconnaissance-to-exploitation cycle and dynamically generate lookalike C2 domains.",
+      "attribution": "DPRK state-sponsored, attributed by Microsoft Threat Intelligence (confidence: high)"
+    },
+    {
+      "id": "jasper-sleet",
+      "names": ["Jasper Sleet"],
+      "type": "nation_state_program",
+      "first_seen": "2024-01",
+      "status": "active",
+      "distribution": ["fraudulent IT worker placement", "remote job platforms", "LLM-assisted identity generation"],
+      "ttps": ["T1656 - Impersonation", "T1566 - Phishing", "T1059 - Command and Scripting Interpreter", "T1583.001 - Acquire Infrastructure: Domains"],
+      "description": "North Korean state-sponsored group operating a large-scale fraudulent remote worker scheme deploying thousands of operatives into Western technology companies. Leverages AI to replace images in stolen identity documents, enhance worker photos, utilize voice-changing software for interviews, generate phishing lures, and produce operational code. Has expanded targeting beyond US companies globally.",
+      "attribution": "DPRK state-sponsored, attributed by Microsoft Threat Intelligence (confidence: high)"
+    },
+    {
+      "id": "shai-hulud",
+      "names": ["Shai-hulud", "Shai-hulud 2.0", "Sha1-Hulud: The Second Coming"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2025-09",
+      "status": "active",
+      "distribution": ["npm registry", "compromised developer accounts"],
+      "ttps": ["T1195.001 - Supply Chain Compromise: Compromise Software Dependencies", "T1552 - Unsecured Credentials", "T1485 - Data Destruction", "T1078 - Valid Accounts", "T1119 - Automated Collection"],
+      "description": "First registry-native self-propagating worm operating at scale within npm. Exploits compromised developer accounts to inject malicious code that spreads through package dependency chains. Wave 1 (September 2025) compromised packages including @ctrl/tinycolor (2.2M weekly downloads). Wave 2 (November 2025) compromised 795 packages with 100M+ lifetime downloads, with @asyncapi/specs as patient zero. Version 2.0 added wiper functionality. Steals npm, GitHub, AWS, GCP credentials.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "nullifai",
+      "names": ["nullifAI"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2025-02",
+      "status": "disrupted",
+      "distribution": ["Hugging Face model repository"],
+      "ttps": ["T1195.002 - Supply Chain Compromise", "T1059.006 - Python"],
+      "description": "Novel malware technique discovered by ReversingLabs targeting ML models on Hugging Face. Uses corrupted Pickle files to deliver malware that bypasses Picklescan security scanning. Two proof-of-concept malicious models were identified and removed. Demonstrates viable attack path for arbitrary code execution through AI model distribution platforms.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "glassworm",
+      "names": ["GlassWorm"],
+      "type": "supply_chain_campaign",
+      "first_seen": "2025-10",
+      "status": "active",
+      "distribution": ["Open VSX registry", "npm registry", "GitHub", "VSCode marketplace"],
+      "ttps": ["T1195.001 - Supply Chain Compromise: Compromise Software Dependencies", "T1195.002 - Supply Chain Compromise", "T1555 - Credentials from Password Stores", "T1552.001 - Unsecured Credentials: Credentials in Files", "T1219 - Remote Access Software", "T1027 - Obfuscated Files or Information", "T1547.001 - Registry Run Keys"],
+      "description": "Large-scale developer-targeted supply chain campaign compromising 433 components across Open VSX, npm, GitHub, and VSCode marketplace, including 72 malicious extensions with 9M+ installs. Steals npm/GitHub/cloud/crypto wallet credentials, deploys VNC servers and SOCKS proxies, and self-propagates via harvested developer credentials. Uses obfuscated JavaScript with invisible Unicode, Solana blockchain dead drops, and Google Calendar C2 fallback. Russian locale exclusion suggests Russian-speaking operators.",
+      "attribution": "Suspected Russian-speaking threat actors based on code analysis (confidence: low)"
+    },
     {
       "id": "operation-bizarre-bazaar",
       "names": [
@@ -307,15 +373,20 @@
       "status": "active",
       "distribution": [
         "IT worker fraud",
-        "social engineering"
+        "social engineering",
+        "spearphishing",
+        "LLM-assisted vulnerability research"
       ],
       "ttps": [
         "T1566 - Phishing",
         "T1204 - User Execution",
-        "T1656 - Impersonation"
+        "T1656 - Impersonation",
+        "T1588.005 - Obtain Capabilities: Exploits",
+        "T1583.001 - Acquire Infrastructure: Domains",
+        "T1059 - Command and Scripting Interpreter"
       ],
       "attribution": "DPRK / Lazarus Group affiliates",
-      "description": "North Korean state-sponsored use of LLMs to support IT worker fraud schemes, generate cover identities, write convincing interview responses, and produce polished code for revenue generation operations."
+      "description": "North Korean state-sponsored use of LLMs across multiple APT groups including Emerald Sleet, Jasper Sleet, and Coral Sleet. Operations span IT worker fraud schemes with AI-enhanced identity documents, LLM-assisted vulnerability research and exploitation path mapping, jailbroken model use for malware development, and AI-generated phishing lures and operational code. Microsoft 2026 Red Report documents early experimentation with agentic AI for iterative decision-making."
     },
     {
       "id": "unc1069",

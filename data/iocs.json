@@ -1,6 +1,96 @@
 {
-  "last_updated": "2026-04-06",
+  "last_updated": "2026-04-07",
   "iocs": [
+    {
+      "value": "deepaichats.com",
+      "type": "domain",
+      "context": "Primary C2 domain for malicious AI assistant browser extensions harvesting ChatGPT and DeepSeek chat histories",
+      "first_seen": "2025-12-01",
+      "source": "Microsoft Security Blog",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "chatsaigpt.com",
+      "type": "domain",
+      "context": "Secondary C2 domain for malicious AI assistant browser extensions",
+      "first_seen": "2025-12-01",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "chataigpt.pro",
+      "type": "domain",
+      "context": "Lovable-hosted C2 infrastructure for malicious AI assistant browser extensions",
+      "first_seen": "2025-12-01",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "chatgptsidebar.pro",
+      "type": "domain",
+      "context": "Lovable-hosted C2 infrastructure for malicious AI assistant browser extensions",
+      "first_seen": "2025-12-01",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "98d1f151872c27d0abae3887f7d6cb6e4ce29e99ad827cb077e1232bc4a69c00",
+      "type": "sha256",
+      "context": "SHA-256 of malicious extension Chat GPT for Chrome with GPT-5 Claude Sonnet and DeepSeek AI v1.9.6",
+      "first_seen": "2025-12-01",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "20ba72e91d7685926c8c1c5b4646616fa9d769e32c1bc4e9f15dddaf3429cea7",
+      "type": "sha256",
+      "context": "SHA-256 of malicious extension AI Sidebar with Deepseek ChatGPT Claude and more v1.6.1",
+      "first_seen": "2025-12-01",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "npm:@ctrl/tinycolor (compromised)",
+      "type": "package",
+      "context": "Shai-hulud worm compromised package with 2.2M weekly downloads",
+      "first_seen": "2025-09-01",
+      "source": "ReversingLabs",
+      "campaign": "shai-hulud-npm-worm-nullifai-hugging-face",
+      "status": "active"
+    },
+    {
+      "value": "npm:@asyncapi/specs (compromised)",
+      "type": "package",
+      "context": "Shai-hulud 2.0 patient zero package with 100M+ lifetime downloads",
+      "first_seen": "2025-11-01",
+      "source": "ReversingLabs",
+      "campaign": "shai-hulud-npm-worm-nullifai-hugging-face",
+      "status": "active"
+    },
+    {
+      "value": "npm:ngx-bootstrap (compromised)",
+      "type": "package",
+      "context": "Shai-hulud worm compromised package with 300K weekly downloads",
+      "first_seen": "2025-09-01",
+      "source": "ReversingLabs",
+      "campaign": "shai-hulud-npm-worm-nullifai-hugging-face",
+      "status": "active"
+    },
+    {
+      "value": "npm:ng2-file-upload (compromised)",
+      "type": "package",
+      "context": "Shai-hulud worm compromised package with 100K weekly downloads",
+      "first_seen": "2025-09-01",
+      "source": "ReversingLabs",
+      "campaign": "shai-hulud-npm-worm-nullifai-hugging-face",
+      "status": "active"
+    },
     {
       "value": "silver.inc",
       "type": "domain",

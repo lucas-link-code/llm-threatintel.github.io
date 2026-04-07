@@ -1,14 +1,71 @@
 {
   "posts": [
     {
+      "id": "2026-04-07-glassworm-supply-chain-open-vsx-developer-environments",
+      "title": "GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments",
+      "date": "2026-04-07",
+      "author": "LLM ThreatIntel",
+      "tags": ["supply-chain", "malware"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.",
+      "file": "2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.md"
+    },
+    {
+      "id": "2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace",
+      "title": "LLMjacking Industrializes: 376% Surge in AI Credential Theft, Underground Marketplaces, and Reverse Proxy Operations",
+      "date": "2026-04-07",
+      "author": "LLM ThreatIntel",
+      "tags": ["llmjacking", "shadow-ai"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sysdig documented a 376% increase in credential theft targeting AI services between Q4 2025 and Q1 2026, with daily victim costs exceeding $100,000 when flagship models are abused. Underground marketplaces now sell stolen LLM API keys on a structured pricing tier from $50 for GPT-3.5 access to $5,000 for whitelisted enterprise keys with no rate limits. Attackers deploy OpenAI Reverse Proxies containing dozens of stolen keys to resell access at scale.",
+      "file": "2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace.md"
+    },
+    {
+      "id": "2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face",
+      "title": "Shai-hulud npm Registry Worm and nullifAI Hugging Face Malware: AI Supply Chain Under Siege",
+      "date": "2026-04-07",
+      "author": "LLM ThreatIntel",
+      "tags": ["supply-chain", "malware"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ReversingLabs documented Shai-hulud, the first self-replicating registry-native worm operating at scale within npm, compromising nearly 1,000 packages with over 100 million lifetime downloads across two waves. Separately, the nullifAI technique demonstrated that malicious ML models can bypass Hugging Face security scanning using corrupted Pickle files. Organizations consuming npm packages should audit lockfiles for compromised packages including @ctrl/tinycolor, @asyncapi/specs, ngx-bootstrap, and ng2-file-upload.",
+      "file": "2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.md"
+    },
+    {
+      "id": "2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet",
+      "title": "Nation-State APT Exploitation of Generative AI: Emerald Sleet and Jasper Sleet Operationalize LLMs",
+      "date": "2026-04-07",
+      "author": "LLM ThreatIntel",
+      "tags": ["nation-state", "apt", "phishing"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft documented North Korean APT groups Emerald Sleet and Jasper Sleet actively integrating LLMs into their operational tradecraft. Emerald Sleet uses LLMs to parse disclosed vulnerabilities and map exploitation paths, while Jasper Sleet leverages AI to scale fraudulent IT worker schemes, generate phishing lures, and produce operational code. Both groups use generative AI to rapidly establish and rotate lookalike domains for C2 infrastructure.",
+      "file": "2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.md"
+    },
+    {
+      "id": "2026-04-07-malicious-browser-extensions-harvesting-llm-chats",
+      "title": "Malicious Browser Extensions Harvesting LLM Chat Histories from 900,000 Users",
+      "date": "2026-04-07",
+      "author": "LLM ThreatIntel",
+      "tags": ["malware", "phishing", "shadow-ai"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Two Chromium-based browser extensions impersonating AI assistants have compromised approximately 900,000 users, harvesting full chat histories from ChatGPT and DeepSeek along with browsing telemetry. Microsoft Defender telemetry confirmed activity across more than 20,000 enterprise tenants. Defenders should block the four identified C2 domains and audit enterprise Chrome extension inventories for the two malicious extension IDs.",
+      "file": "2026-04-07-malicious-browser-extensions-harvesting-llm-chats.md"
+    },
+    {
+      "id": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense",
+      "title": "Zero day gold rush, collapse of dwell time and AI augmented defense",
+      "date": "2026-04-07",
+      "author": "LLM ThreatIntel",
+      "tags": ["shadow-ai", "nation-state"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic reports frontier LLMs have achieved autonomous zero-day discovery and exploitation, identifying 20-year-old heap overflows in the Linux kernel and executing unauthenticated credential theft against Ghost CMS. These agents eliminate the human bottleneck by performing the entire research lifecycle at machine speed. As the capability curve for offensive AI scales exponentially, defenders must adopt agentic security workflows and memory-safe architectures to secure an increasingly transparent attack surface.",
+      "file": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense.md"
+    },
+    {
       "id": "2026-04-06-axios-npm-unc1069-rat-march-2026",
       "title": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
       "date": "2026-04-06",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "supply-chain",
-        "malware"
-      ],
+      "tags": ["supply-chain", "malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "On March 31, 2026, an attacker introduced malicious dependencies into axios npm package releases 1.14.1 and 0.30.4 between 00:21 and 03:20 UTC. Axios, the JavaScript ecosystem's most popular HTTP client with over 100 million weekly npm downloads, was weaponized as a delivery vehicle for a cross-platform remote access trojan (RAT). Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus, financially motivated threat actor.",
       "file": "2026-04-06-axios-npm-unc1069-rat-march-2026.md"
@@ -18,10 +75,7 @@
       "title": "Mercor Data Vendor Breach: AI Training Data and Model Development Secrets Exposed; Meta and OpenAI Pause Operations",
       "date": "2026-04-05",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "supply-chain",
-        "shadow-ai"
-      ],
+      "tags": ["supply-chain", "shadow-ai"],
       "tlp": "TLP:AMBER",
       "excerpt": "Major AI labs are investigating a security incident that impacted Mercor, a leading data vendor. The incident could have exposed key data about how they train AI models. Major AI labs, including Meta and OpenAI, are investigating a security incident at Mercor while it investigates a security breach; the incident could have exposed key data about how they train AI models. The breach represents a critical threat to the AI supply chain, as Mercor provides datasets and research infrastructure used by leading AI companies for model training and evaluation.",
       "file": "2026-04-05-mercor-data-vendor-ai-training-breach.md"
@@ -31,10 +85,7 @@
       "title": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
       "date": "2026-04-05",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malicious-tool",
-        "supply-chain"
-      ],
+      "tags": ["malicious-tool", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from \"promising open standard\" to \"active threat surface\" faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.",
       "file": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads.md"
@@ -44,10 +95,7 @@
       "title": "Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)",
       "date": "2026-04-05",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malicious-tool",
-        "supply-chain"
-      ],
+      "tags": ["malicious-tool", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 to npm. Within days of each other, Anthropic first leaked the source code to Claude Code, and then a critical vulnerability was found by Adversa AI. Within hours, researcher Chaofan Shou discovered the sourcemap and posted a link on X. A genuine and critical vulnerability has now been discovered in Claude Code proper by Adversa AI Red Team. Claude Code is a 519,000+ line TypeScript application that allows developers to interact with Claude directly from the command line.",
       "file": "2026-04-05-claude-code-source-leak-adversa-post-leak-rce.md"
@@ -57,10 +105,7 @@
       "title": "Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)",
       "date": "2026-04-04",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "shadow-ai",
-        "malware"
-      ],
+      "tags": ["shadow-ai", "malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 on npm; within hours, researcher Chaofan Shou discovered the sourcemap and posted it on X, kicking off a global rush to examine the de-obfuscated source code. Days later, Adversa AI discovered a critical vulnerability where malicious CLAUDE.md files can use prompt injection to generate 50+ subcommand pipelines that bypass Claude Code's safety permission system.",
       "file": "2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.md"
@@ -70,10 +115,7 @@
       "title": "CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure",
       "date": "2026-04-04",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "shadow-ai",
-        "malware"
-      ],
+      "tags": ["shadow-ai", "malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "A cross-session information disclosure vulnerability in the awesome-llm-apps Streamlit-based GitHub MCP Agent stores user-supplied API tokens in process-wide environment variables without proper session isolation, allowing attackers to retrieve sensitive GitHub Personal Access Tokens or LLM API keys from subsequent unauthenticated users since Streamlit serves multiple concurrent users from a single Python process.",
       "file": "2026-04-04-awesome-llm-apps-cross-session-token-disclosure.md"
@@ -83,10 +125,7 @@
       "title": "CVE-2026-33654: Nanobot AI Assistant Indirect Prompt Injection via Email Channel",
       "date": "2026-04-04",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malicious-tool",
-        "malware"
-      ],
+      "tags": ["malicious-tool", "malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "An indirect prompt injection vulnerability in nanobot's email channel processing module allows remote, unauthenticated attackers to execute arbitrary LLM instructions and system tools without user interaction by sending malicious prompts via email, bypassing channel isolation in a stealthy zero-click attack (CVSS 8.9, HIGH severity).",
       "file": "2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654.md"
@@ -96,9 +135,7 @@
       "title": "McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users",
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malware"
-      ],
+      "tags": ["malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "McAfee Labs documented a large-scale cryptominer distribution campaign active in January 2026 where attackers used LLM-assisted 'vibe coding' to generate parts of the malicious PowerShell kill chain, distributing 443 malicious ZIP files across Discord, SourceForge, FOSSHub, and MediaFire impersonating AI tools, game mods, and software utilities. The campaign deployed WinUpdateHelper.dll via DLL sideloading, establishing persistence under the name 'Microsoft Console Host' and mining Ravencoin, Zephyr, and Monero. In some infections the final payload was SalatStealer or a Mesh Agent RAT. Defenders should alert on WinUpdateHelper.dll in non-system directories and monitor for anomalous cryptocurrency mining processes.",
       "file": "2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.md"
@@ -108,9 +145,7 @@
       "title": "Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer",
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malware"
-      ],
+      "tags": ["malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an 'AI-gated execution' approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.",
       "file": "2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.md"
@@ -120,10 +155,7 @@
       "title": "Unit 42 Discloses 'Double Agent' Vulnerability in GCP Vertex AI: Overprivileged Service Agents Enable Cloud Data Exfiltration and Google Internal Code Access",
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malware",
-        "shadow-ai"
-      ],
+      "tags": ["malware", "shadow-ai"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Palo Alto Networks Unit 42 disclosed on March 31, 2026 that the Per-Project, Per-Product Service Agent (P4SA) assigned by default to Vertex AI Agent Engine deployments carries excessive OAuth permissions, allowing a compromised or malicious AI agent to extract GCP service credentials and pivot from the agent's execution context into the customer's broader cloud environment — granting unrestricted read access to Cloud Storage buckets and restricted Google-owned Artifact Registry repositories containing internal Vertex AI source code. Google has updated documentation and recommends Bring Your Own Service Account (BYOSA) to mitigate. Organizations using Vertex AI Agent Engine should immediately audit all deployed agents and enforce least-privilege service accounts.",
       "file": "2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation.md"
@@ -133,11 +165,7 @@
       "title": "APT36 (Transparent Tribe) Adopts AI 'Vibeware' Assembly Line: Pakistan-Linked APT Floods Indian Government Targets with Polyglot Implants",
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "apt",
-        "malware",
-        "nation-state"
-      ],
+      "tags": ["apt", "malware", "nation-state"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Bitdefender Labs confirmed that APT36 (Transparent Tribe), a Pakistan-linked state-sponsored group, has pivoted to an AI-assisted malware development model dubbed 'vibeware', using large language models to mass-produce implants in niche programming languages (Nim, Zig, Crystal) and Living Off Trusted Services (LOTS) C2 channels (Slack, Discord, Supabase, Google Sheets), primarily targeting Indian government entities and diplomatic missions. The strategy prioritises volume over sophistication — a 'Distributed Denial of Detection' approach — generating new malware variants daily to overwhelm EDR baselines. Security teams should implement behavioral detection for anomalous API calls to Slack, Discord, and Supabase from non-developer endpoints.",
       "file": "2026-04-02-apt36-transparent-tribe-vibeware-ai-malware.md"
@@ -147,9 +175,7 @@
       "title": "Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack",
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malware"
-      ],
+      "tags": ["malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "IBM X-Force discovered 'Slopoly', a likely LLM-generated PowerShell backdoor deployed by the Hive0163 ransomware group during a live intrusion in early 2026, marking the first confirmed use of AI-generated malware in an active ransomware engagement by a financially motivated threat actor. The malware maintained persistent access to a compromised server for over a week before Interlock ransomware was deployed. Defenders should hunt for scheduled tasks named 'Runtime Broker' under C:\\ProgramData\\Microsoft\\Windows\\Runtime\\ and block connections to the identified C2 infrastructure; the entry vector was ClickFix social engineering, requiring enhanced employee awareness.",
       "file": "2026-04-02-hive0163-slopoly-ai-generated-malware-ransomware.md"
@@ -159,11 +185,7 @@
       "title": "TeamPCP CanisterWorm Evolves: Kubernetes Wiper Deployed Against Iranian Systems via npm Supply Chain",
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malware",
-        "shadow-ai",
-        "supply-chain"
-      ],
+      "tags": ["malware", "shadow-ai", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "TeamPCP deployed a geopolitically targeted destructive wiper payload via its CanisterWorm npm supply chain campaign, first observed on March 20, 2026, that wipes entire Kubernetes clusters when it detects systems configured for Iran (Asia/Tehran timezone or fa_IR locale). On non-Iranian Kubernetes nodes the same malware installs a persistent backdoor; on non-Kubernetes Iranian hosts it executes rm -rf / --no-preserve-root. Organizations running Kubernetes with npm-sourced packages in CI/CD pipelines are at risk of full cluster destruction; defenders must immediately audit npm lockfiles for CanisterWorm-linked packages and inspect Kubernetes for DaemonSets named 'host-provisioner-std' or services named 'pgmon' or 'pgmonitor'.",
       "file": "2026-04-02-teampcp-canisterworm-kubernetes-wiper-iran.md"
@@ -173,11 +195,7 @@
       "title": "AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover",
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malicious-tool",
-        "shadow-ai",
-        "supply-chain"
-      ],
+      "tags": ["malicious-tool", "shadow-ai", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security's RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.",
       "file": "2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.md"
@@ -187,12 +205,7 @@
       "title": "MCP Protocol Security Crisis: Tool Poisoning, Shadow Servers, and Agentic AI Attack Surface",
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "llmjacking",
-        "malicious-tool",
-        "shadow-ai",
-        "supply-chain"
-      ],
+      "tags": ["llmjacking", "malicious-tool", "shadow-ai", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "The Model Context Protocol has become a high-value attack surface with 43% of MCP servers vulnerable to command injection and OWASP publishing a dedicated MCP Top 10 risk framework. Operation Bizarre Bazaar demonstrated industrialized exploitation with 35,000 attack sessions targeting exposed MCP endpoints between December 2025 and January 2026, while Cyata Research disclosed a chained RCE vulnerability in Anthropic's own official Git MCP server. Organizations deploying agentic AI infrastructure must audit MCP server configurations, restrict tool permissions, and monitor for shadow MCP server deployments.",
       "file": "2026-04-01-mcp-protocol-security-tool-poisoning-agentic-risk.md"
@@ -202,11 +215,7 @@
       "title": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malware",
-        "shadow-ai",
-        "supply-chain"
-      ],
+      "tags": ["malware", "shadow-ai", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.",
       "file": "2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.md"
@@ -216,12 +225,7 @@
       "title": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
       "date": "2026-04-01",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "apt",
-        "malware",
-        "nation-state",
-        "supply-chain"
-      ],
+      "tags": ["apt", "malware", "nation-state", "supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Google Threat Intelligence Group attributes the Axios npm package compromise to UNC1069, a North Korea-nexus financially motivated threat actor, based on infrastructure overlaps and use of WAVESHAPER.V2 backdoor. The malicious versions were live for approximately 2-3 hours on March 31, 2026, with both latest and legacy tags compromised to maximize blast radius. Organizations must immediately audit for affected versions and treat any system with exposure as fully compromised.",
       "file": "2026-04-01-axios-npm-supply-chain-unc1069-waveshaper-2026.md"
@@ -231,9 +235,7 @@
       "title": "TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages",
       "date": "2026-03-30",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "supply-chain"
-      ],
+      "tags": ["supply-chain"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.",
       "file": "2026-03-30-teampcp-supply-chain.md"
@@ -243,10 +245,7 @@
       "title": "LAMEHUG: First Malware to Integrate Live LLM for Dynamic C2 Command Generation",
       "date": "2026-03-28",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "apt",
-        "malware"
-      ],
+      "tags": ["apt", "malware"],
       "tlp": "TLP:CLEAR",
       "excerpt": "APT28-attributed malware LAMEHUG represents a milestone in offensive AI adoption. It is the first publicly documented sample that calls an LLM API at runtime to dynamically generate C2 commands based on host reconnaissance data.",
       "file": "2026-03-28-lamehug-llm-malware.md"
@@ -256,9 +255,7 @@
       "title": "Russian GenAI-Assisted FortiGate Mass Exploitation Campaign",
       "date": "2026-03-25",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "nation-state"
-      ],
+      "tags": ["nation-state"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Russian-linked threat actors are leveraging generative AI to accelerate vulnerability research and exploit development targeting FortiGate VPN appliances at scale.",
       "file": "2026-03-25-russian-fortigate-genai.md"
@@ -268,9 +265,7 @@
       "title": "The Malicious LLM Ecosystem: WormGPT, FraudGPT, GhostGPT and Beyond",
       "date": "2026-03-20",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "malicious-tool"
-      ],
+      "tags": ["malicious-tool"],
       "tlp": "TLP:CLEAR",
       "excerpt": "A comprehensive overview of the underground malicious LLM-as-a-service ecosystem, tracking tool availability, pricing, capabilities, and evolution from mid-2023 through early 2026.",
       "file": "2026-03-20-malicious-llm-ecosystem.md"
@@ -280,9 +275,7 @@
       "title": "LLMjacking Operations and Storm-2139: Stolen API Keys at Scale",
       "date": "2026-03-15",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "llmjacking"
-      ],
+      "tags": ["llmjacking"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Storm-2139 continues to operate large-scale LLMjacking infrastructure, stealing and reselling cloud AI API keys from Azure OpenAI, AWS Bedrock, and other providers. Microsoft legal action has disrupted but not eliminated the operation.",
       "file": "2026-03-15-llmjacking-storm2139.md"
@@ -292,9 +285,7 @@
       "title": "Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage",
       "date": "2026-03-10",
       "author": "LLM ThreatIntel",
-      "tags": [
-        "shadow-ai"
-      ],
+      "tags": ["shadow-ai"],
       "tlp": "TLP:CLEAR",
       "excerpt": "Practical detection engineering approaches for identifying unauthorized AI tool usage across corporate environments, covering DNS indicators, endpoint process detection, proxy analysis, and user risk scoring.",
       "file": "2026-03-10-shadow-ai-detection.md"
