@@ -253,7 +253,7 @@ def generate_post_markdown(finding):
         lines.append("")
         lines.append("```")
         for d in iocs['domains']:
-            lines.append(d)
+            lines.append(str(d) if not isinstance(d, dict) else d.get('domain', str(d)))
         lines.append("```")
         lines.append("")
     else:
@@ -267,7 +267,7 @@ def generate_post_markdown(finding):
         lines.append("")
         lines.append("```")
         for u in iocs['urls']:
-            lines.append(u)
+            lines.append(str(u) if not isinstance(u, dict) else u.get('url', str(u)))
         lines.append("```")
         lines.append("")
     else:
@@ -277,7 +277,13 @@ def generate_post_markdown(finding):
         lines.append("")
 
     # Splunk format
-    all_indicators = iocs.get('domains', []) + iocs.get('urls', [])
+    domains_list = iocs.get('domains', [])
+    urls_list = iocs.get('urls', [])
+    # Ensure all items are strings
+    domains_str = [str(d) if not isinstance(d, dict) else d.get('domain', str(d)) for d in domains_list]
+    urls_str = [str(u) if not isinstance(u, dict) else u.get('url', str(u)) for u in urls_list]
+    all_indicators = domains_str + urls_str
+    
     if all_indicators:
         lines.append("### Splunk Format")
         lines.append("")
@@ -296,7 +302,7 @@ def generate_post_markdown(finding):
         lines.append("")
         lines.append("```")
         for h in iocs['hashes']:
-            lines.append(h)
+            lines.append(str(h) if not isinstance(h, dict) else h.get('hash', str(h)))
         lines.append("```")
         lines.append("")
 
@@ -305,7 +311,7 @@ def generate_post_markdown(finding):
         lines.append("")
         lines.append("```")
         for p in iocs['packages']:
-            lines.append(p)
+            lines.append(str(p) if not isinstance(p, dict) else p.get('package', str(p)))
         lines.append("```")
         lines.append("")
 
@@ -481,20 +487,25 @@ def update_iocs(finding):
             added += 1
 
     for domain in finding_iocs.get('domains', []):
-        add_ioc(domain, 'domain')
+        domain_str = str(domain) if not isinstance(domain, dict) else domain.get('domain', str(domain))
+        add_ioc(domain_str, 'domain')
 
     for url in finding_iocs.get('urls', []):
-        add_ioc(url, 'url_path')
+        url_str = str(url) if not isinstance(url, dict) else url.get('url', str(url))
+        add_ioc(url_str, 'url_path')
 
     for hash_val in finding_iocs.get('hashes', []):
-        hash_type = "sha256" if len(hash_val) == 64 else "md5" if len(hash_val) == 32 else "hash"
-        add_ioc(hash_val, hash_type)
+        hash_str = str(hash_val) if not isinstance(hash_val, dict) else hash_val.get('hash', str(hash_val))
+        hash_type = "sha256" if len(hash_str) == 64 else "md5" if len(hash_str) == 32 else "hash"
+        add_ioc(hash_str, hash_type)
 
     for ip in finding_iocs.get('ips', []):
-        add_ioc(ip, 'ip')
+        ip_str = str(ip) if not isinstance(ip, dict) else ip.get('ip', str(ip))
+        add_ioc(ip_str, 'ip')
 
     for pkg in finding_iocs.get('packages', []):
-        add_ioc(pkg, 'package')
+        pkg_str = str(pkg) if not isinstance(pkg, dict) else pkg.get('package', str(pkg))
+        add_ioc(pkg_str, 'package')
 
     if added > 0:
         iocs['last_updated'] = TODAY
