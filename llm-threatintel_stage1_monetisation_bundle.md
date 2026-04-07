@@ -259,7 +259,7 @@ renderAbout(container) {
     <h1 class="page-title"><span class="title-accent">//</span> About LLM ThreatIntel</h1>
     <div class="about-content">
       <p>LLM ThreatIntel is an automated threat intelligence feed focused on the generative AI and LLM threat landscape. Tracking malicious LLM tools, GenAI-assisted malware, AI supply chain compromises, LLMjacking, shadow AI risks, and nation-state GenAI programs.</p>
-      <p>Intelligence collected via Claude Code automated searches. Reports include structured IOCs in multiple copy-paste formats, MITRE ATT&CK mappings, and inline source attribution.</p>
+      <p>Intelligence collected daily via agentic automated searches. Reports include structured IOCs in multiple copy-paste formats, MITRE ATT&CK mappings, and inline source attribution.</p>
 
       <h2 class="about-section-title">Sources</h2>
       <ul class="source-list">
