@@ -51,16 +51,6 @@
       "file": "2026-04-07-malicious-browser-extensions-harvesting-llm-chats.md"
     },
     {
-      "id": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense",
-      "title": "Zero day gold rush, collapse of dwell time and AI augmented defense",
-      "date": "2026-04-07",
-      "author": "LLM ThreatIntel",
-      "tags": ["shadow-ai", "nation-state"],
-      "tlp": "TLP:CLEAR",
-      "excerpt": "Anthropic reports frontier LLMs have achieved autonomous zero-day discovery and exploitation, identifying 20-year-old heap overflows in the Linux kernel and executing unauthenticated credential theft against Ghost CMS. These agents eliminate the human bottleneck by performing the entire research lifecycle at machine speed. As the capability curve for offensive AI scales exponentially, defenders must adopt agentic security workflows and memory-safe architectures to secure an increasingly transparent attack surface.",
-      "file": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense.md"
-    },
-    {
       "id": "2026-04-06-axios-npm-unc1069-rat-march-2026",
       "title": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
       "date": "2026-04-06",

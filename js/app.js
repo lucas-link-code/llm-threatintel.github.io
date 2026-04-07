@@ -369,6 +369,10 @@ const App = {
         </div>
       </div>
       <div class="posts-grid" id="posts-grid">${this.renderPostCards(posts)}</div>
+      <div class="feed-disclaimer" aria-label="Feed disclaimer">
+        <h2 class="about-section-title">Disclaimer</h2>
+        <p>This news feed is automated. The data comes from public reports only and open source community. Validate IOCs before production blocking.</p>
+      </div>
     `;
 
     container.querySelectorAll('.filter-btn').forEach(btn => {
@@ -530,17 +534,18 @@ const App = {
     }
   },
 
+  blogPostBylineHtml() {
+    return `<p class="blog-post-byline">By: Lucas L</p>`;
+  },
+
   blogPostFooterAsideHtml() {
     return `
     <div class="post-footer-aside">
       <h2 class="about-section-title">Project Notes</h2>
       <p>LLM ThreatIntel is maintained independently as a personal defensive-research project focused on the generative AI and LLM threat landscape.</p>
-      <p>If you find the work useful, you can <a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">support it here</a>.</p>
-      <p>General contact: <a href="mailto:contact@lucaslinkowski.com">contact@lucaslinkowski.com</a></p>
-      <p class="post-footer-note">Support does not influence editorial decisions, report selection, or technical conclusions.</p>
+      <p>Report a bug: <a href="mailto:support@llm-threatintel.com">support@llm-threatintel.com</a></p>
       <h2 class="about-section-title">Disclaimer</h2>
       <p>Independent personal project. Blog section analysis, and research are my own and do not represent any employer.</p>
-      <p>Maintained for defensive security research. All intelligence news is automated and comes from public reports. Validate IOCs before production blocking.</p>
     </div>`;
   },
 
@@ -830,7 +835,6 @@ const App = {
             </div>
             <div class="post-title">${post.title}</div>
             <div class="post-excerpt">${this.truncateExcerpt(post.excerpt, 200)}</div>
-            <div style="margin-top:0.75rem;color:var(--t3);font-size:.8rem">By ${post.author}</div>
           </div>
         `).join('')}
       </div>
@@ -862,7 +866,7 @@ const App = {
       if (!response.ok) throw new Error('Blog post file not found');
       const markdown = await response.text();
       const bodyMd = this.stripBlogPostFooterMarkdown(markdown);
-      const html = this.renderMarkdown(bodyMd) + this.blogPostFooterAsideHtml();
+      const html = this.renderMarkdown(bodyMd) + this.blogPostBylineHtml() + this.blogPostFooterAsideHtml();
       container.innerHTML = `
         <a href="#blog" class="back-link">&larr; Back to blog</a>
         <div class="post-meta" style="margin-bottom:1rem">
@@ -884,7 +888,7 @@ const App = {
       <h1 class="page-title"><span class="title-accent">//</span> About LLM ThreatIntel</h1>
       <div class="about-content">
         <p>LLM ThreatIntel is an automated threat intelligence feed focused on the generative AI and LLM threat landscape. Tracking malicious LLM tools, GenAI-assisted malware, AI supply chain compromises, LLMjacking, shadow AI risks, and nation-state GenAI programs.</p>
-        <p>Intelligence collected via Claude Code automated searches. Reports include structured IOCs in multiple copy-paste formats, MITRE ATT&CK mappings, and inline source attribution.</p>
+        <p>All intelligence news posts are collected from public reports via automated searches. Reports include structured IOCs in multiple copy-paste formats, MITRE ATT&CK mappings, and inline source attribution.</p>
         <p class="about-note">Independent personal project. Blog section analysis, and research are my own and do not represent any employer.</p>
         <h2 class="about-section-title">Sources</h2>
         <ul class="source-list">
@@ -899,10 +903,7 @@ const App = {
           <li><a href="https://thehackernews.com" target="_blank">The Hacker News</a></li>
         </ul>
         <h2 class="about-section-title">Support</h2>
-        <p>LLM ThreatIntel is maintained independently. If you find the research useful, you can <a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">support it here</a>.</p>
         <p>Report a bug: <a href="mailto:support@llm-threatintel.com">support@llm-threatintel.com</a></p>
-        <p>General contact: <a href="mailto:contact@lucaslinkowski.com">contact@lucaslinkowski.com</a></p>
-        <p style="color:var(--t3);font-size:.9rem">Support does not influence editorial decisions, report selection, or technical conclusions.</p>
         <h2 class="about-section-title">Disclaimer</h2>
         <p>Independent personal project. Blog section analysis, and research are my own and do not represent any employer.</p>
         <p>Maintained for defensive security research. All intelligence news is automated and comes from public reports. Validate IOCs before production blocking.</p>

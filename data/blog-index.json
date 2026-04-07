@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "id": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense",
+      "title": "Zero day gold rush, collapse of dwell time and AI augmented defense",
+      "date": "2026-04-07",
+      "author": "Lucas Linkowski",
+      "category": "GenAI Security",
+      "tags": ["offensive-ai", "autonomous-agents", "defense"],
+      "excerpt": "Anthropic reports frontier LLMs have achieved autonomous zero day discovery and exploitation, identifying twenty-year-old heap overflows in the Linux kernel and executing unauthenticated credential theft against Ghost CMS. These agents eliminate the human bottleneck by performing the entire research lifecycle at machine speed. As the capability curve for offensive AI scales exponentially, defenders must adopt agentic security workflows and memory safe architectures to secure an increasingly transparent attack surface.",
+      "file": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense.md",
+      "readTime": "6 min"
+    },
+    {
       "id": "detecting-ai-prompt-injection-in-the-wild",
       "title": "Detecting AI Prompt Injection in the Wild",
       "date": "2026-03-01",
