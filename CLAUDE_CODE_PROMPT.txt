@@ -2,6 +2,7 @@ You are working in the llm-threatintel repository, an automated GenAI threat int
 
 REPOSITORY STRUCTURE:
 - posts/*.md - Full markdown threat intel reports
+- posts/*.html - SEO metadata pages (OG, Twitter Card, JSON-LD) for each post
 - data/posts-index.json - Index of all posts with metadata
 - data/actors.json - Threat actor/malware database
 - data/iocs.json - IOC database
@@ -118,6 +119,45 @@ Specific detection guidance referencing log sources: web proxy, DNS, EDR, cloud 
 - [Publisher Name] Another Article (YYYY-MM) — https://another-url
 ```
 
+GENERATE HTML METADATA FILE:
+For each new posts/*.md file, also create a matching posts/*.html file for SEO (Open Graph, Twitter Card, JSON-LD structured data). The HTML file renders the full markdown content inside the site shell with header, nav, footer, and copy buttons. Use an existing posts/*.html as the template. The file must contain:
+
+1. <head> section:
+   - <title> = post title + " | LLM ThreatIntel"
+   - <meta name="description"> = excerpt (HTML-escaped)
+   - <link rel="canonical"> = https://llm-threatintel.com/posts/SLUG.html
+   - Open Graph tags: og:type article, og:title, og:description, og:url, og:site_name, og:image, article:published_time, article:tag (one per tag)
+   - Twitter Card tags: summary_large_image, twitter:title, twitter:description, twitter:image
+   - JSON-LD BlogPosting schema: headline, description, datePublished, dateModified, author, publisher, mainEntityOfPage, keywords
+
+2. <body> section:
+   - Site header with nav links (Intel Feed, Threat Actors, IOC Feed, Blog, About)
+   - Back to feed link
+   - Post meta bar with date, tag spans, and TLP badge
+   - Full post content rendered from markdown to HTML (use python markdown library with tables and fenced_code extensions)
+   - Site footer
+   - Copy button script for all <pre> blocks
+
+Use this Python pattern to generate HTML files from markdown:
+
+```python
+import json, markdown, html, os
+
+md_ext = markdown.Markdown(extensions=['tables', 'fenced_code'])
+
+# For each post entry from posts-index.json:
+with open('posts/' + entry['file']) as f:
+    md_content = f.read()
+md_ext.reset()
+rendered = md_ext.convert(md_content)
+
+# Then substitute into the HTML template using the entry metadata
+# (title, date, tags, excerpt, slug) and the rendered HTML content.
+# See any existing posts/*.html for the exact template structure.
+```
+
+Naming: posts/YYYY-MM-DD-slug.html (same basename as the .md file)
+
 UPDATE data/posts-index.json:
 Add new entry at the TOP of the posts array:
 
@@ -188,10 +228,12 @@ QUALITY CHECKS BEFORE COMMITTING:
 - Detection recommendations reference specific log sources
 - JSON files are valid and last_updated fields are set
 - No duplicate posts in posts-index.json
+- Every posts/*.md file has a matching posts/*.html metadata file
+- HTML files contain valid OG tags, Twitter Card, and JSON-LD schema
 
 OUTPUT FORMAT:
 When complete, provide a summary:
-- Number of posts created
+- Number of posts created (md + html pairs)
 - Number of actors added/updated
 - Number of IOCs added
 - List of new post titles

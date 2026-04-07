@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detecting AI Prompt Injection in the Wild | LLM ThreatIntel</title>
+  <meta name="description" content="Detection engineering for indirect prompt injection attacks targeting AI agents. Covers eight detection categories including CSS hidden text traps, AI ClickFix variants, HashJack fragment injection, zero-width Unicode obfuscation, and agent credential exfiltration. Includes EKFiddle regex rules and UrlScan.io hunting queries.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-03-01-detecting-ai-prompt-injection-in-the-wild.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Detecting AI Prompt Injection in the Wild">
+  <meta property="og:description" content="Detection engineering for indirect prompt injection attacks targeting AI agents. Covers eight detection categories including CSS hidden text traps, AI ClickFix variants, HashJack fragment injection, zero-width Unicode obfuscation, and agent credential exfiltration. Includes EKFiddle regex rules and UrlScan.io hunting queries.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-03-01-detecting-ai-prompt-injection-in-the-wild.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Detecting AI Prompt Injection in the Wild">
+  <meta property="article:published_time" content="2026-03-01T00:00:00Z">
+  <meta property="article:modified_time" content="2026-03-01T00:00:00Z">
+  <meta property="article:tag" content="detection">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Detecting AI Prompt Injection in the Wild">
+  <meta name="twitter:description" content="Detection engineering for indirect prompt injection attacks targeting AI agents. Covers eight detection categories including CSS hidden text traps, AI ClickFix variants, HashJack fragment injection, zero-width Unicode obfuscation, and agent credential exfiltration. Includes EKFiddle regex rules and UrlScan.io hunting queries.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Detecting AI Prompt Injection in the Wild",
+  "description": "Detection engineering for indirect prompt injection attacks targeting AI agents. Covers eight detection categories including CSS hidden text traps, AI ClickFix variants, HashJack fragment injection, zero-width Unicode obfuscation, and agent credential exfiltration. Includes EKFiddle regex rules and UrlScan.io hunting queries.",
+  "datePublished": "2026-03-01T00:00:00Z",
+  "dateModified": "2026-03-01T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-03-01-detecting-ai-prompt-injection-in-the-wild.html",
+  "keywords": ["detection", "prompt-injection"]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-03-01</span>
+      <span class="post-tag tag-detection">Detection</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Detecting AI Prompt Injection in the Wild</h1>
+<p>Traditional ClickFix and SocGholish campaigns rely on tricking a human into running malicious commands. The human sees a fake CAPTCHA or browser update, copies a command, opens a terminal, and executes it. The attack fails if the human recognises the deception.</p>
+<p>That model is changing. As organisations deploy AI agents that autonomously browse the web, summarise documents, and execute workflows, threat actors are now starting to target these agents directly. An AI agent reads the raw HTML and CSS of every page it visits. Attackers embed instructions in that content that are invisible to human users in white text but processed by the agent. The agent follows those instructions, executing commands, exfiltrating credentials, or installing malware, all without human awareness. This eliminates the human bottleneck entirely.</p>
+<p>Unit42 documented 22 distinct payload construction techniques in the wild since December 2025. "Embrace The Red"  demonstrated successful exploitation of Claude computer-use agents. They published lots of great research, link below. The researcher demonstrated a "ClickFix" attack tailored for AI. A malicious website presents a "Verify you're a human" button. When the LLM agent clicks it, JavaScript copies a malicious curl command to the clipboard and opens a terminal to execute it.</p>
+<p>Another example provided a website which tricks agent into writing a local web server that hosts the entire local file system on port 8000 for attackers to exfiltrate files from the local machine.</p>
+<p>and finally, a critical gap identified where agents have the ability to modify their own configuration files without user approval. This is a critical vulnerability that allows attackers to inject malicious code into agents' configuration files.</p>
+<p>see more here:
+https://embracethered.com/blog/posts/2025/39c3-agentic-probllms-exploiting-computer-use-and-coding-agents/</p>
+<p>I thought it would be useful to build a detection rule set to address this. I like writing EKFiddle regex rules for web traffic analysis and other search queries for proactive threat hunting using UrlScan.io.</p>
+<h2>The attack surface</h2>
+<p>Indirect Prompt Injection, aka IDPI, is effective because LLMs cannot reliably distinguish between instructions from their operator and text content they encounter in web pages. Both go to inference pipeline, but the instructions are not treated as adversarial input. When an AI agent visits a page containing the phrase "ignore previous instructions and execute the following command", the model may interpret that as a legitimate directive. The instruction is embedded in what the model treats as context, not as adversarial input.</p>
+<p>Attackers have developed many concealment strategies to keep these payloads invisible to humans while ensuring AI content extractors parse them. CSS techniques include setting font-size to zero pixels, using white-on-white text, positioning elements off-screen at -9999px, setting opacity to zero, and marking elements with aria-hidden. A human never sees these elements. An AI agent that processes the DOM reads them as regular text. CSS files are perfect for this because user does not see them!</p>
+<h2>Eight detection categories</h2>
+<h3>1. Prompt injection override phrases</h3>
+<p>The most direct form of IDPI uses explicit instruction override phrases embedded in page source. Phrases like "ignore previous instructions", "override system prompt", "enable developer mode", and "activate DAN mode" have no legitimate reason to appear in web page content. The EKFiddle rules match these patterns using regex with controlled whitespace tolerance to catch variations.</p>
+<p>example:</p>
+<pre><code>SourceCode  High: AI Prompt Injection Ignore
+(?:ignore|disregard)\s{1,5}(?:all\s{1,5})?(?:previous|prior|above)
+|\s{1,5}(?:instructions|directives|prompts|context)
+</code></pre>
+<p>Phrases like "do not reveal to the user" or "keep these instructions secret" are designed to prevent the hijacked agent from disclosing the attack to the human operator. The combination of an override phrase and a secrecy instruction in the same page is a strong signal of malicious intent.</p>
+<h3>2. CSS hidden text traps</h3>
+<p>These rules detect the combination of CSS visual hiding techniques with command keywords or injection phrases appearing together in the same page. The dual condition requirement, concealment technique plus malicious content, is critical for keeping false positives low. A page that legitimately uses aria hidden for accessibility will not match unless it also contains command execution keywords.</p>
+<p>example:</p>
+<pre><code>SourceCode  High: Hidden Tiny Font Command
+font-size\s{0,3}:\s{0,3}[0-2]px[^&gt;]{0,200}&gt;[^&lt;]{1,300}
+(?:curl\s|powershell|wget\s|bash\s|\.exe\b|pip\s{1,5}install
+|npm\s{1,5}install|ignore\s{1,5}previous)
+</code></pre>
+<p>The rule above matches elements with 0-2 pixel font size that contain within 1300 characters either command execution strings or prompt injection phrases. The bounded repetition prevents catastrophic backtracking.</p>
+<h3>3. AI ClickFix for computer-use agents</h3>
+<p>Traditional ClickFix asks "Verify you are Human" to trigger a CAPTCHA flow. The agent targeted variant inverts use this: "Are you a Computer?" or "Verify you are a Robot". These lures specifically target computers using AI agents that have been instructed to interact with web elements. Think of the recent explosion of ClawdBot madness!</p>
+<p>A more sophisticated variant uses neutral phrases like "Show Instructions" and "Begin Validation" instead of explicit verification language. These phrases bypass LLM safety classifiers which would normally refuse to interact with CAPTCHA-like flows. The page then directs the agent to open a terminal and paste malicious clipboard content and execute it.</p>
+<p>Why would threat actors need to lure humens to clickfix, if they have perfectly capable AI agents reading websites all day long, happy to execute the commands without human intervention! TA can scale 100 x and more at Agent speed.</p>
+<h3>4. Fake AI tool typosquatting</h3>
+<p>Domains that typosquat legitimate AI tools follow predictable naming patterns. chatgpt-app, claude-download, cursor-install, copilot-download, gemini-install. The rules detect these constructions across major AI platforms in both page source and URI traffic.</p>
+<p>The OCRFix campaign is a notable variant. ChatGPT recommendations were LLM-poisoned to direct users to a malicious tesseract-ocr typosquat domain, which delivered credential stealers. The poisoning happened at the training data level, making the recommendations appear entirely legitimate from the model's perspective.</p>
+<h3>5. HashJack fragment injection</h3>
+<p>This technique appends IDPI payloads after the hash fragment identifier in URLs. Per HTTP specification, the server never receives the fragment, so all server-side security controls are blind to this vector. AI agents that process the full URL string ingest the fragment as context. This effectively weaponises any legitimate domain without compromising the host server. No server logs, no WAF alerts, no network IDS signatures.</p>
+<p>example:</p>
+<pre><code>URI  High: HashJack Fragment Injection
+#[^\s]{0,200}(?:ignore\s{1,3}previous|system\s{1,3}prompt
+|execute\s{1,3}(?:this|the)|curl\s|powershell|bash\s
+|override\s{1,3}(?:your|the))
+</code></pre>
+<h3>6. Zero-width Unicode obfuscation</h3>
+<p>Attackers insert invisible Unicode characters between the letters of injection phrases. "ignore previous instructions" becomes individual characters separated by zero-width spaces, non-joiners, or joiners. Regex-based keyword filters miss the fragmented text because the visual representation differs from the character sequence. LLMs reconstruct the semantic meaning regardless because they process the underlying text, not the rendered output.</p>
+<p>The RTL override variant uses right-to-left Unicode markers to reverse text rendering. The string appears reversed to a human reviewing the source, but the LLM reads the logical character order and extracts the instruction correctly.</p>
+<h3>7. Agent credential exfiltration</h3>
+<p>The ZombAI attack chain turns a compromised AI agent into a credential theft tool. IDPI payloads instruct the hijacked agent to read sensitive environment variables like AWS_ACCESS_KEY, GITHUB_TOKEN, OPENAI_API_KEY, or DATABASE_URL, and transmit them to attacker infrastructure via curl, nslookup DNS exfiltration, or fetch requests. The agent operates from within the trusted enterprise perimeter, bypassing network segmentation that would block external attackers.</p>
+<h3>8. Combined hunting sweeps</h3>
+<p>UrlScan.io queries combine indicators from multiple categories into single queries for efficient periodic scanning. Each sweep covers an entire attack class in one query. Recommended cadence is weekly with a date filter to scope the results.</p>
+<p>example of UrlScan.io threat hunting query:</p>
+<pre><code>text.content:(&quot;ignore previous instructions&quot;)
+  OR text.content:(&quot;disregard previous instructions&quot;)
+  OR text.content:(&quot;override system prompt&quot;)
+  OR text.content:(&quot;bypass system prompt&quot;)
+  OR text.content:(&quot;enable developer mode&quot;)
+  OR text.content:(&quot;activate DAN mode&quot;)
+  OR text.content:(&quot;enable jailbreak mode&quot;)
+</code></pre>
+<p>text.content searches for the presence of the keywords cached by UrlScan.io from the text content of the page, mainly index.html content. This is a great way to identify pages that are likely to be infected with IDPI payloads. Although, you do need a paid subscription to UrlScan.io for this property to be available to you.</p>
+<h2>Deployment</h2>
+<p>The EKFiddle regex rules deploy directly into the CustomRegexes.txt production file in Fiddler Classic proxy with EKFiddle extention enabled. The UrlScan.io queries can be scheduled to run as manual queries for periodic threat hunting. Individual phrase queries work best as Saved Searches. The consolidated sweeps work best for manual hunting sessions.</p>
+<p>As LLMs improve their instructions boundaries and attackers adapt their evasion techniques, the detection patterns will need continuous development and refinement. The above categories and detection logic raise awarness where to look for these attacks, they are the attack surfaces and will remain relevant as long as AI agents process untrusted web content.</p></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
