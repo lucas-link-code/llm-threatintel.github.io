@@ -5,8 +5,44 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 06 Apr 2026 05:54:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 05:42:29 +0000</lastBuildDate>
     <item>
+      <title>Flowise RCE Vulnerability (CVE-2025-59528) Actively Exploited in April 2026</title>
+      <link>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Hackers are exploiting a maximum-severity vulnerability, tracked as CVE-2025-59528, in the open-source platform Flowise for building custom LLM apps and agentic systems to execute arbitrary code. The vulnerability affects a widely deployed LLM application framework used by developers and enterprises to build AI-powered workflows. Active exploitation was confirmed on April 7, 2026.</description>
+    </item>    <item>
+      <title>GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments</title>
+      <link>https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <description>The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.</description>
+    </item>    <item>
+      <title>LLMjacking Industrializes: 376% Surge in AI Credential Theft, Underground Marketplaces, and Reverse Proxy Operations</title>
+      <link>https://llm-threatintel.com/posts/2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace.html</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Sysdig documented a 376% increase in credential theft targeting AI services between Q4 2025 and Q1 2026, with daily victim costs exceeding $100,000 when flagship models are abused. Underground marketplaces now sell stolen LLM API keys on a structured pricing tier from $50 for GPT-3.5 access to $5,000 for whitelisted enterprise keys with no rate limits. Attackers deploy OpenAI Reverse Proxies containing dozens of stolen keys to resell access at scale.</description>
+    </item>    <item>
+      <title>Shai-hulud npm Registry Worm and nullifAI Hugging Face Malware: AI Supply Chain Under Siege</title>
+      <link>https://llm-threatintel.com/posts/2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.html</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <description>ReversingLabs documented Shai-hulud, the first self-replicating registry-native worm operating at scale within npm, compromising nearly 1,000 packages with over 100 million lifetime downloads across two waves. Separately, the nullifAI technique demonstrated that malicious ML models can bypass Hugging Face security scanning using corrupted Pickle files. Organizations consuming npm packages should audit lockfiles for compromised packages including @ctrl/tinycolor, @asyncapi/specs, ngx-bootstrap, and ng2-file-upload.</description>
+    </item>    <item>
+      <title>Nation-State APT Exploitation of Generative AI: Emerald Sleet and Jasper Sleet Operationalize LLMs</title>
+      <link>https://llm-threatintel.com/posts/2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.html</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft documented North Korean APT groups Emerald Sleet and Jasper Sleet actively integrating LLMs into their operational tradecraft. Emerald Sleet uses LLMs to parse disclosed vulnerabilities and map exploitation paths, while Jasper Sleet leverages AI to scale fraudulent IT worker schemes, generate phishing lures, and produce operational code. Both groups use generative AI to rapidly establish and rotate lookalike domains for C2 infrastructure.</description>
+    </item>    <item>
+      <title>Malicious Browser Extensions Harvesting LLM Chat Histories from 900,000 Users</title>
+      <link>https://llm-threatintel.com/posts/2026-04-07-malicious-browser-extensions-harvesting-llm-chats.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-07-malicious-browser-extensions-harvesting-llm-chats.html</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Two Chromium-based browser extensions impersonating AI assistants have compromised approximately 900,000 users, harvesting full chat histories from ChatGPT and DeepSeek along with browsing telemetry. Microsoft Defender telemetry confirmed activity across more than 20,000 enterprise tenants. Defenders should block the four identified C2 domains and audit enterprise Chrome extension inventories for the two malicious extension IDs.</description>
+    </item>    <item>
       <title>Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account</title>
       <link>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</guid>
@@ -90,42 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.html</guid>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       <description>Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security's RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.</description>
-    </item>    <item>
-      <title>MCP Protocol Security Crisis: Tool Poisoning, Shadow Servers, and Agentic AI Attack Surface</title>
-      <link>https://llm-threatintel.com/posts/2026-04-01-mcp-protocol-security-tool-poisoning-agentic-risk.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-01-mcp-protocol-security-tool-poisoning-agentic-risk.html</guid>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <description>The Model Context Protocol has become a high-value attack surface with 43% of MCP servers vulnerable to command injection and OWASP publishing a dedicated MCP Top 10 risk framework. Operation Bizarre Bazaar demonstrated industrialized exploitation with 35,000 attack sessions targeting exposed MCP endpoints between December 2025 and January 2026, while Cyata Research disclosed a chained RCE vulnerability in Anthropic's own official Git MCP server. Organizations deploying agentic AI infrastructure must audit MCP server configurations, restrict tool permissions, and monitor for shadow MCP server deployments.</description>
-    </item>    <item>
-      <title>TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised</title>
-      <link>https://llm-threatintel.com/posts/2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.html</guid>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <description>TeamPCP conducted a sophisticated multi-stage supply chain campaign between March 19-27, 2026, compromising four widely-used projects in succession: Trivy, KICS, LiteLLM, and Telnyx, using stolen credentials from each compromise to expand to the next target. The LiteLLM compromise on March 24 involved malicious PyPI versions 1.82.7 and 1.82.8 containing credential stealers, live for only 40 minutes before quarantine. Organizations using AI proxy libraries and infrastructure scanning tools must audit for exposure and rotate all potentially compromised credentials.</description>
-    </item>    <item>
-      <title>Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT</title>
-      <link>https://llm-threatintel.com/posts/2026-04-01-axios-npm-supply-chain-unc1069-waveshaper-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-01-axios-npm-supply-chain-unc1069-waveshaper-2026.html</guid>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Google Threat Intelligence Group attributes the Axios npm package compromise to UNC1069, a North Korea-nexus financially motivated threat actor, based on infrastructure overlaps and use of WAVESHAPER.V2 backdoor. The malicious versions were live for approximately 2-3 hours on March 31, 2026, with both latest and legacy tags compromised to maximize blast radius. Organizations must immediately audit for affected versions and treat any system with exposure as fully compromised.</description>
-    </item>    <item>
-      <title>TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages</title>
-      <link>https://llm-threatintel.com/posts/2026-03-30-teampcp-supply-chain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-03-30-teampcp-supply-chain.html</guid>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Active supply chain campaign distributing backdoored Python packages impersonating LiteLLM and Telnyx AI libraries on PyPI. Developers integrating LLM orchestration frameworks are the primary targets.</description>
-    </item>    <item>
-      <title>LAMEHUG: First Malware to Integrate Live LLM for Dynamic C2 Command Generation</title>
-      <link>https://llm-threatintel.com/posts/2026-03-28-lamehug-llm-malware.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-03-28-lamehug-llm-malware.html</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-      <description>APT28-attributed malware LAMEHUG represents a milestone in offensive AI adoption. It is the first publicly documented sample that calls an LLM API at runtime to dynamically generate C2 commands based on host reconnaissance data.</description>
-    </item>    <item>
-      <title>Russian GenAI-Assisted FortiGate Mass Exploitation Campaign</title>
-      <link>https://llm-threatintel.com/posts/2026-03-25-russian-fortigate-genai.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-03-25-russian-fortigate-genai.html</guid>
-      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Russian-linked threat actors are leveraging generative AI to accelerate vulnerability research and exploit development targeting FortiGate VPN appliances at scale.</description>
     </item>
   </channel>
 </rss>

@@ -47,7 +47,11 @@
     "name": "LLM ThreatIntel"
   },
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-07-malicious-browser-extensions-harvesting-llm-chats.html",
-  "keywords": ["malware", "phishing", "shadow-ai"]
+  "keywords": [
+    "malware",
+    "phishing",
+    "shadow-ai"
+  ]
 }
   </script>
 </head>
@@ -76,118 +80,38 @@
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>Malicious Browser Extensions Harvesting LLM Chat Histories from 900,000 Users</h1>
-<p><strong>Date:</strong> 2026-04-07
-<strong>TLP:</strong> TLP:CLEAR
-<strong>Tags:</strong> malware, phishing, shadow-ai</p>
+<p><strong>Date:</strong> 2026-04-07<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> malware, phishing, shadow-ai</p>
 <h2>Executive Summary</h2>
 <p>Two Chromium-based browser extensions impersonating AI assistants have compromised approximately 900,000 users, harvesting full chat histories from ChatGPT and DeepSeek along with browsing telemetry. Microsoft Defender telemetry confirmed activity across more than 20,000 enterprise tenants. Defenders should block the four identified C2 domains and audit enterprise Chrome extension inventories for the two malicious extension IDs.</p>
 <h2>Campaign Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Campaign / Malware</td>
-<td>Malicious AI Assistant Browser Extensions</td>
-</tr>
-<tr>
-<td>Attribution</td>
-<td>Unknown (confidence: none)</td>
-</tr>
-<tr>
-<td>Target</td>
-<td>Enterprise and consumer users of ChatGPT and DeepSeek</td>
-</tr>
-<tr>
-<td>Vector</td>
-<td>Chrome Web Store distribution, social engineering</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>active</td>
-</tr>
-<tr>
-<td>First Observed</td>
-<td>2025-12</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Malicious AI Assistant Browser Extensions</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>Enterprise and consumer users of ChatGPT and DeepSeek</td></tr><tr><td>Vector</td><td>Chrome Web Store distribution, social engineering</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2025-12</td></tr></tbody></table>
 <h2>Detailed Findings</h2>
-<p>According to Microsoft Security Blog, two Chromium-based extensions impersonating the legitimate AITOPIA AI assistant tool were identified actively scraping user conversations from ChatGPT and DeepSeek platforms. The first extension, "Chat GPT for Chrome with GPT-5, Claude Sonnet and DeepSeek AI" (extension ID fnmihdojmnkclgjpcoonokmkhjpjechg), accumulated over 600,000 installations. The second, "AI Sidebar with Deepseek, ChatGPT, Claude and more" (extension ID inhcgfpbfdjbjogdfjbclgolkmhnooop), reached over 300,000 installations.</p>
+<p>According to Microsoft Security Blog, two Chromium-based extensions impersonating the legitimate AITOPIA AI assistant tool were identified actively scraping user conversations from ChatGPT and DeepSeek platforms. The first extension, &quot;Chat GPT for Chrome with GPT-5, Claude Sonnet and DeepSeek AI&quot; (extension ID fnmihdojmnkclgjpcoonokmkhjpjechg), accumulated over 600,000 installations. The second, &quot;AI Sidebar with Deepseek, ChatGPT, Claude and more&quot; (extension ID inhcgfpbfdjbjogdfjbclgolkmhnooop), reached over 300,000 installations.</p>
 <p>Cryptika Cybersecurity reported that the extensions monitor active browser tabs and use DOM element extraction to capture prompts, responses, and session identifiers from ChatGPT and DeepSeek web interfaces. Collected data is encoded as Base64 JSON and exfiltrated in batches every 30 minutes to attacker-controlled C2 infrastructure at deepaichats.com and chatsaigpt.com. Two additional Lovable-hosted C2 domains were identified: chataigpt.pro and chatgptsidebar.pro.</p>
-<p>According to Dataprise, the extensions achieve persistence by auto-reloading on browser startup without requiring elevated privileges. They mask data theft activity by requesting what appears to be "anonymous analytics" consent from users. The stolen data exposes organizations to leakage of proprietary code, internal workflows, strategic discussions, and credentials embedded in AI conversations.</p>
-<p>Rewterz confirmed that Unit 42 published IOCs for the campaign on February 13, 2026. As of January 7, 2026, both extensions remained available on the Chrome Web Store, though one lost its "Featured" badge following initial disclosure.</p>
+<p>According to Dataprise, the extensions achieve persistence by auto-reloading on browser startup without requiring elevated privileges. They mask data theft activity by requesting what appears to be &quot;anonymous analytics&quot; consent from users. The stolen data exposes organizations to leakage of proprietary code, internal workflows, strategic discussions, and credentials embedded in AI conversations.</p>
+<p>Rewterz confirmed that Unit 42 published IOCs for the campaign on February 13, 2026. As of January 7, 2026, both extensions remained available on the Chrome Web Store, though one lost its &quot;Featured&quot; badge following initial disclosure.</p>
 <h2>MITRE ATT&amp;CK Mapping</h2>
-<table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>ID</th>
-<th>Context</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Browser Extensions</td>
-<td>T1176</td>
-<td>Malicious Chromium extensions installed via Chrome Web Store</td>
-</tr>
-<tr>
-<td>Browser Session Hijacking</td>
-<td>T1185</td>
-<td>DOM scraping of active ChatGPT and DeepSeek sessions</td>
-</tr>
-<tr>
-<td>Exfiltration Over C2 Channel</td>
-<td>T1041</td>
-<td>Base64-encoded JSON batched to C2 every 30 minutes</td>
-</tr>
-<tr>
-<td>Data Encoding: Standard Encoding</td>
-<td>T1132.001</td>
-<td>Base64 encoding of harvested chat data</td>
-</tr>
-<tr>
-<td>Input Capture</td>
-<td>T1056</td>
-<td>Passive capture of user prompts and AI responses</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Browser Extensions</td><td>T1176</td><td>Malicious Chromium extensions installed via Chrome Web Store</td></tr><tr><td>Browser Session Hijacking</td><td>T1185</td><td>DOM scraping of active ChatGPT and DeepSeek sessions</td></tr><tr><td>Exfiltration Over C2 Channel</td><td>T1041</td><td>Base64-encoded JSON batched to C2 every 30 minutes</td></tr><tr><td>Data Encoding: Standard Encoding</td><td>T1132.001</td><td>Base64 encoding of harvested chat data</td></tr><tr><td>Input Capture</td><td>T1056</td><td>Passive capture of user prompts and AI responses</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<pre><code>deepaichats.com
+<pre><code class="language-">deepaichats.com
 chatsaigpt.com
 chataigpt.pro
-chatgptsidebar.pro
-</code></pre>
+chatgptsidebar.pro</code></pre>
 <h3>Full URL Paths</h3>
 <p><em>No full URL paths with specific endpoints published by source.</em></p>
 <h3>Splunk Format</h3>
-<pre><code>&quot;deepaichats.com&quot; OR &quot;chatsaigpt.com&quot; OR &quot;chataigpt.pro&quot; OR &quot;chatgptsidebar.pro&quot;
-</code></pre>
+<pre><code class="language-">&quot;deepaichats.com&quot; OR &quot;chatsaigpt.com&quot; OR &quot;chataigpt.pro&quot; OR &quot;chatgptsidebar.pro&quot;</code></pre>
 <h3>File Hashes</h3>
-<pre><code>98d1f151872c27d0abae3887f7d6cb6e4ce29e99ad827cb077e1232bc4a69c00
-20ba72e91d7685926c8c1c5b4646616fa9d769e32c1bc4e9f15dddaf3429cea7
-</code></pre>
+<pre><code class="language-">98d1f151872c27d0abae3887f7d6cb6e4ce29e99ad827cb077e1232bc4a69c00
+20ba72e91d7685926c8c1c5b4646616fa9d769e32c1bc4e9f15dddaf3429cea7</code></pre>
 <h3>Package Indicators</h3>
-<pre><code>chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
-chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
-</code></pre>
+<pre><code class="language-">chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
+chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Monitor web proxy logs for outbound connections to the four C2 domains: deepaichats.com, chatsaigpt.com, chataigpt.pro, chatgptsidebar.pro. Query EDR telemetry for Chrome extension loads matching IDs fnmihdojmnkclgjpcoonokmkhjpjechg or inhcgfpbfdjbjogdfjbclgolkmhnooop. In CrowdStrike LogScale or Splunk, hunt for Base64-encoded POST requests from browser processes to non-corporate domains at 30-minute intervals. Audit Chrome enterprise extension policies using Google Workspace Admin or GPO to blocklist the two extension IDs. Monitor for DNS queries resolving to Lovable-hosted infrastructure patterns associated with chataigpt.pro and chatgptsidebar.pro.</p>
 <h2>References</h2>
-<ul>
-<li>[Microsoft Security Blog] Malicious AI Assistant Extensions Harvest LLM Chat Histories (2026-03-05) — https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/</li>
-<li>[Cryptika Cybersecurity] Malicious Chrome Extension Steal ChatGPT and DeepSeek Conversations from 900K Users (2026-01) — https://www.cryptika.com/malicious-chrome-extension-steal-chatgpt-and-deepseek-conversations-from-900k-users/</li>
-<li>[Dataprise] Malicious AI Chrome Extensions: Data Theft Alert (2026-02) — https://www.dataprise.com/resources/defense-digest/malicious-ai-chrome-extensions-data-exfiltration/</li>
-<li>[Rewterz] Threat Actors Abuse Chrome Extensions to Steal AI Prompts - Active IOCs (2026-02) — https://rewterz.com/threat-advisory/threat-actors-abuse-chrome-extensions-to-steal-ai-prompts-active-iocs</li>
-<li>[Unit 42] IOCs for Tactics by Browser Extensions to Avoid Bans (2026-02-13) — https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-02-13-IOCs-for-tactics-by-browser-extensions-to-avoid-bans.txt</li>
-</ul></div>
+<ul><li>[Microsoft Security Blog] Malicious AI Assistant Extensions Harvest LLM Chat Histories (2026-03-05) — https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/</li><li>[Cryptika Cybersecurity] Malicious Chrome Extension Steal ChatGPT and DeepSeek Conversations from 900K Users (2026-01) — https://www.cryptika.com/malicious-chrome-extension-steal-chatgpt-and-deepseek-conversations-from-900k-users/</li><li>[Dataprise] Malicious AI Chrome Extensions: Data Theft Alert (2026-02) — https://www.dataprise.com/resources/defense-digest/malicious-ai-chrome-extensions-data-exfiltration/</li><li>[Rewterz] Threat Actors Abuse Chrome Extensions to Steal AI Prompts - Active IOCs (2026-02) — https://rewterz.com/threat-advisory/threat-actors-abuse-chrome-extensions-to-steal-ai-prompts-active-iocs</li><li>[Unit 42] IOCs for Tactics by Browser Extensions to Avoid Bans (2026-02-13) — https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-02-13-IOCs-for-tactics-by-browser-extensions-to-avoid-bans.txt</li></ul></div>
   </main>
 
   <footer class="site-footer">

@@ -46,7 +46,10 @@
     "name": "LLM ThreatIntel"
   },
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html",
-  "keywords": ["supply-chain", "malware"]
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
 }
   </script>
 </head>
@@ -75,46 +78,11 @@
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments</h1>
-<p><strong>Date:</strong> 2026-04-07
-<strong>TLP:</strong> TLP:CLEAR
-<strong>Tags:</strong> supply-chain, malware</p>
+<p><strong>Date:</strong> 2026-04-07<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malware</p>
 <h2>Executive Summary</h2>
 <p>The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors. Organizations should audit Open VSX extension inventories and block extensions with unverified transitive dependencies.</p>
 <h2>Campaign Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Campaign / Malware</td>
-<td>GlassWorm</td>
-</tr>
-<tr>
-<td>Attribution</td>
-<td>Suspected Russian-speaking threat actors (confidence: low)</td>
-</tr>
-<tr>
-<td>Target</td>
-<td>Software developers using VSCode-compatible IDEs with Open VSX extensions</td>
-</tr>
-<tr>
-<td>Vector</td>
-<td>Compromised developer accounts, transitive dependency poisoning in extension manifests</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>active</td>
-</tr>
-<tr>
-<td>First Observed</td>
-<td>2025-10</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GlassWorm</td></tr><tr><td>Attribution</td><td>Suspected Russian-speaking threat actors (confidence: low)</td></tr><tr><td>Target</td><td>Software developers using VSCode-compatible IDEs with Open VSX extensions</td></tr><tr><td>Vector</td><td>Compromised developer accounts, transitive dependency poisoning in extension manifests</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2025-10</td></tr></tbody></table>
 <h2>Detailed Findings</h2>
 <p>According to Socket.dev, the GlassWorm campaign was first identified when researchers discovered malicious loader components injected into established Open VSX extensions via compromised developer accounts or stolen publishing credentials. The initial attack vector involved direct code injection into legitimate extensions during routine updates.</p>
 <p>BleepingComputer reported that as of March 2026, the campaign has expanded to 433 compromised components across multiple platforms, with 72 malicious Open VSX extensions accumulating over 9 million total installs. The campaign spans Open VSX, npm, GitHub, and the Visual Studio Code marketplace, making it one of the broadest developer-targeted supply chain attacks documented.</p>
@@ -123,52 +91,7 @@
 <p>Socket.dev documented the full credential harvesting scope: npm tokens, GitHub tokens, Git credentials, AWS/GCP/Azure cloud provider keys, and browser-stored passwords. The malware also targets cryptocurrency wallets including MetaMask, Electrum, Exodus, Atomic, Ledger Live, Trezor Suite, Binance, and TonKeeper. On Windows systems, GlassWorm establishes persistence through registry keys and deploys hidden VNC servers and SOCKS proxies for remote access. The self-propagation component compromises additional extensions by reusing harvested developer credentials.</p>
 <p>BleepingComputer noted that while no confirmed APT attribution exists, code analysis, operational security patterns, and the Russian locale exclusion collectively suggest Russian-speaking threat actors.</p>
 <h2>MITRE ATT&amp;CK Mapping</h2>
-<table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>ID</th>
-<th>Context</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supply Chain Compromise: Compromise Software Dependencies</td>
-<td>T1195.001</td>
-<td>Transitive dependency poisoning via extensionPack and extensionDependencies fields</td>
-</tr>
-<tr>
-<td>Supply Chain Compromise</td>
-<td>T1195.002</td>
-<td>Compromised developer accounts used to inject malware into legitimate extensions</td>
-</tr>
-<tr>
-<td>Credentials from Password Stores</td>
-<td>T1555</td>
-<td>Harvesting browser passwords and cryptocurrency wallet data</td>
-</tr>
-<tr>
-<td>Unsecured Credentials: Credentials in Files</td>
-<td>T1552.001</td>
-<td>Stealing npm, GitHub, Git, and cloud provider tokens from config files</td>
-</tr>
-<tr>
-<td>Remote Access Software</td>
-<td>T1219</td>
-<td>Hidden VNC servers and SOCKS proxies deployed on compromised systems</td>
-</tr>
-<tr>
-<td>Obfuscated Files or Information</td>
-<td>T1027</td>
-<td>Invisible Unicode characters, runtime payload decryption</td>
-</tr>
-<tr>
-<td>Boot or Logon Autostart Execution: Registry Run Keys</td>
-<td>T1547.001</td>
-<td>Windows registry persistence for GlassWorm loader</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies</td><td>T1195.001</td><td>Transitive dependency poisoning via extensionPack and extensionDependencies fields</td></tr><tr><td>Supply Chain Compromise</td><td>T1195.002</td><td>Compromised developer accounts used to inject malware into legitimate extensions</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>Harvesting browser passwords and cryptocurrency wallet data</td></tr><tr><td>Unsecured Credentials: Credentials in Files</td><td>T1552.001</td><td>Stealing npm, GitHub, Git, and cloud provider tokens from config files</td></tr><tr><td>Remote Access Software</td><td>T1219</td><td>Hidden VNC servers and SOCKS proxies deployed on compromised systems</td></tr><tr><td>Obfuscated Files or Information</td><td>T1027</td><td>Invisible Unicode characters, runtime payload decryption</td></tr><tr><td>Boot or Logon Autostart Execution: Registry Run Keys</td><td>T1547.001</td><td>Windows registry persistence for GlassWorm loader</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
 <p><em>No specific C2 domains published by source. C2 uses direct IP connections, Solana blockchain dead drops, and Google Calendar events.</em></p>
@@ -183,12 +106,7 @@
 <h2>Detection Recommendations</h2>
 <p>Audit Open VSX and VSCode extension inventories for extensions with recent dependency changes in extensionPack or extensionDependencies manifest fields. Monitor EDR for Node.js or Electron processes spawning VNC server binaries or establishing SOCKS proxy listeners on non-standard ports. In web proxy logs, hunt for connections from IDE processes (code, codium, cursor) to Solana RPC endpoints or Google Calendar API endpoints outside normal developer workflow patterns. Query DNS logs for resolution of cryptocurrency exchange domains from developer workstations. Monitor for outbound connections to direct IP addresses from extension host processes. On Windows endpoints, inspect registry Run keys for entries created by VSCode extension processes. Implement extension allowlisting policies in enterprise VSCode deployments to restrict installation to vetted extensions only.</p>
 <h2>References</h2>
-<ul>
-<li>[Socket.dev] GlassWorm Loader Hits Open VSX via Developer Account Compromise (2026-01) — https://socket.dev/blog/glassworm-loader-hits-open-vsx-via-suspected-developer-account-compromise</li>
-<li>[BleepingComputer] GlassWorm malware hits 400+ code repos on GitHub, npm, VSCode, OpenVSX (2026-03) — https://www.bleepingcomputer.com/news/security/glassworm-malware-hits-400-plus-code-repos-on-github-npm-vscode-openvsx/</li>
-<li>[CSO Online] Open VSX extensions hijacked: GlassWorm malware spreads via dependency abuse (2026-03) — https://www.csoonline.com/article/4145579/open-vsx-extensions-hijacked-glassworm-malware-spreads-via-dependency-abuse.html</li>
-<li>[Rescana] GlassWorm Supply Chain Attack Exploits Open VSX Registry to Infect VSCode Extensions with Advanced Malware (2026) — https://www.rescana.com/post/glassworm-supply-chain-attack-exploits-open-vsx-registry-to-infect-vscode-extensions-with-advanced-m</li>
-</ul></div>
+<ul><li>[Socket.dev] GlassWorm Loader Hits Open VSX via Developer Account Compromise (2026-01) — https://socket.dev/blog/glassworm-loader-hits-open-vsx-via-suspected-developer-account-compromise</li><li>[BleepingComputer] GlassWorm malware hits 400+ code repos on GitHub, npm, VSCode, OpenVSX (2026-03) — https://www.bleepingcomputer.com/news/security/glassworm-malware-hits-400-plus-code-repos-on-github-npm-vscode-openvsx/</li><li>[CSO Online] Open VSX extensions hijacked: GlassWorm malware spreads via dependency abuse (2026-03) — https://www.csoonline.com/article/4145579/open-vsx-extensions-hijacked-glassworm-malware-spreads-via-dependency-abuse.html</li><li>[Rescana] GlassWorm Supply Chain Attack Exploits Open VSX Registry to Infect VSCode Extensions with Advanced Malware (2026) — https://www.rescana.com/post/glassworm-supply-chain-attack-exploits-open-vsx-registry-to-infect-vscode-extensions-with-advanced-m</li></ul></div>
   </main>
 
   <footer class="site-footer">
