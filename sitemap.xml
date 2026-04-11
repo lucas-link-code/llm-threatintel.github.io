@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://llm-threatintel.com/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</loc>

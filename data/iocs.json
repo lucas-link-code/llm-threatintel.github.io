@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08",
+  "last_updated": "2026-04-11",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -548,6 +548,69 @@
       "first_seen": "2026-04-08",
       "source": "BleepingComputer",
       "campaign": "flowise-rce-cve-2025-59528-april-2026",
+      "status": "active"
+    },
+    {
+      "value": "checkmarx.zone",
+      "type": "domain",
+      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "first_seen": "2026-04-11",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "https://checkmarx.zone/raw",
+      "type": "url_path",
+      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "first_seen": "2026-04-11",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "litellm 1.82.7 (PyPI)",
+      "type": "package",
+      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "first_seen": "2026-04-11",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "litellm 1.82.8 (PyPI)",
+      "type": "package",
+      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "first_seen": "2026-04-11",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "telnyx 4.87.1 (PyPI)",
+      "type": "package",
+      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "first_seen": "2026-04-11",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "telnyx 4.87.2 (PyPI)",
+      "type": "package",
+      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "first_seen": "2026-04-11",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "vLLM < 0.14.1",
+      "type": "package",
+      "context": "Critical vLLM RCE Vulnerability (CVE-2026-22778): Heap Overflow via Malicious Video Links Affects Millions of AI Servers",
+      "first_seen": "2026-04-11",
+      "source": "OX Security",
+      "campaign": "vllm-cve-2026-22778-rce-heap-overflow",
       "status": "active"
     }
   ]

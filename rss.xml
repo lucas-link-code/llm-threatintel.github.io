@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 08 Apr 2026 05:42:29 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 05:21:12 +0000</lastBuildDate>
     <item>
+      <title>Project Glasswing: Anthropic's Claude Mythos Preview Identified Thousands of Zero-Day Vulnerabilities in Critical Software—Cybersecurity Capability Reshaping Defense and Offense</title>
+      <link>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic formed Project Glasswing because of capabilities observed in a new frontier model trained by Anthropic called Claude Mythos2 Preview, a general-purpose, unreleased frontier model that reveals a stark fact: AI models have reached a level of coding capability where they can surpass all but the most skilled humans at finding and exploiting software vulnerabilities. Over the past few weeks, Anthropic used Claude Mythos Preview to identify thousands of zero-day vulnerabilities (that is, flaws that were previously unknown to the software's developers), many of them critical, in every major operating system and every major web browser, along with a range of other important pieces of software.</description>
+    </item>    <item>
+      <title>Critical vLLM RCE Vulnerability (CVE-2026-22778): Heap Overflow via Malicious Video Links Affects Millions of AI Servers</title>
+      <link>https://llm-threatintel.com/posts/2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.html</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <description>This vulnerability allows an attacker to achieve Remote Code Execution (RCE) simply by sending a malicious video link to a vLLM API. vLLM is a high-throughput, memory-efficient engine designed for serving Large Language Models (LLMs). A critical vulnerability, CVE-2026-22778, was recently discovered in vLLM, a popular framework for serving Large Language Models (LLMs) with high throughput. The vulnerability has been actively exploited in the wild.</description>
+    </item>    <item>
+      <title>TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner</title>
+      <link>https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <description>On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security's Trivy scanner and Checkmarx's KICS GitHub Action over the preceding week.</description>
+    </item>    <item>
       <title>Flowise RCE Vulnerability (CVE-2025-59528) Actively Exploited in April 2026</title>
       <link>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-02-apt36-transparent-tribe-vibeware-ai-malware.html</guid>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <description>Bitdefender Labs confirmed that APT36 (Transparent Tribe), a Pakistan-linked state-sponsored group, has pivoted to an AI-assisted malware development model dubbed 'vibeware', using large language models to mass-produce implants in niche programming languages (Nim, Zig, Crystal) and Living Off Trusted Services (LOTS) C2 channels (Slack, Discord, Supabase, Google Sheets), primarily targeting Indian government entities and diplomatic missions. The strategy prioritises volume over sophistication — a 'Distributed Denial of Detection' approach — generating new malware variants daily to overwhelm EDR baselines. Security teams should implement behavioral detection for anomalous API calls to Slack, Discord, and Supabase from non-developer endpoints.</description>
-    </item>    <item>
-      <title>Hive0163 Ransomware Group Deploys Slopoly: First Confirmed LLM-Generated C2 Framework Used in Live Ransomware Attack</title>
-      <link>https://llm-threatintel.com/posts/2026-04-02-hive0163-slopoly-ai-generated-malware-ransomware.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-02-hive0163-slopoly-ai-generated-malware-ransomware.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>IBM X-Force discovered 'Slopoly', a likely LLM-generated PowerShell backdoor deployed by the Hive0163 ransomware group during a live intrusion in early 2026, marking the first confirmed use of AI-generated malware in an active ransomware engagement by a financially motivated threat actor. The malware maintained persistent access to a compromised server for over a week before Interlock ransomware was deployed. Defenders should hunt for scheduled tasks named 'Runtime Broker' under C:\ProgramData\Microsoft\Windows\Runtime\ and block connections to the identified C2 infrastructure; the entry vector was ClickFix social engineering, requiring enhanced employee awareness.</description>
-    </item>    <item>
-      <title>TeamPCP CanisterWorm Evolves: Kubernetes Wiper Deployed Against Iranian Systems via npm Supply Chain</title>
-      <link>https://llm-threatintel.com/posts/2026-04-02-teampcp-canisterworm-kubernetes-wiper-iran.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-02-teampcp-canisterworm-kubernetes-wiper-iran.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>TeamPCP deployed a geopolitically targeted destructive wiper payload via its CanisterWorm npm supply chain campaign, first observed on March 20, 2026, that wipes entire Kubernetes clusters when it detects systems configured for Iran (Asia/Tehran timezone or fa_IR locale). On non-Iranian Kubernetes nodes the same malware installs a persistent backdoor; on non-Kubernetes Iranian hosts it executes rm -rf / --no-preserve-root. Organizations running Kubernetes with npm-sourced packages in CI/CD pipelines are at risk of full cluster destruction; defenders must immediately audit npm lockfiles for CanisterWorm-linked packages and inspect Kubernetes for DaemonSets named 'host-provisioner-std' or services named 'pgmon' or 'pgmonitor'.</description>
-    </item>    <item>
-      <title>AI Coding Agents Under Attack: Rules File Backdoor, Cursor RCE, and Copilot Repository Takeover</title>
-      <link>https://llm-threatintel.com/posts/2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.html</guid>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security's RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.</description>
     </item>
   </channel>
 </rss>

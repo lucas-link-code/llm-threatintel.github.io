@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08",
+  "last_updated": "2026-04-11",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -377,7 +377,10 @@
         "npm registry",
         "Kubernetes DaemonSets",
         "Telegram",
-        "BreachForums"
+        "BreachForums",
+        "PyPI (Python Package Index)",
+        "GitHub Actions (Trivy compromise)",
+        "CI/CD pipelines"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -391,9 +394,14 @@
         "T1543.002 - Systemd Service",
         "T1102 - C2 via Web Service (ICP blockchain)",
         "T1021.004 - SSH Lateral Movement",
-        "T1552.004 - Credential Harvesting"
+        "T1552.004 - Credential Harvesting",
+        "T1195 - Supply Chain Compromise",
+        "T1040 - Network Sniffing (credential exfiltration)",
+        "T1555 - Credentials from Password Stores",
+        "T1078 - Valid Accounts (PyPI maintainer credential abuse)",
+        "T1570 - Lateral Movement via Kubernetes"
       ],
-      "description": "Supply chain campaign distributing malicious Python packages impersonating LiteLLM and Telnyx on PyPI. Packages contain embedded backdoors targeting developers working with LLM orchestration frameworks.",
+      "description": "TeamPCP is a supply chain-focused threat actor demonstrating sophisticated attack chain design: first compromising Trivy (security scanner) to extract CI/CD credentials, then using those credentials to obtain PyPI maintainer access. The campaign targets AI development ecosystems by poisoning packages at the orchestration layer (LiteLLM bridges 100+ LLM providers). Attack chain includes multi-stage persistence, credential encryption, and beacon-based follow-on payload delivery.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, and affected maintainers (confidence: high)"
     },
     {
@@ -590,16 +598,19 @@
       "status": "active",
       "distribution": [
         "Email-based delivery",
-        "Shared Streamlit hosting environments"
+        "Shared Streamlit hosting environments",
+        "Network-based attack via vLLM API endpoint"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
         "T1203 - Exploitation for Client Execution",
         "T1555 - Credentials from Password Stores",
-        "T1552 - Unsecured Credentials"
+        "T1552 - Unsecured Credentials",
+        "T1190 - Exploit Public-Facing Application",
+        "T1548 - Abuse Elevation Control Mechanism"
       ],
       "description": "An unknown threat actor exploited a design flaw in nanobot's email processing to execute arbitrary commands via prompt injection, demonstrating that personal AI assistants with email integration create an unauthenticated attack surface.",
-      "attribution": "Unattributed"
+      "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
     },
     {
       "id": "unknown-threat-actors-security-researchers",
@@ -698,6 +709,26 @@
       ],
       "description": "Threat actors actively exploiting CVE-2025-59528 in Flowise deployments as of April 7, 2026. Attribution remains unclear; exploitation appears opportunistic and widespread rather than targeted campaign-based.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "anthropic-project-glasswing",
+      "names": [
+        "Anthropic (Project Glasswing)",
+        "Claude Mythos Preview"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Gated access to select defense organizations",
+        "AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks, and 40+ additional organizations"
+      ],
+      "ttps": [
+        "T1592 - Vulnerability Research",
+        "T1566 - Phishing for Information (potential misuse vector)"
+      ],
+      "description": "Claude Mythos Preview represents a watershed moment in AI-assisted cybersecurity: an AI model capable of autonomously identifying exploitable zero-day vulnerabilities at scale and generating working exploits. While Anthropic positioned this as a defensive tool, the technology demonstrates that frontier AI models have reached capability levels that blur the distinction between security tool and offensive weapon. Threat implications: adversarial nations or threat actors with access to comparable models could identify vulnerabilities at speeds that vastly outpace human patching cycles, potentially enabling sustained zero-day campaigns.",
+      "attribution": "Anthropic (defensive initiative); potential for adversarial misuse by nation-states or APT groups if access compromised"
     }
   ]
 }

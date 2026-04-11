@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner | LLM ThreatIntel</title>
+  <meta name="description" content="On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security&#x27;s Trivy scanner and Checkmarx&#x27;s KICS GitHub Action over the preceding week.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner">
+  <meta property="og:description" content="On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security&#x27;s Trivy scanner and Checkmarx&#x27;s KICS GitHub Action over the preceding week.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner">
+  <meta property="article:published_time" content="2026-04-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-11T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner">
+  <meta name="twitter:description" content="On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security&#x27;s Trivy scanner and Checkmarx&#x27;s KICS GitHub Action over the preceding week.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+  "description": "On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security's Trivy scanner and Checkmarx's KICS GitHub Action over the preceding week.",
+  "datePublished": "2026-04-11T00:00:00Z",
+  "dateModified": "2026-04-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html",
+  "keywords": [
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-11</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner</h1>
+<p><strong>Date:</strong> 2026-04-11<br><strong>Tags:</strong> supply-chain</p>
+<h2>Executive Summary</h2>
+<p>On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security&#x27;s Trivy scanner and Checkmarx&#x27;s KICS GitHub Action over the preceding week.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>TeamPCP Supply Chain Campaign</td></tr><tr><td>Attribution</td><td>TeamPCP (threat group) (confidence: high)</td></tr><tr><td>Target</td><td>AI framework developers, LLM orchestration platforms, CI/CD infrastructure</td></tr><tr><td>Vector</td><td>Compromised Trivy security scanner in CI/CD; credential exfiltration; direct PyPI account takeover</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-03-19 (Trivy compromise); 2026-03-24 (LiteLLM/Telnyx compromise)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>litellm 1.82.7 and 1.82.8 were both released on March 24, 2026. These packages feature the same malicious payload with different execution mechanisms. The malware gathers environment variables, SSH keys, cloud credentials, Kubernetes data, Docker configs, shell history, database credentials, wallet files, and CI/CD secrets. It then uses a hybrid scheme for encryption: an AES-256 session key for the data, then RSA-4096 for the session key. Once encrypted on the host, the data is then sent to models.litellm[.]cloud using the header X-Filename: tpcp.tar.gz. Install persistence: The payload writes ~/.config/sysmon/sysmon.py and installs a user systemd unit called sysmon.service. TeamPCP has now exfiltrated an estimated 500,000+ corporate identities and 300 GB+ of compressed credentials across this campaign. March 27, 2026Updated to include the compromise of the telnyx PyPI package (versions 4.87.1 and 4.87.2) on March 27. Those packages were live on March 24, 2026 from 10:39 UTC for about 40 minutes before being quarantined by PyPI.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195</td><td>Compromise of Trivy security scanner and PyPI package repository to distribute malicious LLM framework dependencies</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>Malware harvests SSH keys, cloud provider credentials, Kubernetes tokens, database credentials, and API keys from the compromised system</td></tr><tr><td>Lateral Movement via Kubernetes</td><td>T1570</td><td>If Kubernetes service account token present, malware reads all cluster secrets and attempts to create privileged pods for persistence</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">models.litellm.cloud
+checkmarx.zone</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">https://checkmarx.zone/raw</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;models.litellm.cloud&quot; OR &quot;checkmarx.zone&quot; OR &quot;https://checkmarx.zone/raw&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">litellm 1.82.7 (PyPI)
+litellm 1.82.8 (PyPI)
+telnyx 4.87.1 (PyPI)
+telnyx 4.87.2 (PyPI)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor PyPI and npm for anomalous package versions; flag packages with version jumps or unexpected code changes. For LiteLLM users: immediately verify installed version via <code>pip show litellm</code>; check for ~/.config/sysmon directory and sysmon.service systemd units; audit SSH keys, cloud credentials, Kubernetes tokens. Implement package pinning for supply chain dependencies. Monitor outbound connections to models.litellm.cloud and checkmarx.zone. Review CI/CD logs for Trivy execution and credential extraction. Deploy EDR monitoring for systemd service creation and ~/.config directory writes by pip/Python processes.</p>
+<h2>References</h2>
+<ul><li>[Datadog Security Labs] LiteLLM and Telnyx compromised on PyPI: Tracing the TeamPCP supply chain campaign (2026-03-27) — https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/</li><li>[Snyk] How a Poisoned Security Scanner Became the Key to Backdooring LiteLLM (2026-03-31) — https://snyk.io/blog/poisoned-security-scanner-backdooring-litellm/</li><li>[Repello AI] The LiteLLM supply chain attack: how TeamPCP backdoored the AI development ecosystem (2026-03-26) — https://repello.ai/blog/litellm-supply-chain-attack</li><li>[Sonatype] Compromised litellm PyPI Package Delivers Multi-Stage Credential Stealer (2026-03-24) — https://www.sonatype.com/blog/compromised-litellm-pypi-package-delivers-multi-stage-credential-stealer</li><li>[LiteLLM Official] Security Update: Suspected Supply Chain Incident (2026-03-24) — https://docs.litellm.ai/blog/security-update-march-2026</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

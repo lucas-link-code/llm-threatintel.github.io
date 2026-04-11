@@ -1,6 +1,42 @@
 {
   "posts": [
     {
+      "id": "2026-04-11-project-glasswing-claude-mythos-zero-days",
+      "title": "Project Glasswing: Anthropic's Claude Mythos Preview Identified Thousands of Zero-Day Vulnerabilities in Critical Software—Cybersecurity Capability Reshaping Defense and Offense",
+      "date": "2026-04-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic formed Project Glasswing because of capabilities observed in a new frontier model trained by Anthropic called Claude Mythos2 Preview, a general-purpose, unreleased frontier model that reveals a stark fact: AI models have reached a level of coding capability where they can surpass all but the most skilled humans at finding and exploiting software vulnerabilities. Over the past few weeks, Anthropic used Claude Mythos Preview to identify thousands of zero-day vulnerabilities (that is, flaws that were previously unknown to the software's developers), many of them critical, in every major operating system and every major web browser, along with a range of other important pieces of software.",
+      "file": "2026-04-11-project-glasswing-claude-mythos-zero-days.md"
+    },
+    {
+      "id": "2026-04-11-vllm-cve-2026-22778-rce-heap-overflow",
+      "title": "Critical vLLM RCE Vulnerability (CVE-2026-22778): Heap Overflow via Malicious Video Links Affects Millions of AI Servers",
+      "date": "2026-04-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "This vulnerability allows an attacker to achieve Remote Code Execution (RCE) simply by sending a malicious video link to a vLLM API. vLLM is a high-throughput, memory-efficient engine designed for serving Large Language Models (LLMs). A critical vulnerability, CVE-2026-22778, was recently discovered in vLLM, a popular framework for serving Large Language Models (LLMs) with high throughput. The vulnerability has been actively exploited in the wild.",
+      "file": "2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.md"
+    },
+    {
+      "id": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain",
+      "title": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "date": "2026-04-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security's Trivy scanner and Checkmarx's KICS GitHub Action over the preceding week.",
+      "file": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.md"
+    },
+    {
       "id": "2026-04-08-flowise-rce-cve-2025-59528-april-2026",
       "title": "Flowise RCE Vulnerability (CVE-2025-59528) Actively Exploited in April 2026",
       "date": "2026-04-08",
