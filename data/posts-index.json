@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-04-13-praisonaiagents-ssrf-cloud-metadata",
+      "title": "PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling",
+      "date": "2026-04-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.",
+      "file": "2026-04-13-praisonaiagents-ssrf-cloud-metadata.md"
+    },
+    {
+      "id": "2026-04-13-claude-code-mexico-gov-espionage-150gb",
+      "title": "AI-Assisted Mexican Government Cyber Espionage: Claude Code & GPT-4.1 Enable 150GB Data Exfiltration",
+      "date": "2026-04-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A threat actor weaponized Anthropic's Claude Code and OpenAI's GPT-4.1 to breach multiple Mexican government institutions, exfiltrating roughly 150GB of data and exposing hundreds of millions of records in a campaign that has quietly redrawn the threat landscape. The breach, confirmed in reports published April 11, 2026, happened when a single attacker used two of the most widely available AI tools on the market to automate a sweeping intrusion campaign against government infrastructure. The campaign appears to have been running, at least in part, since early 2026.",
+      "file": "2026-04-13-claude-code-mexico-gov-espionage-150gb.md"
+    },
+    {
+      "id": "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure",
+      "title": "Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise via WebSocket Terminal",
+      "date": "2026-04-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-39987 is a critical pre-authentication remote code execution vulnerability (CVSS v4.0: 9.3) in Marimo, a reactive Python notebook, actively exploited in early April 2026 targeting AI researchers and developers at Stanford, Mozilla AI, OpenAI, and BlackRock. Attackers focused on obtaining LLM provider API keys and cloud credentials within minutes of gaining shell access, representing the initial access phase of AI supply chain attack scenarios.",
+      "file": "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.md"
+    },
+    {
       "id": "2026-04-11-project-glasswing-claude-mythos-zero-days",
       "title": "Project Glasswing: Anthropic's Claude Mythos Preview Identified Thousands of Zero-Day Vulnerabilities in Critical Software—Cybersecurity Capability Reshaping Defense and Offense",
       "date": "2026-04-11",

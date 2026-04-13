@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11",
+  "last_updated": "2026-04-13",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -611,6 +611,24 @@
       "first_seen": "2026-04-11",
       "source": "OX Security",
       "campaign": "vllm-cve-2026-22778-rce-heap-overflow",
+      "status": "active"
+    },
+    {
+      "value": "marimo",
+      "type": "package",
+      "context": "Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise via WebSocket Terminal",
+      "first_seen": "2026-04-13",
+      "source": "Cloud Security Alliance AI Safety Initiative",
+      "campaign": "marimo-preauth-rce-ai-dev-infrastructure",
+      "status": "active"
+    },
+    {
+      "value": "praisonaiagents",
+      "type": "package",
+      "context": "PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling",
+      "first_seen": "2026-04-13",
+      "source": "OffSeq Threat Radar",
+      "campaign": "praisonaiagents-ssrf-cloud-metadata",
       "status": "active"
     }
   ]

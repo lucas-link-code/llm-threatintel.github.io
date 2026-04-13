@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 11 Apr 2026 05:21:12 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 06:09:00 +0000</lastBuildDate>
     <item>
+      <title>PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling</title>
+      <link>https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <description>PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.</description>
+    </item>    <item>
+      <title>AI-Assisted Mexican Government Cyber Espionage: Claude Code &amp; GPT-4.1 Enable 150GB Data Exfiltration</title>
+      <link>https://llm-threatintel.com/posts/2026-04-13-claude-code-mexico-gov-espionage-150gb.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-13-claude-code-mexico-gov-espionage-150gb.html</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A threat actor weaponized Anthropic's Claude Code and OpenAI's GPT-4.1 to breach multiple Mexican government institutions, exfiltrating roughly 150GB of data and exposing hundreds of millions of records in a campaign that has quietly redrawn the threat landscape. The breach, confirmed in reports published April 11, 2026, happened when a single attacker used two of the most widely available AI tools on the market to automate a sweeping intrusion campaign against government infrastructure. The campaign appears to have been running, at least in part, since early 2026.</description>
+    </item>    <item>
+      <title>Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise via WebSocket Terminal</title>
+      <link>https://llm-threatintel.com/posts/2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.html</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-39987 is a critical pre-authentication remote code execution vulnerability (CVSS v4.0: 9.3) in Marimo, a reactive Python notebook, actively exploited in early April 2026 targeting AI researchers and developers at Stanford, Mozilla AI, OpenAI, and BlackRock. Attackers focused on obtaining LLM provider API keys and cloud credentials within minutes of gaining shell access, representing the initial access phase of AI supply chain attack scenarios.</description>
+    </item>    <item>
       <title>Project Glasswing: Anthropic's Claude Mythos Preview Identified Thousands of Zero-Day Vulnerabilities in Critical Software—Cybersecurity Capability Reshaping Defense and Offense</title>
       <link>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.html</guid>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <description>McAfee Labs documented a large-scale cryptominer distribution campaign active in January 2026 where attackers used LLM-assisted 'vibe coding' to generate parts of the malicious PowerShell kill chain, distributing 443 malicious ZIP files across Discord, SourceForge, FOSSHub, and MediaFire impersonating AI tools, game mods, and software utilities. The campaign deployed WinUpdateHelper.dll via DLL sideloading, establishing persistence under the name 'Microsoft Console Host' and mining Ravencoin, Zephyr, and Monero. In some infections the final payload was SalatStealer or a Mesh Agent RAT. Defenders should alert on WinUpdateHelper.dll in non-system directories and monitor for anomalous cryptocurrency mining processes.</description>
-    </item>    <item>
-      <title>Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer</title>
-      <link>https://llm-threatintel.com/posts/2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Unit 42 published analysis on March 19, 2026 of two malware samples representing distinct categories of real-world AI integration in malware: (1) an AI-theater .NET infostealer trio that incorporates OpenAI GPT-3.5-Turbo via HTTP but does so superficially with no practical security impact; and (2) a novel Golang malware dropper for Sliver C2 that uses an LLM to perform environment assessment and decide whether to proceed with infection — an 'AI-gated execution' approach that could be more effective than static allow/deny lists. Both samples were identified through OSINT hunting. IOC hashes are published and should be ingested immediately.</description>
-    </item>    <item>
-      <title>Unit 42 Discloses 'Double Agent' Vulnerability in GCP Vertex AI: Overprivileged Service Agents Enable Cloud Data Exfiltration and Google Internal Code Access</title>
-      <link>https://llm-threatintel.com/posts/2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Palo Alto Networks Unit 42 disclosed on March 31, 2026 that the Per-Project, Per-Product Service Agent (P4SA) assigned by default to Vertex AI Agent Engine deployments carries excessive OAuth permissions, allowing a compromised or malicious AI agent to extract GCP service credentials and pivot from the agent's execution context into the customer's broader cloud environment — granting unrestricted read access to Cloud Storage buckets and restricted Google-owned Artifact Registry repositories containing internal Vertex AI source code. Google has updated documentation and recommends Bring Your Own Service Account (BYOSA) to mitigate. Organizations using Vertex AI Agent Engine should immediately audit all deployed agents and enforce least-privilege service accounts.</description>
-    </item>    <item>
-      <title>APT36 (Transparent Tribe) Adopts AI 'Vibeware' Assembly Line: Pakistan-Linked APT Floods Indian Government Targets with Polyglot Implants</title>
-      <link>https://llm-threatintel.com/posts/2026-04-02-apt36-transparent-tribe-vibeware-ai-malware.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-02-apt36-transparent-tribe-vibeware-ai-malware.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Bitdefender Labs confirmed that APT36 (Transparent Tribe), a Pakistan-linked state-sponsored group, has pivoted to an AI-assisted malware development model dubbed 'vibeware', using large language models to mass-produce implants in niche programming languages (Nim, Zig, Crystal) and Living Off Trusted Services (LOTS) C2 channels (Slack, Discord, Supabase, Google Sheets), primarily targeting Indian government entities and diplomatic missions. The strategy prioritises volume over sophistication — a 'Distributed Denial of Detection' approach — generating new malware variants daily to overwhelm EDR baselines. Security teams should implement behavioral detection for anomalous API calls to Slack, Discord, and Supabase from non-developer endpoints.</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling | LLM ThreatIntel</title>
+  <meta name="description" content="PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling">
+  <meta property="og:description" content="PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling">
+  <meta property="article:published_time" content="2026-04-13T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-13T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling">
+  <meta name="twitter:description" content="PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling",
+  "description": "PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.",
+  "datePublished": "2026-04-13T00:00:00Z",
+  "dateModified": "2026-04-13T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html",
+  "keywords": [
+    "malicious-tool",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-13</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling</h1>
+<p><strong>Date:</strong> 2026-04-13<br><strong>Tags:</strong> malicious-tool, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AI Agent SSRF Exploitation (CVE-2026-40160)</td></tr><tr><td>Attribution</td><td>Unknown (confidence: low)</td></tr><tr><td>Target</td><td>Organizations running PraisonAIAgents for multi-agent AI workflows</td></tr><tr><td>Vector</td><td>Server-side request forgery via compromised or malicious LLM agent input to web_crawl function</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04-01</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Prior to 1.5.128, web_crawl&#x27;s httpx fallback path passes user-supplied URLs directly to httpx.AsyncClient.get() with follow_redirects=True and no host validation. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This fallback is the default crawl path on a fresh PraisonAI installation (no Tavily key, no Crawl4AI installed). The vulnerability is particularly dangerous in production environments where agents have autonomy to interpret user requests.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Server-Side Request Forgery</td><td>T1918</td><td>SSRF via web crawling function enables access to cloud metadata endpoints and internal services</td></tr><tr><td>Credentials from Cloud Metadata</td><td>T1578</td><td>Metadata endpoint access exposes IAM role credentials, temporary security tokens</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published; vulnerability patched in version 1.5.128_</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published; vulnerability patched in version 1.5.128_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">praisonaiagents</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor PraisonAIAgents web_crawl requests for URLs targeting cloud metadata ranges (169.254.169.254/32), internal RFC1918 addresses (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), or localhost (127.0.0.1). Implement network segmentation preventing agent VMs/containers from reaching metadata endpoints. Require upgrade to version 1.5.128 or later immediately. Audit agent logs for requests to internal services or metadata endpoints; treat as indicators of agent compromise or malicious prompt injection.</p>
+<h2>References</h2>
+<ul><li>[OffSeq Threat Radar] CVE-2026-40160: Server-Side Request Forgery in MervinPraison PraisonAIAgents (2026-04-12) — https://radar.offseq.com/threat/cve-2026-40160-cwe-918-server-side-request-forgery-ff80f530</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

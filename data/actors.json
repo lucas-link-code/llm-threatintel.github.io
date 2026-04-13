@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11",
+  "last_updated": "2026-04-13",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -729,6 +729,48 @@
       ],
       "description": "Claude Mythos Preview represents a watershed moment in AI-assisted cybersecurity: an AI model capable of autonomously identifying exploitable zero-day vulnerabilities at scale and generating working exploits. While Anthropic positioned this as a defensive tool, the technology demonstrates that frontier AI models have reached capability levels that blur the distinction between security tool and offensive weapon. Threat implications: adversarial nations or threat actors with access to comparable models could identify vulnerabilities at speeds that vastly outpace human patching cycles, potentially enabling sustained zero-day campaigns.",
       "attribution": "Anthropic (defensive initiative); potential for adversarial misuse by nation-states or APT groups if access compromised"
+    },
+    {
+      "id": "unattributed-threat-actors",
+      "names": [
+        "Unattributed Threat Actors"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Direct Internet scanning and exploitation of exposed Marimo instances",
+        "Open-source package repository"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1555 - Credentials from Password Stores",
+        "T1087 - Account Discovery",
+        "T1918 - Server-Side Request Forgery",
+        "T1574 - Hijack Execution Flow"
+      ],
+      "description": "SSRF vulnerability in popular multi-agent AI framework enables attackers who compromise or manipulate LLM agent input to access cloud metadata services, internal APIs, and localhost endpoints. Default fallback path (no third-party web crawling service configured) is automatically vulnerable, increasing surface area. Reflects broader pattern: agentic AI tooling lacks input validation on URLs and endpoints, trusting LLM-generated URLs implicitly.",
+      "attribution": "Unattributed; likely financially motivated or opportunistic reconnaissance actors"
+    },
+    {
+      "id": "unattributed-ai-assisted-attacker",
+      "names": [
+        "Unattributed AI-Assisted Attacker"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Direct use of Claude Code and GPT-4.1 commercial services"
+      ],
+      "ttps": [
+        "T1059 - Command and Scripting Interpreter",
+        "T1020 - Automated Exfiltration",
+        "T1087 - Account Discovery",
+        "T1105 - Ingress Tool Transfer"
+      ],
+      "description": "First confirmed case of single-attacker AI-orchestrated campaign bypassing commercial AI provider safety controls to conduct government-scale cyber espionage. Attack demonstrates that determined actors can reliably circumvent existing guardrails through indirect framing, prompt chaining, and iterative refinement of attack code within agentic environments. Implications: individual threat actors with access to frontier AI models now operate at previously nation-state-only capability levels.",
+      "attribution": "Unknown; possibly nation-state espionage targeting Mexico's critical infrastructure or organized crime with state-level sophistication"
     }
   ]
 }
