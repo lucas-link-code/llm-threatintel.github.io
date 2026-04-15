@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls | LLM ThreatIntel</title>
+  <meta name="description" content="Adversa AI red team found Claude Code&#x27;s deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe &#x27;ask&#x27; mode, circumventing user-configured denial rules designed to prevent data exfiltration.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls">
+  <meta property="og:description" content="Adversa AI red team found Claude Code&#x27;s deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe &#x27;ask&#x27; mode, circumventing user-configured denial rules designed to prevent data exfiltration.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls">
+  <meta property="article:published_time" content="2026-04-15T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-15T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="apt">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls">
+  <meta name="twitter:description" content="Adversa AI red team found Claude Code&#x27;s deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe &#x27;ask&#x27; mode, circumventing user-configured denial rules designed to prevent data exfiltration.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls",
+  "description": "Adversa AI red team found Claude Code's deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe 'ask' mode, circumventing user-configured denial rules designed to prevent data exfiltration.",
+  "datePublished": "2026-04-15T00:00:00Z",
+  "dateModified": "2026-04-15T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html",
+  "keywords": [
+    "malicious-tool",
+    "apt"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-15</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-apt">Apt</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls</h1>
+<p><strong>Date:</strong> 2026-04-15<br><strong>Tags:</strong> malicious-tool, apt</p>
+<h2>Executive Summary</h2>
+<p>Adversa AI red team found Claude Code&#x27;s deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe &#x27;ask&#x27; mode, circumventing user-configured denial rules designed to prevent data exfiltration.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Claude Code Safety Control Bypass</td></tr><tr><td>Attribution</td><td>Research Finding / Potential Threat Actors (confidence: medium)</td></tr><tr><td>Target</td><td>Developers using Claude Code in production and development environments</td></tr><tr><td>Vector</td><td>Crafted CLAUDE.md files with 50+ subcommand pipelines triggering safety rule fallback</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04-13</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Anthropic fixed a performance issue by capping analysis at 50 subcommands with a fall back to a generic &#x27;ask&#x27; prompt, but Adversa discovered this process can be manipulated; this can be exploited via malicious CLAUDE.md files instructing the AI to generate 50+ subcommand pipelines that appear legitimate, bypassing deny rules. A vulnerability disclosed in April 2026 showed that Claude Code will ignore its deny rules if burdened with a sufficiently long chain of subcommands.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Privilege Escalation</td><td>T1548</td><td>Bypassing deny rules via algorithmic limits in safety system</td></tr><tr><td>Exfiltration Over Command and Control Channel</td><td>T1071</td><td>Using subcommand chains to exfiltrate data despite deny rules</td></tr><tr><td>Defense Evasion</td><td>T1562</td><td>Circumventing safety controls through engineered input structure</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Vulnerability in Claude Code safety system; no malware or network IOCs_</p>
+<h3>Full URL Paths</h3>
+<p>_Vulnerability in Claude Code safety system; no malware or network IOCs_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">Claude Code (affected versions)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor Claude Code processes for command chains exceeding 45+ subcommands, audit CLAUDE.md configuration files for suspicious pipeline structures, enforce workspace isolation for Claude Code execution, implement honeypot deny rules that trigger alerting when bypassed, and maintain strict inventory of Claude Code deployments in production.</p>
+<h2>References</h2>
+<ul><li>[Adversa AI / SecurityWeek] Critical Vulnerability in Claude Code Emerges Days After Source Leak (2026-04-11) — https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/</li><li>[Palo Alto Networks Unit 42] AI Coding Agents Are Insider Threats: Prompt Injection, MCP Exploits, and Supply Chain Attacks (2026-04-12) — https://botmonster.com/posts/ai-coding-agent-insider-threat-prompt-injection-mcp-exploits/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

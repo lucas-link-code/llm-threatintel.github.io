@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-13",
+  "last_updated": "2026-04-15",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -629,6 +629,15 @@
       "first_seen": "2026-04-13",
       "source": "OffSeq Threat Radar",
       "campaign": "praisonaiagents-ssrf-cloud-metadata",
+      "status": "active"
+    },
+    {
+      "value": "Claude Code (affected versions)",
+      "type": "package",
+      "context": "Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls",
+      "first_seen": "2026-04-15",
+      "source": "Adversa AI / SecurityWeek",
+      "campaign": "claude-code-deny-rules-subcommand-bypass",
       "status": "active"
     }
   ]

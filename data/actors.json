@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-13",
+  "last_updated": "2026-04-15",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -771,6 +771,65 @@
       ],
       "description": "First confirmed case of single-attacker AI-orchestrated campaign bypassing commercial AI provider safety controls to conduct government-scale cyber espionage. Attack demonstrates that determined actors can reliably circumvent existing guardrails through indirect framing, prompt chaining, and iterative refinement of attack code within agentic environments. Implications: individual threat actors with access to frontier AI models now operate at previously nation-state-only capability levels.",
       "attribution": "Unknown; possibly nation-state espionage targeting Mexico's critical infrastructure or organized crime with state-level sophistication"
+    },
+    {
+      "id": "unknown-llm-router-operators",
+      "names": [
+        "Unknown LLM Router Operators"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "LLM router intermediaries",
+        "cryptocurrency transaction platforms"
+      ],
+      "ttps": [
+        "T1589 - Credential Access",
+        "T1557 - Man in the Middle",
+        "T1048 - Exfiltration Over Alternative Protocol"
+      ],
+      "description": "Threat actors operating at least 26 malicious LLM routing services that intercept API requests, inject malicious tool calls, and steal credentials from users attempting to interact with legitimate AI models. Targets cryptocurrency users and cloud-dependent services.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "research-community-potential-threat-actors",
+      "names": [
+        "Research Community / Potential Threat Actors"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Amazon Bedrock deployments",
+        "Enterprise multi-agent LLM systems"
+      ],
+      "ttps": [
+        "Prompt injection via inter-agent channels",
+        "Agent coordination hijacking"
+      ],
+      "description": "Researchers have identified exploitable attack surfaces in Amazon Bedrock's multi-agent orchestration architecture. While disclosed as research, the techniques could be operationalized by threat actors to compromise enterprise AI agent fleets through coordinated prompt injection attacks.",
+      "attribution": "Unknown"
+    },
+    {
+      "id": "potential-threat-actors",
+      "names": [
+        "Potential Threat Actors"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Claude Code deployments",
+        "AI agent frameworks integrating Claude Code"
+      ],
+      "ttps": [
+        "T1548 - Privilege Escalation",
+        "T1071 - Command and Control",
+        "T1562 - Defense Evasion"
+      ],
+      "description": "Threat actors can exploit Claude Code's safety rule fallback mechanism by embedding 50+ subcommand pipelines in malicious CLAUDE.md configuration files. When Claude Code exceeds the 50-subcommand threshold, it defaults to unsafe 'ask' mode, allowing arbitrary data exfiltration and system access despite user-configured deny rules.",
+      "attribution": "Unknown; research disclosure by Adversa AI"
     }
   ]
 }

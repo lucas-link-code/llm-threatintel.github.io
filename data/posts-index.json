@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-04-15-claude-code-deny-rules-subcommand-bypass",
+      "title": "Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls",
+      "date": "2026-04-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Adversa AI red team found Claude Code's deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe 'ask' mode, circumventing user-configured denial rules designed to prevent data exfiltration.",
+      "file": "2026-04-15-claude-code-deny-rules-subcommand-bypass.md"
+    },
+    {
+      "id": "2026-04-15-bedrock-multi-agent-prompt-injection",
+      "title": "Multi-Agent Prompt Injection via Amazon Bedrock: Attack Surface Expansion in Enterprise AI Deployments",
+      "date": "2026-04-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Unit 42 research on multi-agent AI systems on Amazon Bedrock reveals new attack surfaces and prompt injection risks. Multi-agent coordination in cloud-hosted LLM environments introduces novel attack vectors where compromised agents can manipulate or hijack peer agent behavior at scale.",
+      "file": "2026-04-15-bedrock-multi-agent-prompt-injection.md"
+    },
+    {
+      "id": "2026-04-15-llm-router-credential-theft-wallet-drain",
+      "title": "LLM Router Infrastructure Compromise: 26 Malicious Services Intercepting AI Credentials and Draining Crypto Wallets",
+      "date": "2026-04-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500k wallet. \"LLM routers\"—services that sit between users and AI models—are emerging as powerful attack points that can intercept and alter sensitive data, with routers designed to forward requests to models but having full access to everything passing through them.",
+      "file": "2026-04-15-llm-router-credential-theft-wallet-drain.md"
+    },
+    {
       "id": "2026-04-13-praisonaiagents-ssrf-cloud-metadata",
       "title": "PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling",
       "date": "2026-04-13",

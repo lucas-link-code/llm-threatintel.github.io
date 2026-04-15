@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 13 Apr 2026 06:09:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 05:54:36 +0000</lastBuildDate>
     <item>
+      <title>Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls</title>
+      <link>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Adversa AI red team found Claude Code's deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe 'ask' mode, circumventing user-configured denial rules designed to prevent data exfiltration.</description>
+    </item>    <item>
+      <title>Multi-Agent Prompt Injection via Amazon Bedrock: Attack Surface Expansion in Enterprise AI Deployments</title>
+      <link>https://llm-threatintel.com/posts/2026-04-15-bedrock-multi-agent-prompt-injection.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-15-bedrock-multi-agent-prompt-injection.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Unit 42 research on multi-agent AI systems on Amazon Bedrock reveals new attack surfaces and prompt injection risks. Multi-agent coordination in cloud-hosted LLM environments introduces novel attack vectors where compromised agents can manipulate or hijack peer agent behavior at scale.</description>
+    </item>    <item>
+      <title>LLM Router Infrastructure Compromise: 26 Malicious Services Intercepting AI Credentials and Draining Crypto Wallets</title>
+      <link>https://llm-threatintel.com/posts/2026-04-15-llm-router-credential-theft-wallet-drain.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-15-llm-router-credential-theft-wallet-drain.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500k wallet. "LLM routers"—services that sit between users and AI models—are emerging as powerful attack points that can intercept and alter sensitive data, with routers designed to forward requests to models but having full access to everything passing through them.</description>
+    </item>    <item>
       <title>PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling</title>
       <link>https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.html</guid>
       <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
       <description>On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 on npm; within hours, researcher Chaofan Shou discovered the sourcemap and posted it on X, kicking off a global rush to examine the de-obfuscated source code. Days later, Adversa AI discovered a critical vulnerability where malicious CLAUDE.md files can use prompt injection to generate 50+ subcommand pipelines that bypass Claude Code's safety permission system.</description>
-    </item>    <item>
-      <title>CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure</title>
-      <link>https://llm-threatintel.com/posts/2026-04-04-awesome-llm-apps-cross-session-token-disclosure.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-04-awesome-llm-apps-cross-session-token-disclosure.html</guid>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <description>A cross-session information disclosure vulnerability in the awesome-llm-apps Streamlit-based GitHub MCP Agent stores user-supplied API tokens in process-wide environment variables without proper session isolation, allowing attackers to retrieve sensitive GitHub Personal Access Tokens or LLM API keys from subsequent unauthenticated users since Streamlit serves multiple concurrent users from a single Python process.</description>
-    </item>    <item>
-      <title>CVE-2026-33654: Nanobot AI Assistant Indirect Prompt Injection via Email Channel</title>
-      <link>https://llm-threatintel.com/posts/2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654.html</guid>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <description>An indirect prompt injection vulnerability in nanobot's email channel processing module allows remote, unauthenticated attackers to execute arbitrary LLM instructions and system tools without user interaction by sending malicious prompts via email, bypassing channel isolation in a stealthy zero-click attack (CVSS 8.9, HIGH severity).</description>
-    </item>    <item>
-      <title>McAfee Labs Uncovers Large-Scale Vibe-Coded Cryptominer Campaign: 443 Malicious ZIPs with LLM-Generated PowerShell Targeting Global Users</title>
-      <link>https://llm-threatintel.com/posts/2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>McAfee Labs documented a large-scale cryptominer distribution campaign active in January 2026 where attackers used LLM-assisted 'vibe coding' to generate parts of the malicious PowerShell kill chain, distributing 443 malicious ZIP files across Discord, SourceForge, FOSSHub, and MediaFire impersonating AI tools, game mods, and software utilities. The campaign deployed WinUpdateHelper.dll via DLL sideloading, establishing persistence under the name 'Microsoft Console Host' and mining Ravencoin, Zephyr, and Monero. In some infections the final payload was SalatStealer or a Mesh Agent RAT. Defenders should alert on WinUpdateHelper.dll in non-system directories and monitor for anomalous cryptocurrency mining processes.</description>
     </item>
   </channel>
 </rss>
