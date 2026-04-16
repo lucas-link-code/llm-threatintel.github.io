@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 15 Apr 2026 05:54:36 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 05:55:13 +0000</lastBuildDate>
     <item>
+      <title>Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries</title>
+      <link>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</guid>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
+      <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with at least one documented case draining a $500K crypto wallet. LLM routers sit between users and AI models as intermediaries and have full access to everything passing through them, including sensitive data, while these routers are designed to forward requests to models like OpenAI or Anthropic. Leaked OpenAI keys and weakly configured routers processed 2.1B tokens, exposing 99 credentials across 440 Codex sessions.</description>
+    </item>    <item>
       <title>Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls</title>
       <link>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-05-claude-code-source-leak-adversa-post-leak-rce.html</guid>
       <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
       <description>On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 to npm. Within days of each other, Anthropic first leaked the source code to Claude Code, and then a critical vulnerability was found by Adversa AI. Within hours, researcher Chaofan Shou discovered the sourcemap and posted a link on X. A genuine and critical vulnerability has now been discovered in Claude Code proper by Adversa AI Red Team. Claude Code is a 519,000+ line TypeScript application that allows developers to interact with Claude directly from the command line.</description>
-    </item>    <item>
-      <title>Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)</title>
-      <link>https://llm-threatintel.com/posts/2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.html</guid>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 on npm; within hours, researcher Chaofan Shou discovered the sourcemap and posted it on X, kicking off a global rush to examine the de-obfuscated source code. Days later, Adversa AI discovered a critical vulnerability where malicious CLAUDE.md files can use prompt injection to generate 50+ subcommand pipelines that bypass Claude Code's safety permission system.</description>
     </item>
   </channel>
 </rss>

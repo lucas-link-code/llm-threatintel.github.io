@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15",
+  "last_updated": "2026-04-16",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -830,6 +830,28 @@
       ],
       "description": "Threat actors can exploit Claude Code's safety rule fallback mechanism by embedding 50+ subcommand pipelines in malicious CLAUDE.md configuration files. When Claude Code exceeds the 50-subcommand threshold, it defaults to unsafe 'ask' mode, allowing arbitrary data exfiltration and system access despite user-configured deny rules.",
       "attribution": "Unknown; research disclosure by Adversa AI"
+    },
+    {
+      "id": "unknown-malicious-router-operators",
+      "names": [
+        "Unknown Malicious Router Operators"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Taobao reseller marketplace (paid routers)",
+        "GitHub (free routers)",
+        "Shopify-hosted storefronts"
+      ],
+      "ttps": [
+        "T1557 - Man-in-the-Middle",
+        "T1110 - Credential Access",
+        "T1059 - Command Execution",
+        "T1098 - Account Manipulation"
+      ],
+      "description": "Unknown operators managing malicious LLM router deployments across commodity marketplaces and GitHub. Some appear to be commercial operators selling cheap API access while exfiltrating credentials; others deploy adaptive evasion targeting specific autonomous AI workflows. No APT or organized crime group attribution identified in published research.",
+      "attribution": "Unattributed; commodity supply-chain abuse by unknown threat actors"
     }
   ]
 }

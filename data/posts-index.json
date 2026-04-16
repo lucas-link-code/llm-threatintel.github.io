@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain",
+      "title": "Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries",
+      "date": "2026-04-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with at least one documented case draining a $500K crypto wallet. LLM routers sit between users and AI models as intermediaries and have full access to everything passing through them, including sensitive data, while these routers are designed to forward requests to models like OpenAI or Anthropic. Leaked OpenAI keys and weakly configured routers processed 2.1B tokens, exposing 99 credentials across 440 Codex sessions.",
+      "file": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.md"
+    },
+    {
       "id": "2026-04-15-claude-code-deny-rules-subcommand-bypass",
       "title": "Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls",
       "date": "2026-04-15",
