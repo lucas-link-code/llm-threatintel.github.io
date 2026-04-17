@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 16 Apr 2026 05:55:13 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 05:57:40 +0000</lastBuildDate>
     <item>
+      <title>Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026</title>
+      <link>https://llm-threatintel.com/posts/2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.html</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-32211 is a missing authentication vulnerability in Microsoft @azure-devops/mcp with CVSS 9.1, disclosed April 3, 2026. This critical vulnerability affects Microsoft's Model Context Protocol (MCP) implementation for Azure DevOps, potentially allowing unauthenticated attackers to interact with AI agents connected to DevOps infrastructure.</description>
+    </item>    <item>
+      <title>Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances</title>
+      <link>https://llm-threatintel.com/posts/2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.html</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise, the widely used open-source platform for building custom large language model (LLM) applications, chatbots, and AI agent pipelines. The vulnerability carries a CVSS score of 10.0. VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.</description>
+    </item>    <item>
+      <title>Malicious LLM Router Infrastructure Compromise: 26 Routers Stealing Credentials and Draining Crypto Wallets via AI Intermediaries</title>
+      <link>https://llm-threatintel.com/posts/2026-04-17-llm-router-credential-theft-crypto-draining.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-17-llm-router-credential-theft-crypto-draining.html</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+      <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500,000 crypto wallet. The team documented real-world abuses including routers secretly injecting malicious tool calls, stealing credentials and draining a client's crypto wallet of $500,000.</description>
+    </item>    <item>
       <title>Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries</title>
       <link>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</guid>
       <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
       <description>On March 31, 2026, an attacker introduced malicious dependencies into axios npm package releases 1.14.1 and 0.30.4 between 00:21 and 03:20 UTC. Axios, the JavaScript ecosystem's most popular HTTP client with over 100 million weekly npm downloads, was weaponized as a delivery vehicle for a cross-platform remote access trojan (RAT). Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus, financially motivated threat actor.</description>
-    </item>    <item>
-      <title>Mercor Data Vendor Breach: AI Training Data and Model Development Secrets Exposed; Meta and OpenAI Pause Operations</title>
-      <link>https://llm-threatintel.com/posts/2026-04-05-mercor-data-vendor-ai-training-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-05-mercor-data-vendor-ai-training-breach.html</guid>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Major AI labs are investigating a security incident that impacted Mercor, a leading data vendor. The incident could have exposed key data about how they train AI models. Major AI labs, including Meta and OpenAI, are investigating a security incident at Mercor while it investigates a security breach; the incident could have exposed key data about how they train AI models. The breach represents a critical threat to the AI supply chain, as Mercor provides datasets and research infrastructure used by leading AI companies for model training and evaluation.</description>
-    </item>    <item>
-      <title>MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning</title>
-      <link>https://llm-threatintel.com/posts/2026-04-05-mcp-security-crisis-30-cves-437k-downloads.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-05-mcp-security-crisis-30-cves-437k-downloads.html</guid>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <description>30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from "promising open standard" to "active threat surface" faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.</description>
-    </item>    <item>
-      <title>Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)</title>
-      <link>https://llm-threatintel.com/posts/2026-04-05-claude-code-source-leak-adversa-post-leak-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-05-claude-code-source-leak-adversa-post-leak-rce.html</guid>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 to npm. Within days of each other, Anthropic first leaked the source code to Claude Code, and then a critical vulnerability was found by Adversa AI. Within hours, researcher Chaofan Shou discovered the sourcemap and posted a link on X. A genuine and critical vulnerability has now been discovered in Claude Code proper by Adversa AI Red Team. Claude Code is a 519,000+ line TypeScript application that allows developers to interact with Claude directly from the command line.</description>
     </item>
   </channel>
 </rss>

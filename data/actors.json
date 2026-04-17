@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16",
+  "last_updated": "2026-04-17",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -782,14 +782,19 @@
       "status": "active",
       "distribution": [
         "LLM router intermediaries",
-        "cryptocurrency transaction platforms"
+        "cryptocurrency transaction platforms",
+        "LLM router services",
+        "AI proxy intermediaries"
       ],
       "ttps": [
         "T1589 - Credential Access",
         "T1557 - Man in the Middle",
-        "T1048 - Exfiltration Over Alternative Protocol"
+        "T1048 - Exfiltration Over Alternative Protocol",
+        "T1557 - Man-in-the-Middle",
+        "T1110 - Credential Access",
+        "T1041 - Exfiltration Over C2"
       ],
-      "description": "Threat actors operating at least 26 malicious LLM routing services that intercept API requests, inject malicious tool calls, and steal credentials from users attempting to interact with legitimate AI models. Targets cryptocurrency users and cloud-dependent services.",
+      "description": "Threat actors operating malicious LLM router services positioned between legitimate users and AI model providers. These services intercept and alter AI requests, inject malicious tool calls, steal credentials, and exfiltrate sensitive data including cryptocurrency wallet access.",
       "attribution": "Unattributed"
     },
     {
@@ -852,6 +857,44 @@
       ],
       "description": "Unknown operators managing malicious LLM router deployments across commodity marketplaces and GitHub. Some appear to be commercial operators selling cheap API access while exfiltrating credentials; others deploy adaptive evasion targeting specific autonomous AI workflows. No APT or organized crime group attribution identified in published research.",
       "attribution": "Unattributed; commodity supply-chain abuse by unknown threat actors"
+    },
+    {
+      "id": "opportunistic-rce-exploiters",
+      "names": [
+        "Opportunistic RCE Exploiters"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Mass internet scanning and exploitation"
+      ],
+      "ttps": [
+        "T1190 - RCE via unsafe code evaluation",
+        "T1110 - Credential harvesting",
+        "T1570 - Lateral movement via stolen credentials"
+      ],
+      "description": "Unknown threat actors scanning for exposed Flowise instances and exploiting CVE-2025-59528 for arbitrary code execution. Initial observed activity from Starlink ISP suggests distributed attack infrastructure. Likely targeting LLM provider credentials and downstream system access.",
+      "attribution": "Unattributed / Indiscriminate"
+    },
+    {
+      "id": "unknown-threat-actors-exploiting-mcp-vulns",
+      "names": [
+        "Unknown Threat Actors Exploiting MCP Vulns"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Azure DevOps MCP endpoints"
+      ],
+      "ttps": [
+        "T1556 - Authentication bypass",
+        "T1190 - RCE via DevOps pipeline",
+        "T1195 - Supply chain injection"
+      ],
+      "description": "Threat actors exploiting authentication bypass in Microsoft Azure DevOps MCP to gain unauthorized access to development pipelines and workflows. Enables potential code injection into software supply chains and lateral movement into enterprise AI/DevOps environments.",
+      "attribution": "Unattributed"
     }
   ]
 }

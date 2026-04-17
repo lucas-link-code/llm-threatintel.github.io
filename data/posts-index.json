@@ -1,6 +1,46 @@
 {
   "posts": [
     {
+      "id": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211",
+      "title": "Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026",
+      "date": "2026-04-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:AMBER",
+      "excerpt": "CVE-2026-32211 is a missing authentication vulnerability in Microsoft @azure-devops/mcp with CVSS 9.1, disclosed April 3, 2026. This critical vulnerability affects Microsoft's Model Context Protocol (MCP) implementation for Azure DevOps, potentially allowing unauthenticated attackers to interact with AI agents connected to DevOps infrastructure.",
+      "file": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.md"
+    },
+    {
+      "id": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation",
+      "title": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances",
+      "date": "2026-04-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:AMBER",
+      "excerpt": "Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise, the widely used open-source platform for building custom large language model (LLM) applications, chatbots, and AI agent pipelines. The vulnerability carries a CVSS score of 10.0. VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.",
+      "file": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.md"
+    },
+    {
+      "id": "2026-04-17-llm-router-credential-theft-crypto-draining",
+      "title": "Malicious LLM Router Infrastructure Compromise: 26 Routers Stealing Credentials and Draining Crypto Wallets via AI Intermediaries",
+      "date": "2026-04-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "llmjacking",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500,000 crypto wallet. The team documented real-world abuses including routers secretly injecting malicious tool calls, stealing credentials and draining a client's crypto wallet of $500,000.",
+      "file": "2026-04-17-llm-router-credential-theft-crypto-draining.md"
+    },
+    {
       "id": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain",
       "title": "Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries",
       "date": "2026-04-16",

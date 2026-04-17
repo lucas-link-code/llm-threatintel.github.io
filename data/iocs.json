@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16",
+  "last_updated": "2026-04-17",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -665,6 +665,42 @@
       "first_seen": "2026-04-16",
       "source": "arXiv",
       "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
+      "status": "active"
+    },
+    {
+      "value": "Starlink IP range (observed in exploitation)",
+      "type": "ip",
+      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances",
+      "first_seen": "2026-04-17",
+      "source": "Canadian Cyber Security Journal",
+      "campaign": "flowise-cve-2025-59528-active-rce-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "Flowise versions < 3.1.1",
+      "type": "package",
+      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances",
+      "first_seen": "2026-04-17",
+      "source": "Canadian Cyber Security Journal",
+      "campaign": "flowise-cve-2025-59528-active-rce-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "devops.microsoft.com (potentially affected endpoints)",
+      "type": "domain",
+      "context": "Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026",
+      "first_seen": "2026-04-17",
+      "source": "CyberDesserts Blog",
+      "campaign": "azure-devops-mcp-auth-bypass-cve-2026-32211",
+      "status": "active"
+    },
+    {
+      "value": "@azure-devops/mcp (version info not specified in advisory)",
+      "type": "package",
+      "context": "Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026",
+      "first_seen": "2026-04-17",
+      "source": "CyberDesserts Blog",
+      "campaign": "azure-devops-mcp-auth-bypass-cve-2026-32211",
       "status": "active"
     }
   ]
