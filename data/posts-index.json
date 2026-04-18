@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026",
+      "title": "MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments",
+      "date": "2026-04-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A practitioner's analysis published in April 2026 exposes systemic security flaws in the infrastructure underpinning the rapidly expanding agentic AI landscape. 43% of public servers are vulnerable to command execution, 36.7% of 7,000+ servers are vulnerable to SSRF, 492 servers are exposed to the internet with zero authentication, and 53% of servers use static credentials.",
+      "file": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.md"
+    },
+    {
       "id": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211",
       "title": "Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026",
       "date": "2026-04-17",

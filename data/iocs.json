@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-17",
+  "last_updated": "2026-04-18",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -701,6 +701,15 @@
       "first_seen": "2026-04-17",
       "source": "CyberDesserts Blog",
       "campaign": "azure-devops-mcp-auth-bypass-cve-2026-32211",
+      "status": "active"
+    },
+    {
+      "value": "MCP servers (multiple vendors)",
+      "type": "package",
+      "context": "MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments",
+      "first_seen": "2026-04-18",
+      "source": "Gentic News",
+      "campaign": "mcp-infrastructure-vulnerability-audit-april-2026",
       "status": "active"
     }
   ]

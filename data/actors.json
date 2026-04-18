@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-17",
+  "last_updated": "2026-04-18",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -895,6 +895,25 @@
       ],
       "description": "Threat actors exploiting authentication bypass in Microsoft Azure DevOps MCP to gain unauthorized access to development pipelines and workflows. Enables potential code injection into software supply chains and lateral movement into enterprise AI/DevOps environments.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "unknown-multiple",
+      "names": [
+        "Unknown/Multiple"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Public MCP server registries; enterprise agent deployments; GitHub marketplace"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing via tool poisoning",
+        "T1190 - SSRF exploitation",
+        "T1078.001 - Credential harvesting"
+      ],
+      "description": "The MCP security crisis reflects the immature security posture of the emerging agent ecosystem. Rather than a single threat actor, the risk stems from widespread developer misconfiguration, overprivileged tool definitions, and lack of authentication enforcement across the ecosystem. Early-stage exploitations documented include cross-tool hijacking, credential exfiltration, and command execution via tool poisoning.",
+      "attribution": "Unattributed—systematic infrastructure misconfiguration rather than coordinated campaign"
     }
   ]
 }

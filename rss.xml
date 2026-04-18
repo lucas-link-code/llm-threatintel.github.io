@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 17 Apr 2026 05:57:40 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2026 05:28:30 +0000</lastBuildDate>
     <item>
+      <title>MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments</title>
+      <link>https://llm-threatintel.com/posts/2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.html</guid>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A practitioner's analysis published in April 2026 exposes systemic security flaws in the infrastructure underpinning the rapidly expanding agentic AI landscape. 43% of public servers are vulnerable to command execution, 36.7% of 7,000+ servers are vulnerable to SSRF, 492 servers are exposed to the internet with zero authentication, and 53% of servers use static credentials.</description>
+    </item>    <item>
       <title>Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026</title>
       <link>https://llm-threatintel.com/posts/2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-07-malicious-browser-extensions-harvesting-llm-chats.html</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <description>Two Chromium-based browser extensions impersonating AI assistants have compromised approximately 900,000 users, harvesting full chat histories from ChatGPT and DeepSeek along with browsing telemetry. Microsoft Defender telemetry confirmed activity across more than 20,000 enterprise tenants. Defenders should block the four identified C2 domains and audit enterprise Chrome extension inventories for the two malicious extension IDs.</description>
-    </item>    <item>
-      <title>Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account</title>
-      <link>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-06-axios-npm-unc1069-rat-march-2026.html</guid>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On March 31, 2026, an attacker introduced malicious dependencies into axios npm package releases 1.14.1 and 0.30.4 between 00:21 and 03:20 UTC. Axios, the JavaScript ecosystem's most popular HTTP client with over 100 million weekly npm downloads, was weaponized as a delivery vehicle for a cross-platform remote access trojan (RAT). Google Threat Intelligence Group publicly attributed the compromise to UNC1069, a North Korea-nexus, financially motivated threat actor.</description>
     </item>
   </channel>
 </rss>
