@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-18",
+  "last_updated": "2026-04-20",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -710,6 +710,24 @@
       "first_seen": "2026-04-18",
       "source": "Gentic News",
       "campaign": "mcp-infrastructure-vulnerability-audit-april-2026",
+      "status": "active"
+    },
+    {
+      "value": "Starlink IP range (exploitation detected from Starlink IP)",
+      "type": "ip",
+      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
+      "first_seen": "2026-04-20",
+      "source": "Canadian Cyber Security Journal / VulnCheck",
+      "campaign": "flowise-cve-2025-59528-rce-active-exploitation-april-2026",
+      "status": "active"
+    },
+    {
+      "value": "flowise < 3.1.1",
+      "type": "package",
+      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
+      "first_seen": "2026-04-20",
+      "source": "Canadian Cyber Security Journal / VulnCheck",
+      "campaign": "flowise-cve-2025-59528-rce-active-exploitation-april-2026",
       "status": "active"
     }
   ]

@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 18 Apr 2026 05:28:30 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 06:07:53 +0000</lastBuildDate>
     <item>
+      <title>Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances</title>
+      <link>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</guid>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <description>VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise with a CVSS score of 10.0. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.</description>
+    </item>    <item>
       <title>MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments</title>
       <link>https://llm-threatintel.com/posts/2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.html</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <description>Microsoft documented North Korean APT groups Emerald Sleet and Jasper Sleet actively integrating LLMs into their operational tradecraft. Emerald Sleet uses LLMs to parse disclosed vulnerabilities and map exploitation paths, while Jasper Sleet leverages AI to scale fraudulent IT worker schemes, generate phishing lures, and produce operational code. Both groups use generative AI to rapidly establish and rotate lookalike domains for C2 infrastructure.</description>
-    </item>    <item>
-      <title>Malicious Browser Extensions Harvesting LLM Chat Histories from 900,000 Users</title>
-      <link>https://llm-threatintel.com/posts/2026-04-07-malicious-browser-extensions-harvesting-llm-chats.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-07-malicious-browser-extensions-harvesting-llm-chats.html</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Two Chromium-based browser extensions impersonating AI assistants have compromised approximately 900,000 users, harvesting full chat histories from ChatGPT and DeepSeek along with browsing telemetry. Microsoft Defender telemetry confirmed activity across more than 20,000 enterprise tenants. Defenders should block the four identified C2 domains and audit enterprise Chrome extension inventories for the two malicious extension IDs.</description>
     </item>
   </channel>
 </rss>

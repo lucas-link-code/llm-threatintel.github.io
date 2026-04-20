@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-18",
+  "last_updated": "2026-04-20",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -599,7 +599,8 @@
       "distribution": [
         "Email-based delivery",
         "Shared Streamlit hosting environments",
-        "Network-based attack via vLLM API endpoint"
+        "Network-based attack via vLLM API endpoint",
+        "Direct exploitation of internet-exposed Flowise instances"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -607,9 +608,11 @@
         "T1555 - Credentials from Password Stores",
         "T1552 - Unsecured Credentials",
         "T1190 - Exploit Public-Facing Application",
-        "T1548 - Abuse Elevation Control Mechanism"
+        "T1548 - Abuse Elevation Control Mechanism",
+        "T1210 - Exploitation of Remote Service",
+        "T1570 - Lateral Movement"
       ],
-      "description": "An unknown threat actor exploited a design flaw in nanobot's email processing to execute arbitrary commands via prompt injection, demonstrating that personal AI assistants with email integration create an unauthenticated attack surface.",
+      "description": "Threat actor conducting active exploitation of CVE-2025-59528 in publicly exposed Flowise instances. Initial detection from Starlink infrastructure suggests either automated scanning or actor with access to resilient infrastructure. Target pattern consistent with indiscriminate credential harvesting (LLM API keys, cloud provider tokens).",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
     },
     {

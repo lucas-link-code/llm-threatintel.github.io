@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": "2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026",
+      "title": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
+      "date": "2026-04-20",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise with a CVSS score of 10.0. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.",
+      "file": "2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.md"
+    },
+    {
       "id": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026",
       "title": "MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments",
       "date": "2026-04-18",
