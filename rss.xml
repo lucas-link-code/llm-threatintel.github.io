@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 20 Apr 2026 06:07:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 05:54:56 +0000</lastBuildDate>
     <item>
+      <title>Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing</title>
+      <link>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Fake Claude AI installer mimicking Anthropic spreads PlugX malware on Windows, using DLL sideloading to gain persistent remote access to infected systems. Cybersecurity experts from Malwarebytes found a malicious campaign where scammers use the popularity of Anthropic's AI tool Claude to spread malware. Hackers made a fake website that looks just like the official one from Anthropic and offers a Pro version of the tool for Windows to lure people into downloading a malicious file.</description>
+    </item>    <item>
+      <title>Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise</title>
+      <link>https://llm-threatintel.com/posts/2026-04-22-marimo-pre-auth-rce-cve-2026-39987.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-22-marimo-pre-auth-rce-cve-2026-39987.html</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-39987 is a critical pre-authentication remote code execution vulnerability (CVSS v4.0: 9.3) in Marimo, a reactive Python notebook widely used in AI development environments. Exploitation was observed within 10 hours of the April 8, 2026 advisory publication. Organizations that ran Marimo on internet-accessible infrastructure before upgrading should treat any deployment as potentially compromised and rotate all credentials that were accessible within the compromised environment, including API keys for LLM providers and cloud service credentials.</description>
+    </item>    <item>
+      <title>Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers</title>
+      <link>https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Cybersecurity researchers discovered a critical "by design" weakness in the Model Context Protocol's (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic's official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</description>
+    </item>    <item>
       <title>Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances</title>
       <link>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <description>The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.</description>
-    </item>    <item>
-      <title>LLMjacking Industrializes: 376% Surge in AI Credential Theft, Underground Marketplaces, and Reverse Proxy Operations</title>
-      <link>https://llm-threatintel.com/posts/2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace.html</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Sysdig documented a 376% increase in credential theft targeting AI services between Q4 2025 and Q1 2026, with daily victim costs exceeding $100,000 when flagship models are abused. Underground marketplaces now sell stolen LLM API keys on a structured pricing tier from $50 for GPT-3.5 access to $5,000 for whitelisted enterprise keys with no rate limits. Attackers deploy OpenAI Reverse Proxies containing dozens of stolen keys to resell access at scale.</description>
-    </item>    <item>
-      <title>Shai-hulud npm Registry Worm and nullifAI Hugging Face Malware: AI Supply Chain Under Siege</title>
-      <link>https://llm-threatintel.com/posts/2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.html</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <description>ReversingLabs documented Shai-hulud, the first self-replicating registry-native worm operating at scale within npm, compromising nearly 1,000 packages with over 100 million lifetime downloads across two waves. Separately, the nullifAI technique demonstrated that malicious ML models can bypass Hugging Face security scanning using corrupted Pickle files. Organizations consuming npm packages should audit lockfiles for compromised packages including @ctrl/tinycolor, @asyncapi/specs, ngx-bootstrap, and ng2-file-upload.</description>
-    </item>    <item>
-      <title>Nation-State APT Exploitation of Generative AI: Emerald Sleet and Jasper Sleet Operationalize LLMs</title>
-      <link>https://llm-threatintel.com/posts/2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.html</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft documented North Korean APT groups Emerald Sleet and Jasper Sleet actively integrating LLMs into their operational tradecraft. Emerald Sleet uses LLMs to parse disclosed vulnerabilities and map exploitation paths, while Jasper Sleet leverages AI to scale fraudulent IT worker schemes, generate phishing lures, and produce operational code. Both groups use generative AI to rapidly establish and rotate lookalike domains for C2 infrastructure.</description>
     </item>
   </channel>
 </rss>

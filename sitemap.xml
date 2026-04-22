@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://llm-threatintel.com/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-04-22-marimo-pre-auth-rce-cve-2026-39987.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</loc>

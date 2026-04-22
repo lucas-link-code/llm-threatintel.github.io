@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-04-22-fake-claude-installer-plugx-malware",
+      "title": "Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing",
+      "date": "2026-04-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Fake Claude AI installer mimicking Anthropic spreads PlugX malware on Windows, using DLL sideloading to gain persistent remote access to infected systems. Cybersecurity experts from Malwarebytes found a malicious campaign where scammers use the popularity of Anthropic's AI tool Claude to spread malware. Hackers made a fake website that looks just like the official one from Anthropic and offers a Pro version of the tool for Windows to lure people into downloading a malicious file.",
+      "file": "2026-04-22-fake-claude-installer-plugx-malware.md"
+    },
+    {
+      "id": "2026-04-22-marimo-pre-auth-rce-cve-2026-39987",
+      "title": "Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise",
+      "date": "2026-04-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-39987 is a critical pre-authentication remote code execution vulnerability (CVSS v4.0: 9.3) in Marimo, a reactive Python notebook widely used in AI development environments. Exploitation was observed within 10 hours of the April 8, 2026 advisory publication. Organizations that ran Marimo on internet-accessible infrastructure before upgrading should treat any deployment as potentially compromised and rotate all credentials that were accessible within the compromised environment, including API keys for LLM providers and cloud service credentials.",
+      "file": "2026-04-22-marimo-pre-auth-rce-cve-2026-39987.md"
+    },
+    {
+      "id": "2026-04-22-anthropic-mcp-stdio-rce-7k-servers",
+      "title": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+      "date": "2026-04-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cybersecurity researchers discovered a critical \"by design\" weakness in the Model Context Protocol's (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic's official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.",
+      "file": "2026-04-22-anthropic-mcp-stdio-rce-7k-servers.md"
+    },
+    {
       "id": "2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026",
       "title": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
       "date": "2026-04-20",

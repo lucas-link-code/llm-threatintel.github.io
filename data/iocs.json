@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-20",
+  "last_updated": "2026-04-22",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -728,6 +728,60 @@
       "first_seen": "2026-04-20",
       "source": "Canadian Cyber Security Journal / VulnCheck",
       "campaign": "flowise-cve-2025-59528-rce-active-exploitation-april-2026",
+      "status": "active"
+    },
+    {
+      "value": "mcp-inspector",
+      "type": "package",
+      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+      "first_seen": "2026-04-22",
+      "source": "The Hacker News",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "status": "active"
+    },
+    {
+      "value": "librechat",
+      "type": "package",
+      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+      "first_seen": "2026-04-22",
+      "source": "The Hacker News",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "status": "active"
+    },
+    {
+      "value": "weknora",
+      "type": "package",
+      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+      "first_seen": "2026-04-22",
+      "source": "The Hacker News",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "status": "active"
+    },
+    {
+      "value": "@akoskm/create-mcp-server-stdio",
+      "type": "package",
+      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+      "first_seen": "2026-04-22",
+      "source": "The Hacker News",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "status": "active"
+    },
+    {
+      "value": "cursor-mcp",
+      "type": "package",
+      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+      "first_seen": "2026-04-22",
+      "source": "The Hacker News",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "status": "active"
+    },
+    {
+      "value": "Claude-Pro-windows-x64.zip",
+      "type": "package",
+      "context": "Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing",
+      "first_seen": "2026-04-22",
+      "source": "Malwarebytes / Hackread",
+      "campaign": "fake-claude-installer-plugx-malware",
       "status": "active"
     }
   ]

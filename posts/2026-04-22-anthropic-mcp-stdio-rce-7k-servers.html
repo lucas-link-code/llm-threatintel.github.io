@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers | LLM ThreatIntel</title>
+  <meta name="description" content="Cybersecurity researchers discovered a critical &quot;by design&quot; weakness in the Model Context Protocol&#x27;s (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic&#x27;s official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers">
+  <meta property="og:description" content="Cybersecurity researchers discovered a critical &quot;by design&quot; weakness in the Model Context Protocol&#x27;s (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic&#x27;s official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers">
+  <meta property="article:published_time" content="2026-04-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-22T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers">
+  <meta name="twitter:description" content="Cybersecurity researchers discovered a critical &quot;by design&quot; weakness in the Model Context Protocol&#x27;s (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic&#x27;s official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
+  "description": "Cybersecurity researchers discovered a critical \"by design\" weakness in the Model Context Protocol's (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic's official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.",
+  "datePublished": "2026-04-22T00:00:00Z",
+  "dateModified": "2026-04-22T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html",
+  "keywords": [
+    "malicious-tool",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-22</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers</h1>
+<p><strong>Date:</strong> 2026-04-22<br><strong>Tags:</strong> malicious-tool, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Cybersecurity researchers discovered a critical &quot;by design&quot; weakness in the Model Context Protocol&#x27;s (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic&#x27;s official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>MCP STDIO Unauthenticated Command Injection</td></tr><tr><td>Attribution</td><td>Unknown (Design Flaw) (confidence: none)</td></tr><tr><td>Target</td><td>Organizations running Anthropic MCP servers, AI agents, coding assistants (Claude Code, Cursor, LibreChat, WeKnora, etc.)</td></tr><tr><td>Vector</td><td>Unauthenticated HTTP requests to MCP marketplace endpoints triggering STDIO configuration parsing</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04-21</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Attackers can inject unauthenticated commands through MCP marketplaces via network requests, triggering hidden STDIO configurations. Anthropic&#x27;s Model Context Protocol gives a direct configuration-to-command execution via their STDIO interface on all of their implementations, regardless of programming language. In practice it actually lets anyone run any arbitrary OS command—if the command successfully creates an STDIO server it will return the handle, but when given a different command, it returns an error after the command is executed. Vulnerabilities based on the same core issue have been reported independently over the past year, including CVE-2025-49596 (MCP Inspector), CVE-2026-22252 (LibreChat), CVE-2026-22688 (WeKnora), CVE-2025-54994 (@akoskm/create-mcp-server-stdio), and CVE-2025-54136 (Cursor).</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Command Injection</td><td>T1059</td><td>Remote command execution via malformed STDIO configuration</td></tr><tr><td>Supply Chain Compromise</td><td>T1195</td><td>Affects 7,000+ MCP servers and 150M+ package downloads</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published; vulnerability is architectural in Anthropic&#x27;s official MCP SDK_</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published; vulnerability is architectural in Anthropic&#x27;s official MCP SDK_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">mcp-inspector
+librechat
+weknora
+@akoskm/create-mcp-server-stdio
+cursor-mcp</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for unusual process spawning from MCP server processes; audit MCP marketplace connections for unexpected STDIO command patterns; ensure MCP servers run in network-isolated environments or behind authentication layers; scan for MCP server exposure using asset inventory tools; monitor WebSocket traffic to /terminal/ws or equivalent endpoints for suspicious patterns.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] Anthropic MCP Design Vulnerability Enables RCE, Threatening AI Supply Chain (2026-04-21) — https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html</li><li>[OX Security Research] Unauthenticated command injection through MCP marketplaces via network requests (2026-04-21) — https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

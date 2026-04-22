@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-20",
+  "last_updated": "2026-04-22",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -917,6 +917,57 @@
       ],
       "description": "The MCP security crisis reflects the immature security posture of the emerging agent ecosystem. Rather than a single threat actor, the risk stems from widespread developer misconfiguration, overprivileged tool definitions, and lack of authentication enforcement across the ecosystem. Early-stage exploitations documented include cross-tool hijacking, credential exfiltration, and command execution via tool poisoning.",
       "attribution": "Unattributed—systematic infrastructure misconfiguration rather than coordinated campaign"
+    },
+    {
+      "id": "unknown-opportunistic",
+      "names": [
+        "Unknown / Opportunistic"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1059 - Command Injection",
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "Any actor with network access to exposed MCP servers can exploit the STDIO parsing flaw to execute arbitrary commands. The vulnerability does not require authentication or special privileges.",
+      "attribution": "Unattributed; design flaw enables exploitation by any network-level attacker"
+    },
+    {
+      "id": "unknown-mass-scanning-infrastructure",
+      "names": [
+        "Unknown / Mass Scanning Infrastructure"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1555 - Credentials in Browser"
+      ],
+      "description": "Opportunistic threat actors conducting automated vulnerability scanning and exploitation of internet-exposed Marimo instances. Post-exploitation activity focused on credential harvesting.",
+      "attribution": "Unattributed; exploitation activity detected from automated scanning infrastructure"
+    },
+    {
+      "id": "unknown-financially-motivated-cybercriminals",
+      "names": [
+        "Unknown / Financially Motivated Cybercriminals"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Phishing emails via Kingmailer and CampaignLark infrastructures"
+      ],
+      "ttps": [
+        "T1566 - Phishing",
+        "T1204 - User Execution of Malicious File",
+        "T1574.001 - DLL Sideloading"
+      ],
+      "description": "Threat actor operating phishing infrastructure to distribute trojanized Claude AI installers. Uses social engineering to exploit user trust in Anthropic branding. Deploys PlugX malware for command-and-control access.",
+      "attribution": "Unattributed; financially motivated threat actor leveraging popularity of Claude AI for initial access"
     }
   ]
 }
