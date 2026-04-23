@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-04-23-flowise-cve-2026-41264-csv-agent-rce",
+      "title": "Flowise CVE-2026-41264: Unauthenticated CSV Agent Prompt Injection RCE via LLM Script Evaluation",
+      "date": "2026-04-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Trend Micro's Zero Day Initiative has identified a vulnerability affecting FlowiseAI Flowise. This vulnerability allows remote attackers to execute arbitrary code on affected installations of FlowiseAI Flowise. Authentication is not required to exploit this vulnerability. The specific flaw exists within the run method of the CSV_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM-generated Python script. An attacker can leverage this vulnerability to execute code in the context of the user running the server.",
+      "file": "2026-04-23-flowise-cve-2026-41264-csv-agent-rce.md"
+    },
+    {
+      "id": "2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation",
+      "title": "CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access",
+      "date": "2026-04-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy. LMDeploy is a toolkit for serving vision-language and text large language models (LLMs). CVE-2026-33626 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration.",
+      "file": "2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation.md"
+    },
+    {
+      "id": "2026-04-23-axios-npm-supply-chain-unc1069-rat-2026",
+      "title": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
+      "date": "2026-04-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On March 30, 2026, Elastic Security Labs detected a supply chain compromise targeting the axios npm package through automated supply-chain monitoring. The attacker gained control of the npm account belonging to jasonsaayman, one of the project's primary maintainers, and published two backdoored versions within a 39-minute window. The axios package is one of the most widely depended-upon HTTP client libraries in the JavaScript ecosystem. At the time of discovery, both the latest and legacy dist-tags pointed to compromised versions, ensuring that the majority of fresh installations pulled a backdoored release.",
+      "file": "2026-04-23-axios-npm-supply-chain-unc1069-rat-2026.md"
+    },
+    {
       "id": "2026-04-22-fake-claude-installer-plugx-malware",
       "title": "Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing",
       "date": "2026-04-22",

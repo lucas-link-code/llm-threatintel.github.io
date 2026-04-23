@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-22",
+  "last_updated": "2026-04-23",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -782,6 +782,51 @@
       "first_seen": "2026-04-22",
       "source": "Malwarebytes / Hackread",
       "campaign": "fake-claude-installer-plugx-malware",
+      "status": "active"
+    },
+    {
+      "value": "sfrclak[.]com",
+      "type": "domain",
+      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
+      "first_seen": "2026-04-23",
+      "source": "Elastic Security Labs",
+      "campaign": "axios-npm-supply-chain-unc1069-rat-2026",
+      "status": "active"
+    },
+    {
+      "value": "sfrclak[.]com:8000",
+      "type": "url_path",
+      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
+      "first_seen": "2026-04-23",
+      "source": "Elastic Security Labs",
+      "campaign": "axios-npm-supply-chain-unc1069-rat-2026",
+      "status": "active"
+    },
+    {
+      "value": "142.11.206[.]72",
+      "type": "ip",
+      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
+      "first_seen": "2026-04-23",
+      "source": "Elastic Security Labs",
+      "campaign": "axios-npm-supply-chain-unc1069-rat-2026",
+      "status": "active"
+    },
+    {
+      "value": "lmdeploy@<0.12.3",
+      "type": "package",
+      "context": "CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access",
+      "first_seen": "2026-04-23",
+      "source": "Sysdig",
+      "campaign": "cve-2026-33626-lmdeploy-ssrf-12hr-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "flowise@<3.0.13",
+      "type": "package",
+      "context": "Flowise CVE-2026-41264: Unauthenticated CSV Agent Prompt Injection RCE via LLM Script Evaluation",
+      "first_seen": "2026-04-23",
+      "source": "GitLab Advisories",
+      "campaign": "flowise-cve-2026-41264-csv-agent-rce",
       "status": "active"
     }
   ]

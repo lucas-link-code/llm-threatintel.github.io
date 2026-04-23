@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 22 Apr 2026 05:54:56 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 05:59:06 +0000</lastBuildDate>
     <item>
+      <title>Flowise CVE-2026-41264: Unauthenticated CSV Agent Prompt Injection RCE via LLM Script Evaluation</title>
+      <link>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Trend Micro's Zero Day Initiative has identified a vulnerability affecting FlowiseAI Flowise. This vulnerability allows remote attackers to execute arbitrary code on affected installations of FlowiseAI Flowise. Authentication is not required to exploit this vulnerability. The specific flaw exists within the run method of the CSV_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM-generated Python script. An attacker can leverage this vulnerability to execute code in the context of the user running the server.</description>
+    </item>    <item>
+      <title>CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access</title>
+      <link>https://llm-threatintel.com/posts/2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation.html</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <description>On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy. LMDeploy is a toolkit for serving vision-language and text large language models (LLMs). CVE-2026-33626 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration.</description>
+    </item>    <item>
+      <title>Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069</title>
+      <link>https://llm-threatintel.com/posts/2026-04-23-axios-npm-supply-chain-unc1069-rat-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-23-axios-npm-supply-chain-unc1069-rat-2026.html</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <description>On March 30, 2026, Elastic Security Labs detected a supply chain compromise targeting the axios npm package through automated supply-chain monitoring. The attacker gained control of the npm account belonging to jasonsaayman, one of the project's primary maintainers, and published two backdoored versions within a 39-minute window. The axios package is one of the most widely depended-upon HTTP client libraries in the JavaScript ecosystem. At the time of discovery, both the latest and legacy dist-tags pointed to compromised versions, ensuring that the majority of fresh installations pulled a backdoored release.</description>
+    </item>    <item>
       <title>Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing</title>
       <link>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.html</guid>
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
       <description>This vulnerability allows an attacker to achieve Remote Code Execution (RCE) simply by sending a malicious video link to a vLLM API. vLLM is a high-throughput, memory-efficient engine designed for serving Large Language Models (LLMs). A critical vulnerability, CVE-2026-22778, was recently discovered in vLLM, a popular framework for serving Large Language Models (LLMs) with high throughput. The vulnerability has been actively exploited in the wild.</description>
-    </item>    <item>
-      <title>TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner</title>
-      <link>https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.html</guid>
-      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security's Trivy scanner and Checkmarx's KICS GitHub Action over the preceding week.</description>
-    </item>    <item>
-      <title>Flowise RCE Vulnerability (CVE-2025-59528) Actively Exploited in April 2026</title>
-      <link>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-08-flowise-rce-cve-2025-59528-april-2026.html</guid>
-      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Hackers are exploiting a maximum-severity vulnerability, tracked as CVE-2025-59528, in the open-source platform Flowise for building custom LLM apps and agentic systems to execute arbitrary code. The vulnerability affects a widely deployed LLM application framework used by developers and enterprises to build AI-powered workflows. Active exploitation was confirmed on April 7, 2026.</description>
-    </item>    <item>
-      <title>GlassWorm Supply Chain Attack: 433 Compromised Components Across Open VSX, npm, and GitHub Targeting Developer Environments</title>
-      <link>https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.html</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <description>The GlassWorm campaign has compromised 433 components across Open VSX, npm, and GitHub since October 2025, including 72 malicious IDE extensions with over 9 million installs. The malware steals credentials for npm, GitHub, cloud providers, and cryptocurrency wallets, deploys hidden VNC servers and SOCKS proxies, and self-propagates by compromising additional extensions through transitive dependency abuse. Code analysis suggests Russian-speaking threat actors.</description>
     </item>
   </channel>
 </rss>

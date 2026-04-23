@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-22",
+  "last_updated": "2026-04-23",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -473,7 +473,12 @@
         "UNC1069",
         "North Korea-nexus threat actor",
         "UNC1069 / Sapphire Sleet",
-        "WAVESHAPER group"
+        "WAVESHAPER group",
+        "STARDUST CHOLLIMA",
+        "Alluring Pisces",
+        "BlueNoroff",
+        "CageyChameleon",
+        "CryptoCore"
       ],
       "type": "nation_state_campaign",
       "first_seen": "2026-04",
@@ -481,7 +486,9 @@
       "distribution": [
         "npm registry",
         "npm registry compromise",
-        "global distribution via npm package manager"
+        "global distribution via npm package manager",
+        "npm registry (global)",
+        "automated CI/CD systems"
       ],
       "ttps": [
         "T1195.002 - Supply Chain Compromise",
@@ -492,9 +499,12 @@
         "T1195.001 - Supply Chain Compromise",
         "T1199 - Trusted Relationship Exploitation",
         "T1021.005 - Remote Access Trojan",
-        "T1547.015 - Scheduled Task/Job via postinstall Hook"
+        "T1547.015 - Scheduled Task/Job via postinstall Hook",
+        "T1598 - Social Engineering",
+        "T1059 - Command and Scripting Interpreter",
+        "T1219 - Remote Access Trojan"
       ],
-      "description": "UNC1069 is a financially motivated North Korea-nexus threat actor with activity dating to at least 2018, historically using WAVESHAPER backdoor. This group demonstrates sophisticated supply chain attack capabilities, pre-staging malicious dependencies 18 hours in advance, bypassing GitHub Actions OIDC via stolen long-lived npm tokens, and deploying obfuscated cross-platform RATs targeting macOS, Windows, and Linux simultaneously.",
+      "description": "Sapphire Sleet is a North Korean state-affiliated threat actor tracked by Microsoft that exploits open-source package registries to deliver RAT malware. The group leverages social engineering to compromise maintainer accounts, publishes backdoored versions to the official registry, and targets developers globally through automated dependency installation. Known for using stolen credentials to gain initial access and for maintaining infrastructure across multiple cloud providers.",
       "attribution": "Attributed to UNC1069 by Google Threat Intelligence Group (confidence: high)"
     },
     {
@@ -968,6 +978,31 @@
       ],
       "description": "Threat actor operating phishing infrastructure to distribute trojanized Claude AI installers. Uses social engineering to exploit user trust in Anthropic branding. Deploys PlugX malware for command-and-control access.",
       "attribution": "Unattributed; financially motivated threat actor leveraging popularity of Claude AI for initial access"
+    },
+    {
+      "id": "unknown-threat-actor",
+      "names": [
+        "Unknown Threat Actor"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Cloud environments",
+        "Internet-accessible LMDeploy instances",
+        "Flowise instances <v3.0.13",
+        "Shared chatflow endpoints"
+      ],
+      "ttps": [
+        "T1190 - Server-Side Request Forgery",
+        "T1526 - Cloud Metadata Access",
+        "T1595.002 - Vulnerability Scanning",
+        "T1060 - Prompt Injection",
+        "T1059.006 - Script Execution via LLM",
+        "T1562.001 - Unsandboxed Code Evaluation"
+      ],
+      "description": "Unknown threat actor conducting reconnaissance and credential harvesting against LMDeploy inference servers. Activity pattern suggests automated SSRF weaponization from GHSA advisory content, likely using LLM-assisted exploit generation to convert advisory details directly into working attacks.",
+      "attribution": "Unattributed; rapid exploitation suggests automated scanning/weaponization"
     }
   ]
 }
