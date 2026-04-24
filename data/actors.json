@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-23",
+  "last_updated": "2026-04-24",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -364,7 +364,9 @@
       "names": [
         "TeamPCP",
         "Initial Access Broker",
-        "CanisterWorm operators"
+        "CanisterWorm operators",
+        "Trivy compromisers",
+        "LiteLLM attackers"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2026-03",
@@ -380,7 +382,8 @@
         "BreachForums",
         "PyPI (Python Package Index)",
         "GitHub Actions (Trivy compromise)",
-        "CI/CD pipelines"
+        "CI/CD pipelines",
+        "PyPI registry"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -399,7 +402,10 @@
         "T1040 - Network Sniffing (credential exfiltration)",
         "T1555 - Credentials from Password Stores",
         "T1078 - Valid Accounts (PyPI maintainer credential abuse)",
-        "T1570 - Lateral Movement via Kubernetes"
+        "T1570 - Lateral Movement via Kubernetes",
+        "T1195.001 - Compromise Package Repository",
+        "T1555 - Credential Harvesting",
+        "T1041 - Exfiltration via C2"
       ],
       "description": "TeamPCP is a supply chain-focused threat actor demonstrating sophisticated attack chain design: first compromising Trivy (security scanner) to extract CI/CD credentials, then using those credentials to obtain PyPI maintainer access. The campaign targets AI development ecosystems by poisoning packages at the orchestration layer (LiteLLM bridges 100+ LLM providers). Attack chain includes multi-stage persistence, credential encryption, and beacon-based follow-on payload delivery.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, and affected maintainers (confidence: high)"
@@ -1003,6 +1009,42 @@
       ],
       "description": "Unknown threat actor conducting reconnaissance and credential harvesting against LMDeploy inference servers. Activity pattern suggests automated SSRF weaponization from GHSA advisory content, likely using LLM-assisted exploit generation to convert advisory details directly into working attacks.",
       "attribution": "Unattributed; rapid exploitation suggests automated scanning/weaponization"
+    },
+    {
+      "id": "unknown-actor",
+      "names": [
+        "Unknown Actor"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Direct exploitation of vulnerable LMDeploy endpoints"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application (SSRF)",
+        "T1592 - Reconnaissance"
+      ],
+      "description": "An unattributed threat actor rapidly weaponized CVE-2026-33626 within 12 hours of disclosure, deploying SSRF port-sweep scripts against LMDeploy inference servers. The actor systematically enumerated AWS IMDS, Redis, MySQL, and secondary HTTP interfaces, indicating profiling of cloud-hosted AI infrastructure for credential extraction or lateral movement.",
+      "attribution": "Unattributed opportunistic actor; no fingerprint linkage to known groups"
+    },
+    {
+      "id": "generic-threat-actor",
+      "names": [
+        "Generic Threat Actor"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Network-accessible OpenClaw endpoints"
+      ],
+      "ttps": [
+        "T1548 - Abuse Elevation Control",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "CVE-2026-41349 represents a class of vulnerability affecting agentic AI systems where architectural trust assumptions enable bypass of human-in-the-loop controls. Threat actors can exploit this by sending malicious agent API requests with config.patch payloads to disable approval gates, enabling unauthorized execution of downstream tools and systems.",
+      "attribution": "Unattributed; any threat actor with network access to OpenClaw API"
     }
   ]
 }

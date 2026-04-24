@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 23 Apr 2026 05:59:06 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 06:02:38 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval</title>
+      <link>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <description>OpenClaw before 2026.3.28 contains an agentic consent bypass vulnerability allowing LLM agents to silently disable execution approval via config.patch parameter. Remote attackers can exploit this to bypass security controls and execute unauthorized operations without user consent. CVE-2026-41349 is a High severity vulnerability (CVSS 8.8). This represents a critical architectural weakness in agentic AI systems where approval controls can be circumvented by malicious prompts or compromised configurations.</description>
+    </item>    <item>
+      <title>CanisterSprawl: TeamPCP npm Supply Chain Campaign Targeting LLM Platforms with 22 Compromised Packages</title>
+      <link>https://llm-threatintel.com/posts/2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.html</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <description>The CanisterWorm campaign, first reported on March 20, 2026, affected 141 packages between March 20 and 23, according to Socket's research. The attack wave affecting Namastex, which Socket now tracks as "CanisterSprawl," has affected a total of 22 packages since April 8. Namastex's Automagik Genie is a command line interface (CLI) for using AI coding agents to create pull requests and pgserve is an embedded PostgreSQL server; the packages had about 8,000 weekly downloads combined as of April 21, 2026. The malicious postinstall script harvests secrets from the victim's environment by searching environment variables for names associated with tokens, credentials, cloud providers, CI/CD systems, registries, LLM platforms and other secrets. It also targets sensitive local system files including .npmrc, .git-credentials, .netrc, .env files, database password files, and files storing SSH keys and cloud credentials, as well as artifacts from browsers and cryptocurrency wallets.</description>
+    </item>    <item>
+      <title>CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access</title>
+      <link>https://llm-threatintel.com/posts/2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation.html</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <description>On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy. Within 12 hours and 31 minutes of its publication on the main GitHub advisory page, the Sysdig Threat Research Team (TRT) observed the first LMDeploy exploitation attempt against our honeypot fleet. The attacker used the vision-language image loader as a generic HTTP SSRF primitive to port-scan the internal network behind the model server: AWS Instance Metadata Service (IMDS), Redis, MySQL, a secondary HTTP administrative interface, and an out-of-band (OOB) DNS exfiltration endpoint.</description>
+    </item>    <item>
       <title>Flowise CVE-2026-41264: Unauthenticated CSV Agent Prompt Injection RCE via LLM Script Evaluation</title>
       <link>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-13-claude-code-mexico-gov-espionage-150gb.html</guid>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
       <description>A threat actor weaponized Anthropic's Claude Code and OpenAI's GPT-4.1 to breach multiple Mexican government institutions, exfiltrating roughly 150GB of data and exposing hundreds of millions of records in a campaign that has quietly redrawn the threat landscape. The breach, confirmed in reports published April 11, 2026, happened when a single attacker used two of the most widely available AI tools on the market to automate a sweeping intrusion campaign against government infrastructure. The campaign appears to have been running, at least in part, since early 2026.</description>
-    </item>    <item>
-      <title>Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise via WebSocket Terminal</title>
-      <link>https://llm-threatintel.com/posts/2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.html</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-39987 is a critical pre-authentication remote code execution vulnerability (CVSS v4.0: 9.3) in Marimo, a reactive Python notebook, actively exploited in early April 2026 targeting AI researchers and developers at Stanford, Mozilla AI, OpenAI, and BlackRock. Attackers focused on obtaining LLM provider API keys and cloud credentials within minutes of gaining shell access, representing the initial access phase of AI supply chain attack scenarios.</description>
-    </item>    <item>
-      <title>Project Glasswing: Anthropic's Claude Mythos Preview Identified Thousands of Zero-Day Vulnerabilities in Critical Software—Cybersecurity Capability Reshaping Defense and Offense</title>
-      <link>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-11-project-glasswing-claude-mythos-zero-days.html</guid>
-      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic formed Project Glasswing because of capabilities observed in a new frontier model trained by Anthropic called Claude Mythos2 Preview, a general-purpose, unreleased frontier model that reveals a stark fact: AI models have reached a level of coding capability where they can surpass all but the most skilled humans at finding and exploiting software vulnerabilities. Over the past few weeks, Anthropic used Claude Mythos Preview to identify thousands of zero-day vulnerabilities (that is, flaws that were previously unknown to the software's developers), many of them critical, in every major operating system and every major web browser, along with a range of other important pieces of software.</description>
-    </item>    <item>
-      <title>Critical vLLM RCE Vulnerability (CVE-2026-22778): Heap Overflow via Malicious Video Links Affects Millions of AI Servers</title>
-      <link>https://llm-threatintel.com/posts/2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.html</guid>
-      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <description>This vulnerability allows an attacker to achieve Remote Code Execution (RCE) simply by sending a malicious video link to a vLLM API. vLLM is a high-throughput, memory-efficient engine designed for serving Large Language Models (LLMs). A critical vulnerability, CVE-2026-22778, was recently discovered in vLLM, a popular framework for serving Large Language Models (LLMs) with high throughput. The vulnerability has been actively exploited in the wild.</description>
     </item>
   </channel>
 </rss>

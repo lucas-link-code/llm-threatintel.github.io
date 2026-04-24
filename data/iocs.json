@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-23",
+  "last_updated": "2026-04-24",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -827,6 +827,42 @@
       "first_seen": "2026-04-23",
       "source": "GitLab Advisories",
       "campaign": "flowise-cve-2026-41264-csv-agent-rce",
+      "status": "active"
+    },
+    {
+      "value": "lmdeploy",
+      "type": "package",
+      "context": "CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access",
+      "first_seen": "2026-04-24",
+      "source": "Sysdig Threat Research Team",
+      "campaign": "cve-2026-33626-lmdeploy-ssrf-rapid-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "namastex/automagik-genie",
+      "type": "package",
+      "context": "CanisterSprawl: TeamPCP npm Supply Chain Campaign Targeting LLM Platforms with 22 Compromised Packages",
+      "first_seen": "2026-04-24",
+      "source": "SC Media / Socket Research",
+      "campaign": "canistersprawl-teampcp-npm-lvm-platform-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "namastex/pgserve",
+      "type": "package",
+      "context": "CanisterSprawl: TeamPCP npm Supply Chain Campaign Targeting LLM Platforms with 22 Compromised Packages",
+      "first_seen": "2026-04-24",
+      "source": "SC Media / Socket Research",
+      "campaign": "canistersprawl-teampcp-npm-lvm-platform-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "openclaw",
+      "type": "package",
+      "context": "CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval",
+      "first_seen": "2026-04-24",
+      "source": "The Hacker Wire",
+      "campaign": "cve-2026-41349-openclaw-consent-bypass-agentic-rce",
       "status": "active"
     }
   ]

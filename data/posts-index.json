@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce",
+      "title": "CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval",
+      "date": "2026-04-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenClaw before 2026.3.28 contains an agentic consent bypass vulnerability allowing LLM agents to silently disable execution approval via config.patch parameter. Remote attackers can exploit this to bypass security controls and execute unauthorized operations without user consent. CVE-2026-41349 is a High severity vulnerability (CVSS 8.8). This represents a critical architectural weakness in agentic AI systems where approval controls can be circumvented by malicious prompts or compromised configurations.",
+      "file": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.md"
+    },
+    {
+      "id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
+      "title": "CanisterSprawl: TeamPCP npm Supply Chain Campaign Targeting LLM Platforms with 22 Compromised Packages",
+      "date": "2026-04-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The CanisterWorm campaign, first reported on March 20, 2026, affected 141 packages between March 20 and 23, according to Socket's research. The attack wave affecting Namastex, which Socket now tracks as \"CanisterSprawl,\" has affected a total of 22 packages since April 8. Namastex's Automagik Genie is a command line interface (CLI) for using AI coding agents to create pull requests and pgserve is an embedded PostgreSQL server; the packages had about 8,000 weekly downloads combined as of April 21, 2026. The malicious postinstall script harvests secrets from the victim's environment by searching environment variables for names associated with tokens, credentials, cloud providers, CI/CD systems, registries, LLM platforms and other secrets. It also targets sensitive local system files including .npmrc, .git-credentials, .netrc, .env files, database password files, and files storing SSH keys and cloud credentials, as well as artifacts from browsers and cryptocurrency wallets.",
+      "file": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.md"
+    },
+    {
+      "id": "2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation",
+      "title": "CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access",
+      "date": "2026-04-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy. Within 12 hours and 31 minutes of its publication on the main GitHub advisory page, the Sysdig Threat Research Team (TRT) observed the first LMDeploy exploitation attempt against our honeypot fleet. The attacker used the vision-language image loader as a generic HTTP SSRF primitive to port-scan the internal network behind the model server: AWS Instance Metadata Service (IMDS), Redis, MySQL, a secondary HTTP administrative interface, and an out-of-band (OOB) DNS exfiltration endpoint.",
+      "file": "2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation.md"
+    },
+    {
       "id": "2026-04-23-flowise-cve-2026-41264-csv-agent-rce",
       "title": "Flowise CVE-2026-41264: Unauthenticated CSV Agent Prompt Injection RCE via LLM Script Evaluation",
       "date": "2026-04-23",
