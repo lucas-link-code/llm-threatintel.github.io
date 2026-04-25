@@ -13,6 +13,7 @@ const App = {
   actorFilter: 'all',
   actorSearch: '',
   selectedActorId: null,
+  lastFocusedActorTrigger: null,
   cleanupHomeFilterBar: null,
   scrollTopButtonHandler: null,
   scrollTopButtonBound: false,
@@ -289,7 +290,7 @@ const App = {
 
     const mc = document.getElementById('modal-content');
     mc.innerHTML = `
-      <h2>${title} (${filtered.length})</h2>
+      <h2 id="modal-title">${title} (${filtered.length})</h2>
       <div class="feed-card" style="margin-bottom:1rem">
         <h3 style="font-size:.85rem">Defanged — One Per Line</h3>
         <div class="feed-output" id="modal-defanged" style="max-height:160px">${this.escapeHtml(defangedList)}</div>
@@ -319,11 +320,21 @@ const App = {
         </div>
       </div>
     `;
-    document.getElementById('modal-overlay').classList.add('open');
+    const overlay = document.getElementById('modal-overlay');
+    overlay.querySelector('.modal').setAttribute('aria-hidden', 'false');
+    overlay.classList.add('open');
   },
 
   closeModal() {
-    document.getElementById('modal-overlay').classList.remove('open');
+    const overlay = document.getElementById('modal-overlay');
+    const modal = overlay.querySelector('.modal');
+    overlay.classList.remove('open');
+    modal.classList.remove('modal--wide');
+    modal.setAttribute('aria-hidden', 'true');
+    if (this.lastFocusedActorTrigger) {
+      this.lastFocusedActorTrigger.focus();
+      this.lastFocusedActorTrigger = null;
+    }
   },
 
   // ---- HOME PAGE ----
@@ -659,11 +670,47 @@ const App = {
     const actors = this.actorsData.entries;
     const filtered = this.getFilteredActors();
 
-    if (!this.selectedActorId || !filtered.some(a => a.id === this.selectedActorId)) {
-      this.selectedActorId = filtered[0]?.id || null;
-    }
-
-    const selected = filtered.find(a => a.id === this.selectedActorId) || null;
+    const tableHtml = filtered.length === 0
+      ? '<p class="page-subtitle">No actors match the current filter or search.</p>'
+      : `
+        <div class="actor-table-wrap">
+          <table class="actor-table" id="actor-table">
+            <thead>
+              <tr>
+                <th>Name / Aliases</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>First Seen</th>
+                <th>Distribution</th>
+                <th>Key TTPs</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${filtered.map(actor => `
+                <tr
+                  data-actor-id="${this.escapeHtml(actor.id)}"
+                  tabindex="0"
+                  role="button"
+                  aria-label="View details for ${this.escapeHtml(actor.names[0])}"
+                >
+                  <td>
+                    <div class="actor-name">${this.escapeHtml(actor.names[0])}</div>
+                    ${actor.names.length > 1 ? `<div class="actor-aliases">aka: ${this.escapeHtml(actor.names.slice(1).join(', '))}</div>` : ''}
+                    ${actor.attribution ? `<div class="actor-aliases">Attr: ${this.escapeHtml(this.stripHtml(actor.attribution))}</div>` : ''}
+                    <div class="actor-summary">${this.escapeHtml(this.getActorSummary(actor))}</div>
+                    <span class="actor-row-cta">View details &rarr;</span>
+                  </td>
+                  <td><span class="ttp-tag">${this.escapeHtml(this.formatType(actor.type))}</span></td>
+                  <td><span class="actor-status status-${this.escapeHtml(actor.status)}">${this.escapeHtml(actor.status.toUpperCase())}</span></td>
+                  <td style="font-family:var(--fm);font-size:.78rem;color:var(--t2)">${this.escapeHtml(actor.first_seen || '')}</td>
+                  <td style="font-size:.82rem;color:var(--t2)">${this.escapeHtml((actor.distribution || []).join(', '))}</td>
+                  <td>${(actor.ttps || []).slice(0, 3).map(t => `<span class="mitre-badge">${this.escapeHtml(t.split(' - ')[0])}</span>`).join(' ')}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
 
     container.innerHTML = `
       <h1 class="page-title"><span class="title-accent">//</span> Threat Actor Tracker</h1>
@@ -698,65 +745,9 @@ const App = {
         </div>
       </div>
 
-      <div class="feed-card actor-detail-card">
-        ${
-          selected ? `
-            <div class="actor-detail-title-row">
-              <div class="actor-detail-title">${this.escapeHtml(selected.names[0])}</div>
-              <span class="ttp-tag">${this.escapeHtml(this.formatType(selected.type))}</span>
-              <span class="actor-status status-${this.escapeHtml(selected.status)}">${this.escapeHtml(selected.status.toUpperCase())}</span>
-            </div>
+      <p class="actor-list-instruction">Click any actor row to open the full detail panel.</p>
 
-            ${selected.names.length > 1 ? `<div class="actor-aliases">aka: ${this.escapeHtml(selected.names.slice(1).join(', '))}</div>` : ''}
-            ${selected.attribution ? `<div class="actor-aliases">Attr: ${this.escapeHtml(this.stripHtml(selected.attribution))}</div>` : ''}
-
-            <p class="actor-detail-summary">${this.escapeHtml(this.stripHtml(selected.description) || this.getActorSummary(selected, 260))}</p>
-
-            <div class="actor-detail-meta">
-              <span class="mitre-badge">First seen ${this.escapeHtml(selected.first_seen || 'unknown')}</span>
-              ${(selected.distribution || []).map(d => `<span class="ttp-tag">${this.escapeHtml(d)}</span>`).join('')}
-            </div>
-
-            <div class="actor-detail-ttps">
-              ${(selected.ttps || []).map(t => `<span class="mitre-badge">${this.escapeHtml(t)}</span>`).join('')}
-            </div>
-          ` : `
-            <p class="page-subtitle" style="margin-bottom:0">No actors match the current filter/search.</p>
-          `
-        }
-      </div>
-
-      <div class="actor-table-wrap">
-        <table class="actor-table" id="actor-table">
-          <thead>
-            <tr>
-              <th>Name / Aliases</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>First Seen</th>
-              <th>Distribution</th>
-              <th>Key TTPs</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${filtered.map(actor => `
-              <tr data-actor-id="${this.escapeHtml(actor.id)}" class="${actor.id === this.selectedActorId ? 'actor-row-selected' : ''}">
-                <td>
-                  <div class="actor-name">${this.escapeHtml(actor.names[0])}</div>
-                  ${actor.names.length > 1 ? `<div class="actor-aliases">aka: ${this.escapeHtml(actor.names.slice(1).join(', '))}</div>` : ''}
-                  ${actor.attribution ? `<div class="actor-aliases">Attr: ${this.escapeHtml(this.stripHtml(actor.attribution))}</div>` : ''}
-                  <div class="actor-summary">${this.escapeHtml(this.getActorSummary(actor))}</div>
-                </td>
-                <td><span class="ttp-tag">${this.escapeHtml(this.formatType(actor.type))}</span></td>
-                <td><span class="actor-status status-${this.escapeHtml(actor.status)}">${this.escapeHtml(actor.status.toUpperCase())}</span></td>
-                <td style="font-family:var(--fm);font-size:.78rem;color:var(--t2)">${this.escapeHtml(actor.first_seen || '')}</td>
-                <td style="font-size:.82rem;color:var(--t2)">${this.escapeHtml((actor.distribution || []).join(', '))}</td>
-                <td>${(actor.ttps || []).slice(0, 3).map(t => `<span class="mitre-badge">${this.escapeHtml(t.split(' - ')[0])}</span>`).join(' ')}</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
+      ${tableHtml}
     `;
 
     const searchInput = container.querySelector('#search-actors');
@@ -780,9 +771,13 @@ const App = {
     });
 
     container.querySelectorAll('#actor-table tbody tr').forEach(row => {
-      row.addEventListener('click', () => {
+      const open = () => {
         this.selectedActorId = row.dataset.actorId;
-        this.renderActors(container);
+        this.openActorDetailModal(row.dataset.actorId, row);
+      };
+      row.addEventListener('click', open);
+      row.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
       });
     });
   },
@@ -947,6 +942,60 @@ const App = {
 
   formatType(type) {
     return type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  },
+
+  // ---- ACTOR DETAIL MODAL ----
+  openActorDetailModal(actorId, triggerEl) {
+    const actor = (this.actorsData?.entries || []).find(a => a.id === actorId);
+    if (!actor) return;
+
+    const mc = document.getElementById('modal-content');
+    mc.innerHTML = this.renderActorDetailModal(actor);
+
+    const overlay = document.getElementById('modal-overlay');
+    const modal = overlay.querySelector('.modal');
+    modal.classList.add('modal--wide');
+    modal.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('open');
+
+    this.lastFocusedActorTrigger = triggerEl || null;
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+  },
+
+  renderActorDetailModal(actor) {
+    const name = this.escapeHtml(actor.names[0]);
+    const aliases = actor.names.length > 1
+      ? `<div class="actor-modal-aliases">aka: ${this.escapeHtml(actor.names.slice(1).join(', '))}</div>`
+      : '';
+    const attribution = actor.attribution
+      ? `<div class="actor-modal-aliases">Attribution: ${this.escapeHtml(this.stripHtml(actor.attribution))}</div>`
+      : '';
+    const fullDescription = this.escapeHtml(this.stripHtml(actor.description) || 'No description available.');
+    const distributionHtml = (actor.distribution || [])
+      .map(d => `<span class="ttp-tag">${this.escapeHtml(d)}</span>`).join('');
+    const ttpHtml = (actor.ttps || [])
+      .map(t => `<span class="mitre-badge">${this.escapeHtml(t)}</span>`).join('');
+
+    return `
+      <div class="actor-modal-header">
+        <h2 id="modal-title">${name}</h2>
+        <span class="ttp-tag">${this.escapeHtml(this.formatType(actor.type))}</span>
+        <span class="actor-status status-${this.escapeHtml(actor.status)}">${this.escapeHtml(actor.status.toUpperCase())}</span>
+        <span class="mitre-badge">First seen ${this.escapeHtml(actor.first_seen || 'unknown')}</span>
+      </div>
+      ${aliases}
+      ${attribution}
+      <p class="actor-modal-description">${fullDescription}</p>
+      ${distributionHtml ? `
+        <div class="actor-modal-section-label">Distribution</div>
+        <div class="actor-modal-meta">${distributionHtml}</div>
+      ` : ''}
+      ${ttpHtml ? `
+        <div class="actor-modal-section-label">MITRE ATT&amp;CK</div>
+        <div class="actor-modal-ttps">${ttpHtml}</div>
+      ` : ''}
+    `;
   }
 };
 
