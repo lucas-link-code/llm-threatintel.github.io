@@ -201,18 +201,24 @@ const App = {
 
   // ---- DEFANGING ----
   defangDomain(d) {
+    if (typeof d !== 'string') return d;
+    if (d.includes('[.]')) return d;
     const lastDot = d.lastIndexOf('.');
     if (lastDot === -1) return d;
     return d.substring(0, lastDot) + '[.]' + d.substring(lastDot + 1);
   },
 
   defangIP(ip) {
+    if (typeof ip !== 'string') return ip;
+    if (ip.includes('[.]')) return ip;
     const lastDot = ip.lastIndexOf('.');
     if (lastDot === -1) return ip;
     return ip.substring(0, lastDot) + '[.]' + ip.substring(lastDot + 1);
   },
 
   defangURL(url) {
+    if (typeof url !== 'string') return url;
+    if (url.includes('[.]')) return url;
     const slashIdx = url.indexOf('/');
     if (slashIdx === -1) return this.defangDomain(url);
     const domain = url.substring(0, slashIdx);
@@ -225,6 +231,10 @@ const App = {
     if (ioc.type === 'ip') return this.defangIP(ioc.value);
     if (ioc.type === 'url_path') return this.defangURL(ioc.value);
     return ioc.value;
+  },
+
+  isHashType(t) {
+    return t === 'sha256' || t === 'sha1' || t === 'md5' || t === 'hash';
   },
 
   // ---- COPY WITH FALLBACK ----
@@ -279,8 +289,14 @@ const App = {
     if (type === 'all') {
       filtered = iocs.filter(i => i.status === 'active');
       title = 'All Active IOCs';
+    } else if (type === 'hash') {
+      filtered = iocs.filter(i => this.isHashType(i.type) && i.status === 'active');
+      title = 'File Hash IOCs';
+    } else if (type === 'package') {
+      filtered = iocs.filter(i => i.type === 'package' && i.status === 'active');
+      title = 'Package IOCs';
     } else {
-      filtered = iocs.filter(i => i.type === type);
+      filtered = iocs.filter(i => i.type === type && i.status === 'active');
       title = type === 'domain' ? 'Domain IOCs' : type === 'url_path' ? 'URL Path IOCs' : type === 'ip' ? 'IP Address IOCs' : 'IOCs';
     }
 
@@ -786,15 +802,19 @@ const App = {
   renderIOCFeed(container) {
     if (!this.iocsData) { container.innerHTML = '<div class="loading">Loading...</div>'; return; }
     const iocs = this.iocsData.iocs;
-    const domains = iocs.filter(i => i.type === 'domain');
-    const urls = iocs.filter(i => i.type === 'url_path');
-    const ips = iocs.filter(i => i.type === 'ip');
     const active = iocs.filter(i => i.status === 'active');
+    const domains = active.filter(i => i.type === 'domain');
+    const urls = active.filter(i => i.type === 'url_path');
+    const ips = active.filter(i => i.type === 'ip');
+    const hashes = active.filter(i => this.isHashType(i.type));
+    const packages = active.filter(i => i.type === 'package');
 
     const defangedDomains = domains.map(d => this.defangDomain(d.value)).join('\n');
     const defangedUrls = urls.map(u => this.defangURL(u.value)).join('\n');
     const defangedIPs = ips.map(ip => this.defangIP(ip.value)).join('\n');
-    const allValues = iocs.map(i => i.value);
+    const hashList = hashes.map(h => h.value).join('\n');
+    const packageList = packages.map(p => p.value).join('\n');
+    const allValues = active.map(i => i.value);
     const splunkFeed = allValues.map(v => '"' + v + '"').join(' OR ');
     const csvFeed = allValues.map(v => '"' + v + '"').join(', ');
 
@@ -805,11 +825,15 @@ const App = {
         <div class="stat-card" onclick="App.showIOCModal('domain')"><div class="stat-value">${domains.length}</div><div class="stat-label">Domains</div></div>
         <div class="stat-card" onclick="App.showIOCModal('url_path')"><div class="stat-value">${urls.length}</div><div class="stat-label">URLs</div></div>
         <div class="stat-card" onclick="App.showIOCModal('ip')"><div class="stat-value">${ips.length}</div><div class="stat-label">IPs</div></div>
+        <div class="stat-card" onclick="App.showIOCModal('hash')"><div class="stat-value">${hashes.length}</div><div class="stat-label">Hashes</div></div>
+        <div class="stat-card" onclick="App.showIOCModal('package')"><div class="stat-value">${packages.length}</div><div class="stat-label">Packages</div></div>
         <div class="stat-card" onclick="App.showIOCModal('all')"><div class="stat-value">${active.length}</div><div class="stat-label">All Active</div></div>
       </div>
       <div class="feed-card"><h3>Defanged Domains</h3><div class="feed-description">Last dot before TLD replaced with [.]</div><div class="feed-output" id="fd1">${this.escapeHtml(defangedDomains || 'No domain IOCs')}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd1',this)">Copy</button></div></div>
       <div class="feed-card"><h3>Defanged URLs</h3><div class="feed-description">Full paths with defanged domain</div><div class="feed-output" id="fd2">${this.escapeHtml(defangedUrls || 'No URL IOCs')}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd2',this)">Copy</button></div></div>
       ${ips.length > 0 ? `<div class="feed-card"><h3>Defanged IPs</h3><div class="feed-description">Last octet dot replaced with [.]</div><div class="feed-output" id="fd3">${this.escapeHtml(defangedIPs)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd3',this)">Copy</button></div></div>` : ''}
+      ${hashes.length > 0 ? `<div class="feed-card"><h3>File Hashes</h3><div class="feed-description">SHA256, SHA1, MD5 file hashes from campaign reports</div><div class="feed-output" id="fd_hash">${this.escapeHtml(hashList)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd_hash',this)">Copy</button></div></div>` : ''}
+      ${packages.length > 0 ? `<div class="feed-card"><h3>Package Indicators</h3><div class="feed-description">npm, PyPI, and other ecosystem package identifiers</div><div class="feed-output" id="fd_pkg">${this.escapeHtml(packageList)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd_pkg',this)">Copy</button></div></div>` : ''}
       <div class="feed-card"><h3>Splunk / LogScale — OR Delimited</h3><div class="feed-description">Clean values, quoted, OR delimited. Paste into SPL or LQL.</div><div class="feed-output" id="fd4">${this.escapeHtml(splunkFeed)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd4',this)">Copy</button></div></div>
       <div class="feed-card"><h3>Comma-Separated Quoted</h3><div class="feed-description">For CSV, SOAR, or script ingestion</div><div class="feed-output" id="fd5">${this.escapeHtml(csvFeed)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd5',this)">Copy</button></div></div>
     `;

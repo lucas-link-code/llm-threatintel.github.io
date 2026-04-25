@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -56,7 +56,7 @@
       "status": "active"
     },
     {
-      "value": "npm:@ctrl/tinycolor (compromised)",
+      "value": "@ctrl/tinycolor",
       "type": "package",
       "context": "Shai-hulud worm compromised package with 2.2M weekly downloads",
       "first_seen": "2025-09-01",
@@ -65,7 +65,7 @@
       "status": "active"
     },
     {
-      "value": "npm:@asyncapi/specs (compromised)",
+      "value": "@asyncapi/specs",
       "type": "package",
       "context": "Shai-hulud 2.0 patient zero package with 100M+ lifetime downloads",
       "first_seen": "2025-11-01",
@@ -74,7 +74,7 @@
       "status": "active"
     },
     {
-      "value": "npm:ngx-bootstrap (compromised)",
+      "value": "ngx-bootstrap",
       "type": "package",
       "context": "Shai-hulud worm compromised package with 300K weekly downloads",
       "first_seen": "2025-09-01",
@@ -83,7 +83,7 @@
       "status": "active"
     },
     {
-      "value": "npm:ng2-file-upload (compromised)",
+      "value": "ng2-file-upload",
       "type": "package",
       "context": "Shai-hulud worm compromised package with 100K weekly downloads",
       "first_seen": "2025-09-01",
@@ -193,7 +193,7 @@
     {
       "value": "sfrclak.com",
       "type": "domain",
-      "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
+      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
       "campaign": "axios-npm-supply-chain-unc1069-waveshaper-2026",
@@ -202,16 +202,7 @@
     {
       "value": "sfrclak.com:8000",
       "type": "url_path",
-      "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
-      "first_seen": "2026-04-01",
-      "source": "Google Cloud Security",
-      "campaign": "axios-npm-supply-chain-unc1069-waveshaper-2026",
-      "status": "active"
-    },
-    {
-      "value": "2553649f232204966871cea80a5d0d6adc700ca",
-      "type": "hash",
-      "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
+      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
       "campaign": "axios-npm-supply-chain-unc1069-waveshaper-2026",
@@ -219,7 +210,7 @@
     },
     {
       "value": "d6f3f62fd3b9f5432f5782b62d8cfd5247d5ee71",
-      "type": "hash",
+      "type": "sha1",
       "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
@@ -228,7 +219,7 @@
     },
     {
       "value": "07d889e2dadce6f3910dcbc253317d28ca61c766",
-      "type": "hash",
+      "type": "sha1",
       "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
@@ -245,27 +236,27 @@
       "status": "active"
     },
     {
-      "value": "npm:axios@1.14.1",
+      "value": "axios@1.14.1",
       "type": "package",
-      "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
       "campaign": "axios-npm-supply-chain-unc1069-waveshaper-2026",
       "status": "active"
     },
     {
-      "value": "npm:axios@0.30.4",
+      "value": "axios@0.30.4",
       "type": "package",
-      "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
       "campaign": "axios-npm-supply-chain-unc1069-waveshaper-2026",
       "status": "active"
     },
     {
-      "value": "npm:plain-crypto-js@4.2.1",
+      "value": "plain-crypto-js@4.2.1",
       "type": "package",
-      "context": "Axios npm Supply Chain Attack: North Korean UNC1069 Deploys Cross-Platform WAVESHAPER.V2 RAT",
+      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
       "first_seen": "2026-04-01",
       "source": "Google Cloud Security",
       "campaign": "axios-npm-supply-chain-unc1069-waveshaper-2026",
@@ -281,7 +272,7 @@
       "status": "active"
     },
     {
-      "value": "pypi:litellm@1.82.7",
+      "value": "litellm@1.82.7",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
       "first_seen": "2026-04-01",
@@ -290,7 +281,7 @@
       "status": "active"
     },
     {
-      "value": "pypi:litellm@1.82.8",
+      "value": "litellm@1.82.8",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
       "first_seen": "2026-04-01",
@@ -299,7 +290,7 @@
       "status": "active"
     },
     {
-      "value": "pypi:telnyx@4.87.1",
+      "value": "telnyx@4.87.1",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
       "first_seen": "2026-04-01",
@@ -308,7 +299,7 @@
       "status": "active"
     },
     {
-      "value": "pypi:telnyx@4.87.2",
+      "value": "telnyx@4.87.2",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
       "first_seen": "2026-04-01",
@@ -425,39 +416,12 @@
       "status": "active"
     },
     {
-      "value": "nanobot < 0.1.6",
+      "value": "nanobot@<0.1.6",
       "type": "package",
       "context": "CVE-2026-33654: Nanobot AI Assistant Indirect Prompt Injection via Email Channel",
       "first_seen": "2026-04-04",
       "source": "CVE Threat Intelligence",
       "campaign": "nanobot-indirect-prompt-injection-cve-2026-33654",
-      "status": "active"
-    },
-    {
-      "value": "awesome-llm-apps (affected version in commit e46690f99c3f08be80a9877fab52acacf7ab8251, 2026-01-19)",
-      "type": "package",
-      "context": "CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure",
-      "first_seen": "2026-04-04",
-      "source": "MITRE CVE Threat Intelligence",
-      "campaign": "awesome-llm-apps-cross-session-token-disclosure",
-      "status": "active"
-    },
-    {
-      "value": "GitHub repositories masquerading as leaked Claude Code source",
-      "type": "url_path",
-      "context": "Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)",
-      "first_seen": "2026-04-04",
-      "source": "SecurityWeek",
-      "campaign": "claude-code-source-leak-critical-adversa-vulnerability",
-      "status": "active"
-    },
-    {
-      "value": "Claude Code CLI v2.1.88 (npm package, sourcemap exposed)",
-      "type": "package",
-      "context": "Claude Code Source Code Leak and Critical Post-Leak Vulnerability (Adversa AI Discovery)",
-      "first_seen": "2026-04-04",
-      "source": "SecurityWeek",
-      "campaign": "claude-code-source-leak-critical-adversa-vulnerability",
       "status": "active"
     },
     {
@@ -467,33 +431,6 @@
       "first_seen": "2026-04-05",
       "source": "SecurityWeek",
       "campaign": "claude-code-source-leak-adversa-post-leak-rce",
-      "status": "active"
-    },
-    {
-      "value": "mcp-remote (437K+ affected installations)",
-      "type": "package",
-      "context": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
-      "first_seen": "2026-04-05",
-      "source": "heyuan110.com",
-      "campaign": "mcp-security-crisis-30-cves-437k-downloads",
-      "status": "active"
-    },
-    {
-      "value": "axios (trojanized versions, March 31 2026)",
-      "type": "package",
-      "context": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
-      "first_seen": "2026-04-05",
-      "source": "heyuan110.com",
-      "campaign": "mcp-security-crisis-30-cves-437k-downloads",
-      "status": "active"
-    },
-    {
-      "value": "postmark-mcp-server (imposter package)",
-      "type": "package",
-      "context": "MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning",
-      "first_seen": "2026-04-05",
-      "source": "heyuan110.com",
-      "campaign": "mcp-security-crisis-30-cves-437k-downloads",
       "status": "active"
     },
     {
@@ -515,34 +452,7 @@
       "status": "active"
     },
     {
-      "value": "axios@1.14.1",
-      "type": "package",
-      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
-      "first_seen": "2026-04-06",
-      "source": "Google Threat Intelligence Group",
-      "campaign": "axios-npm-unc1069-rat-march-2026",
-      "status": "active"
-    },
-    {
-      "value": "axios@0.30.4",
-      "type": "package",
-      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
-      "first_seen": "2026-04-06",
-      "source": "Google Threat Intelligence Group",
-      "campaign": "axios-npm-unc1069-rat-march-2026",
-      "status": "active"
-    },
-    {
-      "value": "plain-crypto-js@4.2.1",
-      "type": "package",
-      "context": "Axios npm Supply Chain Attack: North Korea-Linked UNC1069 Deploys Cross-Platform RAT via Hijacked Maintainer Account",
-      "first_seen": "2026-04-06",
-      "source": "Google Threat Intelligence Group",
-      "campaign": "axios-npm-unc1069-rat-march-2026",
-      "status": "active"
-    },
-    {
-      "value": "flowise (vulnerable versions affected by CVE-2025-59528)",
+      "value": "flowise",
       "type": "package",
       "context": "Flowise RCE Vulnerability (CVE-2025-59528) Actively Exploited in April 2026",
       "first_seen": "2026-04-08",
@@ -569,43 +479,7 @@
       "status": "active"
     },
     {
-      "value": "litellm 1.82.7 (PyPI)",
-      "type": "package",
-      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
-      "first_seen": "2026-04-11",
-      "source": "Datadog Security Labs",
-      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
-      "status": "active"
-    },
-    {
-      "value": "litellm 1.82.8 (PyPI)",
-      "type": "package",
-      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
-      "first_seen": "2026-04-11",
-      "source": "Datadog Security Labs",
-      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
-      "status": "active"
-    },
-    {
-      "value": "telnyx 4.87.1 (PyPI)",
-      "type": "package",
-      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
-      "first_seen": "2026-04-11",
-      "source": "Datadog Security Labs",
-      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
-      "status": "active"
-    },
-    {
-      "value": "telnyx 4.87.2 (PyPI)",
-      "type": "package",
-      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
-      "first_seen": "2026-04-11",
-      "source": "Datadog Security Labs",
-      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
-      "status": "active"
-    },
-    {
-      "value": "vLLM < 0.14.1",
+      "value": "vllm@<0.14.1",
       "type": "package",
       "context": "Critical vLLM RCE Vulnerability (CVE-2026-22778): Heap Overflow via Malicious Video Links Affects Millions of AI Servers",
       "first_seen": "2026-04-11",
@@ -629,15 +503,6 @@
       "first_seen": "2026-04-13",
       "source": "OffSeq Threat Radar",
       "campaign": "praisonaiagents-ssrf-cloud-metadata",
-      "status": "active"
-    },
-    {
-      "value": "Claude Code (affected versions)",
-      "type": "package",
-      "context": "Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls",
-      "first_seen": "2026-04-15",
-      "source": "Adversa AI / SecurityWeek",
-      "campaign": "claude-code-deny-rules-subcommand-bypass",
       "status": "active"
     },
     {
@@ -668,66 +533,12 @@
       "status": "active"
     },
     {
-      "value": "Starlink IP range (observed in exploitation)",
-      "type": "ip",
-      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances",
+      "value": "flowise@<3.1.1",
+      "type": "package",
+      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
       "first_seen": "2026-04-17",
       "source": "Canadian Cyber Security Journal",
       "campaign": "flowise-cve-2025-59528-active-rce-exploitation",
-      "status": "active"
-    },
-    {
-      "value": "Flowise versions < 3.1.1",
-      "type": "package",
-      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances",
-      "first_seen": "2026-04-17",
-      "source": "Canadian Cyber Security Journal",
-      "campaign": "flowise-cve-2025-59528-active-rce-exploitation",
-      "status": "active"
-    },
-    {
-      "value": "devops.microsoft.com (potentially affected endpoints)",
-      "type": "domain",
-      "context": "Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026",
-      "first_seen": "2026-04-17",
-      "source": "CyberDesserts Blog",
-      "campaign": "azure-devops-mcp-auth-bypass-cve-2026-32211",
-      "status": "active"
-    },
-    {
-      "value": "@azure-devops/mcp (version info not specified in advisory)",
-      "type": "package",
-      "context": "Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026",
-      "first_seen": "2026-04-17",
-      "source": "CyberDesserts Blog",
-      "campaign": "azure-devops-mcp-auth-bypass-cve-2026-32211",
-      "status": "active"
-    },
-    {
-      "value": "MCP servers (multiple vendors)",
-      "type": "package",
-      "context": "MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments",
-      "first_seen": "2026-04-18",
-      "source": "Gentic News",
-      "campaign": "mcp-infrastructure-vulnerability-audit-april-2026",
-      "status": "active"
-    },
-    {
-      "value": "Starlink IP range (exploitation detected from Starlink IP)",
-      "type": "ip",
-      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
-      "first_seen": "2026-04-20",
-      "source": "Canadian Cyber Security Journal / VulnCheck",
-      "campaign": "flowise-cve-2025-59528-rce-active-exploitation-april-2026",
-      "status": "active"
-    },
-    {
-      "value": "flowise < 3.1.1",
-      "type": "package",
-      "context": "Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances",
-      "first_seen": "2026-04-20",
-      "source": "Canadian Cyber Security Journal / VulnCheck",
-      "campaign": "flowise-cve-2025-59528-rce-active-exploitation-april-2026",
       "status": "active"
     },
     {
@@ -776,34 +587,7 @@
       "status": "active"
     },
     {
-      "value": "Claude-Pro-windows-x64.zip",
-      "type": "package",
-      "context": "Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing",
-      "first_seen": "2026-04-22",
-      "source": "Malwarebytes / Hackread",
-      "campaign": "fake-claude-installer-plugx-malware",
-      "status": "active"
-    },
-    {
-      "value": "sfrclak[.]com",
-      "type": "domain",
-      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
-      "first_seen": "2026-04-23",
-      "source": "Elastic Security Labs",
-      "campaign": "axios-npm-supply-chain-unc1069-rat-2026",
-      "status": "active"
-    },
-    {
-      "value": "sfrclak[.]com:8000",
-      "type": "url_path",
-      "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
-      "first_seen": "2026-04-23",
-      "source": "Elastic Security Labs",
-      "campaign": "axios-npm-supply-chain-unc1069-rat-2026",
-      "status": "active"
-    },
-    {
-      "value": "142.11.206[.]72",
+      "value": "142.11.206.72",
       "type": "ip",
       "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
       "first_seen": "2026-04-23",
@@ -890,6 +674,24 @@
       "first_seen": "2026-04-25",
       "source": "The Hacker News",
       "campaign": "xinference-teampcp-self-propagating-stealer",
+      "status": "active"
+    },
+    {
+      "value": "chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
+      "type": "package",
+      "context": "Malicious AI sidebar Chrome extension harvesting ChatGPT and DeepSeek chat histories",
+      "first_seen": "2026-04-07",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
+      "type": "package",
+      "context": "Malicious AI sidebar Chrome extension harvesting ChatGPT and DeepSeek chat histories",
+      "first_seen": "2026-04-07",
+      "source": "Cryptika Cybersecurity",
+      "campaign": "malicious-browser-extensions-harvesting-llm-chats",
       "status": "active"
     }
   ]

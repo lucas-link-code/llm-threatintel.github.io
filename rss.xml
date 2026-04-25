@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 25 Apr 2026 05:43:06 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 23:26:47 +0000</lastBuildDate>
     <item>
       <title>Anthropic MCP Architectural Design Flaw: Zero-Click RCE Across 150M+ Downloads via Windsurf IDE</title>
       <link>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</link>

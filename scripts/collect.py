@@ -459,6 +459,79 @@ def update_actors(finding):
     save_json(actors_path, actors)
 
 
+# Markers indicating prose rather than a real IOC. Entries containing any of
+# these are skipped at insertion time so the daily run cannot re-pollute the feed.
+PROSE_REJECT_MARKERS = (
+    "(compromised)",
+    "(multiple vendors)",
+    "masquerading",
+    "potentially affected endpoints",
+    "affected installations",
+    "trojanized versions",
+    "(version info not specified",
+    "(observed in exploitation)",
+    "(exploitation detected",
+    "(affected versions)",
+    "(affected version in commit",
+    "(npm package, sourcemap exposed)",
+    "vulnerable versions affected by",
+    "(imposter package)",
+    " versions ",
+    " range ",
+)
+
+# Reject space-then-comparator forms like "vLLM < 0.14.1" while allowing
+# packed comparator forms like "vllm@<0.14.1".
+SPACE_COMPARATOR_RE = re.compile(r'\s[<>]=?\s')
+HEX_RE = re.compile(r'^[a-fA-F0-9]+$')
+
+
+def classify_hash(value):
+    """Return precise hash type by hex length, or 'hash' if unrecognized."""
+    if not HEX_RE.match(value):
+        return 'hash'
+    length = len(value)
+    if length == 64:
+        return 'sha256'
+    if length == 40:
+        return 'sha1'
+    if length == 32:
+        return 'md5'
+    return 'hash'
+
+
+def normalize_ioc_value(value, ioc_type):
+    """Clean an IOC value before insertion.
+
+    Returns (cleaned_value, cleaned_type) or (None, None) if the value should
+    be rejected. Strips package prefixes, undefangs, and detects prose.
+    """
+    if not isinstance(value, str):
+        value = str(value)
+
+    cleaned = value.strip()
+    if not cleaned:
+        return None, None
+
+    if ioc_type != 'url_path':
+        cleaned = cleaned.replace('[.]', '.')
+
+    if ioc_type == 'package':
+        cleaned = re.sub(r'^(npm:|pypi:)', '', cleaned, flags=re.I)
+
+    lowered = cleaned.lower()
+    if any(marker in lowered for marker in PROSE_REJECT_MARKERS):
+        return None, None
+    if SPACE_COMPARATOR_RE.search(cleaned):
+        return None, None
+
+    new_type = ioc_type
+    if ioc_type in ('hash', 'sha256', 'sha1', 'md5'):
+        new_type = classify_hash(cleaned)
+
+    return cleaned, new_type
+
+
 def update_iocs(finding):
     """Update iocs.json with new IOC entries."""
     iocs_path = DATA_DIR / "iocs.json"
@@ -470,21 +543,28 @@ def update_iocs(finding):
     finding_iocs = finding.get('iocs', {})
     campaign = finding.get('slug', 'unknown')
     added = 0
+    skipped = 0
 
     def add_ioc(value, ioc_type):
-        nonlocal added
-        if value and value not in existing_values:
-            iocs['iocs'].append({
-                "value": value,
-                "type": ioc_type,
-                "context": finding['title'],
-                "first_seen": TODAY,
-                "source": finding.get('references', [{}])[0].get('source', 'LLM ThreatIntel'),
-                "campaign": campaign,
-                "status": "active"
-            })
-            existing_values.add(value)
-            added += 1
+        nonlocal added, skipped
+        cleaned, cleaned_type = normalize_ioc_value(value, ioc_type)
+        if cleaned is None:
+            skipped += 1
+            print(f"  Skipped malformed IOC: {value!r}")
+            return
+        if cleaned in existing_values:
+            return
+        iocs['iocs'].append({
+            "value": cleaned,
+            "type": cleaned_type,
+            "context": finding['title'],
+            "first_seen": TODAY,
+            "source": finding.get('references', [{}])[0].get('source', 'LLM ThreatIntel'),
+            "campaign": campaign,
+            "status": "active"
+        })
+        existing_values.add(cleaned)
+        added += 1
 
     for domain in finding_iocs.get('domains', []):
         domain_str = str(domain) if not isinstance(domain, dict) else domain.get('domain', str(domain))
@@ -496,8 +576,7 @@ def update_iocs(finding):
 
     for hash_val in finding_iocs.get('hashes', []):
         hash_str = str(hash_val) if not isinstance(hash_val, dict) else hash_val.get('hash', str(hash_val))
-        hash_type = "sha256" if len(hash_str) == 64 else "md5" if len(hash_str) == 32 else "hash"
-        add_ioc(hash_str, hash_type)
+        add_ioc(hash_str, 'hash')
 
     for ip in finding_iocs.get('ips', []):
         ip_str = str(ip) if not isinstance(ip, dict) else ip.get('ip', str(ip))
@@ -510,9 +589,9 @@ def update_iocs(finding):
     if added > 0:
         iocs['last_updated'] = TODAY
         save_json(iocs_path, iocs)
-        print(f"  Added {added} new IOC(s)")
+        print(f"  Added {added} new IOC(s)" + (f", skipped {skipped} malformed" if skipped else ""))
     else:
-        print("  No new IOCs to add")
+        print(f"  No new IOCs to add" + (f" ({skipped} skipped as malformed)" if skipped else ""))
 
 
 # ---- Main ----
