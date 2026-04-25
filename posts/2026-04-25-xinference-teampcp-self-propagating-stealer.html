@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign | LLM ThreatIntel</title>
+  <meta name="description" content="Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment &#x27;# hacked by teampcp&#x27;. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign">
+  <meta property="og:description" content="Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment &#x27;# hacked by teampcp&#x27;. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign">
+  <meta property="article:published_time" content="2026-04-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-25T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign">
+  <meta name="twitter:description" content="Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment &#x27;# hacked by teampcp&#x27;. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign",
+  "description": "Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment '# hacked by teampcp'. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.",
+  "datePublished": "2026-04-25T00:00:00Z",
+  "dateModified": "2026-04-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-25</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign</h1>
+<p><strong>Date:</strong> 2026-04-25<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment &#x27;# hacked by teampcp&#x27;. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>TeamPCP Supply Chain Escalation (LiteLLM → Xinference)</td></tr><tr><td>Attribution</td><td>TeamPCP (confidence: high)</td></tr><tr><td>Target</td><td>Python developers building AI/ML applications; downstream LLM platforms</td></tr><tr><td>Vector</td><td>Malicious PyPI package with embedded second-stage payload and PyPI propagation logic</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The campaign features PyPI propagation logic: the script generates a Python .pth-based payload designed to execute when Python starts, then prepares and uploads malicious Python packages with Twine if the required credentials are present, turning one compromised developer environment into additional package compromises. This self-propagating mechanism distinguishes xinference from earlier LiteLLM attacks and indicates TeamPCP has operationalized PyPI credential theft as a force-multiplier tactic. The same threat actor used Trivy scanner compromise to steal LiteLLM maintainer credentials in late March; xinference poisoning represents operational continuity and capability maturation.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Malicious PyPI package distribution to compromise downstream users</td></tr><tr><td>Credential Access</td><td>T1110.001</td><td>Credential stealer payload harvests environment variables, SSH keys, and cloud tokens</td></tr><tr><td>Lateral Movement</td><td>T1570</td><td>Self-propagating mechanism targets developer credentials to upload additional malicious packages</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Source: JFrog/Hacker News analysis (Apr 24, 2026)_</p>
+<h3>Full URL Paths</h3>
+<p>_Source: JFrog/Hacker News analysis (Apr 24, 2026)_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">xinference==2.6.0
+xinference==2.6.1
+xinference==2.6.2</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor PyPI for uploads from known-compromised maintainer accounts; implement pip-audit or Software Composition Analysis scanning for xinference 2.6.0–2.6.2; check CI/CD logs for unexpected Twine invocations or .pth file execution; audit Kubernetes clusters and cloud credential stores (AWS Secrets Manager, GCP Secret Manager) for evidence of large-scale secret enumeration between April 22–25, 2026.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] Self-Propagating Supply Chain Worm Hijacks npm Packages to Steal Developer Tokens (2026-04-24) — https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html</li><li>[Adversa AI] Top GenAI security resources — April 2026 (2026-04-25) — https://adversa.ai/blog/top-genai-security-resources-april-2026/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

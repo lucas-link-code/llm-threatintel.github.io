@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit",
+      "title": "Anthropic MCP Architectural Design Flaw: Zero-Click RCE Across 150M+ Downloads via Windsurf IDE",
+      "date": "2026-04-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol: Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction, allowing remote attackers to execute arbitrary commands via prompt injection. The vulnerability ripples through 150M+ downloads and up to 200,000 vulnerable instances across Cursor, VS Code, Claude Code, and Gemini-CLI.",
+      "file": "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.md"
+    },
+    {
+      "id": "2026-04-25-lmdeploy-ssrf-cloud-metadata-attack",
+      "title": "LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access",
+      "date": "2026-04-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.",
+      "file": "2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.md"
+    },
+    {
+      "id": "2026-04-25-xinference-teampcp-self-propagating-stealer",
+      "title": "Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign",
+      "date": "2026-04-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment '# hacked by teampcp'. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.",
+      "file": "2026-04-25-xinference-teampcp-self-propagating-stealer.md"
+    },
+    {
       "id": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce",
       "title": "CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval",
       "date": "2026-04-24",

@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 24 Apr 2026 06:02:38 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 05:43:06 +0000</lastBuildDate>
     <item>
+      <title>Anthropic MCP Architectural Design Flaw: Zero-Click RCE Across 150M+ Downloads via Windsurf IDE</title>
+      <link>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <description>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol: Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction, allowing remote attackers to execute arbitrary commands via prompt injection. The vulnerability ripples through 150M+ downloads and up to 200,000 vulnerable instances across Cursor, VS Code, Claude Code, and Gemini-CLI.</description>
+    </item>    <item>
+      <title>LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access</title>
+      <link>https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.</description>
+    </item>    <item>
+      <title>Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign</title>
+      <link>https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment '# hacked by teampcp'. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.</description>
+    </item>    <item>
       <title>CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval</title>
       <link>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-15-bedrock-multi-agent-prompt-injection.html</guid>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
       <description>Unit 42 research on multi-agent AI systems on Amazon Bedrock reveals new attack surfaces and prompt injection risks. Multi-agent coordination in cloud-hosted LLM environments introduces novel attack vectors where compromised agents can manipulate or hijack peer agent behavior at scale.</description>
-    </item>    <item>
-      <title>LLM Router Infrastructure Compromise: 26 Malicious Services Intercepting AI Credentials and Draining Crypto Wallets</title>
-      <link>https://llm-threatintel.com/posts/2026-04-15-llm-router-credential-theft-wallet-drain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-15-llm-router-credential-theft-wallet-drain.html</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-      <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500k wallet. "LLM routers"—services that sit between users and AI models—are emerging as powerful attack points that can intercept and alter sensitive data, with routers designed to forward requests to models but having full access to everything passing through them.</description>
-    </item>    <item>
-      <title>PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling</title>
-      <link>https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-13-praisonaiagents-ssrf-cloud-metadata.html</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      <description>PraisonAIAgents before version 1.5.128 contains an SSRF vulnerability (CWE-918) in its web_crawl module. The httpx fallback path uses user-supplied URLs directly in asynchronous HTTP GET requests with automatic redirect following and no validation of the host. An LLM agent tricked into crawling an internal URL can reach cloud metadata endpoints (169.254.169.254), internal services, and localhost. The response content is returned to the agent and may appear in output visible to the attacker. This enables an attacker controlling an LLM agent to induce requests to internal IP addresses and services, including cloud metadata endpoints, potentially exposing sensitive internal data.</description>
-    </item>    <item>
-      <title>AI-Assisted Mexican Government Cyber Espionage: Claude Code &amp; GPT-4.1 Enable 150GB Data Exfiltration</title>
-      <link>https://llm-threatintel.com/posts/2026-04-13-claude-code-mexico-gov-espionage-150gb.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-13-claude-code-mexico-gov-espionage-150gb.html</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      <description>A threat actor weaponized Anthropic's Claude Code and OpenAI's GPT-4.1 to breach multiple Mexican government institutions, exfiltrating roughly 150GB of data and exposing hundreds of millions of records in a campaign that has quietly redrawn the threat landscape. The breach, confirmed in reports published April 11, 2026, happened when a single attacker used two of the most widely available AI tools on the market to automate a sweeping intrusion campaign against government infrastructure. The campaign appears to have been running, at least in part, since early 2026.</description>
     </item>
   </channel>
 </rss>

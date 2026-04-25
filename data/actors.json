@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-24",
+  "last_updated": "2026-04-25",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -405,7 +405,10 @@
         "T1570 - Lateral Movement via Kubernetes",
         "T1195.001 - Compromise Package Repository",
         "T1555 - Credential Harvesting",
-        "T1041 - Exfiltration via C2"
+        "T1041 - Exfiltration via C2",
+        "T1195.001 - Supply Chain Compromise",
+        "T1110.001 - Credential Access via environment variable harvesting",
+        "T1570 - Lateral movement via credential theft and reuse"
       ],
       "description": "TeamPCP is a supply chain-focused threat actor demonstrating sophisticated attack chain design: first compromising Trivy (security scanner) to extract CI/CD credentials, then using those credentials to obtain PyPI maintainer access. The campaign targets AI development ecosystems by poisoning packages at the orchestration layer (LiteLLM bridges 100+ LLM providers). Attack chain includes multi-stage persistence, credential encryption, and beacon-based follow-on payload delivery.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, and affected maintainers (confidence: high)"
@@ -1045,6 +1048,45 @@
       ],
       "description": "CVE-2026-41349 represents a class of vulnerability affecting agentic AI systems where architectural trust assumptions enable bypass of human-in-the-loop controls. Threat actors can exploit this by sending malicious agent API requests with config.patch payloads to disable approval gates, enabling unauthorized execution of downstream tools and systems.",
       "attribution": "Unattributed; any threat actor with network access to OpenClaw API"
+    },
+    {
+      "id": "unknown-automated-exploitation",
+      "names": [
+        "Unknown (Automated Exploitation)"
+      ],
+      "type": "malware",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "SSRF scanning automation"
+      ],
+      "ttps": [
+        "T1090.001 - Server-Side Request Forgery",
+        "T1046 - Network Service Scanning",
+        "T1110.001 - Credential Access via metadata endpoints"
+      ],
+      "description": "Attack pattern indicative of autonomous or semi-autonomous scanning infrastructure that systematically probes recently disclosed vulnerabilities in AI inference frameworks. The 12-hour exploitation window and systematic port enumeration suggest scripted attack infrastructure rather than manual exploitation.",
+      "attribution": "Opportunistic; likely automated scanning infrastructure testing LMDeploy endpoints against known ports"
+    },
+    {
+      "id": "anthropic-mcp-sdk-design",
+      "names": [
+        "Anthropic MCP SDK Design"
+      ],
+      "type": "malicious-tool",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Official Anthropic MCP SDKs",
+        "Downstream projects using MCP (7,000+ public servers, 150M+ total downloads)"
+      ],
+      "ttps": [
+        "T1548.004 - Arbitrary command execution via STDIO",
+        "T1597.002 - Prompt injection",
+        "T1195.001 - Supply chain compromise via MCP marketplace poisoning"
+      ],
+      "description": "The MCP STDIO transport mechanism allows configuration of arbitrary commands and arguments without a manifest allowlist or command sanitization. Any developer using the official Anthropic SDK unknowingly inherits this exposure. OX Security researchers demonstrated successful poisoning of 9/11 public MCP registries with proof-of-concept payloads; production exploitation likely underway.",
+      "attribution": "Architectural design decision; not exploited by specific threat actor; vulnerability class affects all implementations"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-24",
+  "last_updated": "2026-04-25",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -863,6 +863,33 @@
       "first_seen": "2026-04-24",
       "source": "The Hacker Wire",
       "campaign": "cve-2026-41349-openclaw-consent-bypass-agentic-rce",
+      "status": "active"
+    },
+    {
+      "value": "xinference==2.6.0",
+      "type": "package",
+      "context": "Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign",
+      "first_seen": "2026-04-25",
+      "source": "The Hacker News",
+      "campaign": "xinference-teampcp-self-propagating-stealer",
+      "status": "active"
+    },
+    {
+      "value": "xinference==2.6.1",
+      "type": "package",
+      "context": "Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign",
+      "first_seen": "2026-04-25",
+      "source": "The Hacker News",
+      "campaign": "xinference-teampcp-self-propagating-stealer",
+      "status": "active"
+    },
+    {
+      "value": "xinference==2.6.2",
+      "type": "package",
+      "context": "Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign",
+      "first_seen": "2026-04-25",
+      "source": "The Hacker News",
+      "campaign": "xinference-teampcp-self-propagating-stealer",
       "status": "active"
     }
   ]

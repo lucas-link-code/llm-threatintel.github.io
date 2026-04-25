@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access | LLM ThreatIntel</title>
+  <meta name="description" content="CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access">
+  <meta property="og:description" content="CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access">
+  <meta property="article:published_time" content="2026-04-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-04-25T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access">
+  <meta name="twitter:description" content="CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access",
+  "description": "CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.",
+  "datePublished": "2026-04-25T00:00:00Z",
+  "dateModified": "2026-04-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html",
+  "keywords": [
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-04-25</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access</h1>
+<p><strong>Date:</strong> 2026-04-25<br><strong>Tags:</strong> malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>LMDeploy SSRF Infrastructure Reconnaissance</td></tr><tr><td>Attribution</td><td>Unknown (opportunistic automated exploitation) (confidence: low)</td></tr><tr><td>Target</td><td>Organizations running LMDeploy &lt;0.12.3 for LLM inference serving</td></tr><tr><td>Vector</td><td>SSRF via vision-language model image loading endpoint targeting AWS IMDS, internal services</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04-21</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Over a single eight-minute session, the attacker used the vision-language image loader as a generic HTTP SSRF primitive to port-scan the internal network behind the model server: AWS Instance Metadata Service (IMDS), Redis, MySQL, a secondary HTTP administrative interface, and an out-of-band (OOB) DNS exfiltration endpoint. An advisory as specific as GHSA-6w67-hwm5-92mq, which includes the affected file, parameter name, root-cause explanation, and sample vulnerable code, is effectively an input prompt for any commercial LLM to generate a potential exploit; any advisory that names the vulnerable function, shows the missing check, or quotes the affected code pattern becomes a turnkey exploit in the age of capable code-generation models.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Server-Side Request Forgery</td><td>T1090.001</td><td>SSRF via vision-language endpoint to access internal cloud metadata services</td></tr><tr><td>Credential Access</td><td>T1110.001</td><td>IAM credentials exfiltrated via cloud metadata endpoint (IMDS)</td></tr><tr><td>System Information Discovery</td><td>T1046</td><td>Port scanning of internal infrastructure (Redis, MySQL, HTTP admin interfaces)</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Vulnerability affects LMDeploy ≤0.12.0; patch CVE-2026-33626 updates to v0.12.3 with _is_safe_url() check_</p>
+<h3>Full URL Paths</h3>
+<p>_Vulnerability affects LMDeploy ≤0.12.0; patch CVE-2026-33626 updates to v0.12.3 with _is_safe_url() check_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h2>Detection Recommendations</h2>
+<p>LMDeploy has 7,798 GitHub stars and does not appear in CISA&#x27;s Known Exploited Vulnerabilities (KEV) catalog, increasing likelihood that many deployments remain unpatched. Monitor for GET requests to vision-language endpoints with suspicious URL parameters (e.g., 169.254.169.254, localhost, internal IP addresses); implement strict URL validation in load_image() before HTTP requests; audit AWS IMDS access logs for requests originating from LMDeploy processes; apply patch to v0.12.3 or later immediately.</p>
+<h2>References</h2>
+<ul><li>[Sysdig Threat Research Team] CVE-2026-33626: How attackers exploited LMDeploy LLM Inference Engines in 12 hours (2026-04-24) — https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours</li><li>[The Hacker News] LMDeploy CVE-2026-33626 Flaw Exploited Within 13 Hours of Disclosure (2026-04-24) — https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
