@@ -536,10 +536,11 @@ a:hover { color: var(--ab); }
 }
 .modal-overlay.open { display: flex; }
 .modal {
+  position: relative;
   background: linear-gradient(180deg, rgba(17,24,39,.98) 0%, rgba(10,14,20,.98) 100%);
   border: 1px solid var(--bd);
   border-radius: var(--rd);
-  padding: 2rem;
+  padding: 3.25rem 2rem 2rem;
   max-width: 720px;
   width: 100%;
   max-height: 82vh;
@@ -549,16 +550,29 @@ a:hover { color: var(--ab); }
 .modal--wide { max-width: 980px; }
 .modal h2 { font-size: 1.2rem; font-weight: 700; color: var(--w); margin-bottom: 1.25rem; }
 .modal-close {
-  float: right;
-  background: none;
-  border: none;
-  color: var(--t3);
-  font-size: 1.4rem;
+  position: absolute;
+  top: 0.875rem;
+  right: 0.875rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  color: var(--t2);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
   cursor: pointer;
-  padding: 0.2rem 0.5rem;
-  transition: color var(--tr);
+  padding: 0;
+  transition: background var(--tr), color var(--tr), border-color var(--tr);
 }
-.modal-close:hover { color: var(--a); }
+.modal-close:hover {
+  color: var(--w);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
+}
 
 /* Actor modal content layout */
 .actor-modal-header {
@@ -1046,14 +1060,32 @@ a:hover { color: var(--ab); }
     justify-content: center;
   }
   .modal {
-    width: 100%;
-    max-width: 100%;
-    max-height: 85vh;
-    padding: 1.25rem;
-    border-radius: 10px 10px 0 0;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    max-height: 90vh;
+    padding: 3.5rem 1.25rem 1.5rem;
+    border-radius: 14px 14px 0 0;
     margin: 0;
   }
+  .modal::before {
+    content: '';
+    position: absolute;
+    top: 0.45rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.18);
+  }
   .modal--wide {
-    max-width: 100%;
+    max-width: calc(100% - 16px);
+  }
+  .modal-close {
+    width: 44px;
+    height: 44px;
+    top: 0.65rem;
+    right: 0.65rem;
+    font-size: 1.25rem;
   }
 }
