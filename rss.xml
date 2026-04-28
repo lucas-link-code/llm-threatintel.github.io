@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 25 Apr 2026 23:26:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 06:23:36 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-33626 (LMDeploy SSRF) Exploited Within 13 Hours of Disclosure; AI-Generated Exploits Weaponized at Machine Speed</title>
+      <link>https://llm-threatintel.com/posts/2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy disclosed on April 21, 2026, was exploited within 12 hours and 31 minutes, enabling attackers to perform SSRF-based internal network scanning, cloud metadata access, and service enumeration. The advisory included specific details on the affected file, parameter name, and vulnerable code pattern—effectively creating a turnkey exploit prompt for code-generation models, making any advisory naming the vulnerable function or showing the affected code pattern become an instant exploit template in the age of capable code-generation models.</description>
+    </item>    <item>
       <title>Anthropic MCP Architectural Design Flaw: Zero-Click RCE Across 150M+ Downloads via Windsurf IDE</title>
       <link>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</guid>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
       <description>Adversa AI red team found Claude Code's deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe 'ask' mode, circumventing user-configured denial rules designed to prevent data exfiltration.</description>
-    </item>    <item>
-      <title>Multi-Agent Prompt Injection via Amazon Bedrock: Attack Surface Expansion in Enterprise AI Deployments</title>
-      <link>https://llm-threatintel.com/posts/2026-04-15-bedrock-multi-agent-prompt-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-15-bedrock-multi-agent-prompt-injection.html</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Unit 42 research on multi-agent AI systems on Amazon Bedrock reveals new attack surfaces and prompt injection risks. Multi-agent coordination in cloud-hosted LLM environments introduces novel attack vectors where compromised agents can manipulate or hijack peer agent behavior at scale.</description>
     </item>
   </channel>
 </rss>

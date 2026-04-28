@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation",
+      "title": "CVE-2026-33626 (LMDeploy SSRF) Exploited Within 13 Hours of Disclosure; AI-Generated Exploits Weaponized at Machine Speed",
+      "date": "2026-04-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy disclosed on April 21, 2026, was exploited within 12 hours and 31 minutes, enabling attackers to perform SSRF-based internal network scanning, cloud metadata access, and service enumeration. The advisory included specific details on the affected file, parameter name, and vulnerable code pattern—effectively creating a turnkey exploit prompt for code-generation models, making any advisory naming the vulnerable function or showing the affected code pattern become an instant exploit template in the age of capable code-generation models.",
+      "file": "2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.md"
+    },
+    {
       "id": "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit",
       "title": "Anthropic MCP Architectural Design Flaw: Zero-Click RCE Across 150M+ Downloads via Windsurf IDE",
       "date": "2026-04-25",
