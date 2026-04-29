@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-26",
+  "last_updated": "2026-04-29",
   "iocs": [
     {
       "value": "deepaichats.com",
@@ -692,6 +692,24 @@
       "first_seen": "2026-04-07",
       "source": "Cryptika Cybersecurity",
       "campaign": "malicious-browser-extensions-harvesting-llm-chats",
+      "status": "active"
+    },
+    {
+      "value": "65.111.25.67",
+      "type": "ip",
+      "context": "LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access",
+      "first_seen": "2026-04-29",
+      "source": "The Hacker News",
+      "campaign": "litellm-cve-2026-42208-sql-injection",
+      "status": "active"
+    },
+    {
+      "value": "litellm",
+      "type": "package",
+      "context": "LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access",
+      "first_seen": "2026-04-29",
+      "source": "The Hacker News",
+      "campaign": "litellm-cve-2026-42208-sql-injection",
       "status": "active"
     }
   ]

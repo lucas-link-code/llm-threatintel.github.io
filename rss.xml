@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 28 Apr 2026 06:23:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 06:15:38 +0000</lastBuildDate>
     <item>
+      <title>LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access</title>
+      <link>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</guid>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection vulnerability in LiteLLM that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The unknown threat actor targeted database tables like "litellm_credentials.credential_values" and "litellm_config" that hold information related to upstream large language model (LLM) provider keys and the proxy runtime environment, demonstrating that the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.</description>
+    </item>    <item>
       <title>CVE-2026-33626 (LMDeploy SSRF) Exploited Within 13 Hours of Disclosure; AI-Generated Exploits Weaponized at Machine Speed</title>
       <link>https://llm-threatintel.com/posts/2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</guid>
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
       <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with at least one documented case draining a $500K crypto wallet. LLM routers sit between users and AI models as intermediaries and have full access to everything passing through them, including sensitive data, while these routers are designed to forward requests to models like OpenAI or Anthropic. Leaked OpenAI keys and weakly configured routers processed 2.1B tokens, exposing 99 credentials across 440 Codex sessions.</description>
-    </item>    <item>
-      <title>Claude Code Deny Rules Bypass via Subcommand Chaining: 50+ Command Pipeline Defeats Safety Controls</title>
-      <link>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-15-claude-code-deny-rules-subcommand-bypass.html</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Adversa AI red team found Claude Code's deny rules silently stop working after 50 subcommands. Attackers can craft AI-generated command chains that exceed the safety threshold, causing Claude Code to fall back to unsafe 'ask' mode, circumventing user-configured denial rules designed to prevent data exfiltration.</description>
     </item>
   </channel>
 </rss>

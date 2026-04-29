@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-28",
+  "last_updated": "2026-04-29",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -1006,7 +1006,8 @@
         "Cloud environments",
         "Internet-accessible LMDeploy instances",
         "Flowise instances <v3.0.13",
-        "Shared chatflow endpoints"
+        "Shared chatflow endpoints",
+        "LiteLLM proxy deployments"
       ],
       "ttps": [
         "T1190 - Server-Side Request Forgery",
@@ -1014,9 +1015,12 @@
         "T1595.002 - Vulnerability Scanning",
         "T1060 - Prompt Injection",
         "T1059.006 - Script Execution via LLM",
-        "T1562.001 - Unsandboxed Code Evaluation"
+        "T1562.001 - Unsandboxed Code Evaluation",
+        "T1190 - Exploit Public-Facing Application",
+        "T1555 - Credentials from Password Managers",
+        "T1213.02 - Data from Information Repositories: Sharepoint"
       ],
-      "description": "Unknown threat actor conducting reconnaissance and credential harvesting against LMDeploy inference servers. Activity pattern suggests automated SSRF weaponization from GHSA advisory content, likely using LLM-assisted exploit generation to convert advisory details directly into working attacks.",
+      "description": "Unknown threat actor with knowledge of LiteLLM's database schema and internal table structure. Exploitation demonstrates familiarity with AI infrastructure vulnerabilities and rapid transition from disclosure to active probing within 26 hours, consistent with LLM-assisted vulnerability analysis patterns.",
       "attribution": "Unattributed; rapid exploitation suggests automated scanning/weaponization"
     },
     {

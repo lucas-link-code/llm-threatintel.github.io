@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": "2026-04-29-litellm-cve-2026-42208-sql-injection",
+      "title": "LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access",
+      "date": "2026-04-29",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-42208 (CVSS score: 9.3) is an SQL injection vulnerability in LiteLLM that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The unknown threat actor targeted database tables like \"litellm_credentials.credential_values\" and \"litellm_config\" that hold information related to upstream large language model (LLM) provider keys and the proxy runtime environment, demonstrating that the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.",
+      "file": "2026-04-29-litellm-cve-2026-42208-sql-injection.md"
+    },
+    {
       "id": "2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation",
       "title": "CVE-2026-33626 (LMDeploy SSRF) Exploited Within 13 Hours of Disclosure; AI-Generated Exploits Weaponized at Machine Speed",
       "date": "2026-04-28",
