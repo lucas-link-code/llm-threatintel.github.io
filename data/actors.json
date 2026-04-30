@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29",
+  "last_updated": "2026-04-30",
   "entries": [
     {
       "id": "malicious-ai-browser-extensions",
@@ -622,7 +622,8 @@
         "Network-based attack via vLLM API endpoint",
         "Direct exploitation of internet-exposed Flowise instances",
         "Automated scripted exploitation",
-        "LLM-generated exploit code"
+        "LLM-generated exploit code",
+        "Network-based exploitation of exposed gRPC endpoints"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -635,7 +636,8 @@
         "T1570 - Lateral Movement",
         "T1190 - Server-Side Request Forgery",
         "T1592 - Automated reconnaissance",
-        "T1583.001 - Develop Capabilities: LLM-Assisted Exploit Generation"
+        "T1583.001 - Develop Capabilities: LLM-Assisted Exploit Generation",
+        "T1042 - Deserialization of Untrusted Data"
       ],
       "description": "Threat actor conducting active exploitation of CVE-2025-59528 in publicly exposed Flowise instances. Initial detection from Starlink infrastructure suggests either automated scanning or actor with access to resilient infrastructure. Target pattern consistent with indiscriminate credential harvesting (LLM API keys, cloud provider tokens).",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

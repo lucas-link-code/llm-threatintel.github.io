@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce",
+      "title": "CVE-2026-25874: Hugging Face LeRobot Unauthenticated Remote Code Execution via Pickle Deserialization",
+      "date": "2026-04-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-25874 (CVSS 9.3) enables unauthenticated attackers to execute arbitrary system commands on vulnerable Hugging Face LeRobot hosts. With nearly 24,000 GitHub stars, the vulnerability poses severe risk to AI infrastructure, connected robots, and sensitive proprietary data. The PolicyServer and RobotClient components use Python's pickle module to deserialize data over unauthenticated gRPC channels without TLS or authentication. By sending maliciously-crafted serialized payloads, attackers trigger automatic arbitrary code execution.",
+      "file": "2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.md"
+    },
+    {
       "id": "2026-04-29-litellm-cve-2026-42208-sql-injection",
       "title": "LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access",
       "date": "2026-04-29",

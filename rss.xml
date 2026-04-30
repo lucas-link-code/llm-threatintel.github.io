@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 29 Apr 2026 06:15:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 06:20:44 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-25874: Hugging Face LeRobot Unauthenticated Remote Code Execution via Pickle Deserialization</title>
+      <link>https://llm-threatintel.com/posts/2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.html</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-25874 (CVSS 9.3) enables unauthenticated attackers to execute arbitrary system commands on vulnerable Hugging Face LeRobot hosts. With nearly 24,000 GitHub stars, the vulnerability poses severe risk to AI infrastructure, connected robots, and sensitive proprietary data. The PolicyServer and RobotClient components use Python's pickle module to deserialize data over unauthenticated gRPC channels without TLS or authentication. By sending maliciously-crafted serialized payloads, attackers trigger automatic arbitrary code execution.</description>
+    </item>    <item>
       <title>LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access</title>
       <link>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-17-llm-router-credential-theft-crypto-draining.html</guid>
       <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
       <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500,000 crypto wallet. The team documented real-world abuses including routers secretly injecting malicious tool calls, stealing credentials and draining a client's crypto wallet of $500,000.</description>
-    </item>    <item>
-      <title>Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries</title>
-      <link>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.html</guid>
-      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
-      <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with at least one documented case draining a $500K crypto wallet. LLM routers sit between users and AI models as intermediaries and have full access to everything passing through them, including sensitive data, while these routers are designed to forward requests to models like OpenAI or Anthropic. Leaked OpenAI keys and weakly configured routers processed 2.1B tokens, exposing 99 credentials across 440 Codex sessions.</description>
     </item>
   </channel>
 </rss>
