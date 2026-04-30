@@ -1,4 +1,4 @@
-# Frontier Models Need a Body: How Agent Harnesses, Skills, and Tool Runtimes Turn LLMs into Task Systems
+# How Agent Harnesses, Skills, and Tool Runtimes Turn LLMs into Task Systems
 
 The modern frontier model is no longer a standalone chatbot. In practical deployments, the model is only one layer in a much larger system made up of orchestration logic, tool discovery, execution runtimes, security boundaries, memory handling, and approval controls. That surrounding system is what actually turns a model into an agent.
 
