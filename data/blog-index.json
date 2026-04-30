@@ -1,8 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-04-28-agent-harnesses-skills-and-frontier-model-architecture",
+      "title": "Frontier Models Need a Body: How Agent Harnesses, Skills, and Tool Runtimes Turn LLMs into Task Systems",
+      "date": "2026-04-28",
+      "author": "Lucas Linkowski",
+      "category": "GenAI Security",
+      "tags": ["agent-harnesses", "orchestration", "tool-runtimes", "model-architecture"],
+      "excerpt": "The modern frontier model is no longer a standalone chatbot. In practical deployments, the model is only one layer in a much larger system made up of orchestration logic, tool discovery, execution runtimes, security boundaries, memory handling, and approval controls. This post examines what agent harnesses actually are, how skills, MCP servers, and tool runtimes fit into the architecture, and how OpenAI, Google, and Anthropic differ in their approach to building systems around frontier models.",
+      "file": "2026-04-28-agent-harnesses-skills-and-frontier-model-architecture.md",
+      "readTime": "16 min"
+    },
+    {
       "id": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense",
-      "title": "Zero day gold rush, collapse of dwell time and AI augmented defense",
+      "title": "Zero-Day Discovery at Machine Speed and the Defensive Shift Ahead",
       "date": "2026-04-07",
       "author": "Lucas Linkowski",
       "category": "GenAI Security",
