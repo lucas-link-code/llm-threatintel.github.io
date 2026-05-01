@@ -1,4 +1,4 @@
-# How Agent Harnesses, Skills, and Tool Runtimes Turn LLMs into Task Systems
+# Agent Harnesses, Skills, and Tool Runtimes: The Architecture of Frontier Models
 
 The modern frontier model is no longer a standalone chatbot. In practical deployments, the model is only one layer in a much larger system made up of orchestration logic, tool discovery, execution runtimes, security boundaries, memory handling, and approval controls. That surrounding system is what actually turns a model into an agent.
 
@@ -8,7 +8,7 @@ As of early 2026, that architectural layer has become the real differentiator.
 
 The shift is significant. The industry has moved beyond simple JSON function calling and server side chatbot APIs. Frontier models now sit inside systems that can discover tools dynamically, orchestrate remote MCP servers, write code to call APIs, operate terminals, browse the web, or interact with graphical interfaces. Some architectures optimise for managed state and provider hosted execution. Others optimise for inter agent interoperability. Others optimise for local execution, strict sandboxing, and extreme context efficiency.
 
-If you want to understand how to use these systems properly, the right question is no longer just which model is best. The better question is: what harness is this model running inside, where do the tools execute, how is state handled, and what security boundary actually exists around the task?
+The question is not just which model is best. The better question is: what harness is this model running inside, where do the tools execute, how is state handled, and what security boundary actually exists around the task?
 
 That is the real architecture of modern agent systems.
 
@@ -18,13 +18,12 @@ An agent harness is the runtime environment that surrounds the model and transla
 
 At minimum, the harness usually contains:
 
-1. a model interface
-2. a tool registry
-3. an orchestration layer
-4. an execution runtime
-5. a state or memory layer
-6. a policy and approval layer
-7. an observation loop for receiving tool output and continuing execution
+1. model interface
+2. tool registry
+3. orchestration layer
+4. execution runtime
+5. state or memory
+6. observation loop for receiving tool output and continuing execution
 
 The model itself does not run a terminal, open a browser, authenticate to an API, or edit a file. It emits structured intent. The harness turns that intent into real execution.
 
@@ -38,7 +37,7 @@ That contract is where architecture begins.
 
 ## The core layers behind a frontier model
 
-### 1. Model layer
+### 1. Model
 
 This is the reasoning engine. It evaluates prompts, tracks the active context, decides whether a tool is needed, and generates the next action.
 
@@ -51,7 +50,7 @@ The model can:
 
 This is the visible intelligence layer, but it is not the whole system.
 
-### 2. Orchestration layer
+### 2. Orchestration
 
 The orchestration layer is the control plane that manages the loop between model output and real execution.
 
@@ -65,7 +64,7 @@ Its job is to:
 
 In some ecosystems this layer is heavily provider managed. In others it is implemented by the client application or CLI. In practice, this is the layer that determines whether the agent feels smooth, stateful, fast, and safe or brittle, noisy, and expensive.
 
-### 3. Tool layer
+### 3. Tools
 
 The tool layer is the set of capabilities visible to the model. That can include:
 
@@ -117,25 +116,7 @@ This affects:
 
 Persistent memory can make agents more useful, but it also expands the attack surface. The more state the harness carries forward, the more careful the system must be about what gets remembered, summarized, or reloaded.
 
-### 6. Policy and approval plane
-
-This is where safe deployment either happens or fails.
-
-A serious agent harness needs controls around:
-- file access
-- shell execution
-- network egress
-- allowed tools
-- secret injection
-- human approvals
-- telemetry
-- domain allowlists
-- destructive actions
-- remote server trust
-
-Without this layer, the model is being trusted to obey instructions in natural language. That is not a security control.
-
-### 7. Observation loop
+### 6. Observation loop
 
 The last critical layer is the feedback loop. The harness must observe the result of execution and hand the right representation back to the model.
 

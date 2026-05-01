@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": "2026-04-28-agent-harnesses-skills-and-frontier-model-architecture",
-      "title": "How Agent Harnesses, Skills, and Tool Runtimes Turn LLMs into Task Systems",
+      "title": "Agent Harnesses, Skills, and Tool Runtimes: The Architecture of Frontier Models",
       "date": "2026-04-28",
       "author": "Lucas L",
       "category": "GenAI Security",
