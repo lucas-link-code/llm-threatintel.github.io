@@ -734,9 +734,9 @@ a:hover { color: var(--ab); }
 }
 
 .post-content .post-footer-aside {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--bds);
 }
 .post-content .post-footer-aside h2.about-section-title {
   font-size: 1rem;
