@@ -188,8 +188,7 @@ a:hover { color: var(--ab); }
   align-items: center;
   gap: 2rem;
   padding: 0.85rem 1.5rem;
-  background: rgba(17,24,39,.78);
-  backdrop-filter: blur(8px);
+  background: rgba(17,24,39,.92);
   border: 1px solid var(--bds);
   box-shadow: 0 8px 24px rgba(0,0,0,.18);
   border-radius: var(--rd);
@@ -228,8 +227,7 @@ a:hover { color: var(--ab); }
 }
 
 .stat-card {
-  background: rgba(17,24,39,.72);
-  backdrop-filter: blur(4px);
+  background: rgba(17,24,39,.88);
   border: 1px solid var(--bds);
   border-radius: var(--rd);
   padding: 1.4rem 1.2rem;
@@ -476,8 +474,7 @@ a:hover { color: var(--ab); }
 
 /* IOC Feed cards */
 .feed-card {
-  background: linear-gradient(180deg, rgba(17,24,39,.88) 0%, rgba(15,23,34,.92) 100%);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(17,24,39,.96) 0%, rgba(15,23,34,.98) 100%);
   border: 1px solid var(--bds);
   border-radius: var(--rd);
   padding: 1.5rem;
