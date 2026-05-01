@@ -1,6 +1,78 @@
 {
-  "last_updated": "2026-04-30",
+  "last_updated": "2026-05-01",
   "entries": [
+    {
+      "id": "mcpwn-nginx-ui-exploiters",
+      "names": [
+        "MCPwn Exploiters",
+        "Nginx-UI MCP Attackers"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-03",
+      "status": "active",
+      "distribution": [
+        "Mass scanning of internet-exposed nginx-ui instances",
+        "Automated exploitation via Shodan/Censys reconnaissance"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1505 - Server Software Component",
+        "T1543 - Modify System Process",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "Unknown threat actors mass-exploiting CVE-2026-33032 in nginx-ui, a CVSS 9.8 authentication bypass in the MCP integration. The /mcp_message endpoint lacks AuthRequired() middleware, enabling unauthenticated invocation of 12 privileged MCP tools for complete nginx server takeover. VulnCheck added it to its KEV catalog on April 13, 2026. Recorded Future ranked it among the 31 most-exploited CVEs of March 2026. Approximately 2,600 publicly exposed instances identified on Shodan.",
+      "attribution": "Unattributed; opportunistic mass exploitation"
+    },
+    {
+      "id": "gpt-proxy-backdoor",
+      "names": [
+        "GPT-Proxy Backdoor Operators",
+        "kube-health-tools campaign"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "npm registry",
+        "PyPI registry",
+        "GitHub releases"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
+        "T1059.006 - Python",
+        "T1059.007 - JavaScript",
+        "T1090.003 - Multi-hop Proxy",
+        "T1496 - Resource Hijacking",
+        "T1105 - Ingress Tool Transfer"
+      ],
+      "description": "Supply chain campaign distributing malicious kube-health-tools (npm) and kube-node-health (PyPI) packages that install a multi-capability implant including SOCKS5 proxy, reverse shell, SFTP server, and a fully functional OpenAI-compatible LLM proxy. The LLM proxy routes traffic through Chinese aggregator endpoints (shubiaobiao, cloudsway, volengine, aliyun). The stage 2 Go binary uses Chisel reverse tunneling to C2 at sync.geeker.indevs.in. Campaign connects to the gray market for LLM API access in China.",
+      "attribution": "Likely Chinese-speaking operators based on upstream LLM router targets (confidence: low)"
+    },
+    {
+      "id": "ottercookie-contagious-interview",
+      "names": [
+        "OtterCookie",
+        "Contagious Interview",
+        "gemini-check npm account"
+      ],
+      "type": "malware",
+      "first_seen": "2025-10",
+      "status": "active",
+      "distribution": [
+        "npm registry",
+        "Vercel-hosted staging infrastructure"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
+        "T1059.007 - JavaScript",
+        "T1555 - Credentials from Password Stores",
+        "T1005 - Data from Local System",
+        "T1115 - Clipboard Data",
+        "T1071.001 - Web Protocols"
+      ],
+      "description": "OtterCookie is a modular JavaScript backdoor linked to the DPRK Contagious Interview campaign. A new variant delivered via fake Gemini npm package (gemini-ai-checker) explicitly targets AI coding tool directories including .cursor, .claude, .gemini, .windsurf, .pearai, and .eigent for API key and credential theft. The four-module architecture includes Socket.IO RAT, browser/crypto credential stealer, file exfiltrator, and clipboard monitor. Sibling packages express-flowlimit and chai-extensions-extras remain live on npm.",
+      "attribution": "DPRK-linked via Contagious Interview campaign (confidence: medium-high per Microsoft and Cyber and Ramen analysis)"
+    },
     {
       "id": "malicious-ai-browser-extensions",
       "names": [

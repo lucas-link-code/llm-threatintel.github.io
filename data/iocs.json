@@ -1,6 +1,132 @@
 {
-  "last_updated": "2026-04-29",
+  "last_updated": "2026-05-01",
   "iocs": [
+    {
+      "value": "sync.geeker.indevs.in",
+      "type": "domain",
+      "context": "GPT-Proxy backdoor C2 server for kube-health-tools and kube-node-health supply chain campaign",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "github.com/gibunxi4201/kube-node-diag",
+      "type": "url_path",
+      "context": "GPT-Proxy backdoor stage 2 binary download repository",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "b3405b8456f4e82f192cdff6fdd5b290a58fafda01fbc08174105b922bd7b3cf",
+      "type": "sha256",
+      "context": "GPT-Proxy PyPI stage 1 dropper (__init___cpython-311-x86_64-linux-gnu.so)",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "5d58ce3119c37f2bd552f4d883a4f4896dfcb8fb04875f844f999497e4ca846d",
+      "type": "sha256",
+      "context": "GPT-Proxy npm stage 1 dropper (addon.node)",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "fb3ae78d09c119ec335c3b99a95c97d9bb6f92fd2c7c9b0d3e875347e2f25bb2",
+      "type": "sha256",
+      "context": "GPT-Proxy stage 2 binary PyPI variant (kube-diag-linux-amd64-packed)",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "3a3d8f8636fa1db21871005a49ecd7fa59688fa763622fa737ce6b899558b300",
+      "type": "sha256",
+      "context": "GPT-Proxy stage 2 binary npm variant (kube-diag-full-linux-amd64-packed)",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "npm:kube-health-tools",
+      "type": "package",
+      "context": "Malicious npm package deploying GPT-Proxy LLM relay implant targeting Kubernetes environments",
+      "first_seen": "2026-05-01",
+      "source": "Aikido Security",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "pypi:kube-node-health",
+      "type": "package",
+      "context": "Malicious PyPI package deploying GPT-Proxy LLM relay implant targeting Kubernetes environments",
+      "first_seen": "2026-05-01",
+      "source": "Snyk",
+      "campaign": "gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "status": "active"
+    },
+    {
+      "value": "server-check-genimi.vercel.app",
+      "type": "domain",
+      "context": "OtterCookie staging server for fake Gemini npm package delivering JavaScript backdoor",
+      "first_seen": "2026-05-01",
+      "source": "GBHackers",
+      "campaign": "ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "status": "removed"
+    },
+    {
+      "value": "216.126.237.71",
+      "type": "ip",
+      "context": "OtterCookie C2 IP address for RAT, credential theft, and file exfiltration modules",
+      "first_seen": "2026-05-01",
+      "source": "GBHackers",
+      "campaign": "ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "status": "active"
+    },
+    {
+      "value": "npm:gemini-ai-checker",
+      "type": "package",
+      "context": "Fake Gemini token verifier npm package delivering OtterCookie backdoor targeting AI coding tools",
+      "first_seen": "2026-05-01",
+      "source": "GBHackers",
+      "campaign": "ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "status": "removed"
+    },
+    {
+      "value": "npm:express-flowlimit",
+      "type": "package",
+      "context": "OtterCookie sibling malicious npm package sharing same Vercel C2 infrastructure",
+      "first_seen": "2026-05-01",
+      "source": "Cyber and Ramen",
+      "campaign": "ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "status": "active"
+    },
+    {
+      "value": "npm:chai-extensions-extras",
+      "type": "package",
+      "context": "OtterCookie sibling malicious npm package sharing same Vercel C2 infrastructure",
+      "first_seen": "2026-05-01",
+      "source": "Cyber and Ramen",
+      "campaign": "ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "status": "active"
+    },
+    {
+      "value": "nginx-ui",
+      "type": "package",
+      "context": "CVE-2026-33032 MCPwn: nginx-ui versions <=2.3.5 vulnerable to unauthenticated MCP tool invocation",
+      "first_seen": "2026-05-01",
+      "source": "Rapid7",
+      "campaign": "cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
+      "status": "active"
+    },
     {
       "value": "deepaichats.com",
       "type": "domain",
