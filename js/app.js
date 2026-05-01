@@ -562,7 +562,7 @@ const App = {
   },
 
   blogPostBylineHtml() {
-    return `<p class="blog-post-byline">By: Lucas L</p>`;
+    return '';
   },
 
   blogPostFooterAsideHtml() {
