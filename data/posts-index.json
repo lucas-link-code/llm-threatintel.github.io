@@ -13,6 +13,36 @@
       "file": "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.md"
     },
     {
+      "id": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "title": "Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks",
+      "date": "2026-05-01",
+      "author": "LLM ThreatIntel",
+      "tags": ["supply-chain", "malware"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.",
+      "file": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.md"
+    },
+    {
+      "id": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "title": "@bitwarden/cli 2026.4.0 Trojanized: TeamPCP Worm Steals AI Coding Assistant Credentials From Claude Code, Cursor, Aider, Kiro, Codex CLI, and Gemini CLI",
+      "date": "2026-05-01",
+      "author": "LLM ThreatIntel",
+      "tags": ["supply-chain", "malware"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On April 22, 2026, between 17:57 and 19:30 ET, TeamPCP published a malicious @bitwarden/cli 2026.4.0 release on npm after pivoting from a prior compromise of Bitwarden's GitHub Actions CI/CD pipeline tied to the Checkmarx supply chain incident. The 10 MB bw1.js payload harvested GitHub and npm tokens, SSH keys, environment variables, shell history, and cloud credentials, and explicitly enumerated authenticated AI coding assistant configurations for Claude Code, Cursor, Aider, Kiro, Codex CLI, and Gemini CLI before exfiltrating to the audit.checkmarx.cx telemetry endpoint reused from the Checkmarx breach.",
+      "file": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft.md"
+    },
+    {
+      "id": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces",
+      "title": "CVE-2026-39987: Marimo Pre-Auth RCE Weaponized to Drop NKAbuse Blockchain Backdoor From Hugging Face Spaces",
+      "date": "2026-05-01",
+      "author": "LLM ThreatIntel",
+      "tags": ["malicious-tool", "malware"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-39987, a CVSS 9.3 unauthenticated RCE flaw in Marimo Python notebook's /terminal/ws WebSocket endpoint, was disclosed on April 8, 2026 and exploited within 10 hours. Sysdig reported on April 16, 2026 that 11 unique source IPs from 10 countries generated 662 exploit events between April 11 and 14, including a campaign that delivered an undocumented variant of the NKN-blockchain-based NKAbuse Go backdoor (kagent) hosted on the typosquatted Hugging Face Space vsccode-modetx. Defenders running Marimo must upgrade to 0.23.0 or later immediately.",
+      "file": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.md"
+    },
+    {
       "id": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
       "title": "CVE-2026-33032 (MCPwn): Nginx-UI MCP Authentication Bypass Enables Full Web Server Takeover via Unauthenticated Tool Invocation",
       "date": "2026-05-01",

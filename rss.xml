@@ -5,13 +5,31 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 02 May 2026 05:59:46 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2026 09:28:28 +0000</lastBuildDate>
     <item>
       <title>CVE-2026-42208: LiteLLM Pre-Auth SQL Injection Actively Exploited Within 26 Hours of Disclosure; Attackers Target Credential Storage</title>
       <link>https://llm-threatintel.com/posts/2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.html</guid>
       <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
       <description>CVE-2026-42208 (CVSS 9.3) is an SQL injection that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. An unknown threat actor targeted database tables holding upstream LLM provider keys and proxy runtime environment secrets, suggesting the attacker was aware of and went after sensitive credential stores.</description>
+    </item>    <item>
+      <title>Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks</title>
+      <link>https://llm-threatintel.com/posts/2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.</description>
+    </item>    <item>
+      <title>@bitwarden/cli 2026.4.0 Trojanized: TeamPCP Worm Steals AI Coding Assistant Credentials From Claude Code, Cursor, Aider, Kiro, Codex CLI, and Gemini CLI</title>
+      <link>https://llm-threatintel.com/posts/2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>On April 22, 2026, between 17:57 and 19:30 ET, TeamPCP published a malicious @bitwarden/cli 2026.4.0 release on npm after pivoting from a prior compromise of Bitwarden's GitHub Actions CI/CD pipeline tied to the Checkmarx supply chain incident. The 10 MB bw1.js payload harvested GitHub and npm tokens, SSH keys, environment variables, shell history, and cloud credentials, and explicitly enumerated authenticated AI coding assistant configurations for Claude Code, Cursor, Aider, Kiro, Codex CLI, and Gemini CLI before exfiltrating to the audit.checkmarx.cx telemetry endpoint reused from the Checkmarx breach.</description>
+    </item>    <item>
+      <title>CVE-2026-39987: Marimo Pre-Auth RCE Weaponized to Drop NKAbuse Blockchain Backdoor From Hugging Face Spaces</title>
+      <link>https://llm-threatintel.com/posts/2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-39987, a CVSS 9.3 unauthenticated RCE flaw in Marimo Python notebook's /terminal/ws WebSocket endpoint, was disclosed on April 8, 2026 and exploited within 10 hours. Sysdig reported on April 16, 2026 that 11 unique source IPs from 10 countries generated 662 exploit events between April 11 and 14, including a campaign that delivered an undocumented variant of the NKN-blockchain-based NKAbuse Go backdoor (kagent) hosted on the typosquatted Hugging Face Space vsccode-modetx. Defenders running Marimo must upgrade to 0.23.0 or later immediately.</description>
     </item>    <item>
       <title>CVE-2026-33032 (MCPwn): Nginx-UI MCP Authentication Bypass Enables Full Web Server Takeover via Unauthenticated Tool Invocation</title>
       <link>https://llm-threatintel.com/posts/2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.html</link>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</guid>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
       <description>Fake Claude AI installer mimicking Anthropic spreads PlugX malware on Windows, using DLL sideloading to gain persistent remote access to infected systems. Cybersecurity experts from Malwarebytes found a malicious campaign where scammers use the popularity of Anthropic's AI tool Claude to spread malware. Hackers made a fake website that looks just like the official one from Anthropic and offers a Pro version of the tool for Windows to lure people into downloading a malicious file.</description>
-    </item>    <item>
-      <title>Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise</title>
-      <link>https://llm-threatintel.com/posts/2026-04-22-marimo-pre-auth-rce-cve-2026-39987.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-22-marimo-pre-auth-rce-cve-2026-39987.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-39987 is a critical pre-authentication remote code execution vulnerability (CVSS v4.0: 9.3) in Marimo, a reactive Python notebook widely used in AI development environments. Exploitation was observed within 10 hours of the April 8, 2026 advisory publication. Organizations that ran Marimo on internet-accessible infrastructure before upgrading should treat any deployment as potentially compromised and rotate all credentials that were accessible within the compromised environment, including API keys for LLM providers and cloud service credentials.</description>
-    </item>    <item>
-      <title>Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers</title>
-      <link>https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-22-anthropic-mcp-stdio-rce-7k-servers.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Cybersecurity researchers discovered a critical "by design" weakness in the Model Context Protocol's (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic's official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</description>
-    </item>    <item>
-      <title>Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited with 12,000+ Exposed Instances</title>
-      <link>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
-      <description>VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise with a CVSS score of 10.0. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.</description>
     </item>
   </channel>
 </rss>
