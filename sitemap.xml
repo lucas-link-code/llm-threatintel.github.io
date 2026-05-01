@@ -13,6 +13,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://llm-threatintel.com/posts/2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks | LLM ThreatIntel</title>
+  <meta name="description" content="Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks">
+  <meta property="og:description" content="Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks">
+  <meta property="article:published_time" content="2026-05-01T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-01T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks">
+  <meta name="twitter:description" content="Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks",
+  "description": "Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.",
+  "datePublished": "2026-05-01T00:00:00Z",
+  "dateModified": "2026-05-01T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-01</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks</h1>
+<p><strong>Date:</strong> 2026-05-01<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>Between April 29 and April 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK (361,510 weekly downloads), and PyTorch Lightning 2.6.2 and 2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a <code>.claude/settings.json</code> SessionStart hook and a <code>.vscode/tasks.json</code> <code>runOn: folderOpen</code> entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel. SAP rotated affected packages by 13:45 UTC on April 29; defenders should rotate developer/CI tokens used since the affected windows and audit repositories for poisoned <code>.claude/</code> and <code>.vscode/</code> configs.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Mini Shai-Hulud (third Shai-Hulud wave)</td></tr><tr><td>Attribution</td><td>TeamPCP (confidence: high)</td></tr><tr><td>Target</td><td>SAP CAP framework users, Intercom SDK consumers, PyTorch Lightning users, and developer/CI environments using Claude Code or VS Code</td></tr><tr><td>Vector</td><td>Malicious npm preinstall hooks and PyPI install-time imports that bootstrap a Bun runtime payload</td></tr><tr><td>Status</td><td>active (worm-like, ongoing propagation)</td></tr><tr><td>First Observed</td><td>2026-04-29</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Aikido Security, StepSecurity, Wiz, Sophos, and SAP&#x27;s own response, on April 29, 2026, between 09:55 UTC and 12:14 UTC, four official SAP npm packages were republished with malicious preinstall scripts: mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, and @cap-js/sqlite 2.2.2. The packages collectively receive approximately 570,000 weekly downloads and provide the Cloud MTA Build Tool and CAP database service modules used in SAP Cloud Application Programming. SAP detected the compromise and superseded all four packages with clean releases by 13:45 UTC the same day.</p>
+<p>According to Aikido Security and Semgrep, the packages introduce a new package.json <code>preinstall</code> hook that runs <code>setup.mjs</code>, a Bun bootstrapper. <code>setup.mjs</code> is identical across @cap-js/postgres and @cap-js/db-service (SHA-256 4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34); the script detects host OS and architecture, downloads Bun 1.3.13 from GitHub when needed, extracts the binary, and uses Bun rather than Node.js to execute the second stage <code>execution.js</code>. Aikido reports <code>execution.js</code> is an 11.7 MB obfuscated payload (SHA-256 80a3d2877813968ef847ae73b5eeeb70b9435254e74d7f07d8cf4057f0a710ac for the @cap-js/postgres and @cap-js/db-service variants; SHA-256 eb6eb4154b03ec73218727dc643d26f4e14dfda2438112926bb5daf37ae8bcdb is reported as the identical execution.js across the same two packages by Snyk and Aikido).</p>
+<p>Researchers report the second-stage payload protects sensitive strings (credential paths, environment variable names, API endpoints) using PBKDF2 key derivation with per-byte SHA-256 transformations across roughly 200,000 iterations, and harvests local developer credentials, GitHub and npm tokens, GitHub Actions secrets, and cloud secrets from AWS, Azure, GCP, and Kubernetes. Stolen data is encrypted with AES-256-GCM and the symmetric key is encapsulated using RSA-4096 with a public key embedded in the payload, then exfiltrated to public GitHub repositories created on the victim&#x27;s own account with the description &quot;A Mini Shai-Hulud has Appeared.&quot; On April 29, a GitHub search for that exact string returned over 1,000 victim repositories.</p>
+<p>According to Mend, StepSecurity, and Phoenix Security, the most consequential novelty is AI coding agent persistence. The payload commits a <code>.claude/settings.json</code> file abusing Claude Code&#x27;s SessionStart hook and a <code>.vscode/tasks.json</code> with <code>&quot;runOn&quot;: &quot;folderOpen&quot;</code> into every accessible repository, signed <code>claude@users.noreply.github.com</code> with the message <code>chore: update dependencies</code>. Anyone subsequently opening the repository in Claude Code or VS Code silently re-executes the malware, regardless of whether they install any npm package. This converts the repository itself into a propagation vector that piggybacks on AI coding agent and IDE activation events.</p>
+<p>According to Socket and Snyk, the worm propagates: 29 hours after the SAP compromises, on April 30, 2026, intercom-client 7.0.4 was published from the compromised GitHub user <code>nhur</code>&#x27;s account through a now-deleted branch that triggered an automated CI publish workflow during a ~47-minute suspicious activity window. Version 7.0.4 contains two malicious files (<code>setup.mjs</code> and <code>router_runtime.js</code>) that were not present in the previous 7.0.3 release. The same payload scans for secrets in Kubernetes environments and HashiCorp Vault and extracts AWS keys, GitHub and npm tokens, database connection strings, private keys, and API secrets.</p>
+<p>According to Socket, Sonatype, and Semgrep, the campaign also reached PyPI: PyTorch Lightning versions 2.6.2 and 2.6.3 were published on April 30, 2026, containing a hidden <code>_runtime</code> directory with a downloader and an obfuscated JavaScript payload. On import, the package runs a background <code>start.py</code> that downloads the Bun JavaScript runtime and launches an 11 MB obfuscated payload functionally equivalent to the npm execution.js.</p>
+<p>The Hacker News and SecurityWeek report TeamPCP is the same threat actor previously responsible for the Trivy GitHub Actions, Checkmarx, LiteLLM, and Bitwarden CLI compromises, and that the actor moved to an onion-hosted site after its X account was suspended.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies</td><td>T1195.001</td><td>Hijack of mbt, @cap-js/* npm packages and PyTorch Lightning PyPI releases</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Bun runtime executes obfuscated execution.js outside the Node.js attack surface most defenders monitor</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>start.py loader inside PyTorch Lightning launches the Bun-based payload</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>Harvest of GitHub and npm tokens, SSH keys, and cloud credential files</td></tr><tr><td>Unsecured Credentials: Cloud Instance Metadata API</td><td>T1552.005</td><td>Harvesting AWS, Azure, GCP, and Kubernetes credentials from runtime environments</td></tr><tr><td>Event Triggered Execution: Component Object Model Hijacking</td><td>T1546</td><td>Abuse of Claude Code SessionStart hook in <code>.claude/settings.json</code> to run on every editor session</td></tr><tr><td>Event Triggered Execution</td><td>T1546</td><td>VS Code <code>.vscode/tasks.json</code> <code>runOn: folderOpen</code> entry triggers payload on folder open</td></tr><tr><td>Exfiltration Over Web Service</td><td>T1567.002</td><td>Encrypted credential bundles exfiltrated to attacker-controlled public GitHub repositories on the victim&#x27;s own account</td></tr><tr><td>Data Encoding: Standard Encoding</td><td>T1132.001</td><td>Base64-wrapped commit body marker <code>OhNoWhatsGoingOnWithGitHub:[Base64_String]</code></td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">github.com</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">github.com/oven-sh/bun/releases (Bun 1.3.13 download fetched at install time)</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;A Mini Shai-Hulud has Appeared&quot; OR &quot;OhNoWhatsGoingOnWithGitHub:&quot; OR &quot;claude@users.noreply.github.com&quot; OR &quot;execution.js&quot; OR &quot;router_runtime.js&quot; OR &quot;setup.mjs&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34
+80a3d2877813968ef847ae73b5eeeb70b9435254e74d7f07d8cf4057f0a710ac
+eb6eb4154b03ec73218727dc643d26f4e14dfda2438112926bb5daf37ae8bcdb</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:mbt@1.2.48
+npm:@cap-js/db-service@2.10.1
+npm:@cap-js/postgres@2.2.2
+npm:@cap-js/sqlite@2.2.2
+npm:intercom-client@7.0.4
+pypi:lightning@2.6.2
+pypi:lightning@2.6.3</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Audit all source repositories that developers, CI runners, or AI coding agents have touched since April 29, 2026 for unexpected <code>.claude/settings.json</code> and <code>.vscode/tasks.json</code> files, particularly entries containing a SessionStart hook or <code>&quot;runOn&quot;: &quot;folderOpen&quot;</code>. Block commits authored by <code>claude@users.noreply.github.com</code> with the message <code>chore: update dependencies</code> if Claude Code is not in use in the repository.</p>
+<p>Search GitHub organizations for repositories with the description string <code>A Mini Shai-Hulud has Appeared</code> and for commit messages containing <code>OhNoWhatsGoingOnWithGitHub:</code> followed by a base64 blob.</p>
+<p>EDR: alert on <code>bun</code> binary execution under npm install lifecycle (npm install, ci, prepare, postinstall, preinstall) or under Python interpreter parent processes during <code>pip install</code>. Alert on processes named <code>setup.mjs</code>, <code>execution.js</code>, <code>router_runtime.js</code>, or <code>start.py</code> in unexpected directories.</p>
+<p>Audit npm and pip lockfiles for the listed package versions. Block them in artifact managers (Artifactory, Nexus, GitHub Packages) and pull internal copies if present.</p>
+<p>Cloud audit logs: hunt for unusual <code>aws sts get-caller-identity</code>, <code>gcloud auth list</code>, <code>az account show</code>, and Kubernetes <code>kubectl config view</code> invocations spawned by Node.js, npm, or python parent processes around the affected windows.</p>
+<p>Web proxy / DNS: monitor for outbound traffic to GitHub release endpoints from unexpected child processes; specifically the Bun release download path under github.com/oven-sh/bun.</p>
+<p>Rotate any GitHub PATs, npm tokens, GitHub Actions secrets, AWS/Azure/GCP keys, SSH keys, and HashiCorp Vault tokens used on hosts that installed the affected packages or opened repositories in Claude Code or VS Code after April 29, 2026.</p>
+<h2>References</h2>
+<ul><li>[Aikido Security] Mini Shai-Hulud Targets SAP npm Packages With a Bun-Based Secret Stealer (2026-04-29) — https://www.aikido.dev/blog/mini-shai-hulud-has-appeared</li><li>[StepSecurity] A Mini Shai-Hulud Has Appeared: Obfuscated Bun Runtime Payloads Hit SAP-Related npm Packages (2026-04-29) — https://www.stepsecurity.io/blog/a-mini-shai-hulud-has-appeared</li><li>[Wiz] Supply Chain Campaign Targets SAP npm Packages with Credential-Stealing Malware (2026-04-29) — https://www.wiz.io/blog/mini-shai-hulud-supply-chain-sap-npm</li><li>[Sophos] Mini Shai-Hulud Supply Chain Attack Targets SAP npm Packages (2026-04-30) — https://www.sophos.com/en-us/blog/-mini-shai-hulud-supply-chain-attack-targets-sap-npm-packages</li><li>[The Hacker News] SAP-Related npm Packages Compromised in Credential-Stealing Supply Chain Attack (2026-04-30) — https://thehackernews.com/2026/04/sap-npm-packages-compromised-by-mini.html</li><li>[Socket] Intercom&#x27;s npm Package Compromised in Ongoing Mini Shai-Hulud Attack (2026-04-30) — https://socket.dev/blog/intercom-s-npm-package-compromised-in-supply-chain-attack</li><li>[The Hacker News] PyTorch Lightning and Intercom-client Hit in Supply Chain Attacks to Steal Credentials (2026-04-30) — https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html</li><li>[SecurityWeek] 1,800 Hit in Mini Shai-Hulud Attack on SAP, Lightning, Intercom (2026-04-30) — https://www.securityweek.com/1800-hit-in-mini-shai-hulud-attack-on-sap-lightning-intercom/</li><li>[Mend] Shai-Hulud Strikes SAP: Supply Chain Worm Weaponized Claude Code to Compromise the CAP Framework (2026-04-30) — https://www.mend.io/blog/shai-hulud-sap-cap-supply-chain-attack-claude-code/</li><li>[Phoenix Security] Mini Shai-Hulud: SAP CAP and mbt npm Packages Backdoored via Bun-Loaded Credential Stealer with Claude Code Persistence (2026-04-30) — https://phoenix.security/mini-shai-hulud-sap-cap-mbt-npm-supply-chain-bun-credential-stealer/</li><li>[The Register] Ongoing Supply Chain Attacks Worm Into SAP npm Packages (2026-04-30) — https://www.theregister.com/2026/04/30/supply_chain_attacks_sap_npm_packages/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

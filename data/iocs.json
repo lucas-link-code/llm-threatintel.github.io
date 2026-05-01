@@ -2,6 +2,168 @@
   "last_updated": "2026-05-02",
   "iocs": [
     {
+      "value": "4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34",
+      "type": "sha256",
+      "context": "Mini Shai-Hulud setup.mjs Bun bootstrapper (identical across @cap-js/postgres and @cap-js/db-service)",
+      "first_seen": "2026-04-29",
+      "source": "Aikido Security",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "active"
+    },
+    {
+      "value": "80a3d2877813968ef847ae73b5eeeb70b9435254e74d7f07d8cf4057f0a710ac",
+      "type": "sha256",
+      "context": "Mini Shai-Hulud execution.js obfuscated Bun-loaded credential stealer",
+      "first_seen": "2026-04-29",
+      "source": "Aikido Security",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "active"
+    },
+    {
+      "value": "eb6eb4154b03ec73218727dc643d26f4e14dfda2438112926bb5daf37ae8bcdb",
+      "type": "sha256",
+      "context": "Mini Shai-Hulud execution.js variant for @cap-js/postgres and @cap-js/db-service",
+      "first_seen": "2026-04-29",
+      "source": "Snyk",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "active"
+    },
+    {
+      "value": "npm:mbt@1.2.48",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized SAP Cloud MTA Build Tool npm package",
+      "first_seen": "2026-04-29",
+      "source": "Aikido Security",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "npm:@cap-js/db-service@2.10.1",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized SAP CAP db-service npm package",
+      "first_seen": "2026-04-29",
+      "source": "Aikido Security",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "npm:@cap-js/postgres@2.2.2",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized SAP CAP postgres adapter npm package",
+      "first_seen": "2026-04-29",
+      "source": "Aikido Security",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "npm:@cap-js/sqlite@2.2.2",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized SAP CAP sqlite adapter npm package",
+      "first_seen": "2026-04-29",
+      "source": "Aikido Security",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "npm:intercom-client@7.0.4",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized Intercom JS SDK; introduced setup.mjs and router_runtime.js absent in 7.0.3",
+      "first_seen": "2026-04-30",
+      "source": "Socket",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "pypi:lightning@2.6.2",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized PyTorch Lightning PyPI release; hidden _runtime directory and start.py loader",
+      "first_seen": "2026-04-30",
+      "source": "Socket",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "pypi:lightning@2.6.3",
+      "type": "package",
+      "context": "Mini Shai-Hulud trojanized PyTorch Lightning PyPI release; hidden _runtime directory and start.py loader",
+      "first_seen": "2026-04-30",
+      "source": "Socket",
+      "campaign": "mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "status": "removed"
+    },
+    {
+      "value": "audit.checkmarx.cx",
+      "type": "domain",
+      "context": "Bitwarden CLI 2026.4.0 / Checkmarx KICS supply chain campaign exfiltration host",
+      "first_seen": "2026-04-22",
+      "source": "Socket",
+      "campaign": "bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "audit.checkmarx.cx/v1/telemetry",
+      "type": "url_path",
+      "context": "Bitwarden CLI 2026.4.0 telemetry exfiltration endpoint shared with Checkmarx KICS compromise",
+      "first_seen": "2026-04-22",
+      "source": "Socket",
+      "campaign": "bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "18f784b3bc9a0bcdcb1a8d7f51bc5f54323fc40cbd874119354ab609bef6e4cb",
+      "type": "sha256",
+      "context": "Bitwarden CLI 2026.4.0 malicious bw1.js install-time payload",
+      "first_seen": "2026-04-22",
+      "source": "Socket",
+      "campaign": "bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "status": "removed"
+    },
+    {
+      "value": "npm:@bitwarden/cli@2026.4.0",
+      "type": "package",
+      "context": "Trojanized Bitwarden CLI npm release; AI coding assistant credential targeting (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI)",
+      "first_seen": "2026-04-22",
+      "source": "Bitwarden / Socket / Palo Alto Networks Unit 42",
+      "campaign": "bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "status": "removed"
+    },
+    {
+      "value": "vsccode-modetx.hf.space",
+      "type": "domain",
+      "context": "Hugging Face Space typosquat staging dropper and kagent NKAbuse binary in CVE-2026-39987 exploitation",
+      "first_seen": "2026-04-11",
+      "source": "Sysdig",
+      "campaign": "marimo-cve-2026-39987-nkabuse-huggingface-spaces",
+      "status": "active"
+    },
+    {
+      "value": "vsccode-modetx.hf.space/install-linux.sh",
+      "type": "url_path",
+      "context": "Marimo CVE-2026-39987 dropper URL delivering kagent NKAbuse variant",
+      "first_seen": "2026-04-11",
+      "source": "Sysdig",
+      "campaign": "marimo-cve-2026-39987-nkabuse-huggingface-spaces",
+      "status": "active"
+    },
+    {
+      "value": "25e4b2c4bb37f125b693a9c57b0e743eab2a3d98234f7519cd389e788252fd13",
+      "type": "sha256",
+      "context": "install-linux.sh dropper for kagent NKAbuse variant via Marimo CVE-2026-39987",
+      "first_seen": "2026-04-11",
+      "source": "Sysdig",
+      "campaign": "marimo-cve-2026-39987-nkabuse-huggingface-spaces",
+      "status": "active"
+    },
+    {
+      "value": "38.147.173.172",
+      "type": "ip",
+      "context": "Hong Kong source IP delivering kagent NKAbuse via Marimo CVE-2026-39987 exploitation",
+      "first_seen": "2026-04-11",
+      "source": "Sysdig",
+      "campaign": "marimo-cve-2026-39987-nkabuse-huggingface-spaces",
+      "status": "active"
+    },
+    {
       "value": "sync.geeker.indevs.in",
       "type": "domain",
       "context": "GPT-Proxy backdoor C2 server for kube-health-tools and kube-node-health supply chain campaign",
