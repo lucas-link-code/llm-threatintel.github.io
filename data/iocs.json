@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-01",
+  "last_updated": "2026-05-02",
   "iocs": [
     {
       "value": "sync.geeker.indevs.in",
@@ -836,6 +836,15 @@
       "first_seen": "2026-04-29",
       "source": "The Hacker News",
       "campaign": "litellm-cve-2026-42208-sql-injection",
+      "status": "active"
+    },
+    {
+      "value": "LiteLLM <1.83.7",
+      "type": "package",
+      "context": "CVE-2026-42208: LiteLLM Pre-Auth SQL Injection Actively Exploited Within 26 Hours of Disclosure; Attackers Target Credential Storage",
+      "first_seen": "2026-05-02",
+      "source": "The Hacker News",
+      "campaign": "cve-2026-42208-litellm-sqli-active-exploitation",
       "status": "active"
     }
   ]

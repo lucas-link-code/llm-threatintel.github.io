@@ -46,7 +46,10 @@
     "name": "LLM ThreatIntel"
   },
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay.html",
-  "keywords": ["supply-chain", "malware"]
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
 }
   </script>
 </head>
@@ -75,46 +78,11 @@
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>GPT-Proxy Backdoor in npm and PyPI: Kubernetes-Targeted Supply Chain Attack Turns Compromised Servers into Chinese LLM Relay Nodes</h1>
-<p><strong>Date:</strong> 2026-05-01
-<strong>TLP:</strong> TLP:CLEAR
-<strong>Tags:</strong> supply-chain, malware</p>
+<p><strong>Date:</strong> 2026-05-01<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malware</p>
 <h2>Executive Summary</h2>
 <p>Aikido Security discovered malicious packages kube-health-tools (npm) and kube-node-health (PyPI) that target Kubernetes environments by silently installing a full LLM proxy service, SOCKS5 proxy, reverse shell, and SFTP server on victim machines. The implant routes LLM traffic through compromised servers to Chinese LLM aggregator endpoints including shubiaobiao, cloudsway, and volengine, turning victims into relay nodes in a commercial AI reselling operation. Both packages were disclosed on April 22, 2026, with the campaign active since at least April 1, 2026.</p>
 <h2>Campaign Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Campaign / Malware</td>
-<td>GPT-Proxy Backdoor</td>
-</tr>
-<tr>
-<td>Attribution</td>
-<td>Unknown, likely Chinese-speaking operators (confidence: low)</td>
-</tr>
-<tr>
-<td>Target</td>
-<td>Kubernetes developers and DevOps teams running CI/CD pipelines</td>
-</tr>
-<tr>
-<td>Vector</td>
-<td>Malicious npm and PyPI packages masquerading as Kubernetes health tools</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>active</td>
-</tr>
-<tr>
-<td>First Observed</td>
-<td>2026-04</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GPT-Proxy Backdoor</td></tr><tr><td>Attribution</td><td>Unknown, likely Chinese-speaking operators (confidence: low)</td></tr><tr><td>Target</td><td>Kubernetes developers and DevOps teams running CI/CD pipelines</td></tr><tr><td>Vector</td><td>Malicious npm and PyPI packages masquerading as Kubernetes health tools</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04</td></tr></tbody></table>
 <h2>Detailed Findings</h2>
 <p>According to Aikido Security, two malicious packages kube-health-tools (npm) and kube-node-health (PyPI) were published using names that reference Kubernetes to appear legitimate. The PyPI dropper uses a Cython-compiled native extension (__init___cpython-311-x86_64-linux-gnu.so); the npm variant uses a Node.js native addon (addon.node).</p>
 <p>Both stage 1 droppers download a stage 2 Go binary from github[.]com/gibunxi4201/kube-node-diag. The PyPI variant fetches kube-diag-linux-amd64-packed; the npm variant fetches kube-diag-full-linux-amd64-packed.</p>
@@ -125,76 +93,27 @@
 <p>Aikido notes this connects to the booming gray market for LLM API access in China, where platforms like Xianyu, Goofish, and Taobao sell access to ChatGPT, Claude, and Gemini at a fraction of official prices via router endpoints.</p>
 <p>Snyk published advisory SNYK-PYTHON-KUBENODEHEALTH-16120033 on April 22, crediting researcher Ilyas Makari.</p>
 <h2>MITRE ATT&amp;CK Mapping</h2>
-<table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>ID</th>
-<th>Context</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supply Chain Compromise: Compromise Software Dependencies</td>
-<td>T1195.001</td>
-<td>Malicious npm and PyPI packages masquerading as Kubernetes health tools</td>
-</tr>
-<tr>
-<td>Command and Scripting Interpreter: Python</td>
-<td>T1059.006</td>
-<td>Cython-compiled dropper in PyPI package executes on import</td>
-</tr>
-<tr>
-<td>Command and Scripting Interpreter: JavaScript</td>
-<td>T1059.007</td>
-<td>Node.js native addon executes on require()</td>
-</tr>
-<tr>
-<td>Proxy: Multi-hop Proxy</td>
-<td>T1090.003</td>
-<td>SOCKS5 proxy and Chisel reverse tunnel relay traffic through compromised hosts</td>
-</tr>
-<tr>
-<td>Resource Hijacking</td>
-<td>T1496</td>
-<td>Victim servers used as relay nodes for commercial LLM reselling</td>
-</tr>
-<tr>
-<td>Ingress Tool Transfer</td>
-<td>T1105</td>
-<td>Stage 2 binary downloaded from GitHub release page</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies</td><td>T1195.001</td><td>Malicious npm and PyPI packages masquerading as Kubernetes health tools</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>Cython-compiled dropper in PyPI package executes on import</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Node.js native addon executes on require()</td></tr><tr><td>Proxy: Multi-hop Proxy</td><td>T1090.003</td><td>SOCKS5 proxy and Chisel reverse tunnel relay traffic through compromised hosts</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>Victim servers used as relay nodes for commercial LLM reselling</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>Stage 2 binary downloaded from GitHub release page</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<pre><code>sync.geeker.indevs.in
-</code></pre>
+<pre><code class="language-">sync.geeker.indevs.in</code></pre>
 <h3>Full URL Paths</h3>
-<pre><code>github.com/gibunxi4201/kube-node-diag/releases/download/v2.0/kube-diag-linux-amd64-packed
-github.com/gibunxi4201/kube-node-diag/releases/download/v2.0/kube-diag-full-linux-amd64-packed
-</code></pre>
+<pre><code class="language-">github.com/gibunxi4201/kube-node-diag/releases/download/v2.0/kube-diag-linux-amd64-packed
+github.com/gibunxi4201/kube-node-diag/releases/download/v2.0/kube-diag-full-linux-amd64-packed</code></pre>
 <h3>Splunk Format</h3>
-<pre><code>&quot;sync.geeker.indevs.in&quot; OR &quot;gibunxi4201&quot; OR &quot;kube-node-diag&quot; OR &quot;kube-health-tools&quot; OR &quot;kube-node-health&quot; OR &quot;node-health-check&quot;
-</code></pre>
+<pre><code class="language-">&quot;sync.geeker.indevs.in&quot; OR &quot;gibunxi4201&quot; OR &quot;kube-node-diag&quot; OR &quot;kube-health-tools&quot; OR &quot;kube-node-health&quot; OR &quot;node-health-check&quot;</code></pre>
 <h3>File Hashes</h3>
-<pre><code>b3405b8456f4e82f192cdff6fdd5b290a58fafda01fbc08174105b922bd7b3cf
+<pre><code class="language-">b3405b8456f4e82f192cdff6fdd5b290a58fafda01fbc08174105b922bd7b3cf
 5d58ce3119c37f2bd552f4d883a4f4896dfcb8fb04875f844f999497e4ca846d
 fb3ae78d09c119ec335c3b99a95c97d9bb6f92fd2c7c9b0d3e875347e2f25bb2
-3a3d8f8636fa1db21871005a49ecd7fa59688fa763622fa737ce6b899558b300
-</code></pre>
+3a3d8f8636fa1db21871005a49ecd7fa59688fa763622fa737ce6b899558b300</code></pre>
 <h3>Package Indicators</h3>
-<pre><code>npm:kube-health-tools
-pypi:kube-node-health
-</code></pre>
+<pre><code class="language-">npm:kube-health-tools
+pypi:kube-node-health</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Monitor DNS and web proxy logs for connections to sync.geeker.indevs.in. Search process listings for processes named node-health-check --mode=daemon running in non-Kubernetes contexts. Alert on outbound WebSocket connections from developer workstations or CI/CD runners to unexpected hosts on port 443. Audit npm lockfiles and pip freeze output for kube-health-tools or kube-node-health packages. Monitor for files in /tmp/.kh, /tmp/.ns, or /tmp/.nhc.enc paths on developer machines and build servers. Detect OpenAI-compatible API endpoints (GET /v1/models, POST /v1/chat/completions) listening on unexpected internal hosts.</p>
 <h2>References</h2>
-<ul>
-<li>[Aikido Security] GPT-Proxy Backdoor in npm and PyPI turns Servers into Chinese LLM Relays (2026-04-22) — https://www.aikido.dev/blog/gpt-proxy-backdoor-npm-pypi-chinese-llm-relay</li>
-<li>[Snyk] Embedded Malicious Code in kube-node-health (2026-04-22) — https://security.snyk.io/vuln/SNYK-PYTHON-KUBENODEHEALTH-16120033</li>
-<li>[Panther] Tunnel Vision: Supply Chain Attack Targets Kubernetes via npm and PyPI (2026-04) — https://panther.com/blog/tunnel-vision-supply-chain-attack-targets-kubernetes-via-npm-and-pypi</li>
-</ul></div>
+<ul><li>[Aikido Security] GPT-Proxy Backdoor in npm and PyPI turns Servers into Chinese LLM Relays (2026-04-22) — https://www.aikido.dev/blog/gpt-proxy-backdoor-npm-pypi-chinese-llm-relay</li><li>[Snyk] Embedded Malicious Code in kube-node-health (2026-04-22) — https://security.snyk.io/vuln/SNYK-PYTHON-KUBENODEHEALTH-16120033</li><li>[Panther] Tunnel Vision: Supply Chain Attack Targets Kubernetes via npm and PyPI (2026-04) — https://panther.com/blog/tunnel-vision-supply-chain-attack-targets-kubernetes-via-npm-and-pypi</li></ul></div>
   </main>
 
   <footer class="site-footer">

@@ -47,7 +47,11 @@
     "name": "LLM ThreatIntel"
   },
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft.html",
-  "keywords": ["supply-chain", "malware", "apt"]
+  "keywords": [
+    "supply-chain",
+    "malware",
+    "apt"
+  ]
 }
   </script>
 </head>
@@ -72,50 +76,15 @@
     <a href="/" class="back-link">&larr; Back to feed</a>
     <div class="post-meta" style="margin-bottom:1rem">
       <span class="post-date">2026-05-01</span>
-      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-apt">APT</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-apt">Apt</span>
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>OtterCookie Backdoor Targets AI Coding Tools via Fake Gemini npm Package: DPRK-Linked Campaign Harvests Credentials from Cursor, Claude, and Windsurf</h1>
-<p><strong>Date:</strong> 2026-05-01
-<strong>TLP:</strong> TLP:CLEAR
-<strong>Tags:</strong> supply-chain, malware, apt</p>
+<p><strong>Date:</strong> 2026-05-01<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malware, apt</p>
 <h2>Executive Summary</h2>
 <p>A DPRK-linked threat actor published the malicious npm package gemini-ai-checker on March 20, 2026, disguised as a Google Gemini token verification utility but delivering an OtterCookie JavaScript backdoor variant that specifically targets AI coding tool directories including .cursor, .claude, .gemini, .windsurf, .pearai, and .eigent. The campaign is linked with moderate-to-high confidence to the Contagious Interview operation previously documented by Microsoft. Two sibling packages, express-flowlimit and chai-extensions-extras, remain live on npm as of early May 2026 with the same Vercel-hosted C2 infrastructure.</p>
 <h2>Campaign Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Campaign / Malware</td>
-<td>OtterCookie / Contagious Interview</td>
-</tr>
-<tr>
-<td>Attribution</td>
-<td>DPRK-linked threat actor (confidence: medium-high)</td>
-</tr>
-<tr>
-<td>Target</td>
-<td>Software developers using AI coding tools (Cursor, Claude Code, Windsurf, PearAI, Gemini CLI)</td>
-</tr>
-<tr>
-<td>Vector</td>
-<td>Malicious npm package spoofing Google Gemini AI</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>active (sibling packages still live)</td>
-</tr>
-<tr>
-<td>First Observed</td>
-<td>2026-03</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>OtterCookie / Contagious Interview</td></tr><tr><td>Attribution</td><td>DPRK-linked threat actor (confidence: medium-high)</td></tr><tr><td>Target</td><td>Software developers using AI coding tools (Cursor, Claude Code, Windsurf, PearAI, Gemini CLI)</td></tr><tr><td>Vector</td><td>Malicious npm package spoofing Google Gemini AI</td></tr><tr><td>Status</td><td>active (sibling packages still live)</td></tr><tr><td>First Observed</td><td>2026-03</td></tr></tbody></table>
 <h2>Detailed Findings</h2>
 <p>According to GBHackers and Cyber and Ramen, on March 20, 2026, an npm user named gemini-check uploaded a package called gemini-ai-checker, claiming it could verify Google Gemini AI tokens. The package README displayed wording copied from the legitimate package chai-await-async, a JavaScript assertion library with no relationship to Gemini.</p>
 <p>The package mimics a modern Node.js project with four dependencies, 44 files, and a 271 kB footprint including SECURITY and documentation files for legitimacy. The C2 configuration in lib/config.js splits the staging domain, path, version, and bearer token into separate variables so the full URL never appears as a single string.</p>
@@ -126,79 +95,31 @@
 <p>The gemini-ai-checker package was removed from npm shortly before April 1, 2026. However, the same account hosts two related packages that share the same Vercel C2 infrastructure: express-flowlimit (versions 1.3.6, 2.1.6, 2.2.7, 2.2.8) and chai-extensions-extras (version 1.2.5), which had over 500 combined downloads and remain live as of publication.</p>
 <p>The C2 infrastructure uses IP 216.126.237[.]71 (AS14956, RouterHosting LLC) with distinct ports for each module function.</p>
 <h2>MITRE ATT&amp;CK Mapping</h2>
-<table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>ID</th>
-<th>Context</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supply Chain Compromise: Compromise Software Dependencies</td>
-<td>T1195.001</td>
-<td>Malicious npm package spoofing Google Gemini AI brand</td>
-</tr>
-<tr>
-<td>Command and Scripting Interpreter: JavaScript</td>
-<td>T1059.007</td>
-<td>In-memory execution via Function.constructor to avoid disk artifacts</td>
-</tr>
-<tr>
-<td>Credentials from Password Stores</td>
-<td>T1555</td>
-<td>Browser credential databases and 25+ cryptocurrency wallet stores targeted</td>
-</tr>
-<tr>
-<td>Data from Local System</td>
-<td>T1005</td>
-<td>Exfiltration of .env, .pem, .key files and AI coding tool directories</td>
-</tr>
-<tr>
-<td>Clipboard Data</td>
-<td>T1115</td>
-<td>Clipboard monitoring every 500ms for cryptocurrency addresses and API keys</td>
-</tr>
-<tr>
-<td>Application Layer Protocol: Web Protocols</td>
-<td>T1071.001</td>
-<td>Socket.IO-based C2 communication on port 4891</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies</td><td>T1195.001</td><td>Malicious npm package spoofing Google Gemini AI brand</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>In-memory execution via Function.constructor to avoid disk artifacts</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>Browser credential databases and 25+ cryptocurrency wallet stores targeted</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Exfiltration of .env, .pem, .key files and AI coding tool directories</td></tr><tr><td>Clipboard Data</td><td>T1115</td><td>Clipboard monitoring every 500ms for cryptocurrency addresses and API keys</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>Socket.IO-based C2 communication on port 4891</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<pre><code>server-check-genimi.vercel.app
-</code></pre>
+<pre><code class="language-">server-check-genimi.vercel.app</code></pre>
 <h3>Full URL Paths</h3>
-<pre><code>server-check-genimi.vercel.app/defy/v3
+<pre><code class="language-">server-check-genimi.vercel.app/defy/v3
 216.126.237.71/api/service/makelog
-216.126.237.71/api/service/process
-</code></pre>
+216.126.237.71/api/service/process</code></pre>
 <h3>Splunk Format</h3>
-<pre><code>&quot;server-check-genimi.vercel.app&quot; OR &quot;216.126.237.71&quot; OR &quot;gemini-ai-checker&quot; OR &quot;express-flowlimit&quot; OR &quot;chai-extensions-extras&quot; OR &quot;vhost.ctl&quot;
-</code></pre>
+<pre><code class="language-">&quot;server-check-genimi.vercel.app&quot; OR &quot;216.126.237.71&quot; OR &quot;gemini-ai-checker&quot; OR &quot;express-flowlimit&quot; OR &quot;chai-extensions-extras&quot; OR &quot;vhost.ctl&quot;</code></pre>
 <h3>File Hashes</h3>
 <p><em>No file hashes published by source for the npm packages themselves. The payload executes entirely in-memory via Function.constructor.</em></p>
 <h3>Package Indicators</h3>
-<pre><code>npm:gemini-ai-checker
+<pre><code class="language-">npm:gemini-ai-checker
 npm:express-flowlimit
-npm:chai-extensions-extras
-</code></pre>
+npm:chai-extensions-extras</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Monitor web proxy logs for HTTP connections to server-check-genimi.vercel[.]app or outbound traffic to 216.126.237[.]71 on ports 4891, 4896, 4899, and 80.</p>
 <p>Search EDR telemetry for Node.js processes spawning multiple child processes with Socket.IO C2 patterns, particularly processes named vhost.ctl.</p>
-<p>Use Microsoft's published KQL hunting queries for Contagious Interview and OtterCookie activity to detect multi-process Node.js backdoors.</p>
+<p>Use Microsoft&#x27;s published KQL hunting queries for Contagious Interview and OtterCookie activity to detect multi-process Node.js backdoors.</p>
 <p>Audit npm lockfiles for gemini-ai-checker, express-flowlimit, or chai-extensions-extras packages.</p>
 <p>Monitor for access to AI coding tool configuration directories (.cursor, .claude, .gemini, .windsurf, .pearai, .eigent) by non-standard processes.</p>
 <p>Alert on clipboard access patterns consistent with 500ms polling intervals from Node.js processes.</p>
 <h2>References</h2>
-<ul>
-<li>[GBHackers] Fake Gemini npm Package Steals AI Tool Tokens (2026-04-07) — https://gbhackers.com/fake-gemini-npm/</li>
-<li>[Cyber and Ramen] OtterCookie Expands Targeting to AI Coding Tools (2026-04-04) — https://cyberandramen.net/2026/04/04/ottercookie-expands-targeting-to-ai-coding-tools-analysis-of-a-trojanized-npm-campaign/</li>
-<li>[Simply Secure Group] Hackers Use Fake Gemini npm Package to Steal Tokens From Claude, Cursor, and Other AI Tools (2026-04) — https://simplysecuregroup.com/hackers-use-fake-gemini-npm-package-to-steal-tokens-from-claude-cursor-and-other-ai-tools/</li>
-</ul></div>
+<ul><li>[GBHackers] Fake Gemini npm Package Steals AI Tool Tokens (2026-04-07) — https://gbhackers.com/fake-gemini-npm/</li><li>[Cyber and Ramen] OtterCookie Expands Targeting to AI Coding Tools (2026-04-04) — https://cyberandramen.net/2026/04/04/ottercookie-expands-targeting-to-ai-coding-tools-analysis-of-a-trojanized-npm-campaign/</li><li>[Simply Secure Group] Hackers Use Fake Gemini npm Package to Steal Tokens From Claude, Cursor, and Other AI Tools (2026-04) — https://simplysecuregroup.com/hackers-use-fake-gemini-npm-package-to-steal-tokens-from-claude-cursor-and-other-ai-tools/</li></ul></div>
   </main>
 
   <footer class="site-footer">

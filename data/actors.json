@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-01",
+  "last_updated": "2026-05-02",
   "entries": [
     {
       "id": "mcpwn-nginx-ui-exploiters",
@@ -1081,7 +1081,8 @@
         "Internet-accessible LMDeploy instances",
         "Flowise instances <v3.0.13",
         "Shared chatflow endpoints",
-        "LiteLLM proxy deployments"
+        "LiteLLM proxy deployments",
+        "Cloud LLM proxy targets"
       ],
       "ttps": [
         "T1190 - Server-Side Request Forgery",
@@ -1092,7 +1093,8 @@
         "T1562.001 - Unsandboxed Code Evaluation",
         "T1190 - Exploit Public-Facing Application",
         "T1555 - Credentials from Password Managers",
-        "T1213.02 - Data from Information Repositories: Sharepoint"
+        "T1213.02 - Data from Information Repositories: Sharepoint",
+        "T1526 - Credential Access"
       ],
       "description": "Unknown threat actor with knowledge of LiteLLM's database schema and internal table structure. Exploitation demonstrates familiarity with AI infrastructure vulnerabilities and rapid transition from disclosure to active probing within 26 hours, consistent with LLM-assisted vulnerability analysis patterns.",
       "attribution": "Unattributed; rapid exploitation suggests automated scanning/weaponization"

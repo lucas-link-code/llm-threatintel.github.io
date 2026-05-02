@@ -5,8 +5,32 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 30 Apr 2026 06:20:44 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2026 05:59:46 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-42208: LiteLLM Pre-Auth SQL Injection Actively Exploited Within 26 Hours of Disclosure; Attackers Target Credential Storage</title>
+      <link>https://llm-threatintel.com/posts/2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.html</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-42208 (CVSS 9.3) is an SQL injection that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. An unknown threat actor targeted database tables holding upstream LLM provider keys and proxy runtime environment secrets, suggesting the attacker was aware of and went after sensitive credential stores.</description>
+    </item>    <item>
+      <title>CVE-2026-33032 (MCPwn): Nginx-UI MCP Authentication Bypass Enables Full Web Server Takeover via Unauthenticated Tool Invocation</title>
+      <link>https://llm-threatintel.com/posts/2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-33032, a CVSS 9.8 authentication bypass in nginx-ui's MCP integration, has been actively exploited since mid-April 2026 after VulnCheck added it to its Known Exploited Vulnerabilities catalog on April 13. The /mcp_message endpoint is missing the AuthRequired() middleware, allowing any network-accessible attacker to invoke all 12 privileged MCP tools without credentials, achieving complete nginx server takeover in two HTTP requests. Approximately 2,600 publicly exposed nginx-ui instances were identified on Shodan at time of disclosure.</description>
+    </item>    <item>
+      <title>GPT-Proxy Backdoor in npm and PyPI: Kubernetes-Targeted Supply Chain Attack Turns Compromised Servers into Chinese LLM Relay Nodes</title>
+      <link>https://llm-threatintel.com/posts/2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>Aikido Security discovered malicious packages kube-health-tools (npm) and kube-node-health (PyPI) that target Kubernetes environments by silently installing a full LLM proxy service, SOCKS5 proxy, reverse shell, and SFTP server on victim machines. The implant routes LLM traffic through compromised servers to Chinese LLM aggregator endpoints including shubiaobiao, cloudsway, and volengine, turning victims into relay nodes in a commercial AI reselling operation. Both packages were disclosed on April 22, 2026, with the campaign active since at least April 1, 2026.</description>
+    </item>    <item>
+      <title>OtterCookie Backdoor Targets AI Coding Tools via Fake Gemini npm Package: DPRK-Linked Campaign Harvests Credentials from Cursor, Claude, and Windsurf</title>
+      <link>https://llm-threatintel.com/posts/2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>A DPRK-linked threat actor published the malicious npm package gemini-ai-checker on March 20, 2026, disguised as a Google Gemini token verification utility but delivering an OtterCookie JavaScript backdoor variant that specifically targets AI coding tool directories including .cursor, .claude, .gemini, .windsurf, .pearai, and .eigent. The campaign is linked with moderate-to-high confidence to the Contagious Interview operation previously documented by Microsoft. Two sibling packages, express-flowlimit and chai-extensions-extras, remain live on npm as of early May 2026 with the same Vercel-hosted C2 infrastructure.</description>
+    </item>    <item>
       <title>CVE-2026-25874: Hugging Face LeRobot Unauthenticated Remote Code Execution via Pickle Deserialization</title>
       <link>https://llm-threatintel.com/posts/2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.html</guid>
@@ -102,30 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.html</guid>
       <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
       <description>VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise with a CVSS score of 10.0. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.</description>
-    </item>    <item>
-      <title>MCP Infrastructure Security Audit: 43% of Servers Vulnerable to Command Execution; Widespread Configuration Failures Across Production Deployments</title>
-      <link>https://llm-threatintel.com/posts/2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.html</guid>
-      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
-      <description>A practitioner's analysis published in April 2026 exposes systemic security flaws in the infrastructure underpinning the rapidly expanding agentic AI landscape. 43% of public servers are vulnerable to command execution, 36.7% of 7,000+ servers are vulnerable to SSRF, 492 servers are exposed to the internet with zero authentication, and 53% of servers use static credentials.</description>
-    </item>    <item>
-      <title>Microsoft @azure-devops/mcp Missing Authentication (CVE-2026-32211): CVSS 9.1 Critical, Disclosed April 3, 2026</title>
-      <link>https://llm-threatintel.com/posts/2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.html</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-32211 is a missing authentication vulnerability in Microsoft @azure-devops/mcp with CVSS 9.1, disclosed April 3, 2026. This critical vulnerability affects Microsoft's Model Context Protocol (MCP) implementation for Azure DevOps, potentially allowing unauthenticated attackers to interact with AI agents connected to DevOps infrastructure.</description>
-    </item>    <item>
-      <title>Flowise CVE-2025-59528 (CVSS 10.0): Critical RCE in AI Agent Builder Actively Exploited; 12,000+ Exposed Instances</title>
-      <link>https://llm-threatintel.com/posts/2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.html</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise, the widely used open-source platform for building custom large language model (LLM) applications, chatbots, and AI agent pipelines. The vulnerability carries a CVSS score of 10.0. VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.</description>
-    </item>    <item>
-      <title>Malicious LLM Router Infrastructure Compromise: 26 Routers Stealing Credentials and Draining Crypto Wallets via AI Intermediaries</title>
-      <link>https://llm-threatintel.com/posts/2026-04-17-llm-router-credential-theft-crypto-draining.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-17-llm-router-credential-theft-crypto-draining.html</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-      <description>26 LLM routers are secretly injecting malicious tool calls and stealing credentials, with one draining a client's $500,000 crypto wallet. The team documented real-world abuses including routers secretly injecting malicious tool calls, stealing credentials and draining a client's crypto wallet of $500,000.</description>
     </item>
   </channel>
 </rss>

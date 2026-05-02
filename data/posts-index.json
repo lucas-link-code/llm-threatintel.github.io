@@ -1,11 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation",
+      "title": "CVE-2026-42208: LiteLLM Pre-Auth SQL Injection Actively Exploited Within 26 Hours of Disclosure; Attackers Target Credential Storage",
+      "date": "2026-05-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-42208 (CVSS 9.3) is an SQL injection that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. An unknown threat actor targeted database tables holding upstream LLM provider keys and proxy runtime environment secrets, suggesting the attacker was aware of and went after sensitive credential stores.",
+      "file": "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.md"
+    },
+    {
       "id": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
       "title": "CVE-2026-33032 (MCPwn): Nginx-UI MCP Authentication Bypass Enables Full Web Server Takeover via Unauthenticated Tool Invocation",
       "date": "2026-05-01",
       "author": "LLM ThreatIntel",
-      "tags": ["malicious-tool", "supply-chain"],
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "CVE-2026-33032, a CVSS 9.8 authentication bypass in nginx-ui's MCP integration, has been actively exploited since mid-April 2026 after VulnCheck added it to its Known Exploited Vulnerabilities catalog on April 13. The /mcp_message endpoint is missing the AuthRequired() middleware, allowing any network-accessible attacker to invoke all 12 privileged MCP tools without credentials, achieving complete nginx server takeover in two HTTP requests. Approximately 2,600 publicly exposed nginx-ui instances were identified on Shodan at time of disclosure.",
       "file": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.md"
@@ -15,7 +30,10 @@
       "title": "GPT-Proxy Backdoor in npm and PyPI: Kubernetes-Targeted Supply Chain Attack Turns Compromised Servers into Chinese LLM Relay Nodes",
       "date": "2026-05-01",
       "author": "LLM ThreatIntel",
-      "tags": ["supply-chain", "malware"],
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Aikido Security discovered malicious packages kube-health-tools (npm) and kube-node-health (PyPI) that target Kubernetes environments by silently installing a full LLM proxy service, SOCKS5 proxy, reverse shell, and SFTP server on victim machines. The implant routes LLM traffic through compromised servers to Chinese LLM aggregator endpoints including shubiaobiao, cloudsway, and volengine, turning victims into relay nodes in a commercial AI reselling operation. Both packages were disclosed on April 22, 2026, with the campaign active since at least April 1, 2026.",
       "file": "2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay.md"
@@ -25,7 +43,11 @@
       "title": "OtterCookie Backdoor Targets AI Coding Tools via Fake Gemini npm Package: DPRK-Linked Campaign Harvests Credentials from Cursor, Claude, and Windsurf",
       "date": "2026-05-01",
       "author": "LLM ThreatIntel",
-      "tags": ["supply-chain", "malware", "apt"],
+      "tags": [
+        "supply-chain",
+        "malware",
+        "apt"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "A DPRK-linked threat actor published the malicious npm package gemini-ai-checker on March 20, 2026, disguised as a Google Gemini token verification utility but delivering an OtterCookie JavaScript backdoor variant that specifically targets AI coding tool directories including .cursor, .claude, .gemini, .windsurf, .pearai, and .eigent. The campaign is linked with moderate-to-high confidence to the Contagious Interview operation previously documented by Microsoft. Two sibling packages, express-flowlimit and chai-extensions-extras, remain live on npm as of early May 2026 with the same Vercel-hosted C2 infrastructure.",
       "file": "2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft.md"
