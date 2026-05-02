@@ -17,6 +17,13 @@ const App = {
   cleanupHomeFilterBar: null,
   scrollTopButtonHandler: null,
   scrollTopButtonBound: false,
+  feedSearchTerm: '',
+  feedSearchIndex: {},
+  feedSearchIndexReady: false,
+  feedSearchIndexBuilding: false,
+  feedSearchDebounce: null,
+  feedIndexHideTimer: null,
+  lastFocusedSearchTrigger: null,
   metaDefaults: {
     siteName: 'LLM ThreatIntel',
     siteUrl: 'https://llm-threatintel.com',
@@ -27,6 +34,8 @@ const App = {
   async init() {
     await this.loadData();
     this.setupNav();
+    this.setupSearchControls();
+    this.buildFeedSearchIndex();
     this.initScrollTopButton();
     this.route();
     window.addEventListener('hashchange', () => this.route());
@@ -353,6 +362,231 @@ const App = {
     }
   },
 
+  buildPostMetadataBlob(post) {
+    return [
+      post.id,
+      post.title,
+      post.date,
+      post.author,
+      (post.tags || []).join(' '),
+      post.tlp,
+      post.excerpt,
+      post.file
+    ].filter(Boolean).join(' \n ').toLowerCase();
+  },
+
+  async buildFeedSearchIndex() {
+    if (!this.postsIndex || this.feedSearchIndexBuilding) return;
+    this.feedSearchIndexBuilding = true;
+    this.feedSearchIndex = {};
+    const posts = this.postsIndex.posts || [];
+    posts.forEach(p => {
+      this.feedSearchIndex[p.id] = this.buildPostMetadataBlob(p);
+    });
+    this.updateIndexingIndicator('building');
+
+    await Promise.all(posts.map(async p => {
+      try {
+        const r = await fetch(`posts/${p.file}`);
+        if (!r.ok) return;
+        const md = await r.text();
+        this.feedSearchIndex[p.id] += ' \n ' + md.toLowerCase();
+      } catch (_) {
+        /* keep metadata-only */
+      }
+    }));
+
+    this.feedSearchIndexReady = true;
+    this.feedSearchIndexBuilding = false;
+    this.updateIndexingIndicator('ready');
+    if (document.getElementById('posts-grid')) this.filterPosts();
+  },
+
+  updateIndexingIndicator(state) {
+    const el = document.getElementById('feed-index-status');
+    if (!el) return;
+    window.clearTimeout(this.feedIndexHideTimer);
+    if (state === 'building') {
+      el.textContent = 'Indexing reports...';
+      el.classList.remove('is-hidden');
+      return;
+    }
+    if (state === 'ready') {
+      el.textContent = 'Full-text search ready';
+      el.classList.remove('is-hidden');
+      this.feedIndexHideTimer = window.setTimeout(() => {
+        el.classList.add('is-hidden');
+      }, 2500);
+    }
+  },
+
+  getFilteredFeedPosts() {
+    const posts = this.postsIndex?.posts || [];
+    const term = (this.feedSearchTerm || '').trim().toLowerCase();
+    const terms = term ? term.split(/\s+/).filter(Boolean) : [];
+    const filter = this.currentFilter;
+
+    return posts.filter(p => {
+      const tagOk = filter === 'all' || (p.tags || []).includes(filter);
+      if (!tagOk) return false;
+      if (!terms.length) return true;
+      const blob = this.feedSearchIndex[p.id] || this.buildPostMetadataBlob(p);
+      return terms.every(t => blob.includes(t));
+    });
+  },
+
+  setFeedSearchTerm(term, { route = true } = {}) {
+    this.feedSearchTerm = term ?? '';
+    this.syncSearchInputs();
+    const h = window.location.hash;
+    const onHome = !h || h === '#home' || h === '#';
+    if (route && !onHome) {
+      window.location.hash = '#home';
+      return;
+    }
+    this.filterPosts();
+  },
+
+  clearFeedSearch() {
+    this.setFeedSearchTerm('', { route: false });
+  },
+
+  syncSearchInputs() {
+    const v = this.feedSearchTerm;
+    const desk = document.getElementById('header-search-input');
+    const mob = document.getElementById('mobile-search-input');
+    if (desk && desk.value !== v) desk.value = v;
+    if (mob && mob.value !== v) mob.value = v;
+    const clear = document.querySelector('.header-search-clear');
+    if (clear) clear.hidden = !v;
+  },
+
+  setupSearchControls() {
+    const input = document.getElementById('header-search-input');
+    const clear = document.querySelector('.header-search-clear');
+    if (input) {
+      input.addEventListener('input', e => {
+        const v = e.target.value;
+        window.clearTimeout(this.feedSearchDebounce);
+        this.feedSearchDebounce = window.setTimeout(() => this.setFeedSearchTerm(v), 240);
+        if (clear) clear.hidden = !v;
+      });
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          window.clearTimeout(this.feedSearchDebounce);
+          this.setFeedSearchTerm(input.value);
+        }
+        if (e.key === 'Escape' && input.value) {
+          input.value = '';
+          this.setFeedSearchTerm('');
+        }
+      });
+    }
+    if (clear && input) {
+      clear.addEventListener('click', () => {
+        input.value = '';
+        this.setFeedSearchTerm('');
+        input.focus();
+      });
+    }
+
+    const openBtn = document.getElementById('mobile-search-btn');
+    if (openBtn) openBtn.addEventListener('click', () => this.openSearchModal());
+
+    document.getElementById('mobile-search-apply')?.addEventListener('click', () => this.applyMobileSearch());
+    document.getElementById('mobile-search-clear')?.addEventListener('click', () => {
+      const mob = document.getElementById('mobile-search-input');
+      if (mob) mob.value = '';
+      this.setFeedSearchTerm('', { route: false });
+    });
+    document.getElementById('mobile-search-close')?.addEventListener('click', () => this.closeSearchModal());
+    document.getElementById('mobile-search-input')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this.applyMobileSearch();
+      }
+    });
+  },
+
+  openSearchModal() {
+    this.lastFocusedSearchTrigger = document.activeElement;
+    const overlay = document.getElementById('search-modal-overlay');
+    const input = document.getElementById('mobile-search-input');
+    if (!overlay || !input) return;
+    input.value = this.feedSearchTerm || '';
+    const modal = overlay.querySelector('.search-modal');
+    if (modal) modal.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('open');
+    window.setTimeout(() => input.focus(), 0);
+  },
+
+  closeSearchModal() {
+    const overlay = document.getElementById('search-modal-overlay');
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    const modal = overlay.querySelector('.search-modal');
+    if (modal) modal.setAttribute('aria-hidden', 'true');
+    if (this.lastFocusedSearchTrigger && typeof this.lastFocusedSearchTrigger.focus === 'function') {
+      this.lastFocusedSearchTrigger.focus();
+    }
+    this.lastFocusedSearchTrigger = null;
+  },
+
+  applyMobileSearch() {
+    const input = document.getElementById('mobile-search-input');
+    const v = input ? input.value : '';
+    this.closeSearchModal();
+    this.setFeedSearchTerm(v);
+  },
+
+  renderFeedStatusLine(count) {
+    const term = (this.feedSearchTerm || '').trim();
+    const hasSearch = term.length > 0;
+    const filter = this.currentFilter;
+    const totalAll = this.postsIndex?.posts?.length ?? 0;
+
+    if (!hasSearch && filter === 'all') {
+      return '';
+    }
+
+    let line = '';
+    if (hasSearch) {
+      line = `Showing ${count} reports matching "${this.escapeHtml(term)}"`;
+      if (filter !== 'all') {
+        line += ` (${this.escapeHtml(this.formatTag(filter))})`;
+      }
+    } else {
+      line = `Showing ${count} of ${totalAll} reports tagged ${this.escapeHtml(this.formatTag(filter))}`;
+    }
+
+    const clearBtn = hasSearch
+      ? ` <button type="button" class="btn feed-status-clear-btn" onclick="App.clearFeedSearch()">Clear search</button>`
+      : '';
+
+    return `<div class="feed-status-inner">${line}${clearBtn}</div>`;
+  },
+
+  renderEmptyFeedState() {
+    const term = (this.feedSearchTerm || '').trim();
+    const filter = this.currentFilter;
+    if (term) {
+      return `
+        <div class="feed-empty" role="status">
+          <p>No reports matched "${this.escapeHtml(term)}". Try another keyword or <button type="button" class="btn feed-empty-clear-btn" onclick="App.clearFeedSearch()">clear the search</button>.</p>
+        </div>
+      `;
+    }
+    if (filter !== 'all') {
+      return `
+        <div class="feed-empty" role="status">
+          <p>No reports tagged ${this.escapeHtml(this.formatTag(filter))}. Pick another tag or choose All.</p>
+        </div>
+      `;
+    }
+    return '<div class="feed-empty" role="status"><p>No reports available.</p></div>';
+  },
+
   // ---- HOME PAGE ----
   renderHome(container) {
     if (!this.postsIndex) {
@@ -395,7 +629,9 @@ const App = {
           ${allTags.map(tag => `<button class="filter-btn ${activeFilter === tag ? 'active' : ''}" data-filter="${tag}">${this.formatTag(tag)}</button>`).join('')}
         </div>
       </div>
-      <div class="posts-grid" id="posts-grid">${this.renderPostCards(posts)}</div>
+      <div id="feed-index-status" class="feed-index-status is-hidden" aria-live="polite"></div>
+      <div id="feed-status" class="feed-status"></div>
+      <div class="posts-grid" id="posts-grid"></div>
       <div class="feed-disclaimer" aria-label="Feed disclaimer">
         <h2 class="about-section-title">Disclaimer</h2>
         <p>This news feed is automated. The data comes from public reports only and open source community. Validate IOCs before production blocking.</p>
@@ -416,6 +652,8 @@ const App = {
     });
 
     this.filterPosts();
+    this.syncSearchInputs();
+    if (this.feedSearchIndexBuilding) this.updateIndexingIndicator('building');
     this.setupHomeFilterBar(container);
   },
 
@@ -512,11 +750,14 @@ const App = {
   },
 
   filterPosts() {
-    document.querySelectorAll('.post-card').forEach(card => {
-      const tags = card.dataset.tags;
-      const matchesFilter = this.currentFilter === 'all' || tags.includes(this.currentFilter);
-      card.style.display = matchesFilter ? '' : 'none';
-    });
+    const grid = document.getElementById('posts-grid');
+    const status = document.getElementById('feed-status');
+    if (!grid) return;
+    const filtered = this.getFilteredFeedPosts();
+    grid.innerHTML = filtered.length
+      ? this.renderPostCards(filtered)
+      : this.renderEmptyFeedState();
+    if (status) status.innerHTML = this.renderFeedStatusLine(filtered.length);
   },
 
   // ---- SINGLE POST ----
@@ -1026,5 +1267,12 @@ const App = {
 // Boot
 document.addEventListener('DOMContentLoaded', () => App.init());
 
-// Modal close on Escape
-document.addEventListener('keydown', e => { if (e.key === 'Escape') App.closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const searchOv = document.getElementById('search-modal-overlay');
+  if (searchOv?.classList.contains('open')) {
+    App.closeSearchModal();
+    return;
+  }
+  App.closeModal();
+});

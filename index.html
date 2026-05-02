@@ -64,6 +64,16 @@
         <span>LLM <span class="logo-accent">ThreatIntel</span></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="header-search" role="search">
+        <label for="header-search-input" class="visually-hidden">Search reports</label>
+        <input id="header-search-input" type="search" class="header-search-input" placeholder="Search reports..." autocomplete="off" spellcheck="false">
+        <button type="button" class="header-search-clear" aria-label="Clear search" hidden>&times;</button>
+      </div>
+      <button type="button" class="mobile-search-btn" id="mobile-search-btn" aria-label="Search reports">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm5 11l5 5"/>
+        </svg>
+      </button>
       <nav class="site-nav">
         <a href="#home" class="active">Intel Feed</a>
         <a href="#actors">Threat Actors</a>
@@ -79,6 +89,19 @@
     <div class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
       <button class="modal-close" onclick="App.closeModal()" aria-label="Close detail panel">&times;</button>
       <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <div class="search-modal-overlay" id="search-modal-overlay" onclick="if(event.target===this)App.closeSearchModal()">
+    <div class="search-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="search-modal-title">
+      <button class="modal-close" type="button" aria-label="Close search" onclick="App.closeSearchModal()">&times;</button>
+      <h2 id="search-modal-title">Search reports</h2>
+      <input id="mobile-search-input" type="search" class="search-modal-input" placeholder="Keyword, CVE, package, actor..." autocomplete="off" spellcheck="false">
+      <div class="search-modal-actions">
+        <button type="button" class="btn" id="mobile-search-apply">Search</button>
+        <button type="button" class="btn" id="mobile-search-clear">Clear</button>
+        <button type="button" class="btn" id="mobile-search-close">Close</button>
+      </div>
     </div>
   </div>
 
