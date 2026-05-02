@@ -1155,6 +1155,8 @@ a:hover { color: var(--ab); }
 
   .site-logo {
     order: 1;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .nav-toggle {
@@ -1166,6 +1168,7 @@ a:hover { color: var(--ab); }
   }
 
   .header-inner {
+    justify-content: flex-start;
     gap: 0.45rem;
   }
 
@@ -1294,18 +1297,49 @@ a:hover { color: var(--ab); }
 
 @media (max-width: 768px) {
   .search-modal-overlay {
-    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0
+      max(12px, env(safe-area-inset-left))
+      max(14px, env(safe-area-inset-bottom))
+      max(12px, env(safe-area-inset-right));
     align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
   }
 
   .search-modal {
-    width: calc(100% - 16px);
-    max-width: calc(100% - 16px);
-    max-height: 90vh;
+    width: 100%;
+    max-width: calc(100vw - 24px);
+    max-height: min(72vh, calc(100dvh - 96px));
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 3.25rem 1.25rem 1.5rem;
-    border-radius: 14px 14px 0 0;
+    border-radius: 22px 22px 0 0;
     margin: 0;
+    box-sizing: border-box;
+  }
+
+  .search-modal-input {
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .search-modal-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+    width: 100%;
+  }
+
+  .search-modal-actions .btn {
+    width: 100%;
+    min-width: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .search-modal::before {
@@ -1321,6 +1355,11 @@ a:hover { color: var(--ab); }
   }
 }
 
+
+body.search-modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
 
 @media (max-width: 768px) {
   .modal-overlay {

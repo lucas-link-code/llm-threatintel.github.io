@@ -525,6 +525,8 @@ const App = {
 
   openSearchModal() {
     this.lastFocusedSearchTrigger = document.activeElement;
+    this.searchModalScrollY = window.scrollY || 0;
+    document.body.classList.add('search-modal-open');
     const overlay = document.getElementById('search-modal-overlay');
     const input = document.getElementById('mobile-search-input');
     if (!overlay || !input) return;
@@ -541,6 +543,10 @@ const App = {
     overlay.classList.remove('open');
     const modal = overlay.querySelector('.search-modal');
     if (modal) modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('search-modal-open');
+    if (typeof this.searchModalScrollY === 'number') {
+      window.scrollTo(0, this.searchModalScrollY);
+    }
     if (this.lastFocusedSearchTrigger && typeof this.lastFocusedSearchTrigger.focus === 'function') {
       this.lastFocusedSearchTrigger.focus();
     }
