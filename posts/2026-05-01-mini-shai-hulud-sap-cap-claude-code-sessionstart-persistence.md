@@ -51,12 +51,6 @@ The Hacker News and SecurityWeek report TeamPCP is the same threat actor previou
 
 ## IOCs
 
-### Domains
-
-```
-github.com
-```
-
 ### Full URL Paths
 
 ```
