@@ -30,6 +30,12 @@ FAVICON_DATA_URI = (
     "font-weight='bold' font-size='11' fill='white'>LLM</text></svg>"
 )
 
+TAG_DISPLAY = {
+    "apt": "APT",
+    "shadow-ai": "Shadow AI",
+    "llmjacking": "LLMjacking",
+}
+
 
 def get_site_url() -> str:
     if CNAME_FILE.exists():
@@ -211,7 +217,8 @@ def build_post_html(post: dict, markdown: str) -> str:
 
     content_html = render_markdown(markdown)
     tags_html = "".join(
-        f'<span class="post-tag tag-{escape_attr(tag)}">{html.escape(tag.replace("-", " ").title())}</span>'
+        f'<span class="post-tag tag-{escape_attr(tag)}">'
+        f'{html.escape(TAG_DISPLAY.get(tag, tag.replace("-", " ").title()))}</span>'
         for tag in tags
     )
 
