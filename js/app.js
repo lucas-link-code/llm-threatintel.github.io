@@ -187,11 +187,25 @@ const App = {
     if (!btn || this.scrollTopButtonBound) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let rafScheduled = false;
+    let lastShown = false;
+
     const toggleVisibility = () => {
       const shouldShow = window.scrollY > 400;
+      if (shouldShow === lastShown) return;
+      lastShown = shouldShow;
       btn.classList.toggle('visible', shouldShow);
       btn.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
       btn.tabIndex = shouldShow ? 0 : -1;
+    };
+
+    const handleScroll = () => {
+      if (rafScheduled) return;
+      rafScheduled = true;
+      requestAnimationFrame(() => {
+        rafScheduled = false;
+        toggleVisibility();
+      });
     };
 
     btn.addEventListener('click', () => {
@@ -201,7 +215,7 @@ const App = {
       });
     });
 
-    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     this.scrollTopButtonHandler = toggleVisibility;
     this.scrollTopButtonBound = true;
@@ -680,37 +694,49 @@ const App = {
 
     let wasStuck = false;
     let stateTimer = null;
+    let rafScheduled = false;
+    let prevBarHeight = 0;
 
     const syncFilterBar = () => {
-      wrap.style.setProperty('--filter-bar-height', `${bar.offsetHeight}px`);
+      const h = bar.offsetHeight;
+      if (h !== prevBarHeight) {
+        wrap.style.setProperty('--filter-bar-height', `${h}px`);
+        prevBarHeight = h;
+      }
 
       const topDelta = wrap.getBoundingClientRect().top - getTopOffset();
       const isMobile = window.innerWidth <= 768;
       const enterThreshold = isMobile ? -10 : 0;
-      const exitThreshold = isMobile ? 16 : 0;
+      const exitThreshold = isMobile ? 16 : 6;
 
       const isStuck = wasStuck
         ? topDelta <= exitThreshold
         : topDelta <= enterThreshold;
 
-      if (isMobile && isStuck !== wasStuck) {
-        wrap.classList.add('is-animating');
-        window.clearTimeout(stateTimer);
-        stateTimer = window.setTimeout(() => {
-          wrap.classList.remove('is-animating');
-        }, 220);
+      if (isStuck !== wasStuck) {
+        if (isMobile) {
+          wrap.classList.add('is-animating');
+          window.clearTimeout(stateTimer);
+          stateTimer = window.setTimeout(() => {
+            wrap.classList.remove('is-animating');
+          }, 220);
+        }
+        wrap.classList.toggle('is-stuck', isStuck);
+        if (isMobile && isStuck) {
+          this.scrollActiveFilterIntoView(container, false);
+        }
+        wasStuck = isStuck;
       }
-
-      wrap.classList.toggle('is-stuck', isStuck);
-
-      if (window.innerWidth <= 768 && isStuck && !wasStuck) {
-        this.scrollActiveFilterIntoView(container, false);
-      }
-
-      wasStuck = isStuck;
     };
 
-    const handleScroll = () => syncFilterBar();
+    const handleScroll = () => {
+      if (rafScheduled) return;
+      rafScheduled = true;
+      requestAnimationFrame(() => {
+        rafScheduled = false;
+        syncFilterBar();
+      });
+    };
     const handleResize = () => syncFilterBar();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
