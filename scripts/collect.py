@@ -88,6 +88,8 @@ Rules: Every claim cites at least one real source URL. Never fabricate IOCs. Max
 
 Duplicate policy: Do not re-report the same incident already listed below with the same primary source and headline. It IS new intel if: a different vendor or outlet published analysis; a new CVE, advisory, or technical detail appeared; the story is a distinct campaign or tool even if the theme overlaps shadow AI, supply chain, or malware.
 
+Check for duplicates against the existing posts/ directory to ensure they are not duplicates.
+
 Use status "no_new_intel" ONLY after you have run the web searches below and found no qualifying items in the window above. If searches return any credible GenAI or LLM-related security story in that window, return status "new_intel" with at least one finding and real URLs (use confidence "low" if attribution is thin).
 
 {existing_context}
@@ -103,6 +105,11 @@ SEARCHES — Execute these web searches (read multiple results per query when us
 8. GenAI deepfake voice fraud BEC ransomware {year}
 9. machine learning model poisoning supply chain ML security advisory {year}
 10. CVE LLM AI vulnerability disclosure {year}
+11. AI phishing campaign OR deepfake social engineering OR GenAI BEC {year}
+12. shadow AI risk OR unauthorized AI enterprise OR AI data leak corporate {year}
+13. prompt injection attack OR jailbreak as a service OR LLM jailbreak {year}
+14. MCP server vulnerability OR AI agent exploit OR agentic AI security {year}
+15. nation state AI cyber OR APT generative AI OR DPRK AI OR Russia AI offensive {year}
 
 OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the JSON.
 

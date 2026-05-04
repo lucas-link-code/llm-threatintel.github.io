@@ -16,7 +16,7 @@ Operating rules:
 - Use web search aggressively. Search multiple times with different queries to triangulate findings. A single search is rarely sufficient.
 - If sources disagree on attribution, timeline, or technical details, represent both positions, state which is better supported, and why.
 - Do not fabricate IOCs. If a source discusses a campaign but does not publish IOCs, state "No IOCs published by source" rather than inventing plausible domains.
-- Do not include findings older than 7 days unless they represent a significant update to an ongoing campaign.
+- Do not include findings older than 14 days unless they represent a significant update to an ongoing campaign.
 
 ## Search Strategy
 
@@ -48,6 +48,10 @@ For each source below, search for their latest publications related to AI/GenAI/
 - Recorded Future — threat landscape reports
 - Microsoft Security blog — Storm groups, cloud AI abuse
 - CrowdStrike blog — threat actor tracking
+- SecurityWeek blog — cybersecurity news
+- The Register blog — security news
+- The Hacker News blog — security news
+- SecurityWeek articles — cybersecurity news
 
 **Tier 2 — Secondary sources (check every run):**
 - SlashNext blog — phishing and social engineering
@@ -80,6 +84,7 @@ Before producing output:
 3. Eliminate duplicates: if two sources report the same campaign, merge them into one finding with both sources cited.
 4. Eliminate stale news: if an article discusses a campaign that was already covered in a previous run (check existing posts/ directory), skip it unless there is a material update.
 5. Self-check: before finalizing, verify that every IOC you are about to output actually appears in a source. Verify that every MITRE ATT&CK technique ID is valid (format T####.### or T####). Verify that every source URL is a real URL you retrieved during search.
+6. Check findings against the existing posts/ directory to ensure they are not duplicates.
 
 ## Output Requirements
 
@@ -185,7 +190,8 @@ For each threat actor or malware family mentioned:
 
 **4. Update data/iocs.json**
 For each new IOC:
-- Check if it already exists (match on value field). Skip duplicates.
+- Check if it already exists (match on value field), check if it was already ingested. Skip duplicates.
+- do not add obvious high level domains like github.com or pypi.org or npmjs.com without a subdomain or a specific /path for the repository name or package name.
 - Add with all fields: value, type (domain/url_path/sha256/md5/ip), context, first_seen, source, campaign, status.
 - Update the last_updated field to today's date.
 

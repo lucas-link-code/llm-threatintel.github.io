@@ -31,6 +31,74 @@ SEARCH PRIORITY AREAS:
 Check these sources:
 ReversingLabs, Socket.dev, Phylum, Mandiant, Unit 42, Microsoft Security, CrowdStrike, Sysdig, BleepingComputer, The Hacker News, Recorded Future, Abnormal Security
 
+## Search Strategy
+
+Execute searches in three phases. Do not skip phases.
+
+### Phase 1: Broad Landscape Scan
+Run these searches to capture the current news cycle. Use web search for each query:
+
+1. "GenAI malware" OR "LLM malware" news this week
+2. "malicious AI package" OR "malicious PyPI AI" OR "supply chain AI" news this week
+3. "LLMjacking" OR "AI API key stolen" OR "cloud AI abuse" news this week
+4. "malicious LLM model" OR "poisoned AI model" OR "Hugging Face malicious" news this week
+5. "WormGPT" OR "FraudGPT" OR "GhostGPT" OR "DarkGPT" news this month
+6. "AI phishing campaign" OR "deepfake social engineering" OR "GenAI BEC" news this week
+7. "shadow AI risk" OR "unauthorized AI enterprise" OR "AI data leak corporate" news this week
+8. "prompt injection attack" OR "jailbreak as a service" OR "LLM jailbreak" news this week
+9. "MCP server vulnerability" OR "AI agent exploit" OR "agentic AI security" news this week
+10. "nation state AI cyber" OR "APT generative AI" OR "DPRK AI" OR "Russia AI offensive" news this week
+
+### Phase 2: Source-Specific Deep Checks
+For each source below, search for their latest publications related to AI/GenAI/LLM threats. Check if they published anything relevant in the last 7 days:
+
+**Tier 1 — Primary threat intelligence publishers (check every run):**
+- ReversingLabs blog — supply chain, malicious packages
+- Socket.dev blog — npm and PyPI supply chain
+- Phylum.io blog — package ecosystem threats
+- Mandiant / Google Threat Intelligence — APT campaigns, nation-state
+- Unit 42 (Palo Alto Networks) — threat research
+- Recorded Future — threat landscape reports
+- Microsoft Security blog — Storm groups, cloud AI abuse
+- CrowdStrike blog — threat actor tracking
+- SecurityWeek blog — cybersecurity news
+- The Register blog — security news
+- The Hacker News blog — security news
+- SecurityWeek articles — cybersecurity news
+
+**Tier 2 — Secondary sources (check every run):**
+- SlashNext blog — phishing and social engineering
+- Sysdig blog — cloud and container security, LLMjacking
+- BleepingComputer — breaking cybersecurity news
+- The Hacker News — aggregated security news
+- Dark Reading — enterprise security
+- Abnormal Security blog — email threat detection
+- Proofpoint blog — email and social engineering threats
+
+**Tier 3 — Specialized sources (check when relevant):**
+- Checkmarx blog — application security, supply chain
+- JFrog security research — artifact and package security
+- Hugging Face blog — model security updates
+- CERT-UA — Ukraine-focused APT activity
+- CISA advisories — US government alerts
+- Wiz blog — cloud security research
+- Lasso Security blog — AI/LLM security research
+- Protect AI blog — ML supply chain security
+- OWASP Top 10 for LLM Applications updates
+- Trail of Bits blog — AI security research
+- Pillar Security blog — GenAI application security
+- HiddenLayer blog — adversarial ML research
+
+### Phase 3: Verification and Deduplication
+Before producing output:
+
+1. Cross-reference findings across sources. If only one source reports something and it sounds significant, search specifically for corroboration.
+2. Check each finding against the existing data/actors.json and data/iocs.json files in this repository. Read these files before writing output.
+3. Eliminate duplicates: if two sources report the same campaign, merge them into one finding with both sources cited.
+4. Eliminate stale news: if an article discusses a campaign that was already covered in a previous run (check existing posts/ directory), skip it unless there is a material update.
+5. Self-check: before finalizing, verify that every IOC you are about to output actually appears in a source. Verify that every MITRE ATT&CK technique ID is valid (format T####.### or T####). Verify that every source URL is a real URL you retrieved during search.
+6. Check findings against the existing posts/ directory to ensure they are not duplicates.
+
 OPERATING RULES:
 - Every claim must cite a specific source with URL
 - IOCs must be exact values from source reports, not inferred

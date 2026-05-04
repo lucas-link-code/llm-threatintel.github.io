@@ -24,6 +24,12 @@ const App = {
   feedSearchDebounce: null,
   feedIndexHideTimer: null,
   lastFocusedSearchTrigger: null,
+  iocSearch: '',
+  iocTypeFilter: 'all',
+  iocStatusFilter: 'active',
+  iocCampaignFilter: 'all',
+  iocSourceFilter: 'all',
+  iocSort: 'newest',
   metaDefaults: {
     siteName: 'LLM ThreatIntel',
     siteUrl: 'https://llm-threatintel.com',
@@ -242,6 +248,11 @@ const App = {
   defangURL(url) {
     if (typeof url !== 'string') return url;
     if (url.includes('[.]')) return url;
+    const protoMatch = url.match(/^(https?):\/\/([^/]+)(.*)$/i);
+    if (protoMatch) {
+      const proto = protoMatch[1].toLowerCase() === 'https' ? 'hxxps' : 'hxxp';
+      return `${proto}://${this.defangDomain(protoMatch[2])}${protoMatch[3] || ''}`;
+    }
     const slashIdx = url.indexOf('/');
     if (slashIdx === -1) return this.defangDomain(url);
     const domain = url.substring(0, slashIdx);
@@ -298,6 +309,7 @@ const App = {
   },
 
   copyFeedById(id, btn) {
+    if (btn?.disabled) return;
     const el = document.getElementById(id);
     if (el) this.copyText(el.textContent, btn);
   },
@@ -1072,6 +1084,282 @@ const App = {
   },
 
   // ---- IOC FEED ----
+  getIOCRecords() {
+    return Array.isArray(this.iocsData?.iocs) ? this.iocsData.iocs : [];
+  },
+
+  getIOCValue(ioc) {
+    return String(ioc?.value ?? '').trim();
+  },
+
+  getIOCTypeBucket(ioc) {
+    const explicit = String(ioc?.type || '').trim().toLowerCase();
+    if (explicit === 'domain') return 'domain';
+    if (explicit === 'url_path' || explicit === 'url') return 'url_path';
+    if (explicit === 'ip' || explicit === 'ipv4' || explicit === 'ipv6') return 'ip';
+    if (explicit === 'package') return 'package';
+    if (this.isHashType(explicit)) return 'hash';
+
+    const value = this.getIOCValue(ioc).toLowerCase();
+    if (/^[a-f0-9]{64}$/.test(value) || /^[a-f0-9]{40}$/.test(value) || /^[a-f0-9]{32}$/.test(value)) return 'hash';
+    if (/^\d{1,3}(?:\.\d{1,3}){3}$/.test(value)) return 'ip';
+    return explicit || 'unknown';
+  },
+
+  getIOCSearchBlob(ioc) {
+    return [
+      ioc?.value,
+      ioc?.type,
+      ioc?.status,
+      ioc?.campaign,
+      ioc?.source,
+      ioc?.context,
+      ioc?.first_seen
+    ].filter(v => v !== null && v !== undefined).join(' ').toLowerCase();
+  },
+
+  sortIOCs(iocs) {
+    const sorted = [...iocs];
+    const text = (v) => String(v || '').toLowerCase();
+    const byText = (field) => sorted.sort((a, b) => text(a[field]).localeCompare(text(b[field])) || text(a.value).localeCompare(text(b.value)));
+
+    switch (this.iocSort) {
+      case 'type':
+        sorted.sort((a, b) => this.getIOCTypeBucket(a).localeCompare(this.getIOCTypeBucket(b)) || text(a.value).localeCompare(text(b.value)));
+        break;
+      case 'campaign':
+        byText('campaign');
+        break;
+      case 'source':
+        byText('source');
+        break;
+      case 'value':
+        byText('value');
+        break;
+      case 'newest':
+      default:
+        sorted.sort((a, b) => text(b.first_seen).localeCompare(text(a.first_seen)) || text(a.value).localeCompare(text(b.value)));
+        break;
+    }
+    return sorted;
+  },
+
+  getFilteredIOCs() {
+    const term = this.iocSearch.trim().toLowerCase();
+    const terms = term ? term.split(/\s+/).filter(Boolean) : [];
+
+    const filtered = this.getIOCRecords().filter(ioc => {
+      const typeBucket = this.getIOCTypeBucket(ioc);
+      const status = String(ioc?.status || 'unknown').toLowerCase();
+      const campaign = String(ioc?.campaign || '').trim();
+      const source = String(ioc?.source || '').trim();
+
+      if (this.iocTypeFilter !== 'all' && typeBucket !== this.iocTypeFilter) return false;
+      if (this.iocStatusFilter !== 'all' && status !== this.iocStatusFilter) return false;
+      if (this.iocCampaignFilter !== 'all' && campaign !== this.iocCampaignFilter) return false;
+      if (this.iocSourceFilter !== 'all' && source !== this.iocSourceFilter) return false;
+      if (terms.length) {
+        const blob = this.getIOCSearchBlob(ioc);
+        if (!terms.every(t => blob.includes(t))) return false;
+      }
+      return true;
+    });
+
+    return this.sortIOCs(filtered);
+  },
+
+  escapeExportValue(value) {
+    return String(value ?? '').replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+  },
+
+  csvEscapeValue(value) {
+    return `"${String(value ?? '').replace(/"/g, '""')}"`;
+  },
+
+  getExportableIOCs(iocs) {
+    return iocs.filter(ioc => this.getIOCValue(ioc));
+  },
+
+  shouldWildcardSIEMExport() {
+    return this.iocTypeFilter !== 'ip' && this.iocTypeFilter !== 'hash';
+  },
+
+  buildIOCExports(iocs, { wildcardSIEM = this.shouldWildcardSIEMExport() } = {}) {
+    const exportable = this.getExportableIOCs(iocs);
+    const jsonRows = exportable.map(ioc => ({
+      value: this.getIOCValue(ioc),
+      type: ioc?.type || 'unknown',
+      status: ioc?.status || 'unknown',
+      first_seen: ioc?.first_seen || '',
+      campaign: ioc?.campaign || '',
+      source: ioc?.source || '',
+      context: ioc?.context || ''
+    }));
+
+    return {
+      count: exportable.length,
+      defanged: exportable.map(ioc => this.defangIOC({ ...ioc, value: this.getIOCValue(ioc) })).join('\n'),
+      siem: exportable.map(ioc => {
+        const value = this.escapeExportValue(this.getIOCValue(ioc));
+        return wildcardSIEM ? `"*${value}*"` : `"${value}"`;
+      }).join(' OR '),
+      csv: exportable.map(ioc => this.csvEscapeValue(this.getIOCValue(ioc))).join(', '),
+      json: JSON.stringify(jsonRows, null, 2)
+    };
+  },
+
+  getCampaignPostId(campaign) {
+    const campaignValue = String(campaign || '').trim();
+    if (!campaignValue) return null;
+    const posts = this.postsIndex?.posts || [];
+    if (posts.some(p => p.id === campaignValue)) return campaignValue;
+
+    const matches = posts.filter(p => {
+      const stripped = String(p.id || '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+      return stripped === campaignValue;
+    });
+    return matches.length === 1 ? matches[0].id : null;
+  },
+
+  getIOCDisplayValue(ioc) {
+    const value = this.getIOCValue(ioc);
+    if (!value) return 'No value';
+    return this.defangIOC({ ...ioc, value });
+  },
+
+  getIOCFilterOptions(field) {
+    return [...new Set(this.getIOCRecords()
+      .map(ioc => String(ioc?.[field] || '').trim())
+      .filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b));
+  },
+
+  renderSelectOptions(values, selected, labeler = v => v) {
+    return values.map(value => `
+      <option value="${this.escapeAttr(value)}" ${value === selected ? 'selected' : ''}>${this.escapeHtml(labeler(value))}</option>
+    `).join('');
+  },
+
+  resetIOCWorkbench() {
+    this.iocSearch = '';
+    this.iocTypeFilter = 'all';
+    this.iocStatusFilter = 'active';
+    this.iocCampaignFilter = 'all';
+    this.iocSourceFilter = 'all';
+    this.iocSort = 'newest';
+  },
+
+  bindIOCWorkbenchControls(container) {
+    const rerender = (focusSelector = null) => {
+      this.renderIOCFeed(container);
+      if (focusSelector) {
+        const el = container.querySelector(focusSelector);
+        if (el && typeof el.focus === 'function') {
+          el.focus();
+          if (el.id === 'ioc-search') {
+            el.setSelectionRange(this.iocSearch.length, this.iocSearch.length);
+          }
+        }
+      }
+    };
+
+    container.querySelector('#ioc-search')?.addEventListener('input', e => {
+      this.iocSearch = e.target.value;
+      rerender('#ioc-search');
+    });
+    container.querySelector('#ioc-type-filter')?.addEventListener('change', e => {
+      this.iocTypeFilter = e.target.value;
+      rerender('#ioc-type-filter');
+    });
+    container.querySelector('#ioc-status-filter')?.addEventListener('change', e => {
+      this.iocStatusFilter = e.target.value;
+      rerender('#ioc-status-filter');
+    });
+    container.querySelector('#ioc-campaign-filter')?.addEventListener('change', e => {
+      this.iocCampaignFilter = e.target.value;
+      rerender('#ioc-campaign-filter');
+    });
+    container.querySelector('#ioc-source-filter')?.addEventListener('change', e => {
+      this.iocSourceFilter = e.target.value;
+      rerender('#ioc-source-filter');
+    });
+    container.querySelector('#ioc-sort')?.addEventListener('change', e => {
+      this.iocSort = e.target.value;
+      rerender('#ioc-sort');
+    });
+    container.querySelector('#ioc-clear-filters')?.addEventListener('click', () => {
+      this.resetIOCWorkbench();
+      rerender('#ioc-search');
+    });
+  },
+
+  renderIOCExportCard({ title, description, id, value, disabled }) {
+    const output = disabled ? 'No matching IOCs' : value;
+    return `
+      <div class="feed-card ioc-export-card">
+        <h3>${this.escapeHtml(title)}</h3>
+        <div class="feed-description">${this.escapeHtml(description)}</div>
+        <div class="feed-output" id="${this.escapeAttr(id)}">${this.escapeHtml(output)}</div>
+        <div class="feed-actions">
+          <button class="btn" type="button" onclick="App.copyFeedById('${this.escapeAttr(id)}',this)" ${disabled ? 'disabled' : ''}>Copy</button>
+        </div>
+      </div>
+    `;
+  },
+
+  renderIOCCampaignCell(campaign) {
+    const clean = String(campaign || '').trim();
+    if (!clean) return '<span class="ioc-muted">Unknown</span>';
+    const postId = this.getCampaignPostId(clean);
+    if (!postId) return this.escapeHtml(clean);
+    return `<a href="#post/${this.escapeAttr(postId)}">${this.escapeHtml(clean)}</a>`;
+  },
+
+  renderIOCTable(iocs) {
+    if (!iocs.length) {
+      return `
+        <div class="feed-empty ioc-empty-state" role="status">
+          <p>No matching IOCs. Adjust filters or clear the workbench.</p>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="ioc-table-wrap">
+        <table class="ioc-table">
+          <thead>
+            <tr>
+              <th>Indicator</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>First Seen</th>
+              <th>Campaign</th>
+              <th>Source</th>
+              <th>Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${iocs.map(ioc => {
+              const status = String(ioc?.status || 'unknown').toLowerCase();
+              const type = String(ioc?.type || 'unknown');
+              return `
+                <tr>
+                  <td data-label="Indicator"><span class="ioc-value">${this.escapeHtml(this.getIOCDisplayValue(ioc))}</span></td>
+                  <td data-label="Type"><span class="ttp-tag">${this.escapeHtml(this.formatType(type))}</span></td>
+                  <td data-label="Status"><span class="actor-status status-${this.escapeAttr(status)}">${this.escapeHtml(status.toUpperCase())}</span></td>
+                  <td data-label="First Seen"><span class="ioc-mono">${this.escapeHtml(ioc?.first_seen || 'Unknown')}</span></td>
+                  <td data-label="Campaign">${this.renderIOCCampaignCell(ioc?.campaign)}</td>
+                  <td data-label="Source">${this.escapeHtml(ioc?.source || 'Unknown')}</td>
+                  <td data-label="Context">${this.escapeHtml(ioc?.context || '')}</td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  },
+
   renderIOCFeed(container) {
     if (!this.iocsData) { container.innerHTML = '<div class="loading">Loading...</div>'; return; }
     const iocs = this.iocsData.iocs;
@@ -1082,18 +1370,16 @@ const App = {
     const hashes = active.filter(i => this.isHashType(i.type));
     const packages = active.filter(i => i.type === 'package');
 
-    const defangedDomains = domains.map(d => this.defangDomain(d.value)).join('\n');
-    const defangedUrls = urls.map(u => this.defangURL(u.value)).join('\n');
-    const defangedIPs = ips.map(ip => this.defangIP(ip.value)).join('\n');
-    const hashList = hashes.map(h => h.value).join('\n');
-    const packageList = packages.map(p => p.value).join('\n');
-    const allValues = active.map(i => i.value);
-    const splunkFeed = allValues.map(v => '"' + v + '"').join(' OR ');
-    const csvFeed = allValues.map(v => '"' + v + '"').join(', ');
+    const filtered = this.getFilteredIOCs();
+    const exports = this.buildIOCExports(filtered);
+    const noMatches = filtered.length === 0 || exports.count === 0;
+    const total = this.getIOCRecords().length;
+    const campaigns = this.getIOCFilterOptions('campaign');
+    const sources = this.getIOCFilterOptions('source');
 
     container.innerHTML = `
       <h1 class="page-title"><span class="title-accent">//</span> IOC Feed</h1>
-      <p class="page-subtitle">Click tiles to filter by type. All formats copy-paste ready for your tools.</p>
+      <p class="page-subtitle">Filter indicators by value, type, status, campaign, or source. Exports below always match the visible result set.</p>
       <div class="stats-row">
         <div class="stat-card" onclick="App.showIOCModal('domain')"><div class="stat-value">${domains.length}</div><div class="stat-label">Domains</div></div>
         <div class="stat-card" onclick="App.showIOCModal('url_path')"><div class="stat-value">${urls.length}</div><div class="stat-label">URLs</div></div>
@@ -1102,14 +1388,85 @@ const App = {
         <div class="stat-card" onclick="App.showIOCModal('package')"><div class="stat-value">${packages.length}</div><div class="stat-label">Packages</div></div>
         <div class="stat-card" onclick="App.showIOCModal('all')"><div class="stat-value">${active.length}</div><div class="stat-label">All Active</div></div>
       </div>
-      <div class="feed-card"><h3>Defanged Domains</h3><div class="feed-description">Last dot before TLD replaced with [.]</div><div class="feed-output" id="fd1">${this.escapeHtml(defangedDomains || 'No domain IOCs')}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd1',this)">Copy</button></div></div>
-      <div class="feed-card"><h3>Defanged URLs</h3><div class="feed-description">Full paths with defanged domain</div><div class="feed-output" id="fd2">${this.escapeHtml(defangedUrls || 'No URL IOCs')}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd2',this)">Copy</button></div></div>
-      ${ips.length > 0 ? `<div class="feed-card"><h3>Defanged IPs</h3><div class="feed-description">Last octet dot replaced with [.]</div><div class="feed-output" id="fd3">${this.escapeHtml(defangedIPs)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd3',this)">Copy</button></div></div>` : ''}
-      ${hashes.length > 0 ? `<div class="feed-card"><h3>File Hashes</h3><div class="feed-description">SHA256, SHA1, MD5 file hashes from campaign reports</div><div class="feed-output" id="fd_hash">${this.escapeHtml(hashList)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd_hash',this)">Copy</button></div></div>` : ''}
-      ${packages.length > 0 ? `<div class="feed-card"><h3>Package Indicators</h3><div class="feed-description">npm, PyPI, and other ecosystem package identifiers</div><div class="feed-output" id="fd_pkg">${this.escapeHtml(packageList)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd_pkg',this)">Copy</button></div></div>` : ''}
-      <div class="feed-card"><h3>Splunk / LogScale — OR Delimited</h3><div class="feed-description">Clean values, quoted, OR delimited. Paste into SPL or LQL.</div><div class="feed-output" id="fd4">${this.escapeHtml(splunkFeed)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd4',this)">Copy</button></div></div>
-      <div class="feed-card"><h3>Comma-Separated Quoted</h3><div class="feed-description">For CSV, SOAR, or script ingestion</div><div class="feed-output" id="fd5">${this.escapeHtml(csvFeed)}</div><div class="feed-actions"><button class="btn" onclick="App.copyFeedById('fd5',this)">Copy</button></div></div>
+      <div class="ioc-workbench" aria-label="IOC workbench filters">
+        <div class="ioc-control ioc-control-search">
+          <label for="ioc-search">Search</label>
+          <input id="ioc-search" type="search" value="${this.escapeAttr(this.iocSearch)}" placeholder="Value, context, source..." autocomplete="off" spellcheck="false">
+        </div>
+        <div class="ioc-control">
+          <label for="ioc-type-filter">Type</label>
+          <select id="ioc-type-filter">
+            ${this.renderSelectOptions(['all', 'domain', 'url_path', 'ip', 'hash', 'package'], this.iocTypeFilter, v => v === 'all' ? 'All Types' : v === 'url_path' ? 'URLs' : v === 'ip' ? 'IPs' : v === 'hash' ? 'Hashes' : this.formatType(v))}
+          </select>
+        </div>
+        <div class="ioc-control">
+          <label for="ioc-status-filter">Status</label>
+          <select id="ioc-status-filter">
+            ${this.renderSelectOptions(['active', 'removed', 'all'], this.iocStatusFilter, v => v === 'all' ? 'All Statuses' : this.formatType(v))}
+          </select>
+        </div>
+        <div class="ioc-control">
+          <label for="ioc-campaign-filter">Campaign</label>
+          <select id="ioc-campaign-filter">
+            <option value="all">All Campaigns</option>
+            ${this.renderSelectOptions(campaigns, this.iocCampaignFilter)}
+          </select>
+        </div>
+        <div class="ioc-control">
+          <label for="ioc-source-filter">Source</label>
+          <select id="ioc-source-filter">
+            <option value="all">All Sources</option>
+            ${this.renderSelectOptions(sources, this.iocSourceFilter)}
+          </select>
+        </div>
+        <div class="ioc-control">
+          <label for="ioc-sort">Sort</label>
+          <select id="ioc-sort">
+            ${this.renderSelectOptions(['newest', 'type', 'campaign', 'source', 'value'], this.iocSort, v => v === 'newest' ? 'Newest' : this.formatType(v))}
+          </select>
+        </div>
+        <div class="ioc-control ioc-control-action">
+          <label aria-hidden="true">&nbsp;</label>
+          <button class="btn" id="ioc-clear-filters" type="button">Clear</button>
+        </div>
+      </div>
+      <div class="ioc-result-status" id="ioc-result-status" role="status">Showing ${filtered.length} of ${total} IOCs</div>
+      <div class="ioc-export-grid">
+        ${this.renderIOCExportCard({
+          title: 'Defanged Indicators',
+          description: 'Domains, URLs, and IPs defanged where appropriate. Hashes and packages remain raw.',
+          id: 'ioc-export-defanged',
+          value: exports.defanged,
+          disabled: noMatches
+        })}
+        ${this.renderIOCExportCard({
+          title: 'SIEM Wildcard OR',
+          description: this.shouldWildcardSIEMExport()
+            ? 'Raw values, wildcard wrapped, quote/backslash escaped for SPL or LogScale pivots.'
+            : 'Raw exact values without wildcards for IP and hash searches.',
+          id: 'ioc-export-siem',
+          value: exports.siem,
+          disabled: noMatches
+        })}
+        ${this.renderIOCExportCard({
+          title: 'Comma-Separated Quoted',
+          description: 'Raw values for CSV, SOAR, and script ingestion.',
+          id: 'ioc-export-csv',
+          value: exports.csv,
+          disabled: noMatches
+        })}
+        ${this.renderIOCExportCard({
+          title: 'JSON',
+          description: 'Raw IOC records from the current filtered set without changing the source schema.',
+          id: 'ioc-export-json',
+          value: exports.json,
+          disabled: noMatches
+        })}
+      </div>
+      <h2 class="ioc-section-title">Matching Indicators</h2>
+      ${this.renderIOCTable(filtered)}
     `;
+    this.bindIOCWorkbenchControls(container);
   },
 
   // ---- BLOG ----
@@ -1228,6 +1585,10 @@ const App = {
       .replace(/>/g, '&gt;');
   },
 
+  escapeAttr(str) {
+    return this.escapeHtml(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  },
+
   formatTag(tag) {
     const map = {
       'supply-chain': 'Supply Chain', 'malicious-tool': 'Malicious Tool',
@@ -1238,7 +1599,7 @@ const App = {
   },
 
   formatType(type) {
-    return type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    return String(type || 'unknown').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   },
 
   // ---- ACTOR DETAIL MODAL ----
