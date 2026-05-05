@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 02 May 2026 09:28:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 06:09:25 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-33626 LMDeploy SSRF Exploited Within 13 Hours: Attackers Weaponize AI-Generated Exploits for Cloud Metadata Theft</title>
+      <link>https://llm-threatintel.com/posts/2026-05-05-lmdeploy-ssrf-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-05-lmdeploy-ssrf-exploitation.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <description>A high-severity security flaw in LMDeploy, an open-source toolkit for compressing, deploying, and serving large language models (LLMs), has come under active exploitation in the wild less than 13 hours after its public disclosure; the vulnerability, tracked as CVE-2026-33626 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy; within 12 hours and 31 minutes of its publication on the main GitHub advisory page, the Sysdig Threat Research Team (TRT) observed the first LMDeploy exploitation attempt against their honeypot fleet.</description>
+    </item>    <item>
+      <title>CVE-2026-42208 LiteLLM SQL Injection Actively Exploited: Attackers Target Credential Storage Within 26 Hours of Disclosure</title>
+      <link>https://llm-threatintel.com/posts/2026-05-05-litellm-sql-injection-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-05-litellm-sql-injection-exploitation.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection in LiteLLM proxy database during API key verification; the database query mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. While the vulnerability was addressed in version 1.83.7-stable released on April 19, 2026, the first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The attacker targeted database tables like 'litellm_credentials.credential_values' and 'litellm_config' that hold information related to upstream large language model provider keys; the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.</description>
+    </item>    <item>
+      <title>OpenClaw CVE-2026-41358: Origin Validation Bypass Enables Prompt Injection and Context Poisoning via Slack Integration</title>
+      <link>https://llm-threatintel.com/posts/2026-05-05-openclaw-slack-prompt-injection-context-poisoning.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-05-openclaw-slack-prompt-injection-context-poisoning.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <description>An origin validation vulnerability (CWE-346) exists within the OpenClaw AI assistant's Slack integration prior to version 2026.4.2; the platform fails to independently verify the sender of historical thread messages against configured allowlists, enabling unauthorized users to inject malicious instructions into the LLM context when an authorized user triggers the agent, facilitating prompt injection and context poisoning attacks. Successful exploitation results in unauthorized manipulation where attackers can manipulate the agent's behavior, extract sensitive information intended for authorized users, or alter the assistant's persona.</description>
+    </item>    <item>
       <title>CVE-2026-42208: LiteLLM Pre-Auth SQL Injection Actively Exploited Within 26 Hours of Disclosure; Attackers Target Credential Storage</title>
       <link>https://llm-threatintel.com/posts/2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</guid>
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
       <description>Trend Micro's Zero Day Initiative has identified a vulnerability affecting FlowiseAI Flowise. This vulnerability allows remote attackers to execute arbitrary code on affected installations of FlowiseAI Flowise. Authentication is not required to exploit this vulnerability. The specific flaw exists within the run method of the CSV_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM-generated Python script. An attacker can leverage this vulnerability to execute code in the context of the user running the server.</description>
-    </item>    <item>
-      <title>CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access</title>
-      <link>https://llm-threatintel.com/posts/2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation.html</guid>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy. LMDeploy is a toolkit for serving vision-language and text large language models (LLMs). CVE-2026-33626 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration.</description>
-    </item>    <item>
-      <title>Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069</title>
-      <link>https://llm-threatintel.com/posts/2026-04-23-axios-npm-supply-chain-unc1069-rat-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-23-axios-npm-supply-chain-unc1069-rat-2026.html</guid>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On March 30, 2026, Elastic Security Labs detected a supply chain compromise targeting the axios npm package through automated supply-chain monitoring. The attacker gained control of the npm account belonging to jasonsaayman, one of the project's primary maintainers, and published two backdoored versions within a 39-minute window. The axios package is one of the most widely depended-upon HTTP client libraries in the JavaScript ecosystem. At the time of discovery, both the latest and legacy dist-tags pointed to compromised versions, ensuring that the majority of fresh installations pulled a backdoored release.</description>
-    </item>    <item>
-      <title>Fake Claude AI Installer Campaign Distributes PlugX Malware via Phishing</title>
-      <link>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-22-fake-claude-installer-plugx-malware.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Fake Claude AI installer mimicking Anthropic spreads PlugX malware on Windows, using DLL sideloading to gain persistent remote access to infected systems. Cybersecurity experts from Malwarebytes found a malicious campaign where scammers use the popularity of Anthropic's AI tool Claude to spread malware. Hackers made a fake website that looks just like the official one from Anthropic and offers a Pro version of the tool for Windows to lure people into downloading a malicious file.</description>
     </item>
   </channel>
 </rss>

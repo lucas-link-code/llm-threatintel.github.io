@@ -1,6 +1,43 @@
 {
   "posts": [
     {
+      "id": "2026-05-05-lmdeploy-ssrf-exploitation",
+      "title": "CVE-2026-33626 LMDeploy SSRF Exploited Within 13 Hours: Attackers Weaponize AI-Generated Exploits for Cloud Metadata Theft",
+      "date": "2026-05-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A high-severity security flaw in LMDeploy, an open-source toolkit for compressing, deploying, and serving large language models (LLMs), has come under active exploitation in the wild less than 13 hours after its public disclosure; the vulnerability, tracked as CVE-2026-33626 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy; within 12 hours and 31 minutes of its publication on the main GitHub advisory page, the Sysdig Threat Research Team (TRT) observed the first LMDeploy exploitation attempt against their honeypot fleet.",
+      "file": "2026-05-05-lmdeploy-ssrf-exploitation.md"
+    },
+    {
+      "id": "2026-05-05-litellm-sql-injection-exploitation",
+      "title": "CVE-2026-42208 LiteLLM SQL Injection Actively Exploited: Attackers Target Credential Storage Within 26 Hours of Disclosure",
+      "date": "2026-05-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-42208 (CVSS score: 9.3) is an SQL injection in LiteLLM proxy database during API key verification; the database query mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. While the vulnerability was addressed in version 1.83.7-stable released on April 19, 2026, the first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The attacker targeted database tables like 'litellm_credentials.credential_values' and 'litellm_config' that hold information related to upstream large language model provider keys; the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.",
+      "file": "2026-05-05-litellm-sql-injection-exploitation.md"
+    },
+    {
+      "id": "2026-05-05-openclaw-slack-prompt-injection-context-poisoning",
+      "title": "OpenClaw CVE-2026-41358: Origin Validation Bypass Enables Prompt Injection and Context Poisoning via Slack Integration",
+      "date": "2026-05-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An origin validation vulnerability (CWE-346) exists within the OpenClaw AI assistant's Slack integration prior to version 2026.4.2; the platform fails to independently verify the sender of historical thread messages against configured allowlists, enabling unauthorized users to inject malicious instructions into the LLM context when an authorized user triggers the agent, facilitating prompt injection and context poisoning attacks. Successful exploitation results in unauthorized manipulation where attackers can manipulate the agent's behavior, extract sensitive information intended for authorized users, or alter the assistant's persona.",
+      "file": "2026-05-05-openclaw-slack-prompt-injection-context-poisoning.md"
+    },
+    {
       "id": "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation",
       "title": "CVE-2026-42208: LiteLLM Pre-Auth SQL Injection Actively Exploited Within 26 Hours of Disclosure; Attackers Target Credential Storage",
       "date": "2026-05-02",
@@ -17,7 +54,10 @@
       "title": "Mini Shai-Hulud Worm Pivots to AI Coding Agents: TeamPCP Compromises SAP CAP, mbt, intercom-client, and PyTorch Lightning to Plant Claude Code SessionStart Hooks",
       "date": "2026-05-01",
       "author": "LLM ThreatIntel",
-      "tags": ["supply-chain", "malware"],
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Between April 29 and 30, 2026, threat actor TeamPCP conducted a coordinated supply chain operation dubbed Mini Shai-Hulud that hijacked four SAP-related npm packages (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2), the intercom-client 7.0.4 SDK, and PyTorch Lightning 2.6.2/2.6.3 on PyPI. Beyond stealing GitHub, npm, AWS, Azure, GCP, and Kubernetes secrets, the worm commits a .claude/settings.json SessionStart hook and a .vscode/tasks.json runOn folderOpen entry into every accessible repository, turning AI coding agent configurations themselves into a self-propagating persistence channel.",
       "file": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.md"
@@ -27,7 +67,10 @@
       "title": "@bitwarden/cli 2026.4.0 Trojanized: TeamPCP Worm Steals AI Coding Assistant Credentials From Claude Code, Cursor, Aider, Kiro, Codex CLI, and Gemini CLI",
       "date": "2026-05-01",
       "author": "LLM ThreatIntel",
-      "tags": ["supply-chain", "malware"],
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "On April 22, 2026, between 17:57 and 19:30 ET, TeamPCP published a malicious @bitwarden/cli 2026.4.0 release on npm after pivoting from a prior compromise of Bitwarden's GitHub Actions CI/CD pipeline tied to the Checkmarx supply chain incident. The 10 MB bw1.js payload harvested GitHub and npm tokens, SSH keys, environment variables, shell history, and cloud credentials, and explicitly enumerated authenticated AI coding assistant configurations for Claude Code, Cursor, Aider, Kiro, Codex CLI, and Gemini CLI before exfiltrating to the audit.checkmarx.cx telemetry endpoint reused from the Checkmarx breach.",
       "file": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft.md"
@@ -37,7 +80,10 @@
       "title": "CVE-2026-39987: Marimo Pre-Auth RCE Weaponized to Drop NKAbuse Blockchain Backdoor From Hugging Face Spaces",
       "date": "2026-05-01",
       "author": "LLM ThreatIntel",
-      "tags": ["malicious-tool", "malware"],
+      "tags": [
+        "malicious-tool",
+        "malware"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "CVE-2026-39987, a CVSS 9.3 unauthenticated RCE flaw in Marimo Python notebook's /terminal/ws WebSocket endpoint, was disclosed on April 8, 2026 and exploited within 10 hours. Sysdig reported on April 16, 2026 that 11 unique source IPs from 10 countries generated 662 exploit events between April 11 and 14, including a campaign that delivered an undocumented variant of the NKN-blockchain-based NKAbuse Go backdoor (kagent) hosted on the typosquatted Hugging Face Space vsccode-modetx. Defenders running Marimo must upgrade to 0.23.0 or later immediately.",
       "file": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.md"
