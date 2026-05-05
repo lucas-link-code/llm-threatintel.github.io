@@ -1,7 +1,7 @@
 # Bissa Scanner: AI-Assisted CVE-2025-55182 Mass Exploitation Harvests 30,000+ .env Files and AI Provider Credentials Across 900 Organizations
 
 **Date:** 2026-05-05
-**Tags:** Malware, LLMjacking, Supply Chain, Phishing
+**Tags:** malware, llmjacking, supply-chain, Phishing
 
 ## Executive Summary
 
