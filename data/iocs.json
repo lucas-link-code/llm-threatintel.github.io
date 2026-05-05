@@ -1,6 +1,24 @@
 {
-  "last_updated": "2026-05-02",
+  "last_updated": "2026-05-05",
   "iocs": [
+    {
+      "value": "s3.filebase.com/bissapromax/archives/",
+      "type": "url_path",
+      "context": "Bissa Scanner exfiltration endpoint; .env ZIP archives uploaded here from all compromised hosts",
+      "first_seen": "2026-04-10",
+      "source": "The DFIR Report",
+      "campaign": "bissa-scanner-react2shell-ai-credential-harvest",
+      "status": "active"
+    },
+    {
+      "value": "cs2.ip.thc.org",
+      "type": "domain",
+      "context": "Bissa Scanner target feed infrastructure; operator downloaded CVE-2025-55182 target ZIP archives from this host",
+      "first_seen": "2026-04-10",
+      "source": "The DFIR Report",
+      "campaign": "bissa-scanner-react2shell-ai-credential-harvest",
+      "status": "active"
+    },
     {
       "value": "4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34",
       "type": "sha256",

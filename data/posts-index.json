@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest",
+      "title": "Bissa Scanner: AI-Assisted CVE-2025-55182 Mass Exploitation Harvests 30,000+ .env Files and AI Provider Credentials Across 900 Organizations",
+      "date": "2026-05-05",
+      "author": "LLM ThreatIntel",
+      "tags": ["Malware", "LLMjacking", "Supply Chain"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The DFIR Report disclosed on April 22, 2026, that an exposed attacker server revealed a large-scale AI-assisted exploitation operation, dubbed Bissa Scanner, that weaponized CVE-2025-55182 (React2Shell, CVSS 10.0) to scan millions of targets, confirm 900+ successful compromises, and exfiltrate over 30,000 .env files spanning April 10–21, 2026. The operator embedded Claude Code and OpenClaw AI agents directly into the attack pipeline for codebase analysis, troubleshooting, and workflow orchestration, and AI provider credentials—keys for Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace—were the single largest credential category stolen.",
+      "file": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.md"
+    },
+    {
       "id": "2026-05-05-lmdeploy-ssrf-exploitation",
       "title": "CVE-2026-33626 LMDeploy SSRF Exploited Within 13 Hours: Attackers Weaponize AI-Generated Exploits for Cloud Metadata Theft",
       "date": "2026-05-05",

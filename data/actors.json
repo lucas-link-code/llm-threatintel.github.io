@@ -2,6 +2,38 @@
   "last_updated": "2026-05-05",
   "entries": [
     {
+      "id": "bissa-scanner",
+      "names": [
+        "Bissa Scanner",
+        "bissapwned",
+        "bissa_scan_bot"
+      ],
+      "type": "malware",
+      "first_seen": "2025-09",
+      "status": "active",
+      "distribution": [
+        "Internet-wide scanning for CVE-2025-55182 (React2Shell) React 19.x / Next.js 15.x–16.x endpoints",
+        "THC target feed infrastructure (cs2.ip.thc.org ZIP archives)",
+        "Filebase S3-compatible object storage (bucket: bissapromax) for .env archive exfiltration",
+        "Telegram bots (@bissapwned_bot, @bissa_scan_bot) for real-time triage C2"
+      ],
+      "ttps": [
+        "T1595.002 - Active Scanning: Vulnerability Scanning",
+        "T1190 - Exploit Public-Facing Application (CVE-2025-55182 React2Shell CVSS 10.0)",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript",
+        "T1083 - File and Directory Discovery",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1530 - Data from Cloud Storage Object (AWS IMDS, GCP metadata, K8s service account tokens)",
+        "T1041 - Exfiltration Over C2 Channel (Telegram bot)",
+        "T1537 - Transfer Data to Cloud Account (Filebase S3)",
+        "T1588.005 - Obtain Capabilities: Exploits",
+        "T1496 - Resource Hijacking (AI API credential theft for LLMjacking)",
+        "T1119 - Automated Collection"
+      ],
+      "description": "Bissa Scanner is an AI-assisted credential harvesting operation that mass-exploited CVE-2025-55182 (React2Shell, CVSS 10.0) against React 19.x and Next.js 15.x/16.x App Router deployments. Discovered via an exposed attacker server by The DFIR Report on April 22, 2026. The operation ran in phases: bucket 'bissa' (September 2025), 'bissa2' (November 2025), and 'bissapromax' (December 2025 onward). The April 2026 campaign confirmed 900+ compromises and exfiltrated 30,000+ .env files between April 10–21, 2026. AI provider credentials were the single largest category stolen, covering Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace. The operator embedded Claude Code and OpenClaw in the attack workflow for scanner codebase analysis, pipeline troubleshooting, and workflow documentation. Telegram bot @bissapwned_bot (user ID 8798206332, chat 1609309278) provided real-time per-compromise triage records. Post-exploitation triage concentrated deeper activity on financial, cryptocurrency, and retail sectors.",
+      "attribution": "Unattributed; moniker 'bissapwned'; no nation-state attribution (confidence: none)"
+    },
+    {
       "id": "marimo-nkabuse-vsccode-modetx",
       "names": [
         "NKAbuse kagent operators",
