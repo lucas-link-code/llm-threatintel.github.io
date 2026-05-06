@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions | LLM ThreatIntel</title>
+  <meta name="description" content="Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions">
+  <meta property="og:description" content="Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions">
+  <meta property="article:published_time" content="2026-05-06T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-06T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="shadow-ai">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions">
+  <meta name="twitter:description" content="Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection \u2192 Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
+  "description": "Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.",
+  "datePublished": "2026-05-06T00:00:00Z",
+  "dateModified": "2026-05-06T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html",
+  "keywords": [
+    "malicious-tool",
+    "shadow-ai"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-06</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-shadow-ai">Shadow AI</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions</h1>
+<p><strong>Date:</strong> 2026-05-06<br><strong>Tags:</strong> malicious-tool, shadow-ai</p>
+<h2>Executive Summary</h2>
+<p>Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Claudy Day</td></tr><tr><td>Attribution</td><td>Unknown/Opportunistic attacker demonstration (confidence: none)</td></tr><tr><td>Target</td><td>Claude.ai users (individuals, enterprises with sensitive conversations, MCP integrations)</td></tr><tr><td>Vector</td><td>Google Search ads displaying legitimate claude.com URL that redirect via open redirect flaw to malicious injection URL; invisible HTML tags in URL parameters; Files API exfiltration using embedded attacker API key</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-03-18 (initial disclosure); 2026-05-01 (updated comprehensive analysis)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Prompt injection occurs when an attacker embeds hidden instructions inside input that an AI agent processes. In the Claudy Day case, invisible HTML tags were embedded in a URL parameter that pre-fills the Claude.ai chat box. The user sees a normal prompt, but when they press Enter, Claude also executes the hidden instructions. Three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline: from targeted victim delivery, to invisible prompt manipulation, to silent exfiltration of sensitive data from the user&#x27;s conversation history. No integrations, no tools, no MCP servers required. The attack works against a default, out-of-the-box claude.ai session. In a default Claude.ai session, an attacker can access conversation history and memory, which may include business strategy, financial information, health concerns, personal details, and any other sensitive topics discussed with the assistant. With MCP servers or enterprise integrations enabled, the attacker can also read files, send messages, and interact with connected services. One real-world example: the Claudy Day researchers embedded an attacker-controlled API key in the hidden prompt, instructing Claude to search the user&#x27;s conversation history, write it to a file, and upload it to the attacker&#x27;s Anthropic account via the Files API. The exfiltration used a permitted endpoint (api.anthropic.com), making it invisible to network-level controls.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Prompt Injection</td><td>T1595</td><td>Hidden instructions embedded in URL parameters using HTML tags invisible to user but processed by Claude</td></tr><tr><td>Phishing</td><td>T1566</td><td>Google Ads used to deliver malicious redirect URL appearing as legitimate claude.com search result</td></tr><tr><td>Web Session Cookie</td><td>T1185</td><td>Exploitation of implicit trust in claude.ai conversation context and memory</td></tr><tr><td>Data from Cloud Storage Object</td><td>T1526</td><td>Exfiltration of conversation history via Anthropic Files API using embedded attacker API credentials</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No persistent IOCs; attack relies on crafted URLs distributed via Google Ads. Researchers used proof-of-concept injection payloads; no active exploitation URLs public at time of analysis._</p>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)
+claude.com/redirect/ (open redirect flaw, any URL parameter)
+api.anthropic.com/v1/files (Files API used for exfiltration)</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)&quot; OR &quot;claude.com/redirect/ (open redirect flaw, any URL parameter)&quot; OR &quot;api.anthropic.com/v1/files (Files API used for exfiltration)&quot;</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Implement strict input validation and HTML entity escaping on all URL parameters that feed into LLM context, especially pre-filled prompt parameters. Disable or heavily restrict open redirect functionality on authentication/platform domains. Monitor for anomalous Files API usage patterns: legitimate users rarely upload data to Anthropic cloud in bulk; detector should flag multiple file uploads within short windows or uploads containing conversation history. For enterprise deployments: restrict Claude.ai access via conditional access policies blocking high-risk delivery vectors (public cloud, external networks); require explicit user confirmation before Claude executes sensitive actions (file uploads, external API calls, conversation history access) even if instructed by embedded prompts. Educate users to treat AI chat links as untrusted URLs and avoid clicking pre-filled prompt links from external sources (ads, emails, unfamiliar websites). Implement LLM-aware DLP rules that detect text exfiltration patterns even when embedded in seemingly benign API calls. Monitor Google Search ads for suspicious ad content mimicking legitimate AI platform URLs.</p>
+<h2>References</h2>
+<ul><li>[Oasis Security] Claude.ai Prompt Injection Vulnerability | Claudy Day (2026-05-01) — https://www.oasis.security/blog/claude-ai-prompt-injection-data-exfiltration-vulnerability</li><li>[Dark Reading] &#x27;Claudy Day&#x27; Trio of Flaws Exposes Claude Users to Data Theft (2026-03-18) — https://www.darkreading.com/vulnerabilities-threats/claudy-day-trio-flaws-claude-users-data-theft</li><li>[Cybersecurity Dive (via TrueFairy)] Prompt Injection and AI Agent Security Risks: A Claude Code Guide for Enterprise Teams (2026-04-01) — https://www.truefoundry.com/blog/claude-code-prompt-injection</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

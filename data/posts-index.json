@@ -1,11 +1,42 @@
 {
   "posts": [
     {
+      "id": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai",
+      "title": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
+      "date": "2026-05-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.",
+      "file": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.md"
+    },
+    {
+      "id": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain",
+      "title": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "date": "2026-05-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "nation-state",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ReversingLabs attributes PromptMink to Famous Chollima, a North Korean state-sponsored threat group also linked to the \"graphalgo\" campaign targeting crypto developers. Claude Opus co-authored a Feb. 28, 2026, commit to the openpaw-graveyard crypto trading agent. The commit added @solana-launchpad/sdk as a dependency, which silently pulled in @validate-sdk/v2 — the malicious payload package. This marks the first documented instance of AI coding agents being weaponized to install malicious dependencies in autonomous workflows via LLM optimization abuse.",
+      "file": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.md"
+    },
+    {
       "id": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest",
       "title": "Bissa Scanner: AI-Assisted CVE-2025-55182 Mass Exploitation Harvests 30,000+ .env Files and AI Provider Credentials Across 900 Organizations",
       "date": "2026-05-05",
       "author": "LLM ThreatIntel",
-      "tags": ["malware", "llmjacking", "supply-chain"],
+      "tags": [
+        "malware",
+        "llmjacking",
+        "supply-chain"
+      ],
       "tlp": "TLP:CLEAR",
       "excerpt": "The DFIR Report disclosed on April 22, 2026, that an exposed attacker server revealed a large-scale AI-assisted exploitation operation, dubbed Bissa Scanner, that weaponized CVE-2025-55182 (React2Shell, CVSS 10.0) to scan millions of targets, confirm 900+ successful compromises, and exfiltrate over 30,000 .env files spanning April 10–21, 2026. The operator embedded Claude Code and OpenClaw AI agents directly into the attack pipeline for codebase analysis, troubleshooting, and workflow orchestration, and AI provider credentials—keys for Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace—were the single largest credential category stolen.",
       "file": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.md"

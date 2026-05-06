@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 05 May 2026 06:09:25 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2026 06:24:07 +0000</lastBuildDate>
     <item>
+      <title>Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions</title>
+      <link>https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <description>Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.</description>
+    </item>    <item>
+      <title>PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies</title>
+      <link>https://llm-threatintel.com/posts/2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <description>ReversingLabs attributes PromptMink to Famous Chollima, a North Korean state-sponsored threat group also linked to the "graphalgo" campaign targeting crypto developers. Claude Opus co-authored a Feb. 28, 2026, commit to the openpaw-graveyard crypto trading agent. The commit added @solana-launchpad/sdk as a dependency, which silently pulled in @validate-sdk/v2 — the malicious payload package. This marks the first documented instance of AI coding agents being weaponized to install malicious dependencies in autonomous workflows via LLM optimization abuse.</description>
+    </item>    <item>
+      <title>Bissa Scanner: AI-Assisted CVE-2025-55182 Mass Exploitation Harvests 30,000+ .env Files and AI Provider Credentials Across 900 Organizations</title>
+      <link>https://llm-threatintel.com/posts/2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.html</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <description>The DFIR Report disclosed on April 22, 2026, that an exposed attacker server revealed a large-scale AI-assisted exploitation operation, dubbed Bissa Scanner, that weaponized CVE-2025-55182 (React2Shell, CVSS 10.0) to scan millions of targets, confirm 900+ successful compromises, and exfiltrate over 30,000 .env files spanning April 10–21, 2026. The operator embedded Claude Code and OpenClaw AI agents directly into the attack pipeline for codebase analysis, troubleshooting, and workflow orchestration, and AI provider credentials—keys for Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace—were the single largest credential category stolen.</description>
+    </item>    <item>
       <title>CVE-2026-33626 LMDeploy SSRF Exploited Within 13 Hours: Attackers Weaponize AI-Generated Exploits for Cloud Metadata Theft</title>
       <link>https://llm-threatintel.com/posts/2026-05-05-lmdeploy-ssrf-exploitation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-05-lmdeploy-ssrf-exploitation.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</guid>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
       <description>OpenClaw before 2026.3.28 contains an agentic consent bypass vulnerability allowing LLM agents to silently disable execution approval via config.patch parameter. Remote attackers can exploit this to bypass security controls and execute unauthorized operations without user consent. CVE-2026-41349 is a High severity vulnerability (CVSS 8.8). This represents a critical architectural weakness in agentic AI systems where approval controls can be circumvented by malicious prompts or compromised configurations.</description>
-    </item>    <item>
-      <title>CanisterSprawl: TeamPCP npm Supply Chain Campaign Targeting LLM Platforms with 22 Compromised Packages</title>
-      <link>https://llm-threatintel.com/posts/2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.html</guid>
-      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <description>The CanisterWorm campaign, first reported on March 20, 2026, affected 141 packages between March 20 and 23, according to Socket's research. The attack wave affecting Namastex, which Socket now tracks as "CanisterSprawl," has affected a total of 22 packages since April 8. Namastex's Automagik Genie is a command line interface (CLI) for using AI coding agents to create pull requests and pgserve is an embedded PostgreSQL server; the packages had about 8,000 weekly downloads combined as of April 21, 2026. The malicious postinstall script harvests secrets from the victim's environment by searching environment variables for names associated with tokens, credentials, cloud providers, CI/CD systems, registries, LLM platforms and other secrets. It also targets sensitive local system files including .npmrc, .git-credentials, .netrc, .env files, database password files, and files storing SSH keys and cloud credentials, as well as artifacts from browsers and cryptocurrency wallets.</description>
-    </item>    <item>
-      <title>CVE-2026-33626: LMDeploy SSRF Exploited Within 12 Hours of Disclosure for Cloud Metadata Access</title>
-      <link>https://llm-threatintel.com/posts/2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation.html</guid>
-      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <description>On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy. Within 12 hours and 31 minutes of its publication on the main GitHub advisory page, the Sysdig Threat Research Team (TRT) observed the first LMDeploy exploitation attempt against our honeypot fleet. The attacker used the vision-language image loader as a generic HTTP SSRF primitive to port-scan the internal network behind the model server: AWS Instance Metadata Service (IMDS), Redis, MySQL, a secondary HTTP administrative interface, and an out-of-band (OOB) DNS exfiltration endpoint.</description>
-    </item>    <item>
-      <title>Flowise CVE-2026-41264: Unauthenticated CSV Agent Prompt Injection RCE via LLM Script Evaluation</title>
-      <link>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-23-flowise-cve-2026-41264-csv-agent-rce.html</guid>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Trend Micro's Zero Day Initiative has identified a vulnerability affecting FlowiseAI Flowise. This vulnerability allows remote attackers to execute arbitrary code on affected installations of FlowiseAI Flowise. Authentication is not required to exploit this vulnerability. The specific flaw exists within the run method of the CSV_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM-generated Python script. An attacker can leverage this vulnerability to execute code in the context of the user running the server.</description>
     </item>
   </channel>
 </rss>

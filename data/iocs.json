@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-05",
+  "last_updated": "2026-05-06",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1025,6 +1025,105 @@
       "first_seen": "2026-05-02",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sqli-active-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
+      "type": "url_path",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "@solana-launchpad/sdk (bait package, no malicious code)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "@validate-sdk/v2 (payload, infostealer)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "@hash-validator/v2 (early variant, JavaScript infostealer)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "aes-create-ipheriv (rotated payload)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "jito-proper-excutor (rotated payload)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "jito-sub-aes-ipheriv (rotated payload)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "scraper-npm (PyPI variant, February 2026)",
+      "type": "package",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "first_seen": "2026-05-06",
+      "source": "ReversingLabs",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
+      "status": "active"
+    },
+    {
+      "value": "claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)",
+      "type": "url_path",
+      "context": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
+      "first_seen": "2026-05-06",
+      "source": "Oasis Security",
+      "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
+      "status": "active"
+    },
+    {
+      "value": "claude.com/redirect/ (open redirect flaw, any URL parameter)",
+      "type": "url_path",
+      "context": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
+      "first_seen": "2026-05-06",
+      "source": "Oasis Security",
+      "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
+      "status": "active"
+    },
+    {
+      "value": "api.anthropic.com/v1/files (Files API used for exfiltration)",
+      "type": "url_path",
+      "context": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
+      "first_seen": "2026-05-06",
+      "source": "Oasis Security",
+      "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
       "status": "active"
     }
   ]

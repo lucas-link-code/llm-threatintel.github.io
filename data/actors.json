@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-05",
+  "last_updated": "2026-05-06",
   "entries": [
     {
       "id": "bissa-scanner",
@@ -1257,6 +1257,49 @@
       ],
       "description": "The MCP STDIO transport mechanism allows configuration of arbitrary commands and arguments without a manifest allowlist or command sanitization. Any developer using the official Anthropic SDK unknowingly inherits this exposure. OX Security researchers demonstrated successful poisoning of 9/11 public MCP registries with proof-of-concept payloads; production exploitation likely underway.",
       "attribution": "Architectural design decision; not exploited by specific threat actor; vulnerability class affects all implementations"
+    },
+    {
+      "id": "famous-chollima",
+      "names": [
+        "Famous Chollima",
+        "Shifty Corsair"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "npm registry",
+        "PyPI"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1195.001 - Compromise Software Dependencies",
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1078 - Valid Accounts (use of legitimate developer/AI agent workflows)",
+        "T1583.001 - Acquire Infrastructure (Vercel for exfiltration)"
+      ],
+      "description": "Famous Chollima is a North Korean APT group tasked with generating funds for the regime by targeting cryptocurrency and fintech developers. The group has evolved attack techniques from traditional phishing (Contagious Interview campaign with fake job interviews) to supply chain poisoning with LLM-generated code and LLM optimization abuse. The use of detailed README files and well-commented code to appeal to both human developers AND AI coding agents represents a significant tactical shift in supply chain attacks. The group leverages generative AI tools to write the malicious payloads themselves, creating 'vibe-coded' malware with AI artifacts (comments, emojis) visible in source.",
+      "attribution": "North Korea (DPRK) state-sponsored; linked to funding generation for regime"
+    },
+    {
+      "id": "unknown-opportunistic-attacker",
+      "names": [
+        "Unknown / Opportunistic Attacker"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Google Ads platform"
+      ],
+      "ttps": [
+        "T1595 - Prompt Injection / Indirect Prompt Injection",
+        "T1566.002 - Phishing: Spearphishing Link (via Google Ads)",
+        "T1538 - Cloud Service Abuse (Files API abuse)",
+        "T1530 - Data from Cloud Storage Object"
+      ],
+      "description": "The Claudy Day attack chain represents a novel weaponization of prompt injection against default Claude.ai sessions. Unlike traditional malware or phishing requiring explicit user action (opening attachment, running executable), this attack exploits the implicit trust users place in AI assistants to follow instructions embedded in conversation context. The use of Google Ads to deliver the attack vector, combined with the open redirect flaw and invisible HTML tag injection, creates a near-zero-friction attack path. The technique is generalizable to any LLM platform with URL-based session initialization and pre-filled prompt features. Attack scale depends on Google Ads targeting granularity and attacker budget; Oasis researchers note Google Ads supports demographic, industry, and specific email address targeting via Customer Match.",
+      "attribution": "Unattributed; vulnerability class research demonstration"
     }
   ]
 }
