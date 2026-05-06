@@ -654,7 +654,7 @@ const App = {
         <div class="stat-card" onclick="window.location.hash='#ioc-feed'"><div class="stat-value">${this.iocsData ? this.iocsData.iocs.length : 0}</div><div class="stat-label">Total IOCs</div></div>
       </div>
       <h1 class="page-title"><span class="title-accent">//</span> Latest Intelligence</h1>
-      <p class="page-subtitle">Automated GenAI and LLM threat intelligence feed for defenders</p>
+      <p class="page-subtitle">GenAI and LLM threat intelligence feed for defenders</p>
       <div class="filter-bar-wrap">
         <div class="filter-bar" role="group" aria-label="Post category filters" aria-controls="posts-grid">
           <button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" data-filter="all">All</button>
