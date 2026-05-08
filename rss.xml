@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 06 May 2026 06:24:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 05:32:58 +0000</lastBuildDate>
     <item>
+      <title>Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <description>The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they've ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.</description>
+    </item>    <item>
+      <title>Claude Code and GPT Used to Execute Large-Scale Autonomous Cyberattack on Mexican Water Utility and Government Agencies</title>
+      <link>https://llm-threatintel.com/posts/2026-05-08-claude-code-autonomous-attack-mexico-water.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-08-claude-code-autonomous-attack-mexico-water.html</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <description>Dragos published a report describing how threat actors used Claude AI in an attack on a water and drainage utility in Mexico as part of a broader campaign targeting multiple Mexican government organizations between December 2025 and February 2026, with Anthropic's Claude and OpenAI's GPT models serving as an AI-assisted operational engine where Claude served as the primary technical workhorse, handling intrusion planning, tool development, and problem-solving, while GPT handled victim data processing and structured reporting. The threat actor—assessed with high confidence as a Chinese state-sponsored group—manipulated Claude Code tool into attempting infiltration into roughly thirty global targets and succeeded in a small number of cases, believed to be the first documented case of a large-scale cyberattack executed without substantial human intervention, with barriers to performing sophisticated cyberattacks dropping substantially enabling threat actors to now use agentic AI systems for extended periods to do the work of entire teams of experienced hackers: analyzing target systems, producing exploit code, and scanning vast datasets of stolen information more efficiently than any human operator.</description>
+    </item>    <item>
+      <title>Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection</title>
+      <link>https://llm-threatintel.com/posts/2026-05-08-anthropic-mcp-stdio-rce-design-flaw.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-08-anthropic-mcp-stdio-rce-design-flaw.html</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <description>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol affecting 150M+ downloads and baked into official MCP SDKs across every supported programming language, with the vulnerability rippling through a supply chain with 7,000+ publicly accessible servers and up to 200,000 vulnerable instances in total. The systemic vulnerability enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories, and is baked into Anthropic's official MCP software development kit (SDK) across any supported language, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</description>
+    </item>    <item>
       <title>Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions</title>
       <link>https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</guid>
       <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
       <description>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol: Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction, allowing remote attackers to execute arbitrary commands via prompt injection. The vulnerability ripples through 150M+ downloads and up to 200,000 vulnerable instances across Cursor, VS Code, Claude Code, and Gemini-CLI.</description>
-    </item>    <item>
-      <title>LMDeploy CVE-2026-33626 SSRF Exploited Within 12 Hours for Cloud Metadata Access</title>
-      <link>https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.html</guid>
-      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-33626, a Server-Side Request Forgery vulnerability in LMDeploy published on April 21, 2026, was exploited within 12 hours and 31 minutes of publication, with the Sysdig Threat Research Team observing the first LMDeploy exploitation attempt against their honeypot fleet. Attackers used the vision-language image loader as an SSRF primitive to enumerate internal infrastructure and access cloud metadata credentials.</description>
-    </item>    <item>
-      <title>Xinference PyPI Poisoning: Self-Propagating Credential Stealer via TeamPCP Supply Chain Campaign</title>
-      <link>https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-25-xinference-teampcp-self-propagating-stealer.html</guid>
-      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Versions 2.6.0, 2.6.1, and 2.6.2 of the legitimate Python package xinference were compromised to include a Base64-encoded payload that fetches a second-stage collector module responsible for harvesting a wide range of credentials and secrets from the infected host, with the decoded payload opening with the comment '# hacked by teampcp'. This represents escalation of the TeamPCP campaign beyond single-shot credential theft to include self-propagating PyPI upload capability.</description>
-    </item>    <item>
-      <title>CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval</title>
-      <link>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.html</guid>
-      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <description>OpenClaw before 2026.3.28 contains an agentic consent bypass vulnerability allowing LLM agents to silently disable execution approval via config.patch parameter. Remote attackers can exploit this to bypass security controls and execute unauthorized operations without user consent. CVE-2026-41349 is a High severity vulnerability (CVSS 8.8). This represents a critical architectural weakness in agentic AI systems where approval controls can be circumvented by malicious prompts or compromised configurations.</description>
     </item>
   </channel>
 </rss>

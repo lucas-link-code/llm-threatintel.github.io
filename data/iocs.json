@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-08",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1124,6 +1124,69 @@
       "first_seen": "2026-05-06",
       "source": "Oasis Security",
       "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
+      "status": "active"
+    },
+    {
+      "value": "langflow (all versions)",
+      "type": "package",
+      "context": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
+      "first_seen": "2026-05-08",
+      "source": "OX Security Blog",
+      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
+      "status": "active"
+    },
+    {
+      "value": "gpt-researcher",
+      "type": "package",
+      "context": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
+      "first_seen": "2026-05-08",
+      "source": "OX Security Blog",
+      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
+      "status": "active"
+    },
+    {
+      "value": "upsonic",
+      "type": "package",
+      "context": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
+      "first_seen": "2026-05-08",
+      "source": "OX Security Blog",
+      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
+      "status": "active"
+    },
+    {
+      "value": "n8n",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
+      "first_seen": "2026-05-08",
+      "source": "The Hacker News",
+      "campaign": "million-exposed-ai-services-security-assessment",
+      "status": "active"
+    },
+    {
+      "value": "Flowise",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
+      "first_seen": "2026-05-08",
+      "source": "The Hacker News",
+      "campaign": "million-exposed-ai-services-security-assessment",
+      "status": "active"
+    },
+    {
+      "value": "LangFlow",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
+      "first_seen": "2026-05-08",
+      "source": "The Hacker News",
+      "campaign": "million-exposed-ai-services-security-assessment",
+      "status": "active"
+    },
+    {
+      "value": "OpenUI",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
+      "first_seen": "2026-05-08",
+      "source": "The Hacker News",
+      "campaign": "million-exposed-ai-services-security-assessment",
       "status": "active"
     }
   ]

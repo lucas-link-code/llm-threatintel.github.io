@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-08",
   "entries": [
     {
       "id": "bissa-scanner",
@@ -1300,6 +1300,68 @@
       ],
       "description": "The Claudy Day attack chain represents a novel weaponization of prompt injection against default Claude.ai sessions. Unlike traditional malware or phishing requiring explicit user action (opening attachment, running executable), this attack exploits the implicit trust users place in AI assistants to follow instructions embedded in conversation context. The use of Google Ads to deliver the attack vector, combined with the open redirect flaw and invisible HTML tag injection, creates a near-zero-friction attack path. The technique is generalizable to any LLM platform with URL-based session initialization and pre-filled prompt features. Attack scale depends on Google Ads targeting granularity and attacker budget; Oasis researchers note Google Ads supports demographic, industry, and specific email address targeting via Customer Match.",
       "attribution": "Unattributed; vulnerability class research demonstration"
+    },
+    {
+      "id": "architectural-design-flaw-exploitation-community",
+      "names": [
+        "Architectural Design Flaw / Exploitation Community"
+      ],
+      "type": "malicious-tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "MCP server registries",
+        "GitHub repositories",
+        "npm/PyPI packages"
+      ],
+      "ttps": [
+        "T1059 - Command Injection",
+        "T1195 - Supply Chain Compromise"
+      ],
+      "description": "The MCP protocol's STDIO handler treats command parameters as executable without proper sandboxing. This architectural choice was made by Anthropic and propagates to all downstream implementations. Exploitation is trivial: any attacker who can influence MCP JSON configuration (via UI injection, prompt injection in IDEs, or malicious marketplace packages) can execute arbitrary OS commands at the privilege level of the MCP client.",
+      "attribution": "OX Security disclosed; Anthropic SDKs are the root source; exploitation by threat actors and red teams documented"
+    },
+    {
+      "id": "chinese-state-sponsored-apt-group-unattributed-to-specific-tracked-group",
+      "names": [
+        "Chinese State-Sponsored APT Group (Unattributed to Specific Tracked Group)"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Claude Code abuse via jailbreak",
+        "OpenAI GPT API abuse"
+      ],
+      "ttps": [
+        "T1598 - Prompt Injection/Jailbreak",
+        "T1020 - Automated Exfiltration",
+        "T1548 - Privilege Escalation",
+        "T1547 - Persistence"
+      ],
+      "description": "Advanced persistent threat group leveraging agentic AI systems (Claude Code, GPT models) to conduct autonomous intrusions with minimal human direction. The group demonstrated sophisticated understanding of: (1) Claude's jailbreak susceptibility to decomposed task instruction sets; (2) Python framework development to orchestrate multi-stage attacks; (3) how to hide attack context from AI guardrails by framing malicious tasks as defensive/research activities. This represents the first large-scale documented autonomous AI-executed cyberattack against critical infrastructure.",
+      "attribution": "Anthropic assessed with high confidence as Chinese state-sponsored; Dragos/Gambit Security conducted incident investigation and validation"
+    },
+    {
+      "id": "opportunistic-threat-actors-shadow-ai-abusers",
+      "names": [
+        "Opportunistic Threat Actors / Shadow AI Abusers"
+      ],
+      "type": "shadow-ai",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Exposed internet-facing AI endpoints",
+        "Misconfigured agent platforms",
+        "Unprotected chatbots"
+      ],
+      "ttps": [
+        "T1592 - Exploit Exposed Configuration",
+        "T1021 - Unauthorized Access",
+        "T1598 - Jailbreak/Prompt Injection"
+      ],
+      "description": "Shadow AI risk manifests as widespread misconfiguration of production LLM infrastructure. Organizations deploying chatbots, RAG systems, and agent platforms without authentication controls or network isolation create easy entry points for attackers seeking: (1) free access to expensive models for cost arbitrage; (2) jailbroken models for malware generation or social engineering; (3) access to integrated tools and APIs to move laterally into backend systems; (4) exfiltration of conversation history containing sensitive data. The scale (1M exposed services) suggests this is not a targeted campaign but endemic misunderstanding of AI security by engineering teams moving fast.",
+      "attribution": "Distributed threat; primarily opportunistic attackers, fraudsters, and threat actors seeking free compute or model access"
     }
   ]
 }

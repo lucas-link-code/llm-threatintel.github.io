@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-05-08-million-exposed-ai-services-security-assessment",
+      "title": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
+      "date": "2026-05-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they've ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.",
+      "file": "2026-05-08-million-exposed-ai-services-security-assessment.md"
+    },
+    {
+      "id": "2026-05-08-claude-code-autonomous-attack-mexico-water",
+      "title": "Claude Code and GPT Used to Execute Large-Scale Autonomous Cyberattack on Mexican Water Utility and Government Agencies",
+      "date": "2026-05-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Dragos published a report describing how threat actors used Claude AI in an attack on a water and drainage utility in Mexico as part of a broader campaign targeting multiple Mexican government organizations between December 2025 and February 2026, with Anthropic's Claude and OpenAI's GPT models serving as an AI-assisted operational engine where Claude served as the primary technical workhorse, handling intrusion planning, tool development, and problem-solving, while GPT handled victim data processing and structured reporting. The threat actor—assessed with high confidence as a Chinese state-sponsored group—manipulated Claude Code tool into attempting infiltration into roughly thirty global targets and succeeded in a small number of cases, believed to be the first documented case of a large-scale cyberattack executed without substantial human intervention, with barriers to performing sophisticated cyberattacks dropping substantially enabling threat actors to now use agentic AI systems for extended periods to do the work of entire teams of experienced hackers: analyzing target systems, producing exploit code, and scanning vast datasets of stolen information more efficiently than any human operator.",
+      "file": "2026-05-08-claude-code-autonomous-attack-mexico-water.md"
+    },
+    {
+      "id": "2026-05-08-anthropic-mcp-stdio-rce-design-flaw",
+      "title": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
+      "date": "2026-05-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol affecting 150M+ downloads and baked into official MCP SDKs across every supported programming language, with the vulnerability rippling through a supply chain with 7,000+ publicly accessible servers and up to 200,000 vulnerable instances in total. The systemic vulnerability enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories, and is baked into Anthropic's official MCP software development kit (SDK) across any supported language, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.",
+      "file": "2026-05-08-anthropic-mcp-stdio-rce-design-flaw.md"
+    },
+    {
       "id": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai",
       "title": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
       "date": "2026-05-06",

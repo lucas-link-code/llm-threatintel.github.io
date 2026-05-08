@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure | LLM ThreatIntel</title>
+  <meta name="description" content="The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they&#x27;ve ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure">
+  <meta property="og:description" content="The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they&#x27;ve ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure">
+  <meta property="article:published_time" content="2026-05-08T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-08T00:00:00Z">
+  <meta property="article:tag" content="shadow-ai">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure">
+  <meta name="twitter:description" content="The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they&#x27;ve ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
+  "description": "The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they've ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.",
+  "datePublished": "2026-05-08T00:00:00Z",
+  "dateModified": "2026-05-08T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html",
+  "keywords": [
+    "shadow-ai"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-08</span>
+      <span class="post-tag tag-shadow-ai">Shadow AI</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure</h1>
+<p><strong>Date:</strong> 2026-05-08<br><strong>Tags:</strong> shadow-ai</p>
+<h2>Executive Summary</h2>
+<p>The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they&#x27;ve ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Widespread AI Infrastructure Misconfiguration and Shadow AI Exposure (Ongoing)</td></tr><tr><td>Attribution</td><td>Systemic risk from rapid AI adoption without security controls; attackers actively scanning and exploiting exposed instances (confidence: medium)</td></tr><tr><td>Target</td><td>Organizations self-hosting LLM applications, chat interfaces, agent platforms (n8n, Flowise, LangFlow); enterprises with unmanaged AI deployments</td></tr><tr><td>Vector</td><td>Exposed endpoints on internet without authentication; misconfigured MCP servers; unprotected agent management platforms; chatbots with exposed conversation history</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-05</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Using certificate transparency logs researchers pulled just over 2 million hosts with 1 million exposed services, finding AI infrastructure was more vulnerable, exposed, and misconfigured than any other software they&#x27;ve investigated. A number of instances involved chatbots that left user conversations exposed, with one example based on OpenUI exposing a user&#x27;s full LLM conversation history, and more concerning were generic chatbots hosting a wide range of models—including multimodal LLMs—freely available to use, with malicious users able to jailbreak most models to bypass safety guardrails for nefarious purposes without fear of repercussion since they&#x27;re using someone else&#x27;s infrastructure, with people finding creative ways to abuse company chatbots to access more capable models without paying or having requests logged to their own accounts. These platforms are particularly dangerous because there&#x27;s a distinct absence of proper access management controls in AI tooling, meaning access to a bot that&#x27;s integrated with a third-party system often means access to everything it touches.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exposed Services and Misconfiguration</td><td>T1592</td><td>1 million AI services exposed on internet without authentication controls</td></tr><tr><td>Unauthorized Access</td><td>T1021</td><td>Direct access to LLM chat interfaces, agent platforms, and backend systems through exposed endpoints</td></tr><tr><td>Jailbreak / Prompt Injection</td><td>T1598</td><td>Attackers bypass model safety guardrails on freely exposed chatbots to generate malicious content or extract data</td></tr><tr><td>Lateral Movement via Integrated Tools</td><td>T1570</td><td>Access to exposed AI platform credentials enables abuse of connected third-party systems and APIs</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Research based on certificate transparency logs identifying 2M+ hosts, 1M exposed services. Specific vulnerable instances not enumerated in public disclosure to prevent coordinated attack._</p>
+<h3>Full URL Paths</h3>
+<p>_Research based on certificate transparency logs identifying 2M+ hosts, 1M exposed services. Specific vulnerable instances not enumerated in public disclosure to prevent coordinated attack._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">n8n
+Flowise
+LangFlow
+OpenUI</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Defenders should: (1) Inventory all internet-facing LLM services and agent platforms using certificate transparency or network scanning; (2) Enforce network authentication (OAuth, API key, mTLS) on all AI endpoints; (3) Disable or restrict jailbreak-prone features on public-facing chatbots; (4) Implement conversation logging and audit trails; (5) Restrict agent and tool access using least-privilege IAM; (6) Monitor for unusual inference patterns (high volume, unusual prompt content, repeated failed jailbreak attempts); (7) Segment AI infrastructure from core business systems to contain lateral movement; (8) Regularly scan public AI models and endpoints for credential leakage in model contexts or conversation history.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] We Scanned 1 Million Exposed AI Services. Here&#x27;s How Bad the Security Actually Is (2026-05-05) — https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
