@@ -98,7 +98,8 @@ Structure:
 # {Descriptive Title — be specific, not generic}
 
 **Date:** YYYY-MM-DD
-**Tags:** {choose from: Supply Chain, Malware, Malicious Tool, Nation State, Shadow AI, LLMjacking, APT, Phishing, Model Poisoning, Prompt Injection, MCP Security}
+**Tags:** {choose from the exact values below — use the lowercase-hyphenated form verbatim, never invent new tags}
+supply-chain | malware | malicious-tool | nation-state | shadow-ai | llmjacking | apt | phishing | model-poisoning | prompt-injection | mcp-security
 
 ## Executive Summary
 
@@ -176,6 +177,11 @@ Add a new entry at the BEGINNING of the posts array:
   "date": "YYYY-MM-DD",
   "author": "LLM ThreatIntel",
   "tags": ["{tag1}", "{tag2}"],
+```
+Tags MUST be lowercase-hyphenated strings from this exact set — no other values are permitted:
+`supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`
+Using any other casing (e.g. "Malware", "Supply Chain") or any tag not in this list will break the site's filter bar by creating duplicate entries with no colour.
+```json
   "tlp": "TLP:CLEAR",
   "excerpt": "{executive summary text}",
   "file": "YYYY-MM-DD-{slug}.md"
@@ -218,7 +224,7 @@ Run this checklist before executing git commit:
 3. Every threat actor mentioned also has an entry in data/actors.json
 4. MITRE ATT&CK technique IDs are valid format and the technique names are correct
 5. The post slug in the filename matches the id in posts-index.json
-6. Tags in the post metadata match the allowed tag set
+6. Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security — never Title Case, never with spaces, never a value outside this list
 7. IOC domains are clean (no [.] defanging, no hxxps://) in the JSON data files
 8. IOCs in the Markdown post body should use defanged format for display
 9. No duplicate posts exist (check by date and slug against existing posts/)
