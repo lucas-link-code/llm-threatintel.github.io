@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "title": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK < 1.39.4",
+      "date": "2026-05-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft disclosed on May 7, 2026, that two patched vulnerabilities in its Semantic Kernel agent framework could let prompt injection become remote code execution or arbitrary host file writes in affected Python and .NET agent deployments. CVE-2026-26030 affected the Python Semantic Kernel package before version 1.39.4 under specific conditions. An agent had to use the In-Memory Vector Store as backend for a Search Plugin with default filtering behavior; when those conditions aligned, a single crafted prompt could lead to host-level remote code execution.",
+      "file": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.md"
+    },
+    {
+      "id": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration",
+      "title": "Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure",
+      "date": "2026-05-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.",
+      "file": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration.md"
+    },
+    {
       "id": "2026-05-08-million-exposed-ai-services-security-assessment",
       "title": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
       "date": "2026-05-08",

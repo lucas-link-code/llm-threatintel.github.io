@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-08",
+  "last_updated": "2026-05-09",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1187,6 +1187,24 @@
       "first_seen": "2026-05-08",
       "source": "The Hacker News",
       "campaign": "million-exposed-ai-services-security-assessment",
+      "status": "active"
+    },
+    {
+      "value": "semantic-kernel<1.39.4 (Python)",
+      "type": "package",
+      "context": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK < 1.39.4",
+      "first_seen": "2026-05-09",
+      "source": "Microsoft Security Blog",
+      "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "status": "active"
+    },
+    {
+      "value": "semantic-kernel<1.71.0 (.NET)",
+      "type": "package",
+      "context": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK < 1.39.4",
+      "first_seen": "2026-05-09",
+      "source": "Microsoft Security Blog",
+      "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
       "status": "active"
     }
   ]

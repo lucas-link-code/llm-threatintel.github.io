@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 08 May 2026 05:32:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 05:50:49 +0000</lastBuildDate>
     <item>
+      <title>Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK &lt; 1.39.4</title>
+      <link>https://llm-threatintel.com/posts/2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.html</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft disclosed on May 7, 2026, that two patched vulnerabilities in its Semantic Kernel agent framework could let prompt injection become remote code execution or arbitrary host file writes in affected Python and .NET agent deployments. CVE-2026-26030 affected the Python Semantic Kernel package before version 1.39.4 under specific conditions. An agent had to use the In-Memory Vector Store as backend for a Search Plugin with default filtering behavior; when those conditions aligned, a single crafted prompt could lead to host-level remote code execution.</description>
+    </item>    <item>
+      <title>Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <description>AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.</description>
+    </item>    <item>
       <title>Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure</title>
       <link>https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</guid>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
       <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection vulnerability in LiteLLM that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The unknown threat actor targeted database tables like "litellm_credentials.credential_values" and "litellm_config" that hold information related to upstream large language model (LLM) provider keys and the proxy runtime environment, demonstrating that the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.</description>
-    </item>    <item>
-      <title>CVE-2026-33626 (LMDeploy SSRF) Exploited Within 13 Hours of Disclosure; AI-Generated Exploits Weaponized at Machine Speed</title>
-      <link>https://llm-threatintel.com/posts/2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.html</guid>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy disclosed on April 21, 2026, was exploited within 12 hours and 31 minutes, enabling attackers to perform SSRF-based internal network scanning, cloud metadata access, and service enumeration. The advisory included specific details on the affected file, parameter name, and vulnerable code pattern—effectively creating a turnkey exploit prompt for code-generation models, making any advisory naming the vulnerable function or showing the affected code pattern become an instant exploit template in the age of capable code-generation models.</description>
-    </item>    <item>
-      <title>Anthropic MCP Architectural Design Flaw: Zero-Click RCE Across 150M+ Downloads via Windsurf IDE</title>
-      <link>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.html</guid>
-      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
-      <description>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol: Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction, allowing remote attackers to execute arbitrary commands via prompt injection. The vulnerability ripples through 150M+ downloads and up to 200,000 vulnerable instances across Cursor, VS Code, Claude Code, and Gemini-CLI.</description>
     </item>
   </channel>
 </rss>

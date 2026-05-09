@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure | LLM ThreatIntel</title>
+  <meta name="description" content="AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure">
+  <meta property="og:description" content="AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure">
+  <meta property="article:published_time" content="2026-05-09T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-09T00:00:00Z">
+  <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure">
+  <meta name="twitter:description" content="AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure",
+  "description": "AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco\u2014a viral self-hosted AI assistant averaging 2.6 CVEs per day\u2014the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.",
+  "datePublished": "2026-05-09T00:00:00Z",
+  "dateModified": "2026-05-09T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html",
+  "keywords": [
+    "shadow-ai",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-09</span>
+      <span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure</h1>
+<p><strong>Date:</strong> 2026-05-09<br><strong>Tags:</strong> shadow-ai, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Mass AI Infrastructure Exposure Survey</td></tr><tr><td>Attribution</td><td>Intruder Security Research (confidence: high)</td></tr><tr><td>Target</td><td>Organizations self-hosting LLM services, AI chatbots, agent platforms (n8n, Flowise)</td></tr><tr><td>Vector</td><td>Misconfigured, unauthenticated endpoints exposed via public internet; certificate transparency log scanning</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-05</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Chatbots left user conversations exposed, including full LLM conversation history on OpenUI instances. Generic chatbots hosted multimodal LLMs freely available without authentication. Malicious users can jailbreak models to bypass safety guardrails and use compromised infrastructure without fear of repercussion. Exposed instances of agent management platforms (n8n and Flowise) were discovered. Some Flowise instances users thought were internal had been exposed to the internet without authentication. One Flowise instance exposed the entire business logic of an LLM chatbot service and credential list, though values were not revealed to unauthenticated visitors. There is a distinct absence of proper access management controls in AI tooling, meaning access to a bot integrated with a third-party system often means access to everything it touches.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exposed Credentials</td><td>T1552</td><td>Exposed API keys, cloud credentials in Flowise configurations</td></tr><tr><td>Lateral Tool Transfer</td><td>T1570</td><td>Compromised AI agents with access to integrated third-party systems</td></tr><tr><td>Abuse of Functionality</td><td>T1648</td><td>Jailbreaking exposed models to bypass safety controls</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No specific IOCs published; vulnerability class is misconfiguration and lack of authentication controls on self-hosted AI infrastructure_</p>
+<h3>Full URL Paths</h3>
+<p>_No specific IOCs published; vulnerability class is misconfiguration and lack of authentication controls on self-hosted AI infrastructure_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">n8n
+Flowise
+OpenUI</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor certificate transparency logs for new AI service domains. Implement mandatory authentication and access controls on all self-hosted AI infrastructure (Flowise, n8n, LangChain). Audit Flowise configurations for exposed credential references. Implement egress filtering to prevent compromised AI agents from exfiltrating data or communicating with attacker-controlled systems. Deploy rate limiting on LLM API endpoints to detect abuse. Establish baseline behavior profiles for chatbot and agent systems and alert on anomalous usage patterns.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] We Scanned 1 Million Exposed AI Services. Here&#x27;s How Bad the Security Actually Is (2026-05-05) — https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html</li><li>[Intruder Security] AI Infrastructure Security Report (2026-05-05) — https://www.intruder.io/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

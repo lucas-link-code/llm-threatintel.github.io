@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-08",
+  "last_updated": "2026-05-09",
   "entries": [
     {
       "id": "bissa-scanner",
@@ -803,21 +803,25 @@
       "names": [
         "Unknown Threat Actors / Security Researchers",
         "Chaofan Shou (sourcemap discoverer)",
-        "Sigrid Jin and Yeachan Heo (source reconstruction)"
+        "Sigrid Jin and Yeachan Heo (source reconstruction)",
+        "Intruder Security Research Team"
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
       "status": "active",
       "distribution": [
         "GitHub trojanized repositories",
-        "Malicious CLAUDE.md in supply chain"
+        "Malicious CLAUDE.md in supply chain",
+        "Public internet via certificate transparency scanning"
       ],
       "ttps": [
         "T1598 - Phishing",
         "T1195 - Supply Chain Compromise",
-        "T1134.005 - Process Injection"
+        "T1134.005 - Process Injection",
+        "T1552 - Exposed Credentials",
+        "T1526 - Passive Scanning of AI Service Endpoints"
       ],
-      "description": "Unknown actors are likely weaponizing the exposed Claude Code source and the Adversa AI-disclosed permission bypass to craft malicious repository configurations that trick Claude Code users into executing arbitrary commands via prompt injection embedded in CLAUDE.md.",
+      "description": "Threat actors can systematically discover misconfigured AI services via certificate transparency logs and service scanning. No sophisticated tooling required. Scope includes credential theft, model jailbreaking, lateral movement to integrated services, and abuse of LLM compute for malicious purposes.",
       "attribution": "Unattributed (active exploitation expected post-leak)"
     },
     {
@@ -1362,6 +1366,24 @@
       ],
       "description": "Shadow AI risk manifests as widespread misconfiguration of production LLM infrastructure. Organizations deploying chatbots, RAG systems, and agent platforms without authentication controls or network isolation create easy entry points for attackers seeking: (1) free access to expensive models for cost arbitrage; (2) jailbroken models for malware generation or social engineering; (3) access to integrated tools and APIs to move laterally into backend systems; (4) exfiltration of conversation history containing sensitive data. The scale (1M exposed services) suggests this is not a targeted campaign but endemic misunderstanding of AI security by engineering teams moving fast.",
       "attribution": "Distributed threat; primarily opportunistic attackers, fraudsters, and threat actors seeking free compute or model access"
+    },
+    {
+      "id": "vulnerability-not-attributed",
+      "names": [
+        "Vulnerability (Not Attributed)"
+      ],
+      "type": "malware",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "All deployments using Semantic Kernel Python <1.39.4 with InMemoryVectorStore default config"
+      ],
+      "ttps": [
+        "T1598 - Phishing",
+        "T1059.001 - Python Execution"
+      ],
+      "description": "This is a design vulnerability in default configuration, not a discrete malware campaign. However, the RCE consequence means any actor with the ability to inject prompts into a vulnerable Semantic Kernel agent can achieve complete system compromise.",
+      "attribution": "Unattributed; however, any attacker with prompt injection capability can exploit"
     }
   ]
 }
