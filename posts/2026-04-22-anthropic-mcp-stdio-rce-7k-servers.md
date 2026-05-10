@@ -1,7 +1,7 @@
 # Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers
 
 **Date:** 2026-04-22
-**Tags:** malicious-tool, supply-chain
+**Tags:** malicious-tool, supply-chain, mcp-security
 
 ## Executive Summary
 

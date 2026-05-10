@@ -23,6 +23,7 @@
   <meta property="article:modified_time" content="2026-04-04T00:00:00Z">
   <meta property="article:tag" content="shadow-ai">
   <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="mcp-security">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure">
@@ -48,7 +49,8 @@
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-04-awesome-llm-apps-cross-session-token-disclosure.html",
   "keywords": [
     "shadow-ai",
-    "malware"
+    "malware",
+    "mcp-security"
   ]
 }
   </script>
@@ -74,11 +76,11 @@
     <a href="/" class="back-link">&larr; Back to feed</a>
     <div class="post-meta" style="margin-bottom:1rem">
       <span class="post-date">2026-04-04</span>
-      <span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-mcp-security">Mcp Security</span>
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure</h1>
-<p><strong>Date:</strong> 2026-04-04<br><strong>Tags:</strong> shadow-ai, malware</p>
+<p><strong>Date:</strong> 2026-04-04<br><strong>Tags:</strong> shadow-ai, malware, mcp-security</p>
 <h2>Executive Summary</h2>
 <p>A cross-session information disclosure vulnerability in the awesome-llm-apps Streamlit-based GitHub MCP Agent stores user-supplied API tokens in process-wide environment variables without proper session isolation, allowing attackers to retrieve sensitive GitHub Personal Access Tokens or LLM API keys from subsequent unauthenticated users since Streamlit serves multiple concurrent users from a single Python process.</p>
 <h2>Campaign Summary</h2>

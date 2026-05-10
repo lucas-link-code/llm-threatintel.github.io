@@ -1,7 +1,7 @@
 # Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions
 
 **Date:** 2026-05-06
-**Tags:** malicious-tool, shadow-ai
+**Tags:** malicious-tool, shadow-ai, prompt-injection, phishing
 
 ## Executive Summary
 

@@ -176,7 +176,7 @@ Add a new entry at the BEGINNING of the posts array:
   "title": "{post title}",
   "date": "YYYY-MM-DD",
   "author": "LLM ThreatIntel",
-  "tags": ["{tag1}", "{tag2}"],
+  "tags": ["supply-chain", "malware"],
 ```
 Tags MUST be lowercase-hyphenated strings from this exact set — no other values are permitted:
 `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`

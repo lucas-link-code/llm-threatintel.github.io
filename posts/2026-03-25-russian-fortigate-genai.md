@@ -1,7 +1,7 @@
 # Russian GenAI-Assisted FortiGate Mass Exploitation Campaign
 
 **Date:** 2026-03-25
-**Tags:** Nation State, GenAI-Assisted Exploitation
+**Tags:** nation-state
 
 ## Executive Summary
 

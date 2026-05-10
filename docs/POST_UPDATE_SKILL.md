@@ -29,7 +29,7 @@ Before writing anything new:
 - Path: `posts/YYYY-MM-DD-{slug}.md`
 - The `{slug}` is URL-safe: lowercase, hyphens, no spaces. The stem must match the `id` in the index (see below).
 - Structure and quality expectations match `automation/claude-code-task.md`: executive summary, campaign summary table, detailed findings with named sources and URLs, MITRE ATT&CK table, IOC sections, detection recommendations, references. Do not invent IOCs; if sources publish none, say so.
-- **Tags in the Markdown body** must align with the index. The site uses a fixed tag set for Intel Feed styling and automation. Valid slugs are exactly: `supply-chain`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `malware`, `apt`. Use these in `**Tags:**` and in `data/posts-index.json` (see `scripts/collect.py` `VALID_TAGS`).
+- **Tags in the Markdown body** must align with the index. The site uses a fixed tag set for Intel Feed styling and automation. Valid slugs are exactly: `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`. Use these lowercase-hyphenated values in `**Tags:**` and in `data/posts-index.json` (see `scripts/collect.py` `VALID_TAGS`). Do not use Title Case, spaces, underscores, or tags outside this list.
 
 Example front matter style used in repo:
 
@@ -54,7 +54,7 @@ Optional: `**TLP:** TLP:CLEAR` in the body if you mirror existing posts.
 | `title`  | Display title. |
 | `date`   | ISO date `YYYY-MM-DD`. |
 | `author` | Typically `LLM ThreatIntel` for intel reports. |
-| `tags`   | Array of allowed slugs only. |
+| `tags`   | Array of allowed lowercase-hyphenated slugs only. |
 | `tlp`    | e.g. `TLP:CLEAR`. |
 | `excerpt`| Short plain-text summary for cards, Open Graph, and RSS description. |
 | `file`   | Filename only, e.g. `2026-04-13-example-slug.md`. |
@@ -105,7 +105,7 @@ If a Markdown file listed in `posts-index.json` is missing, the script prints a 
 2. IOCs in the body are reflected in `data/iocs.json` where applicable; no fabricated indicators.
 3. MITRE technique IDs are valid (`T####` or `T####.###`).
 4. `id`, filename stem, and `posts-index.json` `file` field are consistent.
-5. Tags are only from the allowed slug set.
+5. Tags are only from the allowed slug set: `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`.
 6. `data/posts-index.json` is valid JSON.
 7. `python3 scripts/build_meta.py` completed without unexpected errors; new `posts/*.html`, `sitemap.xml`, and `rss.xml` are updated.
 

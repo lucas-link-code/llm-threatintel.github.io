@@ -1,7 +1,7 @@
 # OpenClaw CVE-2026-41358: Origin Validation Bypass Enables Prompt Injection and Context Poisoning via Slack Integration
 
 **Date:** 2026-05-05
-**Tags:** malicious-tool, shadow-ai
+**Tags:** malicious-tool, shadow-ai, prompt-injection
 
 ## Executive Summary
 

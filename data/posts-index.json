@@ -50,7 +50,8 @@
       "tags": [
         "apt",
         "nation-state",
-        "malware"
+        "malware",
+        "phishing"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Check Point Research disclosed in May 2026 that DPRK-aligned threat group KONNI is operating an active phishing campaign that drops an AI-generated PowerShell backdoor against blockchain and cryptocurrency developers across Japan, Australia, and India, marking a shift from KONNI's historical focus on South Korean diplomatic and government targets. The infection chain begins with a Discord-hosted ZIP containing a PDF lure and a malicious LNK shortcut that launches a PowerShell loader, which extracts a DOCX decoy plus a CAB archive carrying the backdoor, batch helpers, and a UAC-bypass executable. The PowerShell backdoor exhibits stylistic markers consistent with LLM-generated code: structured documentation blocks, modular function layout, and instructional placeholder comments such as \"your permanent project UUID\" left in production code.",
@@ -89,7 +90,8 @@
       "date": "2026-05-09",
       "author": "LLM ThreatIntel",
       "tags": [
-        "malicious-tool"
+        "malicious-tool",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Microsoft disclosed on May 7, 2026, that two patched vulnerabilities in its Semantic Kernel agent framework could let prompt injection become remote code execution or arbitrary host file writes in affected Python and .NET agent deployments. CVE-2026-26030 affected the Python Semantic Kernel package before version 1.39.4 under specific conditions. An agent had to use the In-Memory Vector Store as backend for a Search Plugin with default filtering behavior; when those conditions aligned, a single crafted prompt could lead to host-level remote code execution.",
@@ -140,7 +142,9 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "supply-chain",
-        "malicious-tool"
+        "malicious-tool",
+        "mcp-security",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol affecting 150M+ downloads and baked into official MCP SDKs across every supported programming language, with the vulnerability rippling through a supply chain with 7,000+ publicly accessible servers and up to 200,000 vulnerable instances in total. The systemic vulnerability enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories, and is baked into Anthropic's official MCP software development kit (SDK) across any supported language, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.",
@@ -153,7 +157,9 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "shadow-ai"
+        "shadow-ai",
+        "prompt-injection",
+        "phishing"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.",
@@ -218,7 +224,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "shadow-ai"
+        "shadow-ai",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "An origin validation vulnerability (CWE-346) exists within the OpenClaw AI assistant's Slack integration prior to version 2026.4.2; the platform fails to independently verify the sender of historical thread messages against configured allowlists, enabling unauthorized users to inject malicious instructions into the LLM context when an authorized user triggers the agent, facilitating prompt injection and context poisoning attacks. Successful exploitation results in unauthorized manipulation where attackers can manipulate the agent's behavior, extract sensitive information intended for authorized users, or alter the assistant's persona.",
@@ -282,7 +289,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "mcp-security"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "CVE-2026-33032, a CVSS 9.8 authentication bypass in nginx-ui's MCP integration, has been actively exploited since mid-April 2026 after VulnCheck added it to its Known Exploited Vulnerabilities catalog on April 13. The /mcp_message endpoint is missing the AuthRequired() middleware, allowing any network-accessible attacker to invoke all 12 privileged MCP tools without credentials, achieving complete nginx server takeover in two HTTP requests. Approximately 2,600 publicly exposed nginx-ui instances were identified on Shodan at time of disclosure.",
@@ -360,7 +368,9 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "apt"
+        "apt",
+        "mcp-security",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol: Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction, allowing remote attackers to execute arbitrary commands via prompt injection. The vulnerability ripples through 150M+ downloads and up to 200,000 vulnerable instances across Cursor, VS Code, Claude Code, and Gemini-CLI.",
@@ -436,7 +446,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Trend Micro's Zero Day Initiative has identified a vulnerability affecting FlowiseAI Flowise. This vulnerability allows remote attackers to execute arbitrary code on affected installations of FlowiseAI Flowise. Authentication is not required to exploit this vulnerability. The specific flaw exists within the run method of the CSV_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM-generated Python script. An attacker can leverage this vulnerability to execute code in the context of the user running the server.",
@@ -475,7 +486,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malware",
-        "malicious-tool"
+        "malicious-tool",
+        "phishing"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Fake Claude AI installer mimicking Anthropic spreads PlugX malware on Windows, using DLL sideloading to gain persistent remote access to infected systems. Cybersecurity experts from Malwarebytes found a malicious campaign where scammers use the popularity of Anthropic's AI tool Claude to spread malware. Hackers made a fake website that looks just like the official one from Anthropic and offers a Pro version of the tool for Windows to lure people into downloading a malicious file.",
@@ -501,7 +513,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "mcp-security"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Cybersecurity researchers discovered a critical \"by design\" weakness in the Model Context Protocol's (MCP) architecture that could pave the way for remote code execution, enabling Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. The systemic vulnerability is baked into Anthropic's official MCP software development kit (SDK) across any supported language, including Python, TypeScript, Java, and Rust, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.",
@@ -513,7 +526,8 @@
       "date": "2026-04-20",
       "author": "LLM ThreatIntel",
       "tags": [
-        "malicious-tool"
+        "malicious-tool",
+        "mcp-security"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise with a CVSS score of 10.0. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.",
@@ -525,7 +539,9 @@
       "date": "2026-04-18",
       "author": "LLM ThreatIntel",
       "tags": [
-        "malicious-tool"
+        "malicious-tool",
+        "mcp-security",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "A practitioner's analysis published in April 2026 exposes systemic security flaws in the infrastructure underpinning the rapidly expanding agentic AI landscape. 43% of public servers are vulnerable to command execution, 36.7% of 7,000+ servers are vulnerable to SSRF, 492 servers are exposed to the internet with zero authentication, and 53% of servers use static credentials.",
@@ -538,7 +554,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "mcp-security"
       ],
       "tlp": "TLP:AMBER",
       "excerpt": "CVE-2026-32211 is a missing authentication vulnerability in Microsoft @azure-devops/mcp with CVSS 9.1, disclosed April 3, 2026. This critical vulnerability affects Microsoft's Model Context Protocol (MCP) implementation for Azure DevOps, potentially allowing unauthenticated attackers to interact with AI agents connected to DevOps infrastructure.",
@@ -551,7 +568,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "mcp-security"
       ],
       "tlp": "TLP:AMBER",
       "excerpt": "Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise, the widely used open-source platform for building custom large language model (LLM) applications, chatbots, and AI agent pipelines. The vulnerability carries a CVSS score of 10.0. VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.",
@@ -604,7 +622,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "apt"
+        "apt",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Unit 42 research on multi-agent AI systems on Amazon Bedrock reveals new attack surfaces and prompt injection risks. Multi-agent coordination in cloud-hosted LLM environments introduces novel attack vectors where compromised agents can manipulate or hijack peer agent behavior at scale.",
@@ -744,7 +763,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "supply-chain",
-        "malware"
+        "malware",
+        "model-poisoning"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "ReversingLabs documented Shai-hulud, the first self-replicating registry-native worm operating at scale within npm, compromising nearly 1,000 packages with over 100 million lifetime downloads across two waves. Separately, the nullifAI technique demonstrated that malicious ML models can bypass Hugging Face security scanning using corrupted Pickle files. Organizations consuming npm packages should audit lockfiles for compromised packages including @ctrl/tinycolor, @asyncapi/specs, ngx-bootstrap, and ng2-file-upload.",
@@ -811,7 +831,9 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "mcp-security",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from \"promising open standard\" to \"active threat surface\" faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.",
@@ -824,7 +846,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "supply-chain"
+        "supply-chain",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 to npm. Within days of each other, Anthropic first leaked the source code to Claude Code, and then a critical vulnerability was found by Adversa AI. Within hours, researcher Chaofan Shou discovered the sourcemap and posted a link on X. A genuine and critical vulnerability has now been discovered in Claude Code proper by Adversa AI Red Team. Claude Code is a 519,000+ line TypeScript application that allows developers to interact with Claude directly from the command line.",
@@ -837,7 +860,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "shadow-ai",
-        "malware"
+        "malware",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 on npm; within hours, researcher Chaofan Shou discovered the sourcemap and posted it on X, kicking off a global rush to examine the de-obfuscated source code. Days later, Adversa AI discovered a critical vulnerability where malicious CLAUDE.md files can use prompt injection to generate 50+ subcommand pipelines that bypass Claude Code's safety permission system.",
@@ -850,7 +874,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "shadow-ai",
-        "malware"
+        "malware",
+        "mcp-security"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "A cross-session information disclosure vulnerability in the awesome-llm-apps Streamlit-based GitHub MCP Agent stores user-supplied API tokens in process-wide environment variables without proper session isolation, allowing attackers to retrieve sensitive GitHub Personal Access Tokens or LLM API keys from subsequent unauthenticated users since Streamlit serves multiple concurrent users from a single Python process.",
@@ -863,7 +888,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "malicious-tool",
-        "malware"
+        "malware",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "An indirect prompt injection vulnerability in nanobot's email channel processing module allows remote, unauthenticated attackers to execute arbitrary LLM instructions and system tools without user interaction by sending malicious prompts via email, bypassing channel isolation in a stealthy zero-click attack (CVSS 8.9, HIGH severity).",
@@ -914,7 +940,8 @@
       "tags": [
         "apt",
         "malware",
-        "nation-state"
+        "nation-state",
+        "phishing"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Bitdefender Labs confirmed that APT36 (Transparent Tribe), a Pakistan-linked state-sponsored group, has pivoted to an AI-assisted malware development model dubbed 'vibeware', using large language models to mass-produce implants in niche programming languages (Nim, Zig, Crystal) and Living Off Trusted Services (LOTS) C2 channels (Slack, Discord, Supabase, Google Sheets), primarily targeting Indian government entities and diplomatic missions. The strategy prioritises volume over sophistication — a 'Distributed Denial of Detection' approach — generating new malware variants daily to overwhelm EDR baselines. Security teams should implement behavioral detection for anomalous API calls to Slack, Discord, and Supabase from non-developer endpoints.",
@@ -926,7 +953,8 @@
       "date": "2026-04-02",
       "author": "LLM ThreatIntel",
       "tags": [
-        "malware"
+        "malware",
+        "phishing"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "IBM X-Force discovered 'Slopoly', a likely LLM-generated PowerShell backdoor deployed by the Hive0163 ransomware group during a live intrusion in early 2026, marking the first confirmed use of AI-generated malware in an active ransomware engagement by a financially motivated threat actor. The malware maintained persistent access to a compromised server for over a week before Interlock ransomware was deployed. Defenders should hunt for scheduled tasks named 'Runtime Broker' under C:\\ProgramData\\Microsoft\\Windows\\Runtime\\ and block connections to the identified C2 infrastructure; the entry vector was ClickFix social engineering, requiring enhanced employee awareness.",
@@ -954,7 +982,8 @@
       "tags": [
         "malicious-tool",
         "shadow-ai",
-        "supply-chain"
+        "supply-chain",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "Multiple critical vulnerabilities in AI coding assistants expose enterprise development environments to supply chain compromise. The Rules File Backdoor attack uses invisible Unicode characters to inject malicious prompts into Cursor and GitHub Copilot configuration files, with 12% of scanned rules files from GitHub containing hidden instructions. CVE-2026-31854 enables arbitrary code execution in Cursor through prompt injection and whitelist bypass, and Orca Security's RoguePilot demonstrated full GitHub repository takeover through passive prompt injection in Copilot. With 97% of enterprise developers using AI coding tools, these attack vectors represent a significant and largely unmonitored threat surface.",
@@ -969,7 +998,9 @@
         "llmjacking",
         "malicious-tool",
         "shadow-ai",
-        "supply-chain"
+        "supply-chain",
+        "mcp-security",
+        "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "The Model Context Protocol has become a high-value attack surface with 43% of MCP servers vulnerable to command injection and OWASP publishing a dedicated MCP Top 10 risk framework. Operation Bizarre Bazaar demonstrated industrialized exploitation with 35,000 attack sessions targeting exposed MCP endpoints between December 2025 and January 2026, while Cyata Research disclosed a chained RCE vulnerability in Anthropic's own official Git MCP server. Organizations deploying agentic AI infrastructure must audit MCP server configurations, restrict tool permissions, and monitor for shadow MCP server deployments.",
@@ -1023,7 +1054,8 @@
       "author": "LLM ThreatIntel",
       "tags": [
         "apt",
-        "malware"
+        "malware",
+        "phishing"
       ],
       "tlp": "TLP:CLEAR",
       "excerpt": "APT28-attributed malware LAMEHUG represents a milestone in offensive AI adoption. It is the first publicly documented sample that calls an LLM API at runtime to dynamically generate C2 commands based on host reconnaissance data.",

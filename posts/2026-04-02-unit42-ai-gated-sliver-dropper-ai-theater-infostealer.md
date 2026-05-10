@@ -1,7 +1,7 @@
 # Unit 42 Analyzes First In-the-Wild AI-Gated Malware: LLM-Controlled Sliver Dropper and AI-Theater .NET Infostealer
 
 **Date:** 2026-04-02
-**Tags:** ai-malware, infostealer, sliver, llm-c2, malware-analysis
+**Tags:** malware
 
 ## Executive Summary
 

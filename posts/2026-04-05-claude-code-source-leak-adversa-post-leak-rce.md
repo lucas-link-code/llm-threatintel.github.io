@@ -1,7 +1,7 @@
 # Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)
 
 **Date:** 2026-04-05
-**Tags:** malicious-tool, supply-chain
+**Tags:** malicious-tool, supply-chain, prompt-injection
 
 ## Executive Summary
 

@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 10 May 2026 17:41:46 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 20:18:48 +0000</lastBuildDate>
     <item>
       <title>TrustFall: One-Keypress RCE in Claude Code, Cursor CLI, Gemini CLI, and GitHub Copilot CLI via Project-Scoped MCP Auto-Approval</title>
       <link>https://llm-threatintel.com/posts/2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.html</link>

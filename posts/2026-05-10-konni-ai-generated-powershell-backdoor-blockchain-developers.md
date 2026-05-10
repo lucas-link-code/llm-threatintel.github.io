@@ -1,7 +1,7 @@
 # KONNI Adopts AI-Generated PowerShell Backdoor: DPRK Group Pivots from South Korean Diplomatic Targets to APAC Blockchain and Cryptocurrency Developers
 
 **Date:** 2026-05-10
-**Tags:** apt, nation-state, malware
+**Tags:** apt, nation-state, malware, phishing
 
 ## Executive Summary
 

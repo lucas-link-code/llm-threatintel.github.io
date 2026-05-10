@@ -1,7 +1,7 @@
 # TeamPCP Supply Chain Campaign Targets LiteLLM and Telnyx PyPI Packages
 
 **Date:** 2026-03-30  
-**Tags:** Supply Chain, PyPI, LLM Orchestration  
+**Tags:** supply-chain
 
 ## Executive Summary
 

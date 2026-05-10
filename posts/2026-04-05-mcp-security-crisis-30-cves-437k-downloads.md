@@ -1,7 +1,7 @@
 # MCP Protocol Security Crisis: 30+ CVEs in 60 Days, 437K+ Downloads Affected, Trojanized npm Packages Targeting AI Agents via Connector Poisoning
 
 **Date:** 2026-04-05
-**Tags:** malicious-tool, supply-chain
+**Tags:** malicious-tool, supply-chain, mcp-security, prompt-injection
 
 ## Executive Summary
 

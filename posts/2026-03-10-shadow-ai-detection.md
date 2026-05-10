@@ -1,7 +1,7 @@
 # Shadow AI in the Enterprise: Detection Strategies for Unauthorized LLM Usage
 
 **Date:** 2026-03-10
-**Tags:** Shadow AI, Detection Engineering
+**Tags:** shadow-ai
 
 ## Executive Summary
 

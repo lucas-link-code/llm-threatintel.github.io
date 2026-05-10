@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-07
 **TLP:** TLP:CLEAR
-**Tags:** supply-chain, malware
+**Tags:** supply-chain, malware, model-poisoning
 
 ## Executive Summary
 

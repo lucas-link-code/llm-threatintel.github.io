@@ -115,7 +115,8 @@ Create posts/*.md files named YYYY-MM-DD-slug.md with this exact structure:
 # Report Title
 
 **Date:** YYYY-MM-DD
-**Tags:** tag1, tag2, tag3
+**Tags:** {choose from the exact values below — use the lowercase-hyphenated form verbatim, never invent new tags}
+supply-chain | malware | malicious-tool | nation-state | shadow-ai | llmjacking | apt | phishing | model-poisoning | prompt-injection | mcp-security
 
 ## Executive Summary
 
@@ -235,12 +236,16 @@ Add new entry at the TOP of the posts array:
   "title": "Full Report Title",
   "date": "YYYY-MM-DD",
   "author": "LLM ThreatIntel",
-  "tags": ["tag1", "tag2"],
+  "tags": ["supply-chain", "malware"],
   "tlp": "TLP:CLEAR",
   "excerpt": "2-3 sentence executive summary matching the post",
   "file": "YYYY-MM-DD-slug.md"
 }
 ```
+
+Tags MUST be lowercase-hyphenated strings from this exact set — no other values are permitted:
+`supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`
+Use the same canonical values in the Markdown `**Tags:**` line and in `data/posts-index.json`. Never use Title Case, spaces, underscores, or tags outside this list.
 
 UPDATE data/actors.json:
 For each new actor or malware mentioned, add or update entry:
@@ -296,6 +301,7 @@ QUALITY CHECKS BEFORE COMMITTING:
 - Detection recommendations reference specific log sources
 - JSON files are valid and last_updated fields are set
 - No duplicate posts in posts-index.json
+- Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security
 - Every posts/*.md file has a matching posts/*.html metadata file
 - HTML files contain valid OG tags, Twitter Card, and JSON-LD schema
 

@@ -23,6 +23,7 @@
   <meta property="article:modified_time" content="2026-04-07T00:00:00Z">
   <meta property="article:tag" content="supply-chain">
   <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="model-poisoning">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shai-hulud npm Registry Worm and nullifAI Hugging Face Malware: AI Supply Chain Under Siege">
@@ -48,7 +49,8 @@
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.html",
   "keywords": [
     "supply-chain",
-    "malware"
+    "malware",
+    "model-poisoning"
   ]
 }
   </script>
@@ -74,11 +76,11 @@
     <a href="/" class="back-link">&larr; Back to feed</a>
     <div class="post-meta" style="margin-bottom:1rem">
       <span class="post-date">2026-04-07</span>
-      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-model-poisoning">Model Poisoning</span>
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>Shai-hulud npm Registry Worm and nullifAI Hugging Face Malware: AI Supply Chain Under Siege</h1>
-<p><strong>Date:</strong> 2026-04-07<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malware</p>
+<p><strong>Date:</strong> 2026-04-07<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> supply-chain, malware, model-poisoning</p>
 <h2>Executive Summary</h2>
 <p>ReversingLabs documented Shai-hulud, the first self-replicating registry-native worm operating at scale within npm, compromising nearly 1,000 packages with over 100 million lifetime downloads across two waves. Separately, the nullifAI technique demonstrated that malicious ML models can bypass Hugging Face security scanning using corrupted Pickle files. Organizations consuming npm packages should audit lockfiles for compromised packages including @ctrl/tinycolor, @asyncapi/specs, ngx-bootstrap, and ng2-file-upload. ML teams loading models from Hugging Face should implement pre-execution scanning beyond platform-provided safety checks.</p>
 <h2>Campaign Summary</h2>

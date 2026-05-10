@@ -1,7 +1,7 @@
 # Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection
 
 **Date:** 2026-05-08
-**Tags:** supply-chain, malicious-tool
+**Tags:** supply-chain, malicious-tool, mcp-security, prompt-injection
 
 ## Executive Summary
 

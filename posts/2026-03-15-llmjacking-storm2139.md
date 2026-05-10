@@ -1,7 +1,7 @@
 # LLMjacking Operations and Storm-2139: Stolen API Keys at Scale
 
 **Date:** 2026-03-15
-**Tags:** LLMjacking, Cloud AI Abuse
+**Tags:** llmjacking
 
 ## Executive Summary
 

@@ -1,7 +1,7 @@
 # Multi-Agent Prompt Injection via Amazon Bedrock: Attack Surface Expansion in Enterprise AI Deployments
 
 **Date:** 2026-04-15
-**Tags:** malicious-tool, apt
+**Tags:** malicious-tool, apt, prompt-injection
 
 ## Executive Summary
 

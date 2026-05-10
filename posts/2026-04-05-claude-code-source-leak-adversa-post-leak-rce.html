@@ -23,6 +23,7 @@
   <meta property="article:modified_time" content="2026-04-05T00:00:00Z">
   <meta property="article:tag" content="malicious-tool">
   <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="prompt-injection">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)">
@@ -48,7 +49,8 @@
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-04-05-claude-code-source-leak-adversa-post-leak-rce.html",
   "keywords": [
     "malicious-tool",
-    "supply-chain"
+    "supply-chain",
+    "prompt-injection"
   ]
 }
   </script>
@@ -74,11 +76,11 @@
     <a href="/" class="back-link">&larr; Back to feed</a>
     <div class="post-meta" style="margin-bottom:1rem">
       <span class="post-date">2026-04-05</span>
-      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>Claude Code Source Leak Followed by Critical Post-Leak RCE: Sourcemap Exposure and Prompt Injection Vulnerability (CVE Pending)</h1>
-<p><strong>Date:</strong> 2026-04-05<br><strong>Tags:</strong> malicious-tool, supply-chain</p>
+<p><strong>Date:</strong> 2026-04-05<br><strong>Tags:</strong> malicious-tool, supply-chain, prompt-injection</p>
 <h2>Executive Summary</h2>
 <p>On March 31, 2026, Anthropic mistakenly included a debugging JavaScript sourcemap for Claude Code v2.1.88 to npm. Within days of each other, Anthropic first leaked the source code to Claude Code, and then a critical vulnerability was found by Adversa AI. Within hours, researcher Chaofan Shou discovered the sourcemap and posted a link on X. A genuine and critical vulnerability has now been discovered in Claude Code proper by Adversa AI Red Team. Claude Code is a 519,000+ line TypeScript application that allows developers to interact with Claude directly from the command line.</p>
 <h2>Campaign Summary</h2>

@@ -1,4 +1,19 @@
 const { test, expect } = require('@playwright/test');
+const postsIndex = require('../data/posts-index.json');
+
+const expectedTagLabels = {
+  'supply-chain': 'Supply Chain',
+  'malicious-tool': 'Malicious Tool',
+  'nation-state': 'Nation State',
+  'shadow-ai': 'Shadow AI',
+  'llmjacking': 'LLMjacking',
+  'malware': 'Malware',
+  'apt': 'APT',
+  'phishing': 'Phishing',
+  'model-poisoning': 'Model Poisoning',
+  'prompt-injection': 'Prompt Injection',
+  'mcp-security': 'MCP Security'
+};
 
 async function waitForFeedCards(page) {
   await page.goto('/index.html#/home');
@@ -40,6 +55,22 @@ test.describe('Intel feed search desktop', () => {
     await page.waitForTimeout(350);
     await expect(page.locator('#feed-status')).toContainText(/Supply Chain|supply/i);
     await expect(page.locator('#posts-grid .post-card')).toHaveCount(1);
+  });
+
+  test('canonical lowercase tags display as readable filter and chip labels', async ({ page }) => {
+    await waitForFeedCards(page);
+    const presentTags = new Set(postsIndex.posts.flatMap(post => post.tags || []));
+    const checkedTags = Object.entries(expectedTagLabels).filter(([tag]) => presentTags.has(tag));
+    expect(checkedTags.length).toBeGreaterThan(0);
+
+    for (const [tag, label] of checkedTags) {
+      await expect(page.locator(`.filter-btn[data-filter="${tag}"]`)).toContainText(label);
+    }
+
+    const newerTag = ['mcp-security', 'model-poisoning', 'prompt-injection', 'phishing'].find(tag => presentTags.has(tag));
+    expect(newerTag).toBeTruthy();
+    await page.locator(`.filter-btn[data-filter="${newerTag}"]`).click();
+    await expect(page.locator(`.post-tag.tag-${newerTag}`).first()).toContainText(expectedTagLabels[newerTag]);
   });
 
   test('search from actors route navigates home', async ({ page }) => {

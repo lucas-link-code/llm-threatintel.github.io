@@ -1,7 +1,7 @@
 # CVE-2026-29872: Awesome-LLM-Apps Cross-Session API Token Disclosure
 
 **Date:** 2026-04-04
-**Tags:** shadow-ai, malware
+**Tags:** shadow-ai, malware, mcp-security
 
 ## Executive Summary
 

@@ -23,6 +23,8 @@
   <meta property="article:modified_time" content="2026-05-08T00:00:00Z">
   <meta property="article:tag" content="supply-chain">
   <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="mcp-security">
+  <meta property="article:tag" content="prompt-injection">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection">
@@ -48,7 +50,9 @@
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-08-anthropic-mcp-stdio-rce-design-flaw.html",
   "keywords": [
     "supply-chain",
-    "malicious-tool"
+    "malicious-tool",
+    "mcp-security",
+    "prompt-injection"
   ]
 }
   </script>
@@ -74,11 +78,11 @@
     <a href="/" class="back-link">&larr; Back to feed</a>
     <div class="post-meta" style="margin-bottom:1rem">
       <span class="post-date">2026-05-08</span>
-      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-mcp-security">Mcp Security</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection</h1>
-<p><strong>Date:</strong> 2026-05-08<br><strong>Tags:</strong> supply-chain, malicious-tool</p>
+<p><strong>Date:</strong> 2026-05-08<br><strong>Tags:</strong> supply-chain, malicious-tool, mcp-security, prompt-injection</p>
 <h2>Executive Summary</h2>
 <p>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic&#x27;s Model Context Protocol affecting 150M+ downloads and baked into official MCP SDKs across every supported programming language, with the vulnerability rippling through a supply chain with 7,000+ publicly accessible servers and up to 200,000 vulnerable instances in total. The systemic vulnerability enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories, and is baked into Anthropic&#x27;s official MCP software development kit (SDK) across any supported language, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</p>
 <h2>Campaign Summary</h2>

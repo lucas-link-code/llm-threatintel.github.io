@@ -48,7 +48,11 @@ VALID_TAGS = {
     "shadow-ai",
     "llmjacking",
     "malware",
-    "apt"
+    "apt",
+    "phishing",
+    "model-poisoning",
+    "prompt-injection",
+    "mcp-security"
 }
 
 # ---- Load existing state for context injection ----
@@ -157,8 +161,8 @@ OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the J
 
 If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "search_summary": "Summary"}}
 
-Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt.
-Choose ONLY from these 7 tags. Do not create new tags or use variations.
+Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt, phishing, model-poisoning, prompt-injection, mcp-security.
+Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 

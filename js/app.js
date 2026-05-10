@@ -9,7 +9,19 @@ const App = {
   iocsData: null,
   blogIndex: null,
   currentFilter: 'all',
-  homeTagOrder: ['malicious-tool', 'supply-chain', 'malware', 'shadow-ai', 'llmjacking', 'nation-state', 'apt'],
+  homeTagOrder: [
+    'malicious-tool',
+    'supply-chain',
+    'malware',
+    'shadow-ai',
+    'llmjacking',
+    'nation-state',
+    'apt',
+    'phishing',
+    'model-poisoning',
+    'prompt-injection',
+    'mcp-security'
+  ],
   actorFilter: 'all',
   actorSearch: '',
   selectedActorId: null,
@@ -2672,9 +2684,16 @@ const App = {
     const map = {
       'supply-chain': 'Supply Chain', 'malicious-tool': 'Malicious Tool',
       'nation-state': 'Nation State', 'shadow-ai': 'Shadow AI',
-      'llmjacking': 'LLMjacking', 'malware': 'Malware', 'apt': 'APT'
+      'llmjacking': 'LLMjacking', 'malware': 'Malware', 'apt': 'APT',
+      'phishing': 'Phishing', 'model-poisoning': 'Model Poisoning',
+      'prompt-injection': 'Prompt Injection', 'mcp-security': 'MCP Security'
     };
-    return map[tag] || tag;
+    if (map[tag]) return map[tag];
+    return String(tag || '')
+      .split('-')
+      .filter(Boolean)
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(' ');
   },
 
   formatType(type) {

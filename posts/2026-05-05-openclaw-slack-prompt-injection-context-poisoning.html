@@ -23,6 +23,7 @@
   <meta property="article:modified_time" content="2026-05-05T00:00:00Z">
   <meta property="article:tag" content="malicious-tool">
   <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="prompt-injection">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenClaw CVE-2026-41358: Origin Validation Bypass Enables Prompt Injection and Context Poisoning via Slack Integration">
@@ -48,7 +49,8 @@
   "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-05-openclaw-slack-prompt-injection-context-poisoning.html",
   "keywords": [
     "malicious-tool",
-    "shadow-ai"
+    "shadow-ai",
+    "prompt-injection"
   ]
 }
   </script>
@@ -74,11 +76,11 @@
     <a href="/" class="back-link">&larr; Back to feed</a>
     <div class="post-meta" style="margin-bottom:1rem">
       <span class="post-date">2026-05-05</span>
-      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-shadow-ai">Shadow AI</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
       <span class="post-tag tlp-clear">TLP:CLEAR</span>
     </div>
     <div class="post-content"><h1>OpenClaw CVE-2026-41358: Origin Validation Bypass Enables Prompt Injection and Context Poisoning via Slack Integration</h1>
-<p><strong>Date:</strong> 2026-05-05<br><strong>Tags:</strong> malicious-tool, shadow-ai</p>
+<p><strong>Date:</strong> 2026-05-05<br><strong>Tags:</strong> malicious-tool, shadow-ai, prompt-injection</p>
 <h2>Executive Summary</h2>
 <p>An origin validation vulnerability (CWE-346) exists within the OpenClaw AI assistant&#x27;s Slack integration prior to version 2026.4.2; the platform fails to independently verify the sender of historical thread messages against configured allowlists, enabling unauthorized users to inject malicious instructions into the LLM context when an authorized user triggers the agent, facilitating prompt injection and context poisoning attacks. Successful exploitation results in unauthorized manipulation where attackers can manipulate the agent&#x27;s behavior, extract sensitive information intended for authorized users, or alter the assistant&#x27;s persona.</p>
 <h2>Campaign Summary</h2>
