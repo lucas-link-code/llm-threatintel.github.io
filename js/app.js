@@ -140,6 +140,22 @@ const App = {
       case 'post':
         this.renderPost(content, params.join('/'));
         break;
+      case 'brief':
+        this.setRouteMeta({
+          title: 'Executive Brief | LLM ThreatIntel',
+          description: 'Concise executive-level summary generated from the current LLM ThreatIntel reports, threat actors, and IOCs.',
+          url: `${this.metaDefaults.siteUrl}/#brief`
+        });
+        this.renderBrief(content);
+        break;
+      case 'trends':
+        this.setRouteMeta({
+          title: 'Trends Dashboard | LLM ThreatIntel',
+          description: 'Current trends across LLM ThreatIntel reports, threat actors, and IOCs, with analyst pivots into reports, actors, and indicators.',
+          url: `${this.metaDefaults.siteUrl}/#trends`
+        });
+        this.renderTrends(content);
+        break;
       case 'actors':
         this.setRouteMeta({
           title: 'Threat Actor Tracker | LLM ThreatIntel',
@@ -617,6 +633,930 @@ const App = {
       `;
     }
     return '<div class="feed-empty" role="status"><p>No reports available.</p></div>';
+  },
+
+  // ---- TRENDS DASHBOARD ----
+  normalizeTrendText(value) {
+    const text = String(value ?? '').trim();
+    return text || 'Unknown';
+  },
+
+  countBy(items, keyFn) {
+    const counts = new Map();
+    items.forEach(item => {
+      const key = this.normalizeTrendText(keyFn(item));
+      counts.set(key, (counts.get(key) || 0) + 1);
+    });
+    return counts;
+  },
+
+  sortCounts(counts, { chronological = false } = {}) {
+    const entries = [...counts.entries()].map(([key, count]) => ({ key, count }));
+    if (chronological) {
+      return entries.sort((a, b) => a.key.localeCompare(b.key));
+    }
+    return entries.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key));
+  },
+
+  getCampaignSlugFromPost(post) {
+    return String(post?.id || '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+  },
+
+  getPostCampaignLookup() {
+    const lookup = new Map();
+    (this.postsIndex?.posts || []).forEach(post => {
+      const slug = this.getCampaignSlugFromPost(post);
+      if (slug) lookup.set(slug, post);
+    });
+    return lookup;
+  },
+
+  getPostTrendBlob(post) {
+    return [
+      post?.id,
+      post?.title,
+      post?.date,
+      post?.excerpt,
+      ...(post?.tags || [])
+    ].filter(Boolean).join(' ').toLowerCase();
+  },
+
+  escapeRegExp(value) {
+    return String(value ?? '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  },
+
+  trendTermMatches(blob, term) {
+    const cleanTerm = String(term || '').trim().toLowerCase();
+    if (!cleanTerm) return false;
+    if (/^[a-z0-9][a-z0-9\s.-]*[a-z0-9]$/i.test(cleanTerm)) {
+      return new RegExp(`(^|[^a-z0-9])${this.escapeRegExp(cleanTerm)}([^a-z0-9]|$)`, 'i').test(blob);
+    }
+    return blob.includes(cleanTerm);
+  },
+
+  getTrendKeywordMaps() {
+    return {
+      platforms: {
+        'npm': ['npm', 'node package', 'package.json'],
+        'PyPI': ['pypi', 'python package', 'pip install'],
+        'GitHub': ['github', 'github actions', 'repository'],
+        'VS Code / Open VSX': ['vscode', 'visual studio code', 'open vsx', 'extension'],
+        'MCP': ['mcp', 'model context protocol'],
+        'Kubernetes': ['kubernetes', 'k8s', 'daemonset'],
+        'Cloud AI APIs': ['openai api', 'anthropic api', 'gemini api', 'bedrock', 'azure openai'],
+        'AI Coding Assistants': ['claude code', 'cursor', 'windsurf', 'copilot', 'ai coding assistant'],
+        'Browser Extensions': ['browser extension', 'chrome extension', 'chromium extension']
+      },
+      themes: {
+        'Supply Chain': ['supply chain', 'trojanized', 'package compromise', 'dependency', 'registry'],
+        'Credential Theft / LLMjacking': ['credential', 'api key', 'token', 'secret', 'llmjacking', 'exfiltrat'],
+        'Prompt Injection': ['prompt injection', 'indirect prompt', 'context poisoning'],
+        'MCP / Agent Abuse': ['mcp', 'agentic', 'ai agent', 'tool poisoning'],
+        'RCE / Exploitation': ['rce', 'remote code execution', 'cve', 'exploited', 'vulnerability'],
+        'Malware / Backdoor': ['malware', 'backdoor', 'rat', 'stealer', 'worm', 'dropper'],
+        'Nation-State / APT': ['apt', 'dprk', 'north korean', 'nation-state', 'russia', 'iran'],
+        'Phishing / Social Engineering': ['phishing', 'bec', 'deepfake', 'social engineering', 'fake installer']
+      }
+    };
+  },
+
+  getTrendRepresentativeSearch(kind, label) {
+    const maps = this.getTrendKeywordMaps();
+    if (kind === 'platform') return maps.platforms[label]?.[0] || label;
+    if (kind === 'theme') return maps.themes[label]?.[0] || label;
+    return label;
+  },
+
+  getTrendPostBlobs(posts, iocs) {
+    const iocsByCampaign = new Map();
+    iocs.forEach(ioc => {
+      const campaign = String(ioc?.campaign || '').trim();
+      if (!campaign) return;
+      if (!iocsByCampaign.has(campaign)) iocsByCampaign.set(campaign, []);
+      iocsByCampaign.get(campaign).push([
+        ioc.value,
+        ioc.context,
+        ioc.source,
+        ioc.type
+      ].filter(Boolean).join(' '));
+    });
+
+    return posts.map(post => {
+      const slug = this.getCampaignSlugFromPost(post);
+      const iocContext = (iocsByCampaign.get(slug) || []).join(' ');
+      return { post, blob: `${this.getPostTrendBlob(post)} ${iocContext}`.toLowerCase() };
+    });
+  },
+
+  countKeywordMap(postBlobs, keywordMap) {
+    const counts = new Map();
+    Object.entries(keywordMap).forEach(([label, keywords]) => {
+      let count = 0;
+      postBlobs.forEach(({ blob }) => {
+        if (keywords.some(keyword => this.trendTermMatches(blob, keyword))) count += 1;
+      });
+      if (count > 0) counts.set(label, count);
+    });
+    return this.sortCounts(counts);
+  },
+
+  isGenericActorTrendName(name) {
+    const normalized = String(name || '').trim().toLowerCase();
+    const denylist = new Set([
+      'unknown',
+      'unknown threat actor',
+      'unknown threat actors',
+      'potential threat actors',
+      'research community',
+      'unknown / opportunistic',
+      'unknown / multiple',
+      'unknown / mass scanning infrastructure',
+      'unattributed threat actors'
+    ]);
+    return denylist.has(normalized)
+      || normalized.startsWith('unknown /')
+      || normalized.startsWith('unknown-')
+      || normalized.includes('research community')
+      || normalized.includes('potential threat actors');
+  },
+
+  getActorMentionCounts(posts, actors, iocs = []) {
+    const postBlobs = this.getTrendPostBlobs(posts, iocs);
+    const counts = new Map();
+
+    actors.forEach(actor => {
+      const names = [...new Set(actor?.names || [])]
+        .map(name => String(name || '').trim())
+        .filter(name => name && !this.isGenericActorTrendName(name));
+      if (!names.length) return;
+
+      let count = 0;
+      postBlobs.forEach(({ blob }) => {
+        if (names.some(name => this.trendTermMatches(blob, name))) count += 1;
+      });
+      if (count > 0) counts.set(names[0], count);
+    });
+
+    return this.sortCounts(counts).slice(0, 10);
+  },
+
+  getTrendsData() {
+    const posts = this.postsIndex?.posts || [];
+    const actors = this.actorsData?.entries || [];
+    const iocs = this.iocsData?.iocs || [];
+    const postBlobs = this.getTrendPostBlobs(posts, iocs);
+    const keywordMaps = this.getTrendKeywordMaps();
+    const validMonths = posts
+      .map(post => String(post.date || '').match(/^\d{4}-\d{2}/)?.[0])
+      .filter(Boolean);
+    const latestReportMonth = validMonths.length ? [...validMonths].sort().at(-1) : 'Unknown';
+    const monthIndex = month => {
+      const match = String(month || '').match(/^(\d{4})-(\d{2})$/);
+      return match ? Number(match[1]) * 12 + Number(match[2]) : null;
+    };
+    const latestMonthIndex = monthIndex(latestReportMonth);
+    const latestMonthReports = posts.filter(post => String(post.date || '').slice(0, 7) === latestReportMonth).length;
+    const lastSixMonthReports = latestMonthIndex === null ? 0 : posts.filter(post => {
+      const idx = monthIndex(String(post.date || '').slice(0, 7));
+      return idx !== null && idx >= latestMonthIndex - 5 && idx <= latestMonthIndex;
+    }).length;
+
+    return {
+      totals: {
+        reports: posts.length,
+        activeIocs: iocs.filter(ioc => ioc.status === 'active').length,
+        totalIocs: iocs.length,
+        activeActors: actors.filter(actor => actor.status === 'active').length
+      },
+      reportWindows: {
+        latestMonth: latestReportMonth,
+        latestMonthReports,
+        lastSixMonthReports,
+        totalReports: posts.length
+      },
+      reportsByTag: this.sortCounts(this.countBy(posts.flatMap(post => post.tags || []), tag => tag)),
+      reportsByMonth: this.sortCounts(this.countBy(posts.filter(post => /^\d{4}-\d{2}/.test(String(post.date || ''))), post => String(post.date).slice(0, 7)), { chronological: true }),
+      iocTypes: this.sortCounts(this.countBy(iocs, ioc => ioc.type)),
+      iocStatuses: this.sortCounts(this.countBy(iocs, ioc => ioc.status)),
+      iocSources: this.sortCounts(this.countBy(iocs, ioc => ioc.source)).slice(0, 10),
+      actorTypes: this.sortCounts(this.countBy(actors, actor => actor.type)),
+      actorStatuses: this.sortCounts(this.countBy(actors, actor => actor.status)),
+      actorMentions: this.getActorMentionCounts(posts, actors, iocs),
+      affectedPlatforms: this.countKeywordMap(postBlobs, keywordMaps.platforms),
+      attackThemes: this.countKeywordMap(postBlobs, keywordMaps.themes)
+    };
+  },
+
+  renderTrendStatCards(data) {
+    const cards = [
+      ['total-reports', data.totals.reports, 'Total Reports'],
+      ['active-iocs', data.totals.activeIocs, 'Active IOCs'],
+      ['total-iocs', data.totals.totalIocs, 'Total IOCs'],
+      ['active-actors', data.totals.activeActors, 'Active Actors']
+    ];
+
+    return `
+      <div class="stats-row trends-stat-row">
+        ${cards.map(([key, value, label]) => `
+          <div class="stat-card trend-stat-card" data-trend-stat="${this.escapeAttr(key)}">
+            <div class="stat-value">${this.escapeHtml(value)}</div>
+            <div class="stat-label">${this.escapeHtml(label)}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  },
+
+  renderTrendReportWindows(data) {
+    const windows = [
+      ['latest-month', data.reportWindows.latestMonthReports, 'Latest Month', data.reportWindows.latestMonth],
+      ['last-six-months', data.reportWindows.lastSixMonthReports, 'Last 6 Months', 'Rolling from latest report month'],
+      ['all-time', data.reportWindows.totalReports, 'All Time', 'Tracked reports']
+    ];
+
+    return `
+      <div class="trend-period-row" aria-label="Report time windows">
+        ${windows.map(([key, value, label, detail]) => `
+          <div class="trend-period-card" data-trend-period="${this.escapeAttr(key)}">
+            <span class="trend-period-value">${this.escapeHtml(value)}</span>
+            <span class="trend-period-label">${this.escapeHtml(label)}</span>
+            <span class="trend-period-detail">${this.escapeHtml(detail)}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  },
+
+  getIOCTypePivotValue(type) {
+    if (['domain', 'url_path', 'ip', 'package', 'hash'].includes(type)) return type;
+    return null;
+  },
+
+  trendPivotOnClick(type, value) {
+    return this.escapeAttr(`App.openTrendPivot(${JSON.stringify(type)},${JSON.stringify(value)})`);
+  },
+
+  briefPivotOnClick(type, value) {
+    return this.escapeAttr(`App.openBriefPivot(${JSON.stringify(type)},${JSON.stringify(value)})`);
+  },
+
+  renderTrendBarList({ title, description, section, items, labeler = value => value, pivotType = null, pivotValue = value => value, pivotHandler = 'trend' }) {
+    const max = Math.max(...items.map(item => item.count), 1);
+    const rows = items.length
+      ? items.map(item => {
+        const width = Math.max(4, Math.round((item.count / max) * 100));
+        const label = labeler(item.key);
+        const targetValue = pivotType ? pivotValue(item.key) : null;
+        const onClick = pivotHandler === 'brief'
+          ? this.briefPivotOnClick(pivotType, targetValue)
+          : this.trendPivotOnClick(pivotType, targetValue);
+        const rowInner = `
+          <div class="trend-bar-meta">
+            <span class="trend-bar-label">${this.escapeHtml(label)}</span>
+            <span class="trend-bar-count">${this.escapeHtml(item.count)}</span>
+          </div>
+          <div class="trend-bar-track" aria-hidden="true">
+            <span class="trend-bar-fill" style="width:${width}%"></span>
+          </div>
+        `;
+        if (!pivotType || !targetValue) {
+          return `
+          <div class="trend-bar-row" data-trend-key="${this.escapeAttr(item.key)}" data-trend-count="${this.escapeAttr(item.count)}">
+            ${rowInner}
+          </div>
+          `;
+        }
+        return `
+          <button
+            type="button"
+            class="trend-bar-row trend-bar-button"
+            data-trend-key="${this.escapeAttr(item.key)}"
+            data-trend-count="${this.escapeAttr(item.count)}"
+            data-trend-pivot="${this.escapeAttr(pivotType)}"
+            data-trend-pivot-value="${this.escapeAttr(targetValue)}"
+            aria-label="Open ${this.escapeAttr(label)} trend pivot"
+            onclick="${onClick}"
+          >
+            ${rowInner}
+          </button>
+        `;
+      }).join('')
+      : '<p class="feed-description">No data available.</p>';
+
+    return `
+      <section class="trend-card" data-trend-section="${this.escapeAttr(section)}">
+        <div class="trend-card-header">
+          <h2>${this.escapeHtml(title)}</h2>
+          ${description ? `<p>${this.escapeHtml(description)}</p>` : ''}
+        </div>
+        <div class="trend-bar-list">
+          ${rows}
+        </div>
+      </section>
+    `;
+  },
+
+  renderRouteWithCurrentState(route) {
+    const content = document.getElementById('app-content');
+    if (!content) return;
+    if (route === 'home') {
+      this.renderHome(content);
+    } else if (route === 'ioc-feed') {
+      this.renderIOCFeed(content);
+    } else if (route === 'actors') {
+      this.renderActors(content);
+    } else if (route === 'trends') {
+      this.renderTrends(content);
+    } else if (route === 'brief') {
+      this.renderBrief(content);
+    }
+    window.scrollTo(0, 0);
+    this.scrollTopButtonHandler?.();
+  },
+
+  navigateOrRender(route) {
+    const target = `#${route}`;
+    if (window.location.hash === target) {
+      this.renderRouteWithCurrentState(route);
+    } else {
+      window.location.hash = target;
+    }
+  },
+
+  openTrendPivot(type, value) {
+    const cleanValue = String(value || '').trim();
+    if (!cleanValue) return;
+
+    switch (type) {
+      case 'report-tag':
+        this.feedSearchTerm = '';
+        this.currentFilter = cleanValue;
+        this.syncSearchInputs();
+        this.navigateOrRender('home');
+        break;
+      case 'report-month':
+      case 'platform':
+      case 'theme':
+        this.currentFilter = 'all';
+        this.feedSearchTerm = cleanValue;
+        this.syncSearchInputs();
+        this.navigateOrRender('home');
+        break;
+      case 'ioc-type':
+        this.iocSearch = '';
+        this.iocTypeFilter = cleanValue;
+        this.iocStatusFilter = 'all';
+        this.iocCampaignFilter = 'all';
+        this.iocSourceFilter = 'all';
+        this.navigateOrRender('ioc-feed');
+        break;
+      case 'ioc-source':
+        this.iocSearch = '';
+        this.iocTypeFilter = 'all';
+        this.iocStatusFilter = 'all';
+        this.iocCampaignFilter = 'all';
+        this.iocSourceFilter = cleanValue;
+        this.navigateOrRender('ioc-feed');
+        break;
+      case 'ioc-status':
+        this.iocSearch = '';
+        this.iocTypeFilter = 'all';
+        this.iocStatusFilter = cleanValue;
+        this.iocCampaignFilter = 'all';
+        this.iocSourceFilter = 'all';
+        this.navigateOrRender('ioc-feed');
+        break;
+      case 'actor-search':
+        this.actorSearch = cleanValue;
+        this.actorFilter = 'all';
+        this.navigateOrRender('actors');
+        break;
+      default:
+        break;
+    }
+  },
+
+  // ---- EXECUTIVE BRIEF ----
+  getBriefThemeKeywords() {
+    return {
+      'Supply Chain': ['supply chain', 'npm', 'pypi', 'package', 'dependency', 'registry'],
+      'Credential Theft / LLMjacking': ['credential', 'token', 'api key', 'secret', 'llmjacking', 'unauthorized ai access'],
+      'MCP / Agent Abuse': ['mcp', 'model context protocol', 'tool poisoning', 'agent abuse'],
+      'Prompt Injection': ['prompt injection', 'indirect prompt injection', 'jailbreak'],
+      'AI Coding Tools': ['cursor', 'claude code', 'copilot', 'coding agent', 'ai coding'],
+      'Nation-State / APT': ['nation-state', 'dprk', 'russia', 'apt', 'state-sponsored'],
+      'Phishing / Social Engineering': ['phishing', 'clickfix', 'fake captcha', 'social engineering']
+    };
+  },
+
+  getRecentPosts(days = 30) {
+    const posts = this.postsIndex?.posts || [];
+    const datedPosts = posts
+      .map(post => ({ post, time: Date.parse(`${post?.date || ''}T00:00:00Z`) }))
+      .filter(item => Number.isFinite(item.time));
+    if (!datedPosts.length) return [];
+
+    const latestTime = Math.max(...datedPosts.map(item => item.time));
+    const startTime = latestTime - ((days - 1) * 24 * 60 * 60 * 1000);
+    return datedPosts
+      .filter(item => item.time >= startTime && item.time <= latestTime)
+      .map(item => item.post);
+  },
+
+  getBriefThemeMix(posts) {
+    const iocs = this.iocsData?.iocs || [];
+    return this.countKeywordMap(this.getTrendPostBlobs(posts || [], iocs), this.getBriefThemeKeywords());
+  },
+
+  getBriefThemeSearchTerm(theme) {
+    const representativeTerms = {
+      'Supply Chain': 'supply chain',
+      'Credential Theft / LLMjacking': 'api key',
+      'MCP / Agent Abuse': 'mcp',
+      'Prompt Injection': 'prompt injection',
+      'AI Coding Tools': 'ai coding',
+      'Nation-State / APT': 'apt',
+      'Phishing / Social Engineering': 'phishing'
+    };
+    return representativeTerms[theme] || theme;
+  },
+
+  getBriefPosture(data) {
+    const recentReports = data?.totals?.recentReports || 0;
+    const activeIocs = data?.totals?.activeIocs || 0;
+    const activeActors = data?.totals?.activeActors || 0;
+    let label = 'Stable';
+
+    if (recentReports >= 5 && activeIocs >= 20) {
+      label = 'Elevated';
+    } else if (recentReports >= 2 || activeIocs >= 10) {
+      label = 'Active';
+    } else if (activeActors > 0 || activeIocs > 0) {
+      label = 'Watch';
+    }
+
+    return {
+      label,
+      rationale: 'Posture is based on current reporting volume, recent activity, and active IOC count.',
+      caveat: 'This is a tracking-data posture indicator, not an enterprise risk rating.'
+    };
+  },
+
+  getBriefData() {
+    const posts = this.postsIndex?.posts || [];
+    const actors = this.actorsData?.entries || [];
+    const iocs = this.iocsData?.iocs || [];
+    const activeIocs = iocs.filter(ioc => ioc.status === 'active');
+    const recentPosts = this.getRecentPosts(30);
+    const themeSourcePosts = recentPosts.length >= 2 ? recentPosts : posts;
+    const themeFallback = recentPosts.length < 2 && posts.length > 0;
+    const themeMix = this.getBriefThemeMix(themeSourcePosts);
+    const iocTypes = this.sortCounts(this.countBy(activeIocs, ioc => ioc.type));
+    const iocSources = this.sortCounts(this.countBy(activeIocs, ioc => ioc.source));
+    const validDates = posts
+      .map(post => String(post?.date || '').match(/^\d{4}-\d{2}-\d{2}/)?.[0])
+      .filter(Boolean)
+      .sort();
+    const latestReportDate = validDates.at(-1) || '';
+
+    const data = {
+      windowLabel: 'Last 30 days',
+      lastUpdated: this.iocsData?.last_updated || latestReportDate || 'Unknown',
+      latestReportDate: latestReportDate || 'Unknown',
+      themeFallback,
+      totals: {
+        recentReports: recentPosts.length,
+        totalReports: posts.length,
+        activeIocs: activeIocs.length,
+        activeActors: actors.filter(actor => actor.status === 'active').length
+      },
+      themeMix,
+      topTheme: themeMix[0]?.key || 'No theme signal',
+      topIocType: iocTypes[0]?.key || 'Unknown',
+      topIocSource: iocSources[0]?.key || 'Unknown'
+    };
+
+    data.posture = this.getBriefPosture(data);
+    return data;
+  },
+
+  generateExecutiveSummary(data) {
+    const topTheme = data?.topTheme || 'tracked activity';
+    const topIocType = this.formatType(data?.topIocType || 'Unknown');
+    const topIocSource = data?.topIocSource || 'Unknown';
+    const posture = String(data?.posture?.label || 'Watch').toLowerCase();
+    const article = /^[aeiou]/i.test(posture) ? 'an' : 'a';
+    return [
+      `The current tracking data shows ${article} ${posture} directional signal across tracked reports, actors, and indicators.`,
+      `Recent reporting is most concentrated around ${topTheme}, based on conservative keyword matching across the tracked reports.`,
+      `Active IOC volume remains represented in the feed, with ${topIocType} indicators and ${topIocSource} source reporting prominent in the current dataset.`,
+      'The strongest defender focus is monitoring AI credential exposure, reviewing agent and tool permissions, and tracking package ecosystem infrastructure.',
+      'This page summarizes tracked reporting only and does not measure global prevalence or organization-specific risk.'
+    ].join(' ');
+  },
+
+  generateRecommendedFocus() {
+    return [
+      {
+        title: 'Credential Exposure',
+        text: 'Monitor AI API key exposure and LLM gateway abuse.'
+      },
+      {
+        title: 'Agent Permissions',
+        text: 'Review MCP, agent, and AI coding assistant permission boundaries.'
+      },
+      {
+        title: 'Supply Chain Indicators',
+        text: 'Track package ecosystem indicators and supply chain reporting.'
+      }
+    ];
+  },
+
+  renderBriefStatTiles(data) {
+    const cards = [
+      ['recent-reports', data.totals.recentReports, 'Reports, Last 30 Days'],
+      ['total-reports', data.totals.totalReports, 'Total Reports'],
+      ['active-iocs', data.totals.activeIocs, 'Active IOCs'],
+      ['active-actors', data.totals.activeActors, 'Active Actors'],
+      ['top-theme', data.topTheme, 'Top Recent Theme']
+    ];
+
+    return `
+      <div class="stats-row brief-stat-row">
+        ${cards.map(([key, value, label]) => `
+          <div class="stat-card brief-stat-card" data-brief-stat="${this.escapeAttr(key)}">
+            <div class="stat-value">${this.escapeHtml(value)}</div>
+            <div class="stat-label">${this.escapeHtml(label)}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  },
+
+  renderBriefThemeChart(data) {
+    const description = data.themeFallback
+      ? 'Limited recent data, showing all tracked reports. Keyword-based themes are counted once per report.'
+      : 'Keyword-based themes counted once per recent report.';
+
+    return `
+      <section class="brief-main-chart">
+        ${this.renderTrendBarList({
+          title: 'Threat Theme Mix, Last 30 Days',
+          description,
+          section: 'brief-theme-mix',
+          items: data.themeMix,
+          pivotType: 'theme',
+          pivotValue: value => this.getBriefThemeSearchTerm(value),
+          pivotHandler: 'brief'
+        })}
+      </section>
+    `;
+  },
+
+  getBriefThemeSignal(theme) {
+    const signals = {
+      'Supply Chain': 'Recent reporting continues to cluster around package ecosystems, dependency trust, and registry abuse.',
+      'Credential Theft / LLMjacking': 'Recent reporting keeps credential exposure, token theft, and unauthorized AI access in view.',
+      'MCP / Agent Abuse': 'Recent reporting points to agent tooling, MCP exposure, and tool permission boundaries.',
+      'Prompt Injection': 'Recent reporting includes prompt and context manipulation as a directional concern.',
+      'AI Coding Tools': 'Recent reporting includes AI coding assistants and developer workflow exposure.',
+      'Nation-State / APT': 'Recent reporting includes state-aligned or APT-labelled activity in the tracked dataset.',
+      'Phishing / Social Engineering': 'Recent reporting includes social engineering and lure-driven access paths.'
+    };
+    return signals[theme] || 'Recent reporting shows a directional signal in the tracked dataset.';
+  },
+
+  renderBriefSignalCards(data) {
+    const cards = [
+      {
+        key: 'theme',
+        title: 'Most Active Theme',
+        value: data.topTheme,
+        text: this.getBriefThemeSignal(data.topTheme)
+      },
+      {
+        key: 'ioc-type',
+        title: 'Top IOC Type',
+        value: this.formatType(data.topIocType),
+        text: 'The active IOC feed is currently led by this indicator category.'
+      },
+      {
+        key: 'ioc-source',
+        title: 'Most Common IOC Source',
+        value: data.topIocSource,
+        text: 'This source label contributes the largest share of active IOC records.'
+      }
+    ];
+
+    return `
+      <section class="brief-section">
+        <div class="trend-section-heading">
+          <h2>Recent Signals</h2>
+          <p>Short directional readouts from the current tracked reporting.</p>
+        </div>
+        <div class="brief-card-grid brief-signal-grid">
+          ${cards.map(card => `
+            <article class="brief-mini-card" data-brief-signal="${this.escapeAttr(card.key)}">
+              <span class="brief-card-kicker">${this.escapeHtml(card.title)}</span>
+              <h3>${this.escapeHtml(card.value)}</h3>
+              <p>${this.escapeHtml(card.text)}</p>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  },
+
+  renderBriefActionCards(data) {
+    const meaningCards = [
+      {
+        key: 'leadership',
+        title: 'Leadership',
+        text: 'Prioritize visibility into AI tooling, API key exposure, and third-party package risk.'
+      },
+      {
+        key: 'soc',
+        title: 'SOC / Threat Hunting',
+        text: 'Use IOC Feed pivots to hunt active domains, URLs, hashes, IPs, and package indicators.'
+      },
+      {
+        key: 'engineering',
+        title: 'Engineering',
+        text: 'Review agent and tool permissions, MCP server exposure, and package dependency controls.'
+      }
+    ];
+    const focusItems = this.generateRecommendedFocus(data);
+
+    return `
+      <section class="brief-section">
+        <div class="trend-section-heading">
+          <h2>What This Means</h2>
+          <p>Three operational takeaways for different audiences.</p>
+        </div>
+        <div class="brief-card-grid brief-meaning-grid">
+          ${meaningCards.map(card => `
+            <article class="brief-mini-card" data-brief-meaning="${this.escapeAttr(card.key)}">
+              <span class="brief-card-kicker">${this.escapeHtml(card.title)}</span>
+              <p>${this.escapeHtml(card.text)}</p>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+      <section class="brief-section">
+        <div class="trend-section-heading">
+          <h2>Recommended Focus</h2>
+          <p>Concise priorities for the next review cycle.</p>
+        </div>
+        <div class="brief-card-grid brief-focus-grid">
+          ${focusItems.map((item, index) => `
+            <article class="brief-mini-card" data-brief-focus="${this.escapeAttr(index + 1)}">
+              <span class="brief-card-kicker">Priority ${this.escapeHtml(index + 1)}</span>
+              <h3>${this.escapeHtml(item.title)}</h3>
+              <p>${this.escapeHtml(item.text)}</p>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  },
+
+  renderBriefPivotActions() {
+    const actions = [
+      ['trends', 'Open Trends'],
+      ['home', 'Open Intel Feed'],
+      ['ioc-feed', 'Open IOC Feed'],
+      ['actors', 'Open Threat Actors']
+    ];
+
+    return `
+      <section class="brief-section brief-pivot-section">
+        <div class="trend-section-heading">
+          <h2>Analyst Pivots</h2>
+          <p>Open the detailed views for deeper review.</p>
+        </div>
+        <div class="brief-pivot-actions">
+          ${actions.map(([route, label]) => `
+            <button
+              type="button"
+              class="btn"
+              data-brief-pivot="${this.escapeAttr(route)}"
+              aria-label="${this.escapeAttr(label)}"
+              onclick="${this.escapeAttr(`App.openBriefPivot('route','${route}')`)}"
+            >${this.escapeHtml(label)}</button>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  },
+
+  openBriefPivot(type, value) {
+    const cleanValue = String(value || '').trim();
+    if (!cleanValue) return;
+
+    if (type === 'route') {
+      if (cleanValue === 'home') {
+        this.currentFilter = 'all';
+        this.feedSearchTerm = '';
+        this.syncSearchInputs();
+      } else if (cleanValue === 'ioc-feed') {
+        this.iocSearch = '';
+        this.iocTypeFilter = 'all';
+        this.iocStatusFilter = 'active';
+        this.iocCampaignFilter = 'all';
+        this.iocSourceFilter = 'all';
+        this.iocSort = 'newest';
+      } else if (cleanValue === 'actors') {
+        this.actorSearch = '';
+        this.actorFilter = 'all';
+      }
+      this.navigateOrRender(cleanValue);
+      return;
+    }
+
+    if (type === 'theme') {
+      this.currentFilter = 'all';
+      this.feedSearchTerm = this.getBriefThemeSearchTerm(cleanValue);
+      this.syncSearchInputs();
+      this.navigateOrRender('home');
+      return;
+    }
+
+    this.openTrendPivot(type, cleanValue);
+  },
+
+  renderBrief(container) {
+    const data = this.getBriefData();
+    const summary = this.generateExecutiveSummary(data);
+
+    container.innerHTML = `
+      <div class="brief-dashboard">
+        <div class="brief-header">
+          <h1 class="page-title"><span class="title-accent">//</span> Executive Brief</h1>
+          <p class="page-subtitle">Concise leadership view of current GenAI and LLM threat activity across tracked reporting.</p>
+          <div class="brief-meta-row" aria-label="Page metadata">
+            <span class="mitre-badge" data-brief-window>${this.escapeHtml(data.windowLabel)}</span>
+            <span class="mitre-badge" data-brief-updated>Updated ${this.escapeHtml(data.lastUpdated)}</span>
+          </div>
+        </div>
+        <p class="brief-methodology-note">This page is generated from current LLM ThreatIntel reporting. Derived themes are keyword-based and directional, not definitive attribution or organization-specific risk scoring.</p>
+        <div class="brief-overview-grid">
+          <section class="brief-summary-card" data-brief-summary>
+            <h2>Executive Summary</h2>
+            <p>${this.escapeHtml(summary)}</p>
+          </section>
+          <section class="brief-posture-card" data-brief-posture="${this.escapeAttr(data.posture.label)}">
+            <div>
+              <h2>Current Threat Posture</h2>
+              <div class="brief-posture-label">${this.escapeHtml(data.posture.label)}</div>
+            </div>
+            <div>
+              <p>${this.escapeHtml(data.posture.rationale)}</p>
+              <p class="brief-caveat">${this.escapeHtml(data.posture.caveat)}</p>
+            </div>
+          </section>
+        </div>
+        ${this.renderBriefStatTiles(data)}
+        ${this.renderBriefThemeChart(data)}
+        ${this.renderBriefSignalCards(data)}
+        ${this.renderBriefActionCards(data)}
+        ${this.renderBriefPivotActions()}
+      </div>
+    `;
+  },
+
+  renderTrends(container) {
+    const data = this.getTrendsData();
+
+    container.innerHTML = `
+      <div class="trends-dashboard">
+        <h1 class="page-title"><span class="title-accent">//</span> Trends Dashboard</h1>
+        <p class="page-subtitle">Trends across current reports, threat actors, and IOCs. Use the pivots to jump into filtered reports, actors, or indicators.</p>
+
+        ${this.renderTrendStatCards(data)}
+
+        <section class="trend-section">
+          <div class="trend-section-heading">
+            <h2>Reports</h2>
+            <p>Exact metrics from report metadata.</p>
+          </div>
+          ${this.renderTrendReportWindows(data)}
+          <div class="trend-grid">
+            ${this.renderTrendBarList({
+              title: 'Reports by Tag',
+              description: 'Counts each tag assigned to current reports.',
+              section: 'reports-by-tag',
+              items: data.reportsByTag,
+              labeler: value => this.formatTag(value),
+              pivotType: 'report-tag'
+            })}
+            ${this.renderTrendBarList({
+              title: 'Reports by Month',
+              description: 'Counts reports by publication month.',
+              section: 'reports-by-month',
+              items: data.reportsByMonth,
+              pivotType: 'report-month'
+            })}
+          </div>
+        </section>
+
+        <section class="trend-section">
+          <div class="trend-section-heading">
+            <h2>IOCs</h2>
+            <p>Exact metrics from the IOC database.</p>
+          </div>
+          <div class="trend-grid">
+            ${this.renderTrendBarList({
+              title: 'IOC Type Mix',
+              description: 'Counts explicit IOC type values.',
+              section: 'ioc-types',
+              items: data.iocTypes,
+              labeler: value => this.formatType(value),
+              pivotType: 'ioc-type',
+              pivotValue: value => this.getIOCTypePivotValue(value)
+            })}
+            ${this.renderTrendBarList({
+              title: 'IOC Status Mix',
+              description: 'Counts explicit IOC status values.',
+              section: 'ioc-statuses',
+              items: data.iocStatuses,
+              labeler: value => this.formatType(value),
+              pivotType: 'ioc-status'
+            })}
+            ${this.renderTrendBarList({
+              title: 'Top IOC Sources',
+              description: 'Top source labels represented in IOC records.',
+              section: 'ioc-sources',
+              items: data.iocSources,
+              pivotType: 'ioc-source'
+            })}
+          </div>
+        </section>
+
+        <section class="trend-section">
+          <div class="trend-section-heading">
+            <h2>Threat Actors</h2>
+            <p>Exact metrics from actor records.</p>
+          </div>
+          <div class="trend-grid">
+            ${this.renderTrendBarList({
+              title: 'Actor Type Mix',
+              description: 'Counts explicit actor type values.',
+              section: 'actor-types',
+              items: data.actorTypes,
+              labeler: value => this.formatType(value)
+            })}
+            ${this.renderTrendBarList({
+              title: 'Actor Status Mix',
+              description: 'Counts explicit actor status values.',
+              section: 'actor-statuses',
+              items: data.actorStatuses,
+              labeler: value => this.formatType(value)
+            })}
+          </div>
+        </section>
+
+        <section class="trend-section">
+          <div class="trend-section-heading">
+            <h2>Most Mentioned Actors</h2>
+            <p>Keyword-based actor mentions across current report metadata and campaign-linked IOC context.</p>
+          </div>
+          <div class="trend-grid">
+            ${this.renderTrendBarList({
+              title: 'Actor Mentions',
+              description: 'Counts at most one mention per report for each actor name or alias.',
+              section: 'actor-mentions',
+              items: data.actorMentions,
+              pivotType: 'actor-search'
+            })}
+          </div>
+        </section>
+
+        <section class="trend-section">
+          <div class="trend-section-heading">
+            <h2>Derived Intelligence Themes</h2>
+            <p>Derived sections are based on current public-source reports and conservative keyword matching. Treat them as directional pivots, not definitive attribution.</p>
+          </div>
+          <div class="trend-grid">
+            ${this.renderTrendBarList({
+              title: 'Top Affected Platforms',
+              description: 'Keyword-based platform references counted once per report.',
+              section: 'affected-platforms',
+              items: data.affectedPlatforms,
+              pivotType: 'platform',
+              pivotValue: value => this.getTrendRepresentativeSearch('platform', value)
+            })}
+            ${this.renderTrendBarList({
+              title: 'Attack Themes',
+              description: 'Keyword-based themes counted once per report.',
+              section: 'attack-themes',
+              items: data.attackThemes,
+              pivotType: 'theme',
+              pivotValue: value => this.getTrendRepresentativeSearch('theme', value)
+            })}
+          </div>
+        </section>
+      </div>
+    `;
   },
 
   // ---- HOME PAGE ----

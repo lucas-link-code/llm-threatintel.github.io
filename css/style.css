@@ -574,6 +574,381 @@ a:hover { color: var(--ab); }
   min-width: 0;
 }
 
+/* Executive Brief + Trends Dashboard */
+.brief-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brief-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.brief-header .page-subtitle {
+  margin-bottom: 0;
+}
+
+.brief-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brief-methodology-note {
+  color: var(--t3);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.brief-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.brief-summary-card,
+.brief-posture-card {
+  background: rgba(17,24,39,.88);
+  border: 1px solid var(--bds);
+  border-radius: var(--rd);
+  padding: 1rem;
+  min-width: 0;
+}
+
+.brief-summary-card h2,
+.brief-posture-card h2 {
+  color: var(--t1);
+  font-size: 0.95rem;
+  margin-bottom: 0.55rem;
+}
+
+.brief-summary-card p {
+  color: var(--t2);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.brief-posture-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.brief-posture-card p {
+  color: var(--t2);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.brief-posture-label {
+  color: var(--ab);
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.brief-caveat {
+  color: var(--t3) !important;
+  margin-top: 0.35rem;
+}
+
+.brief-stat-row {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 0;
+}
+
+.brief-stat-card {
+  cursor: default;
+  min-width: 0;
+}
+
+.brief-stat-card:hover {
+  transform: none;
+}
+
+.brief-stat-card[data-brief-stat="top-theme"] .stat-value {
+  font-size: clamp(1rem, 1.35vw, 1.45rem);
+  overflow-wrap: anywhere;
+}
+
+.brief-main-chart .trend-card {
+  min-height: 240px;
+}
+
+.brief-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.brief-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.brief-mini-card {
+  background: rgba(17,24,39,.82);
+  border: 1px solid var(--bds);
+  border-radius: var(--rd);
+  padding: 0.95rem;
+  min-width: 0;
+}
+
+.brief-card-kicker {
+  display: block;
+  color: var(--t3);
+  font-family: var(--fm);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+
+.brief-mini-card h3 {
+  color: var(--ab);
+  font-size: 0.98rem;
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+  overflow-wrap: anywhere;
+}
+
+.brief-mini-card p {
+  color: var(--t2);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.brief-pivot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.trends-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trends-stat-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 0.2rem;
+}
+
+.trend-stat-card {
+  cursor: default;
+}
+
+.trend-stat-card:hover {
+  transform: none;
+}
+
+.trend-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.trend-section-heading h2 {
+  font-size: 1.05rem;
+  color: var(--t1);
+  margin-bottom: 0.25rem;
+}
+
+.trend-section-heading p {
+  color: var(--t3);
+  font-size: 0.84rem;
+}
+
+.trend-period-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.trend-period-card {
+  background: rgba(17,24,39,.7);
+  border: 1px solid var(--bds);
+  border-radius: var(--rs);
+  flex: 0 1 180px;
+  min-width: 150px;
+  padding: 0.55rem 0.7rem;
+}
+
+.trend-period-value {
+  display: block;
+  color: var(--ab);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.trend-period-label {
+  display: block;
+  color: var(--t1);
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-top: 0.18rem;
+}
+
+.trend-period-detail {
+  display: block;
+  color: var(--t3);
+  font-size: 0.66rem;
+  margin-top: 0.14rem;
+  overflow-wrap: anywhere;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.trend-card {
+  background: rgba(17,24,39,.88);
+  border: 1px solid var(--bds);
+  border-radius: var(--rd);
+  padding: 1rem;
+  min-width: 0;
+}
+
+.trend-card-header {
+  margin-bottom: 0.85rem;
+}
+
+.trend-card-header h2 {
+  font-size: 0.95rem;
+  color: var(--ab);
+  margin-bottom: 0.25rem;
+}
+
+.trend-card-header p {
+  color: var(--t3);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.trend-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.trend-bar-row {
+  min-width: 0;
+}
+
+.trend-bar-button {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--rs);
+}
+
+.trend-bar-button:hover .trend-bar-label,
+.trend-bar-button:focus-visible .trend-bar-label {
+  color: var(--t1);
+}
+
+.trend-bar-button:hover .trend-bar-fill,
+.trend-bar-button:focus-visible .trend-bar-fill {
+  background: linear-gradient(90deg, var(--ab), #93c5fd);
+}
+
+.trend-bar-button:focus-visible {
+  outline: 2px solid var(--bdg);
+  outline-offset: 4px;
+}
+
+.trend-bar-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.trend-bar-label {
+  color: var(--t2);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.trend-bar-count {
+  color: var(--t1);
+  font-family: var(--fm);
+  font-size: 0.78rem;
+}
+
+.trend-bar-track {
+  height: 0.5rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.trend-bar-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--as), #60a5fa);
+  border-radius: inherit;
+}
+
+@media (max-width: 1100px) {
+  .brief-overview-grid,
+  .brief-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brief-stat-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .trends-stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .brief-stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trends-stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trend-period-row {
+    gap: 0.5rem;
+  }
+
+  .trend-period-card {
+    flex-basis: calc(50% - 0.25rem);
+    min-width: 130px;
+  }
+
+  .trend-card {
+    padding: 0.9rem;
+  }
+}
+
 .ioc-section-title {
   font-size: 1rem;
   font-weight: 600;
