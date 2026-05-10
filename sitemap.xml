@@ -7,6 +7,36 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://llm-threatintel.com/posts/2026-05-10-context-ai-vercel-oauth-supply-chain-breach.html</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>

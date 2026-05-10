@@ -1215,6 +1215,114 @@
       "source": "OX Security",
       "campaign": "context-ai-vercel-oauth-supply-chain-breach",
       "status": "active"
+    },
+    {
+      "value": "claude-pro.com",
+      "type": "domain",
+      "context": "Lookalike domain impersonating Anthropic's Claude AI; distributes 505MB Claude-Pro-windows-x64.zip MSI delivering Beagle backdoor via signed G Data NOVupdate.exe DLL sideload",
+      "first_seen": "2026-02-01",
+      "source": "Sophos",
+      "campaign": "fake-claude-pro-beagle-backdoor-donutloader",
+      "status": "active"
+    },
+    {
+      "value": "license.claude-pro.com",
+      "type": "domain",
+      "context": "Beagle backdoor command-and-control over TCP/443 and UDP/8080 using hardcoded AES key",
+      "first_seen": "2026-02-01",
+      "source": "Sophos",
+      "campaign": "fake-claude-pro-beagle-backdoor-donutloader",
+      "status": "active"
+    },
+    {
+      "value": "claude-pro.com/Claude-Pro-windows-x64.zip",
+      "type": "url_path",
+      "context": "Beagle backdoor delivery URL; 505MB ZIP containing MSI installer that drops signed G Data NOVupdate.exe + malicious avk.dll + encrypted NOVupdate.exe.dat to Windows Startup folder",
+      "first_seen": "2026-02-01",
+      "source": "BleepingComputer",
+      "campaign": "fake-claude-pro-beagle-backdoor-donutloader",
+      "status": "active"
+    },
+    {
+      "value": "8.217.190.58",
+      "type": "ip",
+      "context": "Beagle backdoor C2 IP on Alibaba Cloud; resolves license.claude-pro.com",
+      "first_seen": "2026-02-01",
+      "source": "Sophos",
+      "campaign": "fake-claude-pro-beagle-backdoor-donutloader",
+      "status": "active"
+    },
+    {
+      "value": "huggingface.co/Open-OSS/privacy-filter",
+      "type": "url_path",
+      "context": "Typosquatted Hugging Face repository impersonating OpenAI's openai/privacy-filter; reached #1 trending with ~244,000 downloads before takedown; loader.py drops Sefirah Rust infostealer",
+      "first_seen": "2026-05-07",
+      "source": "HiddenLayer",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "status": "removed"
+    },
+    {
+      "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py",
+      "type": "url_path",
+      "context": "Initial-stage Python loader that disables TLS verification, base64-decodes a jsonkeeper.com URL, and pipes a hidden-window PowerShell second stage",
+      "first_seen": "2026-05-07",
+      "source": "HiddenLayer",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "status": "removed"
+    },
+    {
+      "value": "api.eth-fastscan.org",
+      "type": "domain",
+      "context": "Sefirah second-stage downloader host; serves update.bat to fetch and execute the final Rust infostealer",
+      "first_seen": "2026-05-07",
+      "source": "HiddenLayer",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "status": "active"
+    },
+    {
+      "value": "api.eth-fastscan.org/update.bat",
+      "type": "url_path",
+      "context": "Sefirah update.bat downloader retrieving the final Rust infostealer payload",
+      "first_seen": "2026-05-07",
+      "source": "HiddenLayer",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "status": "active"
+    },
+    {
+      "value": "recargapopular.com",
+      "type": "domain",
+      "context": "Sefirah Rust infostealer exfiltration endpoint; receives browser credentials, cryptocurrency wallets, Discord/SSH/FTP tokens, screenshots",
+      "first_seen": "2026-05-07",
+      "source": "BleepingComputer",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "status": "active"
+    },
+    {
+      "value": "huggingface:Open-OSS/privacy-filter",
+      "type": "package",
+      "context": "Hugging Face repository identifier for the typosquatted OpenAI privacy-filter clone; removed by Hugging Face following HiddenLayer disclosure",
+      "first_seen": "2026-05-07",
+      "source": "HiddenLayer",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "status": "removed"
+    },
+    {
+      "value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc",
+      "type": "url_path",
+      "context": "Adversa AI safe PoC for the TrustFall one-click developer-machine variant; reproduces the chain on Claude Code, Cursor CLI, Gemini CLI, and GitHub Copilot CLI without exfiltration",
+      "first_seen": "2026-05-07",
+      "source": "Adversa AI",
+      "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
+      "status": "active"
+    },
+    {
+      "value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline",
+      "type": "url_path",
+      "context": "Adversa AI safe PoC for the TrustFall zero-click headless-CI variant; exfiltrates GitHub Actions runner process.env to a researcher-chosen webhook collector",
+      "first_seen": "2026-05-07",
+      "source": "Adversa AI",
+      "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
+      "status": "active"
     }
   ]
 }

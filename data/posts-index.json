@@ -1,6 +1,76 @@
 {
   "posts": [
     {
+      "id": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis",
+      "title": "TrustFall: One-Keypress RCE in Claude Code, Cursor CLI, Gemini CLI, and GitHub Copilot CLI via Project-Scoped MCP Auto-Approval",
+      "date": "2026-05-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Adversa AI disclosed on May 7, 2026 that all four major agentic coding CLIs (Claude Code, Cursor CLI, Gemini CLI, GitHub Copilot CLI) execute project-defined MCP servers as unsandboxed OS processes the moment a developer accepts the folder trust prompt, requiring only a single Enter keypress on the default Yes/Trust option. A malicious cloned repository ships .mcp.json plus .claude/settings.json with enableAllProjectMcpServers true and gains full user-privilege code execution before any tool call, with the inline command/args payload variant leaving no script file on disk for static scanners. On CI runners using anthropics/claude-code-action headless mode the trust dialog is skipped entirely, producing a zero-click variant that exfiltrates the runner's process.env including deploy keys, signing certificates, GITHUB_TOKEN, and cloud credentials.",
+      "file": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.md"
+    },
+    {
+      "id": "2026-05-10-fake-claude-pro-beagle-backdoor-donutloader",
+      "title": "Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026",
+      "date": "2026-05-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "malicious-tool",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands via a hardcoded AES key. Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.",
+      "file": "2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.md"
+    },
+    {
+      "id": "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "title": "Fake OpenAI \"Open-OSS/privacy-filter\" Hugging Face Repository Reaches #1 Trending: 244K Downloads of Sefirah Rust Infostealer Loaded by loader.py via jsonkeeper.com",
+      "date": "2026-05-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning",
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "HiddenLayer disclosed on May 7, 2026 that a typosquatted Hugging Face repository named Open-OSS/privacy-filter impersonating OpenAI's legitimate Privacy Filter project reached the platform's number one trending position and accumulated approximately 244,000 downloads before removal. The malicious loader.py chains a base64-decoded URL to the public paste service jsonkeeper.com, fetches a hidden PowerShell command that adds the next-stage payload to Microsoft Defender exclusions, retrieves update.bat from api.eth-fastscan[.]org, and ultimately executes Sefirah, a Rust-based infostealer that exfiltrates browser credentials, cryptocurrency wallets, Discord and SSH tokens, and screenshots to recargapopular[.]com. Lyrie Research published a follow-on analysis on May 10, 2026 noting infrastructure overlaps with parallel npm typosquat campaigns distributing the WinOS 4.0 implant.",
+      "file": "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat.md"
+    },
+    {
+      "id": "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers",
+      "title": "KONNI Adopts AI-Generated PowerShell Backdoor: DPRK Group Pivots from South Korean Diplomatic Targets to APAC Blockchain and Cryptocurrency Developers",
+      "date": "2026-05-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "apt",
+        "nation-state",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research disclosed in May 2026 that DPRK-aligned threat group KONNI is operating an active phishing campaign that drops an AI-generated PowerShell backdoor against blockchain and cryptocurrency developers across Japan, Australia, and India, marking a shift from KONNI's historical focus on South Korean diplomatic and government targets. The infection chain begins with a Discord-hosted ZIP containing a PDF lure and a malicious LNK shortcut that launches a PowerShell loader, which extracts a DOCX decoy plus a CAB archive carrying the backdoor, batch helpers, and a UAC-bypass executable. The PowerShell backdoor exhibits stylistic markers consistent with LLM-generated code: structured documentation blocks, modular function layout, and instructional placeholder comments such as \"your permanent project UUID\" left in production code.",
+      "file": "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers.md"
+    },
+    {
+      "id": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain",
+      "title": "Morse Code Prompt Injection Drains $174K from Grok-Linked Bankrbot Wallet on Base: NFT-Granted Permission Plus Trusted-Output Pipeline Bypasses Encoding-Based Guardrails",
+      "date": "2026-05-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On May 4, 2026, an attacker drained approximately 3 billion DRB tokens (worth around $174,000) from a Grok-linked Bankrbot wallet on the Base network by chaining an NFT permissioning grant to a Morse-coded X (Twitter) prompt injection that Grok publicly decoded into plaintext, which Bankrbot then ingested as a trusted command and executed as an on-chain transfer. The architectural failure is not the encoding bypass but the cross-agent trust pipeline: Bankrbot treated Grok's reply as authoritative instruction without verifying the original instruction author, and Grok's helpful decoding step laundered the attacker's encoded payload into the format Bankrbot accepts. Encoded prompt injection in Morse, base64, hex, ROT13, and unicode-confusable forms is now a documented operational technique against agentic crypto wallets.",
+      "file": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain.md"
+    },
+    {
       "id": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach",
       "title": "Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration",
       "date": "2026-05-10",

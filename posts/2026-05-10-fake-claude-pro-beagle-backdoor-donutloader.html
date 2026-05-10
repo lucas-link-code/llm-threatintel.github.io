@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026 | LLM ThreatIntel</title>
+  <meta name="description" content="Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands via a hardcoded AES key. Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026">
+  <meta property="og:description" content="Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands via a hardcoded AES key. Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026">
+  <meta property="article:published_time" content="2026-05-10T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-10T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="phishing">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026">
+  <meta name="twitter:description" content="Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands via a hardcoded AES key. Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026",
+  "description": "Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands via a hardcoded AES key. Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.",
+  "datePublished": "2026-05-10T00:00:00Z",
+  "dateModified": "2026-05-10T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.html",
+  "keywords": [
+    "malware",
+    "malicious-tool",
+    "phishing"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-10</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-phishing">Phishing</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026</h1>
+<p><strong>Date:</strong> 2026-05-10<br><strong>Tags:</strong> malware, malicious-tool, phishing</p>
+<h2>Executive Summary</h2>
+<p>Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands (cmd, upload, download, mkdir, rename, ls, rm, uninstall) via a hardcoded AES key. This campaign is distinct from the April 22, 2026 Malwarebytes Fake-Claude-installer-PlugX cluster covered separately and represents a coordinated brand-impersonation operation: Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Beagle backdoor / fake Claude AI installer (claude-pro[.]com)</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none); reuses tradecraft historically associated with PlugX-style operators but Sophos analysis shows DonutLoader/Beagle stack is distinct from PlugX</td></tr><tr><td>Target</td><td>Windows users searching for or deceived into downloading a &quot;Claude Pro&quot; desktop client; impersonations also seeded under names mimicking CrowdStrike, SentinelOne, Trellix, and Microsoft Defender updaters</td></tr><tr><td>Vector</td><td>Lookalike domain claude-pro[.]com → Claude-Pro-windows-x64.zip (505 MB) → MSI installer → DLL sideload of avk.dll into signed G Data NOVupdate.exe → encrypted NOVupdate.exe.dat → DonutLoader → Beagle</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-02 (earliest VirusTotal samples sharing the XOR key); Malwarebytes initial discovery 2026-04; Sophos detailed analysis 2026-05-07</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to BleepingComputer (2026-05-07), the fake Claude AI website claude-pro[.]com closely mimics Anthropic&#x27;s legitimate site and offers a &quot;Claude-Pro Relay&quot; Windows download. The 505 MB ZIP archive contains an MSI installer. After execution the installer drops three files into the Windows Startup folder: NOVupdate.exe (a legitimate, code-signed G Data antivirus updater), avk.dll (the malicious sideload component), and NOVupdate.exe.dat (the encrypted DonutLoader payload). To reduce victim suspicion the MSI also installs a working Claude desktop UI that launches normally.</p>
+<p>According to Sophos (2026-05-07), the malicious avk.dll is loaded by NOVupdate.exe through standard DLL search-order sideloading (MITRE T1574.002). The DLL reads NOVupdate.exe.dat from disk, applies a hardcoded XOR key to decrypt it into a DonutLoader stage, then injects DonutLoader into memory. DonutLoader in turn loads Beagle directly into the running process without writing the final payload to disk.</p>
+<p>According to Sophos, Beagle is a previously undocumented backdoor with a compact command set: uninstall, cmd (arbitrary command execution), upload, download, mkdir, rename, ls, and rm. Communications use a hardcoded AES key and target license.claude-pro[.]com on TCP/443 and UDP/8080. The C2 hostname resolves to 8.217.190.58 on Alibaba Cloud.</p>
+<p>According to Sophos, pivoting on the hardcoded XOR key on VirusTotal surfaced related samples dating to February 2026 with lures impersonating updater binaries from CrowdStrike, SentinelOne, Trellix, and Microsoft Defender. The naming pattern indicates the operator deliberately rotates the abused signed binary across security-vendor brands. According to Malwarebytes (2026-04), the campaign is part of a wider trend of cybercriminals exploiting the Claude brand, similar to the earlier April 22, 2026 fake Claude PlugX campaign already documented but using a distinct stack (DonutLoader and Beagle here, PlugX in the earlier cluster).</p>
+<p>According to Security Affairs (2026-05-07), some early commentary characterized the payload as PlugX before Sophos&#x27;s detailed reverse engineering reclassified it as Beagle on the basis of the differing C2 protocol, command set, and AES key handling. Defenders should treat the two clusters as separate.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Phishing: Spearphishing Link</td><td>T1566.002</td><td>claude-pro[.]com lookalike domain advertising fake Claude-Pro Relay Windows client</td></tr><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>Victim runs Claude-Pro-windows-x64 MSI installer</td></tr><tr><td>Hijack Execution Flow: DLL Side-Loading</td><td>T1574.002</td><td>avk.dll sideloaded by signed G Data NOVupdate.exe from the Startup folder</td></tr><tr><td>Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>T1547.001</td><td>Three files dropped into Windows Startup folder for persistence</td></tr><tr><td>Deobfuscate/Decode Files or Information</td><td>T1140</td><td>Hardcoded XOR key decrypts NOVupdate.exe.dat into DonutLoader stage</td></tr><tr><td>Reflective Code Loading</td><td>T1620</td><td>DonutLoader reflectively loads Beagle into memory without writing final payload to disk</td></tr><tr><td>Masquerading: Match Legitimate Name or Location</td><td>T1036.005</td><td>Use of legitimate signed G Data updater binary; impersonation of CrowdStrike, SentinelOne, Trellix, Microsoft Defender updaters in sibling samples</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>Beagle C2 over TCP/443 to license.claude-pro[.]com</td></tr><tr><td>Non-Application Layer Protocol</td><td>T1095</td><td>Beagle fallback C2 channel over UDP/8080</td></tr><tr><td>Encrypted Channel: Symmetric Cryptography</td><td>T1573.001</td><td>Hardcoded AES key protects Beagle C2 traffic</td></tr><tr><td>Command and Scripting Interpreter</td><td>T1059</td><td>Beagle cmd command executes arbitrary shell commands on victim</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>Beagle download and upload commands move files in and out of the victim</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">claude-pro.com
+license.claude-pro.com</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">claude-pro.com/Claude-Pro-windows-x64.zip</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;claude-pro.com&quot; OR &quot;license.claude-pro.com&quot; OR &quot;claude-pro.com/Claude-Pro-windows-x64.zip&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source at time of writing</code></pre>
+<h3>Network Indicators</h3>
+<pre><code class="language-">8.217.190.58</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On web proxy and DNS, alert on outbound resolution or HTTP traffic to claude-pro[.]com, license.claude-pro[.]com, or any subdomain of claude-pro[.]com; legitimate Anthropic infrastructure is anthropic.com and claude.ai. Block 8.217.190.58 at the perimeter for environments without a business need to reach this Alibaba Cloud /32. Add the URL claude-pro[.]com/Claude-Pro-windows-x64.zip to web download blocklists and treat any 505 MB ZIP with the basename Claude-Pro-windows-x64 as malicious by signature.</p>
+<p>On EDR, hunt for NOVupdate.exe executing from <code>%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\</code> or any non-standard path outside the legitimate G Data installation directory under <code>C:\Program Files (x86)\G Data\</code>; legitimate G Data NOVupdate runs only under that path tree. Alert on NOVupdate.exe loading avk.dll from a non-G Data directory (DLL sideload pattern). Hunt for any process loading a sibling .dat file via filename pattern <code>&lt;process&gt;.exe.dat</code> from the Startup folder, since this is the encrypted-payload-on-disk pattern used by this chain. The same primitive applies to sibling samples impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender updater binaries: alert on any of those updater filenames running from a non-vendor path.</p>
+<p>On network telemetry, hunt for outbound TCP/443 with non-TLS payloads, or UDP/8080 outbound to a low-reputation IP, both of which are atypical for normal endpoint traffic. Beagle&#x27;s hardcoded AES key and small command vocabulary produce tight, repetitive packet sizes; baseline this if you have NetFlow or Zeek conn.log on the egress.</p>
+<p>For Splunk, ingest Sysmon EventID 7 (image load) and alert when avk.dll loads from a path outside <code>C:\Program Files (x86)\G Data\</code>. For CrowdStrike LogScale, build a CQL detection on <code>event_simpleName=ImageHardLink OR event_simpleName=ProcessRollup2</code> where ParentBaseFileName matches NOVupdate.exe and FilePath does not start with the legitimate G Data installation directory.</p>
+<h2>References</h2>
+<ul><li>[BleepingComputer] Fake Claude AI website delivers new &#x27;Beagle&#x27; Windows malware (2026-05-07) — https://www.bleepingcomputer.com/news/security/fake-claude-ai-website-delivers-new-beagle-windows-malware/</li><li>[Sophos] Donuts and Beagles: Fake Claude site spreads backdoor (2026-05-07) — https://www.sophos.com/en-us/blog/donuts-and-beagles-fake-claude-site-spreads-backdoor</li><li>[Malwarebytes] Fake Claude site installs malware that gives attackers access to your computer (2026-04) — https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer</li><li>[Infosecurity Magazine] Fake Claude AI Site Drops Beagle Backdoor on Windows Users (2026-05-07) — https://www.infosecurity-magazine.com/news/fake-claude-site-beagle-backdoor/</li><li>[Security Affairs] Fake Claude AI installer abuses DLL sideloading to deploy PlugX (2026-05-07) — https://securityaffairs.com/190754/malware/fake-claude-ai-installer-abuses-dll-sideloading-to-deploy-plugx.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
