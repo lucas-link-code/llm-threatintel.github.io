@@ -43,7 +43,15 @@ test.describe('Executive Brief route', () => {
       .filter(Boolean)
       .sort()
       .at(-1);
-    const lastUpdated = iocsData.last_updated || latestReportDate;
+    const lastUpdated = [
+      latestReportDate,
+      iocsData.last_updated,
+      actorsData.last_updated
+    ]
+      .map(value => String(value || '').match(/^\d{4}-\d{2}-\d{2}/)?.[0])
+      .filter(Boolean)
+      .sort()
+      .at(-1);
     const activeIocs = iocsData.iocs.filter(ioc => ioc.status === 'active').length;
     const activeActors = actorsData.entries.filter(actor => actor.status === 'active').length;
 
@@ -51,10 +59,11 @@ test.describe('Executive Brief route', () => {
     await expect(page.locator('[data-brief-stat="active-iocs"]')).toContainText(String(activeIocs));
     await expect(page.locator('[data-brief-stat="active-actors"]')).toContainText(String(activeActors));
     await expect(page.locator('[data-brief-stat="recent-reports"]')).toBeVisible();
-    await expect(page.locator('[data-brief-stat="top-theme"]')).toBeVisible();
-    await expect(page.locator('[data-brief-window]')).toContainText('Last 30 days');
+    await expect(page.locator('[data-brief-stat="top-theme"]')).toHaveCount(0);
+    await expect(page.locator('[data-brief-window]')).toContainText('Window: Last 30 days');
     await expect(page.locator('[data-brief-updated]')).toContainText(lastUpdated);
     await expect(page.locator('.brief-posture-card')).toHaveAttribute('data-brief-posture', /^(Elevated|Active|Watch|Stable)$/);
+    await expect(page.locator('.brief-posture-card')).toContainText('Leading threat theme');
     await expect(page.locator('.brief-posture-card')).toContainText('tracking-data posture indicator');
   });
 
@@ -85,12 +94,34 @@ test.describe('Executive Brief route', () => {
     await expect(page.locator('.brief-dashboard')).not.toContainText(/\bcorpus\b/i);
     await expect(page.locator('.brief-dashboard')).not.toContainText(/This brief/i);
     await expect(page.locator('.brief-signal-grid .brief-mini-card')).toHaveCount(3);
+    await expect(page.locator('[data-brief-signal="ioc-sources"]')).toContainText('Top IOC Sources');
+    await expect(page.locator('[data-brief-signal="ioc-sources"]')).not.toContainText('Most Common IOC Source');
     await expect(page.locator('.brief-meaning-grid .brief-mini-card')).toHaveCount(3);
     await expect(page.locator('[data-brief-focus]')).toHaveCount(3);
     await expect(page.locator('text=Recommended Focus')).toBeVisible();
   });
 
   test('pivots route to detailed pages with clean destination state', async ({ page }) => {
+    await openBrief(page);
+    await page.locator('[data-brief-stat="recent-reports"]').click();
+    await expect(page).toHaveURL(/#home$/);
+    await expect(page.locator('#header-search-input')).toHaveValue('');
+
+    await openBrief(page);
+    await page.locator('[data-brief-stat="total-reports"]').click();
+    await expect(page).toHaveURL(/#home$/);
+    await expect(page.locator('#header-search-input')).toHaveValue('');
+
+    await openBrief(page);
+    await page.locator('[data-brief-stat="active-iocs"]').click();
+    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page.locator('#ioc-status-filter')).toHaveValue('active');
+
+    await openBrief(page);
+    await page.locator('[data-brief-stat="active-actors"]').click();
+    await expect(page).toHaveURL(/#actors$/);
+    await expect(page.locator('#search-actors')).toHaveValue('');
+
     await openBrief(page);
     const themeButton = page.locator('[data-trend-section="brief-theme-mix"] .trend-bar-button').first();
     const themeSearch = await themeButton.getAttribute('data-trend-pivot-value');

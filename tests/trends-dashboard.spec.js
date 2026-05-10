@@ -31,6 +31,11 @@ function reportWindowCounts() {
   const latestIndex = monthIndex(latestMonth);
   return {
     latestMonth,
+    latestMonthPosts: postsIndex.posts.filter(post => String(post.date || '').slice(0, 7) === latestMonth),
+    lastSixMonthPosts: postsIndex.posts.filter(post => {
+      const idx = monthIndex(String(post.date || '').slice(0, 7));
+      return idx !== null && idx >= latestIndex - 5 && idx <= latestIndex;
+    }),
     latestMonthReports: postsIndex.posts.filter(post => String(post.date || '').slice(0, 7) === latestMonth).length,
     lastSixMonthReports: postsIndex.posts.filter(post => {
       const idx = monthIndex(String(post.date || '').slice(0, 7));
@@ -86,6 +91,7 @@ test.describe('Trends dashboard route', () => {
     await expect(page.locator('[data-trend-period="latest-month"]')).toContainText(windows.latestMonth);
     await expect(page.locator('[data-trend-period="last-six-months"]')).toContainText(String(windows.lastSixMonthReports));
     await expect(page.locator('[data-trend-period="all-time"]')).toContainText(String(windows.totalReports));
+    await expect(page.locator('[data-trend-period="all-time"]')).toHaveAttribute('aria-pressed', 'true');
 
     const expectedTags = countBy(postsIndex.posts.flatMap(post => post.tags || []));
     const actualTags = await chartCounts(page, 'reports-by-tag');
@@ -99,6 +105,31 @@ test.describe('Trends dashboard route', () => {
       .map(([key, count]) => ({ key, count }))
       .sort((a, b) => a.key.localeCompare(b.key));
     expect(await chartCounts(page, 'reports-by-month')).toEqual(expectedMonths);
+  });
+
+  test('report time-window tiles filter report-derived charts only', async ({ page }) => {
+    await openTrends(page);
+    const windows = reportWindowCounts();
+
+    await page.locator('[data-trend-period="latest-month"]').click();
+    await expect(page.locator('[data-trend-period="latest-month"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('.trend-section').first().locator('.trend-section-heading')).toContainText(`reports from ${windows.latestMonth}`);
+
+    const expectedLatestTags = countBy(windows.latestMonthPosts.flatMap(post => post.tags || []));
+    const actualLatestTags = await chartCounts(page, 'reports-by-tag');
+    for (const [key, count] of expectedLatestTags.entries()) {
+      expect(actualLatestTags).toContainEqual({ key, count });
+    }
+
+    const expectedLatestMonths = windows.latestMonthPosts.length
+      ? [{ key: windows.latestMonth, count: windows.latestMonthPosts.length }]
+      : [];
+    expect(await chartCounts(page, 'reports-by-month')).toEqual(expectedLatestMonths);
+
+    const totalIocRows = await chartCounts(page, 'ioc-types');
+    await page.locator('[data-trend-period="last-six-months"]').click();
+    await expect(page.locator('[data-trend-period="last-six-months"]')).toHaveAttribute('aria-pressed', 'true');
+    expect(await chartCounts(page, 'ioc-types')).toEqual(totalIocRows);
   });
 
   test('IOC exact metrics match iocs.json data', async ({ page }) => {
@@ -189,6 +220,28 @@ test.describe('Trends dashboard route', () => {
     await expect(page.locator('#ioc-status-filter')).toHaveValue('removed');
   });
 
+  test('top stat tiles pivot to their detailed pages', async ({ page }) => {
+    await openTrends(page);
+    await page.locator('[data-trend-stat="total-reports"]').click();
+    await expect(page).toHaveURL(/#home$/);
+    await expect(page.locator('#header-search-input')).toHaveValue('');
+
+    await openTrends(page);
+    await page.locator('[data-trend-stat="active-iocs"]').click();
+    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page.locator('#ioc-status-filter')).toHaveValue('active');
+
+    await openTrends(page);
+    await page.locator('[data-trend-stat="total-iocs"]').click();
+    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page.locator('#ioc-status-filter')).toHaveValue('all');
+
+    await openTrends(page);
+    await page.locator('[data-trend-stat="active-actors"]').click();
+    await expect(page).toHaveURL(/#actors$/);
+    await expect(page.locator('#search-actors')).toHaveValue('');
+  });
+
   test('actor mention pivot routes to Threat Actors search', async ({ page }) => {
     await openTrends(page);
     const actorButton = page.locator('[data-trend-section="actor-mentions"] .trend-bar-button').first();
@@ -204,6 +257,16 @@ test.describe('Trends dashboard route', () => {
     await firstButton.focus();
     await expect(firstButton).toBeFocused();
     await expect(firstButton).toHaveAttribute('aria-label', /Open .+ trend pivot/);
+
+    const periodButton = page.locator('[data-trend-period="latest-month"]');
+    await periodButton.focus();
+    await expect(periodButton).toBeFocused();
+    await expect(periodButton).toHaveAttribute('aria-label', /Show Trends report charts/);
+
+    const statButton = page.locator('[data-trend-stat="total-reports"]');
+    await statButton.focus();
+    await expect(statButton).toBeFocused();
+    await expect(statButton).toHaveAttribute('aria-label', 'Open Intel Feed');
   });
 
   test('desktop, tablet, and mobile layouts avoid document-level horizontal overflow', async ({ page }) => {

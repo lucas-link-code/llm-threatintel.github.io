@@ -254,6 +254,18 @@ a:hover { color: var(--ab); }
 }
 .stat-card:hover::before { opacity: 1; }
 
+.stat-card-button {
+  width: 100%;
+  appearance: none;
+  color: inherit;
+  font: inherit;
+}
+
+.stat-card-button:focus-visible {
+  outline: 2px solid var(--bdg);
+  outline-offset: 4px;
+}
+
 .stat-value {
   font-size: 2rem;
   font-weight: 800;
@@ -636,8 +648,8 @@ a:hover { color: var(--ab); }
 .brief-posture-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.85rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
 }
 
 .brief-posture-card p {
@@ -646,11 +658,53 @@ a:hover { color: var(--ab); }
   line-height: 1.55;
 }
 
+.brief-posture-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.brief-posture-metric {
+  min-width: 0;
+}
+
 .brief-posture-label {
   color: var(--ab);
-  font-size: 1.8rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.8rem);
   font-weight: 900;
   line-height: 1;
+}
+
+.brief-posture-theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.55rem 0.65rem;
+  background: rgba(96,165,250,.08);
+  border: 1px solid rgba(96,165,250,.16);
+  border-radius: var(--rs);
+}
+
+.brief-posture-copy {
+  border-top: 1px solid rgba(148,163,184,.12);
+  padding-top: 0.65rem;
+}
+
+.brief-posture-theme span {
+  color: var(--t3);
+  font-family: var(--fm);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brief-posture-theme strong {
+  color: var(--ab);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .brief-caveat {
@@ -659,22 +713,12 @@ a:hover { color: var(--ab); }
 }
 
 .brief-stat-row {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-bottom: 0;
 }
 
 .brief-stat-card {
-  cursor: default;
   min-width: 0;
-}
-
-.brief-stat-card:hover {
-  transform: none;
-}
-
-.brief-stat-card[data-brief-stat="top-theme"] .stat-value {
-  font-size: clamp(1rem, 1.35vw, 1.45rem);
-  overflow-wrap: anywhere;
 }
 
 .brief-main-chart .trend-card {
@@ -743,11 +787,7 @@ a:hover { color: var(--ab); }
 }
 
 .trend-stat-card {
-  cursor: default;
-}
-
-.trend-stat-card:hover {
-  transform: none;
+  min-width: 0;
 }
 
 .trend-section {
@@ -774,12 +814,38 @@ a:hover { color: var(--ab); }
 }
 
 .trend-period-card {
+  appearance: none;
   background: rgba(17,24,39,.7);
   border: 1px solid var(--bds);
   border-radius: var(--rs);
+  color: inherit;
+  cursor: pointer;
   flex: 0 1 180px;
+  font: inherit;
   min-width: 150px;
   padding: 0.55rem 0.7rem;
+  text-align: left;
+  transition: background-color var(--tr), border-color var(--tr), box-shadow var(--tr), transform var(--tr);
+}
+
+.trend-period-card:hover,
+.trend-period-card:focus-visible,
+.trend-period-card.active {
+  background: rgba(36,52,71,.72);
+  border-color: var(--bdg);
+}
+
+.trend-period-card:hover {
+  transform: translateY(-1px);
+}
+
+.trend-period-card:focus-visible {
+  outline: 2px solid var(--bdg);
+  outline-offset: 3px;
+}
+
+.trend-period-card.active {
+  box-shadow: 0 0 0 1px rgba(96,165,250,.16);
 }
 
 .trend-period-value {

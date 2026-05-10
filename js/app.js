@@ -30,6 +30,7 @@ const App = {
   iocCampaignFilter: 'all',
   iocSourceFilter: 'all',
   iocSort: 'newest',
+  trendReportWindow: 'all-time',
   metaDefaults: {
     siteName: 'LLM ThreatIntel',
     siteUrl: 'https://llm-threatintel.com',
@@ -493,6 +494,12 @@ const App = {
     this.setFeedSearchTerm('', { route: false });
   },
 
+  setFeedSearchImmediate(term) {
+    window.clearTimeout(this.feedSearchDebounce);
+    this.feedSearchTerm = term ?? '';
+    this.syncSearchInputs();
+  },
+
   syncSearchInputs() {
     const v = this.feedSearchTerm;
     const desk = document.getElementById('header-search-input');
@@ -800,12 +807,7 @@ const App = {
     return this.sortCounts(counts).slice(0, 10);
   },
 
-  getTrendsData() {
-    const posts = this.postsIndex?.posts || [];
-    const actors = this.actorsData?.entries || [];
-    const iocs = this.iocsData?.iocs || [];
-    const postBlobs = this.getTrendPostBlobs(posts, iocs);
-    const keywordMaps = this.getTrendKeywordMaps();
+  getReportWindowContext(posts) {
     const validMonths = posts
       .map(post => String(post.date || '').match(/^\d{4}-\d{2}/)?.[0])
       .filter(Boolean);
@@ -815,11 +817,56 @@ const App = {
       return match ? Number(match[1]) * 12 + Number(match[2]) : null;
     };
     const latestMonthIndex = monthIndex(latestReportMonth);
-    const latestMonthReports = posts.filter(post => String(post.date || '').slice(0, 7) === latestReportMonth).length;
-    const lastSixMonthReports = latestMonthIndex === null ? 0 : posts.filter(post => {
+    const latestMonthPosts = posts.filter(post => String(post.date || '').slice(0, 7) === latestReportMonth);
+    const lastSixMonthPosts = latestMonthIndex === null ? [] : posts.filter(post => {
       const idx = monthIndex(String(post.date || '').slice(0, 7));
       return idx !== null && idx >= latestMonthIndex - 5 && idx <= latestMonthIndex;
-    }).length;
+    });
+
+    return {
+      latestReportMonth,
+      windows: {
+        'latest-month': {
+          key: 'latest-month',
+          label: 'Latest Month',
+          detail: latestReportMonth,
+          posts: latestMonthPosts
+        },
+        'last-six-months': {
+          key: 'last-six-months',
+          label: 'Last 6 Months',
+          detail: 'Rolling from latest report month',
+          posts: lastSixMonthPosts
+        },
+        'all-time': {
+          key: 'all-time',
+          label: 'All Time',
+          detail: 'Tracked reports',
+          posts
+        }
+      }
+    };
+  },
+
+  getTrendWindowDescription(data) {
+    const selected = data?.reportWindows?.selected;
+    if (!selected) return 'current reports';
+    if (selected.key === 'latest-month') return `reports from ${selected.detail}`;
+    if (selected.key === 'last-six-months') return 'reports from the latest six-month window';
+    return 'all tracked reports';
+  },
+
+  getTrendsData() {
+    const posts = this.postsIndex?.posts || [];
+    const actors = this.actorsData?.entries || [];
+    const iocs = this.iocsData?.iocs || [];
+    const keywordMaps = this.getTrendKeywordMaps();
+    const windowContext = this.getReportWindowContext(posts);
+    const selectedWindowKey = windowContext.windows[this.trendReportWindow] ? this.trendReportWindow : 'all-time';
+    this.trendReportWindow = selectedWindowKey;
+    const selectedWindow = windowContext.windows[selectedWindowKey];
+    const windowPosts = selectedWindow.posts;
+    const postBlobs = this.getTrendPostBlobs(windowPosts, iocs);
 
     return {
       totals: {
@@ -829,19 +876,25 @@ const App = {
         activeActors: actors.filter(actor => actor.status === 'active').length
       },
       reportWindows: {
-        latestMonth: latestReportMonth,
-        latestMonthReports,
-        lastSixMonthReports,
+        selected: {
+          key: selectedWindow.key,
+          label: selectedWindow.label,
+          detail: selectedWindow.detail,
+          count: selectedWindow.posts.length
+        },
+        latestMonth: windowContext.latestReportMonth,
+        latestMonthReports: windowContext.windows['latest-month'].posts.length,
+        lastSixMonthReports: windowContext.windows['last-six-months'].posts.length,
         totalReports: posts.length
       },
-      reportsByTag: this.sortCounts(this.countBy(posts.flatMap(post => post.tags || []), tag => tag)),
-      reportsByMonth: this.sortCounts(this.countBy(posts.filter(post => /^\d{4}-\d{2}/.test(String(post.date || ''))), post => String(post.date).slice(0, 7)), { chronological: true }),
+      reportsByTag: this.sortCounts(this.countBy(windowPosts.flatMap(post => post.tags || []), tag => tag)),
+      reportsByMonth: this.sortCounts(this.countBy(windowPosts.filter(post => /^\d{4}-\d{2}/.test(String(post.date || ''))), post => String(post.date).slice(0, 7)), { chronological: true }),
       iocTypes: this.sortCounts(this.countBy(iocs, ioc => ioc.type)),
       iocStatuses: this.sortCounts(this.countBy(iocs, ioc => ioc.status)),
       iocSources: this.sortCounts(this.countBy(iocs, ioc => ioc.source)).slice(0, 10),
       actorTypes: this.sortCounts(this.countBy(actors, actor => actor.type)),
       actorStatuses: this.sortCounts(this.countBy(actors, actor => actor.status)),
-      actorMentions: this.getActorMentionCounts(posts, actors, iocs),
+      actorMentions: this.getActorMentionCounts(windowPosts, actors, iocs),
       affectedPlatforms: this.countKeywordMap(postBlobs, keywordMaps.platforms),
       attackThemes: this.countKeywordMap(postBlobs, keywordMaps.themes)
     };
@@ -849,19 +902,25 @@ const App = {
 
   renderTrendStatCards(data) {
     const cards = [
-      ['total-reports', data.totals.reports, 'Total Reports'],
-      ['active-iocs', data.totals.activeIocs, 'Active IOCs'],
-      ['total-iocs', data.totals.totalIocs, 'Total IOCs'],
-      ['active-actors', data.totals.activeActors, 'Active Actors']
+      ['total-reports', data.totals.reports, 'Total Reports', 'Open Intel Feed'],
+      ['active-iocs', data.totals.activeIocs, 'Active IOCs', 'Open active IOCs'],
+      ['total-iocs', data.totals.totalIocs, 'Total IOCs', 'Open all IOCs'],
+      ['active-actors', data.totals.activeActors, 'Active Actors', 'Open Threat Actors']
     ];
 
     return `
       <div class="stats-row trends-stat-row">
-        ${cards.map(([key, value, label]) => `
-          <div class="stat-card trend-stat-card" data-trend-stat="${this.escapeAttr(key)}">
+        ${cards.map(([key, value, label, ariaLabel]) => `
+          <button
+            type="button"
+            class="stat-card trend-stat-card stat-card-button"
+            data-trend-stat="${this.escapeAttr(key)}"
+            aria-label="${this.escapeAttr(ariaLabel)}"
+            onclick="${this.escapeAttr(`App.openTrendStatPivot('${key}')`)}"
+          >
             <div class="stat-value">${this.escapeHtml(value)}</div>
             <div class="stat-label">${this.escapeHtml(label)}</div>
-          </div>
+          </button>
         `).join('')}
       </div>
     `;
@@ -877,11 +936,18 @@ const App = {
     return `
       <div class="trend-period-row" aria-label="Report time windows">
         ${windows.map(([key, value, label, detail]) => `
-          <div class="trend-period-card" data-trend-period="${this.escapeAttr(key)}">
+          <button
+            type="button"
+            class="trend-period-card ${data.reportWindows.selected.key === key ? 'active' : ''}"
+            data-trend-period="${this.escapeAttr(key)}"
+            aria-pressed="${data.reportWindows.selected.key === key ? 'true' : 'false'}"
+            aria-label="Show Trends report charts for ${this.escapeAttr(label)}"
+            onclick="${this.escapeAttr(`App.setTrendReportWindow('${key}')`)}"
+          >
             <span class="trend-period-value">${this.escapeHtml(value)}</span>
             <span class="trend-period-label">${this.escapeHtml(label)}</span>
             <span class="trend-period-detail">${this.escapeHtml(detail)}</span>
-          </div>
+          </button>
         `).join('')}
       </div>
     `;
@@ -983,23 +1049,63 @@ const App = {
     }
   },
 
+  setTrendReportWindow(windowKey) {
+    const allowed = new Set(['latest-month', 'last-six-months', 'all-time']);
+    if (!allowed.has(windowKey)) return;
+    this.trendReportWindow = windowKey;
+    this.navigateOrRender('trends');
+  },
+
+  openTrendStatPivot(key) {
+    switch (key) {
+      case 'total-reports':
+        this.currentFilter = 'all';
+        this.setFeedSearchImmediate('');
+        this.navigateOrRender('home');
+        break;
+      case 'active-iocs':
+        this.iocSearch = '';
+        this.iocTypeFilter = 'all';
+        this.iocStatusFilter = 'active';
+        this.iocCampaignFilter = 'all';
+        this.iocSourceFilter = 'all';
+        this.iocSort = 'newest';
+        this.navigateOrRender('ioc-feed');
+        break;
+      case 'total-iocs':
+        this.iocSearch = '';
+        this.iocTypeFilter = 'all';
+        this.iocStatusFilter = 'all';
+        this.iocCampaignFilter = 'all';
+        this.iocSourceFilter = 'all';
+        this.iocSort = 'newest';
+        this.navigateOrRender('ioc-feed');
+        break;
+      case 'active-actors':
+        this.actorSearch = '';
+        this.actorFilter = 'all';
+        this.navigateOrRender('actors');
+        break;
+      default:
+        break;
+    }
+  },
+
   openTrendPivot(type, value) {
     const cleanValue = String(value || '').trim();
     if (!cleanValue) return;
 
     switch (type) {
       case 'report-tag':
-        this.feedSearchTerm = '';
+        this.setFeedSearchImmediate('');
         this.currentFilter = cleanValue;
-        this.syncSearchInputs();
         this.navigateOrRender('home');
         break;
       case 'report-month':
       case 'platform':
       case 'theme':
         this.currentFilter = 'all';
-        this.feedSearchTerm = cleanValue;
-        this.syncSearchInputs();
+        this.setFeedSearchImmediate(cleanValue);
         this.navigateOrRender('home');
         break;
       case 'ioc-type':
@@ -1068,6 +1174,14 @@ const App = {
     return this.countKeywordMap(this.getTrendPostBlobs(posts || [], iocs), this.getBriefThemeKeywords());
   },
 
+  getLatestDateLabel(...values) {
+    const dates = values
+      .map(value => String(value || '').match(/^\d{4}-\d{2}-\d{2}/)?.[0])
+      .filter(Boolean)
+      .sort();
+    return dates.at(-1) || 'Unknown';
+  },
+
   getBriefThemeSearchTerm(theme) {
     const representativeTerms = {
       'Supply Chain': 'supply chain',
@@ -1120,8 +1234,8 @@ const App = {
     const latestReportDate = validDates.at(-1) || '';
 
     const data = {
-      windowLabel: 'Last 30 days',
-      lastUpdated: this.iocsData?.last_updated || latestReportDate || 'Unknown',
+      windowLabel: 'Window: Last 30 days',
+      lastUpdated: this.getLatestDateLabel(latestReportDate, this.iocsData?.last_updated, this.actorsData?.last_updated),
       latestReportDate: latestReportDate || 'Unknown',
       themeFallback,
       totals: {
@@ -1133,7 +1247,7 @@ const App = {
       themeMix,
       topTheme: themeMix[0]?.key || 'No theme signal',
       topIocType: iocTypes[0]?.key || 'Unknown',
-      topIocSource: iocSources[0]?.key || 'Unknown'
+      topIocSources: iocSources.slice(0, 3)
     };
 
     data.posture = this.getBriefPosture(data);
@@ -1143,13 +1257,12 @@ const App = {
   generateExecutiveSummary(data) {
     const topTheme = data?.topTheme || 'tracked activity';
     const topIocType = this.formatType(data?.topIocType || 'Unknown');
-    const topIocSource = data?.topIocSource || 'Unknown';
     const posture = String(data?.posture?.label || 'Watch').toLowerCase();
     const article = /^[aeiou]/i.test(posture) ? 'an' : 'a';
     return [
       `The current tracking data shows ${article} ${posture} directional signal across tracked reports, actors, and indicators.`,
       `Recent reporting is most concentrated around ${topTheme}, based on conservative keyword matching across the tracked reports.`,
-      `Active IOC volume remains represented in the feed, with ${topIocType} indicators and ${topIocSource} source reporting prominent in the current dataset.`,
+      `Active IOC volume remains represented in the feed, with ${topIocType} indicators prominent in the current dataset.`,
       'The strongest defender focus is monitoring AI credential exposure, reviewing agent and tool permissions, and tracking package ecosystem infrastructure.',
       'This page summarizes tracked reporting only and does not measure global prevalence or organization-specific risk.'
     ].join(' ');
@@ -1174,20 +1287,25 @@ const App = {
 
   renderBriefStatTiles(data) {
     const cards = [
-      ['recent-reports', data.totals.recentReports, 'Reports, Last 30 Days'],
-      ['total-reports', data.totals.totalReports, 'Total Reports'],
-      ['active-iocs', data.totals.activeIocs, 'Active IOCs'],
-      ['active-actors', data.totals.activeActors, 'Active Actors'],
-      ['top-theme', data.topTheme, 'Top Recent Theme']
+      ['recent-reports', data.totals.recentReports, 'Reports, Last 30 Days', 'Open Intel Feed'],
+      ['total-reports', data.totals.totalReports, 'Total Reports', 'Open Intel Feed'],
+      ['active-iocs', data.totals.activeIocs, 'Active IOCs', 'Open active IOCs'],
+      ['active-actors', data.totals.activeActors, 'Active Actors', 'Open Threat Actors']
     ];
 
     return `
       <div class="stats-row brief-stat-row">
-        ${cards.map(([key, value, label]) => `
-          <div class="stat-card brief-stat-card" data-brief-stat="${this.escapeAttr(key)}">
+        ${cards.map(([key, value, label, ariaLabel]) => `
+          <button
+            type="button"
+            class="stat-card brief-stat-card stat-card-button"
+            data-brief-stat="${this.escapeAttr(key)}"
+            aria-label="${this.escapeAttr(ariaLabel)}"
+            onclick="${this.escapeAttr(`App.openBriefStatPivot('${key}')`)}"
+          >
             <div class="stat-value">${this.escapeHtml(value)}</div>
             <div class="stat-label">${this.escapeHtml(label)}</div>
-          </div>
+          </button>
         `).join('')}
       </div>
     `;
@@ -1241,10 +1359,10 @@ const App = {
         text: 'The active IOC feed is currently led by this indicator category.'
       },
       {
-        key: 'ioc-source',
-        title: 'Most Common IOC Source',
-        value: data.topIocSource,
-        text: 'This source label contributes the largest share of active IOC records.'
+        key: 'ioc-sources',
+        title: 'Top IOC Sources',
+        value: data.topIocSources.length ? data.topIocSources.map(item => `${item.key} (${item.count})`).join(', ') : 'Unknown',
+        text: 'Leading active IOC source labels, shown as a mix instead of a single headline source.'
       }
     ];
 
@@ -1349,6 +1467,23 @@ const App = {
     `;
   },
 
+  openBriefStatPivot(key) {
+    switch (key) {
+      case 'recent-reports':
+      case 'total-reports':
+        this.openBriefPivot('route', 'home');
+        break;
+      case 'active-iocs':
+        this.openBriefPivot('route', 'ioc-feed');
+        break;
+      case 'active-actors':
+        this.openBriefPivot('route', 'actors');
+        break;
+      default:
+        break;
+    }
+  },
+
   openBriefPivot(type, value) {
     const cleanValue = String(value || '').trim();
     if (!cleanValue) return;
@@ -1356,8 +1491,7 @@ const App = {
     if (type === 'route') {
       if (cleanValue === 'home') {
         this.currentFilter = 'all';
-        this.feedSearchTerm = '';
-        this.syncSearchInputs();
+        this.setFeedSearchImmediate('');
       } else if (cleanValue === 'ioc-feed') {
         this.iocSearch = '';
         this.iocTypeFilter = 'all';
@@ -1375,8 +1509,7 @@ const App = {
 
     if (type === 'theme') {
       this.currentFilter = 'all';
-      this.feedSearchTerm = this.getBriefThemeSearchTerm(cleanValue);
-      this.syncSearchInputs();
+      this.setFeedSearchImmediate(this.getBriefThemeSearchTerm(cleanValue));
       this.navigateOrRender('home');
       return;
     }
@@ -1405,11 +1538,17 @@ const App = {
             <p>${this.escapeHtml(summary)}</p>
           </section>
           <section class="brief-posture-card" data-brief-posture="${this.escapeAttr(data.posture.label)}">
-            <div>
-              <h2>Current Threat Posture</h2>
-              <div class="brief-posture-label">${this.escapeHtml(data.posture.label)}</div>
+            <div class="brief-posture-summary">
+              <div class="brief-posture-metric">
+                <h2>Current Threat Posture</h2>
+                <div class="brief-posture-label">${this.escapeHtml(data.posture.label)}</div>
+              </div>
+              <div class="brief-posture-metric brief-posture-theme">
+                <span>Leading threat theme</span>
+                <strong>${this.escapeHtml(data.topTheme)}</strong>
+              </div>
             </div>
-            <div>
+            <div class="brief-posture-copy">
               <p>${this.escapeHtml(data.posture.rationale)}</p>
               <p class="brief-caveat">${this.escapeHtml(data.posture.caveat)}</p>
             </div>
@@ -1437,7 +1576,7 @@ const App = {
         <section class="trend-section">
           <div class="trend-section-heading">
             <h2>Reports</h2>
-            <p>Exact metrics from report metadata.</p>
+            <p>Exact metrics from ${this.escapeHtml(this.getTrendWindowDescription(data))}. Use the time-window tiles to update the report-derived charts.</p>
           </div>
           ${this.renderTrendReportWindows(data)}
           <div class="trend-grid">
