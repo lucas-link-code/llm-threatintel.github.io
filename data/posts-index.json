@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach",
+      "title": "Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration",
+      "date": "2026-05-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A Context.ai employee was compromised with Lumma Stealer malware in February 2026, and a threat actor claiming ShinyHunters responsibility used compromised OAuth tokens to pivot into Vercel's Google Workspace account, exposing customer credentials and claiming $2 million in stolen data. The attacker gained access to a Vercel employee's Google Workspace account through a compromised Context AI browser extension, then accessed environment variables not marked as sensitive and not encrypted at rest.",
+      "file": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach.md"
+    },
+    {
       "id": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce",
       "title": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK < 1.39.4",
       "date": "2026-05-09",

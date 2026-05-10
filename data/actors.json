@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-09",
+  "last_updated": "2026-05-10",
   "entries": [
     {
       "id": "bissa-scanner",
@@ -1384,6 +1384,27 @@
       ],
       "description": "This is a design vulnerability in default configuration, not a discrete malware campaign. However, the RCE consequence means any actor with the ability to inject prompts into a vulnerable Semantic Kernel agent can achieve complete system compromise.",
       "attribution": "Unattributed; however, any attacker with prompt injection capability can exploit"
+    },
+    {
+      "id": "shinyhunters-claimed",
+      "names": [
+        "ShinyHunters (Claimed)",
+        "Unknown threat actor claiming ShinyHunters identity"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "BreachForums (data sale posting)"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing: Spearphishing Link",
+        "T1547 - Boot or Logon Autostart Execution (via Lumma Stealer persistence)",
+        "T1078.004 - Valid Accounts: Cloud Accounts",
+        "T1552.001 - Unsecured Credentials: Credentials in Files"
+      ],
+      "description": "Threat actor leveraged infostealer malware to compromise an AI productivity vendor's employee, then weaponized OAuth tokens to access downstream enterprise systems. The actor claimed responsibility for the breach on BreachForums under the ShinyHunters persona and attempted to sell stolen data including customer API keys and source code for $2 million, though the actual ShinyHunters threat group denied attribution.",
+      "attribution": "Unattributed; ShinyHunters group publicly denied involvement per BleepingComputer reporting"
     }
   ]
 }

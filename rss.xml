@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 09 May 2026 21:13:46 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 06:14:10 +0000</lastBuildDate>
     <item>
+      <title>Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration</title>
+      <link>https://llm-threatintel.com/posts/2026-05-10-context-ai-vercel-oauth-supply-chain-breach.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-10-context-ai-vercel-oauth-supply-chain-breach.html</guid>
+      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
+      <description>A Context.ai employee was compromised with Lumma Stealer malware in February 2026, and a threat actor claiming ShinyHunters responsibility used compromised OAuth tokens to pivot into Vercel's Google Workspace account, exposing customer credentials and claiming $2 million in stolen data. The attacker gained access to a Vercel employee's Google Workspace account through a compromised Context AI browser extension, then accessed environment variables not marked as sensitive and not encrypted at rest.</description>
+    </item>    <item>
       <title>Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK &lt; 1.39.4</title>
       <link>https://llm-threatintel.com/posts/2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.html</guid>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
       <description>CVE-2026-25874 (CVSS 9.3) enables unauthenticated attackers to execute arbitrary system commands on vulnerable Hugging Face LeRobot hosts. With nearly 24,000 GitHub stars, the vulnerability poses severe risk to AI infrastructure, connected robots, and sensitive proprietary data. The PolicyServer and RobotClient components use Python's pickle module to deserialize data over unauthenticated gRPC channels without TLS or authentication. By sending maliciously-crafted serialized payloads, attackers trigger automatic arbitrary code execution.</description>
-    </item>    <item>
-      <title>LiteLLM CVE-2026-42208: Critical SQL Injection in Proxy Database Enables Unauthorized Credential Access</title>
-      <link>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-04-29-litellm-cve-2026-42208-sql-injection.html</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection vulnerability in LiteLLM that could be exploited to modify the underlying LiteLLM proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The unknown threat actor targeted database tables like "litellm_credentials.credential_values" and "litellm_config" that hold information related to upstream large language model (LLM) provider keys and the proxy runtime environment, demonstrating that the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.</description>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-09",
+  "last_updated": "2026-05-10",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1205,6 +1205,15 @@
       "first_seen": "2026-05-09",
       "source": "Microsoft Security Blog",
       "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "status": "active"
+    },
+    {
+      "value": "beta.context.ai (no longer accessible as of April 20, 2026)",
+      "type": "domain",
+      "context": "Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration",
+      "first_seen": "2026-05-10",
+      "source": "OX Security",
+      "campaign": "context-ai-vercel-oauth-supply-chain-breach",
       "status": "active"
     }
   ]
