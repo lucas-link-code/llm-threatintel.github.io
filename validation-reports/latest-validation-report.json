@@ -1,5 +1,5 @@
 {
-  "commit_sha": "5300229ce0d6",
+  "commit_sha": "6462a9e55c66",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -30,7 +30,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-12T19:40:34+00:00",
+  "generated_at_utc": "2026-05-12T19:55:48+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -464,19 +464,114 @@
       "recommendation": "",
       "record_id": "",
       "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation",
+      "severity": "review"
     }
   ],
-  "mode": "strict",
+  "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 0,
+  "reports_checked": 3,
   "reports_newly_validated": 0,
-  "reports_skipped": 0,
-  "review_required": 0,
-  "source_urls_checked": 0,
+  "reports_skipped": 83,
+  "review_required": 3,
+  "source_urls_checked": 10,
   "state_updates": 0,
-  "url_results": [],
+  "url_results": [
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://webflow.sysdig.com/blog/cve-2026-42208-how-attackers-exploited-litellm-credentials"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.cve.news/cve-2026-42208/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/08/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+    }
+  ],
   "validation_version": "1.0.0",
   "warnings": 54
 }

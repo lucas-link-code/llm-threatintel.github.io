@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-12T19:40:34+00:00`
-- Commit SHA: `5300229ce0d6`
-- Mode: `strict`
+- Run time UTC: `2026-05-12T19:55:48+00:00`
+- Commit SHA: `6462a9e55c66`
+- Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `54`
-- Review required: `0`
-- Reports checked: `0`
-- Reports skipped: `0`
+- Review required: `3`
+- Reports checked: `3`
+- Reports skipped: `83`
 - Reports newly validated: `0`
 - IOC duplicates found: `2`
-- Source URLs checked: `0`
+- Source URLs checked: `10`
 
 No files were removed or destructively modified.
 
@@ -72,6 +72,9 @@ No files were removed or destructively modified.
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `153`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 2 times
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.md` `2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce`: no source URL was accessible; manual review or alternate evidence is required
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md` `2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models`: no source URL was accessible; manual review or alternate evidence is required
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.md` `2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation`: no source URL was accessible; manual review or alternate evidence is required
 
 ## Duplicate IOC Review
 
@@ -82,3 +85,41 @@ No files were removed or destructively modified.
 ### `huggingface.co/open-oss/privacy-filter`
 - `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
 - `https://huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `openclawhugging-face-supply-chain-poisoning-malicious-skills-models` source `TechNext Web`
+
+## Human Review Queue
+
+```text
+Report: 2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```
+
+```text
+Report: 2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```
+
+```text
+Report: 2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```

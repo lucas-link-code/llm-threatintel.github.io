@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 
@@ -335,6 +336,41 @@ class ValidateSiteTests(unittest.TestCase):
             result_410 = validator.classify_http_result("https://example.com/gone", 410)
             self.assertEqual(result_404.status, "not_found")
             self.assertEqual(result_410.status, "not_found")
+
+    def test_url_check_builds_ssl_handler_without_open_context_kwarg(self):
+        class FakeResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, exc_type, exc, tb):
+                return False
+
+            def getcode(self):
+                return 200
+
+            def geturl(self):
+                return "https://example.com/report"
+
+        class FakeOpener:
+            def open(self, request, **kwargs):
+                self.request = request
+                self.kwargs = kwargs
+                if "context" in kwargs:
+                    raise AssertionError("context must be configured on HTTPSHandler, not opener.open")
+                return FakeResponse()
+
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root)
+            args = validate_site.build_arg_parser().parse_args(["--mode", "evidence"])
+            validator = validate_site.Validator(root, args)
+            fake_opener = FakeOpener()
+            with mock.patch.object(validate_site.urllib.request, "build_opener", return_value=fake_opener):
+                result = validator.check_url("https://example.com/report")
+
+            self.assertEqual(result.status, "accessible")
+            self.assertEqual(fake_opener.kwargs["timeout"], 10)
+            self.assertNotIn("context", fake_opener.kwargs)
 
 
 if __name__ == "__main__":

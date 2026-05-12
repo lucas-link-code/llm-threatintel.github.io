@@ -842,11 +842,11 @@ class Validator:
                     headers["Range"] = "bytes=0-2048"
                 request = urllib.request.Request(url, method=method, headers=headers)
                 redirect_handler = LimitedRedirectHandler(int(self.policy["url_redirect_limit"]))
-                opener = urllib.request.build_opener(redirect_handler)
+                https_handler = urllib.request.HTTPSHandler(context=ssl.create_default_context())
+                opener = urllib.request.build_opener(redirect_handler, https_handler)
                 with opener.open(
                     request,
                     timeout=int(self.policy["url_timeout_seconds"]),
-                    context=ssl.create_default_context(),
                 ) as response:
                     code = response.getcode()
                     final_url = response.geturl()
