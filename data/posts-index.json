@@ -1,6 +1,47 @@
 {
   "posts": [
     {
+      "id": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce",
+      "title": "Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks—Eval() Filter Bypasses Enable Code Execution Chains",
+      "date": "2026-05-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft discovered a vulnerable path in Semantic Kernel that could turn prompt injection into host-level remote code execution (RCE). A single prompt was enough to launch calc.exe on the device running an AI agent, with no browser exploit, malicious attachment, or memory corruption bug needed. Microsoft identified and disclosed two critical vulnerabilities: CVE-2026-25592 and CVE-2026-26030, which have since been fixed and could allow an attacker to achieve unauthorized code execution by leveraging injection attacks specifically targeted at agents built within the framework. Your agent is vulnerable to CVE-2026-26030 if it uses the Python package semantic-kernel running a framework version prior to 1.39.4.",
+      "file": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.md"
+    },
+    {
+      "id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "title": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
+      "date": "2026-05-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Hugging Face and ClawHub, the two largest repositories for AI models and agent skills, have been found to contain hundreds of malicious models capable of executing arbitrary code and 575 malicious OpenClaw agent skills designed to steal credentials, open reverse shells, and hijack AI agents for cryptocurrency mining. Protect AI, which partnered with Hugging Face to scan the platform's model library, has examined more than four million models and identified approximately 352,000 unsafe or suspicious issues across 51,700 models. Over 575 malicious skills across 13 developer accounts were identified in OpenClaw, targeting Windows and macOS with trojans, cryptominers, and AMOS stealer malware.",
+      "file": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md"
+    },
+    {
+      "id": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation",
+      "title": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "date": "2026-05-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-42208 (CVSS 9.3) is a critical SQL injection vulnerability in LiteLLM versions 1.81.16 through 1.83.6 that allows unauthenticated attackers to modify the underlying proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed. Attackers specifically targeted database tables like \"litellm_credentials.credential_values\" and \"litellm_config\" that hold upstream LLM provider keys, suggesting prior knowledge of the schema and a focus on harvesting sensitive secrets.",
+      "file": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.md"
+    },
+    {
       "id": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis",
       "title": "TrustFall: One-Keypress RCE in Claude Code, Cursor CLI, Gemini CLI, and GitHub Copilot CLI via Project-Scoped MCP Auto-Approval",
       "date": "2026-05-10",
