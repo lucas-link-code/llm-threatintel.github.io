@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-10",
+  "last_updated": "2026-05-12",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1322,6 +1322,69 @@
       "first_seen": "2026-05-07",
       "source": "Adversa AI",
       "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
+      "status": "active"
+    },
+    {
+      "value": "65.111.27.132",
+      "type": "ip",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "first_seen": "2026-05-12",
+      "source": "The Hacker News",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "litellm>=1.81.16,<1.83.7",
+      "type": "package",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "first_seen": "2026-05-12",
+      "source": "The Hacker News",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "https://huggingface.co/Open-OSS/privacy-filter",
+      "type": "url_path",
+      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
+      "first_seen": "2026-05-12",
+      "source": "TechNext Web",
+      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "status": "active"
+    },
+    {
+      "value": "Open-OSS/privacy-filter (Hugging Face)",
+      "type": "package",
+      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
+      "first_seen": "2026-05-12",
+      "source": "TechNext Web",
+      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "status": "active"
+    },
+    {
+      "value": "575+ trojanized OpenClaw agent skills",
+      "type": "package",
+      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
+      "first_seen": "2026-05-12",
+      "source": "TechNext Web",
+      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "status": "active"
+    },
+    {
+      "value": "352,000+ unsafe/suspicious Hugging Face models",
+      "type": "package",
+      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
+      "first_seen": "2026-05-12",
+      "source": "TechNext Web",
+      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "status": "active"
+    },
+    {
+      "value": "semantic-kernel<1.39.4 (Python SDK)",
+      "type": "package",
+      "context": "Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks—Eval() Filter Bypasses Enable Code Execution Chains",
+      "first_seen": "2026-05-12",
+      "source": "Microsoft Security Blog",
+      "campaign": "cve-2026-26030-semantic-kernel-prompt-injection-rce",
       "status": "active"
     }
   ]
