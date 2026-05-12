@@ -1,0 +1,1583 @@
+{
+  "generated_by": "scripts/validate_site.py",
+  "reports": {
+    "2026-03-10-shadow-ai-detection": {
+      "content_hash": "11e271273d0adee2aa227e51bda514586db72d1a89ef39ddc94938ca5945f49d",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-03-10-shadow-ai-detection.md",
+      "posts_index_hash": "90c64ff59145880cbe705a897379f5628f3f4b333feab53bd851d7146d96ac95",
+      "report_id": "2026-03-10-shadow-ai-detection",
+      "review_required": [],
+      "source_urls": [],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-03-15-llmjacking-storm2139": {
+      "content_hash": "6133dec79fc4b89ce40e746a72be91ab7e508b630325f75283963785967cb5ab",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-03-15-llmjacking-storm2139.md",
+      "posts_index_hash": "18e8a17da3a6add5fbd20b3b96d9241a16247a297e3a055edf2e892bad9cdd81",
+      "report_id": "2026-03-15-llmjacking-storm2139",
+      "review_required": [],
+      "source_urls": [],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-03-20-malicious-llm-ecosystem": {
+      "content_hash": "78719f2118714ca0dcfefb4c07f638f257f9bc8d05852e190d3fef744bc8f84f",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-03-20-malicious-llm-ecosystem.md",
+      "posts_index_hash": "cafbaed8d592f9beb0217779b75b687d00d23901459a86e2a9a044bf83883650",
+      "report_id": "2026-03-20-malicious-llm-ecosystem",
+      "review_required": [],
+      "source_urls": [],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-03-25-russian-fortigate-genai": {
+      "content_hash": "58d80a6a5a92a6e1e2e889d56560022b8e2c11ef68e463392a170d5ffbcb718c",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-03-25-russian-fortigate-genai.md",
+      "posts_index_hash": "843b59e466696f84bd1167c2fe257537e8ab5b983200e6f1ddb3aa85fb0623b0",
+      "report_id": "2026-03-25-russian-fortigate-genai",
+      "review_required": [],
+      "source_urls": [],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-03-28-lamehug-llm-malware": {
+      "content_hash": "e3d4dfaf6ebf59b540d05390d00b0401a06780bb84eae61dcf30096d46f962a4",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-03-28-lamehug-llm-malware.md",
+      "posts_index_hash": "4b01788a3fb9ac1628eb8dc32ca06ca5f81b1b66bc7a5c31bc3b2a781a70970e",
+      "report_id": "2026-03-28-lamehug-llm-malware",
+      "review_required": [],
+      "source_urls": [],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-03-30-teampcp-supply-chain": {
+      "content_hash": "bde50326f64e11f1ed807d8a05c9da77cd580a020685f62f9ac78e19a25890f4",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-03-30-teampcp-supply-chain.md",
+      "posts_index_hash": "e8d3eacac19e45b5e0bf14712581880fe825a07a3878eedd39d48a278b876a7c",
+      "report_id": "2026-03-30-teampcp-supply-chain",
+      "review_required": [],
+      "source_urls": [],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce": {
+      "content_hash": "7fad4c5ba08729b85b0f1dd4b126c955ed97a3d292d9440862d9efd1d4fd0ed2",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce.md",
+      "posts_index_hash": "1aea314d0dcfa69b8b165b4f4e601a2511af9a91bb65e4569a68e7217880a874",
+      "report_id": "2026-04-01-ai-coding-agents-attack-surface-rules-backdoor-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents",
+        "https://orca.security/resources/blog/roguepilot-github-copilot-vulnerability/",
+        "https://agentseal.org/blog/cursor-rules-hidden-instructions",
+        "https://github.com/cursor/cursor/security/advisories/GHSA-hf2x-r83r-qw5q",
+        "https://sonarsource.com/blog/protecting-your-ai-code"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-01-axios-npm-supply-chain-unc1069-waveshaper-2026": {
+      "content_hash": "1f55b3fff665429e4ebc8d862d239219e400588436ec87a507a5398a61029f27",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-01-axios-npm-supply-chain-unc1069-waveshaper-2026.md",
+      "posts_index_hash": "24e409fd89a3a42ff80bc0e57c897d1fb8e25b918e95941a593c4915d71547de",
+      "report_id": "2026-04-01-axios-npm-supply-chain-unc1069-waveshaper-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package",
+        "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all",
+        "https://socradar.io/blog/axios-npm-supply-chain-attack-2026-ciso-guide/",
+        "https://www.sans.org/blog/axios-npm-supply-chain-compromise-malicious-packages-remote-access-trojan"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-01-mcp-protocol-security-tool-poisoning-agentic-risk": {
+      "content_hash": "94e91c93c8c9fd825371a2709a2498b2973691c87356d04cad06b3dd12fb2d63",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-01-mcp-protocol-security-tool-poisoning-agentic-risk.md",
+      "posts_index_hash": "a63cab0cc7bb4307403ef479768200424d41a38e7548b2a408455b4ada18b403",
+      "report_id": "2026-04-01-mcp-protocol-security-tool-poisoning-agentic-risk",
+      "review_required": [],
+      "source_urls": [
+        "https://owasp.org/www-project-mcp-top-10/",
+        "https://owasp.org/www-community/attacks/MCP_Tool_Poisoning",
+        "https://cyata.ai/blog/cyata-research-breaking-anthropics-official-mcp-server",
+        "https://policyascode.dev/blog/mcp-security-vulnerabilities-2026",
+        "https://www.pillar.security/blog/operation-bizarre-bazaar-first-attributed-llmjacking-campaign-with-commercial-marketplace-monetization",
+        "https://bleepingcomputer.com/news/security/hackers-hijack-exposed-llm-endpoints-in-bizarre-bazaar-operation",
+        "https://www.theregister.com/2026/01/20/anthropic_prompt_injection_flaws/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026": {
+      "content_hash": "5283dbab11216bc76b90bfddd68518d309ff60d24be2911192a41f4806f9a833",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.md",
+      "posts_index_hash": "a43191a9f95f3908a8082817ede57645ee5cd9f087732a4a943d18c4fac52a5d",
+      "report_id": "2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/",
+        "https://docs.litellm.ai/blog/security-update-march-2026",
+        "https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026",
+        "https://www.helpnetsecurity.com/2026/03/25/teampcp-supply-chain-attacks/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-02-apt36-transparent-tribe-vibeware-ai-malware": {
+      "content_hash": "af1fbd7ebb0ffa036c13fb1f361f1506433ee021066d2963aea276f181a29a4b",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-02-apt36-transparent-tribe-vibeware-ai-malware.md",
+      "posts_index_hash": "246da34a252e6e6c3a361942fa9823089e742de02519d781ef5b8e9d1696993b",
+      "report_id": "2026-04-02-apt36-transparent-tribe-vibeware-ai-malware",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bitdefender.com/en-us/blog/businessinsights/apt36-nightmare-vibeware",
+        "https://www.darkreading.com/cyberattacks-data-breaches/nation-state-actor-ai-malware-assembly-line",
+        "https://www.computerweekly.com/news/366639830/APT36-unleashes-AI-generated-vibeware-to-flood-targets",
+        "https://hackread.com/pakistan-apt36-indian-govt-networks-ai-vibeware/",
+        "https://www.govinfosecurity.com/nation-state-hackers-play-vibes-a-30920"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-02-hive0163-slopoly-ai-generated-malware-ransomware": {
+      "content_hash": "d026bb2533b89c73249f5f0c33c4c380175f6a44459d1e28b2c428c53630b87a",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-02-hive0163-slopoly-ai-generated-malware-ransomware.md",
+      "posts_index_hash": "36685959a4d08af69187eb644aa967827211bdb8027ea0233278daf79cff5d30",
+      "report_id": "2026-04-02-hive0163-slopoly-ai-generated-malware-ransomware",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ibm.com/think/x-force/slopoly-start-ai-enhanced-ransomware-attacks",
+        "https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html",
+        "https://cybersecuritynews.com/ibm-uncovers-slopoly-likely-ai-generated-malware/",
+        "https://securityaffairs.com/189378/malware/ai-assisted-slopoly-malware-powers-hive0163s-ransomware-campaigns.html",
+        "https://www.itbrew.com/stories/2026/03/16/ai-generated-malware-off-to-a-sloppy-start-for-ransomware-actors-ibm-says"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper": {
+      "content_hash": "d61193080d36ff8caa5f8d5b9aad4e673caeff6ba1aec6e6003e07d2b4af8c66",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper.md",
+      "posts_index_hash": "a08ff36413b7e20a118b6797c6f4d301025f0f97e15004cf9c90e9a4969b3f13",
+      "report_id": "2026-04-02-mcafee-vibe-coded-cryptominer-campaign-winupdatehelper",
+      "review_required": [],
+      "source_urls": [
+        "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/ai-written-malware-vibe-coded-campaign/",
+        "https://www.mcafee.com/blogs/internet-security/new-research-hackers-are-using-ai-written-code-to-spread-malware/",
+        "https://gbhackers.com/vibe-coded-malware/",
+        "https://www.techradar.com/pro/security/likely-created-with-ai-generated-code-this-massive-vibe-coded-campaign-uses-1-700-fake-filenames-to-inject-malware-into-your-favorite-game-mods-and-apps"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-02-teampcp-canisterworm-kubernetes-wiper-iran": {
+      "content_hash": "612d58d31d4018588a55133991fbd077b9733a2d7820448c4a1046ce0ef8f830",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-02-teampcp-canisterworm-kubernetes-wiper-iran.md",
+      "posts_index_hash": "162c4b5aecd2f0ea41770c759caeb05cb657b42a026e0fed824449795d678c35",
+      "report_id": "2026-04-02-teampcp-canisterworm-kubernetes-wiper-iran",
+      "review_required": [],
+      "source_urls": [
+        "https://www.aikido.dev/blog/teampcp-stage-payload-canisterworm-iran",
+        "https://www.bleepingcomputer.com/news/security/teampcp-deploys-iran-targeted-wiper-in-kubernetes-attacks/",
+        "https://krebsonsecurity.com/2026/03/canisterworm-springs-wiper-attack-targeting-iran/",
+        "https://origin-unit42.paloaltonetworks.com/teampcp-supply-chain-attacks/",
+        "https://thehackernews.com/2026/03/trivy-hack-spreads-infostealer-via.html",
+        "https://phoenix.security/teampcp-supply-chain-attack-trivy-checkmarx-github-actions-npm-canisterworm/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer": {
+      "content_hash": "b3b632d3e2155bfb5392439e3cf1b0f3c53e207637c95e7413498af9585b8166",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer.md",
+      "posts_index_hash": "470671bd14bc6b021a41a8e07a525609d512ae265579be945f71d0ae3aa017e5",
+      "report_id": "2026-04-02-unit42-ai-gated-sliver-dropper-ai-theater-infostealer",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/ai-use-in-malware/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation": {
+      "content_hash": "d4f80c6f05a8bb6e6f93e5c60f6620ddef5b06cd32fdb096d0a53904d6a03ffd",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation.md",
+      "posts_index_hash": "6cd8a7d14865d999f01ef7f7a65694ce922bce4391bbbfc6d495cfc62f0baa48",
+      "report_id": "2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation",
+      "review_required": [],
+      "source_urls": [
+        "https://origin-unit42.paloaltonetworks.com/double-agents-vertex-ai/",
+        "https://thehackernews.com/2026/03/vertex-ai-vulnerability-exposes-google.html",
+        "https://www.securityweek.com/google-addresses-vertex-security-issues-after-researchers-weaponize-ai-agent/",
+        "https://www.sdxcentral.com/news/google-vertex-agentic-flaw-latest-chink-in-hyperscale-ai-armor/",
+        "https://www.techradar.com/pro/security/what-if-the-ai-agent-you-just-deployed-was-secretly-working-against-you-vertex-ai-double-agent-flaw-exposes-customer-data-and-googles-internal-code"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-04-awesome-llm-apps-cross-session-token-disclosure": {
+      "content_hash": "c885c6503c2adc27862b90fce82a5b7be587b1e3239e4699cb9925b834ed3eb1",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-04-awesome-llm-apps-cross-session-token-disclosure.md",
+      "posts_index_hash": "834b2ff2bca231c66d9ec388b8c6f767c98c45099703faa1452a604dcb4d330b",
+      "report_id": "2026-04-04-awesome-llm-apps-cross-session-token-disclosure",
+      "review_required": [],
+      "source_urls": [
+        "https://cve.threatint.eu/CVE/CVE-2026-29872"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-04-claude-code-source-leak-critical-adversa-vulnerability": {
+      "content_hash": "b953bf7569004c0d72367025b408114fcaf1ddedc6d1d68837b03af3eba00b49",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-04-claude-code-source-leak-critical-adversa-vulnerability.md",
+      "posts_index_hash": "05ba191a407aa9c2de73155b8bbc3d830ed0ea238df0f37e54812dab83087f62",
+      "report_id": "2026-04-04-claude-code-source-leak-critical-adversa-vulnerability",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/",
+        "https://www.theregister.com/2026/04/02/trojanized_claude_code_leak_github/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654": {
+      "content_hash": "b4e45b3bdd637d491c4d9da96601511f7a08aef9e83a5d819bea6f6eb16978cb",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654.md",
+      "posts_index_hash": "b9e41be6c70956a1ef6d3fd7645288f8a507ab3c968da33bd2dc01ff2b4d7ef5",
+      "report_id": "2026-04-04-nanobot-indirect-prompt-injection-cve-2026-33654",
+      "review_required": [],
+      "source_urls": [
+        "https://cve.threatint.eu/CVE/CVE-2026-33654"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-05-claude-code-source-leak-adversa-post-leak-rce": {
+      "content_hash": "ef16e27fb93cb69f12c55d5ff79bf021078e20d16b5163b4f2de06cff57cb5fa",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-05-claude-code-source-leak-adversa-post-leak-rce.md",
+      "posts_index_hash": "cb3db40d14c65641f85e57dd1b77145d97b08bb3a7f3a91ceac085cef248c324",
+      "report_id": "2026-04-05-claude-code-source-leak-adversa-post-leak-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/",
+        "https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/",
+        "https://www.theregister.com/2026/04/02/trojanized_claude_code_leak_github/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-05-mcp-security-crisis-30-cves-437k-downloads": {
+      "content_hash": "b5cd6f703e9f8df47b9ece80df948e34bb86637ef0ada25874a3efde89094735",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads.md",
+      "posts_index_hash": "8f18cc3ca190e3916d713f1f49dcaa7328ee2860737466a0849382a960c419e4",
+      "report_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
+      "review_required": [],
+      "source_urls": [
+        "https://www.heyuan110.com/posts/ai/2026-03-10-mcp-security-2026/",
+        "https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/",
+        "https://dev.to/toniantunovic/mcp-connector-poisoning-how-compromised-npm-packages-hijack-your-ai-agent-3ha0",
+        "https://medium.com/@instatunnel/securing-mcp-servers-the-2026-guide-to-ai-tool-tunneling-aafa113b08db"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-05-mercor-data-vendor-ai-training-breach": {
+      "content_hash": "12eebc8234fb34146c0b0e48c61fabf06e6ec732b059c7c4f39c68c625c8bbb6",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-05-mercor-data-vendor-ai-training-breach.md",
+      "posts_index_hash": "f01e62c3858c8d11d68941bfd0c11d8f5028cb9d2646ad4885ed2a653b238fe4",
+      "report_id": "2026-04-05-mercor-data-vendor-ai-training-breach",
+      "review_required": [],
+      "source_urls": [
+        "https://llm-stats.com/ai-news"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-06-axios-npm-unc1069-rat-march-2026": {
+      "content_hash": "28c9c3e55f8ccd2c70ccfa7cbb7acb8493602b45928b80b2e5996ebd928c2536",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-06-axios-npm-unc1069-rat-march-2026.md",
+      "posts_index_hash": "8f6ce79c7f810857d262d897c79580139368b8da0dba83167205c819242a6085",
+      "report_id": "2026-04-06-axios-npm-unc1069-rat-march-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package",
+        "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+        "https://securitylabs.datadoghq.com/articles/axios-npm-supply-chain-compromise/",
+        "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+        "https://www.trendmicro.com/en_us/research/26/c/axios-npm-package-compromised.html",
+        "https://www.huntress.com/blog/supply-chain-compromise-axios-npm-package",
+        "https://socradar.io/blog/axios-npm-supply-chain-attack-2026-ciso-guide/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-07-glassworm-supply-chain-open-vsx-developer-environments": {
+      "content_hash": "ab71f95870c04465d0530084cffe87e2ce03b51f3bd8030967414625a8006d99",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-07-glassworm-supply-chain-open-vsx-developer-environments.md",
+      "posts_index_hash": "7664cf6cc5e852446f4b7efbe5f6d47a435fa0a97e0e1a29a0fc4f039ffba649",
+      "report_id": "2026-04-07-glassworm-supply-chain-open-vsx-developer-environments",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/glassworm-loader-hits-open-vsx-via-suspected-developer-account-compromise",
+        "https://www.bleepingcomputer.com/news/security/glassworm-malware-hits-400-plus-code-repos-on-github-npm-vscode-openvsx/",
+        "https://www.csoonline.com/article/4145579/open-vsx-extensions-hijacked-glassworm-malware-spreads-via-dependency-abuse.html",
+        "https://www.rescana.com/post/glassworm-supply-chain-attack-exploits-open-vsx-registry-to-infect-vscode-extensions-with-advanced-m"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace": {
+      "content_hash": "57077c25ecdca27fcef02124678a2cd0401c8e44c1b895fefe9a03e1ebab8c56",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace.md",
+      "posts_index_hash": "c779e67d14bc6f33115852296fa245460f1ea919ef4e9481c856da2d05e634b3",
+      "report_id": "2026-04-07-llmjacking-api-key-theft-reverse-proxy-marketplace",
+      "review_required": [],
+      "source_urls": [
+        "https://sysdig.com/blog/llmjacking-from-emerging-threat-to-black-market-reality",
+        "https://www.upwind.io/glossary/llmjacking-what-is-it-and-why-is-it-a-concern",
+        "https://app.eno.cx.ua/intel/llmjacking-stolen-api-credentials-underground-marketplace-2026.html",
+        "https://promptguardrails.com/blog/llmjacking-stolen-credentials-ai-budget-attack"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-07-malicious-browser-extensions-harvesting-llm-chats": {
+      "content_hash": "e0faebad3b66d781c5eb318ea91083e018a22b9c5211b6d9e03ec135774fdbf6",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-07-malicious-browser-extensions-harvesting-llm-chats.md",
+      "posts_index_hash": "c2dcf203945358b12413d25007a742bc30cc7fc2adf08a6a1b459d0b01b8a455",
+      "report_id": "2026-04-07-malicious-browser-extensions-harvesting-llm-chats",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/",
+        "https://www.cryptika.com/malicious-chrome-extension-steal-chatgpt-and-deepseek-conversations-from-900k-users/",
+        "https://www.dataprise.com/resources/defense-digest/malicious-ai-chrome-extensions-data-exfiltration/",
+        "https://rewterz.com/threat-advisory/threat-actors-abuse-chrome-extensions-to-steal-ai-prompts-active-iocs",
+        "https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-02-13-IOCs-for-tactics-by-browser-extensions-to-avoid-bans.txt"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet": {
+      "content_hash": "1a7ea0d4c13c5b229c7ba50f3247afae8524409cf43484a88ec5a668f3a82247",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet.md",
+      "posts_index_hash": "753c80852afeb267fa141ec882a2f4f25042307203f8a41527970191560e4690",
+      "report_id": "2026-04-07-nation-state-apt-ai-tradecraft-emerald-jasper-sleet",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/",
+        "https://www.microsoft.com/en-us/security/blog/2025/06/30/jasper-sleet-north-korean-remote-it-workers-evolving-tactics-to-infiltrate-organizations/",
+        "https://openclawai.io/blog/microsoft-red-report-2026-ai-jailbreaks"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face": {
+      "content_hash": "a5b749b331b8115c049c238ba3cd3a0d857f5202205c4f89980f43d80f443654",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face.md",
+      "posts_index_hash": "62c7813a68b718e06ee9d20bef3d39530f435a17995ec617e9bc4c45c56dbfae",
+      "report_id": "2026-04-07-shai-hulud-npm-worm-nullifai-hugging-face",
+      "review_required": [],
+      "source_urls": [
+        "https://www.reversinglabs.com/blog/shai-hulud-worm-npm",
+        "https://www.reversinglabs.com/blog/new-shai-hulud-worm-spreads-what-to-know",
+        "https://www.reversinglabs.com/blog/sscs-report-2026-takeaways",
+        "https://reversinglabs.com/blog/rl-identifies-malware-ml-model-hosted-on-hugging-face"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-08-flowise-rce-cve-2025-59528-april-2026": {
+      "content_hash": "20a1966b1260d9cbebe488c8799ddd0399f1affe8bfa833b53dec00c32f248ff",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-08-flowise-rce-cve-2025-59528-april-2026.md",
+      "posts_index_hash": "8cd613e47d420fcfeca29f104f2124170633a2aa828f925893befc2f64939a8b",
+      "report_id": "2026-04-08-flowise-rce-cve-2025-59528-april-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/max-severity-flowise-rce-vulnerability-now-exploited-in-attacks/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-11-project-glasswing-claude-mythos-zero-days": {
+      "content_hash": "e6d1b1a88f94fd0c9d94e15f270386e5f9ba12bbe4607407cf014ae11fa3fc1e",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-11-project-glasswing-claude-mythos-zero-days.md",
+      "posts_index_hash": "577f99651737752410ffae53f84db09d2168e04eb5e8d8b8fb4fa2620433c1bc",
+      "report_id": "2026-04-11-project-glasswing-claude-mythos-zero-days",
+      "review_required": [],
+      "source_urls": [
+        "https://www.anthropic.com/glasswing",
+        "https://cybersecuritynews.com/aws-and-anthropic-ai-powered-cybersecurity/",
+        "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2026/april/project-glasswing/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain": {
+      "content_hash": "55a60bc0859724ecd11d427780a45fcc43f344a9db6b203534c53ee226664d9e",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.md",
+      "posts_index_hash": "b814e62a8c9fae5be53312ab090b1b516cdd57e4bcec0bba4b4932efef57b5a3",
+      "report_id": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/",
+        "https://snyk.io/blog/poisoned-security-scanner-backdooring-litellm/",
+        "https://repello.ai/blog/litellm-supply-chain-attack",
+        "https://www.sonatype.com/blog/compromised-litellm-pypi-package-delivers-multi-stage-credential-stealer",
+        "https://docs.litellm.ai/blog/security-update-march-2026"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-11-vllm-cve-2026-22778-rce-heap-overflow": {
+      "content_hash": "c2dbab18fdee24937bc620b78b646314127cce4b2d9fe306aabe3090211e9ee2",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-11-vllm-cve-2026-22778-rce-heap-overflow.md",
+      "posts_index_hash": "34da6ce8bec44b51217357415b6abce16a08c02fb103af1e5ad2283b8b15882e",
+      "report_id": "2026-04-11-vllm-cve-2026-22778-rce-heap-overflow",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/cve-2026-22778-vllm-rce-vulnerability/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-13-claude-code-mexico-gov-espionage-150gb": {
+      "content_hash": "8eb89869f650e1af391ca1c699d35b6346429aa89a032c22d1b46ce2d78b03f5",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-13-claude-code-mexico-gov-espionage-150gb.md",
+      "posts_index_hash": "79e93acacb53a83f0e5b45ebfd8ba1468b7adc90aef76624814a7d13ae66b0ae",
+      "report_id": "2026-04-13-claude-code-mexico-gov-espionage-150gb",
+      "review_required": [],
+      "source_urls": [
+        "https://startupfortune.com/a-hacker-used-claude-and-chatgpt-to-steal-150gb-from-mexican-government-agencies-in-what-investigators-are-calling-one-of-the-first-confirmed-cases-of-ai-assisted-state-scale-cyber-espionage/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure": {
+      "content_hash": "31cf45ed10b385947a7f0d0dd3f99346490d7db06a5045cda765aef5db8907a6",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.md",
+      "posts_index_hash": "50018f0ea4737c5f07b88b035a56d1d2f09b92a0c9e21cef82bca1214c1fc881",
+      "report_id": "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-marimo-rce-cve-2026-39987-ai-toolchain-202/",
+        "https://endorlabs.com/blog/marimo-rce",
+        "https://sysdig.com/blog/marimo-rce-april-2026"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-13-praisonaiagents-ssrf-cloud-metadata": {
+      "content_hash": "04f56170aa193d8a2abf529d05d147469800120a72e5dbf9501e8d1ddfc8f3a5",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-13-praisonaiagents-ssrf-cloud-metadata.md",
+      "posts_index_hash": "b82532d2fbd283c2f047e6df86022075327486d62d6c002635c7580be1f2f64d",
+      "report_id": "2026-04-13-praisonaiagents-ssrf-cloud-metadata",
+      "review_required": [],
+      "source_urls": [
+        "https://radar.offseq.com/threat/cve-2026-40160-cwe-918-server-side-request-forgery-ff80f530"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-15-bedrock-multi-agent-prompt-injection": {
+      "content_hash": "d779fedeb6a506426ec6768be974879feef59ea19af0c06ff2b704a9c6b292f4",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-15-bedrock-multi-agent-prompt-injection.md",
+      "posts_index_hash": "f4015aa777c35af7b33749765eeecd3362d124ea69819e945464ee9b060bf03a",
+      "report_id": "2026-04-15-bedrock-multi-agent-prompt-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-15-claude-code-deny-rules-subcommand-bypass": {
+      "content_hash": "448bc7c8ab4fb6a7c07725e9ee2acc16598f03d93f11b9f6ed2761934eb96df8",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-15-claude-code-deny-rules-subcommand-bypass.md",
+      "posts_index_hash": "713cf9a9081d36bd70f2e92765071d8eb53939463fa92d3b90bc1b28ca39ab31",
+      "report_id": "2026-04-15-claude-code-deny-rules-subcommand-bypass",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/",
+        "https://botmonster.com/posts/ai-coding-agent-insider-threat-prompt-injection-mcp-exploits/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-15-llm-router-credential-theft-wallet-drain": {
+      "content_hash": "b47ff19674de47503290f97b678b0fa7e9fc6dc7f3d5ca4f77f6685ebda70943",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-15-llm-router-credential-theft-wallet-drain.md",
+      "posts_index_hash": "30316a07969a23b4c957ad680222cbd85ace5b74bf3db5d7a643a837a7000fad",
+      "report_id": "2026-04-15-llm-router-credential-theft-wallet-drain",
+      "review_required": [],
+      "source_urls": [
+        "https://www.coindesk.com/tech/2026/04/13/ai-agents-are-set-to-power-crypto-payments-but-a-hidden-flaw-could-expose-wallets"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain": {
+      "content_hash": "0b6a69c7f70e4c1e7594701b131a5a3928b94bfddf91e8801288e803ee4f1e7c",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.md",
+      "posts_index_hash": "ac3b4367224543f2349ef202862b9b0ee6674a4803857ec08292f4c6747afb9e",
+      "report_id": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain",
+      "review_required": [],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.08407",
+        "https://www.coindesk.com/tech/2026/04/13/ai-agents-are-set-to-power-crypto-payments-but-a-hidden-flaw-could-expose-wallets",
+        "https://tech.yahoo.com/cybersecurity/articles/ai-steal-bitcoin-research-reveals-101523573.html",
+        "https://oecd.ai/en/incidents/2026-04-10-d6e2",
+        "https://news.risky.biz/risky-bulletin-malicious-llm-proxy-routers-found-in-the-wild/",
+        "https://threatlabsnews.xcitium.com/blog/malicious-llm-routers-a-hidden-threat-to-ai-supply-chains/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211": {
+      "content_hash": "5c280370205c2eaa266d4d6b1e94099ae5246481a761bdd81c8fa2ebe3642e42",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.md",
+      "posts_index_hash": "28414c43ea3f185109b4386ad46be5c6a1fd24ca88f30d66dabcec2eac037d42",
+      "report_id": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.cyberdesserts.com/ai-agent-security-risks/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation": {
+      "content_hash": "22aa97155c5ea282f2555ca623615720610894f517c80f4cd3ee533a9cf73306",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.md",
+      "posts_index_hash": "9599e44a27f13b8c55e5ae32278df175526358877e381d2a5a0d795e008e0060",
+      "report_id": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecurityjournal.ca/techtalk/83883-flowise-cve-2025-59528-rce-exploitation-ai-agent-builder-2026-04-08/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-17-llm-router-credential-theft-crypto-draining": {
+      "content_hash": "f3c813a97dea8c01e7855dd17a6c8aac5d4461f0c0c83695e2ad07e80eb87bbc",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-17-llm-router-credential-theft-crypto-draining.md",
+      "posts_index_hash": "9069b6ae0b88016e28686beafd1bffb10d246a38c688f49b22b6da1c95f7e56b",
+      "report_id": "2026-04-17-llm-router-credential-theft-crypto-draining",
+      "review_required": [],
+      "source_urls": [
+        "https://www.coindesk.com/tech/2026/04/13/ai-agents-are-set-to-power-crypto-payments-but-a-hidden-flaw-could-expose-wallets",
+        "https://www.kdnuggets.com/are-ai-agents-your-next-security-nightmare"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026": {
+      "content_hash": "646f50f1f9912bc08675b70cb1dd8c776cc7a2aeeedd051f5607ae0ea2b3b7a0",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026.md",
+      "posts_index_hash": "aeff8423549a13d530d99e78acf327b1af9f0677bc327a681dfe46ba64280454",
+      "report_id": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://gentic.news/article/mcp-security-crisis-43-of-servers",
+        "https://www.practical-devsecops.com/mcp-security-vulnerabilities/",
+        "https://adversa.ai/blog/top-mcp-security-resources-april-2026/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026": {
+      "content_hash": "23732317d733e818585d38961f01f0fca58f19d2a4daff3713bfbd1f87408e65",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026.md",
+      "posts_index_hash": "569757be2b7fe838990d919aeb05e0a4773e6bd679824396ad3e4c9ca246d60e",
+      "report_id": "2026-04-20-flowise-cve-2025-59528-rce-active-exploitation-april-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecurityjournal.ca/techtalk/83883-flowise-cve-2025-59528-rce-exploitation-ai-agent-builder-2026-04-08/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-22-anthropic-mcp-stdio-rce-7k-servers": {
+      "content_hash": "277dda22b75a79e4b1e9db3ebad30cab8deb8a1644673fe8b93b13a559851e95",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-22-anthropic-mcp-stdio-rce-7k-servers.md",
+      "posts_index_hash": "94086b93f2f28ba92f3e31930eb5c2ea93e3dbc74546e2910eab5bd71b52057e",
+      "report_id": "2026-04-22-anthropic-mcp-stdio-rce-7k-servers",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-22-fake-claude-installer-plugx-malware": {
+      "content_hash": "eb201ea106840b22ec81730d2234a3bd1a5a737068bd45b16cdca9d74c5b2e2d",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-22-fake-claude-installer-plugx-malware.md",
+      "posts_index_hash": "49750913e1ef4dca4ec29d77b3962db05d9b93f6ab65f2cb57fe21de3a299c76",
+      "report_id": "2026-04-22-fake-claude-installer-plugx-malware",
+      "review_required": [],
+      "source_urls": [
+        "https://hackread.com/fake-claude-ai-installer-plugx-malware-windows-users/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-22-marimo-pre-auth-rce-cve-2026-39987": {
+      "content_hash": "0eef365131b6253d58bd1997d6e9d161fa4fa5a80da1cdea47baf3e1573ed1f4",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-22-marimo-pre-auth-rce-cve-2026-39987.md",
+      "posts_index_hash": "e1a8d348a0139510f9f29cca1f3e3f94c4a7029307903107880c3457ba439dca",
+      "report_id": "2026-04-22-marimo-pre-auth-rce-cve-2026-39987",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-marimo-rce-cve-2026-39987-ai-toolchain-202/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-23-axios-npm-supply-chain-unc1069-rat-2026": {
+      "content_hash": "06fe50e82bd6af7b65904e107a8301a9ae4dbca4a87bbec243d00dce92735028",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-23-axios-npm-supply-chain-unc1069-rat-2026.md",
+      "posts_index_hash": "f9418e2332dfd4b037d4b47628f1cda2db56d4db43c7e0dcab411d5b658cc01a",
+      "report_id": "2026-04-23-axios-npm-supply-chain-unc1069-rat-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all",
+        "https://info.varnish-software.com/blog/cisa-alert-axios-npm-supply-chain-compromise-april-2026-how-to-protect-your-ci/cd-pipelines",
+        "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+        "https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html",
+        "https://socradar.io/blog/axios-npm-supply-chain-attack-2026-ciso-guide/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation": {
+      "content_hash": "997544d5e2c2d29e60609998553bebb86295de96648be04f2bf19aa596c0c942",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation.md",
+      "posts_index_hash": "4aab3b979fb03bc3f651b7f2e26235d4a70b02cda35357b56f85e82c697c0197",
+      "report_id": "2026-04-23-cve-2026-33626-lmdeploy-ssrf-12hr-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+        "https://github.com/advisories/GHSA-6w67-hwm5-92mq"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-23-flowise-cve-2026-41264-csv-agent-rce": {
+      "content_hash": "6a3486460370ea8b9df22a9052c10d08aaa36c3b56ae758b36f7273444861146",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-23-flowise-cve-2026-41264-csv-agent-rce.md",
+      "posts_index_hash": "11aa7a761bbf5ca48cc23f45fdc79a47d06558e19e78b9ce568c51e836f2bbc6",
+      "report_id": "2026-04-23-flowise-cve-2026-41264-csv-agent-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://advisories.gitlab.com/npm/flowise-components/CVE-2026-41264/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft": {
+      "content_hash": "d3aa5361c037d9500a2a51fbc3533afa05d2148d06fe4004ef729eb0bb84945a",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.md",
+      "posts_index_hash": "a561a0a128ef351b59dd17bc1dfcd6983fea62c401e5e2d4fca89e5865720510",
+      "report_id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://www.scworld.com/news/namastex-npm-packages-compromised-in-canisterworm-supply-chain-attack",
+        "https://wiz.io"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation": {
+      "content_hash": "fb81e4b1f67874606caab0de935da6a172019ef591456dc667297b37c46a55b1",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation.md",
+      "posts_index_hash": "2a7f81b944bd56f05fc7b6dde87e9f3c90b3e789b1407039a7ddc3a7d244fdf2",
+      "report_id": "2026-04-24-cve-2026-33626-lmdeploy-ssrf-rapid-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+        "https://github.com/advisories/GHSA-6w67-hwm5-92mq"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce": {
+      "content_hash": "fafc4b7e7b5005a459ffaf1ea09d65f258e7d6d181e5f85b5a40da0113c9204d",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.md",
+      "posts_index_hash": "bf9eae5d943a73682a158cc5c46eee10d48d4a200191cffc57f79f8d36fd3998",
+      "report_id": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.thehackerwire.com/vulnerability/CVE-2026-41349/",
+        "https://www.redpacketsecurity.com/cve-alert-cve-2026-41349-openclaw-openclaw/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit": {
+      "content_hash": "9bafcfa85d90c30450b652d483ee17b55f8fb021d1ab8b10f156b647fd50f6f3",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit.md",
+      "posts_index_hash": "d7a28cd379119c75fee02b8b1e96fb92cc4417280fb7e3a1a8db39c6ece35a3e",
+      "report_id": "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/",
+        "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+        "https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-25-lmdeploy-ssrf-cloud-metadata-attack": {
+      "content_hash": "3fde89933bd4cc4f1e05dada941f29ecdfda28a1cba058c93206ad15dc785729",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-25-lmdeploy-ssrf-cloud-metadata-attack.md",
+      "posts_index_hash": "6efd8662bf44ab36142b235ed86a3379e5c947e924884f5e4f481fc7948139f4",
+      "report_id": "2026-04-25-lmdeploy-ssrf-cloud-metadata-attack",
+      "review_required": [],
+      "source_urls": [
+        "https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+        "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-25-xinference-teampcp-self-propagating-stealer": {
+      "content_hash": "10ddcf735cfaaa7ff02f4dba32156743e3eced1ea4f204d041614f9cb1f33f7d",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-25-xinference-teampcp-self-propagating-stealer.md",
+      "posts_index_hash": "7eb46c88b8b3e6daa6069fc7a6c6cfcf9cf14cc5e3e95cba20305cae0f72ff6c",
+      "report_id": "2026-04-25-xinference-teampcp-self-propagating-stealer",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html",
+        "https://adversa.ai/blog/top-genai-security-resources-april-2026/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation": {
+      "content_hash": "5e2d7133da19489d7abdcdb7c0276cde023d8867f7f989544cdd42d40e42e922",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation.md",
+      "posts_index_hash": "01982bbabe2bba2ca980c76c714010de46964a9d0e366e7f3800cf68d4db1fdc",
+      "report_id": "2026-04-28-lmdeploy-ssrf-rapid-exploitation-ai-exploit-generation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+        "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html",
+        "https://intruceptlabs.com/2026/04/security-flaw-in-lmdeploy-exploited-in-12-hours-is-cve-2026-33626/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-29-litellm-cve-2026-42208-sql-injection": {
+      "content_hash": "0bbe5f296861a306d745315866d6d9c6ff51786f60a00b48ae682d229f7c3ba0",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-29-litellm-cve-2026-42208-sql-injection.md",
+      "posts_index_hash": "2f3f3ab659af40a05bcd3d3405573f537c933a55ba4fb028c1108032ff39a24e",
+      "report_id": "2026-04-29-litellm-cve-2026-42208-sql-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+        "https://webflow.sysdig.com/blog/litellm-cve-2026-42208"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce": {
+      "content_hash": "2585c26c36bdb7b73db4fd233aad78eb5e5d9bbe8474123b7bd3fc637bcce184",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce.md",
+      "posts_index_hash": "f02de606d5978b52cb2961ec9e4ef6f2219f6c61744c420403b7f08d08f3365d",
+      "report_id": "2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-lerobot-vulnerability/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft": {
+      "content_hash": "530548d210e891850a85620547ec7303e58b37548ffd99ae516813f72abb7043",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft.md",
+      "posts_index_hash": "a17045640042827e3bb3f2e9825c837fb1e674a29f4fd5814c1502c424e9606a",
+      "report_id": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/bitwarden-cli-compromised",
+        "https://www.paloaltonetworks.com/blog/cloud-security/bitwardencli-supply-chain-attack/",
+        "https://research.jfrog.com/post/bitwarden-cli-hijack/",
+        "https://thehackernews.com/2026/04/bitwarden-cli-compromised-in-ongoing.html",
+        "https://www.endorlabs.com/learn/shai-hulud-the-third-coming----inside-the-bitwarden-cli-2026-4-0-supply-chain-attack",
+        "https://www.sophos.com/en-us/blog/supply-chain-attacks-hit-checkmarx-and-bitwarden-developer-tools",
+        "https://stateofsurveillance.org/news/bitwarden-cli-supply-chain-attack-ai-coding-tools-checkmarx-2026/",
+        "https://securityboulevard.com/2026/04/the-butlerian-jihad-compromised-bitwarden-cli-deploys-npm-worm-poisons-ai-assistants-and-dumps-github-secrets/",
+        "https://www.securityweek.com/bitwarden-npm-package-hit-in-supply-chain-attack/",
+        "https://community.bitwarden.com/t/bitwarden-statement-on-checkmarx-supply-chain-incident/96127"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass": {
+      "content_hash": "f4f757d9e739b92c5222c29e906825a78275c21535b2675b3da0c8fe481e47e6",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.md",
+      "posts_index_hash": "3f6a79d0cf723bafea3970b8c340d7e2308a143325140fd9a12178eae0439044",
+      "report_id": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
+      "review_required": [],
+      "source_urls": [
+        "https://policylayer.com/attacks/mcpwn-auth-bypass",
+        "https://www.rapid7.com/blog/post/etr-cve-2026-33032-nginx-ui-missing-mcp-authentication/",
+        "https://www.picussecurity.com/resource/blog/cve-2026-33032-mcpwn-how-a-missing-middleware-call-in-nginx-ui-hands-attackers-full-web-server-takeover",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-33032"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay": {
+      "content_hash": "8eae6ef08620d1f16e08dea6ecb8ee2eff10f1b345257ccb61fa8e63f5351d98",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay.md",
+      "posts_index_hash": "ceab337c7b1616a5a2881480102ed36c0cfb7d06b5533e43c1d0b0dbdcc848f3",
+      "report_id": "2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+      "review_required": [],
+      "source_urls": [
+        "https://www.aikido.dev/blog/gpt-proxy-backdoor-npm-pypi-chinese-llm-relay",
+        "https://security.snyk.io/vuln/SNYK-PYTHON-KUBENODEHEALTH-16120033",
+        "https://panther.com/blog/tunnel-vision-supply-chain-attack-targets-kubernetes-via-npm-and-pypi"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces": {
+      "content_hash": "26fad12244c792d79aab88b40e866a34c0ccec7c8d46edc6f0c8c2c51a7f0146",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.md",
+      "posts_index_hash": "e083e0c4cc63ee78ab2433aa4425a3c599f095752d0b138ee9f21ff6f4ceebc2",
+      "report_id": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/cve-2026-39987-update-how-attackers-weaponized-marimo-to-deploy-a-blockchain-botnet-via-huggingface",
+        "https://thehackernews.com/2026/04/marimo-rce-flaw-cve-2026-39987.html",
+        "https://www.bleepingcomputer.com/news/security/hackers-exploit-marimo-flaw-to-deploy-nkabuse-malware-from-hugging-face/",
+        "https://www.bleepingcomputer.com/news/security/critical-marimo-pre-auth-rce-flaw-now-under-active-exploitation/",
+        "https://www.resecurity.com/blog/article/marimo-pre-auth-rce-via-unauthenticated-websocket-terminal-cve-2026-39987",
+        "https://cybersecuritynews.com/attackers-spread-blockchain-based-backdoor-via-hugging-face/",
+        "https://gbhackers.com/weaponized-cve-2026-39987/",
+        "https://www.scworld.com/brief/multiple-attacks-weaponizing-critical-marimo-rce-identified",
+        "https://securityaffairs.com/190623/hacking/cve-2026-39987-marimo-rce-exploited-in-hours-after-disclosure.html",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-marimo-rce-cve-2026-39987-ai-toolchain-202/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence": {
+      "content_hash": "a458e4e6832eeb344aae453db3f0bb7b67bedee848bca164f2e28d75596c7704",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence.md",
+      "posts_index_hash": "534252a73ac11e2dd95769837614799b859b591ea21680e78b902506533eb9b5",
+      "report_id": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "review_required": [],
+      "source_urls": [
+        "https://www.aikido.dev/blog/mini-shai-hulud-has-appeared",
+        "https://www.stepsecurity.io/blog/a-mini-shai-hulud-has-appeared",
+        "https://www.wiz.io/blog/mini-shai-hulud-supply-chain-sap-npm",
+        "https://www.sophos.com/en-us/blog/-mini-shai-hulud-supply-chain-attack-targets-sap-npm-packages",
+        "https://thehackernews.com/2026/04/sap-npm-packages-compromised-by-mini.html",
+        "https://socket.dev/blog/intercom-s-npm-package-compromised-in-supply-chain-attack",
+        "https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html",
+        "https://www.securityweek.com/1800-hit-in-mini-shai-hulud-attack-on-sap-lightning-intercom/",
+        "https://www.mend.io/blog/shai-hulud-sap-cap-supply-chain-attack-claude-code/",
+        "https://phoenix.security/mini-shai-hulud-sap-cap-mbt-npm-supply-chain-bun-credential-stealer/",
+        "https://www.theregister.com/2026/04/30/supply_chain_attacks_sap_npm_packages/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft": {
+      "content_hash": "1966f89f354cfe3b1e4c6605ee115161c3bc43028f86d64e6bb34f4d12caee9f",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft.md",
+      "posts_index_hash": "1f61f08f27888da1925f7e9cbe2d9543dba6b4e999f944a9832a8eda2fcd8c78",
+      "report_id": "2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://gbhackers.com/fake-gemini-npm/",
+        "https://cyberandramen.net/2026/04/04/ottercookie-expands-targeting-to-ai-coding-tools-analysis-of-a-trojanized-npm-campaign/",
+        "https://simplysecuregroup.com/hackers-use-fake-gemini-npm-package-to-steal-tokens-from-claude-cursor-and-other-ai-tools/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation": {
+      "content_hash": "ea966601f9700321185e6d08a270b13061bf4cf4d281bb2f31eca045ba52694c",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation.md",
+      "posts_index_hash": "a13fe10b7a4982ff3ddde8748d78edd9189b23f87410086b66b561d4a71d4a7b",
+      "report_id": "2026-05-02-cve-2026-42208-litellm-sqli-active-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+        "https://www.bleepingcomputer.com/news/security/hackers-are-exploiting-a-critical-litellm-pre-auth-sqli-flaw/",
+        "https://github.com/BerriAI/litellm/security/advisories"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest": {
+      "content_hash": "ee8b7a1f7027bcef549ce3b291b1000a56156bf126d16f855bb9b3e7e2ac9d9f",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.md",
+      "posts_index_hash": "8ec5d38240ae910d032d4fa7d1a80068b4f28070c201692e0a49211d6dbb8096",
+      "report_id": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest",
+      "review_required": [],
+      "source_urls": [
+        "https://thedfirreport.com/2026/04/22/bissa-scanner-exposed-ai-assisted-mass-exploitation-and-credential-harvesting/",
+        "https://www.trendmicro.com/en_us/research/25/l/CVE-2025-55182-analysis-poc-itw.html",
+        "https://cloud.google.com/blog/topics/threat-intelligence/threat-actors-exploit-react2shell-cve-2025-55182",
+        "https://www.greynoise.io/blog/cve-2025-55182-react2shell-opportunistic-exploitation-in-the-wild-what-the-greynoise-observation-grid-is-seeing-so-far",
+        "https://www.penligent.ai/hackinglabs/react2shell-telegram-bots-and-the-bissa-scanner-breach-pipeline/",
+        "https://thecyberexpress.com/bissa-scanner-ai-assisted-credential-factory/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-05-litellm-sql-injection-exploitation": {
+      "content_hash": "ea6ad54f48a982ff4d9ac62c22dce1d994f99140dbf132df49d57f1dbf805d4a",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-05-litellm-sql-injection-exploitation.md",
+      "posts_index_hash": "e2bfaef74ca5f5c14b9e4a9c8eae0f943eda3033dc5a71e363a4fbe23fbc2b31",
+      "report_id": "2026-05-05-litellm-sql-injection-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+        "https://www.securityweek.com/fresh-litellm-vulnerability-exploited-shortly-after-disclosure/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-05-lmdeploy-ssrf-exploitation": {
+      "content_hash": "1f47119f03c92e0fba8ff5c304133b9d76403b6fec5e0785a8554510c29786ec",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-05-lmdeploy-ssrf-exploitation.md",
+      "posts_index_hash": "131ba60017e00332544e43881730442cf9a56a421d088a20f1b4939800ce7b49",
+      "report_id": "2026-05-05-lmdeploy-ssrf-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+        "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-05-openclaw-slack-prompt-injection-context-poisoning": {
+      "content_hash": "e908ded4cb11d88077c565dad6bcf260e346d390aaa30b43aa4217c367a69780",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-05-openclaw-slack-prompt-injection-context-poisoning.md",
+      "posts_index_hash": "b11e6c374f0b48c4f1e40943c97276e6a082f67ddd7f75c704850cc9f80ad270",
+      "report_id": "2026-05-05-openclaw-slack-prompt-injection-context-poisoning",
+      "review_required": [],
+      "source_urls": [
+        "https://cvereports.com/reports/CVE-2026-41358"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai": {
+      "content_hash": "a6a36c8a119e0567f213a33d5ab060f7fdd8c2c77a0ac3a7689b72eabe1e7039",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.md",
+      "posts_index_hash": "41b5fc18e260cecd45bf56a1600fb67e9bb88b98e781d461331f2c696969ffb1",
+      "report_id": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai",
+      "review_required": [],
+      "source_urls": [
+        "https://www.oasis.security/blog/claude-ai-prompt-injection-data-exfiltration-vulnerability",
+        "https://www.darkreading.com/vulnerabilities-threats/claudy-day-trio-flaws-claude-users-data-theft",
+        "https://www.truefoundry.com/blog/claude-code-prompt-injection"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain": {
+      "content_hash": "4f8b4bb2be2e82437463a29614492a705552e0be47eae79fd795f02f26844ad1",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.md",
+      "posts_index_hash": "f73f94e1b0b5106fa764bd29143c59ad6eca2ac166155619305d75fad286b8e1",
+      "report_id": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://www.reversinglabs.com/blog/claude-promptmink-malware-crypto",
+        "https://www.infoworld.com/article/4167479/supply-chain-attacks-take-aim-at-your-ai-coding-agents-2.html",
+        "https://www.csoonline.com/article/4167465/supply-chain-attacks-take-aim-at-your-ai-coding-agents.html",
+        "https://thehackernews.com/2026/04/new-wave-of-dprk-attacks-uses-ai.html"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-08-anthropic-mcp-stdio-rce-design-flaw": {
+      "content_hash": "f2d27ee1da8443322eacfec45c9c112d9f0be2c9953d7eacec45357903a674a6",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-08-anthropic-mcp-stdio-rce-design-flaw.md",
+      "posts_index_hash": "bc27af5f0a3e47756c28b454c636f12c7e3afabb85b4cd592561c50d4cb395a3",
+      "report_id": "2026-05-08-anthropic-mcp-stdio-rce-design-flaw",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/",
+        "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+        "https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/",
+        "https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-08-claude-code-autonomous-attack-mexico-water": {
+      "content_hash": "e20069d75d8c25fccf0a1a7b92aeb18e9bbb2c58a657f8b685b99f6efa585b06",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-08-claude-code-autonomous-attack-mexico-water.md",
+      "posts_index_hash": "8f7128fca5114b11dce4d156ed9fc9c3a5ffb22867beb29b11053b0700052d2d",
+      "report_id": "2026-05-08-claude-code-autonomous-attack-mexico-water",
+      "review_required": [],
+      "source_urls": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage",
+        "https://www.securityweek.com/claude-ai-guided-hackers-toward-ot-assets-during-water-utility-intrusion/",
+        "https://www.infosecurity-magazine.com/news/llm-critical-infrastructure/",
+        "https://www.techradar.com/pro/security/hackers-use-claude-and-chatgpt-in-a-significant-evolution-in-offensive-capability-to-breach-government-agencies-leak-hundreds-of-millions-of-citizen-records"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-08-million-exposed-ai-services-security-assessment": {
+      "content_hash": "08b159f02683fccd2e25988681f4384fee1fc5f36049a5d616a233204974d1e4",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-08-million-exposed-ai-services-security-assessment.md",
+      "posts_index_hash": "5de6e6e9d6fc15421bc622bca11363b0f44e814d7041c1549003b9ef7c6383cc",
+      "report_id": "2026-05-08-million-exposed-ai-services-security-assessment",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-09-massive-exposure-1m-ai-services-misconfiguration": {
+      "content_hash": "fc9d79a196075bacf01d3b4050f76e1fb1a272bf1386549b11ae6db6ff99cee1",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration.md",
+      "posts_index_hash": "beeb2be88e4442e68c2813702b1d612f5421567b348b1d06f186cd7ecd5a2ea2",
+      "report_id": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+        "https://www.intruder.io/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce": {
+      "content_hash": "3a319366d3e003b7327745e3b0b1a829571475570b00f20df4b857ff551ac1f5",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.md",
+      "posts_index_hash": "dc78158fadc0d72a6fc63c98cd85b6139ed123b3dc073c7d983e24e04e6970e5",
+      "report_id": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+        "https://github.com/microsoft/semantic-kernel/security/advisories/GHSA-xjw9-4gw8-4rqx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain": {
+      "content_hash": "9aef2eb2bae7468a381491b1fecb1fda8f03860ecc78418816b880aed2a3d1e8",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain.md",
+      "posts_index_hash": "6535ffe585905cc935ce4ac367da941e4db35f3d95683ef738c951f2e2efbd01",
+      "report_id": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain",
+      "review_required": [],
+      "source_urls": [
+        "https://cryptoslate.com/how-one-trader-exploited-grok-and-morse-code-to-trick-ai-agent-into-sending-billions-of-crypto-tokens-from-a-verified-wallet/",
+        "https://www.newsorga.com/article/grok-bankrbot-morse-code-prompt-injection-174k-drb-theft-base-may-2026",
+        "https://www.cryptopolitan.com/user-tricked-grok-bankrbot-to-send-tokens/",
+        "https://dailycoinpost.com/grok-wallet-prompt-injection-bankr-drb/",
+        "https://oecd.ai/en/incidents/2026-05-04-4a73",
+        "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-10-context-ai-vercel-oauth-supply-chain-breach": {
+      "content_hash": "6a6d6912b775085fa54ba5e80e362d2ab60a8962007d46abdac4e9294c883042",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach.md",
+      "posts_index_hash": "a318255695f55c866f20a12d9acb0f0662b44ef372c279354a8d16414597ac87",
+      "report_id": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/vercel-context-ai-supply-chain-attack-breachforums/",
+        "https://thehackernews.com/2026/04/vercel-breach-tied-to-context-ai-hack.html",
+        "https://vercel.com/kb/bulletin/vercel-april-2026-security-incident",
+        "https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html",
+        "https://techcrunch.com/2026/04/20/app-host-vercel-confirms-security-incident-says-customer-data-was-stolen-via-breach-at-context-ai/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-10-fake-claude-pro-beagle-backdoor-donutloader": {
+      "content_hash": "bbb4e6fd7e6f3857e47104d9df4be0dbe6948e7f042f835ebe1972d08e211d9a",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.md",
+      "posts_index_hash": "d8a82d9de0f029173cc5b304c794570ea9a419820249f2b0b070216ef4397be7",
+      "report_id": "2026-05-10-fake-claude-pro-beagle-backdoor-donutloader",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/fake-claude-ai-website-delivers-new-beagle-windows-malware/",
+        "https://www.sophos.com/en-us/blog/donuts-and-beagles-fake-claude-site-spreads-backdoor",
+        "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer",
+        "https://www.infosecurity-magazine.com/news/fake-claude-site-beagle-backdoor/",
+        "https://securityaffairs.com/190754/malware/fake-claude-ai-installer-abuses-dll-sideloading-to-deploy-plugx.html"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers": {
+      "content_hash": "189b1f9b65c98d521f647d7afa19a7ed844c4028119bf0aae74b52f27031fb9c",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers.md",
+      "posts_index_hash": "aa26ebcbc946ee0115411a36d0ca1b4eb8b4e4a62a9102d9a0e3da9b160318ff",
+      "report_id": "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers",
+      "review_required": [],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/konni-targets-developers-with-ai-malware/",
+        "https://blog.checkpoint.com/research/ai-powered-north-korean-konni-malware-targets-developers/",
+        "https://www.bleepingcomputer.com/news/security/konni-hackers-target-blockchain-engineers-with-ai-built-malware/",
+        "https://securityaffairs.com/187317/apt/north-korea-linked-konni-uses-ai-to-build-stealthy-malware-tooling.html",
+        "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat": {
+      "content_hash": "73f1c942733af609a03701c3ee725c91a6d3a8a9c3ba43168cfdc4a653cb0ed1",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat.md",
+      "posts_index_hash": "94bec87fabc0a96d44bafa5ab26cbbbbbfa5c8a84ccb038bdba82d00f030d1bb",
+      "report_id": "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "review_required": [],
+      "source_urls": [
+        "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
+        "https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/",
+        "https://lyrie.ai/research/research/2026-05-10-huggingface-openai-typosquat",
+        "https://www.acronis.com/en/tru/posts/poisoning-the-well-ai-supply-chain-attacks-on-hugging-face-and-openclaw/",
+        "https://www.securityweek.com/hugging-face-clawhub-abused-for-malware-distribution/"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    },
+    "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis": {
+      "content_hash": "2f9a4636fdbf054a4622988a5adcb563732dab2382fd5af6359f133cefd548ff",
+      "evidence_status": "baseline_audit_no_network",
+      "file": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.md",
+      "posts_index_hash": "d3ce49eede64f5b35dcda4ba411a485cbff2b837f88e501134ca458903fad5c8",
+      "report_id": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis",
+      "review_required": [],
+      "source_urls": [
+        "https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/",
+        "https://lyrie.ai/research/research/2026-05-09-trustfall-agentic-rce",
+        "https://www.helpnetsecurity.com/2026/05/07/trustfall-ai-coding-cli-vulnerability-research/",
+        "https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319",
+        "https://www.sonarsource.com/blog/claude-arbitrary-code-execution"
+      ],
+      "structure_status": "baseline_audit",
+      "validated_at": "2026-05-12T17:27:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "baseline audit entry; source URLs were not network checked"
+      ]
+    }
+  },
+  "validation_version": "1.0.0"
+}

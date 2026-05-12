@@ -35,7 +35,7 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     outputs:
-      changed: ${{ steps.changes.outputs.changed }}
+      pushed: ${{ steps.push.outputs.pushed || steps.no_push.outputs.pushed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,23 +53,182 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/collect.py
 
+      - name: Run validation report
+        id: validation
+        run: |
+          set +e
+          python scripts/validate_site.py --mode full --changed-only-evidence --write-report --update-validation-state --fail-on-review-required
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "VALIDATION_EXIT_CODE=$code" >> "$GITHUB_ENV"
+          exit 0
+
+      - name: Prepare persistent validation reports
+        id: reports
+        env:
+          VALIDATION_EXIT_CODE: ${{ steps.validation.outputs.exit_code }}
+        run: |
+          set -euo pipefail
+          ts="$(date -u +'%Y%m%d-%H%M%SZ')"
+          year="$(date -u +'%Y')"
+          month="$(date -u +'%m')"
+          base="${ts}-run-${GITHUB_RUN_ID}"
+          run_dir="validation-reports/runs/${year}/${month}"
+          review_dir="validation-reports/review-required"
+          mkdir -p "$run_dir" "$review_dir"
+
+          run_md="${run_dir}/${base}.md"
+          run_json="${run_dir}/${base}.json"
+          cp validation-reports/latest-validation-report.md "$run_md"
+          cp validation-reports/latest-validation-report.json "$run_json"
+
+          review_md=""
+          review_json=""
+          if [ "${VALIDATION_EXIT_CODE}" != "0" ]; then
+            review_md="${review_dir}/${base}.md"
+            review_json="${review_dir}/${base}.json"
+            cp validation-reports/latest-validation-report.md "$review_md"
+            cp validation-reports/latest-validation-report.json "$review_json"
+          fi
+
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path("validation-reports")
+          latest = root / "latest-validation-report.json"
+          payload = json.loads(latest.read_text())
+          run_reports = sorted((root / "runs").glob("*/*/*.md"), reverse=True)
+          review_reports = sorted((root / "review-required").glob("*.md"), reverse=True)
+
+          def link(path):
+              return path.as_posix()
+
+          exit_code = os.environ.get("VALIDATION_EXIT_CODE", "unknown")
+          lines = [
+              "# Validation Reports",
+              "",
+              "Scheduled collection runs publish even when validation finds issues.",
+              "The validator result is preserved here so Lucas can review and assign remediation later.",
+              "",
+              "## Latest Run",
+              "",
+              f"- GitHub run ID: `{os.environ.get('GITHUB_RUN_ID', 'unknown')}`",
+              f"- Validator exit code: `{exit_code}`",
+              f"- Generated at UTC: `{payload.get('generated_at_utc', 'unknown')}`",
+              f"- Hard failures: `{payload.get('hard_failures', 0)}`",
+              f"- Warnings: `{payload.get('warnings', 0)}`",
+              f"- Review required: `{payload.get('review_required', 0)}`",
+              f"- Latest Markdown: [latest-validation-report.md](latest-validation-report.md)",
+              f"- Latest JSON: [latest-validation-report.json](latest-validation-report.json)",
+              "",
+              "## Exit Codes",
+              "",
+              "- `0`: validation passed",
+              "- `1`: hard validation failure",
+              "- `2`: review required with `--fail-on-review-required`",
+              "- `3`: internal validator error",
+              "",
+              "## Recent Run Reports",
+              "",
+          ]
+
+          if run_reports:
+              for path in run_reports[:20]:
+                  lines.append(f"- [{path.name}]({link(path.relative_to(root))})")
+          else:
+              lines.append("- No run reports recorded yet.")
+
+          lines.extend(["", "## Review-Required Reports", ""])
+          if review_reports:
+              for path in review_reports[:20]:
+                  lines.append(f"- [{path.name}]({link(path.relative_to(root))})")
+          else:
+              lines.append("- No review-required reports recorded yet.")
+
+          lines.extend([
+              "",
+              "## Mobile Review Notes",
+              "",
+              "From GitHub mobile, open this file, then open the latest run report or any report under `review-required`.",
+              "The Markdown report contains the human review queue and recommended options.",
+              "",
+          ])
+
+          (root / "index.md").write_text("\n".join(lines))
+          PY
+
+          echo "run_md=$run_md" >> "$GITHUB_OUTPUT"
+          echo "run_json=$run_json" >> "$GITHUB_OUTPUT"
+          echo "review_md=$review_md" >> "$GITHUB_OUTPUT"
+          echo "review_json=$review_json" >> "$GITHUB_OUTPUT"
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collection-validation-report
+          path: |
+            validation-reports/latest-validation-report.md
+            validation-reports/latest-validation-report.json
+            validation-reports/index.md
+            validation-reports/runs/**/*.md
+            validation-reports/runs/**/*.json
+            validation-reports/review-required/**/*.md
+            validation-reports/review-required/**/*.json
+          if-no-files-found: warn
+
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Commit and push
+        id: push
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "LLM ThreatIntel Bot"
           git config user.email "bot@llm-threatintel.github.io"
           git add -A
-          git commit -m "intel: $(date +%Y-%m-%d) automated collection"
+          if [ "${VALIDATION_EXIT_CODE}" = "0" ]; then
+            git commit -m "intel: $(date +%Y-%m-%d) automated collection"
+          else
+            git commit -m "validation: $(date +%Y-%m-%d) report-only collection review"
+          fi
           git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Mark no push
+        id: no_push
+        if: steps.changes.outputs.changed != 'true'
+        run: echo "pushed=false" >> "$GITHUB_OUTPUT"
+
+      - name: Collection summary
+        if: always()
+        run: |
+          {
+            echo "## LLM ThreatIntel Collection"
+            echo ""
+            echo "- Validator exit code: \`${VALIDATION_EXIT_CODE:-not-run}\`"
+            echo "- Changes committed: \`${{ steps.changes.outputs.changed || 'false' }}\`"
+            echo "- Latest validation report: \`validation-reports/latest-validation-report.md\`"
+            echo "- Validation report index: \`validation-reports/index.md\`"
+            echo ""
+            if [ "${VALIDATION_EXIT_CODE:-0}" != "0" ]; then
+              echo "Validation found issues. Publishing continued in report-only mode for Lucas review."
+            else
+              echo "Validation passed. Publishing continued normally."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
   deploy:
     needs: collect
-    if: needs.collect.outputs.changed == 'true'
+    if: needs.collect.outputs.pushed == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

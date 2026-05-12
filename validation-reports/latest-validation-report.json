@@ -1,0 +1,404 @@
+{
+  "commit_sha": "bf73cd851dad",
+  "duplicate_iocs": {
+    "flowise": [
+      {
+        "campaign": "flowise-rce-cve-2025-59528-april-2026",
+        "source": "BleepingComputer",
+        "type": "package",
+        "value": "flowise"
+      },
+      {
+        "campaign": "million-exposed-ai-services-security-assessment",
+        "source": "The Hacker News",
+        "type": "package",
+        "value": "Flowise"
+      }
+    ]
+  },
+  "generated_at_utc": "2026-05-12T19:14:12+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (164 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (150 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (169 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (143 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (156 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1019 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-08-million-exposed-ai-services-security-assessment",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1215 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-08-claude-code-autonomous-attack-mexico-water",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (159 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (161 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (152 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (149 characters)",
+      "recommendation": "",
+      "record_id": "2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (984 characters)",
+      "recommendation": "",
+      "record_id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (146 characters)",
+      "recommendation": "",
+      "record_id": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (177 characters)",
+      "recommendation": "",
+      "record_id": "2026-04-11-project-glasswing-claude-mythos-zero-days",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-04-05-mercor-data-vendor-ai-training-breach",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (144 characters)",
+      "recommendation": "",
+      "record_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (976 characters)",
+      "recommendation": "",
+      "record_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
+      "severity": "warn"
+    },
+    {
+      "code": "post-title-long",
+      "file": "data/posts-index.json",
+      "message": "post title is long (157 characters)",
+      "recommendation": "",
+      "record_id": "2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-weak-source",
+      "file": "data/iocs.json",
+      "message": "IOC has weak source label: OSINT",
+      "recommendation": "",
+      "record_id": "48",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: namastex/automagik-genie",
+      "recommendation": "",
+      "record_id": "103",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: namastex/pgserve",
+      "recommendation": "",
+      "record_id": "104",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: xinference==2.6.0",
+      "recommendation": "",
+      "record_id": "106",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: xinference==2.6.1",
+      "recommendation": "",
+      "record_id": "107",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: xinference==2.6.2",
+      "recommendation": "",
+      "record_id": "108",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
+      "recommendation": "",
+      "record_id": "109",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
+      "recommendation": "",
+      "record_id": "110",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: LiteLLM <1.83.7",
+      "recommendation": "",
+      "record_id": "113",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
+      "recommendation": "",
+      "record_id": "114",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)",
+      "recommendation": "",
+      "record_id": "115",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)",
+      "recommendation": "",
+      "record_id": "116",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)",
+      "recommendation": "",
+      "record_id": "117",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)",
+      "recommendation": "",
+      "record_id": "118",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)",
+      "recommendation": "",
+      "record_id": "119",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)",
+      "recommendation": "",
+      "record_id": "120",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)",
+      "recommendation": "",
+      "record_id": "121",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)",
+      "recommendation": "",
+      "record_id": "122",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: claude.com/redirect/ (open redirect flaw, any URL parameter)",
+      "recommendation": "",
+      "record_id": "123",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: api.anthropic.com/v1/files (Files API used for exfiltration)",
+      "recommendation": "",
+      "record_id": "124",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: langflow (all versions)",
+      "recommendation": "",
+      "record_id": "125",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
+      "recommendation": "",
+      "record_id": "132",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
+      "recommendation": "",
+      "record_id": "133",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
+      "recommendation": "",
+      "record_id": "134",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-legacy-format-exception",
+      "file": "data/iocs.json",
+      "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
+      "recommendation": "",
+      "record_id": "144",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-duplicate-review",
+      "file": "data/iocs.json",
+      "message": "duplicate IOC review required: flowise appears 2 times",
+      "recommendation": "",
+      "record_id": "",
+      "severity": "warn"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 0,
+  "reports_newly_validated": 0,
+  "reports_skipped": 83,
+  "review_required": 0,
+  "source_urls_checked": 0,
+  "state_updates": 0,
+  "url_results": [],
+  "validation_version": "1.0.0",
+  "warnings": 46
+}

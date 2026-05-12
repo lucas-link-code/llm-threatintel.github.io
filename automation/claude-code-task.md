@@ -202,7 +202,23 @@ For each new IOC:
 - Update the last_updated field to today's date.
 
 **5. Git Operations**
-After all files are written:
+After all files are written and before any `git add`, `git commit`, or `git push`, run the shared validator:
+```bash
+python scripts/validate_site.py --mode full --changed-only-evidence --write-report --update-validation-state
+```
+
+For local Claude Code, cloud Claude Code, Cursor, or manual agent runs, treat this validator as a blocking pre-commit gate unless Lucas explicitly approves report-only publication for that run.
+
+If validation fails or returns review-required findings:
+- do not commit
+- do not push
+- do not delete reports
+- do not remove IOCs
+- do not rewrite major intelligence content without Lucas approval
+- print the validation report location: `validation-reports/latest-validation-report.md`
+- summarize the review issues and ask Lucas whether to add/confirm sources, add a manual evidence override, revise supported claims, keep for review, or remove only with explicit approval
+
+If validation passes:
 ```bash
 git add -A
 git commit -m "intel: YYYY-MM-DD — {one-line summary of key findings}"
@@ -217,7 +233,7 @@ git push origin main
 
 ## Quality Gates — Check Before Committing
 
-Run this checklist before executing git commit:
+Run this checklist and the shared validator before executing git commit:
 
 1. Every factual claim in the post is attributed to a named source with a URL
 2. Every IOC listed in the post body also appears in data/iocs.json
@@ -229,6 +245,7 @@ Run this checklist before executing git commit:
 8. IOCs in the Markdown post body should use defanged format for display
 9. No duplicate posts exist (check by date and slug against existing posts/)
 10. The posts-index.json is valid JSON after your edits (parse it to verify)
+11. `python scripts/validate_site.py --mode full --changed-only-evidence --write-report --update-validation-state` passes before commit/push unless Lucas explicitly approves report-only publication
 
 ## Scheduling
 
@@ -240,3 +257,5 @@ Cron entry:
 ```
 
 The 11:10 UTC timing ensures overlap with US business hours security news publishing and captures overnight publications from European and Asian sources.
+
+Note: the scheduled GitHub Actions collection workflow intentionally runs in report-only publication mode. It captures the validator exit code, commits the validation report, and continues publish/deploy so Lucas can review findings afterwards. That report-only workflow mode does not weaken the validator and does not apply automatically to local/manual agent runs.

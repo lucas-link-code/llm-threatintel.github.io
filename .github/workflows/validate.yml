@@ -1,0 +1,39 @@
+# ============================================================
+# LLM ThreatIntel — Data Quality Validation
+# Non-networked validation gate for repository data contracts.
+# ============================================================
+
+name: Validate Site Data
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run strict non-network validation
+        run: python scripts/validate_site.py --mode strict --write-report --no-network
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: |
+            validation-reports/latest-validation-report.md
+            validation-reports/latest-validation-report.json
+          if-no-files-found: warn

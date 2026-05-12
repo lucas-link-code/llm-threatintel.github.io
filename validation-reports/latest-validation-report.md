@@ -1,0 +1,72 @@
+# LLM ThreatIntel Validation Report
+
+- Run time UTC: `2026-05-12T19:14:12+00:00`
+- Commit SHA: `bf73cd851dad`
+- Mode: `full`
+- Validation version: `1.0.0`
+- Overall result: `pass`
+- Hard failures: `0`
+- Warnings: `46`
+- Review required: `0`
+- Reports checked: `0`
+- Reports skipped: `83`
+- Reports newly validated: `0`
+- IOC duplicates found: `1`
+- Source URLs checked: `0`
+
+No files were removed or destructively modified.
+
+## Findings
+
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat`: post title is long (164 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers`: post title is long (150 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain`: post title is long (169 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce`: post title is long (143 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-09-massive-exposure-1m-ai-services-misconfiguration`: post title is long (156 characters)
+- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-05-08-million-exposed-ai-services-security-assessment`: post excerpt is long (1019 characters)
+- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-05-08-claude-code-autonomous-attack-mexico-water`: post excerpt is long (1215 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain`: post title is long (159 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence`: post title is long (161 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft`: post title is long (152 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft`: post title is long (149 characters)
+- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft`: post excerpt is long (984 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026`: post title is long (146 characters)
+- **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211`: public feed post uses non-clear TLP: TLP:AMBER
+- **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-flowise-cve-2025-59528-active-rce-exploitation`: public feed post uses non-clear TLP: TLP:AMBER
+- **WARN** `post-title-long` `data/posts-index.json` `2026-04-11-project-glasswing-claude-mythos-zero-days`: post title is long (177 characters)
+- **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-05-mercor-data-vendor-ai-training-breach`: public feed post uses non-clear TLP: TLP:AMBER
+- **WARN** `post-title-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post title is long (144 characters)
+- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post excerpt is long (976 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation`: post title is long (157 characters)
+- **WARN** `ioc-weak-source` `data/iocs.json` `48`: IOC has weak source label: OSINT
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `103`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `104`: legacy IOC format exception retained without modifying data: namastex/pgserve
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `106`: legacy IOC format exception retained without modifying data: xinference==2.6.0
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `107`: legacy IOC format exception retained without modifying data: xinference==2.6.1
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `108`: legacy IOC format exception retained without modifying data: xinference==2.6.2
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `109`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `110`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `113`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `114`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `115`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `116`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `117`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `118`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `119`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `120`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `121`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `122`: legacy IOC format exception retained without modifying data: claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `123`: legacy IOC format exception retained without modifying data: claude.com/redirect/ (open redirect flaw, any URL parameter)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `124`: legacy IOC format exception retained without modifying data: api.anthropic.com/v1/files (Files API used for exfiltration)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `125`: legacy IOC format exception retained without modifying data: langflow (all versions)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `133`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `134`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `144`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
+- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
+
+## Duplicate IOC Review
+
+### `flowise`
+- `flowise` type `package` campaign `flowise-rce-cve-2025-59528-april-2026` source `BleepingComputer`
+- `Flowise` type `package` campaign `million-exposed-ai-services-security-assessment` source `The Hacker News`
