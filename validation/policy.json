@@ -82,6 +82,7 @@
       "chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
       "chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
       "LiteLLM <1.83.7",
+      "litellm>=1.81.16,<1.83.7",
       "@solana-launchpad/sdk (bait package, no malicious code)",
       "@validate-sdk/v2 (payload, infostealer)",
       "@hash-validator/v2 (early variant, JavaScript infostealer)",
@@ -91,8 +92,12 @@
       "scraper-npm (PyPI variant, February 2026)",
       "langflow (all versions)",
       "semantic-kernel<1.39.4 (Python)",
+      "semantic-kernel<1.39.4 (Python SDK)",
       "semantic-kernel<1.71.0 (.NET)",
-      "huggingface:Open-OSS/privacy-filter"
+      "huggingface:Open-OSS/privacy-filter",
+      "Open-OSS/privacy-filter (Hugging Face)",
+      "575+ trojanized OpenClaw agent skills",
+      "352,000+ unsafe/suspicious Hugging Face models"
     ],
     "url_path": [
       "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",

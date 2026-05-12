@@ -1,23 +1,25 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-12T19:14:12+00:00`
-- Commit SHA: `bf73cd851dad`
-- Mode: `full`
+- Run time UTC: `2026-05-12T19:40:34+00:00`
+- Commit SHA: `5300229ce0d6`
+- Mode: `strict`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
-- Warnings: `46`
+- Warnings: `54`
 - Review required: `0`
 - Reports checked: `0`
-- Reports skipped: `83`
+- Reports skipped: `0`
 - Reports newly validated: `0`
-- IOC duplicates found: `1`
+- IOC duplicates found: `2`
 - Source URLs checked: `0`
 
 No files were removed or destructively modified.
 
 ## Findings
 
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce`: post title is long (142 characters)
+- **WARN** `post-title-long` `data/posts-index.json` `2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models`: post title is long (166 characters)
 - **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat`: post title is long (164 characters)
 - **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers`: post title is long (150 characters)
 - **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain`: post title is long (169 characters)
@@ -63,10 +65,20 @@ No files were removed or destructively modified.
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `133`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `134`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `144`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `148`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `150`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `151`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `152`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `153`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
+- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 2 times
 
 ## Duplicate IOC Review
 
 ### `flowise`
 - `flowise` type `package` campaign `flowise-rce-cve-2025-59528-april-2026` source `BleepingComputer`
 - `Flowise` type `package` campaign `million-exposed-ai-services-security-assessment` source `The Hacker News`
+
+### `huggingface.co/open-oss/privacy-filter`
+- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
+- `https://huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `openclawhugging-face-supply-chain-poisoning-malicious-skills-models` source `TechNext Web`
