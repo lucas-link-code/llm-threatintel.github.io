@@ -1,6 +1,46 @@
 {
   "posts": [
     {
+      "id": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "title": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "date": "2026-05-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed, raising fresh concerns about how enterprises source and validate AI models from public repositories. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.",
+      "file": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.md"
+    },
+    {
+      "id": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026",
+      "title": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
+      "date": "2026-05-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn't enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.",
+      "file": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026.md"
+    },
+    {
+      "id": "2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026",
+      "title": "AI-Generated Zero-Day 2FA Bypass Exploit Discovered by Google—First Known Case of Criminal LLM-Weaponized Vulnerability Discovery",
+      "date": "2026-05-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "prompt-injection",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "For the first time, Google Threat Intelligence Group (GTIG) identified a threat actor using a zero-day exploit that is believed to have been developed with AI. The flaw was a 2FA bypass, and the script showed all tell-tale signs of LLM-generated code: detailed docstrings, a clean class structure, even a hallucinated CVSS score baked into the comments. Google Threat Intelligence Group worked with the impacted vendor to disclose the vulnerability before the planned mass exploitation campaign could be executed.",
+      "file": "2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026.md"
+    },
+    {
       "id": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce",
       "title": "Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks—Eval() Filter Bypasses Enable Code Execution Chains",
       "date": "2026-05-12",

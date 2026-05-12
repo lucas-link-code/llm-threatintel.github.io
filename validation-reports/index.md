@@ -1,9 +1,16 @@
 # Validation Reports
 
-Scheduled collection runs publish even when validation finds issues. The validator result is preserved here so Lucas can review and assign remediation later.
+Scheduled collection runs publish even when validation finds issues.
+The validator result is preserved here so Lucas can review and assign remediation later.
 
 ## Latest Run
 
+- GitHub run ID: `25761878399`
+- Validator exit code: `1`
+- Generated at UTC: `2026-05-12T21:00:47+00:00`
+- Hard failures: `4`
+- Warnings: `56`
+- Review required: `3`
 - Latest Markdown: [latest-validation-report.md](latest-validation-report.md)
 - Latest JSON: [latest-validation-report.json](latest-validation-report.json)
 
@@ -16,12 +23,13 @@ Scheduled collection runs publish even when validation finds issues. The validat
 
 ## Recent Run Reports
 
-- No GitHub Actions run reports recorded yet.
+- [20260512-210047Z-run-25761878399.md](runs/2026/05/20260512-210047Z-run-25761878399.md)
 
 ## Review-Required Reports
 
-- No review-required reports recorded yet.
+- [20260512-210047Z-run-25761878399.md](review-required/20260512-210047Z-run-25761878399.md)
 
 ## Mobile Review Notes
 
-From GitHub mobile, open this file, then open the latest run report or any report under `review-required`. The Markdown report contains the human review queue and recommended options.
+From GitHub mobile, open this file, then open the latest run report or any report under `review-required`.
+The Markdown report contains the human review queue and recommended options.

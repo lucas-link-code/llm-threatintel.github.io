@@ -1577,6 +1577,113 @@
       "warnings": [
         "baseline audit entry; source URLs were not network checked"
       ]
+    },
+    "2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026": {
+      "content_hash": "eac069b371cd982d7743a871b7507abf366a36cb95db291964cdd2a79c957627",
+      "evidence_status": "validated",
+      "file": "2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026.md",
+      "posts_index_hash": "a2641e78b5005e43071a17f694df1ea3990ed38e0ffaab529c509b09d93177ea",
+      "report_id": "2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access",
+        "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html",
+        "https://www.theregister.com/ai-ml/2026/05/11/google-says-criminals-used-ai-built-zero-day-in-planned-mass-hack-spree/5237982"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-12T21:00:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce": {
+      "content_hash": "fc1c860ac3e93bd8bd630ab41c7e65c11775bdadee67fe6d455e18066b4de2cc",
+      "evidence_status": "validated",
+      "file": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.md",
+      "posts_index_hash": "76987d3b12a1dd17e1ba23a52795fb24732f3d4e4991d1a6c26134591d8abd1c",
+      "report_id": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-12T21:00:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation": {
+      "content_hash": "7fb5929c2a14f68b42fbed5146893f0acfa0432d5ff905338f051425b248defd",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.md",
+      "posts_index_hash": "c40063b6fe20211de9aa35f87fc514fa4a51db3e32c4d68f4fb9025ec95f6deb",
+      "report_id": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+        "https://webflow.sysdig.com/blog/cve-2026-42208-how-attackers-exploited-litellm-credentials",
+        "https://www.cve.news/cve-2026-42208/",
+        "https://www.cisa.gov/news-events/alerts/2026/05/08/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-12T21:00:47+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026": {
+      "content_hash": "641a7e585275565722df76054b2cfb061b5538a3271c257d08e208f94b9eb5a5",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.md",
+      "posts_index_hash": "f602051aff92bb9d8f6929f79eff34295793dfcda9b14329bedc5fb086167092",
+      "report_id": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
+        "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
+        "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-12T21:00:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-12-intruder-1-million-exposed-ai-services-may-2026": {
+      "content_hash": "43c84734522bc9c5b0657276c5dd54311b61c3110eaffd3e2f07928ea9430623",
+      "evidence_status": "validated",
+      "file": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026.md",
+      "posts_index_hash": "0b0284090bc1d38044d1d0054b03ef880936ffdc956713e51eba66a917d58e96",
+      "report_id": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-12T21:00:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models": {
+      "content_hash": "30ed88e4fa5b454a1d693b43e8718a8f54f4efa003f2eb12e3a1a47e02f4609f",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md",
+      "posts_index_hash": "91df4736443192bd83c7e7564637fa91de033e9bd8231d1a0b8e3fd9c4414565",
+      "report_id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
+        "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d",
+        "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-12T21:00:45+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

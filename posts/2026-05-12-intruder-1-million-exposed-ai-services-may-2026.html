@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure | LLM ThreatIntel</title>
+  <meta name="description" content="Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn&#x27;t enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure">
+  <meta property="og:description" content="Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn&#x27;t enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure">
+  <meta property="article:published_time" content="2026-05-12T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-12T00:00:00Z">
+  <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure">
+  <meta name="twitter:description" content="Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn&#x27;t enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Massive Exposure of 1 Million AI Services\u2014Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
+  "description": "Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn't enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.",
+  "datePublished": "2026-05-12T00:00:00Z",
+  "dateModified": "2026-05-12T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html",
+  "keywords": [
+    "shadow-ai",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-12</span>
+      <span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure</h1>
+<p><strong>Date:</strong> 2026-05-12<br><strong>Tags:</strong> shadow-ai, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn&#x27;t enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Large-Scale AI Infrastructure Exposure Survey</td></tr><tr><td>Attribution</td><td>Security research initiative; no malicious campaign (confidence: none)</td></tr><tr><td>Target</td><td>Unpatched self-hosted LLM services, chatbots, agent management platforms across internet</td></tr><tr><td>Vector</td><td>Default configurations, missing authentication, exposed APIs, unsafe serialization in AI frameworks</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-05</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>A number of instances involved chatbots that left user conversations exposed. One example, based on OpenUI, exposed a user&#x27;s full LLM conversation history. More concerning were generic chatbots hosting a wide range of models—including multimodal LLMs—freely available to use. Malicious users can jailbreak most models to bypass safety guardrails for nefarious purposes—like generating illegal imagery, or soliciting advice with intent to commit a crime—and do so without fear of repercussion, since they&#x27;re using someone else&#x27;s infrastructure. They also discovered exposed instances of agent management platforms, including n8n and Flowise. Some instances that users clearly thought were internal had been exposed to the internet without authentication. One of the most egregious examples was a Flowise instance that exposed the entire business logic of an LLM chatbot service. Their credential list was exposed too. There&#x27;s a distinct absence of proper access management controls in AI tooling, meaning access to a bot that&#x27;s integrated with a third-party system often means access to everything it touches.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Default Configuration</td><td>T1028</td><td>Self-hosted AI services deployed with authentication disabled by default</td></tr><tr><td>Exposed Service</td><td>T1526</td><td>1 million internet-facing AI services with missing or insufficient access controls</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Specific vulnerable instances not disclosed; research focused on systematic security posture assessment_</p>
+<h3>Full URL Paths</h3>
+<p>_Specific vulnerable instances not disclosed; research focused on systematic security posture assessment_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">n8n
+Flowise
+OpenUI
+LLM hosting frameworks</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Conduct external asset inventory using certificate transparency logs to identify all internet-facing AI services in your environment. Implement mandatory authentication on all AI infrastructure—no deployment should be live without MFA/API key validation. Scan Shodan/Censys regularly for instances of known AI frameworks (Flowise, n8n, LLM gateways) with &#x27;LLM&#x27;, &#x27;chat&#x27;, &#x27;agent&#x27; in the title. Monitor for default credentials in logs. Enforce network segmentation for AI services and restrict them to private networks unless business requirement demands external access. Implement continuous scanning for exposed conversation histories and credential lists.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] We Scanned 1 Million Exposed AI Services. Here&#x27;s How Bad the Security Actually Is (2026-05-05) — https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html</li><li>[Intruder Security Research] Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration (2026-05-05) — https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

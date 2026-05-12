@@ -1386,6 +1386,60 @@
       "source": "Microsoft Security Blog",
       "campaign": "cve-2026-26030-semantic-kernel-prompt-injection-rce",
       "status": "active"
+    },
+    {
+      "value": "LLM hosting frameworks",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
+      "first_seen": "2026-05-12",
+      "source": "The Hacker News",
+      "campaign": "intruder-1-million-exposed-ai-services-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "jsonkeeper.com",
+      "type": "domain",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "first_seen": "2026-05-12",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
+      "type": "sha256",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "first_seen": "2026-05-12",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Open-OSS/privacy-filter (malicious Hugging Face repository)",
+      "type": "package",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "first_seen": "2026-05-12",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Sefirah (Rust-based infostealer)",
+      "type": "package",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "first_seen": "2026-05-12",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "loader.py (malicious loader script)",
+      "type": "package",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "first_seen": "2026-05-12",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "status": "active"
     }
   ]
 }

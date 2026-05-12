@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 12 May 2026 06:16:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 21:00:40 +0000</lastBuildDate>
     <item>
+      <title>Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal</title>
+      <link>https://llm-threatintel.com/posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <description>A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed, raising fresh concerns about how enterprises source and validate AI models from public repositories. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.</description>
+    </item>    <item>
+      <title>Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <description>Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn't enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.</description>
+    </item>    <item>
+      <title>AI-Generated Zero-Day 2FA Bypass Exploit Discovered by Google—First Known Case of Criminal LLM-Weaponized Vulnerability Discovery</title>
+      <link>https://llm-threatintel.com/posts/2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <description>For the first time, Google Threat Intelligence Group (GTIG) identified a threat actor using a zero-day exploit that is believed to have been developed with AI. The flaw was a 2FA bypass, and the script showed all tell-tale signs of LLM-generated code: detailed docstrings, a clean class structure, even a hallucinated CVSS score baked into the comments. Google Threat Intelligence Group worked with the impacted vendor to disclose the vulnerability before the planned mass exploitation campaign could be executed.</description>
+    </item>    <item>
       <title>Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks—Eval() Filter Bypasses Enable Code Execution Chains</title>
       <link>https://llm-threatintel.com/posts/2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.html</guid>
       <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
       <description>The DFIR Report disclosed on April 22, 2026, that an exposed attacker server revealed a large-scale AI-assisted exploitation operation, dubbed Bissa Scanner, that weaponized CVE-2025-55182 (React2Shell, CVSS 10.0) to scan millions of targets, confirm 900+ successful compromises, and exfiltrate over 30,000 .env files spanning April 10–21, 2026. The operator embedded Claude Code and OpenClaw AI agents directly into the attack pipeline for codebase analysis, troubleshooting, and workflow orchestration, and AI provider credentials—keys for Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace—were the single largest credential category stolen.</description>
-    </item>    <item>
-      <title>CVE-2026-33626 LMDeploy SSRF Exploited Within 13 Hours: Attackers Weaponize AI-Generated Exploits for Cloud Metadata Theft</title>
-      <link>https://llm-threatintel.com/posts/2026-05-05-lmdeploy-ssrf-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-05-lmdeploy-ssrf-exploitation.html</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <description>A high-severity security flaw in LMDeploy, an open-source toolkit for compressing, deploying, and serving large language models (LLMs), has come under active exploitation in the wild less than 13 hours after its public disclosure; the vulnerability, tracked as CVE-2026-33626 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. On April 21, 2026, GitHub published GHSA-6w67-hwm5-92mq, later assigned CVE-2026-33626, a Server-Side Request Forgery (SSRF) vulnerability in LMDeploy; within 12 hours and 31 minutes of its publication on the main GitHub advisory page, the Sysdig Threat Research Team (TRT) observed the first LMDeploy exploitation attempt against their honeypot fleet.</description>
-    </item>    <item>
-      <title>CVE-2026-42208 LiteLLM SQL Injection Actively Exploited: Attackers Target Credential Storage Within 26 Hours of Disclosure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-05-litellm-sql-injection-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-05-litellm-sql-injection-exploitation.html</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection in LiteLLM proxy database during API key verification; the database query mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. While the vulnerability was addressed in version 1.83.7-stable released on April 19, 2026, the first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. The attacker targeted database tables like 'litellm_credentials.credential_values' and 'litellm_config' that hold information related to upstream large language model provider keys; the attacker was not only aware of these tables, but also went after those that hold sensitive secrets.</description>
-    </item>    <item>
-      <title>OpenClaw CVE-2026-41358: Origin Validation Bypass Enables Prompt Injection and Context Poisoning via Slack Integration</title>
-      <link>https://llm-threatintel.com/posts/2026-05-05-openclaw-slack-prompt-injection-context-poisoning.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-05-openclaw-slack-prompt-injection-context-poisoning.html</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <description>An origin validation vulnerability (CWE-346) exists within the OpenClaw AI assistant's Slack integration prior to version 2026.4.2; the platform fails to independently verify the sender of historical thread messages against configured allowlists, enabling unauthorized users to inject malicious instructions into the LLM context when an authorized user triggers the agent, facilitating prompt injection and context poisoning attacks. Successful exploitation results in unauthorized manipulation where attackers can manipulate the agent's behavior, extract sensitive information intended for authorized users, or alter the assistant's persona.</description>
     </item>
   </channel>
 </rss>
