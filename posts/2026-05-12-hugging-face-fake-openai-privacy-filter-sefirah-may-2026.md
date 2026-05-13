@@ -41,7 +41,10 @@ recargapopular.com
 
 ### Full URL Paths
 
-_IOCs sourced from HiddenLayer advisory and Malwarebytes reporting; PlugX/Sefirah historically linked to Chinese state operators_
+```
+huggingface.co/Open-OSS/privacy-filter
+huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py
+```
 
 ### Splunk Format
 
@@ -57,11 +60,7 @@ _IOCs sourced from HiddenLayer advisory and Malwarebytes reporting; PlugX/Sefira
 
 ### Package Indicators
 
-```
-Open-OSS/privacy-filter (malicious Hugging Face repository)
-Sefirah (Rust-based infostealer)
-loader.py (malicious loader script)
-```
+_No package indicators published; repository and loader indicators are listed as URL paths._
 
 ## Detection Recommendations
 

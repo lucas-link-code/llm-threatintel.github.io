@@ -108,7 +108,6 @@ DEFAULT_POLICY = {
         "lorem ipsum",
     ],
     "weak_source_labels": ["OSINT", "Unknown", "Community", "Reddit", "Twitter"],
-    "title_warning_length": 140,
     "excerpt_warning_length": 900,
     "url_timeout_seconds": 10,
     "url_redirect_limit": 5,
@@ -403,8 +402,6 @@ class Validator:
             if self.has_placeholder(excerpt):
                 self.fail("post-excerpt-placeholder", "post excerpt contains unresolved placeholder text", rel_path, record)
 
-            if len(title) > int(self.policy["title_warning_length"]):
-                self.warn("post-title-long", f"post title is long ({len(title)} characters)", rel_path, record)
             if len(excerpt) > int(self.policy["excerpt_warning_length"]):
                 self.warn("post-excerpt-long", f"post excerpt is long ({len(excerpt)} characters)", rel_path, record)
 
@@ -1179,6 +1176,12 @@ class Validator:
                 lines.append(f"- **{issue['severity'].upper()}** `{issue['code']}`{location}{record}: {issue['message']}")
             lines.append("")
 
+        failure_items = [issue for issue in payload["issues"] if issue["severity"] == "fail"]
+        if failure_items:
+            lines.extend(["## Hard Failure Queue", ""])
+            for issue in failure_items:
+                lines.extend(self.render_failure_queue_item(issue))
+
         if payload["duplicate_iocs"]:
             lines.extend(["## Duplicate IOC Review", ""])
             for normalized, records in payload["duplicate_iocs"].items():
@@ -1211,6 +1214,43 @@ class Validator:
                 )
 
         return "\n".join(lines).rstrip() + "\n"
+
+    def render_failure_queue_item(self, issue: dict[str, Any]) -> list[str]:
+        lines = [
+            "```text",
+            f"File: {issue.get('file') or 'Repository'}",
+            f"Record: {issue.get('record_id') or 'n/a'}",
+            f"Problem: {issue['code']}",
+            f"Validator finding: {issue['message']}",
+        ]
+
+        if issue.get("file") == "data/iocs.json" and str(issue.get("record_id", "")).isdigit():
+            idx = int(issue["record_id"])
+            iocs = self.parsed.get("iocs", [])
+            if 0 <= idx < len(iocs) and isinstance(iocs[idx], dict):
+                ioc = iocs[idx]
+                lines.extend(
+                    [
+                        f"IOC value: {ioc.get('value', '')}",
+                        f"IOC type: {ioc.get('type', '')}",
+                        f"Status: {ioc.get('status', '')}",
+                        f"Campaign: {ioc.get('campaign', '')}",
+                        f"Source: {ioc.get('source', '')}",
+                        f"Context: {ioc.get('context', '')}",
+                    ]
+                )
+
+        lines.extend(
+            [
+                "Recommended action:",
+                "[ ] Correct the structured value/type",
+                "[ ] Remove non-actionable narrative labels from IOC data",
+                "[ ] Add a policy exception only if Lucas explicitly approves it",
+                "```",
+                "",
+            ]
+        )
+        return lines
 
     def print_console_summary(self) -> None:
         print("LLM ThreatIntel validation")

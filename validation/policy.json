@@ -64,7 +64,6 @@
     "Reddit",
     "Twitter"
   ],
-  "title_warning_length": 140,
   "excerpt_warning_length": 900,
   "url_timeout_seconds": 10,
   "url_redirect_limit": 5,

@@ -92,15 +92,14 @@
 <pre><code class="language-">jsonkeeper.com
 recargapopular.com</code></pre>
 <h3>Full URL Paths</h3>
-<p>_IOCs sourced from HiddenLayer advisory and Malwarebytes reporting; PlugX/Sefirah historically linked to Chinese state operators_</p>
+<pre><code class="language-">huggingface.co/Open-OSS/privacy-filter
+huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py</code></pre>
 <h3>Splunk Format</h3>
 <pre><code class="language-">&quot;jsonkeeper.com&quot; OR &quot;recargapopular.com&quot;</code></pre>
 <h3>File Hashes</h3>
 <pre><code class="language-">35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96</code></pre>
 <h3>Package Indicators</h3>
-<pre><code class="language-">Open-OSS/privacy-filter (malicious Hugging Face repository)
-Sefirah (Rust-based infostealer)
-loader.py (malicious loader script)</code></pre>
+<p><em>No package indicators published; repository and loader indicators are listed as URL paths.</em></p>
 <h2>Detection Recommendations</h2>
 <p>Implement mandatory code review and malware scanning for all AI repositories before internal use—treat Pickle files and loader scripts as high-risk. Deploy application allowlisting for PowerShell execution, especially payload downloads from external URLs. Monitor for scheduled tasks mimicking Microsoft Edge updates. Track all Hugging Face repository downloads in your organization and cross-reference against known-malicious repository hashes. Alert on base64-encoded URL decoding in Python/loader scripts. Block jsonkeeper.com and similar dynamic C2 infrastructure. Scan for Sefirah infostealer signatures (Rust-compiled binaries with browser credential theft patterns).</p>
 <h2>References</h2>

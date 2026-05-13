@@ -49,7 +49,6 @@ _No IOCs available for Splunk query_
 n8n
 Flowise
 OpenUI
-LLM hosting frameworks
 ```
 
 ## Detection Recommendations

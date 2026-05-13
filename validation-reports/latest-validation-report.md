@@ -1,47 +1,30 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-12T21:00:47+00:00`
-- Commit SHA: `ef42c4bfddcf5904f1881754dd4510644dc29608`
-- Mode: `full`
+- Run time UTC: `2026-05-13T10:35:59+00:00`
+- Commit SHA: `91d1a0400a11`
+- Mode: `strict`
 - Validation version: `1.0.0`
-- Overall result: `fail`
-- Hard failures: `4`
-- Warnings: `56`
-- Review required: `3`
-- Reports checked: `6`
-- Reports skipped: `83`
-- Reports newly validated: `6`
-- IOC duplicates found: `2`
-- Source URLs checked: `17`
+- Overall result: `pass`
+- Hard failures: `0`
+- Warnings: `41`
+- Review required: `0`
+- Reports checked: `0`
+- Reports skipped: `0`
+- Reports newly validated: `0`
+- IOC duplicates found: `4`
+- Source URLs checked: `0`
 
 No files were removed or destructively modified.
 
 ## Findings
 
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026`: post title is long (149 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-12-intruder-1-million-exposed-ai-services-may-2026`: post title is long (157 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce`: post title is long (142 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models`: post title is long (166 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat`: post title is long (164 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers`: post title is long (150 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain`: post title is long (169 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce`: post title is long (143 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-09-massive-exposure-1m-ai-services-misconfiguration`: post title is long (156 characters)
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-05-08-million-exposed-ai-services-security-assessment`: post excerpt is long (1019 characters)
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-05-08-claude-code-autonomous-attack-mexico-water`: post excerpt is long (1215 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain`: post title is long (159 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence`: post title is long (161 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft`: post title is long (152 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft`: post title is long (149 characters)
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft`: post excerpt is long (984 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026`: post title is long (146 characters)
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-flowise-cve-2025-59528-active-rce-exploitation`: public feed post uses non-clear TLP: TLP:AMBER
-- **WARN** `post-title-long` `data/posts-index.json` `2026-04-11-project-glasswing-claude-mythos-zero-days`: post title is long (177 characters)
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-05-mercor-data-vendor-ai-training-breach`: public feed post uses non-clear TLP: TLP:AMBER
-- **WARN** `post-title-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post title is long (144 characters)
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post excerpt is long (976 characters)
-- **WARN** `post-title-long` `data/posts-index.json` `2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation`: post title is long (157 characters)
 - **WARN** `ioc-weak-source` `data/iocs.json` `48`: IOC has weak source label: OSINT
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `103`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `104`: legacy IOC format exception retained without modifying data: namastex/pgserve
@@ -72,15 +55,10 @@ No files were removed or destructively modified.
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `151`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `152`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `153`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
-- **FAIL** `ioc-package-format` `data/iocs.json` `154`: invalid package IOC: LLM hosting frameworks
-- **FAIL** `ioc-package-format` `data/iocs.json` `157`: invalid package IOC: Open-OSS/privacy-filter (malicious Hugging Face repository)
-- **FAIL** `ioc-package-format` `data/iocs.json` `158`: invalid package IOC: Sefirah (Rust-based infostealer)
-- **FAIL** `ioc-package-format` `data/iocs.json` `159`: invalid package IOC: loader.py (malicious loader script)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
-- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 2 times
-- **REVIEW** `evidence-url-review` `posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.md` `2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026`: 1 source URL(s) require review
-- **REVIEW** `evidence-url-review` `posts/2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md` `2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models`: 1 source URL(s) require review
-- **REVIEW** `evidence-url-review` `posts/2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.md` `2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation`: 2 source URL(s) require review
+- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
+- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
+- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
 
 ## Duplicate IOC Review
 
@@ -91,41 +69,12 @@ No files were removed or destructively modified.
 ### `huggingface.co/open-oss/privacy-filter`
 - `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
 - `https://huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `openclawhugging-face-supply-chain-poisoning-malicious-skills-models` source `TechNext Web`
+- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
 
-## Human Review Queue
+### `huggingface.co/open-oss/privacy-filter/blob/main/loader.py`
+- `huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
+- `huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py` type `url_path` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
 
-```text
-Report: 2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation
-Problem: evidence-url-review
-Validator finding: 2 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
+### `recargapopular.com`
+- `recargapopular.com` type `domain` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `BleepingComputer`
+- `recargapopular.com` type `domain` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`

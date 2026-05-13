@@ -1,5 +1,5 @@
 {
-  "commit_sha": "ef42c4bfddcf5904f1881754dd4510644dc29608",
+  "commit_sha": "91d1a0400a11",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -27,84 +27,46 @@
         "source": "TechNext Web",
         "type": "url_path",
         "value": "https://huggingface.co/Open-OSS/privacy-filter"
+      },
+      {
+        "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+        "source": "HiddenLayer",
+        "type": "url_path",
+        "value": "huggingface.co/Open-OSS/privacy-filter"
+      }
+    ],
+    "huggingface.co/open-oss/privacy-filter/blob/main/loader.py": [
+      {
+        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+        "source": "HiddenLayer",
+        "type": "url_path",
+        "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py"
+      },
+      {
+        "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+        "source": "HiddenLayer",
+        "type": "url_path",
+        "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py"
+      }
+    ],
+    "recargapopular.com": [
+      {
+        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+        "source": "BleepingComputer",
+        "type": "domain",
+        "value": "recargapopular.com"
+      },
+      {
+        "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+        "source": "HiddenLayer",
+        "type": "domain",
+        "value": "recargapopular.com"
       }
     ]
   },
-  "generated_at_utc": "2026-05-12T21:00:47+00:00",
-  "hard_failures": 4,
+  "generated_at_utc": "2026-05-13T10:35:59+00:00",
+  "hard_failures": 0,
   "issues": [
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (149 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (157 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (142 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (166 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (164 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (150 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (169 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (143 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (156 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration",
-      "severity": "warn"
-    },
     {
       "code": "post-excerpt-long",
       "file": "data/posts-index.json",
@@ -122,51 +84,11 @@
       "severity": "warn"
     },
     {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (159 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (161 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (152 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-01-bitwarden-cli-teampcp-ai-coding-assistant-credential-theft",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (149 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-01-ottercookie-fake-gemini-npm-ai-coding-tool-theft",
-      "severity": "warn"
-    },
-    {
       "code": "post-excerpt-long",
       "file": "data/posts-index.json",
       "message": "post excerpt is long (984 characters)",
       "recommendation": "",
       "record_id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (146 characters)",
-      "recommendation": "",
-      "record_id": "2026-04-18-mcp-infrastructure-vulnerability-audit-april-2026",
       "severity": "warn"
     },
     {
@@ -186,14 +108,6 @@
       "severity": "warn"
     },
     {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (177 characters)",
-      "recommendation": "",
-      "record_id": "2026-04-11-project-glasswing-claude-mythos-zero-days",
-      "severity": "warn"
-    },
-    {
       "code": "post-tlp-public-warning",
       "file": "data/posts-index.json",
       "message": "public feed post uses non-clear TLP: TLP:AMBER",
@@ -202,27 +116,11 @@
       "severity": "warn"
     },
     {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (144 characters)",
-      "recommendation": "",
-      "record_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
-      "severity": "warn"
-    },
-    {
       "code": "post-excerpt-long",
       "file": "data/posts-index.json",
       "message": "post excerpt is long (976 characters)",
       "recommendation": "",
       "record_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
-      "severity": "warn"
-    },
-    {
-      "code": "post-title-long",
-      "file": "data/posts-index.json",
-      "message": "post title is long (157 characters)",
-      "recommendation": "",
-      "record_id": "2026-04-02-vertex-ai-double-agent-gcp-privilege-escalation",
       "severity": "warn"
     },
     {
@@ -466,38 +364,6 @@
       "severity": "warn"
     },
     {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: LLM hosting frameworks",
-      "recommendation": "",
-      "record_id": "154",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Open-OSS/privacy-filter (malicious Hugging Face repository)",
-      "recommendation": "",
-      "record_id": "157",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Sefirah (Rust-based infostealer)",
-      "recommendation": "",
-      "record_id": "158",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: loader.py (malicious loader script)",
-      "recommendation": "",
-      "record_id": "159",
-      "severity": "fail"
-    },
-    {
       "code": "ioc-duplicate-review",
       "file": "data/iocs.json",
       "message": "duplicate IOC review required: flowise appears 2 times",
@@ -508,167 +374,39 @@
     {
       "code": "ioc-duplicate-review",
       "file": "data/iocs.json",
-      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 2 times",
+      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times",
       "recommendation": "",
       "record_id": "",
       "severity": "warn"
     },
     {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.md",
-      "message": "1 source URL(s) require review",
+      "code": "ioc-duplicate-review",
+      "file": "data/iocs.json",
+      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times",
       "recommendation": "",
-      "record_id": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "severity": "review"
+      "record_id": "",
+      "severity": "warn"
     },
     {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md",
-      "message": "1 source URL(s) require review",
+      "code": "ioc-duplicate-review",
+      "file": "data/iocs.json",
+      "message": "duplicate IOC review required: recargapopular.com appears 2 times",
       "recommendation": "",
-      "record_id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.md",
-      "message": "2 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation",
-      "severity": "review"
+      "record_id": "",
+      "severity": "warn"
     }
   ],
-  "mode": "full",
+  "mode": "strict",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
-  "reports_checked": 6,
-  "reports_newly_validated": 6,
-  "reports_skipped": 83,
-  "review_required": 3,
-  "source_urls_checked": 17,
-  "state_updates": 6,
-  "url_results": [
-    {
-      "error": "HTTP Error 404: Not Found",
-      "final_url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
-      "http_status": 404,
-      "status": "not_found",
-      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.theregister.com/ai-ml/2026/05/11/google-says-criminals-used-ai-built-zero-day-in-planned-mass-hack-spree/5237982",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.theregister.com/ai-ml/2026/05/11/google-says-criminals-used-ai-built-zero-day-in-planned-mass-hack-spree/5237982"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/"
-    },
-    {
-      "error": "",
-      "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-26030",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
-    },
-    {
-      "error": "",
-      "final_url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain"
-    },
-    {
-      "error": "HTTP Error 404: Not Found",
-      "final_url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
-      "http_status": 404,
-      "status": "not_found",
-      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads"
-    },
-    {
-      "error": "",
-      "final_url": "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d"
-    },
-    {
-      "error": "",
-      "final_url": "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html"
-    },
-    {
-      "error": "HTTP Error 404: Not Found",
-      "final_url": "https://webflow.sysdig.com/blog/cve-2026-42208-how-attackers-exploited-litellm-credentials",
-      "http_status": 404,
-      "status": "not_found",
-      "url": "https://webflow.sysdig.com/blog/cve-2026-42208-how-attackers-exploited-litellm-credentials"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.cve.news/cve-2026-42208/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.cve.news/cve-2026-42208/"
-    },
-    {
-      "error": "HTTP Error 404: Not Found",
-      "final_url": "https://www.cisa.gov/news-events/alerts/2026/05/08/cisa-adds-two-known-exploited-vulnerabilities-catalog",
-      "http_status": 404,
-      "status": "not_found",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/05/08/cisa-adds-two-known-exploited-vulnerabilities-catalog"
-    }
-  ],
+  "overall_result": "pass",
+  "reports_checked": 0,
+  "reports_newly_validated": 0,
+  "reports_skipped": 0,
+  "review_required": 0,
+  "source_urls_checked": 0,
+  "state_updates": 0,
+  "url_results": [],
   "validation_version": "1.0.0",
-  "warnings": 56
+  "warnings": 41
 }

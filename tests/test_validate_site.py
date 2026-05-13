@@ -219,6 +219,30 @@ class ValidateSiteTests(unittest.TestCase):
                     codes = {issue["code"] for issue in report(root)["issues"]}
                     self.assertIn(expected_code, codes)
 
+    def test_hard_failure_queue_includes_ioc_details(self):
+        iocs = [
+            {
+                "value": "not a package value",
+                "type": "package",
+                "context": "Example context for invalid package",
+                "first_seen": "2026-05-10",
+                "source": "Example Source",
+                "campaign": "example-report",
+                "status": "active",
+            }
+        ]
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root, iocs=iocs)
+            code, _ = run_validator(root, "--mode", "strict", "--write-report")
+            self.assertEqual(code, 1)
+            markdown = (root / "validation-reports/latest-validation-report.md").read_text()
+            self.assertIn("## Hard Failure Queue", markdown)
+            self.assertIn("IOC value: not a package value", markdown)
+            self.assertIn("IOC type: package", markdown)
+            self.assertIn("Campaign: example-report", markdown)
+            self.assertIn("Source: Example Source", markdown)
+
     def test_url_path_is_not_over_normalized_into_domain(self):
         iocs = [
             {
