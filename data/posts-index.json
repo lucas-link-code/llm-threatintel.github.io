@@ -1,6 +1,47 @@
 {
   "posts": [
     {
+      "id": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
+      "title": "Windsurf Zero-Click Prompt Injection RCE (CVE-2026-30615) in AI IDE Supply Chain—MCP SDK Design Flaw Affects 150M+ Downloads",
+      "date": "2026-05-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "supply-chain",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction. Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction. This represents a systemic architectural flaw in Anthropic's MCP that propagates across 150M+ downloads.",
+      "file": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.md"
+    },
+    {
+      "id": "2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation",
+      "title": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Exploited Within 36 Hours—Attackers Harvest LLM Credentials and Configuration",
+      "date": "2026-05-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-42208 (CVSS score: 9.3) is an SQL injection that could be exploited to modify the underlying LiteLLM proxy database. While the vulnerability was addressed in version 1.83.7-stable released on April 19, 2026, the first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. Attackers actively targeted credential tables, confirming the shift of AI infrastructure into the active exploitation window.",
+      "file": "2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation.md"
+    },
+    {
+      "id": "2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit",
+      "title": "Google's First AI-Discovered Zero-Day: Criminal LLM Weaponized Vulnerability Discovery and Mass Exploitation Plot Disrupted",
+      "date": "2026-05-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "nation-state",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google's Threat Intelligence Group identified the first known case of an attacker using AI to discover and weaponize a zero-day vulnerability, and stopped the planned mass attack. The 2FA bypass vulnerability stems from a high-level semantic logic flaw arising as a result of a hard-coded trust assumption, something LLMs excel at spotting. This represents a critical inflection point: AI-assisted vulnerability discovery is now operationalized for criminal mass exploitation.",
+      "file": "2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit.md"
+    },
+    {
       "id": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
       "title": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
       "date": "2026-05-12",

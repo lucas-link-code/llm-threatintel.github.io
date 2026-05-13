@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 12 May 2026 21:00:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 06:28:18 +0000</lastBuildDate>
     <item>
+      <title>Windsurf Zero-Click Prompt Injection RCE (CVE-2026-30615) in AI IDE Supply Chain—MCP SDK Design Flaw Affects 150M+ Downloads</title>
+      <link>https://llm-threatintel.com/posts/2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.html</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <description>A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction. Windsurf (CVE-2026-30615) was the only IDE where exploitation required zero user interaction. This represents a systemic architectural flaw in Anthropic's MCP that propagates across 150M+ downloads.</description>
+    </item>    <item>
+      <title>CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Exploited Within 36 Hours—Attackers Harvest LLM Credentials and Configuration</title>
+      <link>https://llm-threatintel.com/posts/2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation.html</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection that could be exploited to modify the underlying LiteLLM proxy database. While the vulnerability was addressed in version 1.83.7-stable released on April 19, 2026, the first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database. Attackers actively targeted credential tables, confirming the shift of AI infrastructure into the active exploitation window.</description>
+    </item>    <item>
+      <title>Google's First AI-Discovered Zero-Day: Criminal LLM Weaponized Vulnerability Discovery and Mass Exploitation Plot Disrupted</title>
+      <link>https://llm-threatintel.com/posts/2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit.html</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <description>Google's Threat Intelligence Group identified the first known case of an attacker using AI to discover and weaponize a zero-day vulnerability, and stopped the planned mass attack. The 2FA bypass vulnerability stems from a high-level semantic logic flaw arising as a result of a hard-coded trust assumption, something LLMs excel at spotting. This represents a critical inflection point: AI-assisted vulnerability discovery is now operationalized for criminal mass exploitation.</description>
+    </item>    <item>
       <title>Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal</title>
       <link>https://llm-threatintel.com/posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-08-anthropic-mcp-stdio-rce-design-flaw.html</guid>
       <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
       <description>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol affecting 150M+ downloads and baked into official MCP SDKs across every supported programming language, with the vulnerability rippling through a supply chain with 7,000+ publicly accessible servers and up to 200,000 vulnerable instances in total. The systemic vulnerability enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories, and is baked into Anthropic's official MCP software development kit (SDK) across any supported language, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</description>
-    </item>    <item>
-      <title>Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions</title>
-      <link>https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.html</guid>
-      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
-      <description>Claudy Day: Chaining Prompt Injection and Data Exfiltration in Claude.ai. Oasis Security researchers discovered that for a significant period, this assumption could be broken, and worked with Anthropic to close the gap. We discovered three vulnerabilities in Claude.ai and the broader claude.com platform, collectively dubbed Claudy Day, that, when chained together, create a complete attack pipeline. Updated publication on 2026-05-01 with comprehensive technical analysis reveals zero-click data theft from conversation history via invisible prompt injection embedded in Google Search ads.</description>
-    </item>    <item>
-      <title>PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies</title>
-      <link>https://llm-threatintel.com/posts/2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.html</guid>
-      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
-      <description>ReversingLabs attributes PromptMink to Famous Chollima, a North Korean state-sponsored threat group also linked to the "graphalgo" campaign targeting crypto developers. Claude Opus co-authored a Feb. 28, 2026, commit to the openpaw-graveyard crypto trading agent. The commit added @solana-launchpad/sdk as a dependency, which silently pulled in @validate-sdk/v2 — the malicious payload package. This marks the first documented instance of AI coding agents being weaponized to install malicious dependencies in autonomous workflows via LLM optimization abuse.</description>
-    </item>    <item>
-      <title>Bissa Scanner: AI-Assisted CVE-2025-55182 Mass Exploitation Harvests 30,000+ .env Files and AI Provider Credentials Across 900 Organizations</title>
-      <link>https://llm-threatintel.com/posts/2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-05-bissa-scanner-react2shell-ai-credential-harvest.html</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <description>The DFIR Report disclosed on April 22, 2026, that an exposed attacker server revealed a large-scale AI-assisted exploitation operation, dubbed Bissa Scanner, that weaponized CVE-2025-55182 (React2Shell, CVSS 10.0) to scan millions of targets, confirm 900+ successful compromises, and exfiltrate over 30,000 .env files spanning April 10–21, 2026. The operator embedded Claude Code and OpenClaw AI agents directly into the attack pipeline for codebase analysis, troubleshooting, and workflow orchestration, and AI provider credentials—keys for Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace—were the single largest credential category stolen.</description>
     </item>
   </channel>
 </rss>

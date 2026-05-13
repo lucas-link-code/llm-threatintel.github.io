@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12",
+  "last_updated": "2026-05-13",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1431,6 +1431,15 @@
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
       "status": "removed"
+    },
+    {
+      "value": "Windsurf",
+      "type": "package",
+      "context": "Windsurf AI IDE versions 1.9544.26 and prior affected by CVE-2026-30615 zero-click prompt injection RCE",
+      "first_seen": "2026-05-13",
+      "source": "OX Security",
+      "campaign": "windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
+      "status": "active"
     }
   ]
 }
