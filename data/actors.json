@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12",
+  "last_updated": "2026-05-13",
   "entries": [
     {
       "id": "trustfall-mcp-rce-class",
@@ -1656,6 +1656,63 @@
       ],
       "description": "Sophisticated multi-platform supply chain campaign exploiting trust in AI model repositories. Operator demonstrates understanding of AI developer workflows, model card structures, and ability to manufacture social proof (artificial engagement metrics). The shared infrastructure with npm and PyPI campaigns suggests either the same threat actor or coordination across multiple teams. Use of Rust infostealer (Sefirah) and DLL sideload techniques indicates moderate-to-advanced technical capability.",
       "attribution": "Unknown; PlugX/Sefirah historically associated with Chinese APT groups, but code reuse does not confirm attribution"
+    },
+    {
+      "id": "unattributed",
+      "names": [
+        "Unattributed"
+      ],
+      "type": "malware",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Unknown"
+      ],
+      "ttps": [
+        "T1190 - Exploitation for Privilege Escalation",
+        "AML.T0054 - LLM Jailbreak Injection"
+      ],
+      "description": "Criminal threat actor with LLM integration capability and access to model APIs. Demonstrated advanced understanding of semantic vulnerability classes that require LLM reasoning to identify. Planned mass exploitation suggesting organized criminal structure with distribution infrastructure.",
+      "attribution": "Unattributed; threat actor nationality and motivation unknown"
+    },
+    {
+      "id": "unknown-litellm-cve-2026-42208-threat-actor",
+      "names": [
+        "Unknown LiteLLM CVE-2026-42208 Threat Actor"
+      ],
+      "type": "malware",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Automated scanning + exploitation"
+      ],
+      "ttps": [
+        "T1190 - Exploitation of Remote Services",
+        "T1555 - Credentials from Password Stores"
+      ],
+      "description": "Threat actor with schema knowledge of LiteLLM internals. Demonstrated rapid exploitation within 26 hours of advisory publication, consistent with LLM-assisted payload generation. Targeted only sensitive credential tables, indicating prior research or insider knowledge. Two-phase attack with IP rotation suggests organized infrastructure.",
+      "attribution": "Unknown; network infrastructure suggests VPS or bulletproof hosting"
+    },
+    {
+      "id": "anthropic-mcp-architecture-implicit-supply-chain-vulnerability",
+      "names": [
+        "Anthropic MCP Architecture (Implicit Supply Chain Vulnerability)",
+        "MCP STDIO Design Flaw"
+      ],
+      "type": "supply-chain",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Official Anthropic MCP SDKs (Python, TypeScript, Java, Rust)",
+        "Downstream AI IDEs and agent frameworks",
+        "Public MCP registries and marketplace"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1190 - Exploitation of Remote Services"
+      ],
+      "description": "This is not an actively exploited campaign but rather a systemic architectural vulnerability baked into Anthropic's official MCP SDKs. The flaw enables any downstream implementation to execute arbitrary OS commands via prompt injection. Researchers demonstrated 'poisoning' of 9 out of 11 public MCP registries with proof-of-concept malicious MCP servers, indicating trivial supply chain propagation.",
+      "attribution": "Architectural decision by Anthropic; no malicious actor attribution required"
     }
   ]
 }

@@ -1684,6 +1684,58 @@
       "validated_at": "2026-05-12T21:00:45+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit": {
+      "content_hash": "3d2210e91fb36f4dc9213167d9fdfb83e9359b1a27551cf95cd7c733c998945f",
+      "evidence_status": "validated",
+      "file": "2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit.md",
+      "posts_index_hash": "04bbf4de0ba99c9e682d54b2b3f0825128f184022eb5d1ccb014004e1311283f",
+      "report_id": "2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-13T06:28:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation": {
+      "content_hash": "be4c903e4cf778a5ca89025c719f34c28916ca1c83e87a3a58bd5ba6a7689f8a",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation.md",
+      "posts_index_hash": "eb58c31e1e716fbe81dc5be6a9193e9cfb17479a88ad3ca3aabaf09cfd568967",
+      "report_id": "2026-05-13-litellm-cve-2026-42208-sql-injection-active-exploitation",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+        "https://www.sysdig.com/blog/litellm-sql-injection-cve-2026-42208/",
+        "https://www.cisa.gov/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-13T06:28:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce": {
+      "content_hash": "56cce00c5229ef13e750efd3d417bb9ba8770f4ae171132357fbd143498164ef",
+      "evidence_status": "validated",
+      "file": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.md",
+      "posts_index_hash": "fa2d6d065ba94fd74b9fd71df866ccc3fcd7f35cf8f52519e65448a78a2cda6a",
+      "report_id": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/",
+        "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+        "https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/",
+        "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-13T06:28:20+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

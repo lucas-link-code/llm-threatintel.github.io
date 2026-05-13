@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12",
+  "last_updated": "2026-05-13",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1439,6 +1439,24 @@
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Windsurf 1.9544.26 and prior",
+      "type": "package",
+      "context": "Windsurf Zero-Click Prompt Injection RCE (CVE-2026-30615) in AI IDE Supply Chain—MCP SDK Design Flaw Affects 150M+ Downloads",
+      "first_seen": "2026-05-13",
+      "source": "OX Security",
+      "campaign": "windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
+      "status": "active"
+    },
+    {
+      "value": "9 out of 11 public MCP registries successfully poisoned in PoC",
+      "type": "package",
+      "context": "Windsurf Zero-Click Prompt Injection RCE (CVE-2026-30615) in AI IDE Supply Chain—MCP SDK Design Flaw Affects 150M+ Downloads",
+      "first_seen": "2026-05-13",
+      "source": "OX Security",
+      "campaign": "windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
       "status": "active"
     }
   ]
