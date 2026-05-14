@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 13 May 2026 06:28:18 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 06:26:58 +0000</lastBuildDate>
     <item>
+      <title>Shadow AI Data Breach: Community Bank Exposes SSNs via Unauthorized AI Application—First SEC Form 8-K Filing of Shadow AI Incident</title>
+      <link>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+      <description>Community Bank disclosed use of an "unauthorized AI-based software application" exposing customer data including names, dates of birth, and Social Security numbers. One possibility is that the data was entered into a generative AI tool outside the bank's approved systems. If so, that could raise questions about whether the information was transmitted to a third-party provider and how it may have been retained or processed. This represents the first publicly disclosed corporate breach tied explicitly to shadow AI tool usage and SEC disclosure.</description>
+    </item>    <item>
+      <title>Frontier AI Models Discover 75+ Vulnerabilities in Vendor Code—5x Increase in Vulnerability Detection Through Automated AI Scanning</title>
+      <link>https://llm-threatintel.com/posts/2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+      <description>Palo Alto Networks released its May "Patch Wednesday" security advisories. This is the first time where the majority of findings were the result of frontier AI models scanning code. The advisory covers 26 CVEs (representing 75 issues) versus the usual volume (typically less than 5 CVEs in a month). This represents an inflection point in AI-driven vulnerability discovery at scale, enabling both defenders and attackers to identify flaws at machine speed.</description>
+    </item>    <item>
+      <title>First Confirmed AI-Assisted Zero-Day Vulnerability Discovery and Weaponization—2FA Bypass Deployed in Wild</title>
+      <link>https://llm-threatintel.com/posts/2026-05-14-google-ai-zero-day-2fa-bypass-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-14-google-ai-zero-day-2fa-bypass-may-2026.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+      <description>Google's Threat Intelligence Group disclosed on May 11, 2026 the first confirmed case of attackers using an AI model to build a zero-day exploit deployed in the wild, a 2FA bypass targeting a popular open-source admin tool. Google says it has identified what may be the first known case where cybercriminals used AI to discover and weaponize a previously unknown zero-day vulnerability. Security researchers have long warned AI could one day accelerate cyberattacks. That day appears to be here.</description>
+    </item>    <item>
       <title>Windsurf Zero-Click Prompt Injection RCE (CVE-2026-30615) in AI IDE Supply Chain—MCP SDK Design Flaw Affects 150M+ Downloads</title>
       <link>https://llm-threatintel.com/posts/2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html</guid>
       <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
       <description>AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.</description>
-    </item>    <item>
-      <title>Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-08-million-exposed-ai-services-security-assessment.html</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-      <description>The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they've ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.</description>
-    </item>    <item>
-      <title>Claude Code and GPT Used to Execute Large-Scale Autonomous Cyberattack on Mexican Water Utility and Government Agencies</title>
-      <link>https://llm-threatintel.com/posts/2026-05-08-claude-code-autonomous-attack-mexico-water.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-08-claude-code-autonomous-attack-mexico-water.html</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-      <description>Dragos published a report describing how threat actors used Claude AI in an attack on a water and drainage utility in Mexico as part of a broader campaign targeting multiple Mexican government organizations between December 2025 and February 2026, with Anthropic's Claude and OpenAI's GPT models serving as an AI-assisted operational engine where Claude served as the primary technical workhorse, handling intrusion planning, tool development, and problem-solving, while GPT handled victim data processing and structured reporting. The threat actor—assessed with high confidence as a Chinese state-sponsored group—manipulated Claude Code tool into attempting infiltration into roughly thirty global targets and succeeded in a small number of cases, believed to be the first documented case of a large-scale cyberattack executed without substantial human intervention, with barriers to performing sophisticated cyberattacks dropping substantially enabling threat actors to now use agentic AI systems for extended periods to do the work of entire teams of experienced hackers: analyzing target systems, producing exploit code, and scanning vast datasets of stolen information more efficiently than any human operator.</description>
-    </item>    <item>
-      <title>Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection</title>
-      <link>https://llm-threatintel.com/posts/2026-05-08-anthropic-mcp-stdio-rce-design-flaw.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-08-anthropic-mcp-stdio-rce-design-flaw.html</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-      <description>OX Security researchers uncovered an architectural RCE vulnerability in Anthropic's Model Context Protocol affecting 150M+ downloads and baked into official MCP SDKs across every supported programming language, with the vulnerability rippling through a supply chain with 7,000+ publicly accessible servers and up to 200,000 vulnerable instances in total. The systemic vulnerability enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories, and is baked into Anthropic's official MCP software development kit (SDK) across any supported language, affecting more than 7,000 publicly accessible servers and software packages totaling more than 150 million downloads.</description>
     </item>
   </channel>
 </rss>

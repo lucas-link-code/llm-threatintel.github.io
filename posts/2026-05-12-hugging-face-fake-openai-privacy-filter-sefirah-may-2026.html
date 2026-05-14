@@ -99,7 +99,7 @@ huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py</code></pre>
 <h3>File Hashes</h3>
 <pre><code class="language-">35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96</code></pre>
 <h3>Package Indicators</h3>
-<p><em>No package indicators published; repository and loader indicators are listed as URL paths.</em></p>
+<p>_No package indicators published; repository and loader indicators are listed as URL paths._</p>
 <h2>Detection Recommendations</h2>
 <p>Implement mandatory code review and malware scanning for all AI repositories before internal use—treat Pickle files and loader scripts as high-risk. Deploy application allowlisting for PowerShell execution, especially payload downloads from external URLs. Monitor for scheduled tasks mimicking Microsoft Edge updates. Track all Hugging Face repository downloads in your organization and cross-reference against known-malicious repository hashes. Alert on base64-encoded URL decoding in Python/loader scripts. Block jsonkeeper.com and similar dynamic C2 infrastructure. Scan for Sefirah infostealer signatures (Rust-compiled binaries with browser credential theft patterns).</p>
 <h2>References</h2>

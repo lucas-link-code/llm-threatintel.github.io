@@ -1,6 +1,43 @@
 {
   "posts": [
     {
+      "id": "2026-05-14-community-bank-shadow-ai-data-breach-may-2026",
+      "title": "Shadow AI Data Breach: Community Bank Exposes SSNs via Unauthorized AI Application—First SEC Form 8-K Filing of Shadow AI Incident",
+      "date": "2026-05-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Community Bank disclosed use of an \"unauthorized AI-based software application\" exposing customer data including names, dates of birth, and Social Security numbers. One possibility is that the data was entered into a generative AI tool outside the bank's approved systems. If so, that could raise questions about whether the information was transmitted to a third-party provider and how it may have been retained or processed. This represents the first publicly disclosed corporate breach tied explicitly to shadow AI tool usage and SEC disclosure.",
+      "file": "2026-05-14-community-bank-shadow-ai-data-breach-may-2026.md"
+    },
+    {
+      "id": "2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026",
+      "title": "Frontier AI Models Discover 75+ Vulnerabilities in Vendor Code—5x Increase in Vulnerability Detection Through Automated AI Scanning",
+      "date": "2026-05-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Palo Alto Networks released its May \"Patch Wednesday\" security advisories. This is the first time where the majority of findings were the result of frontier AI models scanning code. The advisory covers 26 CVEs (representing 75 issues) versus the usual volume (typically less than 5 CVEs in a month). This represents an inflection point in AI-driven vulnerability discovery at scale, enabling both defenders and attackers to identify flaws at machine speed.",
+      "file": "2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026.md"
+    },
+    {
+      "id": "2026-05-14-google-ai-zero-day-2fa-bypass-may-2026",
+      "title": "First Confirmed AI-Assisted Zero-Day Vulnerability Discovery and Weaponization—2FA Bypass Deployed in Wild",
+      "date": "2026-05-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google's Threat Intelligence Group disclosed on May 11, 2026 the first confirmed case of attackers using an AI model to build a zero-day exploit deployed in the wild, a 2FA bypass targeting a popular open-source admin tool. Google says it has identified what may be the first known case where cybercriminals used AI to discover and weaponize a previously unknown zero-day vulnerability. Security researchers have long warned AI could one day accelerate cyberattacks. That day appears to be here.",
+      "file": "2026-05-14-google-ai-zero-day-2fa-bypass-may-2026.md"
+    },
+    {
       "id": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
       "title": "Windsurf Zero-Click Prompt Injection RCE (CVE-2026-30615) in AI IDE Supply Chain—MCP SDK Design Flaw Affects 150M+ Downloads",
       "date": "2026-05-13",

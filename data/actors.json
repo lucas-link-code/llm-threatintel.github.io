@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-13",
+  "last_updated": "2026-05-14",
   "entries": [
     {
       "id": "trustfall-mcp-rce-class",
@@ -1713,6 +1713,105 @@
       ],
       "description": "This is not an actively exploited campaign but rather a systemic architectural vulnerability baked into Anthropic's official MCP SDKs. The flaw enables any downstream implementation to execute arbitrary OS commands via prompt injection. Researchers demonstrated 'poisoning' of 9 out of 11 public MCP registries with proof-of-concept malicious MCP servers, indicating trivial supply chain propagation.",
       "attribution": "Architectural decision by Anthropic; no malicious actor attribution required"
+    },
+    {
+      "id": "apt45-andariel-onyx-sleet",
+      "names": [
+        "APT45 (Andariel, Onyx Sleet)",
+        "Andariel",
+        "Onyx Sleet"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "PyPI",
+        "npm",
+        "direct vulnerability research"
+      ],
+      "ttps": [
+        "T1592 - Search Open Websites/Domains",
+        "T0801 - Exploit Development",
+        "T1650 - Acquire Access"
+      ],
+      "description": "Nation-state actor observed sending thousands of repetitive AI prompts to analyze CVEs and validate proof-of-concept exploits. Demonstrates industrialized use of frontier AI models for vulnerability discovery at scale.",
+      "attribution": "North Korea (DPRK)"
+    },
+    {
+      "id": "unc2814-temp-hex-mustang-panda",
+      "names": [
+        "UNC2814 (TEMP.Hex, Mustang Panda)",
+        "TEMP.Hex",
+        "Mustang Panda"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "AI model jailbreaking"
+      ],
+      "ttps": [
+        "T1592 - Search Open Websites/Domains",
+        "T0801 - Exploit Development"
+      ],
+      "description": "Threat actor observed using persona-driven AI jailbreaks (e.g., 'act as senior security auditor') to research vulnerabilities in embedded systems and IoT devices.",
+      "attribution": "China (PRC)"
+    },
+    {
+      "id": "unnamed-criminal-syndicate",
+      "names": [
+        "Unnamed Criminal Syndicate"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "AI vulnerability discovery partnerships"
+      ],
+      "ttps": [
+        "T1592 - Search Open Websites/Domains",
+        "T0801 - Exploit Development"
+      ],
+      "description": "Criminal group demonstrating industrialized AI-assisted zero-day vulnerability discovery, coordination between multiple actors, and rapid weaponization. First publicly confirmed case of criminal LLM weaponization for zero-day discovery.",
+      "attribution": "Unattributed - Multiple prominent cybercrime threat actors in coordination"
+    },
+    {
+      "id": "palo-alto-networks-defender",
+      "names": [
+        "Palo Alto Networks (Defender)",
+        "Unit 42",
+        "Cortex"
+      ],
+      "type": "malicious_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Internal vulnerability discovery"
+      ],
+      "ttps": [
+        "T1592 - Search Open Websites/Domains",
+        "T0801 - Exploit Development"
+      ],
+      "description": "Palo Alto Networks demonstrating defensive capability to scan 130+ products and identify 75+ previously unknown vulnerabilities using frontier AI (Claude Mythos). This capability, once exclusive to top-tier security vendors, will eventually be available to threat actors with similar model access.",
+      "attribution": "Palo Alto Networks - Defensive research"
+    },
+    {
+      "id": "shadow-ai-user-likely-employee",
+      "names": [
+        "Shadow AI User (Likely Employee)"
+      ],
+      "type": "shadow-ai",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Internal employee access"
+      ],
+      "ttps": [
+        "T1020 - Automated Exfiltration",
+        "T1567 - Exfiltration Over Web Service"
+      ],
+      "description": "Employee or contractor at Community Bank using unauthorized generative AI tool (likely ChatGPT, Claude, or similar) to process sensitive customer PII, resulting in uncontrolled transmission of 1M+ customer records to third-party AI service provider. No evidence of malicious intent; likely productivity-driven shadow AI adoption.",
+      "attribution": "Unattributed - Likely employee negligence or unauthorized tool adoption"
     }
   ]
 }

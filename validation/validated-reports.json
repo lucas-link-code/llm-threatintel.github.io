@@ -1632,7 +1632,7 @@
       "warnings": []
     },
     "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026": {
-      "content_hash": "641a7e585275565722df76054b2cfb061b5538a3271c257d08e208f94b9eb5a5",
+      "content_hash": "19e58033859ed4e12a6c8b5e9bdd16210370726b1fa5f4aba3faa1593a080851",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.md",
       "posts_index_hash": "f602051aff92bb9d8f6929f79eff34295793dfcda9b14329bedc5fb086167092",
@@ -1646,12 +1646,12 @@
         "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-12T21:00:41+00:00",
+      "validated_at": "2026-05-14T06:27:01+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-05-12-intruder-1-million-exposed-ai-services-may-2026": {
-      "content_hash": "43c84734522bc9c5b0657276c5dd54311b61c3110eaffd3e2f07928ea9430623",
+      "content_hash": "988fb6236a6716d975b1e196f5c3abfe4703b7a1e763b9d229145e73c9086312",
       "evidence_status": "validated",
       "file": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026.md",
       "posts_index_hash": "0b0284090bc1d38044d1d0054b03ef880936ffdc956713e51eba66a917d58e96",
@@ -1661,7 +1661,7 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-12T21:00:41+00:00",
+      "validated_at": "2026-05-14T06:27:01+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1720,7 +1720,7 @@
       "warnings": []
     },
     "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce": {
-      "content_hash": "56cce00c5229ef13e750efd3d417bb9ba8770f4ae171132357fbd143498164ef",
+      "content_hash": "f0b00a8a1428aea4bf60056f1c26b24044b573a57b848d2a466b9b505a3fadb1",
       "evidence_status": "validated",
       "file": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.md",
       "posts_index_hash": "fa2d6d065ba94fd74b9fd71df866ccc3fcd7f35cf8f52519e65448a78a2cda6a",
@@ -1733,7 +1733,57 @@
         "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-13T06:28:20+00:00",
+      "validated_at": "2026-05-14T06:27:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-14-community-bank-shadow-ai-data-breach-may-2026": {
+      "content_hash": "236498e80bb9b07a3422eda5841567ad8d753ff09192d54b9e00b8b61b902f27",
+      "evidence_status": "validated",
+      "file": "2026-05-14-community-bank-shadow-ai-data-breach-may-2026.md",
+      "posts_index_hash": "c3a767fa06a9355e7a1ed418d749ec0a9e703b05e28966d8444ec6e34e62f351",
+      "report_id": "2026-05-14-community-bank-shadow-ai-data-breach-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.theregister.com/security/2026/05/12/us-bank-reports-itself-after-ai-customer-data-mishap/5238787"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-14T06:26:58+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-14-google-ai-zero-day-2fa-bypass-may-2026": {
+      "content_hash": "725e0a4fc90d31ccb8b462e17a1aa150aacbfe0c8db65f9d1369a07d005baf34",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-14-google-ai-zero-day-2fa-bypass-may-2026.md",
+      "posts_index_hash": "9b68b0ba9150fcaff1b194b8b7915845429b1ff8e0731081ec3ca347f6d09e31",
+      "report_id": "2026-05-14-google-ai-zero-day-2fa-bypass-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence",
+        "https://www.axios.com/2026/05/12/ai-hacking-found-google-report",
+        "https://www.roborhythms.com/google-ai-hackers-2fa-zero-day-may-2026/",
+        "https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-14T06:26:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026": {
+      "content_hash": "6fd13695eb3b0fd834b371d18eb25510933c85fa72c1ad40118076cdad7fa197",
+      "evidence_status": "validated",
+      "file": "2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026.md",
+      "posts_index_hash": "1e7a1ca730978926a811490995bcdb3ebc629bf08dae078102ac2d275c72e3ac",
+      "report_id": "2026-05-14-palo-alto-frontier-ai-vulnerability-discovery-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.paloaltonetworks.com/blog/2026/05/defenders-guide-frontier-ai-impact-cybersecurity-may-2026-update/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-14T06:26:59+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }
