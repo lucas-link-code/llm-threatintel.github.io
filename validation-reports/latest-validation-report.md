@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-16T05:57:00+00:00`
-- Commit SHA: `06620037739e5338bcf67e842d2421ef97c8bfb7`
+- Run time UTC: `2026-05-16T06:31:48+00:00`
+- Commit SHA: `05d95e12eb9a`
 - Mode: `full`
 - Validation version: `1.0.0`
-- Overall result: `fail`
-- Hard failures: `4`
+- Overall result: `pass`
+- Hard failures: `0`
 - Warnings: `41`
 - Review required: `3`
 - Reports checked: `3`
-- Reports skipped: `95`
-- Reports newly validated: `2`
+- Reports skipped: `96`
+- Reports newly validated: `0`
 - IOC duplicates found: `4`
-- Source URLs checked: `7`
+- Source URLs checked: `15`
 
 No files were removed or destructively modified.
 
@@ -25,117 +25,43 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-flowise-cve-2025-59528-active-rce-exploitation`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-05-mercor-data-vendor-ai-training-breach`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post excerpt is long (976 characters)
-- **WARN** `ioc-weak-source` `data/iocs.json` `48`: IOC has weak source label: OSINT
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `103`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `104`: legacy IOC format exception retained without modifying data: namastex/pgserve
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `106`: legacy IOC format exception retained without modifying data: xinference==2.6.0
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `107`: legacy IOC format exception retained without modifying data: xinference==2.6.1
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `108`: legacy IOC format exception retained without modifying data: xinference==2.6.2
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `109`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `110`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `113`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `114`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `115`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `116`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `117`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `118`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `119`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `120`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `121`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `122`: legacy IOC format exception retained without modifying data: claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `123`: legacy IOC format exception retained without modifying data: claude.com/redirect/ (open redirect flaw, any URL parameter)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `124`: legacy IOC format exception retained without modifying data: api.anthropic.com/v1/files (Files API used for exfiltration)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `125`: legacy IOC format exception retained without modifying data: langflow (all versions)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `133`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `134`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `144`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `148`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `150`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `151`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `152`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `153`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
-- **FAIL** `ioc-url-path-format` `data/iocs.json` `164`: url_path IOC must not contain spaces: Shared chat URLs within claude.ai platform
-- **FAIL** `ioc-url-path-format` `data/iocs.json` `165`: url_path IOC must not contain spaces: Social media post on X/Twitter with Morse code payload
-- **FAIL** `ioc-package-format` `data/iocs.json` `166`: invalid package IOC: Grok (xAI chatbot)
-- **FAIL** `ioc-package-format` `data/iocs.json` `167`: invalid package IOC: Bankrbot (automated finance agent)
+- **WARN** `ioc-weak-source` `data/iocs.json` `55`: IOC has weak source label: OSINT
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `110`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `111`: legacy IOC format exception retained without modifying data: namastex/pgserve
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `113`: legacy IOC format exception retained without modifying data: xinference==2.6.0
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `114`: legacy IOC format exception retained without modifying data: xinference==2.6.1
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `115`: legacy IOC format exception retained without modifying data: xinference==2.6.2
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `116`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `117`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `120`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `121`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `122`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `123`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `124`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `125`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `126`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `127`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `128`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `129`: legacy IOC format exception retained without modifying data: claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `130`: legacy IOC format exception retained without modifying data: claude.com/redirect/ (open redirect flaw, any URL parameter)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `131`: legacy IOC format exception retained without modifying data: api.anthropic.com/v1/files (Files API used for exfiltration)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: langflow (all versions)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `139`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `140`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `141`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `151`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `155`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `157`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `158`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `159`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `160`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.md` `2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026`: no source URL was accessible; manual review or alternate evidence is required
 - **REVIEW** `evidence-source-review-required` `posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md` `2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026`: no source URL was accessible; manual review or alternate evidence is required
-- **REVIEW** `evidence-url-review` `posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md` `2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026`: 2 source URL(s) require review
-- **REVIEW** `evidence-url-review` `posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.md` `2026-05-16-hugging-face-privacy-filter-infostealer-may-2026`: 1 source URL(s) require review
-
-## Hard Failure Queue
-
-```text
-File: data/iocs.json
-Record: 164
-Problem: ioc-url-path-format
-Validator finding: url_path IOC must not contain spaces: Shared chat URLs within claude.ai platform
-IOC value: Shared chat URLs within claude.ai platform
-IOC type: url_path
-Status: active
-Campaign: google-ads-claude-ai-shared-chat-macos-malware-may-2026
-Source: Bleeping Computer
-Context: Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 165
-Problem: ioc-url-path-format
-Validator finding: url_path IOC must not contain spaces: Social media post on X/Twitter with Morse code payload
-IOC value: Social media post on X/Twitter with Morse code payload
-IOC type: url_path
-Status: active
-Campaign: grok-bankrbot-morse-code-prompt-injection-may-2026
-Source: Security Boulevard
-Context: Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 166
-Problem: ioc-package-format
-Validator finding: invalid package IOC: Grok (xAI chatbot)
-IOC value: Grok (xAI chatbot)
-IOC type: package
-Status: active
-Campaign: grok-bankrbot-morse-code-prompt-injection-may-2026
-Source: Security Boulevard
-Context: Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 167
-Problem: ioc-package-format
-Validator finding: invalid package IOC: Bankrbot (automated finance agent)
-IOC value: Bankrbot (automated finance agent)
-IOC type: package
-Status: active
-Campaign: grok-bankrbot-morse-code-prompt-injection-may-2026
-Source: Security Boulevard
-Context: Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md` `2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026`: no source URL was accessible; manual review or alternate evidence is required
 
 ## Duplicate IOC Review
 
@@ -159,6 +85,18 @@ Recommended action:
 ## Human Review Queue
 
 ```text
+Report: 2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```
+
+```text
 Report: 2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026
 Problem: evidence-source-review-required
 Validator finding: no source URL was accessible; manual review or alternate evidence is required
@@ -172,20 +110,8 @@ Recommended options:
 
 ```text
 Report: 2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026
-Problem: evidence-url-review
-Validator finding: 2 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-05-16-hugging-face-privacy-filter-infostealer-may-2026
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
 Recommended options:
 [ ] Keep report and add/confirm valid source
 [ ] Add manual evidence override

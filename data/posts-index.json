@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "title": "Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning",
+      "date": "2026-05-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages — including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch — through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance.",
+      "file": "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.md"
+    },
+    {
       "id": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026",
       "title": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
       "date": "2026-05-16",

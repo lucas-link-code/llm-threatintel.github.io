@@ -1,5 +1,5 @@
 {
-  "commit_sha": "06620037739e5338bcf67e842d2421ef97c8bfb7",
+  "commit_sha": "05d95e12eb9a",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -64,8 +64,8 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-16T05:57:00+00:00",
-  "hard_failures": 4,
+  "generated_at_utc": "2026-05-16T06:31:48+00:00",
+  "hard_failures": 0,
   "issues": [
     {
       "code": "post-excerpt-long",
@@ -128,7 +128,7 @@
       "file": "data/iocs.json",
       "message": "IOC has weak source label: OSINT",
       "recommendation": "",
-      "record_id": "48",
+      "record_id": "55",
       "severity": "warn"
     },
     {
@@ -136,7 +136,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/automagik-genie",
       "recommendation": "",
-      "record_id": "103",
+      "record_id": "110",
       "severity": "warn"
     },
     {
@@ -144,7 +144,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/pgserve",
       "recommendation": "",
-      "record_id": "104",
+      "record_id": "111",
       "severity": "warn"
     },
     {
@@ -152,7 +152,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.0",
       "recommendation": "",
-      "record_id": "106",
+      "record_id": "113",
       "severity": "warn"
     },
     {
@@ -160,7 +160,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.1",
       "recommendation": "",
-      "record_id": "107",
+      "record_id": "114",
       "severity": "warn"
     },
     {
@@ -168,7 +168,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.2",
       "recommendation": "",
-      "record_id": "108",
+      "record_id": "115",
       "severity": "warn"
     },
     {
@@ -176,7 +176,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
       "recommendation": "",
-      "record_id": "109",
+      "record_id": "116",
       "severity": "warn"
     },
     {
@@ -184,7 +184,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
       "recommendation": "",
-      "record_id": "110",
+      "record_id": "117",
       "severity": "warn"
     },
     {
@@ -192,7 +192,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: LiteLLM <1.83.7",
       "recommendation": "",
-      "record_id": "113",
+      "record_id": "120",
       "severity": "warn"
     },
     {
@@ -200,7 +200,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
       "recommendation": "",
-      "record_id": "114",
+      "record_id": "121",
       "severity": "warn"
     },
     {
@@ -208,7 +208,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)",
       "recommendation": "",
-      "record_id": "115",
+      "record_id": "122",
       "severity": "warn"
     },
     {
@@ -216,7 +216,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)",
       "recommendation": "",
-      "record_id": "116",
+      "record_id": "123",
       "severity": "warn"
     },
     {
@@ -224,7 +224,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)",
       "recommendation": "",
-      "record_id": "117",
+      "record_id": "124",
       "severity": "warn"
     },
     {
@@ -232,7 +232,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "118",
+      "record_id": "125",
       "severity": "warn"
     },
     {
@@ -240,7 +240,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)",
       "recommendation": "",
-      "record_id": "119",
+      "record_id": "126",
       "severity": "warn"
     },
     {
@@ -248,7 +248,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "120",
+      "record_id": "127",
       "severity": "warn"
     },
     {
@@ -256,7 +256,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)",
       "recommendation": "",
-      "record_id": "121",
+      "record_id": "128",
       "severity": "warn"
     },
     {
@@ -264,7 +264,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)",
       "recommendation": "",
-      "record_id": "122",
+      "record_id": "129",
       "severity": "warn"
     },
     {
@@ -272,7 +272,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: claude.com/redirect/ (open redirect flaw, any URL parameter)",
       "recommendation": "",
-      "record_id": "123",
+      "record_id": "130",
       "severity": "warn"
     },
     {
@@ -280,7 +280,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: api.anthropic.com/v1/files (Files API used for exfiltration)",
       "recommendation": "",
-      "record_id": "124",
+      "record_id": "131",
       "severity": "warn"
     },
     {
@@ -288,7 +288,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: langflow (all versions)",
       "recommendation": "",
-      "record_id": "125",
+      "record_id": "132",
       "severity": "warn"
     },
     {
@@ -296,7 +296,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
       "recommendation": "",
-      "record_id": "132",
+      "record_id": "139",
       "severity": "warn"
     },
     {
@@ -304,7 +304,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
       "recommendation": "",
-      "record_id": "133",
+      "record_id": "140",
       "severity": "warn"
     },
     {
@@ -312,7 +312,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
       "recommendation": "",
-      "record_id": "134",
+      "record_id": "141",
       "severity": "warn"
     },
     {
@@ -320,7 +320,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
       "recommendation": "",
-      "record_id": "144",
+      "record_id": "151",
       "severity": "warn"
     },
     {
@@ -328,7 +328,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7",
       "recommendation": "",
-      "record_id": "148",
+      "record_id": "155",
       "severity": "warn"
     },
     {
@@ -336,7 +336,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)",
       "recommendation": "",
-      "record_id": "150",
+      "record_id": "157",
       "severity": "warn"
     },
     {
@@ -344,7 +344,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills",
       "recommendation": "",
-      "record_id": "151",
+      "record_id": "158",
       "severity": "warn"
     },
     {
@@ -352,7 +352,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models",
       "recommendation": "",
-      "record_id": "152",
+      "record_id": "159",
       "severity": "warn"
     },
     {
@@ -360,40 +360,8 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)",
       "recommendation": "",
-      "record_id": "153",
+      "record_id": "160",
       "severity": "warn"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: Shared chat URLs within claude.ai platform",
-      "recommendation": "",
-      "record_id": "164",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: Social media post on X/Twitter with Morse code payload",
-      "recommendation": "",
-      "record_id": "165",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Grok (xAI chatbot)",
-      "recommendation": "",
-      "record_id": "166",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Bankrbot (automated finance agent)",
-      "recommendation": "",
-      "record_id": "167",
-      "severity": "fail"
     },
     {
       "code": "ioc-duplicate-review",
@@ -429,6 +397,14 @@
     },
     {
       "code": "evidence-source-review-required",
+      "file": "posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
       "file": "posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md",
       "message": "no source URL was accessible; manual review or alternate evidence is required",
       "recommendation": "",
@@ -436,33 +412,102 @@
       "severity": "review"
     },
     {
-      "code": "evidence-url-review",
+      "code": "evidence-source-review-required",
       "file": "posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md",
-      "message": "2 source URL(s) require review",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
       "recommendation": "",
       "record_id": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026",
       "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
+  "overall_result": "pass",
   "reports_checked": 3,
-  "reports_newly_validated": 2,
-  "reports_skipped": 95,
+  "reports_newly_validated": 0,
+  "reports_skipped": 96,
   "review_required": 3,
-  "source_urls_checked": 7,
-  "state_updates": 2,
+  "source_urls_checked": 15,
+  "state_updates": 0,
   "url_results": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.reversinglabs.com/blog/mini-shai-hulud-tears-at-oss-trust",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.reversinglabs.com/blog/mini-shai-hulud-tears-at-oss-trust"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.ox.security/blog/shai-hulud-here-we-go-again-170-packages-hit-across-npm-pypi/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.ox.security/blog/shai-hulud-here-we-go-again-170-packages-hit-across-npm-pypi/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/"
+    },
+    {
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1016)>",
+      "final_url": null,
+      "http_status": null,
+      "status": "tls_error",
+      "url": "https://snyk.io/blog/tanstack-npm-packages-compromised/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://phoenix.security/mini-shai-hulud-teampcp-tanstack/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://phoenix.security/mini-shai-hulud-teampcp-tanstack/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.theregister.com/cyber-crime/2026/05/12/cache-poisoning-caper-turns-tanstack-npm-packages-toxic/5238650",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.theregister.com/cyber-crime/2026/05/12/cache-poisoning-caper-turns-tanstack-npm-packages-toxic/5238650"
+    },
     {
       "error": "HTTP Error 403: Forbidden",
       "final_url": "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer",
@@ -471,10 +516,10 @@
       "url": "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer"
     },
     {
-      "error": "",
-      "final_url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/",
-      "http_status": 200,
-      "status": "accessible",
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware",
+      "http_status": 403,
+      "status": "blocked",
       "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware"
     },
     {
@@ -490,27 +535,6 @@
       "http_status": 403,
       "status": "blocked",
       "url": "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter"
-    },
-    {
-      "error": "HTTP Error 404: Not Found",
-      "final_url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
-      "http_status": 404,
-      "status": "not_found",
-      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
     }
   ],
   "validation_version": "1.0.0",

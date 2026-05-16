@@ -2,6 +2,69 @@
   "last_updated": "2026-05-16",
   "iocs": [
     {
+      "value": "git-tanstack.com",
+      "type": "domain",
+      "context": "Mini Shai-Hulud Wave 5 TeamPCP typosquat C2 domain; serves transformers.pyz credential stealer payload and receives exfiltrated secrets",
+      "first_seen": "2026-05-11",
+      "source": "StepSecurity / ReversingLabs / Phoenix Security",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "git-tanstack.com/tmp/transformers.pyz",
+      "type": "url_path",
+      "context": "Mini Shai-Hulud Wave 5 payload delivery URL; Bun-executed credential stealer downloaded from npm preinstall hook",
+      "first_seen": "2026-05-11",
+      "source": "Phoenix Security / StepSecurity",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "api.masscan.cloud",
+      "type": "domain",
+      "context": "Mini Shai-Hulud Wave 5 C2 secondary exfiltration channel; receives stolen CI secrets and credential data",
+      "first_seen": "2026-05-11",
+      "source": "StepSecurity / Infosecurity Magazine",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "filev2.getsession.org",
+      "type": "domain",
+      "context": "Mini Shai-Hulud Wave 5 exfiltration channel via decentralized Session messenger network seed nodes",
+      "first_seen": "2026-05-11",
+      "source": "Phoenix Security / ReversingLabs",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "83.142.209.194",
+      "type": "ip",
+      "context": "Mini Shai-Hulud Wave 5 payload delivery server for malicious PyPI packages mistralai==2.4.6 and guardrails-ai==0.10.1; serves credential stealer on import",
+      "first_seen": "2026-05-11",
+      "source": "Microsoft / Safedep",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "pypi:mistralai@2.4.6",
+      "type": "package",
+      "context": "Mini Shai-Hulud Wave 5 trojanized Mistral AI Python SDK; malicious code in __init__.py executes on import, downloads stealer from 83.142.209.194, includes geofenced rm -rf / for Israel/Iran systems",
+      "first_seen": "2026-05-11",
+      "source": "Safedep / Microsoft / The Hacker News",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "removed"
+    },
+    {
+      "value": "pypi:guardrails-ai@0.10.1",
+      "type": "package",
+      "context": "Mini Shai-Hulud Wave 5 trojanized Guardrails AI validation framework; malicious code executes on import",
+      "first_seen": "2026-05-11",
+      "source": "Safedep / The Hacker News",
+      "campaign": "mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "status": "removed"
+    },
+    {
       "value": "s3.filebase.com/bissapromax/archives/",
       "type": "url_path",
       "context": "Bissa Scanner exfiltration endpoint; .env ZIP archives uploaded here from all compromised hosts",
@@ -1478,36 +1541,27 @@
       "status": "active"
     },
     {
-      "value": "Shared chat URLs within claude.ai platform",
+      "value": "claude.ai/share",
       "type": "url_path",
-      "context": "Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust",
+      "context": "Attack vector: malvertising delivers macOS malware instructions via legitimate claude.ai shared chat URLs, bypassing domain-based detection",
       "first_seen": "2026-05-16",
       "source": "Bleeping Computer",
       "campaign": "google-ads-claude-ai-shared-chat-macos-malware-may-2026",
       "status": "active"
     },
     {
-      "value": "Social media post on X/Twitter with Morse code payload",
-      "type": "url_path",
-      "context": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
+      "value": "grok",
+      "type": "package",
+      "context": "xAI Grok chatbot exploited via Morse code prompt injection to trigger Bankrbot crypto theft of $175K",
       "first_seen": "2026-05-16",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
       "status": "active"
     },
     {
-      "value": "Grok (xAI chatbot)",
+      "value": "bankrbot",
       "type": "package",
-      "context": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
-      "first_seen": "2026-05-16",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "Bankrbot (automated finance agent)",
-      "type": "package",
-      "context": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
+      "context": "Bankrbot automated finance agent abused via prompt injection chained through Grok to drain $175K in cryptocurrency",
       "first_seen": "2026-05-16",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
