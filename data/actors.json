@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-14",
+  "last_updated": "2026-05-16",
   "entries": [
     {
       "id": "trustfall-mcp-rce-class",
@@ -1812,6 +1812,51 @@
       ],
       "description": "Employee or contractor at Community Bank using unauthorized generative AI tool (likely ChatGPT, Claude, or similar) to process sensitive customer PII, resulting in uncontrolled transmission of 1M+ customer records to third-party AI service provider. No evidence of malicious intent; likely productivity-driven shadow AI adoption.",
       "attribution": "Unattributed - Likely employee negligence or unauthorized tool adoption"
+    },
+    {
+      "id": "unknown-threat-group",
+      "names": [
+        "Unknown Threat Group"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Hugging Face public repository",
+        "Google Ads (malvertising)",
+        "Anthropic Claude shared chats"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1583.006 - Acquire Infrastructure: Typosquatting",
+        "T1059.003 - Command and Scripting Interpreter: PowerShell",
+        "T1027 - Obfuscation of Files or Information",
+        "T1598.003 - Phishing: Malvertising",
+        "T1598.001 - Phishing: Spearphishing Link",
+        "T1059.004 - Command and Scripting Interpreter: Bash",
+        "T1204.001 - User Execution: Malicious Link"
+      ],
+      "description": "Threat actor group actively abusing AI platform shared chat features (Claude, ChatGPT, Grok) for malware distribution. Uses Google Ads to redirect users searching for AI tools to malicious shared chats hosted on legitimate platforms. Geographic targeting suggests operational scope limited to Western targets. Likely repeatable against other AI platforms.",
+      "attribution": "Unknown; possible overlap with npm/PyPI supply-chain campaigns based on shared infrastructure"
+    },
+    {
+      "id": "unknown-individual-or-small-group",
+      "names": [
+        "Unknown Individual or Small Group"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "X/Twitter social media platform"
+      ],
+      "ttps": [
+        "T1593 - Prompt Injection",
+        "T1204 - User Execution (AI agent autonomous execution)",
+        "T1036 - Obfuscation of Files or Information (Morse encoding)"
+      ],
+      "description": "Actor demonstrated sophisticated understanding of agentic AI vulnerabilities, particularly the breakdown of trust boundaries between AI agents and downstream tool-calling systems. Used encoding obfuscation (Morse code) to bypass model-level defenses. Attack pattern suggests proof-of-concept or research exercise rather than profit-driven crime, though $175K theft indicates genuine exploitation capability.",
+      "attribution": "Unknown; single attack with high technical sophistication suggests either experienced researcher or organized actor testing AI agent vulnerabilities"
     }
   ]
 }

@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "title": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
+      "date": "2026-05-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On 04 May, an attacker drained roughly $175,000 in tokens from an AI-controlled crypto wallet using a tweet written in Morse code. The wallet belonged to Grok, xAI's chatbot. Bankrbot, an automated finance agent connected to Grok through a tool-calling layer, executed the transfer. The attack required no smart-contract bug, no stolen private key, and no compromise of either model. It required one obfuscated message and a chain of trust nobody had thought to inspect.",
+      "file": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md"
+    },
+    {
+      "id": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026",
+      "title": "Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust",
+      "date": "2026-05-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Attackers are abusing Google Ads and legitimate Claude.ai shared chats in an active malvertising campaign. Users searching for \"Claude mac download\" may come across sponsored search results that list claude.ai as the target website, but lead to instructions that install malware on their Mac. This campaign eliminates the primary indicator users are trained to check: the domain in the ad. Both attacks point to the real claude.ai domain because the malicious content is hosted inside Claude's own shared chat feature.",
+      "file": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md"
+    },
+    {
+      "id": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026",
+      "title": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "date": "2026-05-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.",
+      "file": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.md"
+    },
+    {
       "id": "2026-05-14-community-bank-shadow-ai-data-breach-may-2026",
       "title": "Shadow AI Data Breach: Community Bank Exposes SSNs via Unauthorized AI Application—First SEC Form 8-K Filing of Shadow AI Incident",
       "date": "2026-05-14",

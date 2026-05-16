@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-13",
+  "last_updated": "2026-05-16",
   "iocs": [
     {
       "value": "s3.filebase.com/bissapromax/archives/",
@@ -1439,6 +1439,78 @@
       "first_seen": "2026-05-13",
       "source": "OX Security",
       "campaign": "windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce",
+      "status": "active"
+    },
+    {
+      "value": "https://www.huggingface.co/Open-OSS/privacy-filter",
+      "type": "url_path",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "first_seen": "2026-05-16",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
+      "type": "sha256",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "first_seen": "2026-05-16",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
+      "type": "sha256",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "first_seen": "2026-05-16",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "claude.ai",
+      "type": "domain",
+      "context": "Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust",
+      "first_seen": "2026-05-16",
+      "source": "Bleeping Computer",
+      "campaign": "google-ads-claude-ai-shared-chat-macos-malware-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Shared chat URLs within claude.ai platform",
+      "type": "url_path",
+      "context": "Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust",
+      "first_seen": "2026-05-16",
+      "source": "Bleeping Computer",
+      "campaign": "google-ads-claude-ai-shared-chat-macos-malware-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Social media post on X/Twitter with Morse code payload",
+      "type": "url_path",
+      "context": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
+      "first_seen": "2026-05-16",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Grok (xAI chatbot)",
+      "type": "package",
+      "context": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
+      "first_seen": "2026-05-16",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Bankrbot (automated finance agent)",
+      "type": "package",
+      "context": "Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails",
+      "first_seen": "2026-05-16",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
       "status": "active"
     }
   ]

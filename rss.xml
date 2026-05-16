@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 14 May 2026 06:26:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2026 05:56:59 +0000</lastBuildDate>
     <item>
+      <title>Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails</title>
+      <link>https://llm-threatintel.com/posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+      <description>On 04 May, an attacker drained roughly $175,000 in tokens from an AI-controlled crypto wallet using a tweet written in Morse code. The wallet belonged to Grok, xAI's chatbot. Bankrbot, an automated finance agent connected to Grok through a tool-calling layer, executed the transfer. The attack required no smart-contract bug, no stolen private key, and no compromise of either model. It required one obfuscated message and a chain of trust nobody had thought to inspect.</description>
+    </item>    <item>
+      <title>Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust</title>
+      <link>https://llm-threatintel.com/posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+      <description>Attackers are abusing Google Ads and legitimate Claude.ai shared chats in an active malvertising campaign. Users searching for "Claude mac download" may come across sponsored search results that list claude.ai as the target website, but lead to instructions that install malware on their Mac. This campaign eliminates the primary indicator users are trained to check: the domain in the ad. Both attacks point to the real claude.ai domain because the malicious content is hosted inside Claude's own shared chat feature.</description>
+    </item>    <item>
+      <title>Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign</title>
+      <link>https://llm-threatintel.com/posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+      <description>A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.</description>
+    </item>    <item>
       <title>Shadow AI Data Breach: Community Bank Exposes SSNs via Unauthorized AI Application—First SEC Form 8-K Filing of Shadow AI Incident</title>
       <link>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain.html</guid>
       <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
       <description>On May 4, 2026, an attacker drained approximately 3 billion DRB tokens (worth around $174,000) from a Grok-linked Bankrbot wallet on the Base network by chaining an NFT permissioning grant to a Morse-coded X (Twitter) prompt injection that Grok publicly decoded into plaintext, which Bankrbot then ingested as a trusted command and executed as an on-chain transfer. The architectural failure is not the encoding bypass but the cross-agent trust pipeline: Bankrbot treated Grok's reply as authoritative instruction without verifying the original instruction author, and Grok's helpful decoding step laundered the attacker's encoded payload into the format Bankrbot accepts. Encoded prompt injection in Morse, base64, hex, ROT13, and unicode-confusable forms is now a documented operational technique against agentic crypto wallets.</description>
-    </item>    <item>
-      <title>Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration</title>
-      <link>https://llm-threatintel.com/posts/2026-05-10-context-ai-vercel-oauth-supply-chain-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-10-context-ai-vercel-oauth-supply-chain-breach.html</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <description>A Context.ai employee was compromised with Lumma Stealer malware in February 2026, and a threat actor claiming ShinyHunters responsibility used compromised OAuth tokens to pivot into Vercel's Google Workspace account, exposing customer credentials and claiming $2 million in stolen data. The attacker gained access to a Vercel employee's Google Workspace account through a compromised Context AI browser extension, then accessed environment variables not marked as sensitive and not encrypted at rest.</description>
-    </item>    <item>
-      <title>Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK &lt; 1.39.4</title>
-      <link>https://llm-threatintel.com/posts/2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.html</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft disclosed on May 7, 2026, that two patched vulnerabilities in its Semantic Kernel agent framework could let prompt injection become remote code execution or arbitrary host file writes in affected Python and .NET agent deployments. CVE-2026-26030 affected the Python Semantic Kernel package before version 1.39.4 under specific conditions. An agent had to use the In-Memory Vector Store as backend for a Search Plugin with default filtering behavior; when those conditions aligned, a single crafted prompt could lead to host-level remote code execution.</description>
-    </item>    <item>
-      <title>Intruder Scans 1 Million Exposed AI Services: Finds Critical Misconfiguration, No Authentication, and Direct RCE Paths Across Self-Hosted LLM Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-09-massive-exposure-1m-ai-services-misconfiguration.html</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
-      <description>AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software investigated. In the wake of the ClawdBot fiasco—a viral self-hosted AI assistant averaging 2.6 CVEs per day—the Intruder team investigated how bad AI infrastructure security actually is. Using certificate transparency logs, researchers pulled just over 2 million hosts with 1 million exposed services.</description>
     </item>
   </channel>
 </rss>

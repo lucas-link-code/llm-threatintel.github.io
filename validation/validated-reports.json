@@ -1786,6 +1786,44 @@
       "validated_at": "2026-05-14T06:26:59+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026": {
+      "content_hash": "4aef030feb32757a7e0f0c8c46eca24f72906ec7d34ed27c7d846d42e8ca094d",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md",
+      "posts_index_hash": "dee133b0ec191249c00546247fc02da50ac25e53564ce2fb939c05bce1c44530",
+      "report_id": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware",
+        "https://www.ghacks.net/2026/05/11/hackers-abuse-google-ads-and-claude-ai-shared-chats-to-distribute-macos-malware",
+        "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-16T05:57:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026": {
+      "content_hash": "3f6b4c6c4cdbe0dd6737a976802cd9c9bfa0a3b783c13cfcfb5498a8bd250c64",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.md",
+      "posts_index_hash": "fdcd8688ed0b9cc181c5c2a3cb03104ad9eefd11ce4062a7b001532c75ec47e8",
+      "report_id": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
+        "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-16T05:57:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
