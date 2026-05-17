@@ -1,5 +1,5 @@
 {
-  "commit_sha": "05d95e12eb9a",
+  "commit_sha": "63a4503d6652",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -64,7 +64,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-16T06:31:48+00:00",
+  "generated_at_utc": "2026-05-17T13:39:03+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -397,6 +397,22 @@
     },
     {
       "code": "evidence-source-review-required",
+      "file": "posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-05-17-openai-tanstack-supply-chain-breach-may-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
       "file": "posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.md",
       "message": "no source URL was accessible; manual review or alternate evidence is required",
       "recommendation": "",
@@ -424,13 +440,104 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
+  "reports_checked": 5,
   "reports_newly_validated": 0,
   "reports_skipped": 96,
-  "review_required": 3,
-  "source_urls_checked": 15,
+  "review_required": 5,
+  "source_urls_checked": 28,
   "state_updates": 0,
   "url_results": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://oddguan.com/blog/comment-and-control-prompt-injection-credential-theft-claude-code-gemini-cli-github-copilot/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://oddguan.com/blog/comment-and-control-prompt-injection-credential-theft-claude-code-gemini-cli-github-copilot/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://thenextweb.com/news/ai-agents-hijacked-prompt-injection-bug-bounties-no-cve",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://thenextweb.com/news/ai-agents-hijacked-prompt-injection-bug-bounties-no-cve"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-comment-control-github-prompt-injection-20/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-comment-control-github-prompt-injection-20/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://repello.ai/blog/comment-and-control-claude-code-gemini-copilot-prompt-injection",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://repello.ai/blog/comment-and-control-claude-code-gemini-copilot-prompt-injection"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://gbhackers.com/claude-code-gemini-cli-and-github-copilot-exposed/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://gbhackers.com/claude-code-gemini-cli-and-github-copilot-exposed/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.theregister.com/security/2026/05/15/openai-caught-in-tanstack-npm-supply-chain-chaos-after-employee-devices-compromised/5241019",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.theregister.com/security/2026/05/15/openai-caught-in-tanstack-npm-supply-chain-chaos-after-employee-devices-compromised/5241019"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://techcrunch.com/2026/05/14/openai-says-hackers-stole-some-data-after-latest-code-security-issue/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://techcrunch.com/2026/05/14/openai-says-hackers-stole-some-data-after-latest-code-security-issue/"
+    },
     {
       "error": "HTTP Error 403: Forbidden",
       "final_url": "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem",
@@ -488,10 +595,10 @@
       "url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/"
     },
     {
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate is not yet valid (_ssl.c:1016)>",
-      "final_url": null,
-      "http_status": null,
-      "status": "tls_error",
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://snyk.io/blog/tanstack-npm-packages-compromised/",
+      "http_status": 403,
+      "status": "blocked",
       "url": "https://snyk.io/blog/tanstack-npm-packages-compromised/"
     },
     {

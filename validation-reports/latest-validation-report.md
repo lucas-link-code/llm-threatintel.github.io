@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-16T06:31:48+00:00`
-- Commit SHA: `05d95e12eb9a`
+- Run time UTC: `2026-05-17T13:39:03+00:00`
+- Commit SHA: `63a4503d6652`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `41`
-- Review required: `3`
-- Reports checked: `3`
+- Review required: `5`
+- Reports checked: `5`
 - Reports skipped: `96`
 - Reports newly validated: `0`
 - IOC duplicates found: `4`
-- Source URLs checked: `15`
+- Source URLs checked: `28`
 
 No files were removed or destructively modified.
 
@@ -59,6 +59,8 @@ No files were removed or destructively modified.
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.md` `2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection`: no source URL was accessible; manual review or alternate evidence is required
+- **REVIEW** `evidence-source-review-required` `posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.md` `2026-05-17-openai-tanstack-supply-chain-breach-may-2026`: no source URL was accessible; manual review or alternate evidence is required
 - **REVIEW** `evidence-source-review-required` `posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.md` `2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026`: no source URL was accessible; manual review or alternate evidence is required
 - **REVIEW** `evidence-source-review-required` `posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md` `2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026`: no source URL was accessible; manual review or alternate evidence is required
 - **REVIEW** `evidence-source-review-required` `posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md` `2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026`: no source URL was accessible; manual review or alternate evidence is required
@@ -83,6 +85,30 @@ No files were removed or destructively modified.
 - `recargapopular.com` type `domain` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
 
 ## Human Review Queue
+
+```text
+Report: 2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```
+
+```text
+Report: 2026-05-17-openai-tanstack-supply-chain-breach-may-2026
+Problem: evidence-source-review-required
+Validator finding: no source URL was accessible; manual review or alternate evidence is required
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```
 
 ```text
 Report: 2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026
