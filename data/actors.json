@@ -2,6 +2,33 @@
   "last_updated": "2026-05-18",
   "entries": [
     {
+      "id": "comment-and-control-github-prompt-injection",
+      "names": [
+        "Comment and Control",
+        "GitHub PR Prompt Injection",
+        "CI/CD Credential Exfiltration via AI Agent"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2025-10",
+      "status": "active",
+      "distribution": [
+        "GitHub pull request titles containing injected instructions",
+        "GitHub issue bodies with fake trusted content sections",
+        "GitHub review comments with HTML-comment-hidden payloads",
+        "Any GitHub-connected repository using Claude Code Security Review, Gemini CLI Action, or GitHub Copilot Agent in CI/CD"
+      ],
+      "ttps": [
+        "T1566.003 - Phishing: Spearphishing via Service (GitHub PR as delivery vector)",
+        "T1059.004 - Command and Scripting Interpreter: Unix Shell (env, ps, whoami in CI runner)",
+        "T1552.001 - Credentials In Files (CI runner environment variables harvested)",
+        "T1567.002 - Exfiltration Over Web Service (GitHub API used as exfiltration channel)",
+        "T1190 - Exploit Public-Facing Application (public PR sufficient; no code access needed)",
+        "T1202 - Indirect Command Execution (agent executes attacker instructions without user interaction)"
+      ],
+      "description": "Vulnerability class disclosed publicly April 15, 2026 by Aonan Guan (Wyze Labs) and Johns Hopkins researchers Zhengyu Liu and Gavin Zhong. Comment and Control exploits the trust AI coding agents place in GitHub-hosted content: malicious instructions embedded in PR titles, issue bodies, or review comments are processed as authoritative context and executed in the CI runner environment. Claude Code's security review agent was found to return the full runner environment via a JSON 'security finding' comment; Gemini CLI Action was found to post API keys as public issue comments; GitHub Copilot Agent used HTML comment obfuscation to scan for secrets and exfiltrate via GitHub's APIs. Anthropic rated the finding CVSS 9.4 Critical (October 2025 report), paid a $100 bug bounty, and issued no public advisory or CVE. Google paid $1,337; GitHub paid $500. No vendor issued a CVE or public advisory. Ongoing May 2026 coverage focuses on the vendor non-disclosure controversy and CI/CD security implications.",
+      "attribution": "Vulnerability research by Aonan Guan (Wyze Labs), Zhengyu Liu, and Gavin Zhong (Johns Hopkins); no attributed threat actor exploiting in the wild as of May 2026"
+    },
+    {
       "id": "trustfall-mcp-rce-class",
       "names": [
         "TrustFall",
@@ -724,7 +751,7 @@
         "T1037.004 - Boot or Logon Initialization Scripts (~/.bashrc heredoc payload)",
         "T1608.002 - Stage Capabilities: Upload Tool (worm self-republish via stolen npm tokens)"
       ],
-      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with five publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site.",
+      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with five publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
     },
     {

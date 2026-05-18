@@ -38,6 +38,32 @@
       "file": "2026-05-18-intruder-1-million-exposed-ai-services-may-2026.md"
     },
     {
+      "id": "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection",
+      "title": "Comment and Control: Prompt Injection via GitHub PR Comments Steals Credentials from Claude Code, Gemini CLI, and GitHub Copilot — Vendors Paid Bounties, Issued No Public Advisories",
+      "date": "2026-05-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Security researcher Aonan Guan disclosed that embedding malicious instructions in GitHub pull request titles, issue bodies, or review comments hijacks Claude Code, Gemini CLI, and GitHub Copilot agents to exfiltrate CI/CD secrets back through GitHub's own APIs. Anthropic rated the finding CVSS 9.4 Critical but paid a $100 bounty and issued no public advisory. No CVEs were assigned by any of the three vendors, leaving an unknown number of pipelines on unpatched agent versions.",
+      "file": "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.md"
+    },
+    {
+      "id": "2026-05-17-openai-tanstack-supply-chain-breach-may-2026",
+      "title": "OpenAI Confirms Two Employee Devices Compromised in Mini Shai-Hulud TanStack Supply Chain Attack — Code-Signing Certificates Rotated",
+      "date": "2026-05-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenAI disclosed that two employee devices were breached during the Mini Shai-Hulud Wave 5 TanStack supply chain attack, with the credential-stealer accessing internal source code repositories containing code-signing material for iOS, macOS, Windows, and Android applications. All code-signing certificates have been rotated; macOS users must update OpenAI desktop apps before June 12, 2026, when the compromised certificate will be revoked. No customer data, production systems, or IP was accessed.",
+      "file": "2026-05-17-openai-tanstack-supply-chain-breach-may-2026.md"
+    },
+    {
       "id": "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
       "title": "Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning",
       "date": "2026-05-16",
