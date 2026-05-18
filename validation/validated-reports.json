@@ -1651,7 +1651,7 @@
       "warnings": []
     },
     "2026-05-12-intruder-1-million-exposed-ai-services-may-2026": {
-      "content_hash": "988fb6236a6716d975b1e196f5c3abfe4703b7a1e763b9d229145e73c9086312",
+      "content_hash": "c4a1ce6d6e1649358af355e2b2ba181ba2f22d8116aeddb9e116c72992fb6e13",
       "evidence_status": "validated",
       "file": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026.md",
       "posts_index_hash": "0b0284090bc1d38044d1d0054b03ef880936ffdc956713e51eba66a917d58e96",
@@ -1661,7 +1661,7 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-14T06:27:01+00:00",
+      "validated_at": "2026-05-18T06:58:59+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1788,7 +1788,7 @@
       "warnings": []
     },
     "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026": {
-      "content_hash": "4aef030feb32757a7e0f0c8c46eca24f72906ec7d34ed27c7d846d42e8ca094d",
+      "content_hash": "6ebb82e06bad8628e9f70e4533dac4ceb92e3134524f7c3ae9d5132b169d58bd",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md",
       "posts_index_hash": "dee133b0ec191249c00546247fc02da50ac25e53564ce2fb939c05bce1c44530",
@@ -1802,7 +1802,7 @@
         "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-16T05:57:00+00:00",
+      "validated_at": "2026-05-17T06:24:41+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1822,6 +1822,86 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-05-16T05:57:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026": {
+      "content_hash": "b29848b93d48caa8becb35ba28a313275bf5423f51ba62df08698f43f091fac8",
+      "evidence_status": "validated",
+      "file": "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.md",
+      "posts_index_hash": "1799c4f9b5ef97a8a6236398dab26567dab624df69512cb0055b230be1325a81",
+      "report_id": "2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem",
+        "https://www.reversinglabs.com/blog/mini-shai-hulud-tears-at-oss-trust",
+        "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised",
+        "https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/",
+        "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html",
+        "https://www.ox.security/blog/shai-hulud-here-we-go-again-170-packages-hit-across-npm-pypi/",
+        "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/",
+        "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/",
+        "https://snyk.io/blog/tanstack-npm-packages-compromised/",
+        "https://phoenix.security/mini-shai-hulud-teampcp-tanstack/",
+        "https://www.theregister.com/cyber-crime/2026/05/12/cache-poisoning-caper-turns-tanstack-npm-packages-toxic/5238650"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-17T06:24:40+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-18-intruder-1-million-exposed-ai-services-may-2026": {
+      "content_hash": "48118ee06944612c43705c0be49754da1056d744aea99d081cdccbab750ac9fc",
+      "evidence_status": "validated",
+      "file": "2026-05-18-intruder-1-million-exposed-ai-services-may-2026.md",
+      "posts_index_hash": "437faa068d49ba10fec7a562457d655436e9edfc0cd80e84d6dd67ccfba368fe",
+      "report_id": "2026-05-18-intruder-1-million-exposed-ai-services-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+        "https://www.guardianmssp.com/2026/05/05/we-scanned-1-million-exposed-ai-services-heres-how-bad-the-security-actually-is/",
+        "https://www.techjuice.pk/ai-infrastructure-cybersecurity-risks-exposed-systems/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-18T06:58:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce": {
+      "content_hash": "28b09321458debb32f07be4f99d1391168b67992b5c094484d8e10495535281c",
+      "evidence_status": "validated",
+      "file": "2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce.md",
+      "posts_index_hash": "c8839a975ae9185abe8cc0ab4154c709b741868bd41003b4fcf5143300817b36",
+      "report_id": "2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+        "https://particula.tech/blog/semantic-kernel-cve-2026-25592-prompt-injection-rce",
+        "https://vibegraveyard.ai/story/semantic-kernel-prompt-injection-rce/",
+        "https://windowsforum.com/threads/semantic-kernel-prompt-injection-bugs-let-attackers-run-code-or-write-files.416873/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-18T06:58:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026": {
+      "content_hash": "ea88b4e2eb974953f807a0a224a9b1ee252cbab462af61e09a7d81ab8cc14484",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026.md",
+      "posts_index_hash": "65a08ce2f8eda39a30e7a839d2f4e462d91a56e49b52e697d16987683344f863",
+      "report_id": "2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.theregister.com/patches/2026/05/14/welcome-to-the-vulnpocalypse-as-vendors-use-ai-to-find-bugs-and-patches-multiply-like-rabbits/5240027",
+        "https://www.axios.com/2026/05/13/palo-alto-networks-mythos-gpt-cybersecurity",
+        "https://www.paloaltonetworks.com/blog/2026/05/defenders-guide-frontier-ai-impact-cybersecurity-may-2026-update/",
+        "https://www.securityweek.com/microsoft-palo-alto-networks-find-many-vulnerabilities-by-using-ai-on-their-own-code/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-18T06:58:56+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

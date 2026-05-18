@@ -1,5 +1,5 @@
 {
-  "commit_sha": "7de95c491562edf25e989c8b5d8cbc52c715c0b4",
+  "commit_sha": "69fb951a7d4fb7c2a5f1c0ac87294ecf11d38076",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -49,20 +49,6 @@
         "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py"
       }
     ],
-    "openui": [
-      {
-        "campaign": "million-exposed-ai-services-security-assessment",
-        "source": "The Hacker News",
-        "type": "package",
-        "value": "OpenUI"
-      },
-      {
-        "campaign": "intruder-1-million-exposed-ai-services-may-2026",
-        "source": "Intruder Security",
-        "type": "package",
-        "value": "openui"
-      }
-    ],
     "recargapopular.com": [
       {
         "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
@@ -78,7 +64,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-18T06:58:59+00:00",
+  "generated_at_utc": "2026-05-17T06:24:41+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -404,26 +390,10 @@
     {
       "code": "ioc-duplicate-review",
       "file": "data/iocs.json",
-      "message": "duplicate IOC review required: openui appears 2 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
       "message": "duplicate IOC review required: recargapopular.com appears 2 times",
       "recommendation": "",
       "record_id": "",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026",
-      "severity": "review"
     },
     {
       "code": "evidence-source-review-required",
@@ -432,95 +402,103 @@
       "recommendation": "",
       "record_id": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026",
       "severity": "review"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md",
+      "message": "2 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026",
+      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 5,
-  "reports_newly_validated": 4,
-  "reports_skipped": 97,
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 96,
   "review_required": 2,
-  "source_urls_checked": 13,
-  "state_updates": 4,
+  "source_urls_checked": 15,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.theregister.com/patches/2026/05/14/welcome-to-the-vulnpocalypse-as-vendors-use-ai-to-find-bugs-and-patches-multiply-like-rabbits/5240027",
+      "final_url": "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.theregister.com/patches/2026/05/14/welcome-to-the-vulnpocalypse-as-vendors-use-ai-to-find-bugs-and-patches-multiply-like-rabbits/5240027"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.axios.com/2026/05/13/palo-alto-networks-mythos-gpt-cybersecurity",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.axios.com/2026/05/13/palo-alto-networks-mythos-gpt-cybersecurity"
+      "url": "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem"
     },
     {
       "error": "",
-      "final_url": "https://www.paloaltonetworks.com/blog/2026/05/defenders-guide-frontier-ai-impact-cybersecurity-may-2026-update/",
+      "final_url": "https://www.reversinglabs.com/blog/mini-shai-hulud-tears-at-oss-trust",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.paloaltonetworks.com/blog/2026/05/defenders-guide-frontier-ai-impact-cybersecurity-may-2026-update/"
+      "url": "https://www.reversinglabs.com/blog/mini-shai-hulud-tears-at-oss-trust"
     },
     {
       "error": "",
-      "final_url": "https://www.securityweek.com/microsoft-palo-alto-networks-find-many-vulnerabilities-by-using-ai-on-their-own-code/",
+      "final_url": "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.securityweek.com/microsoft-palo-alto-networks-find-many-vulnerabilities-by-using-ai-on-their-own-code/"
+      "url": "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised"
     },
     {
       "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+      "final_url": "https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/"
+      "url": "https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/"
     },
     {
       "error": "",
-      "final_url": "https://particula.tech/blog/semantic-kernel-cve-2026-25592-prompt-injection-rce",
+      "final_url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://particula.tech/blog/semantic-kernel-cve-2026-25592-prompt-injection-rce"
+      "url": "https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html"
     },
     {
       "error": "",
-      "final_url": "https://vibegraveyard.ai/story/semantic-kernel-prompt-injection-rce/",
+      "final_url": "https://www.ox.security/blog/shai-hulud-here-we-go-again-170-packages-hit-across-npm-pypi/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://vibegraveyard.ai/story/semantic-kernel-prompt-injection-rce/"
+      "url": "https://www.ox.security/blog/shai-hulud-here-we-go-again-170-packages-hit-across-npm-pypi/"
     },
     {
       "error": "",
-      "final_url": "https://windowsforum.com/threads/semantic-kernel-prompt-injection-bugs-let-attackers-run-code-or-write-files.416873/",
+      "final_url": "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://windowsforum.com/threads/semantic-kernel-prompt-injection-bugs-let-attackers-run-code-or-write-files.416873/"
+      "url": "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/"
     },
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+      "final_url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
+      "url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/"
     },
     {
       "error": "",
-      "final_url": "https://www.guardianmssp.com/2026/05/05/we-scanned-1-million-exposed-ai-services-heres-how-bad-the-security-actually-is/",
+      "final_url": "https://snyk.io/blog/tanstack-npm-packages-compromised/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.guardianmssp.com/2026/05/05/we-scanned-1-million-exposed-ai-services-heres-how-bad-the-security-actually-is/"
+      "url": "https://snyk.io/blog/tanstack-npm-packages-compromised/"
     },
     {
       "error": "",
-      "final_url": "https://www.techjuice.pk/ai-infrastructure-cybersecurity-risks-exposed-systems/",
+      "final_url": "https://phoenix.security/mini-shai-hulud-teampcp-tanstack/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.techjuice.pk/ai-infrastructure-cybersecurity-risks-exposed-systems/"
+      "url": "https://phoenix.security/mini-shai-hulud-teampcp-tanstack/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.theregister.com/cyber-crime/2026/05/12/cache-poisoning-caper-turns-tanstack-npm-packages-toxic/5238650",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.theregister.com/cyber-crime/2026/05/12/cache-poisoning-caper-turns-tanstack-npm-packages-toxic/5238650"
     },
     {
       "error": "HTTP Error 403: Forbidden",
@@ -531,12 +509,26 @@
     },
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+      "final_url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.ghacks.net/2026/05/11/hackers-abuse-google-ads-and-claude-ai-shared-chats-to-distribute-macos-malware",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.ghacks.net/2026/05/11/hackers-abuse-google-ads-and-claude-ai-shared-chats-to-distribute-macos-malware"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware"
     }
   ],
   "validation_version": "1.0.0",
-  "warnings": 42
+  "warnings": 41
 }

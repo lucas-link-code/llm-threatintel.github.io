@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-17",
+  "last_updated": "2026-05-18",
   "iocs": [
     {
       "value": "git-tanstack.com",
@@ -1565,6 +1565,42 @@
       "first_seen": "2026-05-16",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "ollama",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
+      "first_seen": "2026-05-18",
+      "source": "Intruder Security",
+      "campaign": "intruder-1-million-exposed-ai-services-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "openui",
+      "type": "package",
+      "context": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
+      "first_seen": "2026-05-18",
+      "source": "Intruder Security",
+      "campaign": "intruder-1-million-exposed-ai-services-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "Microsoft.SemanticKernel.Core",
+      "type": "package",
+      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)—Prompt Injection to Remote Code Execution in AI Agent Frameworks",
+      "first_seen": "2026-05-18",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
+      "status": "active"
+    },
+    {
+      "value": "semantic-kernel",
+      "type": "package",
+      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)—Prompt Injection to Remote Code Execution in AI Agent Frameworks",
+      "first_seen": "2026-05-18",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
       "status": "active"
     }
   ]

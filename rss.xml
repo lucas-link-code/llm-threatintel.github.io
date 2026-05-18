@@ -5,8 +5,32 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 16 May 2026 05:56:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2026 06:58:55 +0000</lastBuildDate>
     <item>
+      <title>Frontier AI Models Discover 75+ Vulnerabilities in Vendor Code—Palo Alto Networks AI-Driven Vulnerability Surge Signals 'Vulnpocalypse'; 3-5 Month Window to Patch Before Attackers Gain Access</title>
+      <link>https://llm-threatintel.com/posts/2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <description>Palo Alto Networks found 75 vulnerabilities in its products—more than seven times the amount it usually finds in a month—after beginning to use advanced AI cybersecurity models from Anthropic and OpenAI. The company is among the first with access to Anthropic's Mythos Preview and OpenAI's GPT-5.5-Cyber, and now estimates organizations have just three to five months before attackers broadly gain access to these capabilities.</description>
+    </item>    <item>
+      <title>Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)—Prompt Injection to Remote Code Execution in AI Agent Frameworks</title>
+      <link>https://llm-threatintel.com/posts/2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft disclosed on May 7, 2026, two patched vulnerabilities in Semantic Kernel agent framework that could let prompt injection become remote code execution or arbitrary host file writes in affected Python and .NET deployments. CVE-2026-25592 (CVSS 10.0) lets a prompt-injected Semantic Kernel agent escape its Azure Container Apps Python sandbox by abusing DownloadFileAsync, which was accidentally tagged [KernelFunction] and exposed to the LLM with no path validation.</description>
+    </item>    <item>
+      <title>Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-05-18-intruder-1-million-exposed-ai-services-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-18-intruder-1-million-exposed-ai-services-may-2026.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <description>Intruder researchers scanned 1 million exposed AI services across 2+ million hosts and found AI infrastructure more vulnerable, exposed, and misconfigured than any other software they have investigated. Generic chatbots hosting multimodal LLMs were freely available for jailbreaking, allowing attackers to bypass safety guardrails and access models without logging to their own accounts.</description>
+    </item>    <item>
+      <title>Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning</title>
+      <link>https://llm-threatintel.com/posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+      <description>On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages — including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch — through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance.</description>
+    </item>    <item>
       <title>Grok AI Bankrbot Crypto Theft via Morse Code Prompt Injection—$175K Drained; Demonstrates Encoded Injection Bypasses Model Guardrails</title>
       <link>https://llm-threatintel.com/posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.html</guid>
@@ -102,30 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.html</guid>
       <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
       <description>Adversa AI disclosed on May 7, 2026 that all four major agentic coding CLIs (Claude Code, Cursor CLI, Gemini CLI, GitHub Copilot CLI) execute project-defined MCP servers as unsandboxed OS processes the moment a developer accepts the folder trust prompt, requiring only a single Enter keypress on the default Yes/Trust option. A malicious cloned repository ships .mcp.json plus .claude/settings.json with enableAllProjectMcpServers true and gains full user-privilege code execution before any tool call, with the inline command/args payload variant leaving no script file on disk for static scanners. On CI runners using anthropics/claude-code-action headless mode the trust dialog is skipped entirely, producing a zero-click variant that exfiltrates the runner's process.env including deploy keys, signing certificates, GITHUB_TOKEN, and cloud credentials.</description>
-    </item>    <item>
-      <title>Fake Claude AI Site Drops Beagle Backdoor: claude-pro[.]com Distributes G Data DLL Sideload Chain Loading DonutLoader Since February 2026</title>
-      <link>https://llm-threatintel.com/posts/2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-10-fake-claude-pro-beagle-backdoor-donutloader.html</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <description>Sophos and BleepingComputer disclosed on May 7, 2026 that the fake Anthropic lookalike claude-pro[.]com has been distributing a previously undocumented Windows backdoor named Beagle for months, delivered through a 505 MB Claude-Pro-windows-x64.zip MSI that installs a legitimate functioning Claude UI on top of a DLL sideload chain abusing a signed G Data antivirus updater. Beagle communicates with license.claude-pro[.]com over TCP/443 and UDP/8080 to an Alibaba Cloud-hosted C2 at 8.217.190.58 and supports eight commands via a hardcoded AES key. Sophos identified VirusTotal samples reusing the same XOR key dating to February 2026 with sibling lures impersonating CrowdStrike, SentinelOne, Trellix, and Microsoft Defender update binaries.</description>
-    </item>    <item>
-      <title>Fake OpenAI "Open-OSS/privacy-filter" Hugging Face Repository Reaches #1 Trending: 244K Downloads of Sefirah Rust Infostealer Loaded by loader.py via jsonkeeper.com</title>
-      <link>https://llm-threatintel.com/posts/2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-10-open-oss-privacy-filter-huggingface-sefirah-typosquat.html</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <description>HiddenLayer disclosed on May 7, 2026 that a typosquatted Hugging Face repository named Open-OSS/privacy-filter impersonating OpenAI's legitimate Privacy Filter project reached the platform's number one trending position and accumulated approximately 244,000 downloads before removal. The malicious loader.py chains a base64-decoded URL to the public paste service jsonkeeper.com, fetches a hidden PowerShell command that adds the next-stage payload to Microsoft Defender exclusions, retrieves update.bat from api.eth-fastscan[.]org, and ultimately executes Sefirah, a Rust-based infostealer that exfiltrates browser credentials, cryptocurrency wallets, Discord and SSH tokens, and screenshots to recargapopular[.]com. Lyrie Research published a follow-on analysis on May 10, 2026 noting infrastructure overlaps with parallel npm typosquat campaigns distributing the WinOS 4.0 implant.</description>
-    </item>    <item>
-      <title>KONNI Adopts AI-Generated PowerShell Backdoor: DPRK Group Pivots from South Korean Diplomatic Targets to APAC Blockchain and Cryptocurrency Developers</title>
-      <link>https://llm-threatintel.com/posts/2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-10-konni-ai-generated-powershell-backdoor-blockchain-developers.html</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <description>Check Point Research disclosed in May 2026 that DPRK-aligned threat group KONNI is operating an active phishing campaign that drops an AI-generated PowerShell backdoor against blockchain and cryptocurrency developers across Japan, Australia, and India, marking a shift from KONNI's historical focus on South Korean diplomatic and government targets. The infection chain begins with a Discord-hosted ZIP containing a PDF lure and a malicious LNK shortcut that launches a PowerShell loader, which extracts a DOCX decoy plus a CAB archive carrying the backdoor, batch helpers, and a UAC-bypass executable. The PowerShell backdoor exhibits stylistic markers consistent with LLM-generated code: structured documentation blocks, modular function layout, and instructional placeholder comments such as "your permanent project UUID" left in production code.</description>
-    </item>    <item>
-      <title>Morse Code Prompt Injection Drains $174K from Grok-Linked Bankrbot Wallet on Base: NFT-Granted Permission Plus Trusted-Output Pipeline Bypasses Encoding-Based Guardrails</title>
-      <link>https://llm-threatintel.com/posts/2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain.html</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <description>On May 4, 2026, an attacker drained approximately 3 billion DRB tokens (worth around $174,000) from a Grok-linked Bankrbot wallet on the Base network by chaining an NFT permissioning grant to a Morse-coded X (Twitter) prompt injection that Grok publicly decoded into plaintext, which Bankrbot then ingested as a trusted command and executed as an on-chain transfer. The architectural failure is not the encoding bypass but the cross-agent trust pipeline: Bankrbot treated Grok's reply as authoritative instruction without verifying the original instruction author, and Grok's helpful decoding step laundered the attacker's encoded payload into the format Bankrbot accepts. Encoded prompt injection in Morse, base64, hex, ROT13, and unicode-confusable forms is now a documented operational technique against agentic crypto wallets.</description>
     </item>
   </channel>
 </rss>
