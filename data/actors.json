@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-16",
+  "last_updated": "2026-05-18",
   "entries": [
     {
       "id": "trustfall-mcp-rce-class",
@@ -1857,6 +1857,62 @@
       ],
       "description": "Actor demonstrated sophisticated understanding of agentic AI vulnerabilities, particularly the breakdown of trust boundaries between AI agents and downstream tool-calling systems. Used encoding obfuscation (Morse code) to bypass model-level defenses. Attack pattern suggests proof-of-concept or research exercise rather than profit-driven crime, though $175K theft indicates genuine exploitation capability.",
       "attribution": "Unknown; single attack with high technical sophistication suggests either experienced researcher or organized actor testing AI agent vulnerabilities"
+    },
+    {
+      "id": "opportunistic-threat-actors",
+      "names": [
+        "Opportunistic Threat Actors"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Internet-facing AI infrastructure"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1110.001 - Default Credentials"
+      ],
+      "description": "Distributed attackers exploiting unauthenticated and misconfigured self-hosted AI services to gain free access to frontier models and bypass safety controls; no centralized campaign attribution",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "design-flaw-architectural-vulnerability",
+      "names": [
+        "Design Flaw / Architectural Vulnerability"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Microsoft Semantic Kernel users"
+      ],
+      "ttps": [
+        "T1598.004 - Phishing: Spearphishing Link (prompt injection variant)",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "Systemic vulnerability in how Semantic Kernel exposes internal helper functions to LLM tool calling without proper input validation. Any attacker who can inject prompts into an AI agent (via malicious documents, web content, email attachments) can leverage LLM-controlled parameters to achieve RCE or arbitrary file write.",
+      "attribution": "Unattributed (design flaw, not actor-driven)"
+    },
+    {
+      "id": "frontier-ai-vulnerability-discovery-defensive",
+      "names": [
+        "Frontier AI Vulnerability Discovery (Defensive)",
+        "Project Glasswing",
+        "Trusted Access for Cyber"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Palo Alto Networks, Microsoft, Amazon, Google, other Project Glasswing participants"
+      ],
+      "ttps": [
+        "T1592 - Gather Victim Host Information (automated scanning)",
+        "T1526 - Reconnaissance via vulnerability discovery"
+      ],
+      "description": "Project Glasswing and Trusted Access for Cyber are controlled access programs giving major vendors early access to frontier AI models (Claude Mythos, GPT-5.5-Cyber) for vulnerability discovery. Vendors are racing to find and patch vulnerabilities before the same capabilities become available to attackers. The strategic window is 3–5 months.",
+      "attribution": "Defensive capability operated by major technology vendors to preempt attacker access"
     }
   ]
 }

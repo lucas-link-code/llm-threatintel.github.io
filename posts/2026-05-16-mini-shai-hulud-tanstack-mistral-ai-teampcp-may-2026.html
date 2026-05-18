@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning | LLM ThreatIntel</title>
+  <meta name="description" content="On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages — including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch — through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning">
+  <meta property="og:description" content="On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages — including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch — through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning">
+  <meta property="article:published_time" content="2026-05-16T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-16T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning">
+  <meta name="twitter:description" content="On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages — including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch — through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning",
+  "description": "On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages \u2014 including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch \u2014 through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance.",
+  "datePublished": "2026-05-16T00:00:00Z",
+  "dateModified": "2026-05-16T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-16</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning</h1>
+<p><strong>Date:</strong> 2026-05-16<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>On May 11, 2026, TeamPCP executed a fifth wave of their self-propagating Mini Shai-Hulud supply chain worm, compromising 170+ npm and PyPI packages — including TanStack, the Mistral AI Python SDK, Guardrails AI, UiPath, and OpenSearch — through a chained GitHub Actions exploit that extracted OIDC tokens without ever touching maintainer credentials. The 404 malicious package versions have a cumulative download count exceeding 518 million and represent the first documented case of malicious npm packages published with valid SLSA build provenance. Defenders should immediately audit CI environments for preinstall hooks invoking Bun, outbound connections to <code>git-tanstack.com</code>, <code>api.masscan.cloud</code>, and <code>filev2.getsession.org</code>, and lateral connections to <code>83.142.209.194</code>.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Mini Shai-Hulud Wave 5 / Shai-Hulud worm (TeamPCP)</td></tr><tr><td>Actor / Attribution</td><td>TeamPCP (attributed by StepSecurity, ReversingLabs, Wiz, OX Security — confidence: high)</td></tr><tr><td>Target</td><td>npm and PyPI consumers: developers, CI/CD pipelines, AI developers using TanStack, Mistral AI SDK, Guardrails AI</td></tr><tr><td>Vector</td><td>Chained GitHub Actions exploit: <code>pull_request_target</code> misconfiguration → GitHub Actions cache poisoning → OIDC token extraction from runner process memory</td></tr><tr><td>Status</td><td>Active; malicious versions removed from npm and PyPI registries as of May 12, 2026</td></tr><tr><td>First Observed</td><td>May 11, 2026, 19:20–19:26 UTC (initial @tanstack/* publishing window)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<h3>Attack Mechanics</h3>
+<p>According to StepSecurity&#x27;s incident analysis, the attacker opened a pull request targeting the TanStack/router repository that triggered TanStack&#x27;s <code>bundle-size.yml</code> workflow, which used the <code>pull_request_target</code> event trigger. This trigger grants workflows access to the base repository&#x27;s cache scope and a <code>GITHUB_TOKEN</code> with elevated permissions, even when the code originates from a fork. The attacker-controlled code in the PR exploited this to poison the GitHub Actions pnpm cache with a malicious store containing preinstall hooks.</p>
+<p>ReversingLabs and StepSecurity report that attacker-controlled binaries, injected via the poisoned cache, then extracted OIDC tokens directly from the GitHub Actions runner&#x27;s process memory (<code>/proc/&lt;pid&gt;/mem</code>). Using the extracted OIDC token, the attacker called npm&#x27;s publish endpoint via TanStack&#x27;s own trusted publishing identity, producing packages with valid provenance attestations. SecurityWeek confirmed this is the first documented instance of a malicious npm package carrying valid SLSA provenance — making it indistinguishable from a legitimate release using standard provenance verification.</p>
+<h3>Scope of Compromise</h3>
+<p>Between 19:20 and 19:26 UTC on May 11, 2026, 84 malicious npm artifacts were published across 42 packages in the <code>@tanstack</code> namespace. According to OX Security&#x27;s analysis, the worm subsequently propagated to packages owned by UiPath (<code>@uipath/<em></code>), OpenSearch (<code>@opensearch-project/</em></code>), and Squawk (<code>@squawk/*</code>), reaching 170+ total packages across 404 malicious versions.</p>
+<p>On the PyPI side, Safedep reported two malicious packages published independently of TanStack&#x27;s GitHub Actions pipeline, indicating a parallel attack track against PyPI maintainer accounts:<br>- <code>mistralai==2.4.6</code> (official Mistral AI Python SDK)<br>- <code>guardrails-ai==0.10.1</code> (Guardrails AI validation framework)</p>
+<p>The cumulative download count for all affected packages exceeds 518 million. <code>@tanstack/react-router</code> alone receives over 12.7 million weekly downloads.</p>
+<p>CVE-2026-45321 (CVSS 9.6) was assigned to the GitHub Actions OIDC token extraction component of the attack chain.</p>
+<h3>Malicious Payload Analysis</h3>
+<p>According to Phoenix Security&#x27;s technical dissection, each compromised npm package version included a <code>preinstall</code> script that:</p>
+<ol><li>Downloaded the Bun JavaScript runtime as a living-off-the-land binary (LOTL). Bun was chosen because it lacks the <code>--require</code> hook interception used by most Node.js security and monitoring tools.</li><li>Executed a 2.3 MB obfuscated payload (<code>router_init.js</code>) that swept the environment for CI secrets, cloud credentials, GitHub tokens, Kubernetes service account tokens, HashiCorp Vault secrets, cryptocurrency wallet files, and credentials for AI tools and messaging applications.</li><li>Installed a persistent <code>gh-token-monitor</code> daemon via macOS LaunchAgent or Linux systemd that polls GitHub every 60 seconds and attempts <code>rm -rf ~/</code> when token revocation is detected (when GitHub returns a 40x response).</li></ol>
+<p>For PyPI packages, Microsoft&#x27;s analysis found that <code>mistralai==2.4.6</code> contains malicious code inserted into <code>mistralai/client/__init__.py</code> that executes on every import, downloads a credential stealer payload from <code>83.142.209.194</code>, includes country-aware logic to avoid Russian-language environments, and incorporates a geofenced destructive branch with a 1-in-6 probability of executing <code>rm -rf /</code> on systems geolocated to Israel or Iran.</p>
+<p>Exfiltration uses three redundant channels, per Phoenix Security and ReversingLabs: the typosquat domain <code>git-tanstack[.]com</code>, the decentralized Session messenger network (via <code>filev2.getsession[.]org</code> seed nodes), and GitHub API dead drops where stolen tokens create Dune-themed repositories. Branch names in the dead-drop repositories are drawn exclusively from Frank Herbert&#x27;s Dune novel (atreides, cogitor, fedaykin, fremen, futar, gesserit, ghola, harkonnen, heighliner, kanly, kralizec, lasgun, etc.).</p>
+<h3>Campaign Attribution and Lineage</h3>
+<p>StepSecurity attributes this wave to TeamPCP, the same actor behind:<br>- Waves 1–3 of the Shai-Hulud worm (September and November 2025)<br>- The Aqua Security Trivy GitHub Actions compromise (March 2026)<br>- The Bitwarden CLI 2026.4.0 hijack targeting AI coding assistant credentials (April 22, 2026)<br>- Mini Shai-Hulud Wave 4 targeting SAP CAP packages and PyTorch Lightning (April 29–30, 2026)</p>
+<p>The consistent use of Bun as a LOTL binary, AES-256-GCM decryption dependent on <code>Bun.gunzipSync</code>, Dune-themed dead-drop repository branches, and Session messenger for C2 are signature characteristics across all TeamPCP waves.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>Poisoning npm and PyPI packages via GitHub Actions OIDC token theft</td></tr><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>GitHub Actions cache poisoning to inject malicious preinstall hooks into legitimate release pipeline</td></tr><tr><td>JavaScript/JScript</td><td>T1059.007</td><td>Bun runtime used to execute obfuscated router_init.js payload, evading Node.js security hooks</td></tr><tr><td>Credentials In Files</td><td>T1552.001</td><td>Sweeping CI environment variables, cloud credential files, Kubernetes tokens, Vault secrets</td></tr><tr><td>Exfiltration Over C2 Channel</td><td>T1041</td><td>Triple-channel exfiltration via git-tanstack.com, Session messenger, and GitHub API dead drops</td></tr><tr><td>Data Destruction</td><td>T1485</td><td>rm -rf ~/ triggered on developer machines; rm -rf / on geofenced Israel/Iran systems</td></tr><tr><td>Create or Modify System Process: Launch Agent</td><td>T1543.001</td><td>macOS LaunchAgent for gh-token-monitor persistence</td></tr><tr><td>Create or Modify System Process: Systemd Service</td><td>T1543.002</td><td>Linux systemd service for gh-token-monitor persistence</td></tr><tr><td>Stage Capabilities: Upload Tool</td><td>T1608.002</td><td>Worm self-republishes using stolen npm tokens from compromised developers</td></tr><tr><td>Valid Accounts</td><td>T1078</td><td>Stolen GitHub Actions OIDC token used to publish under legitimate TanStack publishing identity</td></tr><tr><td>Exfiltration to Code Repository</td><td>T1567.002</td><td>GitHub API dead drops using stolen tokens for exfiltrated credential staging</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">git-tanstack.com
+api.masscan.cloud
+filev2.getsession.org</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">git-tanstack.com/tmp/transformers.pyz
+83.142.209.194</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;git-tanstack.com&quot; OR &quot;api.masscan.cloud&quot; OR &quot;filev2.getsession.org&quot; OR &quot;83.142.209.194&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No file hash IOCs published by sources as of 2026-05-16</code></pre>
+<h3>Malicious Package Versions</h3>
+<pre><code class="language-">pypi:mistralai@2.4.6
+pypi:guardrails-ai@0.10.1
+npm:@tanstack/* (42 packages, see StepSecurity advisory for full list)</code></pre>
+<h2>Detection Recommendations</h2>
+<p><strong>npm/PyPI audit:</strong> Check <code>package.json</code> <code>preinstall</code> scripts across all dependencies for invocations of <code>bun</code>, <code>bun run</code>, or <code>router_init.js</code>. Lock files installed from <code>mistralai==2.4.6</code> or <code>guardrails-ai==0.10.1</code> should be treated as compromised.</p>
+<p><strong>CI/CD pipeline review:</strong> Audit all GitHub Actions workflows using <code>pull_request_target</code> for untrusted code checkout patterns. The StepSecurity Harden-Runner GitHub Action flags anomalous OIDC token usage and cache write operations from fork-controlled code.</p>
+<p><strong>Network detection (web proxy/DNS):</strong> Alert on outbound DNS queries or HTTP connections to <code>git-tanstack.com</code>, <code>api.masscan.cloud</code>, and <code>filev2.getsession.org</code>. Alert on any process making HTTP requests to <code>83.142.209.194</code>.</p>
+<p><strong>EDR process creation:</strong> Alert on <code>node</code> or <code>bun</code> processes spawned from npm <code>preinstall</code> lifecycle scripts, particularly when followed by outbound network connections. Alert on <code>systemctl enable</code> or LaunchAgent plist creation from npm scripts.</p>
+<p><strong>Credential rotation:</strong> Any environment that installed an affected <code>@tanstack/*</code>, <code>mistralai</code>, or <code>guardrails-ai</code> version between May 11–12, 2026 should treat all CI secrets, GitHub tokens, AWS/GCP/Azure credentials, Kubernetes service account tokens, and Vault secrets as compromised and rotate immediately.</p>
+<p><strong>GitHub dead drop detection:</strong> Monitor organization repositories for new repositories with Dune-themed branch names (fremen, harkonnen, sardaukar, etc.) created by automated token use — these are exfiltration staging artifacts.</p>
+<h2>References</h2>
+<ul><li>[StepSecurity] TeamPCP&#x27;s Mini Shai-Hulud Is Back: A Self-Spreading Supply Chain Attack Compromises TanStack npm Packages (2026-05-12) — https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem</li><li>[ReversingLabs] Team PCP&#x27;s Mini Shai-Hulud tears at open-source trust (2026-05-12) — https://www.reversinglabs.com/blog/mini-shai-hulud-tears-at-oss-trust</li><li>[Wiz] Mini Shai-Hulud Strikes Again: TanStack + more npm Packages Compromised (2026-05-12) — https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised</li><li>[SecurityWeek] TanStack, Mistral AI, UiPath Hit in Fresh Supply Chain Attack (2026-05-12) — https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/</li><li>[The Hacker News] Mini Shai-Hulud Worm Compromises TanStack, Mistral AI, Guardrails AI &amp; More Packages (2026-05-12) — https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html</li><li>[OX Security] &quot;Shai-Hulud&quot; Malware Hits 170+ npm &amp; PyPi Packages (2026-05-12) — https://www.ox.security/blog/shai-hulud-here-we-go-again-170-packages-hit-across-npm-pypi/</li><li>[Orca Security] TanStack and 160+ npm/PyPI Packages Compromised in Supply Chain Worm Attack (2026-05-12) — https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/</li><li>[Safedep] Mass Supply Chain Attack Hits TanStack, Mistral AI npm and PyPI Packages (2026-05-12) — https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/</li><li>[Snyk] TanStack npm Packages Hit by Mini Shai-Hulud (2026-05-12) — https://snyk.io/blog/tanstack-npm-packages-compromised/</li><li>[Phoenix Security] Mini Shai-Hulud: TeamPCP&#x27;s Self-Propagating npm Worm Hits TanStack, OpenSearch, and Mistral AI Across 170 Packages (2026-05-13) — https://phoenix.security/mini-shai-hulud-teampcp-tanstack/</li><li>[The Register] Cache-poisoning caper turns TanStack npm packages toxic (2026-05-12) — https://www.theregister.com/cyber-crime/2026/05/12/cache-poisoning-caper-turns-tanstack-npm-packages-toxic/5238650</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
