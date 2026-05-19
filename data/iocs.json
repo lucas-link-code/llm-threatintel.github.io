@@ -1199,33 +1199,6 @@
       "status": "active"
     },
     {
-      "value": "claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)",
-      "type": "url_path",
-      "context": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
-      "first_seen": "2026-05-06",
-      "source": "Oasis Security",
-      "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
-      "status": "active"
-    },
-    {
-      "value": "claude.com/redirect/ (open redirect flaw, any URL parameter)",
-      "type": "url_path",
-      "context": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
-      "first_seen": "2026-05-06",
-      "source": "Oasis Security",
-      "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
-      "status": "active"
-    },
-    {
-      "value": "api.anthropic.com/v1/files (Files API used for exfiltration)",
-      "type": "url_path",
-      "context": "Claudy Day Update: Oasis Security Documents Complete Prompt Injection → Data Exfiltration Attack Chain Against Default Claude.ai Sessions",
-      "first_seen": "2026-05-06",
-      "source": "Oasis Security",
-      "campaign": "claudy-day-oasis-prompt-injection-claude-ai",
-      "status": "active"
-    },
-    {
       "value": "langflow (all versions)",
       "type": "package",
       "context": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
@@ -1565,24 +1538,6 @@
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "claude.ai",
-      "type": "domain",
-      "context": "Attackers Abuse Google Ads and Claude.ai Shared Chats for macOS Malware Distribution—Active Malvertising Campaign Exploits AI Platform Trust",
-      "first_seen": "2026-05-16",
-      "source": "Bleeping Computer",
-      "campaign": "google-ads-claude-ai-shared-chat-macos-malware-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "claude.ai/share",
-      "type": "url_path",
-      "context": "Attack vector: malvertising delivers macOS malware instructions via legitimate claude.ai shared chat URLs, bypassing domain-based detection",
-      "first_seen": "2026-05-16",
-      "source": "Bleeping Computer",
-      "campaign": "google-ads-claude-ai-shared-chat-macos-malware-may-2026",
       "status": "active"
     },
     {
