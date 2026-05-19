@@ -102,10 +102,68 @@
       "352,000+ unsafe/suspicious Hugging Face models"
     ],
     "url_path": [
-      "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
-      "claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)",
-      "claude.com/redirect/ (open redirect flaw, any URL parameter)",
-      "api.anthropic.com/v1/files (Files API used for exfiltration)"
+      "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)"
     ]
-  }
+  },
+  "legitimate_platform_iocs_deny_list": {
+    "_comment": "IOC values that match these entries (case-insensitive, after normalisation) hard-fail validation. The match is on the bare platform — specific malicious subdomains or URLs containing an attacker-controlled identifier (e.g. claude.ai/share/Xy7AbC9KqM) are NOT blocked. To allow a genuine compromise of one of these platforms, add the specific normalized value to legitimate_platform_ioc_overrides below. See PR #9 for the cleanup that motivated this rule.",
+    "domains": [
+      "claude.ai",
+      "claude.com",
+      "anthropic.com",
+      "api.anthropic.com",
+      "openai.com",
+      "chatgpt.com",
+      "chat.openai.com",
+      "api.openai.com",
+      "gemini.google.com",
+      "ai.google.dev",
+      "aistudio.google.com",
+      "grok.com",
+      "x.ai",
+      "api.x.ai",
+      "huggingface.co",
+      "hf.co",
+      "mistral.ai",
+      "api.mistral.ai",
+      "chat.mistral.ai",
+      "cohere.com",
+      "api.cohere.com",
+      "replicate.com",
+      "api.replicate.com",
+      "perplexity.ai",
+      "api.perplexity.ai",
+      "www.perplexity.ai",
+      "together.xyz",
+      "together.ai",
+      "api.together.xyz",
+      "api.together.ai",
+      "cursor.sh",
+      "cursor.com",
+      "windsurf.ai",
+      "codeium.com",
+      "copilot.github.com",
+      "ollama.com",
+      "lmstudio.ai",
+      "poe.com"
+    ],
+    "url_paths": [
+      "claude.ai/share",
+      "claude.ai/new",
+      "claude.ai/chat",
+      "claude.com/redirect",
+      "api.anthropic.com/v1/files",
+      "api.anthropic.com/v1/messages",
+      "chatgpt.com/share",
+      "chat.openai.com/share",
+      "api.openai.com/v1/chat/completions",
+      "gemini.google.com/share",
+      "gemini.google.com/app",
+      "grok.com/share",
+      "huggingface.co/models",
+      "huggingface.co/datasets",
+      "huggingface.co/spaces"
+    ]
+  },
+  "legitimate_platform_ioc_overrides": []
 }

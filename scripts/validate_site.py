@@ -113,6 +113,8 @@ DEFAULT_POLICY = {
     "url_redirect_limit": 5,
     "allow_url_path_scheme": True,
     "legacy_ioc_format_exceptions": {},
+    "legitimate_platform_iocs_deny_list": {"domains": [], "url_paths": []},
+    "legitimate_platform_ioc_overrides": [],
 }
 
 
@@ -527,6 +529,7 @@ class Validator:
 
             if value and ioc_type in allowed_types:
                 self.validate_ioc_value(value, ioc_type, rel_path, record)
+                self.validate_ioc_not_legitimate_platform(value, ioc_type, rel_path, record)
 
             source = str(ioc.get("source", "")).strip()
             if source in set(self.policy.get("weak_source_labels", [])):
@@ -617,6 +620,68 @@ class Validator:
         elif ioc_type == "package":
             if any(ch.isspace() for ch in value) or not PACKAGE_RE.match(value):
                 self.fail("ioc-package-format", f"invalid package IOC: {value}", file, record)
+
+    def normalize_for_platform_check(self, value: str) -> str:
+        """Normalize an IOC value for matching against the legitimate-platform deny list.
+
+        Strips: descriptive parentheticals, scheme, www., query strings whose
+        value contains a [PLACEHOLDER]-style token, and trailing slashes.
+        Returns the lowercased remainder.
+        """
+        if not value:
+            return ""
+        v = re.sub(r"\s*\([^)]*\)\s*$", "", value).strip()
+        v = v.lower()
+        v = re.sub(r"^https?://", "", v)
+        v = re.sub(r"^www\.", "", v)
+        v = re.sub(r"\?[^=&]*=\[[^\]]*\].*$", "", v)
+        v = v.rstrip("/")
+        return v
+
+    def validate_ioc_not_legitimate_platform(self, value: str, ioc_type: str, file: str, record: str) -> None:
+        """Hard-fail if an IOC names a legitimate AI vendor platform.
+
+        The match is exact (after normalisation), not prefix. A specific
+        malicious URL containing an attacker-controlled identifier — e.g.
+        claude.ai/share/Xy7AbC9KqM — will normalise to itself, not match
+        the bare 'claude.ai/share' entry in the deny list, and pass.
+        To allow a genuine compromise of one of these platforms, add the
+        normalised value to legitimate_platform_ioc_overrides in
+        validation/policy.json.
+        """
+        if ioc_type not in {"domain", "url_path"}:
+            return
+        deny = self.policy.get("legitimate_platform_iocs_deny_list", {}) or {}
+        deny_domains = {str(d).lower() for d in deny.get("domains", [])}
+        deny_url_paths = {str(p).lower() for p in deny.get("url_paths", [])}
+        overrides = {str(o).lower() for o in self.policy.get("legitimate_platform_ioc_overrides", [])}
+
+        normalised = self.normalize_for_platform_check(value)
+        if not normalised or normalised in overrides:
+            return
+
+        if ioc_type == "domain":
+            if normalised in deny_domains:
+                self.fail(
+                    "ioc-legitimate-platform",
+                    f"IOC names a legitimate AI vendor platform domain (bare domains are not indicators; "
+                    f"document the abuse in prose / Detection Recommendations instead, or add an explicit "
+                    f"entry to legitimate_platform_ioc_overrides if this is a confirmed compromise of the "
+                    f"platform itself): {value}",
+                    file,
+                    record,
+                )
+        elif ioc_type == "url_path":
+            if normalised in deny_domains or normalised in deny_url_paths:
+                self.fail(
+                    "ioc-legitimate-platform",
+                    f"IOC names a legitimate AI vendor platform endpoint or generic feature path (only "
+                    f"URLs containing a specific attacker-controlled identifier qualify as indicators; "
+                    f"add an explicit entry to legitimate_platform_ioc_overrides if this is a confirmed "
+                    f"compromise of the platform itself): {value}",
+                    file,
+                    record,
+                )
 
     def validate_url_path_ioc(self, value: str, file: str, record: str) -> None:
         if any(ch.isspace() for ch in value):
