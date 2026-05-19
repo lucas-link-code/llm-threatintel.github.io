@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
+      "title": "CVE-2026-44338: PraisonAI Legacy Flask API Authentication Bypass — Scanner Probed Vulnerable /agents Endpoint 3 Hours 44 Minutes After GitHub Advisory",
+      "date": "2026-05-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "GitHub published advisory GHSA-6rmh-7xcm-cpxj (CVE-2026-44338, CVSS 7.3) on May 11, 2026, disclosing an unauthenticated authentication bypass in PraisonAI's legacy Flask API server affecting versions 2.5.6 through 4.6.33; the fix is in 4.6.34. PraisonAI's src/praisonai/api_server.py hard-codes AUTH_ENABLED = False and binds to 0.0.0.0:8080 when launched directly, so any reachable caller can hit GET /agents and POST /chat without a token. Sysdig observed a probe identifying itself as User-Agent CVE-Detector/1.0 hitting the vulnerable /agents route at 17:40 UTC the same day — three hours and forty-four minutes after the advisory went live at 13:56 UTC.",
+      "file": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.md"
+    },
+    {
+      "id": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "title": "Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling",
+      "date": "2026-05-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Akamai's Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud's alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure.",
+      "file": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.md"
+    },
+    {
       "id": "2026-05-19-cve-2026-42208-litellm-sql-injection",
       "title": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation",
       "date": "2026-05-19",

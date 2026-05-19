@@ -2,6 +2,58 @@
   "last_updated": "2026-05-19",
   "entries": [
     {
+      "id": "cve-2026-44338-praisonai-auth-bypass",
+      "names": [
+        "CVE-2026-44338",
+        "PraisonAI Legacy Flask API Auth Bypass",
+        "PraisonAI api_server.py Unauthenticated /agents and /chat"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05-11",
+      "status": "active",
+      "distribution": [
+        "PraisonAI legacy Flask API server (src/praisonai/api_server.py) launched directly, binding to 0.0.0.0:8080 with AUTH_ENABLED=False",
+        "Internet-exposed PraisonAI deployments enumerated by mass scanners using User-Agent CVE-Detector/1.0",
+        "Internal corporate networks where PraisonAI agent hosts are reachable from untrusted segments",
+        "Affected PyPI package praisonai versions 2.5.6 through 4.6.33; fixed in 4.6.34"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application (unauthenticated /agents and /chat Flask routes)",
+        "T1595.002 - Active Scanning: Vulnerability Scanning (CVE-Detector/1.0 scanner probing /agents within hours of advisory)",
+        "T1133 - External Remote Services (api_server.py default 0.0.0.0:8080 bind)",
+        "T1548 - Abuse Elevation Control Mechanism (check_auth() returns True when AUTH_ENABLED is False)",
+        "T1059 - Command and Scripting Interpreter (downstream: agents.yaml workflow executes shell or MCP tools when /chat is invoked)"
+      ],
+      "description": "CVE-2026-44338 (CVSS 7.3, CWE-306/668/1188) disclosed in GitHub Security Advisory GHSA-6rmh-7xcm-cpxj on May 11, 2026 at 13:56 UTC. PraisonAI is an open-source multi-agent orchestration framework (~7,100 GitHub stars) whose legacy Flask API server src/praisonai/api_server.py hard-codes AUTH_ENABLED=False and AUTH_TOKEN=None. The check_auth() helper returns True unconditionally when authentication is disabled, so the two routes labelled as protected fail open: GET /agents returns the configured agent metadata (agent_file name and the list of agents), POST /chat accepts a JSON body with a message key and executes PraisonAI(agent_file=agents.yaml).run(). When launched directly, the server binds to 0.0.0.0:8080. Sysdig's runtime telemetry recorded the first probe at 17:40 UTC the same day (3h44m after advisory publication) — a GET /agents request with no Authorization header and User-Agent CVE-Detector/1.0 returning 200 OK with body {agent_file:agents.yaml, agents:[...]}. Vulnerability discovered and reported by Shmulik Cohen. Fixed in PraisonAI 4.6.34. Distinct from the earlier April 13, 2026 PraisonAIAgents SSRF advisory (CVE-2026-40160) in the web_crawl module of the same project.",
+      "attribution": "Vulnerability research by Shmulik Cohen; opportunistic mass scanning observed by Sysdig Threat Research Team using scanner User-Agent CVE-Detector/1.0; no named threat actor"
+    },
+    {
+      "id": "akamai-mcp-backend-vulns-doris-pinot-alibaba-rds",
+      "names": [
+        "Akamai MCP Back-End Vulnerability Cluster",
+        "Apache Doris MCP CVE-2025-66335",
+        "Apache Pinot MCP Auth Bypass",
+        "Alibaba Cloud RDS OpenAPI MCP Info Disclosure"
+      ],
+      "type": "malicious-tool",
+      "first_seen": "2026-05-13",
+      "status": "active",
+      "distribution": [
+        "PyPI package doris-mcp-server versions 0.1.0 through 0.6.0 (CVE-2025-66335, patched in 0.6.1)",
+        "GitHub repository startreedata/mcp-pinot v1.1.0 and earlier (HTTP transport unauthenticated; OAuth added as optional)",
+        "PyPI package alibabacloud-rds-openapi-mcp-server and github.com/aliyun/alibabacloud-rds-openapi-mcp-server (no patch; Alibaba declined; CERT/CC notified)",
+        "Any AI agent host running these MCP servers and reachable from a non-loopback interface"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application (HTTP/SSE MCP endpoints invoked without authentication)",
+        "T1210 - Exploitation of Remote Services (cross-host MCP tool invocation)",
+        "T1213 - Data from Information Repositories (vector index metadata exfiltrated via Alibaba RDS MCP unauthenticated RAG tool)",
+        "T1078 - Valid Accounts (database engine ACLs bypassed because MCP layer authenticates as a privileged service account rather than per-caller)"
+      ],
+      "description": "Cross-database vulnerability cluster disclosed by Akamai Security Intelligence Group on May 13, 2026 in the research post 'One Is a Fluke, 3 Is a Pattern: MCP Back-End Vulnerabilities'. Three independent MCP server implementations published by database vendors share the same root cause: the MCP transport is treated as inherently trusted and tool routes either skip authentication or concatenate caller-supplied parameters into the engine's query language. Apache Doris MCP (CVE-2025-66335, CVSS 5.3, GHSA-qhfq-gvvc-5q6q) — exec_query concatenates the db_name parameter into the SQL statement; patched in doris-mcp-server 0.6.1. Apache Pinot MCP (StarTree mcp-pinot v1.1.0 and earlier) — HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full database takeover when externally reachable; StarTree added OAuth as an optional HTTP authenticator. Alibaba Cloud RDS MCP (alibabacloud-rds-openapi-mcp-server) — RAG tool serves vector-index contents (table names, schemas) without authenticating the caller; Alibaba categorised the issue as 'not applicable' for a fix; Akamai escalated to CERT/CC. Full research and discovery tool to be presented at x33fcon, June 2026.",
+      "attribution": "Vulnerability research by Akamai Security Intelligence Group; no in-the-wild exploitation reported as of disclosure"
+    },
+    {
       "id": "comment-and-control-github-prompt-injection",
       "names": [
         "Comment and Control",

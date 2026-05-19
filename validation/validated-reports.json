@@ -1950,6 +1950,29 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds": {
+      "content_hash": "27f8766ae4df9036aabf777c4272215066078ffaa20bac2cd3746afb2705475b",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.md",
+      "posts_index_hash": "1b01b06497ae54af256e0c8b06fb6b27365e5a1c3170d1af2fde989e519dcb36",
+      "report_id": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "review_required": [
+        "4 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities",
+        "https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916",
+        "https://github.com/advisories/GHSA-qhfq-gvvc-5q6q",
+        "https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66335",
+        "https://github.com/startreedata/mcp-pinot",
+        "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T12:05:47+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-05-19-cve-2026-42208-litellm-sql-injection": {
       "content_hash": "c1d90d3a2f0cfca65d81591eee143138db4615b90039d87dbc62f1d8263f2583",
       "evidence_status": "validated",
@@ -1963,6 +1986,28 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-05-19T07:53:19+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation": {
+      "content_hash": "7f1e0c1247d25071b6d9e36125db0dd8dcac55b387231656d45bed3dd76cda19",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.md",
+      "posts_index_hash": "d00d818b8ab20576126df4bd9439b75bb2d7b1f24edad480a89802d7f9a742be",
+      "report_id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
+      "review_required": [
+        "5 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-6rmh-7xcm-cpxj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44338",
+        "https://www.sysdig.com/blog/cve-2026-44338-praisonai-authentication-bypass-in-under-4-hours-and-the-growing-trend-of-rapid-exploitation",
+        "https://thehackernews.com/2026/05/praisonai-cve-2026-44338-auth-bypass.html",
+        "https://www.securityweek.com/hackers-targeted-praisonai-vulnerability-hours-after-disclosure/",
+        "https://www.csoonline.com/article/4171215/praisonai-vulnerability-gets-scanned-within-4-hours-of-disclosure.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T12:05:44+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },

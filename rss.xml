@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 19 May 2026 07:53:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 12:05:33 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-44338: PraisonAI Legacy Flask API Authentication Bypass — Scanner Probed Vulnerable /agents Endpoint 3 Hours 44 Minutes After GitHub Advisory</title>
+      <link>https://llm-threatintel.com/posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <description>GitHub published advisory GHSA-6rmh-7xcm-cpxj (CVE-2026-44338, CVSS 7.3) on May 11, 2026, disclosing an unauthenticated authentication bypass in PraisonAI's legacy Flask API server affecting versions 2.5.6 through 4.6.33; the fix is in 4.6.34. PraisonAI's src/praisonai/api_server.py hard-codes AUTH_ENABLED = False and binds to 0.0.0.0:8080 when launched directly, so any reachable caller can hit GET /agents and POST /chat without a token. Sysdig observed a probe identifying itself as User-Agent CVE-Detector/1.0 hitting the vulnerable /agents route at 17:40 UTC the same day — three hours and forty-four minutes after the advisory went live at 13:56 UTC.</description>
+    </item>    <item>
+      <title>Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling</title>
+      <link>https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <description>Akamai's Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud's alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure.</description>
+    </item>    <item>
       <title>CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation</title>
       <link>https://llm-threatintel.com/posts/2026-05-19-cve-2026-42208-litellm-sql-injection.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-19-cve-2026-42208-litellm-sql-injection.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-13-google-ai-zero-day-discovery-criminal-llm-exploit.html</guid>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
       <description>Google's Threat Intelligence Group identified the first known case of an attacker using AI to discover and weaponize a zero-day vulnerability, and stopped the planned mass attack. The 2FA bypass vulnerability stems from a high-level semantic logic flaw arising as a result of a hard-coded trust assumption, something LLMs excel at spotting. This represents a critical inflection point: AI-assisted vulnerability discovery is now operationalized for criminal mass exploitation.</description>
-    </item>    <item>
-      <title>Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal</title>
-      <link>https://llm-threatintel.com/posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <description>A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed, raising fresh concerns about how enterprises source and validate AI models from public repositories. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.</description>
-    </item>    <item>
-      <title>Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <description>Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn't enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.</description>
     </item>
   </channel>
 </rss>
