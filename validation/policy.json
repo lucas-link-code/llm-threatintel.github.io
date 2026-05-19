@@ -82,6 +82,7 @@
       "chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
       "LiteLLM <1.83.7",
       "litellm>=1.81.16,<1.83.7",
+      "litellm (versions 1.81.16 to 1.83.6)",
       "@solana-launchpad/sdk (bait package, no malicious code)",
       "@validate-sdk/v2 (payload, infostealer)",
       "@hash-validator/v2 (early variant, JavaScript infostealer)",
@@ -95,7 +96,9 @@
       "semantic-kernel<1.71.0 (.NET)",
       "huggingface:Open-OSS/privacy-filter",
       "Open-OSS/privacy-filter (Hugging Face)",
+      "Open-OSS/privacy-filter (Hugging Face repository)",
       "575+ trojanized OpenClaw agent skills",
+      "OpenClaw ClawHub malicious skills (575 identified)",
       "352,000+ unsafe/suspicious Hugging Face models"
     ],
     "url_path": [
