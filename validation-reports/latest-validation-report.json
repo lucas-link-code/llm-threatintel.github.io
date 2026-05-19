@@ -1,5 +1,5 @@
 {
-  "commit_sha": "6fa4835bcb3af92ce6c0ce5d04f900c7d6d7f1bc",
+  "commit_sha": "f07468520ed7",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -78,7 +78,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-19T07:53:24+00:00",
+  "generated_at_utc": "2026-05-19T12:05:48+00:00",
   "hard_failures": 3,
   "issues": [
     {
@@ -142,7 +142,7 @@
       "file": "data/iocs.json",
       "message": "IOC has weak source label: OSINT",
       "recommendation": "",
-      "record_id": "55",
+      "record_id": "59",
       "severity": "warn"
     },
     {
@@ -150,7 +150,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/automagik-genie",
       "recommendation": "",
-      "record_id": "110",
+      "record_id": "114",
       "severity": "warn"
     },
     {
@@ -158,7 +158,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/pgserve",
       "recommendation": "",
-      "record_id": "111",
+      "record_id": "115",
       "severity": "warn"
     },
     {
@@ -166,7 +166,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.0",
       "recommendation": "",
-      "record_id": "113",
+      "record_id": "117",
       "severity": "warn"
     },
     {
@@ -174,7 +174,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.1",
       "recommendation": "",
-      "record_id": "114",
+      "record_id": "118",
       "severity": "warn"
     },
     {
@@ -182,7 +182,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.2",
       "recommendation": "",
-      "record_id": "115",
+      "record_id": "119",
       "severity": "warn"
     },
     {
@@ -190,7 +190,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
       "recommendation": "",
-      "record_id": "116",
+      "record_id": "120",
       "severity": "warn"
     },
     {
@@ -198,7 +198,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
       "recommendation": "",
-      "record_id": "117",
+      "record_id": "121",
       "severity": "warn"
     },
     {
@@ -206,7 +206,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: LiteLLM <1.83.7",
       "recommendation": "",
-      "record_id": "120",
+      "record_id": "124",
       "severity": "warn"
     },
     {
@@ -214,7 +214,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
       "recommendation": "",
-      "record_id": "121",
+      "record_id": "125",
       "severity": "warn"
     },
     {
@@ -222,7 +222,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)",
       "recommendation": "",
-      "record_id": "122",
+      "record_id": "126",
       "severity": "warn"
     },
     {
@@ -230,7 +230,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)",
       "recommendation": "",
-      "record_id": "123",
+      "record_id": "127",
       "severity": "warn"
     },
     {
@@ -238,7 +238,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)",
       "recommendation": "",
-      "record_id": "124",
+      "record_id": "128",
       "severity": "warn"
     },
     {
@@ -246,7 +246,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "125",
+      "record_id": "129",
       "severity": "warn"
     },
     {
@@ -254,7 +254,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)",
       "recommendation": "",
-      "record_id": "126",
+      "record_id": "130",
       "severity": "warn"
     },
     {
@@ -262,7 +262,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "127",
+      "record_id": "131",
       "severity": "warn"
     },
     {
@@ -270,7 +270,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)",
       "recommendation": "",
-      "record_id": "128",
+      "record_id": "132",
       "severity": "warn"
     },
     {
@@ -278,7 +278,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)",
       "recommendation": "",
-      "record_id": "129",
+      "record_id": "133",
       "severity": "warn"
     },
     {
@@ -286,7 +286,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: claude.com/redirect/ (open redirect flaw, any URL parameter)",
       "recommendation": "",
-      "record_id": "130",
+      "record_id": "134",
       "severity": "warn"
     },
     {
@@ -294,7 +294,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: api.anthropic.com/v1/files (Files API used for exfiltration)",
       "recommendation": "",
-      "record_id": "131",
+      "record_id": "135",
       "severity": "warn"
     },
     {
@@ -302,7 +302,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: langflow (all versions)",
       "recommendation": "",
-      "record_id": "132",
+      "record_id": "136",
       "severity": "warn"
     },
     {
@@ -310,7 +310,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
       "recommendation": "",
-      "record_id": "139",
+      "record_id": "143",
       "severity": "warn"
     },
     {
@@ -318,7 +318,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
       "recommendation": "",
-      "record_id": "140",
+      "record_id": "144",
       "severity": "warn"
     },
     {
@@ -326,7 +326,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
       "recommendation": "",
-      "record_id": "141",
+      "record_id": "145",
       "severity": "warn"
     },
     {
@@ -334,7 +334,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
       "recommendation": "",
-      "record_id": "151",
+      "record_id": "155",
       "severity": "warn"
     },
     {
@@ -342,7 +342,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7",
       "recommendation": "",
-      "record_id": "155",
+      "record_id": "159",
       "severity": "warn"
     },
     {
@@ -350,7 +350,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)",
       "recommendation": "",
-      "record_id": "157",
+      "record_id": "161",
       "severity": "warn"
     },
     {
@@ -358,7 +358,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills",
       "recommendation": "",
-      "record_id": "158",
+      "record_id": "162",
       "severity": "warn"
     },
     {
@@ -366,7 +366,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models",
       "recommendation": "",
-      "record_id": "159",
+      "record_id": "163",
       "severity": "warn"
     },
     {
@@ -374,7 +374,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)",
       "recommendation": "",
-      "record_id": "160",
+      "record_id": "164",
       "severity": "warn"
     },
     {
@@ -382,7 +382,7 @@
       "file": "data/iocs.json",
       "message": "invalid package IOC: Open-OSS/privacy-filter (Hugging Face repository)",
       "recommendation": "",
-      "record_id": "180",
+      "record_id": "184",
       "severity": "fail"
     },
     {
@@ -390,7 +390,7 @@
       "file": "data/iocs.json",
       "message": "invalid package IOC: OpenClaw ClawHub malicious skills (575 identified)",
       "recommendation": "",
-      "record_id": "181",
+      "record_id": "185",
       "severity": "fail"
     },
     {
@@ -398,7 +398,7 @@
       "file": "data/iocs.json",
       "message": "invalid package IOC: litellm (versions 1.81.16 to 1.83.6)",
       "recommendation": "",
-      "record_id": "182",
+      "record_id": "186",
       "severity": "fail"
     },
     {
@@ -443,26 +443,18 @@
     },
     {
       "code": "evidence-url-review",
-      "file": "posts/2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer.md",
-      "message": "1 source URL(s) require review",
+      "file": "posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.md",
+      "message": "5 source URL(s) require review",
       "recommendation": "",
-      "record_id": "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer",
+      "record_id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
       "severity": "review"
     },
     {
       "code": "evidence-url-review",
-      "file": "posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.md",
-      "message": "2 source URL(s) require review",
+      "file": "posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.md",
+      "message": "4 source URL(s) require review",
       "recommendation": "",
-      "record_id": "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-05-17-openai-tanstack-supply-chain-breach-may-2026",
+      "record_id": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
       "severity": "review"
     },
     {
@@ -478,145 +470,103 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "fail",
-  "reports_checked": 6,
-  "reports_newly_validated": 5,
-  "reports_skipped": 101,
-  "review_required": 4,
-  "source_urls_checked": 20,
-  "state_updates": 5,
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 106,
+  "review_required": 3,
+  "source_urls_checked": 14,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.cve.news/cve-2026-42208/",
+      "final_url": "https://github.com/advisories/GHSA-6rmh-7xcm-cpxj",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.cve.news/cve-2026-42208"
-    },
-    {
-      "error": "",
-      "final_url": "https://cybersecurefox.com/en/litellm-cve-2026-42208-sql-injection-ai-gateway/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecurefox.com/en/litellm-cve-2026-42208-sql-injection-ai-gateway"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.acronis.com/en/tru/posts/poisoning-the-well-ai-supply-chain-attacks-on-hugging-face-and-openclaw/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.acronis.com/en/tru/posts/poisoning-the-well-ai-supply-chain-attacks-on-hugging-face-and-openclaw"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter"
+      "url": "https://github.com/advisories/GHSA-6rmh-7xcm-cpxj"
     },
     {
       "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://winbuzzer.com/2026/05/11/fake-openai-repository-on-hugging-face-pushes-info-xcxwbn",
+      "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44338",
       "http_status": 403,
       "status": "blocked",
-      "url": "https://winbuzzer.com/2026/05/11/fake-openai-repository-on-hugging-face-pushes-info-xcxwbn"
-    },
-    {
-      "error": "",
-      "final_url": "https://oddguan.com/blog/comment-and-control-prompt-injection-credential-theft-claude-code-gemini-cli-github-copilot/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://oddguan.com/blog/comment-and-control-prompt-injection-credential-theft-claude-code-gemini-cli-github-copilot/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/"
-    },
-    {
-      "error": "HTTP Error 429: Too Many Requests",
-      "final_url": "https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026",
-      "http_status": 429,
-      "status": "rate_limited",
-      "url": "https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026"
-    },
-    {
-      "error": "",
-      "final_url": "https://thenextweb.com/news/ai-agents-hijacked-prompt-injection-bug-bounties-no-cve",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thenextweb.com/news/ai-agents-hijacked-prompt-injection-bug-bounties-no-cve"
-    },
-    {
-      "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-comment-control-github-prompt-injection-20/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-comment-control-github-prompt-injection-20/"
-    },
-    {
-      "error": "",
-      "final_url": "https://repello.ai/blog/comment-and-control-claude-code-gemini-copilot-prompt-injection",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://repello.ai/blog/comment-and-control-claude-code-gemini-copilot-prompt-injection"
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44338"
     },
     {
       "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://gbhackers.com/claude-code-gemini-cli-and-github-copilot-exposed/",
+      "final_url": "https://www.sysdig.com/blog/cve-2026-44338-praisonai-authentication-bypass-in-under-4-hours-and-the-growing-trend-of-rapid-exploitation",
       "http_status": 403,
       "status": "blocked",
-      "url": "https://gbhackers.com/claude-code-gemini-cli-and-github-copilot-exposed/"
+      "url": "https://www.sysdig.com/blog/cve-2026-44338-praisonai-authentication-bypass-in-under-4-hours-and-the-growing-trend-of-rapid-exploitation"
     },
     {
       "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/",
+      "final_url": "https://thehackernews.com/2026/05/praisonai-cve-2026-44338-auth-bypass.html",
       "http_status": 403,
       "status": "blocked",
-      "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/"
+      "url": "https://thehackernews.com/2026/05/praisonai-cve-2026-44338-auth-bypass.html"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.securityweek.com/hackers-targeted-praisonai-vulnerability-hours-after-disclosure/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.securityweek.com/hackers-targeted-praisonai-vulnerability-hours-after-disclosure/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.csoonline.com/article/4171215/praisonai-vulnerability-gets-scanned-within-4-hours-of-disclosure.html",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.csoonline.com/article/4171215/praisonai-vulnerability-gets-scanned-within-4-hours-of-disclosure.html"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916"
     },
     {
       "error": "",
-      "final_url": "https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/",
+      "final_url": "https://github.com/advisories/GHSA-qhfq-gvvc-5q6q",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/"
+      "url": "https://github.com/advisories/GHSA-qhfq-gvvc-5q6q"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66335",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66335"
     },
     {
       "error": "",
-      "final_url": "https://www.theregister.com/security/2026/05/15/openai-caught-in-tanstack-npm-supply-chain-chaos-after-employee-devices-compromised/5241019",
+      "final_url": "https://github.com/startreedata/mcp-pinot",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.theregister.com/security/2026/05/15/openai-caught-in-tanstack-npm-supply-chain-chaos-after-employee-devices-compromised/5241019"
+      "url": "https://github.com/startreedata/mcp-pinot"
     },
     {
       "error": "",
-      "final_url": "https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/",
+      "final_url": "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://techcrunch.com/2026/05/14/openai-says-hackers-stole-some-data-after-latest-code-security-issue/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://techcrunch.com/2026/05/14/openai-says-hackers-stole-some-data-after-latest-code-security-issue/"
+      "url": "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server"
     },
     {
       "error": "HTTP Error 403: Forbidden",

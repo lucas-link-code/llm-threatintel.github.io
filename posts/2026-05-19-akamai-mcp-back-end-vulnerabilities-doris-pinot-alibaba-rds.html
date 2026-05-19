@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling | LLM ThreatIntel</title>
+  <meta name="description" content="Akamai&#x27;s Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud&#x27;s alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling">
+  <meta property="og:description" content="Akamai&#x27;s Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud&#x27;s alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling">
+  <meta property="article:published_time" content="2026-05-19T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-19T00:00:00Z">
+  <meta property="article:tag" content="mcp-security">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling">
+  <meta name="twitter:description" content="Akamai&#x27;s Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud&#x27;s alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS \u2014 Pattern of Unauthenticated Database Exposure via AI Agent Tooling",
+  "description": "Akamai's Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud's alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server \u2014 Akamai escalated to CERT/CC for coordinated disclosure.",
+  "datePublished": "2026-05-19T00:00:00Z",
+  "dateModified": "2026-05-19T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html",
+  "keywords": [
+    "mcp-security",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-19</span>
+      <span class="post-tag tag-mcp-security">Mcp Security</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling</h1>
+<p><strong>Date:</strong> 2026-05-19<br><strong>Tags:</strong> mcp-security, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>Akamai&#x27;s Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied Model Context Protocol (MCP) server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree <code>mcp-pinot</code> reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud&#x27;s <code>alibabacloud-rds-openapi-mcp-server</code> (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure. Defenders running any of these MCP servers, or any MCP server fronting a database, should treat the MCP endpoint as an unauthenticated SQL surface until proven otherwise.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>MCP back-end vulnerability cluster (Doris / Pinot / Alibaba RDS)</td></tr><tr><td>Actor / Attribution</td><td>Vulnerability research by Akamai Security Intelligence Group — no in-the-wild exploitation reported as of disclosure</td></tr><tr><td>Target</td><td>Organizations exposing MCP servers for analytics, time-series, or RDBMS workloads to AI agents (Claude Desktop, Cursor, Windsurf, Claude Code, internal agents)</td></tr><tr><td>Vector</td><td>Unauthenticated network access to MCP transport (HTTP, SSE) followed by tool invocation; SQL injection via unvalidated tool parameters; info disclosure via RAG retrieval over a vector store that holds schema metadata</td></tr><tr><td>Status</td><td>active — Doris patched; Pinot mitigated (optional OAuth); Alibaba RDS unpatched (vendor declined)</td></tr><tr><td>First Observed</td><td>2026-05-13 (Akamai public disclosure)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Akamai&#x27;s Security Intelligence Group blog post &quot;One Is a Fluke, 3 Is a Pattern: MCP Back-End Vulnerabilities&quot; published May 13, 2026, the three issues share a single root cause: MCP servers shipped by database vendors trust that any caller that reaches the MCP transport is an authorized AI agent on the same host, and therefore expose tool routes that bypass — or sit entirely outside — the database engine&#x27;s own access controls. The Register&#x27;s May 13, 2026 coverage by Jessica Lyons frames the finding as a single bug hunter (Akamai researcher) tracking down three serious MCP database flaws, one of which the vendor refused to fix.</p>
+<p><strong>Apache Doris MCP — CVE-2025-66335 (SQL injection).</strong> The Doris MCP Server (PyPI package <code>doris-mcp-server</code>) shipped versions 0.1.0 through 0.6.0 with an <code>exec_query</code> tool whose <code>db_name</code> argument was concatenated into the final SQL statement rather than passed as a separate bind parameter. The GitHub Security Advisory GHSA-qhfq-gvvc-5q6q rates the issue Moderate (CVSS 5.3) and assigns CWE-89; Apache published the corresponding mailing-list advisory on dev@doris.apache.org and shipped the fix in 0.6.1. Akamai&#x27;s research notes that on a default deployment any client able to reach the MCP transport — typically an agent process on the same host, but in cloud or shared-development deployments anyone on the network — can invoke <code>exec_query</code> and inject SQL prefixed to the intended statement, bypassing whatever query validation the Doris engine itself would have applied.</p>
+<p><strong>Apache Pinot MCP — authentication bypass and SQL injection.</strong> StarTree&#x27;s reference Pinot MCP server <code>mcp-pinot</code> (github.com/startreedata/mcp-pinot, v1.1.0 and earlier) used HTTP as its transport layer without requiring authentication. Akamai found that unauthenticated callers reaching the HTTP endpoint can invoke MCP tools, including the SQL-execution tool, which means an internet-exposed Pinot MCP server is equivalent to an unauthenticated SQL gateway in front of the Pinot cluster. According to Akamai, in environments where the MCP endpoint is reachable externally this allows full remote takeover of the database. StarTree has since added OAuth as an authentication option for the HTTP transport, which Akamai notes lowers the SQL-injection severity but does not eliminate the underlying injection in the code path. Apache has also opened a security issue in the upstream <code>mcp-pinot</code> repository.</p>
+<p><strong>Alibaba Cloud RDS MCP — information disclosure (no patch).</strong> The <code>alibabacloud-rds-openapi-mcp-server</code> (PyPI; github.com/aliyun/alibabacloud-rds-openapi-mcp-server) exposes a retrieval-augmented-generation (RAG) MCP tool that queries an embedded vector index without authenticating the caller. According to Akamai, the vector index contains table names, schema definitions, and other potentially sensitive metadata; any client able to reach the MCP endpoint can issue queries to the server without any input validation. Alibaba categorised the issue as &quot;not applicable&quot; for a fix and chose to leave the behaviour in the codebase. Akamai reported the inaction to the CERT Coordination Center (CERT/CC) to ensure global coordinated disclosure and is awaiting CERT/CC response.</p>
+<p><strong>Pattern.</strong> Akamai emphasises that the three findings are not isolated vendor mistakes but a recurring class: MCP servers built and published by the database vendors themselves repeatedly trust the transport, repeatedly skip authentication on the MCP layer, and repeatedly use string concatenation or unsanitised parameter passing into the engine&#x27;s own query language. The full research, along with the discovery tool Akamai used, will be presented at x33fcon in June 2026.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Unauthenticated HTTP MCP endpoints exposed on developer hosts, build agents, or internal services</td></tr><tr><td>Exploitation of Remote Services</td><td>T1210</td><td>Network-reachable MCP transports invoked by unauthorized clients to call tools</td></tr><tr><td>SQL Injection</td><td>T1190</td><td><code>db_name</code> parameter concatenated into Doris SQL; Pinot SQL execution tool reachable without auth</td></tr><tr><td>Data from Information Repositories</td><td>T1213</td><td>Vector-index metadata (table names, schemas) exfiltrated from Alibaba RDS MCP via unauthenticated RAG tool</td></tr><tr><td>Valid Accounts (bypassed)</td><td>T1078</td><td>Database engine ACLs bypassed because MCP layer authenticates as a privileged service account rather than per-caller</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">pypi:doris-mcp-server@&lt;0.6.1
+pypi:alibabacloud-rds-openapi-mcp-server
+mcp-pinot@&lt;=1.1.0</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory every MCP server running in developer, CI, and shared-cluster environments — not just MCP clients (Claude Code, Cursor, Windsurf) but the server side that fronts databases, queues, and APIs. Identify any MCP server whose transport is HTTP or SSE and verify it requires an authenticated session (OAuth, mTLS, or a shared bearer that is rotated); STDIO-only deployments still need host-level controls because the spawned process trusts its parent. For Apache Doris MCP, upgrade <code>doris-mcp-server</code> to 0.6.1 or later and audit existing <code>exec_query</code> invocations in MCP request logs for SQL that begins with semicolons, comments, or <code>UNION</code> after the expected statement — these indicate <code>db_name</code>-prefix injection. For Apache Pinot MCP, enable the new OAuth authenticator on <code>mcp-pinot</code> HTTP transport, restrict the listener to loopback or a mutually authenticated overlay network, and treat the Pinot Broker Query API behind the MCP server as if it were directly exposed. For <code>alibabacloud-rds-openapi-mcp-server</code>, since Alibaba has declined to patch, remove the server from any host that does not strictly require it; if it must run, firewall the transport to localhost only and monitor outbound calls that include RAG retrieval. On the network: alert on any HTTP request to <code>/mcp</code>, <code>/sse</code>, <code>/messages</code>, or <code>/tools/call</code> paths from off-host sources; on EDR: alert on <code>mcp-pinot</code>, <code>doris-mcp-server</code>, or <code>alibabacloud-rds-openapi-mcp-server</code> Python processes binding to non-loopback addresses. Treat any MCP server published by a database vendor as untrusted until you have verified the auth posture on the MCP layer specifically — engine-level ACLs do not protect you.</p>
+<h2>References</h2>
+<ul><li>[Akamai] One Is a Fluke, 3 Is a Pattern: MCP Back-End Vulnerabilities (2026-05-13) — https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities</li><li>[The Register] Bug hunter tracks down three massive MCP flaws and one vendor won&#x27;t fix theirs (2026-05-13) — https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916</li><li>[GitHub Advisory Database] CVE-2025-66335 — Apache Doris MCP Server SQL injection (GHSA-qhfq-gvvc-5q6q) — https://github.com/advisories/GHSA-qhfq-gvvc-5q6q</li><li>[Apache lists.apache.org] CVE-2025-66335: Apache Doris MCP Server: MCP SQL inject — https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy</li><li>[NVD] CVE-2025-66335 Detail — https://nvd.nist.gov/vuln/detail/CVE-2025-66335</li><li>[GitHub - startreedata/mcp-pinot] StarTree MCP Server for Apache Pinot — https://github.com/startreedata/mcp-pinot</li><li>[GitHub - aliyun/alibabacloud-rds-openapi-mcp-server] Alibaba Cloud RDS OpenAPI MCP Server — https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

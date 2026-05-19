@@ -2,6 +2,42 @@
   "last_updated": "2026-05-19",
   "iocs": [
     {
+      "value": "praisonai",
+      "type": "package",
+      "context": "CVE-2026-44338 PraisonAI legacy Flask api_server.py authentication bypass; AUTH_ENABLED=False hard-coded; unauthenticated GET /agents and POST /chat on TCP/8080; affects versions 2.5.6 through 4.6.33; fixed in 4.6.34",
+      "first_seen": "2026-05-11",
+      "source": "GitHub Advisory GHSA-6rmh-7xcm-cpxj / Sysdig Threat Research",
+      "campaign": "cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "doris-mcp-server",
+      "type": "package",
+      "context": "CVE-2025-66335 (CVSS 5.3, GHSA-qhfq-gvvc-5q6q) Apache Doris MCP Server SQL injection via exec_query db_name parameter concatenation; affects versions 0.1.0 through 0.6.0; patched in 0.6.1",
+      "first_seen": "2026-05-13",
+      "source": "Akamai Security Intelligence Group / GitHub Advisory Database / Apache",
+      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "status": "active"
+    },
+    {
+      "value": "alibabacloud-rds-openapi-mcp-server",
+      "type": "package",
+      "context": "Unauthenticated information disclosure in Alibaba Cloud RDS OpenAPI MCP Server; RAG tool serves vector-index metadata (table names, schemas) without authenticating the caller; vendor declined to fix; Akamai escalated to CERT/CC",
+      "first_seen": "2026-05-13",
+      "source": "Akamai Security Intelligence Group",
+      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "status": "active"
+    },
+    {
+      "value": "github.com/startreedata/mcp-pinot",
+      "type": "url_path",
+      "context": "StarTree MCP Server for Apache Pinot (mcp-pinot v1.1.0 and earlier) — HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full Pinot cluster takeover when externally reachable; StarTree added OAuth as optional HTTP authenticator",
+      "first_seen": "2026-05-13",
+      "source": "Akamai Security Intelligence Group",
+      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "status": "active"
+    },
+    {
       "value": "git-tanstack.com",
       "type": "domain",
       "context": "Mini Shai-Hulud Wave 5 TeamPCP typosquat C2 domain; serves transformers.pyz credential stealer payload and receives exfiltrated secrets",
