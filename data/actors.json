@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-18",
+  "last_updated": "2026-05-19",
   "entries": [
     {
       "id": "comment-and-control-github-prompt-injection",
@@ -968,7 +968,8 @@
         "OpenClaw users in enterprise Slack environments",
         "LiteLLM proxy deployments",
         "LMDeploy deployments with vision-language support",
-        "SQL injection payloads via HTTP"
+        "SQL injection payloads via HTTP",
+        "Hugging Face"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -987,7 +988,10 @@
         "T1110 - Credential Access",
         "T1110 - Brute Force / Credential Access",
         "T1552.001 - Unsecured Credentials: Cloud Metadata",
-        "T1110.003 - Credential Access via Brute Force"
+        "T1110.003 - Credential Access via Brute Force",
+        "T1195 - Supply Chain Compromise",
+        "T1204.002 - User Execution of Malware",
+        "T1555.003 - Credentials from Web Browsers"
       ],
       "description": "Threat actor conducting active exploitation of CVE-2025-59528 in publicly exposed Flowise instances. Initial detection from Starlink infrastructure suggests either automated scanning or actor with access to resilient infrastructure. Target pattern consistent with indiscriminate credential harvesting (LLM API keys, cloud provider tokens).",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
@@ -1940,6 +1944,42 @@
       ],
       "description": "Project Glasswing and Trusted Access for Cyber are controlled access programs giving major vendors early access to frontier AI models (Claude Mythos, GPT-5.5-Cyber) for vulnerability discovery. Vendors are racing to find and patch vulnerabilities before the same capabilities become available to attackers. The strategic window is 3–5 months.",
       "attribution": "Defensive capability operated by major technology vendors to preempt attacker access"
+    },
+    {
+      "id": "hightower6eu",
+      "names": [
+        "hightower6eu"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "OpenClaw ClawHub"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "Threat actor publishing trojanized AI agent skills to ClawHub. Uploaded 334 malicious skills across multiple accounts with cross-platform (Windows/macOS) payloads including trojans, cryptominers, and AMOS stealer.",
+      "attribution": "Unattributed; operates under alias 'hightower6eu'"
+    },
+    {
+      "id": "sakaen736jih",
+      "names": [
+        "sakaen736jih"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "OpenClaw ClawHub"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1204 - User Execution"
+      ],
+      "description": "Threat actor publishing trojanized AI agent skills. Uploaded 199 malicious skills targeting Windows and macOS users with infostealer, trojan, and cryptomining payloads.",
+      "attribution": "Unattributed; operates under alias 'sakaen736jih'"
     }
   ]
 }

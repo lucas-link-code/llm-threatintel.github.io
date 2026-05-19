@@ -1850,6 +1850,51 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection": {
+      "content_hash": "729860f0f345afe70cd0ae7fe5599d213b3ccd12ec58abcd9c79eee1c233c72f",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.md",
+      "posts_index_hash": "78a8c416efdf255158e828e17af6e6cecefc394b40093d524f18d44f57786dec",
+      "report_id": "2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://oddguan.com/blog/comment-and-control-prompt-injection-credential-theft-claude-code-gemini-cli-github-copilot/",
+        "https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/",
+        "https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026",
+        "https://thenextweb.com/news/ai-agents-hijacked-prompt-injection-bug-bounties-no-cve",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-comment-control-github-prompt-injection-20/",
+        "https://repello.ai/blog/comment-and-control-claude-code-gemini-copilot-prompt-injection",
+        "https://gbhackers.com/claude-code-gemini-cli-and-github-copilot-exposed/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T07:53:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-17-openai-tanstack-supply-chain-breach-may-2026": {
+      "content_hash": "5b979779c7db99a03ffa090632deb6ef91db7c364a5a39db82fbc57cd0a58368",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-17-openai-tanstack-supply-chain-breach-may-2026.md",
+      "posts_index_hash": "41f0382b69ce82a587a18b7f2050d827fd5aaf04c6a1336f42b4769a021d8ea7",
+      "report_id": "2026-05-17-openai-tanstack-supply-chain-breach-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/",
+        "https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/",
+        "https://www.theregister.com/security/2026/05/15/openai-caught-in-tanstack-npm-supply-chain-chaos-after-employee-devices-compromised/5241019",
+        "https://www.securityweek.com/openai-hit-by-tanstack-supply-chain-attack/",
+        "https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html",
+        "https://techcrunch.com/2026/05/14/openai-says-hackers-stole-some-data-after-latest-code-security-issue/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T07:53:23+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-05-18-intruder-1-million-exposed-ai-services-may-2026": {
       "content_hash": "48118ee06944612c43705c0be49754da1056d744aea99d081cdccbab750ac9fc",
       "evidence_status": "validated",
@@ -1902,6 +1947,56 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-05-18T06:58:56+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-19-cve-2026-42208-litellm-sql-injection": {
+      "content_hash": "c1d90d3a2f0cfca65d81591eee143138db4615b90039d87dbc62f1d8263f2583",
+      "evidence_status": "validated",
+      "file": "2026-05-19-cve-2026-42208-litellm-sql-injection.md",
+      "posts_index_hash": "7221f3721e724929cb316ea392456d8a974ef50202085a960fdc6c4950b78b48",
+      "report_id": "2026-05-19-cve-2026-42208-litellm-sql-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://www.cve.news/cve-2026-42208",
+        "https://cybersecurefox.com/en/litellm-cve-2026-42208-sql-injection-ai-gateway"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T07:53:19+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer": {
+      "content_hash": "ecd669135ce347cb5f838407bba8b96edc2a1b6b92cf0981452c33db222f7d38",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer.md",
+      "posts_index_hash": "75dd3be7f992f95642b2f0c54d81886cff1bce382d11a350a4d439bf6e7f2aee",
+      "report_id": "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
+        "https://winbuzzer.com/2026/05/11/fake-openai-repository-on-hugging-face-pushes-info-xcxwbn"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T07:53:20+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-19-openclaw-clawhu-skill-poisoning-campaign": {
+      "content_hash": "865c36c714f71fb401d5b8ed5f40a41a2fe740c52e45aad774041cb12fd72327",
+      "evidence_status": "validated",
+      "file": "2026-05-19-openclaw-clawhu-skill-poisoning-campaign.md",
+      "posts_index_hash": "1482639b5227db5440f0d07c0db22a12ed0dfc5c68283364639994b91f2f7ecc",
+      "report_id": "2026-05-19-openclaw-clawhu-skill-poisoning-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://www.acronis.com/en/tru/posts/poisoning-the-well-ai-supply-chain-attacks-on-hugging-face-and-openclaw",
+        "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-19T07:53:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

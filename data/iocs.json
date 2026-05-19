@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-18",
+  "last_updated": "2026-05-19",
   "iocs": [
     {
       "value": "git-tanstack.com",
@@ -1601,6 +1601,51 @@
       "first_seen": "2026-05-18",
       "source": "Microsoft Security Blog",
       "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
+      "status": "active"
+    },
+    {
+      "value": "welovechinatown.info",
+      "type": "domain",
+      "context": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal",
+      "first_seen": "2026-05-19",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "jsonkeeper.com/b/AVNNE",
+      "type": "url_path",
+      "context": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal",
+      "first_seen": "2026-05-19",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "Open-OSS/privacy-filter (Hugging Face repository)",
+      "type": "package",
+      "context": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal",
+      "first_seen": "2026-05-19",
+      "source": "HiddenLayer",
+      "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "OpenClaw ClawHub malicious skills (575 identified)",
+      "type": "package",
+      "context": "ClawHub/OpenClaw Mass Skill Poisoning: 575+ Trojanized Agent Skills Targeting Windows & macOS",
+      "first_seen": "2026-05-19",
+      "source": "Acronis",
+      "campaign": "openclaw-clawhu-skill-poisoning-campaign",
+      "status": "active"
+    },
+    {
+      "value": "litellm (versions 1.81.16 to 1.83.6)",
+      "type": "package",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation",
+      "first_seen": "2026-05-19",
+      "source": "CVE.news",
+      "campaign": "cve-2026-42208-litellm-sql-injection",
       "status": "active"
     }
   ]

@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 18 May 2026 06:58:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 07:53:17 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation</title>
+      <link>https://llm-threatintel.com/posts/2026-05-19-cve-2026-42208-litellm-sql-injection.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-19-cve-2026-42208-litellm-sql-injection.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <description>LiteLLM, a popular open-source 'AI Gateway' making it easier to run OpenAI-style LLM queries across models and providers, has a serious vulnerability identified as CVE-2026-42208 affecting versions 1.81.16 up to just before 1.83.7. From version 1.81.16 to before 1.83.7, a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter, allowing an unauthenticated attacker to send a specially crafted Authorization header to any LLM API route and read or modify data in the proxy's database, leading to unauthorized access to the proxy and the credentials it manages.</description>
+    </item>    <item>
+      <title>ClawHub/OpenClaw Mass Skill Poisoning: 575+ Trojanized Agent Skills Targeting Windows &amp; macOS</title>
+      <link>https://llm-threatintel.com/posts/2026-05-19-openclaw-clawhu-skill-poisoning-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-19-openclaw-clawhu-skill-poisoning-campaign.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <description>Researchers identified 575 malicious skills within the OpenClaw ecosystem distributed by 13 developer accounts. The campaign targets both Windows and macOS systems, with a significant portion linked to two threat actors operating under the aliases 'hightower6eu' with 334 malicious skills and 'sakaen736jih' with 199 malicious skills. Trojanized skills masquerade as legitimate tools but instruct users to execute encoded commands or install hidden dependencies, and indirect prompt injection is used where hidden instructions cause AI agents to execute malicious actions on behalf of users.</description>
+    </item>    <item>
+      <title>Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal</title>
+      <link>https://llm-threatintel.com/posts/2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <description>On May 7, 2026, researchers identified malicious code in the Hugging Face repository Open-OSS/privacy-filter, which appeared among the platform's top trending repositories with over 200k downloads until removal. The repository typosquatted OpenAI's legitimate Privacy Filter release, copied its model card nearly verbatim, and shipped a loader.py file that fetches and executes infostealer malware on Windows machines.</description>
+    </item>    <item>
       <title>Frontier AI Models Discover 75+ Vulnerabilities in Vendor Code—Palo Alto Networks AI-Driven Vulnerability Surge Signals 'Vulnpocalypse'; 3-5 Month Window to Patch Before Attackers Gain Access</title>
       <link>https://llm-threatintel.com/posts/2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026.html</guid>
@@ -24,6 +42,18 @@
       <guid>https://llm-threatintel.com/posts/2026-05-18-intruder-1-million-exposed-ai-services-may-2026.html</guid>
       <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
       <description>Intruder researchers scanned 1 million exposed AI services across 2+ million hosts and found AI infrastructure more vulnerable, exposed, and misconfigured than any other software they have investigated. Generic chatbots hosting multimodal LLMs were freely available for jailbreaking, allowing attackers to bypass safety guardrails and access models without logging to their own accounts.</description>
+    </item>    <item>
+      <title>Comment and Control: Prompt Injection via GitHub PR Comments Steals Credentials from Claude Code, Gemini CLI, and GitHub Copilot — Vendors Paid Bounties, Issued No Public Advisories</title>
+      <link>https://llm-threatintel.com/posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.html</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
+      <description>Security researcher Aonan Guan disclosed that embedding malicious instructions in GitHub pull request titles, issue bodies, or review comments hijacks Claude Code, Gemini CLI, and GitHub Copilot agents to exfiltrate CI/CD secrets back through GitHub's own APIs. Anthropic rated the finding CVSS 9.4 Critical but paid a $100 bounty and issued no public advisory. No CVEs were assigned by any of the three vendors, leaving an unknown number of pipelines on unpatched agent versions.</description>
+    </item>    <item>
+      <title>OpenAI Confirms Two Employee Devices Compromised in Mini Shai-Hulud TanStack Supply Chain Attack — Code-Signing Certificates Rotated</title>
+      <link>https://llm-threatintel.com/posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.html</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI disclosed that two employee devices were breached during the Mini Shai-Hulud Wave 5 TanStack supply chain attack, with the credential-stealer accessing internal source code repositories containing code-signing material for iOS, macOS, Windows, and Android applications. All code-signing certificates have been rotated; macOS users must update OpenAI desktop apps before June 12, 2026, when the compromised certificate will be revoked. No customer data, production systems, or IP was accessed.</description>
     </item>    <item>
       <title>Mini Shai-Hulud Wave 5: TeamPCP Compromises TanStack, Mistral AI, UiPath, and 170+ npm/PyPI Packages via GitHub Actions Cache Poisoning</title>
       <link>https://llm-threatintel.com/posts/2026-05-16-mini-shai-hulud-tanstack-mistral-ai-teampcp-may-2026.html</link>
@@ -96,36 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-12-intruder-1-million-exposed-ai-services-may-2026.html</guid>
       <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
       <description>Using certificate transparency logs to pull just over 2 million hosts with 1 million exposed services, the Intruder team found that the AI infrastructure they scanned was more vulnerable, exposed, and misconfigured than any other software they had ever investigated. A significant number of hosts had been deployed straight out of the box, with no authentication in place. Authentication simply isn't enabled by default in many of these projects, and real user data and company tooling were sitting exposed to anyone who looked.</description>
-    </item>    <item>
-      <title>AI-Generated Zero-Day 2FA Bypass Exploit Discovered by Google—First Known Case of Criminal LLM-Weaponized Vulnerability Discovery</title>
-      <link>https://llm-threatintel.com/posts/2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <description>For the first time, Google Threat Intelligence Group (GTIG) identified a threat actor using a zero-day exploit that is believed to have been developed with AI. The flaw was a 2FA bypass, and the script showed all tell-tale signs of LLM-generated code: detailed docstrings, a clean class structure, even a hallucinated CVSS score baked into the comments. Google Threat Intelligence Group worked with the impacted vendor to disclose the vulnerability before the planned mass exploitation campaign could be executed.</description>
-    </item>    <item>
-      <title>Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks—Eval() Filter Bypasses Enable Code Execution Chains</title>
-      <link>https://llm-threatintel.com/posts/2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft discovered a vulnerable path in Semantic Kernel that could turn prompt injection into host-level remote code execution (RCE). A single prompt was enough to launch calc.exe on the device running an AI agent, with no browser exploit, malicious attachment, or memory corruption bug needed. Microsoft identified and disclosed two critical vulnerabilities: CVE-2026-25592 and CVE-2026-26030, which have since been fixed and could allow an attacker to achieve unauthorized code execution by leveraging injection attacks specifically targeted at agents built within the framework. Your agent is vulnerable to CVE-2026-26030 if it uses the Python package semantic-kernel running a framework version prior to 1.39.4.</description>
-    </item>    <item>
-      <title>OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware</title>
-      <link>https://llm-threatintel.com/posts/2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <description>Hugging Face and ClawHub, the two largest repositories for AI models and agent skills, have been found to contain hundreds of malicious models capable of executing arbitrary code and 575 malicious OpenClaw agent skills designed to steal credentials, open reverse shells, and hijack AI agents for cryptocurrency mining. Protect AI, which partnered with Hugging Face to scan the platform's model library, has examined more than four million models and identified approximately 352,000 unsafe or suspicious issues across 51,700 models. Over 575 malicious skills across 13 developer accounts were identified in OpenClaw, targeting Windows and macOS with trojans, cryptominers, and AMOS stealer malware.</description>
-    </item>    <item>
-      <title>CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables</title>
-      <link>https://llm-threatintel.com/posts/2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation.html</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-42208 (CVSS 9.3) is a critical SQL injection vulnerability in LiteLLM versions 1.81.16 through 1.83.6 that allows unauthenticated attackers to modify the underlying proxy database. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed. Attackers specifically targeted database tables like "litellm_credentials.credential_values" and "litellm_config" that hold upstream LLM provider keys, suggesting prior knowledge of the schema and a focus on harvesting sensitive secrets.</description>
-    </item>    <item>
-      <title>TrustFall: One-Keypress RCE in Claude Code, Cursor CLI, Gemini CLI, and GitHub Copilot CLI via Project-Scoped MCP Auto-Approval</title>
-      <link>https://llm-threatintel.com/posts/2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.html</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <description>Adversa AI disclosed on May 7, 2026 that all four major agentic coding CLIs (Claude Code, Cursor CLI, Gemini CLI, GitHub Copilot CLI) execute project-defined MCP servers as unsandboxed OS processes the moment a developer accepts the folder trust prompt, requiring only a single Enter keypress on the default Yes/Trust option. A malicious cloned repository ships .mcp.json plus .claude/settings.json with enableAllProjectMcpServers true and gains full user-privilege code execution before any tool call, with the inline command/args payload variant leaving no script file on disk for static scanners. On CI runners using anthropics/claude-code-action headless mode the trust dialog is skipped entirely, producing a zero-click variant that exfiltrates the runner's process.env including deploy keys, signing certificates, GITHUB_TOKEN, and cloud credentials.</description>
     </item>
   </channel>
 </rss>

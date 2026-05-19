@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-05-19-cve-2026-42208-litellm-sql-injection",
+      "title": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation",
+      "date": "2026-05-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "LiteLLM, a popular open-source 'AI Gateway' making it easier to run OpenAI-style LLM queries across models and providers, has a serious vulnerability identified as CVE-2026-42208 affecting versions 1.81.16 up to just before 1.83.7. From version 1.81.16 to before 1.83.7, a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter, allowing an unauthenticated attacker to send a specially crafted Authorization header to any LLM API route and read or modify data in the proxy's database, leading to unauthorized access to the proxy and the credentials it manages.",
+      "file": "2026-05-19-cve-2026-42208-litellm-sql-injection.md"
+    },
+    {
+      "id": "2026-05-19-openclaw-clawhu-skill-poisoning-campaign",
+      "title": "ClawHub/OpenClaw Mass Skill Poisoning: 575+ Trojanized Agent Skills Targeting Windows & macOS",
+      "date": "2026-05-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Researchers identified 575 malicious skills within the OpenClaw ecosystem distributed by 13 developer accounts. The campaign targets both Windows and macOS systems, with a significant portion linked to two threat actors operating under the aliases 'hightower6eu' with 334 malicious skills and 'sakaen736jih' with 199 malicious skills. Trojanized skills masquerade as legitimate tools but instruct users to execute encoded commands or install hidden dependencies, and indirect prompt injection is used where hidden instructions cause AI agents to execute malicious actions on behalf of users.",
+      "file": "2026-05-19-openclaw-clawhu-skill-poisoning-campaign.md"
+    },
+    {
+      "id": "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer",
+      "title": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal",
+      "date": "2026-05-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On May 7, 2026, researchers identified malicious code in the Hugging Face repository Open-OSS/privacy-filter, which appeared among the platform's top trending repositories with over 200k downloads until removal. The repository typosquatted OpenAI's legitimate Privacy Filter release, copied its model card nearly verbatim, and shipped a loader.py file that fetches and executes infostealer malware on Windows machines.",
+      "file": "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer.md"
+    },
+    {
       "id": "2026-05-18-palo-alto-75-vulnerabilities-frontier-ai-mythos-may-2026",
       "title": "Frontier AI Models Discover 75+ Vulnerabilities in Vendor Code—Palo Alto Networks AI-Driven Vulnerability Surge Signals 'Vulnpocalypse'; 3-5 Month Window to Patch Before Attackers Gain Access",
       "date": "2026-05-18",
