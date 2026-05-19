@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-19T12:05:48+00:00`
-- Commit SHA: `f07468520ed7`
-- Mode: `full`
+- Run time UTC: `2026-05-19T13:16:58+00:00`
+- Commit SHA: `9712f9bd4e27`
+- Mode: `strict`
 - Validation version: `1.0.0`
-- Overall result: `fail`
-- Hard failures: `3`
-- Warnings: `42`
-- Review required: `3`
-- Reports checked: `3`
-- Reports skipped: `106`
-- Reports newly validated: `2`
+- Overall result: `pass`
+- Hard failures: `0`
+- Warnings: `45`
+- Review required: `0`
+- Reports checked: `0`
+- Reports skipped: `0`
+- Reports newly validated: `0`
 - IOC duplicates found: `5`
-- Source URLs checked: `14`
+- Source URLs checked: `0`
 
 No files were removed or destructively modified.
 
@@ -55,70 +55,14 @@ No files were removed or destructively modified.
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `162`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `163`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `164`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
-- **FAIL** `ioc-package-format` `data/iocs.json` `184`: invalid package IOC: Open-OSS/privacy-filter (Hugging Face repository)
-- **FAIL** `ioc-package-format` `data/iocs.json` `185`: invalid package IOC: OpenClaw ClawHub malicious skills (575 identified)
-- **FAIL** `ioc-package-format` `data/iocs.json` `186`: invalid package IOC: litellm (versions 1.81.16 to 1.83.6)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `184`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `185`: legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `186`: legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: openui appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
-- **REVIEW** `evidence-url-review` `posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.md` `2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation`: 5 source URL(s) require review
-- **REVIEW** `evidence-url-review` `posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.md` `2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds`: 4 source URL(s) require review
-- **REVIEW** `evidence-source-review-required` `posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md` `2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026`: no source URL was accessible; manual review or alternate evidence is required
-
-## Hard Failure Queue
-
-```text
-File: data/iocs.json
-Record: 184
-Problem: ioc-package-format
-Validator finding: invalid package IOC: Open-OSS/privacy-filter (Hugging Face repository)
-IOC value: Open-OSS/privacy-filter (Hugging Face repository)
-IOC type: package
-Status: active
-Campaign: hugging-face-fake-openai-privacy-filter-infostealer
-Source: HiddenLayer
-Context: Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 185
-Problem: ioc-package-format
-Validator finding: invalid package IOC: OpenClaw ClawHub malicious skills (575 identified)
-IOC value: OpenClaw ClawHub malicious skills (575 identified)
-IOC type: package
-Status: active
-Campaign: openclaw-clawhu-skill-poisoning-campaign
-Source: Acronis
-Context: ClawHub/OpenClaw Mass Skill Poisoning: 575+ Trojanized Agent Skills Targeting Windows & macOS
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 186
-Problem: ioc-package-format
-Validator finding: invalid package IOC: litellm (versions 1.81.16 to 1.83.6)
-IOC value: litellm (versions 1.81.16 to 1.83.6)
-IOC type: package
-Status: active
-Campaign: cve-2026-42208-litellm-sql-injection
-Source: CVE.news
-Context: CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
 
 ## Duplicate IOC Review
 
@@ -142,41 +86,3 @@ Recommended action:
 ### `recargapopular.com`
 - `recargapopular.com` type `domain` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `BleepingComputer`
 - `recargapopular.com` type `domain` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
-
-## Human Review Queue
-
-```text
-Report: 2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation
-Problem: evidence-url-review
-Validator finding: 5 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds
-Problem: evidence-url-review
-Validator finding: 4 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

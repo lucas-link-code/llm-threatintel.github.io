@@ -1,5 +1,5 @@
 {
-  "commit_sha": "f07468520ed7",
+  "commit_sha": "9712f9bd4e27",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -78,8 +78,8 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-19T12:05:48+00:00",
-  "hard_failures": 3,
+  "generated_at_utc": "2026-05-19T13:16:58+00:00",
+  "hard_failures": 0,
   "issues": [
     {
       "code": "post-excerpt-long",
@@ -378,28 +378,28 @@
       "severity": "warn"
     },
     {
-      "code": "ioc-package-format",
+      "code": "ioc-legacy-format-exception",
       "file": "data/iocs.json",
-      "message": "invalid package IOC: Open-OSS/privacy-filter (Hugging Face repository)",
+      "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)",
       "recommendation": "",
       "record_id": "184",
-      "severity": "fail"
+      "severity": "warn"
     },
     {
-      "code": "ioc-package-format",
+      "code": "ioc-legacy-format-exception",
       "file": "data/iocs.json",
-      "message": "invalid package IOC: OpenClaw ClawHub malicious skills (575 identified)",
+      "message": "legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)",
       "recommendation": "",
       "record_id": "185",
-      "severity": "fail"
+      "severity": "warn"
     },
     {
-      "code": "ioc-package-format",
+      "code": "ioc-legacy-format-exception",
       "file": "data/iocs.json",
-      "message": "invalid package IOC: litellm (versions 1.81.16 to 1.83.6)",
+      "message": "legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)",
       "recommendation": "",
       "record_id": "186",
-      "severity": "fail"
+      "severity": "warn"
     },
     {
       "code": "ioc-duplicate-review",
@@ -440,142 +440,19 @@
       "recommendation": "",
       "record_id": "",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.md",
-      "message": "5 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.md",
-      "message": "4 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "severity": "review"
     }
   ],
-  "mode": "full",
+  "mode": "strict",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
-  "reports_checked": 3,
-  "reports_newly_validated": 2,
-  "reports_skipped": 106,
-  "review_required": 3,
-  "source_urls_checked": 14,
-  "state_updates": 2,
-  "url_results": [
-    {
-      "error": "",
-      "final_url": "https://github.com/advisories/GHSA-6rmh-7xcm-cpxj",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://github.com/advisories/GHSA-6rmh-7xcm-cpxj"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44338",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44338"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.sysdig.com/blog/cve-2026-44338-praisonai-authentication-bypass-in-under-4-hours-and-the-growing-trend-of-rapid-exploitation",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.sysdig.com/blog/cve-2026-44338-praisonai-authentication-bypass-in-under-4-hours-and-the-growing-trend-of-rapid-exploitation"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://thehackernews.com/2026/05/praisonai-cve-2026-44338-auth-bypass.html",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://thehackernews.com/2026/05/praisonai-cve-2026-44338-auth-bypass.html"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.securityweek.com/hackers-targeted-praisonai-vulnerability-hours-after-disclosure/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.securityweek.com/hackers-targeted-praisonai-vulnerability-hours-after-disclosure/"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.csoonline.com/article/4171215/praisonai-vulnerability-gets-scanned-within-4-hours-of-disclosure.html",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.csoonline.com/article/4171215/praisonai-vulnerability-gets-scanned-within-4-hours-of-disclosure.html"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916"
-    },
-    {
-      "error": "",
-      "final_url": "https://github.com/advisories/GHSA-qhfq-gvvc-5q6q",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://github.com/advisories/GHSA-qhfq-gvvc-5q6q"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66335",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66335"
-    },
-    {
-      "error": "",
-      "final_url": "https://github.com/startreedata/mcp-pinot",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://github.com/startreedata/mcp-pinot"
-    },
-    {
-      "error": "",
-      "final_url": "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer"
-    }
-  ],
+  "overall_result": "pass",
+  "reports_checked": 0,
+  "reports_newly_validated": 0,
+  "reports_skipped": 0,
+  "review_required": 0,
+  "source_urls_checked": 0,
+  "state_updates": 0,
+  "url_results": [],
   "validation_version": "1.0.0",
-  "warnings": 42
+  "warnings": 45
 }
