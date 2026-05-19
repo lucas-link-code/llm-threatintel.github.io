@@ -33,7 +33,7 @@ Prompt injection occurs when an attacker embeds hidden instructions inside input
 
 ## IOCs
 
-_Oasis Security explicitly states that the Claudy Day research used proof-of-concept injection payloads and that no active exploitation URLs were public at the time of analysis. The strings previously listed in this section (`claude.ai/new?q=[INJECTION_PAYLOAD]`, `claude.com/redirect/`, `api.anthropic.com/v1/files`) are not malicious indicators — they are legitimate Anthropic platform endpoints and a placeholder. Listing them as IOCs would block legitimate Claude usage rather than detect the attack. The corresponding records have been removed from `data/iocs.json`._
+*Oasis Security explicitly states that the Claudy Day research used proof-of-concept injection payloads and that no active exploitation URLs were public at the time of analysis. The strings previously listed in this section (`claude.ai/new?q=[INJECTION_PAYLOAD]`, `claude.com/redirect/`, `api.anthropic.com/v1/files`) are not malicious indicators — they are legitimate Anthropic platform endpoints and a placeholder. Listing them as IOCs would block legitimate Claude usage rather than detect the attack. The corresponding records have been removed from `data/iocs.json`.*
 
 ### Domains
 
