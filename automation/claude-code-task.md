@@ -198,6 +198,28 @@ For each threat actor or malware family mentioned:
 For each new IOC:
 - Check if it already exists (match on value field), check if it was already ingested. Skip duplicates.
 - do not add obvious high level domains like github.com or pypi.org or npmjs.com without a subdomain or a specific /path for the repository name or package name.
+- **Do not add legitimate AI vendor platforms or their generic feature paths as IOCs.** Even when a source post discusses a campaign that abuses one of these services, the bare domain or its generic share/redirect/API path is not an indicator — it is shared infrastructure that millions of legitimate users rely on. Publishing it would cause defenders who pipe this feed into a proxy denylist to block the platform organisation-wide. The deny list (case-insensitive, applies to both `domain` and `url_path` types):
+
+  | Vendor | Domains | Generic feature paths (also blocked) |
+  |---|---|---|
+  | Anthropic | `claude.ai`, `claude.com`, `anthropic.com`, `api.anthropic.com` | `claude.ai/share`, `claude.ai/new`, `claude.ai/chat`, `claude.com/redirect`, `api.anthropic.com/v1/files`, `api.anthropic.com/v1/messages` |
+  | OpenAI | `openai.com`, `chatgpt.com`, `chat.openai.com`, `api.openai.com` | `chatgpt.com/share`, `chat.openai.com/share`, `api.openai.com/v1/chat/completions` |
+  | Google | `gemini.google.com`, `ai.google.dev`, `aistudio.google.com` | `gemini.google.com/share`, `gemini.google.com/app` |
+  | xAI | `grok.com`, `x.ai`, `api.x.ai` | `grok.com/share` |
+  | Hugging Face | `huggingface.co`, `hf.co` | `huggingface.co/models`, `huggingface.co/datasets`, `huggingface.co/spaces` |
+  | Mistral | `mistral.ai`, `api.mistral.ai`, `chat.mistral.ai` | — |
+  | Cohere | `cohere.com`, `api.cohere.com` | — |
+  | Replicate | `replicate.com`, `api.replicate.com` | — |
+  | Perplexity | `perplexity.ai`, `api.perplexity.ai`, `www.perplexity.ai` | — |
+  | Together | `together.xyz`, `together.ai`, `api.together.xyz`, `api.together.ai` | — |
+  | Coding assistants | `cursor.sh`, `cursor.com`, `windsurf.ai`, `codeium.com`, `copilot.github.com` | — |
+  | Local runners | `ollama.com`, `lmstudio.ai`, `poe.com` | — |
+
+  **What to publish instead:**
+  - If the source publishes a specific malicious shared-chat URL with a real chat identifier (e.g. `claude.ai/share/Xy7AbC9KqM`), that IS a valid `url_path` IOC and should be included.
+  - If the source publishes a specific malicious subdomain (e.g. `evil-typosquat.claude-ai.com`), that IS a valid `domain` IOC.
+  - If the only "IOC" the source gives is the bare platform domain (e.g. "the malware was distributed via claude.ai shared chats"), DO NOT add a record to `data/iocs.json`. Document the abuse pattern in the post's `Detailed Findings` and `Detection Recommendations` sections instead, and write `No domain IOCs published by source` in the IOC block. The validator hard-fails on bare-platform entries; see `validation/policy.json` → `legitimate_platform_iocs_deny_list`.
+  - The same rule applies to placeholder strings (`claude.ai/new?q=[INJECTION_PAYLOAD]`) and to descriptions of patched vulnerability surfaces (`claude.com/redirect/`) — these are not indicators; they are research notes that belong in the prose.
 - Add with all fields: value, type (domain/url_path/sha256/md5/ip), context, first_seen, source, campaign, status.
 - Update the last_updated field to today's date.
 
@@ -241,7 +263,7 @@ Run this checklist and the shared validator before executing git commit:
 4. MITRE ATT&CK technique IDs are valid format and the technique names are correct
 5. The post slug in the filename matches the id in posts-index.json
 6. Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security — never Title Case, never with spaces, never a value outside this list
-7. IOC domains are clean (no [.] defanging, no hxxps://) in the JSON data files
+7. IOC domains are clean (no [.] defanging, no hxxps://) in the JSON data files, and no entry is a bare legitimate AI vendor platform or its generic feature path (see the deny list in section "Update data/iocs.json"). The validator will hard-fail on these.
 8. IOCs in the Markdown post body should use defanged format for display
 9. No duplicate posts exist (check by date and slug against existing posts/)
 10. The posts-index.json is valid JSON after your edits (parse it to verify)
