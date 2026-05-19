@@ -92,14 +92,13 @@
 <h2>MITRE ATT&amp;CK Mapping</h2>
 <table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Prompt Injection</td><td>T1595</td><td>Hidden instructions embedded in URL parameters using HTML tags invisible to user but processed by Claude</td></tr><tr><td>Phishing</td><td>T1566</td><td>Google Ads used to deliver malicious redirect URL appearing as legitimate claude.com search result</td></tr><tr><td>Web Session Cookie</td><td>T1185</td><td>Exploitation of implicit trust in claude.ai conversation context and memory</td></tr><tr><td>Data from Cloud Storage Object</td><td>T1526</td><td>Exfiltration of conversation history via Anthropic Files API using embedded attacker API credentials</td></tr></tbody></table>
 <h2>IOCs</h2>
+<p>_Oasis Security explicitly states that the Claudy Day research used proof-of-concept injection payloads and that no active exploitation URLs were public at the time of analysis. The strings previously listed in this section (<code>claude.ai/new?q=[INJECTION_PAYLOAD]</code>, <code>claude.com/redirect/</code>, <code>api.anthropic.com/v1/files</code>) are not malicious indicators — they are legitimate Anthropic platform endpoints and a placeholder. Listing them as IOCs would block legitimate Claude usage rather than detect the attack. The corresponding records have been removed from <code>data/iocs.json</code>._</p>
 <h3>Domains</h3>
-<p>_No persistent IOCs; attack relies on crafted URLs distributed via Google Ads. Researchers used proof-of-concept injection payloads; no active exploitation URLs public at time of analysis._</p>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
 <h3>Full URL Paths</h3>
-<pre><code class="language-">claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)
-claude.com/redirect/ (open redirect flaw, any URL parameter)
-api.anthropic.com/v1/files (Files API used for exfiltration)</code></pre>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
 <h3>Splunk Format</h3>
-<pre><code class="language-">&quot;claude.ai/new?q=[INJECTION_PAYLOAD] (injection vector)&quot; OR &quot;claude.com/redirect/ (open redirect flaw, any URL parameter)&quot; OR &quot;api.anthropic.com/v1/files (Files API used for exfiltration)&quot;</code></pre>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Implement strict input validation and HTML entity escaping on all URL parameters that feed into LLM context, especially pre-filled prompt parameters. Disable or heavily restrict open redirect functionality on authentication/platform domains. Monitor for anomalous Files API usage patterns: legitimate users rarely upload data to Anthropic cloud in bulk; detector should flag multiple file uploads within short windows or uploads containing conversation history. For enterprise deployments: restrict Claude.ai access via conditional access policies blocking high-risk delivery vectors (public cloud, external networks); require explicit user confirmation before Claude executes sensitive actions (file uploads, external API calls, conversation history access) even if instructed by embedded prompts. Educate users to treat AI chat links as untrusted URLs and avoid clicking pre-filled prompt links from external sources (ads, emails, unfamiliar websites). Implement LLM-aware DLP rules that detect text exfiltration patterns even when embedded in seemingly benign API calls. Monitor Google Search ads for suspicious ad content mimicking legitimate AI platform URLs.</p>
 <h2>References</h2>

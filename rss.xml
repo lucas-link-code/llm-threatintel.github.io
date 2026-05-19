@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 19 May 2026 12:05:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 21:18:15 +0000</lastBuildDate>
     <item>
       <title>CVE-2026-44338: PraisonAI Legacy Flask API Authentication Bypass — Scanner Probed Vulnerable /agents Endpoint 3 Hours 44 Minutes After GitHub Advisory</title>
       <link>https://llm-threatintel.com/posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.html</link>
