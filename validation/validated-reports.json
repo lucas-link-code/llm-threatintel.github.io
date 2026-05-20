@@ -1319,23 +1319,23 @@
       ]
     },
     "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai": {
-      "content_hash": "a6a36c8a119e0567f213a33d5ab060f7fdd8c2c77a0ac3a7689b72eabe1e7039",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "ff1a0b374e649f492009d52be9249113c556d996104a27ac2c8e5636c3febc85",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai.md",
       "posts_index_hash": "41b5fc18e260cecd45bf56a1600fb67e9bb88b98e781d461331f2c696969ffb1",
       "report_id": "2026-05-06-claudy-day-oasis-prompt-injection-claude-ai",
-      "review_required": [],
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://www.oasis.security/blog/claude-ai-prompt-injection-data-exfiltration-vulnerability",
         "https://www.darkreading.com/vulnerabilities-threats/claudy-day-trio-flaws-claude-users-data-theft",
         "https://www.truefoundry.com/blog/claude-code-prompt-injection"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-05-20T07:15:11+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain": {
       "content_hash": "4f8b4bb2be2e82437463a29614492a705552e0be47eae79fd795f02f26844ad1",
@@ -1788,7 +1788,7 @@
       "warnings": []
     },
     "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026": {
-      "content_hash": "6ebb82e06bad8628e9f70e4533dac4ceb92e3134524f7c3ae9d5132b169d58bd",
+      "content_hash": "46f60882c9078e69398541716b5390abf70cd5e7118f38b35a6f54a694e2d007",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.md",
       "posts_index_hash": "dee133b0ec191249c00546247fc02da50ac25e53564ce2fb939c05bce1c44530",
@@ -1802,7 +1802,7 @@
         "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-17T06:24:41+00:00",
+      "validated_at": "2026-05-20T07:15:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
