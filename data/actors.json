@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-19",
+  "last_updated": "2026-05-21",
   "entries": [
     {
       "id": "cve-2026-44338-praisonai-auth-bypass",
@@ -1021,7 +1021,10 @@
         "LiteLLM proxy deployments",
         "LMDeploy deployments with vision-language support",
         "SQL injection payloads via HTTP",
-        "Hugging Face"
+        "Hugging Face",
+        "Public internet scanning via Shodan-like enumeration",
+        "Operational artifact injection via accessible systems",
+        "Automated scanning and exploitation of publicly exposed LiteLLM instances"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1043,7 +1046,12 @@
         "T1110.003 - Credential Access via Brute Force",
         "T1195 - Supply Chain Compromise",
         "T1204.002 - User Execution of Malware",
-        "T1555.003 - Credentials from Web Browsers"
+        "T1555.003 - Credentials from Web Browsers",
+        "T1592 - Reconnaissance",
+        "T1190 - Exploitation of Vulnerability",
+        "T1598 - Phishing",
+        "T1078 - Valid Accounts",
+        "T1110 - Brute Force"
       ],
       "description": "Threat actor conducting active exploitation of CVE-2025-59528 in publicly exposed Flowise instances. Initial detection from Starlink infrastructure suggests either automated scanning or actor with access to resilient infrastructure. Target pattern consistent with indiscriminate credential harvesting (LLM API keys, cloud provider tokens).",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

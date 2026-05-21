@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-19",
+  "last_updated": "2026-05-21",
   "iocs": [
     {
       "value": "praisonai",
@@ -1637,6 +1637,33 @@
       "first_seen": "2026-05-19",
       "source": "CVE.news",
       "campaign": "cve-2026-42208-litellm-sql-injection",
+      "status": "active"
+    },
+    {
+      "value": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+      "type": "url_path",
+      "context": "Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure",
+      "first_seen": "2026-05-21",
+      "source": "The Hacker News",
+      "campaign": "intruder-1m-exposed-ai-services-misconfig-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://docs.litellm.ai/blog/security-update-march-2026",
+      "type": "url_path",
+      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
+      "first_seen": "2026-05-21",
+      "source": "The Hacker News",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+      "type": "url_path",
+      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
+      "first_seen": "2026-05-21",
+      "source": "The Hacker News",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
       "status": "active"
     }
   ]

@@ -2044,6 +2044,56 @@
       "validated_at": "2026-05-19T07:53:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026": {
+      "content_hash": "a3b3af668c1e59630237a9ee51b8db4a78787d528a48c6767430af02e1e486c8",
+      "evidence_status": "validated",
+      "file": "2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026.md",
+      "posts_index_hash": "baf4dea4c93dec20d1a3a7854ddf9ca4873a4bddde7ebf206c5d216a7405aca7",
+      "report_id": "2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.helpnetsecurity.com/2026/05/20/agentic-ai-security-llm-research/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-21T06:55:24+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026": {
+      "content_hash": "d516763eaf8bf4dd0a949d2370b5ccdb36d84b43967a1ae00418befda4b3a580",
+      "evidence_status": "validated",
+      "file": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.md",
+      "posts_index_hash": "5d3c0b5d3b99dd56815aea7c7f33c0f35067b8696921ab4de1790134a24f25af",
+      "report_id": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+        "https://www.securityweek.com/fresh-litellm-vulnerability-exploited-shortly-after-disclosure/",
+        "https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-21T06:55:24+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026": {
+      "content_hash": "68d3f429d3b9e361454c08ffa415c3c7b18c33e64e7b5c410e8aaf3220300acc",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.md",
+      "posts_index_hash": "e1de9b9747d6b508a463330254786158a9a619f3c2fa18d8e51eb8ce904377e4",
+      "report_id": "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+        "https://www.darkreading.com/cyber-risk/industrialized-exploitation-agentic-offensive-security-existential-threat"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-21T06:55:25+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

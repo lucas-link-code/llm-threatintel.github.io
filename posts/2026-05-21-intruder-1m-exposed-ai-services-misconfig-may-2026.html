@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure | LLM ThreatIntel</title>
+  <meta name="description" content="The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure">
+  <meta property="og:description" content="The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure">
+  <meta property="article:published_time" content="2026-05-21T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-21T00:00:00Z">
+  <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure">
+  <meta name="twitter:description" content="The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations\u2014Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure",
+  "description": "The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.",
+  "datePublished": "2026-05-21T00:00:00Z",
+  "dateModified": "2026-05-21T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.html",
+  "keywords": [
+    "shadow-ai",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-21</span>
+      <span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure</h1>
+<p><strong>Date:</strong> 2026-05-21<br><strong>Tags:</strong> shadow-ai, malware</p>
+<h2>Executive Summary</h2>
+<p>The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Intruder AI Infrastructure Exposure Audit</td></tr><tr><td>Attribution</td><td>Unknown (discovered via public scanning) (confidence: none)</td></tr><tr><td>Target</td><td>Self-hosted LLM infrastructure operators, AI service deployments across enterprises</td></tr><tr><td>Vector</td><td>Public internet exposure, misconfigured authentication, unprotected agent platforms</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-14 (publication date)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>One Flowise instance exposed the entire business logic of an LLM chatbot service with credential list exposed; Flowise was hardened enough not to reveal stored values to unauthenticated users, but an attacker could still use the tools connected to those credentials to exfiltrate sensitive information. Chatbots left user conversations exposed, with examples including OpenUI-based platforms exposing full LLM conversation history. Generic chatbots hosted multiple models freely available; malicious users can jailbreak models to bypass safety guardrails and people are finding creative ways to abuse company chatbots to access more capable models without paying or having requests logged to their own accounts.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Reconnaissance</td><td>T1592</td><td>Scanning and enumeration of exposed AI services and infrastructure</td></tr><tr><td>Exploitation of Vulnerability</td><td>T1190</td><td>Targeting misconfigured authentication and access control on AI agent platforms</td></tr><tr><td>Abuse of Functionality</td><td>T1078</td><td>Unauthorized use of exposed chatbot services for jailbreaking and model misuse</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No specific IOCs published; vulnerability patterns across multiple deployment types._</p>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">flowise
+n8n</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for unauthenticated access to AI platforms (Flowise, n8n, OpenUI instances); enforce authentication and network segmentation for all agent management platforms; disable public internet exposure for LLM chatbots unless explicitly required; implement WAF rules to block common jailbreak patterns; track outbound API calls from user-controlled chatbots for anomalous token generation; scan certificate transparency logs for internal domain exposures; implement rate limiting on model invocation endpoints.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] We Scanned 1 Million Exposed AI Services. Here&#x27;s How Bad the Security Actually Is (2026-05-14) — https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html</li><li>[Intruder Security Blog (via Dark Reading)] AI Infrastructure Security Assessment (2026-05-13) — https://www.darkreading.com/cyber-risk/industrialized-exploitation-agentic-offensive-security-existential-threat</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

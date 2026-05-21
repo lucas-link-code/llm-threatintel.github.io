@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
+      "title": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
+      "date": "2026-05-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:AMBER",
+      "excerpt": "CVE-2026-42208 (CVSS score: 9.3) is an SQL injection that could be exploited to modify the LiteLLM proxy database; a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database, but this result is from May 14 publication window citing active May exploitation.",
+      "file": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.md"
+    },
+    {
+      "id": "2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026",
+      "title": "Agentic AI Security Crisis: Confused-Deputy Problem in LLM-Driven Operations—Telemetry Poisoning, Retrieval Jamming, and Prompt Injection Target Production Infrastructure Agents",
+      "date": "2026-05-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Large language models in operational roles query telemetry, propose configuration changes, and in some deployments execute those changes against live infrastructure; vendors describe this as autonomous remediation or self-healing infrastructure, but recent survey characterizes it as a confused-deputy problem waiting to happen. Retrieval jamming floods the knowledge base with blocker documents that trigger refusal loops and stall incident response when needed; telemetry manipulation allows attackers who can influence metrics and logs to steer mitigation decisions without touching the model.",
+      "file": "2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026.md"
+    },
+    {
+      "id": "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026",
+      "title": "Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure",
+      "date": "2026-05-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.",
+      "file": "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.md"
+    },
+    {
       "id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
       "title": "CVE-2026-44338: PraisonAI Legacy Flask API Authentication Bypass — Scanner Probed Vulnerable /agents Endpoint 3 Hours 44 Minutes After GitHub Advisory",
       "date": "2026-05-19",
