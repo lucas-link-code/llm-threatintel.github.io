@@ -1806,6 +1806,23 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026": {
+      "content_hash": "0723c40fdb7f7f809dda435caefba1ab666ae3eeab31fda0e3daded74ce671f0",
+      "evidence_status": "validated_with_alternate_sources",
+      "file": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md",
+      "posts_index_hash": "fb4c8af8faf79a77a4c877cb428b1c3fd1a37a5b20f7ed4328acebbe33b1ce2e",
+      "report_id": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-21T12:03:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "manual evidence override accepted"
+      ]
+    },
     "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026": {
       "content_hash": "3f6b4c6c4cdbe0dd6737a976802cd9c9bfa0a3b783c13cfcfb5498a8bd250c64",
       "evidence_status": "validated_with_warnings",
@@ -2045,6 +2062,28 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch": {
+      "content_hash": "c1806e1d589a37a7959dc0f308d3db0a573bc3d08974328210932be116933489",
+      "evidence_status": "validated_with_alternate_sources",
+      "file": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.md",
+      "posts_index_hash": "6ddc8897f24f93c7c55684b5a443a9adb0dcc84b02fb66a21b6ec2329ab16f5c",
+      "report_id": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch",
+      "review_required": [],
+      "source_urls": [
+        "https://oddguan.com/blog/second-time-same-sandbox-anthropic-claude-code-network-allowlist-bypass-data-exfiltration/",
+        "https://oddguan.com/blog/anthropic-sandbox-cve-2025-66479/",
+        "https://www.theregister.com/security/2026/05/20/even-claude-agrees-hole-in-its-sandbox-was-real-and-dangerous/5243662",
+        "https://www.securityweek.com/anthropic-silently-patches-claude-code-sandbox-bypass/",
+        "https://cybersecuritynews.com/claude-codes-network-sandbox-vulnerability/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66479"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-21T12:02:53+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "manual evidence override accepted"
+      ]
+    },
     "2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026": {
       "content_hash": "a3b3af668c1e59630237a9ee51b8db4a78787d528a48c6767430af02e1e486c8",
       "evidence_status": "validated",
@@ -2094,6 +2133,32 @@
       "validated_at": "2026-05-21T06:55:25+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026": {
+      "content_hash": "6c480d9d4d814660d593150c8eee3d4a79465b845c3acd8b16a543ebbf93924f",
+      "evidence_status": "validated_with_alternate_sources",
+      "file": "2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026.md",
+      "posts_index_hash": "c789c175a0513f133c27bbad8e4a6b8418c996492f621a7cecc56e0ba58d7bd1",
+      "report_id": "2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/antv-packages-compromised",
+        "https://www.microsoft.com/en-us/security/blog/2026/05/20/mini-shai-hulud-compromised-antv-npm-packages-enable-ci-cd-credential-theft/",
+        "https://snyk.io/blog/mini-shai-hulud-antv-npm-supply-chain-attack/",
+        "https://www.stepsecurity.io/blog/shai-hulud-here-we-go-again-mass-npm-supply-chain-attack-hits-the-antv-ecosystem",
+        "https://safedep.io/mini-shai-hulud-strikes-again-314-npm-packages-compromised/",
+        "https://www.mend.io/blog/mini-shai-hulud-antv-atool-npm-supply-chain-attack/",
+        "https://www.akamai.com/blog/security-research/mini-shai-hulud-worm-returns-goes-public",
+        "https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/",
+        "https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html",
+        "https://www.infosecurity-magazine.com/news/antv-npm-mini-shai-hulud-largest/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-21T12:02:53+00:00",
+      "validation_version": "1.0.0",
+      "warnings": [
+        "manual evidence override accepted"
+      ]
     }
   },
   "validation_version": "1.0.0"

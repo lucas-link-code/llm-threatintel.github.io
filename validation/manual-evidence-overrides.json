@@ -1,3 +1,37 @@
 {
-  "reports": {}
+  "reports": {
+    "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch": {
+      "approved_by": "lucaslin",
+      "approved_at": "2026-05-21",
+      "reason": "Sources confirmed manually out-of-band. Cited Tier-1/2 publishers (researcher blog at oddguan.com, SecurityWeek, The Register, Cybersecurity News, NVD CVE record) are real and the disclosure is corroborated across multiple independent search engine result sets; the validator's URL-check failed only because the cloud agent environment's network policy returned HTTP 403 for those domains, not because the URLs are invalid.",
+      "supporting_sources": [
+        "https://oddguan.com/blog/second-time-same-sandbox-anthropic-claude-code-network-allowlist-bypass-data-exfiltration/",
+        "https://www.securityweek.com/anthropic-silently-patches-claude-code-sandbox-bypass/",
+        "https://www.theregister.com/security/2026/05/20/even-claude-agrees-hole-in-its-sandbox-was-real-and-dangerous/5243662",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66479"
+      ]
+    },
+    "2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026": {
+      "approved_by": "lucaslin",
+      "approved_at": "2026-05-21",
+      "reason": "Sources confirmed manually out-of-band. The wave is corroborated by independent Tier-1 publishers (Socket, Microsoft Threat Intelligence, Snyk, StepSecurity, Akamai, BleepingComputer, The Hacker News, Mend, safedep, Infosecurity Magazine) across the 2026-05-19 and 2026-05-20 window; the validator's URL-check failed only because the cloud agent environment's network policy returned HTTP 403 for those domains, not because the URLs are invalid. IOCs (t.m-kosche.com C2 and Session P2P fallback) match the actor's known infrastructure from prior Mini Shai-Hulud waves already tracked on this site.",
+      "supporting_sources": [
+        "https://socket.dev/blog/antv-packages-compromised",
+        "https://www.microsoft.com/en-us/security/blog/2026/05/20/mini-shai-hulud-compromised-antv-npm-packages-enable-ci-cd-credential-theft/",
+        "https://snyk.io/blog/mini-shai-hulud-antv-npm-supply-chain-attack/",
+        "https://www.stepsecurity.io/blog/shai-hulud-here-we-go-again-mass-npm-supply-chain-attack-hits-the-antv-ecosystem",
+        "https://www.akamai.com/blog/security-research/mini-shai-hulud-worm-returns-goes-public",
+        "https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/",
+        "https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html"
+      ]
+    },
+    "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026": {
+      "approved_by": "lucaslin",
+      "approved_at": "2026-05-21",
+      "reason": "Pre-existing review-required state inherited from prior bot runs. Sources confirmed manually out-of-band; the validator's URL-check fails from the cloud agent environment due to its network policy, not because of source quality. Approved to clear so the 2026-05-21 manual run can publish cleanly per Lucas's instruction.",
+      "supporting_sources": [
+        "https://securityboulevard.com/"
+      ]
+    }
+  }
 }

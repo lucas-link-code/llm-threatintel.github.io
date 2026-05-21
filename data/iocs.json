@@ -2,6 +2,33 @@
   "last_updated": "2026-05-21",
   "iocs": [
     {
+      "value": "m-kosche.com",
+      "type": "domain",
+      "context": "Mini Shai-Hulud Wave 6 (@antv ecosystem npm compromise, May 19 2026): primary C2 / credential exfiltration host; HTTPS POST disguised as OpenTelemetry trace data at t.m-kosche.com:443/api/public/otel/v1/traces. Same actor (TeamPCP) and payload byte-equivalent to prior Mini Shai-Hulud waves.",
+      "first_seen": "2026-05-19",
+      "source": "Socket",
+      "campaign": "mini-shai-hulud-antv-echarts-npm-639-versions-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "t.m-kosche.com",
+      "type": "domain",
+      "context": "Mini Shai-Hulud Wave 6 (@antv ecosystem npm compromise, May 19 2026): exact exfiltration subdomain hosting the OpenTelemetry-disguised C2 endpoint on port 443.",
+      "first_seen": "2026-05-19",
+      "source": "Socket",
+      "campaign": "mini-shai-hulud-antv-echarts-npm-639-versions-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "t.m-kosche.com:443/api/public/otel/v1/traces",
+      "type": "url_path",
+      "context": "Mini Shai-Hulud Wave 6 exact C2 path: HTTPS POST of PBKDF2/Fisher-Yates encrypted credential bundle, disguised as legitimate Jaeger/OTLP trace payload to bypass observability-aware egress proxies.",
+      "first_seen": "2026-05-19",
+      "source": "Socket",
+      "campaign": "mini-shai-hulud-antv-echarts-npm-639-versions-may-2026",
+      "status": "active"
+    },
+    {
       "value": "praisonai",
       "type": "package",
       "context": "CVE-2026-44338 PraisonAI legacy Flask api_server.py authentication bypass; AUTH_ENABLED=False hard-coded; unauthenticated GET /agents and POST /chat on TCP/8080; affects versions 2.5.6 through 4.6.33; fixed in 4.6.34",

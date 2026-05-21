@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-21T06:55:25+00:00`
-- Commit SHA: `ad7d462ad125f9eb7c07dda20baeda3b05aded5a`
+- Run time UTC: `2026-05-21T12:03:35+00:00`
+- Commit SHA: `e0e0b7050d71`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `43`
-- Review required: `2`
-- Reports checked: `4`
-- Reports skipped: `108`
-- Reports newly validated: `3`
+- Review required: `0`
+- Reports checked: `1`
+- Reports skipped: `113`
+- Reports newly validated: `1`
 - IOC duplicates found: `5`
-- Source URLs checked: `7`
+- Source URLs checked: `0`
 
 No files were removed or destructively modified.
 
@@ -26,43 +26,41 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-flowise-cve-2025-59528-active-rce-exploitation`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-05-mercor-data-vendor-ai-training-breach`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post excerpt is long (976 characters)
-- **WARN** `ioc-weak-source` `data/iocs.json` `59`: IOC has weak source label: OSINT
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `114`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `115`: legacy IOC format exception retained without modifying data: namastex/pgserve
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `117`: legacy IOC format exception retained without modifying data: xinference==2.6.0
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `118`: legacy IOC format exception retained without modifying data: xinference==2.6.1
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `119`: legacy IOC format exception retained without modifying data: xinference==2.6.2
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `120`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `121`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `124`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `125`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `126`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `127`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `128`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `129`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `130`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `131`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `133`: legacy IOC format exception retained without modifying data: langflow (all versions)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `140`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `141`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `142`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `152`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `156`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `158`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `159`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `160`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `161`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `179`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `180`: legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `181`: legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)
+- **WARN** `ioc-weak-source` `data/iocs.json` `62`: IOC has weak source label: OSINT
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `117`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `118`: legacy IOC format exception retained without modifying data: namastex/pgserve
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `120`: legacy IOC format exception retained without modifying data: xinference==2.6.0
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `121`: legacy IOC format exception retained without modifying data: xinference==2.6.1
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `122`: legacy IOC format exception retained without modifying data: xinference==2.6.2
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `123`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `124`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `127`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `128`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `129`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `130`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `131`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `133`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `134`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `135`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `136`: legacy IOC format exception retained without modifying data: langflow (all versions)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `143`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `144`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `145`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `155`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `159`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `161`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `162`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `163`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `164`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `182`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `183`: legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `184`: legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: openui appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
-- **REVIEW** `evidence-url-review` `posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.md` `2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026`: 1 source URL(s) require review
-- **REVIEW** `evidence-source-review-required` `posts/2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md` `2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026`: no source URL was accessible; manual review or alternate evidence is required
 
 ## Duplicate IOC Review
 
@@ -86,29 +84,3 @@ No files were removed or destructively modified.
 ### `recargapopular.com`
 - `recargapopular.com` type `domain` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `BleepingComputer`
 - `recargapopular.com` type `domain` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
-
-## Human Review Queue
-
-```text
-Report: 2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

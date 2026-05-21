@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued | LLM ThreatIntel</title>
+  <meta name="description" content="Wyze Labs researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic&#x27;s Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user&#x27;s domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw — a SOCKS5 hostname null-byte injection of the form attacker-host.com\x00.google.com — affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan&#x27;s HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued">
+  <meta property="og:description" content="Wyze Labs researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic&#x27;s Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user&#x27;s domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw — a SOCKS5 hostname null-byte injection of the form attacker-host.com\x00.google.com — affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan&#x27;s HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued">
+  <meta property="article:published_time" content="2026-05-21T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-21T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued">
+  <meta name="twitter:description" content="Wyze Labs researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic&#x27;s Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user&#x27;s domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw — a SOCKS5 hostname null-byte injection of the form attacker-host.com\x00.google.com — affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan&#x27;s HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection \u2014 Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued",
+  "description": "Wyze Labs researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic's Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user's domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw \u2014 a SOCKS5 hostname null-byte injection of the form attacker-host.com\\x00.google.com \u2014 affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan's HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory.",
+  "datePublished": "2026-05-21T00:00:00Z",
+  "dateModified": "2026-05-21T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html",
+  "keywords": [
+    "malicious-tool",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-21</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued</h1>
+<p><strong>Date:</strong> 2026-05-21<br><strong>Tags:</strong> malicious-tool, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Independent researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic&#x27;s Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user&#x27;s domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw — a SOCKS5 hostname null-byte injection of the form <code>attacker-host.com\x00.google.com</code> — affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan&#x27;s HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory; developers running affected versions with a custom <code>allowedDomains</code> policy should upgrade to ≥ v2.1.90 immediately and rotate any credentials that Claude Code agent runs touched during the affected window.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Vulnerability</td><td>Claude Code network sandbox bypass — SOCKS5 hostname null-byte injection</td></tr><tr><td>Affected product</td><td>Anthropic Claude Code CLI (<code>@anthropic-ai/claude-code</code>)</td></tr><tr><td>Affected versions</td><td>v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89 — ~130 published versions</td></tr><tr><td>Patched version</td><td>v2.1.90, released 2026-04-01</td></tr><tr><td>CVE</td><td>None assigned to Claude Code. The prior, related sandbox bypass (CVE-2025-66479, CVSS 1.8) was issued against <code>@anthropic-ai/sandbox-runtime</code> &lt; 0.0.16, not Claude Code itself.</td></tr><tr><td>Disclosure date</td><td>2026-05-20 (researcher blog), covered by SecurityWeek and The Register on 2026-05-20</td></tr><tr><td>Researcher</td><td>Aonan Guan (Wyze Labs, blog at oddguan.com)</td></tr><tr><td>Status</td><td>Patched silently 2026-04-01; public disclosure 2026-05-20; no Anthropic security advisory at disclosure time</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Aonan Guan&#x27;s public write-up <em>Second Time, Same Sandbox</em>, the vulnerability sits in how Claude Code&#x27;s sandbox enforces the network allowlist that operators configure via the <code>allowedDomains</code> policy. The sandbox routes all outbound network traffic through an embedded SOCKS5 proxy that validates the requested hostname against the allowlist before relaying the connection. The validation is implemented as a JavaScript suffix check — if the requested hostname ends with one of the allowed entries (for example <code>*.google.com</code>), the connection is approved. The relayed hostname is then passed unchanged to libc&#x27;s <code>getaddrinfo()</code> for resolution. Because C string handling terminates at the first null byte, a hostname of the form <code>attacker-host.com\x00.google.com</code> passes the JavaScript suffix check (the string ends with <code>.google.com</code> to the JS engine, which treats <code>\x00</code> as just another character inside the string) but resolves to <code>attacker-host.com</code> at the OS layer.</p>
+<p>The result is a complete bypass of the network allowlist. Any code running inside the Claude Code sandbox — including code generated by an LLM agent run, tool-installed dependencies, or untrusted MCP servers — can open a raw SOCKS5 tunnel to an attacker-controlled host. Because the channel is raw SOCKS5 rather than HTTP, the exfiltration does not appear in proxy logs, web egress logs, or browser-style telemetry; it shows up only at the L3 network layer if egress filtering is in place outside the sandbox itself.</p>
+<p>Guan tested credential exfiltration over the bypass and confirmed extraction of AWS credentials read from <code>~/.aws/credentials</code>, GitHub personal access tokens read from <code>~/.config/gh/config.yml</code>, model API keys held in environment variables such as <code>ANTHROPIC_API_KEY</code> and <code>OPENAI_API_KEY</code>, and arbitrary local source code read from the agent&#x27;s working directory. The Register notes that the data exfiltration window in production environments may be effectively unlimited because the SOCKS5 channel produces no HTTP egress signal that a proxy or DLP control would normally log.</p>
+<p>This is the second documented Claude Code sandbox bypass attributed to Guan. The first, tracked as CVE-2025-66479 (CVSS 1.8, Protection Mechanism Failure / CWE-693), was a bug in <code>@anthropic-ai/sandbox-runtime</code> &lt; 0.0.16 in which a sandbox configured with <code>allowedDomains: []</code> — intended by the operator to mean <em>complete network isolation</em> — was treated as <em>no policy configured</em> and permitted unrestricted egress. Anthropic patched that flaw in <code>sandbox-runtime</code> v0.0.16 and shipped the Claude Code packaging in v2.0.55 with the changelog line <em>&quot;Fix proxy DNS resolution&quot;</em>; no security advisory mentioned the network isolation regression. Guan submitted his HackerOne report on the first bypass on 2026-04-03; Anthropic responded that it had identified and fixed the issue earlier (public commit 2026-03-27, shipped in v2.1.88 on 2026-03-31). On the second bypass (the SOCKS5 null-byte injection covered here), Anthropic closed Guan&#x27;s HackerOne report #3646509 as a duplicate, patched silently in v2.1.90 on 2026-04-01, and as of the 2026-05-20 public disclosure had not assigned a CVE to Claude Code or published a security advisory.</p>
+<p>The Register reports that Anthropic&#x27;s own Claude model, when shown the technical write-up, concurred with Guan&#x27;s severity assessment — hence the headline <em>&quot;Even Claude agrees: hole in its sandbox was real and dangerous.&quot;</em> SecurityWeek&#x27;s coverage focuses on the disclosure-process question: when an AI tool vendor patches a sandbox-escape-class flaw without filing a CVE or warning operators who rely on the sandbox as a security boundary, downstream defenders cannot prioritise upgrades, cannot retrospectively audit the affected window, and cannot reason about which credential rotations are now required.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Subvert Trust Controls: Software Component Tampering — N/A; the sandbox itself is the trust boundary being bypassed</td><td>T1553</td><td>The sandbox&#x27;s domain allowlist is the protection mechanism; the SOCKS5 null-byte injection bypasses it without modifying the sandbox</td></tr><tr><td>Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol</td><td>T1048.002</td><td>Raw SOCKS5 tunnel from inside the sandbox to attacker-controlled host; no HTTP egress signal</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td><code>~/.aws/credentials</code>, <code>~/.config/gh/config.yml</code> accessed from inside the sandbox</td></tr><tr><td>Unsecured Credentials: Environment Variables</td><td>T1552.001</td><td><code>ANTHROPIC_API_KEY</code>, <code>OPENAI_API_KEY</code>, and arbitrary env vars readable inside the sandbox</td></tr><tr><td>Defense Evasion: Impair Defenses — Disable or Modify System Firewall</td><td>T1562.004</td><td>Equivalent effect on the sandbox&#x27;s egress allowlist; the allowlist is intact but bypassed</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p><em>Aonan Guan&#x27;s disclosure is a vulnerability advisory, not an incident response report. No attacker-controlled domains, hostnames, hashes, or exploit URLs have been observed in the wild — the proof-of-concept used the placeholder <code>attacker-host.com\x00.google.com</code> to demonstrate the suffix-vs-resolution mismatch. Anthropic infrastructure (<code>claude.ai</code>, <code>api.anthropic.com</code>) is not an IOC; the vulnerability is in the local Claude Code CLI, not in Anthropic-hosted services. Defenders detect this bypass by checking the local Claude Code version (<code>claude --version</code>) and by network telemetry, not by domain blocklists; see Detection Recommendations below.</em></p>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p><strong>Version inventory (every endpoint running Claude Code):</strong><br>- Run <code>claude --version</code> (or check <code>~/.claude/CLAUDE.md</code> and <code>package.json</code> for the npm-installed CLI) and compare against the affected range. Any version <code>&gt;= 2.0.24 &amp;&amp; &lt; 2.1.90</code> was vulnerable; any version <code>&gt;= 2.0.24 &amp;&amp; &lt; 2.0.55</code> was vulnerable to the <em>first</em> sandbox bypass (CVE-2025-66479) as well. Inventory via MDM, your endpoint management agent, or a one-off SSM/Ansible task across developer fleets.</p>
+<p><strong>Retrospective credential audit:</strong><br>- Treat the window 2025-10-20 → 2026-04-01 as a potential credential exposure window for any developer who ran Claude Code agent sessions with <code>allowedDomains</code> configured. Rotate AWS access keys, GitHub PATs, npm tokens, and model API keys (<code>ANTHROPIC_API_KEY</code>, <code>OPENAI_API_KEY</code>, others) that were present in <code>~/.aws/</code>, <code>~/.config/gh/</code>, or the shell environment of Claude Code processes during that window. The CVE-2025-66479 window for an empty-allowedDomains policy is narrower (sandbox-runtime &lt; 0.0.16, Claude Code &lt; 2.0.55).</p>
+<p><strong>Network egress (catches future bypasses of this class):</strong><br>- Do not rely on the Claude Code sandbox as the sole egress control for developer endpoints handling production credentials. Pair it with a host-level firewall (macOS <code>pf</code>, Linux <code>nftables</code>, Windows Defender Firewall) or a network-level egress proxy whose allowlist is enforced <em>outside</em> the sandbox and that logs raw L4 connections, not just HTTP.<br>- Alert on outbound SOCKS5 connections (default proxy ports 1080, 1085, 4145, plus any custom port) originating from a developer workstation to a non-allowlisted destination. SOCKS5 from developer hosts is rare in most environments outside specific tooling (Tor, lightsail, dev proxies); a baseline followed by exception monitoring catches the bypass.<br>- For EDR with process+netconn telemetry (CrowdStrike, SentinelOne, Defender for Endpoint), correlate <code>claude</code> (or <code>node</code> invoking <code>@anthropic-ai/claude-code</code>) processes with outbound connections to non-allowlisted hosts, especially over ephemeral high ports.</p>
+<p><strong>Configuration hardening for ongoing use:</strong><br>- After upgrading to v2.1.90+, audit the <code>allowedDomains</code> policy in every developer&#x27;s Claude Code config and reject overly broad entries (e.g., bare TLD wildcards). The fix in v2.1.90 closes the null-byte path but the allowlist remains the primary control surface.</p>
+<h2>References</h2>
+<ul><li>[Aonan Guan] <em>Second Time, Same Sandbox: Another Anthropic Claude Code Network Sandbox Bypass Enables Data Exfiltration</em> (2026-05-20) — https://oddguan.com/blog/second-time-same-sandbox-anthropic-claude-code-network-allowlist-bypass-data-exfiltration/</li><li>[Aonan Guan] <em>CVE-2025-66479: Anthropic&#x27;s Silent Fix and the CVE That Claude Code Never Got</em> (prior disclosure, referenced as the &quot;first time&quot;) — https://oddguan.com/blog/anthropic-sandbox-cve-2025-66479/</li><li>[The Register] <em>Even Claude agrees: hole in its sandbox was real and dangerous</em> (2026-05-20) — https://www.theregister.com/security/2026/05/20/even-claude-agrees-hole-in-its-sandbox-was-real-and-dangerous/5243662</li><li>[SecurityWeek] <em>Anthropic Silently Patches Claude Code Sandbox Bypass</em> (2026-05-20) — https://www.securityweek.com/anthropic-silently-patches-claude-code-sandbox-bypass/</li><li>[Cybersecurity News] <em>Claude Code&#x27;s Network Sandbox Vulnerability Exposes User Credentials and Source Code</em> (2026-05-20) — https://cybersecuritynews.com/claude-codes-network-sandbox-vulnerability/</li><li>[NVD] <em>CVE-2025-66479</em> (prior related sandbox-runtime CVE, CVSS 1.8) — https://nvd.nist.gov/vuln/detail/CVE-2025-66479</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

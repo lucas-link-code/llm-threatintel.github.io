@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch",
+      "title": "Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued",
+      "date": "2026-05-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Wyze Labs researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic's Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user's domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw — a SOCKS5 hostname null-byte injection of the form attacker-host.com\\x00.google.com — affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan's HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory.",
+      "file": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.md"
+    },
+    {
+      "id": "2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026",
+      "title": "Mini Shai-Hulud Third Wave: TeamPCP Hijacks atool npm Maintainer Account, Publishes 639 Malicious Versions Across 323 Packages in 30 Minutes — @antv Ecosystem and echarts-for-react (1.1M Weekly Downloads) Among Victims",
+      "date": "2026-05-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On 2026-05-19, the Mini Shai-Hulud campaign (TeamPCP) hijacked the npm maintainer account atool and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those across 279 packages in the @antv data-visualisation ecosystem plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The 498 KB obfuscated Bun stealer is byte-equivalent to prior Mini Shai-Hulud waves; it harvests 20+ credential classes (AWS, GCP, Azure, GitHub, npm, SSH, Kubernetes, Vault, Stripe, DB strings), attempts Docker host-socket escape, and exfiltrates via HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry traces) with Session P2P as fallback. Microsoft Threat Intelligence advisory 2026-05-20.",
+      "file": "2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026.md"
+    },
+    {
       "id": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
       "title": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
       "date": "2026-05-21",
