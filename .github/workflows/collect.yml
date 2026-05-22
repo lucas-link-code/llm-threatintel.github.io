@@ -1,7 +1,9 @@
 # ============================================================
 # LLM ThreatIntel — Automated Intelligence Collection
 # Option B: GitHub Actions + Claude API
-# Runs daily at 03:00 UTC (4:00 AM BST / UK summer)
+# Runs daily at 04:17 UTC (05:17 BST in summer / 04:17 GMT in winter)
+# Off the top of the hour to avoid the GitHub Actions cron rush
+# that drove Anthropic API overloaded_error failures.
 # ============================================================
 #
 # SETUP REQUIRED:
@@ -19,7 +21,7 @@ name: Daily Intelligence Collection
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # 03:00 UTC = 04:00 BST
+    - cron: '17 4 * * *'  # 04:17 UTC; off-peak and off the top of the hour
   workflow_dispatch:  # Manual trigger for testing
 
 permissions:

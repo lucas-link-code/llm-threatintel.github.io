@@ -19,6 +19,7 @@ import sys
 import json
 import re
 import subprocess
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -40,6 +41,16 @@ FORCE = "--force" in sys.argv
 
 # How far back to look for qualifying stories (wider than 7 days reduces empty runs).
 INTEL_LOOKBACK_DAYS = 14
+
+# Retry budget for the API call. The Anthropic SDK has built-in retries
+# (max_retries=2 by default), but its backoff is ~3-4s total which is too tight
+# to ride out the multi-minute overload windows that hit GitHub-Actions-hosted
+# cron jobs around peak hours. This outer loop adds 4 extra attempts at 30s,
+# 60s, 120s, and 240s — total worst-case wait ~7.5 minutes — so transient
+# overloaded_error / 5xx / connection errors no longer fail the workflow.
+API_RETRY_MAX_ATTEMPTS = 5
+API_RETRY_INITIAL_DELAY = 30
+API_RETRY_MAX_DELAY = 240
 
 VALID_TAGS = {
     "supply-chain",
@@ -605,6 +616,54 @@ def update_iocs(finding):
         print(f"  No new IOCs to add" + (f" ({skipped} skipped as malformed)" if skipped else ""))
 
 
+# ---- API call with retry on transient overload ----
+def _is_retryable_api_error(exc):
+    """True if exc is a transient error worth retrying.
+
+    Covers HTTP 529 overloaded_error (the common GitHub Actions cron failure),
+    5xx internal errors, 429 rate limits, and connection errors. Excludes 4xx
+    client errors (bad request, auth, etc.) which would just fail again.
+    """
+    if isinstance(exc, anthropic.APIConnectionError):
+        return True
+    if isinstance(exc, anthropic.RateLimitError):
+        return True
+    if isinstance(exc, anthropic.InternalServerError):
+        return True
+    if isinstance(exc, anthropic.APIStatusError):
+        if getattr(exc, "status_code", None) == 529:
+            return True
+        body = getattr(exc, "body", None)
+        if isinstance(body, dict):
+            error_obj = body.get("error")
+            if isinstance(error_obj, dict) and error_obj.get("type") == "overloaded_error":
+                return True
+    return False
+
+
+def stream_with_retry(client, **kwargs):
+    """Call client.messages.stream and return the final message, retrying transient errors."""
+    last_exc = None
+    for attempt in range(1, API_RETRY_MAX_ATTEMPTS + 1):
+        try:
+            with client.messages.stream(**kwargs) as stream:
+                return stream.get_final_message()
+        except anthropic.APIError as exc:
+            last_exc = exc
+            if not _is_retryable_api_error(exc) or attempt == API_RETRY_MAX_ATTEMPTS:
+                raise
+            delay = min(
+                API_RETRY_INITIAL_DELAY * (2 ** (attempt - 1)),
+                API_RETRY_MAX_DELAY,
+            )
+            print(
+                f"  Anthropic API transient error on attempt {attempt}/{API_RETRY_MAX_ATTEMPTS}: {exc}"
+            )
+            print(f"  Retrying in {delay}s...")
+            time.sleep(delay)
+    raise last_exc  # pragma: no cover
+
+
 # ---- Main ----
 def main():
     print(f"{'='*60}")
@@ -628,16 +687,16 @@ def main():
     print("Searching for new GenAI threat intelligence...\n")
 
     try:
-        with client.messages.stream(
+        response = stream_with_retry(
+            client,
             model=MODEL,
             max_tokens=16000,
             system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
             tools=[{"type": "web_search_20260209", "name": "web_search", "allowed_callers": ["direct"]}],
-            messages=[{"role": "user", "content": prompt}]
-        ) as stream:
-            response = stream.get_final_message()
+            messages=[{"role": "user", "content": prompt}],
+        )
     except anthropic.APIError as e:
-        print(f"ERROR: Anthropic API error: {e}")
+        print(f"ERROR: Anthropic API error after {API_RETRY_MAX_ATTEMPTS} attempts: {e}")
         sys.exit(1)
     except Exception as e:
         print(f"ERROR: Unexpected error: {e}")
