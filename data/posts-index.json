@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "title": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "date": "2026-05-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An attacker exploited AI agents Grok and Bankrbot by sending a Morse code prompt via X, tricking them into transferring 3 billion DRB tokens (worth $150,000–$200,000) from a verified wallet on the Base network. The incident involved two security failures: Prompt Injection (OWASP LLM01:2025) via encoding and Excessive Agency (OWASP LLM06:2025). This demonstrates how encoding obfuscation bypasses LLM safety filters and how autonomous agents with financial permissions represent a systemic vulnerability.",
+      "file": "2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.md"
+    },
+    {
       "id": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch",
       "title": "Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued",
       "date": "2026-05-21",

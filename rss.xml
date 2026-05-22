@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 21 May 2026 12:02:52 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 13:13:48 +0000</lastBuildDate>
     <item>
+      <title>Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk</title>
+      <link>https://llm-threatintel.com/posts/2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.html</guid>
+      <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+      <description>An attacker exploited AI agents Grok and Bankrbot by sending a Morse code prompt via X, tricking them into transferring 3 billion DRB tokens (worth $150,000–$200,000) from a verified wallet on the Base network. The incident involved two security failures: Prompt Injection (OWASP LLM01:2025) via encoding and Excessive Agency (OWASP LLM06:2025). This demonstrates how encoding obfuscation bypasses LLM safety filters and how autonomous agents with financial permissions represent a systemic vulnerability.</description>
+    </item>    <item>
       <title>Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued</title>
       <link>https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.html</guid>
       <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
       <description>A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.</description>
-    </item>    <item>
-      <title>Shadow AI Data Breach: Community Bank Exposes SSNs via Unauthorized AI Application—First SEC Form 8-K Filing of Shadow AI Incident</title>
-      <link>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <description>Community Bank disclosed use of an "unauthorized AI-based software application" exposing customer data including names, dates of birth, and Social Security numbers. One possibility is that the data was entered into a generative AI tool outside the bank's approved systems. If so, that could raise questions about whether the information was transmitted to a third-party provider and how it may have been retained or processed. This represents the first publicly disclosed corporate breach tied explicitly to shadow AI tool usage and SEC disclosure.</description>
     </item>
   </channel>
 </rss>

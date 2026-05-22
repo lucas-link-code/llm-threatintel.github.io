@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-21",
+  "last_updated": "2026-05-22",
   "iocs": [
     {
       "value": "m-kosche.com",
@@ -1691,6 +1691,60 @@
       "first_seen": "2026-05-21",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "x.com",
+      "type": "domain",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "first_seen": "2026-05-22",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "base.blockscout.com",
+      "type": "domain",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "first_seen": "2026-05-22",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a",
+      "type": "url_path",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "first_seen": "2026-05-22",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://twitter.com/bankrbot",
+      "type": "url_path",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "first_seen": "2026-05-22",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "@bankr/agent",
+      "type": "package",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "first_seen": "2026-05-22",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "grok-bankr-integration",
+      "type": "package",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "first_seen": "2026-05-22",
+      "source": "Security Boulevard",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
       "status": "active"
     }
   ]

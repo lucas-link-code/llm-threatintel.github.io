@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-21",
+  "last_updated": "2026-05-22",
   "entries": [
     {
       "id": "cve-2026-44338-praisonai-auth-bypass",
@@ -2043,6 +2043,28 @@
       ],
       "description": "Threat actor publishing trojanized AI agent skills. Uploaded 199 malicious skills targeting Windows and macOS users with infostealer, trojan, and cryptomining payloads.",
       "attribution": "Unattributed; operates under alias 'sakaen736jih'"
+    },
+    {
+      "id": "ilhamrafli-base-eth-ilhamrfliansyh",
+      "names": [
+        "ilhamrafli.base.eth (ilhamrfliansyh)",
+        "ilhamrafli",
+        "ilhamrfliansyh"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Social media (X/Twitter)"
+      ],
+      "ttps": [
+        "T1059 - Prompt Injection via Encoding",
+        "T1078 - Privilege Escalation (NFT-based)",
+        "T1027 - Obfuscation (Morse code)",
+        "T1566 - Social Engineering"
+      ],
+      "description": "Threat actor exploited design flaws in AI agent autonomy and inter-agent trust boundaries to execute unauthorized financial transactions. Attack chain required knowledge of (1) Grok's public wallet address, (2) Bankr ecosystem permission model, (3) LLM encoding/decoding capabilities, and (4) social platform automation. Account deletion post-incident suggests awareness of attribution risk. Prior related incident in March 2025 suggests ongoing targeting of Bankr ecosystem.",
+      "attribution": "Unattributed; appears to be individual threat actor or small group with crypto-focused sophistication"
     }
   ]
 }
