@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026",
+      "title": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "date": "2026-05-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target \"Pwn Request\" pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI's SDK suite (on both npm and PyPI), UiPath's automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.",
+      "file": "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.md"
+    },
+    {
       "id": "2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026",
       "title": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "date": "2026-05-22",

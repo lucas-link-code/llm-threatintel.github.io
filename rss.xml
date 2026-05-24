@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 22 May 2026 13:13:48 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2026 06:39:07 +0000</lastBuildDate>
     <item>
+      <title>TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction</title>
+      <link>https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html</guid>
+      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
+      <description>On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target "Pwn Request" pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI's SDK suite (on both npm and PyPI), UiPath's automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.</description>
+    </item>    <item>
       <title>Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk</title>
       <link>https://llm-threatintel.com/posts/2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-16-google-ads-claude-ai-shared-chat-macos-malware-may-2026.html</guid>
       <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
       <description>Attackers are abusing Google Ads and legitimate Claude.ai shared chats in an active malvertising campaign. Users searching for "Claude mac download" may come across sponsored search results that list claude.ai as the target website, but lead to instructions that install malware on their Mac. This campaign eliminates the primary indicator users are trained to check: the domain in the ad. Both attacks point to the real claude.ai domain because the malicious content is hosted inside Claude's own shared chat feature.</description>
-    </item>    <item>
-      <title>Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign</title>
-      <link>https://llm-threatintel.com/posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.html</guid>
-      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
-      <description>A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.</description>
     </item>
   </channel>
 </rss>

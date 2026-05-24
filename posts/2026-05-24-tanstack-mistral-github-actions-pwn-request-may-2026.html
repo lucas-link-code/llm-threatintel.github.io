@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction | LLM ThreatIntel</title>
+  <meta name="description" content="On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target &quot;Pwn Request&quot; pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI&#x27;s SDK suite (on both npm and PyPI), UiPath&#x27;s automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction">
+  <meta property="og:description" content="On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target &quot;Pwn Request&quot; pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI&#x27;s SDK suite (on both npm and PyPI), UiPath&#x27;s automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction">
+  <meta property="article:published_time" content="2026-05-24T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-24T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction">
+  <meta name="twitter:description" content="On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target &quot;Pwn Request&quot; pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI&#x27;s SDK suite (on both npm and PyPI), UiPath&#x27;s automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+  "description": "On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target \"Pwn Request\" pattern, GitHub Actions cache poisoning across the fork\u2194base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI's SDK suite (on both npm and PyPI), UiPath's automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.",
+  "datePublished": "2026-05-24T00:00:00Z",
+  "dateModified": "2026-05-24T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-24</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction</h1>
+<p><strong>Date:</strong> 2026-05-24<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target &quot;Pwn Request&quot; pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI&#x27;s SDK suite (on both npm and PyPI), UiPath&#x27;s automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Mini Shai-Hulud Wave 2 / TanStack Attack</td></tr><tr><td>Attribution</td><td>TeamPCP (confidence: high)</td></tr><tr><td>Target</td><td>Open-source npm and PyPI ecosystems; downstream consumers including Mistral AI, UiPath, OpenSearch, Guardrails AI</td></tr><tr><td>Vector</td><td>GitHub Actions Pwn Request pattern + Actions cache poisoning + OIDC token extraction from runner memory</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-11</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The TanStack compromise exploited a chain of three vulnerabilities in GitHub Actions. The attacker created a fork of the TanStack/router repository (renamed to zblgg/configuration to evade fork-list searches), then opened a pull request that triggered a pull_request_target workflow. This workflow checked out and executed the attacker&#x27;s fork code, which poisoned the GitHub Actions cache with a malicious pnpm store. When legitimate maintainer PRs were later merged to main, the release workflow restored the poisoned cache. Attacker-controlled binaries then extracted OIDC tokens directly from the GitHub Actions runner&#x27;s process memory (/proc/&lt;pid&gt;/mem). The attacker was able to use these tokens to publish the malicious package versions without ever stealing npm credentials. If one of these packages was installed on your machine, there is a script running right now that polls your GitHub token every 60 seconds. The moment you revoke that token, the way every security playbook says to it runs rm -rf ~/. Your entire home directory is gone. The incident is attributed by StepSecurity to the threat group known as TeamPCP, and it is also the first documented case of a malicious npm package carrying valid SLSA provenance.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195</td><td>Malicious code injected into widely-used open-source packages via GitHub Actions workflow hijacking</td></tr><tr><td>Obtain Capabilities - Malware</td><td>T1588.001</td><td>Credential harvesting worm with self-propagation and persistence mechanisms</td></tr><tr><td>Lateral Tool Transfer</td><td>T1570</td><td>Malicious payloads self-propagate through npm registry to secondary targets via stolen credentials</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">git-tanstack.com
+getsession.org</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">filev2.getsession.org
+seed1.getsession.org
+seed2.getsession.org
+seed3.getsession.org</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;git-tanstack.com&quot; OR &quot;getsession.org&quot; OR &quot;filev2.getsession.org&quot; OR &quot;seed1.getsession.org&quot; OR &quot;seed2.getsession.org&quot; OR &quot;seed3.getsession.org&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">@tanstack/react-router@1.169.5,1.169.8
+@tanstack/vue-router@1.169.5,1.169.8
+@tanstack/solid-router@1.169.5,1.169.8
+@tanstack/start@1.169.5,1.169.8
+@mistralai/*@2.4.6
+@uipath/*
+@squawk/*
+guardrails-ai@0.10.1
+mistralai@2.4.6
+opensearch-project/opensearch</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor GitHub Actions runners for memory access patterns suspicious to /proc/<em>/mem. Audit all PR-triggered workflows for pull_request_target + untrusted checkout combinations using static analyzers like zizmor. Block git-tanstack.com at DNS/proxy level. Search lockfiles and CI logs for affected @tanstack/</em>, @mistralai/<em>, @uipath/</em>, @squawk/*, guardrails-ai, and opensearch-project versions published on May 11, 2026. Check for gh-token-monitor daemon persistence (~/.config/systemd/user/gh-token-monitor.service on Linux; ~/Library/LaunchAgents/com.user.gh-token-monitor.plist on macOS). If exposed, treat host as fully compromised and rotate all credentials before token revocation to prevent wiper trigger (rm -rf ~/).</p>
+<h2>References</h2>
+<ul><li>[TanStack] Postmortem: TanStack npm supply-chain compromise (2026-05-12) — https://tanstack.com/blog/npm-supply-chain-compromise-postmortem</li><li>[Snyk] TanStack npm Packages Hit by Mini Shai-Hulud (2026-05-12) — https://snyk.io/blog/tanstack-npm-packages-compromised/</li><li>[Palo Alto Networks Unit 42] The npm Threat Landscape: Attack Surface and Mitigations (Updated May 21) (2026-05-21) — https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/</li><li>[Wiz] Mini Shai-Hulud Strikes Again: TanStack + more npm Packages Compromised (2026-05-12) — https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised</li><li>[Orca Security] TanStack and 160+ npm/PyPI Packages Compromised in Supply Chain Worm Attack (2026-05-12) — https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/</li><li>[SafeDep] Mass Supply Chain Attack Hits TanStack, Mistral AI npm and PyPI Packages (2026-05-12) — https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

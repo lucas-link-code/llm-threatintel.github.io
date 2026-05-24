@@ -2180,6 +2180,26 @@
       "validated_at": "2026-05-22T13:13:50+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026": {
+      "content_hash": "8fb5b0365953f6b918332fc900c5afe3d679a8e9744fbbea4b25f288be23f525",
+      "evidence_status": "validated",
+      "file": "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.md",
+      "posts_index_hash": "4a6ab3a684270fb5e6654c60415a90ebc86148c1b7ab3cc89f31b0d05d68c5f3",
+      "report_id": "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem",
+        "https://snyk.io/blog/tanstack-npm-packages-compromised/",
+        "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+        "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised",
+        "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/",
+        "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-24T06:39:10+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
