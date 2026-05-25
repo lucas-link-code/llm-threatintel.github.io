@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Token Discipline: Keeping Agentic CLI Sessions Fast, Cheap, and Useful | LLM ThreatIntel</title>
+  <meta name="description" content="Claude Code sessions become expensive and less reliable when conversation history, file reads, shell output, CLAUDE.md, skills, MCP servers, and tool results accumulate without discipline. This post turns token optimisation tips into an operating model for agentic CLI work: measure context, clear between unrelated tasks, compact before the window is forced to compact, keep CLAUDE.md as an index, constrain shell and MCP output, delegate noisy work to subagents, and move repeatable workflows into skills and hooks.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-25-claude-code-token-discipline-agentic-cli-workflows.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Claude Code Token Discipline: Keeping Agentic CLI Sessions Fast, Cheap, and Useful">
+  <meta property="og:description" content="Claude Code sessions become expensive and less reliable when conversation history, file reads, shell output, CLAUDE.md, skills, MCP servers, and tool results accumulate without discipline. This post turns token optimisation tips into an operating model for agentic CLI work: measure context, clear between unrelated tasks, compact before the window is forced to compact, keep CLAUDE.md as an index, constrain shell and MCP output, delegate noisy work to subagents, and move repeatable workflows into skills and hooks.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-25-claude-code-token-discipline-agentic-cli-workflows.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Claude Code Token Discipline: Keeping Agentic CLI Sessions Fast, Cheap, and Useful">
+  <meta property="article:published_time" content="2026-05-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-25T00:00:00Z">
+  <meta property="article:tag" content="claude-code">
+  <meta property="article:tag" content="agentic-cli">
+  <meta property="article:tag" content="token-management">
+  <meta property="article:tag" content="workflow-optimisation">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code Token Discipline: Keeping Agentic CLI Sessions Fast, Cheap, and Useful">
+  <meta name="twitter:description" content="Claude Code sessions become expensive and less reliable when conversation history, file reads, shell output, CLAUDE.md, skills, MCP servers, and tool results accumulate without discipline. This post turns token optimisation tips into an operating model for agentic CLI work: measure context, clear between unrelated tasks, compact before the window is forced to compact, keep CLAUDE.md as an index, constrain shell and MCP output, delegate noisy work to subagents, and move repeatable workflows into skills and hooks.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code Token Discipline: Keeping Agentic CLI Sessions Fast, Cheap, and Useful",
+  "description": "Claude Code sessions become expensive and less reliable when conversation history, file reads, shell output, CLAUDE.md, skills, MCP servers, and tool results accumulate without discipline. This post turns token optimisation tips into an operating model for agentic CLI work: measure context, clear between unrelated tasks, compact before the window is forced to compact, keep CLAUDE.md as an index, constrain shell and MCP output, delegate noisy work to subagents, and move repeatable workflows into skills and hooks.",
+  "datePublished": "2026-05-25T00:00:00Z",
+  "dateModified": "2026-05-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-25-claude-code-token-discipline-agentic-cli-workflows.html",
+  "keywords": [
+    "claude-code",
+    "agentic-cli",
+    "token-management",
+    "workflow-optimisation"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/#blog" class="back-link">&larr; Back to blog</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-25</span>
+      <span class="post-tag tag-claude-code">Claude Code</span><span class="post-tag tag-agentic-cli">Agentic Cli</span><span class="post-tag tag-token-management">Token Management</span><span class="post-tag tag-workflow-optimisation">Workflow Optimisation</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Claude Code Token Discipline: Keeping Agentic CLI Sessions Fast, Cheap, and Useful</h1>
+<p>Claude Code is not expensive because the prompt you typed is long. It becomes expensive because the working set around that prompt keeps growing.</p>
+<p>Every serious agentic coding session accumulates conversation history, file contents, command output, project instructions, memory, tool schemas, MCP server context, screenshots, test logs, and partial plans. The next turn does not happen in isolation. It is evaluated against the active context window. That means the thirtieth message in a messy session is not comparable to the first message in a fresh session.</p>
+<p>Strictly speaking, this is not magic exponential billing. If the context grows steadily, the cumulative cost bends upward because each new turn carries more previous material. Operationally, it feels exponential because a small amount of context waste early in the session gets paid for repeatedly.</p>
+<p>That is the core mental model: context is not storage. Context is recurring rent.</p>
+<p>The quality problem follows the same curve. Long sessions make the model slower, more expensive, and easier to steer off course. Important constraints from the middle of the conversation become easier to lose. Old tool output competes with current requirements. The model has more to reconcile before it can act.</p>
+<p>Token discipline is therefore not only a cost-control habit. It is a quality-control habit.</p>
+<h2>What actually fills the context window</h2>
+<p>The visible conversation is only part of the working set.</p>
+<p>The obvious context is your instruction, the assistant&#x27;s previous responses, files Claude has read, diffs, logs, test results, screenshots, and command output.</p>
+<p>The less obvious context is project and tool overhead: <code>CLAUDE.md</code>, memory, loaded skills, system instructions, configured MCP servers, browser state, subagent summaries, and anything else the harness needs to make the next step possible.</p>
+<p>This is why two sessions that look similar in the terminal can behave very differently. A fresh session in a small repo with one focused file reference is cheap. A long session with a large <code>CLAUDE.md</code>, several connectors, three failed test runs, pasted logs, and broad exploratory reads is not.</p>
+<p>The practical fix is to treat context like an operational budget. Measure it, reduce it, and clear it when the task changes.</p>
+<h2>Start with a small map</h2>
+<p>Run <code>/init</code> when you start using Claude Code in a project. The point is not to create a massive project manual. The point is to create a compact routing layer that tells Claude where the important things live, what conventions matter, and which commands are authoritative.</p>
+<p>The mistake is letting <code>CLAUDE.md</code> become a dumping ground.</p>
+<p>I would keep it under roughly 150-200 lines. It should contain the rules that apply to nearly every session:</p>
+<ol><li>project purpose</li><li>key directories</li><li>build and test commands</li><li>coding conventions</li><li>security constraints</li><li>deployment or validation gotchas</li><li>links to deeper documents</li></ol>
+<p>Everything else should live in separate Markdown files, skills, or normal project documentation. <code>CLAUDE.md</code> should point to those files. It should not inline them.</p>
+<p>A concise <code>CLAUDE.md</code> acts like a constitution. It captures repeated decisions and recurring mistakes so you do not have to re-explain them, but it does not drag unrelated detail into every task.</p>
+<p>If the instruction matters for every session, keep it in <code>CLAUDE.md</code>. If it only matters for one workflow, move it to a skill, command, or referenced document.</p>
+<h2>Measure before optimising</h2>
+<p>The first command I would run in a serious session is <code>/context</code>.</p>
+<p>That shows what is consuming the current window. It makes invisible overhead visible: project memory, loaded files, tool output, MCP context, and conversation history. Without that view you are guessing.</p>
+<p>For spend and usage, use <code>/usage</code>; <code>/cost</code> is an alias in current Claude Code builds. The exact display depends on whether you are using API billing, Claude Pro, Claude Max, Team, Enterprise, or a cloud provider route, but the habit is the same. Check the meter before the session feels slow.</p>
+<p>Then configure <code>/statusline</code>.</p>
+<p>A status line that shows model, context percentage, git branch, and usage gives you constant feedback without interrupting the work. It changes behaviour because you stop treating the context window as an abstract limit and start treating it as a visible resource.</p>
+<p>The minimum useful status line for me would show:</p>
+<ol><li>active model</li><li>current directory or branch</li><li>context window percentage</li><li>session usage or cost</li><li>whether the worktree is dirty</li></ol>
+<p>That is enough to catch context rot early.</p>
+<h2>Clear between unrelated tasks</h2>
+<p>Use <code>/clear</code> when the next task is not a continuation of the current one.</p>
+<p>This is the simplest optimisation and the one people avoid because it feels like losing progress. It is not losing progress. It is removing irrelevant baggage. Previous conversations remain resumable, and persistent project guidance still comes from <code>CLAUDE.md</code>.</p>
+<p>Do not carry a frontend layout discussion into a backend auth refactor. Do not carry an incident-response write-up into a dependency upgrade. Do not carry a failed experiment into the final implementation pass unless the failure itself matters.</p>
+<p>Context that does not help the current task is not neutral. It competes with the current task.</p>
+<h2>Compact before the model is forced to compact</h2>
+<p>Auto-compaction exists, but I prefer manual compaction after a logical phase completes. Around 60-70 percent context usage is a good operating range. Waiting until the session is almost full leaves less room to preserve nuance.</p>
+<p>Use <code>/compact</code> with instructions:</p>
+<pre><code class="language-">/compact focus on final implementation decisions, changed files, failed approaches to avoid, and remaining test failures</code></pre>
+<p>The instruction matters. A generic compact can preserve the wrong things. A focused compact tells Claude what to retain for the next phase.</p>
+<p>After several compacts, stop and clear. A compacted session is useful, but it is still a summary of a summary after enough cycles. If the work has become important, ask Claude to produce a concise handoff summary, clear the session, and restart from that summary plus the current repo state.</p>
+<p>A clean new session with a good handoff is often better than a tired long session with a long memory trail.</p>
+<h2>Use plan mode before high-blast-radius work</h2>
+<p>For non-trivial changes, start with <code>/plan</code>.</p>
+<p>Plan mode is not bureaucracy. It is cost control. It prevents the most expensive failure mode in Claude Code: confident implementation in the wrong direction followed by a long correction chain.</p>
+<p>A good planning prompt should define:</p>
+<ol><li>the problem</li><li>constraints</li><li>files or components likely involved</li><li>expected output</li><li>validation requirements</li><li>what not to change</li></ol>
+<p>For example:</p>
+<pre><code class="language-">/plan Refactor the blog rendering path so Markdown posts support tables and code copy buttons. Inspect the existing JS renderer first. Do not change the intel feed renderer unless required. Propose the smallest implementation and verification steps before editing.</code></pre>
+<p>That kind of prompt narrows the search space. It also gives you a chance to reject the approach before any edits happen.</p>
+<p>For ambiguous work, ask Claude to keep asking questions until it is confident enough to proceed. That is not about making the model timid. It is about preventing it from filling gaps with assumptions that later become expensive to unwind.</p>
+<h2>Be surgical with file references</h2>
+<p>Do not ask Claude to &quot;look through the repo&quot; when you already know the likely file.</p>
+<p>Point it at the file, function, route, component, test, or log slice that matters. If the task involves a specific function, name it. If the bug is in one UI path, describe the route and interaction. If the failure comes from a test, provide the failing test name and the relevant output.</p>
+<p>Broad prompts trigger broad exploration. Broad exploration reads more files. More files increase context. Increased context increases cost and reduces precision.</p>
+<p>This applies to pasted material as well. Do not paste a whole file when one function is relevant. Do not paste a whole GitHub Actions log when the last 80 lines contain the failure. Do not paste 200 commits when the last five are enough.</p>
+<p>The better pattern is:</p>
+<pre><code class="language-">The failure is in `renderBlogPost` in `js/app.js`. Inspect that function and the Markdown renderer only. The symptom is that fenced code blocks render correctly but table rows do not preserve inline code. Propose a minimal fix and test command.</code></pre>
+<p>That prompt is cheaper and produces better work than &quot;fix blog rendering&quot;.</p>
+<h2>Keep shell output out of the transcript unless it matters</h2>
+<p>Shell output is context.</p>
+<p>If Claude runs <code>git log</code> with hundreds of commits, that output becomes part of the session. If it runs a noisy test suite and dumps every passing test, that output becomes part of the session. If it prints a minified bundle, that output becomes part of the session.</p>
+<p>Use bounded commands:</p>
+<pre><code class="language-">git log --oneline -20
+npm test -- --runInBand 2&gt;&amp;1 | tail -120
+pytest -q 2&gt;&amp;1 | tail -120
+rg -n &quot;pattern&quot; path/to/dir</code></pre>
+<p>The point is not to hide evidence from the model. The point is to feed it the evidence it can actually use.</p>
+<p>When a command is expected to be noisy, tell Claude up front to summarise or filter it. If the same noisy command appears often, move the filtering into a hook or a project skill so it happens consistently.</p>
+<h2>Watch the run and interrupt early</h2>
+<p>Do not walk away from an agentic coding run until the direction is clearly correct.</p>
+<p>The first few tool calls tell you whether Claude understood the task. If it starts editing the wrong subsystem, reading irrelevant files, generating broad refactors, or retrying the same failing command, stop it immediately with Escape.</p>
+<p>Early interruption saves tokens, but the bigger win is avoiding poisoned momentum. A bad approach creates code, output, explanations, and test failures that all enter the session. Then the model has to reason around its own debris.</p>
+<p>Claude Code gives you <code>/rewind</code> and checkpoints for a reason. Use them. A clean rollback plus a sharper prompt is usually cheaper than repairing a wandering implementation.</p>
+<h2>Batch intent, not confusion</h2>
+<p>One complete prompt is usually better than three vague ones.</p>
+<p>Do not send:</p>
+<pre><code class="language-">Fix the auth bug.
+Also use the existing helper.
+Actually do not touch middleware.
+Also add tests.</code></pre>
+<p>Send:</p>
+<pre><code class="language-">Fix the auth bug in `auth/session.ts`. Use the existing token parser in `auth/token.ts`. Do not change middleware behaviour. Add or update the focused unit tests only. Before editing, identify the likely failure path and show the minimal plan.</code></pre>
+<p>The second version is cheaper because the model receives the complete task in one coherent frame. It is also safer because the constraints arrive before implementation begins.</p>
+<p>If the model makes a minor mistake, prefer interrupting, rewinding, or restating the corrected task cleanly over building a long correction thread.</p>
+<h2>Treat MCP servers as context-bearing dependencies</h2>
+<p>MCP is useful, but every connected server is part of the agent harness. It can add tool surface, permissions, schema overhead, latency, and risk.</p>
+<p>Current Claude Code builds defer MCP tool definitions more efficiently than older versions, but that does not make MCP free. Run <code>/mcp</code> and <code>/context</code> to see what is loaded. Disable servers you are not actively using.</p>
+<p>There is also a practical rule: if a normal CLI can do the job, prefer the CLI.</p>
+<p>For GitHub, <code>gh</code> may be cheaper than loading a broad MCP server. For cloud resources, <code>aws</code>, <code>gcloud</code>, or <code>az</code> may be more efficient than exposing a large tool catalogue. For a one-off API query, a direct script can be cheaper than connecting an entire workspace integration.</p>
+<p>This is not an argument against MCP. It is an argument against keeping every possible connector active in every session.</p>
+<h2>Use subagents to contain noisy work</h2>
+<p>Subagents are useful because they have separate context windows. That makes them a good fit for work that is necessary but noisy:</p>
+<ol><li>reading a large file tree</li><li>comparing multiple implementation options</li><li>summarising long logs</li><li>researching API documentation</li><li>scanning for repeated patterns</li><li>drafting tests before the main implementation</li></ol>
+<p>The main session should receive a compressed result, not every intermediate read.</p>
+<p>For cost control, use cheaper models for simple subagent work where available. Haiku is suitable for basic summarisation, extraction, and formatting. Sonnet is the default choice for most coding. Opus should be reserved for architecture, difficult debugging, and decisions where the cost of a wrong answer is high.</p>
+<p>Agent teams and broad parallel execution need more discipline. They can be powerful, but each teammate has its own context and usage profile. More agents means more windows, more tool calls, and more opportunities to duplicate work. Keep the spawn prompt narrow and clean up the team when the work is done.</p>
+<h2>Move repeated workflows into skills</h2>
+<p>If you ask Claude to perform the same procedure more than twice, make it a skill.</p>
+<p>Project skills in <code>.claude/skills/</code> are useful for repeatable operating procedures:</p>
+<ol><li>technical debt scans</li><li>PR review style</li><li>release validation</li><li>frontend screenshot QA</li><li>threat intel report formatting</li><li>detection rule generation</li><li>dependency upgrade checks</li></ol>
+<p>The benefit is not only convenience. A skill makes the workflow explicit and reusable. It reduces repeated prompt text, avoids forgetting steps, and lets you keep specialised instructions out of the always-loaded project memory.</p>
+<p>For sensitive or high-risk skills, be deliberate with allowed tools and permissions. A skill that can run shell commands is operational code. Treat it like code.</p>
+<h2>Build verification into the task</h2>
+<p>The cheapest bug is the one Claude catches before you review the output.</p>
+<p>For frontend work, ask for the full loop:</p>
+<ol><li>implement the change</li><li>run the app</li><li>open it in a browser</li><li>take a screenshot</li><li>inspect console errors</li><li>compare the screenshot against the intended layout</li><li>fix visible issues before stopping</li></ol>
+<p>For backend work, define the test command, expected failing case, and success condition. For documentation, define the target format and ask Claude to check internal consistency before returning.</p>
+<p>Do not leave verification implicit. If you want tests, screenshots, linting, or CLI validation, put that in the original prompt. Otherwise you pay for a second loop.</p>
+<h2>Use hooks for guardrails and output shaping</h2>
+<p>Hooks are one of the better places to enforce habits that humans forget.</p>
+<p>A hook can block destructive commands, filter noisy test output, inject environment context, play a notification when a long task finishes, or add extra checks before tool use. That shifts repeatable control logic out of the prompt and into deterministic local configuration.</p>
+<p>The security angle matters. Do not run Claude Code with broad skip-permission modes just to save clicks. Configure allow rules for commands you trust and deny rules for destructive operations. The deny list should win. Speed is useful only if the agent still has boundaries.</p>
+<p>For long-running sessions, notification hooks are also practical. They let you step away without ignoring the run completely. The important habit is still the same: watch the early direction, then let the boring part run.</p>
+<h2>Timing is capacity management, not a strategy</h2>
+<p>Some users plan heavy Claude Code work outside peak usage windows because subscription limits and provider capacity can vary by time, plan, and current policy. That can help during periods where off-peak usage is treated more favourably.</p>
+<p>I would not build the workflow around a fixed clock rule.</p>
+<p>Anthropic changes usage policies, promotions, model availability, and limits. Treat timing as an operational convenience, not an architectural dependency. The durable controls are still context discipline, model selection, smaller prompts, compact sessions, filtered output, and fewer unnecessary tools.</p>
+<p>Use the dashboard, <code>/usage</code>, and your status line to manage the actual session you are in.</p>
+<h2>The working checklist</h2>
+<p>This is the checklist I would actually use:</p>
+<ol><li>Run <code>/init</code> once per repo, then prune <code>CLAUDE.md</code>.</li><li>Keep <code>CLAUDE.md</code> under roughly 200 lines and use it as an index.</li><li>Configure <code>/statusline</code> with model, context percentage, branch, and usage.</li><li>Run <code>/context</code> at the start of serious sessions.</li><li>Use <code>/clear</code> between unrelated tasks.</li><li>Use <code>/plan</code> before high-blast-radius changes.</li><li>Reference exact files, functions, routes, or tests.</li><li>Limit shell output with <code>head</code>, <code>tail</code>, <code>rg</code>, and focused test commands.</li><li>Interrupt bad direction early with Escape.</li><li>Use <code>/compact</code> around 60-70 percent context with explicit retention instructions.</li><li>After several compacts, generate a handoff summary and start clean.</li><li>Disable unused MCP servers.</li><li>Prefer CLIs or direct API calls for one-off operations.</li><li>Delegate noisy reading and summarisation to subagents.</li><li>Use Sonnet for most coding, Haiku for simple delegated work, and Opus for hard architecture.</li><li>Move repeated workflows into skills.</li><li>Use hooks for output filtering, notifications, and permission guardrails.</li><li>Verify inside the task: tests, screenshots, console checks, or command output.</li></ol>
+<p>The common theme is narrowness. Narrow session. Narrow prompt. Narrow file set. Narrow command output. Narrow tool surface. Narrow persistence.</p>
+<p>Claude Code works best when the harness gives the model just enough state to act and not enough stale context to drift.</p>
+<h2>Source notes</h2>
+<ul><li>User-provided notes from the video: <code>18 Claude Code Token Hacks in 18 Minutes</code></li><li>Anthropic Claude Code commands reference: https://code.claude.com/docs/en/commands</li><li>Anthropic Claude Code costs guide: https://code.claude.com/docs/en/costs</li><li>Anthropic Claude Code architecture guide: https://code.claude.com/docs/en/how-claude-code-works</li><li>Anthropic Claude Code status line guide: https://code.claude.com/docs/en/statusline</li><li>Anthropic Claude Code sessions guide: https://code.claude.com/docs/en/sessions</li><li>Anthropic Claude Code scheduled tasks guide: https://code.claude.com/docs/en/scheduled-tasks</li><li>Anthropic Claude Code hooks reference: https://code.claude.com/docs/en/hooks</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

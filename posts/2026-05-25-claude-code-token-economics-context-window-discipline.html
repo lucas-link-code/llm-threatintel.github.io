@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Token Economics in Claude Code: Context Window Discipline for Agentic
+      Workflows | LLM ThreatIntel
+    </title>
+    <meta
+      name="description"
+      content="Claude Code is an agentic CLI tool that re-evaluates the full context window on every turn, including conversation history, CLAUDE.md, memory, skills, and tool context. Token costs compound across a session because each message carries the accumulated weight of everything before it. This post consolidates techniques for managing context window pressure, reducing token waste, and maintaining model performance in agentic CLI workflows."
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="author" content="Lucas L" />
+    <meta name="theme-color" content="#0c0a12" />
+    <link
+      rel="canonical"
+      href="https://llm-threatintel.com/posts/2026-05-25-claude-code-token-economics-context-window-discipline.html"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Token Economics in Claude Code: Context Window Discipline for Agentic Workflows"
+    />
+    <meta
+      property="og:description"
+      content="Claude Code is an agentic CLI tool that re-evaluates the full context window on every turn, including conversation history, CLAUDE.md, memory, skills, and tool context. Token costs compound across a session because each message carries the accumulated weight of everything before it. This post consolidates techniques for managing context window pressure, reducing token waste, and maintaining model performance in agentic CLI workflows."
+    />
+    <meta
+      property="og:url"
+      content="https://llm-threatintel.com/posts/2026-05-25-claude-code-token-economics-context-window-discipline.html"
+    />
+    <meta property="og:site_name" content="LLM ThreatIntel" />
+    <meta
+      property="og:image"
+      content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Token Economics in Claude Code: Context Window Discipline for Agentic Workflows"
+    />
+    <meta property="article:published_time" content="2026-05-25T00:00:00Z" />
+    <meta property="article:modified_time" content="2026-05-25T00:00:00Z" />
+    <meta property="article:tag" content="claude-code" />
+    <meta property="article:tag" content="agentic-tools" />
+    <meta property="article:tag" content="token-optimization" />
+    <meta property="article:tag" content="context-management" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Token Economics in Claude Code: Context Window Discipline for Agentic Workflows"
+    />
+    <meta
+      name="twitter:description"
+      content="Claude Code is an agentic CLI tool that re-evaluates the full context window on every turn, including conversation history, CLAUDE.md, memory, skills, and tool context. Token costs compound across a session because each message carries the accumulated weight of everything before it. This post consolidates techniques for managing context window pressure, reducing token waste, and maintaining model performance in agentic CLI workflows."
+    />
+    <meta
+      name="twitter:image"
+      content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Token Economics in Claude Code: Context Window Discipline for Agentic Workflows",
+        "description": "Claude Code is an agentic CLI tool that re-evaluates the full context window on every turn, including conversation history, CLAUDE.md, memory, skills, and tool context. Token costs compound across a session because each message carries the accumulated weight of everything before it. This post consolidates techniques for managing context window pressure, reducing token waste, and maintaining model performance in agentic CLI workflows.",
+        "datePublished": "2026-05-25T00:00:00Z",
+        "dateModified": "2026-05-25T00:00:00Z",
+        "author": {
+          "@type": "Person",
+          "name": "Lucas L"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "LLM ThreatIntel"
+        },
+        "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-25-claude-code-token-economics-context-window-discipline.html",
+        "keywords": [
+          "claude-code",
+          "agentic-tools",
+          "token-optimization",
+          "context-management"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="site-logo">
+          <span class="logo-mark">LLM</span>
+          <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Intel Feed</a>
+          <a href="/#actors">Threat Actors</a>
+          <a href="/#ioc-feed">IOC Feed</a>
+          <a href="/#blog">Blog</a>
+          <a href="/#about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content" id="app-content">
+      <a href="/#blog" class="back-link">&larr; Back to blog</a>
+      <div class="post-meta" style="margin-bottom: 1rem">
+        <span class="post-date">2026-05-25</span>
+        <span class="post-tag tag-claude-code">Claude Code</span
+        ><span class="post-tag tag-agentic-tools">Agentic Tools</span
+        ><span class="post-tag tag-token-optimization">Token Optimization</span
+        ><span class="post-tag tag-context-management">Context Management</span>
+        <span class="post-tag tlp-clear">TLP:CLEAR</span>
+      </div>
+      <div class="post-content">
+        <h1>
+          Token Economics in Claude Code: Context Window Discipline for Agentic
+          Workflows
+        </h1>
+        <p>
+          Claude Code is an agentic CLI tool that reads, writes, and executes
+          code from the terminal. It is one of the more capable developer-facing
+          agent harnesses available in 2026. It is also expensive to operate
+          carelessly.
+        </p>
+        <p>
+          The cost model is not intuitive. Each turn is evaluated against the
+          active context window: conversation history, file contents, command
+          output, <code>CLAUDE.md</code>, memory, loaded skills, system
+          instructions, and tool context. That means message thirty in a messy
+          session is not comparable to message one in a fresh session. It
+          carries the weight of everything that came before it.
+        </p>
+        <p>
+          Strictly speaking, this is not magic exponential billing. If context
+          grows steadily, cumulative spend bends upward because each new turn
+          pays for more previous material. Operationally, it feels exponential
+          because early context waste gets paid for repeatedly.
+        </p>
+        <p>
+          That dynamic makes token discipline a core operational skill, not an
+          afterthought.
+        </p>
+        <p>
+          This post consolidates techniques for managing context window
+          pressure, reducing token waste, and maintaining model performance
+          across long Claude Code sessions. The material is based on the
+          supplied video notes and checked against current Claude Code
+          documentation where command behaviour matters.
+        </p>
+        <h2>Why token costs compound</h2>
+        <p>
+          Three factors drive the compounding cost problem in agentic CLI tools.
+        </p>
+        <h3>Compounding cost per message</h3>
+        <p>
+          Claude Code does not process each message in isolation. Later messages
+          are more expensive because they carry the weight of the active session
+          before them. A 30-message session does not cost 30 times the price of
+          a single short message. It costs more because the later turns include
+          accumulated context as input.
+        </p>
+        <h3>Invisible overhead</h3>
+        <p>
+          Before you type a single character, the context window is already
+          partially consumed. System instructions, <code>CLAUDE.md</code>,
+          memory, loaded skills, and configured tools all contribute to baseline
+          overhead. Current Claude Code builds defer MCP tool definitions more
+          efficiently than older descriptions of the product, but connected
+          servers still add tool surface and can load additional context when
+          used. A large <code>CLAUDE.md</code> plus unnecessary connectors is
+          still wasted context.
+        </p>
+        <h3>Loss in the middle</h3>
+        <p>
+          LLMs pay disproportionate attention to the beginning and end of their
+          context window. As sessions grow longer, information in the middle of
+          the conversation degrades in influence. This is not a billing problem.
+          It is a performance problem. Long unmanaged sessions produce worse
+          output because the model effectively loses track of mid-session
+          decisions and constraints.
+        </p>
+        <h2>Session initialization and configuration</h2>
+        <h3>Run init on every project</h3>
+        <p>
+          The <code>/init</code> command scans the codebase and generates a
+          <code>CLAUDE.md</code> file that maps architecture, conventions, and
+          key files. This eliminates the need to re-explain project context in
+          every session. For new projects, outline the tech stack and goals so
+          Claude generates the file with useful structure.
+        </p>
+        <h3>Configure the status line</h3>
+        <p>
+          The <code>/statusline</code> command sets up a persistent dashboard at
+          the bottom of the terminal. At minimum it should show active model,
+          context percentage, branch, and usage. This is the fastest way to
+          notice context pressure building before it degrades output quality.
+        </p>
+        <h3>Establish your baseline overhead</h3>
+        <p>
+          Run <code>/context</code> to see what is consuming the active window.
+          Run <code>/usage</code> for usage and spend visibility;
+          <code>/cost</code> is an alias in current Claude Code builds. These
+          commands should be among the first things you run in any session where
+          cost or quality matters. They reveal how much of the context window is
+          already consumed before work begins.
+        </p>
+        <h3>Keep the usage dashboard open</h3>
+        <p>
+          The Claude usage dashboard on the Anthropic console shows cumulative
+          spend and pacing against rate limits. Monitor it to avoid hitting
+          reset windows unexpectedly during heavy sessions.
+        </p>
+        <h2>CLAUDE.md management</h2>
+        <p>
+          The <code>CLAUDE.md</code> file loads into every conversation. Its
+          size directly impacts baseline context across the entire session.
+        </p>
+        <h3>Keep it under 200 lines</h3>
+        <p>
+          Treat <code>CLAUDE.md</code> as an index, not a data dump. It should
+          point to larger documentation files rather than including full text
+          inline. A 500-line <code>CLAUDE.md</code> means hundreds of lines of
+          context carried into sessions where most of that detail may not
+          matter.
+        </p>
+        <h3>Use modular documentation routing</h3>
+        <p>
+          Store detailed style guides, business logic, and API references in
+          separate <code>.md</code> files. <code>CLAUDE.md</code> links to them.
+          Claude can load the referenced files only when relevant, rather than
+          carrying everything in context permanently.
+        </p>
+        <h3>Log decisions continuously</h3>
+        <p>
+          After resolving an architectural question or discovering a
+          project-specific pattern, add it to <code>CLAUDE.md</code> as a
+          concise bullet. This prevents re-explaining the same decisions across
+          sessions. Over time, <code>CLAUDE.md</code> becomes a project
+          constitution that encodes accumulated knowledge and prevents repeated
+          mistakes.
+        </p>
+        <h2>Context window discipline</h2>
+        <h3>Clear between unrelated tasks</h3>
+        <p>
+          Use <code>/clear</code> when switching from one task domain to
+          another. Context from task A is noise for task B. Carrying it forward
+          wastes tokens and can confuse the model&#x27;s reasoning about the new
+          task.
+        </p>
+        <h3>Compact at 60 percent capacity</h3>
+        <p>
+          Run <code>/compact</code> manually when context usage approaches 60-70
+          percent or after a logical phase completes. This compresses the
+          conversation history while retaining essential logic. Specify what to
+          preserve with a targeted instruction, for example:
+        </p>
+        <pre><code class="language-">/compact focus on API integration decisions, changed files, failed approaches to avoid, and remaining test failures</code></pre>
+        <p>
+          After three or four compacts in a single session, quality begins to
+          degrade. At that point, clear the session entirely and provide a brief
+          summary of completed work to start fresh with a clean context.
+        </p>
+        <h3>Respect the cache timeout</h3>
+        <p>
+          Prompt caching reduces repeated-input cost, but it should not be
+          treated as a reason to keep a bloated session alive. If you are
+          stepping away from a large session, compact or clear before the break.
+          Assume the next turn may be more expensive than the previous cached
+          turn.
+        </p>
+        <h3>Use rewind for clean undo</h3>
+        <p>
+          The <code>/rewind</code> command rolls back the conversation to a
+          previous state without requiring a session restart. This is faster and
+          cheaper than letting the model continue down a wrong path and then
+          correcting it with additional messages.
+        </p>
+        <h2>Input and output hygiene</h2>
+        <h3>Surgical pasting</h3>
+        <p>
+          Do not paste entire files when only a single function is relevant.
+          Every character pasted enters the context window and stays there for
+          the remainder of the session. Be precise about what you feed in.
+        </p>
+        <h3>Use specific file references</h3>
+        <p>
+          Instead of asking Claude to find a bug across the repository,
+          reference the exact file or function name when you know it. This
+          constrains the search space and prevents the model from reading
+          unnecessary files into context.
+        </p>
+        <h3>Batch prompts</h3>
+        <p>
+          One complex, well-structured message is cheaper than three separate
+          messages. Each separate correction creates another turn with the
+          accumulated context. If the model starts in the wrong direction,
+          interrupt early, rewind where appropriate, and restate the corrected
+          task cleanly.
+        </p>
+        <h3>Limit command output</h3>
+        <p>
+          Shell command outputs enter the context window in full. A git log with
+          200 commits or a verbose test output can consume thousands of tokens
+          instantly. Pipe output through head, tail, or grep to limit what
+          enters the context.
+        </p>
+        <h3>Watch the output</h3>
+        <p>
+          Do not walk away during execution. If Claude enters a loop, pursues a
+          dead end, or starts generating incorrect code, hit Escape immediately.
+          Every token generated on a wrong path compounds the cost of the
+          session and pollutes the context for subsequent messages.
+        </p>
+        <h2>Planning and execution patterns</h2>
+        <h3>Start in plan mode</h3>
+        <p>
+          Toggle plan mode with Shift+Tab or use <code>/plan</code> before
+          starting any significant task. In plan mode, Claude reads, researches,
+          outlines steps, and asks clarifying questions without altering code.
+          Once the plan is approved, switch to execution mode. This workflow
+          prevents runaway code generation on incorrect assumptions and reduces
+          revision cycles.
+        </p>
+        <h3>Prompt with problems, not solutions</h3>
+        <p>
+          Present the problem rather than dictating a specific implementation.
+          Instead of writing a function that does X, frame it as how should we
+          handle X given these constraints. This forces the model to reason
+          through trade-offs and assumptions, producing higher quality
+          architectural choices.
+        </p>
+        <h3>Enforce clarification</h3>
+        <p>
+          Instruct Claude to seek alignment before proceeding by stating
+          something like: continuously ask me questions until you are 95 percent
+          confident you understand exactly what I need. This reduces costly
+          back-and-forth revision cycles on ambiguous work.
+        </p>
+        <h3>Intervene early</h3>
+        <p>
+          If Claude hallucinates or takes the wrong approach, do not wait for
+          completion. Hit Escape, correct the course, and re-prompt. Every token
+          spent on a wrong path is waste that compounds through the rest of the
+          session.
+        </p>
+        <h3>Challenge mediocre output</h3>
+        <p>
+          Reject weak code explicitly. Instruct Claude to try a different
+          approach or produce a more elegant version. Models typically produce
+          significantly better code on the second iteration when the bar is
+          raised. Instruct it to log the correction in CLAUDE.md or a skill file
+          so the pattern is not repeated.
+        </p>
+        <h2>Quality assurance integration</h2>
+        <h3>Embed verification in task lists</h3>
+        <p>
+          Instruct Claude to build verification steps directly into its
+          generated to-do lists. For frontend work, this means building the
+          component, taking a screenshot to verify the layout, and checking
+          Chrome DevTools for console errors before moving to the next task. Add
+          a rule: do not move on until you are 95 percent confident the current
+          to-do is correct.
+        </p>
+        <h3>Use visual verification</h3>
+        <p>
+          Claude&#x27;s vision capabilities allow feeding it error screenshots,
+          UI inspiration images, or using a self-check loop where it designs,
+          screenshots, analyzes, and fixes iteratively. This produces polished
+          output in fewer iterations than text-only feedback cycles.
+        </p>
+        <h3>Integrate Chrome DevTools</h3>
+        <p>
+          Claude can operate a browser to interact with applications, click
+          buttons, fill forms, and verify functionality. This is effective for
+          frontend QA and for automating verification of tasks that lack
+          explicit APIs.
+        </p>
+        <h2>Subagent delegation and model tiering</h2>
+        <h3>Deploy parallel subagents</h3>
+        <p>
+          Instruct the main session to use subagents for parallel processing
+          when the task naturally decomposes. Claude can delegate isolated work
+          with separate context windows to research, write tests, or explore
+          approaches. Each subagent should report concise findings back to the
+          main thread without polluting the primary context with intermediate
+          work.
+        </p>
+        <h3>Tier models by task complexity</h3>
+        <p>
+          Assign the right model to the right job. Use Sonnet for most primary
+          coding tasks. Use Haiku where available for subagents handling file
+          reading, data processing, or basic formatting. Reserve Opus for
+          high-level architectural planning and complex debugging where maximum
+          reasoning depth matters.
+        </p>
+        <p>
+          The main thread running a more capable model can synthesise
+          lightweight summaries from cheaper subagents, optimising cost without
+          sacrificing output quality.
+        </p>
+        <h3>Create reusable skills</h3>
+        <p>
+          Create <code>.md</code> files in <code>.claude/skills/</code> to
+          automate standard operating procedures. A file like
+          <code>tech-debt.md</code> can define exact steps to scan for technical
+          debt. Skills can be invoked through Claude Code&#x27;s skill mechanism
+          or natural language, turning repeated multi-step workflows into
+          reusable operations.
+        </p>
+        <h2>Advanced configuration</h2>
+        <h3>Disconnect unused MCP servers</h3>
+        <p>
+          Every active MCP server expands the tool surface and can add context
+          once its tools are used. Current Claude Code builds defer definitions
+          by default, but MCP still is not free. Disconnect any server not
+          actively needed for the current task. If you only need a single
+          function from a service, consider using the native CLI or a direct API
+          call instead of initializing a broad MCP integration.
+        </p>
+        <h3>Use direct API calls over MCP when capacity is critical</h3>
+        <p>
+          MCP servers are powerful, but they are not always the cheapest path.
+          If token capacity is the constraint and you only need one specific
+          operation, such as querying a single database or calling one endpoint,
+          a direct API call or standard CLI command can avoid exposing a large
+          tool catalogue to the session.
+        </p>
+        <h3>Allocate maximum reasoning for hard problems</h3>
+        <p>
+          Use extended thinking deliberately. Reserve maximum reasoning for
+          complex refactoring, system architecture design, or difficult
+          debugging scenarios where shallow reasoning would produce incorrect
+          results. For simpler tasks, reduce reasoning effort so you are not
+          spending deep-thinking tokens on formatting or mechanical edits.
+        </p>
+        <h3>Configure granular permissions</h3>
+        <p>
+          Avoid running with dangerously permissive skip-all settings. Instead,
+          configure permissions explicitly. Place safe commands in the allow
+          list and destructive commands like deletes and removes in the deny
+          list. The deny list overrides the allow list, providing a safety net
+          without sacrificing speed on routine operations.
+        </p>
+        <h3>Use git worktrees for parallel sessions</h3>
+        <p>
+          To run multiple Claude Code sessions on the same repository without
+          file overwrite conflicts, use git worktrees or Claude Code&#x27;s
+          worktree-based parallel features. Keep each large task in an isolated
+          workspace on a separate branch, then merge deliberately once
+          completed.
+        </p>
+        <h3>Schedule recurring checks</h3>
+        <p>
+          Use the <code>/loop</code> command for recurring checks within a
+          session, such as monitoring deployment status at regular intervals.
+          For longer-term automation beyond the session, use routines, desktop
+          scheduled tasks, cron, or CI.
+        </p>
+        <h3>Set up notification hooks</h3>
+        <p>
+          Configure hooks to trigger a system notification when Claude finishes
+          a task. This is useful when running multiple sessions in parallel or
+          when stepping away from the terminal during a long execution.
+        </p>
+        <h2>Timing and pacing</h2>
+        <h3>Work off-peak when possible</h3>
+        <p>
+          Usage limits and effective pacing can vary by plan, provider route,
+          capacity, and Anthropic policy changes. Some users schedule heavy work
+          outside peak weekday windows when off-peak usage is treated more
+          favourably. Treat this as capacity management, not a fixed rule. The
+          durable controls are still smaller context, better model selection,
+          fewer unnecessary tools, and cleaner session boundaries.
+        </p>
+        <h3>Inject live documentation</h3>
+        <p>
+          Use live documentation only when the task needs it. A documentation
+          MCP server can be valuable for current framework syntax, but it is
+          still another connector. Load it for version-specific API work, then
+          disconnect it when the session no longer needs that source.
+        </p>
+        <h2>The operational pattern</h2>
+        <p>
+          The techniques above are not independent optimisations. They form a
+          coherent operational discipline.
+        </p>
+        <p>
+          Start every session by checking <code>/context</code> and
+          <code>/usage</code> to understand baseline overhead. Disconnect MCP
+          servers that are not needed. Keep <code>CLAUDE.md</code> lean and
+          modular. Use plan mode before execution. Batch prompts. Compact around
+          60-70 percent. Watch the output. Intervene early. Delegate bulk work
+          to subagents on cheaper models. Clear between unrelated tasks.
+        </p>
+        <p>
+          The difference between a practitioner who follows these patterns and
+          one who does not is substantial. It shows up in token costs, in output
+          quality, and in the number of useful tasks that can be completed
+          within a single rate limit window.
+        </p>
+        <p>
+          Agentic coding tools are powerful, but they are only as efficient as
+          the operator&#x27;s discipline around context management. The model is
+          the reasoning engine. The context window is the constraint. Managing
+          that constraint is the skill.
+        </p>
+        <h2>Source</h2>
+        <p>User-provided notes from:</p>
+        <ul>
+          <li>18 Claude Code Token Hacks in 18 Minutes</li>
+          <li>32 Claude Code techniques breakdown</li>
+        </ul>
+        <p>
+          Official Claude Code references checked while preparing this post:
+        </p>
+        <ul>
+          <li>Commands: https://code.claude.com/docs/en/commands</li>
+          <li>Costs: https://code.claude.com/docs/en/costs</li>
+          <li>
+            How Claude Code works:
+            https://code.claude.com/docs/en/how-claude-code-works
+          </li>
+          <li>Status line: https://code.claude.com/docs/en/statusline</li>
+          <li>Sessions: https://code.claude.com/docs/en/sessions</li>
+          <li>
+            Scheduled tasks: https://code.claude.com/docs/en/scheduled-tasks
+          </li>
+          <li>Hooks: https://code.claude.com/docs/en/hooks</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI
+      Threat Intelligence
+      <div class="footer-links">
+        Defensive research only <span>&middot;</span> TLP:CLEAR
+        <span>&middot;</span> Automated via Claude Code
+        <span>&middot;</span> llm-threatintel.com
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll("pre").forEach((pre) => {
+        const btn = document.createElement("button");
+        btn.className = "copy-btn";
+        btn.textContent = "Copy";
+        btn.addEventListener("click", () => {
+          const code = pre.querySelector("code");
+          const text = code ? code.textContent : pre.textContent;
+          navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = "Copied!";
+            setTimeout(() => (btn.textContent = "Copy"), 1500);
+          });
+        });
+        pre.style.position = "relative";
+        pre.appendChild(btn);
+      });
+    </script>
+  </body>
+</html>

@@ -1,12 +1,49 @@
 {
   "posts": [
     {
+      "id": "2026-05-25-claude-code-token-discipline-agentic-cli-workflows",
+      "title": "Token Use Optimizations: How to keep agent sessions fast, cheap, and useful",
+      "date": "2026-05-25",
+      "author": "LLM ThreatIntel",
+      "category": "GenAI Security",
+      "tags": [
+        "claude-code",
+        "agentic-cli",
+        "token-management",
+        "workflow-optimisation"
+      ],
+      "excerpt": "Agentic tool sessions like Claude Code become expensive and less reliable when conversation history, file reads, shell output, CLAUDE.md, skills and responses accumulate. This post provides token optimisation tips for agentic CLI work. It shows how to measure context, clear between unrelated tasks, compact before the window is forced to compact, keep CLAUDE.md as an index, constrain shell and MCP output, delegate noisy work to subagents, and move repeatable workflows into skills and hooks.",
+      "file": "2026-05-25-claude-code-token-discipline-agentic-cli-workflows.md",
+      "readTime": "12 min"
+    },
+    {
+      "id": "2026-05-25-claude-code-token-economics-context-window-discipline",
+      "title": "Token Economics: Best practices for managing context windows",
+      "date": "2026-05-25",
+      "author": "LLM ThreatIntel",
+      "category": "GenAI Security",
+      "tags": [
+        "claude-code",
+        "agentic-tools",
+        "token-optimization",
+        "context-management"
+      ],
+      "excerpt": "Claude Code as well as other agentic CLI tools re-evaluate the full context window on every turn, including conversation history, CLAUDE.md, memory, skills, and tool context. Token costs compound across a session because each message carries the accumulated weight of everything before it. This post consolidates techniques for managing context window pressure, reducing token waste, and maintaining model performance in agentic CLI workflows.",
+      "file": "2026-05-25-claude-code-token-economics-context-window-discipline.md",
+      "readTime": "14 min"
+    },
+    {
       "id": "2026-04-28-agent-harnesses-skills-and-frontier-model-architecture",
       "title": "Agent Harnesses, Skills, and Tool Runtimes: The Architecture of Frontier Models",
       "date": "2026-04-28",
       "author": "Lucas L",
       "category": "GenAI Security",
-      "tags": ["agent-harnesses", "orchestration", "tool-runtimes", "model-architecture"],
+      "tags": [
+        "agent-harnesses",
+        "orchestration",
+        "tool-runtimes",
+        "model-architecture"
+      ],
       "excerpt": "The modern frontier model is no longer a standalone chatbot. In practical deployments, the model is only one layer in a much larger system made up of orchestration logic, tool discovery, execution runtimes, security boundaries, memory handling, and approval controls. This post examines what agent harnesses actually are, how skills, MCP servers, and tool runtimes fit into the architecture, and how OpenAI, Google, and Anthropic differ in their approach to building systems around frontier models.",
       "file": "2026-04-28-agent-harnesses-skills-and-frontier-model-architecture.md",
       "readTime": "16 min"
