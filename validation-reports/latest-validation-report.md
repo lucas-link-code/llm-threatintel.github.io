@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-25T07:16:31+00:00`
-- Commit SHA: `307bb182c33438d06a3d788b028434b8202ce3f8`
+- Run time UTC: `2026-05-25T09:43:31+00:00`
+- Commit SHA: `197e7d21b8cc`
 - Mode: `full`
 - Validation version: `1.0.0`
-- Overall result: `fail`
-- Hard failures: `11`
+- Overall result: `pass`
+- Hard failures: `0`
 - Warnings: `43`
 - Review required: `0`
-- Reports checked: `0`
-- Reports skipped: `116`
-- Reports newly validated: `0`
+- Reports checked: `1`
+- Reports skipped: `117`
+- Reports newly validated: `1`
 - IOC duplicates found: `5`
-- Source URLs checked: `0`
+- Source URLs checked: `6`
 
 No files were removed or destructively modified.
 
@@ -26,241 +26,41 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-17-flowise-cve-2025-59528-active-rce-exploitation`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-04-05-mercor-data-vendor-ai-training-breach`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post excerpt is long (976 characters)
-- **WARN** `ioc-weak-source` `data/iocs.json` `62`: IOC has weak source label: OSINT
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `117`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `118`: legacy IOC format exception retained without modifying data: namastex/pgserve
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `120`: legacy IOC format exception retained without modifying data: xinference==2.6.0
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `121`: legacy IOC format exception retained without modifying data: xinference==2.6.1
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `122`: legacy IOC format exception retained without modifying data: xinference==2.6.2
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `123`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `124`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `127`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `128`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `129`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `130`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `131`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `133`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `134`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `135`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `136`: legacy IOC format exception retained without modifying data: langflow (all versions)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `143`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `144`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `145`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `155`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `159`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `161`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `162`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `163`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `164`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `182`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `183`: legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `184`: legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)
-- **FAIL** `ioc-url-path-format` `data/iocs.json` `195`: url_path IOC must include a path, query, or port: seed1.getsession.org
-- **FAIL** `ioc-url-path-format` `data/iocs.json` `196`: url_path IOC must include a path, query, or port: seed2.getsession.org
-- **FAIL** `ioc-url-path-format` `data/iocs.json` `197`: url_path IOC must include a path, query, or port: seed3.getsession.org
-- **FAIL** `ioc-package-format` `data/iocs.json` `198`: invalid package IOC: @tanstack/react-router@1.169.5,1.169.8
-- **FAIL** `ioc-package-format` `data/iocs.json` `199`: invalid package IOC: @tanstack/vue-router@1.169.5,1.169.8
-- **FAIL** `ioc-package-format` `data/iocs.json` `200`: invalid package IOC: @tanstack/solid-router@1.169.5,1.169.8
-- **FAIL** `ioc-package-format` `data/iocs.json` `201`: invalid package IOC: @tanstack/start@1.169.5,1.169.8
-- **FAIL** `ioc-package-format` `data/iocs.json` `202`: invalid package IOC: @mistralai/*@2.4.6
-- **FAIL** `ioc-package-format` `data/iocs.json` `203`: invalid package IOC: @uipath/*
-- **FAIL** `ioc-package-format` `data/iocs.json` `204`: invalid package IOC: @squawk/*
-- **FAIL** `ioc-package-format` `data/iocs.json` `207`: invalid package IOC: opensearch-project/opensearch
+- **WARN** `ioc-weak-source` `data/iocs.json` `70`: IOC has weak source label: OSINT
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `125`: legacy IOC format exception retained without modifying data: namastex/automagik-genie
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `126`: legacy IOC format exception retained without modifying data: namastex/pgserve
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `128`: legacy IOC format exception retained without modifying data: xinference==2.6.0
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `129`: legacy IOC format exception retained without modifying data: xinference==2.6.1
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `130`: legacy IOC format exception retained without modifying data: xinference==2.6.2
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `131`: legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `132`: legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `135`: legacy IOC format exception retained without modifying data: LiteLLM <1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `136`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `137`: legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `138`: legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `139`: legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `140`: legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `141`: legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `142`: legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `143`: legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `144`: legacy IOC format exception retained without modifying data: langflow (all versions)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `151`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `152`: legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `153`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `163`: legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `167`: legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `169`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `170`: legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `171`: legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `172`: legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `190`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `191`: legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)
+- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `192`: legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: openui appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
-
-## Hard Failure Queue
-
-```text
-File: data/iocs.json
-Record: 195
-Problem: ioc-url-path-format
-Validator finding: url_path IOC must include a path, query, or port: seed1.getsession.org
-IOC value: seed1.getsession.org
-IOC type: url_path
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 196
-Problem: ioc-url-path-format
-Validator finding: url_path IOC must include a path, query, or port: seed2.getsession.org
-IOC value: seed2.getsession.org
-IOC type: url_path
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 197
-Problem: ioc-url-path-format
-Validator finding: url_path IOC must include a path, query, or port: seed3.getsession.org
-IOC value: seed3.getsession.org
-IOC type: url_path
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 198
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @tanstack/react-router@1.169.5,1.169.8
-IOC value: @tanstack/react-router@1.169.5,1.169.8
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 199
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @tanstack/vue-router@1.169.5,1.169.8
-IOC value: @tanstack/vue-router@1.169.5,1.169.8
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 200
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @tanstack/solid-router@1.169.5,1.169.8
-IOC value: @tanstack/solid-router@1.169.5,1.169.8
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 201
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @tanstack/start@1.169.5,1.169.8
-IOC value: @tanstack/start@1.169.5,1.169.8
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 202
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @mistralai/*@2.4.6
-IOC value: @mistralai/*@2.4.6
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 203
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @uipath/*
-IOC value: @uipath/*
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 204
-Problem: ioc-package-format
-Validator finding: invalid package IOC: @squawk/*
-IOC value: @squawk/*
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 207
-Problem: ioc-package-format
-Validator finding: invalid package IOC: opensearch-project/opensearch
-IOC value: opensearch-project/opensearch
-IOC type: package
-Status: active
-Campaign: tanstack-mistral-github-actions-pwn-request-may-2026
-Source: TanStack
-Context: TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
 
 ## Duplicate IOC Review
 

@@ -1,5 +1,5 @@
 {
-  "commit_sha": "307bb182c33438d06a3d788b028434b8202ce3f8",
+  "commit_sha": "197e7d21b8cc",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -78,8 +78,8 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-25T07:16:31+00:00",
-  "hard_failures": 11,
+  "generated_at_utc": "2026-05-25T09:43:31+00:00",
+  "hard_failures": 0,
   "issues": [
     {
       "code": "post-tlp-public-warning",
@@ -150,7 +150,7 @@
       "file": "data/iocs.json",
       "message": "IOC has weak source label: OSINT",
       "recommendation": "",
-      "record_id": "62",
+      "record_id": "70",
       "severity": "warn"
     },
     {
@@ -158,7 +158,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/automagik-genie",
       "recommendation": "",
-      "record_id": "117",
+      "record_id": "125",
       "severity": "warn"
     },
     {
@@ -166,7 +166,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/pgserve",
       "recommendation": "",
-      "record_id": "118",
+      "record_id": "126",
       "severity": "warn"
     },
     {
@@ -174,7 +174,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.0",
       "recommendation": "",
-      "record_id": "120",
+      "record_id": "128",
       "severity": "warn"
     },
     {
@@ -182,7 +182,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.1",
       "recommendation": "",
-      "record_id": "121",
+      "record_id": "129",
       "severity": "warn"
     },
     {
@@ -190,7 +190,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.2",
       "recommendation": "",
-      "record_id": "122",
+      "record_id": "130",
       "severity": "warn"
     },
     {
@@ -198,7 +198,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
       "recommendation": "",
-      "record_id": "123",
+      "record_id": "131",
       "severity": "warn"
     },
     {
@@ -206,7 +206,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
       "recommendation": "",
-      "record_id": "124",
+      "record_id": "132",
       "severity": "warn"
     },
     {
@@ -214,7 +214,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: LiteLLM <1.83.7",
       "recommendation": "",
-      "record_id": "127",
+      "record_id": "135",
       "severity": "warn"
     },
     {
@@ -222,7 +222,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
       "recommendation": "",
-      "record_id": "128",
+      "record_id": "136",
       "severity": "warn"
     },
     {
@@ -230,7 +230,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)",
       "recommendation": "",
-      "record_id": "129",
+      "record_id": "137",
       "severity": "warn"
     },
     {
@@ -238,7 +238,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)",
       "recommendation": "",
-      "record_id": "130",
+      "record_id": "138",
       "severity": "warn"
     },
     {
@@ -246,7 +246,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)",
       "recommendation": "",
-      "record_id": "131",
+      "record_id": "139",
       "severity": "warn"
     },
     {
@@ -254,7 +254,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "132",
+      "record_id": "140",
       "severity": "warn"
     },
     {
@@ -262,7 +262,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)",
       "recommendation": "",
-      "record_id": "133",
+      "record_id": "141",
       "severity": "warn"
     },
     {
@@ -270,7 +270,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "134",
+      "record_id": "142",
       "severity": "warn"
     },
     {
@@ -278,7 +278,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)",
       "recommendation": "",
-      "record_id": "135",
+      "record_id": "143",
       "severity": "warn"
     },
     {
@@ -286,7 +286,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: langflow (all versions)",
       "recommendation": "",
-      "record_id": "136",
+      "record_id": "144",
       "severity": "warn"
     },
     {
@@ -294,7 +294,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
       "recommendation": "",
-      "record_id": "143",
+      "record_id": "151",
       "severity": "warn"
     },
     {
@@ -302,7 +302,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
       "recommendation": "",
-      "record_id": "144",
+      "record_id": "152",
       "severity": "warn"
     },
     {
@@ -310,7 +310,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
       "recommendation": "",
-      "record_id": "145",
+      "record_id": "153",
       "severity": "warn"
     },
     {
@@ -318,7 +318,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
       "recommendation": "",
-      "record_id": "155",
+      "record_id": "163",
       "severity": "warn"
     },
     {
@@ -326,7 +326,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7",
       "recommendation": "",
-      "record_id": "159",
+      "record_id": "167",
       "severity": "warn"
     },
     {
@@ -334,7 +334,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)",
       "recommendation": "",
-      "record_id": "161",
+      "record_id": "169",
       "severity": "warn"
     },
     {
@@ -342,7 +342,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills",
       "recommendation": "",
-      "record_id": "162",
+      "record_id": "170",
       "severity": "warn"
     },
     {
@@ -350,7 +350,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models",
       "recommendation": "",
-      "record_id": "163",
+      "record_id": "171",
       "severity": "warn"
     },
     {
@@ -358,7 +358,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)",
       "recommendation": "",
-      "record_id": "164",
+      "record_id": "172",
       "severity": "warn"
     },
     {
@@ -366,7 +366,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)",
       "recommendation": "",
-      "record_id": "182",
+      "record_id": "190",
       "severity": "warn"
     },
     {
@@ -374,7 +374,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)",
       "recommendation": "",
-      "record_id": "183",
+      "record_id": "191",
       "severity": "warn"
     },
     {
@@ -382,96 +382,8 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)",
       "recommendation": "",
-      "record_id": "184",
+      "record_id": "192",
       "severity": "warn"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must include a path, query, or port: seed1.getsession.org",
-      "recommendation": "",
-      "record_id": "195",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must include a path, query, or port: seed2.getsession.org",
-      "recommendation": "",
-      "record_id": "196",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must include a path, query, or port: seed3.getsession.org",
-      "recommendation": "",
-      "record_id": "197",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @tanstack/react-router@1.169.5,1.169.8",
-      "recommendation": "",
-      "record_id": "198",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @tanstack/vue-router@1.169.5,1.169.8",
-      "recommendation": "",
-      "record_id": "199",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @tanstack/solid-router@1.169.5,1.169.8",
-      "recommendation": "",
-      "record_id": "200",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @tanstack/start@1.169.5,1.169.8",
-      "recommendation": "",
-      "record_id": "201",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @mistralai/*@2.4.6",
-      "recommendation": "",
-      "record_id": "202",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @uipath/*",
-      "recommendation": "",
-      "record_id": "203",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: @squawk/*",
-      "recommendation": "",
-      "record_id": "204",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: opensearch-project/opensearch",
-      "recommendation": "",
-      "record_id": "207",
-      "severity": "fail"
     },
     {
       "code": "ioc-duplicate-review",
@@ -517,14 +429,57 @@
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
-  "reports_checked": 0,
-  "reports_newly_validated": 0,
-  "reports_skipped": 116,
+  "overall_result": "pass",
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 117,
   "review_required": 0,
-  "source_urls_checked": 0,
-  "state_updates": 0,
-  "url_results": [],
+  "source_urls_checked": 6,
+  "state_updates": 1,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem"
+    },
+    {
+      "error": "",
+      "final_url": "https://snyk.io/blog/tanstack-npm-packages-compromised/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://snyk.io/blog/tanstack-npm-packages-compromised/"
+    },
+    {
+      "error": "",
+      "final_url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.wiz.io/blog/mini-shai-hulud-strikes-again-tanstack-more-npm-packages-compromised"
+    },
+    {
+      "error": "",
+      "final_url": "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/"
+    },
+    {
+      "error": "",
+      "final_url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/"
+    }
+  ],
   "validation_version": "1.0.0",
   "warnings": 43
 }

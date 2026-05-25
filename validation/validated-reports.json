@@ -2182,7 +2182,7 @@
       "warnings": []
     },
     "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026": {
-      "content_hash": "8fb5b0365953f6b918332fc900c5afe3d679a8e9744fbbea4b25f288be23f525",
+      "content_hash": "59d6b65e39fa12f28c86223c3c724ad3bc4306b3b0b3d07c50c4622f026f4537",
       "evidence_status": "validated",
       "file": "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.md",
       "posts_index_hash": "4a6ab3a684270fb5e6654c60415a90ebc86148c1b7ab3cc89f31b0d05d68c5f3",
@@ -2197,7 +2197,48 @@
         "https://safedep.io/mass-npm-supply-chain-attack-tanstack-mistral/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-24T06:39:10+00:00",
+      "validated_at": "2026-05-25T09:43:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware": {
+      "content_hash": "ca755c4cb9ca07a02a149400b46f86832a743162382d7959531ebb39ad9e5f1f",
+      "evidence_status": "validated",
+      "file": "2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware.md",
+      "posts_index_hash": "002f4ec520084fd8c77c7fa11fa412b42b1528ea24d8854e49a90bb4f8e32b1e",
+      "report_id": "2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access",
+        "https://www.welivesecurity.com/en/eset-research/promptspy-ushers-in-era-android-threats-using-genai/",
+        "https://www.helpnetsecurity.com/2026/05/11/google-ai-vulnerability-exploitation/",
+        "https://thenextweb.com/news/google-ai-zero-day-exploit-cybersecurity-arms-race",
+        "https://koreajoongangdaily.joins.com/news/2026-05-14/national/northKorea/Rise-of-AI-raises-fears-of-North-Korean-hacking-capabilities/2592651",
+        "https://securelist.com/kimsuky-appleseed-pebbledash-campaigns/119785/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-25T09:19:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence": {
+      "content_hash": "8b5980f091e029b3e5beca6a0cbcdae00292006146681542fdcf8b5fd25a3a7c",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.md",
+      "posts_index_hash": "53884b5bb7f1755aa99182facf80a621469afe95b5b6d5ecb11a32addc887728",
+      "report_id": "2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates",
+        "https://cyberpress.org/supply-chain-attack-compromises-34-packages/",
+        "https://gbhackers.com/hackers-compromise-34-npm-pypi-and-crates-packages/",
+        "https://www.cyberkendra.com/2026/05/malicious-packages-on-npm-pypi-and.html",
+        "https://sqmagazine.co.uk/trapdoor-malware-npm-pypi-rust-developers/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-25T09:20:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

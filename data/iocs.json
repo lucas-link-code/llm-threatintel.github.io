@@ -1,6 +1,78 @@
 {
-  "last_updated": "2026-05-24",
+  "last_updated": "2026-05-25",
   "iocs": [
+    {
+      "value": "pypi:eth-security-auditor@0.1.0",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: first observed malicious package (uploaded May 22, 2026 20:20 UTC), auto-executes on import and downloads remote JavaScript for credential theft",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "pypi:cryptowallet-safety",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious PyPI package posing as crypto wallet safety tool, downloads and executes remote JavaScript payload via node -e",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "sui-move-build-helper",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious Crates.io package targeting Sui/Move developers, build.rs script extracts wallet keystores and exfiltrates via GitHub Gists using XOR key cargo-build-helper-2026",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "sui-sdk-build-utils",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious Crates.io package targeting Sui ecosystem developers",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "sui-framework-helpers",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious Crates.io package targeting Sui framework developers",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "move-analyzer-build",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious Crates.io package targeting Move language developers",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "move-compiler-tools",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious Crates.io package targeting Move language developers",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
+    {
+      "value": "move-project-builder",
+      "type": "package",
+      "context": "TrapDoor cross-ecosystem crypto stealer: malicious Crates.io package targeting Move language developers",
+      "first_seen": "2026-05-22",
+      "source": "Socket",
+      "campaign": "trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "status": "active"
+    },
     {
       "value": "m-kosche.com",
       "type": "domain",
@@ -1758,7 +1830,7 @@
     },
     {
       "value": "seed1.getsession.org",
-      "type": "url_path",
+      "type": "domain",
       "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
       "first_seen": "2026-05-24",
       "source": "TanStack",
@@ -1767,7 +1839,7 @@
     },
     {
       "value": "seed2.getsession.org",
-      "type": "url_path",
+      "type": "domain",
       "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
       "first_seen": "2026-05-24",
       "source": "TanStack",
@@ -1776,7 +1848,7 @@
     },
     {
       "value": "seed3.getsession.org",
-      "type": "url_path",
+      "type": "domain",
       "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
       "first_seen": "2026-05-24",
       "source": "TanStack",
@@ -1784,63 +1856,99 @@
       "status": "active"
     },
     {
-      "value": "@tanstack/react-router@1.169.5,1.169.8",
+      "value": "npm:@tanstack/react-router@1.169.5",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: malicious version published via cache poisoning and OIDC token extraction on May 11, 2026",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
     },
     {
-      "value": "@tanstack/vue-router@1.169.5,1.169.8",
+      "value": "npm:@tanstack/react-router@1.169.8",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: second malicious version published via cache poisoning and OIDC token extraction on May 11, 2026",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
     },
     {
-      "value": "@tanstack/solid-router@1.169.5,1.169.8",
+      "value": "npm:@tanstack/vue-router@1.169.5",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: malicious version",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
     },
     {
-      "value": "@tanstack/start@1.169.5,1.169.8",
+      "value": "npm:@tanstack/vue-router@1.169.8",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: second malicious version",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
     },
     {
-      "value": "@mistralai/*@2.4.6",
+      "value": "npm:@tanstack/solid-router@1.169.5",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: malicious version",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
     },
     {
-      "value": "@uipath/*",
+      "value": "npm:@tanstack/solid-router@1.169.8",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: second malicious version",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
     },
     {
-      "value": "@squawk/*",
+      "value": "npm:@tanstack/start@1.169.5",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: malicious version",
+      "first_seen": "2026-05-24",
+      "source": "TanStack",
+      "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@tanstack/start@1.169.8",
+      "type": "package",
+      "context": "TanStack GitHub Actions Pwn Request supply chain attack: second malicious version",
+      "first_seen": "2026-05-24",
+      "source": "TanStack",
+      "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@mistralai/mistralai@2.4.6",
+      "type": "package",
+      "context": "TanStack & Mistral GitHub Actions Pwn Request supply chain attack: compromised Mistral AI npm SDK; multiple @mistralai scoped packages affected at version 2.4.6",
+      "first_seen": "2026-05-24",
+      "source": "TanStack",
+      "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@uipath/robot",
+      "type": "package",
+      "context": "TanStack & Mistral GitHub Actions Pwn Request supply chain attack: representative indicator for 65 compromised @uipath scoped npm packages",
+      "first_seen": "2026-05-24",
+      "source": "TanStack",
+      "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@squawk/cli",
+      "type": "package",
+      "context": "TanStack & Mistral GitHub Actions Pwn Request supply chain attack: representative indicator for 20 compromised @squawk scoped npm aviation data packages",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
@@ -1865,9 +1973,9 @@
       "status": "active"
     },
     {
-      "value": "opensearch-project/opensearch",
+      "value": "npm:@opensearch-project/opensearch",
       "type": "package",
-      "context": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
+      "context": "TanStack & Mistral GitHub Actions Pwn Request supply chain attack: compromised OpenSearch npm package (1.3M weekly downloads)",
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",

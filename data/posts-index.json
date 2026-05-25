@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence",
+      "title": "TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft",
+      "date": "2026-05-25",
+      "author": "LLM ThreatIntel",
+      "tags": ["supply-chain", "malware"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, and plants persistence through .cursorrules and CLAUDE.md files that inject hidden zero-width Unicode instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.",
+      "file": "2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.md"
+    },
+    {
+      "id": "2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware",
+      "title": "GTIG Reports First Autonomous GenAI-Powered Malware in the Wild: PromptSpy Uses Gemini API for Real-Time Device Control; Russia-Nexus CANFAIL and LONGSTREAM Deploy LLM-Generated Decoy Code",
+      "date": "2026-05-25",
+      "author": "LLM ThreatIntel",
+      "tags": ["malware", "nation-state"],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google Threat Intelligence Group published a May 11, 2026 report documenting the transition from experimental to industrial-scale use of generative AI in adversarial workflows. The report reveals previously unreported capabilities in PromptSpy, an Android backdoor that uses the Gemini API to autonomously navigate victim devices in real time without human supervision, including biometric data capture and anti-uninstall overlays. Russia-nexus malware families CANFAIL and LONGSTREAM are confirmed using LLM-generated decoy code to obfuscate malicious payloads targeting Ukrainian organizations.",
+      "file": "2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware.md"
+    },
+    {
       "id": "2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026",
       "title": "TanStack & Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning & OIDC Token Extraction",
       "date": "2026-05-24",

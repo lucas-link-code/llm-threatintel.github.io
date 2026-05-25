@@ -1,6 +1,55 @@
 {
-  "last_updated": "2026-05-24",
+  "last_updated": "2026-05-25",
   "entries": [
+    {
+      "id": "trapdoor-cross-ecosystem-crypto-stealer",
+      "names": [
+        "TrapDoor",
+        "TrapDoor Crypto Stealer",
+        "trap-core.js"
+      ],
+      "type": "malware",
+      "first_seen": "2026-05-22",
+      "status": "active",
+      "distribution": [
+        "Malicious npm packages (21 packages) delivered via postinstall hooks executing trap-core.js credential harvester",
+        "Malicious PyPI packages (7 packages) auto-executing on import, downloading remote JavaScript from attacker-controlled GitHub Pages",
+        "Malicious Crates.io packages (6 packages) targeting Sui and Move blockchain developers via build.rs compilation scripts",
+        "Pull requests to legitimate repositories injecting .cursorrules and CLAUDE.md files under innocuous commit titles"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Compromise Software Dependencies (malicious packages on npm, PyPI, Crates.io)",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript (trap-core.js 1,149-line credential harvester)",
+        "T1555 - Credentials from Password Stores (browser credential and crypto wallet keystore extraction)",
+        "T1547 - Boot or Logon Autostart Execution (systemd and cron persistence)",
+        "T1021.004 - Remote Services: SSH (SSH-based lateral movement using stolen keys)",
+        "T1552.001 - Unsecured Credentials: Credentials In Files (environment variable and .env file harvesting)",
+        "T1132.001 - Data Encoding: Standard Encoding (zero-width Unicode characters in .cursorrules and CLAUDE.md)"
+      ],
+      "description": "Cross-ecosystem supply chain attack campaign discovered by Socket on May 22, 2026. Published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io targeting developers in crypto, DeFi, Solana, and AI communities. The npm payload (trap-core.js) validates stolen AWS and GitHub tokens via live API calls, attempts SSH-based lateral movement, and plants persistence through .cursorrules, CLAUDE.md, Git hooks, shell hooks, systemd, cron, and SSH. The AI coding assistant targeting is novel: .cursorrules and CLAUDE.md files contain hidden instructions embedded with zero-width Unicode characters that trick AI coding tools into executing silent credential exfiltration. Crates.io packages use XOR encryption with hardcoded key cargo-build-helper-2026 to exfiltrate wallet keystores to GitHub Gists. PyPI packages download and execute remote JavaScript via node -e.",
+      "attribution": "Unknown threat actor. No named APT or criminal group attributed."
+    },
+    {
+      "id": "canfail-longstream-russia-nexus-ai-obfuscated-malware",
+      "names": [
+        "CANFAIL",
+        "LONGSTREAM"
+      ],
+      "type": "malware",
+      "first_seen": "2025-01",
+      "status": "active",
+      "distribution": [
+        "Targeted intrusion operations against Ukrainian organizations",
+        "Delivered as part of Russia-nexus cyber operations"
+      ],
+      "ttps": [
+        "T1027 - Obfuscated Files or Information (LLM-generated junk/decoy code for obfuscation)",
+        "T1059 - Command and Scripting Interpreter (LONGSTREAM downloader script)",
+        "T1071 - Application Layer Protocol (C2 communications)"
+      ],
+      "description": "Two Russia-nexus malware families confirmed by Google GTIG (May 2026 report) to use LLM-generated decoy code for obfuscation of malicious payloads targeting Ukrainian organizations. CANFAIL contains LLM-authored comments explicitly describing blocks of code as unused filler, indicating the threat actor requested the model generate large volumes of inert code for obfuscation. LONGSTREAM contains 32 separate instances of code querying the system daylight saving time status, a repetitive functionally irrelevant pattern designed to make the script appear benign to analysts and automated detection tools.",
+      "attribution": "Russia-nexus (high confidence, per Google GTIG)"
+    },
     {
       "id": "cve-2026-44338-praisonai-auth-bypass",
       "names": [
@@ -664,21 +713,26 @@
     {
       "id": "promptspy",
       "names": [
-        "PromptSpy"
+        "PromptSpy",
+        "PromptSpy Android Backdoor",
+        "GeminiAutomationAgent"
       ],
       "type": "malware",
-      "first_seen": "2025-08",
+      "first_seen": "2026-01",
       "status": "active",
       "distribution": [
-        "malicious browser extensions",
-        "trojanized AI assistants"
+        "Sideloaded APK via dedicated website (not found on Google Play)",
+        "VNCSpy first-stage dropper uploaded to VirusTotal from Hong Kong (January 2026) and Argentina (February 2026)"
       ],
       "ttps": [
-        "T1185 - Browser Session Hijacking",
-        "T1056.004 - Credential API Hooking",
-        "T1041 - Exfiltration Over C2 Channel"
+        "T1548 - Abuse Elevation Control Mechanism: Accessibility Features (serializes UI hierarchy via Accessibility API)",
+        "T1056 - Input Capture (biometric data capture for authentication replay)",
+        "T1071.001 - Application Layer Protocol: Web Protocols (Gemini API calls to generativelanguage.googleapis.com)",
+        "T1562.001 - Impair Defenses: Disable or Modify Tools (invisible overlay prevents uninstallation)",
+        "T1113 - Screen Capture (VNC module for real-time screen viewing)"
       ],
-      "description": "Spyware targeting AI platform users to exfiltrate prompts, API keys, and conversation histories from ChatGPT, Claude, and other LLM interfaces."
+      "description": "First known Android malware to abuse generative AI in its execution flow. Discovered by ESET in February 2026; extended analysis by Google GTIG in May 2026. Contains GeminiAutomationAgent module that sends device UI hierarchy as XML to gemini-2.5-flash-lite model and receives structured JSON responses with tap/swipe coordinates for autonomous UI navigation. Capabilities include VNC remote access, biometric data capture, lockscreen data capture, anti-uninstall overlays, screen recording, and dynamically updatable C2 infrastructure including Gemini API keys and VNC relay servers. ESET noted it has not appeared in wider telemetry, suggesting possible proof of concept. Google disabled associated assets and confirmed no apps containing PromptSpy on Google Play.",
+      "attribution": "Unknown. VNCSpy first-stage samples uploaded from Hong Kong and Argentina. No named threat actor."
     },
     {
       "id": "honestcue",
