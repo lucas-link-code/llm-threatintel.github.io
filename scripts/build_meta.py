@@ -374,6 +374,90 @@ def build_rss(posts: list[dict]) -> str:
 """
 
 
+def strip_markdown_to_text(md: str) -> str:
+    """Strip markdown formatting to plain searchable text."""
+    text = re.sub(r"```\w*\n[\s\S]*?```", " ", md)
+    text = re.sub(r"`[^`]+`", lambda m: m.group(0)[1:-1], text)
+    text = re.sub(r"#{1,6}\s+", "", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+    text = re.sub(r"\*(.+?)\*", r"\1", text)
+    text = re.sub(r"^[-*]\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^\d+\.\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^>\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"\|", " ", text)
+    text = re.sub(r"[-]{3,}", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def extract_cves(text: str) -> list[str]:
+    return sorted(set(re.findall(r"CVE-\d{4}-\d{4,7}", text)))
+
+
+def build_search_index(posts: list[dict]) -> str:
+    """Build deterministic search index JSON from posts and cross-reference data."""
+    actors_path = DATA_DIR / "actors.json"
+    iocs_path = DATA_DIR / "iocs.json"
+
+    actor_names = set()
+    if actors_path.exists():
+        actors_data = read_json(actors_path)
+        for entry in actors_data.get("entries", []):
+            for name in entry.get("names", []):
+                if len(name) > 2:
+                    actor_names.add(name.lower())
+
+    ioc_by_campaign = {}
+    if iocs_path.exists():
+        iocs_data = read_json(iocs_path)
+        for ioc in iocs_data.get("iocs", []):
+            campaign = ioc.get("campaign", "").strip()
+            if campaign:
+                ioc_by_campaign.setdefault(campaign, []).append(ioc.get("value", ""))
+
+    entries = []
+    for post in posts:
+        md_path = POSTS_DIR / post["file"]
+        if not md_path.exists():
+            continue
+
+        markdown = md_path.read_text(encoding="utf-8")
+        body = strip_markdown_to_text(markdown)
+        body_lower = body.lower()
+
+        cves = extract_cves(markdown)
+
+        matched_actors = sorted(
+            name for name in actor_names if name in body_lower
+        )
+
+        post_id = post.get("id", Path(post["file"]).stem)
+        slug_stripped = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", post_id)
+        matched_iocs = sorted(set(
+            ioc_by_campaign.get(post_id, []) +
+            ioc_by_campaign.get(slug_stripped, [])
+        ))
+
+        entries.append({
+            "id": post_id,
+            "title": post.get("title", ""),
+            "date": post.get("date", ""),
+            "excerpt": post.get("excerpt", ""),
+            "file": post.get("file", ""),
+            "body": body,
+            "tags": sorted(post.get("tags", [])),
+            "cves": cves,
+            "actors": matched_actors,
+            "iocs": matched_iocs,
+        })
+
+    entries.sort(key=lambda e: e["id"])
+
+    index_data = {"posts": entries}
+    return json.dumps(index_data, indent=2, ensure_ascii=False, sort_keys=False) + "\n"
+
+
 def main():
     posts_data = read_json(INDEX_FILE)
     posts = posts_data.get("posts", [])
@@ -397,6 +481,17 @@ def main():
 
     (ROOT / "rss.xml").write_text(build_rss(posts), encoding="utf-8")
     print("[OK] Generated rss.xml")
+
+    search_index_path = DATA_DIR / "search-index.json"
+    new_index = build_search_index(posts)
+    current = ""
+    if search_index_path.exists():
+        current = search_index_path.read_text(encoding="utf-8")
+    if new_index != current:
+        search_index_path.write_text(new_index, encoding="utf-8")
+        print("[OK] Generated data/search-index.json")
+    else:
+        print("[OK] data/search-index.json unchanged")
 
 
 if __name__ == "__main__":

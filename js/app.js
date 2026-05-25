@@ -56,8 +56,19 @@ const App = {
     this.setupSearchControls();
     this.buildFeedSearchIndex();
     this.initScrollTopButton();
+    this.lastRoutedHash = null;
     this.route();
-    window.addEventListener('hashchange', () => this.route());
+    window.addEventListener('hashchange', () => {
+      const currentHash = window.location.hash || '#home';
+      if (currentHash === this.lastRoutedHash) return;
+      this.route();
+    });
+    window.addEventListener('popstate', () => {
+      const currentHash = window.location.hash || '#home';
+      if (currentHash !== this.lastRoutedHash) {
+        this.route();
+      }
+    });
   },
 
   async loadData() {
@@ -128,9 +139,41 @@ const App = {
     this.upsertLink('canonical', finalUrl);
   },
 
+  parseHash(hash) {
+    const raw = (hash || '#home').slice(1);
+    const qIdx = raw.indexOf('?');
+    const pathPart = qIdx === -1 ? raw : raw.substring(0, qIdx);
+    const paramStr = qIdx === -1 ? '' : raw.substring(qIdx + 1);
+    const [page, ...pathParams] = pathPart.split('/');
+    const queryParams = new URLSearchParams(paramStr);
+    return { page: page || 'home', pathParams, queryParams };
+  },
+
+  buildHash(page, pathParams, queryParams) {
+    let h = '#' + page;
+    if (pathParams && pathParams.length) h += '/' + pathParams.join('/');
+    if (queryParams) {
+      const str = queryParams.toString();
+      if (str) h += '?' + str;
+    }
+    return h;
+  },
+
+  updateHashParams(params, { push = true } = {}) {
+    const { page, pathParams } = this.parseHash(window.location.hash);
+    const newHash = this.buildHash(page, pathParams, params);
+    if (window.location.hash === newHash) return;
+    this.lastRoutedHash = newHash;
+    if (push) {
+      history.pushState(null, '', newHash);
+    } else {
+      history.replaceState(null, '', newHash);
+    }
+  },
+
   route() {
-    const hash = window.location.hash || '#home';
-    const [page, ...params] = hash.slice(1).split('/');
+    this.lastRoutedHash = window.location.hash || '#home';
+    const { page, pathParams: params, queryParams } = this.parseHash(window.location.hash);
 
     this.cleanupHomeFilterBar?.();
     this.cleanupHomeFilterBar = null;
@@ -140,6 +183,8 @@ const App = {
     });
 
     const content = document.getElementById('app-content');
+
+    this.applyUrlParams(page, queryParams);
 
     switch (page) {
       case 'home':
@@ -215,6 +260,26 @@ const App = {
     }
     window.scrollTo(0, 0);
     this.scrollTopButtonHandler?.();
+  },
+
+  applyUrlParams(page, queryParams) {
+    if (page === 'home') {
+      this.currentFilter = queryParams.get('tag') || 'all';
+      this.feedSearchTerm = queryParams.get('q') || '';
+      this.syncSearchInputs();
+    } else if (page === 'ioc-feed') {
+      this.iocTypeFilter = queryParams.get('type') || 'all';
+      this.iocStatusFilter = queryParams.get('status') || 'active';
+      this.iocCampaignFilter = queryParams.get('campaign') || 'all';
+      this.iocSourceFilter = queryParams.get('source') || 'all';
+      this.iocSearch = queryParams.get('q') || '';
+    } else if (page === 'actors') {
+      this.actorSearch = queryParams.get('q') || '';
+      this.actorFilter = queryParams.get('filter') || 'all';
+    } else if (page === 'trends') {
+      const w = queryParams.get('window');
+      if (w) this.trendReportWindow = w;
+    }
   },
 
   initScrollTopButton() {
@@ -298,6 +363,88 @@ const App = {
 
   isHashType(t) {
     return t === 'sha256' || t === 'sha1' || t === 'md5' || t === 'hash';
+  },
+
+  // ---- IOC ENRICHMENT + AGE ----
+  getEnrichmentLinks(ioc) {
+    const raw = this.getIOCValue(ioc);
+    if (!raw) return [];
+    const bucket = this.getIOCTypeBucket(ioc);
+    const enc = encodeURIComponent(raw);
+    const links = [];
+
+    if (bucket === 'domain') {
+      links.push({ label: 'VirusTotal', url: `https://www.virustotal.com/gui/domain/${enc}` });
+      links.push({ label: 'urlscan.io', url: `https://urlscan.io/search/#domain:${enc}` });
+      links.push({ label: 'AbuseIPDB', url: `https://www.abuseipdb.com/check/${enc}` });
+    } else if (bucket === 'ip') {
+      links.push({ label: 'VirusTotal', url: `https://www.virustotal.com/gui/ip-address/${enc}` });
+      links.push({ label: 'AbuseIPDB', url: `https://www.abuseipdb.com/check/${enc}` });
+      links.push({ label: 'Shodan', url: `https://www.shodan.io/host/${enc}` });
+    } else if (bucket === 'hash') {
+      const hashType = String(ioc?.type || '').toLowerCase();
+      links.push({ label: 'VirusTotal', url: `https://www.virustotal.com/gui/file/${enc}` });
+      if (hashType === 'sha256') {
+        links.push({ label: 'MalwareBazaar', url: `https://bazaar.abuse.ch/browse.php?search=sha256:${enc}` });
+      } else if (hashType === 'md5') {
+        links.push({ label: 'MalwareBazaar', url: `https://bazaar.abuse.ch/browse.php?search=md5:${enc}` });
+      } else {
+        links.push({ label: 'MalwareBazaar', url: `https://bazaar.abuse.ch/browse.php?search=sha256:${enc}` });
+      }
+      links.push({ label: 'Hybrid Analysis', url: `https://www.hybrid-analysis.com/search?query=${enc}` });
+    } else if (bucket === 'url_path') {
+      links.push({ label: 'urlscan.io', url: `https://urlscan.io/search/#page.url:${enc}` });
+      links.push({ label: 'VirusTotal', url: `https://www.virustotal.com/gui/search/${enc}` });
+    } else if (bucket === 'package') {
+      const pkgVal = raw;
+      if (pkgVal.startsWith('npm:')) {
+        const name = pkgVal.replace(/^npm:/, '').replace(/@[^@/]+$/, '');
+        const nameEnc = encodeURIComponent(name);
+        links.push({ label: 'npm', url: `https://www.npmjs.com/package/${nameEnc}` });
+        links.push({ label: 'Socket', url: `https://socket.dev/npm/package/${nameEnc}` });
+        links.push({ label: 'Snyk', url: `https://security.snyk.io/package/npm/${nameEnc}` });
+      } else if (pkgVal.startsWith('pypi:')) {
+        const name = pkgVal.replace(/^pypi:/, '').replace(/@[^@/]+$/, '');
+        const nameEnc = encodeURIComponent(name);
+        links.push({ label: 'PyPI', url: `https://pypi.org/project/${nameEnc}/` });
+        links.push({ label: 'Socket', url: `https://socket.dev/pypi/package/${nameEnc}` });
+        links.push({ label: 'Snyk', url: `https://security.snyk.io/package/pip/${nameEnc}` });
+      } else {
+        links.push({ label: 'Socket', url: `https://socket.dev/npm/package/${enc}` });
+        links.push({ label: 'Snyk', url: `https://security.snyk.io/package/npm/${enc}` });
+      }
+    } else {
+      links.push({ label: 'VirusTotal', url: `https://www.virustotal.com/gui/search/${enc}` });
+    }
+    return links;
+  },
+
+  renderEnrichmentLinks(ioc) {
+    const links = this.getEnrichmentLinks(ioc);
+    if (!links.length) return '';
+    return `<span class="ioc-enrichment">${links.map(l =>
+      `<a href="${this.escapeAttr(l.url)}" target="_blank" rel="noopener" class="ioc-enrich-link" aria-label="Look up IOC in ${this.escapeAttr(l.label)}" title="${this.escapeAttr(l.label)}">${this.escapeHtml(l.label)}</a>`
+    ).join('')}</span>`;
+  },
+
+  getAgeBadge(ioc) {
+    const firstSeen = ioc?.first_seen;
+    if (!firstSeen || typeof firstSeen !== 'string') return null;
+    const seenDate = new Date(firstSeen + 'T00:00:00Z');
+    if (isNaN(seenDate.getTime())) return null;
+    const now = new Date();
+    const diffMs = now.getTime() - seenDate.getTime();
+    const days = Math.floor(diffMs / 86400000);
+    if (days < 0) return null;
+    if (days < 14) return { label: 'New', cls: 'age-new', days };
+    if (days < 45) return { label: 'Recent', cls: 'age-recent', days };
+    return { label: 'Older', cls: 'age-older', days };
+  },
+
+  renderAgeBadge(ioc) {
+    const badge = this.getAgeBadge(ioc);
+    if (!badge) return '';
+    return `<span class="ioc-age-badge ${badge.cls}" title="First seen ${badge.days} day${badge.days === 1 ? '' : 's'} ago">${badge.label}</span>`;
   },
 
   // ---- COPY WITH FALLBACK ----
@@ -390,9 +537,10 @@ const App = {
         <h3 style="font-size:.85rem">Detail</h3>
         <div style="overflow-x:auto">
           <table class="actor-table" style="min-width:480px">
-            <thead><tr><th>Indicator</th><th>Context</th><th>Campaign</th></tr></thead>
+            <thead><tr><th>Indicator</th><th>Lookup</th><th>Context</th><th>Campaign</th></tr></thead>
             <tbody>${filtered.map(i => `<tr>
               <td style="font-family:var(--fm);font-size:.76rem;word-break:break-all">${this.escapeHtml(this.defangIOC(i))}</td>
+              <td>${this.renderEnrichmentLinks(i)}</td>
               <td style="font-size:.8rem;color:var(--t2)">${this.escapeHtml(i.context)}</td>
               <td><span class="ttp-tag">${this.escapeHtml(i.campaign)}</span></td>
             </tr>`).join('')}</tbody>
@@ -438,8 +586,17 @@ const App = {
     posts.forEach(p => {
       this.feedSearchIndex[p.id] = this.buildPostMetadataBlob(p);
     });
-    this.updateIndexingIndicator('building');
 
+    const loaded = await this.loadPrebuiltSearchIndex();
+    if (loaded) {
+      this.feedSearchIndexReady = true;
+      this.feedSearchIndexBuilding = false;
+      this.updateIndexingIndicator('ready');
+      if (document.getElementById('posts-grid')) this.filterPosts();
+      return;
+    }
+
+    this.updateIndexingIndicator('building');
     await Promise.all(posts.map(async p => {
       try {
         const r = await fetch(`posts/${p.file}`);
@@ -457,10 +614,45 @@ const App = {
     if (document.getElementById('posts-grid')) this.filterPosts();
   },
 
+  async loadPrebuiltSearchIndex() {
+    try {
+      this.updateIndexingIndicator('loading');
+      const r = await fetch('data/search-index.json');
+      if (!r.ok) return false;
+      const data = await r.json();
+      if (!data || !Array.isArray(data.posts)) return false;
+      for (const entry of data.posts) {
+        if (!entry.id) continue;
+        const blob = [
+          entry.id || '',
+          entry.title || '',
+          entry.date || '',
+          entry.file || '',
+          entry.excerpt || '',
+          entry.body || '',
+          (entry.tags || []).join(' '),
+          (entry.cves || []).join(' '),
+          (entry.actors || []).join(' '),
+          (entry.iocs || []).join(' ')
+        ].join(' \n ').toLowerCase();
+        this.feedSearchIndex[entry.id] = blob;
+      }
+      return true;
+    } catch (e) {
+      console.warn('search-index.json load failed, falling back to per-file indexing:', e.message);
+      return false;
+    }
+  },
+
   updateIndexingIndicator(state) {
     const el = document.getElementById('feed-index-status');
     if (!el) return;
     window.clearTimeout(this.feedIndexHideTimer);
+    if (state === 'loading') {
+      el.textContent = 'Search index loading';
+      el.classList.remove('is-hidden');
+      return;
+    }
     if (state === 'building') {
       el.textContent = 'Indexing reports...';
       el.classList.remove('is-hidden');
@@ -493,13 +685,15 @@ const App = {
   setFeedSearchTerm(term, { route = true } = {}) {
     this.feedSearchTerm = term ?? '';
     this.syncSearchInputs();
-    const h = window.location.hash;
-    const onHome = !h || h === '#home' || h === '#';
+    const { page } = this.parseHash(window.location.hash);
+    const onHome = page === 'home' || page === '';
     if (route && !onHome) {
-      window.location.hash = '#home';
+      const p = this.buildRouteParams('home');
+      window.location.hash = this.buildHash('home', [], p);
       return;
     }
     this.filterPosts();
+    this.updateHashParams(this.buildRouteParams('home'), { push: false });
   },
 
   clearFeedSearch() {
@@ -1052,13 +1246,33 @@ const App = {
     this.scrollTopButtonHandler?.();
   },
 
-  navigateOrRender(route) {
-    const target = `#${route}`;
+  navigateOrRender(route, params) {
+    const qp = params || this.buildRouteParams(route);
+    const target = this.buildHash(route, [], qp);
     if (window.location.hash === target) {
       this.renderRouteWithCurrentState(route);
     } else {
       window.location.hash = target;
     }
+  },
+
+  buildRouteParams(route) {
+    const p = new URLSearchParams();
+    if (route === 'home') {
+      if (this.currentFilter && this.currentFilter !== 'all') p.set('tag', this.currentFilter);
+      if (this.feedSearchTerm) p.set('q', this.feedSearchTerm);
+    } else if (route === 'ioc-feed') {
+      if (this.iocTypeFilter && this.iocTypeFilter !== 'all') p.set('type', this.iocTypeFilter);
+      if (this.iocStatusFilter && this.iocStatusFilter !== 'active') p.set('status', this.iocStatusFilter);
+      if (this.iocCampaignFilter && this.iocCampaignFilter !== 'all') p.set('campaign', this.iocCampaignFilter);
+      if (this.iocSourceFilter && this.iocSourceFilter !== 'all') p.set('source', this.iocSourceFilter);
+      if (this.iocSearch) p.set('q', this.iocSearch);
+    } else if (route === 'actors') {
+      if (this.actorSearch) p.set('q', this.actorSearch);
+    } else if (route === 'trends') {
+      if (this.trendReportWindow && this.trendReportWindow !== 'all-time') p.set('window', this.trendReportWindow);
+    }
+    return p;
   },
 
   setTrendReportWindow(windowKey) {
@@ -1767,6 +1981,7 @@ const App = {
         container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         this.filterPosts();
+        this.updateHashParams(this.buildRouteParams('home'), { push: true });
 
         if (window.innerWidth <= 768) {
           this.scrollActiveFilterIntoView(container);
@@ -1922,6 +2137,7 @@ const App = {
       if (!response.ok) throw new Error('Post file not found');
       const markdown = await response.text();
       const html = this.renderMarkdown(markdown);
+      const relatedHtml = this.renderRelatedReports(postMeta, markdown);
       container.innerHTML = `
         <a href="#home" class="back-link">&larr; Back to feed</a>
         <div class="post-meta" style="margin-bottom:1rem">
@@ -1930,11 +2146,86 @@ const App = {
           <span class="post-tag tlp-clear">${postMeta.tlp}</span>
         </div>
         <div class="post-content">${html}</div>
+        ${relatedHtml}
       `;
       this.addCopyButtons(container);
     } catch (e) {
       container.innerHTML = `<a href="#home" class="back-link">&larr; Back</a><div class="post-content"><p>Error: ${e.message}</p></div>`;
     }
+  },
+
+  computeRelatedPosts(currentPost, markdown) {
+    const posts = this.postsIndex?.posts || [];
+    const currentId = currentPost.id;
+    const scores = new Map();
+
+    const cves = (markdown.match(/CVE-\d{4}-\d{4,7}/g) || []);
+    const uniqueCves = [...new Set(cves)];
+
+    const actorNames = [];
+    const entries = this.actorsData?.entries || [];
+    const mdLower = markdown.toLowerCase();
+    for (const actor of entries) {
+      for (const name of (actor.names || [])) {
+        if (name.length > 3 && mdLower.includes(name.toLowerCase())) {
+          actorNames.push(name.toLowerCase());
+        }
+      }
+    }
+
+    const currentIocs = (this.iocsData?.iocs || [])
+      .filter(i => i.type === 'package' && (i.campaign === currentId || i.campaign === currentId.replace(/^\d{4}-\d{2}-\d{2}-/, '')))
+      .map(i => i.value.replace(/^(?:npm:|pypi:)/, '').replace(/@[^@/]+$/, '').toLowerCase());
+
+    for (const post of posts) {
+      if (post.id === currentId) continue;
+      let score = 0;
+
+      const postBlob = (post.title + ' ' + post.excerpt + ' ' + post.id).toLowerCase();
+
+      for (const cve of uniqueCves) {
+        if (postBlob.includes(cve.toLowerCase())) {
+          score += 3;
+        }
+      }
+
+      for (const pkgName of currentIocs) {
+        if (pkgName.length > 3 && postBlob.includes(pkgName)) {
+          score += 3;
+        }
+      }
+
+      for (const actorName of actorNames) {
+        if (postBlob.includes(actorName)) {
+          score += 2;
+        }
+      }
+
+      if (score > 0) scores.set(post.id, score);
+    }
+
+    const threshold = 3;
+    const results = [...scores.entries()]
+      .filter(([, s]) => s >= threshold)
+      .sort((a, b) => b[1] - a[1] || b[0].localeCompare(a[0]))
+      .slice(0, 5)
+      .map(([id]) => posts.find(p => p.id === id))
+      .filter(Boolean);
+
+    return results;
+  },
+
+  renderRelatedReports(postMeta, markdown) {
+    const related = this.computeRelatedPosts(postMeta, markdown);
+    if (!related.length) return '';
+    return `
+      <div class="related-reports">
+        <h2 class="related-reports-title">Related Reports</h2>
+        <ul class="related-reports-list">
+          ${related.map(p => `<li><a href="#post/${this.escapeAttr(p.id)}">${this.escapeHtml(p.title)}</a><span class="related-date">${p.date}</span></li>`).join('')}
+        </ul>
+      </div>
+    `;
   },
 
   blogPostBylineHtml() {
@@ -2424,6 +2715,7 @@ const App = {
               <th>Type</th>
               <th>Status</th>
               <th>First Seen</th>
+              <th>Lookup</th>
               <th>Campaign</th>
               <th>Source</th>
               <th>Context</th>
@@ -2438,7 +2730,8 @@ const App = {
                   <td data-label="Indicator"><span class="ioc-value">${this.escapeHtml(this.getIOCDisplayValue(ioc))}</span></td>
                   <td data-label="Type"><span class="ttp-tag">${this.escapeHtml(this.formatType(type))}</span></td>
                   <td data-label="Status"><span class="actor-status status-${this.escapeAttr(status)}">${this.escapeHtml(status.toUpperCase())}</span></td>
-                  <td data-label="First Seen"><span class="ioc-mono">${this.escapeHtml(ioc?.first_seen || 'Unknown')}</span></td>
+                  <td data-label="First Seen"><span class="ioc-mono">${this.escapeHtml(ioc?.first_seen || 'Unknown')}</span> ${this.renderAgeBadge(ioc)}</td>
+                  <td data-label="Lookup">${this.renderEnrichmentLinks(ioc)}</td>
                   <td data-label="Campaign">${this.renderIOCCampaignCell(ioc?.campaign)}</td>
                   <td data-label="Source">${this.escapeHtml(ioc?.source || 'Unknown')}</td>
                   <td data-label="Context">${this.escapeHtml(ioc?.context || '')}</td>
@@ -2554,10 +2847,103 @@ const App = {
           disabled: noMatches
         })}
       </div>
+      <div class="ioc-misp-export">
+        <button class="btn misp-export-btn" id="misp-export-btn" ${noMatches ? 'disabled' : ''}>Export MISP Event JSON</button>
+        <span class="misp-export-status" id="misp-export-status"></span>
+      </div>
       <h2 class="ioc-section-title">Matching Indicators</h2>
       ${this.renderIOCTable(filtered)}
     `;
     this.bindIOCWorkbenchControls(container);
+    this.bindMISPExport(container, filtered);
+  },
+
+  // ---- MISP EXPORT ----
+  getMISPAttributeType(ioc) {
+    const bucket = this.getIOCTypeBucket(ioc);
+    const type = String(ioc?.type || '').toLowerCase();
+    if (bucket === 'domain') return { type: 'domain', category: 'Network activity' };
+    if (bucket === 'ip') return { type: 'ip-dst', category: 'Network activity' };
+    if (type === 'sha256') return { type: 'sha256', category: 'Payload delivery' };
+    if (type === 'md5') return { type: 'md5', category: 'Payload delivery' };
+    if (type === 'sha1') return { type: 'sha1', category: 'Payload delivery' };
+    if (bucket === 'hash') return { type: 'sha256', category: 'Payload delivery' };
+    if (bucket === 'url_path') return { type: 'url', category: 'Network activity' };
+    if (bucket === 'package') return { type: 'text', category: 'Other' };
+    return null;
+  },
+
+  buildMISPEvent(iocs) {
+    const now = new Date().toISOString().split('T')[0];
+    const filterDesc = [];
+    if (this.iocTypeFilter !== 'all') filterDesc.push(this.iocTypeFilter);
+    if (this.iocStatusFilter !== 'active') filterDesc.push(this.iocStatusFilter);
+    const suffix = filterDesc.length ? filterDesc.join('-') : 'all';
+
+    const attributes = [];
+    const skipped = [];
+
+    for (const ioc of iocs) {
+      const raw = this.getIOCValue(ioc);
+      if (!raw) { skipped.push(ioc); continue; }
+      const mapping = this.getMISPAttributeType(ioc);
+      if (!mapping) { skipped.push(ioc); continue; }
+
+      const attr = {
+        type: mapping.type,
+        category: mapping.category,
+        value: raw,
+        to_ids: true,
+        comment: ioc.context || ''
+      };
+
+      if (mapping.type === 'text' && ioc.type === 'package') {
+        attr.comment = `Package indicator: ${raw}. ${ioc.context || ''}`.trim();
+      }
+
+      attributes.push(attr);
+    }
+
+    const event = {
+      Event: {
+        info: `LLM ThreatIntel IOC Export - ${now} - ${suffix}`,
+        threat_level_id: '2',
+        analysis: '2',
+        distribution: '0',
+        Tag: [{ name: 'tlp:clear' }],
+        Attribute: attributes
+      }
+    };
+
+    return { event, exported: attributes.length, skipped: skipped.length, filename: `llm-threatintel-misp-export-${now}-${suffix}.json` };
+  },
+
+  bindMISPExport(container, filtered) {
+    const btn = container.querySelector('#misp-export-btn');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      if (!filtered || !filtered.length) return;
+      const { event, exported, skipped, filename } = this.buildMISPEvent(filtered);
+      if (exported === 0) return;
+
+      const json = JSON.stringify(event, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+
+      const status = container.querySelector('#misp-export-status');
+      if (status) {
+        const msg = skipped > 0
+          ? `Exported ${exported} IOCs. ${skipped} skipped (unsupported format).`
+          : `Exported ${exported} IOCs.`;
+        status.textContent = msg;
+        setTimeout(() => { status.textContent = ''; }, 5000);
+      }
+    });
   },
 
   // ---- BLOG ----

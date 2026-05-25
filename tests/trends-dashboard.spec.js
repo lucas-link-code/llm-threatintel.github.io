@@ -192,20 +192,20 @@ test.describe('Trends dashboard route', () => {
     await openTrends(page);
     const tag = postsIndex.posts.find(post => post.tags?.length)?.tags[0];
     await page.locator(`[data-trend-section="reports-by-tag"] [data-trend-key="${tag}"]`).click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator(`.filter-btn[data-filter="${tag}"]`)).toHaveClass(/active/);
 
     await openTrends(page);
     const month = postsIndex.posts.find(post => /^\d{4}-\d{2}/.test(post.date))?.date.slice(0, 7);
     await page.locator(`[data-trend-section="reports-by-month"] [data-trend-key="${month}"]`).click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator('#header-search-input')).toHaveValue(month);
   });
 
   test('IOC pivots route to IOC Workbench filters', async ({ page }) => {
     await openTrends(page);
     await page.locator('[data-trend-section="ioc-types"] [data-trend-key="domain"]').click();
-    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page).toHaveURL(/#ioc-feed/);
     await expect(page.locator('#ioc-type-filter')).toHaveValue('domain');
     await expect(page.locator('#ioc-status-filter')).toHaveValue('all');
 
@@ -213,7 +213,7 @@ test.describe('Trends dashboard route', () => {
     const sourceButton = page.locator('[data-trend-section="ioc-sources"] .trend-bar-button').first();
     const source = await sourceButton.getAttribute('data-trend-key');
     await sourceButton.click();
-    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page).toHaveURL(/#ioc-feed/);
     await expect(page.locator('#ioc-source-filter')).toHaveValue(source);
 
     await page.evaluate(() => App.openTrendPivot('ioc-status', 'removed'));
@@ -223,22 +223,22 @@ test.describe('Trends dashboard route', () => {
   test('top stat tiles pivot to their detailed pages', async ({ page }) => {
     await openTrends(page);
     await page.locator('[data-trend-stat="total-reports"]').click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator('#header-search-input')).toHaveValue('');
 
     await openTrends(page);
     await page.locator('[data-trend-stat="active-iocs"]').click();
-    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page).toHaveURL(/#ioc-feed/);
     await expect(page.locator('#ioc-status-filter')).toHaveValue('active');
 
     await openTrends(page);
     await page.locator('[data-trend-stat="total-iocs"]').click();
-    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page).toHaveURL(/#ioc-feed/);
     await expect(page.locator('#ioc-status-filter')).toHaveValue('all');
 
     await openTrends(page);
     await page.locator('[data-trend-stat="active-actors"]').click();
-    await expect(page).toHaveURL(/#actors$/);
+    await expect(page).toHaveURL(/#actors/);
     await expect(page.locator('#search-actors')).toHaveValue('');
   });
 
@@ -247,7 +247,7 @@ test.describe('Trends dashboard route', () => {
     const actorButton = page.locator('[data-trend-section="actor-mentions"] .trend-bar-button').first();
     const actorName = await actorButton.getAttribute('data-trend-key');
     await actorButton.click();
-    await expect(page).toHaveURL(/#actors$/);
+    await expect(page).toHaveURL(/#actors/);
     await expect(page.locator('#search-actors')).toHaveValue(actorName);
   });
 

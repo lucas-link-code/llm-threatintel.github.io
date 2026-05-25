@@ -104,50 +104,50 @@ test.describe('Executive Brief route', () => {
   test('pivots route to detailed pages with clean destination state', async ({ page }) => {
     await openBrief(page);
     await page.locator('[data-brief-stat="recent-reports"]').click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator('#header-search-input')).toHaveValue('');
 
     await openBrief(page);
     await page.locator('[data-brief-stat="total-reports"]').click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator('#header-search-input')).toHaveValue('');
 
     await openBrief(page);
     await page.locator('[data-brief-stat="active-iocs"]').click();
-    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page).toHaveURL(/#ioc-feed/);
     await expect(page.locator('#ioc-status-filter')).toHaveValue('active');
 
     await openBrief(page);
     await page.locator('[data-brief-stat="active-actors"]').click();
-    await expect(page).toHaveURL(/#actors$/);
+    await expect(page).toHaveURL(/#actors/);
     await expect(page.locator('#search-actors')).toHaveValue('');
 
     await openBrief(page);
     const themeButton = page.locator('[data-trend-section="brief-theme-mix"] .trend-bar-button').first();
     const themeSearch = await themeButton.getAttribute('data-trend-pivot-value');
     await themeButton.click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator('#header-search-input')).toHaveValue(themeSearch);
 
     await openBrief(page);
     await page.locator('[data-brief-pivot="trends"]').click();
-    await expect(page).toHaveURL(/#trends$/);
+    await expect(page).toHaveURL(/#trends/);
     await expect(page.locator('h1')).toContainText('Trends Dashboard');
 
     await openBrief(page);
     await page.locator('[data-brief-pivot="ioc-feed"]').click();
-    await expect(page).toHaveURL(/#ioc-feed$/);
+    await expect(page).toHaveURL(/#ioc-feed/);
     await expect(page.locator('#ioc-status-filter')).toHaveValue('active');
     await expect(page.locator('#ioc-type-filter')).toHaveValue('all');
 
     await openBrief(page);
     await page.locator('[data-brief-pivot="actors"]').click();
-    await expect(page).toHaveURL(/#actors$/);
+    await expect(page).toHaveURL(/#actors/);
     await expect(page.locator('#search-actors')).toHaveValue('');
 
     await openBrief(page);
     await page.locator('[data-brief-pivot="home"]').click();
-    await expect(page).toHaveURL(/#home$/);
+    await expect(page).toHaveURL(/#home/);
     await expect(page.locator('#header-search-input')).toHaveValue('');
 
     await page.locator('#header-search-input').fill('api key');
