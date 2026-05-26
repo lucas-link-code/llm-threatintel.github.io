@@ -92,12 +92,23 @@ const App = {
   setupNav() {
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.site-nav');
+    const logo = document.querySelector('.site-logo');
     if (toggle && nav) {
       toggle.addEventListener('click', () => nav.classList.toggle('open'));
     }
     document.querySelectorAll('.site-nav a').forEach(a => {
       a.addEventListener('click', () => nav.classList.remove('open'));
     });
+    if (logo) {
+      logo.addEventListener('click', e => {
+        nav?.classList.remove('open');
+        const { page } = this.parseHash(window.location.hash);
+        if (page === 'home' && window.location.hash === '#home') {
+          e.preventDefault();
+          this.scrollToTop();
+        }
+      });
+    }
   },
 
   getRecentBlogPost(days = 14) {
@@ -321,7 +332,6 @@ const App = {
     const btn = document.getElementById('scroll-top-btn');
     if (!btn || this.scrollTopButtonBound) return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let rafScheduled = false;
     let lastShown = false;
 
@@ -343,18 +353,22 @@ const App = {
       });
     };
 
-    btn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
-      });
-    });
+    btn.addEventListener('click', () => this.scrollToTop());
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     this.scrollTopButtonHandler = toggleVisibility;
     this.scrollTopButtonBound = true;
     toggleVisibility();
+  },
+
+  scrollToTop() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+    });
+    this.scrollTopButtonHandler?.();
   },
 
   // ---- DEFANGING ----
