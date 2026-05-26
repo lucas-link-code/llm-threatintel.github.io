@@ -53,6 +53,7 @@ const App = {
   async init() {
     await this.loadData();
     this.setupNav();
+    this.updateBlogNewBadges();
     this.setupSearchControls();
     this.buildFeedSearchIndex();
     this.initScrollTopButton();
@@ -97,6 +98,40 @@ const App = {
     document.querySelectorAll('.site-nav a').forEach(a => {
       a.addEventListener('click', () => nav.classList.remove('open'));
     });
+  },
+
+  getRecentBlogPost(days = 14) {
+    const posts = this.blogIndex?.posts;
+    if (!Array.isArray(posts) || posts.length === 0) return null;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const windowMs = days * 24 * 60 * 60 * 1000;
+
+    return posts.reduce((newest, post) => {
+      if (!post?.date || !/^\d{4}-\d{2}-\d{2}$/.test(post.date)) return newest;
+      const postDate = new Date(`${post.date}T00:00:00`);
+      if (Number.isNaN(postDate.getTime()) || postDate > today) return newest;
+      if (today - postDate > windowMs) return newest;
+      if (!newest || postDate > newest.date) return { date: postDate, post };
+      return newest;
+    }, null);
+  },
+
+  updateBlogNewBadges() {
+    const recentPost = this.getRecentBlogPost();
+    const showBadge = Boolean(recentPost);
+    document.querySelectorAll('.new-badge').forEach(badge => {
+      badge.hidden = !showBadge;
+    });
+
+    const toggle = document.querySelector('.nav-toggle');
+    if (toggle) {
+      const label = showBadge
+        ? 'Toggle navigation, new blog posts available'
+        : 'Toggle navigation';
+      toggle.setAttribute('aria-label', label);
+    }
   },
 
   upsertMeta(attrName, attrValue, content) {

@@ -63,7 +63,14 @@
         <span class="logo-mark">LLM</span>
         <span>LLM <span class="logo-accent">ThreatIntel</span></span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="new-badge nav-toggle-new-badge" hidden>New</span>
+      </button>
       <div class="header-search" role="search">
         <label for="header-search-input" class="visually-hidden">Search reports</label>
         <input id="header-search-input" type="search" class="header-search-input" placeholder="Search reports..." autocomplete="off" spellcheck="false">
@@ -80,7 +87,7 @@
         <a href="#trends">Trends</a>
         <a href="#actors">Threat Actors</a>
         <a href="#ioc-feed">IOC Feed</a>
-        <a href="#blog">Blog</a>
+        <a href="#blog">Blog <span class="new-badge nav-link-new-badge" hidden>New</span></a>
         <a href="#about">About</a>
       </nav>
     </div>
