@@ -2241,6 +2241,22 @@
       "validated_at": "2026-05-25T09:20:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030": {
+      "content_hash": "fb48a6f837e4a92ac88c7820afaaec4c4177281427648ca8fb71257eb5bca9e4",
+      "evidence_status": "validated",
+      "file": "2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030.md",
+      "posts_index_hash": "4893d995275cc449a60e577f9b591ae23a383f5dcbe4f28b88de403110d2f1da",
+      "report_id": "2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-26T06:48:51+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

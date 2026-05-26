@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft | LLM ThreatIntel</title>
+  <meta name="description" content="Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, and plants persistence through .cursorrules and CLAUDE.md files that inject hidden zero-width Unicode instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft">
+  <meta property="og:description" content="Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, and plants persistence through .cursorrules and CLAUDE.md files that inject hidden zero-width Unicode instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft">
+  <meta property="article:published_time" content="2026-05-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-25T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft">
+  <meta name="twitter:description" content="Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, and plants persistence through .cursorrules and CLAUDE.md files that inject hidden zero-width Unicode instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io \u2014 Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft",
+  "description": "Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, and plants persistence through .cursorrules and CLAUDE.md files that inject hidden zero-width Unicode instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.",
+  "datePublished": "2026-05-25T00:00:00Z",
+  "dateModified": "2026-05-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-25</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft</h1>
+<p><strong>Date:</strong> 2026-05-25<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, browser data, and environment variables, and plants persistence through <code>.cursorrules</code> and <code>CLAUDE.md</code> files that inject hidden instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>TrapDoor</td></tr><tr><td>Actor / Attribution</td><td>Unknown</td></tr><tr><td>Target</td><td>Developers in crypto, DeFi, Solana, AI, and Move/Sui blockchain ecosystems</td></tr><tr><td>Vector</td><td>Malicious packages across npm, PyPI, and Crates.io masquerading as developer tools</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Socket, the TrapDoor campaign was first observed on May 22, 2026 at 20:20:18 UTC with the upload of the PyPI package <code>eth-security-auditor@0.1.0</code>. Packages were then published in waves across three registries by multiple accounts. Socket reports that the campaign spans 21 npm packages, 7 PyPI packages, and 6 Crates.io packages, with package names designed to appear as legitimate blockchain development tools, security auditors, and AI workflow utilities.</p>
+<h3>npm Attack Chain</h3>
+<p>Socket&#x27;s analysis found that npm packages trigger a shared 1,149-line credential harvester called <code>trap-core.js</code> via <code>postinstall</code> hooks on installation. According to Socket, the payload scans for credentials, validates stolen AWS and GitHub tokens through live API calls, attempts SSH-based lateral movement to other machines on the network, and establishes persistence through multiple mechanisms including <code>.cursorrules</code>, <code>CLAUDE.md</code>, Git hooks, shell hooks, systemd services, cron jobs, and SSH authorized_keys modification.</p>
+<h3>PyPI Attack Chain</h3>
+<p>PyPI packages auto-execute on import and download JavaScript from an attacker-controlled GitHub Pages domain, running it via <code>node -e</code>. According to Socket, this approach lets the attacker update malware behavior remotely without publishing a new package version.</p>
+<h3>Crates.io Attack Chain</h3>
+<p>The Crates.io component targets Sui and Move blockchain developers specifically. According to Socket, malicious <code>build.rs</code> scripts execute automatically during Rust compilation, search for local crypto wallet keystores, XOR-encrypt them using the hardcoded key <code>cargo-build-helper-2026</code>, and exfiltrate them to GitHub Gists.</p>
+<h3>AI Coding Assistant Weaponization</h3>
+<p>According to Socket CTO Ahmad Nassri, the most unusual feature is TrapDoor&#x27;s use of AI-targeted injection. The npm payload writes <code>.cursorrules</code> and <code>CLAUDE.md</code> files containing hidden instructions embedded with zero-width Unicode characters. These configuration files are read by AI coding assistants such as Cursor and Claude Code to understand project context. The injected instructions trick the AI assistant into executing &quot;security scans&quot; that silently exfiltrate developer secrets during future coding sessions.</p>
+<p>CyberPress reported that the attacker also submitted pull requests to legitimate repositories attempting to inject malicious <code>.cursorrules</code> or <code>CLAUDE.md</code> files under innocuous titles like &quot;docs: add .cursorrules with dev standards and build verification.&quot;</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.002</td><td>Malicious packages published to npm, PyPI, Crates.io</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>trap-core.js credential harvester executed via postinstall hooks</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>Browser credential and crypto wallet keystore extraction</td></tr><tr><td>Boot or Logon Autostart Execution</td><td>T1547</td><td>Persistence via systemd services and cron jobs</td></tr><tr><td>Lateral Movement: Remote Services: SSH</td><td>T1021.004</td><td>SSH-based lateral movement using stolen keys</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Environment variable and .env file harvesting</td></tr><tr><td>Data Encoding: Standard Encoding</td><td>T1132.001</td><td>Zero-width Unicode characters hide instructions in config files</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h3>Malicious Packages</h3>
+<pre><code class="language-">npm: trap-core.js (shared payload across npm packages)
+PyPI: eth-security-auditor@0.1.0
+PyPI: cryptowallet-safety
+Crates.io: move-analyzer-build
+Crates.io: move-compiler-tools
+Crates.io: move-project-builder
+Crates.io: sui-framework-helpers
+Crates.io: sui-move-build-helper
+Crates.io: sui-sdk-build-utils</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Search developer workstations and CI/CD environments for unexpected <code>.cursorrules</code> and <code>CLAUDE.md</code> files, particularly any containing zero-width Unicode characters. Use <code>cat -A</code> or hex editors to detect hidden content in these files. Monitor for unexpected <code>postinstall</code> script execution in npm packages. Alert on <code>build.rs</code> scripts in Rust projects that make network connections or access keystore directories. Search for <code>trap-core.js</code> filenames or references across project directories. Monitor for outbound connections to GitHub Gists API from build environments, which may indicate Crates.io payload exfiltration. Audit open pull requests for additions of <code>.cursorrules</code> or <code>CLAUDE.md</code> files from unfamiliar contributors. Rotate any potentially exposed AWS keys, GitHub tokens, SSH keys, and crypto wallet credentials. EDR: alert on processes spawned by <code>node</code>, <code>python</code>, or <code>cargo</code> that access <code>~/.ssh</code>, browser credential stores, or crypto wallet directories during package installation.</p>
+<h2>References</h2>
+<ul><li>[Socket] TrapDoor Crypto Stealer Supply Chain Attack Hits 34 Packages and Hundreds of Versions Across npm, PyPI, and Crates.io (2026-05-22) — https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates</li><li>[CyberPress] Supply Chain Attack Compromises 34 Packages Across npm, PyPI, Crates (2026-05-24) — https://cyberpress.org/supply-chain-attack-compromises-34-packages/</li><li>[GBHackers] Hackers Compromise 34 npm, PyPI, and Crates Packages in Major Supply Chain Attack (2026-05-24) — https://gbhackers.com/hackers-compromise-34-npm-pypi-and-crates-packages/</li><li>[Cyber Kendra] Malicious Packages on npm, PyPI, and Crates.io Steal Crypto Wallets, SSH Keys, and Cloud Credentials (2026-05-24) — https://www.cyberkendra.com/2026/05/malicious-packages-on-npm-pypi-and.html</li><li>[SQ Magazine] TrapDoor Malware Targets npm, PyPI, and Rust Developers (2026-05-24) — https://sqmagazine.co.uk/trapdoor-malware-npm-pypi-rust-developers/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
