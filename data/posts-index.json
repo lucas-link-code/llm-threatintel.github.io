@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-05-27-mcp-tool-poisoning-stdio-rce-vulnerability-may-2026",
+      "title": "MCP Tool Poisoning: 200K+ Vulnerable MCP Instances Exposed via STDIO Protocol Design Flaws",
+      "date": "2026-05-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The OX Security disclosure in May 2026 illustrated how design decisions made early in a protocol's life create systemic risk later, and the vulnerability was not a memory bug or missing authentication check. OX Security researchers identified a systemic command injection vulnerability in Anthropic's MCP protocol that propagated across the AI ecosystem, with a full disclosure advisory including CVEs, affected platforms, and attack variants.",
+      "file": "2026-05-27-mcp-tool-poisoning-stdio-rce-vulnerability-may-2026.md"
+    },
+    {
+      "id": "2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026",
+      "title": "Malvertising Campaign Abuses Google Ads and Claude.ai Shared Chats to Distribute macOS Infostealer",
+      "date": "2026-05-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An active malvertising campaign is abusing Google sponsored search results and Claude.ai's shared chat feature to deliver macOS infostealer malware to users searching for Claude downloads on Mac. Both attacks point to the real claude.ai domain because the malicious content is hosted inside Claude's own shared chat feature, and standard advice to verify the destination URL before clicking provides no protection here.",
+      "file": "2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026.md"
+    },
+    {
+      "id": "2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026",
+      "title": "Fake OpenAI 'Privacy Filter' Repository on Hugging Face Delivers Infostealer to 244K Users",
+      "date": "2026-05-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On May 7, 2026, HiddenLayer identified malicious code in the Hugging Face repository Open-OSS/privacy-filter, which appeared among the platform's top trending repositories with over 200k downloads until its removal. The repository had typosquatted OpenAI's legitimate Privacy Filter release, copied its model card nearly verbatim, and shipped a loader.py file that fetches and executes infostealer malware on Windows machines.",
+      "file": "2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026.md"
+    },
+    {
       "id": "2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030",
       "title": "Microsoft Semantic Kernel Remote Code Execution: Prompt Injection to Python Eval Sink in AI Agent Frameworks",
       "date": "2026-05-26",

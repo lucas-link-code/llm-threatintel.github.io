@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 26 May 2026 06:48:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 07:06:08 +0000</lastBuildDate>
     <item>
+      <title>MCP Tool Poisoning: 200K+ Vulnerable MCP Instances Exposed via STDIO Protocol Design Flaws</title>
+      <link>https://llm-threatintel.com/posts/2026-05-27-mcp-tool-poisoning-stdio-rce-vulnerability-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-27-mcp-tool-poisoning-stdio-rce-vulnerability-may-2026.html</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <description>The OX Security disclosure in May 2026 illustrated how design decisions made early in a protocol's life create systemic risk later, and the vulnerability was not a memory bug or missing authentication check. OX Security researchers identified a systemic command injection vulnerability in Anthropic's MCP protocol that propagated across the AI ecosystem, with a full disclosure advisory including CVEs, affected platforms, and attack variants.</description>
+    </item>    <item>
+      <title>Malvertising Campaign Abuses Google Ads and Claude.ai Shared Chats to Distribute macOS Infostealer</title>
+      <link>https://llm-threatintel.com/posts/2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026.html</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <description>An active malvertising campaign is abusing Google sponsored search results and Claude.ai's shared chat feature to deliver macOS infostealer malware to users searching for Claude downloads on Mac. Both attacks point to the real claude.ai domain because the malicious content is hosted inside Claude's own shared chat feature, and standard advice to verify the destination URL before clicking provides no protection here.</description>
+    </item>    <item>
+      <title>Fake OpenAI 'Privacy Filter' Repository on Hugging Face Delivers Infostealer to 244K Users</title>
+      <link>https://llm-threatintel.com/posts/2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026.html</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <description>On May 7, 2026, HiddenLayer identified malicious code in the Hugging Face repository Open-OSS/privacy-filter, which appeared among the platform's top trending repositories with over 200k downloads until its removal. The repository had typosquatted OpenAI's legitimate Privacy Filter release, copied its model card nearly verbatim, and shipped a loader.py file that fetches and executes infostealer malware on Windows machines.</description>
+    </item>    <item>
       <title>Microsoft Semantic Kernel Remote Code Execution: Prompt Injection to Python Eval Sink in AI Agent Frameworks</title>
       <link>https://llm-threatintel.com/posts/2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce.html</guid>
       <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
       <description>Microsoft disclosed on May 7, 2026, two patched vulnerabilities in Semantic Kernel agent framework that could let prompt injection become remote code execution or arbitrary host file writes in affected Python and .NET deployments. CVE-2026-25592 (CVSS 10.0) lets a prompt-injected Semantic Kernel agent escape its Azure Container Apps Python sandbox by abusing DownloadFileAsync, which was accidentally tagged [KernelFunction] and exposed to the LLM with no path validation.</description>
-    </item>    <item>
-      <title>Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-18-intruder-1-million-exposed-ai-services-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-18-intruder-1-million-exposed-ai-services-may-2026.html</guid>
-      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
-      <description>Intruder researchers scanned 1 million exposed AI services across 2+ million hosts and found AI infrastructure more vulnerable, exposed, and misconfigured than any other software they have investigated. Generic chatbots hosting multimodal LLMs were freely available for jailbreaking, allowing attackers to bypass safety guardrails and access models without logging to their own accounts.</description>
-    </item>    <item>
-      <title>Comment and Control: Prompt Injection via GitHub PR Comments Steals Credentials from Claude Code, Gemini CLI, and GitHub Copilot — Vendors Paid Bounties, Issued No Public Advisories</title>
-      <link>https://llm-threatintel.com/posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-17-comment-and-control-claude-code-gemini-github-copilot-prompt-injection.html</guid>
-      <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
-      <description>Security researcher Aonan Guan disclosed that embedding malicious instructions in GitHub pull request titles, issue bodies, or review comments hijacks Claude Code, Gemini CLI, and GitHub Copilot agents to exfiltrate CI/CD secrets back through GitHub's own APIs. Anthropic rated the finding CVSS 9.4 Critical but paid a $100 bounty and issued no public advisory. No CVEs were assigned by any of the three vendors, leaving an unknown number of pipelines on unpatched agent versions.</description>
-    </item>    <item>
-      <title>OpenAI Confirms Two Employee Devices Compromised in Mini Shai-Hulud TanStack Supply Chain Attack — Code-Signing Certificates Rotated</title>
-      <link>https://llm-threatintel.com/posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-17-openai-tanstack-supply-chain-breach-may-2026.html</guid>
-      <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI disclosed that two employee devices were breached during the Mini Shai-Hulud Wave 5 TanStack supply chain attack, with the credential-stealer accessing internal source code repositories containing code-signing material for iOS, macOS, Windows, and Android applications. All code-signing certificates have been rotated; macOS users must update OpenAI desktop apps before June 12, 2026, when the compromised certificate will be revoked. No customer data, production systems, or IP was accessed.</description>
     </item>
   </channel>
 </rss>

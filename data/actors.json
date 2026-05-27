@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-26",
+  "last_updated": "2026-05-27",
   "entries": [
     {
       "id": "trapdoor-cross-ecosystem-crypto-stealer",
@@ -2122,6 +2122,65 @@
       ],
       "description": "Threat actor exploited design flaws in AI agent autonomy and inter-agent trust boundaries to execute unauthorized financial transactions. Attack chain required knowledge of (1) Grok's public wallet address, (2) Bankr ecosystem permission model, (3) LLM encoding/decoding capabilities, and (4) social platform automation. Account deletion post-incident suggests awareness of attribution risk. Prior related incident in March 2025 suggests ongoing targeting of Bankr ecosystem.",
       "attribution": "Unattributed; appears to be individual threat actor or small group with crypto-focused sophistication"
+    },
+    {
+      "id": "unknown-possible-winos-4-0-campaign-operator",
+      "names": [
+        "Unknown - Possible WinOS 4.0 Campaign Operator"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Hugging Face",
+        "npm (WinOS 4.0)"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise",
+        "T1036 - Masquerading",
+        "T1566.002 - Phishing: Spearphishing Link"
+      ],
+      "description": "Threat actor or group operating typosquatting campaigns across multiple platforms (Hugging Face, npm). Uses shared C2 infrastructure (jsonkeeper.com, welovechinatown.info) suggesting coordinated operation. Targets developers in open-source AI ecosystem.",
+      "attribution": "Unattributed; possible connection to WinOS 4.0 npm typosquatting based on C2 overlap"
+    },
+    {
+      "id": "unknown-malvertising-operator",
+      "names": [
+        "Unknown Malvertising Operator"
+      ],
+      "type": "malware",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Google Ads",
+        "Claude.ai shared chats"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing: Spearphishing Link",
+        "T1036.005 - Masquerading",
+        "T1598.003 - Phishing: Search Engines"
+      ],
+      "description": "Threat actor running malvertising campaigns abusing legitimate AI platform features (Claude.ai shared chats) as delivery infrastructure. Demonstrates sophisticated understanding of user verification patterns and legitimate domain trust. Geographic targeting suggests selective operations.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "systemic-protocol-design-vulnerability",
+      "names": [
+        "Systemic Protocol Design Vulnerability"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Anthropic MCP STDIO protocol implementation across IDEs and AI agents"
+      ],
+      "ttps": [
+        "T1598.004 - Phishing: Search Engines",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript/TypeScript",
+        "T1134 - Access Token Manipulation"
+      ],
+      "description": "Systemic vulnerability in Model Context Protocol STDIO transport implementation. The protocol's JSON-RPC deserialization layer does not validate tool definitions before passing them to AI agents. Attackers can poison tool metadata or register malicious MCP servers to inject hidden instructions that execute with the privileges of the client IDE or application.",
+      "attribution": "Design flaw in Anthropic MCP protocol specification; exploitable by any threat actor crafting malicious MCP server definitions or tool descriptions"
     }
   ]
 }
