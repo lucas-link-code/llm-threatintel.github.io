@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-27",
+  "last_updated": "2026-05-28",
   "entries": [
     {
       "id": "trapdoor-cross-ecosystem-crypto-stealer",
@@ -1067,7 +1067,7 @@
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
-      "status": "inactive",
+      "status": "active",
       "distribution": [
         "Email-based delivery",
         "Shared Streamlit hosting environments",
@@ -1083,7 +1083,8 @@
         "Hugging Face",
         "Public internet scanning via Shodan-like enumeration",
         "Operational artifact injection via accessible systems",
-        "Automated scanning and exploitation of publicly exposed LiteLLM instances"
+        "Automated scanning and exploitation of publicly exposed LiteLLM instances",
+        "Exploitation of misconfigured Starlette/FastAPI deployments"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1111,7 +1112,9 @@
         "T1598 - Phishing",
         "T1078 - Valid Accounts",
         "T1110 - Brute Force",
-        "T1059 - Command and Scripting Interpreter"
+        "T1059 - Command and Scripting Interpreter",
+        "T1583 - HTTP Host header manipulation",
+        "T1526 - Network Service Discovery"
       ],
       "description": "Threat actor conducting active exploitation of CVE-2025-59528 in publicly exposed Flowise instances. Initial detection from Starlink infrastructure suggests either automated scanning or actor with access to resilient infrastructure. Target pattern consistent with indiscriminate credential harvesting (LLM API keys, cloud provider tokens).",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

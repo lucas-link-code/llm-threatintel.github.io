@@ -2570,6 +2570,26 @@
       "iocs": [
         "Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf"
       ]
+    },
+    {
+      "id": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai",
+      "title": "CVE-2026-48710 (BadHost): Starlette Host Header Injection Bypasses Authentication in AI Inference Servers, MCP Gateways, and FastAPI-Based LLM Infrastructure",
+      "date": "2026-05-28",
+      "excerpt": "CVE-2026-48710 (BadHost) is a critical vulnerability in Starlette versions before 1.0.1 affecting FastAPI-based applications that power modern AI infrastructure, including LLM inference servers, agent frameworks, and MCP gateways, enabling authentication bypass through manipulated HTTP headers. The vulnerability affects vLLM and LiteLLM inference servers, AI agent frameworks, MCP servers, and tools such as Ray Serve and BentoML.",
+      "file": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai.md",
+      "body": "CVE-2026-48710 (BadHost): Starlette Host Header Injection Bypasses Authentication in AI Inference Servers, MCP Gateways, and FastAPI-Based LLM Infrastructure Date: 2026-05-28 Tags: prompt-injection, mcp-security, supply-chain Executive Summary CVE-2026-48710 (BadHost) is a critical vulnerability in Starlette versions before 1.0.1 affecting FastAPI-based applications that power modern AI infrastructure, including LLM inference servers, agent frameworks, and MCP gateways, enabling authentication bypass through manipulated HTTP headers. The vulnerability affects vLLM and LiteLLM inference servers, AI agent frameworks, MCP servers, and tools such as Ray Serve and BentoML. Campaign Summary Field Detail Campaign / Malware Starlette Host Header Injection Exploitation Attribution Unknown (confidence: none) Target Organizations running FastAPI/Starlette-based AI services: vLLM, LiteLLM, MCP servers, Ray Serve, BentoML, and cloud AI platforms Vector Malformed HTTP Host header crafted to bypass URL validation in request.url construction Status active First Observed 2026-05-27 Detailed Findings The root cause lies in how Starlette constructs request URLs by concatenating the Host header with the request path, discovered by X41 D-Sec during an OSTIF-sponsored audit. MCP servers are especially vulnerable because they expose unauthenticated OAuth discovery endpoints by design, and if successfully exploited, BadHost can enable attackers to access restricted LLM endpoints, extract API keys and credentials, interact with internal agent tooling, and abuse AI compute resources without legitimate authorization. MITRE ATT&CK Mapping Technique ID Context Manipulation of Control Plane (HTTP Headers) T1583 Host header injection used to bypass authentication in request URL validation Network Service Discovery via Tool Exploitation T1526 Attackers leverage unauthenticated MCP OAuth discovery endpoints and SSRF-adjacent behaviors IOCs Domains _Affects any FastAPI or Starlette-based service. No specific public IOCs available; vulnerability is header-manipulation based._ Full URL Paths _Affects any FastAPI or Starlette-based service. No specific public IOCs available; vulnerability is header-manipulation based._ Splunk Format _No IOCs available for Splunk query_ Package Indicators Detection Recommendations Monitor for Host header manipulation attempts in FastAPI/Starlette application logs; implement strict Host header validation; apply egress filtering to restrict outbound connections from AI agent processes; scan for Starlette versions < 1.0.1 in CI/CD pipelines and runtime environments; implement network segmentation to isolate MCP servers from unauthenticated network segments; use TLS mutual authentication for internal AI service communication. References [Cyber Security News] Attackers Can Exploit BadHost to Access Sensitive AI Agent Server Endpoints (2026-05-27) — https://cybersecuritynews.com/badhost-ai-agent-vulnerability/amp/ [Kaspersky] BadHost: How Unsafe HTTP Header Handling Exposes AI Infrastructure (2026-05-27) — https://www.kaspersky.com/blog/badhost-vulnerability-ai-infrastructure",
+      "tags": [
+        "mcp-security",
+        "prompt-injection",
+        "supply-chain"
+      ],
+      "cves": [
+        "CVE-2026-48710"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
     }
   ]
 }

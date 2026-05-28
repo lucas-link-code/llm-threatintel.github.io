@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai",
+      "title": "CVE-2026-48710 (BadHost): Starlette Host Header Injection Bypasses Authentication in AI Inference Servers, MCP Gateways, and FastAPI-Based LLM Infrastructure",
+      "date": "2026-05-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-48710 (BadHost) is a critical vulnerability in Starlette versions before 1.0.1 affecting FastAPI-based applications that power modern AI infrastructure, including LLM inference servers, agent frameworks, and MCP gateways, enabling authentication bypass through manipulated HTTP headers. The vulnerability affects vLLM and LiteLLM inference servers, AI agent frameworks, MCP servers, and tools such as Ray Serve and BentoML.",
+      "file": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai.md"
+    },
+    {
       "id": "2026-05-27-mcp-tool-poisoning-stdio-rce-vulnerability-may-2026",
       "title": "MCP Tool Poisoning: 200K+ Vulnerable MCP Instances Exposed via STDIO Protocol Design Flaws",
       "date": "2026-05-27",
