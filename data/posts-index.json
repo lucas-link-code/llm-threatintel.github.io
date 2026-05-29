@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp",
+      "title": "GitHub's Internal Repositories Breached via Poisoned Nx Console VS Code Extension — TeamPCP (UNC6780) Exfiltrates ~3,800 Private Repos; Stealer Harvests Claude Code, 1Password, npm, AWS and GitHub Credentials",
+      "date": "2026-05-29",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On 2026-05-18 TeamPCP (Google GTIG: UNC6780) published a trojanised version 18.95.0 of the Nx Console VS Code extension (nrwl.angular-console, 2.2M+ installs) to the Visual Studio Marketplace and Open VSX, live ~11-18 minutes before takedown. On workspace open it fetched a ~498 KB obfuscated credential stealer staged in a dangling orphan commit inside the legitimate nrwl/nx GitHub repository, harvesting 1Password vaults, Anthropic Claude Code configurations, npm tokens, GitHub credentials and AWS keys, and on macOS installing a persistent Python C2 backdoor (~/.local/share/kitty/cat.py) that uses the GitHub Search API as a dead-drop. A compromised GitHub employee endpoint led GitHub to disclose unauthorised internal access on 2026-05-19 and confirm ~3,800 internal repositories exfiltrated by 2026-05-20; TeamPCP advertised the data for >$50,000 on the Breached forum. Root cause chains back to the 2026-05-11 TanStack compromise (@tanstack/zod-adapter@1.166.15) which scraped a contributor's GitHub token.",
+      "file": "2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp.md"
+    },
+    {
       "id": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch",
       "title": "Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued",
       "date": "2026-05-21",

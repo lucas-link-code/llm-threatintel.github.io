@@ -32,6 +32,23 @@
       "supporting_sources": [
         "https://securityboulevard.com/"
       ]
+    },
+    "2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp": {
+      "approved_by": "lucaslin",
+      "approved_at": "2026-05-29",
+      "reason": "Sources confirmed manually out-of-band. The incident is corroborated across independent Tier-1 publishers (Nx's own postmortem and GitHub Security Advisory GHSA-c9j4-9m59-847w, The Hacker News, BleepingComputer, VentureBeat, Help Net Security, Infosecurity Magazine, StepSecurity, Cybersecurity News, iTnews) covering 2026-05-18 through 2026-05-20. The validator's URL-check failed only because the cloud agent environment's network policy returned HTTP 403 for those domains, not because the URLs are invalid. The actor (TeamPCP / UNC6780) and root-cause package (@tanstack/zod-adapter@1.166.15 from the 2026-05-11 Wave 5 compromise already tracked on this site) are consistent with known infrastructure.",
+      "supporting_sources": [
+        "https://nx.dev/blog/nx-console-v18-95-0-postmortem",
+        "https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w",
+        "https://thehackernews.com/2026/05/github-internal-repositories-breached.html",
+        "https://thehackernews.com/2026/05/compromised-nx-console-18950-targeted.html",
+        "https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/",
+        "https://venturebeat.com/security/github-confirms-3800-repos-stolen-poisoned-vs-code-extension-supply-chain-worm-microsoft-python-sdk",
+        "https://www.helpnetsecurity.com/2026/05/20/github-breached-teampcp/",
+        "https://www.infosecurity-magazine.com/news/github-breach-nx-console-vs-code/",
+        "https://www.stepsecurity.io/blog/nx-console-vs-code-extension-compromised",
+        "https://cybersecuritynews.com/nx-console-vs-code-extension-compromised/"
+      ]
     }
   }
 }

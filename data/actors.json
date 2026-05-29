@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-21",
+  "last_updated": "2026-05-29",
   "entries": [
     {
       "id": "cve-2026-44338-praisonai-auth-bypass",
@@ -743,6 +743,7 @@
       "id": "teampcp",
       "names": [
         "TeamPCP",
+        "UNC6780",
         "@pcpcats",
         "Shai-Hulud operators",
         "Mini Shai-Hulud",
@@ -751,11 +752,12 @@
         "Trivy compromisers",
         "LiteLLM attackers",
         "Bitwarden CLI hijackers",
-        "Checkmarx KICS compromisers"
+        "Checkmarx KICS compromisers",
+        "Nx Console extension compromisers"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
-      "last_updated": "2026-05-21",
+      "last_updated": "2026-05-29",
       "status": "active",
       "distribution": [
         "PyPI",
@@ -775,7 +777,11 @@
         "Tor onion site",
         "AI coding agent configuration files (.claude/settings.json, .vscode/tasks.json)",
         "Hijacked npm maintainer account atool (Mini Shai-Hulud Wave 6, May 19 2026, @antv ecosystem)",
-        "C2 via OpenTelemetry-disguised HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces"
+        "C2 via OpenTelemetry-disguised HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces",
+        "Poisoned VS Code IDE extension (Nx Console nrwl.angular-console v18.95.0, Visual Studio Marketplace + Open VSX, May 18 2026)",
+        "GitHub internal-repository breach via compromised employee endpoint (~3,800 repos, May 2026)",
+        "C2 via GitHub Search API dead-drop (commits keyed on 'firedalazer', RSA-PSS verified) with HTTPS/GitHub-API/DNS-tunnelling exfiltration",
+        "Microsoft durabletask Python SDK PyPI compromise (May 19 2026, disk-wiper, SLSA L3 provenance)"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -804,9 +810,12 @@
         "T1199 - Trusted Relationship (Bitwarden CI consuming compromised Checkmarx KICS images)",
         "T1567.002 - Exfiltration to Code Repository (GitHub dead-drop with Mini Shai-Hulud descriptions)",
         "T1037.004 - Boot or Logon Initialization Scripts (~/.bashrc heredoc payload)",
-        "T1608.002 - Stage Capabilities: Upload Tool (worm self-republish via stolen npm tokens)"
+        "T1608.002 - Stage Capabilities: Upload Tool (worm self-republish via stolen npm tokens)",
+        "T1102.001 - Dead Drop Resolver (cat.py polls GitHub Search API for commits keyed on 'firedalazer')",
+        "T1543.001 - Launch Agent (macOS hourly persistence for ~/.local/share/kitty/cat.py)",
+        "T1048 - Exfiltration Over Alternative Protocol (DNS tunnelling, one of three parallel channels in the Nx Console payload)"
       ],
-      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages.",
+      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. On May 18, 2026 the actor pivoted from package registries to the IDE-extension supply chain: a contributor GitHub token scraped via @tanstack/zod-adapter@1.166.15 (Wave 5) was used to publish a poisoned Nx Console VS Code extension (nrwl.angular-console v18.95.0, 2.2M+ installs) to the Visual Studio Marketplace and Open VSX, live ~11-36 minutes. On workspace open it fetched a ~498 KB obfuscated stealer staged in a dangling orphan commit inside the legitimate nrwl/nx repo, harvesting 1Password, Anthropic Claude Code configs, npm, GitHub and AWS credentials, and on macOS installing a persistent Python C2 backdoor (~/.local/share/kitty/cat.py, SHA-256 fb5c97557230a27460fdab01fafcfabeaa49590bafd5b6ef30501aa9e0a51142) that uses the GitHub Search API as a dead-drop (commits keyed on 'firedalazer', RSA-PSS verified) with HTTPS/GitHub-API/DNS-tunnelling exfiltration. A compromised GitHub employee endpoint led GitHub to disclose internal unauthorised access on May 19 and confirm ~3,800 internal repositories exfiltrated by May 20; TeamPCP advertised the data for >$50,000 on the Breached forum. Concurrently, three malicious versions of Microsoft's durabletask Python SDK (with a disk-wiper component, valid SLSA L3 provenance) were published to PyPI on May 19. Google Threat Intelligence Group tracks the actor as UNC6780. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages plus the Nx Console IDE-extension compromise and the GitHub internal-repo breach.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
     },
     {

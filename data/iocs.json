@@ -1,6 +1,33 @@
 {
-  "last_updated": "2026-05-21",
+  "last_updated": "2026-05-29",
   "iocs": [
+    {
+      "value": "fb5c97557230a27460fdab01fafcfabeaa49590bafd5b6ef30501aa9e0a51142",
+      "type": "sha256",
+      "context": "GitHub internal-repo breach via poisoned Nx Console v18.95.0 VS Code extension (TeamPCP/UNC6780): SHA-256 of the macOS Python C2 backdoor cat.py installed at ~/.local/share/kitty/cat.py with an hourly LaunchAgent; uses the GitHub Search API as a dead-drop (commits keyed on 'firedalazer', RSA-PSS verified)",
+      "first_seen": "2026-05-18",
+      "source": "StepSecurity",
+      "campaign": "github-internal-repos-breach-nx-console-vscode-extension-teampcp",
+      "status": "active"
+    },
+    {
+      "value": "nrwl.angular-console",
+      "type": "package",
+      "context": "Malicious Nx Console VS Code extension build version 18.95.0, published to the Visual Studio Marketplace and Open VSX on 2026-05-18 (~12:30 UTC) via a stolen nrwl/nx publishing credential (VSCE_PAT); fetched a ~498 KB obfuscated credential stealer on workspace open. Only version 18.95.0 is malicious; the extension itself (2.2M+ installs) is legitimate",
+      "first_seen": "2026-05-18",
+      "source": "Nx postmortem / GHSA-c9j4-9m59-847w",
+      "campaign": "github-internal-repos-breach-nx-console-vscode-extension-teampcp",
+      "status": "removed"
+    },
+    {
+      "value": "@tanstack/zod-adapter",
+      "type": "package",
+      "context": "Root-cause dependency for the Nx Console compromise: malicious version 1.166.15 (from the 2026-05-11 TanStack Mini Shai-Hulud wave) resolved during a pnpm install on an nrwl/nx contributor's machine ~7 days earlier and scraped the GitHub token later used to publish the poisoned Nx Console extension",
+      "first_seen": "2026-05-11",
+      "source": "Nx postmortem / StepSecurity",
+      "campaign": "github-internal-repos-breach-nx-console-vscode-extension-teampcp",
+      "status": "removed"
+    },
     {
       "value": "m-kosche.com",
       "type": "domain",

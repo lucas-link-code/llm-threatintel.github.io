@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 21 May 2026 12:02:52 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 12:56:15 +0000</lastBuildDate>
     <item>
+      <title>GitHub's Internal Repositories Breached via Poisoned Nx Console VS Code Extension — TeamPCP (UNC6780) Exfiltrates ~3,800 Private Repos; Stealer Harvests Claude Code, 1Password, npm, AWS and GitHub Credentials</title>
+      <link>https://llm-threatintel.com/posts/2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp.html</guid>
+      <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
+      <description>On 2026-05-18 TeamPCP (Google GTIG: UNC6780) published a trojanised version 18.95.0 of the Nx Console VS Code extension (nrwl.angular-console, 2.2M+ installs) to the Visual Studio Marketplace and Open VSX, live ~11-18 minutes before takedown. On workspace open it fetched a ~498 KB obfuscated credential stealer staged in a dangling orphan commit inside the legitimate nrwl/nx GitHub repository, harvesting 1Password vaults, Anthropic Claude Code configurations, npm tokens, GitHub credentials and AWS keys, and on macOS installing a persistent Python C2 backdoor (~/.local/share/kitty/cat.py) that uses the GitHub Search API as a dead-drop. A compromised GitHub employee endpoint led GitHub to disclose unauthorised internal access on 2026-05-19 and confirm ~3,800 internal repositories exfiltrated by 2026-05-20; TeamPCP advertised the data for &gt;$50,000 on the Breached forum. Root cause chains back to the 2026-05-11 TanStack compromise (@tanstack/zod-adapter@1.166.15) which scraped a contributor's GitHub token.</description>
+    </item>    <item>
       <title>Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued</title>
       <link>https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.html</guid>
       <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
       <description>A malicious Hugging Face repository posing as an OpenAI release delivered infostealer malware to Windows systems and logged 244,000 downloads before being removed. The repository, named Open-OSS/privacy-filter, impersonated OpenAI's legitimate Privacy Filter release, copied its model card almost word-for-word, and included a malicious loader.py file that fetched and executed credential-stealing malware on Windows hosts. The repository reached the #1 trending position on Hugging Face with approximately 244K downloads and 667 likes in under 18 hours, numbers that were almost certainly artificially inflated to make the repository appear legitimate.</description>
-    </item>    <item>
-      <title>Shadow AI Data Breach: Community Bank Exposes SSNs via Unauthorized AI Application—First SEC Form 8-K Filing of Shadow AI Incident</title>
-      <link>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-14-community-bank-shadow-ai-data-breach-may-2026.html</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <description>Community Bank disclosed use of an "unauthorized AI-based software application" exposing customer data including names, dates of birth, and Social Security numbers. One possibility is that the data was entered into a generative AI tool outside the bank's approved systems. If so, that could raise questions about whether the information was transmitted to a third-party provider and how it may have been retained or processed. This represents the first publicly disclosed corporate breach tied explicitly to shadow AI tool usage and SEC disclosure.</description>
     </item>
   </channel>
 </rss>

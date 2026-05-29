@@ -2159,6 +2159,33 @@
       "warnings": [
         "manual evidence override accepted"
       ]
+    },
+    "2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp": {
+      "content_hash": "542cccea297476341c8ee25b41125fa5915ecb47baa1b96cb5eba3267e9b2041",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp.md",
+      "posts_index_hash": "52a2302062a38317e112f43d84c4f286826459ba4089378764b5b74064a4aad9",
+      "report_id": "2026-05-29-github-internal-repos-breach-nx-console-vscode-extension-teampcp",
+      "review_required": [
+        "10 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://nx.dev/blog/nx-console-v18-95-0-postmortem",
+        "https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w",
+        "https://thehackernews.com/2026/05/github-internal-repositories-breached.html",
+        "https://thehackernews.com/2026/05/compromised-nx-console-18950-targeted.html",
+        "https://www.stepsecurity.io/blog/nx-console-vs-code-extension-compromised",
+        "https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/",
+        "https://venturebeat.com/security/github-confirms-3800-repos-stolen-poisoned-vs-code-extension-supply-chain-worm-microsoft-python-sdk",
+        "https://www.helpnetsecurity.com/2026/05/20/github-breached-teampcp/",
+        "https://www.infosecurity-magazine.com/news/github-breach-nx-console-vs-code/",
+        "https://cybersecuritynews.com/nx-console-vs-code-extension-compromised/",
+        "https://www.itnews.com.au/news/mini-shai-hulud-worm-injects-disk-wiper-into-microsoft-azure-pypi-package-625988"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-29T12:56:23+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
