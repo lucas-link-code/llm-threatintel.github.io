@@ -2289,6 +2289,24 @@
       "validated_at": "2026-05-27T07:06:09+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai": {
+      "content_hash": "e64c50da38d433d19b775da4c6f56779c9df47baac35062ea36fbac0a5ca3c3c",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai.md",
+      "posts_index_hash": "1107e3d6387644ec83a57fbdaac37d52c63ede8cfd57800274710187c573ad68",
+      "report_id": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/badhost-ai-agent-vulnerability/amp/",
+        "https://www.kaspersky.com/blog/badhost-vulnerability-ai-infrastructure"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-29T06:56:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
