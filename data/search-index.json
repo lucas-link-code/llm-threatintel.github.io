@@ -2531,9 +2531,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "claude.ai"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026",
@@ -2551,7 +2549,7 @@
         "unknown"
       ],
       "iocs": [
-        "Open-OSS/privacy-filter"
+        "huggingface.co/Open-OSS/privacy-filter"
       ]
     },
     {
@@ -2567,9 +2565,7 @@
       ],
       "cves": [],
       "actors": [],
-      "iocs": [
-        "Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai",

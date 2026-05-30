@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 30 May 2026 06:25:28 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2026 21:13:44 +0000</lastBuildDate>
     <item>
       <title>Marimo CVE-2026-39987: Unauthenticated RCE Weaponized for Post-Exploitation via LLM-Driven Lateral Movement</title>
       <link>https://llm-threatintel.com/posts/2026-05-30-marimo-cve-2026-39987-llm-post-exploitation.html</link>

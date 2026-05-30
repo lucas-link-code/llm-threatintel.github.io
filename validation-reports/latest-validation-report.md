@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-05-30T06:25:30+00:00`
-- Commit SHA: `492913647b6e138722fc70d1d653b46ed25eed1d`
-- Mode: `full`
+- Run time UTC: `2026-05-30T21:14:05+00:00`
+- Commit SHA: `016ecb1f0471`
+- Mode: `strict`
 - Validation version: `1.0.0`
-- Overall result: `fail`
-- Hard failures: `3`
+- Overall result: `pass`
+- Hard failures: `0`
 - Warnings: `43`
-- Review required: `1`
-- Reports checked: `3`
-- Reports skipped: `122`
-- Reports newly validated: `2`
+- Review required: `0`
+- Reports checked: `0`
+- Reports skipped: `0`
+- Reports newly validated: `0`
 - IOC duplicates found: `5`
-- Source URLs checked: `5`
+- Source URLs checked: `0`
 
 No files were removed or destructively modified.
 
@@ -56,68 +56,11 @@ No files were removed or destructively modified.
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `190`: legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `191`: legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)
 - **WARN** `ioc-legacy-format-exception` `data/iocs.json` `192`: legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)
-- **FAIL** `ioc-package-format` `data/iocs.json` `220`: invalid package IOC: Open-OSS/privacy-filter
-- **FAIL** `ioc-legitimate-platform` `data/iocs.json` `221`: IOC names a legitimate AI vendor platform domain (bare domains are not indicators; document the abuse in prose / Detection Recommendations instead, or add an explicit entry to legitimate_platform_ioc_overrides if this is a confirmed compromise of the platform itself): claude.ai
-- **FAIL** `ioc-package-format` `data/iocs.json` `222`: invalid package IOC: Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: flowise appears 2 times
-- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times
+- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 4 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: openui appears 2 times
 - **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: recargapopular.com appears 2 times
-- **REVIEW** `evidence-source-review-required` `posts/2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026.md` `2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026`: no source URL was accessible; manual review or alternate evidence is required
-
-## Hard Failure Queue
-
-```text
-File: data/iocs.json
-Record: 220
-Problem: ioc-package-format
-Validator finding: invalid package IOC: Open-OSS/privacy-filter
-IOC value: Open-OSS/privacy-filter
-IOC type: package
-Status: active
-Campaign: fake-openai-privacy-filter-hugging-face-infostealer-may-2026
-Source: HiddenLayer
-Context: Fake OpenAI 'Privacy Filter' Repository on Hugging Face Delivers Infostealer to 244K Users
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 221
-Problem: ioc-legitimate-platform
-Validator finding: IOC names a legitimate AI vendor platform domain (bare domains are not indicators; document the abuse in prose / Detection Recommendations instead, or add an explicit entry to legitimate_platform_ioc_overrides if this is a confirmed compromise of the platform itself): claude.ai
-IOC value: claude.ai
-IOC type: domain
-Status: active
-Campaign: claude-google-ads-malvertising-macos-infostealer-may-2026
-Source: Security Boulevard / Evan Rowe (CISO Whisperer)
-Context: Malvertising Campaign Abuses Google Ads and Claude.ai Shared Chats to Distribute macOS Infostealer
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-```text
-File: data/iocs.json
-Record: 222
-Problem: ioc-package-format
-Validator finding: invalid package IOC: Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf
-IOC value: Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf
-IOC type: package
-Status: active
-Campaign: mcp-tool-poisoning-stdio-rce-vulnerability-may-2026
-Source: OX Security
-Context: MCP Tool Poisoning: 200K+ Vulnerable MCP Instances Exposed via STDIO Protocol Design Flaws
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
 
 ## Duplicate IOC Review
 
@@ -129,6 +72,7 @@ Recommended action:
 - `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
 - `https://huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `openclawhugging-face-supply-chain-poisoning-malicious-skills-models` source `TechNext Web`
 - `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
+- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `fake-openai-privacy-filter-hugging-face-infostealer-may-2026` source `HiddenLayer`
 
 ### `huggingface.co/open-oss/privacy-filter/blob/main/loader.py`
 - `huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
@@ -141,17 +85,3 @@ Recommended action:
 ### `recargapopular.com`
 - `recargapopular.com` type `domain` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `BleepingComputer`
 - `recargapopular.com` type `domain` campaign `hugging-face-fake-openai-privacy-filter-sefirah-may-2026` source `HiddenLayer`
-
-## Human Review Queue
-
-```text
-Report: 2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

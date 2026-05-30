@@ -1,5 +1,5 @@
 {
-  "commit_sha": "492913647b6e138722fc70d1d653b46ed25eed1d",
+  "commit_sha": "016ecb1f0471",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -30,6 +30,12 @@
       },
       {
         "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
+        "source": "HiddenLayer",
+        "type": "url_path",
+        "value": "huggingface.co/Open-OSS/privacy-filter"
+      },
+      {
+        "campaign": "fake-openai-privacy-filter-hugging-face-infostealer-may-2026",
         "source": "HiddenLayer",
         "type": "url_path",
         "value": "huggingface.co/Open-OSS/privacy-filter"
@@ -78,8 +84,8 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-30T06:25:30+00:00",
-  "hard_failures": 3,
+  "generated_at_utc": "2026-05-30T21:14:05+00:00",
+  "hard_failures": 0,
   "issues": [
     {
       "code": "post-tlp-public-warning",
@@ -386,30 +392,6 @@
       "severity": "warn"
     },
     {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Open-OSS/privacy-filter",
-      "recommendation": "",
-      "record_id": "220",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-legitimate-platform",
-      "file": "data/iocs.json",
-      "message": "IOC names a legitimate AI vendor platform domain (bare domains are not indicators; document the abuse in prose / Detection Recommendations instead, or add an explicit entry to legitimate_platform_ioc_overrides if this is a confirmed compromise of the platform itself): claude.ai",
-      "recommendation": "",
-      "record_id": "221",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf",
-      "recommendation": "",
-      "record_id": "222",
-      "severity": "fail"
-    },
-    {
       "code": "ioc-duplicate-review",
       "file": "data/iocs.json",
       "message": "duplicate IOC review required: flowise appears 2 times",
@@ -420,7 +402,7 @@
     {
       "code": "ioc-duplicate-review",
       "file": "data/iocs.json",
-      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 3 times",
+      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 4 times",
       "recommendation": "",
       "record_id": "",
       "severity": "warn"
@@ -448,63 +430,19 @@
       "recommendation": "",
       "record_id": "",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-05-27-claude-google-ads-malvertising-macos-infostealer-may-2026",
-      "severity": "review"
     }
   ],
-  "mode": "full",
+  "mode": "strict",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
-  "reports_checked": 3,
-  "reports_newly_validated": 2,
-  "reports_skipped": 122,
-  "review_required": 1,
-  "source_urls_checked": 5,
-  "state_updates": 2,
-  "url_results": [
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.sysdig.com/blog",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.sysdig.com/blog/"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://securityboulevard.com/2026/05/attackers-abuse-google-ads-and-claude-ai-shared-chats-to-push-mac-malware/"
-    }
-  ],
+  "overall_result": "pass",
+  "reports_checked": 0,
+  "reports_newly_validated": 0,
+  "reports_skipped": 0,
+  "review_required": 0,
+  "source_urls_checked": 0,
+  "state_updates": 0,
+  "url_results": [],
   "validation_version": "1.0.0",
   "warnings": 43
 }

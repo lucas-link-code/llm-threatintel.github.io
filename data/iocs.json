@@ -1982,31 +1982,13 @@
       "status": "active"
     },
     {
-      "value": "Open-OSS/privacy-filter",
-      "type": "package",
+      "value": "huggingface.co/Open-OSS/privacy-filter",
+      "type": "url_path",
       "context": "Fake OpenAI 'Privacy Filter' Repository on Hugging Face Delivers Infostealer to 244K Users",
       "first_seen": "2026-05-27",
       "source": "HiddenLayer",
       "campaign": "fake-openai-privacy-filter-hugging-face-infostealer-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "claude.ai",
-      "type": "domain",
-      "context": "Malvertising Campaign Abuses Google Ads and Claude.ai Shared Chats to Distribute macOS Infostealer",
-      "first_seen": "2026-05-27",
-      "source": "Security Boulevard / Evan Rowe (CISO Whisperer)",
-      "campaign": "claude-google-ads-malvertising-macos-infostealer-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "Anthropic MCP STDIO clients: Cursor, VS Code, Claude Code, Gemini CLI, Windsurf",
-      "type": "package",
-      "context": "MCP Tool Poisoning: 200K+ Vulnerable MCP Instances Exposed via STDIO Protocol Design Flaws",
-      "first_seen": "2026-05-27",
-      "source": "OX Security",
-      "campaign": "mcp-tool-poisoning-stdio-rce-vulnerability-may-2026",
-      "status": "active"
+      "status": "removed"
     }
   ]
 }
