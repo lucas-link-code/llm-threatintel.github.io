@@ -1,100 +1,9 @@
 {
-  "commit_sha": "dc2834bd577d",
-  "duplicate_iocs": {
-    "flowise": [
-      {
-        "campaign": "flowise-rce-cve-2025-59528-april-2026",
-        "source": "BleepingComputer",
-        "type": "package",
-        "value": "flowise"
-      },
-      {
-        "campaign": "million-exposed-ai-services-security-assessment",
-        "source": "The Hacker News",
-        "type": "package",
-        "value": "Flowise"
-      }
-    ],
-    "huggingface.co/open-oss/privacy-filter": [
-      {
-        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      },
-      {
-        "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-        "source": "TechNext Web",
-        "type": "url_path",
-        "value": "https://huggingface.co/Open-OSS/privacy-filter"
-      },
-      {
-        "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      },
-      {
-        "campaign": "fake-openai-privacy-filter-hugging-face-infostealer-may-2026",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      }
-    ],
-    "huggingface.co/open-oss/privacy-filter/blob/main/loader.py": [
-      {
-        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py"
-      },
-      {
-        "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py"
-      }
-    ],
-    "openui": [
-      {
-        "campaign": "million-exposed-ai-services-security-assessment",
-        "source": "The Hacker News",
-        "type": "package",
-        "value": "OpenUI"
-      },
-      {
-        "campaign": "intruder-1-million-exposed-ai-services-may-2026",
-        "source": "Intruder Security",
-        "type": "package",
-        "value": "openui"
-      }
-    ],
-    "recargapopular.com": [
-      {
-        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
-        "source": "BleepingComputer",
-        "type": "domain",
-        "value": "recargapopular.com"
-      },
-      {
-        "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-        "source": "HiddenLayer",
-        "type": "domain",
-        "value": "recargapopular.com"
-      }
-    ]
-  },
-  "generated_at_utc": "2026-05-30T22:02:16+00:00",
+  "commit_sha": "9d1ec67f04ec",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-05-30T23:07:38+00:00",
   "hard_failures": 0,
   "issues": [
-    {
-      "code": "post-tlp-public-warning",
-      "file": "data/posts-index.json",
-      "message": "public feed post uses non-clear TLP: TLP:AMBER",
-      "recommendation": "",
-      "record_id": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
-      "severity": "warn"
-    },
     {
       "code": "post-excerpt-long",
       "file": "data/posts-index.json",
@@ -117,30 +26,6 @@
       "message": "post excerpt is long (984 characters)",
       "recommendation": "",
       "record_id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
-      "severity": "warn"
-    },
-    {
-      "code": "post-tlp-public-warning",
-      "file": "data/posts-index.json",
-      "message": "public feed post uses non-clear TLP: TLP:AMBER",
-      "recommendation": "",
-      "record_id": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211",
-      "severity": "warn"
-    },
-    {
-      "code": "post-tlp-public-warning",
-      "file": "data/posts-index.json",
-      "message": "public feed post uses non-clear TLP: TLP:AMBER",
-      "recommendation": "",
-      "record_id": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation",
-      "severity": "warn"
-    },
-    {
-      "code": "post-tlp-public-warning",
-      "file": "data/posts-index.json",
-      "message": "public feed post uses non-clear TLP: TLP:AMBER",
-      "recommendation": "",
-      "record_id": "2026-04-05-mercor-data-vendor-ai-training-breach",
       "severity": "warn"
     },
     {
@@ -300,7 +185,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
       "recommendation": "",
-      "record_id": "239",
+      "record_id": "238",
       "severity": "warn"
     },
     {
@@ -308,7 +193,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
       "recommendation": "",
-      "record_id": "240",
+      "record_id": "239",
       "severity": "warn"
     },
     {
@@ -316,7 +201,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
       "recommendation": "",
-      "record_id": "241",
+      "record_id": "240",
       "severity": "warn"
     },
     {
@@ -324,7 +209,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
       "recommendation": "",
-      "record_id": "251",
+      "record_id": "250",
       "severity": "warn"
     },
     {
@@ -332,7 +217,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7",
       "recommendation": "",
-      "record_id": "255",
+      "record_id": "254",
       "severity": "warn"
     },
     {
@@ -340,7 +225,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)",
       "recommendation": "",
-      "record_id": "257",
+      "record_id": "255",
       "severity": "warn"
     },
     {
@@ -348,7 +233,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills",
       "recommendation": "",
-      "record_id": "258",
+      "record_id": "256",
       "severity": "warn"
     },
     {
@@ -356,7 +241,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models",
       "recommendation": "",
-      "record_id": "259",
+      "record_id": "257",
       "severity": "warn"
     },
     {
@@ -364,7 +249,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)",
       "recommendation": "",
-      "record_id": "260",
+      "record_id": "258",
       "severity": "warn"
     },
     {
@@ -372,7 +257,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)",
       "recommendation": "",
-      "record_id": "278",
+      "record_id": "272",
       "severity": "warn"
     },
     {
@@ -380,7 +265,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)",
       "recommendation": "",
-      "record_id": "279",
+      "record_id": "273",
       "severity": "warn"
     },
     {
@@ -388,47 +273,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)",
       "recommendation": "",
-      "record_id": "280",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: flowise appears 2 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 4 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter/blob/main/loader.py appears 2 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: openui appears 2 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: recargapopular.com appears 2 times",
-      "recommendation": "",
-      "record_id": "",
+      "record_id": "274",
       "severity": "warn"
     }
   ],
@@ -436,49 +281,84 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 1,
-  "reports_skipped": 125,
+  "reports_checked": 3,
+  "reports_newly_validated": 3,
+  "reports_skipped": 123,
   "review_required": 0,
-  "source_urls_checked": 5,
-  "state_updates": 1,
+  "source_urls_checked": 10,
+  "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://labs.withsecure.com/publications/greyvibe",
+      "final_url": "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://labs.withsecure.com/publications/greyvibe"
+      "url": "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter"
     },
     {
       "error": "",
-      "final_url": "https://github.com/WithSecureLabs/iocs/blob/master/GREYVIBE/greyvibe_iocs.csv",
+      "final_url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://github.com/WithSecureLabs/iocs/blob/master/GREYVIBE/greyvibe_iocs.csv"
+      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html"
     },
     {
       "error": "",
-      "final_url": "https://www.bleepingcomputer.com/news/security/greyvibe-hackers-use-chatgpt-gemini-to-power-cyberattacks/",
+      "final_url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.bleepingcomputer.com/news/security/greyvibe-hackers-use-chatgpt-gemini-to-power-cyberattacks/"
+      "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
     },
     {
       "error": "",
-      "final_url": "https://www.csoonline.com/article/4178879/russia-aligned-crime-group-greyvibe-extensively-uses-ai-in-attacks.html",
+      "final_url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.csoonline.com/article/4178879/russia-aligned-crime-group-greyvibe-extensively-uses-ai-in-attacks.html"
+      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html"
     },
     {
       "error": "",
-      "final_url": "https://securityaffairs.com/192877/apt/meet-greyvibe-the-russian-linked-hacking-group-using-ai-to-target-ukraine-and-still-making-rookie-mistakes.html",
+      "final_url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://securityaffairs.com/192877/apt/meet-greyvibe-the-russian-linked-hacking-group-using-ai-to-target-ukraine-and-still-making-rookie-mistakes.html"
+      "url": "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer"
+    },
+    {
+      "error": "",
+      "final_url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d"
+    },
+    {
+      "error": "",
+      "final_url": "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
     }
   ],
   "validation_version": "1.0.0",
-  "warnings": 43
+  "warnings": 34
 }

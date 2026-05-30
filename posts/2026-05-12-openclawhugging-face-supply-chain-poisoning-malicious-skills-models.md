@@ -67,6 +67,6 @@ Scan all downloaded Hugging Face models and OpenClaw agent skills with ML-specif
 ## References
 
 - [TechNext Web] Hugging Face and ClawHub Compromised with Hundreds of Malicious AI Models and Agent Skills (2026-05-09) — https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain
-- [CSO Online] Malicious Hugging Face Model Masquerading as OpenAI Release Hits 244K Downloads (2026-05-11) — https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads
+- [CSO Online] Malicious Hugging Face Model Masquerading as OpenAI Release Hits 244K Downloads (2026-05-11) — https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html
 - [OffSeq Threat Radar] Poisoning the Well: AI Supply Chain Attacks on Hugging Face and OpenClaw (2026-05-11) — https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d
 - [HiddenLayer Research] Fake OpenAI Repository on Hugging Face Pushes Infostealer Malware (2026-05-09) — https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/

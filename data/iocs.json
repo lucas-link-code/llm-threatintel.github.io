@@ -2126,15 +2126,6 @@
       "status": "active"
     },
     {
-      "value": "Flowise",
-      "type": "package",
-      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
-      "first_seen": "2026-05-08",
-      "source": "The Hacker News",
-      "campaign": "million-exposed-ai-services-security-assessment",
-      "status": "active"
-    },
-    {
       "value": "LangFlow",
       "type": "package",
       "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
@@ -2306,15 +2297,6 @@
       "status": "active"
     },
     {
-      "value": "https://huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
-      "first_seen": "2026-05-12",
-      "source": "TechNext Web",
-      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-      "status": "active"
-    },
-    {
       "value": "Open-OSS/privacy-filter (Hugging Face)",
       "type": "package",
       "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
@@ -2367,33 +2349,6 @@
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
       "status": "active"
-    },
-    {
-      "value": "huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "Typosquatted Hugging Face repository impersonating OpenAI's privacy-filter release; removed after HiddenLayer disclosure",
-      "first_seen": "2026-05-12",
-      "source": "HiddenLayer",
-      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "status": "removed"
-    },
-    {
-      "value": "recargapopular.com",
-      "type": "domain",
-      "context": "Sefirah Rust infostealer exfiltration endpoint described in the HiddenLayer-reported Hugging Face privacy-filter campaign",
-      "first_seen": "2026-05-12",
-      "source": "HiddenLayer",
-      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py",
-      "type": "url_path",
-      "context": "Malicious loader.py path in the removed Hugging Face privacy-filter repository; first-stage script launches the Sefirah infection chain",
-      "first_seen": "2026-05-12",
-      "source": "HiddenLayer",
-      "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "status": "removed"
     },
     {
       "value": "Windsurf",
@@ -2451,15 +2406,6 @@
     },
     {
       "value": "ollama",
-      "type": "package",
-      "context": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
-      "first_seen": "2026-05-18",
-      "source": "Intruder Security",
-      "campaign": "intruder-1-million-exposed-ai-services-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "openui",
       "type": "package",
       "context": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
       "first_seen": "2026-05-18",
@@ -2772,15 +2718,6 @@
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
       "status": "active"
-    },
-    {
-      "value": "huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "Fake OpenAI 'Privacy Filter' Repository on Hugging Face Delivers Infostealer to 244K Users",
-      "first_seen": "2026-05-27",
-      "source": "HiddenLayer",
-      "campaign": "fake-openai-privacy-filter-hugging-face-infostealer-may-2026",
-      "status": "removed"
     }
   ]
 }

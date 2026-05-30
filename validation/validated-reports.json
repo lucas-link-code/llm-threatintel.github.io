@@ -389,21 +389,19 @@
       ]
     },
     "2026-04-05-mercor-data-vendor-ai-training-breach": {
-      "content_hash": "12eebc8234fb34146c0b0e48c61fabf06e6ec732b059c7c4f39c68c625c8bbb6",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "0c3c2713f631232ef7438b72f1837a1022ac12f58e9d101afd7a2ffbf8bef3ee",
+      "evidence_status": "validated",
       "file": "2026-04-05-mercor-data-vendor-ai-training-breach.md",
-      "posts_index_hash": "f01e62c3858c8d11d68941bfd0c11d8f5028cb9d2646ad4885ed2a653b238fe4",
+      "posts_index_hash": "56e7301e7f381e184edbf8a4739506f7b2e84c925dadfc65f870867c2bd89a73",
       "report_id": "2026-04-05-mercor-data-vendor-ai-training-breach",
       "review_required": [],
       "source_urls": [
         "https://llm-stats.com/ai-news"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-05-30T23:00:26+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-06-axios-npm-unc1069-rat-march-2026": {
       "content_hash": "28c9c3e55f8ccd2c70ccfa7cbb7acb8493602b45928b80b2e5996ebd928c2536",
@@ -730,38 +728,34 @@
       ]
     },
     "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211": {
-      "content_hash": "5c280370205c2eaa266d4d6b1e94099ae5246481a761bdd81c8fa2ebe3642e42",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "54ac3bc35e4c09450aab41bc9c469e19ef5fdd2e074053b7f89e2df70e329d07",
+      "evidence_status": "validated",
       "file": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.md",
-      "posts_index_hash": "28414c43ea3f185109b4386ad46be5c6a1fd24ca88f30d66dabcec2eac037d42",
+      "posts_index_hash": "4644f85ea5c1d84441a22289971568c734eafbba521f9ead41072b19fe45e35f",
       "report_id": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211",
       "review_required": [],
       "source_urls": [
         "https://blog.cyberdesserts.com/ai-agent-security-risks/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-05-30T23:00:25+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation": {
-      "content_hash": "22aa97155c5ea282f2555ca623615720610894f517c80f4cd3ee533a9cf73306",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "792a818da282c7d30810cf95f0763ada353ca885bc0b551c7da7c62186b8baae",
+      "evidence_status": "validated",
       "file": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.md",
-      "posts_index_hash": "9599e44a27f13b8c55e5ae32278df175526358877e381d2a5a0d795e008e0060",
+      "posts_index_hash": "ba3ae1b36a8217bf76aa5231af8d1bfe000d3530eea2e7931e4e7d481dcfc7b8",
       "report_id": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation",
       "review_required": [],
       "source_urls": [
         "https://cybersecurityjournal.ca/techtalk/83883-flowise-cve-2025-59528-rce-exploitation-ai-agent-builder-2026-04-08/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-05-30T23:00:25+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-17-llm-router-credential-theft-crypto-draining": {
       "content_hash": "f3c813a97dea8c01e7855dd17a6c8aac5d4461f0c0c83695e2ad07e80eb87bbc",
@@ -1398,8 +1392,8 @@
       ]
     },
     "2026-05-08-million-exposed-ai-services-security-assessment": {
-      "content_hash": "08b159f02683fccd2e25988681f4384fee1fc5f36049a5d616a233204974d1e4",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "43b51d1b702edc252eb6130feb8bbd27ab6a464e8ec6f95980914de0cbddc2c9",
+      "evidence_status": "validated",
       "file": "2026-05-08-million-exposed-ai-services-security-assessment.md",
       "posts_index_hash": "5de6e6e9d6fc15421bc622bca11363b0f44e814d7041c1549003b9ef7c6383cc",
       "report_id": "2026-05-08-million-exposed-ai-services-security-assessment",
@@ -1407,12 +1401,10 @@
       "source_urls": [
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-05-30T23:00:15+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-09-massive-exposure-1m-ai-services-misconfiguration": {
       "content_hash": "fc9d79a196075bacf01d3b4050f76e1fb1a272bf1386549b11ae6db6ff99cee1",
@@ -1632,26 +1624,24 @@
       "warnings": []
     },
     "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026": {
-      "content_hash": "19e58033859ed4e12a6c8b5e9bdd16210370726b1fa5f4aba3faa1593a080851",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "f7942f4d0b5d1b8c86d7d8f8b5935890b8a3f850964b50390ae4253f50aafc71",
+      "evidence_status": "validated",
       "file": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026.md",
       "posts_index_hash": "f602051aff92bb9d8f6929f79eff34295793dfcda9b14329bedc5fb086167092",
       "report_id": "2026-05-12-hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
-        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
         "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html",
         "https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-14T06:27:01+00:00",
+      "validated_at": "2026-05-30T23:07:37+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-05-12-intruder-1-million-exposed-ai-services-may-2026": {
-      "content_hash": "c4a1ce6d6e1649358af355e2b2ba181ba2f22d8116aeddb9e116c72992fb6e13",
+      "content_hash": "0c7b94ff8bdeafb290b05f2310b76ec58fd25df21d0cf73e7fb8285a4f08dcaf",
       "evidence_status": "validated",
       "file": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026.md",
       "posts_index_hash": "0b0284090bc1d38044d1d0054b03ef880936ffdc956713e51eba66a917d58e96",
@@ -1661,27 +1651,25 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-18T06:58:59+00:00",
+      "validated_at": "2026-05-30T22:59:51+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models": {
-      "content_hash": "30ed88e4fa5b454a1d693b43e8718a8f54f4efa003f2eb12e3a1a47e02f4609f",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "5c33247f39a20d8d7c066613adeb542d41a9d12af0a22bdaca9fd73f915d466c",
+      "evidence_status": "validated",
       "file": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md",
       "posts_index_hash": "91df4736443192bd83c7e7564637fa91de033e9bd8231d1a0b8e3fd9c4414565",
       "report_id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
-        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
         "https://radar.offseq.com/threat/poisoning-the-well-ai-supply-chain-attacks-on-hugg-ad143c8d",
         "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-12T21:00:45+00:00",
+      "validated_at": "2026-05-30T23:07:38+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1824,21 +1812,19 @@
       ]
     },
     "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026": {
-      "content_hash": "3f6b4c6c4cdbe0dd6737a976802cd9c9bfa0a3b783c13cfcfb5498a8bd250c64",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "4beb5bd2ea7adab9c7649cbde7dc3bea8728ecdd927f241189e0c9209d151f3e",
+      "evidence_status": "validated",
       "file": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.md",
       "posts_index_hash": "fdcd8688ed0b9cc181c5c2a3cb03104ad9eefd11ce4062a7b001532c75ec47e8",
       "report_id": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter",
-        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads",
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
         "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-16T05:57:00+00:00",
+      "validated_at": "2026-05-30T23:07:36+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1913,7 +1899,7 @@
       "warnings": []
     },
     "2026-05-18-intruder-1-million-exposed-ai-services-may-2026": {
-      "content_hash": "48118ee06944612c43705c0be49754da1056d744aea99d081cdccbab750ac9fc",
+      "content_hash": "87716c8c45158519fcd5cb6e5ccf7a856d28fd52772318074544b2da36d0fecc",
       "evidence_status": "validated",
       "file": "2026-05-18-intruder-1-million-exposed-ai-services-may-2026.md",
       "posts_index_hash": "437faa068d49ba10fec7a562457d655436e9edfc0cd80e84d6dd67ccfba368fe",
@@ -1925,7 +1911,7 @@
         "https://www.techjuice.pk/ai-infrastructure-cybersecurity-risks-exposed-systems/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-18T06:58:59+00:00",
+      "validated_at": "2026-05-30T22:59:49+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2100,10 +2086,10 @@
       "warnings": []
     },
     "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026": {
-      "content_hash": "d516763eaf8bf4dd0a949d2370b5ccdb36d84b43967a1ae00418befda4b3a580",
+      "content_hash": "25bb03a95141ca7af8d121d73c6f01b96a24ffba12015ff2bad8b2123b357e1e",
       "evidence_status": "validated",
       "file": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.md",
-      "posts_index_hash": "5d3c0b5d3b99dd56815aea7c7f33c0f35067b8696921ab4de1790134a24f25af",
+      "posts_index_hash": "d99a98fda9c2ccf63c9738c34e9e71ee52832148e657cc57d8264ddbfaa03c19",
       "report_id": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
       "review_required": [],
       "source_urls": [
@@ -2112,7 +2098,7 @@
         "https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-21T06:55:24+00:00",
+      "validated_at": "2026-05-30T22:59:48+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2274,7 +2260,7 @@
       "warnings": []
     },
     "2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026": {
-      "content_hash": "5fd6f1b7c81fc87373242a2f5a3510456ac90050c3a6ed12b1e6bcd0c51a4d64",
+      "content_hash": "e3889408f52eff9f9be0fb0e307428f017c476818aed41b1af11e32c4cc79da3",
       "evidence_status": "validated",
       "file": "2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026.md",
       "posts_index_hash": "04eadab96a0986a361a3390d00477ef25e6eb60ed487d22543aece5c05849846",
@@ -2285,7 +2271,7 @@
         "https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T21:58:31+00:00",
+      "validated_at": "2026-05-30T22:59:47+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },

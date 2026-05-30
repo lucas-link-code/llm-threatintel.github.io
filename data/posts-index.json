@@ -194,7 +194,7 @@
       "tags": [
         "supply-chain"
       ],
-      "tlp": "TLP:AMBER",
+      "tlp": "TLP:CLEAR",
       "excerpt": "CVE-2026-42208 (CVSS score: 9.3) is an SQL injection that could be exploited to modify the LiteLLM proxy database; a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database, but this result is from May 14 publication window citing active May exploitation.",
       "file": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.md"
     },
@@ -1120,7 +1120,7 @@
         "supply-chain",
         "mcp-security"
       ],
-      "tlp": "TLP:AMBER",
+      "tlp": "TLP:CLEAR",
       "excerpt": "CVE-2026-32211 is a missing authentication vulnerability in Microsoft @azure-devops/mcp with CVSS 9.1, disclosed April 3, 2026. This critical vulnerability affects Microsoft's Model Context Protocol (MCP) implementation for Azure DevOps, potentially allowing unauthenticated attackers to interact with AI agents connected to DevOps infrastructure.",
       "file": "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211.md"
     },
@@ -1134,7 +1134,7 @@
         "supply-chain",
         "mcp-security"
       ],
-      "tlp": "TLP:AMBER",
+      "tlp": "TLP:CLEAR",
       "excerpt": "Attackers are actively exploiting CVE-2025-59528, a maximum-severity remote code execution vulnerability in Flowise, the widely used open-source platform for building custom large language model (LLM) applications, chatbots, and AI agent pipelines. The vulnerability carries a CVSS score of 10.0. VulnCheck researchers detected the first confirmed in-the-wild exploitation activity from a Starlink IP address in early April 2026. Current internet scans identify between 12,000 and 15,000 Flowise instances exposed online.",
       "file": "2026-04-17-flowise-cve-2025-59528-active-rce-exploitation.md"
     },
@@ -1383,7 +1383,7 @@
         "supply-chain",
         "shadow-ai"
       ],
-      "tlp": "TLP:AMBER",
+      "tlp": "TLP:CLEAR",
       "excerpt": "Major AI labs are investigating a security incident that impacted Mercor, a leading data vendor. The incident could have exposed key data about how they train AI models. Major AI labs, including Meta and OpenAI, are investigating a security incident at Mercor while it investigates a security breach; the incident could have exposed key data about how they train AI models. The breach represents a critical threat to the AI supply chain, as Mercor provides datasets and research infrastructure used by leading AI companies for model training and evaluation.",
       "file": "2026-04-05-mercor-data-vendor-ai-training-breach.md"
     },

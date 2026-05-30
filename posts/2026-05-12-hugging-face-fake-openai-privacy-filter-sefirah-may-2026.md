@@ -68,6 +68,6 @@ Implement mandatory code review and malware scanning for all AI repositories bef
 
 ## References
 
-- [HiddenLayer] Malicious Hugging Face model masquerading as OpenAI release hits 244K downloads (2026-05-09) — https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads
+- [HiddenLayer] Malicious Hugging Face model masquerading as OpenAI release hits 244K downloads (2026-05-09) — https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html
 - [The Hacker News] Fake OpenAI Privacy Filter Repo Hits #1 on Hugging Face, Draws 244K Downloads (2026-05-10) — https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html
 - [Malwarebytes Labs] Fake Claude site installs malware that gives attackers access to your computer (2026-04-10) — https://www.malwarebytes.com/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer

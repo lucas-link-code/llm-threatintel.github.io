@@ -71,5 +71,5 @@ Monitor Hugging Face trending repositories for repositories with identical names
 ## References
 
 - [HiddenLayer] Malware Found in Trending Hugging Face Repository "Open-OSS/privacy-filter" (2026-05-07) — https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter
-- [CSO Online] Malicious Hugging Face model masquerading as OpenAI release hits 244K downloads (2026-05-13) — https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads
+- [CSO Online] Malicious Hugging Face model masquerading as OpenAI release hits 244K downloads (2026-05-13) — https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html
 - [Bleeping Computer] Fake OpenAI Privacy Filter Repo Hits #1 on Hugging Face, Draws 244K Downloads (2026-05-16) — https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html
