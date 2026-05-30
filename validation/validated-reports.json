@@ -2307,6 +2307,38 @@
       "validated_at": "2026-05-29T06:56:41+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-05-30-chatgphish-chatgpt-markdown-injection-phishing": {
+      "content_hash": "21ec3f125d9446a81570d9db6164c2686fdc5d1653f9c4c04c0751c36e180832",
+      "evidence_status": "validated",
+      "file": "2026-05-30-chatgphish-chatgpt-markdown-injection-phishing.md",
+      "posts_index_hash": "37ca17349b40a1c9c93ea21bccf0c4d0410678884cd41a3c10fcdcda824a8b43",
+      "report_id": "2026-05-30-chatgphish-chatgpt-markdown-injection-phishing",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
+        "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-30T06:25:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-05-30-marimo-cve-2026-39987-llm-post-exploitation": {
+      "content_hash": "2dc9b2f3081ca72237e49006806587fdb94c02d0e37bb3b56da4ec6c9b9dab28",
+      "evidence_status": "validated",
+      "file": "2026-05-30-marimo-cve-2026-39987-llm-post-exploitation.md",
+      "posts_index_hash": "b1a0fbb69a91c31d3b41226ca05f0957d1305bcfce82106c025d55469719bb35",
+      "report_id": "2026-05-30-marimo-cve-2026-39987-llm-post-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
+        "https://www.sysdig.com/blog/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-05-30T06:25:29+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

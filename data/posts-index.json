@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-05-30-marimo-cve-2026-39987-llm-post-exploitation",
+      "title": "Marimo CVE-2026-39987: Unauthenticated RCE Weaponized for Post-Exploitation via LLM-Driven Lateral Movement",
+      "date": "2026-05-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An unknown threat actor has been observed using a large language model (LLM) agent to conduct post-compromise actions after obtaining initial access following the exploitation of a publicly-accessible Marimo network using a recently disclosed vulnerability. The attack demonstrates a novel operational pattern where an LLM agent autonomously executes multi-stage lateral movement and credential harvesting after RCE, representing a shift in post-exploitation tradecraft.",
+      "file": "2026-05-30-marimo-cve-2026-39987-llm-post-exploitation.md"
+    },
+    {
+      "id": "2026-05-30-chatgphish-chatgpt-markdown-injection-phishing",
+      "title": "ChatGPhish: ChatGPT Web Summarization Markdown Injection Enables Phishing and IP Exfiltration",
+      "date": "2026-05-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers bypassed OpenAI's initial dismissal by demonstrating the attack's scale across passive tracking, UI redress, and QR-code pivots.",
+      "file": "2026-05-30-chatgphish-chatgpt-markdown-injection-phishing.md"
+    },
+    {
       "id": "2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai",
       "title": "CVE-2026-48710 (BadHost): Starlette Host Header Injection Bypasses Authentication in AI Inference Servers, MCP Gateways, and FastAPI-Based LLM Infrastructure",
       "date": "2026-05-28",

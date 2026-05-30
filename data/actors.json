@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-28",
+  "last_updated": "2026-05-30",
   "entries": [
     {
       "id": "trapdoor-cross-ecosystem-crypto-stealer",
@@ -1494,7 +1494,8 @@
         "Flowise instances <v3.0.13",
         "Shared chatflow endpoints",
         "LiteLLM proxy deployments",
-        "Cloud LLM proxy targets"
+        "Cloud LLM proxy targets",
+        "CVE-2026-39987 exploitation in the wild"
       ],
       "ttps": [
         "T1190 - Server-Side Request Forgery",
@@ -1506,9 +1507,12 @@
         "T1190 - Exploit Public-Facing Application",
         "T1555 - Credentials from Password Managers",
         "T1213.02 - Data from Information Repositories: Sharepoint",
-        "T1526 - Credential Access"
+        "T1526 - Credential Access",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1550.001 - Use Alternate Authentication Material: Application Access Token",
+        "T1021.004 - Remote Services: SSH"
       ],
-      "description": "Unknown threat actor with knowledge of LiteLLM's database schema and internal table structure. Exploitation demonstrates familiarity with AI infrastructure vulnerabilities and rapid transition from disclosure to active probing within 26 hours, consistent with LLM-assisted vulnerability analysis patterns.",
+      "description": "Threat actor demonstrated operational use of LLM agents for post-exploitation automation. After RCE via CVE-2026-39987, the attacker deployed an LLM agent to extract, reason about, and replay stolen cloud credentials for lateral movement and data exfiltration. The capability represents a significant shift in how attackers integrate AI into intrusion workflows.",
       "attribution": "Unattributed; rapid exploitation suggests automated scanning/weaponization"
     },
     {
@@ -2184,6 +2188,27 @@
       ],
       "description": "Systemic vulnerability in Model Context Protocol STDIO transport implementation. The protocol's JSON-RPC deserialization layer does not validate tool definitions before passing them to AI agents. Attackers can poison tool metadata or register malicious MCP servers to inject hidden instructions that execute with the privileges of the client IDE or application.",
       "attribution": "Design flaw in Anthropic MCP protocol specification; exploitable by any threat actor crafting malicious MCP server definitions or tool descriptions"
+    },
+    {
+      "id": "security-researcher-permiso-security",
+      "names": [
+        "Security Researcher (Permiso Security)",
+        "Andi Ahmeti"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "ChatGPT Web UI",
+        "ChatGPT API summarization endpoints"
+      ],
+      "ttps": [
+        "T1059 - Command and Scripting Interpreter (Prompt Injection)",
+        "T1566.001 - Phishing: Spearphishing Link",
+        "T1598.004 - Phishing for Information: Spearphishing Link"
+      ],
+      "description": "Proof-of-concept research disclosed a design flaw in ChatGPT's response rendering that allows attacker-controlled Markdown links, images, and QR codes embedded in summarized web content to be auto-fetched and rendered as trusted UI elements. The vulnerability enables passive IP exfiltration, phishing, and account compromise without any backend exploit or model jailbreak.",
+      "attribution": "Vulnerability researcher disclosure; not attributed to specific threat actor exploiting in the wild as of publication"
     }
   ]
 }
