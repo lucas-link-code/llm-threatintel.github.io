@@ -1,5 +1,5 @@
 {
-  "commit_sha": "016ecb1f0471",
+  "commit_sha": "dc2834bd577d",
   "duplicate_iocs": {
     "flowise": [
       {
@@ -84,7 +84,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-05-30T21:14:05+00:00",
+  "generated_at_utc": "2026-05-30T22:02:16+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -156,7 +156,7 @@
       "file": "data/iocs.json",
       "message": "IOC has weak source label: OSINT",
       "recommendation": "",
-      "record_id": "70",
+      "record_id": "158",
       "severity": "warn"
     },
     {
@@ -164,7 +164,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/automagik-genie",
       "recommendation": "",
-      "record_id": "125",
+      "record_id": "213",
       "severity": "warn"
     },
     {
@@ -172,7 +172,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: namastex/pgserve",
       "recommendation": "",
-      "record_id": "126",
+      "record_id": "214",
       "severity": "warn"
     },
     {
@@ -180,7 +180,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.0",
       "recommendation": "",
-      "record_id": "128",
+      "record_id": "216",
       "severity": "warn"
     },
     {
@@ -188,7 +188,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.1",
       "recommendation": "",
-      "record_id": "129",
+      "record_id": "217",
       "severity": "warn"
     },
     {
@@ -196,7 +196,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: xinference==2.6.2",
       "recommendation": "",
-      "record_id": "130",
+      "record_id": "218",
       "severity": "warn"
     },
     {
@@ -204,7 +204,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
       "recommendation": "",
-      "record_id": "131",
+      "record_id": "219",
       "severity": "warn"
     },
     {
@@ -212,7 +212,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
       "recommendation": "",
-      "record_id": "132",
+      "record_id": "220",
       "severity": "warn"
     },
     {
@@ -220,7 +220,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: LiteLLM <1.83.7",
       "recommendation": "",
-      "record_id": "135",
+      "record_id": "223",
       "severity": "warn"
     },
     {
@@ -228,7 +228,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
       "recommendation": "",
-      "record_id": "136",
+      "record_id": "224",
       "severity": "warn"
     },
     {
@@ -236,7 +236,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)",
       "recommendation": "",
-      "record_id": "137",
+      "record_id": "225",
       "severity": "warn"
     },
     {
@@ -244,7 +244,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)",
       "recommendation": "",
-      "record_id": "138",
+      "record_id": "226",
       "severity": "warn"
     },
     {
@@ -252,7 +252,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)",
       "recommendation": "",
-      "record_id": "139",
+      "record_id": "227",
       "severity": "warn"
     },
     {
@@ -260,7 +260,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "140",
+      "record_id": "228",
       "severity": "warn"
     },
     {
@@ -268,7 +268,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)",
       "recommendation": "",
-      "record_id": "141",
+      "record_id": "229",
       "severity": "warn"
     },
     {
@@ -276,7 +276,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "142",
+      "record_id": "230",
       "severity": "warn"
     },
     {
@@ -284,7 +284,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)",
       "recommendation": "",
-      "record_id": "143",
+      "record_id": "231",
       "severity": "warn"
     },
     {
@@ -292,7 +292,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: langflow (all versions)",
       "recommendation": "",
-      "record_id": "144",
+      "record_id": "232",
       "severity": "warn"
     },
     {
@@ -300,7 +300,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
       "recommendation": "",
-      "record_id": "151",
+      "record_id": "239",
       "severity": "warn"
     },
     {
@@ -308,7 +308,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
       "recommendation": "",
-      "record_id": "152",
+      "record_id": "240",
       "severity": "warn"
     },
     {
@@ -316,7 +316,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
       "recommendation": "",
-      "record_id": "153",
+      "record_id": "241",
       "severity": "warn"
     },
     {
@@ -324,7 +324,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
       "recommendation": "",
-      "record_id": "163",
+      "record_id": "251",
       "severity": "warn"
     },
     {
@@ -332,7 +332,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7",
       "recommendation": "",
-      "record_id": "167",
+      "record_id": "255",
       "severity": "warn"
     },
     {
@@ -340,7 +340,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)",
       "recommendation": "",
-      "record_id": "169",
+      "record_id": "257",
       "severity": "warn"
     },
     {
@@ -348,7 +348,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills",
       "recommendation": "",
-      "record_id": "170",
+      "record_id": "258",
       "severity": "warn"
     },
     {
@@ -356,7 +356,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models",
       "recommendation": "",
-      "record_id": "171",
+      "record_id": "259",
       "severity": "warn"
     },
     {
@@ -364,7 +364,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)",
       "recommendation": "",
-      "record_id": "172",
+      "record_id": "260",
       "severity": "warn"
     },
     {
@@ -372,7 +372,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)",
       "recommendation": "",
-      "record_id": "190",
+      "record_id": "278",
       "severity": "warn"
     },
     {
@@ -380,7 +380,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)",
       "recommendation": "",
-      "record_id": "191",
+      "record_id": "279",
       "severity": "warn"
     },
     {
@@ -388,7 +388,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)",
       "recommendation": "",
-      "record_id": "192",
+      "record_id": "280",
       "severity": "warn"
     },
     {
@@ -432,17 +432,53 @@
       "severity": "warn"
     }
   ],
-  "mode": "strict",
+  "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 0,
-  "reports_newly_validated": 0,
-  "reports_skipped": 0,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 125,
   "review_required": 0,
-  "source_urls_checked": 0,
-  "state_updates": 0,
-  "url_results": [],
+  "source_urls_checked": 5,
+  "state_updates": 1,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://labs.withsecure.com/publications/greyvibe",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://labs.withsecure.com/publications/greyvibe"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/WithSecureLabs/iocs/blob/master/GREYVIBE/greyvibe_iocs.csv",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/WithSecureLabs/iocs/blob/master/GREYVIBE/greyvibe_iocs.csv"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.bleepingcomputer.com/news/security/greyvibe-hackers-use-chatgpt-gemini-to-power-cyberattacks/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.bleepingcomputer.com/news/security/greyvibe-hackers-use-chatgpt-gemini-to-power-cyberattacks/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.csoonline.com/article/4178879/russia-aligned-crime-group-greyvibe-extensively-uses-ai-in-attacks.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.csoonline.com/article/4178879/russia-aligned-crime-group-greyvibe-extensively-uses-ai-in-attacks.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://securityaffairs.com/192877/apt/meet-greyvibe-the-russian-linked-hacking-group-using-ai-to-target-ukraine-and-still-making-rookie-mistakes.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://securityaffairs.com/192877/apt/meet-greyvibe-the-russian-linked-hacking-group-using-ai-to-target-ukraine-and-still-making-rookie-mistakes.html"
+    }
+  ],
   "validation_version": "1.0.0",
   "warnings": 43
 }

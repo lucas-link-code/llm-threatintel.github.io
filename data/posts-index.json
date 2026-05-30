@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage",
+      "title": "GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT",
+      "date": "2026-05-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt",
+        "malware",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "WithSecure on May 28, 2026 disclosed GreyVibe (GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators, and develop the LegionRelay PowerShell RAT. Defenders should block the published C2 and lure infrastructure and hunt for the PhantomRelay and LegionRelay artifacts and FallSpy Android spyware indicators.",
+      "file": "2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage.md"
+    },
+    {
       "id": "2026-05-30-marimo-cve-2026-39987-llm-post-exploitation",
       "title": "Marimo CVE-2026-39987: Unauthenticated RCE Weaponized for Post-Exploitation via LLM-Driven Lateral Movement",
       "date": "2026-05-30",

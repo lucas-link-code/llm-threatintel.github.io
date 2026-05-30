@@ -2,6 +2,106 @@
   "last_updated": "2026-05-30",
   "entries": [
     {
+      "id": "greyvibe",
+      "names": [
+        "GreyVibe",
+        "GREYVIBE"
+      ],
+      "type": "threat_group",
+      "first_seen": "2025-08",
+      "status": "active",
+      "distribution": [
+        "PhantomMail spearphishing emails with links to ZIP/RAR archives on Google Drive and 4sync, using Gmail senders impersonating Ukrainian government and emergency-service entities",
+        "PhantomClick fake CAPTCHA / ClickFix pages impersonating Zoom and LAPAS with a fake Cloudflare verification pretext",
+        "PrincessClub fake Ukrainian adult-club websites delivering FallSpy (Android) and PhantomRelayV1 or LegionRelay (Windows), seeded via fake female Telegram personas",
+        "DroneLink fake military-charity websites delivering WireGuard VPN alongside LegionRelay",
+        "Nebo FallSpy samples mimicking a Russian military login screen",
+        "PhantomRelay variants also observed in a Microsoft Teams voice-phishing intrusion set and a KongTuke ClickFix chain (February to March 2026)"
+      ],
+      "ttps": [
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence (ChatGPT, Google Gemini, Ideogram AI for lures, fake-site imagery, obfuscators, loaders)",
+        "T1587.001 - Develop Capabilities: Malware (LLM-assisted full-stack development of LegionRelay and backend)",
+        "T1566.002 - Phishing: Spearphishing Link (PhantomMail Google Drive and 4sync archive links)",
+        "T1189 - Drive-by Compromise (PrincessClub and DroneLink fake websites)",
+        "T1204.002 - User Execution: Malicious File (PhantomClick ClickFix infection commands)",
+        "T1059.001 - Command and Scripting Interpreter: PowerShell (PhantomRelay and LegionRelay RATs)",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript (LOOKVALJS and TEASOUP loaders)",
+        "T1027 - Obfuscated Files or Information (DAYLIGHT obfuscator)",
+        "T1102.001 - Web Service: Dead Drop Resolver (LegionRelay Telegram channel C2 resolution)"
+      ],
+      "description": "Russia-nexus threat cluster disclosed by WithSecure on May 28, 2026, active since at least August 2025 and discovered by WithSecure in January 2026, targeting Ukrainian and Ukraine-related military, government, civilian, and business organisations. GreyVibe is defined by extensive generative-AI use across the full intrusion lifecycle: WithSecure assesses with moderate confidence that ChatGPT, Google Gemini, and Ideogram AI were used to generate phishing lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators and loaders, develop the LegionRelay RAT and its backend, and produce post-compromise commands. The group runs five documented campaigns (PhantomMail, PhantomClick, PrincessClub, DroneLink, Nebo) delivering the PhantomRelay and LegionRelay PowerShell RATs on Windows and FallSpy spyware on Android. Design flaws in LegionRelay exposed backend functionality that gave WithSecure extended research visibility into the group's victimology and operations.",
+      "attribution": "Russia-nexus, consistent with Russian intelligence-gathering interests (confidence: moderate, per WithSecure). Tooling overlaps with the TrickBot gang and UAC-0098. WithSecure notes the actor lacked the operational discipline typically associated with mature nation-state actors."
+    },
+    {
+      "id": "phantomrelay",
+      "names": [
+        "PhantomRelay",
+        "PhantomRelayLite",
+        "PhantomRelayV1",
+        "PhantomRelayV2"
+      ],
+      "type": "malware",
+      "first_seen": "2025-08",
+      "status": "active",
+      "distribution": [
+        "Delivered by GreyVibe via PhantomMail spearphishing, PhantomClick ClickFix pages, and PrincessClub fake adult-club websites",
+        "Variants also observed in a Microsoft Teams voice-phishing intrusion set and a KongTuke ClickFix delivery chain (February to March 2026)"
+      ],
+      "ttps": [
+        "T1059.001 - Command and Scripting Interpreter: PowerShell (PowerShell RAT supporting dynamic script loading and command execution)",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task (persistence via tasks such as System Health Service and Razer Synapse Service Helper)",
+        "T1027 - Obfuscated Files or Information (DAYLIGHT obfuscator)",
+        "T1091 - Replication Through Removable Media (PhantomRelayV1 USB propagation script WUDFHost.ps1)",
+        "T1071.001 - Application Layer Protocol: Web Protocols (C2 communications)"
+      ],
+      "description": "PowerShell-based remote access trojan used by GreyVibe, tracked by WithSecure in three variants (PhantomRelayLite, PhantomRelayV1, PhantomRelayV2) distinguished by obfuscation, persistence artifacts, and C2 infrastructure. Supports system fingerprinting, dynamic script loading, and PowerShell and Windows command execution. WithSecure notes variants of PhantomRelay also appeared in activity that may be unrelated to the Ukraine targeting, including a Microsoft Teams voice-phishing campaign and a KongTuke ClickFix chain between February and March 2026; GreyVibe rewrote the tool into versions used exclusively in its own operations.",
+      "attribution": "Used by GreyVibe (Russia-nexus). PhantomRelayLite variants also seen in possibly-separate Teams vishing and KongTuke clusters."
+    },
+    {
+      "id": "legionrelay",
+      "names": [
+        "LegionRelay"
+      ],
+      "type": "malware",
+      "first_seen": "2026",
+      "status": "active",
+      "distribution": [
+        "Delivered by GreyVibe via the DroneLink fake military-charity websites alongside WireGuard VPN software, and via PrincessClub Windows infections"
+      ],
+      "ttps": [
+        "T1059.001 - Command and Scripting Interpreter: PowerShell (lightweight PowerShell RAT)",
+        "T1102.001 - Web Service: Dead Drop Resolver (Telegram channel used to resolve live C2 address)",
+        "T1071.001 - Application Layer Protocol: Web Protocols (C2 over REST API methods)",
+        "T1555.003 - Credentials from Password Stores: Credentials from Web Browsers (browser credential theft)",
+        "T1113 - Screen Capture (screenshot capture)",
+        "T1041 - Exfiltration Over C2 Channel (file, Telegram, and WhatsApp data exfiltration)"
+      ],
+      "description": "Lightweight PowerShell remote access trojan used by GreyVibe that WithSecure assesses with moderate confidence was developed with LLM assistance, alongside its backend infrastructure. Communicates with C2 over REST API methods and resolves its live C2 address through a Telegram channel dead-drop resolver. Supports file enumeration, file exfiltration, screenshot capture, browser credential theft, Telegram and WhatsApp data exfiltration, and RDP access setup. Design flaws in LegionRelay inadvertently exposed backend functionality, giving WithSecure extended visibility into GreyVibe operations.",
+      "attribution": "Used by GreyVibe (Russia-nexus); strongest indicators of AI-assisted development among GreyVibe tooling, per WithSecure."
+    },
+    {
+      "id": "fallspy",
+      "names": [
+        "FallSpy"
+      ],
+      "type": "malware",
+      "first_seen": "2025-08",
+      "status": "active",
+      "distribution": [
+        "Delivered by GreyVibe via PrincessClub fake Ukrainian adult-club websites and the Nebo fake Russian military login lure, as sideloaded Android APKs"
+      ],
+      "ttps": [
+        "T1430 - Location Tracking (last-known location collection)",
+        "T1636.002 - Protected User Data: Call Log (call-log collection)",
+        "T1636.003 - Protected User Data: Contact List (contact collection)",
+        "T1426 - System Information Discovery (device information and SIM-linked phone numbers)",
+        "T1422 - System Network Configuration Discovery (network information, Wi-Fi SSID, public IP)",
+        "T1533 - Data from Local System (media file collection and exfiltration)"
+      ],
+      "description": "Android spyware family used by GreyVibe, first observed in August 2025 across the PrincessClub and Nebo campaigns. Presents decoy content to the victim while covertly collecting and exfiltrating contacts, call logs, installed-application lists, SIM-linked phone numbers, device and network information, Wi-Fi SSID, last-known location, public IP, and media files. WithSecure assesses FallSpy is developed for surveillance and intelligence-gathering objectives.",
+      "attribution": "Used by GreyVibe (Russia-nexus)."
+    },
+    {
       "id": "trapdoor-cross-ecosystem-crypto-stealer",
       "names": [
         "TrapDoor",
