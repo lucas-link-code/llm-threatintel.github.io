@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-30",
+  "last_updated": "2026-06-01",
   "entries": [
     {
       "id": "greyvibe",
@@ -2309,6 +2309,66 @@
       ],
       "description": "Proof-of-concept research disclosed a design flaw in ChatGPT's response rendering that allows attacker-controlled Markdown links, images, and QR codes embedded in summarized web content to be auto-fetched and rendered as trusted UI elements. The vulnerability enables passive IP exfiltration, phishing, and account compromise without any backend exploit or model jailbreak.",
       "attribution": "Vulnerability researcher disclosure; not attributed to specific threat actor exploiting in the wild as of publication"
+    },
+    {
+      "id": "llmshare-campaign-operators",
+      "names": [
+        "LLMShare Campaign Operators"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Google Ads malvertising",
+        "Organic search results for ChatGPT downloads"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing: Deceptive phishing emails and fake outage pages",
+        "T1199 - Trusted Relationship Exploitation"
+      ],
+      "description": "Sophisticated threat actor leveraging AI platform sharing features and search engine advertising to distribute trojans. Demonstrates understanding of user trust in platform domains and ability to manipulate AI-generated content for social engineering.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "cve-2026-33626-exploitation-actor",
+      "names": [
+        "CVE-2026-33626 Exploitation Actor"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Direct network scanning of exposed LMDeploy instances",
+        "Opportunistic exploitation following advisory publication"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Applications: SSRF in LLM inference server",
+        "T1528 - Steal Cloud Credentials: AWS IMDS credential theft",
+        "T1046 - Network Service Discovery: Port scanning via SSRF"
+      ],
+      "description": "Threat actor demonstrating automated exploitation capability, using GHSA advisory details as direct input for exploit generation via commercial LLM tools. Attack methodology matches cryptojacking and credential-harvesting campaigns rather than data exfiltration focus.",
+      "attribution": "Unknown; geolocation suggests Hong Kong-based operations"
+    },
+    {
+      "id": "marimo-cve-2026-39987-exploitation-actor",
+      "names": [
+        "Marimo CVE-2026-39987 Exploitation Actor"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Direct scanning for exposed Marimo instances",
+        "Opportunistic RCE exploitation"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Applications: Marimo pre-auth RCE",
+        "T1555 - Credential Dumping: LLM-driven secrets harvesting",
+        "T1528 - Steal Cloud Credentials: AWS credential harvesting",
+        "T1550.001 - Use Alternate Authentication Material: Credential-based lateral movement"
+      ],
+      "description": "Threat actor using LLM agent post-exploitation automation to accelerate credential harvesting and lateral movement. Represents shift from fully scripted playbooks to dynamic agent-driven exploration, lowering the engineering cost for scaling attacks across diverse target environments.",
+      "attribution": "Unknown; demonstrates advanced agentic automation and cloud-aware operational patterns"
     }
   ]
 }

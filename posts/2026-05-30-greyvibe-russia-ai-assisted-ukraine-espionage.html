@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT | LLM ThreatIntel</title>
+  <meta name="description" content="WithSecure on May 28, 2026 disclosed GreyVibe (GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators, and develop the LegionRelay PowerShell RAT. Defenders should block the published C2 and lure infrastructure and hunt for the PhantomRelay and LegionRelay artifacts and FallSpy Android spyware indicators.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT">
+  <meta property="og:description" content="WithSecure on May 28, 2026 disclosed GreyVibe (GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators, and develop the LegionRelay PowerShell RAT. Defenders should block the published C2 and lure infrastructure and hunt for the PhantomRelay and LegionRelay artifacts and FallSpy Android spyware indicators.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT">
+  <meta property="article:published_time" content="2026-05-30T00:00:00Z">
+  <meta property="article:modified_time" content="2026-05-30T00:00:00Z">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="apt">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="phishing">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT">
+  <meta name="twitter:description" content="WithSecure on May 28, 2026 disclosed GreyVibe (GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators, and develop the LegionRelay PowerShell RAT. Defenders should block the published C2 and lure infrastructure and hunt for the PhantomRelay and LegionRelay artifacts and FallSpy Android spyware indicators.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT",
+  "description": "WithSecure on May 28, 2026 disclosed GreyVibe (GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators, and develop the LegionRelay PowerShell RAT. Defenders should block the published C2 and lure infrastructure and hunt for the PhantomRelay and LegionRelay artifacts and FallSpy Android spyware indicators.",
+  "datePublished": "2026-05-30T00:00:00Z",
+  "dateModified": "2026-05-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage.html",
+  "keywords": [
+    "nation-state",
+    "apt",
+    "malware",
+    "phishing"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-05-30</span>
+      <span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-apt">APT</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-phishing">Phishing</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT</h1>
+<p><strong>Date:</strong> 2026-05-30<br><strong>Tags:</strong> nation-state, apt, malware, phishing</p>
+<h2>Executive Summary</h2>
+<p>WithSecure on May 28, 2026 disclosed GreyVibe (stylised GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate phishing lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators and loaders, develop the LegionRelay PowerShell RAT and its backend, and produce post-compromise commands. Defenders should block the published C2 and lure infrastructure, hunt for the PhantomRelay and LegionRelay PowerShell RAT artifacts and scheduled tasks, and treat the FallSpy Android spyware indicators as active mobile surveillance threats.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GreyVibe (GREYVIBE); PhantomMail, PhantomClick, PrincessClub, DroneLink, Nebo campaigns; PhantomRelay (V1/V2/Lite) and LegionRelay PowerShell RATs; FallSpy Android spyware</td></tr><tr><td>Actor / Attribution</td><td>Russia-nexus, state-aligned interests (confidence: moderate, per WithSecure). Tooling overlaps with the TrickBot gang and UAC-0098. WithSecure notes the group lacks the operational discipline of a mature nation-state actor</td></tr><tr><td>Target</td><td>Ukrainian and Ukraine-related organisations: military, government, civilian, and business sectors; confirmed victims include Ukrainian combatants in Kharkiv</td></tr><tr><td>Vector</td><td>Spearphishing links (Google Drive, 4sync), fake CAPTCHA / ClickFix pages, fake Ukrainian adult-club websites, fake military-charity sites, fake Russian military login pages, Telegram personas, Microsoft Teams vishing</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2025-08 (FallSpy first observed); WithSecure discovered the activity in January 2026 and published May 28, 2026</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to WithSecure, GreyVibe is distinguished less by technical sophistication than by the breadth of generative AI woven through its operations. WithSecure assesses with moderate confidence that the group used large language models and image generators for four classes of work: lure development, including the images used in the PrincessClub campaign and the fake-site content for PrincessClub and PhantomClick; resource development, including the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscation and loader scripts, full-stack development of the LegionRelay RAT, and backend infrastructure setup; and post-compromise activity, including the generation of commands, scripts, and tooling delivered through PhantomRelay and LegionRelay. WithSecure states that LegionRelay and the backend serving it show the strongest indicators of AI generation, and that the platforms used include Ideogram AI, ChatGPT, and Google Gemini.</p>
+<p>According to WithSecure, design flaws in LegionRelay, a custom RAT WithSecure assesses was likely LLM-developed, exposed a limited subset of the malware&#x27;s backend functionality. That exposure gave WithSecure extended research visibility into GreyVibe victimology, actions on objectives, and post-compromise tooling over an extended period. WithSecure deliberately omitted sensitive victim details from its public reporting.</p>
+<h3>Five Campaigns</h3>
+<p>According to WithSecure and SecurityAffairs, WithSecure documented five distinct attack chains, each with its own lure and payload.</p>
+<p>PhantomMail uses spearphishing emails carrying links to malicious ZIP and RAR archives hosted on Google Drive and the file-sharing service 4sync. The archives contain Python and JavaScript loaders that deliver PhantomRelay. Spearphishing activity ran from at least December 2025 through April 2026 using Gmail sender addresses impersonating Ukrainian government and emergency-service entities, with Ukrainian-language lure filenames referencing inspection acts and cyber-defence conference materials.</p>
+<p>PhantomClick uses fake CAPTCHA pages impersonating Zoom and the Latvian Platform for Development Cooperation (LAPAS), styled as ClickFix attacks. According to WithSecure, the pages present a fake Cloudflare verification pretext and trick victims into running a command that initiates a PhantomRelay infection chain in the background while a decoy is shown.</p>
+<p>PrincessClub is a persistent campaign using fake Ukrainian adult-club websites to deliver FallSpy on Android and PhantomRelayV1 or LegionRelay on Windows. According to WithSecure, confirmed victims included Ukrainian combatants, many located in Kharkiv. Operators used fake female Telegram personas, including via local dating channels, to build trust before directing victims to the lure sites. Later iterations added a WebRTC-based live-call feature, accessible only after infection, capable of capturing victim audio and video, which WithSecure assesses turns the lure into a potential human intelligence collection mechanism.</p>
+<p>DroneLink uses websites posing as charitable foundations supporting the Ukrainian military with FPV drones and UAVs to deliver WireGuard VPN software alongside the lightweight LegionRelay RAT. Nebo uses a FallSpy sample designed to mimic a Russian military login screen, apparently to convince Ukrainian military personnel they are accessing a Russian terminal.</p>
+<h3>Malware</h3>
+<p>According to BleepingComputer and CSO Online, PhantomRelay is a PowerShell RAT supporting system fingerprinting, dynamic script loading, and PowerShell and Windows command execution. WithSecure tracks three variants: PhantomRelayLite, PhantomRelayV1, and PhantomRelayV2, distinguished by obfuscation, persistence artifacts, and C2 infrastructure. PhantomRelay variants also appeared in a Microsoft Teams voice-phishing intrusion set and a separate KongTuke (ClickFix) delivery chain between February and March 2026 that WithSecure could not definitively tie to the Ukraine targeting.</p>
+<p>According to WithSecure and CSO Online, LegionRelay is a lightweight PowerShell RAT that communicates with its C2 over REST API methods and supports file enumeration, file exfiltration, screenshot capture, browser credential theft, Telegram and WhatsApp data exfiltration, and RDP access setup. It uses a Telegram channel as a dead-drop resolver for C2 addressing.</p>
+<p>According to WithSecure, FallSpy is an Android spyware family first observed in August 2025 across the PrincessClub and Nebo campaigns. It presents decoy content while covertly collecting contacts, call logs, installed-application lists, SIM-linked phone numbers, device and network information, Wi-Fi SSID, last-known location, public IP, and media files.</p>
+<h3>Attribution</h3>
+<p>According to SecurityAffairs and CSO Online, WithSecure identified connections between GreyVibe tooling and both the TrickBot gang and UAC-0098, a group previously linked to Russian cybercriminal networks. WithSecure assesses the activity is consistent with Russian intelligence-gathering interests but states the actor lacked the sophistication and operational discipline typically associated with mature nation-state actors. WithSecure notes that GreyVibe&#x27;s extensive, frequent AI-driven changes to tooling and lures likely help the group compensate for capability gaps, accelerate development cycles, and reduce historical backlinks to prior activity, which WithSecure expects will increase the difficulty of continuous detection, tracking, and attribution.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>ChatGPT, Google Gemini, and Ideogram AI used to generate lures, fake-site imagery, obfuscators, and loaders</td></tr><tr><td>Develop Capabilities: Malware</td><td>T1587.001</td><td>LLM-assisted full-stack development of the LegionRelay RAT and supporting backend</td></tr><tr><td>Phishing: Spearphishing Link</td><td>T1566.002</td><td>PhantomMail emails linking to ZIP/RAR archives on Google Drive and 4sync</td></tr><tr><td>Drive-by Compromise</td><td>T1189</td><td>PrincessClub adult-club sites and DroneLink charity sites delivering malware</td></tr><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>PhantomClick fake CAPTCHA/ClickFix pages trick victims into running infection commands</td></tr><tr><td>Command and Scripting Interpreter: PowerShell</td><td>T1059.001</td><td>PhantomRelay and LegionRelay are PowerShell RATs</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>LOOKVALJS and TEASOUP JavaScript loaders</td></tr><tr><td>Obfuscated Files or Information</td><td>T1027</td><td>DAYLIGHT obfuscator applied to PhantomRelay and LegionRelay scripts</td></tr><tr><td>Scheduled Task/Job: Scheduled Task</td><td>T1053.005</td><td>Persistence via scheduled tasks including &quot;Adobe working&quot;, &quot;System Health Service&quot;, and &quot;Razer Synapse Service Helper&quot;</td></tr><tr><td>Web Service: Dead Drop Resolver</td><td>T1102.001</td><td>LegionRelay resolves C2 addressing via a Telegram channel</td></tr><tr><td>Credentials from Password Stores: Credentials from Web Browsers</td><td>T1555.003</td><td>LegionRelay browser credential theft</td></tr><tr><td>Replication Through Removable Media</td><td>T1091</td><td>PhantomRelayV1 USB propagation script (WUDFHost.ps1)</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>PhantomRelay and LegionRelay C2 over REST/HTTP</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">lapas.live
+zoomconference.click
+zoomconference.app
+strip-mens.tilda.ws
+princess-mens.fun
+princess-mens-club.com
+princess-mens.click
+princessclub.click
+princessclub.best
+princessclub.online
+princessclub.cyou
+clubprincess.click
+frontforce.org
+ukrguard.org
+ukrbezpeka.online
+ironbrave.online
+ukrvarta.online
+edbo.linkpc.net
+edbo.publicvm.com
+edbo.work.gd
+dsszzi.linkpc.net
+declaration.linkpc.net
+goodhillsenterprise.com
+ny-car-dealership.it.com
+doct0rsim.com
+routinesyscheckup.com
+serotoninenterprise.com
+newstarcommunity.com
+jackscommunications.com
+fasterscommunications.com
+bsnowcommunications.com
+highfleetenterprise.com
+flyskyenterprise.com
+newsolutionsxsenterprise.icu
+neuromancersolutionsenterprise.icu
+nycpartnersenterprise.com
+chiselworksenterprise.com
+newrentalsenterprise.com
+bluelagoonaenterprise.com
+heltaskeltahenterprise.com
+newequipmentsolutions.com
+j4jobspk.com
+aerobionix.com
+prosearium.net
+saidozdemir.com
+tucsonanimalallergy.com
+halungroup.com
+khanvas.com
+maxolutions243.com
+thirdmetrics.com
+resutato.com
+red-viper.com
+emballeplus.com
+meadowsantiques.com
+seahorsemethod.com
+intrawld.com
+emovietheater.com
+robotic-toys.com
+kentfiresafe.com
+artsselection.com
+zeftasarim.com
+xpertlearninghub.com</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">t.me/s/sdgsersergser</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;lapas.live&quot; OR &quot;zoomconference.click&quot; OR &quot;zoomconference.app&quot; OR &quot;strip-mens.tilda.ws&quot; OR &quot;princess-mens.fun&quot; OR &quot;princess-mens-club.com&quot; OR &quot;princess-mens.click&quot; OR &quot;princessclub.click&quot; OR &quot;princessclub.best&quot; OR &quot;princessclub.online&quot; OR &quot;princessclub.cyou&quot; OR &quot;clubprincess.click&quot; OR &quot;frontforce.org&quot; OR &quot;ukrguard.org&quot; OR &quot;ukrbezpeka.online&quot; OR &quot;ironbrave.online&quot; OR &quot;ukrvarta.online&quot; OR &quot;edbo.linkpc.net&quot; OR &quot;edbo.publicvm.com&quot; OR &quot;edbo.work.gd&quot; OR &quot;dsszzi.linkpc.net&quot; OR &quot;declaration.linkpc.net&quot; OR &quot;goodhillsenterprise.com&quot; OR &quot;ny-car-dealership.it.com&quot; OR &quot;doct0rsim.com&quot; OR &quot;routinesyscheckup.com&quot; OR &quot;serotoninenterprise.com&quot; OR &quot;newstarcommunity.com&quot; OR &quot;jackscommunications.com&quot; OR &quot;fasterscommunications.com&quot; OR &quot;bsnowcommunications.com&quot; OR &quot;highfleetenterprise.com&quot; OR &quot;flyskyenterprise.com&quot; OR &quot;newsolutionsxsenterprise.icu&quot; OR &quot;neuromancersolutionsenterprise.icu&quot; OR &quot;nycpartnersenterprise.com&quot; OR &quot;chiselworksenterprise.com&quot; OR &quot;newrentalsenterprise.com&quot; OR &quot;bluelagoonaenterprise.com&quot; OR &quot;heltaskeltahenterprise.com&quot; OR &quot;newequipmentsolutions.com&quot; OR &quot;j4jobspk.com&quot; OR &quot;aerobionix.com&quot; OR &quot;prosearium.net&quot; OR &quot;saidozdemir.com&quot; OR &quot;tucsonanimalallergy.com&quot; OR &quot;halungroup.com&quot; OR &quot;khanvas.com&quot; OR &quot;maxolutions243.com&quot; OR &quot;thirdmetrics.com&quot; OR &quot;resutato.com&quot; OR &quot;red-viper.com&quot; OR &quot;emballeplus.com&quot; OR &quot;meadowsantiques.com&quot; OR &quot;seahorsemethod.com&quot; OR &quot;intrawld.com&quot; OR &quot;emovietheater.com&quot; OR &quot;robotic-toys.com&quot; OR &quot;kentfiresafe.com&quot; OR &quot;artsselection.com&quot; OR &quot;zeftasarim.com&quot; OR &quot;xpertlearninghub.com&quot; OR &quot;t.me/s/sdgsersergser&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">920e8a8e06a1559ba0b4a1be5f6c290ed8e305fd130675ceadc655c79c1cb369
+db05db462a0e8ba40c656dd0b8bd11f6fdc85895b54904df1dc83bb0609e2ff2
+286de17c2e8017241bee12b0935ed5e1e5d5216f4311be781ca1a69ad81188b3
+ee144c883784c635ef84e0ae6a12b03553c1fd65646621f22d08511bd3e6d42a
+03beb07ce116a2a69f360dd3fab8c3aa55bb42ce580d43f1924642874e388efe
+c716dabe228f89e58835d2c93dbaa5719dc77f62c9e84f3e3d54ef82ded621e1
+d814564ab8b905c3b9b7a42e757228d9d30f8ffd4fa6b3c48f4aa7e2b1e44594
+b0c07b265c9d9046038ffa48d5b8e17b8ba0791503beba85196cdbe0ac2fcb27
+63047083db26ec6a8aa2d0d008ca4c067855a952a89f9e3e878b2215e26841cf
+ee87fae14e3cc64d894f0a677af8832f8669f11853374c18b7110df1fc52f4e5
+cbaf6cdb2acbd293d7e58cabe41449027a28b84223ba88f19e4463ec4176dad0
+bcb9e99021f88b9720a667d737a3ddd7d5b9f963ac3cae6d26e74701e406dcdc
+87b8abb05c7ee5642a5e801e7825dfa5ee4c1393ac998e87470ab53cc75e1842
+a695a70c2efd11e1daa93997c1aaf976a205476839f553f2c8e64fb73123b853
+40f9399ea067d69c0985aecdc54beddbcb585d7f660606e5bb4be981811c28ba
+e9634032df81334e9e960ab8b88ff05a0f7ec9c034dc012f816f09e23c18d41b</code></pre>
+<h3>Network Indicators</h3>
+<pre><code class="language-">194.87.128.243
+194.87.108.110
+89.125.189.118
+89.125.189.85
+91.149.221.124
+188.124.59.120
+193.233.23.81
+89.37.185.60
+74.112.102.120</code></pre>
+<p>LegionRelay C2 operates on TCP port 8000 (194.87.128.243, 194.87.108.110, 89.125.189.118, 89.125.189.85, 91.149.221.124). Nebo fake-login infrastructure operates on TCP port 14000 (89.37.185.60, 74.112.102.120). 188.124.59.120 hosts lapas[.]live; 193.233.23.81 hosts the PhantomClick zoomconference domains and PrincessClub princess-mens[.]click. The complete IOC set, including PhantomMail staging URLs and YARA rules, is published in WithSecure&#x27;s GitHub IOC repository linked in References.</p>
+<h2>Detection Recommendations</h2>
+<p>On web proxy and DNS, alert on resolution of or outbound HTTP/S traffic to the domains above. The C2 domains cluster on the <em>enterprise[.]com and </em>enterprise[.]icu naming pattern (goodhillsenterprise[.]com, serotoninenterprise[.]com, neuromancersolutionsenterprise[.]icu) and on Ukrainian-themed charity and government lures (ukrguard[.]org, ukrbezpeka[.]online, dsszzi.linkpc[.]net, declaration.linkpc[.]net); baseline DNS for newly observed domains matching these patterns. Block the dynamic-DNS staging hosts on linkpc[.]net, publicvm[.]com, and work[.]gd subdomains where there is no business need.</p>
+<p>On network telemetry, block or alert on outbound connections to the LegionRelay C2 IPs on TCP/8000 (194.87.128.243, 194.87.108.110, 89.125.189.118, 89.125.189.85, 91.149.221.124) and the Nebo hosts on TCP/14000 (89.37.185.60, 74.112.102.120). Hunt for outbound HTTPS requests to t[.]me/s/sdgsersergser, which LegionRelay uses as a Telegram dead-drop to resolve its live C2 address; legitimate enterprise endpoints rarely fetch Telegram channel preview pages programmatically.</p>
+<p>On EDR, hunt for PowerShell scripts and scheduled tasks matching the PhantomRelay and LegionRelay artifacts: scheduled task names &quot;Adobe working&quot;, &quot;BackUp checker&quot;, &quot;AMD Checker&quot;, &quot;System Health Service&quot;, &quot;Microsoft System Health Service&quot;, and &quot;Razer Synapse Service Helper&quot;; file paths C:\ProgramData\AMD\amd.ps1, C:\ProgramData\BackUp\backup.ps1, and C:\ProgramData\Adobe\dfDgrr3.ps1; staging directories %ProgramData%\WindowSystem, %ProgramData%\Microsoft Windows, and %LOCALAPPDATA%\Razer Update; and script filenames SysCheckupService.ps1, SystemHealthSvc.ps1, Configuration.ps1, Configurate.ps1, RzUpdateManager.ps1, RzTelemetry.ps1, and the USB propagation script WUDFHost.ps1. Alert on PowerShell processes performing browser-credential, Telegram, or WhatsApp data access followed by outbound REST traffic.</p>
+<p>On email gateways, block the PhantomMail spearphishing senders (Gmail addresses impersonating Ukrainian government and emergency-service entities such as centrenergo.ukr@gmail[.]com, office.dsns.dp@gmail[.]com, and office.cip.ua.gov@gmail[.]com) and quarantine ZIP/RAR attachments or Google Drive and 4sync links carrying Ukrainian-language filenames referencing inspection acts or conference materials. For Android fleets under MDM, treat the FallSpy APK hashes as active spyware and alert on sideloaded applications requesting contacts, call-log, location, and SIM data alongside network access.</p>
+<h2>References</h2>
+<ul><li>[WithSecure Labs] GREYVIBE: A Russia-nexus group leveraging AI across state-aligned operations (2026-05-28) — https://labs.withsecure.com/publications/greyvibe</li><li>[WithSecure Labs] GREYVIBE indicators of compromise and YARA rules (2026-05) — https://github.com/WithSecureLabs/iocs/blob/master/GREYVIBE/greyvibe_iocs.csv</li><li>[BleepingComputer] GreyVibe hackers use ChatGPT, Gemini to power cyberattacks (2026-05-28) — https://www.bleepingcomputer.com/news/security/greyvibe-hackers-use-chatgpt-gemini-to-power-cyberattacks/</li><li>[CSO Online] Russia-aligned crime group Greyvibe extensively uses AI in attacks (2026-05-28) — https://www.csoonline.com/article/4178879/russia-aligned-crime-group-greyvibe-extensively-uses-ai-in-attacks.html</li><li>[Security Affairs] Meet GREYVIBE, the Russian-linked hacking group using AI to target Ukraine and still making rookie mistakes (2026-05) — https://securityaffairs.com/192877/apt/meet-greyvibe-the-russian-linked-hacking-group-using-ai-to-target-ukraine-and-still-making-rookie-mistakes.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

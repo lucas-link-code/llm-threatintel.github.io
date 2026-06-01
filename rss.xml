@@ -5,8 +5,32 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 30 May 2026 21:13:44 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 08:36:54 +0000</lastBuildDate>
     <item>
+      <title>Marimo CVE-2026-39987 Exploited with LLM Agent Post-Exploitation: AI-Driven Lateral Movement and Secrets Harvesting</title>
+      <link>https://llm-threatintel.com/posts/2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-39987 refers to a critical pre-authenticated remote code execution vulnerability impacting all versions of Marimo prior to and including 0.20.4. It allows an unauthenticated attacker to execute arbitrary system commands. The security defect has since come under active exploitation, with threat actors using it to initiate manual reconnaissance against honeypot systems and attempt to harvest sensitive data. The latest activity documented by Sysdig sticks to the same pattern, the primary difference being that an LLM agent was used to drive the post-exploitation activity. The incident, per the cloud security firm, was recorded on May 10, 2026, with the attacker gathering credentials from the environment and then using the harvested AWS access key to perform API calls against AWS Secrets Manager and retrieve an SSH private key. This represents the first documented case of LLM agent-driven post-exploitation automation in a real-world attack.</description>
+    </item>    <item>
+      <title>CVE-2026-33626 LMDeploy SSRF Weaponized in 12 Hours: Vision-LLM Image Loader Abused for Cloud Credential Theft and Internal Network Scanning</title>
+      <link>https://llm-threatintel.com/posts/2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-33626 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration. The vulnerability, tracked as CVE-2026-33626 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. This represents the fastest exploitation window recorded for AI infrastructure vulnerabilities and demonstrates a collapse in patch windows driven by LLM-enabled exploit generation.</description>
+    </item>    <item>
+      <title>LLMShare Malware Campaign: ChatGPT and Claude Shared Chats Weaponized for Desktop App Trojanization and Credential Theft</title>
+      <link>https://llm-threatintel.com/posts/2026-06-01-llmshare-chatgpt-claude-malware-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-01-llmshare-chatgpt-claude-malware-campaign.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Threat actors are abusing ChatGPT's content-sharing feature to display fake OpenAI outage pages that direct users to download malware disguised as the ChatGPT desktop application. The "LLMShare" campaign, discovered by Push Security, uses Google ads to direct users searching for ChatGPT to a malicious shared ChatGPT page hosted on chatgpt.com, allowing the attack to be delivered through a legitimate OpenAI domain. On Claude, shared chats pose as Apple support walkthroughs laced with malicious Terminal commands, while a shared Claude chat shows a fake download guide for Claude Code that delivers malware.</description>
+    </item>    <item>
+      <title>GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT</title>
+      <link>https://llm-threatintel.com/posts/2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>WithSecure on May 28, 2026 disclosed GreyVibe (GREYVIBE), a Russia-nexus threat cluster active since at least August 2025 that uses generative AI across the full intrusion lifecycle to target Ukrainian and Ukraine-related military, government, civilian, and business organisations. WithSecure assesses with moderate confidence that GreyVibe used ChatGPT, Google Gemini, and Ideogram AI to generate lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators, and develop the LegionRelay PowerShell RAT. Defenders should block the published C2 and lure infrastructure and hunt for the PhantomRelay and LegionRelay artifacts and FallSpy Android spyware indicators.</description>
+    </item>    <item>
       <title>Marimo CVE-2026-39987: Unauthenticated RCE Weaponized for Post-Exploitation via LLM-Driven Lateral Movement</title>
       <link>https://llm-threatintel.com/posts/2026-05-30-marimo-cve-2026-39987-llm-post-exploitation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-05-30-marimo-cve-2026-39987-llm-post-exploitation.html</guid>
@@ -102,30 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.html</guid>
       <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
       <description>The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.</description>
-    </item>    <item>
-      <title>CVE-2026-44338: PraisonAI Legacy Flask API Authentication Bypass — Scanner Probed Vulnerable /agents Endpoint 3 Hours 44 Minutes After GitHub Advisory</title>
-      <link>https://llm-threatintel.com/posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.html</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-      <description>GitHub published advisory GHSA-6rmh-7xcm-cpxj (CVE-2026-44338, CVSS 7.3) on May 11, 2026, disclosing an unauthenticated authentication bypass in PraisonAI's legacy Flask API server affecting versions 2.5.6 through 4.6.33; the fix is in 4.6.34. PraisonAI's src/praisonai/api_server.py hard-codes AUTH_ENABLED = False and binds to 0.0.0.0:8080 when launched directly, so any reachable caller can hit GET /agents and POST /chat without a token. Sysdig observed a probe identifying itself as User-Agent CVE-Detector/1.0 hitting the vulnerable /agents route at 17:40 UTC the same day — three hours and forty-four minutes after the advisory went live at 13:56 UTC.</description>
-    </item>    <item>
-      <title>Akamai Discloses MCP Back-End Vulnerabilities Across Apache Doris, Apache Pinot, and Alibaba Cloud RDS — Pattern of Unauthenticated Database Exposure via AI Agent Tooling</title>
-      <link>https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.html</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-      <description>Akamai's Security Intelligence Group published research on May 13, 2026 disclosing three vulnerabilities in vendor-supplied MCP server implementations that front production database engines: Apache Doris (CVE-2025-66335, SQL injection), Apache Pinot via the StarTree mcp-pinot reference server (authentication bypass enabling SQL injection and database takeover), and Alibaba Cloud's alibabacloud-rds-openapi-mcp-server (unauthenticated information disclosure of vector-store metadata). Apache patched the Doris flaw in MCP server 0.6.1, StarTree added OAuth as an optional HTTP authenticator for Pinot, and Alibaba declined to fix the RDS server — Akamai escalated to CERT/CC for coordinated disclosure.</description>
-    </item>    <item>
-      <title>CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Under Active Exploitation</title>
-      <link>https://llm-threatintel.com/posts/2026-05-19-cve-2026-42208-litellm-sql-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-19-cve-2026-42208-litellm-sql-injection.html</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-      <description>LiteLLM, a popular open-source 'AI Gateway' making it easier to run OpenAI-style LLM queries across models and providers, has a serious vulnerability identified as CVE-2026-42208 affecting versions 1.81.16 up to just before 1.83.7. From version 1.81.16 to before 1.83.7, a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter, allowing an unauthenticated attacker to send a specially crafted Authorization header to any LLM API route and read or modify data in the proxy's database, leading to unauthorized access to the proxy and the credentials it manages.</description>
-    </item>    <item>
-      <title>ClawHub/OpenClaw Mass Skill Poisoning: 575+ Trojanized Agent Skills Targeting Windows &amp; macOS</title>
-      <link>https://llm-threatintel.com/posts/2026-05-19-openclaw-clawhu-skill-poisoning-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-19-openclaw-clawhu-skill-poisoning-campaign.html</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-      <description>Researchers identified 575 malicious skills within the OpenClaw ecosystem distributed by 13 developer accounts. The campaign targets both Windows and macOS systems, with a significant portion linked to two threat actors operating under the aliases 'hightower6eu' with 334 malicious skills and 'sakaen736jih' with 199 malicious skills. Trojanized skills masquerade as legitimate tools but instruct users to execute encoded commands or install hidden dependencies, and indirect prompt injection is used where hidden instructions cause AI agents to execute malicious actions on behalf of users.</description>
     </item>
   </channel>
 </rss>

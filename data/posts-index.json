@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation",
+      "title": "Marimo CVE-2026-39987 Exploited with LLM Agent Post-Exploitation: AI-Driven Lateral Movement and Secrets Harvesting",
+      "date": "2026-06-01",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "apt",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-39987 refers to a critical pre-authenticated remote code execution vulnerability impacting all versions of Marimo prior to and including 0.20.4. It allows an unauthenticated attacker to execute arbitrary system commands. The security defect has since come under active exploitation, with threat actors using it to initiate manual reconnaissance against honeypot systems and attempt to harvest sensitive data. The latest activity documented by Sysdig sticks to the same pattern, the primary difference being that an LLM agent was used to drive the post-exploitation activity. The incident, per the cloud security firm, was recorded on May 10, 2026, with the attacker gathering credentials from the environment and then using the harvested AWS access key to perform API calls against AWS Secrets Manager and retrieve an SSH private key. This represents the first documented case of LLM agent-driven post-exploitation automation in a real-world attack.",
+      "file": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.md"
+    },
+    {
+      "id": "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation",
+      "title": "CVE-2026-33626 LMDeploy SSRF Weaponized in 12 Hours: Vision-LLM Image Loader Abused for Cloud Credential Theft and Internal Network Scanning",
+      "date": "2026-06-01",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "apt",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-33626 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration. The vulnerability, tracked as CVE-2026-33626 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. This represents the fastest exploitation window recorded for AI infrastructure vulnerabilities and demonstrates a collapse in patch windows driven by LLM-enabled exploit generation.",
+      "file": "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.md"
+    },
+    {
+      "id": "2026-06-01-llmshare-chatgpt-claude-malware-campaign",
+      "title": "LLMShare Malware Campaign: ChatGPT and Claude Shared Chats Weaponized for Desktop App Trojanization and Credential Theft",
+      "date": "2026-06-01",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Threat actors are abusing ChatGPT's content-sharing feature to display fake OpenAI outage pages that direct users to download malware disguised as the ChatGPT desktop application. The \"LLMShare\" campaign, discovered by Push Security, uses Google ads to direct users searching for ChatGPT to a malicious shared ChatGPT page hosted on chatgpt.com, allowing the attack to be delivered through a legitimate OpenAI domain. On Claude, shared chats pose as Apple support walkthroughs laced with malicious Terminal commands, while a shared Claude chat shows a fake download guide for Claude Code that delivers malware.",
+      "file": "2026-06-01-llmshare-chatgpt-claude-malware-campaign.md"
+    },
+    {
       "id": "2026-05-30-greyvibe-russia-ai-assisted-ukraine-espionage",
       "title": "GreyVibe: Russia-Nexus Cluster Uses ChatGPT, Gemini, and Ideogram AI Across Five Ukraine-Focused Campaigns to Build Lures, Obfuscators, and the LegionRelay RAT",
       "date": "2026-05-30",

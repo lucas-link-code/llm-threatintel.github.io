@@ -2359,6 +2359,56 @@
       "validated_at": "2026-05-30T06:25:29+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation": {
+      "content_hash": "b48ed25061afc74e1a7ed151120c6efe18fa7a39466920bac4733f9ee578651b",
+      "evidence_status": "validated",
+      "file": "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.md",
+      "posts_index_hash": "e6b9819774faa378a4e8b7d2e6ec79ad58534d618f72792632c7aa23172fb4c8",
+      "report_id": "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+        "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-01T08:36:55+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-01-llmshare-chatgpt-claude-malware-campaign": {
+      "content_hash": "70a9901a29592288527df2511e16e06e8e57870d23dd6a1a7da8b97084d80f09",
+      "evidence_status": "validated",
+      "file": "2026-06-01-llmshare-chatgpt-claude-malware-campaign.md",
+      "posts_index_hash": "ab3d1c4d9ff771728f08129a1649e427214a98f40f36c685557f852dc9ac5741",
+      "report_id": "2026-06-01-llmshare-chatgpt-claude-malware-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/chatgpt-share-links-abused-to-host-fake-outage-pages-to-deliver-malware/",
+        "https://the-decoder.com/attackers-abuse-shared-chatgpt-and-claude-chats-to-spread-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-01T08:36:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation": {
+      "content_hash": "f5813e1582e666d995e911266fc710858c2216a20e5a213b6170ba33ef15e9de",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.md",
+      "posts_index_hash": "7d67df90451e2631314d84b9d01370e2210466adafc7288f5004b2b6f66e122d",
+      "report_id": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
+        "https://www.sysdig.com/blog/marimo-cve-2026-39987"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-01T08:36:55+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

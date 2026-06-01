@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-30",
+  "last_updated": "2026-06-01",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2717,6 +2717,51 @@
       "first_seen": "2026-05-24",
       "source": "TanStack",
       "campaign": "tanstack-mistral-github-actions-pwn-request-may-2026",
+      "status": "active"
+    },
+    {
+      "value": "openew.app",
+      "type": "domain",
+      "context": "LLMShare Malware Campaign: ChatGPT and Claude Shared Chats Weaponized for Desktop App Trojanization and Credential Theft",
+      "first_seen": "2026-06-01",
+      "source": "BleepingComputer",
+      "campaign": "llmshare-chatgpt-claude-malware-campaign",
+      "status": "active"
+    },
+    {
+      "value": "chatgpt.com (legitimate domain abused for sharing malicious prompts)",
+      "type": "domain",
+      "context": "LLMShare Malware Campaign: ChatGPT and Claude Shared Chats Weaponized for Desktop App Trojanization and Credential Theft",
+      "first_seen": "2026-06-01",
+      "source": "BleepingComputer",
+      "campaign": "llmshare-chatgpt-claude-malware-campaign",
+      "status": "active"
+    },
+    {
+      "value": "Shared ChatGPT prompts rendering fake outage pages (legitimate chatgpt.com domain with attacker-controlled prompt content)",
+      "type": "url_path",
+      "context": "LLMShare Malware Campaign: ChatGPT and Claude Shared Chats Weaponized for Desktop App Trojanization and Credential Theft",
+      "first_seen": "2026-06-01",
+      "source": "BleepingComputer",
+      "campaign": "llmshare-chatgpt-claude-malware-campaign",
+      "status": "active"
+    },
+    {
+      "value": "Kowloon Bay, Hong Kong-based attacker IPs (not explicitly disclosed in advisories)",
+      "type": "ip",
+      "context": "CVE-2026-33626 LMDeploy SSRF Weaponized in 12 Hours: Vision-LLM Image Loader Abused for Cloud Credential Theft and Internal Network Scanning",
+      "first_seen": "2026-06-01",
+      "source": "Sysdig",
+      "campaign": "cve-2026-33626-lmdeploy-ssrf-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "lmdeploy (versions 0.12.0 and prior)",
+      "type": "package",
+      "context": "CVE-2026-33626 LMDeploy SSRF Weaponized in 12 Hours: Vision-LLM Image Loader Abused for Cloud Credential Theft and Internal Network Scanning",
+      "first_seen": "2026-06-01",
+      "source": "Sysdig",
+      "campaign": "cve-2026-33626-lmdeploy-ssrf-exploitation",
       "status": "active"
     }
   ]
