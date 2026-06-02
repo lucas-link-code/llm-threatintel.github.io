@@ -2377,7 +2377,7 @@
       "warnings": []
     },
     "2026-06-01-llmshare-chatgpt-claude-malware-campaign": {
-      "content_hash": "70a9901a29592288527df2511e16e06e8e57870d23dd6a1a7da8b97084d80f09",
+      "content_hash": "6fa16d153d703578a048bcdd2d27d90785afa52649e66afc555a23002242773d",
       "evidence_status": "validated",
       "file": "2026-06-01-llmshare-chatgpt-claude-malware-campaign.md",
       "posts_index_hash": "ab3d1c4d9ff771728f08129a1649e427214a98f40f36c685557f852dc9ac5741",
@@ -2388,7 +2388,7 @@
         "https://the-decoder.com/attackers-abuse-shared-chatgpt-and-claude-chats-to-spread-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-01T08:36:57+00:00",
+      "validated_at": "2026-06-02T07:26:36+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2407,6 +2407,38 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-06-01T08:36:55+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-02-llmshare-chatgpt-claude-malware-campaign": {
+      "content_hash": "c833556aeabff61c709da71bfdbd0f9d589e8a0f06a6b84c34a019e1b0905955",
+      "evidence_status": "validated",
+      "file": "2026-06-02-llmshare-chatgpt-claude-malware-campaign.md",
+      "posts_index_hash": "cd0febf9eb00c4d2c32d8b86f7dfd87147897265584adba42acf50388213bfba",
+      "report_id": "2026-06-02-llmshare-chatgpt-claude-malware-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://www.techtimes.com/articles/317528/20260601/chatgpt-share-links-deliver-malware-openai-domain-evading-corporate-web-filters.htm",
+        "https://www.ghacks.net/2026/06/01/attackers-abuse-chatgpt-share-links-to-host-fake-outage-pages-that-deliver-malware/",
+        "https://www.bleepingcomputer.com/news/security/chatgpt-share-links-abused-to-host-fake-outage-pages-to-deliver-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-02T07:26:34+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-02-vercel-context-ai-oauth-breach": {
+      "content_hash": "8dbad522461e06dba98d0259ed043b3cef783d460aa705ca155c835b492339fc",
+      "evidence_status": "validated",
+      "file": "2026-06-02-vercel-context-ai-oauth-breach.md",
+      "posts_index_hash": "26a7d9bcd58493b551ec10970dc6791f44061cb5cdbe86f26c9cbe569ee8c6af",
+      "report_id": "2026-06-02-vercel-context-ai-oauth-breach",
+      "review_required": [],
+      "source_urls": [
+        "https://blueradius.io/ai-cybersecurity-incident-report-2026"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-02T07:26:33+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

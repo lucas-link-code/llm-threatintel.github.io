@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-06-02",
   "entries": [
     {
       "id": "greyvibe",
@@ -1184,7 +1184,14 @@
         "Public internet scanning via Shodan-like enumeration",
         "Operational artifact injection via accessible systems",
         "Automated scanning and exploitation of publicly exposed LiteLLM instances",
-        "Exploitation of misconfigured Starlette/FastAPI deployments"
+        "Exploitation of misconfigured Starlette/FastAPI deployments",
+        "Google Ads",
+        "ChatGPT/Claude share links",
+        "Web pages",
+        "GitHub",
+        "Documentation portals",
+        "SaaS dashboards",
+        "Lumma Stealer malware campaigns"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1214,9 +1221,14 @@
         "T1110 - Brute Force",
         "T1059 - Command and Scripting Interpreter",
         "T1583 - HTTP Host header manipulation",
-        "T1526 - Network Service Discovery"
+        "T1526 - Network Service Discovery",
+        "T1598.003 - Phishing",
+        "T1189 - Drive-by Compromise",
+        "T1566.002 - Social Engineering",
+        "T1059.007 - Cross-Site Scripting",
+        "T1528 - Credential Access"
       ],
-      "description": "Threat actor conducting active exploitation of CVE-2025-59528 in publicly exposed Flowise instances. Initial detection from Starlink infrastructure suggests either automated scanning or actor with access to resilient infrastructure. Target pattern consistent with indiscriminate credential harvesting (LLM API keys, cloud provider tokens).",
+      "description": "Threat actors compromised a Context.ai employee via infostealer malware, then weaponized the trust relationship between the employee and their corporate environment to steal OAuth tokens with excessive permissions. The incident demonstrates how AI tool adoption expands the enterprise attack surface through new credential types and trust relationships.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
     },
     {

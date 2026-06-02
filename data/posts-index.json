@@ -1,6 +1,46 @@
 {
   "posts": [
     {
+      "id": "2026-06-02-vercel-context-ai-oauth-breach",
+      "title": "Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure",
+      "date": "2026-06-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "In April 2026, Vercel disclosed a security incident rooted in a Vercel employee granting an AI productivity tool (Context.ai) 'Allow All' OAuth permissions to the employee's corporate Google Workspace. Attackers, who had compromised a Context.ai employee via Lumma Stealer malware in February 2026, used those OAuth tokens to take over the Vercel employee's account and move laterally into Vercel's internal systems.",
+      "file": "2026-06-02-vercel-context-ai-oauth-breach.md"
+    },
+    {
+      "id": "2026-06-02-chatgphish-web-summarization-injection",
+      "title": "ChatGPhish: ChatGPT Web Summarization Markdown Injection Enables Phishing and Data Exfiltration",
+      "date": "2026-06-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. The research was publicly published on May 29, 2026.",
+      "file": "2026-06-02-chatgphish-web-summarization-injection.md"
+    },
+    {
+      "id": "2026-06-02-llmshare-chatgpt-claude-malware-campaign",
+      "title": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages",
+      "date": "2026-06-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "LLMShare plants fake outage pages on OpenAI's real domain chatgpt.com, driving victims through Google ads. Corporate firewalls fail because the URL is genuine. Push Security confirmed active detections on May 29, 2026. LLMShare is the most technically refined entry in a line of attacks that has grown sharply since late 2025.",
+      "file": "2026-06-02-llmshare-chatgpt-claude-malware-campaign.md"
+    },
+    {
       "id": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation",
       "title": "Marimo CVE-2026-39987 Exploited with LLM Agent Post-Exploitation: AI-Driven Lateral Movement and Secrets Harvesting",
       "date": "2026-06-01",

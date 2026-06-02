@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 01 Jun 2026 08:36:54 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 07:26:33 +0000</lastBuildDate>
     <item>
+      <title>Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-06-02-vercel-context-ai-oauth-breach.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-02-vercel-context-ai-oauth-breach.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <description>In April 2026, Vercel disclosed a security incident rooted in a Vercel employee granting an AI productivity tool (Context.ai) 'Allow All' OAuth permissions to the employee's corporate Google Workspace. Attackers, who had compromised a Context.ai employee via Lumma Stealer malware in February 2026, used those OAuth tokens to take over the Vercel employee's account and move laterally into Vercel's internal systems.</description>
+    </item>    <item>
+      <title>ChatGPhish: ChatGPT Web Summarization Markdown Injection Enables Phishing and Data Exfiltration</title>
+      <link>https://llm-threatintel.com/posts/2026-06-02-chatgphish-web-summarization-injection.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-02-chatgphish-web-summarization-injection.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. The research was publicly published on May 29, 2026.</description>
+    </item>    <item>
+      <title>LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages</title>
+      <link>https://llm-threatintel.com/posts/2026-06-02-llmshare-chatgpt-claude-malware-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-02-llmshare-chatgpt-claude-malware-campaign.html</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <description>LLMShare plants fake outage pages on OpenAI's real domain chatgpt.com, driving victims through Google ads. Corporate firewalls fail because the URL is genuine. Push Security confirmed active detections on May 29, 2026. LLMShare is the most technically refined entry in a line of attacks that has grown sharply since late 2025.</description>
+    </item>    <item>
       <title>Marimo CVE-2026-39987 Exploited with LLM Agent Post-Exploitation: AI-Driven Lateral Movement and Secrets Harvesting</title>
       <link>https://llm-threatintel.com/posts/2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026.html</guid>
       <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
       <description>On 2026-05-19, the Mini Shai-Hulud campaign (TeamPCP) hijacked the npm maintainer account atool and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those across 279 packages in the @antv data-visualisation ecosystem plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The 498 KB obfuscated Bun stealer is byte-equivalent to prior Mini Shai-Hulud waves; it harvests 20+ credential classes (AWS, GCP, Azure, GitHub, npm, SSH, Kubernetes, Vault, Stripe, DB strings), attempts Docker host-socket escape, and exfiltrates via HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry traces) with Session P2P as fallback. Microsoft Threat Intelligence advisory 2026-05-20.</description>
-    </item>    <item>
-      <title>CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection</title>
-      <link>https://llm-threatintel.com/posts/2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.html</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-42208 (CVSS score: 9.3) is an SQL injection that could be exploited to modify the LiteLLM proxy database; a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. The first exploitation attempt was recorded on April 26 at 16:17 UTC, roughly 26 hours and seven minutes after the GitHub advisory was indexed in the global GitHub Advisory Database, but this result is from May 14 publication window citing active May exploitation.</description>
-    </item>    <item>
-      <title>Agentic AI Security Crisis: Confused-Deputy Problem in LLM-Driven Operations—Telemetry Poisoning, Retrieval Jamming, and Prompt Injection Target Production Infrastructure Agents</title>
-      <link>https://llm-threatintel.com/posts/2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-21-confused-deputy-agentic-ai-operations-telemetry-attack-may-2026.html</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
-      <description>Large language models in operational roles query telemetry, propose configuration changes, and in some deployments execute those changes against live infrastructure; vendors describe this as autonomous remediation or self-healing infrastructure, but recent survey characterizes it as a confused-deputy problem waiting to happen. Retrieval jamming floods the knowledge base with blocker documents that trigger refusal loops and stall incident response when needed; telemetry manipulation allows attackers who can influence metrics and logs to steer mitigation decisions without touching the model.</description>
-    </item>    <item>
-      <title>Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.html</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
-      <description>The Intruder team scanned 1 million exposed AI services using certificate transparency logs and found that the AI infrastructure they investigated was more vulnerable, exposed, and misconfigured than any other software they have ever analyzed. Instances of agent management platforms including n8n and Flowise were exposed without authentication, with one Flowise instance exposing the entire business logic of an LLM chatbot service along with credential lists.</description>
     </item>
   </channel>
 </rss>

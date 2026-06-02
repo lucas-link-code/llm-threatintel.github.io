@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-06-02",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2762,6 +2762,33 @@
       "first_seen": "2026-06-01",
       "source": "Sysdig",
       "campaign": "cve-2026-33626-lmdeploy-ssrf-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "chatgpt.com/s/* (attacker-controlled share links)",
+      "type": "url_path",
+      "context": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages",
+      "first_seen": "2026-06-02",
+      "source": "Push Security",
+      "campaign": "llmshare-chatgpt-claude-malware-campaign",
+      "status": "active"
+    },
+    {
+      "value": "openew[.]app (fake download portal)",
+      "type": "url_path",
+      "context": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages",
+      "first_seen": "2026-06-02",
+      "source": "Push Security",
+      "campaign": "llmshare-chatgpt-claude-malware-campaign",
+      "status": "active"
+    },
+    {
+      "value": "Context.ai (compromised OAuth integration)",
+      "type": "package",
+      "context": "Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure",
+      "first_seen": "2026-06-02",
+      "source": "BlueRadius Cyber",
+      "campaign": "vercel-context-ai-oauth-breach",
       "status": "active"
     }
   ]

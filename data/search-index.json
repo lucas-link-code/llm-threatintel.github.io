@@ -2770,7 +2770,9 @@
       "iocs": [
         "Shared ChatGPT prompts rendering fake outage pages (legitimate chatgpt.com domain with attacker-controlled prompt content)",
         "chatgpt.com (legitimate domain abused for sharing malicious prompts)",
-        "openew.app"
+        "chatgpt.com/s/* (attacker-controlled share links)",
+        "openew.app",
+        "openew[.]app (fake download portal)"
       ]
     },
     {
@@ -2792,6 +2794,67 @@
         "unknown"
       ],
       "iocs": []
+    },
+    {
+      "id": "2026-06-02-chatgphish-web-summarization-injection",
+      "title": "ChatGPhish: ChatGPT Web Summarization Markdown Injection Enables Phishing and Data Exfiltration",
+      "date": "2026-06-02",
+      "excerpt": "A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. The research was publicly published on May 29, 2026.",
+      "file": "2026-06-02-chatgphish-web-summarization-injection.md",
+      "body": "ChatGPhish: ChatGPT Web Summarization Markdown Injection Enables Phishing and Data Exfiltration Date: 2026-06-02 Tags: prompt-injection, phishing Executive Summary A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. The research was publicly published on May 29, 2026. Campaign Summary Field Detail Campaign / Malware ChatGPhish Attribution Unknown attacker(s); technique is generalized and available to any actor (confidence: none) Target Any ChatGPT user who uses the 'Analyze this link' or page summarization feature on web pages containing attacker-controlled content Vector Any page a user visits and asks ChatGPT to summarize—a GitHub README, documentation portal, blog post, or SaaS dashboard—can silently carry malicious instructions into the model's response. By appending a small instruction payload to any publicly accessible web page, an unauthenticated attacker can influence how ChatGPT structures and renders its summarization output. Status active First Observed 2026-05-29 Detailed Findings Once that attacker content is processed, it surfaces inside the ChatGPT response window, styled identically to genuine assistant output, complete with formatted alerts, clickable links, and inline images. The browser's same-origin policy offers no protection because the AI assistant executes with the user's authenticated context, making traditional web security boundaries irrelevant. Researchers at Permiso have disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. ChatGPhish escalates that premise by swapping the bounded email primitive for the browser where users spend the majority of their working day. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, citing 'Untrusted Markdown Rendering Leads to XSS, Phishing, and Data Exfiltration.' OpenAI responded noting the report could not be reproduced. A revised submission on May 1, 2026, with expanded proof-of-concept steps, was subsequently classified as a duplicate of a previously reported issue. After follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026. MITRE ATT&CK Mapping Technique ID Context Phishing: Spearphishing Link T1598.003 Attacker-controlled markdown links rendered inside ChatGPT response Cross-Site Scripting T1059.007 Markdown injection leading to UI redress and fake security alerts Social Engineering T1566.002 Spoofed system alerts and security notifications IOCs Domains _No specific IOCs published; technique is generalized and exploits OpenAI feature design rather than specific infrastructure_ Full URL Paths _No specific IOCs published; technique is generalized and exploits OpenAI feature design rather than specific infrastructure_ Splunk Format _No IOCs available for Splunk query_ Detection Recommendations Monitor ChatGPT sessions for summarization of untrusted content; implement user awareness training on risks of asking AI assistants to analyze or summarize user-generated web content; pressure OpenAI to implement origin labeling for markdown links sourced from summarized content; log all ChatGPT API calls involving page summarization with external URLs. References [Cybersecurity News] New ChatGPT Vulnerability Lets Attackers Turn Web Pages Into Phishing Payloads (2026-05-29) — https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/ [Permiso Security (via Cybersecurity News)] ChatGPhish: ChatGPT Web Summarization Markdown Injection (2026-05-29) — https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/",
+      "tags": [
+        "phishing",
+        "prompt-injection"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-06-02-llmshare-chatgpt-claude-malware-campaign",
+      "title": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages",
+      "date": "2026-06-02",
+      "excerpt": "LLMShare plants fake outage pages on OpenAI's real domain chatgpt.com, driving victims through Google ads. Corporate firewalls fail because the URL is genuine. Push Security confirmed active detections on May 29, 2026. LLMShare is the most technically refined entry in a line of attacks that has grown sharply since late 2025.",
+      "file": "2026-06-02-llmshare-chatgpt-claude-malware-campaign.md",
+      "body": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages Date: 2026-06-02 Tags: phishing, malware, prompt-injection Executive Summary LLMShare plants fake outage pages on OpenAI's real domain chatgpt.com, driving victims through Google ads. Corporate firewalls fail because the URL is genuine. Push Security confirmed active detections on May 29, 2026. LLMShare is the most technically refined entry in a line of attacks that has grown sharply since late 2025. Campaign Summary Field Detail Campaign / Malware LLMShare Attribution Unknown threat actor(s) (confidence: low) Target Enterprise users of ChatGPT and Claude; geographically and temporally scoped by malvertising Vector ChatGPT allows users to share conversations through public links in the format chatgpt.com/s/[unique-id]. It also renders HTML and CSS code embedded in those shared pages. The attackers behind LLMShare used that rendering capability to build a pixel-perfect fake ChatGPT outage notice — complete with OpenAI branding and a prominent download button — and published it as a standard share link. Status active First Observed 2026-05-29 Detailed Findings The campaign, called 'LLMShare' and uncovered by Push Security, uses Google ads to lead users to a malicious shared ChatGPT page hosted on the legitimate chatgpt.com domain. Attackers purchase Google ads targeting users searching for ChatGPT, and clicking the ad directs to what appears to be a legitimate ChatGPT shared page on a chatgpt.com/s/ link. Instead of a real chat conversation, the page shows a fake outage notice. This notice claims that the web version is unavailable due to high traffic and directs users to download the desktop app. The researchers say the site uses cloaking to display content only to targeted victims. When security platforms like URLScan visited the URL, they were shown a harmless AR/VR company website instead. A parallel February 2026 campaign abused Claude.ai Artifacts — Anthropic's feature for sharing rendered applications — to host fake Homebrew installation guides, hitting at least one confirmed government organization. MITRE ATT&CK Mapping Technique ID Context Phishing: Spearphishing Link T1598.003 Malicious links delivered via Google Ads targeting specific user searches Drive-by Compromise T1189 Download of malware disguised as legitimate desktop application Social Engineering T1566.002 Fake outage notices and application interfaces to deceive users IOCs Domains Full URL Paths Splunk Format Detection Recommendations Security teams should treat AI platform domains with the same behavioral scrutiny applied to any other third-party content source. The domain being trustworthy does not make the content rendered on it safe. Employee awareness training should be updated to reflect that a URL beginning with chatgpt.com or claude.ai is not by itself a signal that the content is legitimate. Additionally, any executable downloaded from a ChatGPT or Claude shared page should be treated as suspicious, regardless of the explanation provided on screen. References [Push Security] LLMShare: ChatGPT Share Links Deliver Malware (2026-06-01) — https://www.techtimes.com/articles/317528/20260601/chatgpt-share-links-deliver-malware-openai-domain-evading-corporate-web-filters.htm [gHacks Tech News] Attackers Abuse ChatGPT Share Links to Host Fake Outage Pages (2026-06-01) — https://www.ghacks.net/2026/06/01/attackers-abuse-chatgpt-share-links-to-host-fake-outage-pages-that-deliver-malware/ [BleepingComputer] ChatGPT share links abused to host fake outage pages to deliver malware (2026-06-01) — https://www.bleepingcomputer.com/news/security/chatgpt-share-links-abused-to-host-fake-outage-pages-to-deliver-malware/",
+      "tags": [
+        "malware",
+        "phishing",
+        "prompt-injection"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown",
+        "unknown threat actor"
+      ],
+      "iocs": [
+        "Shared ChatGPT prompts rendering fake outage pages (legitimate chatgpt.com domain with attacker-controlled prompt content)",
+        "chatgpt.com (legitimate domain abused for sharing malicious prompts)",
+        "chatgpt.com/s/* (attacker-controlled share links)",
+        "openew.app",
+        "openew[.]app (fake download portal)"
+      ]
+    },
+    {
+      "id": "2026-06-02-vercel-context-ai-oauth-breach",
+      "title": "Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure",
+      "date": "2026-06-02",
+      "excerpt": "In April 2026, Vercel disclosed a security incident rooted in a Vercel employee granting an AI productivity tool (Context.ai) 'Allow All' OAuth permissions to the employee's corporate Google Workspace. Attackers, who had compromised a Context.ai employee via Lumma Stealer malware in February 2026, used those OAuth tokens to take over the Vercel employee's account and move laterally into Vercel's internal systems.",
+      "file": "2026-06-02-vercel-context-ai-oauth-breach.md",
+      "body": "Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure Date: 2026-06-02 Tags: supply-chain, llmjacking Executive Summary In April 2026, Vercel disclosed a security incident rooted in a Vercel employee granting an AI productivity tool (Context.ai) 'Allow All' OAuth permissions to the employee's corporate Google Workspace. Attackers, who had compromised a Context.ai employee via Lumma Stealer malware in February 2026, used those OAuth tokens to take over the Vercel employee's account and move laterally into Vercel's internal systems. Campaign Summary Field Detail Campaign / Malware Vercel + Context.ai OAuth Supply Chain Breach Attribution Unknown; likely criminal or APT group with access to Lumma Stealer distribution network (confidence: low) Target Context.ai employees (initial infection); Vercel employees (OAuth token compromise); Vercel infrastructure (lateral movement) Vector The incident operationalized OWASP LLM06 Excessive Agency. The 'Allow All' OAuth grant to an AI productivity tool is the textbook case. The employee almost certainly did not intend to authorize an attacker chain that would take over their entire mailbox, drive, and downstream identity surface. They simply clicked through the OAuth consent screen the way users have been trained to. Status disrupted First Observed 2026-02-01 Detailed Findings The 2026 AI security picture opened with a named breach that crystallized the patterns red teams had been warning about for two years. In April 2026, Vercel disclosed a security incident rooted in a Vercel employee granting an AI productivity tool (Context.ai) 'Allow All' OAuth permissions to the employee's corporate Google Workspace. Attackers, who had compromised a Context.ai employee via Lumma Stealer malware in February 2026, used those OAuth tokens to take over the Vercel employee's account and move laterally into Vercel's internal systems. Vercel engaged Mandiant for incident response, notified law enforcement, contacted a limited subset of affected customers directly, and advised customers to review environment variables and enable the sensitive-variable encryption feature. Separately, Vercel disclosed that some customer data had been stolen prior to the main hack. MITRE ATT&CK Mapping Technique ID Context Valid Accounts T1078 Stolen OAuth tokens used to authenticate as legitimate user Lateral Movement T1570 Exploitation of Vercel employee identity to access internal systems Credential Access T1528 OAuth token theft via malware-compromised AI tool Supply Chain Compromise T1195 Trusted AI productivity tool weaponized via third-party employee compromise IOCs Domains _Specific IOCs not disclosed in public reports; focuses on OAuth token compromise chain rather than technical artifacts_ Full URL Paths _Specific IOCs not disclosed in public reports; focuses on OAuth token compromise chain rather than technical artifacts_ Splunk Format _No IOCs available for Splunk query_ Package Indicators Detection Recommendations A regulator will not accept 'the model was instructed not to' as evidence of access control. Auditors do not certify the configuration. They certify enforcement. The first time a HIPAA, CMMC, PCI, or SOX auditor asks for proof that an AI agent was prevented from accessing a particular dataset, the answer cannot be a system prompt. It must be a logged enforcement decision. Organizations should: (1) Audit all OAuth grants from employees to AI tools; (2) Implement zero-trust OAuth scoping (no 'Allow All' grants); (3) Monitor for anomalous identity and access patterns (ITDR); (4) Enforce conditional access policies for OAuth tokens issued to AI tools; (5) Rotate credentials for any employees who granted excessive permissions to AI tools. References [BlueRadius Cyber] AI Cybersecurity Incident Report 2026: Vercel, EchoLeak, OWASP (2026-06-01) — https://blueradius.io/ai-cybersecurity-incident-report-2026",
+      "tags": [
+        "llmjacking",
+        "supply-chain"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": [
+        "Context.ai (compromised OAuth integration)"
+      ]
     }
   ]
 }
