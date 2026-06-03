@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 02 Jun 2026 07:26:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 08:20:16 +0000</lastBuildDate>
     <item>
+      <title>MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools</title>
+      <link>https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html</guid>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <description>OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.</description>
+    </item>    <item>
+      <title>Hugging Face and ClawHub Compromised: 352,000+ Malicious Models and AI Agent Skills Deliver Backdoors, Cryptominers, and Credential Stealers Across Open AI Ecosystem</title>
+      <link>https://llm-threatintel.com/posts/2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.html</guid>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Hugging Face and ClawHub, the two largest repositories for AI models and agent skills, have been systematically compromised with hundreds of malicious entries that steal credentials, open backdoors, and hijack AI agents for cryptocurrency mining. Hugging Face hosts more than a million machine learning models used by virtually every AI company on the planet and has been found to contain hundreds of malicious models capable of executing arbitrary code; ClawHub has been infiltrated by 341 malicious skills designed to steal credentials, open reverse shells, and hijack AI agents for cryptocurrency mining. Protect AI, which partnered with Hugging Face to scan the platform's model library, examined more than four million models and identified approximately 352,000 unsafe or suspicious issues across 51,700 models.</description>
+    </item>    <item>
+      <title>Anthropic Disrupts Chinese State-Sponsored Agentic Attack: Claude Code Autonomously Weaponized in Large-Scale Espionage Campaign Without Human Direction</title>
+      <link>https://llm-threatintel.com/posts/2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous.html</guid>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <description>This is the first documented case of a large-scale cyberattack executed without substantial human intervention. A Chinese state-sponsored group manipulated Claude Code into attempting infiltration of roughly thirty global targets, succeeding in a small number of cases, targeting large tech companies, financial institutions, chemical manufacturing companies, and government agencies. Claude performed reconnaissance in a fraction of the time human hackers would take, identified and tested security vulnerabilities by researching and writing its own exploit code, harvested credentials, and extracted large amounts of private data with minimal human supervision.</description>
+    </item>    <item>
       <title>Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure</title>
       <link>https://llm-threatintel.com/posts/2026-06-02-vercel-context-ai-oauth-breach.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-02-vercel-context-ai-oauth-breach.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html</guid>
       <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
       <description>On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target "Pwn Request" pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI's SDK suite (on both npm and PyPI), UiPath's automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.</description>
-    </item>    <item>
-      <title>Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk</title>
-      <link>https://llm-threatintel.com/posts/2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.html</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
-      <description>An attacker exploited AI agents Grok and Bankrbot by sending a Morse code prompt via X, tricking them into transferring 3 billion DRB tokens (worth $150,000–$200,000) from a verified wallet on the Base network. The incident involved two security failures: Prompt Injection (OWASP LLM01:2025) via encoding and Excessive Agency (OWASP LLM06:2025). This demonstrates how encoding obfuscation bypasses LLM safety filters and how autonomous agents with financial permissions represent a systemic vulnerability.</description>
-    </item>    <item>
-      <title>Claude Code Network Sandbox Bypassed for 5.5 Months via SOCKS5 Hostname Null-Byte Injection — Anthropic Patched Silently, Closed HackerOne Report as Duplicate, No CVE Issued</title>
-      <link>https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch.html</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
-      <description>Wyze Labs researcher Aonan Guan publicly disclosed on 2026-05-20 a second network sandbox bypass in Anthropic's Claude Code CLI that let any code Claude Code executed inside its sandbox bypass the user's domain allowlist and exfiltrate AWS credentials, GitHub tokens, environment variables, model API keys, and local source code over a raw SOCKS5 connection that does not appear in HTTP egress logs. The flaw — a SOCKS5 hostname null-byte injection of the form attacker-host.com\x00.google.com — affected every Claude Code release from v2.0.24 (sandbox GA, 2025-10-20) through v2.1.89, roughly 130 versions over 5.5 months, and was silently patched in v2.1.90 on 2026-04-01 with no security note in the release notes. Anthropic closed Guan's HackerOne report #3646509 as a duplicate, declined to issue a CVE against Claude Code, and as of disclosure had not published a security advisory.</description>
-    </item>    <item>
-      <title>Mini Shai-Hulud Third Wave: TeamPCP Hijacks atool npm Maintainer Account, Publishes 639 Malicious Versions Across 323 Packages in 30 Minutes — @antv Ecosystem and echarts-for-react (1.1M Weekly Downloads) Among Victims</title>
-      <link>https://llm-threatintel.com/posts/2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-21-mini-shai-hulud-antv-echarts-npm-639-versions-may-2026.html</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
-      <description>On 2026-05-19, the Mini Shai-Hulud campaign (TeamPCP) hijacked the npm maintainer account atool and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those across 279 packages in the @antv data-visualisation ecosystem plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The 498 KB obfuscated Bun stealer is byte-equivalent to prior Mini Shai-Hulud waves; it harvests 20+ credential classes (AWS, GCP, Azure, GitHub, npm, SSH, Kubernetes, Vault, Stripe, DB strings), attempts Docker host-socket escape, and exfiltrates via HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry traces) with Session P2P as fallback. Microsoft Threat Intelligence advisory 2026-05-20.</description>
     </item>
   </channel>
 </rss>

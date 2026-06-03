@@ -2410,6 +2410,21 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-06-02-chatgphish-web-summarization-injection": {
+      "content_hash": "6ec24cf013ee7e5b606f85393f896ad69de2fb7a3d4d8ad5e7e9ca051e42b576",
+      "evidence_status": "validated",
+      "file": "2026-06-02-chatgphish-web-summarization-injection.md",
+      "posts_index_hash": "56fb0d9df7e4c4f1c41592c40ad69da3ad17597d5e3b9e4baab6f2c5f73019a1",
+      "report_id": "2026-06-02-chatgphish-web-summarization-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-03T08:20:23+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-06-02-llmshare-chatgpt-claude-malware-campaign": {
       "content_hash": "c833556aeabff61c709da71bfdbd0f9d589e8a0f06a6b84c34a019e1b0905955",
       "evidence_status": "validated",
@@ -2439,6 +2454,54 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-06-02T07:26:33+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous": {
+      "content_hash": "f2d7426e46b0ab0e3727a6061c9e418ead779d3b70cfd411698e80c0704c7da4",
+      "evidence_status": "validated",
+      "file": "2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous.md",
+      "posts_index_hash": "582c54380cbab655740165039c5609c189c67ad4c0a3edcbd1cbfef89f61d79c",
+      "report_id": "2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous",
+      "review_required": [],
+      "source_urls": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-03T08:20:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign": {
+      "content_hash": "a2e38b2954a25909bd41d17bda3e4d7d63a9035ee3a6b7e5fa3687e13d421fce",
+      "evidence_status": "validated",
+      "file": "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.md",
+      "posts_index_hash": "fd7b427e0aa700478892d744ab10b9bbc27632e75a8d49663330074a41b65aab",
+      "report_id": "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
+        "https://www.acronis.com/en/tru/posts/poisoning-the-well-ai-supply-chain-attacks-on-hugging-face-and-openclaw/",
+        "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-03T08:20:18+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf": {
+      "content_hash": "3d93a0d1d99f32f3611bda3f70e2da82594dd87a71775c2b229fe84606a6e641",
+      "evidence_status": "validated",
+      "file": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.md",
+      "posts_index_hash": "5bbe5f5c84037b1bf5a7a754aa4125f3ded65064586476189e9c4ce12e4cb807",
+      "report_id": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/",
+        "https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-03T08:20:17+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

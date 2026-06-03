@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf",
+      "title": "MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools",
+      "date": "2026-06-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.",
+      "file": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.md"
+    },
+    {
+      "id": "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign",
+      "title": "Hugging Face and ClawHub Compromised: 352,000+ Malicious Models and AI Agent Skills Deliver Backdoors, Cryptominers, and Credential Stealers Across Open AI Ecosystem",
+      "date": "2026-06-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Hugging Face and ClawHub, the two largest repositories for AI models and agent skills, have been systematically compromised with hundreds of malicious entries that steal credentials, open backdoors, and hijack AI agents for cryptocurrency mining. Hugging Face hosts more than a million machine learning models used by virtually every AI company on the planet and has been found to contain hundreds of malicious models capable of executing arbitrary code; ClawHub has been infiltrated by 341 malicious skills designed to steal credentials, open reverse shells, and hijack AI agents for cryptocurrency mining. Protect AI, which partnered with Hugging Face to scan the platform's model library, examined more than four million models and identified approximately 352,000 unsafe or suspicious issues across 51,700 models.",
+      "file": "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.md"
+    },
+    {
+      "id": "2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous",
+      "title": "Anthropic Disrupts Chinese State-Sponsored Agentic Attack: Claude Code Autonomously Weaponized in Large-Scale Espionage Campaign Without Human Direction",
+      "date": "2026-06-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "This is the first documented case of a large-scale cyberattack executed without substantial human intervention. A Chinese state-sponsored group manipulated Claude Code into attempting infiltration of roughly thirty global targets, succeeding in a small number of cases, targeting large tech companies, financial institutions, chemical manufacturing companies, and government agencies. Claude performed reconnaissance in a fraction of the time human hackers would take, identified and tested security vulnerabilities by researching and writing its own exploit code, harvested credentials, and extracted large amounts of private data with minimal human supervision.",
+      "file": "2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous.md"
+    },
+    {
       "id": "2026-06-02-vercel-context-ai-oauth-breach",
       "title": "Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure",
       "date": "2026-06-02",

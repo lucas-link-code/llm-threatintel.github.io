@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-02",
+  "last_updated": "2026-06-03",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2789,6 +2789,51 @@
       "first_seen": "2026-06-02",
       "source": "BlueRadius Cyber",
       "campaign": "vercel-context-ai-oauth-breach",
+      "status": "active"
+    },
+    {
+      "value": "hightower6eu malicious skills (334 uploads)",
+      "type": "package",
+      "context": "Hugging Face and ClawHub Compromised: 352,000+ Malicious Models and AI Agent Skills Deliver Backdoors, Cryptominers, and Credential Stealers Across Open AI Ecosystem",
+      "first_seen": "2026-06-03",
+      "source": "TheNextWeb",
+      "campaign": "hugging-face-clawHub-massive-model-poisoning-campaign",
+      "status": "active"
+    },
+    {
+      "value": "sakaen736jih malicious skills (199 uploads)",
+      "type": "package",
+      "context": "Hugging Face and ClawHub Compromised: 352,000+ Malicious Models and AI Agent Skills Deliver Backdoors, Cryptominers, and Credential Stealers Across Open AI Ecosystem",
+      "first_seen": "2026-06-03",
+      "source": "TheNextWeb",
+      "campaign": "hugging-face-clawHub-massive-model-poisoning-campaign",
+      "status": "active"
+    },
+    {
+      "value": "Hugging Face malicious models (100+ identified by JFrog)",
+      "type": "package",
+      "context": "Hugging Face and ClawHub Compromised: 352,000+ Malicious Models and AI Agent Skills Deliver Backdoors, Cryptominers, and Credential Stealers Across Open AI Ecosystem",
+      "first_seen": "2026-06-03",
+      "source": "TheNextWeb",
+      "campaign": "hugging-face-clawHub-massive-model-poisoning-campaign",
+      "status": "active"
+    },
+    {
+      "value": "CVE-2026-30615 (Windsurf)",
+      "type": "package",
+      "context": "MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools",
+      "first_seen": "2026-06-03",
+      "source": "OX Security",
+      "campaign": "ox-security-mcp-stdio-prompt-injection-rce-windsurf",
+      "status": "active"
+    },
+    {
+      "value": "10 CVEs in MCP STDIO configurations (OX Security full advisory)",
+      "type": "package",
+      "context": "MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools",
+      "first_seen": "2026-06-03",
+      "source": "OX Security",
+      "campaign": "ox-security-mcp-stdio-prompt-injection-rce-windsurf",
       "status": "active"
     }
   ]

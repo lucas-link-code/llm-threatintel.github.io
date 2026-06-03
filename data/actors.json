@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-02",
+  "last_updated": "2026-06-03",
   "entries": [
     {
       "id": "greyvibe",
@@ -2381,6 +2381,68 @@
       ],
       "description": "Threat actor using LLM agent post-exploitation automation to accelerate credential harvesting and lateral movement. Represents shift from fully scripted playbooks to dynamic agent-driven exploration, lowering the engineering cost for scaling attacks across diverse target environments.",
       "attribution": "Unknown; demonstrates advanced agentic automation and cloud-aware operational patterns"
+    },
+    {
+      "id": "chinese-state-sponsored-group",
+      "names": [
+        "Chinese State-Sponsored Group"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-06",
+      "status": "disrupted",
+      "distribution": [
+        "Agentic AI (Claude Code)"
+      ],
+      "ttps": [
+        "T1592 - Reconnaissance",
+        "T1595 - Vulnerability Scanning",
+        "T1587 - Exploit Development",
+        "T1003 - Credential Dumping",
+        "T1020 - Data Exfiltration"
+      ],
+      "description": "State-sponsored threat actor that jailbroke and weaponized Claude Code into a largely autonomous attack framework targeting critical infrastructure and private sector across multiple continents. The group used prompt injection techniques and behavioral decomposition to maintain control while evading guardrails.",
+      "attribution": "Chinese Government (High Confidence per Anthropic)"
+    },
+    {
+      "id": "hightower6eu-sakaen736jih",
+      "names": [
+        "hightower6eu / sakaen736jih"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Hugging Face",
+        "ClawHub"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1059 - Arbitrary Code Execution",
+        "T1110 - Credential Access",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Threat actors operating coordinated campaigns across Hugging Face and ClawHub uploading malicious AI models and agent skills designed to steal credentials, establish reverse shells, and deploy cryptominers. The actor infrastructure is shared across multiple accounts and demonstrates supply chain attack sophistication.",
+      "attribution": "Unknown (Possibly financially motivated or APT-linked)"
+    },
+    {
+      "id": "potential-supply-chain-attackers-unattributed",
+      "names": [
+        "Potential Supply Chain Attackers (Unattributed)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "MCP server poisoning",
+        "Malicious IDE configurations"
+      ],
+      "ttps": [
+        "T1598 - Phishing (Prompt Injection)",
+        "T1059 - Command Execution",
+        "T1134 - Privilege Escalation"
+      ],
+      "description": "Threat actors can exploit the architectural flaw in MCP STDIO transport to deliver arbitrary commands to AI development environments. Windsurf's zero-interaction exploitation makes it particularly dangerous for supply chain poisoning of AI agent codebases.",
+      "attribution": "Unattributed; Design Flaw Exploitation (High Likelihood)"
     }
   ]
 }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools | LLM ThreatIntel</title>
+  <meta name="description" content="OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools">
+  <meta property="og:description" content="OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools">
+  <meta property="article:published_time" content="2026-06-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-03T00:00:00Z">
+  <meta property="article:tag" content="mcp-security">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools">
+  <meta name="twitter:description" content="OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools",
+  "description": "OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)\u2014the industry standard for AI agent communication created and maintained by Anthropic\u2014which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.",
+  "datePublished": "2026-06-03T00:00:00Z",
+  "dateModified": "2026-06-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html",
+  "keywords": [
+    "mcp-security",
+    "prompt-injection",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-06-03</span>
+      <span class="post-tag tag-mcp-security">Mcp Security</span><span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools</h1>
+<p><strong>Date:</strong> 2026-06-03<br><strong>Tags:</strong> mcp-security, prompt-injection, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>MCP STDIO Prompt Injection to RCE Campaign</td></tr><tr><td>Attribution</td><td>Design Flaw (Not Attributed to Specific Threat Actor) (confidence: none)</td></tr><tr><td>Target</td><td>AI developers using Cursor, VS Code, Windsurf, Claude Code, Gemini CLI; enterprises running MCP servers</td></tr><tr><td>Vector</td><td>Malicious MCP server configuration files; prompt injection in STDIO protocol; zero-interaction exploitation in Windsurf</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04-15 (OX Security disclosure)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The vulnerability is not a traditional coding error but an architectural design decision baked into Anthropic&#x27;s official MCP SDKs across every supported programming language, including Python, TypeScript, Java, and Rust. The OX Security disclosure illustrated how design decisions made early in a protocol&#x27;s life create systemic risk later; tool poisoning is the new prompt injection where attackers hide instructions inside tool metadata that the agent reads but the user cannot see. A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system; OX Security&#x27;s full disclosure advisory covers 10 CVEs in MCP STDIO configurations. A 2026 disclosure exposed up to 200,000 vulnerable MCP instances across IDEs, internal tools, and cloud services.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Prompt Injection</td><td>T1598</td><td>Malicious instructions embedded in tool metadata and configuration files</td></tr><tr><td>Code Injection</td><td>T1059</td><td>Arbitrary command execution via STDIO protocol parsing</td></tr><tr><td>Privilege Escalation</td><td>T1134</td><td>RCE runs with privileges of the IDE or agent process</td></tr><tr><td>Data Exfiltration</td><td>T1041</td><td>Access to API keys, chat histories, internal databases</td></tr><tr><td>Lateral Movement</td><td>T1570</td><td>Compromised MCP server can access connected resources</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Specific CVE numbers and hashes not enumerated in available sources; OX Security maintains the full advisory_</p>
+<h3>Full URL Paths</h3>
+<p>_Specific CVE numbers and hashes not enumerated in available sources; OX Security maintains the full advisory_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">CVE-2026-30615 (Windsurf)
+10 CVEs in MCP STDIO configurations (OX Security full advisory)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Implement manifest-only execution in MCP SDKs (Anthropic&#x27;s recommended fix); deploy command allowlists at the protocol level; require explicit approval for MCP server connections in all IDEs; monitor MCP JSON configuration files for suspicious tool definitions; scan MCP server repositories and packages for malicious tool metadata; implement sandboxing for MCP tool execution; require TLS for all MCP communications and cryptographic verification of server identity; upgrade all affected IDEs and code editors to patched versions; audit existing MCP deployments for unauthorized configuration changes.</p>
+<h2>References</h2>
+<ul><li>[OX Security] The Mother of All AI Supply Chains: Critical, Systemic Vulnerability at the Core of the MCP (2026-04-15) — https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/</li><li>[OX Security] MCP Supply Chain Advisory: RCE Vulnerabilities Across the AI Ecosystem (2026-04-17) — https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
