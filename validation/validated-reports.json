@@ -2504,6 +2504,26 @@
       "validated_at": "2026-06-03T08:20:17+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-04-autonomous-llm-agent-worm-network-propagation": {
+      "content_hash": "9c81e8022f14c907737e216ec7d8e25a48f403945b4e2bb8d008a3d48ce1609f",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-06-04-autonomous-llm-agent-worm-network-propagation.md",
+      "posts_index_hash": "2e80fae2ed6617f5931f3afb34b1b77eea1e096d6ee92e930debf014ae84f24a",
+      "report_id": "2026-06-04-autonomous-llm-agent-worm-network-propagation",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://gizmodo.com/a-fundamentally-new-threat-researchers-develop-new-ai-powered-worm-that-might-be-unstoppable-2000766975",
+        "https://www.helpnetsecurity.com/2026/06/03/autonomous-ai-worm-prototype/",
+        "https://www.itnews.com.au/news/researchers-build-self-replicating-ai-worm-with-byo-llm-626409",
+        "https://arxiv.org/abs/2605.02812"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-04T07:25:49+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

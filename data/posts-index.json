@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-06-04-autonomous-llm-agent-worm-network-propagation",
+      "title": "Autonomous LLM Agent Worm: Self-Replicating Network Compromise Using Free Public Models",
+      "date": "2026-06-04",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Researchers from the University of Toronto, University of Cambridge, and others demonstrated a \"worm\" that generates tailored attack strategies to each target it encounters, built with publicly available AI models at disconcertingly low cost. The proof-of-concept worm analyzes each target, reasons about how to attack it, and creates a strategy on the fly. Unlike traditional computer viruses, this worm can dynamically detect security flaws unique to each device it infects and feeds parasitically off devices' computing power, which is made more dire by the fact that consumer devices are now built to support computationally expensive LLMs.",
+      "file": "2026-06-04-autonomous-llm-agent-worm-network-propagation.md"
+    },
+    {
       "id": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf",
       "title": "MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools",
       "date": "2026-06-03",

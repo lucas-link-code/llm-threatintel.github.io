@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 03 Jun 2026 08:20:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 07:25:46 +0000</lastBuildDate>
     <item>
+      <title>Autonomous LLM Agent Worm: Self-Replicating Network Compromise Using Free Public Models</title>
+      <link>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</guid>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Researchers from the University of Toronto, University of Cambridge, and others demonstrated a "worm" that generates tailored attack strategies to each target it encounters, built with publicly available AI models at disconcertingly low cost. The proof-of-concept worm analyzes each target, reasons about how to attack it, and creates a strategy on the fly. Unlike traditional computer viruses, this worm can dynamically detect security flaws unique to each device it infects and feeds parasitically off devices' computing power, which is made more dire by the fact that consumer devices are now built to support computationally expensive LLMs.</description>
+    </item>    <item>
       <title>MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools</title>
       <link>https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware.html</guid>
       <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
       <description>Google Threat Intelligence Group published a May 11, 2026 report documenting the transition from experimental to industrial-scale use of generative AI in adversarial workflows. The report reveals previously unreported capabilities in PromptSpy, an Android backdoor that uses the Gemini API to autonomously navigate victim devices in real time without human supervision, including biometric data capture and anti-uninstall overlays. Russia-nexus malware families CANFAIL and LONGSTREAM are confirmed using LLM-generated decoy code to obfuscate malicious payloads targeting Ukrainian organizations.</description>
-    </item>    <item>
-      <title>TanStack &amp; Mistral GitHub Actions Pwn Request Supply Chain Attack: 170+ Packages Compromised via Cache Poisoning &amp; OIDC Token Extraction</title>
-      <link>https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-24-tanstack-mistral-github-actions-pwn-request-may-2026.html</guid>
-      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
-      <description>On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target "Pwn Request" pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. A coordinated supply chain attack on May 11, 2026 compromised over 170 npm packages and 2 PyPI packages, totaling 404 malicious versions. The attacker hit the entire TanStack router ecosystem (42 packages), Mistral AI's SDK suite (on both npm and PyPI), UiPath's automation tooling (65 packages), OpenSearch (1.3M weekly npm downloads), and Guardrails AI (PyPI). The packages passed SLSA provenance checks, carried valid signed certificates, and looked 100% legitimate to every security tool checking cryptographic proof of origin.</description>
     </item>
   </channel>
 </rss>

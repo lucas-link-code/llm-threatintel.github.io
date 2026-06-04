@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03",
+  "last_updated": "2026-06-04",
   "entries": [
     {
       "id": "greyvibe",
@@ -2443,6 +2443,26 @@
       ],
       "description": "Threat actors can exploit the architectural flaw in MCP STDIO transport to deliver arbitrary commands to AI development environments. Windsurf's zero-interaction exploitation makes it particularly dangerous for supply chain poisoning of AI agent codebases.",
       "attribution": "Unattributed; Design Flaw Exploitation (High Likelihood)"
+    },
+    {
+      "id": "academic-research-team",
+      "names": [
+        "Academic Research Team",
+        "University of Toronto CleverHans Lab"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Research publication, proof-of-concept only"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1580 - Internal Reconnaissance",
+        "T1570 - Lateral Movement"
+      ],
+      "description": "Researchers demonstrated the feasibility of autonomous, self-replicating malware powered by free LLMs that can reason through novel attack strategies without human direction. The work illustrates a fundamental shift in malware design: from pre-programmed exploit chains to dynamically adaptive, reasoning-based propagation that tailors its approach to each target system it encounters.",
+      "attribution": "Academic research; prototype threat"
     }
   ]
 }
