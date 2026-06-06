@@ -2524,6 +2524,41 @@
       "validated_at": "2026-06-04T07:25:49+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026": {
+      "content_hash": "97152713b0c58b9338092c8127b51a0d5a816e37b473d8cdb4ce39f933a8a8e7",
+      "evidence_status": "validated",
+      "file": "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.md",
+      "posts_index_hash": "ddbb2cf99af304b356e5c4bc1bcf4caa407cd692759e1ceae928056893d31507",
+      "report_id": "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.techtimes.com/articles/317784/20260604/agentic-ai-security-alarm-infosecurity-europe-free-llm-now-powers-adaptive-worm.htm",
+        "https://arxiv.org"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-06T06:32:17+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026": {
+      "content_hash": "e1a4b2151159c5f1db5ff72be424722fb75317ea028ae58d9b5b1a4b0347fc6b",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026.md",
+      "posts_index_hash": "f3eae756e576613feb9d10e13c29b6a16858cb93457efef429123aa2ddde760f",
+      "report_id": "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.techtimes.com/articles/317528/20260601/chatgpt-share-links-deliver-malware-openai-domain-evading-corporate-web-filters.htm",
+        "https://www.ghacks.net/2026/06/01/attackers-abuse-chatgpt-share-links-to-host-fake-outage-pages-that-deliver-malware/",
+        "https://www.infosecurity-magazine.com/news/attackers-shared-content-chatgpt/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-06T06:32:18+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

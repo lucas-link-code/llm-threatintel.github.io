@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 04 Jun 2026 07:25:46 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 06:32:16 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-4372: Hugging Face Transformers RCE via Malicious Config.json; 232 Million Downloads Pre-Patch Expose GPU-Accelerated AI Inference</title>
+      <link>https://llm-threatintel.com/posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.html</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-4372 affects multiple versions of Hugging Face Transformers when the optional kernels package is installed; although the package is not enabled by default, it is commonly used in GPU-accelerated inference environments and is often included through the transformers[all] installation option. Vulnerable Transformers versions were downloaded about 232 million times before a patch was released, creating supply chain risk for organizations using third-party AI models. Researchers at Pluto disclosed a remote code execution vulnerability that bypasses the library's built-in trust_remote_code=False security control; CVE-2026-4372 allows remote code execution through malicious Hugging Face model configurations, bypassing the library's trust_remote_code=False security control.</description>
+    </item>    <item>
+      <title>Autonomous LLM Worm Compromises 73.8% of Simulated Enterprise Network; University of Toronto Researchers Demonstrate Free Open-Weight Model Capability</title>
+      <link>https://llm-threatintel.com/posts/2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.html</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Researchers at University of Toronto proved a free open-weight AI worm can compromise 73.8% of a simulated enterprise network. Published June 2 by researchers at CleverHans Lab—the cybersecurity research group at the University of Toronto led by Professor Nicolas Papernot—in collaboration with the Vector Institute and the University of Cambridge, the paper described a worm that does not operate from a fixed list of exploits. Cisco's State of AI Security 2026 report found that only 29 percent of organizations reported being prepared to secure agentic AI deployments, even as 83 percent planned to deploy them into business functions.</description>
+    </item>    <item>
+      <title>LLMShare: ChatGPT and Claude Share Links Weaponized for Malware via Google Ads and Fake Outage Pages</title>
+      <link>https://llm-threatintel.com/posts/2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026.html</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <description>ChatGPT share links host fake outage pages on OpenAI's genuine domain to distribute malware via Google ads, with attackers building pixel-perfect fake ChatGPT outage notices using ChatGPT's rendering capability. Push Security confirmed active detections on May 29, 2026. The technique exploits a design feature—not a software vulnerability—in ChatGPT's sharing system, meaning no patch from OpenAI can close it without changing product design.</description>
+    </item>    <item>
       <title>Autonomous LLM Agent Worm: Self-Replicating Network Compromise Using Free Public Models</title>
       <link>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-27-fake-openai-privacy-filter-hugging-face-infostealer-may-2026.html</guid>
       <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
       <description>On May 7, 2026, HiddenLayer identified malicious code in the Hugging Face repository Open-OSS/privacy-filter, which appeared among the platform's top trending repositories with over 200k downloads until its removal. The repository had typosquatted OpenAI's legitimate Privacy Filter release, copied its model card nearly verbatim, and shipped a loader.py file that fetches and executes infostealer malware on Windows machines.</description>
-    </item>    <item>
-      <title>Microsoft Semantic Kernel Remote Code Execution: Prompt Injection to Python Eval Sink in AI Agent Frameworks</title>
-      <link>https://llm-threatintel.com/posts/2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030.html</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft disclosed two critical vulnerabilities in Semantic Kernel, an open-source framework for building AI agents with over 27,000 GitHub stars, that allow attackers to cross from prompt injection to code execution primitives. CVE-2026-26030 affects Python package semantic-kernel prior to version 1.39.4, particularly when using the In-Memory Vector Store with filter functionality. Upgrading to version 1.39.4 or higher mitigates the risk.</description>
-    </item>    <item>
-      <title>TrapDoor Supply Chain Attack Spans npm, PyPI, and Crates.io — Weaponizes AI Coding Assistant Config Files for Persistence and Credential Theft</title>
-      <link>https://llm-threatintel.com/posts/2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-25-trapdoor-cross-ecosystem-crypto-stealer-ai-assistant-persistence.html</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
-      <description>Socket researchers identified an active cross-ecosystem supply chain campaign called TrapDoor that has published 34+ malicious packages and 384+ versions across npm, PyPI, and Crates.io since May 22, 2026, targeting developers in crypto, DeFi, Solana, and AI communities. The campaign steals crypto wallets, SSH keys, AWS and GitHub tokens, and plants persistence through .cursorrules and CLAUDE.md files that inject hidden zero-width Unicode instructions into AI coding assistants like Cursor and Claude Code, causing future AI sessions to silently execute credential exfiltration routines.</description>
-    </item>    <item>
-      <title>GTIG Reports First Autonomous GenAI-Powered Malware in the Wild: PromptSpy Uses Gemini API for Real-Time Device Control; Russia-Nexus CANFAIL and LONGSTREAM Deploy LLM-Generated Decoy Code</title>
-      <link>https://llm-threatintel.com/posts/2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-25-promptspy-canfail-longstream-genai-enabled-autonomous-malware.html</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
-      <description>Google Threat Intelligence Group published a May 11, 2026 report documenting the transition from experimental to industrial-scale use of generative AI in adversarial workflows. The report reveals previously unreported capabilities in PromptSpy, an Android backdoor that uses the Gemini API to autonomously navigate victim devices in real time without human supervision, including biometric data capture and anti-uninstall overlays. Russia-nexus malware families CANFAIL and LONGSTREAM are confirmed using LLM-generated decoy code to obfuscate malicious payloads targeting Ukrainian organizations.</description>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-04",
+  "last_updated": "2026-06-06",
   "entries": [
     {
       "id": "greyvibe",
@@ -2332,14 +2332,19 @@
       "status": "active",
       "distribution": [
         "Google Ads malvertising",
-        "Organic search results for ChatGPT downloads"
+        "Organic search results for ChatGPT downloads",
+        "Google Ads (malvertising)",
+        "ChatGPT/Claude share link generation"
       ],
       "ttps": [
         "T1566.002 - Phishing: Deceptive phishing emails and fake outage pages",
-        "T1199 - Trusted Relationship Exploitation"
+        "T1199 - Trusted Relationship Exploitation",
+        "T1566.002 - Spearphishing Link",
+        "T1583.006 - Acquire Infrastructure (cloaked download site)",
+        "T1598.003 - Spearphishing Link"
       ],
-      "description": "Sophisticated threat actor leveraging AI platform sharing features and search engine advertising to distribute trojans. Demonstrates understanding of user trust in platform domains and ability to manipulate AI-generated content for social engineering.",
-      "attribution": "Unattributed"
+      "description": "Threat actor group conducting precision malvertising campaign targeting AI platform users through geographically and role-scoped Google ads. Campaign demonstrates advanced social engineering via trusted domain abuse and payload cloaking; parallel Claude.ai Artifacts campaign hit government organizations.",
+      "attribution": "Unattributed; coordinated multi-platform experimentation suggests organized cybercrime operation"
     },
     {
       "id": "cve-2026-33626-exploitation-actor",
@@ -2463,6 +2468,48 @@
       ],
       "description": "Researchers demonstrated the feasibility of autonomous, self-replicating malware powered by free LLMs that can reason through novel attack strategies without human direction. The work illustrates a fundamental shift in malware design: from pre-programmed exploit chains to dynamically adaptive, reasoning-based propagation that tailors its approach to each target system it encounters.",
       "attribution": "Academic research; prototype threat"
+    },
+    {
+      "id": "university-of-toronto-cleverhans-lab-benign-research",
+      "names": [
+        "University of Toronto CleverHans Lab (Benign Research)",
+        "Vector Institute",
+        "University of Cambridge"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Academic publication (June 2026)",
+        "Conference presentation at Infosecurity Europe 2026"
+      ],
+      "ttps": [
+        "T1595.003 - Vulnerability Scanning",
+        "T1587.004 - Exploit Development",
+        "T1210 - Lateral Movement",
+        "T1072 - Self-Propagation"
+      ],
+      "description": "Academic security research demonstrating that open-weight LLM agents can autonomously conduct network compromise operations without human direction. The worm uses free models (not proprietary APIs) and achieves 73.8% network compromise in simulation. Implications: threat actors can now adopt similar techniques using public models; enterprise security programs urgently need agentic AI containment controls.",
+      "attribution": "Academic Research; threat model applicable to adversarial LLM agents and threat groups adopting agentic AI"
+    },
+    {
+      "id": "unknown-attackers-supply-chain-vector",
+      "names": [
+        "Unknown Attackers (Supply Chain Vector)"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Hugging Face model registry"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise",
+        "T1059.006 - Code Injection",
+        "T1552.001 - Credential Access"
+      ],
+      "description": "Vulnerability in Hugging Face Transformers core library affects 232 million downloads pre-patch. Attackers can upload malicious models to public registry and compromise organizations that load them using standard APIs. No authentication bypass required; victims believe they are loading legitimate models. GPU-accelerated inference environments face highest risk due to elevated system privileges and cloud credential access.",
+      "attribution": "Unattributed; exploitation vector is available to any adversary capable of publishing to Hugging Face"
     }
   ]
 }

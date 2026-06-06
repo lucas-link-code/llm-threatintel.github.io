@@ -1,6 +1,46 @@
 {
   "posts": [
     {
+      "id": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026",
+      "title": "CVE-2026-4372: Hugging Face Transformers RCE via Malicious Config.json; 232 Million Downloads Pre-Patch Expose GPU-Accelerated AI Inference",
+      "date": "2026-06-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-4372 affects multiple versions of Hugging Face Transformers when the optional kernels package is installed; although the package is not enabled by default, it is commonly used in GPU-accelerated inference environments and is often included through the transformers[all] installation option. Vulnerable Transformers versions were downloaded about 232 million times before a patch was released, creating supply chain risk for organizations using third-party AI models. Researchers at Pluto disclosed a remote code execution vulnerability that bypasses the library's built-in trust_remote_code=False security control; CVE-2026-4372 allows remote code execution through malicious Hugging Face model configurations, bypassing the library's trust_remote_code=False security control.",
+      "file": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.md"
+    },
+    {
+      "id": "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026",
+      "title": "Autonomous LLM Worm Compromises 73.8% of Simulated Enterprise Network; University of Toronto Researchers Demonstrate Free Open-Weight Model Capability",
+      "date": "2026-06-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "apt",
+        "malware",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Researchers at University of Toronto proved a free open-weight AI worm can compromise 73.8% of a simulated enterprise network. Published June 2 by researchers at CleverHans Lab—the cybersecurity research group at the University of Toronto led by Professor Nicolas Papernot—in collaboration with the Vector Institute and the University of Cambridge, the paper described a worm that does not operate from a fixed list of exploits. Cisco's State of AI Security 2026 report found that only 29 percent of organizations reported being prepared to secure agentic AI deployments, even as 83 percent planned to deploy them into business functions.",
+      "file": "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.md"
+    },
+    {
+      "id": "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026",
+      "title": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware via Google Ads and Fake Outage Pages",
+      "date": "2026-06-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ChatGPT share links host fake outage pages on OpenAI's genuine domain to distribute malware via Google ads, with attackers building pixel-perfect fake ChatGPT outage notices using ChatGPT's rendering capability. Push Security confirmed active detections on May 29, 2026. The technique exploits a design feature—not a software vulnerability—in ChatGPT's sharing system, meaning no patch from OpenAI can close it without changing product design.",
+      "file": "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026.md"
+    },
+    {
       "id": "2026-06-04-autonomous-llm-agent-worm-network-propagation",
       "title": "Autonomous LLM Agent Worm: Self-Replicating Network Compromise Using Free Public Models",
       "date": "2026-06-04",

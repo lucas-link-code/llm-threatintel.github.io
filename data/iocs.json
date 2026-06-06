@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03",
+  "last_updated": "2026-06-06",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2834,6 +2834,33 @@
       "first_seen": "2026-06-03",
       "source": "OX Security",
       "campaign": "ox-security-mcp-stdio-prompt-injection-rce-windsurf",
+      "status": "active"
+    },
+    {
+      "value": "chatgpt.com/s/ (legitimate domain, malicious share content)",
+      "type": "url_path",
+      "context": "LLMShare: ChatGPT and Claude Share Links Weaponized for Malware via Google Ads and Fake Outage Pages",
+      "first_seen": "2026-06-06",
+      "source": "Push Security",
+      "campaign": "llmshare-chatgpt-claude-malware-campaign-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://arxiv.org/abs/2406 (expected publication on arXiv)",
+      "type": "url_path",
+      "context": "Autonomous LLM Worm Compromises 73.8% of Simulated Enterprise Network; University of Toronto Researchers Demonstrate Free Open-Weight Model Capability",
+      "first_seen": "2026-06-06",
+      "source": "TechTimes",
+      "campaign": "autonomous-llm-agent-worm-network-compromise-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://huggingface.co/ (legitimate platform; malicious models can be hosted here)",
+      "type": "url_path",
+      "context": "CVE-2026-4372: Hugging Face Transformers RCE via Malicious Config.json; 232 Million Downloads Pre-Patch Expose GPU-Accelerated AI Inference",
+      "first_seen": "2026-06-06",
+      "source": "TechRepublic",
+      "campaign": "huggingface-transformers-cve-2026-4372-rce-june-2026",
       "status": "active"
     }
   ]
