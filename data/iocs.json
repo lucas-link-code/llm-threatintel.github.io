@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06",
+  "last_updated": "2026-06-07",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2861,6 +2861,69 @@
       "first_seen": "2026-06-06",
       "source": "TechRepublic",
       "campaign": "huggingface-transformers-cve-2026-4372-rce-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "Starlette",
+      "type": "package",
+      "context": "CVE-2026-48710 BadHost: LLM Agent Autonomous Database Exfiltration via Starlette Host Header Injection",
+      "first_seen": "2026-06-07",
+      "source": "buildfastwithai.com",
+      "campaign": "cve-2026-48710-badhost-starlette-llm-rce",
+      "status": "active"
+    },
+    {
+      "value": "FastAPI",
+      "type": "package",
+      "context": "CVE-2026-48710 BadHost: LLM Agent Autonomous Database Exfiltration via Starlette Host Header Injection",
+      "first_seen": "2026-06-07",
+      "source": "buildfastwithai.com",
+      "campaign": "cve-2026-48710-badhost-starlette-llm-rce",
+      "status": "active"
+    },
+    {
+      "value": "vLLM",
+      "type": "package",
+      "context": "CVE-2026-48710 BadHost: LLM Agent Autonomous Database Exfiltration via Starlette Host Header Injection",
+      "first_seen": "2026-06-07",
+      "source": "buildfastwithai.com",
+      "campaign": "cve-2026-48710-badhost-starlette-llm-rce",
+      "status": "active"
+    },
+    {
+      "value": "LiteLLM",
+      "type": "package",
+      "context": "CVE-2026-48710 BadHost: LLM Agent Autonomous Database Exfiltration via Starlette Host Header Injection",
+      "first_seen": "2026-06-07",
+      "source": "buildfastwithai.com",
+      "campaign": "cve-2026-48710-badhost-starlette-llm-rce",
+      "status": "active"
+    },
+    {
+      "value": "chatgpt.com/s/* (malicious share links)",
+      "type": "url_path",
+      "context": "LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload",
+      "first_seen": "2026-06-07",
+      "source": "Push Security / TechTimes",
+      "campaign": "llmshare-fake-outage-malware-chatgpt-domain",
+      "status": "active"
+    },
+    {
+      "value": "Odyssey Stealer",
+      "type": "package",
+      "context": "LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload",
+      "first_seen": "2026-06-07",
+      "source": "Push Security / TechTimes",
+      "campaign": "llmshare-fake-outage-malware-chatgpt-domain",
+      "status": "active"
+    },
+    {
+      "value": "AMOS (Atomic macOS Stealer)",
+      "type": "package",
+      "context": "LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload",
+      "first_seen": "2026-06-07",
+      "source": "Push Security / TechTimes",
+      "campaign": "llmshare-fake-outage-malware-chatgpt-domain",
       "status": "active"
     }
   ]

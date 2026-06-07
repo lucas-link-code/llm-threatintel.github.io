@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance | LLM ThreatIntel</title>
+  <meta name="description" content="A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT&#x27;s page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-06-07-chatgphish-prompt-injection-phishing-qr-code.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance">
+  <meta property="og:description" content="A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT&#x27;s page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-06-07-chatgphish-prompt-injection-phishing-qr-code.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance">
+  <meta property="article:published_time" content="2026-06-07T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-07T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="phishing">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance">
+  <meta name="twitter:description" content="A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT&#x27;s page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance",
+  "description": "A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.",
+  "datePublished": "2026-06-07T00:00:00Z",
+  "dateModified": "2026-06-07T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-06-07-chatgphish-prompt-injection-phishing-qr-code.html",
+  "keywords": [
+    "prompt-injection",
+    "phishing"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-06-07</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-phishing">Phishing</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance</h1>
+<p><strong>Date:</strong> 2026-06-07<br><strong>Tags:</strong> prompt-injection, phishing</p>
+<h2>Executive Summary</h2>
+<p>A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT&#x27;s page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>ChatGPhish - Summarization-Based Prompt Injection</td></tr><tr><td>Attribution</td><td>Unknown / Proof-of-Concept Disclosed (confidence: low)</td></tr><tr><td>Target</td><td>ChatGPT users; enterprises allowing ChatGPT access</td></tr><tr><td>Vector</td><td>Cross-prompt injection (XPIA) via attacker-controlled web page content; exploitation of summarization feature</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-29</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The chatgpt.com response renderer trusts Markdown links and Markdown image URLs that originated from a third-party page the assistant has just summarized, auto-fetching those images and surfacing those links as live, clickable elements inside the trusted assistant UI. In a hypothetical attack scenario, a bad actor can append a small payload to any web page that the victim later prompts ChatGPT to summarize, causing it to leak their IP, User-Agent, and Referer details when attacker-hosted images embedded in the page are automatically fetched when the answer is rendered. It can result in malicious Markdown links being rendered as live clickable elements inside the assistant&#x27;s response, serve fake system-style security alerts, and serve a QR code from an attacker&#x27;s S3 bucket and trick the victim into scanning it via their mobile device, effectively bypassing desktop URL filters and enterprise security controls. When the user opens the page in their browser and asks ChatGPT to summarize the page, the chatbot does summarize the content and summarizes the tool&#x27;s purpose and key features. Immediately beneath this summary, there&#x27;s a box warning &quot;A new device was added to your account.&quot; The &quot;click here&quot; link looks like a real OpenAI/ChatGPT-issued security URL. But when the user clicks the link, it takes them to an attacker-controlled domain.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Phishing</td><td>T1566</td><td>Fake security alerts and clickable links rendered in ChatGPT</td></tr><tr><td>Prompt Injection</td><td>T1609</td><td>Cross-prompt injection via web page content to manipulate LLM behavior</td></tr><tr><td>Reconnaissance</td><td>T1592</td><td>Passive IP/browser enumeration via auto-fetched images</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_PoC uses generic attacker-controlled S3 buckets and domains; no specific indicators published_</p>
+<h3>Full URL Paths</h3>
+<p>_PoC uses generic attacker-controlled S3 buckets and domains; no specific indicators published_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h2>Detection Recommendations</h2>
+<p>Implement semantic input/output filtering and anomaly detection on AI-integrated surfaces within enterprise environments. Monitor AI browser activity logs for unexpected outbound image fetch requests to unknown or URL-shortened endpoints. Enforce strict Markdown rendering policies in ChatGPT integrations—disable automatic image fetching from untrusted sources. Deploy link analysis on any URLs rendered in AI summaries before user interaction. For enterprise ChatGPT deployments, require user confirmation before allowing LLM-generated links to execute. Monitor for QR code generation in LLM outputs to external services.</p>
+<h2>References</h2>
+<ul><li>[Permiso Security / cybersecuritynews.com] New ChatGPT Vulnerability Lets Attackers Turn Web Pages Into Phishing Payloads (2026-05-29) — https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/</li><li>[The Hacker News] ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface (2026-05-29) — https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html</li><li>[The Register] ChatGPT prompt injection turns web pages into phishing lures (2026-05-29) — https://www.theregister.com/research/2026/05/29/chatgpt-prompt-injection-turns-web-pages-into-phishing-lures/5248137</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

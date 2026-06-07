@@ -2559,6 +2559,55 @@
       "validated_at": "2026-06-06T06:32:18+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-07-chatgphish-prompt-injection-phishing-qr-code": {
+      "content_hash": "b01c0af9e2514359ae8c7ebe6f40ebd96ae63b75c17af0f3e7ab897c7ccc09d8",
+      "evidence_status": "validated",
+      "file": "2026-06-07-chatgphish-prompt-injection-phishing-qr-code.md",
+      "posts_index_hash": "1b33abf9400754cd728d371542adaa630d7f0a904b1e89f9aee9fd6d88291023",
+      "report_id": "2026-06-07-chatgphish-prompt-injection-phishing-qr-code",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/",
+        "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
+        "https://www.theregister.com/research/2026/05/29/chatgpt-prompt-injection-turns-web-pages-into-phishing-lures/5248137"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-07T07:07:15+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce": {
+      "content_hash": "39de7381ddaf154edeba2dedb964e8cac4d71414aea223f0b822b0b8104535e8",
+      "evidence_status": "validated",
+      "file": "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce.md",
+      "posts_index_hash": "fd75cc3b4a89c0e80fa4159745d3c83eb9ac87f2645c1dba38a53d004dbb5935",
+      "report_id": "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.buildfastwithai.com/blogs/ai-news-today-june-1-2026"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-07T07:07:16+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain": {
+      "content_hash": "13537e70e85da482c59dce75f3174ad0eca16601212d76a02a95a584819611e8",
+      "evidence_status": "validated",
+      "file": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.md",
+      "posts_index_hash": "828447439fbd559dd2bee83c5a693de40bcd8ea1144c554b4248f40623006b85",
+      "report_id": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain",
+      "review_required": [],
+      "source_urls": [
+        "https://www.techtimes.com/articles/317528/20260601/chatgpt-share-links-deliver-malware-openai-domain-evading-corporate-web-filters.htm",
+        "https://www.malwarebytes.com/blog/threat-intel/2026/05/fake-chatgpt-download-site-infects-windows-and-mac-users-with-malware",
+        "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-07T07:07:14+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

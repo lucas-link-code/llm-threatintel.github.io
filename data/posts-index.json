@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain",
+      "title": "LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload",
+      "date": "2026-06-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Threat actors turned ChatGPT's own content-sharing feature into a malware delivery pipeline, hosting fake service disruption pages directly on chatgpt.com and routing victims there through paid Google search ads. Security firm Push Security disclosed the campaign, which it named LLMShare, on May 29, 2026, confirming it was still generating active detections at the time. Because the attack lands on OpenAI's own domain rather than an attacker-controlled site, it bypasses the URL-reputation checks, corporate firewalls, and personal caution that would stop a conventional phishing page. The technique exploits a design feature—not a software vulnerability—in ChatGPT's sharing system, which means no patch from OpenAI can close it without changing how the product works.",
+      "file": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.md"
+    },
+    {
+      "id": "2026-06-07-chatgphish-prompt-injection-phishing-qr-code",
+      "title": "ChatGPhish: Browser-Integrated Prompt Injection Weaponizes ChatGPT Summarization for Phishing and Passive Reconnaissance",
+      "date": "2026-06-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.",
+      "file": "2026-06-07-chatgphish-prompt-injection-phishing-qr-code.md"
+    },
+    {
+      "id": "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce",
+      "title": "CVE-2026-48710 BadHost: LLM Agent Autonomous Database Exfiltration via Starlette Host Header Injection",
+      "date": "2026-06-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sysdig documented the first live cyberattack in which an LLM agent autonomously performed post-exploitation actions including exfiltrating an AWS database in under an hour, exploiting CVE-2026-48710, a critical authentication bypass in Starlette that affects millions of AI agents, FastAPI applications, vLLM deployments, LiteLLM instances, and every MCP server built on those frameworks. CVE-2026-48710, labeled \"BadHost,\" is a host header injection vulnerability that allows unauthenticated remote attackers to bypass authentication by manipulating the HTTP Host header.",
+      "file": "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce.md"
+    },
+    {
       "id": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026",
       "title": "CVE-2026-4372: Hugging Face Transformers RCE via Malicious Config.json; 232 Million Downloads Pre-Patch Expose GPU-Accelerated AI Inference",
       "date": "2026-06-06",

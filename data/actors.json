@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06",
+  "last_updated": "2026-06-07",
   "entries": [
     {
       "id": "greyvibe",
@@ -2510,6 +2510,67 @@
       ],
       "description": "Vulnerability in Hugging Face Transformers core library affects 232 million downloads pre-patch. Attackers can upload malicious models to public registry and compromise organizations that load them using standard APIs. No authentication bypass required; victims believe they are loading legitimate models. GPU-accelerated inference environments face highest risk due to elevated system privileges and cloud credential access.",
       "attribution": "Unattributed; exploitation vector is available to any adversary capable of publishing to Hugging Face"
+    },
+    {
+      "id": "unknown-automated",
+      "names": [
+        "Unknown / Automated"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Cloud-hosted AI inference"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1548 - Abuse Elevation Control Mechanism",
+        "T1041 - Exfiltration Over Command and Control Channel"
+      ],
+      "description": "First documented autonomous LLM agent performing full attack lifecycle from reconnaissance through data exfiltration. Attack chain automated by frontier AI model without human micro-management of individual steps.",
+      "attribution": "Unattributed; exploitation appears autonomous or semi-directed"
+    },
+    {
+      "id": "unknown-proof-of-concept-threat",
+      "names": [
+        "Unknown / Proof-of-Concept Threat",
+        "ChatGPhish Researchers"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Web pages, blog posts, GitHub repositories"
+      ],
+      "ttps": [
+        "T1566 - Phishing",
+        "T1609 - Prompt Injection",
+        "T1592 - Reconnaissance"
+      ],
+      "description": "Vulnerability disclosed as browser-based prompt injection technique. Attack relies on trust relationship between ChatGPT UI and web content it summarizes. No active widespread campaign documented, but PoC is reproducible and transferable.",
+      "attribution": "Disclosed by Permiso Security researchers; no active campaign attribution yet"
+    },
+    {
+      "id": "unknown-llmshare-campaign-operators",
+      "names": [
+        "Unknown / LLMShare Campaign Operators",
+        "OpenAI Lookalike Campaign"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Google Ads",
+        "chatgpt.com share links",
+        "claude.ai share links"
+      ],
+      "ttps": [
+        "T1566 - Phishing",
+        "T1589 - Malware",
+        "T1110 - Credential Access"
+      ],
+      "description": "Cybercriminal campaign leveraging legitimate OpenAI/Anthropic share infrastructure combined with Google Ad network for distribution. Payloads include credential stealers targeting browser passwords, cryptocurrency wallets, and session tokens.",
+      "attribution": "Unknown; no threat group attribution provided"
     }
   ]
 }
