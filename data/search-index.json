@@ -1180,8 +1180,7 @@
         "unknown threat actor"
       ],
       "iocs": [
-        "65.111.25.67",
-        "litellm"
+        "65.111.25.67"
       ]
     },
     {
@@ -1570,7 +1569,6 @@
       "actors": [],
       "iocs": [
         "LangFlow",
-        "OpenUI",
         "n8n"
       ]
     },
@@ -1867,8 +1865,6 @@
         "unknown threat actor"
       ],
       "iocs": [
-        "352,000+ unsafe/suspicious Hugging Face models",
-        "575+ trojanized OpenClaw agent skills",
         "Open-OSS/privacy-filter (Hugging Face)"
       ]
     },
@@ -1928,9 +1924,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "Windsurf"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-14-community-bank-shadow-ai-data-breach-may-2026",
@@ -2272,9 +2266,7 @@
         "hightower6eu",
         "sakaen736jih"
       ],
-      "iocs": [
-        "OpenClaw ClawHub malicious skills (575 identified)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-21-claude-code-socks5-sandbox-bypass-silent-patch",
@@ -2748,10 +2740,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "Kowloon Bay, Hong Kong-based attacker IPs (not explicitly disclosed in advisories)",
-        "lmdeploy (versions 0.12.0 and prior)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-01-llmshare-chatgpt-claude-malware-campaign",
@@ -2770,11 +2759,7 @@
         "unknown"
       ],
       "iocs": [
-        "Shared ChatGPT prompts rendering fake outage pages (legitimate chatgpt.com domain with attacker-controlled prompt content)",
-        "chatgpt.com (legitimate domain abused for sharing malicious prompts)",
-        "chatgpt.com/s/* (attacker-controlled share links)",
-        "openew.app",
-        "openew[.]app (fake download portal)"
+        "openew.app"
       ]
     },
     {
@@ -2832,11 +2817,7 @@
         "unknown threat actor"
       ],
       "iocs": [
-        "Shared ChatGPT prompts rendering fake outage pages (legitimate chatgpt.com domain with attacker-controlled prompt content)",
-        "chatgpt.com (legitimate domain abused for sharing malicious prompts)",
-        "chatgpt.com/s/* (attacker-controlled share links)",
-        "openew.app",
-        "openew[.]app (fake download portal)"
+        "openew.app"
       ]
     },
     {
@@ -2855,7 +2836,7 @@
         "unknown"
       ],
       "iocs": [
-        "Context.ai (compromised OAuth integration)"
+        "context.ai"
       ]
     },
     {
@@ -2895,11 +2876,7 @@
         "sakaen736jih",
         "unknown"
       ],
-      "iocs": [
-        "Hugging Face malicious models (100+ identified by JFrog)",
-        "hightower6eu malicious skills (334 uploads)",
-        "sakaen736jih malicious skills (199 uploads)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf",
@@ -2917,10 +2894,7 @@
         "CVE-2026-30615"
       ],
       "actors": [],
-      "iocs": [
-        "10 CVEs in MCP STDIO configurations (OX Security full advisory)",
-        "CVE-2026-30615 (Windsurf)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-04-autonomous-llm-agent-worm-network-propagation",
@@ -2958,9 +2932,7 @@
         "university of cambridge",
         "vector institute"
       ],
-      "iocs": [
-        "https://arxiv.org/abs/2406 (expected publication on arXiv)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026",
@@ -2979,9 +2951,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "https://huggingface.co/ (legitimate platform; malicious models can be hosted here)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026",
@@ -2998,9 +2968,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "chatgpt.com/s/ (legitimate domain, malicious share content)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-07-chatgphish-prompt-injection-phishing-qr-code",
@@ -3037,12 +3005,7 @@
         "unknown",
         "unknown / automated"
       ],
-      "iocs": [
-        "FastAPI",
-        "LiteLLM",
-        "Starlette",
-        "vLLM"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain",
@@ -3059,11 +3022,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "AMOS (Atomic macOS Stealer)",
-        "Odyssey Stealer",
-        "chatgpt.com/s/* (malicious share links)"
-      ]
+      "iocs": []
     }
   ]
 }

@@ -96,10 +96,7 @@
       "semantic-kernel<1.71.0 (.NET)",
       "huggingface:Open-OSS/privacy-filter",
       "Open-OSS/privacy-filter (Hugging Face)",
-      "Open-OSS/privacy-filter (Hugging Face repository)",
-      "575+ trojanized OpenClaw agent skills",
-      "OpenClaw ClawHub malicious skills (575 identified)",
-      "352,000+ unsafe/suspicious Hugging Face models"
+      "Open-OSS/privacy-filter (Hugging Face repository)"
     ],
     "url_path": [
       "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)"
@@ -155,6 +152,7 @@
       "api.anthropic.com/v1/files",
       "api.anthropic.com/v1/messages",
       "chatgpt.com/share",
+      "chatgpt.com/s",
       "chat.openai.com/share",
       "api.openai.com/v1/chat/completions",
       "gemini.google.com/share",
@@ -165,5 +163,34 @@
       "huggingface.co/spaces"
     ]
   },
-  "legitimate_platform_ioc_overrides": []
+  "legitimate_platform_ioc_overrides": [],
+  "parenthetical_value_overrides": [],
+  "malware_family_denylist": [
+    "Odyssey Stealer",
+    "AMOS",
+    "Atomic macOS Stealer",
+    "Lumma Stealer",
+    "Formbook",
+    "XLoader",
+    "AsyncRAT",
+    "Cobalt Strike",
+    "Grandoreiro",
+    "Mekotio",
+    "Sefirah",
+    "LummaC2"
+  ],
+  "affected_product_package_denylist": [
+    "FastAPI",
+    "LiteLLM",
+    "Starlette",
+    "vLLM",
+    "Windsurf",
+    "OpenUI"
+  ],
+  "reference_url_domain_denylist": [
+    "arxiv.org",
+    "cve.org",
+    "nvd.nist.gov",
+    "cve.mitre.org"
+  ]
 }

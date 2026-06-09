@@ -1,23 +1,8 @@
 {
-  "commit_sha": "662e6f11f8ae15688215df1d354adc315dcad548",
-  "duplicate_iocs": {
-    "litellm": [
-      {
-        "campaign": "litellm-cve-2026-42208-sql-injection",
-        "source": "The Hacker News",
-        "type": "package",
-        "value": "litellm"
-      },
-      {
-        "campaign": "cve-2026-48710-badhost-starlette-llm-rce",
-        "source": "buildfastwithai.com",
-        "type": "package",
-        "value": "LiteLLM"
-      }
-    ]
-  },
-  "generated_at_utc": "2026-06-09T06:51:27+00:00",
-  "hard_failures": 20,
+  "commit_sha": "662e6f11f8ae",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-06-09T06:54:19+00:00",
+  "hard_failures": 0,
   "issues": [
     {
       "code": "post-excerpt-long",
@@ -128,7 +113,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: LiteLLM <1.83.7",
       "recommendation": "",
-      "record_id": "223",
+      "record_id": "222",
       "severity": "warn"
     },
     {
@@ -136,7 +121,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
       "recommendation": "",
-      "record_id": "224",
+      "record_id": "223",
       "severity": "warn"
     },
     {
@@ -144,7 +129,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @solana-launchpad/sdk (bait package, no malicious code)",
       "recommendation": "",
-      "record_id": "225",
+      "record_id": "224",
       "severity": "warn"
     },
     {
@@ -152,7 +137,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @validate-sdk/v2 (payload, infostealer)",
       "recommendation": "",
-      "record_id": "226",
+      "record_id": "225",
       "severity": "warn"
     },
     {
@@ -160,7 +145,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: @hash-validator/v2 (early variant, JavaScript infostealer)",
       "recommendation": "",
-      "record_id": "227",
+      "record_id": "226",
       "severity": "warn"
     },
     {
@@ -168,7 +153,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: aes-create-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "228",
+      "record_id": "227",
       "severity": "warn"
     },
     {
@@ -176,7 +161,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-proper-excutor (rotated payload)",
       "recommendation": "",
-      "record_id": "229",
+      "record_id": "228",
       "severity": "warn"
     },
     {
@@ -184,7 +169,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: jito-sub-aes-ipheriv (rotated payload)",
       "recommendation": "",
-      "record_id": "230",
+      "record_id": "229",
       "severity": "warn"
     },
     {
@@ -192,7 +177,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: scraper-npm (PyPI variant, February 2026)",
       "recommendation": "",
-      "record_id": "231",
+      "record_id": "230",
       "severity": "warn"
     },
     {
@@ -200,7 +185,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: langflow (all versions)",
       "recommendation": "",
-      "record_id": "232",
+      "record_id": "231",
       "severity": "warn"
     },
     {
@@ -208,7 +193,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python)",
       "recommendation": "",
-      "record_id": "238",
+      "record_id": "236",
       "severity": "warn"
     },
     {
@@ -216,7 +201,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.71.0 (.NET)",
       "recommendation": "",
-      "record_id": "239",
+      "record_id": "237",
       "severity": "warn"
     },
     {
@@ -224,7 +209,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
       "recommendation": "",
-      "record_id": "240",
+      "record_id": "238",
       "severity": "warn"
     },
     {
@@ -232,7 +217,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: huggingface:Open-OSS/privacy-filter",
       "recommendation": "",
-      "record_id": "250",
+      "record_id": "248",
       "severity": "warn"
     },
     {
@@ -240,7 +225,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm>=1.81.16,<1.83.7",
       "recommendation": "",
-      "record_id": "254",
+      "record_id": "252",
       "severity": "warn"
     },
     {
@@ -248,23 +233,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face)",
       "recommendation": "",
-      "record_id": "255",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-legacy-format-exception",
-      "file": "data/iocs.json",
-      "message": "legacy IOC format exception retained without modifying data: 575+ trojanized OpenClaw agent skills",
-      "recommendation": "",
-      "record_id": "256",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-legacy-format-exception",
-      "file": "data/iocs.json",
-      "message": "legacy IOC format exception retained without modifying data: 352,000+ unsafe/suspicious Hugging Face models",
-      "recommendation": "",
-      "record_id": "257",
+      "record_id": "253",
       "severity": "warn"
     },
     {
@@ -272,7 +241,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: semantic-kernel<1.39.4 (Python SDK)",
       "recommendation": "",
-      "record_id": "258",
+      "record_id": "254",
       "severity": "warn"
     },
     {
@@ -280,15 +249,7 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: Open-OSS/privacy-filter (Hugging Face repository)",
       "recommendation": "",
-      "record_id": "272",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-legacy-format-exception",
-      "file": "data/iocs.json",
-      "message": "legacy IOC format exception retained without modifying data: OpenClaw ClawHub malicious skills (575 identified)",
-      "recommendation": "",
-      "record_id": "273",
+      "record_id": "267",
       "severity": "warn"
     },
     {
@@ -296,205 +257,21 @@
       "file": "data/iocs.json",
       "message": "legacy IOC format exception retained without modifying data: litellm (versions 1.81.16 to 1.83.6)",
       "recommendation": "",
-      "record_id": "274",
+      "record_id": "268",
       "severity": "warn"
-    },
-    {
-      "code": "ioc-domain-format",
-      "file": "data/iocs.json",
-      "message": "domain IOC must not contain scheme, path, or spaces: chatgpt.com (legitimate domain abused for sharing malicious prompts)",
-      "recommendation": "",
-      "record_id": "303",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-legitimate-platform",
-      "file": "data/iocs.json",
-      "message": "IOC names a legitimate AI vendor platform domain (bare domains are not indicators; document the abuse in prose / Detection Recommendations instead, or add an explicit entry to legitimate_platform_ioc_overrides if this is a confirmed compromise of the platform itself): chatgpt.com (legitimate domain abused for sharing malicious prompts)",
-      "recommendation": "",
-      "record_id": "303",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: Shared ChatGPT prompts rendering fake outage pages (legitimate chatgpt.com domain with attacker-controlled prompt content)",
-      "recommendation": "",
-      "record_id": "304",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-ip-format",
-      "file": "data/iocs.json",
-      "message": "invalid IP IOC: Kowloon Bay, Hong Kong-based attacker IPs (not explicitly disclosed in advisories)",
-      "recommendation": "",
-      "record_id": "305",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: lmdeploy (versions 0.12.0 and prior)",
-      "recommendation": "",
-      "record_id": "306",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: chatgpt.com/s/* (attacker-controlled share links)",
-      "recommendation": "",
-      "record_id": "307",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-defanged-json",
-      "file": "data/iocs.json",
-      "message": "IOC JSON value must be clean, not defanged: openew[.]app (fake download portal)",
-      "recommendation": "",
-      "record_id": "308",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Context.ai (compromised OAuth integration)",
-      "recommendation": "",
-      "record_id": "309",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: hightower6eu malicious skills (334 uploads)",
-      "recommendation": "",
-      "record_id": "310",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: sakaen736jih malicious skills (199 uploads)",
-      "recommendation": "",
-      "record_id": "311",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Hugging Face malicious models (100+ identified by JFrog)",
-      "recommendation": "",
-      "record_id": "312",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: CVE-2026-30615 (Windsurf)",
-      "recommendation": "",
-      "record_id": "313",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: 10 CVEs in MCP STDIO configurations (OX Security full advisory)",
-      "recommendation": "",
-      "record_id": "314",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: chatgpt.com/s/ (legitimate domain, malicious share content)",
-      "recommendation": "",
-      "record_id": "315",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: https://arxiv.org/abs/2406 (expected publication on arXiv)",
-      "recommendation": "",
-      "record_id": "316",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: https://huggingface.co/ (legitimate platform; malicious models can be hosted here)",
-      "recommendation": "",
-      "record_id": "317",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-legitimate-platform",
-      "file": "data/iocs.json",
-      "message": "IOC names a legitimate AI vendor platform endpoint or generic feature path (only URLs containing a specific attacker-controlled identifier qualify as indicators; add an explicit entry to legitimate_platform_ioc_overrides if this is a confirmed compromise of the platform itself): https://huggingface.co/ (legitimate platform; malicious models can be hosted here)",
-      "recommendation": "",
-      "record_id": "317",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-url-path-format",
-      "file": "data/iocs.json",
-      "message": "url_path IOC must not contain spaces: chatgpt.com/s/* (malicious share links)",
-      "recommendation": "",
-      "record_id": "322",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: Odyssey Stealer",
-      "recommendation": "",
-      "record_id": "323",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-package-format",
-      "file": "data/iocs.json",
-      "message": "invalid package IOC: AMOS (Atomic macOS Stealer)",
-      "recommendation": "",
-      "record_id": "324",
-      "severity": "fail"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: litellm appears 2 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026",
-      "severity": "review"
     }
   ],
-  "mode": "full",
+  "mode": "strict",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
-  "reports_checked": 1,
+  "overall_result": "pass",
+  "reports_checked": 0,
   "reports_newly_validated": 0,
-  "reports_skipped": 141,
-  "review_required": 1,
-  "source_urls_checked": 1,
+  "reports_skipped": 0,
+  "review_required": 0,
+  "source_urls_checked": 0,
   "state_updates": 0,
-  "url_results": [
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
-    }
-  ],
+  "url_results": [],
   "validation_version": "1.0.0",
-  "warnings": 36
+  "warnings": 32
 }

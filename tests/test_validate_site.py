@@ -85,6 +85,9 @@ def base_repo(root, iocs=None, post=None, markdown=None):
     )
     write_json(root / "validation/validated-reports.json", {"validation_version": "1.0.0", "reports": {}})
     write_json(root / "validation/manual-evidence-overrides.json", {"reports": {}})
+    policy_src = REPO_ROOT / "validation" / "policy.json"
+    if policy_src.exists():
+        (root / "validation" / "policy.json").write_text(policy_src.read_text())
     (root / "posts" / post["file"]).write_text(markdown)
 
 
@@ -360,6 +363,149 @@ class ValidateSiteTests(unittest.TestCase):
             result_410 = validator.classify_http_result("https://example.com/gone", 410)
             self.assertEqual(result_404.status, "not_found")
             self.assertEqual(result_410.status, "not_found")
+
+    def test_ioc_semantic_validation_failures(self):
+        cases = [
+            (
+                "prose parenthetical domain",
+                [{"value": "chatgpt.com (legitimate domain abused for sharing malicious prompts)", "type": "domain"}],
+                "ioc-prose-parenthetical",
+            ),
+            (
+                "wildcard url_path",
+                [{"value": "chatgpt.com/s/* (attacker-controlled share links)", "type": "url_path"}],
+                "ioc-wildcard-value",
+            ),
+            (
+                "generic platform path",
+                [{"value": "chatgpt.com/s/", "type": "url_path"}],
+                "ioc-legitimate-platform",
+            ),
+            (
+                "huggingface platform prose",
+                [{"value": "https://huggingface.co/ (legitimate platform; malicious models can be hosted here)", "type": "url_path"}],
+                "ioc-prose-parenthetical",
+            ),
+            (
+                "arxiv reference prose",
+                [{"value": "https://arxiv.org/abs/2406 (expected publication on arXiv)", "type": "url_path"}],
+                "ioc-prose-parenthetical",
+            ),
+            (
+                "geographic ip description",
+                [{"value": "Kowloon Bay, Hong Kong-based attacker IPs", "type": "ip"}],
+                "ioc-ip-format",
+            ),
+            (
+                "cve as package",
+                [{"value": "CVE-2026-30615 (Windsurf)", "type": "package"}],
+                "ioc-cve-as-value",
+            ),
+            (
+                "aggregate cve package",
+                [{"value": "10 CVEs in MCP STDIO configurations (OX Security full advisory)", "type": "package"}],
+                "ioc-aggregate-description",
+            ),
+            (
+                "aggregate models package",
+                [{"value": "Hugging Face malicious models (100+ identified by JFrog)", "type": "package"}],
+                "ioc-aggregate-description",
+            ),
+            (
+                "aggregate uploads package 1",
+                [{"value": "hightower6eu malicious skills (334 uploads)", "type": "package"}],
+                "ioc-aggregate-description",
+            ),
+            (
+                "aggregate uploads package 2",
+                [{"value": "sakaen736jih malicious skills (199 uploads)", "type": "package"}],
+                "ioc-aggregate-description",
+            ),
+            (
+                "aggregate without parentheses",
+                [{"value": "575+ trojanized OpenClaw agent skills", "type": "package"}],
+                "ioc-aggregate-description",
+            ),
+            (
+                "malware family package",
+                [{"value": "Odyssey Stealer", "type": "package"}],
+                "ioc-malware-name-as-package",
+            ),
+            (
+                "malware family prose package",
+                [{"value": "AMOS (Atomic macOS Stealer)", "type": "package"}],
+                "ioc-prose-parenthetical",
+            ),
+            (
+                "affected product fastapi",
+                [{"value": "FastAPI", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "affected product litellm",
+                [{"value": "LiteLLM", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "defanged domain",
+                [{"value": "openew[.]app (fake download portal)", "type": "domain"}],
+                "ioc-defanged-json",
+            ),
+        ]
+
+        for name, ioc_values, expected_code in cases:
+            with self.subTest(name=name):
+                iocs = []
+                for item in ioc_values:
+                    iocs.append(
+                        {
+                            "value": item["value"],
+                            "type": item["type"],
+                            "context": "Example context",
+                            "first_seen": "2026-05-10",
+                            "source": "Example Source",
+                            "campaign": "example-report",
+                            "status": "active",
+                        }
+                    )
+                with self.with_repo() as tmp:
+                    root = Path(tmp)
+                    base_repo(root, iocs=iocs)
+                    code, _ = run_validator(root, "--mode", "strict", "--write-report")
+                    self.assertEqual(code, 1)
+                    codes = {issue["code"] for issue in report(root)["issues"]}
+                    self.assertIn(expected_code, codes)
+
+    def test_ioc_semantic_validation_passes(self):
+        cases = [
+            ("openew.app", "domain"),
+            ("npm:@scope/package@1.2.3", "package"),
+            ("pypi:package@1.2.3", "package"),
+            ("huggingface.co/Open-OSS/privacy-filter", "url_path"),
+            ("litellm@1.82.7", "package"),
+            ("192.168.1.1", "ip"),
+            ("a" * 64, "sha256"),
+            ("claude.ai/share/Xy7AbC9KqM", "url_path"),
+        ]
+
+        for value, ioc_type in cases:
+            with self.subTest(value=value, ioc_type=ioc_type):
+                iocs = [
+                    {
+                        "value": value,
+                        "type": ioc_type,
+                        "context": "Example context",
+                        "first_seen": "2026-05-10",
+                        "source": "Example Source",
+                        "campaign": "example-report",
+                        "status": "active",
+                    }
+                ]
+                with self.with_repo() as tmp:
+                    root = Path(tmp)
+                    base_repo(root, iocs=iocs)
+                    code, _ = run_validator(root, "--mode", "strict", "--write-report")
+                    self.assertEqual(code, 0, msg=(root / "validation-reports/latest-validation-report.json").read_text())
 
     def test_url_check_builds_ssl_handler_without_open_context_kwarg(self):
         class FakeResponse:

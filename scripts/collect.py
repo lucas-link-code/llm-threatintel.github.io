@@ -495,6 +495,66 @@ PROSE_REJECT_MARKERS = (
 # packed comparator forms like "vllm@<0.14.1".
 SPACE_COMPARATOR_RE = re.compile(r'\s[<>]=?\s')
 HEX_RE = re.compile(r'^[a-fA-F0-9]+$')
+CVE_RE = re.compile(r'CVE-\d{4}-\d+', re.I)
+AGGREGATE_DESC_RE = re.compile(
+    r'\d+\+?\s+(identified|uploads|models|skills|affected|trojanized|'
+    r'suspicious|unsafe|advisories|CVEs|compromised|malicious)',
+    re.I,
+)
+PARENTHETICAL_PROSE_RE = re.compile(r'\s*\([^)]{3,}\)\s*$')
+DOMAIN_RE = re.compile(
+    r'^(?=.{1,253}$)(?!-)(?:[A-Za-z0-9-]{1,63}\.)+[A-Za-z0-9-]{2,63}$'
+)
+POLICY_PATH = REPO_ROOT / "validation" / "policy.json"
+_POLICY_CACHE = None
+
+
+def load_policy():
+    global _POLICY_CACHE
+    if _POLICY_CACHE is None:
+        if POLICY_PATH.exists():
+            _POLICY_CACHE = json.loads(POLICY_PATH.read_text())
+        else:
+            _POLICY_CACHE = {}
+    return _POLICY_CACHE
+
+
+def extract_url_host(value):
+    if '://' in value:
+        from urllib.parse import urlparse
+        parsed = urlparse(value)
+        host = parsed.netloc.split('@')[-1].split(':')[0]
+        return host.lower() if host else ''
+    if '/' in value:
+        return value.split('/')[0].lower()
+    return value.lower()
+
+
+def normalize_for_platform_check(value):
+    v = PARENTHETICAL_PROSE_RE.sub('', value).strip()
+    v = v.lower()
+    v = re.sub(r'^https?://', '', v)
+    v = re.sub(r'^www\.', '', v)
+    return v.rstrip('/')
+
+
+def matches_platform_denylist(value, ioc_type, policy):
+    deny = policy.get('legitimate_platform_iocs_deny_list', {}) or {}
+    deny_domains = {str(d).lower() for d in deny.get('domains', [])}
+    deny_url_paths = {str(p).lower() for p in deny.get('url_paths', [])}
+    overrides = {str(o).lower() for o in policy.get('legitimate_platform_ioc_overrides', [])}
+    normalised = normalize_for_platform_check(value)
+    if not normalised or normalised in overrides:
+        return False
+    if ioc_type == 'domain':
+        return normalised in deny_domains
+    if ioc_type == 'url_path':
+        return normalised in deny_domains or normalised in deny_url_paths
+    return False
+
+
+def is_valid_domain(value):
+    return bool(DOMAIN_RE.match(value))
 
 
 def classify_hash(value):
@@ -514,15 +574,41 @@ def classify_hash(value):
 def normalize_ioc_value(value, ioc_type):
     """Clean an IOC value before insertion.
 
-    Returns (cleaned_value, cleaned_type) or (None, None) if the value should
-    be rejected. Strips package prefixes, undefangs, and detects prose.
+    Returns (cleaned_value, cleaned_type, reject_reason). On success
+    reject_reason is None. Strips package prefixes, undefangs, and detects prose.
     """
     if not isinstance(value, str):
         value = str(value)
 
     cleaned = value.strip()
     if not cleaned:
-        return None, None
+        return None, None, 'empty value'
+
+    policy = load_policy()
+    malware_names = policy.get('malware_family_denylist', [])
+    malware_lower = {n.lower() for n in malware_names}
+    affected_products = {n.lower() for n in policy.get('affected_product_package_denylist', [])}
+    ref_domains = policy.get('reference_url_domain_denylist', [])
+
+    if '*' in cleaned:
+        return None, None, 'wildcard values are not valid IOCs'
+
+    if CVE_RE.match(cleaned):
+        return None, None, 'CVE ID is not an IOC value'
+
+    if AGGREGATE_DESC_RE.search(cleaned):
+        return None, None, 'aggregate or statistical description is not an IOC value'
+
+    paren_match = PARENTHETICAL_PROSE_RE.search(cleaned)
+    if paren_match:
+        stripped = cleaned[:paren_match.start()].strip()
+        if not stripped:
+            return None, None, 'value is only editorial prose in parentheses'
+        if stripped.lower() in affected_products or stripped in malware_names or stripped.lower() in malware_lower:
+            return None, None, 'stripped value is not a valid IOC'
+        if ioc_type == 'domain' and not is_valid_domain(stripped):
+            return None, None, 'stripped value is not a valid domain'
+        cleaned = stripped
 
     if ioc_type != 'url_path':
         cleaned = cleaned.replace('[.]', '.')
@@ -532,15 +618,34 @@ def normalize_ioc_value(value, ioc_type):
 
     lowered = cleaned.lower()
     if any(marker in lowered for marker in PROSE_REJECT_MARKERS):
-        return None, None
+        return None, None, 'value contains narrative prose markers'
     if SPACE_COMPARATOR_RE.search(cleaned):
-        return None, None
+        return None, None, 'space-separated version comparators are not valid package IOCs'
+
+    if ioc_type == 'package':
+        if cleaned in malware_names or cleaned.lower() in malware_lower:
+            return None, None, 'malware family name is not a package IOC'
+        bare = re.sub(r'^(?:npm|pypi):', '', cleaned, flags=re.I)
+        if '@' not in bare and bare.lower() in affected_products:
+            return None, None, 'bare affected product name without registry/version context'
+
+    if ioc_type == 'url_path':
+        host = extract_url_host(cleaned)
+        if host and ref_domains:
+            for ref_domain in ref_domains:
+                ref = ref_domain.lower()
+                if host == ref or host.endswith('.' + ref):
+                    return None, None, 'reference or documentation URL is not an IOC'
+
+    if ioc_type in ('domain', 'url_path'):
+        if matches_platform_denylist(cleaned, ioc_type, policy):
+            return None, None, 'legitimate platform domain or generic path is not an IOC'
 
     new_type = ioc_type
     if ioc_type in ('hash', 'sha256', 'sha1', 'md5'):
         new_type = classify_hash(cleaned)
 
-    return cleaned, new_type
+    return cleaned, new_type, None
 
 
 def update_iocs(finding):
@@ -558,10 +663,11 @@ def update_iocs(finding):
 
     def add_ioc(value, ioc_type):
         nonlocal added, skipped
-        cleaned, cleaned_type = normalize_ioc_value(value, ioc_type)
+        cleaned, cleaned_type, reject_reason = normalize_ioc_value(value, ioc_type)
         if cleaned is None:
             skipped += 1
-            print(f"  Skipped malformed IOC: {value!r}")
+            reason = reject_reason or 'malformed value'
+            print(f"  Skipped malformed IOC: {value!r} (reason: {reason})")
             return
         if cleaned in existing_values:
             return

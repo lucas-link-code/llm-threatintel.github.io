@@ -220,6 +220,17 @@ For each new IOC:
   - If the source publishes a specific malicious subdomain (e.g. `evil-typosquat.claude-ai.com`), that IS a valid `domain` IOC.
   - If the only "IOC" the source gives is the bare platform domain (e.g. "the malware was distributed via claude.ai shared chats"), DO NOT add a record to `data/iocs.json`. Document the abuse pattern in the post's `Detailed Findings` and `Detection Recommendations` sections instead, and write `No domain IOCs published by source` in the IOC block. The validator hard-fails on bare-platform entries; see `validation/policy.json` → `legitimate_platform_iocs_deny_list`.
   - The same rule applies to placeholder strings (`claude.ai/new?q=[INJECTION_PAYLOAD]`) and to descriptions of patched vulnerability surfaces (`claude.com/redirect/`) — these are not indicators; they are research notes that belong in the prose.
+- IOC value quality rules:
+  - IOC values must be specific, machine-actionable indicators. Each value must be something a defender can paste into a proxy denylist, SIEM query, or hash lookup.
+  - CVE IDs are NOT IOC values. Track CVEs in post prose and actor records.
+  - Affected software names are NOT IOC values unless they are exact malicious or compromised package names with explicit registry prefix and version context (e.g., `npm:litellm@1.82.7`, `pypi:package@1.2.3`). Bare product names like FastAPI, LiteLLM, Starlette are affected products, not malicious packages.
+  - Malware family names (e.g., Odyssey Stealer, AMOS, Lumma Stealer) are NOT package IOCs. Track malware families in `data/actors.json`.
+  - News, blog, documentation, and research URLs are references, not IOCs. Cite them in the post References section.
+  - Generic platform domains and generic share/model/API paths are not IOCs (see the deny list above).
+  - Descriptive text, statistics, and aggregate summaries (e.g., "100+ identified", "334 uploads", "malicious models") must go in post prose, not `data/iocs.json`.
+  - IOC JSON values must be clean, raw, and not defanged. No `[.]` or `hxxps://` in `data/iocs.json`. Defanging is for display in Markdown post bodies only.
+  - Put explanation in the `context` field, not in the `value` field. The value field must contain only the bare indicator.
+  - Wildcard values (e.g., `chatgpt.com/s/*`) are not valid IOCs.
 - Add with all fields: value, type (domain/url_path/sha256/md5/ip), context, first_seen, source, campaign, status.
 - Update the last_updated field to today's date.
 

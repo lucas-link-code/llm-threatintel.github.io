@@ -52,6 +52,13 @@ PACKAGE_RE = re.compile(
     r"^(?:(?:npm|pypi):)?(?:@[A-Za-z0-9._-]+/)?[A-Za-z0-9._-]+"
     r"(?:@[A-Za-z0-9._<>=~!+\-]+)?$"
 )
+CVE_RE = re.compile(r"CVE-\d{4}-\d+", re.I)
+AGGREGATE_DESC_RE = re.compile(
+    r"\d+\+?\s+(identified|uploads|models|skills|affected|trojanized|"
+    r"suspicious|unsafe|advisories|CVEs|compromised|malicious)",
+    re.I,
+)
+PARENTHETICAL_PROSE_RE = re.compile(r"\([^)]{3,}\)")
 
 
 DEFAULT_POLICY = {
@@ -603,6 +610,62 @@ class Validator:
             self.fail("ioc-defanged-json", f"IOC JSON value must be clean, not defanged: {value}", file, record)
             return
 
+        if "*" in value:
+            self.fail("ioc-wildcard-value", f"IOC value must not contain wildcards: {value}", file, record)
+            return
+
+        if CVE_RE.match(value):
+            self.fail(
+                "ioc-cve-as-value",
+                f"CVE IDs are vulnerability identifiers, not IOC values: {value}",
+                file,
+                record,
+            )
+            return
+
+        if AGGREGATE_DESC_RE.search(value):
+            self.fail(
+                "ioc-aggregate-description",
+                f"IOC value is an aggregate description, not a specific indicator: {value}",
+                file,
+                record,
+            )
+            return
+
+        paren_overrides = self.policy.get("parenthetical_value_overrides", [])
+        if PARENTHETICAL_PROSE_RE.search(value) and value not in paren_overrides:
+            self.fail(
+                "ioc-prose-parenthetical",
+                f"IOC value contains editorial prose in parentheses (move context to the context field): {value}",
+                file,
+                record,
+            )
+            return
+
+        if ioc_type == "package":
+            malware_names = self.policy.get("malware_family_denylist", [])
+            malware_lower = {n.lower() for n in malware_names}
+            if value in malware_names or value.lower() in malware_lower:
+                self.fail(
+                    "ioc-malware-name-as-package",
+                    f"malware family name is not a package IOC (track in actors.json instead): {value}",
+                    file,
+                    record,
+                )
+                return
+
+            affected = {n.lower() for n in self.policy.get("affected_product_package_denylist", [])}
+            bare_name = re.sub(r"^(?:npm|pypi):", "", value, flags=re.I)
+            if "@" not in bare_name and bare_name.lower() in affected:
+                self.fail(
+                    "ioc-affected-product-as-package",
+                    f"bare affected product name is not a package IOC without registry/version context "
+                    f"(use registry:name@version for specific compromised versions): {value}",
+                    file,
+                    record,
+                )
+                return
+
         if ioc_type == "domain":
             if "://" in value or "/" in value or any(ch.isspace() for ch in value):
                 self.fail("ioc-domain-format", f"domain IOC must not contain scheme, path, or spaces: {value}", file, record)
@@ -704,6 +767,20 @@ class Validator:
         has_port = ":" in parsed.netloc
         if not has_path_or_query and not has_port:
             self.fail("ioc-url-path-format", f"url_path IOC must include a path, query, or port: {value}", file, record)
+            return
+
+        ref_domains = self.policy.get("reference_url_domain_denylist", [])
+        if host and ref_domains:
+            host_lower = host.lower()
+            for ref_domain in ref_domains:
+                if host_lower == ref_domain.lower() or host_lower.endswith("." + ref_domain.lower()):
+                    self.fail(
+                        "ioc-reference-url",
+                        f"reference/documentation URL is not an IOC (cite in post References section instead): {value}",
+                        file,
+                        record,
+                    )
+                    return
 
     def validate_hash_ioc(self, value: str, ioc_type: str, file: str, record: str) -> None:
         expected = {"md5": 32, "sha1": 40, "sha256": 64}.get(ioc_type)
