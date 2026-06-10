@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-07",
+  "last_updated": "2026-06-10",
   "entries": [
     {
       "id": "greyvibe",
@@ -1191,7 +1191,8 @@
         "GitHub",
         "Documentation portals",
         "SaaS dashboards",
-        "Lumma Stealer malware campaigns"
+        "Lumma Stealer malware campaigns",
+        "MCP-based AI agent infrastructure"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1226,7 +1227,8 @@
         "T1189 - Drive-by Compromise",
         "T1566.002 - Social Engineering",
         "T1059.007 - Cross-Site Scripting",
-        "T1528 - Credential Access"
+        "T1528 - Credential Access",
+        "T1190 - Exploitation of Remote Services"
       ],
       "description": "Threat actors compromised a Context.ai employee via infostealer malware, then weaponized the trust relationship between the employee and their corporate environment to steal OAuth tokens with excessive permissions. The incident demonstrates how AI tool adoption expands the enterprise attack surface through new credential types and trust relationships.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

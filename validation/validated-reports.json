@@ -1047,22 +1047,22 @@
       ]
     },
     "2026-04-29-litellm-cve-2026-42208-sql-injection": {
-      "content_hash": "0bbe5f296861a306d745315866d6d9c6ff51786f60a00b48ae682d229f7c3ba0",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "607eeff39d48a89edae0ff2dbbf77cff6ef7ba5cd86c194d9a82996ce738db93",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-04-29-litellm-cve-2026-42208-sql-injection.md",
       "posts_index_hash": "2f3f3ab659af40a05bcd3d3405573f537c933a55ba4fb028c1108032ff39a24e",
       "report_id": "2026-04-29-litellm-cve-2026-42208-sql-injection",
-      "review_required": [],
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
         "https://webflow.sysdig.com/blog/litellm-cve-2026-42208"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-10T07:11:11+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-30-cve-2026-25874-lerobot-unauthenticated-rce": {
       "content_hash": "2585c26c36bdb7b73db4fd233aad78eb5e5d9bbe8474123b7bd3fc637bcce184",
@@ -1392,7 +1392,7 @@
       ]
     },
     "2026-05-08-million-exposed-ai-services-security-assessment": {
-      "content_hash": "43b51d1b702edc252eb6130feb8bbd27ab6a464e8ec6f95980914de0cbddc2c9",
+      "content_hash": "38ebc3af7b32d7855aabdcdb82735b850dd840e075dbace9088a895d59f9206c",
       "evidence_status": "validated",
       "file": "2026-05-08-million-exposed-ai-services-security-assessment.md",
       "posts_index_hash": "5de6e6e9d6fc15421bc622bca11363b0f44e814d7041c1549003b9ef7c6383cc",
@@ -1402,7 +1402,7 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T23:00:15+00:00",
+      "validated_at": "2026-06-10T07:11:10+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1656,12 +1656,14 @@
       "warnings": []
     },
     "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models": {
-      "content_hash": "5c33247f39a20d8d7c066613adeb542d41a9d12af0a22bdaca9fd73f915d466c",
-      "evidence_status": "validated",
+      "content_hash": "564812a80918ce7c43e68706579bff3e9447505bc4d9d6c8767003622ac2f8e9",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md",
       "posts_index_hash": "91df4736443192bd83c7e7564637fa91de033e9bd8231d1a0b8e3fd9c4414565",
       "report_id": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-      "review_required": [],
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
         "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
@@ -1669,7 +1671,7 @@
         "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T23:07:38+00:00",
+      "validated_at": "2026-06-10T07:11:10+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1708,7 +1710,7 @@
       "warnings": []
     },
     "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce": {
-      "content_hash": "f0b00a8a1428aea4bf60056f1c26b24044b573a57b848d2a466b9b505a3fadb1",
+      "content_hash": "98288aba09e0021714f0359aa63a9f34d4d5e67f3f9740aa34a063fa09d0afc4",
       "evidence_status": "validated",
       "file": "2026-05-13-windsurf-cve-2026-30615-mcp-zero-click-prompt-injection-rce.md",
       "posts_index_hash": "fa2d6d065ba94fd74b9fd71df866ccc3fcd7f35cf8f52519e65448a78a2cda6a",
@@ -1721,7 +1723,7 @@
         "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-14T06:27:00+00:00",
+      "validated_at": "2026-06-10T07:11:08+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2033,7 +2035,7 @@
       "warnings": []
     },
     "2026-05-19-openclaw-clawhu-skill-poisoning-campaign": {
-      "content_hash": "865c36c714f71fb401d5b8ed5f40a41a2fe740c52e45aad774041cb12fd72327",
+      "content_hash": "25669a2a05cd830f3da6c01ed1c18b20bf7d9200bfe88a44b6d8e2f1f66e58ed",
       "evidence_status": "validated",
       "file": "2026-05-19-openclaw-clawhu-skill-poisoning-campaign.md",
       "posts_index_hash": "1482639b5227db5440f0d07c0db22a12ed0dfc5c68283364639994b91f2f7ecc",
@@ -2044,7 +2046,7 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-19T07:53:19+00:00",
+      "validated_at": "2026-06-10T07:11:06+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2361,7 +2363,7 @@
       "warnings": []
     },
     "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation": {
-      "content_hash": "b48ed25061afc74e1a7ed151120c6efe18fa7a39466920bac4733f9ee578651b",
+      "content_hash": "5de75d5a90e3e3b345b601bad0508cab0160161fa53b6ba9c5abca1e50bdd15b",
       "evidence_status": "validated",
       "file": "2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.md",
       "posts_index_hash": "e6b9819774faa378a4e8b7d2e6ec79ad58534d618f72792632c7aa23172fb4c8",
@@ -2372,12 +2374,12 @@
         "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-01T08:36:55+00:00",
+      "validated_at": "2026-06-10T07:11:03+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-06-01-llmshare-chatgpt-claude-malware-campaign": {
-      "content_hash": "6fa16d153d703578a048bcdd2d27d90785afa52649e66afc555a23002242773d",
+      "content_hash": "1cc05c6cc889f6c07151824eb2fc51defa4c109f6ca02470d50fead21be80acb",
       "evidence_status": "validated",
       "file": "2026-06-01-llmshare-chatgpt-claude-malware-campaign.md",
       "posts_index_hash": "ab3d1c4d9ff771728f08129a1649e427214a98f40f36c685557f852dc9ac5741",
@@ -2388,7 +2390,7 @@
         "https://the-decoder.com/attackers-abuse-shared-chatgpt-and-claude-chats-to-spread-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-02T07:26:36+00:00",
+      "validated_at": "2026-06-10T07:11:05+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2426,24 +2428,26 @@
       "warnings": []
     },
     "2026-06-02-llmshare-chatgpt-claude-malware-campaign": {
-      "content_hash": "c833556aeabff61c709da71bfdbd0f9d589e8a0f06a6b84c34a019e1b0905955",
-      "evidence_status": "validated",
+      "content_hash": "5d9674a4cfd9d09f6241c18dcb795a1b4b928464c9ef4c1a03553f2f393b8287",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-06-02-llmshare-chatgpt-claude-malware-campaign.md",
       "posts_index_hash": "cd0febf9eb00c4d2c32d8b86f7dfd87147897265584adba42acf50388213bfba",
       "report_id": "2026-06-02-llmshare-chatgpt-claude-malware-campaign",
-      "review_required": [],
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://www.techtimes.com/articles/317528/20260601/chatgpt-share-links-deliver-malware-openai-domain-evading-corporate-web-filters.htm",
         "https://www.ghacks.net/2026/06/01/attackers-abuse-chatgpt-share-links-to-host-fake-outage-pages-that-deliver-malware/",
         "https://www.bleepingcomputer.com/news/security/chatgpt-share-links-abused-to-host-fake-outage-pages-to-deliver-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-02T07:26:34+00:00",
+      "validated_at": "2026-06-10T07:11:03+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-06-02-vercel-context-ai-oauth-breach": {
-      "content_hash": "8dbad522461e06dba98d0259ed043b3cef783d460aa705ca155c835b492339fc",
+      "content_hash": "58173c6baf964f97beef0c1390a112132d9207b79c4b8b44784d94ee41514115",
       "evidence_status": "validated",
       "file": "2026-06-02-vercel-context-ai-oauth-breach.md",
       "posts_index_hash": "26a7d9bcd58493b551ec10970dc6791f44061cb5cdbe86f26c9cbe569ee8c6af",
@@ -2453,7 +2457,7 @@
         "https://blueradius.io/ai-cybersecurity-incident-report-2026"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-02T07:26:33+00:00",
+      "validated_at": "2026-06-10T07:11:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2473,7 +2477,7 @@
       "warnings": []
     },
     "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign": {
-      "content_hash": "a2e38b2954a25909bd41d17bda3e4d7d63a9035ee3a6b7e5fa3687e13d421fce",
+      "content_hash": "3f6b1ddf34ba35c99b5e823413c7710bef4f5c326d88d0801dd8a3c1c4776814",
       "evidence_status": "validated",
       "file": "2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.md",
       "posts_index_hash": "fd7b427e0aa700478892d744ab10b9bbc27632e75a8d49663330074a41b65aab",
@@ -2485,12 +2489,12 @@
         "https://www.hiddenlayer.com/research/malware-found-in-trending-hugging-face-repository-open-oss-privacy-filter"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-03T08:20:18+00:00",
+      "validated_at": "2026-06-10T07:11:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf": {
-      "content_hash": "3d93a0d1d99f32f3611bda3f70e2da82594dd87a71775c2b229fe84606a6e641",
+      "content_hash": "756174bd28a967175ce337b035b6cd359096ae76e255fc853357d75f97449284",
       "evidence_status": "validated",
       "file": "2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.md",
       "posts_index_hash": "5bbe5f5c84037b1bf5a7a754aa4125f3ded65064586476189e9c4ce12e4cb807",
@@ -2501,7 +2505,7 @@
         "https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-03T08:20:17+00:00",
+      "validated_at": "2026-06-10T07:11:01+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2526,7 +2530,7 @@
       "warnings": []
     },
     "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026": {
-      "content_hash": "97152713b0c58b9338092c8127b51a0d5a816e37b473d8cdb4ce39f933a8a8e7",
+      "content_hash": "44236caf794e17be02817314530bfaeb49f5edac4f5dd0a8986f5ceab756c9b7",
       "evidence_status": "validated",
       "file": "2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.md",
       "posts_index_hash": "ddbb2cf99af304b356e5c4bc1bcf4caa407cd692759e1ceae928056893d31507",
@@ -2537,12 +2541,12 @@
         "https://arxiv.org"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-06T06:32:17+00:00",
+      "validated_at": "2026-06-10T07:11:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026": {
-      "content_hash": "e1a4b2151159c5f1db5ff72be424722fb75317ea028ae58d9b5b1a4b0347fc6b",
+      "content_hash": "efa1a66208d17095d11d823fcceef341f6dd1657f52e0dd893e7dc84a1ec3742",
       "evidence_status": "validated_with_warnings",
       "file": "2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026.md",
       "posts_index_hash": "f3eae756e576613feb9d10e13c29b6a16858cb93457efef429123aa2ddde760f",
@@ -2556,7 +2560,7 @@
         "https://www.infosecurity-magazine.com/news/attackers-shared-content-chatgpt/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-06T06:32:18+00:00",
+      "validated_at": "2026-06-10T07:11:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2578,7 +2582,7 @@
       "warnings": []
     },
     "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce": {
-      "content_hash": "39de7381ddaf154edeba2dedb964e8cac4d71414aea223f0b822b0b8104535e8",
+      "content_hash": "fcde6488929e4ae94fd03e9e5593d408bbd4a7145820202b7e97dac633c269f9",
       "evidence_status": "validated",
       "file": "2026-06-07-cve-2026-48710-badhost-starlette-llm-rce.md",
       "posts_index_hash": "fd75cc3b4a89c0e80fa4159745d3c83eb9ac87f2645c1dba38a53d004dbb5935",
@@ -2588,12 +2592,12 @@
         "https://www.buildfastwithai.com/blogs/ai-news-today-june-1-2026"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-07T07:07:16+00:00",
+      "validated_at": "2026-06-10T07:10:59+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain": {
-      "content_hash": "13537e70e85da482c59dce75f3174ad0eca16601212d76a02a95a584819611e8",
+      "content_hash": "43d2478b6668dc3d7227577596e040dbf94a17669ae12e11bcc2beb909b5dc84",
       "evidence_status": "validated",
       "file": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.md",
       "posts_index_hash": "828447439fbd559dd2bee83c5a693de40bcd8ea1144c554b4248f40623006b85",
@@ -2605,7 +2609,23 @@
         "https://cybersecuritynews.com/chatgpt-vulnerability-chatgphish-attack/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-07T07:07:14+00:00",
+      "validated_at": "2026-06-10T07:10:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev": {
+      "content_hash": "d2cbb6399405ccf081317e9a1a8cf27fe4530fd9a7b55ac42d9b7234cc9832a5",
+      "evidence_status": "validated",
+      "file": "2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev.md",
+      "posts_index_hash": "e0ca6c6c42f8b330e1773973217ceb2076f0a0b99ff271f27c24c54f9af53a03",
+      "report_id": "2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev",
+      "review_required": [],
+      "source_urls": [
+        "https://cybelangel.com/blog/itellm-vulnerability-cve-2026-42271/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-10T07:10:58+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

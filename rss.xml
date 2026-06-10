@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 09 Jun 2026 06:42:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 07:10:57 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-42271 LiteLLM MCP Command Injection: CISA KEV Addition and Confirmed Active Exploitation</title>
+      <link>https://llm-threatintel.com/posts/2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev.html</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+      <description>On June 9, 2026, CISA added CVE-2026-42271 to the KEV catalog, citing confirmed active exploitation in the wild. The command injection flaw in LiteLLM MCP test endpoints was disclosed April 20, 2026, with fixes released May 8, 2026 in version 1.83.7. Confirmed attacks followed within five weeks of the patch being published, representing a narrow detection window.</description>
+    </item>    <item>
       <title>LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload</title>
       <link>https://llm-threatintel.com/posts/2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-05-30-chatgphish-chatgpt-markdown-injection-phishing.html</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
       <description>A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers bypassed OpenAI's initial dismissal by demonstrating the attack's scale across passive tracking, UI redress, and QR-code pivots.</description>
-    </item>    <item>
-      <title>CVE-2026-48710 (BadHost): Starlette Host Header Injection Bypasses Authentication in AI Inference Servers, MCP Gateways, and FastAPI-Based LLM Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-05-28-cve-2026-48710-badhost-starlette-host-injection-ai.html</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-48710 (BadHost) is a critical vulnerability in Starlette versions before 1.0.1 affecting FastAPI-based applications that power modern AI infrastructure, including LLM inference servers, agent frameworks, and MCP gateways, enabling authentication bypass through manipulated HTTP headers. The vulnerability affects vLLM and LiteLLM inference servers, AI agent frameworks, MCP servers, and tools such as Ray Serve and BentoML.</description>
     </item>
   </channel>
 </rss>

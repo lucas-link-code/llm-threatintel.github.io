@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev",
+      "title": "CVE-2026-42271 LiteLLM MCP Command Injection: CISA KEV Addition and Confirmed Active Exploitation",
+      "date": "2026-06-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On June 9, 2026, CISA added CVE-2026-42271 to the KEV catalog, citing confirmed active exploitation in the wild. The command injection flaw in LiteLLM MCP test endpoints was disclosed April 20, 2026, with fixes released May 8, 2026 in version 1.83.7. Confirmed attacks followed within five weeks of the patch being published, representing a narrow detection window.",
+      "file": "2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev.md"
+    },
+    {
       "id": "2026-06-07-llmshare-fake-outage-malware-chatgpt-domain",
       "title": "LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload",
       "date": "2026-06-07",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-09",
+  "last_updated": "2026-06-10",
   "iocs": [
     {
       "value": "lapas.live",
@@ -922,7 +922,7 @@
     {
       "value": "github.com/startreedata/mcp-pinot",
       "type": "url_path",
-      "context": "StarTree MCP Server for Apache Pinot (mcp-pinot v1.1.0 and earlier) \u2014 HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full Pinot cluster takeover when externally reachable; StarTree added OAuth as optional HTTP authenticator",
+      "context": "StarTree MCP Server for Apache Pinot (mcp-pinot v1.1.0 and earlier) — HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full Pinot cluster takeover when externally reachable; StarTree added OAuth as optional HTTP authenticator",
       "first_seen": "2026-05-13",
       "source": "Akamai Security Intelligence Group",
       "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
@@ -2011,7 +2011,7 @@
     {
       "value": "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
       "type": "url_path",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2020,7 +2020,7 @@
     {
       "value": "@solana-launchpad/sdk (bait package, no malicious code)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2029,7 +2029,7 @@
     {
       "value": "@validate-sdk/v2 (payload, infostealer)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2038,7 +2038,7 @@
     {
       "value": "@hash-validator/v2 (early variant, JavaScript infostealer)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2047,7 +2047,7 @@
     {
       "value": "aes-create-ipheriv (rotated payload)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2056,7 +2056,7 @@
     {
       "value": "jito-proper-excutor (rotated payload)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2065,7 +2065,7 @@
     {
       "value": "jito-sub-aes-ipheriv (rotated payload)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2074,7 +2074,7 @@
     {
       "value": "scraper-npm (PyPI variant, February 2026)",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2128,7 +2128,7 @@
     {
       "value": "semantic-kernel<1.39.4 (Python)",
       "type": "package",
-      "context": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework\u2014eval() Filter Vulnerability Affects Python SDK < 1.39.4",
+      "context": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK < 1.39.4",
       "first_seen": "2026-05-09",
       "source": "Microsoft Security Blog",
       "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
@@ -2137,7 +2137,7 @@
     {
       "value": "semantic-kernel<1.71.0 (.NET)",
       "type": "package",
-      "context": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework\u2014eval() Filter Vulnerability Affects Python SDK < 1.39.4",
+      "context": "Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Microsoft AI Agent Framework—eval() Filter Vulnerability Affects Python SDK < 1.39.4",
       "first_seen": "2026-05-09",
       "source": "Microsoft Security Blog",
       "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
@@ -2263,7 +2263,7 @@
     {
       "value": "65.111.27.132",
       "type": "ip",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -2272,7 +2272,7 @@
     {
       "value": "litellm>=1.81.16,<1.83.7",
       "type": "package",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -2281,7 +2281,7 @@
     {
       "value": "Open-OSS/privacy-filter (Hugging Face)",
       "type": "package",
-      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified\u2014Trojans, Cryptominers, and AMOS Stealer Malware",
+      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
       "first_seen": "2026-05-12",
       "source": "TechNext Web",
       "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
@@ -2290,7 +2290,7 @@
     {
       "value": "semantic-kernel<1.39.4 (Python SDK)",
       "type": "package",
-      "context": "Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks\u2014Eval() Filter Bypasses Enable Code Execution Chains",
+      "context": "Microsoft Semantic Kernel CVE-2026-26030: Prompt Injection to RCE in Agentic AI Frameworks—Eval() Filter Bypasses Enable Code Execution Chains",
       "first_seen": "2026-05-12",
       "source": "Microsoft Security Blog",
       "campaign": "cve-2026-26030-semantic-kernel-prompt-injection-rce",
@@ -2299,7 +2299,7 @@
     {
       "value": "jsonkeeper.com",
       "type": "domain",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -2308,7 +2308,7 @@
     {
       "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
       "type": "sha256",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -2317,7 +2317,7 @@
     {
       "value": "https://www.huggingface.co/Open-OSS/privacy-filter",
       "type": "url_path",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -2326,7 +2326,7 @@
     {
       "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -2335,7 +2335,7 @@
     {
       "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -2362,7 +2362,7 @@
     {
       "value": "ollama",
       "type": "package",
-      "context": "Massive Exposure of 1 Million AI Services\u2014Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
+      "context": "Massive Exposure of 1 Million AI Services—Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
       "first_seen": "2026-05-18",
       "source": "Intruder Security",
       "campaign": "intruder-1-million-exposed-ai-services-may-2026",
@@ -2371,7 +2371,7 @@
     {
       "value": "Microsoft.SemanticKernel.Core",
       "type": "package",
-      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)\u2014Prompt Injection to Remote Code Execution in AI Agent Frameworks",
+      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)—Prompt Injection to Remote Code Execution in AI Agent Frameworks",
       "first_seen": "2026-05-18",
       "source": "Microsoft Security Blog",
       "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
@@ -2380,7 +2380,7 @@
     {
       "value": "semantic-kernel",
       "type": "package",
-      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)\u2014Prompt Injection to Remote Code Execution in AI Agent Frameworks",
+      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)—Prompt Injection to Remote Code Execution in AI Agent Frameworks",
       "first_seen": "2026-05-18",
       "source": "Microsoft Security Blog",
       "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
@@ -2425,7 +2425,7 @@
     {
       "value": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
       "type": "url_path",
-      "context": "Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations\u2014Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure",
+      "context": "Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations—Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure",
       "first_seen": "2026-05-21",
       "source": "The Hacker News",
       "campaign": "intruder-1m-exposed-ai-services-misconfig-may-2026",
@@ -2434,7 +2434,7 @@
     {
       "value": "https://docs.litellm.ai/blog/security-update-march-2026",
       "type": "url_path",
-      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours\u2014Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
+      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
       "first_seen": "2026-05-21",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
@@ -2443,7 +2443,7 @@
     {
       "value": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
       "type": "url_path",
-      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours\u2014Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
+      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours—Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
       "first_seen": "2026-05-21",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
@@ -2452,7 +2452,7 @@
     {
       "value": "x.com",
       "type": "domain",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -2461,7 +2461,7 @@
     {
       "value": "base.blockscout.com",
       "type": "domain",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -2470,7 +2470,7 @@
     {
       "value": "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a",
       "type": "url_path",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -2479,7 +2479,7 @@
     {
       "value": "https://twitter.com/bankrbot",
       "type": "url_path",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -2488,7 +2488,7 @@
     {
       "value": "@bankr/agent",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -2497,7 +2497,7 @@
     {
       "value": "grok-bankr-integration",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -2681,6 +2681,15 @@
       "first_seen": "2026-06-02",
       "source": "BlueRadius Cyber",
       "campaign": "vercel-context-ai-oauth-breach",
+      "status": "active"
+    },
+    {
+      "value": "litellm>=1.83.7",
+      "type": "package",
+      "context": "CVE-2026-42271 LiteLLM MCP Command Injection: CISA KEV Addition and Confirmed Active Exploitation",
+      "first_seen": "2026-06-10",
+      "source": "Cyberangel",
+      "campaign": "cve-2026-42271-litellm-mcp-rce-kasi-kev",
       "status": "active"
     }
   ]
