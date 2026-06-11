@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages | LLM ThreatIntel</title>
+  <meta name="description" content="The Miasma supply chain attack crossed two new boundaries between June 5 and June 7, 2026. On June 5, a recompromised contributor account pushed a malicious commit into Microsoft&#x27;s Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub&#x27;s automated enforcement disabled 73 repositories across four Microsoft GitHub organizations in a 105-second sweep. On 1 June 2026, Wiz Research identified a supply chain compromise affecting multiple packages published under the @redhat-cloud-services npm namespace. Investigation revealed that at least 32 package releases contained unauthorized modifications.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-06-11-miasma-redhat-npm-azure-github-compromise.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages">
+  <meta property="og:description" content="The Miasma supply chain attack crossed two new boundaries between June 5 and June 7, 2026. On June 5, a recompromised contributor account pushed a malicious commit into Microsoft&#x27;s Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub&#x27;s automated enforcement disabled 73 repositories across four Microsoft GitHub organizations in a 105-second sweep. On 1 June 2026, Wiz Research identified a supply chain compromise affecting multiple packages published under the @redhat-cloud-services npm namespace. Investigation revealed that at least 32 package releases contained unauthorized modifications.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-06-11-miasma-redhat-npm-azure-github-compromise.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages">
+  <meta property="article:published_time" content="2026-06-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-11T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages">
+  <meta name="twitter:description" content="The Miasma supply chain attack crossed two new boundaries between June 5 and June 7, 2026. On June 5, a recompromised contributor account pushed a malicious commit into Microsoft&#x27;s Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub&#x27;s automated enforcement disabled 73 repositories across four Microsoft GitHub organizations in a 105-second sweep. On 1 June 2026, Wiz Research identified a supply chain compromise affecting multiple packages published under the @redhat-cloud-services npm namespace. Investigation revealed that at least 32 package releases contained unauthorized modifications.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages",
+  "description": "The Miasma supply chain attack crossed two new boundaries between June 5 and June 7, 2026. On June 5, a recompromised contributor account pushed a malicious commit into Microsoft's Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub's automated enforcement disabled 73 repositories across four Microsoft GitHub organizations in a 105-second sweep. On 1 June 2026, Wiz Research identified a supply chain compromise affecting multiple packages published under the @redhat-cloud-services npm namespace. Investigation revealed that at least 32 package releases contained unauthorized modifications.",
+  "datePublished": "2026-06-11T00:00:00Z",
+  "dateModified": "2026-06-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-06-11-miasma-redhat-npm-azure-github-compromise.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-06-11</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages</h1>
+<p><strong>Date:</strong> 2026-06-11<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>The Miasma supply chain attack crossed two new boundaries between June 5 and June 7, 2026. On June 5, a recompromised contributor account pushed a malicious commit into Microsoft&#x27;s Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub&#x27;s automated enforcement disabled 73 repositories across four Microsoft GitHub organizations in a 105-second sweep. On 1 June 2026, Wiz Research identified a supply chain compromise affecting multiple packages published under the @redhat-cloud-services npm namespace. Investigation revealed that at least 32 package releases contained unauthorized modifications.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Miasma: The Spreading Blight</td></tr><tr><td>Attribution</td><td>Mini Shai-Hulud lineage; TeamPCP (primary), possible copycat actors from open-sourced code (May 12, 2026) (confidence: high)</td></tr><tr><td>Target</td><td>Red Hat npm ecosystem users (80,000-117,000 weekly downloads), Microsoft Azure infrastructure and developers, npm package maintainers with OIDC publishing rights, cloud and CI/CD teams</td></tr><tr><td>Vector</td><td>Compromised GitHub employee account + OIDC-based publishing; npm preinstall hooks and GitHub Actions workflows; MCP configuration poisoning via repository files</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-01</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>On June 1, 2026, researchers identified malicious code embedded in at least 32 package releases published under the @redhat-cloud-services npm namespace, a set of frontend components and API clients that power the Red Hat Hybrid Cloud Console. The compromised releases carry a preinstall script that runs an obfuscated payload the moment a package is installed, harvesting developer and cloud credentials and attempting to spread itself to other packages the victim can publish. Microsoft Threat Intelligence identified a large-scale npm supply chain attack affecting 32 maliciously modified packages across more than 90 versions under the @redhat-cloud-services npm scope. The compromise originated from the upstream RedHatInsights/javascript-clients Continuous Integration and Continuous Delivery (CI/CD) pipeline, allowing attackers to publish trojanized packages through the legitimate GitHub Actions OpenID Connect (OIDC) publishing workflow. As a result, the malicious packages carried authentic provenance signatures while embedding the campaign marker &quot;Miasma: The Spreading Blight.&quot; Once installed, the trojanized packages triggered an npm preinstall hook that executed a heavily obfuscated 4.29 MB dropper script. One of the main changes in this new variant is the addition of new data collectors focused on cloud identities. Specifically, collectors for GCP and Azure identities were added that collect all identities the infected machine has access to. While previous versions of the malware primarily focused on extracting secrets from these environments, this variant suggests an increased attacker focus on gaining and leveraging access to the cloud itself. A recompromised contributor account pushed a malicious commit into Microsoft&#x27;s Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. The Hades variant uses Python .pth startup hooks to execute a Bun-powered JavaScript credential stealer on every Python interpreter startup, without the victim ever importing the compromised package.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195</td><td>Compromised GitHub employee account and OIDC publishing workflow used to inject malicious code into npm packages and GitHub repositories</td></tr><tr><td>Trusted Relationship</td><td>T1199</td><td>Abuse of GitHub Actions OIDC identity token (id-token: write) and trusted publishing mechanism to mint valid SLSA provenance attestations for malicious packages</td></tr><tr><td>Credential Dumping</td><td>T1110.004</td><td>4.29 MB obfuscated payload harvests GitHub, npm, PyPI, AWS, Azure, GCP, Kubernetes, SSH, Docker, Vault credentials; scrapy GitHub Actions runner memory for ephemeral secrets</td></tr><tr><td>Code Execution via Package Manager Hook</td><td>T1547.004</td><td>npm preinstall hook executes malicious JavaScript before standard package initialization; npm binding.gyp abuse in second wave</td></tr><tr><td>Repository Hijacking and Worm Propagation</td><td>T1098</td><td>Malware enumerates /user/repos and /user/orgs, spreads to additional repositories with forged SLSA provenance, plants destructive triggers (&#x27;IfYouInvalidateThisTokenItWillNukeTheComputerOfTheOwner&#x27;)</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_First wave June 1 ~10:53 UTC, second wave ~13:44 UTC, third wave ~14:23 UTC. PyPI removed malicious versions; npm implemented namespace protections. GitHub repositories marked with description &#x27;Miasma: The Spreading Blight&#x27; used for exfiltration._</p>
+<h3>Full URL Paths</h3>
+<p>_First wave June 1 ~10:53 UTC, second wave ~13:44 UTC, third wave ~14:23 UTC. PyPI removed malicious versions; npm implemented namespace protections. GitHub repositories marked with description &#x27;Miasma: The Spreading Blight&#x27; used for exfiltration._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">@redhat-cloud-services/frontend-components (7.7.2–7.7.5, 7.7.7–7.7.9)
+@redhat-cloud-services/compliance-client (4.0.3–4.0.6)
+@redhat-cloud-services/rbac-client (9.0.3, 9.0.4, 9.0.6)
+29 additional packages in @redhat-cloud-services namespace (96 total versions)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>New, unexpected repositories in your GitHub org, especially any with the description Miasma: The Spreading Blight. Unrecognized GitHub Actions workflows, particularly minimal ones that request id-token: write and trigger on push to any branch. Newly created personal access tokens, deploy keys, or npm tokens you did not create. Anomalous reads of GCP and Azure identity metadata from build runners. Monitor for npm preinstall hook execution and binding.gyp modifications during package installation. Detect GitHub Actions OIDC token requests with id-token: write permission in workflows that lack code review enforcement. Flag orphan commits that bypass branch protection rules. Scan for outbound connections to attacker-controlled GitHub repositories or hardcoded Anthropic API endpoints. Implement npm install with --ignore-scripts to prevent preinstall hooks. Use provenance verification and SBOM scanning to detect supply chain compromises.</p>
+<h2>References</h2>
+<ul><li>[Wiz] Miasma: Supply Chain Attack Targeting RedHat npm Packages (2026-06-04) — https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages</li><li>[Microsoft Security Blog] Preinstall to persistence: Inside the Red Hat npm Miasma credential-stealing campaign (2026-06-02) — https://www.microsoft.com/en-us/security/blog/2026/06/02/preinstall-persistence-inside-red-hat-npm-miasma-credential-stealing-campaign/</li><li>[Snyk] Miasma Attack Hits Red Hat npm Packages (2026-06-01) — https://snyk.io/blog/miasma-supply-chain-attack-malicious-code-redhat-cloud-services-npm-packages/</li><li>[Phoenix Security] Miasma Worm Reaches Microsoft Azure and PyPI: 73 Repositories Disabled, Hades Wave Drops 37 Malicious Python Wheels (2026-06-09) — https://phoenix.security/miasma-azure-hades-pypi-supply-chain-worm-2026/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

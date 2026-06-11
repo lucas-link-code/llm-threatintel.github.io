@@ -1,6 +1,46 @@
 {
   "posts": [
     {
+      "id": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce",
+      "title": "CVE-2026-4372: Hugging Face Transformers Critical RCE via Malicious Model Config.json – 232 Million Downloads Exposed Pre-Patch",
+      "date": "2026-06-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The vulnerability allows an attacker to craft a malicious config.json file containing the _attn_implementation_internal field set to an attacker-controlled Hugging Face Hub repository ID. When a victim loads a model using standard Transformers APIs such as AutoModelForCausalLM.from_pretrained(), the library fetches and executes code from the attacker's repository — enabling arbitrary remote code execution. Transformers is the most widely used library for working with AI/ML models — it has hundreds of millions of monthly downloads and is the foundation of the modern NLP and generative AI ecosystem.",
+      "file": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce.md"
+    },
+    {
+      "id": "2026-06-11-miasma-redhat-npm-azure-github-compromise",
+      "title": "Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages",
+      "date": "2026-06-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The Miasma supply chain attack crossed two new boundaries between June 5 and June 7, 2026. On June 5, a recompromised contributor account pushed a malicious commit into Microsoft's Azure/durabletask GitHub repository, planting configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub's automated enforcement disabled 73 repositories across four Microsoft GitHub organizations in a 105-second sweep. On 1 June 2026, Wiz Research identified a supply chain compromise affecting multiple packages published under the @redhat-cloud-services npm namespace. Investigation revealed that at least 32 package releases contained unauthorized modifications.",
+      "file": "2026-06-11-miasma-redhat-npm-azure-github-compromise.md"
+    },
+    {
+      "id": "2026-06-11-hades-campaign-pypi-credential-stealer-bun-payload",
+      "title": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "date": "2026-06-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On June 8, 2026, version 0.8.101 of the popular graph machine learning package ensmallen on PyPI was identified as containing a highly sophisticated supply chain compromise. Concurrently, a series of related packages in the computational biology, bioinformatics, and genotype-phenotype analysis ecosystem were also found to carry the identical malicious payload. This operation, which we are tracking as the Hades Campaign, uses a self-contained Bun executable to execute a multi-layer payload silently on package import. Attackers are now writing payloads that target the cognitive logic of automated AI triage systems. Scanners that pass raw text to LLMs without strict boundary isolation can be coerced into generating false negative verdicts, allowing the malicious package to bypass organization analysis.",
+      "file": "2026-06-11-hades-campaign-pypi-credential-stealer-bun-payload.md"
+    },
+    {
       "id": "2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev",
       "title": "CVE-2026-42271 LiteLLM MCP Command Injection: CISA KEV Addition and Confirmed Active Exploitation",
       "date": "2026-06-10",

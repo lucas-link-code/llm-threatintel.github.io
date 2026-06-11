@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10",
+  "last_updated": "2026-06-11",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2690,6 +2690,159 @@
       "first_seen": "2026-06-10",
       "source": "Cyberangel",
       "campaign": "cve-2026-42271-litellm-mcp-rce-kasi-kev",
+      "status": "active"
+    },
+    {
+      "value": "ensmallen",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "bramin",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "cmd2func",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "coolbox",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "dynamo-release",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "executor-engine",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "executor-http",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "funcdesc",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "magique",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "langchain-core-mcp",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "spateo-release",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "gpt-pilot",
+      "type": "package",
+      "context": "Hades Campaign: PyPI Credential Stealer Worm Targeting AI/ML Ecosystem with Prompt-Injection Evasion",
+      "first_seen": "2026-06-11",
+      "source": "StepSecurity",
+      "campaign": "hades-campaign-pypi-credential-stealer-bun-payload",
+      "status": "active"
+    },
+    {
+      "value": "@redhat-cloud-services/frontend-components",
+      "type": "package",
+      "context": "Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages",
+      "first_seen": "2026-06-11",
+      "source": "Wiz",
+      "campaign": "miasma-redhat-npm-azure-github-compromise",
+      "status": "active"
+    },
+    {
+      "value": "@redhat-cloud-services/compliance-client",
+      "type": "package",
+      "context": "Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages",
+      "first_seen": "2026-06-11",
+      "source": "Wiz",
+      "campaign": "miasma-redhat-npm-azure-github-compromise",
+      "status": "active"
+    },
+    {
+      "value": "@redhat-cloud-services/rbac-client",
+      "type": "package",
+      "context": "Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages",
+      "first_seen": "2026-06-11",
+      "source": "Wiz",
+      "campaign": "miasma-redhat-npm-azure-github-compromise",
+      "status": "active"
+    },
+    {
+      "value": "29 additional packages in @redhat-cloud-services namespace",
+      "type": "package",
+      "context": "Miasma Supply Chain Attack: Azure Repositories Disabled, Credential-Stealing Worm in Red Hat npm Packages",
+      "first_seen": "2026-06-11",
+      "source": "Wiz",
+      "campaign": "miasma-redhat-npm-azure-github-compromise",
+      "status": "active"
+    },
+    {
+      "value": "huggingface-hub",
+      "type": "package",
+      "context": "CVE-2026-4372: Hugging Face Transformers Critical RCE via Malicious Model Config.json – 232 Million Downloads Exposed Pre-Patch",
+      "first_seen": "2026-06-11",
+      "source": "Threat-Modeling.com Vulnerability Intelligence Report",
+      "campaign": "cve-2026-4372-hugging-face-transformers-rce",
       "status": "active"
     }
   ]

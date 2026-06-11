@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10",
+  "last_updated": "2026-06-11",
   "entries": [
     {
       "id": "greyvibe",
@@ -604,24 +604,40 @@
       "names": [
         "Shai-hulud",
         "Shai-hulud 2.0",
-        "Sha1-Hulud: The Second Coming"
+        "Sha1-Hulud: The Second Coming",
+        "Miasma Supply Chain Campaign",
+        "Mini Shai-Hulud",
+        "Shai-Hulud",
+        "TeamPCP"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
       "status": "active",
       "distribution": [
         "npm registry",
-        "compromised developer accounts"
+        "compromised developer accounts",
+        "npm (@redhat-cloud-services scope)",
+        "PyPI",
+        "GitHub (Azure and RedHatInsights organizations)",
+        "GitHub Actions workflows"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
         "T1552 - Unsecured Credentials",
         "T1485 - Data Destruction",
         "T1078 - Valid Accounts",
-        "T1119 - Automated Collection"
+        "T1119 - Automated Collection",
+        "T1195 - Supply Chain Compromise",
+        "T1199 - Trusted Relationship (OIDC publishing)",
+        "T1547.004 - Boot/Logon Initialization Scripts (npm preinstall, binding.gyp, .pth hooks)",
+        "T1110.004 - Credential Harvesting",
+        "T1555 - Credentials in Browser, Cookie Store",
+        "T1552.007 - Container Configuration Discovery (Docker configs, Kubernetes manifests)",
+        "T1046 - Network Service Scanning (cloud metadata enumeration)",
+        "T1550.001 - Use Alternate Authentication Material (stolen OIDC tokens for republication)"
       ],
-      "description": "First registry-native self-propagating worm operating at scale within npm. Exploits compromised developer accounts to inject malicious code that spreads through package dependency chains. Wave 1 (September 2025) compromised packages including @ctrl/tinycolor (2.2M weekly downloads). Wave 2 (November 2025) compromised 795 packages with 100M+ lifetime downloads, with @asyncapi/specs as patient zero. Version 2.0 added wiper functionality. Steals npm, GitHub, AWS, GCP credentials.",
-      "attribution": "Unattributed"
+      "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, and container platforms. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration.",
+      "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase."
     },
     {
       "id": "nullifai",
@@ -905,7 +921,9 @@
         "Trivy compromisers",
         "LiteLLM attackers",
         "Bitwarden CLI hijackers",
-        "Checkmarx KICS compromisers"
+        "Checkmarx KICS compromisers",
+        "Shai-Hulud / Miasma / Hades Threat Lineage",
+        "TeamPCP (potential open-source code reuse by copycats)"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
@@ -929,7 +947,9 @@
         "Tor onion site",
         "AI coding agent configuration files (.claude/settings.json, .vscode/tasks.json)",
         "Hijacked npm maintainer account atool (Mini Shai-Hulud Wave 6, May 19 2026, @antv ecosystem)",
-        "C2 via OpenTelemetry-disguised HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces"
+        "C2 via OpenTelemetry-disguised HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces",
+        "npm ecosystem",
+        "GitHub Actions workflows"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -960,7 +980,12 @@
         "T1037.004 - Boot or Logon Initialization Scripts (~/.bashrc heredoc payload)",
         "T1608.002 - Stage Capabilities: Upload Tool (worm self-republish via stolen npm tokens)",
         "T1588.001 - Malware Development",
-        "T1570 - Lateral Tool Transfer"
+        "T1570 - Lateral Tool Transfer",
+        "T1547.004 - Boot or Logon Initialization Scripts (Python .pth hooks)",
+        "T1110.004 - Brute Force (credential harvesting and enumeration)",
+        "T1140 - Deobfuscation/Decoding (AES-GCM decryption of modular payloads)",
+        "T1518 - Software Discovery (scanning for cloud metadata, identities, Kubernetes)",
+        "T1553.002 - Subvert Trust Controls (SLSA provenance forgery in earlier waves)"
       ],
       "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
@@ -2573,6 +2598,25 @@
       ],
       "description": "Cybercriminal campaign leveraging legitimate OpenAI/Anthropic share infrastructure combined with Google Ad network for distribution. Payloads include credential stealers targeting browser passwords, cryptocurrency wallets, and session tokens.",
       "attribution": "Unknown; no threat group attribution provided"
+    },
+    {
+      "id": "model-poisoning-threat-actor-s",
+      "names": [
+        "Model-Poisoning Threat Actor(s)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Hugging Face Hub"
+      ],
+      "ttps": [
+        "T1195.003 - Malicious Repository and Code",
+        "T1190 - Exploit Public-Facing Application",
+        "T1083 - File and Directory Discovery (post-RCE lateral movement)"
+      ],
+      "description": "Actors exploit the Transformers library's dynamic code loading mechanism to execute arbitrary Python code during model initialization. Attacks are particularly dangerous because they occur transparently during routine model loading workflows, without explicit code execution prompts visible to developers. The massive install base (hundreds of millions of monthly downloads) and common practice of loading community models from Hugging Face create a large attack surface.",
+      "attribution": "Unattributed; likely opportunistic threat actors leveraging trust in Hugging Face Hub ecosystem to deliver RCE payload via model config poisoning"
     }
   ]
 }

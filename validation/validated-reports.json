@@ -2628,6 +2628,58 @@
       "validated_at": "2026-06-10T07:10:58+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-11-cve-2026-4372-hugging-face-transformers-rce": {
+      "content_hash": "49823b7bf1f7a7511312134343ddafda152476787b0575359acd876f8083825a",
+      "evidence_status": "validated",
+      "file": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce.md",
+      "posts_index_hash": "c769874d249ab7ed4a84d2ba1c4a683ad9a1fffceb85ec4d83f769efbd585968",
+      "report_id": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://threat-modeling.com/vulnerability-intelligence-report-june-6-2026/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-4372"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-11T08:05:58+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-11-hades-campaign-pypi-credential-stealer-bun-payload": {
+      "content_hash": "815075197814dd55e92fd53f3b72aae8ffc3c35890f22eddddd2fb8cf7a91a73",
+      "evidence_status": "validated",
+      "file": "2026-06-11-hades-campaign-pypi-credential-stealer-bun-payload.md",
+      "posts_index_hash": "395f68f3624ea5feb5060d9b8cfae509130414d6d68bdb437710973c33f67869",
+      "report_id": "2026-06-11-hades-campaign-pypi-credential-stealer-bun-payload",
+      "review_required": [],
+      "source_urls": [
+        "https://www.stepsecurity.io/blog/the-hades-campaign-pypi-packages",
+        "https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html",
+        "https://socket.dev/blog/shai-hulud-descends-to-hades-miasma-pypi-wave",
+        "https://orca.security/resources/blog/hades-pypi-supply-chain-attack/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-11T08:06:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-11-miasma-redhat-npm-azure-github-compromise": {
+      "content_hash": "f62366ee724104ea475369ac9a0b90b88a1afb53beb220f63a737cce8b1e551a",
+      "evidence_status": "validated",
+      "file": "2026-06-11-miasma-redhat-npm-azure-github-compromise.md",
+      "posts_index_hash": "44c67e315c2fcfbecc6139988f9bd37040393c954b1342293c099d53890c758a",
+      "report_id": "2026-06-11-miasma-redhat-npm-azure-github-compromise",
+      "review_required": [],
+      "source_urls": [
+        "https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages",
+        "https://www.microsoft.com/en-us/security/blog/2026/06/02/preinstall-persistence-inside-red-hat-npm-miasma-credential-stealing-campaign/",
+        "https://snyk.io/blog/miasma-supply-chain-attack-malicious-code-redhat-cloud-services-npm-packages/",
+        "https://phoenix.security/miasma-azure-hades-pypi-supply-chain-worm-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-11T08:06:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
