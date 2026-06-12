@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-11",
+  "last_updated": "2026-06-12",
   "entries": [
     {
       "id": "greyvibe",
@@ -1217,7 +1217,8 @@
         "Documentation portals",
         "SaaS dashboards",
         "Lumma Stealer malware campaigns",
-        "MCP-based AI agent infrastructure"
+        "MCP-based AI agent infrastructure",
+        "Direct exploitation of exposed Marimo instances"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1253,7 +1254,8 @@
         "T1566.002 - Social Engineering",
         "T1059.007 - Cross-Site Scripting",
         "T1528 - Credential Access",
-        "T1190 - Exploitation of Remote Services"
+        "T1190 - Exploitation of Remote Services",
+        "T1552.001 - Unsecured Credentials: Credentials In Files"
       ],
       "description": "Threat actors compromised a Context.ai employee via infostealer malware, then weaponized the trust relationship between the employee and their corporate environment to steal OAuth tokens with excessive permissions. The incident demonstrates how AI tool adoption expands the enterprise attack surface through new credential types and trust relationships.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
@@ -2617,6 +2619,45 @@
       ],
       "description": "Actors exploit the Transformers library's dynamic code loading mechanism to execute arbitrary Python code during model initialization. Attacks are particularly dangerous because they occur transparently during routine model loading workflows, without explicit code execution prompts visible to developers. The massive install base (hundreds of millions of monthly downloads) and common practice of loading community models from Hugging Face create a large attack surface.",
       "attribution": "Unattributed; likely opportunistic threat actors leveraging trust in Hugging Face Hub ecosystem to deliver RCE payload via model config poisoning"
+    },
+    {
+      "id": "silver-fox-suspected-via-infrastructure-overlap",
+      "names": [
+        "Silver Fox (suspected via infrastructure overlap)",
+        "ValleyRAT operators"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Hugging Face public repository"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1566.002 - Phishing: Spearphishing Link (via ranking algorithm)"
+      ],
+      "description": "Threat actors with history in financially-motivated malware distribution leveraged Hugging Face's open model publishing to distribute credential-stealing malware. The use of near-identical code and shared infrastructure across multiple repositories suggests coordinated, systematic campaign to compromise developers.",
+      "attribution": "HiddenLayer researchers noted infrastructure overlap with ValleyRAT; formal attribution to Silver Fox not confirmed"
+    },
+    {
+      "id": "storm-3075-malvertising-variant",
+      "names": [
+        "Storm-3075 (Malvertising variant)"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Google Ads",
+        "Free streaming sites",
+        "Email"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing: Spearphishing Link",
+        "T1583.008 - Acquire Infrastructure: Malvertising"
+      ],
+      "description": "Financially-motivated threat actors conducting large-scale credential phishing and malware distribution leveraging AI platform brands. Campaign scale (2000+ recipients for Claude variant, 4500+ for ChatGPT) and multi-vector approach (email, ads, GitHub, streaming) indicates sophistication and organization.",
+      "attribution": "Microsoft Threat Intelligence (Storm-3075 callout for DeepSeek malvertising variant)"
     }
   ]
 }

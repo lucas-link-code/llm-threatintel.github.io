@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation",
+      "title": "Marimo CVE-2026-39987 Exploited by LLM Agent for Post-Compromise Cloud Credential Theft and Lateral Movement",
+      "date": "2026-06-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An unknown threat actor has been observed using a large language model (LLM) agent to conduct post-compromise actions after obtaining initial access following the exploitation of a publicly-accessible Marimo network. The attacker compromised an internet-reachable Marimo notebook via CVE-2026-39987, extracted two cloud credentials from the compromised host, replayed them through a fanned-out egress pool to retrieve an SSH private key from AWS Secrets Manager, and used that key to drive eight short SSH sessions against a downstream SSH bastion server. This represents one of the first documented cases of LLM agents autonomously conducting multi-stage post-exploitation workflows without human direction between steps.",
+      "file": "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.md"
+    },
+    {
+      "id": "2026-06-12-ai-platform-impersonation-phishing-may-2026",
+      "title": "Microsoft Threat Intelligence Tracks Multi-Campaign Credential Phishing via ChatGPT, Claude, DeepSeek Impersonation (May 2026)",
+      "date": "2026-06-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "By disguising phishing attacks with the branding of platforms like ChatGPT, Claude, and DeepSeek, threat actors are luring users into handing over login credentials, credit card numbers, and authentication tokens. Microsoft Threat Intelligence observed multiple, distinct campaigns in 2026 that reused legitimate branding, SEO techniques, malvertising, and multi-stage redirect chains to bypass defenses and scale theft and infection at pace. Within 45 minutes of DeepSeek V4 preview, a fake GitHub organization called DeepSeek-V4 was live, loaded with stolen branding, real benchmark data, and search-optimized tags. Users who downloaded the archives received a loader that silently installed Vidar infostealer on their devices.",
+      "file": "2026-06-12-ai-platform-impersonation-phishing-may-2026.md"
+    },
+    {
+      "id": "2026-06-12-fake-openai-privacy-filter-hugging-face-malware",
+      "title": "Fake OpenAI Privacy Filter Malware Campaign Reaches 244K Downloads on Hugging Face Before Removal",
+      "date": "2026-06-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A fraudulent AI model posing as an OpenAI release briefly became one of the most downloaded projects on Hugging Face before researchers determined it was distributing credential-stealing malware to Windows systems. Before its removal, the repository accumulated roughly 244,000 downloads and hundreds of positive ratings in less than a day, reaching the top of Hugging Face's trending rankings. Some of the infrastructure tied to the attack overlaps with activity previously associated with ValleyRAT, a remote access trojan linked by researchers to the China-aligned threat group known as Silver Fox.",
+      "file": "2026-06-12-fake-openai-privacy-filter-hugging-face-malware.md"
+    },
+    {
       "id": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce",
       "title": "CVE-2026-4372: Hugging Face Transformers Critical RCE via Malicious Model Config.json – 232 Million Downloads Exposed Pre-Patch",
       "date": "2026-06-11",

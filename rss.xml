@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 11 Jun 2026 08:05:57 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2026 07:24:29 +0000</lastBuildDate>
     <item>
+      <title>Marimo CVE-2026-39987 Exploited by LLM Agent for Post-Compromise Cloud Credential Theft and Lateral Movement</title>
+      <link>https://llm-threatintel.com/posts/2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.html</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+      <description>An unknown threat actor has been observed using a large language model (LLM) agent to conduct post-compromise actions after obtaining initial access following the exploitation of a publicly-accessible Marimo network. The attacker compromised an internet-reachable Marimo notebook via CVE-2026-39987, extracted two cloud credentials from the compromised host, replayed them through a fanned-out egress pool to retrieve an SSH private key from AWS Secrets Manager, and used that key to drive eight short SSH sessions against a downstream SSH bastion server. This represents one of the first documented cases of LLM agents autonomously conducting multi-stage post-exploitation workflows without human direction between steps.</description>
+    </item>    <item>
+      <title>Microsoft Threat Intelligence Tracks Multi-Campaign Credential Phishing via ChatGPT, Claude, DeepSeek Impersonation (May 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-06-12-ai-platform-impersonation-phishing-may-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-12-ai-platform-impersonation-phishing-may-2026.html</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+      <description>By disguising phishing attacks with the branding of platforms like ChatGPT, Claude, and DeepSeek, threat actors are luring users into handing over login credentials, credit card numbers, and authentication tokens. Microsoft Threat Intelligence observed multiple, distinct campaigns in 2026 that reused legitimate branding, SEO techniques, malvertising, and multi-stage redirect chains to bypass defenses and scale theft and infection at pace. Within 45 minutes of DeepSeek V4 preview, a fake GitHub organization called DeepSeek-V4 was live, loaded with stolen branding, real benchmark data, and search-optimized tags. Users who downloaded the archives received a loader that silently installed Vidar infostealer on their devices.</description>
+    </item>    <item>
+      <title>Fake OpenAI Privacy Filter Malware Campaign Reaches 244K Downloads on Hugging Face Before Removal</title>
+      <link>https://llm-threatintel.com/posts/2026-06-12-fake-openai-privacy-filter-hugging-face-malware.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-12-fake-openai-privacy-filter-hugging-face-malware.html</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A fraudulent AI model posing as an OpenAI release briefly became one of the most downloaded projects on Hugging Face before researchers determined it was distributing credential-stealing malware to Windows systems. Before its removal, the repository accumulated roughly 244,000 downloads and hundreds of positive ratings in less than a day, reaching the top of Hugging Face's trending rankings. Some of the infrastructure tied to the attack overlaps with activity previously associated with ValleyRAT, a remote access trojan linked by researchers to the China-aligned threat group known as Silver Fox.</description>
+    </item>    <item>
       <title>CVE-2026-4372: Hugging Face Transformers Critical RCE via Malicious Model Config.json – 232 Million Downloads Exposed Pre-Patch</title>
       <link>https://llm-threatintel.com/posts/2026-06-11-cve-2026-4372-hugging-face-transformers-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-11-cve-2026-4372-hugging-face-transformers-rce.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-02-llmshare-chatgpt-claude-malware-campaign.html</guid>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
       <description>LLMShare plants fake outage pages on OpenAI's real domain chatgpt.com, driving victims through Google ads. Corporate firewalls fail because the URL is genuine. Push Security confirmed active detections on May 29, 2026. LLMShare is the most technically refined entry in a line of attacks that has grown sharply since late 2025.</description>
-    </item>    <item>
-      <title>Marimo CVE-2026-39987 Exploited with LLM Agent Post-Exploitation: AI-Driven Lateral Movement and Secrets Harvesting</title>
-      <link>https://llm-threatintel.com/posts/2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.html</guid>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-39987 refers to a critical pre-authenticated remote code execution vulnerability impacting all versions of Marimo prior to and including 0.20.4. It allows an unauthenticated attacker to execute arbitrary system commands. The security defect has since come under active exploitation, with threat actors using it to initiate manual reconnaissance against honeypot systems and attempt to harvest sensitive data. The latest activity documented by Sysdig sticks to the same pattern, the primary difference being that an LLM agent was used to drive the post-exploitation activity. The incident, per the cloud security firm, was recorded on May 10, 2026, with the attacker gathering credentials from the environment and then using the harvested AWS access key to perform API calls against AWS Secrets Manager and retrieve an SSH private key. This represents the first documented case of LLM agent-driven post-exploitation automation in a real-world attack.</description>
-    </item>    <item>
-      <title>CVE-2026-33626 LMDeploy SSRF Weaponized in 12 Hours: Vision-LLM Image Loader Abused for Cloud Credential Theft and Internal Network Scanning</title>
-      <link>https://llm-threatintel.com/posts/2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-01-cve-2026-33626-lmdeploy-ssrf-exploitation.html</guid>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-33626 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration. The vulnerability, tracked as CVE-2026-33626 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. This represents the fastest exploitation window recorded for AI infrastructure vulnerabilities and demonstrates a collapse in patch windows driven by LLM-enabled exploit generation.</description>
-    </item>    <item>
-      <title>LLMShare Malware Campaign: ChatGPT and Claude Shared Chats Weaponized for Desktop App Trojanization and Credential Theft</title>
-      <link>https://llm-threatintel.com/posts/2026-06-01-llmshare-chatgpt-claude-malware-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-01-llmshare-chatgpt-claude-malware-campaign.html</guid>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Threat actors are abusing ChatGPT's content-sharing feature to display fake OpenAI outage pages that direct users to download malware disguised as the ChatGPT desktop application. The "LLMShare" campaign, discovered by Push Security, uses Google ads to direct users searching for ChatGPT to a malicious shared ChatGPT page hosted on chatgpt.com, allowing the attack to be delivered through a legitimate OpenAI domain. On Claude, shared chats pose as Apple support walkthroughs laced with malicious Terminal commands, while a shared Claude chat shows a fake download guide for Claude Code that delivers malware.</description>
     </item>
   </channel>
 </rss>

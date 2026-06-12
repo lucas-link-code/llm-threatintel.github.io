@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-11",
+  "last_updated": "2026-06-12",
   "iocs": [
     {
       "value": "lapas.live",
@@ -2843,6 +2843,24 @@
       "first_seen": "2026-06-11",
       "source": "Threat-Modeling.com Vulnerability Intelligence Report",
       "campaign": "cve-2026-4372-hugging-face-transformers-rce",
+      "status": "active"
+    },
+    {
+      "value": "https://github.com/Open-OSS/privacy-filter",
+      "type": "url_path",
+      "context": "Fake OpenAI Privacy Filter Malware Campaign Reaches 244K Downloads on Hugging Face Before Removal",
+      "first_seen": "2026-06-12",
+      "source": "HiddenLayer",
+      "campaign": "fake-openai-privacy-filter-hugging-face-malware",
+      "status": "active"
+    },
+    {
+      "value": "Open-OSS/privacy-filter",
+      "type": "package",
+      "context": "Fake OpenAI Privacy Filter Malware Campaign Reaches 244K Downloads on Hugging Face Before Removal",
+      "first_seen": "2026-06-12",
+      "source": "HiddenLayer",
+      "campaign": "fake-openai-privacy-filter-hugging-face-malware",
       "status": "active"
     }
   ]

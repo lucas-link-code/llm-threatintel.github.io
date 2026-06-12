@@ -2680,6 +2680,59 @@
       "validated_at": "2026-06-11T08:06:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-12-ai-platform-impersonation-phishing-may-2026": {
+      "content_hash": "55633fd8d24954ac163c7be16b10b867ae91333493608fd50a03a85d56b44fc1",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-06-12-ai-platform-impersonation-phishing-may-2026.md",
+      "posts_index_hash": "6c28046f0ff50f34be46622cdb37873f1a5a19e8dc7f1ef2f96892b1f83e3207",
+      "report_id": "2026-06-12-ai-platform-impersonation-phishing-may-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/threat-actors-abuse-chatgpt-claude-and-deepseek-brands-as-phishing-lures/",
+        "https://gbhackers.com/ai-brands-exploited/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-12T07:24:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-12-fake-openai-privacy-filter-hugging-face-malware": {
+      "content_hash": "a559d6c0b98ff4f6c6fbb3a6773616aa88da5c1d657cf1081d4e5cbe76ef6d1a",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-06-12-fake-openai-privacy-filter-hugging-face-malware.md",
+      "posts_index_hash": "cc134fb1b4382d4ec302a5b20a2509948588660dbdf84b20a92eec679212b5a0",
+      "report_id": "2026-06-12-fake-openai-privacy-filter-hugging-face-malware",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://securityboulevard.com/2026/05/attackers-use-fake-openai-model-to-push-credential-stealing-malware/",
+        "https://www.csoonline.com/article/4169407/malicious-hugging-face-model-masquerading-as-openai-release-hits-244k-downloads.html",
+        "https://hivesecurity.gitlab.io/blog/huggingface-ai-supply-chain-attacks-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-12T07:24:32+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation": {
+      "content_hash": "64b0aea6e7293dea543ad31d42c948df3eb6cfbcfe0e395a709ee8a30c4b1a0a",
+      "evidence_status": "validated",
+      "file": "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.md",
+      "posts_index_hash": "93c13b4438ee6d619e156c4c2d64927969dca75d9654a2274186532529ba63bd",
+      "report_id": "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
+        "https://www.sysdig.com/blog"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-12T07:24:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
