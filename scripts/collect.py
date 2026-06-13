@@ -163,6 +163,7 @@ If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "sear
 
 Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt, phishing, model-poisoning, prompt-injection, mcp-security.
 Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
+Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, Hugging Face repo slugs as packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 
@@ -498,10 +499,20 @@ HEX_RE = re.compile(r'^[a-fA-F0-9]+$')
 CVE_RE = re.compile(r'CVE-\d{4}-\d+', re.I)
 AGGREGATE_DESC_RE = re.compile(
     r'\d+\+?\s+(identified|uploads|models|skills|affected|trojanized|'
-    r'suspicious|unsafe|advisories|CVEs|compromised|malicious)',
+    r'suspicious|unsafe|advisories|CVEs|compromised|malicious|packages)|'
+    r'additional packages|in @[\w-]+ namespace',
     re.I,
 )
+PACKAGE_RE = re.compile(
+    r'^(?:(?:npm|pypi|nuget|chrome-extension):)?'
+    r'(?:@[A-Za-z0-9._-]+/[A-Za-z0-9._-]+|[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)?)'
+    r'(?:@[A-Za-z0-9._+-]+)?$'
+)
+PACKAGE_COMPARATOR_RE = re.compile(r'[<>=]{1,2}|==')
+PACKAGE_VERSION_RANGE_RE = re.compile(r'\bversions?\b.*\bto\b|\bto\b.*\bversions?\b', re.I)
+HF_REPO_PACKAGE_SLUGS = {'open-oss/privacy-filter'}
 PARENTHETICAL_PROSE_RE = re.compile(r'\s*\([^)]{3,}\)\s*$')
+PARENTHETICAL_NOTE_RE = re.compile(r'\s*\(([^)]{3,})\)\s*$')
 DOMAIN_RE = re.compile(
     r'^(?=.{1,253}$)(?!-)(?:[A-Za-z0-9-]{1,63}\.)+[A-Za-z0-9-]{2,63}$'
 )
@@ -571,18 +582,57 @@ def classify_hash(value):
     return 'hash'
 
 
+def package_candidate_reason(value: str) -> str | None:
+    if any(ch.isspace() for ch in value):
+        return 'package value must not contain whitespace'
+    if PARENTHETICAL_PROSE_RE.search(value):
+        return 'package value must not contain parenthetical prose'
+    if ',' in value:
+        return 'package value must not contain commas'
+    if PACKAGE_COMPARATOR_RE.search(value):
+        return 'package value must not contain version comparators or ranges'
+    if PACKAGE_VERSION_RANGE_RE.search(value):
+        return 'package value must not contain version range prose'
+    if AGGREGATE_DESC_RE.search(value):
+        return 'aggregate or statistical description is not an IOC value'
+    bare = re.sub(r'^(?:npm|pypi|nuget|chrome-extension):', '', value, flags=re.I)
+    if value.lower().startswith('huggingface:') or bare.lower() in HF_REPO_PACKAGE_SLUGS:
+        return 'Hugging Face repository identifiers must use url_path, not package'
+    if not PACKAGE_RE.match(value):
+        return 'invalid package IOC format'
+    return None
+
+
+def package_dict_to_value(pkg: dict) -> tuple[str, str]:
+    name = str(pkg.get('name') or pkg.get('package') or '').strip()
+    registry = str(pkg.get('registry') or '').strip().lower()
+    version = str(pkg.get('version') or '').strip()
+    note = str(pkg.get('note') or '').strip()
+    if not name:
+        return '', note
+    value = name
+    if registry and version:
+        value = f'{registry}:{name}@{version}'
+    elif registry:
+        value = f'{registry}:{name}'
+    elif version:
+        value = f'{name}@{version}'
+    return value, note
+
+
 def normalize_ioc_value(value, ioc_type):
     """Clean an IOC value before insertion.
 
-    Returns (cleaned_value, cleaned_type, reject_reason). On success
-    reject_reason is None. Strips package prefixes, undefangs, and detects prose.
+    Returns (cleaned_value, cleaned_type, reject_reason, context_note).
+  On success reject_reason is None.
     """
     if not isinstance(value, str):
         value = str(value)
 
     cleaned = value.strip()
+    context_note = None
     if not cleaned:
-        return None, None, 'empty value'
+        return None, None, 'empty value', None
 
     policy = load_policy()
     malware_names = policy.get('malware_family_denylist', [])
@@ -591,43 +641,55 @@ def normalize_ioc_value(value, ioc_type):
     ref_domains = policy.get('reference_url_domain_denylist', [])
 
     if '*' in cleaned:
-        return None, None, 'wildcard values are not valid IOCs'
+        return None, None, 'wildcard values are not valid IOCs', None
 
     if CVE_RE.match(cleaned):
-        return None, None, 'CVE ID is not an IOC value'
+        return None, None, 'CVE ID is not an IOC value', None
 
     if AGGREGATE_DESC_RE.search(cleaned):
-        return None, None, 'aggregate or statistical description is not an IOC value'
+        return None, None, 'aggregate or statistical description is not an IOC value', None
 
-    paren_match = PARENTHETICAL_PROSE_RE.search(cleaned)
+    if ioc_type == 'package' and '==' in cleaned:
+        name, ver = cleaned.split('==', 1)
+        cleaned = f'pypi:{name.strip()}@{ver.strip()}'
+
+    paren_match = PARENTHETICAL_NOTE_RE.search(cleaned)
     if paren_match:
         stripped = cleaned[:paren_match.start()].strip()
+        note = paren_match.group(1).strip()
         if not stripped:
-            return None, None, 'value is only editorial prose in parentheses'
-        if stripped.lower() in affected_products or stripped in malware_names or stripped.lower() in malware_lower:
-            return None, None, 'stripped value is not a valid IOC'
-        if ioc_type == 'domain' and not is_valid_domain(stripped):
-            return None, None, 'stripped value is not a valid domain'
-        cleaned = stripped
+            return None, None, 'value is only editorial prose in parentheses', None
+        if ioc_type == 'package':
+            reason = package_candidate_reason(stripped)
+            if reason:
+                return None, None, reason, None
+            cleaned = stripped
+            context_note = note
+        else:
+            if stripped.lower() in affected_products or stripped in malware_names or stripped.lower() in malware_lower:
+                return None, None, 'stripped value is not a valid IOC', None
+            if ioc_type == 'domain' and not is_valid_domain(stripped):
+                return None, None, 'stripped value is not a valid domain', None
+            cleaned = stripped
 
     if ioc_type != 'url_path':
         cleaned = cleaned.replace('[.]', '.')
 
-    if ioc_type == 'package':
-        cleaned = re.sub(r'^(npm:|pypi:)', '', cleaned, flags=re.I)
-
     lowered = cleaned.lower()
     if any(marker in lowered for marker in PROSE_REJECT_MARKERS):
-        return None, None, 'value contains narrative prose markers'
+        return None, None, 'value contains narrative prose markers', None
     if SPACE_COMPARATOR_RE.search(cleaned):
-        return None, None, 'space-separated version comparators are not valid package IOCs'
+        return None, None, 'space-separated version comparators are not valid package IOCs', None
 
     if ioc_type == 'package':
         if cleaned in malware_names or cleaned.lower() in malware_lower:
-            return None, None, 'malware family name is not a package IOC'
-        bare = re.sub(r'^(?:npm|pypi):', '', cleaned, flags=re.I)
+            return None, None, 'malware family name is not a package IOC', None
+        bare = re.sub(r'^(?:npm|pypi|nuget|chrome-extension):', '', cleaned, flags=re.I)
         if '@' not in bare and bare.lower() in affected_products:
-            return None, None, 'bare affected product name without registry/version context'
+            return None, None, 'bare affected product name without registry/version context', None
+        reason = package_candidate_reason(cleaned)
+        if reason:
+            return None, None, reason, None
 
     if ioc_type == 'url_path':
         host = extract_url_host(cleaned)
@@ -635,17 +697,17 @@ def normalize_ioc_value(value, ioc_type):
             for ref_domain in ref_domains:
                 ref = ref_domain.lower()
                 if host == ref or host.endswith('.' + ref):
-                    return None, None, 'reference or documentation URL is not an IOC'
+                    return None, None, 'reference or documentation URL is not an IOC', None
 
     if ioc_type in ('domain', 'url_path'):
         if matches_platform_denylist(cleaned, ioc_type, policy):
-            return None, None, 'legitimate platform domain or generic path is not an IOC'
+            return None, None, 'legitimate platform domain or generic path is not an IOC', None
 
     new_type = ioc_type
     if ioc_type in ('hash', 'sha256', 'sha1', 'md5'):
         new_type = classify_hash(cleaned)
 
-    return cleaned, new_type, None
+    return cleaned, new_type, None, context_note
 
 
 def update_iocs(finding):
@@ -661,9 +723,9 @@ def update_iocs(finding):
     added = 0
     skipped = 0
 
-    def add_ioc(value, ioc_type):
+    def add_ioc(value, ioc_type, note=''):
         nonlocal added, skipped
-        cleaned, cleaned_type, reject_reason = normalize_ioc_value(value, ioc_type)
+        cleaned, cleaned_type, reject_reason, relocated_note = normalize_ioc_value(value, ioc_type)
         if cleaned is None:
             skipped += 1
             reason = reject_reason or 'malformed value'
@@ -671,10 +733,14 @@ def update_iocs(finding):
             return
         if cleaned in existing_values:
             return
+        context = finding['title']
+        extra_note = note or relocated_note
+        if extra_note:
+            context = f"{context} | {extra_note}"
         iocs['iocs'].append({
             "value": cleaned,
             "type": cleaned_type,
-            "context": finding['title'],
+            "context": context,
             "first_seen": TODAY,
             "source": finding.get('references', [{}])[0].get('source', 'LLM ThreatIntel'),
             "campaign": campaign,
@@ -700,8 +766,11 @@ def update_iocs(finding):
         add_ioc(ip_str, 'ip')
 
     for pkg in finding_iocs.get('packages', []):
-        pkg_str = str(pkg) if not isinstance(pkg, dict) else pkg.get('package', str(pkg))
-        add_ioc(pkg_str, 'package')
+        if isinstance(pkg, dict):
+            pkg_str, pkg_note = package_dict_to_value(pkg)
+            add_ioc(pkg_str, 'package', note=pkg_note)
+        else:
+            add_ioc(str(pkg), 'package')
 
     if added > 0:
         iocs['last_updated'] = TODAY

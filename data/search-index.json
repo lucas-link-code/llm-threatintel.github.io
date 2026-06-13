@@ -387,9 +387,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "nanobot@<0.1.6"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-05-claude-code-source-leak-adversa-post-leak-rce",
@@ -578,10 +576,10 @@
         "unknown"
       ],
       "iocs": [
-        "@asyncapi/specs",
-        "@ctrl/tinycolor",
         "ng2-file-upload",
-        "ngx-bootstrap"
+        "ngx-bootstrap",
+        "npm:@asyncapi/specs",
+        "npm:@ctrl/tinycolor"
       ]
     },
     {
@@ -602,9 +600,7 @@
         "unknown",
         "unknown/multiple"
       ],
-      "iocs": [
-        "flowise"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-11-project-glasswing-claude-mythos-zero-days",
@@ -659,9 +655,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "vllm@<0.14.1"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-13-claude-code-mexico-gov-espionage-150gb",
@@ -835,9 +829,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "flowise@<3.1.1"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-17-llm-router-credential-theft-crypto-draining",
@@ -917,10 +909,10 @@
         "unknown"
       ],
       "iocs": [
-        "@akoskm/create-mcp-server-stdio",
         "cursor-mcp",
         "librechat",
         "mcp-inspector",
+        "npm:@akoskm/create-mcp-server-stdio",
         "weknora"
       ]
     },
@@ -997,9 +989,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "lmdeploy@<0.12.3"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-23-flowise-cve-2026-41264-csv-agent-rce",
@@ -1019,9 +1009,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "flowise@<3.0.13"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
@@ -1039,8 +1027,8 @@
         "teampcp"
       ],
       "iocs": [
-        "namastex/automagik-genie",
-        "namastex/pgserve"
+        "npm:namastex/automagik-genie",
+        "npm:namastex/pgserve"
       ]
     },
     {
@@ -1060,9 +1048,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "lmdeploy"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce",
@@ -1137,9 +1123,9 @@
         "teampcp"
       ],
       "iocs": [
-        "xinference==2.6.0",
-        "xinference==2.6.1",
-        "xinference==2.6.2"
+        "pypi:xinference@2.6.0",
+        "pypi:xinference@2.6.1",
+        "pypi:xinference@2.6.2"
       ]
     },
     {
@@ -1374,9 +1360,7 @@
         "unknown",
         "unknown threat actor"
       ],
-      "iocs": [
-        "LiteLLM <1.83.7"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-05-bissa-scanner-react2shell-ai-credential-harvest",
@@ -1499,14 +1483,14 @@
         "famous chollima"
       ],
       "iocs": [
-        "@hash-validator/v2 (early variant, JavaScript infostealer)",
-        "@solana-launchpad/sdk (bait package, no malicious code)",
-        "@validate-sdk/v2 (payload, infostealer)",
-        "aes-create-ipheriv (rotated payload)",
+        "aes-create-ipheriv",
         "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
-        "jito-proper-excutor (rotated payload)",
-        "jito-sub-aes-ipheriv (rotated payload)",
-        "scraper-npm (PyPI variant, February 2026)"
+        "jito-proper-excutor",
+        "jito-sub-aes-ipheriv",
+        "npm:@hash-validator/v2",
+        "npm:@solana-launchpad/sdk",
+        "npm:@validate-sdk/v2",
+        "pypi:scraper-npm"
       ]
     },
     {
@@ -1534,7 +1518,6 @@
       "actors": [],
       "iocs": [
         "gpt-researcher",
-        "langflow (all versions)",
         "upsonic"
       ]
     },
@@ -1603,10 +1586,7 @@
         "CVE-2026-26030"
       ],
       "actors": [],
-      "iocs": [
-        "semantic-kernel<1.39.4 (Python)",
-        "semantic-kernel<1.71.0 (.NET)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-10-bankrbot-grok-morse-code-prompt-injection-drb-drain",
@@ -1713,7 +1693,6 @@
         "api.eth-fastscan.org/update.bat",
         "huggingface.co/Open-OSS/privacy-filter",
         "huggingface.co/Open-OSS/privacy-filter/blob/main/loader.py",
-        "huggingface:Open-OSS/privacy-filter",
         "recargapopular.com"
       ]
     },
@@ -1779,9 +1758,7 @@
         "CVE-2026-26030"
       ],
       "actors": [],
-      "iocs": [
-        "semantic-kernel<1.39.4 (Python SDK)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-12-cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -1802,8 +1779,7 @@
         "unknown threat actor"
       ],
       "iocs": [
-        "65.111.27.132",
-        "litellm>=1.81.16,<1.83.7"
+        "65.111.27.132"
       ]
     },
     {
@@ -1865,7 +1841,7 @@
         "unknown threat actor"
       ],
       "iocs": [
-        "Open-OSS/privacy-filter (Hugging Face)"
+        "huggingface.co/Open-OSS/privacy-filter"
       ]
     },
     {
@@ -2011,13 +1987,13 @@
         "unknown individual or small group"
       ],
       "iocs": [
-        "@bankr/agent",
         "bankrbot",
         "base.blockscout.com",
         "grok",
         "grok-bankr-integration",
         "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a",
         "https://twitter.com/bankrbot",
+        "npm:@bankr/agent",
         "x.com"
       ]
     },
@@ -2144,8 +2120,7 @@
       ],
       "actors": [],
       "iocs": [
-        "Microsoft.SemanticKernel.Core",
-        "semantic-kernel"
+        "Microsoft.SemanticKernel.Core"
       ]
     },
     {
@@ -2201,9 +2176,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "litellm (versions 1.81.16 to 1.83.6)"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
@@ -2244,7 +2217,7 @@
         "unknown threat actor"
       ],
       "iocs": [
-        "Open-OSS/privacy-filter (Hugging Face repository)",
+        "huggingface.co/Open-OSS/privacy-filter",
         "jsonkeeper.com/b/AVNNE",
         "welovechinatown.info"
       ]
@@ -2383,13 +2356,13 @@
         "ilhamrafli"
       ],
       "iocs": [
-        "@bankr/agent",
         "bankrbot",
         "base.blockscout.com",
         "grok",
         "grok-bankr-integration",
         "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a",
         "https://twitter.com/bankrbot",
+        "npm:@bankr/agent",
         "x.com"
       ]
     },
@@ -3043,9 +3016,7 @@
         "unknown",
         "unknown threat actor"
       ],
-      "iocs": [
-        "litellm>=1.83.7"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce",
@@ -3121,10 +3092,9 @@
         "teampcp"
       ],
       "iocs": [
-        "29 additional packages in @redhat-cloud-services namespace",
-        "@redhat-cloud-services/compliance-client",
-        "@redhat-cloud-services/frontend-components",
-        "@redhat-cloud-services/rbac-client"
+        "npm:@redhat-cloud-services/compliance-client",
+        "npm:@redhat-cloud-services/frontend-components",
+        "npm:@redhat-cloud-services/rbac-client"
       ]
     },
     {
@@ -3155,8 +3125,8 @@
       "cves": [],
       "actors": [],
       "iocs": [
-        "Open-OSS/privacy-filter",
-        "https://github.com/Open-OSS/privacy-filter"
+        "https://github.com/Open-OSS/privacy-filter",
+        "huggingface.co/Open-OSS/privacy-filter"
       ]
     },
     {

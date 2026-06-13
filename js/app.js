@@ -561,12 +561,17 @@ const App = {
     }
 
     const defangedList = filtered.map(i => this.defangIOC(i)).join('\n');
-    const splunkList = filtered.map(i => '"' + i.value + '"').join(' OR ');
-    const csvList = filtered.map(i => '"' + i.value + '"').join(', ');
+    const { exportable, skipped } = this.getExportableIOCs(filtered);
+    const splunkList = exportable.map(i => '"' + this.getIOCValue(i) + '"').join(' OR ');
+    const csvList = exportable.map(i => this.csvEscapeValue(this.getIOCValue(i))).join(', ');
+    const exportWarning = skipped.length
+      ? `<p class="misp-export-status ioc-export-warning" role="alert">Some indicators are not export-safe (${skipped.length} skipped from SIEM and CSV exports).</p>`
+      : '';
 
     const mc = document.getElementById('modal-content');
     mc.innerHTML = `
       <h2 id="modal-title">${title} (${filtered.length})</h2>
+      ${exportWarning}
       <div class="feed-card" style="margin-bottom:1rem">
         <h3 style="font-size:.85rem">Defanged — One Per Line</h3>
         <div class="feed-output" id="modal-defanged" style="max-height:160px">${this.escapeHtml(defangedList)}</div>
@@ -2523,6 +2528,40 @@ const App = {
     return String(ioc?.value ?? '').trim();
   },
 
+  isExportSafePackageValue(value) {
+    const v = String(value || '').trim();
+    if (!v) return false;
+    if (/[()]/.test(v)) return false;
+    if (/\s/.test(v)) return false;
+    if (/,/.test(v)) return false;
+    if (/[<>]=?|==/.test(v)) return false;
+    if (/\badditional packages\b/i.test(v)) return false;
+    if (/\ball versions\b/i.test(v)) return false;
+    return true;
+  },
+
+  isExportSafeIoc(ioc) {
+    const value = this.getIOCValue(ioc);
+    if (!value) return false;
+    if (this.getIOCTypeBucket(ioc) === 'package') {
+      return this.isExportSafePackageValue(value);
+    }
+    return true;
+  },
+
+  getExportableIOCs(iocs) {
+    const exportable = [];
+    const skipped = [];
+    for (const ioc of iocs) {
+      if (this.isExportSafeIoc(ioc)) exportable.push(ioc);
+      else skipped.push(ioc);
+    }
+    if (skipped.length) {
+      console.warn('IOC export skipped non-export-safe indicators:', skipped.map(i => this.getIOCValue(i)));
+    }
+    return { exportable, skipped };
+  },
+
   getIOCTypeBucket(ioc) {
     const explicit = String(ioc?.type || '').trim().toLowerCase();
     if (explicit === 'domain') return 'domain';
@@ -2607,16 +2646,12 @@ const App = {
     return `"${String(value ?? '').replace(/"/g, '""')}"`;
   },
 
-  getExportableIOCs(iocs) {
-    return iocs.filter(ioc => this.getIOCValue(ioc));
-  },
-
   shouldWildcardSIEMExport() {
     return this.iocTypeFilter !== 'ip' && this.iocTypeFilter !== 'hash';
   },
 
   buildIOCExports(iocs, { wildcardSIEM = this.shouldWildcardSIEMExport() } = {}) {
-    const exportable = this.getExportableIOCs(iocs);
+    const { exportable, skipped } = this.getExportableIOCs(iocs);
     const jsonRows = exportable.map(ioc => ({
       value: this.getIOCValue(ioc),
       type: ioc?.type || 'unknown',
@@ -2629,6 +2664,8 @@ const App = {
 
     return {
       count: exportable.length,
+      skippedCount: skipped.length,
+      skippedValues: skipped.map(ioc => this.getIOCValue(ioc)),
       defanged: exportable.map(ioc => this.defangIOC({ ...ioc, value: this.getIOCValue(ioc) })).join('\n'),
       siem: exportable.map(ioc => {
         const value = this.escapeExportValue(this.getIOCValue(ioc));
@@ -2864,6 +2901,7 @@ const App = {
         </div>
       </div>
       <div class="ioc-result-status" id="ioc-result-status" role="status">Showing ${filtered.length} of ${total} IOCs</div>
+      ${exports.skippedCount > 0 ? `<div class="misp-export-status ioc-export-warning" role="alert">Some indicators are not export-safe (${exports.skippedCount} skipped from export blocks).</div>` : ''}
       <div class="ioc-export-grid">
         ${this.renderIOCExportCard({
           title: 'Defanged Indicators',
@@ -2934,7 +2972,7 @@ const App = {
 
     for (const ioc of iocs) {
       const raw = this.getIOCValue(ioc);
-      if (!raw) { skipped.push(ioc); continue; }
+      if (!raw || !this.isExportSafeIoc(ioc)) { skipped.push(ioc); continue; }
       const mapping = this.getMISPAttributeType(ioc);
       if (!mapping) { skipped.push(ioc); continue; }
 

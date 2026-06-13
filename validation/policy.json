@@ -68,36 +68,11 @@
   "url_timeout_seconds": 10,
   "url_redirect_limit": 5,
   "allow_url_path_scheme": true,
-  "legacy_ioc_format_exceptions": {
+    "legacy_ioc_format_exceptions": {
     "domain": [
       "beta.context.ai (no longer accessible as of April 20, 2026)"
     ],
-    "package": [
-      "namastex/automagik-genie",
-      "namastex/pgserve",
-      "xinference==2.6.0",
-      "xinference==2.6.1",
-      "xinference==2.6.2",
-      "chrome-extension:fnmihdojmnkclgjpcoonokmkhjpjechg",
-      "chrome-extension:inhcgfpbfdjbjogdfjbclgolkmhnooop",
-      "LiteLLM <1.83.7",
-      "litellm>=1.81.16,<1.83.7",
-      "litellm (versions 1.81.16 to 1.83.6)",
-      "@solana-launchpad/sdk (bait package, no malicious code)",
-      "@validate-sdk/v2 (payload, infostealer)",
-      "@hash-validator/v2 (early variant, JavaScript infostealer)",
-      "aes-create-ipheriv (rotated payload)",
-      "jito-proper-excutor (rotated payload)",
-      "jito-sub-aes-ipheriv (rotated payload)",
-      "scraper-npm (PyPI variant, February 2026)",
-      "langflow (all versions)",
-      "semantic-kernel<1.39.4 (Python)",
-      "semantic-kernel<1.39.4 (Python SDK)",
-      "semantic-kernel<1.71.0 (.NET)",
-      "huggingface:Open-OSS/privacy-filter",
-      "Open-OSS/privacy-filter (Hugging Face)",
-      "Open-OSS/privacy-filter (Hugging Face repository)"
-    ],
+    "package": [],
     "url_path": [
       "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)"
     ]

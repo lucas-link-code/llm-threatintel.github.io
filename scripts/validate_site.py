@@ -49,9 +49,19 @@ DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)(?!-)(?:[A-Za-z0-9-]{1,63}\.)+[A-Za-z0-9-]{2,63}$"
 )
 PACKAGE_RE = re.compile(
-    r"^(?:(?:npm|pypi):)?(?:@[A-Za-z0-9._-]+/)?[A-Za-z0-9._-]+"
-    r"(?:@[A-Za-z0-9._<>=~!+\-]+)?$"
+    r"^(?:(?:npm|pypi|nuget|chrome-extension):)?"
+    r"(?:@[A-Za-z0-9._-]+/[A-Za-z0-9._-]+|[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)?)"
+    r"(?:@[A-Za-z0-9._+-]+)?$"
 )
+PACKAGE_COMPARATOR_RE = re.compile(r"[<>=]{1,2}|==")
+PACKAGE_VERSION_RANGE_RE = re.compile(r"\bversions?\b.*\bto\b|\bto\b.*\bversions?\b", re.I)
+PACKAGE_AGGREGATE_RE = re.compile(
+    r"\d+\+?\s+(identified|uploads|models|skills|affected|trojanized|"
+    r"suspicious|unsafe|advisories|CVEs|compromised|malicious|packages)|"
+    r"additional packages|in @[\w-]+ namespace",
+    re.I,
+)
+HF_REPO_PACKAGE_SLUGS = {"open-oss/privacy-filter"}
 CVE_RE = re.compile(r"CVE-\d{4}-\d+", re.I)
 AGGREGATE_DESC_RE = re.compile(
     r"\d+\+?\s+(identified|uploads|models|skills|affected|trojanized|"
@@ -633,7 +643,7 @@ class Validator:
             return
 
         paren_overrides = self.policy.get("parenthetical_value_overrides", [])
-        if PARENTHETICAL_PROSE_RE.search(value) and value not in paren_overrides:
+        if ioc_type != "package" and PARENTHETICAL_PROSE_RE.search(value) and value not in paren_overrides:
             self.fail(
                 "ioc-prose-parenthetical",
                 f"IOC value contains editorial prose in parentheses (move context to the context field): {value}",
@@ -655,7 +665,7 @@ class Validator:
                 return
 
             affected = {n.lower() for n in self.policy.get("affected_product_package_denylist", [])}
-            bare_name = re.sub(r"^(?:npm|pypi):", "", value, flags=re.I)
+            bare_name = re.sub(r"^(?:npm|pypi|nuget|chrome-extension):", "", value, flags=re.I)
             if "@" not in bare_name and bare_name.lower() in affected:
                 self.fail(
                     "ioc-affected-product-as-package",
@@ -681,8 +691,70 @@ class Validator:
         elif ioc_type in {"sha256", "sha1", "md5", "hash"}:
             self.validate_hash_ioc(value, ioc_type, file, record)
         elif ioc_type == "package":
-            if any(ch.isspace() for ch in value) or not PACKAGE_RE.match(value):
-                self.fail("ioc-package-format", f"invalid package IOC: {value}", file, record)
+            self.validate_package_ioc(value, file, record)
+
+    def validate_package_ioc(self, value: str, file: str, record: str) -> None:
+        if PARENTHETICAL_PROSE_RE.search(value):
+            self.fail(
+                "ioc-package-format",
+                f"package IOC must not contain parenthetical prose: {value}",
+                file,
+                record,
+            )
+            return
+        if any(ch.isspace() for ch in value):
+            self.fail("ioc-package-format", f"package IOC must not contain whitespace: {value}", file, record)
+            return
+        if "," in value:
+            self.fail("ioc-package-format", f"package IOC must not contain commas: {value}", file, record)
+            return
+        if PACKAGE_COMPARATOR_RE.search(value):
+            self.fail(
+                "ioc-package-format",
+                f"package IOC must not contain version comparators or ranges: {value}",
+                file,
+                record,
+            )
+            return
+        if PACKAGE_VERSION_RANGE_RE.search(value):
+            self.fail(
+                "ioc-package-format",
+                f"package IOC must not contain version range prose: {value}",
+                file,
+                record,
+            )
+            return
+        if PACKAGE_AGGREGATE_RE.search(value):
+            self.fail(
+                "ioc-package-format",
+                f"package IOC is an aggregate description, not an exact indicator: {value}",
+                file,
+                record,
+            )
+            return
+
+        bare = re.sub(r"^(?:npm|pypi|nuget|chrome-extension):", "", value, flags=re.I)
+        if value.lower().startswith("huggingface:") or bare.lower() in HF_REPO_PACKAGE_SLUGS:
+            self.fail(
+                "ioc-package-hf-repo-slug",
+                f"Hugging Face repository identifiers must use url_path, not package: {value}",
+                file,
+                record,
+            )
+            return
+        if "/" in bare and not bare.startswith("@") and "(hugging face" not in value.lower():
+            slug = bare.split("@", 1)[0].lower()
+            if slug in HF_REPO_PACKAGE_SLUGS:
+                self.fail(
+                    "ioc-package-hf-repo-slug",
+                    f"repository slug must use url_path, not package: {value}",
+                    file,
+                    record,
+                )
+                return
+
+        if not PACKAGE_RE.match(value):
+            self.fail("ioc-package-format", f"invalid package IOC: {value}", file, record)
 
     def normalize_for_platform_check(self, value: str) -> str:
         """Normalize an IOC value for matching against the legitimate-platform deny list.

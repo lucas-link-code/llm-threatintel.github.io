@@ -1,0 +1,274 @@
+{
+  "changed": [
+    {
+      "old_value": "@ctrl/tinycolor",
+      "new_value": "npm:@ctrl/tinycolor",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "shai-hulud-npm-worm-nullifai-hugging-face"
+    },
+    {
+      "old_value": "@asyncapi/specs",
+      "new_value": "npm:@asyncapi/specs",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "shai-hulud-npm-worm-nullifai-hugging-face"
+    },
+    {
+      "old_value": "@akoskm/create-mcp-server-stdio",
+      "new_value": "npm:@akoskm/create-mcp-server-stdio",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers"
+    },
+    {
+      "old_value": "namastex/automagik-genie",
+      "new_value": "npm:namastex/automagik-genie",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "canistersprawl-teampcp-npm-lvm-platform-credential-theft"
+    },
+    {
+      "old_value": "namastex/pgserve",
+      "new_value": "npm:namastex/pgserve",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "canistersprawl-teampcp-npm-lvm-platform-credential-theft"
+    },
+    {
+      "old_value": "xinference==2.6.0",
+      "new_value": "pypi:xinference@2.6.0",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "converted_pin",
+      "campaign": "xinference-teampcp-self-propagating-stealer"
+    },
+    {
+      "old_value": "xinference==2.6.1",
+      "new_value": "pypi:xinference@2.6.1",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "converted_pin",
+      "campaign": "xinference-teampcp-self-propagating-stealer"
+    },
+    {
+      "old_value": "xinference==2.6.2",
+      "new_value": "pypi:xinference@2.6.2",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "converted_pin",
+      "campaign": "xinference-teampcp-self-propagating-stealer"
+    },
+    {
+      "old_value": "@solana-launchpad/sdk (bait package, no malicious code)",
+      "new_value": "@solana-launchpad/sdk",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "@validate-sdk/v2 (payload, infostealer)",
+      "new_value": "@validate-sdk/v2",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "@hash-validator/v2 (early variant, JavaScript infostealer)",
+      "new_value": "@hash-validator/v2",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "aes-create-ipheriv (rotated payload)",
+      "new_value": "aes-create-ipheriv",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "jito-proper-excutor (rotated payload)",
+      "new_value": "jito-proper-excutor",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "jito-sub-aes-ipheriv (rotated payload)",
+      "new_value": "jito-sub-aes-ipheriv",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "scraper-npm (PyPI variant, February 2026)",
+      "new_value": "pypi:scraper-npm",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "clean_value_move_note_to_context",
+      "campaign": "promptmink-famous-chollima-ai-agent-supply-chain"
+    },
+    {
+      "old_value": "@bankr/agent",
+      "new_value": "npm:@bankr/agent",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026"
+    },
+    {
+      "old_value": "@redhat-cloud-services/frontend-components",
+      "new_value": "npm:@redhat-cloud-services/frontend-components",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "miasma-redhat-npm-azure-github-compromise"
+    },
+    {
+      "old_value": "@redhat-cloud-services/compliance-client",
+      "new_value": "npm:@redhat-cloud-services/compliance-client",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "miasma-redhat-npm-azure-github-compromise"
+    },
+    {
+      "old_value": "@redhat-cloud-services/rbac-client",
+      "new_value": "npm:@redhat-cloud-services/rbac-client",
+      "old_type": "package",
+      "new_type": "package",
+      "action": "prefixed_registry",
+      "campaign": "miasma-redhat-npm-azure-github-compromise"
+    }
+  ],
+  "removed": [
+    {
+      "value": "nanobot@<0.1.6",
+      "campaign": "nanobot-indirect-prompt-injection-cve-2026-33654",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected <0.1.6"
+    },
+    {
+      "value": "flowise",
+      "campaign": "flowise-rce-cve-2025-59528-april-2026",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: CVE campaign bare product indicator (flowise)"
+    },
+    {
+      "value": "vllm@<0.14.1",
+      "campaign": "vllm-cve-2026-22778-rce-heap-overflow",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected <0.14.1"
+    },
+    {
+      "value": "flowise@<3.1.1",
+      "campaign": "flowise-cve-2025-59528-active-rce-exploitation",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected <3.1.1"
+    },
+    {
+      "value": "lmdeploy@<0.12.3",
+      "campaign": "cve-2026-33626-lmdeploy-ssrf-12hr-exploitation",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected <0.12.3"
+    },
+    {
+      "value": "flowise@<3.0.13",
+      "campaign": "flowise-cve-2026-41264-csv-agent-rce",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected <3.0.13"
+    },
+    {
+      "value": "lmdeploy",
+      "campaign": "cve-2026-33626-lmdeploy-ssrf-rapid-exploitation",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: CVE campaign bare product indicator (lmdeploy)"
+    },
+    {
+      "value": "LiteLLM <1.83.7",
+      "campaign": "cve-2026-42208-litellm-sqli-active-exploitation",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected <1.83.7"
+    },
+    {
+      "value": "langflow (all versions)",
+      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: all versions; langflow (all versions)"
+    },
+    {
+      "value": "semantic-kernel<1.39.4 (Python)",
+      "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: Python; affected <1.39.4"
+    },
+    {
+      "value": "semantic-kernel<1.71.0 (.NET)",
+      "campaign": "semantic-kernel-cve-2026-26030-prompt-injection-rce",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: .NET; affected <1.71.0"
+    },
+    {
+      "value": "huggingface:Open-OSS/privacy-filter",
+      "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+      "reason": "duplicate url_path already exists: huggingface.co/Open-OSS/privacy-filter"
+    },
+    {
+      "value": "litellm>=1.81.16,<1.83.7",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected >=1.81.16,<1.83.7"
+    },
+    {
+      "value": "semantic-kernel<1.39.4 (Python SDK)",
+      "campaign": "cve-2026-26030-semantic-kernel-prompt-injection-rce",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: Python SDK; affected <1.39.4"
+    },
+    {
+      "value": "semantic-kernel",
+      "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: CVE campaign bare product indicator (semantic-kernel)"
+    },
+    {
+      "value": "litellm (versions 1.81.16 to 1.83.6)",
+      "campaign": "cve-2026-42208-litellm-sql-injection",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: versions 1.81.16 to 1.83.6; litellm (versions 1.81.16 to 1.83.6)"
+    },
+    {
+      "value": "litellm>=1.83.7",
+      "campaign": "cve-2026-42271-litellm-mcp-rce-kasi-kev",
+      "reason": "affected product version range is not an exact package IOC; retain in report prose: affected >=1.83.7"
+    },
+    {
+      "value": "29 additional packages in @redhat-cloud-services namespace",
+      "campaign": "miasma-redhat-npm-azure-github-compromise",
+      "reason": "aggregate description is not an exact package indicator"
+    }
+  ],
+  "converted_type": [
+    {
+      "old_value": "Open-OSS/privacy-filter (Hugging Face)",
+      "new_value": "huggingface.co/Open-OSS/privacy-filter",
+      "old_type": "package",
+      "new_type": "url_path",
+      "action": "converted_to_url_path",
+      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models"
+    },
+    {
+      "old_value": "Open-OSS/privacy-filter (Hugging Face repository)",
+      "new_value": "huggingface.co/Open-OSS/privacy-filter",
+      "old_type": "package",
+      "new_type": "url_path",
+      "action": "converted_to_url_path",
+      "campaign": "hugging-face-fake-openai-privacy-filter-infostealer"
+    },
+    {
+      "old_value": "Open-OSS/privacy-filter",
+      "new_value": "huggingface.co/Open-OSS/privacy-filter",
+      "old_type": "package",
+      "new_type": "url_path",
+      "action": "converted_to_url_path",
+      "campaign": "fake-openai-privacy-filter-hugging-face-malware"
+    }
+  ]
+}

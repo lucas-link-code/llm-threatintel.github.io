@@ -230,6 +230,7 @@ For each new IOC:
   - Descriptive text, statistics, and aggregate summaries (e.g., "100+ identified", "334 uploads", "malicious models") must go in post prose, not `data/iocs.json`.
   - IOC JSON values must be clean, raw, and not defanged. No `[.]` or `hxxps://` in `data/iocs.json`. Defanging is for display in Markdown post bodies only.
   - Put explanation in the `context` field, not in the `value` field. The value field must contain only the bare indicator.
+  - Package IOC value must be a clean machine-actionable identifier only. Valid: `@scope/name`, `name@1.2.3`, `npm:@scope/name@1.2.3`, `pypi:name@1.2.3`, `nuget:name@1.2.3`. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare affected product names without pinned version, Hugging Face repo slugs as packages. Use package objects with separate note field when needed: `{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}`. Hugging Face model/repo URLs belong in urls, not packages.
   - Wildcard values (e.g., `chatgpt.com/s/*`) are not valid IOCs.
 - Add with all fields: value, type (domain/url_path/sha256/md5/ip), context, first_seen, source, campaign, status.
 - Update the last_updated field to today's date.

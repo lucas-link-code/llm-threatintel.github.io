@@ -19,16 +19,18 @@ class CollectIocNormalizationTests(unittest.TestCase):
         collect._POLICY_CACHE = None
 
     def assertRejected(self, value, ioc_type):
-        cleaned, cleaned_type, reason = collect.normalize_ioc_value(value, ioc_type)
+        cleaned, cleaned_type, reason, note = collect.normalize_ioc_value(value, ioc_type)
         self.assertIsNone(cleaned)
         self.assertIsNone(cleaned_type)
         self.assertIsNotNone(reason)
 
-    def assertAccepted(self, value, ioc_type, expected_value, expected_type=None):
-        cleaned, cleaned_type, reason = collect.normalize_ioc_value(value, ioc_type)
+    def assertAccepted(self, value, ioc_type, expected_value, expected_type=None, expected_note=None):
+        cleaned, cleaned_type, reason, note = collect.normalize_ioc_value(value, ioc_type)
         self.assertIsNone(reason)
         self.assertEqual(cleaned, expected_value)
         self.assertEqual(cleaned_type, expected_type or ioc_type)
+        if expected_note is not None:
+            self.assertEqual(note, expected_note)
 
     def test_rejects_cve_as_package(self):
         self.assertRejected("CVE-2026-30615 (Windsurf)", "package")
@@ -46,7 +48,24 @@ class CollectIocNormalizationTests(unittest.TestCase):
         self.assertRejected("100+ malicious models", "package")
 
     def test_normalizes_npm_package_prefix(self):
-        self.assertAccepted("npm:@scope/package@1.2.3", "package", "@scope/package@1.2.3")
+        self.assertAccepted("npm:@scope/package@1.2.3", "package", "npm:@scope/package@1.2.3")
+
+    def test_relocates_package_parenthetical_note(self):
+        cleaned, typ, reason, note = collect.normalize_ioc_value(
+            "@validate-sdk/v2 (payload, infostealer)", "package"
+        )
+        self.assertIsNone(reason)
+        self.assertEqual(cleaned, "@validate-sdk/v2")
+        self.assertEqual(note, "payload, infostealer")
+
+    def test_rejects_version_range_package(self):
+        self.assertRejected("litellm>=1.83.7", "package")
+
+    def test_rejects_aggregate_namespace_package(self):
+        self.assertRejected("29 additional packages in @redhat-cloud-services namespace", "package")
+
+    def test_accepts_pypi_package(self):
+        self.assertAccepted("pypi:package@1.2.3", "package", "pypi:package@1.2.3")
 
     def test_accepts_versioned_package(self):
         self.assertAccepted("litellm@1.82.7", "package", "litellm@1.82.7")
@@ -96,7 +115,7 @@ class CollectIocNormalizationTests(unittest.TestCase):
 
     def test_rejection_logs_reason(self):
         with mock.patch("builtins.print") as print_mock:
-            cleaned, cleaned_type, reason = collect.normalize_ioc_value(
+            cleaned, cleaned_type, reason, note = collect.normalize_ioc_value(
                 "CVE-2026-30615 (Windsurf)", "package"
             )
             self.assertIsNone(cleaned)

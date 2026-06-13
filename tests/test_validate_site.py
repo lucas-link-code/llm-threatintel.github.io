@@ -434,7 +434,7 @@ class ValidateSiteTests(unittest.TestCase):
             (
                 "malware family prose package",
                 [{"value": "AMOS (Atomic macOS Stealer)", "type": "package"}],
-                "ioc-prose-parenthetical",
+                "ioc-package-format",
             ),
             (
                 "affected product fastapi",
@@ -450,6 +450,31 @@ class ValidateSiteTests(unittest.TestCase):
                 "defanged domain",
                 [{"value": "openew[.]app (fake download portal)", "type": "domain"}],
                 "ioc-defanged-json",
+            ),
+            (
+                "parenthetical package",
+                [{"value": "@validate-sdk/v2 (payload, infostealer)", "type": "package"}],
+                "ioc-package-format",
+            ),
+            (
+                "package with space",
+                [{"value": "litellm (versions 1.81.16 to 1.83.6)", "type": "package"}],
+                "ioc-package-format",
+            ),
+            (
+                "package with comparator",
+                [{"value": "litellm>=1.83.7", "type": "package"}],
+                "ioc-package-format",
+            ),
+            (
+                "aggregate namespace package",
+                [{"value": "29 additional packages in @redhat-cloud-services namespace", "type": "package"}],
+                "ioc-package-format",
+            ),
+            (
+                "huggingface repo as package",
+                [{"value": "Open-OSS/privacy-filter", "type": "package"}],
+                "ioc-package-hf-repo-slug",
             ),
         ]
 
@@ -481,6 +506,7 @@ class ValidateSiteTests(unittest.TestCase):
             ("openew.app", "domain"),
             ("npm:@scope/package@1.2.3", "package"),
             ("pypi:package@1.2.3", "package"),
+            ("@validate-sdk/v2", "package"),
             ("huggingface.co/Open-OSS/privacy-filter", "url_path"),
             ("litellm@1.82.7", "package"),
             ("192.168.1.1", "ip"),
