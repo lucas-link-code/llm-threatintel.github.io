@@ -94,7 +94,7 @@
 <p>_CVE-2026-39987 affects Marimo versions prior to patched release; no specific IOCs published; honeypot telemetry from Endor Labs and Sysdig (April 2026) documents exploitation activity_</p>
 <h3>Splunk Format</h3>
 <p>_No IOCs available for Splunk query_</p>
-<h3>Package Indicators</h3>
+<h3>Affected Product</h3>
 <pre><code class="language-">marimo</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Monitor for WebSocket connections to Marimo instances; alert on shell command execution within Marimo terminal endpoints, particularly commands enumerating environment variables (env, printenv, aws configure list, gcloud config list). Search logs for access to .env files, ~/.aws, ~/.ssh, and cloud credential stores post-compromise. Implement network segmentation to isolate Marimo instances from production LLM provider credentials; rotate all LLM API keys, cloud credentials, and Hugging Face tokens if Marimo instances were exposed.</p>

@@ -60,16 +60,11 @@ No domain IOCs published by source (research disclosure; PoC uses placeholder at
 
 ### Full URL Paths
 
-```
-github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc
-github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline
-```
+_Safe researcher PoC paths published by Adversa AI; see References._
 
 ### Splunk Format
 
-```
-"github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc" OR "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline"
-```
+_No IOCs available for Splunk query_
 
 ### File Hashes
 
@@ -98,6 +93,8 @@ For machines or pipelines that have run `claude` against external repositories b
 ## References
 
 - [Adversa AI] TrustFall: coding agent security flaw enables one-click RCE in Claude, Cursor, Gemini CLI and GitHub Copilot (2026-05-07) — https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/
+- [Adversa AI] TrustFall safe PoC (developer-machine variant) — https://github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc
+- [Adversa AI] TrustFall safe PoC (headless CI variant) — https://github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline
 - [Lyrie Research] TrustFall: One Keypress RCE in Claude Code, Gemini CLI, and Cursor Opens Supply Chain Weaponization (2026-05-09) — https://lyrie.ai/research/research/2026-05-09-trustfall-agentic-rce
 - [Help Net Security] One keypress is all it takes to compromise four AI coding tools (2026-05-07) — https://www.helpnetsecurity.com/2026/05/07/trustfall-ai-coding-cli-vulnerability-research/
 - [The Register] Anthropic response to 1-click pwn: Shouldn't have clicked 'ok' (2026-05-07) — https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319

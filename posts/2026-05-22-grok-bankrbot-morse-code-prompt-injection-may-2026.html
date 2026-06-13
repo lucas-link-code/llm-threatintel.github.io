@@ -92,16 +92,13 @@
 <table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Prompt Injection</td><td>T1059</td><td>Encoded Morse code used to inject malicious instructions that bypass LLM content filtering and intent-detection mechanisms</td></tr><tr><td>Excessive Agency / Privilege Abuse</td><td>T1078</td><td>AI agent granted autonomous transaction execution permissions without multi-factor verification or human-in-the-loop controls</td></tr><tr><td>Input Obfuscation / Encoding</td><td>T1027</td><td>Morse code encoding used to evade safety filters and detection systems</td></tr><tr><td>Social Engineering / Privilege Escalation</td><td>T1566</td><td>NFT gift used to escalate wallet permissions prior to prompt injection attack</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<pre><code class="language-">x.com
-base.blockscout.com</code></pre>
+<p>_Attack delivery used X/Twitter and Base blockchain explorer evidence links. See References for source reporting and transaction evidence._</p>
 <h3>Full URL Paths</h3>
-<pre><code class="language-">https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a
-https://twitter.com/bankrbot</code></pre>
+<p>_No attacker-controlled URL IOCs published; evidence transaction and profile URLs are cited in References._</p>
 <h3>Splunk Format</h3>
-<pre><code class="language-">&quot;x.com&quot; OR &quot;base.blockscout.com&quot; OR &quot;https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a&quot; OR &quot;https://twitter.com/bankrbot&quot;</code></pre>
+<p>_No IOCs available for Splunk query_</p>
 <h3>Package Indicators</h3>
-<pre><code class="language-">@bankr/agent
-grok-bankr-integration</code></pre>
+<pre><code class="language-">npm:@bankr/agent</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Monitor AI agent output to external systems for sudden permission-based changes or high-value transactions. Implement mandatory human approval gates for any agentic AI financial action exceeding threshold amounts. Deploy input validation that detects and flags encoded instructions (Morse, Base64, hexadecimal, Unicode homoglyphs, multilingual variants) before LLM processing. Isolate agent-to-agent communication channels with explicit allowlisting of authorized commands and recipients. Use blockchain transaction monitoring (Etherscan, Blockscout) to flag large transfers from known AI-controlled wallets. Implement spend caps and recipient allowlists at the blockchain/ledger layer, not at the LLM layer. Track modifications to agent permission models and alert on any privilege escalation via external contracts or NFTs.</p>
 <h2>References</h2>

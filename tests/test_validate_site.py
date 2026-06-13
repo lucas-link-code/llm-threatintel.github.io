@@ -191,8 +191,8 @@ class ValidateSiteTests(unittest.TestCase):
             (
                 "duplicate IOC warning",
                 [
-                    {"value": "Flowise", "type": "package"},
-                    {"value": "flowise", "type": "package"},
+                    {"value": "evil.example.com", "type": "domain"},
+                    {"value": "evil.example.com", "type": "domain"},
                 ],
                 "ioc-duplicate-review",
                 0,
@@ -447,6 +447,56 @@ class ValidateSiteTests(unittest.TestCase):
                 "ioc-affected-product-as-package",
             ),
             (
+                "affected product ollama",
+                [{"value": "ollama", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "affected product grok",
+                [{"value": "grok", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "affected product bankrbot",
+                [{"value": "bankrbot", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "conceptual package grok-bankr-integration",
+                [{"value": "grok-bankr-integration", "type": "package"}],
+                "ioc-conceptual-package-label",
+            ),
+            (
+                "affected product n8n",
+                [{"value": "n8n", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "affected product langflow",
+                [{"value": "LangFlow", "type": "package"}],
+                "ioc-affected-product-as-package",
+            ),
+            (
+                "reference url thehackernews",
+                [{"value": "thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "reference url docs litellm",
+                [{"value": "docs.litellm.ai/blog/security-update-march-2026", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "safe poc adversa github",
+                [{"value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "evidence domain x.com",
+                [{"value": "x.com", "type": "domain"}],
+                "ioc-evidence-domain",
+            ),
+            (
                 "defanged domain",
                 [{"value": "openew[.]app (fake download portal)", "type": "domain"}],
                 "ioc-defanged-json",
@@ -507,6 +557,9 @@ class ValidateSiteTests(unittest.TestCase):
             ("npm:@scope/package@1.2.3", "package"),
             ("pypi:package@1.2.3", "package"),
             ("@validate-sdk/v2", "package"),
+            ("npm:@bankr/agent", "package"),
+            ("pypi:xinference@2.6.0", "package"),
+            ("npm:namastex/automagik-genie", "package"),
             ("huggingface.co/Open-OSS/privacy-filter", "url_path"),
             ("litellm@1.82.7", "package"),
             ("192.168.1.1", "ip"),

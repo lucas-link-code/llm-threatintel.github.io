@@ -70,6 +70,54 @@ class CollectIocNormalizationTests(unittest.TestCase):
     def test_accepts_versioned_package(self):
         self.assertAccepted("litellm@1.82.7", "package", "litellm@1.82.7")
 
+    def test_rejects_semantic_false_positive_packages(self):
+        for value in ("ollama", "grok", "bankrbot", "grok-bankr-integration", "n8n", "LangFlow"):
+            with self.subTest(value=value):
+                self.assertRejected(value, "package")
+
+    def test_rejects_reference_urls(self):
+        self.assertRejected(
+            "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+            "url_path",
+        )
+        self.assertRejected("docs.litellm.ai/blog/security-update-march-2026", "url_path")
+        self.assertRejected(
+            "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc",
+            "url_path",
+        )
+
+    def test_accepts_malicious_packages_and_hf_repo(self):
+        self.assertAccepted("npm:@bankr/agent", "package", "npm:@bankr/agent")
+        self.assertAccepted("pypi:xinference@2.6.0", "package", "pypi:xinference@2.6.0")
+        self.assertAccepted("npm:namastex/automagik-genie", "package", "npm:namastex/automagik-genie")
+        self.assertAccepted(
+            "huggingface.co/Open-OSS/privacy-filter",
+            "url_path",
+            "huggingface.co/Open-OSS/privacy-filter",
+        )
+
+    def test_suppresses_packages_when_no_iocs_published(self):
+        finding = {
+            "slug": "intruder-example",
+            "title": "Intruder example",
+            "references": [{"source": "Intruder"}],
+            "iocs": {
+                "note": "No specific IOCs published due to responsible disclosure",
+                "packages": ["ollama", "n8n"],
+            },
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir(parents=True)
+            (data_dir / "iocs.json").write_text(
+                json.dumps({"last_updated": "2026-06-09", "iocs": []}, indent=2) + "\n"
+            )
+            with mock.patch.object(collect, "DATA_DIR", data_dir), mock.patch.object(
+                collect, "save_json"
+            ) as save_json_mock:
+                collect.update_iocs(finding)
+                self.assertFalse(save_json_mock.called)
+
     def test_undefangs_domain(self):
         self.assertAccepted("openew[.]app", "domain", "openew.app")
 

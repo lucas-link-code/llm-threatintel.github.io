@@ -44,7 +44,7 @@ _CVE-2026-39987 affects Marimo versions prior to patched release; no specific IO
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Product
 
 ```
 marimo

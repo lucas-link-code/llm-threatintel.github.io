@@ -19,6 +19,7 @@ import sys
 import json
 import re
 import subprocess
+import urllib.parse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -142,6 +143,7 @@ OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the J
       "mitre_attack": [{{"technique": "Name", "id": "T1234.001", "context": "How it applies"}}],
       "iocs": {{
         "domains": [], "urls": [], "hashes": [], "ips": [], "packages": [],
+        "affected_platforms": [],
         "note": "Source of IOCs or 'No IOCs published'"
       }},
       "actors": [{{
@@ -163,7 +165,7 @@ If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "sear
 
 Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt, phishing, model-poisoning, prompt-injection, mcp-security.
 Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
-Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, Hugging Face repo slugs as packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages.
+Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, affected platforms, conceptual labels, Hugging Face repo slugs as packages. Put affected or exposed platforms in iocs.affected_platforms, not packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages. Reference, advisory, evidence, and safe PoC URLs belong in references, not urls.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 
@@ -324,6 +326,17 @@ def generate_post_markdown(finding):
         lines.append("```")
         for p in iocs['packages']:
             lines.append(str(p) if not isinstance(p, dict) else p.get('package', str(p)))
+        lines.append("```")
+        lines.append("")
+
+    affected = iocs.get('affected_platforms') or []
+    if affected:
+        heading = iocs.get('affected_platforms_heading', 'Affected Platforms')
+        lines.append(f"### {heading}")
+        lines.append("")
+        lines.append("```")
+        for item in affected:
+            lines.append(str(item))
         lines.append("```")
         lines.append("")
 
@@ -518,6 +531,7 @@ DOMAIN_RE = re.compile(
 )
 POLICY_PATH = REPO_ROOT / "validation" / "policy.json"
 _POLICY_CACHE = None
+NO_IOCS_PUBLISHED_RE = re.compile(r"no specific ioc|no iocs published", re.I)
 
 
 def load_policy():
@@ -532,13 +546,41 @@ def load_policy():
 
 def extract_url_host(value):
     if '://' in value:
-        from urllib.parse import urlparse
-        parsed = urlparse(value)
+        parsed = urllib.parse.urlparse(value)
         host = parsed.netloc.split('@')[-1].split(':')[0]
         return host.lower() if host else ''
     if '/' in value:
         return value.split('/')[0].lower()
     return value.lower()
+
+
+def normalize_url_host_path(value: str) -> tuple[str, str]:
+    parsed = urllib.parse.urlparse(value if '://' in value else f'//{value}', scheme='')
+    host = parsed.netloc.split('@')[-1].split(':')[0].lower() if parsed.netloc else ''
+    path = parsed.path or '/'
+    return host, path
+
+
+def matches_reference_url_path(value: str, policy: dict) -> bool:
+    host, path = normalize_url_host_path(value)
+    if not host:
+        return False
+    for entry in policy.get('reference_url_path_denylist', []):
+        entry_host = str(entry.get('host', '')).lower()
+        prefix = str(entry.get('path_prefix', '/'))
+        if host == entry_host or host.endswith('.' + entry_host):
+            if path.startswith(prefix):
+                return True
+    return False
+
+
+def bare_package_name(value: str) -> str:
+    return re.sub(r'^(?:npm|pypi|nuget|chrome-extension):', '', value, flags=re.I)
+
+
+def iocs_publication_suppressed(finding_iocs: dict) -> bool:
+    note = str(finding_iocs.get('note', ''))
+    return bool(NO_IOCS_PUBLISHED_RE.search(note))
 
 
 def normalize_for_platform_check(value):
@@ -638,7 +680,9 @@ def normalize_ioc_value(value, ioc_type):
     malware_names = policy.get('malware_family_denylist', [])
     malware_lower = {n.lower() for n in malware_names}
     affected_products = {n.lower() for n in policy.get('affected_product_package_denylist', [])}
+    conceptual = {n.lower() for n in policy.get('conceptual_package_denylist', [])}
     ref_domains = policy.get('reference_url_domain_denylist', [])
+    evidence_domains = {d.lower() for d in policy.get('evidence_domain_denylist', [])}
 
     if '*' in cleaned:
         return None, None, 'wildcard values are not valid IOCs', None
@@ -684,8 +728,11 @@ def normalize_ioc_value(value, ioc_type):
     if ioc_type == 'package':
         if cleaned in malware_names or cleaned.lower() in malware_lower:
             return None, None, 'malware family name is not a package IOC', None
-        bare = re.sub(r'^(?:npm|pypi|nuget|chrome-extension):', '', cleaned, flags=re.I)
-        if '@' not in bare and bare.lower() in affected_products:
+        bare = bare_package_name(cleaned)
+        bare_lower = bare.lower()
+        if bare_lower in conceptual:
+            return None, None, 'conceptual label is not a package IOC', None
+        if '@' not in bare and bare_lower in affected_products:
             return None, None, 'bare affected product name without registry/version context', None
         reason = package_candidate_reason(cleaned)
         if reason:
@@ -698,6 +745,11 @@ def normalize_ioc_value(value, ioc_type):
                 ref = ref_domain.lower()
                 if host == ref or host.endswith('.' + ref):
                     return None, None, 'reference or documentation URL is not an IOC', None
+        if matches_reference_url_path(cleaned, policy):
+            return None, None, 'reference, advisory, evidence, or safe PoC URL is not an IOC', None
+
+    if ioc_type == 'domain' and cleaned.lower() in evidence_domains:
+        return None, None, 'evidence or delivery-channel domain is not an IOC', None
 
     if ioc_type in ('domain', 'url_path'):
         if matches_platform_denylist(cleaned, ioc_type, policy):
@@ -722,6 +774,7 @@ def update_iocs(finding):
     campaign = finding.get('slug', 'unknown')
     added = 0
     skipped = 0
+    suppress_packages = iocs_publication_suppressed(finding_iocs)
 
     def add_ioc(value, ioc_type, note=''):
         nonlocal added, skipped
@@ -765,12 +818,19 @@ def update_iocs(finding):
         ip_str = str(ip) if not isinstance(ip, dict) else ip.get('ip', str(ip))
         add_ioc(ip_str, 'ip')
 
-    for pkg in finding_iocs.get('packages', []):
-        if isinstance(pkg, dict):
-            pkg_str, pkg_note = package_dict_to_value(pkg)
-            add_ioc(pkg_str, 'package', note=pkg_note)
-        else:
-            add_ioc(str(pkg), 'package')
+    packages = finding_iocs.get('packages', [])
+    if suppress_packages and packages:
+        skipped += len(packages)
+        print(
+            f"  Skipped {len(packages)} package IOC(s): source reported no specific IOCs published"
+        )
+    else:
+        for pkg in packages:
+            if isinstance(pkg, dict):
+                pkg_str, pkg_note = package_dict_to_value(pkg)
+                add_ioc(pkg_str, 'package', note=pkg_note)
+            else:
+                add_ioc(str(pkg), 'package')
 
     if added > 0:
         iocs['last_updated'] = TODAY

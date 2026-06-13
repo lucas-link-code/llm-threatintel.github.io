@@ -43,7 +43,7 @@ _Specific vulnerable instances not disclosed; research focused on systematic sec
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Platforms
 
 ```
 n8n

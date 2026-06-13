@@ -94,7 +94,7 @@
 <p>_No IOCs published; vulnerability patched in version 1.5.128_</p>
 <h3>Splunk Format</h3>
 <p>_No IOCs available for Splunk query_</p>
-<h3>Package Indicators</h3>
+<h3>Affected Product</h3>
 <pre><code class="language-">praisonaiagents</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Monitor PraisonAIAgents web_crawl requests for URLs targeting cloud metadata ranges (169.254.169.254/32), internal RFC1918 addresses (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), or localhost (127.0.0.1). Implement network segmentation preventing agent VMs/containers from reaching metadata endpoints. Require upgrade to version 1.5.128 or later immediately. Audit agent logs for requests to internal services or metadata endpoints; treat as indicators of agent compromise or malicious prompt injection.</p>

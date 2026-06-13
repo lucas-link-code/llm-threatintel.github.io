@@ -160,7 +160,38 @@
     "Starlette",
     "vLLM",
     "Windsurf",
-    "OpenUI"
+    "OpenUI",
+    "ollama",
+    "grok",
+    "bankrbot",
+    "grok-bankr-integration",
+    "n8n",
+    "langflow",
+    "flowise",
+    "openui",
+    "gpt-researcher",
+    "upsonic",
+    "mcp-inspector",
+    "librechat",
+    "weknora",
+    "cursor-mcp",
+    "sub2api",
+    "new-api",
+    "one-api"
+  ],
+  "conceptual_package_denylist": [
+    "grok-bankr-integration"
+  ],
+  "reference_url_path_denylist": [
+    {"host": "thehackernews.com", "path_prefix": "/"},
+    {"host": "docs.litellm.ai", "path_prefix": "/blog/"},
+    {"host": "github.com", "path_prefix": "/adversa-ai/research/"},
+    {"host": "twitter.com", "path_prefix": "/"},
+    {"host": "base.blockscout.com", "path_prefix": "/tx/"}
+  ],
+  "evidence_domain_denylist": [
+    "x.com",
+    "base.blockscout.com"
   ],
   "reference_url_domain_denylist": [
     "arxiv.org",

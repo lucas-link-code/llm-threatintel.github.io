@@ -44,7 +44,7 @@ _No specific IOCs published; vulnerability class is misconfiguration and lack of
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Platforms
 
 ```
 n8n

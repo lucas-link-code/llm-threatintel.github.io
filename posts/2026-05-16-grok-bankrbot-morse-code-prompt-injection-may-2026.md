@@ -48,13 +48,6 @@ Social media post on X/Twitter with Morse code payload
 "Social media post on X/Twitter with Morse code payload"
 ```
 
-### Package Indicators
-
-```
-Grok (xAI chatbot)
-Bankrbot (automated finance agent)
-```
-
 ## Detection Recommendations
 
 Monitor AI agent tool invocation logs for anomalous patterns: tool calls not preceded by natural conversational context; rapid sequences of transfer operations; transfers to previously unknown wallets. Implement agent-layer access controls: require additional authentication for high-value transactions beyond model-level guardrails. Do not rely on model-level safety filters to prevent tool misuse. Implement network-layer controls: IP allowlists for crypto wallet transfer destinations. Monitor social media mentions of AI agents for encoded instructions. Implement behavioral anomaly detection on crypto wallet connected to AI agents. Rate-limit AI agent tool calls. Require human approval for financial transactions exceeding threshold.

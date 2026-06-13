@@ -43,7 +43,7 @@ _No IOCs published; vulnerability patched in version 1.5.128_
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Product
 
 ```
 praisonaiagents

@@ -45,7 +45,7 @@ _Research based on certificate transparency logs identifying 2M+ hosts, 1M expos
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Platforms
 
 ```
 n8n

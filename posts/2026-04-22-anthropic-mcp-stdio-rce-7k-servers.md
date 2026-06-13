@@ -43,7 +43,7 @@ _No IOCs published; vulnerability is architectural in Anthropic's official MCP S
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected MCP Platforms
 
 ```
 mcp-inspector

@@ -893,42 +893,6 @@
       "status": "active"
     },
     {
-      "value": "praisonai",
-      "type": "package",
-      "context": "CVE-2026-44338 PraisonAI legacy Flask api_server.py authentication bypass; AUTH_ENABLED=False hard-coded; unauthenticated GET /agents and POST /chat on TCP/8080; affects versions 2.5.6 through 4.6.33; fixed in 4.6.34",
-      "first_seen": "2026-05-11",
-      "source": "GitHub Advisory GHSA-6rmh-7xcm-cpxj / Sysdig Threat Research",
-      "campaign": "cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
-      "status": "active"
-    },
-    {
-      "value": "doris-mcp-server",
-      "type": "package",
-      "context": "CVE-2025-66335 (CVSS 5.3, GHSA-qhfq-gvvc-5q6q) Apache Doris MCP Server SQL injection via exec_query db_name parameter concatenation; affects versions 0.1.0 through 0.6.0; patched in 0.6.1",
-      "first_seen": "2026-05-13",
-      "source": "Akamai Security Intelligence Group / GitHub Advisory Database / Apache",
-      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
-      "status": "active"
-    },
-    {
-      "value": "alibabacloud-rds-openapi-mcp-server",
-      "type": "package",
-      "context": "Unauthenticated information disclosure in Alibaba Cloud RDS OpenAPI MCP Server; RAG tool serves vector-index metadata (table names, schemas) without authenticating the caller; vendor declined to fix; Akamai escalated to CERT/CC",
-      "first_seen": "2026-05-13",
-      "source": "Akamai Security Intelligence Group",
-      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
-      "status": "active"
-    },
-    {
-      "value": "github.com/startreedata/mcp-pinot",
-      "type": "url_path",
-      "context": "StarTree MCP Server for Apache Pinot (mcp-pinot v1.1.0 and earlier) \u2014 HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full Pinot cluster takeover when externally reachable; StarTree added OAuth as optional HTTP authenticator",
-      "first_seen": "2026-05-13",
-      "source": "Akamai Security Intelligence Group",
-      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
-      "status": "active"
-    },
-    {
       "value": "git-tanstack.com",
       "type": "domain",
       "context": "Mini Shai-Hulud Wave 5 TeamPCP typosquat C2 domain; serves transformers.pyz credential stealer payload and receives exfiltrated secrets",
@@ -1286,15 +1250,6 @@
       "first_seen": "2026-05-01",
       "source": "Cyber and Ramen",
       "campaign": "ottercookie-fake-gemini-npm-ai-coding-tool-theft",
-      "status": "active"
-    },
-    {
-      "value": "nginx-ui",
-      "type": "package",
-      "context": "CVE-2026-33032 MCPwn: nginx-ui versions <=2.3.5 vulnerable to unauthenticated MCP tool invocation",
-      "first_seen": "2026-05-01",
-      "source": "Rapid7",
-      "campaign": "cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
       "status": "active"
     },
     {
@@ -1757,96 +1712,6 @@
       "status": "active"
     },
     {
-      "value": "marimo",
-      "type": "package",
-      "context": "Marimo Pre-Authentication RCE (CVE-2026-39987): Critical AI Development Toolchain Compromise via WebSocket Terminal",
-      "first_seen": "2026-04-13",
-      "source": "Cloud Security Alliance AI Safety Initiative",
-      "campaign": "marimo-preauth-rce-ai-dev-infrastructure",
-      "status": "active"
-    },
-    {
-      "value": "praisonaiagents",
-      "type": "package",
-      "context": "PraisonAIAgents SSRF Vulnerability (CVE-2026-40160): Cloud Metadata Access via Malicious URL Crawling",
-      "first_seen": "2026-04-13",
-      "source": "OffSeq Threat Radar",
-      "campaign": "praisonaiagents-ssrf-cloud-metadata",
-      "status": "active"
-    },
-    {
-      "value": "sub2api",
-      "type": "package",
-      "context": "Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries",
-      "first_seen": "2026-04-16",
-      "source": "arXiv",
-      "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
-      "status": "active"
-    },
-    {
-      "value": "new-api",
-      "type": "package",
-      "context": "Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries",
-      "first_seen": "2026-04-16",
-      "source": "arXiv",
-      "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
-      "status": "active"
-    },
-    {
-      "value": "one-api",
-      "type": "package",
-      "context": "Malicious LLM Router Infrastructure Compromise: 26 Routers Injecting Malicious Code and Stealing Credentials via AI Agent Intermediaries",
-      "first_seen": "2026-04-16",
-      "source": "arXiv",
-      "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
-      "status": "active"
-    },
-    {
-      "value": "mcp-inspector",
-      "type": "package",
-      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
-      "first_seen": "2026-04-22",
-      "source": "The Hacker News",
-      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
-      "status": "active"
-    },
-    {
-      "value": "librechat",
-      "type": "package",
-      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
-      "first_seen": "2026-04-22",
-      "source": "The Hacker News",
-      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
-      "status": "active"
-    },
-    {
-      "value": "weknora",
-      "type": "package",
-      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
-      "first_seen": "2026-04-22",
-      "source": "The Hacker News",
-      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
-      "status": "active"
-    },
-    {
-      "value": "npm:@akoskm/create-mcp-server-stdio",
-      "type": "package",
-      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
-      "first_seen": "2026-04-22",
-      "source": "The Hacker News",
-      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
-      "status": "active"
-    },
-    {
-      "value": "cursor-mcp",
-      "type": "package",
-      "context": "Anthropic MCP Design Vulnerability Enables Unauthenticated RCE Across 7,000+ Servers",
-      "first_seen": "2026-04-22",
-      "source": "The Hacker News",
-      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
-      "status": "active"
-    },
-    {
       "value": "142.11.206.72",
       "type": "ip",
       "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
@@ -1871,15 +1736,6 @@
       "first_seen": "2026-04-24",
       "source": "SC Media / Socket Research",
       "campaign": "canistersprawl-teampcp-npm-lvm-platform-credential-theft",
-      "status": "active"
-    },
-    {
-      "value": "openclaw",
-      "type": "package",
-      "context": "CVE-2026-41349: OpenClaw Agentic Consent Bypass Allows Unauthorized Agent Execution Without User Approval",
-      "first_seen": "2026-04-24",
-      "source": "The Hacker Wire",
-      "campaign": "cve-2026-41349-openclaw-consent-bypass-agentic-rce",
       "status": "active"
     },
     {
@@ -2009,42 +1865,6 @@
       "status": "active"
     },
     {
-      "value": "gpt-researcher",
-      "type": "package",
-      "context": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
-      "first_seen": "2026-05-08",
-      "source": "OX Security Blog",
-      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
-      "status": "active"
-    },
-    {
-      "value": "upsonic",
-      "type": "package",
-      "context": "Anthropic MCP Architectural RCE Flaw Exposes 150M+ Downloads and 7,000+ Servers to Command Injection",
-      "first_seen": "2026-05-08",
-      "source": "OX Security Blog",
-      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
-      "status": "active"
-    },
-    {
-      "value": "n8n",
-      "type": "package",
-      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
-      "first_seen": "2026-05-08",
-      "source": "The Hacker News",
-      "campaign": "million-exposed-ai-services-security-assessment",
-      "status": "active"
-    },
-    {
-      "value": "LangFlow",
-      "type": "package",
-      "context": "Massive Exposure of 1 Million AI Services Reveals Critical Misconfiguration and Security Debt in Production AI Infrastructure",
-      "first_seen": "2026-05-08",
-      "source": "The Hacker News",
-      "campaign": "million-exposed-ai-services-security-assessment",
-      "status": "active"
-    },
-    {
       "value": "beta.context.ai (no longer accessible as of April 20, 2026)",
       "type": "domain",
       "context": "Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration",
@@ -2135,24 +1955,6 @@
       "status": "active"
     },
     {
-      "value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc",
-      "type": "url_path",
-      "context": "Adversa AI safe PoC for the TrustFall one-click developer-machine variant; reproduces the chain on Claude Code, Cursor CLI, Gemini CLI, and GitHub Copilot CLI without exfiltration",
-      "first_seen": "2026-05-07",
-      "source": "Adversa AI",
-      "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
-      "status": "active"
-    },
-    {
-      "value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline",
-      "type": "url_path",
-      "context": "Adversa AI safe PoC for the TrustFall zero-click headless-CI variant; exfiltrates GitHub Actions runner process.env to a researcher-chosen webhook collector",
-      "first_seen": "2026-05-07",
-      "source": "Adversa AI",
-      "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
-      "status": "active"
-    },
-    {
       "value": "65.111.27.132",
       "type": "ip",
       "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
@@ -2216,42 +2018,6 @@
       "status": "active"
     },
     {
-      "value": "grok",
-      "type": "package",
-      "context": "xAI Grok chatbot exploited via Morse code prompt injection to trigger Bankrbot crypto theft of $175K",
-      "first_seen": "2026-05-16",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "bankrbot",
-      "type": "package",
-      "context": "Bankrbot automated finance agent abused via prompt injection chained through Grok to drain $175K in cryptocurrency",
-      "first_seen": "2026-05-16",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "ollama",
-      "type": "package",
-      "context": "Massive Exposure of 1 Million AI Services\u2014Intruder Security Scan Reveals Critical Misconfigurations and Authentication Gaps in Self-Hosted LLM Infrastructure",
-      "first_seen": "2026-05-18",
-      "source": "Intruder Security",
-      "campaign": "intruder-1-million-exposed-ai-services-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "Microsoft.SemanticKernel.Core",
-      "type": "package",
-      "context": "Microsoft Semantic Kernel Critical RCE Vulnerabilities (CVE-2026-25592, CVE-2026-26030)\u2014Prompt Injection to Remote Code Execution in AI Agent Frameworks",
-      "first_seen": "2026-05-18",
-      "source": "Microsoft Security Blog",
-      "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
-      "status": "active"
-    },
-    {
       "value": "welovechinatown.info",
       "type": "domain",
       "context": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal",
@@ -2279,79 +2045,7 @@
       "status": "active"
     },
     {
-      "value": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
-      "type": "url_path",
-      "context": "Intruder Security Scans Reveal 1 Million Exposed AI Services with Critical Misconfigurations\u2014Authentication Bypass and Unauthenticated Access Across Flowise, n8n, and Chatbot Infrastructure",
-      "first_seen": "2026-05-21",
-      "source": "The Hacker News",
-      "campaign": "intruder-1m-exposed-ai-services-misconfig-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://docs.litellm.ai/blog/security-update-march-2026",
-      "type": "url_path",
-      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours\u2014Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
-      "first_seen": "2026-05-21",
-      "source": "The Hacker News",
-      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
-      "type": "url_path",
-      "context": "CVE-2026-42208: LiteLLM SQL Injection Under Active Exploitation Within 36 Hours\u2014Unauthenticated Pre-Auth Credential Database Access via Authorization Header Injection",
-      "first_seen": "2026-05-21",
-      "source": "The Hacker News",
-      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "x.com",
-      "type": "domain",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
-      "first_seen": "2026-05-22",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "base.blockscout.com",
-      "type": "domain",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
-      "first_seen": "2026-05-22",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a",
-      "type": "url_path",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
-      "first_seen": "2026-05-22",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://twitter.com/bankrbot",
-      "type": "url_path",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
-      "first_seen": "2026-05-22",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
       "value": "npm:@bankr/agent",
-      "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
-      "first_seen": "2026-05-22",
-      "source": "Security Boulevard",
-      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "grok-bankr-integration",
       "type": "package",
       "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
@@ -2672,15 +2366,6 @@
       "first_seen": "2026-06-11",
       "source": "Wiz",
       "campaign": "miasma-redhat-npm-azure-github-compromise",
-      "status": "active"
-    },
-    {
-      "value": "huggingface-hub",
-      "type": "package",
-      "context": "CVE-2026-4372: Hugging Face Transformers Critical RCE via Malicious Model Config.json \u2013 232 Million Downloads Exposed Pre-Patch",
-      "first_seen": "2026-06-11",
-      "source": "Threat-Modeling.com Vulnerability Intelligence Report",
-      "campaign": "cve-2026-4372-hugging-face-transformers-rce",
       "status": "active"
     },
     {

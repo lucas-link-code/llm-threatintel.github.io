@@ -223,14 +223,14 @@ For each new IOC:
 - IOC value quality rules:
   - IOC values must be specific, machine-actionable indicators. Each value must be something a defender can paste into a proxy denylist, SIEM query, or hash lookup.
   - CVE IDs are NOT IOC values. Track CVEs in post prose and actor records.
-  - Affected software names are NOT IOC values unless they are exact malicious or compromised package names with explicit registry prefix and version context (e.g., `npm:litellm@1.82.7`, `pypi:package@1.2.3`). Bare product names like FastAPI, LiteLLM, Starlette are affected products, not malicious packages.
+  - Affected software names are NOT IOC values unless they are exact malicious or compromised package names with explicit registry prefix and version context (e.g., `npm:litellm@1.82.7`, `pypi:package@1.2.3`). Bare product names like FastAPI, LiteLLM, Starlette, ollama, grok, n8n, LangFlow are affected products, not malicious packages. Put affected or exposed platforms in report prose or an Affected Platforms section, not in package IOCs.
   - Malware family names (e.g., Odyssey Stealer, AMOS, Lumma Stealer) are NOT package IOCs. Track malware families in `data/actors.json`.
   - News, blog, documentation, and research URLs are references, not IOCs. Cite them in the post References section.
   - Generic platform domains and generic share/model/API paths are not IOCs (see the deny list above).
   - Descriptive text, statistics, and aggregate summaries (e.g., "100+ identified", "334 uploads", "malicious models") must go in post prose, not `data/iocs.json`.
   - IOC JSON values must be clean, raw, and not defanged. No `[.]` or `hxxps://` in `data/iocs.json`. Defanging is for display in Markdown post bodies only.
   - Put explanation in the `context` field, not in the `value` field. The value field must contain only the bare indicator.
-  - Package IOC value must be a clean machine-actionable identifier only. Valid: `@scope/name`, `name@1.2.3`, `npm:@scope/name@1.2.3`, `pypi:name@1.2.3`, `nuget:name@1.2.3`. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare affected product names without pinned version, Hugging Face repo slugs as packages. Use package objects with separate note field when needed: `{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}`. Hugging Face model/repo URLs belong in urls, not packages.
+  - Package IOC value must be a clean machine-actionable identifier only. Valid: `@scope/name`, `name@1.2.3`, `npm:@scope/name@1.2.3`, `pypi:name@1.2.3`, `nuget:name@1.2.3`. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare affected product names without pinned version, conceptual labels like `grok-bankr-integration`, Hugging Face repo slugs as packages. Use package objects with separate note field when needed: `{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}`. Hugging Face model/repo URLs belong in urls, not packages. Reference, advisory, evidence, and safe PoC URLs belong in References, not IOC url_path values.
   - Wildcard values (e.g., `chatgpt.com/s/*`) are not valid IOCs.
 - Add with all fields: value, type (domain/url_path/sha256/md5/ip), context, first_seen, source, campaign, status.
 - Update the last_updated field to today's date.

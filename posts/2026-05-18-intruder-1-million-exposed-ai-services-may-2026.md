@@ -44,7 +44,7 @@ _Intruder researchers identified specific deployment platforms via CT logs; no s
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Platforms
 
 ```
 ollama

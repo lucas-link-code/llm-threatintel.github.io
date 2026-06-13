@@ -38,17 +38,13 @@ _No specific IOCs published; vulnerability patterns across multiple deployment t
 
 ### Full URL Paths
 
-```
-https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html
-```
+_No specific IOCs published; vulnerability patterns across multiple deployment types._
 
 ### Splunk Format
 
-```
-"https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
-```
+_No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Platforms
 
 ```
 flowise

@@ -41,29 +41,20 @@ About 80% of the funds were eventually returned, but only after the DRB communit
 
 ### Domains
 
-```
-x.com
-base.blockscout.com
-```
+_Attack delivery used X/Twitter and Base blockchain explorer evidence links. See References for source reporting and transaction evidence._
 
 ### Full URL Paths
 
-```
-https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a
-https://twitter.com/bankrbot
-```
+_No attacker-controlled URL IOCs published; evidence transaction and profile URLs are cited in References._
 
 ### Splunk Format
 
-```
-"x.com" OR "base.blockscout.com" OR "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a" OR "https://twitter.com/bankrbot"
-```
+_No IOCs available for Splunk query_
 
 ### Package Indicators
 
 ```
-@bankr/agent
-grok-bankr-integration
+npm:@bankr/agent
 ```
 
 ## Detection Recommendations

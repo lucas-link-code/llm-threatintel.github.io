@@ -44,7 +44,7 @@ _CVEs issued for individual implementations: CVE-2025-49596 (MCP Inspector), CVE
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected MCP Platforms
 
 ```
 @anthropic-ai/sdk (all versions with MCP support)

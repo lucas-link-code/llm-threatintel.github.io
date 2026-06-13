@@ -45,7 +45,7 @@ _Research identified commodity open-source router templates (sub2api, new-api, o
 
 _No IOCs available for Splunk query_
 
-### Package Indicators
+### Affected Router Templates
 
 ```
 sub2api

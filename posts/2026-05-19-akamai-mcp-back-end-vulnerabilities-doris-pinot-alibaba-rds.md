@@ -60,12 +60,13 @@ No URL IOCs published by source
 No IOCs available for Splunk query
 ```
 
-### Package Indicators
+### Affected MCP Products
 
 ```
-pypi:doris-mcp-server@<0.6.1
+pypi:doris-mcp-server versions below 0.6.1
 pypi:alibabacloud-rds-openapi-mcp-server
-mcp-pinot@<=1.1.0
+mcp-pinot versions <=1.1.0
+github.com/startreedata/mcp-pinot
 ```
 
 ### File Hashes

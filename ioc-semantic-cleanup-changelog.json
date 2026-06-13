@@ -1,0 +1,216 @@
+{
+  "remove": [
+    {
+      "value": "base.blockscout.com",
+      "type": "domain",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "x.com",
+      "type": "domain",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "LangFlow",
+      "type": "package",
+      "campaign": "million-exposed-ai-services-security-assessment",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "Microsoft.SemanticKernel.Core",
+      "type": "package",
+      "campaign": "microsoft-semantic-kernel-cve-2026-25592-26030-rce",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "alibabacloud-rds-openapi-mcp-server",
+      "type": "package",
+      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "bankrbot",
+      "type": "package",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "cursor-mcp",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "doris-mcp-server",
+      "type": "package",
+      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "gpt-researcher",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "grok",
+      "type": "package",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "grok-bankr-integration",
+      "type": "package",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "huggingface-hub",
+      "type": "package",
+      "campaign": "cve-2026-4372-hugging-face-transformers-rce",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "librechat",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "marimo",
+      "type": "package",
+      "campaign": "marimo-preauth-rce-ai-dev-infrastructure",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "mcp-inspector",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "n8n",
+      "type": "package",
+      "campaign": "million-exposed-ai-services-security-assessment",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "new-api",
+      "type": "package",
+      "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "nginx-ui",
+      "type": "package",
+      "campaign": "cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "npm:@akoskm/create-mcp-server-stdio",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "ollama",
+      "type": "package",
+      "campaign": "intruder-1-million-exposed-ai-services-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "one-api",
+      "type": "package",
+      "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "openclaw",
+      "type": "package",
+      "campaign": "cve-2026-41349-openclaw-consent-bypass-agentic-rce",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "praisonai",
+      "type": "package",
+      "campaign": "cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "praisonaiagents",
+      "type": "package",
+      "campaign": "praisonaiagents-ssrf-cloud-metadata",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "sub2api",
+      "type": "package",
+      "campaign": "malicious-llm-router-credential-theft-crypto-wallet-drain",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "upsonic",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-design-flaw",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "weknora",
+      "type": "package",
+      "campaign": "anthropic-mcp-stdio-rce-7k-servers",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc",
+      "type": "url_path",
+      "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline",
+      "type": "url_path",
+      "campaign": "trustfall-mcp-one-keypress-rce-coding-clis",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "github.com/startreedata/mcp-pinot",
+      "type": "url_path",
+      "campaign": "akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "https://base.blockscout.com/tx/0x6fc7eb7da9379383efda4253e4f599bbc3a99afed0468eabfe18484ec525739a",
+      "type": "url_path",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "https://docs.litellm.ai/blog/security-update-march-2026",
+      "type": "url_path",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+      "type": "url_path",
+      "campaign": "cve-2026-42208-litellm-sql-injection-active-exploit-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+      "type": "url_path",
+      "campaign": "intruder-1m-exposed-ai-services-misconfig-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    },
+    {
+      "value": "https://twitter.com/bankrbot",
+      "type": "url_path",
+      "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
+      "reason": "semantic false positive removed from IOC feed"
+    }
+  ],
+  "keep": [],
+  "needs_review": []
+}

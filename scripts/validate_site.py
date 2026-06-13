@@ -71,6 +71,30 @@ AGGREGATE_DESC_RE = re.compile(
 PARENTHETICAL_PROSE_RE = re.compile(r"\([^)]{3,}\)")
 
 
+def normalize_url_host_path(value: str) -> tuple[str, str]:
+    parsed = urllib.parse.urlparse(value if "://" in value else f"//{value}", scheme="")
+    host = parsed.netloc.split("@")[-1].split(":")[0].lower() if parsed.netloc else ""
+    path = parsed.path or "/"
+    return host, path
+
+
+def matches_reference_url_path(value: str, policy: dict) -> bool:
+    host, path = normalize_url_host_path(value)
+    if not host:
+        return False
+    for entry in policy.get("reference_url_path_denylist", []):
+        entry_host = str(entry.get("host", "")).lower()
+        prefix = str(entry.get("path_prefix", "/"))
+        if host == entry_host or host.endswith("." + entry_host):
+            if path.startswith(prefix):
+                return True
+    return False
+
+
+def bare_package_name(value: str) -> str:
+    return re.sub(r"^(?:npm|pypi|nuget|chrome-extension):", "", value, flags=re.I)
+
+
 DEFAULT_POLICY = {
     "validation_version": VALIDATION_VERSION,
     "allowed_tags": [
@@ -665,8 +689,18 @@ class Validator:
                 return
 
             affected = {n.lower() for n in self.policy.get("affected_product_package_denylist", [])}
-            bare_name = re.sub(r"^(?:npm|pypi|nuget|chrome-extension):", "", value, flags=re.I)
-            if "@" not in bare_name and bare_name.lower() in affected:
+            conceptual = {n.lower() for n in self.policy.get("conceptual_package_denylist", [])}
+            bare_name = bare_package_name(value)
+            bare_lower = bare_name.lower()
+            if bare_lower in conceptual:
+                self.fail(
+                    "ioc-conceptual-package-label",
+                    f"conceptual label is not a package IOC: {value}",
+                    file,
+                    record,
+                )
+                return
+            if "@" not in bare_name and bare_lower in affected:
                 self.fail(
                     "ioc-affected-product-as-package",
                     f"bare affected product name is not a package IOC without registry/version context "
@@ -677,6 +711,15 @@ class Validator:
                 return
 
         if ioc_type == "domain":
+            evidence_domains = {d.lower() for d in self.policy.get("evidence_domain_denylist", [])}
+            if value.lower() in evidence_domains:
+                self.fail(
+                    "ioc-evidence-domain",
+                    f"evidence or delivery-channel domain is not an IOC: {value}",
+                    file,
+                    record,
+                )
+                return
             if "://" in value or "/" in value or any(ch.isspace() for ch in value):
                 self.fail("ioc-domain-format", f"domain IOC must not contain scheme, path, or spaces: {value}", file, record)
             elif not self.valid_domain(value):
@@ -853,6 +896,15 @@ class Validator:
                         record,
                     )
                     return
+
+        if matches_reference_url_path(value, self.policy):
+            self.fail(
+                "ioc-reference-url",
+                f"reference, advisory, evidence, or safe PoC URL is not an IOC: {value}",
+                file,
+                record,
+            )
+            return
 
     def validate_hash_ioc(self, value: str, ioc_type: str, file: str, record: str) -> None:
         expected = {"md5": 32, "sha1": 40, "sha256": 64}.get(ioc_type)
