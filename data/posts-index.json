@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026",
+      "title": "Agentjacking: AI Coding Agents Exploited via Sentry Error Tracking Integration",
+      "date": "2026-06-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Tenet Security researchers disclosed \"agentjacking,\" a new class of attack in which malicious instructions hidden in Sentry error events trick AI coding agents into executing arbitrary code on developer machines, exploiting an architectural flaw in the Sentry monitoring tool. An attacker injects malicious commands into Sentry error events that are impossible to distinguish from the tool's own remediation guidance.",
+      "file": "2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.md"
+    },
+    {
       "id": "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation",
       "title": "Marimo CVE-2026-39987 Exploited by LLM Agent for Post-Compromise Cloud Credential Theft and Lateral Movement",
       "date": "2026-06-12",

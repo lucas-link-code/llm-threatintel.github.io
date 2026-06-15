@@ -2703,6 +2703,21 @@
       "validated_at": "2026-06-12T07:24:30+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026": {
+      "content_hash": "7c604d29ffbde7dda5d67bc23544f56b0634d497d7bfa8fd0ba64aa5a867c7b3",
+      "evidence_status": "validated",
+      "file": "2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.md",
+      "posts_index_hash": "3cd3f45d4bc26dbea5a310e7dd23a761999ef8226f771432aa574e312a30cb1c",
+      "report_id": "2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.infosecurity-magazine.com/news/agentjacking-attacks-hijack-ai/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-15T09:24:16+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

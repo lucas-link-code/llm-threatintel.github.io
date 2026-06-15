@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 13 Jun 2026 14:35:48 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 09:24:16 +0000</lastBuildDate>
     <item>
+      <title>Agentjacking: AI Coding Agents Exploited via Sentry Error Tracking Integration</title>
+      <link>https://llm-threatintel.com/posts/2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.html</guid>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Tenet Security researchers disclosed "agentjacking," a new class of attack in which malicious instructions hidden in Sentry error events trick AI coding agents into executing arbitrary code on developer machines, exploiting an architectural flaw in the Sentry monitoring tool. An attacker injects malicious commands into Sentry error events that are impossible to distinguish from the tool's own remediation guidance.</description>
+    </item>    <item>
       <title>Marimo CVE-2026-39987 Exploited by LLM Agent for Post-Compromise Cloud Credential Theft and Lateral Movement</title>
       <link>https://llm-threatintel.com/posts/2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-02-chatgphish-web-summarization-injection.html</guid>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
       <description>A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. The research was publicly published on May 29, 2026.</description>
-    </item>    <item>
-      <title>LLMShare: ChatGPT and Claude Share Links Weaponized for Malware Delivery via Google Ads and Fake Outage Pages</title>
-      <link>https://llm-threatintel.com/posts/2026-06-02-llmshare-chatgpt-claude-malware-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-02-llmshare-chatgpt-claude-malware-campaign.html</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-      <description>LLMShare plants fake outage pages on OpenAI's real domain chatgpt.com, driving victims through Google ads. Corporate firewalls fail because the URL is genuine. Push Security confirmed active detections on May 29, 2026. LLMShare is the most technically refined entry in a line of attacks that has grown sharply since late 2025.</description>
     </item>
   </channel>
 </rss>

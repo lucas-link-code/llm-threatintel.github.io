@@ -5,12 +5,12 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Latest Run
 
-- GitHub run ID: `27491815655`
+- GitHub run ID: `27536629240`
 - Validator exit code: `2`
-- Generated at UTC: `2026-06-14T07:25:03+00:00`
+- Generated at UTC: `2026-06-15T09:24:16+00:00`
 - Hard failures: `0`
 - Warnings: `9`
-- Review required: `6`
+- Review required: `1`
 - Latest Markdown: [latest-validation-report.md](latest-validation-report.md)
 - Latest JSON: [latest-validation-report.json](latest-validation-report.json)
 
@@ -23,6 +23,7 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Recent Run Reports
 
+- [20260615-092417Z-run-27536629240.md](runs/2026/06/20260615-092417Z-run-27536629240.md)
 - [20260614-072503Z-run-27491815655.md](runs/2026/06/20260614-072503Z-run-27491815655.md)
 - [20260613-065942Z-run-27459733030.md](runs/2026/06/20260613-065942Z-run-27459733030.md)
 - [20260612-072432Z-run-27401165980.md](runs/2026/06/20260612-072432Z-run-27401165980.md)
@@ -42,10 +43,10 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20260529-065642Z-run-26622989780.md](runs/2026/05/20260529-065642Z-run-26622989780.md)
 - [20260528-065645Z-run-26559711850.md](runs/2026/05/20260528-065645Z-run-26559711850.md)
 - [20260527-070610Z-run-26496261699.md](runs/2026/05/20260527-070610Z-run-26496261699.md)
-- [20260526-064851Z-run-26436936391.md](runs/2026/05/20260526-064851Z-run-26436936391.md)
 
 ## Review-Required Reports
 
+- [20260615-092417Z-run-27536629240.md](review-required/20260615-092417Z-run-27536629240.md)
 - [20260614-072503Z-run-27491815655.md](review-required/20260614-072503Z-run-27491815655.md)
 - [20260613-065942Z-run-27459733030.md](review-required/20260613-065942Z-run-27459733030.md)
 - [20260612-072432Z-run-27401165980.md](review-required/20260612-072432Z-run-27401165980.md)
@@ -65,7 +66,6 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20260528-065645Z-run-26559711850.md](review-required/20260528-065645Z-run-26559711850.md)
 - [20260527-070610Z-run-26496261699.md](review-required/20260527-070610Z-run-26496261699.md)
 - [20260525-071631Z-run-26388436765.md](review-required/20260525-071631Z-run-26388436765.md)
-- [20260524-063910Z-run-26354194981.md](review-required/20260524-063910Z-run-26354194981.md)
 
 ## Mobile Review Notes
 
