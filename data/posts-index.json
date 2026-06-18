@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft",
+      "title": "JetBrains Marketplace: 15 Malicious AI Coding Plugins Steal Developer API Keys from 70,000 Installs",
+      "date": "2026-06-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Aikido Security identified 15 malicious plugins on the JetBrains Marketplace, all posing as AI coding assistants powered by DeepSeek, OpenAI, and SiliconFlow. Each plugin functioned as advertised while silently exfiltrating any AI provider API key entered in settings to a hardcoded server at 39.107.60.51 over plain HTTP. Combined install count across all 15 plugins reached approximately 70,000 before removal. JetBrains removed all plugins, banned the seven associated publisher accounts, and triggered a remote kill-switch disabling extensions across installed IDEs on June 16, 2026.",
+      "file": "2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft.md"
+    },
+    {
+      "id": "2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool",
+      "title": "LLMjacking Evolved: Attacker Deploys Autonomous Offensive Tool Against Exposed Ollama Servers",
+      "date": "2026-06-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages. The tool was observed under active development against private practice ranges, indicating pre-operational maturity work.",
+      "file": "2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool.md"
+    },
+    {
       "id": "2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026",
       "title": "Agentjacking: AI Coding Agents Exploited via Sentry Error Tracking Integration",
       "date": "2026-06-15",

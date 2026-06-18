@@ -1,6 +1,53 @@
 {
-  "last_updated": "2026-06-15",
+  "last_updated": "2026-06-18",
   "entries": [
+    {
+      "id": "vapt-framework",
+      "names": [
+        "VAPT",
+        "VAPT autonomous offensive framework"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06-12",
+      "status": "active",
+      "distribution": [
+        "Deployed by unknown threat actor against exposed Ollama servers (port 11434, unauthenticated) discovered via Shodan/Censys scanning",
+        "Framework backend-agnostic: originally built for paid APIs (OpenAI, Anthropic, Google), redirected at stolen model servers as cost-free substitute"
+      ],
+      "ttps": [
+        "T1496 - Resource Hijacking (unauthenticated Ollama server used as free inference engine)",
+        "T1046 - Network Service Discovery (service fingerprinting stage normalizes banners into CPE identities)",
+        "T1190 - Exploit Public-Facing Application (web reconnaissance and SQL injection targeting)",
+        "T1552 - Unsecured Credentials (credential extraction stage parsing looted files)",
+        "T1059 - Command and Scripting Interpreter (RCE confirmation via VAPTb3gin/VAPTfin sentinels)",
+        "T1020 - Automated Exfiltration (structured JSON pipeline outputs credentials to controller)"
+      ],
+      "description": "Autonomous offensive security framework documented by Sysdig Threat Research Team on June 17, 2026 from observations on June 12 and June 14. The tool identifies itself via RCE confirmation markers VAPTb3gin and VAPTfin. It drives a large language model through discrete pipeline stages: service fingerprinting (CPE normalization), vulnerability matching, web reconnaissance, proof-of-concept synthesis, blind SQL injection crafting with filter evasion, credential extraction, file-read planning, privilege escalation, and autonomous orchestration. Each stage imposes a strict JSON output contract for deterministic downstream consumption. The orchestrator uses a PROPOSE-ONLY variant with an internal oracles.py verifier for a stated zero-false-positive invariant. The tool was observed under active development against private practice ranges (172.30.0.0/24, 10.129.0.0/16) before operational deployment against live targets. Backend-agnostic: requests at least seven model variants by name including commercial GPT-4o-mini, claude-3-5-sonnet, gemini-2.0-flash-exp and local open-weight builds.",
+      "attribution": "Unknown; residential IP cluster in Hyderabad, India (122.183.48.0/24, 47.15.69.15). Attribution confidence: low."
+    },
+    {
+      "id": "jetbrains-ai-plugin-campaign",
+      "names": [
+        "JetBrains AI plugin credential theft campaign"
+      ],
+      "type": "threat_group",
+      "first_seen": "2025-10-31",
+      "status": "disrupted",
+      "distribution": [
+        "15 malicious plugins published to JetBrains Marketplace under seven vendor accounts (CodePilot, StackSmith, CodeCrafter, CodeWeaver, JetCode, DailyCode, ZenCoder)",
+        "Plugins masquerade as AI coding assistants and Git utilities powered by DeepSeek, OpenAI, and SiliconFlow",
+        "Stolen API keys exfiltrated via HTTP POST to 39.107.60.51/api/software/key on settings save event"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Software Supply Chain (malicious plugins on official marketplace)",
+        "T1555 - Credentials from Password Stores (API keys from IDE plugin settings)",
+        "T1041 - Exfiltration Over C2 Channel (HTTP POST to hardcoded IP 39.107.60.51 port 80)",
+        "T1036 - Masquerading (plugins impersonate legitimate AI coding assistant products)",
+        "T1496 - Resource Hijacking (stolen AI API keys used for unauthorized LLM compute)"
+      ],
+      "description": "Coordinated AI plugin credential theft campaign active from October 2025 through June 2026 on the JetBrains Marketplace. Discovered by Aikido Security and disclosed June 16, 2026. All 15 plugins share a nearly identical codebase repackaged under different plugin IDs and publisher accounts. Malicious logic hooks the settings save handler: on API key entry and Apply click, the key is sent in plaintext to 39.107.60.51/api/software/key authenticated with a static hardcoded token. Targeted OpenAI, DeepSeek, and SiliconFlow API keys. Campaign operated across seven vendor accounts to avoid bulk bans. Two high-volume plugins (CodeGPT AI Assistant, DeepSeek AI Assist) published June 9-10, 2026, accumulated 53,000+ of 70,000 total installs immediately before discovery. JetBrains removed all plugins, banned all publisher accounts, and triggered remote kill-switch June 16, 2026.",
+      "attribution": "Unknown. No attribution to known threat group."
+    },
     {
       "id": "greyvibe",
       "names": [

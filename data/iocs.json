@@ -1,6 +1,60 @@
 {
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-18",
   "iocs": [
+    {
+      "value": "39.107.60.51",
+      "type": "ip",
+      "context": "JetBrains Marketplace malicious AI plugin C2 server; receives stolen OpenAI/DeepSeek/SiliconFlow API keys via HTTP POST to /api/software/key",
+      "first_seen": "2025-10-31",
+      "source": "Aikido Security",
+      "campaign": "jetbrains-ai-plugin-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "39.107.60.51/api/software/key",
+      "type": "url_path",
+      "context": "JetBrains malicious AI plugin exfiltration endpoint; receives developer AI provider API keys in plaintext POST body authenticated with static hardcoded token",
+      "first_seen": "2025-10-31",
+      "source": "Aikido Security / BleepingComputer",
+      "campaign": "jetbrains-ai-plugin-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "122.183.48.82",
+      "type": "ip",
+      "context": "VAPT autonomous offensive framework operator source IP; Hyderabad India residential ISP; June 12 2026 session",
+      "first_seen": "2026-06-12",
+      "source": "Sysdig TRT",
+      "campaign": "vapt-llmjacking-autonomous-offensive",
+      "status": "active"
+    },
+    {
+      "value": "122.183.48.35",
+      "type": "ip",
+      "context": "VAPT autonomous offensive framework operator source IP; Hyderabad India residential ISP same /24 as 122.183.48.82; June 14 2026 session",
+      "first_seen": "2026-06-14",
+      "source": "Sysdig TRT",
+      "campaign": "vapt-llmjacking-autonomous-offensive",
+      "status": "active"
+    },
+    {
+      "value": "122.183.48.195",
+      "type": "ip",
+      "context": "VAPT autonomous offensive framework operator source IP; Hyderabad India residential ISP same /24 as 122.183.48.82; June 14 2026 session",
+      "first_seen": "2026-06-14",
+      "source": "Sysdig TRT",
+      "campaign": "vapt-llmjacking-autonomous-offensive",
+      "status": "active"
+    },
+    {
+      "value": "47.15.69.15",
+      "type": "ip",
+      "context": "VAPT autonomous offensive framework operator source IP; India residential second ISP; June 14 2026 session",
+      "first_seen": "2026-06-14",
+      "source": "Sysdig TRT",
+      "campaign": "vapt-llmjacking-autonomous-offensive",
+      "status": "active"
+    },
     {
       "value": "lapas.live",
       "type": "domain",
