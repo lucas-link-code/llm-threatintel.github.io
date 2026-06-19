@@ -610,27 +610,27 @@
       ]
     },
     "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure": {
-      "content_hash": "31cf45ed10b385947a7f0d0dd3f99346490d7db06a5045cda765aef5db8907a6",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "3822b5eff4d5cbe4a377b20163999ee677b8661d1ecd34a61294a72ed8684bd0",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure.md",
       "posts_index_hash": "50018f0ea4737c5f07b88b035a56d1d2f09b92a0c9e21cef82bca1214c1fc881",
       "report_id": "2026-04-13-marimo-preauth-rce-ai-dev-infrastructure",
-      "review_required": [],
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
       "source_urls": [
         "https://labs.cloudsecurityalliance.org/research/csa-research-note-marimo-rce-cve-2026-39987-ai-toolchain-202/",
         "https://endorlabs.com/blog/marimo-rce",
         "https://sysdig.com/blog/marimo-rce-april-2026"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:35+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-13-praisonaiagents-ssrf-cloud-metadata": {
-      "content_hash": "04f56170aa193d8a2abf529d05d147469800120a72e5dbf9501e8d1ddfc8f3a5",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "afd1fbea27ad71b23cd6dbf07541f018a03625e20fc682beaec6677287419232",
+      "evidence_status": "validated",
       "file": "2026-04-13-praisonaiagents-ssrf-cloud-metadata.md",
       "posts_index_hash": "b82532d2fbd283c2f047e6df86022075327486d62d6c002635c7580be1f2f64d",
       "report_id": "2026-04-13-praisonaiagents-ssrf-cloud-metadata",
@@ -638,12 +638,10 @@
       "source_urls": [
         "https://radar.offseq.com/threat/cve-2026-40160-cwe-918-server-side-request-forgery-ff80f530"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:33+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-15-bedrock-multi-agent-prompt-injection": {
       "content_hash": "d779fedeb6a506426ec6768be974879feef59ea19af0c06ff2b704a9c6b292f4",
@@ -698,8 +696,8 @@
       ]
     },
     "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain": {
-      "content_hash": "0b6a69c7f70e4c1e7594701b131a5a3928b94bfddf91e8801288e803ee4f1e7c",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "eb20a844adf2ec887db9819ad3ce8c1a4d364e90884b7b6291074f1b9406d76f",
+      "evidence_status": "validated",
       "file": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain.md",
       "posts_index_hash": "ac3b4367224543f2349ef202862b9b0ee6674a4803857ec08292f4c6747afb9e",
       "report_id": "2026-04-16-malicious-llm-router-credential-theft-crypto-wallet-drain",
@@ -712,12 +710,10 @@
         "https://news.risky.biz/risky-bulletin-malicious-llm-proxy-routers-found-in-the-wild/",
         "https://threatlabsnews.xcitium.com/blog/malicious-llm-routers-a-hidden-threat-to-ai-supply-chains/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:32+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-17-azure-devops-mcp-auth-bypass-cve-2026-32211": {
       "content_hash": "54ac3bc35e4c09450aab41bc9c469e19ef5fdd2e074053b7f89e2df70e329d07",
@@ -804,7 +800,7 @@
       ]
     },
     "2026-04-22-anthropic-mcp-stdio-rce-7k-servers": {
-      "content_hash": "f6f1b069b1181b5acfb3627c44ed6ef7442c29b50d5547ba6feb14a4c4db9d14",
+      "content_hash": "0de62c8f2f68bd883ee11d51fbe01c04d648119f8a40ecbd83f481692dde851e",
       "evidence_status": "validated",
       "file": "2026-04-22-anthropic-mcp-stdio-rce-7k-servers.md",
       "posts_index_hash": "94086b93f2f28ba92f3e31930eb5c2ea93e3dbc74546e2910eab5bd71b52057e",
@@ -814,7 +810,7 @@
         "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:58+00:00",
+      "validated_at": "2026-06-19T08:33:30+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -836,8 +832,8 @@
       ]
     },
     "2026-04-22-marimo-pre-auth-rce-cve-2026-39987": {
-      "content_hash": "0eef365131b6253d58bd1997d6e9d161fa4fa5a80da1cdea47baf3e1573ed1f4",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "b16636d168a3c7b856da61f5d9f369caed8b31f8dfc6d27dd3e3b49fbfe93766",
+      "evidence_status": "validated",
       "file": "2026-04-22-marimo-pre-auth-rce-cve-2026-39987.md",
       "posts_index_hash": "e1a8d348a0139510f9f29cca1f3e3f94c4a7029307903107880c3457ba439dca",
       "report_id": "2026-04-22-marimo-pre-auth-rce-cve-2026-39987",
@@ -845,12 +841,10 @@
       "source_urls": [
         "https://labs.cloudsecurityalliance.org/research/csa-research-note-marimo-rce-cve-2026-39987-ai-toolchain-202/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:30+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-23-axios-npm-supply-chain-unc1069-rat-2026": {
       "content_hash": "06fe50e82bd6af7b65904e107a8301a9ae4dbca4a87bbec243d00dce92735028",
@@ -939,22 +933,22 @@
       "warnings": []
     },
     "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce": {
-      "content_hash": "fafc4b7e7b5005a459ffaf1ea09d65f258e7d6d181e5f85b5a40da0113c9204d",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "60ddcd083fb7c8396877160899ad8e726bd38a61815232c3b9a5224c0c1b0d71",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce.md",
       "posts_index_hash": "bf9eae5d943a73682a158cc5c46eee10d48d4a200191cffc57f79f8d36fd3998",
       "report_id": "2026-04-24-cve-2026-41349-openclaw-consent-bypass-agentic-rce",
-      "review_required": [],
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://www.thehackerwire.com/vulnerability/CVE-2026-41349/",
         "https://www.redpacketsecurity.com/cve-alert-cve-2026-41349-openclaw-openclaw/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:30+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-25-anthropic-mcp-stdio-rce-idee-exploit": {
       "content_hash": "9bafcfa85d90c30450b652d483ee17b55f8fb021d1ab8b10f156b647fd50f6f3",
@@ -1090,8 +1084,8 @@
       ]
     },
     "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass": {
-      "content_hash": "f4f757d9e739b92c5222c29e906825a78275c21535b2675b3da0c8fe481e47e6",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "46f2b153d11da66a298efac0fb94162a1deaa9ab60e96eeabb61223f16981051",
+      "evidence_status": "validated",
       "file": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass.md",
       "posts_index_hash": "3f6a79d0cf723bafea3970b8c340d7e2308a143325140fd9a12178eae0439044",
       "report_id": "2026-05-01-cve-2026-33032-mcpwn-nginx-ui-mcp-auth-bypass",
@@ -1102,12 +1096,10 @@
         "https://www.picussecurity.com/resource/blog/cve-2026-33032-mcpwn-how-a-missing-middleware-call-in-nginx-ui-hands-attackers-full-web-server-takeover",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-33032"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:26+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-01-gpt-proxy-backdoor-npm-pypi-chinese-llm-relay": {
       "content_hash": "8eae6ef08620d1f16e08dea6ecb8ee2eff10f1b345257ccb61fa8e63f5351d98",
@@ -1129,12 +1121,14 @@
       ]
     },
     "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces": {
-      "content_hash": "26fad12244c792d79aab88b40e866a34c0ccec7c8d46edc6f0c8c2c51a7f0146",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "49c3948467101de12b483fd354a3a59fd2aad18ad5b47f1fd20423de6fca998f",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces.md",
       "posts_index_hash": "e083e0c4cc63ee78ab2433aa4425a3c599f095752d0b138ee9f21ff6f4ceebc2",
       "report_id": "2026-05-01-marimo-cve-2026-39987-nkabuse-huggingface-spaces",
-      "review_required": [],
+      "review_required": [
+        "3 source URL(s) require review"
+      ],
       "source_urls": [
         "https://www.sysdig.com/blog/cve-2026-39987-update-how-attackers-weaponized-marimo-to-deploy-a-blockchain-botnet-via-huggingface",
         "https://thehackernews.com/2026/04/marimo-rce-flaw-cve-2026-39987.html",
@@ -1147,12 +1141,10 @@
         "https://securityaffairs.com/190623/hacking/cve-2026-39987-marimo-rce-exploited-in-hours-after-disclosure.html",
         "https://labs.cloudsecurityalliance.org/research/csa-research-note-marimo-rce-cve-2026-39987-ai-toolchain-202/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:25+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-01-mini-shai-hulud-sap-cap-claude-code-sessionstart-persistence": {
       "content_hash": "a458e4e6832eeb344aae453db3f0bb7b67bedee848bca164f2e28d75596c7704",
@@ -1330,7 +1322,7 @@
       "warnings": []
     },
     "2026-05-08-anthropic-mcp-stdio-rce-design-flaw": {
-      "content_hash": "0a4280ed4f46ca9b75dd9001fc37bfa450faeb20a0be3676c2fa0f13ea63d6ff",
+      "content_hash": "c2070710298467257d426b6c6922747540174b7baaf4a990424ac3282012cf7c",
       "evidence_status": "validated",
       "file": "2026-05-08-anthropic-mcp-stdio-rce-design-flaw.md",
       "posts_index_hash": "bc27af5f0a3e47756c28b454c636f12c7e3afabb85b4cd592561c50d4cb395a3",
@@ -1343,7 +1335,7 @@
         "https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:52+00:00",
+      "validated_at": "2026-06-19T08:33:23+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1368,7 +1360,7 @@
       ]
     },
     "2026-05-08-million-exposed-ai-services-security-assessment": {
-      "content_hash": "38ebc3af7b32d7855aabdcdb82735b850dd840e075dbace9088a895d59f9206c",
+      "content_hash": "23f250b4ce8a0e61b9e4cb6d7607c68a6084690001e765978f377e7173fd391b",
       "evidence_status": "validated",
       "file": "2026-05-08-million-exposed-ai-services-security-assessment.md",
       "posts_index_hash": "5de6e6e9d6fc15421bc622bca11363b0f44e814d7041c1549003b9ef7c6383cc",
@@ -1378,13 +1370,13 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-10T07:11:10+00:00",
+      "validated_at": "2026-06-19T08:33:21+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-05-09-massive-exposure-1m-ai-services-misconfiguration": {
-      "content_hash": "fc9d79a196075bacf01d3b4050f76e1fb1a272bf1386549b11ae6db6ff99cee1",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "0bb73fb8be8d736d8500341ad7a150fd3d7c0fc0989671f07b5d51388e56fa04",
+      "evidence_status": "validated",
       "file": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration.md",
       "posts_index_hash": "beeb2be88e4442e68c2813702b1d612f5421567b348b1d06f186cd7ecd5a2ea2",
       "report_id": "2026-05-09-massive-exposure-1m-ai-services-misconfiguration",
@@ -1393,15 +1385,13 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
         "https://www.intruder.io/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:21+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce": {
-      "content_hash": "b6348dca714e029043a8e72bad03e4a4588c656e51ca817a362ca10b7254022c",
+      "content_hash": "44c3a81c78a7f06bb7822c1029c687a7f9252339e2f3a17ead072297460b724d",
       "evidence_status": "validated",
       "file": "2026-05-09-semantic-kernel-cve-2026-26030-prompt-injection-rce.md",
       "posts_index_hash": "dc78158fadc0d72a6fc63c98cd85b6139ed123b3dc073c7d983e24e04e6970e5",
@@ -1413,7 +1403,7 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:51+00:00",
+      "validated_at": "2026-06-19T08:33:21+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1522,25 +1512,25 @@
       "warnings": []
     },
     "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis": {
-      "content_hash": "2f9a4636fdbf054a4622988a5adcb563732dab2382fd5af6359f133cefd548ff",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "af9f3be27468c2b007c8c785f74e5ec48f65db3b8b0678a2116646ac0217eafc",
+      "evidence_status": "validated",
       "file": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis.md",
       "posts_index_hash": "d3ce49eede64f5b35dcda4ba411a485cbff2b837f88e501134ca458903fad5c8",
       "report_id": "2026-05-10-trustfall-mcp-one-keypress-rce-coding-clis",
       "review_required": [],
       "source_urls": [
         "https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/",
+        "https://github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc",
+        "https://github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc-ci-pipeline",
         "https://lyrie.ai/research/research/2026-05-09-trustfall-agentic-rce",
         "https://www.helpnetsecurity.com/2026/05/07/trustfall-ai-coding-cli-vulnerability-research/",
         "https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319",
         "https://www.sonarsource.com/blog/claude-arbitrary-code-execution"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:20+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-12-ai-generated-zero-day-2fa-bypass-google-may-2026": {
       "content_hash": "eac069b371cd982d7743a871b7507abf366a36cb95db291964cdd2a79c957627",
@@ -1560,7 +1550,7 @@
       "warnings": []
     },
     "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce": {
-      "content_hash": "f088c2ee482e4444215712e699d66382d4006621d1dc8b4b83ec67439a22f344",
+      "content_hash": "8810bf75566534e42744ae6c624a8571b0d889776f95f1a39fea184db7b098bf",
       "evidence_status": "validated",
       "file": "2026-05-12-cve-2026-26030-semantic-kernel-prompt-injection-rce.md",
       "posts_index_hash": "76987d3b12a1dd17e1ba23a52795fb24732f3d4e4991d1a6c26134591d8abd1c",
@@ -1571,7 +1561,7 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:44+00:00",
+      "validated_at": "2026-06-19T08:33:16+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1613,7 +1603,7 @@
       "warnings": []
     },
     "2026-05-12-intruder-1-million-exposed-ai-services-may-2026": {
-      "content_hash": "0c7b94ff8bdeafb290b05f2310b76ec58fd25df21d0cf73e7fb8285a4f08dcaf",
+      "content_hash": "3564ef317fdae2ec36969cafc5c6e5f068e585baa26d0501a775a02aba7cd97f",
       "evidence_status": "validated",
       "file": "2026-05-12-intruder-1-million-exposed-ai-services-may-2026.md",
       "posts_index_hash": "0b0284090bc1d38044d1d0054b03ef880936ffdc956713e51eba66a917d58e96",
@@ -1623,7 +1613,7 @@
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T22:59:51+00:00",
+      "validated_at": "2026-06-19T08:33:16+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1767,7 +1757,7 @@
       "warnings": []
     },
     "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026": {
-      "content_hash": "c48aa0c4106da2971d52a795a2f06104c14b7a19a2eb3e5138edccb6d3f7ff2c",
+      "content_hash": "3e7251e7e8e24fa747e60da9985303b0d54d6edd79fbc005ddf1b7caeaeda85d",
       "evidence_status": "validated_with_alternate_sources",
       "file": "2026-05-16-grok-bankrbot-morse-code-prompt-injection-may-2026.md",
       "posts_index_hash": "fb4c8af8faf79a77a4c877cb428b1c3fd1a37a5b20f7ed4328acebbe33b1ce2e",
@@ -1777,7 +1767,7 @@
         "https://securityboulevard.com/2026/05/encoded-prompt-injection-why-llm-guardrails-are-at-the-wrong-layer"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:43+00:00",
+      "validated_at": "2026-06-19T08:33:16+00:00",
       "validation_version": "1.0.0",
       "warnings": [
         "manual evidence override accepted"
@@ -1871,7 +1861,7 @@
       "warnings": []
     },
     "2026-05-18-intruder-1-million-exposed-ai-services-may-2026": {
-      "content_hash": "87716c8c45158519fcd5cb6e5ccf7a856d28fd52772318074544b2da36d0fecc",
+      "content_hash": "141c618e322721f95f3ba5d959f51085a3278898b0287a274e6d4539945dee30",
       "evidence_status": "validated",
       "file": "2026-05-18-intruder-1-million-exposed-ai-services-may-2026.md",
       "posts_index_hash": "437faa068d49ba10fec7a562457d655436e9edfc0cd80e84d6dd67ccfba368fe",
@@ -1883,12 +1873,12 @@
         "https://www.techjuice.pk/ai-infrastructure-cybersecurity-risks-exposed-systems/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T22:59:49+00:00",
+      "validated_at": "2026-06-19T08:33:16+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce": {
-      "content_hash": "272257a994cc98f1058831ad6977660d3eefe1981db14420f64a1d076cda9e27",
+      "content_hash": "9fc4089432afdd3b92b2643deaa7be221e4531e259a9eeb59b66e4145a063057",
       "evidence_status": "validated",
       "file": "2026-05-18-microsoft-semantic-kernel-cve-2026-25592-26030-rce.md",
       "posts_index_hash": "c8839a975ae9185abe8cc0ab4154c709b741868bd41003b4fcf5143300817b36",
@@ -1901,7 +1891,7 @@
         "https://windowsforum.com/threads/semantic-kernel-prompt-injection-bugs-let-attackers-run-code-or-write-files.416873/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:43+00:00",
+      "validated_at": "2026-06-19T08:33:15+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1926,13 +1916,13 @@
       "warnings": []
     },
     "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds": {
-      "content_hash": "27f8766ae4df9036aabf777c4272215066078ffaa20bac2cd3746afb2705475b",
+      "content_hash": "3763d4c2ec501ef7588fb9950f07b30efb8cc77af292941af980ba200db03d4f",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds.md",
       "posts_index_hash": "1b01b06497ae54af256e0c8b06fb6b27365e5a1c3170d1af2fde989e519dcb36",
       "report_id": "2026-05-19-akamai-mcp-back-end-vulnerabilities-doris-pinot-alibaba-rds",
       "review_required": [
-        "4 source URL(s) require review"
+        "1 source URL(s) require review"
       ],
       "source_urls": [
         "https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities",
@@ -1944,7 +1934,7 @@
         "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-19T12:05:47+00:00",
+      "validated_at": "2026-06-19T08:33:14+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1965,14 +1955,12 @@
       "warnings": []
     },
     "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation": {
-      "content_hash": "7f1e0c1247d25071b6d9e36125db0dd8dcac55b387231656d45bed3dd76cda19",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "a4429cfae414e61e1313c22f8fca621996e3d426705b42f81060a030c9d8cdca",
+      "evidence_status": "validated",
       "file": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation.md",
       "posts_index_hash": "d00d818b8ab20576126df4bd9439b75bb2d7b1f24edad480a89802d7f9a742be",
       "report_id": "2026-05-19-cve-2026-44338-praisonai-auth-bypass-rapid-exploitation",
-      "review_required": [
-        "5 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://github.com/advisories/GHSA-6rmh-7xcm-cpxj",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-44338",
@@ -1982,7 +1970,7 @@
         "https://www.csoonline.com/article/4171215/praisonai-vulnerability-gets-scanned-within-4-hours-of-disclosure.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-19T12:05:44+00:00",
+      "validated_at": "2026-06-19T08:33:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2058,7 +2046,7 @@
       "warnings": []
     },
     "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026": {
-      "content_hash": "25bb03a95141ca7af8d121d73c6f01b96a24ffba12015ff2bad8b2123b357e1e",
+      "content_hash": "1beed4c4c31159e0bb02bcd717c7a3d8669ea0a687a7e4bc5320cb27538093b4",
       "evidence_status": "validated",
       "file": "2026-05-21-cve-2026-42208-litellm-sql-injection-active-exploit-may-2026.md",
       "posts_index_hash": "d99a98fda9c2ccf63c9738c34e9e71ee52832148e657cc57d8264ddbfaa03c19",
@@ -2070,12 +2058,12 @@
         "https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T22:59:48+00:00",
+      "validated_at": "2026-06-19T08:33:09+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026": {
-      "content_hash": "68d3f429d3b9e361454c08ffa415c3c7b18c33e64e7b5c410e8aaf3220300acc",
+      "content_hash": "e74d2d393c0881bd92b48dc760cb813b6a5cfb51da834bd698f6bf6d49ede183",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-21-intruder-1m-exposed-ai-services-misconfig-may-2026.md",
       "posts_index_hash": "e1de9b9747d6b508a463330254786158a9a619f3c2fa18d8e51eb8ce904377e4",
@@ -2088,7 +2076,7 @@
         "https://www.darkreading.com/cyber-risk/industrialized-exploitation-agentic-offensive-security-existential-threat"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-21T06:55:25+00:00",
+      "validated_at": "2026-06-19T08:33:10+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2119,7 +2107,7 @@
       ]
     },
     "2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026": {
-      "content_hash": "b0700296183dd902a741c93c484a691c02d37cb73cbcd48ad8526c6b8b936f35",
+      "content_hash": "a99a2fd1590df3fb6aa9c5268df061278c10ec5bd2c9be87b37834198d9c1afb",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-22-grok-bankrbot-morse-code-prompt-injection-may-2026.md",
       "posts_index_hash": "c0332033ffa316109e1fd9c7472345eecbdcb6e048ed1f76149214eba465bc52",
@@ -2135,7 +2123,7 @@
         "https://gbhackers.com/hackers-use-morse-code-to-trick-grok-and-bankrbot/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:40+00:00",
+      "validated_at": "2026-06-19T08:33:09+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2201,7 +2189,7 @@
       "warnings": []
     },
     "2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030": {
-      "content_hash": "fb48a6f837e4a92ac88c7820afaaec4c4177281427648ca8fb71257eb5bca9e4",
+      "content_hash": "953e3ca3578d7c7b61e9fab7c40e257524260561eef39875cd08a89fc192e201",
       "evidence_status": "validated",
       "file": "2026-05-26-microsoft-semantic-kernel-rce-cve-2026-26030.md",
       "posts_index_hash": "4893d995275cc449a60e577f9b591ae23a383f5dcbe4f28b88de403110d2f1da",
@@ -2212,7 +2200,7 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-26030"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-26T06:48:51+00:00",
+      "validated_at": "2026-06-19T08:33:08+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2365,7 +2353,7 @@
       "warnings": []
     },
     "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation": {
-      "content_hash": "f5813e1582e666d995e911266fc710858c2216a20e5a213b6170ba33ef15e9de",
+      "content_hash": "a951ba12b61a2d7a51ad8ae06b4a30e7f570fd95c441842c4f8768eab2b64cf3",
       "evidence_status": "validated_with_warnings",
       "file": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.md",
       "posts_index_hash": "7d67df90451e2631314d84b9d01370e2210466adafc7288f5004b2b6f66e122d",
@@ -2378,7 +2366,7 @@
         "https://www.sysdig.com/blog/marimo-cve-2026-39987"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-01T08:36:55+00:00",
+      "validated_at": "2026-06-19T08:33:07+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2600,7 +2588,7 @@
       "warnings": []
     },
     "2026-06-11-cve-2026-4372-hugging-face-transformers-rce": {
-      "content_hash": "49823b7bf1f7a7511312134343ddafda152476787b0575359acd876f8083825a",
+      "content_hash": "0007f796a8aab115fb38785bca99bbb6acc5fd1495dd90976bcba212590ba151",
       "evidence_status": "validated",
       "file": "2026-06-11-cve-2026-4372-hugging-face-transformers-rce.md",
       "posts_index_hash": "c769874d249ab7ed4a84d2ba1c4a683ad9a1fffceb85ec4d83f769efbd585968",
@@ -2611,7 +2599,7 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-4372"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-11T08:05:58+00:00",
+      "validated_at": "2026-06-19T08:33:07+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2689,7 +2677,7 @@
       "warnings": []
     },
     "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation": {
-      "content_hash": "64b0aea6e7293dea543ad31d42c948df3eb6cfbcfe0e395a709ee8a30c4b1a0a",
+      "content_hash": "ebedf1e9f9d56221a793d8de24f2e950c7c89d2426fe9f000c94649b99a9a65c",
       "evidence_status": "validated",
       "file": "2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.md",
       "posts_index_hash": "93c13b4438ee6d619e156c4c2d64927969dca75d9654a2274186532529ba63bd",
@@ -2700,7 +2688,7 @@
         "https://www.sysdig.com/blog"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-12T07:24:30+00:00",
+      "validated_at": "2026-06-19T08:33:06+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2716,6 +2704,40 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-06-15T09:24:16+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft": {
+      "content_hash": "b6aadd78c52d8b98b3abaec88b363a356100796ca6697a3c50a458bc95899061",
+      "evidence_status": "validated",
+      "file": "2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft.md",
+      "posts_index_hash": "aa4886a2661e9b8a413f88523143d6a18cb0ad3fd916242df59d420a607c567b",
+      "report_id": "2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://www.aikido.dev/blog/multiple-jetbrains-ide-plugins-caught-stealing-ai-keys",
+        "https://blog.jetbrains.com/platform/2026/06/marketplace-ecosystem-security-update-malicious-ai-plugins/",
+        "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool": {
+      "content_hash": "1729253d16c90105af76385d845656052f19297f4fa6217b9e196669260aba15",
+      "evidence_status": "validated",
+      "file": "2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool.md",
+      "posts_index_hash": "77bfa0916b0a49e214bd6e93d021994fb13eea51abb7c2422cac1d8e9f5281e5",
+      "report_id": "2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools",
+        "https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots",
+        "https://www.sysdig.com/blog/llmjacking-from-emerging-threat-to-black-market-reality"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-19T08:33:05+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }
