@@ -5,9 +5,9 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Latest Run
 
-- GitHub run ID: `27898034413`
+- GitHub run ID: `27941970934`
 - Validator exit code: `2`
-- Generated at UTC: `2026-06-21T08:01:39+00:00`
+- Generated at UTC: `2026-06-22T09:11:19+00:00`
 - Hard failures: `0`
 - Warnings: `9`
 - Review required: `1`
@@ -23,6 +23,7 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Recent Run Reports
 
+- [20260622-091119Z-run-27941970934.md](runs/2026/06/20260622-091119Z-run-27941970934.md)
 - [20260621-080139Z-run-27898034413.md](runs/2026/06/20260621-080139Z-run-27898034413.md)
 - [20260620-070221Z-run-27863647513.md](runs/2026/06/20260620-070221Z-run-27863647513.md)
 - [20260619-083335Z-run-27814849248.md](runs/2026/06/20260619-083335Z-run-27814849248.md)
@@ -42,10 +43,10 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20260605-070941Z-run-27000913835.md](runs/2026/06/20260605-070941Z-run-27000913835.md)
 - [20260604-072549Z-run-26937289487.md](runs/2026/06/20260604-072549Z-run-26937289487.md)
 - [20260603-082023Z-run-26872574417.md](runs/2026/06/20260603-082023Z-run-26872574417.md)
-- [20260602-072636Z-run-26804998654.md](runs/2026/06/20260602-072636Z-run-26804998654.md)
 
 ## Review-Required Reports
 
+- [20260622-091119Z-run-27941970934.md](review-required/20260622-091119Z-run-27941970934.md)
 - [20260621-080139Z-run-27898034413.md](review-required/20260621-080139Z-run-27898034413.md)
 - [20260620-070221Z-run-27863647513.md](review-required/20260620-070221Z-run-27863647513.md)
 - [20260619-083335Z-run-27814849248.md](review-required/20260619-083335Z-run-27814849248.md)
@@ -65,7 +66,6 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20260605-070941Z-run-27000913835.md](review-required/20260605-070941Z-run-27000913835.md)
 - [20260604-072549Z-run-26937289487.md](review-required/20260604-072549Z-run-26937289487.md)
 - [20260603-082023Z-run-26872574417.md](review-required/20260603-082023Z-run-26872574417.md)
-- [20260602-072636Z-run-26804998654.md](review-required/20260602-072636Z-run-26804998654.md)
 
 ## Mobile Review Notes
 
