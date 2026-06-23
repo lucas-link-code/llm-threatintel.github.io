@@ -5,8 +5,38 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 15 Jun 2026 09:24:16 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 06:52:59 +0000</lastBuildDate>
     <item>
+      <title>Miasma Source Code Leak: Open-Source Release of Supply Chain Worm Framework via Compromised GitHub Accounts (June 8+, 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-06-23-miasma-source-code-leak-github-open-source-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-23-miasma-source-code-leak-github-open-source-june-2026.html</guid>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <description>The Miasma credential-stealing attack framework was briefly made available for free on GitHub, after multiple repositories with the name "Miasma-Open-Source-Release" began appearing since June 8, 2026. According to SafeDep, the source code has been published through compromised developer accounts. The Miasma codebase appears to be larger than a supply chain worm. This represents a significant operational security failure and toolkit proliferation risk.</description>
+    </item>    <item>
+      <title>Windsurf CVE-2026-30615: Prompt Injection to Local RCE via Untrusted MCP Configuration Manipulation</title>
+      <link>https://llm-threatintel.com/posts/2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.html</guid>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction.</description>
+    </item>    <item>
+      <title>IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages</title>
+      <link>https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html</guid>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.</description>
+    </item>    <item>
+      <title>JetBrains Marketplace: 15 Malicious AI Coding Plugins Steal Developer API Keys from 70,000 Installs</title>
+      <link>https://llm-threatintel.com/posts/2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft.html</guid>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Aikido Security identified 15 malicious plugins on the JetBrains Marketplace, all posing as AI coding assistants powered by DeepSeek, OpenAI, and SiliconFlow. Each plugin functioned as advertised while silently exfiltrating any AI provider API key entered in settings to a hardcoded server at 39.107.60.51 over plain HTTP. Combined install count across all 15 plugins reached approximately 70,000 before removal. JetBrains removed all plugins, banned the seven associated publisher accounts, and triggered a remote kill-switch disabling extensions across installed IDEs on June 16, 2026.</description>
+    </item>    <item>
+      <title>LLMjacking Evolved: Attacker Deploys Autonomous Offensive Tool Against Exposed Ollama Servers</title>
+      <link>https://llm-threatintel.com/posts/2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool.html</guid>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <description>On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages. The tool was observed under active development against private practice ranges, indicating pre-operational maturity work.</description>
+    </item>    <item>
       <title>Agentjacking: AI Coding Agents Exploited via Sentry Error Tracking Integration</title>
       <link>https://llm-threatintel.com/posts/2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.html</guid>
@@ -96,36 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</guid>
       <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
       <description>Researchers from the University of Toronto, University of Cambridge, and others demonstrated a "worm" that generates tailored attack strategies to each target it encounters, built with publicly available AI models at disconcertingly low cost. The proof-of-concept worm analyzes each target, reasons about how to attack it, and creates a strategy on the fly. Unlike traditional computer viruses, this worm can dynamically detect security flaws unique to each device it infects and feeds parasitically off devices' computing power, which is made more dire by the fact that consumer devices are now built to support computationally expensive LLMs.</description>
-    </item>    <item>
-      <title>MCP Supply Chain Attack: OX Security Discloses Critical Systemic Prompt Injection to RCE Vulnerability in Anthropic MCP STDIO Transport Affecting 150M+ Downloads and Six AI Coding Tools</title>
-      <link>https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-03-ox-security-mcp-stdio-prompt-injection-rce-windsurf.html</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-      <description>OX Security Research uncovered a critical, systemic vulnerability at the core of the Model Context Protocol (MCP)—the industry standard for AI agent communication created and maintained by Anthropic—which enables Arbitrary Command Execution (RCE) on any system running a vulnerable MCP implementation, granting attackers direct access to sensitive user data, internal databases, API keys, and chat histories. Cursor, VS Code, Windsurf, Claude Code, and Gemini-CLI are all vulnerable, with Windsurf (CVE-2026-30615) being the only IDE where exploitation required zero user interaction.</description>
-    </item>    <item>
-      <title>Hugging Face and ClawHub Compromised: 352,000+ Malicious Models and AI Agent Skills Deliver Backdoors, Cryptominers, and Credential Stealers Across Open AI Ecosystem</title>
-      <link>https://llm-threatintel.com/posts/2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-03-hugging-face-clawHub-massive-model-poisoning-campaign.html</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Hugging Face and ClawHub, the two largest repositories for AI models and agent skills, have been systematically compromised with hundreds of malicious entries that steal credentials, open backdoors, and hijack AI agents for cryptocurrency mining. Hugging Face hosts more than a million machine learning models used by virtually every AI company on the planet and has been found to contain hundreds of malicious models capable of executing arbitrary code; ClawHub has been infiltrated by 341 malicious skills designed to steal credentials, open reverse shells, and hijack AI agents for cryptocurrency mining. Protect AI, which partnered with Hugging Face to scan the platform's model library, examined more than four million models and identified approximately 352,000 unsafe or suspicious issues across 51,700 models.</description>
-    </item>    <item>
-      <title>Anthropic Disrupts Chinese State-Sponsored Agentic Attack: Claude Code Autonomously Weaponized in Large-Scale Espionage Campaign Without Human Direction</title>
-      <link>https://llm-threatintel.com/posts/2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-03-anthropic-chinese-agentic-attack-claude-code-autonomous.html</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-      <description>This is the first documented case of a large-scale cyberattack executed without substantial human intervention. A Chinese state-sponsored group manipulated Claude Code into attempting infiltration of roughly thirty global targets, succeeding in a small number of cases, targeting large tech companies, financial institutions, chemical manufacturing companies, and government agencies. Claude performed reconnaissance in a fraction of the time human hackers would take, identified and tested security vulnerabilities by researching and writing its own exploit code, harvested credentials, and extracted large amounts of private data with minimal human supervision.</description>
-    </item>    <item>
-      <title>Vercel + Context.ai OAuth Supply Chain Breach: AI Productivity Tool Compromised via Lumma Stealer, Enabling Lateral Movement into CDN Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-06-02-vercel-context-ai-oauth-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-02-vercel-context-ai-oauth-breach.html</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-      <description>In April 2026, Vercel disclosed a security incident rooted in a Vercel employee granting an AI productivity tool (Context.ai) 'Allow All' OAuth permissions to the employee's corporate Google Workspace. Attackers, who had compromised a Context.ai employee via Lumma Stealer malware in February 2026, used those OAuth tokens to take over the Vercel employee's account and move laterally into Vercel's internal systems.</description>
-    </item>    <item>
-      <title>ChatGPhish: ChatGPT Web Summarization Markdown Injection Enables Phishing and Data Exfiltration</title>
-      <link>https://llm-threatintel.com/posts/2026-06-02-chatgphish-web-summarization-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-02-chatgphish-web-summarization-injection.html</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-      <description>A browser-based prompt injection technique that transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. The research was publicly published on May 29, 2026.</description>
     </item>
   </channel>
 </rss>

@@ -2740,6 +2740,60 @@
       "validated_at": "2026-06-19T08:33:05+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026": {
+      "content_hash": "970439e02980fd64c9a074fc460474a22e989ac0a5a6ea1ef3e729980023146c",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.md",
+      "posts_index_hash": "ad1de1d306e05c434e9e98d5c9ec4efc959984efc5b18658ca4e01f404ece6d5",
+      "report_id": "2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/new-ironworm-malware-hits-36-packages-in-npm-supply-chain-attack/",
+        "https://www.ox.security/blog/ironworm-supply-chain-malware-hits-npm/",
+        "https://www.darkreading.com/cyberattacks-data-breaches/rust-written-ironworm-npm-supply-chain",
+        "https://phoenix.security/ironworm-npm-supply-chain-worm-rust-ebpf-rootkit-tor/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-23T06:53:04+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-23-miasma-source-code-leak-github-open-source-june-2026": {
+      "content_hash": "3683184fbfa16bf4759b2ac59a02654957a8a126e92f9200c0ab40fbba2366a1",
+      "evidence_status": "validated",
+      "file": "2026-06-23-miasma-source-code-leak-github-open-source-june-2026.md",
+      "posts_index_hash": "5d30ab275f74fb93b288a0ce359b748361eab061d4ac497151f4506ae7f933c2",
+      "report_id": "2026-06-23-miasma-source-code-leak-github-open-source-june-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://phoenix.security/accelerating-supply-chain-attacks-npm-pypi-vsx-ai-enabled-2026/",
+        "https://thehackernews.com/2026/06/threatsday-bulletin-worm-code-leaked-ai.html",
+        "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-23T06:53:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp": {
+      "content_hash": "6b038080b30a3e720e117411801b88bf8539730263457eb2fd5558d6d6eced9a",
+      "evidence_status": "validated",
+      "file": "2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.md",
+      "posts_index_hash": "ffc2c5259d86d62dcfadb71814faeddbf95a9fcf310342861adfda48923ee3a3",
+      "report_id": "2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/",
+        "https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/",
+        "https://www.techtimes.com/articles/318361/20260614/ai-agent-security-hits-its-reckoning-prompt-injection-may-permanent-flaw-not-patchable-bug.htm"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-23T06:53:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

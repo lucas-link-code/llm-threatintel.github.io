@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages | LLM ThreatIntel</title>
+  <meta name="description" content="A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages">
+  <meta property="og:description" content="A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages">
+  <meta name="twitter:description" content="A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages",
+  "description": "A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.",
+  "datePublished": "2026-06-23T00:00:00Z",
+  "dateModified": "2026-06-23T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html",
+  "keywords": [
+    "supply-chain",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-06-23</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages</h1>
+<p><strong>Date:</strong> 2026-06-23<br><strong>Tags:</strong> supply-chain, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>IronWorm</td></tr><tr><td>Attribution</td><td>Unknown; possibly TeamPCP evolution (confidence: medium)</td></tr><tr><td>Target</td><td>Software developers; crypto/Web3 ecosystem focus</td></tr><tr><td>Vector</td><td>Malicious npm package installation via preinstall hooks</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-03</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The attack started from a compromised account named &#x27;asteroiddao,&#x27; which published package versions containing the Rust ELF binary executed via &#x27;preinstall,&#x27; pushing malicious commits into repositories. The commit author appears as &quot;claude,&quot; and the timestamps point to several years ago, up to 13 years in some cases, even though they were pushed in the past few days. IronWorm ships as a 976 KB Rust ELF binary executed via a preinstall hook, packs a custom-modified UPX stub to defeat signature-based unpackers, encrypts every internal string with a unique per-call-site key, and carries an embedded eBPF kernel-level rootkit to hide its own processes, sockets, and anti-debugging tripwires from defenders. The Rust-based malware self-propagates by using stolen credentials for publishing on npm; this includes secrets associated with npm&#x27;s Trusted Publishing workflow. Once it compromises a developer or CI environment, it can publish trojanized versions of packages owned by the victim, which then infect additional developers and CI systems. The implant sweeps 86 environment variables and over 20 credential file paths covering AWS, GCP, Azure, Vault, Kubernetes, npm, Docker, GitHub, and the entire 2026 generation of AI provider keys (Anthropic, OpenAI, Gemini, Cohere, Mistral, Groq, Perplexity, xAI). Despite the affected packages garnering a combined total of 32,177 monthly downloads, the threat was mitigated before the infection could spread to more popular packages.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Compromised npm packages with malicious preinstall hooks</td></tr><tr><td>Credential Dumping</td><td>T1110.001</td><td>Extraction of 86 environment variables and 20+ credential files from developer machines</td></tr><tr><td>Persistence via Rootkit</td><td>T1547.014</td><td>eBPF kernel rootkit hides malware processes and network activity from detection</td></tr><tr><td>Command and Control via Tor</td><td>T1071.001</td><td>Tor-based C2 communication channel</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_JFrog Security provided detailed IOC list; packages deprecated and removed within 24 hours of publication. No CVE assigned during active exploitation._</p>
+<h3>Full URL Paths</h3>
+<p>_JFrog Security provided detailed IOC list; packages deprecated and removed within 24 hours of publication. No CVE assigned during active exploitation._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">{&#x27;name&#x27;: &#x27;asteroiddao compromise - 36-37 npm packages&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;note&#x27;: &quot;Specific affected package list available in JFrog and OX Security reports; packages included deposits from &#x27;asteroiddao&#x27; account with malicious preinstall hooks&quot;}</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">npm registry
+JavaScript/Node.js development environments
+CI/CD pipelines</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor npm preinstall hooks and postinstall scripts for binary execution; audit GitHub commit metadata for backdated changes and suspicious &#x27;claude&#x27; author names; scan for eBPF rootkit signatures and Tor egress traffic; review environment variable exports and credential file access patterns in CI/CD logs; enable MFA and token rotation for npm publishing; implement supply chain scanning that detects Rust binaries in preinstall hooks and custom UPX stubs.</p>
+<h2>References</h2>
+<ul><li>[JFrog Security] IronWorm Supply Chain Attack: Rust Malware with eBPF Rootkit and Tor C2 (2026-06-04) — https://www.bleepingcomputer.com/news/security/new-ironworm-malware-hits-36-packages-in-npm-supply-chain-attack/</li><li>[OX Security] IronWorm Supply Chain Malware Hits npm (2026-06-03) — https://www.ox.security/blog/ironworm-supply-chain-malware-hits-npm/</li><li>[Dark Reading] Rust-Written IronWorm Hits NPM Supply Chain (2026-06-04) — https://www.darkreading.com/cyberattacks-data-breaches/rust-written-ironworm-npm-supply-chain</li><li>[Phoenix Security] IronWorm (No CVE): Rust-Built npm Worm Ships an eBPF Rootkit, Tor C2, and a Self-Propagating Supply Chain Implant (2026-06-04) — https://phoenix.security/ironworm-npm-supply-chain-worm-rust-ebpf-rootkit-tor/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-06-23-miasma-source-code-leak-github-open-source-june-2026",
+      "title": "Miasma Source Code Leak: Open-Source Release of Supply Chain Worm Framework via Compromised GitHub Accounts (June 8+, 2026)",
+      "date": "2026-06-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The Miasma credential-stealing attack framework was briefly made available for free on GitHub, after multiple repositories with the name \"Miasma-Open-Source-Release\" began appearing since June 8, 2026. According to SafeDep, the source code has been published through compromised developer accounts. The Miasma codebase appears to be larger than a supply chain worm. This represents a significant operational security failure and toolkit proliferation risk.",
+      "file": "2026-06-23-miasma-source-code-leak-github-open-source-june-2026.md"
+    },
+    {
+      "id": "2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp",
+      "title": "Windsurf CVE-2026-30615: Prompt Injection to Local RCE via Untrusted MCP Configuration Manipulation",
+      "date": "2026-06-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction.",
+      "file": "2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.md"
+    },
+    {
+      "id": "2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026",
+      "title": "IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages",
+      "date": "2026-06-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.",
+      "file": "2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.md"
+    },
+    {
       "id": "2026-06-18-jetbrains-marketplace-malicious-ai-plugins-api-key-theft",
       "title": "JetBrains Marketplace: 15 Malicious AI Coding Plugins Steal Developer API Keys from 70,000 Installs",
       "date": "2026-06-18",

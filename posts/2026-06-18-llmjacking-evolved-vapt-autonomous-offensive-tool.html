@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LLMjacking Evolved: Attacker Deploys Autonomous Offensive Tool Against Exposed Ollama Servers | LLM ThreatIntel</title>
-  <meta name="description" content="On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages.">
+  <meta name="description" content="On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages. The tool was observed under active development against private practice ranges, indicating pre-operational maturity work.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="LLM ThreatIntel">
   <meta name="theme-color" content="#0c0a12">
@@ -14,7 +14,7 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="LLMjacking Evolved: Attacker Deploys Autonomous Offensive Tool Against Exposed Ollama Servers">
-  <meta property="og:description" content="On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages.">
+  <meta property="og:description" content="On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages. The tool was observed under active development against private practice ranges, indicating pre-operational maturity work.">
   <meta property="og:url" content="https://llm-threatintel.com/posts/2026-06-18-llmjacking-evolved-vapt-autonomous-offensive-tool.html">
   <meta property="og:site_name" content="LLM ThreatIntel">
   <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
@@ -26,7 +26,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LLMjacking Evolved: Attacker Deploys Autonomous Offensive Tool Against Exposed Ollama Servers">
-  <meta name="twitter:description" content="On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages.">
+  <meta name="twitter:description" content="On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages. The tool was observed under active development against private practice ranges, indicating pre-operational maturity work.">
   <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
 
   <script type="application/ld+json">
@@ -34,7 +34,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "LLMjacking Evolved: Attacker Deploys Autonomous Offensive Tool Against Exposed Ollama Servers",
-  "description": "On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages.",
+  "description": "On June 12, 2026, the Sysdig Threat Research Team observed a threat actor abusing an internet-exposed, unauthenticated Ollama model server as the inference engine for VAPT, an autonomous multi-stage offensive security framework. Unlike prior LLMjacking operations that stole AI compute for resale, this actor wired hijacked inference capacity directly into a software pipeline that fingerprints services, synthesizes exploits, crafts SQL injection payloads, extracts credentials, and confirms remote code execution without human direction between stages. The tool was observed under active development against private practice ranges, indicating pre-operational maturity work.",
   "datePublished": "2026-06-18T00:00:00Z",
   "dateModified": "2026-06-18T00:00:00Z",
   "author": {
@@ -84,20 +84,20 @@
 <h2>Campaign Summary</h2>
 <table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>VAPT autonomous offensive framework</td></tr><tr><td>Actor / Attribution</td><td>Unknown; residential IP cluster, Hyderabad, India (confidence: low)</td></tr><tr><td>Target</td><td>Internet-exposed Ollama servers (port 11434, no authentication); private practice ranges during observed sessions</td></tr><tr><td>Vector</td><td>Unauthenticated Ollama API access; no CVE — pure configuration exposure</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-12</td></tr></tbody></table>
 <h2>Detailed Findings</h2>
-<p>According to Sysdig Threat Research Team, on June 12, 2026, a threat actor originating from IP 122.183.48[.]82 (residential ISP, Hyderabad, India) connected to an Ollama server exposed on port 11434 and began driving an automated offensive pipeline against private-range targets. The session ran approximately eight and a half hours. On June 14, the same tool returned across three additional IPs in the same /24 (122.183.48[.]35, 122.183.48[.]195) and a second residential provider (47.15.69[.]15). Sysdig attributes all four sessions to a single actor based on identical tooling, private benchmark targets, and shared Indian residential origin.</p>
-<p>Because the VAPT framework sends its full instruction set to the model on every request, Sysdig captured the complete pipeline architecture from the inference server's traffic. The tool identifies itself through a compromise-confirmation routine that executes <code>echo VAPTb3gin; id; echo VAPTfin</code> and looks for the sentinel strings bracketing the output of <code>id</code>. This marker pair is characteristic of automated exploit tooling and is a clean EDR and network detection anchor.</p>
+<p>According to Sysdig Threat Research Team, on June 12, 2026, a threat actor originating from IP 122.183.48.82 (residential ISP, Hyderabad, India) connected to an Ollama server exposed on port 11434 and began driving an automated offensive pipeline against private-range targets. The session ran approximately eight and a half hours. On June 14, the same tool returned across three additional IPs in the same /24 (122.183.48.35, 122.183.48.195) and a second residential provider (47.15.69.15). Sysdig attributes all four sessions to a single actor based on identical tooling, private benchmark targets, and shared Indian residential origin.</p>
+<p>Because the VAPT framework sends its full instruction set to the model on every request, Sysdig captured the complete pipeline architecture from the inference server&#x27;s traffic. The tool identifies itself through a compromise-confirmation routine that executes <code>echo VAPTb3gin; id; echo VAPTfin</code> and looks for the sentinel strings bracketing the output of <code>id</code>. This marker pair is characteristic of automated exploit tooling and is a clean EDR and network detection anchor.</p>
 <h3>Pipeline Architecture</h3>
 <p>Sysdig documented the following discrete stages, each imposing a strict JSON output contract on the model so the surrounding software can consume results deterministically:</p>
-<p><strong>Service fingerprinting:</strong> Normalizes nmap service banners into precise CPE identities for vulnerability lookup, returning <code>{"vendor":"","product":"","version":"","cpe23":"","confidence":""}</code> — explicitly instructed never to invent version strings.</p>
-<p><strong>Vulnerability matching and applicability triage:</strong> Matches pinned product/version against candidate CVEs, filters to applicable entries.</p>
-<p><strong>Web reconnaissance:</strong> Consumes a full observation bundle (page text, HTML comments, headers, decoded cookies, forms, parameters) and emits candidate paths and parameters for downstream exploitation.</p>
-<p><strong>Proof-of-concept synthesis:</strong> Builds protocol-aware PoCs including a backdoored service that opens a second port only after a trigger payload is received.</p>
-<p><strong>Blind SQL injection crafting:</strong> Infers the target input filter from timing probes and constructs time-based blind SQL injection templates with filter-evasion logic. Uses operators such as <code>||</code>, <code>IF()/CASE</code>, <code>/**/</code> space substitution, and mixed-case evasion when the word OR or AND is detected as filtered.</p>
-<p><strong>Credential and secret extraction:</strong> Parses looted configuration files, environment files, and source code for every username, password, API key, and connection string. Sysdig reports this was the most-invoked stage, run over a hundred times across the June 12 session.</p>
-<p><strong>Arbitrary file-read planning:</strong> Given a file-read primitive, plans which files to retrieve.</p>
-<p><strong>Privilege escalation:</strong> Selects the next escalation command.</p>
-<p><strong>Autonomous orchestration:</strong> A controller stage that drives the full chain until it achieves command execution, framed as an "authorized pentester" to keep the model cooperative. Exposes a fixed tool surface (<code>request(method, path, headers, cookies, query, body)</code>), payload builders for JWT forgery and PHP object injection gadgets, and sweep primitives (<code>ssrf_scan</code>, <code>object_injection_scan</code>). Once a probe returns <code>uid=</code>, the confirmed request is frozen as a reusable recipe with the command field parameterized as <code>__VAPTCMD__</code>.</p>
-<p>A second orchestrator variant exposes a "PROPOSE-ONLY" split where the model only suggests candidate payloads while a separate <code>oracles.py</code> verifier decides whether anything triggered, implementing what the tool calls a "zero-false-positive invariant." Naming an internal source file inside a system prompt is the signature of maintained software, not a throwaway script.</p>
+<p>Service fingerprinting: Normalizes nmap service banners into precise CPE identities for vulnerability lookup, returning <code>{&quot;vendor&quot;:&quot;&quot;,&quot;product&quot;:&quot;&quot;,&quot;version&quot;:&quot;&quot;,&quot;cpe23&quot;:&quot;&quot;,&quot;confidence&quot;:&quot;&quot;}</code> — explicitly instructed never to invent version strings.</p>
+<p>Vulnerability matching and applicability triage: Matches pinned product/version against candidate CVEs, filters to applicable entries.</p>
+<p>Web reconnaissance: Consumes a full observation bundle (page text, HTML comments, headers, decoded cookies, forms, parameters) and emits candidate paths and parameters for downstream exploitation.</p>
+<p>Proof-of-concept synthesis: Builds protocol-aware PoCs including a backdoored service that opens a second port only after a trigger payload is received.</p>
+<p>Blind SQL injection crafting: Infers the target input filter from timing probes and constructs time-based blind SQL injection templates with filter-evasion logic. Uses operators such as <code>||</code>, <code>IF()/CASE</code>, <code>/**/</code> space substitution, and mixed-case evasion when the word <code>OR</code> or <code>AND</code> is detected as filtered.</p>
+<p>Credential and secret extraction: Parses looted configuration files, environment files, and source code for every username, password, API key, and connection string. Sysdig reports this was the most-invoked stage, run over a hundred times across the June 12 session.</p>
+<p>Arbitrary file-read planning: Given a file-read primitive, plans which files to retrieve.</p>
+<p>Privilege escalation: Selects the next escalation command.</p>
+<p>Autonomous orchestration: A controller stage that drives the full chain until it achieves command execution, framed as an &quot;authorized pentester&quot; to keep the model cooperative. Exposes a fixed tool surface (<code>request(method, path, headers, cookies, query, body)</code>), payload builders for JWT forgery and PHP object injection gadgets, and sweep primitives (<code>ssrf_scan</code>, <code>object_injection_scan</code>). Once a probe returns <code>uid=</code>, the confirmed request is frozen as a reusable recipe with the command field parameterized as <code>__VAPTCMD__</code>.</p>
+<p>A second orchestrator variant exposes a &quot;PROPOSE-ONLY&quot; split where the model only suggests candidate payloads while a separate <code>oracles.py</code> verifier decides whether anything triggered, implementing what the tool calls a &quot;zero-false-positive invariant.&quot; Naming an internal source file inside a system prompt is the signature of maintained software, not a throwaway script.</p>
 <h3>Tool Maturity and Intent</h3>
 <p>The pipeline grew across the June 12 session, adding stages roughly three hours in and continuing through the final ninety minutes. Individual stages were rewritten in place across multiple versions. When the tool returned on June 14, the full stage set from June 12 was present from the first requests. Sysdig assesses this as a developer iterating on a maturing tool against a benchmark range, not a finished product in production use against live victims.</p>
 <p>All targets observed were private RFC 1918 addresses. On June 14, the actor pointed the tool at <code>10.129.0.0/16</code>, the address space used by HackTheBox penetration-testing labs. No public host appeared as a target.</p>
@@ -108,29 +108,30 @@
 <table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Resource Hijacking</td><td>T1496</td><td>Unauthenticated Ollama server used as free inference engine for offensive pipeline</td></tr><tr><td>Automated Exfiltration</td><td>T1020</td><td>Credential extraction stage parses looted files and returns structured results to pipeline</td></tr><tr><td>Network Service Discovery</td><td>T1046</td><td>Service fingerprinting stage normalizes banners from port scans into CPE identities</td></tr><tr><td>Exploitation for Privilege Escalation</td><td>T1068</td><td>Privilege escalation stage selects next command after initial RCE confirmed</td></tr><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Web reconnaissance and SQL injection stages target externally reachable services</td></tr><tr><td>Command and Scripting Interpreter</td><td>T1059</td><td>RCE confirmation via shell command echoing VAPTb3gin/VAPTfin sentinels</td></tr><tr><td>Unsecured Credentials</td><td>T1552</td><td>Credential extraction stage targets env files, configs, source code, connection strings</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<pre><code>No domain IOCs published by source</code></pre>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
 <h3>Full URL Paths</h3>
-<pre><code>No URL IOCs published by source</code></pre>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
 <h3>Splunk Format</h3>
-<pre><code>No IOCs available for Splunk query</code></pre>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
 <h3>IP Addresses</h3>
-<pre><code>122.183.48[.]82
-122.183.48[.]35
-122.183.48[.]195
-47.15.69[.]15</code></pre>
+<pre><code class="language-">122.183.48.82
+122.183.48.35
+122.183.48.195
+47.15.69.15</code></pre>
 <h3>File Hashes</h3>
-<pre><code>No hash IOCs published by source</code></pre>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
 <h3>Behavioral IOCs (Strings/Patterns)</h3>
-<pre><code>VAPTb3gin
+<pre><code class="language-">VAPTb3gin
 VAPTfin
 __VAPTCMD__
 echo VAPTb3gin; id; echo VAPTfin</code></pre>
 <h2>Detection Recommendations</h2>
-<p><strong>EDR:</strong> Alert on Python or similar interpreter processes making outbound HTTPS connections to model API endpoints (api.openai.com, api.anthropic.com, generativelanguage.googleapis.com, or any host on port 11434) followed within seconds by shell execution. The combination of LLM API call followed by command execution is the core behavioral signature.</p>
-<p><strong>Network:</strong> Alert on inbound connections to port 11434 from external IPs. Ollama should never be internet-reachable. If port 11434 is reachable from the internet, treat the server as compromised. Block outbound access to port 11434 on all non-developer hosts.</p>
-<p><strong>Network pattern:</strong> Query HTTP requests to an internal Ollama server (GET /api/tags, POST /api/chat, POST /api/generate) from external source IPs. Log the full request body; VAPT sends its stage instructions in the messages array, which exposes the pipeline architecture.</p>
-<p><strong>String-based:</strong> SIEM or EDR rule matching process output or command arguments containing <code>VAPTb3gin</code> or <code>VAPTfin</code>. These strings are unique to this framework and should not appear in legitimate tooling.</p>
-<p><strong>SIEM hunt:</strong> Review any system where an AI model inference endpoint was reachable to external IPs. Pull model server access logs for any session exceeding 50 requests in a single connection — this framework makes hundreds of calls per stage sequence.</p>
+<p>EDR: Alert on Python or similar interpreter processes making outbound HTTPS connections to model API endpoints (api.openai.com, api.anthropic.com, generativelanguage.googleapis.com, or any host on port 11434) followed within seconds by shell execution. The combination of LLM API call followed by command execution is the core behavioral signature.</p>
+<p>Network: Alert on inbound connections to port 11434 from external IPs. Ollama should never be internet-reachable. If port 11434 is reachable from the internet, treat the server as compromised. Block outbound access to port 11434 on all non-developer hosts.</p>
+<p>Network pattern: Query HTTP requests to an internal Ollama server (GET /api/tags, POST /api/chat, POST /api/generate) from external source IPs. Log the full request body; VAPT sends its stage instructions in the <code>messages</code> array, which exposes the pipeline architecture.</p>
+<p>Firewall: Block all inbound access to port 11434. Ollama&#x27;s default configuration binds to all interfaces with no authentication.</p>
+<p>String-based: SIEM or EDR rule matching process output or command arguments containing <code>VAPTb3gin</code> or <code>VAPTfin</code>. These strings are unique to this framework and should not appear in legitimate tooling.</p>
+<p>SIEM hunt: Review any system where an AI model inference endpoint was reachable to external IPs. Pull model server access logs for any session exceeding 50 requests in a single connection — this framework makes hundreds of calls per stage sequence.</p>
 <h2>References</h2>
 <ul><li>[Sysdig TRT] LLMjacking evolved: Attackers are using stolen AI compute to build offensive agentic tools (2026-06-17) — https://www.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools</li><li>[Sysdig TRT] AI agent at the wheel: How an attacker used LLMs to move from a CVE to an internal database in 4 pivots (2026-05-10) — https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots</li><li>[Sysdig TRT] LLMjacking: From Emerging Threat to Black Market Reality (2026) — https://www.sysdig.com/blog/llmjacking-from-emerging-threat-to-black-market-reality</li></ul></div>
   </main>
