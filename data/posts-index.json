@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026",
+      "title": "Trend Micro ClickFix Malvertising: Claude.ai Shared Chat Weaponization Across 6 Attack Waves (April-June 2026)",
+      "date": "2026-06-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malicious-tool",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "TrendAI Research tracked 106 unique malicious hostnames deployed across six distinct attack waves over seven weeks from April 8 to June 14, 2026, with operators continuously rotating infrastructure and testing new AI brand lures. The campaign made a significant tactical leap by shifting to and weaponizing claude.ai's shared chat feature; victims landed on a fully legitimate, trusted domain that rendered browser warnings and URL inspection easier to evade. The Asia-Pacific region bore the brunt of the campaign, accounting for 67.2% of all confirmed victims, with Taiwan alone representing 30.5% of total traffic.",
+      "file": "2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026.md"
+    },
+    {
       "id": "2026-06-23-miasma-source-code-leak-github-open-source-june-2026",
       "title": "Miasma Source Code Leak: Open-Source Release of Supply Chain Worm Framework via Compromised GitHub Accounts (June 8+, 2026)",
       "date": "2026-06-23",

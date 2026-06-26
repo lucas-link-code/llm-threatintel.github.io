@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 23 Jun 2026 06:52:59 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 06:56:26 +0000</lastBuildDate>
     <item>
+      <title>Trend Micro ClickFix Malvertising: Claude.ai Shared Chat Weaponization Across 6 Attack Waves (April-June 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026.html</guid>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 +0000</pubDate>
+      <description>TrendAI Research tracked 106 unique malicious hostnames deployed across six distinct attack waves over seven weeks from April 8 to June 14, 2026, with operators continuously rotating infrastructure and testing new AI brand lures. The campaign made a significant tactical leap by shifting to and weaponizing claude.ai's shared chat feature; victims landed on a fully legitimate, trusted domain that rendered browser warnings and URL inspection easier to evade. The Asia-Pacific region bore the brunt of the campaign, accounting for 67.2% of all confirmed victims, with Taiwan alone representing 30.5% of total traffic.</description>
+    </item>    <item>
       <title>Miasma Source Code Leak: Open-Source Release of Supply Chain Worm Framework via Compromised GitHub Accounts (June 8+, 2026)</title>
       <link>https://llm-threatintel.com/posts/2026-06-23-miasma-source-code-leak-github-open-source-june-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-23-miasma-source-code-leak-github-open-source-june-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-06-llmshare-chatgpt-claude-malware-campaign-june-2026.html</guid>
       <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
       <description>ChatGPT share links host fake outage pages on OpenAI's genuine domain to distribute malware via Google ads, with attackers building pixel-perfect fake ChatGPT outage notices using ChatGPT's rendering capability. Push Security confirmed active detections on May 29, 2026. The technique exploits a design feature—not a software vulnerability—in ChatGPT's sharing system, meaning no patch from OpenAI can close it without changing product design.</description>
-    </item>    <item>
-      <title>Autonomous LLM Agent Worm: Self-Replicating Network Compromise Using Free Public Models</title>
-      <link>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-04-autonomous-llm-agent-worm-network-propagation.html</guid>
-      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Researchers from the University of Toronto, University of Cambridge, and others demonstrated a "worm" that generates tailored attack strategies to each target it encounters, built with publicly available AI models at disconcertingly low cost. The proof-of-concept worm analyzes each target, reasons about how to attack it, and creates a strategy on the fly. Unlike traditional computer viruses, this worm can dynamically detect security flaws unique to each device it infects and feeds parasitically off devices' computing power, which is made more dire by the fact that consumer devices are now built to support computationally expensive LLMs.</description>
     </item>
   </channel>
 </rss>

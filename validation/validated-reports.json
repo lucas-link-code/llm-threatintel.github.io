@@ -2794,6 +2794,21 @@
       "validated_at": "2026-06-23T06:53:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026": {
+      "content_hash": "9803d3a8885766bc3e4c20c07166e70d91cf1d7c34f2de8aa9ae27c69114e8e1",
+      "evidence_status": "validated",
+      "file": "2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026.md",
+      "posts_index_hash": "a40c09c9fcc7d1f1787b03cac7e2d0104ac8af50d64d3b60350e2ffce8922d35",
+      "report_id": "2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-26T06:56:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
