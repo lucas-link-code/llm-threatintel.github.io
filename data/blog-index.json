@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "2026-06-29-prompt-smarter-llm-insights-enhanced-outcomes",
+      "title": "Prompt Smarter: Leveraging LLM Insights for Enhanced Outcomes",
+      "date": "2026-06-29",
+      "author": "Lucas L",
+      "category": "GenAI Security",
+      "tags": [
+        "prompt-engineering",
+        "llm-reasoning",
+        "agent-harnesses",
+        "cybersecurity"
+      ],
+      "excerpt": "A practical explanation of how LLMs process prompts through tokenisation, embeddings, attention, prediction, and sampling. The post connects those mechanics to prompt structure, reasoning effort, temperature, security analysis prompts, coding prompts, and the larger shift from text generation to agent harnesses where provider choice becomes an architecture decision.",
+      "file": "2026-06-29-prompt-smarter-llm-insights-enhanced-outcomes.md",
+      "readTime": "15 min"
+    },
+    {
       "id": "2026-05-25-claude-code-token-discipline-agentic-cli-workflows",
       "title": "Token Use Optimizations: How to keep agent sessions fast, cheap, and useful",
       "date": "2026-05-25",

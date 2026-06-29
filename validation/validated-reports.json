@@ -32,19 +32,21 @@
       ]
     },
     "2026-03-20-malicious-llm-ecosystem": {
-      "content_hash": "78719f2118714ca0dcfefb4c07f638f257f9bc8d05852e190d3fef744bc8f84f",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "f87323fbfe86478364283548fda12135cf73099ac96421bd0ef100f31b5ff45b",
+      "evidence_status": "validated",
       "file": "2026-03-20-malicious-llm-ecosystem.md",
       "posts_index_hash": "cafbaed8d592f9beb0217779b75b687d00d23901459a86e2a9a044bf83883650",
       "report_id": "2026-03-20-malicious-llm-ecosystem",
       "review_required": [],
-      "source_urls": [],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "source_urls": [
+        "https://www.wired.com/story/chatgpt-scams-fraudgpt-wormgpt-crime/",
+        "https://netenrich.com/blog/fraudgpt-the-villain-avatar-of-chatgpt",
+        "https://www.itpro.com/security/cyber-crime/the-rise-of-ghostgpt-why-cybercriminals-are-turning-to-generative-ai"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-29T13:12:41+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-03-25-russian-fortigate-genai": {
       "content_hash": "58d80a6a5a92a6e1e2e889d56560022b8e2c11ef68e463392a170d5ffbcb718c",
@@ -367,24 +369,21 @@
       ]
     },
     "2026-04-05-mcp-security-crisis-30-cves-437k-downloads": {
-      "content_hash": "b5cd6f703e9f8df47b9ece80df948e34bb86637ef0ada25874a3efde89094735",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "d2b88774a1180b8148dc0ceef3de60aa1342831d99f7f3908fc43f7b227fbc51",
+      "evidence_status": "validated",
       "file": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads.md",
-      "posts_index_hash": "8f18cc3ca190e3916d713f1f49dcaa7328ee2860737466a0849382a960c419e4",
+      "posts_index_hash": "d6c4f4964a3cc45dc08664ba89e9ba1f87d7b7e74c49e5b17fedcadbd24ae61a",
       "report_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
       "review_required": [],
       "source_urls": [
         "https://www.heyuan110.com/posts/ai/2026-03-10-mcp-security-2026/",
         "https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/",
-        "https://dev.to/toniantunovic/mcp-connector-poisoning-how-compromised-npm-packages-hijack-your-ai-agent-3ha0",
-        "https://medium.com/@instatunnel/securing-mcp-servers-the-2026-guide-to-ai-tool-tunneling-aafa113b08db"
+        "https://dev.to/toniantunovic/mcp-connector-poisoning-how-compromised-npm-packages-hijack-your-ai-agent-3ha0"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-29T13:12:40+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-04-05-mercor-data-vendor-ai-training-breach": {
       "content_hash": "0c3c2713f631232ef7438b72f1837a1022ac12f58e9d101afd7a2ffbf8bef3ee",
@@ -899,20 +898,18 @@
       "warnings": []
     },
     "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft": {
-      "content_hash": "136a20df62f2a5bc9c68d7ea6c31e14f070d0494c9c20977361be83b249c2d2a",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "f6719cae9f540f2b6b2bee166c851d33c43786f895f2b0f9c7b35505ada9c0a9",
+      "evidence_status": "validated",
       "file": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.md",
-      "posts_index_hash": "a561a0a128ef351b59dd17bc1dfcd6983fea62c401e5e2d4fca89e5865720510",
+      "posts_index_hash": "8f763fb8324b6d4556941f4e26e5893fce67bd22b661e2fa085e226a08a9bb63",
       "report_id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://www.scworld.com/news/namastex-npm-packages-compromised-in-canisterworm-supply-chain-attack",
         "https://wiz.io"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:57+00:00",
+      "validated_at": "2026-06-29T13:10:06+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1304,7 +1301,7 @@
       "warnings": []
     },
     "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain": {
-      "content_hash": "a0b8b03180f3c12e08b748d4758dfab42e4cc84539e2c42b5fee2a5415bb2bf2",
+      "content_hash": "f82d43433af01163fc54d0f05269e8a9daa10bcca61ce82e75829c867378b6a6",
       "evidence_status": "validated",
       "file": "2026-05-06-promptmink-famous-chollima-ai-agent-supply-chain.md",
       "posts_index_hash": "f73f94e1b0b5106fa764bd29143c59ad6eca2ac166155619305d75fad286b8e1",
@@ -1317,7 +1314,7 @@
         "https://thehackernews.com/2026/04/new-wave-of-dprk-attacks-uses-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:55+00:00",
+      "validated_at": "2026-06-29T13:10:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1340,10 +1337,10 @@
       "warnings": []
     },
     "2026-05-08-claude-code-autonomous-attack-mexico-water": {
-      "content_hash": "e20069d75d8c25fccf0a1a7b92aeb18e9bbb2c58a657f8b685b99f6efa585b06",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "bb9c806bcbf953dcfb576c7bda07d1b3e0c98e47384a3491b060eb4315940f06",
+      "evidence_status": "validated",
       "file": "2026-05-08-claude-code-autonomous-attack-mexico-water.md",
-      "posts_index_hash": "8f7128fca5114b11dce4d156ed9fc9c3a5ffb22867beb29b11053b0700052d2d",
+      "posts_index_hash": "51e7a9864489abb6baa260697426c1cde55f941b367ef71b12ba98dfd48ec3a1",
       "report_id": "2026-05-08-claude-code-autonomous-attack-mexico-water",
       "review_required": [],
       "source_urls": [
@@ -1352,25 +1349,23 @@
         "https://www.infosecurity-magazine.com/news/llm-critical-infrastructure/",
         "https://www.techradar.com/pro/security/hackers-use-claude-and-chatgpt-in-a-significant-evolution-in-offensive-capability-to-breach-government-agencies-leak-hundreds-of-millions-of-citizen-records"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-29T13:09:59+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-08-million-exposed-ai-services-security-assessment": {
-      "content_hash": "23f250b4ce8a0e61b9e4cb6d7607c68a6084690001e765978f377e7173fd391b",
+      "content_hash": "bb81b904b34ea26fb1faa0d113c4a31f218102c2e7b86fcedd50620993440463",
       "evidence_status": "validated",
       "file": "2026-05-08-million-exposed-ai-services-security-assessment.md",
-      "posts_index_hash": "5de6e6e9d6fc15421bc622bca11363b0f44e814d7041c1549003b9ef7c6383cc",
+      "posts_index_hash": "7afecc3195da98e5b00b689d5fbc7d9d0fec48a6ddb8e36ea040b20d43ecad1b",
       "report_id": "2026-05-08-million-exposed-ai-services-security-assessment",
       "review_required": [],
       "source_urls": [
         "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-19T08:33:21+00:00",
+      "validated_at": "2026-06-29T13:09:56+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1430,8 +1425,8 @@
       ]
     },
     "2026-05-10-context-ai-vercel-oauth-supply-chain-breach": {
-      "content_hash": "6a6d6912b775085fa54ba5e80e362d2ab60a8962007d46abdac4e9294c883042",
-      "evidence_status": "baseline_audit_no_network",
+      "content_hash": "930893529863090bec95b38c378b43621190bb23fffc42c2de7e63544ae00020",
+      "evidence_status": "validated",
       "file": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach.md",
       "posts_index_hash": "a318255695f55c866f20a12d9acb0f0662b44ef372c279354a8d16414597ac87",
       "report_id": "2026-05-10-context-ai-vercel-oauth-supply-chain-breach",
@@ -1443,12 +1438,10 @@
         "https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html",
         "https://techcrunch.com/2026/04/20/app-host-vercel-confirms-security-incident-says-customer-data-was-stolen-via-breach-at-context-ai/"
       ],
-      "structure_status": "baseline_audit",
-      "validated_at": "2026-05-12T17:27:01+00:00",
+      "structure_status": "validated",
+      "validated_at": "2026-06-29T13:09:56+00:00",
       "validation_version": "1.0.0",
-      "warnings": [
-        "baseline audit entry; source URLs were not network checked"
-      ]
+      "warnings": []
     },
     "2026-05-10-fake-claude-pro-beagle-backdoor-donutloader": {
       "content_hash": "bbb4e6fd7e6f3857e47104d9df4be0dbe6948e7f042f835ebe1972d08e211d9a",
@@ -2353,20 +2346,17 @@
       "warnings": []
     },
     "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation": {
-      "content_hash": "a951ba12b61a2d7a51ad8ae06b4a30e7f570fd95c441842c4f8768eab2b64cf3",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "042adafd2ffc48dc769df871b5515957ebdd8c0a63e4b0a0234a7436baabc054",
+      "evidence_status": "validated",
       "file": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.md",
-      "posts_index_hash": "7d67df90451e2631314d84b9d01370e2210466adafc7288f5004b2b6f66e122d",
+      "posts_index_hash": "0cf8737e021245e2fd68b3c38a5387f184e4bcb33f4fdb1f984d5d301c0cca27",
       "report_id": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
-        "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
-        "https://www.sysdig.com/blog/marimo-cve-2026-39987"
+        "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-19T08:33:07+00:00",
+      "validated_at": "2026-06-29T13:12:39+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2500,6 +2490,21 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-06-10T07:11:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026": {
+      "content_hash": "54db1474937b58f7ab62c316d2a6478568f9cf2437059b886c2f8ea23462cdb4",
+      "evidence_status": "validated",
+      "file": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.md",
+      "posts_index_hash": "e96128768937e0113d6cf5fade4062f29ccdceb62bdb7bede9aaf1cdf548facc",
+      "report_id": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://pluto.security/blog/unauthenticated-remote-code-execution-in-huggingface-transformers-via-config-injection/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-29T13:14:03+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },

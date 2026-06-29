@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-26",
+  "last_updated": "2026-06-29",
   "iocs": [
     {
       "value": "39.107.60.51",
@@ -1433,15 +1433,6 @@
       "status": "active"
     },
     {
-      "value": "darkgpt.bot",
-      "type": "domain",
-      "context": "DarkGPT variant distribution",
-      "first_seen": "2024-03-10",
-      "source": "OSINT",
-      "campaign": "malicious_llm_tools",
-      "status": "active"
-    },
-    {
       "value": "pypi.org/project/litellm-proxy-server",
       "type": "url_path",
       "context": "TeamPCP malicious LiteLLM impersonation package on PyPI",
@@ -1847,9 +1838,9 @@
       "status": "active"
     },
     {
-      "value": "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
-      "type": "url_path",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies",
+      "value": "ipfs-url-validator.vercel.app",
+      "type": "domain",
+      "context": "PromptMink early variant exfiltration endpoint reported in ReversingLabs coverage of North Korean supply chain abuse of AI coding agents",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -1919,9 +1910,9 @@
       "status": "active"
     },
     {
-      "value": "beta.context.ai (no longer accessible as of April 20, 2026)",
+      "value": "beta.context.ai",
       "type": "domain",
-      "context": "Context.ai OAuth Compromise Pivots to Vercel via Lumma Stealer and Overpermissioned Google Workspace Integration",
+      "context": "Context.ai OAuth compromise infrastructure; no longer accessible as of April 20, 2026",
       "first_seen": "2026-05-10",
       "source": "OX Security",
       "campaign": "context-ai-vercel-oauth-supply-chain-breach",

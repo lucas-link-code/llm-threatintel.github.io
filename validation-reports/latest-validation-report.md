@@ -1,52 +1,17 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-06-29T08:13:37+00:00`
-- Commit SHA: `b8b05d0c4946197ddf9d9dab05289aa1bb92210c`
+- Run time UTC: `2026-06-29T13:14:03+00:00`
+- Commit SHA: `2c0a410747fb`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
-- Warnings: `9`
-- Review required: `1`
-- Reports checked: `2`
-- Reports skipped: `155`
+- Warnings: `0`
+- Review required: `0`
+- Reports checked: `1`
+- Reports skipped: `156`
 - Reports newly validated: `1`
-- IOC duplicates found: `1`
-- Source URLs checked: `3`
+- IOC duplicates found: `0`
+- Source URLs checked: `1`
 
 No files were removed or destructively modified.
-
-## Findings
-
-- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation`: post excerpt is long (958 characters)
-- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-05-08-million-exposed-ai-services-security-assessment`: post excerpt is long (1019 characters)
-- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-05-08-claude-code-autonomous-attack-mexico-water`: post excerpt is long (1215 characters)
-- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft`: post excerpt is long (984 characters)
-- **WARN** `post-excerpt-long` `data/posts-index.json` `2026-04-05-mcp-security-crisis-30-cves-437k-downloads`: post excerpt is long (976 characters)
-- **WARN** `ioc-weak-source` `data/iocs.json` `159`: IOC has weak source label: OSINT
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `205`: legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)
-- **WARN** `ioc-legacy-format-exception` `data/iocs.json` `213`: legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)
-- **WARN** `ioc-duplicate-review` `data/iocs.json`: duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 4 times
-- **REVIEW** `evidence-source-review-required` `posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.md` `2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026`: no source URL was accessible; manual review or alternate evidence is required
-
-## Duplicate IOC Review
-
-### `huggingface.co/open-oss/privacy-filter`
-- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `open-oss-privacy-filter-huggingface-sefirah-typosquat` source `HiddenLayer`
-- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `openclawhugging-face-supply-chain-poisoning-malicious-skills-models` source `TechNext Web`
-- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `hugging-face-fake-openai-privacy-filter-infostealer` source `HiddenLayer`
-- `huggingface.co/Open-OSS/privacy-filter` type `url_path` campaign `fake-openai-privacy-filter-hugging-face-malware` source `HiddenLayer`
-
-## Human Review Queue
-
-```text
-Report: 2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

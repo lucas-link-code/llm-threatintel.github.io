@@ -68,13 +68,33 @@
   "url_timeout_seconds": 10,
   "url_redirect_limit": 5,
   "allow_url_path_scheme": true,
-    "legacy_ioc_format_exceptions": {
-    "domain": [
-      "beta.context.ai (no longer accessible as of April 20, 2026)"
-    ],
-    "package": [],
-    "url_path": [
-      "ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)"
+  "legacy_ioc_format_exceptions": {},
+  "reviewed_duplicate_iocs": {
+    "huggingface.co/open-oss/privacy-filter": [
+      {
+        "value": "huggingface.co/Open-OSS/privacy-filter",
+        "type": "url_path",
+        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
+        "source": "HiddenLayer"
+      },
+      {
+        "value": "huggingface.co/Open-OSS/privacy-filter",
+        "type": "url_path",
+        "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
+        "source": "TechNext Web"
+      },
+      {
+        "value": "huggingface.co/Open-OSS/privacy-filter",
+        "type": "url_path",
+        "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
+        "source": "HiddenLayer"
+      },
+      {
+        "value": "huggingface.co/Open-OSS/privacy-filter",
+        "type": "url_path",
+        "campaign": "fake-openai-privacy-filter-hugging-face-malware",
+        "source": "HiddenLayer"
+      }
     ]
   },
   "legitimate_platform_iocs_deny_list": {

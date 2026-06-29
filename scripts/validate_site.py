@@ -154,6 +154,7 @@ DEFAULT_POLICY = {
     "url_redirect_limit": 5,
     "allow_url_path_scheme": True,
     "legacy_ioc_format_exceptions": {},
+    "reviewed_duplicate_iocs": {},
     "legitimate_platform_iocs_deny_list": {"domains": [], "url_paths": []},
     "legitimate_platform_ioc_overrides": [],
 }
@@ -916,6 +917,34 @@ class Validator:
         elif ioc_type == "hash" and len(value) not in {32, 40, 64}:
             self.fail("ioc-hash-format", f"generic hash IOC must be 32, 40, or 64 hex chars: {value}", file, record)
 
+    def reviewed_duplicate_ioc_group(self, normalized: str, records: list[dict[str, str]]) -> bool:
+        reviewed = self.policy.get("reviewed_duplicate_iocs", {})
+        if not isinstance(reviewed, dict):
+            return False
+        expected = reviewed.get(normalized)
+        if not isinstance(expected, list):
+            return False
+
+        def canonical(items: list[dict[str, Any]]) -> list[dict[str, str]]:
+            normalized_items = []
+            for item in items:
+                if not isinstance(item, dict):
+                    return []
+                normalized_items.append(
+                    {
+                        "value": str(item.get("value", "")),
+                        "type": str(item.get("type", "")),
+                        "campaign": str(item.get("campaign", "")),
+                        "source": str(item.get("source", "")),
+                    }
+                )
+            return sorted(
+                normalized_items,
+                key=lambda item: (item["type"], item["value"], item["campaign"], item["source"]),
+            )
+
+        return canonical(records) == canonical(expected)
+
     def validate_duplicate_iocs(self) -> None:
         values: dict[str, list[dict[str, str]]] = defaultdict(list)
         for ioc in self.parsed.get("iocs", []):
@@ -937,6 +966,8 @@ class Validator:
 
         for normalized, records in sorted(values.items()):
             if len(records) < 2:
+                continue
+            if self.reviewed_duplicate_ioc_group(normalized, records):
                 continue
             types = {record["type"] for record in records}
             self.duplicate_iocs[normalized] = records

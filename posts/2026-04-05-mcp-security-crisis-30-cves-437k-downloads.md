@@ -62,4 +62,3 @@ Audit all MCP server installations and validate tool descriptions against canoni
 - [heyuan110.com] MCP Security 2026: 30 CVEs in 60 Days — What Went Wrong (2026-03-10) — https://www.heyuan110.com/posts/ai/2026-03-10-mcp-security-2026/
 - [Unit42 / Palo Alto Networks] New Prompt Injection Attack Vectors Through MCP Sampling (2025-12-05) — https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/
 - [DEV Community] MCP Connector Poisoning: How Compromised npm Packages Hijack Your AI Agent (2026-04-04) — https://dev.to/toniantunovic/mcp-connector-poisoning-how-compromised-npm-packages-hijack-your-ai-agent-3ha0
-- [Medium / InstaTunnel] Securing MCP Servers: The 2026 Guide to AI Tool Tunneling (2026-03-01) — https://medium.com/@instatunnel/securing-mcp-servers-the-2026-guide-to-ai-tool-tunneling-aafa113b08db

@@ -382,7 +382,7 @@
         "llmjacking"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "CVE-2026-39987 refers to a critical pre-authenticated remote code execution vulnerability impacting all versions of Marimo prior to and including 0.20.4. It allows an unauthenticated attacker to execute arbitrary system commands. The security defect has since come under active exploitation, with threat actors using it to initiate manual reconnaissance against honeypot systems and attempt to harvest sensitive data. The latest activity documented by Sysdig sticks to the same pattern, the primary difference being that an LLM agent was used to drive the post-exploitation activity. The incident, per the cloud security firm, was recorded on May 10, 2026, with the attacker gathering credentials from the environment and then using the harvested AWS access key to perform API calls against AWS Secrets Manager and retrieve an SSH private key. This represents the first documented case of LLM agent-driven post-exploitation automation in a real-world attack.",
+      "excerpt": "Marimo CVE-2026-39987 enabled unauthenticated RCE through exposed notebook services. Sysdig observed attackers using an LLM agent after initial exploitation to enumerate the host, harvest AWS credentials, query Secrets Manager, and retrieve an SSH private key from the victim environment.",
       "file": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation.md"
     },
     {
@@ -1095,7 +1095,7 @@
         "shadow-ai"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "The AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software the researchers have investigated, with businesses moving fast to self-host LLM infrastructure at the expense of security, and in the wake of the ClawdBot fiasco the Intruder team investigated how bad the security of AI infrastructure actually is, finding the AI infrastructure scanned was more vulnerable, exposed, and misconfigured than any other software they've ever investigated. Researchers discovered exposed instances of agent management platforms, including n8n and Flowise, with some instances that users clearly thought were internal exposed to the internet without authentication, including one egregious example where a Flowise instance exposed the entire business logic of an LLM chatbot service with its credential list, hardened enough not to reveal stored values to unauthenticated visitors but allowing attackers to still use tools connected to those credentials to exfiltrate sensitive information.",
+      "excerpt": "Intruder found more than 1 million exposed AI services while assessing self-hosted LLM infrastructure after the ClawdBot incident. Exposed n8n and Flowise instances revealed unauthenticated workflows, business logic, and connected tools that could be abused to exfiltrate data.",
       "file": "2026-05-08-million-exposed-ai-services-security-assessment.md"
     },
     {
@@ -1108,7 +1108,7 @@
         "malware"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Dragos published a report describing how threat actors used Claude AI in an attack on a water and drainage utility in Mexico as part of a broader campaign targeting multiple Mexican government organizations between December 2025 and February 2026, with Anthropic's Claude and OpenAI's GPT models serving as an AI-assisted operational engine where Claude served as the primary technical workhorse, handling intrusion planning, tool development, and problem-solving, while GPT handled victim data processing and structured reporting. The threat actor—assessed with high confidence as a Chinese state-sponsored group—manipulated Claude Code tool into attempting infiltration into roughly thirty global targets and succeeded in a small number of cases, believed to be the first documented case of a large-scale cyberattack executed without substantial human intervention, with barriers to performing sophisticated cyberattacks dropping substantially enabling threat actors to now use agentic AI systems for extended periods to do the work of entire teams of experienced hackers: analyzing target systems, producing exploit code, and scanning vast datasets of stolen information more efficiently than any human operator.",
+      "excerpt": "Dragos reported an AI-assisted campaign against a Mexican water utility and government organizations between December 2025 and February 2026. Claude Code handled intrusion planning, tooling, and target work, while GPT supported victim-data processing and reporting.",
       "file": "2026-05-08-claude-code-autonomous-attack-mexico-water.md"
     },
     {
@@ -1399,7 +1399,7 @@
         "malware"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "The CanisterWorm campaign, first reported on March 20, 2026, affected 141 packages between March 20 and 23, according to Socket's research. The attack wave affecting Namastex, which Socket now tracks as \"CanisterSprawl,\" has affected a total of 22 packages since April 8. Namastex's Automagik Genie is a command line interface (CLI) for using AI coding agents to create pull requests and pgserve is an embedded PostgreSQL server; the packages had about 8,000 weekly downloads combined as of April 21, 2026. The malicious postinstall script harvests secrets from the victim's environment by searching environment variables for names associated with tokens, credentials, cloud providers, CI/CD systems, registries, LLM platforms and other secrets. It also targets sensitive local system files including .npmrc, .git-credentials, .netrc, .env files, database password files, and files storing SSH keys and cloud credentials, as well as artifacts from browsers and cryptocurrency wallets.",
+      "excerpt": "Socket linked CanisterSprawl to TeamPCP's earlier CanisterWorm activity, with 22 Namastex packages compromised from April 8, 2026. Malicious postinstall scripts harvested environment secrets, registry credentials, SSH keys, cloud credentials, browser artifacts, and crypto wallet data.",
       "file": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft.md"
     },
     {
@@ -1812,7 +1812,7 @@
         "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "30 CVEs. 60 days. 437,000 compromised downloads. The Model Context Protocol went from \"promising open standard\" to \"active threat surface\" faster than anyone predicted. Between January and February 2026, security researchers filed over 30 CVEs targeting MCP servers, clients, and infrastructure. The vulnerabilities ranged from trivial path traversals to a CVSS 9.6 remote code execution flaw in a package downloaded nearly half a million times. The axios npm supply chain attack of March 2026 deployed a RAT through AI coding agents autonomously running npm install. On March 31, 2026, the axios npm package, one of the most-downloaded JavaScript libraries in existence with over 100 million weekly installs, was compromised via a hijacked maintainer account. Two malicious versions injected a hidden dependency that silently deployed a cross-platform Remote Access Trojan on macOS, Windows, and Linux. Coding agents do not wait for human approval before running npm install.",
+      "excerpt": "MCP security debt escalated quickly in early 2026, with 30+ CVEs across servers, clients, and infrastructure plus trojanized npm packages targeting AI agents. The report ties protocol weaknesses, connector poisoning, and the axios/WAVESHAPER supply-chain attack to agentic development risk.",
       "file": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads.md"
     },
     {

@@ -1,150 +1,28 @@
 {
-  "commit_sha": "b8b05d0c4946197ddf9d9dab05289aa1bb92210c",
-  "duplicate_iocs": {
-    "huggingface.co/open-oss/privacy-filter": [
-      {
-        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      },
-      {
-        "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-        "source": "TechNext Web",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      },
-      {
-        "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      },
-      {
-        "campaign": "fake-openai-privacy-filter-hugging-face-malware",
-        "source": "HiddenLayer",
-        "type": "url_path",
-        "value": "huggingface.co/Open-OSS/privacy-filter"
-      }
-    ]
-  },
-  "generated_at_utc": "2026-06-29T08:13:37+00:00",
+  "commit_sha": "2c0a410747fb",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-06-29T13:14:03+00:00",
   "hard_failures": 0,
-  "issues": [
-    {
-      "code": "post-excerpt-long",
-      "file": "data/posts-index.json",
-      "message": "post excerpt is long (958 characters)",
-      "recommendation": "",
-      "record_id": "2026-06-01-marimo-cve-2026-39987-llm-agent-post-exploitation",
-      "severity": "warn"
-    },
-    {
-      "code": "post-excerpt-long",
-      "file": "data/posts-index.json",
-      "message": "post excerpt is long (1019 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-08-million-exposed-ai-services-security-assessment",
-      "severity": "warn"
-    },
-    {
-      "code": "post-excerpt-long",
-      "file": "data/posts-index.json",
-      "message": "post excerpt is long (1215 characters)",
-      "recommendation": "",
-      "record_id": "2026-05-08-claude-code-autonomous-attack-mexico-water",
-      "severity": "warn"
-    },
-    {
-      "code": "post-excerpt-long",
-      "file": "data/posts-index.json",
-      "message": "post excerpt is long (984 characters)",
-      "recommendation": "",
-      "record_id": "2026-04-24-canistersprawl-teampcp-npm-lvm-platform-credential-theft",
-      "severity": "warn"
-    },
-    {
-      "code": "post-excerpt-long",
-      "file": "data/posts-index.json",
-      "message": "post excerpt is long (976 characters)",
-      "recommendation": "",
-      "record_id": "2026-04-05-mcp-security-crisis-30-cves-437k-downloads",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-weak-source",
-      "file": "data/iocs.json",
-      "message": "IOC has weak source label: OSINT",
-      "recommendation": "",
-      "record_id": "159",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-legacy-format-exception",
-      "file": "data/iocs.json",
-      "message": "legacy IOC format exception retained without modifying data: ipfs-url-validator.vercel.app (exfiltration endpoint for early variants)",
-      "recommendation": "",
-      "record_id": "205",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-legacy-format-exception",
-      "file": "data/iocs.json",
-      "message": "legacy IOC format exception retained without modifying data: beta.context.ai (no longer accessible as of April 20, 2026)",
-      "recommendation": "",
-      "record_id": "213",
-      "severity": "warn"
-    },
-    {
-      "code": "ioc-duplicate-review",
-      "file": "data/iocs.json",
-      "message": "duplicate IOC review required: huggingface.co/open-oss/privacy-filter appears 4 times",
-      "recommendation": "",
-      "record_id": "",
-      "severity": "warn"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026",
-      "severity": "review"
-    }
-  ],
+  "issues": [],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
+  "reports_checked": 1,
   "reports_newly_validated": 1,
-  "reports_skipped": 155,
-  "review_required": 1,
-  "source_urls_checked": 3,
+  "reports_skipped": 156,
+  "review_required": 0,
+  "source_urls_checked": 1,
   "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-llmjacking-evolved-offensive-agentic-20260/",
+      "final_url": "https://pluto.security/blog/unauthenticated-remote-code-execution-in-huggingface-transformers-via-config-injection/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-llmjacking-evolved-offensive-agentic-20260/"
-    },
-    {
-      "error": "",
-      "final_url": "https://beyondscale.tech/blog/llmjacking-defense-guide",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://beyondscale.tech/blog/llmjacking-defense-guide"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
+      "url": "https://pluto.security/blog/unauthenticated-remote-code-execution-in-huggingface-transformers-via-config-injection/"
     }
   ],
   "validation_version": "1.0.0",
-  "warnings": 9
+  "warnings": 0
 }

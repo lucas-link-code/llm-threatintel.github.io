@@ -42,13 +42,12 @@ Currently tracked malicious LLM tools include WormGPT (v1 through v3), FraudGPT,
 wormgpt.ai
 fraudgpt.com
 ghostgpt.chat
-darkgpt.bot
 ```
 
 ### Splunk Format
 
 ```
-"wormgpt.ai" OR "fraudgpt.com" OR "ghostgpt.chat" OR "darkgpt.bot"
+"wormgpt.ai" OR "fraudgpt.com" OR "ghostgpt.chat"
 ```
 
 ## Detection Recommendations
@@ -57,7 +56,6 @@ Monitor for access to known malicious LLM service domains and Telegram bot APIs 
 
 ## References
 
-- SlashNext: WormGPT Analysis (2023)
-- Netenrich: FraudGPT Investigation (2023)
-- Abnormal Security: GhostGPT Report (2024)
-- Multiple dark web forum monitoring reports
+- WIRED: Cybercriminals Are Selling AI Tools for Scams on the Dark Web (2023) — https://www.wired.com/story/chatgpt-scams-fraudgpt-wormgpt-crime/
+- Netenrich: FraudGPT, The Villain Avatar of ChatGPT (2023) — https://netenrich.com/blog/fraudgpt-the-villain-avatar-of-chatgpt
+- ITPro: The Rise of GhostGPT: Why Cybercriminals Are Turning to Generative AI (2025) — https://www.itpro.com/security/cyber-crime/the-rise-of-ghostgpt-why-cybercriminals-are-turning-to-generative-ai
