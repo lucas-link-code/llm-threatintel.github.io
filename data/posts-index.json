@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026",
+      "title": "LLMjacking Evolved: Autonomous AI Agents Weaponized for Credential Validation and Infrastructure Reconnaissance in June 2026 Campaign",
+      "date": "2026-06-29",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A June 2026 finding by Sysdig signals LLMjacking crossing a strategic threshold: attackers exploited remote code execution vulnerabilities in outdated web frameworks to obtain cloud credentials, then validated and triaged those credentials against 30+ LLM providers before listing access for resale, representing a departure from ad hoc opportunism toward systematic supply chain criminalization and suggesting LLMjacking may be evolving beyond infrastructure-abuse toward AI as an active component of the adversary's toolkit.",
+      "file": "2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026.md"
+    },
+    {
       "id": "2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026",
       "title": "Trend Micro ClickFix Malvertising: Claude.ai Shared Chat Weaponization Across 6 Attack Waves (April-June 2026)",
       "date": "2026-06-26",

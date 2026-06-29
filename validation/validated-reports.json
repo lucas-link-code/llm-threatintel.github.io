@@ -2809,6 +2809,22 @@
       "validated_at": "2026-06-26T06:56:26+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026": {
+      "content_hash": "ad5fbf967e45c6d25a1ebdf014a7ee7c6d4a92cf2338f260f995f8310e20df06",
+      "evidence_status": "validated",
+      "file": "2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026.md",
+      "posts_index_hash": "9faf1046526e0d1d2e173b19e458bb526985b58571c377c6ea3b04a17aaab11e",
+      "report_id": "2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-llmjacking-evolved-offensive-agentic-20260/",
+        "https://beyondscale.tech/blog/llmjacking-defense-guide"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-06-29T08:13:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

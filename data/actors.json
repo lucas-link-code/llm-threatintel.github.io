@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-26",
+  "last_updated": "2026-06-29",
   "entries": [
     {
       "id": "vapt-framework",
@@ -2789,6 +2789,27 @@
       ],
       "description": "Organized cybercriminal group conducting industrialized ClickFix malvertising campaigns that evolved from GitLab Pages hosting to weaponizing legitimate AI platform infrastructure. Group demonstrates keyword-testing capability across multiple AI brands (Claude, ChatGPT, Perplexity) and geographic targeting precision. Campaign infrastructure rotation every 1-2 weeks suggests professional operational security and resource availability.",
       "attribution": "Unknown; no nation-state or APT attribution"
+    },
+    {
+      "id": "unnamed-organized-cybercrime-group",
+      "names": [
+        "Unnamed organized cybercrime group",
+        "Operation LLM Credential Triage team (attributed)"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Credential theft via framework RCE",
+        "Marketplace resale infrastructure"
+      ],
+      "ttps": [
+        "T1078 - Valid Accounts",
+        "T1210 - Exploitation of Remote Services",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Systematized LLMjacking operation conducting at-scale credential validation and triage against multiple LLM providers. Transition from compute theft to agentic AI reconnaissance (via MCP) suggests technical sophistication and intent to establish persistent post-compromise infrastructure rather than temporary resource abuse.",
+      "attribution": "Unknown; organized cybercrime, not APT"
     }
   ]
 }
