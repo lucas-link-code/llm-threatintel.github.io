@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-29",
+  "last_updated": "2026-06-30",
   "entries": [
     {
       "id": "vapt-framework",
@@ -655,7 +655,9 @@
         "Miasma Supply Chain Campaign",
         "Mini Shai-Hulud",
         "Shai-Hulud",
-        "TeamPCP"
+        "TeamPCP",
+        "Miasma threat actor",
+        "UNC6780"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
@@ -666,7 +668,9 @@
         "npm (@redhat-cloud-services scope)",
         "PyPI",
         "GitHub (Azure and RedHatInsights organizations)",
-        "GitHub Actions workflows"
+        "GitHub Actions workflows",
+        "npm packages",
+        "GitHub Actions"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -681,7 +685,10 @@
         "T1555 - Credentials in Browser, Cookie Store",
         "T1552.007 - Container Configuration Discovery (Docker configs, Kubernetes manifests)",
         "T1046 - Network Service Scanning (cloud metadata enumeration)",
-        "T1550.001 - Use Alternate Authentication Material (stolen OIDC tokens for republication)"
+        "T1550.001 - Use Alternate Authentication Material (stolen OIDC tokens for republication)",
+        "T1195.001 - Supply Chain Compromise",
+        "T1555.005 - Credential Harvesting",
+        "T1021 - Lateral Movement"
       ],
       "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, and container platforms. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration.",
       "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase."
@@ -2810,6 +2817,45 @@
       ],
       "description": "Systematized LLMjacking operation conducting at-scale credential validation and triage against multiple LLM providers. Transition from compute theft to agentic AI reconnaissance (via MCP) suggests technical sophistication and intent to establish persistent post-compromise infrastructure rather than temporary resource abuse.",
       "attribution": "Unknown; organized cybercrime, not APT"
+    },
+    {
+      "id": "systemic-pattern-no-attributed-actor",
+      "names": [
+        "Systemic pattern (no attributed actor)",
+        "Cordyceps"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "GitHub Actions workflows"
+      ],
+      "ttps": [
+        "T1554 - CI/CD Pipeline Manipulation",
+        "T1059.007 - Code Injection",
+        "T1548 - Privilege Escalation"
+      ],
+      "description": "Cordyceps is a structural class of CI/CD workflow vulnerabilities, not a malware family or specific campaign. The root cause lies in weak trust boundary enforcement between untrusted external input (PR comments, branch names, artifact metadata) and high-privilege GitHub Actions execution contexts. GitHub's pull_request_target event fires with maintainer-level permissions but reads untrusted PR data; if that data reaches shell commands or environment variable assignments without sanitization, it becomes a privilege escalation path. AI coding agents, generating CI/CD YAML at scale without security review, propagate these patterns exponentially across millions of repos.",
+      "attribution": "Pattern identification only; no specific nation-state, APT, or cybercriminal attribution. Amplified by AI coding agents (Claude Code, GitHub Copilot, Cursor) auto-generating YAML workflows without security hardening."
+    },
+    {
+      "id": "unknown-attacker-sysdig-case-study-only",
+      "names": [
+        "Unknown attacker (Sysdig case study only)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Direct exploitation via HTTP Host header manipulation"
+      ],
+      "ttps": [
+        "T1556 - Authentication Bypass",
+        "T1548 - Privilege Escalation",
+        "T1649 - LLM Agent Autonomy"
+      ],
+      "description": "No specific actor attribution; vulnerability is architectural. Sysdig documented first real-world exploitation in which an autonomous LLM agent identified the BadHost flaw, generated exploit code, escalated privileges, and exfiltrated AWS database without human intervention. Demonstrates capability of agentic AI systems to weaponize infrastructure vulnerabilities at machine speed.",
+      "attribution": "Unattributed; Sysdig case study documents single incident with autonomous LLM agent performing post-compromise actions."
     }
   ]
 }

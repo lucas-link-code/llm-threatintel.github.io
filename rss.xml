@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 29 Jun 2026 13:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 06:57:43 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)</title>
+      <link>https://llm-threatintel.com/posts/2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.html</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-48710 (BadHost) stems from how Starlette constructs request URLs, with the framework taking the HTTP Host header — freely manipulable by an attacker — and concatenating it with the request path without any prior validation, resulting in unauthenticated manipulation of request-processing logic. A host-header injection flaw in Starlette — the ASGI core behind FastAPI and most of Python's AI serving stack — lets unauthenticated attackers bypass path-based authentication middleware without a single credential, affecting all Starlette versions before 1.0.1, with the blast radius including vLLM, LiteLLM, MCP servers, and thousands of AI agent backends. Security firm Sysdig documented the first live cyberattack in which an LLM agent autonomously performed post-exploitation actions -- including exfiltrating an AWS database -- in under an hour.</description>
+    </item>    <item>
+      <title>Cordyceps: CI/CD Workflow Vulnerability Pattern Exposes 300+ Open-Source Repositories to Attacker-Controlled Code Execution (June 23, 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.html</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Novee's research team discovered Cordyceps, a critical supply chain flaw hiding in plain sight, impacting code repositories at thousands of organizations, including Microsoft, Google, Apache, and Cloudflare, identifying a systemic class of exploitable CI/CD vulnerabilities across the open-source supply chain – command injection, broken authentication logic, artifact poisoning chains, and privilege escalation in GitHub Actions workflows, with the team scanning roughly 30,000 high-impact repositories, validating hundreds of fully exploitable attack chains, and receiving confirmation of fixes at dozens of organizations. The issue can allow full attacker control of repositories at dozens of the largest organizations worldwide, including Microsoft, Google, Apache, and Cloudflare, with the flaw being exploitable by any unauthenticated user requiring no org membership or special privileges, where a free account is enough to forge approvals, push code, or steal credentials, and the penetration-testing company's scan of about 30,000 high-impact repositories revealing more than 300 to be fully exploitable, enabling attacker-controlled code execution, credential theft, and supply chain compromise.</description>
+    </item>    <item>
+      <title>Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+      <description>On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim's own GitHub token. The attack uses the same 'Phantom Gyp' toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.</description>
+    </item>    <item>
       <title>LLMjacking Evolved: Autonomous AI Agents Weaponized for Credential Validation and Infrastructure Reconnaissance in June 2026 Campaign</title>
       <link>https://llm-threatintel.com/posts/2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-07-chatgphish-prompt-injection-phishing-qr-code.html</guid>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
       <description>A browser-based prompt injection technique transforms any web page into a phishing delivery surface by exploiting ChatGPT's page summarization feature, rendering attacker-controlled links, fake security alerts, and QR codes directly inside the trusted ChatGPT interface. Researchers at Permiso disclosed the attack dubbed ChatGPhish, which builds on the same trust-transfer logic previously demonstrated against Microsoft Copilot. Permiso submitted the initial vulnerability report to OpenAI via Bugcrowd on April 29, 2026, and after follow-up communication on May 7, 2026, clarifying the broader phishing, QR-code, and passive tracking implications, the research was publicly published on May 29, 2026.</description>
-    </item>    <item>
-      <title>CVE-2026-48710 BadHost: LLM Agent Autonomous Database Exfiltration via Starlette Host Header Injection</title>
-      <link>https://llm-threatintel.com/posts/2026-06-07-cve-2026-48710-badhost-starlette-llm-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-07-cve-2026-48710-badhost-starlette-llm-rce.html</guid>
-      <pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Sysdig documented the first live cyberattack in which an LLM agent autonomously performed post-exploitation actions including exfiltrating an AWS database in under an hour, exploiting CVE-2026-48710, a critical authentication bypass in Starlette that affects millions of AI agents, FastAPI applications, vLLM deployments, LiteLLM instances, and every MCP server built on those frameworks. CVE-2026-48710, labeled "BadHost," is a host header injection vulnerability that allows unauthenticated remote attackers to bypass authentication by manipulating the HTTP Host header.</description>
-    </item>    <item>
-      <title>CVE-2026-4372: Hugging Face Transformers RCE via Malicious Config.json; 232 Million Downloads Pre-Patch Expose GPU-Accelerated AI Inference</title>
-      <link>https://llm-threatintel.com/posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-06-huggingface-transformers-cve-2026-4372-rce-june-2026.html</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-4372 affects multiple versions of Hugging Face Transformers when the optional kernels package is installed; although the package is not enabled by default, it is commonly used in GPU-accelerated inference environments and is often included through the transformers[all] installation option. Vulnerable Transformers versions were downloaded about 232 million times before a patch was released, creating supply chain risk for organizations using third-party AI models. Researchers at Pluto disclosed a remote code execution vulnerability that bypasses the library's built-in trust_remote_code=False security control; CVE-2026-4372 allows remote code execution through malicious Hugging Face model configurations, bypassing the library's trust_remote_code=False security control.</description>
-    </item>    <item>
-      <title>Autonomous LLM Worm Compromises 73.8% of Simulated Enterprise Network; University of Toronto Researchers Demonstrate Free Open-Weight Model Capability</title>
-      <link>https://llm-threatintel.com/posts/2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-06-autonomous-llm-agent-worm-network-compromise-june-2026.html</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Researchers at University of Toronto proved a free open-weight AI worm can compromise 73.8% of a simulated enterprise network. Published June 2 by researchers at CleverHans Lab—the cybersecurity research group at the University of Toronto led by Professor Nicolas Papernot—in collaboration with the Vector Institute and the University of Cambridge, the paper described a worm that does not operate from a fixed list of exploits. Cisco's State of AI Security 2026 report found that only 29 percent of organizations reported being prepared to secure agentic AI deployments, even as 83 percent planned to deploy them into business functions.</description>
     </item>
   </channel>
 </rss>

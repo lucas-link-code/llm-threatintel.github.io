@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-29",
+  "last_updated": "2026-06-30",
   "iocs": [
     {
       "value": "39.107.60.51",
@@ -2501,6 +2501,69 @@
       "first_seen": "2026-06-26",
       "source": "Trend Micro",
       "campaign": "trend-micro-claude-clickfix-malvertising-campaign-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised",
+      "type": "url_path",
+      "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)",
+      "first_seen": "2026-06-30",
+      "source": "StepSecurity",
+      "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm",
+      "type": "url_path",
+      "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)",
+      "first_seen": "2026-06-30",
+      "source": "StepSecurity",
+      "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@leo-sdk/sdk@varies",
+      "type": "package",
+      "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026) | All versions published 2026-06-24T23:04:55Z affected; high-traffic targets include leo-logger, leo-sdk, leo-aws, leo-config, leo-streams",
+      "first_seen": "2026-06-30",
+      "source": "StepSecurity",
+      "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@rstreams/core@varies",
+      "type": "package",
+      "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026) | RStreams ecosystem packages also targeted",
+      "first_seen": "2026-06-30",
+      "source": "StepSecurity",
+      "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://novee.security/blog/cordyceps/",
+      "type": "url_path",
+      "context": "Cordyceps: CI/CD Workflow Vulnerability Pattern Exposes 300+ Open-Source Repositories to Attacker-Controlled Code Execution (June 23, 2026)",
+      "first_seen": "2026-06-30",
+      "source": "Novee Security",
+      "campaign": "cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "status": "active"
+    },
+    {
+      "value": "https://badhost.org/",
+      "type": "url_path",
+      "context": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
+      "first_seen": "2026-06-30",
+      "source": "X41 D-Sec (via OSTIF)",
+      "campaign": "badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
+      "status": "active"
+    },
+    {
+      "value": "https://ostif.org/disclosing-the-badhost-vulnerability-in-starlette/",
+      "type": "url_path",
+      "context": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
+      "first_seen": "2026-06-30",
+      "source": "X41 D-Sec (via OSTIF)",
+      "campaign": "badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
       "status": "active"
     }
   ]

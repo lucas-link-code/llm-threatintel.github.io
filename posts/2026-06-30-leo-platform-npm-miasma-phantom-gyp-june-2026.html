@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026) | LLM ThreatIntel</title>
+  <meta name="description" content="On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim&#x27;s own GitHub token. The attack uses the same &#x27;Phantom Gyp&#x27; toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)">
+  <meta property="og:description" content="On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim&#x27;s own GitHub token. The attack uses the same &#x27;Phantom Gyp&#x27; toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)">
+  <meta property="article:published_time" content="2026-06-30T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-30T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)">
+  <meta name="twitter:description" content="On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim&#x27;s own GitHub token. The attack uses the same &#x27;Phantom Gyp&#x27; toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)",
+  "description": "On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim's own GitHub token. The attack uses the same 'Phantom Gyp' toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.",
+  "datePublished": "2026-06-30T00:00:00Z",
+  "dateModified": "2026-06-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-06-30</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)</h1>
+<p><strong>Date:</strong> 2026-06-30<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim&#x27;s own GitHub token. The attack uses the same &#x27;Phantom Gyp&#x27; toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Miasma/Shai-Hulud/Mini Shai-Hulud (Leo Platform Wave)</td></tr><tr><td>Attribution</td><td>Miasma threat actor (possibly TeamPCP/UNC6780 variant) (confidence: medium)</td></tr><tr><td>Target</td><td>Leo Platform/RStreams npm ecosystem developers; AI coding workflows; cloud-native and serverless workloads</td></tr><tr><td>Vector</td><td>Compromised npm maintainer account (czirker) abused to publish trojanized package versions</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-24T23:04:55Z</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>All 20 packages were published within a 3-second window at 2026-06-24T23:04:55Z, confirming a single automated operation against the Leo Platform maintainer accounts, with the payload being structurally identical to the Miasma campaign published June 3, 2026, sharing the same binding.gyp hook syntax, the same three-layer obfuscation chain, and the same Bun v1.3.13 download URL. The payload steals secrets from GitHub Actions runners, multi-cloud credential stores (AWS, GCP, Azure), package registries, HashiCorp Vault, Kubernetes, and password managers, then exfiltrates them via the victim&#x27;s own GitHub token to avoid external C2 domains. It also functions as a supply chain worm, publishing malicious versions of any package the victim has publish rights to by bypassing 2FA. Together these packages receive approximately 13,600 downloads per week. The malware targets developer workstations and CI runners, hunting for AWS, Azure, and Google Cloud credentials alongside GitHub personal access tokens, Kubernetes secrets, HashiCorp Vault credentials, 1Password data, npm publishing credentials, and other sensitive information.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Compromised npm maintainer account used to publish trojanized package versions</td></tr><tr><td>Credential Harvesting</td><td>T1555.005</td><td>Malicious payload extracts cloud credentials, tokens, and SSH keys from developer machines and CI runners</td></tr><tr><td>Lateral Movement via Environment Variables</td><td>T1021</td><td>Stolen GitHub Actions secrets and cloud credentials enable pivoting to cloud infrastructure</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_IOCs per StepSecurity, Microsoft Threat Intelligence, and Sonatype technical writeups; 20+ confirmed malicious versions; npm account &#x27;czirker&#x27; vector of compromise_</p>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised
+https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised&quot; OR &quot;https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">{&#x27;name&#x27;: &#x27;@leo-sdk/sdk&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;varies&#x27;, &#x27;note&#x27;: &#x27;All versions published 2026-06-24T23:04:55Z affected; high-traffic targets include leo-logger, leo-sdk, leo-aws, leo-config, leo-streams&#x27;}
+{&#x27;name&#x27;: &#x27;@rstreams/core&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;varies&#x27;, &#x27;note&#x27;: &#x27;RStreams ecosystem packages also targeted&#x27;}</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">npm registry
+GitHub Actions
+AWS
+GCP
+Azure
+Kubernetes</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor npm package installations for unexpected binding.gyp files in legitimate packages; implement 2FA enforcement and API token rotation for all npm maintainer accounts; audit GitHub Actions runner memory and environment variables for exfiltration indicators; scan for Bun runtime invocations outside normal development workflows; block or restrict node-gyp execution in CI/CD pipelines where not explicitly required; implement supply-chain attestation via SLSA provenance checks; use socket.dev or similar real-time malicious package feeds to detect poisoned releases within minutes of publication.</p>
+<h2>References</h2>
+<ul><li>[StepSecurity] Mass npm Supply Chain Attack: 20 Leo Platform Packages Compromised (2026-06-25) — https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised</li><li>[Sonatype] Miasma Returns: Leo Platform Compromise in npm (2026-06-25) — https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm</li><li>[Microsoft Threat Intelligence (X/Twitter)] Microsoft Threat Intelligence on Leo Platform/RStreams npm attack (2026-06-25) — https://x.com/MsftSecIntel/status/2070225815803949436</li><li>[The Register] Miasma campaign poisons 20-plus npm packages (2026-06-26) — https://www.theregister.com/security/2026/06/26/miasma-campaign-poisons-20-plus-npm-packages-hunts-for-developer-secrets/5262886</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

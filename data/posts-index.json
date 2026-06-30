@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
+      "title": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
+      "date": "2026-06-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-48710 (BadHost) stems from how Starlette constructs request URLs, with the framework taking the HTTP Host header — freely manipulable by an attacker — and concatenating it with the request path without any prior validation, resulting in unauthenticated manipulation of request-processing logic. A host-header injection flaw in Starlette — the ASGI core behind FastAPI and most of Python's AI serving stack — lets unauthenticated attackers bypass path-based authentication middleware without a single credential, affecting all Starlette versions before 1.0.1, with the blast radius including vLLM, LiteLLM, MCP servers, and thousands of AI agent backends. Security firm Sysdig documented the first live cyberattack in which an LLM agent autonomously performed post-exploitation actions -- including exfiltrating an AWS database -- in under an hour.",
+      "file": "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.md"
+    },
+    {
+      "id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "title": "Cordyceps: CI/CD Workflow Vulnerability Pattern Exposes 300+ Open-Source Repositories to Attacker-Controlled Code Execution (June 23, 2026)",
+      "date": "2026-06-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Novee's research team discovered Cordyceps, a critical supply chain flaw hiding in plain sight, impacting code repositories at thousands of organizations, including Microsoft, Google, Apache, and Cloudflare, identifying a systemic class of exploitable CI/CD vulnerabilities across the open-source supply chain – command injection, broken authentication logic, artifact poisoning chains, and privilege escalation in GitHub Actions workflows, with the team scanning roughly 30,000 high-impact repositories, validating hundreds of fully exploitable attack chains, and receiving confirmation of fixes at dozens of organizations. The issue can allow full attacker control of repositories at dozens of the largest organizations worldwide, including Microsoft, Google, Apache, and Cloudflare, with the flaw being exploitable by any unauthenticated user requiring no org membership or special privileges, where a free account is enough to forge approvals, push code, or steal credentials, and the penetration-testing company's scan of about 30,000 high-impact repositories revealing more than 300 to be fully exploitable, enabling attacker-controlled code execution, credential theft, and supply chain compromise.",
+      "file": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.md"
+    },
+    {
+      "id": "2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026",
+      "title": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)",
+      "date": "2026-06-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim's own GitHub token. The attack uses the same 'Phantom Gyp' toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.",
+      "file": "2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.md"
+    },
+    {
       "id": "2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026",
       "title": "LLMjacking Evolved: Autonomous AI Agents Weaponized for Credential Validation and Infrastructure Reconnaissance in June 2026 Campaign",
       "date": "2026-06-29",
