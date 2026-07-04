@@ -19,6 +19,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-07-03-bioshocking-ai-browser-guardrail-bypass.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://llm-threatintel.com/posts/2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.html</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>

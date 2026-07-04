@@ -71,8 +71,17 @@ AGGREGATE_DESC_RE = re.compile(
 PARENTHETICAL_PROSE_RE = re.compile(r"\([^)]{3,}\)")
 
 
+def safe_urlparse(value: str):
+    try:
+        return urllib.parse.urlparse(value if "://" in value else f"//{value}", scheme="")
+    except ValueError:
+        return None
+
+
 def normalize_url_host_path(value: str) -> tuple[str, str]:
-    parsed = urllib.parse.urlparse(value if "://" in value else f"//{value}", scheme="")
+    parsed = safe_urlparse(value)
+    if not parsed:
+        return "", "/"
     host = parsed.netloc.split("@")[-1].split(":")[0].lower() if parsed.netloc else ""
     path = parsed.path or "/"
     return host, path
@@ -866,7 +875,10 @@ class Validator:
         if any(ch.isspace() for ch in value):
             self.fail("ioc-url-path-format", f"url_path IOC must not contain spaces: {value}", file, record)
             return
-        parsed = urllib.parse.urlparse(value if "://" in value else f"//{value}", scheme="")
+        parsed = safe_urlparse(value)
+        if not parsed:
+            self.fail("ioc-url-path-format", f"url_path IOC is malformed: {value}", file, record)
+            return
         if parsed.scheme and parsed.scheme not in {"http", "https"}:
             self.fail("ioc-url-path-format", f"url_path IOC has unsupported scheme: {value}", file, record)
             return

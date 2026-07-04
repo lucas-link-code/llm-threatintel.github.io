@@ -487,6 +487,10 @@ def update_actors(finding):
 # Markers indicating prose rather than a real IOC. Entries containing any of
 # these are skipped at insertion time so the daily run cannot re-pollute the feed.
 PROSE_REJECT_MARKERS = (
+    "poc available",
+    "did not disclose",
+    "researchers did not",
+    "no specific",
     "(compromised)",
     "(multiple vendors)",
     "masquerading",
@@ -534,6 +538,13 @@ _POLICY_CACHE = None
 NO_IOCS_PUBLISHED_RE = re.compile(r"no specific ioc|no iocs published", re.I)
 
 
+def safe_urlparse(value: str):
+    try:
+        return urllib.parse.urlparse(value if '://' in value else f'//{value}', scheme='')
+    except ValueError:
+        return None
+
+
 def load_policy():
     global _POLICY_CACHE
     if _POLICY_CACHE is None:
@@ -545,8 +556,10 @@ def load_policy():
 
 
 def extract_url_host(value):
-    if '://' in value:
-        parsed = urllib.parse.urlparse(value)
+    parsed = safe_urlparse(value)
+    if not parsed:
+        return ''
+    if parsed.netloc:
         host = parsed.netloc.split('@')[-1].split(':')[0]
         return host.lower() if host else ''
     if '/' in value:
@@ -555,7 +568,9 @@ def extract_url_host(value):
 
 
 def normalize_url_host_path(value: str) -> tuple[str, str]:
-    parsed = urllib.parse.urlparse(value if '://' in value else f'//{value}', scheme='')
+    parsed = safe_urlparse(value)
+    if not parsed:
+        return '', '/'
     host = parsed.netloc.split('@')[-1].split(':')[0].lower() if parsed.netloc else ''
     path = parsed.path or '/'
     return host, path
@@ -722,6 +737,9 @@ def normalize_ioc_value(value, ioc_type):
     lowered = cleaned.lower()
     if any(marker in lowered for marker in PROSE_REJECT_MARKERS):
         return None, None, 'value contains narrative prose markers', None
+    if ioc_type in {'domain', 'url_path', 'ip', 'hash', 'sha256', 'sha1', 'md5'}:
+        if any(ch.isspace() for ch in cleaned):
+            return None, None, 'value contains whitespace; narrative prose is not an IOC', None
     if SPACE_COMPARATOR_RE.search(cleaned):
         return None, None, 'space-separated version comparators are not valid package IOCs', None
 
@@ -740,6 +758,8 @@ def normalize_ioc_value(value, ioc_type):
 
     if ioc_type == 'url_path':
         host = extract_url_host(cleaned)
+        if not host:
+            return None, None, 'malformed URL value', None
         if host and ref_domains:
             for ref_domain in ref_domains:
                 ref = ref_domain.lower()

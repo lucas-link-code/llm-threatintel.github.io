@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage | LLM ThreatIntel</title>
+  <meta name="description" content="SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage">
+  <meta property="og:description" content="SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage">
+  <meta property="article:published_time" content="2026-07-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-03T00:00:00Z">
+  <meta property="article:tag" content="apt">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage">
+  <meta name="twitter:description" content="SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage",
+  "description": "SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.",
+  "datePublished": "2026-07-03T00:00:00Z",
+  "dateModified": "2026-07-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html",
+  "keywords": [
+    "apt",
+    "malware",
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-03</span>
+      <span class="post-tag tag-apt">APT</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage</h1>
+<p><strong>Date:</strong> 2026-07-03<br><strong>Tags:</strong> apt, malware, prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>macOS.Gaslight</td></tr><tr><td>Attribution</td><td>DPRK-aligned macOS activity (SentinelLABS high confidence)</td></tr><tr><td>Target</td><td>macOS systems; analysts and automated triage pipelines using LLM-assisted malware analysis</td></tr><tr><td>Vector</td><td>Rust Mach-O implant with Telegram Bot API C2 and embedded prompt-injection content</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-05-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>macOS.Gaslight is an ad hoc signed Mach-O implant written in Rust. Apple XProtect identified the sample through the MACOS_BONZAI_COBUCH rule after a VirusTotal upload on May 22, 2026. SentinelLABS links the implant to DPRK-aligned macOS activity through the BONZAI signature family and related AIRPIPE/BONZAI samples.</p>
+<p>The implant uses Telegram Bot API <code>getUpdates</code> polling for C2. It treats Telegram <code>Conflict</code> responses as a single-instance lock, encrypts payloads with AES-GCM, and pins TLS through a custom trust anchor. The runtime configuration supplies Telegram room ID, bot token material, AES key, upload URLs, persistence names, payload paths, and platform-specific options. The binary self-redacts the Telegram bot token in its own runtime output, limiting token recovery from logs or crash artifacts.</p>
+<p>Operator functionality includes <code>help</code>, <code>id</code>, <code>shell</code>, <code>kill</code>, <code>upload</code>, and <code>stop</code>, with evidence of a possible <code>focus</code> command. The implant creates a power-management assertion to prevent system sleep and maintain long-running polling. Its embedded Python collection module targets Chrome, Brave, Firefox, Safari, Terminal histories, installed application inventory, running process lists, system profile output, and a raw copy of <code>login.keychain-db</code>, then stages collection as <code>temp/collected_data.zip</code> for Telegram upload.</p>
+<p>The LLM-specific feature is defensive evasion against analysis workflows, not a sandbox escape. The implant carries fabricated &quot;system&quot; messages designed to convince an LLM-assisted triage process that the session is invalid, unsafe, or must be aborted. This positions prompt injection as an anti-analysis layer for malware families expected to be reviewed by AI-assisted analyst tooling.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Command and Scripting Interpreter: Unix Shell</td><td>T1059.004</td><td>Interactive shell command execution through the implant</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>Embedded Python collection module executed by the implant</td></tr><tr><td>Create or Modify System Process: Launch Agent</td><td>T1543.001</td><td>Runtime config includes macOS persistence fields</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Browser data, Terminal histories, system profile, process list, and application inventory collection</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>Collection includes raw <code>login.keychain-db</code> copy</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>Telegram Bot API C2 over HTTPS</td></tr><tr><td>Encrypted Channel</td><td>T1573</td><td>AES-GCM payload encryption and pinned TLS</td></tr><tr><td>Obfuscated Files or Information</td><td>T1027</td><td>Embedded prompt-injection content attempts to mislead LLM-assisted analysis</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No specific malicious domains published. C2 uses Telegram Bot API infrastructure with operator-supplied bot configuration._</p>
+<h3>Full URL Paths</h3>
+<p>_No specific malicious URL path IOCs published._</p>
+<h3>Splunk Format</h3>
+<p>_No domain or URL IOCs available for Splunk query_</p>
+<h3>File Hashes</h3>
+<p>SHA256<br><pre><code class="language-">6328567511d88fdc2ae0939c5ef17b7a63d2a833881900de018a4f12f4982525
+77b4fd46994992f0e57302cfe76ed23c0d90101381d2b89fc2ddf5c4536e77ca
+baabf249c77bc54c54ab0e66e15af798bd28aa5b4683554456a8b73ab8741239
+b3c56d689414343589f38394d19ba2fe9a518133281200faa0556ba4e4136394</code></pre></p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">macOS
+LLM-assisted malware triage workflows</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Block or alert on the SHA256 values above. Hunt for ad hoc signed Rust Mach-O binaries with the identifier <code>endpoint-macos-aarch64-5555494492fc075f441637fb9d894913dde3a2ea</code>. Monitor macOS processes that create <code>IOPMAssertionCreateWithName</code> assertions while polling Telegram Bot API endpoints. Alert on unsigned or ad hoc signed binaries reading browser profile data, Terminal history files, <code>system_profiler</code> output, process lists, and <code>login.keychain-db</code> in the same execution window. Inspect suspicious macOS malware samples for embedded prompt-injection strings that claim the analysis session is invalid, unsafe, or must be terminated.</p>
+<h2>References</h2>
+<ul><li>[SentinelOne] macOS.Gaslight | Rust Backdoor Turns Prompt Injection on the Analyst, Not the Sandbox (2026-06-23) - https://www.sentinelone.com/labs/macos-gaslight-rust-backdoor-turns-prompt-injection-on-the-analyst-not-the-sandbox/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

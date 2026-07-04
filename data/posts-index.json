@@ -27,6 +27,33 @@
       "file": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.md"
     },
     {
+      "id": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
+      "title": "macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage",
+      "date": "2026-07-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "apt",
+        "malware",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.",
+      "file": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.md"
+    },
+    {
+      "id": "2026-07-03-bioshocking-ai-browser-guardrail-bypass",
+      "title": "BioShocking AI Browser Guardrail Bypass: False-Reality Prompt Injection Against Agentic Browsers",
+      "date": "2026-07-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "LayerX disclosed BioShocking, a prompt-injection technique that manipulates an agentic AI browser into treating a malicious page as a game context where normal safety rules no longer apply. In LayerX's proof of concept, six tested agentic browsers or browser plugins failed to stop at the final credential-compromise step after the page trained the agent to accept intentionally false rules.",
+      "file": "2026-07-03-bioshocking-ai-browser-guardrail-bypass.md"
+    },
+    {
       "id": "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
       "title": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
       "date": "2026-06-30",

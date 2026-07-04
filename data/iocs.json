@@ -2549,21 +2549,39 @@
       "status": "active"
     },
     {
-      "value": "https://badhost.org/",
-      "type": "url_path",
-      "context": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
-      "first_seen": "2026-06-30",
-      "source": "X41 D-Sec (via OSTIF)",
-      "campaign": "badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
+      "value": "6328567511d88fdc2ae0939c5ef17b7a63d2a833881900de018a4f12f4982525",
+      "type": "hash",
+      "context": "macOS.Gaslight Rust backdoor Mach-O sample",
+      "first_seen": "2026-05-22",
+      "source": "SentinelOne",
+      "campaign": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
       "status": "active"
     },
     {
-      "value": "https://ostif.org/disclosing-the-badhost-vulnerability-in-starlette/",
-      "type": "url_path",
-      "context": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
-      "first_seen": "2026-06-30",
-      "source": "X41 D-Sec (via OSTIF)",
-      "campaign": "badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
+      "value": "77b4fd46994992f0e57302cfe76ed23c0d90101381d2b89fc2ddf5c4536e77ca",
+      "type": "hash",
+      "context": "macOS.Gaslight sibling BONZAI sample",
+      "first_seen": "2026-06-23",
+      "source": "SentinelOne",
+      "campaign": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
+      "status": "active"
+    },
+    {
+      "value": "baabf249c77bc54c54ab0e66e15af798bd28aa5b4683554456a8b73ab8741239",
+      "type": "hash",
+      "context": "macOS.Gaslight embedded Python collection module",
+      "first_seen": "2026-06-23",
+      "source": "SentinelOne",
+      "campaign": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
+      "status": "active"
+    },
+    {
+      "value": "b3c56d689414343589f38394d19ba2fe9a518133281200faa0556ba4e4136394",
+      "type": "hash",
+      "context": "macOS.Gaslight bash installer script",
+      "first_seen": "2026-06-23",
+      "source": "SentinelOne",
+      "campaign": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
       "status": "active"
     }
   ]

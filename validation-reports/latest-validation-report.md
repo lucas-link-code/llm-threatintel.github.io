@@ -1,16 +1,16 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-07-04T10:22:11+00:00`
-- Commit SHA: `e2affee610b3d28325b3aff2c60cd9db335565a3`
+- Run time UTC: `2026-07-04T20:04:00+00:00`
+- Commit SHA: `725867d46e83`
 - Mode: `full`
 - Validation version: `1.0.0`
-- Overall result: `fail`
-- Hard failures: `1`
+- Overall result: `pass`
+- Hard failures: `0`
 - Warnings: `1`
-- Review required: `1`
-- Reports checked: `1`
-- Reports skipped: `161`
-- Reports newly validated: `1`
+- Review required: `0`
+- Reports checked: `2`
+- Reports skipped: `162`
+- Reports newly validated: `2`
 - IOC duplicates found: `0`
 - Source URLs checked: `2`
 
@@ -19,38 +19,3 @@ No files were removed or destructively modified.
 ## Findings
 
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
-- **FAIL** `ioc-url-path-format` `data/iocs.json` `283`: url_path IOC must include a path, query, or port: https://badhost.org/
-- **REVIEW** `evidence-url-review` `posts/2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.md` `2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing`: 1 source URL(s) require review
-
-## Hard Failure Queue
-
-```text
-File: data/iocs.json
-Record: 283
-Problem: ioc-url-path-format
-Validator finding: url_path IOC must include a path, query, or port: https://badhost.org/
-IOC value: https://badhost.org/
-IOC type: url_path
-Status: active
-Campaign: badhost-cve-2026-48710-starlette-auth-bypass-ai-servers
-Source: X41 D-Sec (via OSTIF)
-Context: CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)
-Recommended action:
-[ ] Correct the structured value/type
-[ ] Remove non-actionable narrative labels from IOC data
-[ ] Add a policy exception only if Lucas explicitly approves it
-```
-
-## Human Review Queue
-
-```text
-Report: 2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

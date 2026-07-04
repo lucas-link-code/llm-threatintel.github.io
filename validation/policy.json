@@ -210,10 +210,13 @@
     {"host": "base.blockscout.com", "path_prefix": "/tx/"}
   ],
   "evidence_domain_denylist": [
+    "badhost.org",
     "x.com",
     "base.blockscout.com"
   ],
   "reference_url_domain_denylist": [
+    "badhost.org",
+    "ostif.org",
     "arxiv.org",
     "cve.org",
     "nvd.nist.gov",

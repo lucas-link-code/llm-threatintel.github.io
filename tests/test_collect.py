@@ -38,6 +38,17 @@ class CollectIocNormalizationTests(unittest.TestCase):
     def test_rejects_wildcard_url_path(self):
         self.assertRejected("chatgpt.com/s/*", "url_path")
 
+    def test_rejects_prose_url_path_without_crashing(self):
+        self.assertRejected(
+            "PoC available at GitHub - researchers did not disclose specific malicious URLs",
+            "url_path",
+        )
+        self.assertRejected(
+            "[PoC available at GitHub - researchers did not disclose specific malicious URLs]",
+            "url_path",
+        )
+        self.assertRejected("[not-an-ipv6]", "url_path")
+
     def test_rejects_malware_family_package(self):
         self.assertRejected("Odyssey Stealer", "package")
 

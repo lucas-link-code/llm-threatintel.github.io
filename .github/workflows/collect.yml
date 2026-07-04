@@ -36,9 +36,13 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       pushed: ${{ steps.push.outputs.pushed || steps.no_push.outputs.pushed }}
+      sha: ${{ steps.push.outputs.sha || steps.no_push.outputs.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 50
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -200,13 +204,17 @@ jobs:
           else
             git commit -m "validation: $(date +%Y-%m-%d) report-only collection review"
           fi
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
           echo "pushed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Mark no push
         id: no_push
         if: steps.changes.outputs.changed != 'true'
-        run: echo "pushed=false" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "pushed=false" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Collection summary
         if: always()
@@ -233,20 +241,33 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ needs.collect.outputs.sha }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Build sitemap, RSS, and static post pages
+        run: python scripts/build_meta.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
           path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}

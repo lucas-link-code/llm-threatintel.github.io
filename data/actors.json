@@ -2860,6 +2860,34 @@
       ],
       "description": "No specific actor attribution; vulnerability is architectural. Sysdig documented first real-world exploitation in which an autonomous LLM agent identified the BadHost flaw, generated exploit code, escalated privileges, and exfiltrated AWS database without human intervention. Demonstrates capability of agentic AI systems to weaponize infrastructure vulnerabilities at machine speed.",
       "attribution": "Unattributed; Sysdig case study documents single incident with autonomous LLM agent performing post-compromise actions."
+    },
+    {
+      "id": "dprk-aligned-macos-gaslight-cluster",
+      "names": [
+        "macOS.Gaslight",
+        "BONZAI/Cobuch cluster",
+        "AIRPIPE/BONZAI macOS activity"
+      ],
+      "type": "malware",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Unknown initial access",
+        "Telegram Bot API C2",
+        "macOS Rust implant"
+      ],
+      "ttps": [
+        "T1059.004 - Command and Scripting Interpreter: Unix Shell",
+        "T1059.006 - Command and Scripting Interpreter: Python",
+        "T1543.001 - Create or Modify System Process: Launch Agent",
+        "T1005 - Data from Local System",
+        "T1555 - Credentials from Password Stores",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1573 - Encrypted Channel",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "macOS.Gaslight is a Rust macOS backdoor and infostealer with Telegram Bot API polling, AES-GCM payload encryption, pinned TLS, interactive shell access, browser and keychain collection, and embedded prompt-injection content designed to derail LLM-assisted malware triage. SentinelLABS links the implant to DPRK-aligned macOS activity through Apple XProtect MACOS_BONZAI_COBUCH and related AIRPIPE/BONZAI samples.",
+      "attribution": "DPRK-aligned macOS activity; SentinelLABS assesses high confidence."
     }
   ]
 }

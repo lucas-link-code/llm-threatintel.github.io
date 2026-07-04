@@ -392,6 +392,31 @@ class ValidateSiteTests(unittest.TestCase):
                 "ioc-prose-parenthetical",
             ),
             (
+                "prose url path",
+                [
+                    {
+                        "value": "PoC available at GitHub - researchers did not disclose specific malicious URLs",
+                        "type": "url_path",
+                    }
+                ],
+                "ioc-url-path-format",
+            ),
+            (
+                "bracketed prose url path",
+                [
+                    {
+                        "value": "[PoC available at GitHub - researchers did not disclose specific malicious URLs]",
+                        "type": "url_path",
+                    }
+                ],
+                "ioc-url-path-format",
+            ),
+            (
+                "malformed bracketed url path",
+                [{"value": "[not-an-ipv6]", "type": "url_path"}],
+                "ioc-url-path-format",
+            ),
+            (
                 "geographic ip description",
                 [{"value": "Kowloon Bay, Hong Kong-based attacker IPs", "type": "ip"}],
                 "ioc-ip-format",

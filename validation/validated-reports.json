@@ -2832,14 +2832,12 @@
       "warnings": []
     },
     "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers": {
-      "content_hash": "5987c3da674b2a0c113b59d4a40cfe759b2b9eecf4eb77d847714715ea4918db",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "d7536a23950d1f0f55b4c6105c011e62ad502b032c650549fc6641f1301a01f3",
+      "evidence_status": "validated",
       "file": "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.md",
       "posts_index_hash": "92b904e8b27818d7bd392b8f3385b411906d976ff4d0ffa83b5592dc58e81923",
       "report_id": "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://ostif.org/disclosing-the-badhost-vulnerability-in-starlette/",
         "https://badhost.org/",
@@ -2847,7 +2845,7 @@
         "https://www.buildfastwithai.com/blogs/ai-news-today-june-1-2026"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-30T06:57:45+00:00",
+      "validated_at": "2026-07-04T20:02:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2886,6 +2884,36 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-06-30T06:57:46+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-03-bioshocking-ai-browser-guardrail-bypass": {
+      "content_hash": "a645ec92b7433fe232031905dd3d8bba7d16f35abb928055d334ddbf1f3c00a2",
+      "evidence_status": "validated",
+      "file": "2026-07-03-bioshocking-ai-browser-guardrail-bypass.md",
+      "posts_index_hash": "9a7560d4e06c50e6f0bc82e527280800397be9859fc1331e46b0f5624cf29f29",
+      "report_id": "2026-07-03-bioshocking-ai-browser-guardrail-bypass",
+      "review_required": [],
+      "source_urls": [
+        "https://layerxsecurity.com/blog/bioshocking-ai-gaming-the-ai-browser-and-escaping-its-guardrails/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-04T20:04:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection": {
+      "content_hash": "0ed03b106a2553f179bd683b9e665e5d3222ed94f763a21f5900101cbb68bb62",
+      "evidence_status": "validated",
+      "file": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.md",
+      "posts_index_hash": "a3eeac7b176199696b30bf09a424f7e0f93d28f1ac7cbe484ce97c5736425d3a",
+      "report_id": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sentinelone.com/labs/macos-gaslight-rust-backdoor-turns-prompt-injection-on-the-analyst-not-the-sandbox/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-04T20:04:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
