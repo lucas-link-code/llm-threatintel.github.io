@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 04 Jul 2026 06:21:46 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 10:22:10 +0000</lastBuildDate>
     <item>
+      <title>Phantom Squatting: AI-Generated Domains Register Fake URLs for Phishing as LLMs Hallucinate Non-Existent Websites</title>
+      <link>https://llm-threatintel.com/posts/2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.html</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Palo Alto Networks' Unit 42 identifies 'phantom squatting,' a new attack technique where attackers register AI-hallucinated but non-existent domain names before legitimate users can claim them, then host phishing pages on those domains. Attackers have started buying those made-up domains before anyone else can, then hosting phishing pages on them to catch traffic that AI tools point their way. This represents a novel attack vector exploiting the intersection of LLM hallucination vulnerabilities and domain registration abuse.</description>
+    </item>    <item>
       <title>Active Exploitation of Langflow CVE-2026-33017 RCE: Monero Mining Campaign Targets Exposed AI Infrastructure (July 2026)</title>
       <link>https://llm-threatintel.com/posts/2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-10-cve-2026-42271-litellm-mcp-rce-kasi-kev.html</guid>
       <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
       <description>On June 9, 2026, CISA added CVE-2026-42271 to the KEV catalog, citing confirmed active exploitation in the wild. The command injection flaw in LiteLLM MCP test endpoints was disclosed April 20, 2026, with fixes released May 8, 2026 in version 1.83.7. Confirmed attacks followed within five weeks of the patch being published, representing a narrow detection window.</description>
-    </item>    <item>
-      <title>LLMShare Malware Campaign: ChatGPT/Claude Share Links Host Malware via Fake Outage Pages; Odyssey Stealer Payload</title>
-      <link>https://llm-threatintel.com/posts/2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-07-llmshare-fake-outage-malware-chatgpt-domain.html</guid>
-      <pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Threat actors turned ChatGPT's own content-sharing feature into a malware delivery pipeline, hosting fake service disruption pages directly on chatgpt.com and routing victims there through paid Google search ads. Security firm Push Security disclosed the campaign, which it named LLMShare, on May 29, 2026, confirming it was still generating active detections at the time. Because the attack lands on OpenAI's own domain rather than an attacker-controlled site, it bypasses the URL-reputation checks, corporate firewalls, and personal caution that would stop a conventional phishing page. The technique exploits a design feature—not a software vulnerability—in ChatGPT's sharing system, which means no patch from OpenAI can close it without changing how the product works.</description>
     </item>
   </channel>
 </rss>

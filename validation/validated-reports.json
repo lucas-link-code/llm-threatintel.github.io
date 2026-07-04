@@ -2907,6 +2907,24 @@
       "validated_at": "2026-07-04T06:21:47+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing": {
+      "content_hash": "36cac9342c859475af3c063804e25943c822558590c81e4caf5481f579c43f51",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.md",
+      "posts_index_hash": "5505370273f33d94bce4322f8ae95ecdc4b50de8ed9a4bc1f9a82da87757b496",
+      "report_id": "2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://techmaniacs.com/2026/07/01/cybersecurity-daily-briefing-july-01-2026/",
+        "https://thehackernews.com/2026/07/phantom-squatting-attack-ai-hallucinated.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-04T10:22:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

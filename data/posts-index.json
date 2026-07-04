@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing",
+      "title": "Phantom Squatting: AI-Generated Domains Register Fake URLs for Phishing as LLMs Hallucinate Non-Existent Websites",
+      "date": "2026-07-04",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Palo Alto Networks' Unit 42 identifies 'phantom squatting,' a new attack technique where attackers register AI-hallucinated but non-existent domain names before legitimate users can claim them, then host phishing pages on those domains. Attackers have started buying those made-up domains before anyone else can, then hosting phishing pages on them to catch traffic that AI tools point their way. This represents a novel attack vector exploiting the intersection of LLM hallucination vulnerabilities and domain registration abuse.",
+      "file": "2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.md"
+    },
+    {
       "id": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign",
       "title": "Active Exploitation of Langflow CVE-2026-33017 RCE: Monero Mining Campaign Targets Exposed AI Infrastructure (July 2026)",
       "date": "2026-07-04",

@@ -1274,7 +1274,8 @@
         "MCP-based AI agent infrastructure",
         "Direct exploitation of exposed Marimo instances",
         "AI coding agents with Sentry integration",
-        "Automated scanning and exploitation of exposed Langflow endpoints"
+        "Automated scanning and exploitation of exposed Langflow endpoints",
+        "Domain registration abuse"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1313,7 +1314,8 @@
         "T1190 - Exploitation of Remote Services",
         "T1552.001 - Unsecured Credentials: Credentials In Files",
         "Prompt Injection via Error Messages",
-        "T1496 - Resource Hijacking"
+        "T1496 - Resource Hijacking",
+        "T1598.003 - Phishing: Spearphishing Link"
       ],
       "description": "Threat actors compromised a Context.ai employee via infostealer malware, then weaponized the trust relationship between the employee and their corporate environment to steal OAuth tokens with excessive permissions. The incident demonstrates how AI tool adoption expands the enterprise attack surface through new credential types and trust relationships.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
