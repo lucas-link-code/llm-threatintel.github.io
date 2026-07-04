@@ -2888,6 +2888,25 @@
       "validated_at": "2026-06-30T06:57:46+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign": {
+      "content_hash": "016ad2abc04ba1aae6bb5176c1434b03fe95d3cb9c8dbd798e1cd653d9bb4054",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.md",
+      "posts_index_hash": "e3b34dfe97c5bceeda0d5278fe00527dda388030d2a849349195daa20243f6aa",
+      "report_id": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://techmaniacs.com/2026/07/01/cybersecurity-daily-briefing-july-01-2026/",
+        "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html",
+        "https://www.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-04T06:21:47+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

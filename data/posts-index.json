@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign",
+      "title": "Active Exploitation of Langflow CVE-2026-33017 RCE: Monero Mining Campaign Targets Exposed AI Infrastructure (July 2026)",
+      "date": "2026-07-04",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Threat actors are continuing to exploit a critical Langflow vulnerability as part of fresh attacks designed to deliver a Monero cryptocurrency miner, weaponizing CVE-2026-33017 (CVSS score: 9.3), an unauthenticated remote code execution (RCE) vulnerability in Langflow. Any environment running Langflow and exposed to the internet is facing active exploitation of CVE-2026-33017. The campaign targets exposed AI application endpoints, establishing persistent cryptocurrency mining infrastructure on compromised hosts.",
+      "file": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.md"
+    },
+    {
       "id": "2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers",
       "title": "CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)",
       "date": "2026-06-30",

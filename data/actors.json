@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-04",
   "entries": [
     {
       "id": "vapt-framework",
@@ -1273,7 +1273,8 @@
         "Lumma Stealer malware campaigns",
         "MCP-based AI agent infrastructure",
         "Direct exploitation of exposed Marimo instances",
-        "AI coding agents with Sentry integration"
+        "AI coding agents with Sentry integration",
+        "Automated scanning and exploitation of exposed Langflow endpoints"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1311,7 +1312,8 @@
         "T1528 - Credential Access",
         "T1190 - Exploitation of Remote Services",
         "T1552.001 - Unsecured Credentials: Credentials In Files",
-        "Prompt Injection via Error Messages"
+        "Prompt Injection via Error Messages",
+        "T1496 - Resource Hijacking"
       ],
       "description": "Threat actors compromised a Context.ai employee via infostealer malware, then weaponized the trust relationship between the employee and their corporate environment to steal OAuth tokens with excessive permissions. The incident demonstrates how AI tool adoption expands the enterprise attack surface through new credential types and trust relationships.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

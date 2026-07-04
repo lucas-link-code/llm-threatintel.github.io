@@ -3311,6 +3311,26 @@
         "npm:@leo-sdk/sdk@varies",
         "npm:@rstreams/core@varies"
       ]
+    },
+    {
+      "id": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign",
+      "title": "Active Exploitation of Langflow CVE-2026-33017 RCE: Monero Mining Campaign Targets Exposed AI Infrastructure (July 2026)",
+      "date": "2026-07-04",
+      "excerpt": "Threat actors are continuing to exploit a critical Langflow vulnerability as part of fresh attacks designed to deliver a Monero cryptocurrency miner, weaponizing CVE-2026-33017 (CVSS score: 9.3), an unauthenticated remote code execution (RCE) vulnerability in Langflow. Any environment running Langflow and exposed to the internet is facing active exploitation of CVE-2026-33017. The campaign targets exposed AI application endpoints, establishing persistent cryptocurrency mining infrastructure on compromised hosts.",
+      "file": "2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.md",
+      "body": "Active Exploitation of Langflow CVE-2026-33017 RCE: Monero Mining Campaign Targets Exposed AI Infrastructure (July 2026) Date: 2026-07-04 Tags: malware, supply-chain Executive Summary Threat actors are continuing to exploit a critical Langflow vulnerability as part of fresh attacks designed to deliver a Monero cryptocurrency miner, weaponizing CVE-2026-33017 (CVSS score: 9.3), an unauthenticated remote code execution (RCE) vulnerability in Langflow. Any environment running Langflow and exposed to the internet is facing active exploitation of CVE-2026-33017. The campaign targets exposed AI application endpoints, establishing persistent cryptocurrency mining infrastructure on compromised hosts. Campaign Summary Field Detail Campaign / Malware Langflow Monero Mining Exploitation (July 2026) Attribution Unknown (confidence: none) Target Organizations with exposed Langflow AI applications Vector Unauthenticated RCE via CVE-2026-33017 (SSRF in vision-language module) Status active First Observed 2026-07-01 Detailed Findings The vulnerability, tracked as CVE-2026-33017 (CVSS score: 7.5), relates to a Server-Side Request Forgery (SSRF) vulnerability that could be exploited to access sensitive data. A high-severity security flaw in LMDeploy, an open-source toolkit for compressing, deploying, and serving large language models (LLMs), has come under active exploitation in the wild less than 13 hours after its public disclosure. CVE-2026-33017 in LMDeploy was exploited within 12 hours of disclosure, enabling attackers to use a vision-LLM endpoint for SSRF-based internal network scanning, cloud metadata access, and service enumeration. In early July 2026, the same vulnerability class emerged in Langflow with active Monero mining payload deployment. MITRE ATT&CK Mapping Technique ID Context Exploit Public-Facing Application T1190 CVE-2026-33017 RCE in unpatched Langflow instances Resource Hijacking T1496 Monero cryptocurrency mining via compromised AI infrastructure IOCs Domains _No specific IOCs published in articles. Exploitation timeline: CVE disclosure ~April 2026, active wild exploitation documented early July 2026. Targets any internet-facing Langflow instance running vulnerable version._ Full URL Paths _No specific IOCs published in articles. Exploitation timeline: CVE disclosure ~April 2026, active wild exploitation documented early July 2026. Targets any internet-facing Langflow instance running vulnerable version._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Monitor for outbound connections from Langflow containers to mining pools (stratum protocol on common ports 3333, 9332-9334, 14433). Patch all Langflow instances to patched versions. Implement network segmentation to restrict Langflow egress. Monitor for anomalous CPU/memory consumption on Langflow hosts indicative of mining. Scan exposed Langflow instances on the internet for presence of CVE-2026-33017. References [The Hacker News] Cybersecurity Daily Briefing: July 01, 2026 – TECHMANIACS.com (2026-07-01) — https://techmaniacs.com/2026/07/01/cybersecurity-daily-briefing-july-01-2026/ [The Hacker News] LMDeploy CVE-2026-33626 Flaw Exploited Within 13 Hours of Disclosure (2026-04-27) — https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html [Sysdig] CVE-2026-33626: How attackers exploited LMDeploy LLM Inference Engines in 12 hours (2026-04-22) — https://www.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+      "tags": [
+        "malware",
+        "supply-chain"
+      ],
+      "cves": [
+        "CVE-2026-33017",
+        "CVE-2026-33626"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
     }
   ]
 }
