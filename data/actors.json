@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-04",
+  "last_updated": "2026-07-06",
   "entries": [
     {
       "id": "vapt-framework",
@@ -2888,6 +2888,26 @@
       ],
       "description": "macOS.Gaslight is a Rust macOS backdoor and infostealer with Telegram Bot API polling, AES-GCM payload encryption, pinned TLS, interactive shell access, browser and keychain collection, and embedded prompt-injection content designed to derail LLM-assisted malware triage. SentinelLABS links the implant to DPRK-aligned macOS activity through Apple XProtect MACOS_BONZAI_COBUCH and related AIRPIPE/BONZAI samples.",
       "attribution": "DPRK-aligned macOS activity; SentinelLABS assesses high confidence."
+    },
+    {
+      "id": "jadepuffer",
+      "names": [
+        "JadePuffer"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Enterprise cloud environments with exposed AI infrastructure"
+      ],
+      "ttps": [
+        "T1190 - Exploitation of Remote Services",
+        "T1003 - Credential Dumping",
+        "T1570 - Lateral Movement",
+        "T1547 - Boot or Logon Autostart Execution"
+      ],
+      "description": "JadePuffer is a threat actor group targeting exposed Langflow instances for ransomware deployment. The group demonstrates sophisticated capability to weaponize LLM agents for autonomous multi-stage intrusions, leveraging real-time LLM reasoning to adapt exploitation tactics, extract credentials across multiple system types (Postgres, MySQL, MinIO), and achieve persistent access to critical infrastructure services like Nacos.",
+      "attribution": "Unattributed (tracked by Sysdig as JadePuffer)"
     }
   ]
 }

@@ -2953,6 +2953,21 @@
       "validated_at": "2026-07-04T10:22:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026": {
+      "content_hash": "b497d5404f0c0f4472e3e718e5d1e458b3899dc9949f8e44f8e27a5655b09df5",
+      "evidence_status": "validated",
+      "file": "2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026.md",
+      "posts_index_hash": "bdd2dafe0edb01961778db3f458da03c9a6c723b0b190f66532d4808899ee91f",
+      "report_id": "2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-06T07:14:13+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

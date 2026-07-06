@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026",
+      "title": "JadePuffer: Autonomous Agentic AI-Powered Ransomware Campaign via Langflow CVE-2025-3248",
+      "date": "2026-07-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "prompt-injection",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A threat actor exploited a vulnerability in Langflow to access an organization's instance and abuse it in an agentic ransomware attack, with attackers exploiting Langflow vulnerability CVE-2025-3248 to conduct an agentic AI-powered ransomware attack involving reconnaissance, credential theft, and lateral movement. The attack demonstrates how LLM agents can combine known exploitation techniques with real-time reasoning to automate complex, multi-stage intrusions.",
+      "file": "2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026.md"
+    },
+    {
       "id": "2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing",
       "title": "Phantom Squatting: AI-Generated Domains Register Fake URLs for Phishing as LLMs Hallucinate Non-Existent Websites",
       "date": "2026-07-04",
