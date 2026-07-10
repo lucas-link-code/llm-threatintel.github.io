@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 06 Jul 2026 07:14:13 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 06:47:07 +0000</lastBuildDate>
     <item>
+      <title>Armored Likho: LLM-Generated Malware Targeting Critical Infrastructure in Russia, Kazakhstan, Brazil</title>
+      <link>https://llm-threatintel.com/posts/2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure.html</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Kaspersky identified Armored Likho (also tracked as Eagle Werewolf), an APT group using large language models to generate first-stage loader code, identified through verbose inline comments, bullet-point emoji, and redundant code blocks consistent with LLM output. The group runs two parallel tracks: financially motivated attacks against private individuals and targeted espionage against government agencies and electric power organizations in Russia, Kazakhstan, and Brazil. AI-generated code erases traditional stylistic fingerprints used for threat attribution, with CrowdStrike documenting an 89% increase in AI-enabled attacks in 2025.</description>
+    </item>    <item>
       <title>JadePuffer: Autonomous Agentic AI-Powered Ransomware Campaign via Langflow CVE-2025-3248</title>
       <link>https://llm-threatintel.com/posts/2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-12-fake-openai-privacy-filter-hugging-face-malware.html</guid>
       <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
       <description>A fraudulent AI model posing as an OpenAI release briefly became one of the most downloaded projects on Hugging Face before researchers determined it was distributing credential-stealing malware to Windows systems. Before its removal, the repository accumulated roughly 244,000 downloads and hundreds of positive ratings in less than a day, reaching the top of Hugging Face's trending rankings. Some of the infrastructure tied to the attack overlaps with activity previously associated with ValleyRAT, a remote access trojan linked by researchers to the China-aligned threat group known as Silver Fox.</description>
-    </item>    <item>
-      <title>CVE-2026-4372: Hugging Face Transformers Critical RCE via Malicious Model Config.json – 232 Million Downloads Exposed Pre-Patch</title>
-      <link>https://llm-threatintel.com/posts/2026-06-11-cve-2026-4372-hugging-face-transformers-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-11-cve-2026-4372-hugging-face-transformers-rce.html</guid>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <description>The vulnerability allows an attacker to craft a malicious config.json file containing the _attn_implementation_internal field set to an attacker-controlled Hugging Face Hub repository ID. When a victim loads a model using standard Transformers APIs such as AutoModelForCausalLM.from_pretrained(), the library fetches and executes code from the attacker's repository — enabling arbitrary remote code execution. Transformers is the most widely used library for working with AI/ML models — it has hundreds of millions of monthly downloads and is the foundation of the modern NLP and generative AI ecosystem.</description>
     </item>
   </channel>
 </rss>

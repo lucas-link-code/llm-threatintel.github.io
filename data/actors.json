@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06",
+  "last_updated": "2026-07-10",
   "entries": [
     {
       "id": "vapt-framework",
@@ -2908,6 +2908,26 @@
       ],
       "description": "JadePuffer is a threat actor group targeting exposed Langflow instances for ransomware deployment. The group demonstrates sophisticated capability to weaponize LLM agents for autonomous multi-stage intrusions, leveraging real-time LLM reasoning to adapt exploitation tactics, extract credentials across multiple system types (Postgres, MySQL, MinIO), and achieve persistent access to critical infrastructure services like Nacos.",
       "attribution": "Unattributed (tracked by Sysdig as JadePuffer)"
+    },
+    {
+      "id": "armored-likho",
+      "names": [
+        "Armored Likho",
+        "Eagle Werewolf"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Spear-phishing with Windows LNK exploit"
+      ],
+      "ttps": [
+        "T1587.001 - Malware Development",
+        "T1190 - Exploit Public-Facing Application",
+        "T1070 - Indicator Removal"
+      ],
+      "description": "Armored Likho operates a dual-track campaign: espionage against power grids and government in Russia, Kazakhstan, and Brazil, alongside financially motivated attacks against private individuals. The group leverages LLM-generated code for malware obfuscation to evade traditional code-style fingerprinting, representing a documented escalation of AI-assisted tactics from commodity cybercrime into APT-level operations.",
+      "attribution": "Probable Russian/CIS state-adjacent actor conducting critical infrastructure espionage and financially motivated cybercrime in parallel"
     }
   ]
 }

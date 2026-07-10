@@ -2968,6 +2968,25 @@
       "validated_at": "2026-07-06T07:14:13+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure": {
+      "content_hash": "d770bf3d5b90e8fd9d47eb84ddcead0ca1a65edec7618beff68256a5c8028c25",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure.md",
+      "posts_index_hash": "699d5e4466511bc81d32de475c2fc8cd884c78509e357071970586cdd81df7bb",
+      "report_id": "2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.techtimes.com/articles/319680/20260704/new-apt-group-hits-power-grids-three-countries-ai-crafted-malware.htm",
+        "https://securityaffairs.com/194854/apt/ai-generated-malware-powers-new-armored-likho-apt-campaign.html",
+        "https://www.kaspersky.com/about/press-releases/2026/armored-likho-apt"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-10T06:47:09+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

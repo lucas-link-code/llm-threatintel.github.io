@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure",
+      "title": "Armored Likho: LLM-Generated Malware Targeting Critical Infrastructure in Russia, Kazakhstan, Brazil",
+      "date": "2026-07-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malware",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Kaspersky identified Armored Likho (also tracked as Eagle Werewolf), an APT group using large language models to generate first-stage loader code, identified through verbose inline comments, bullet-point emoji, and redundant code blocks consistent with LLM output. The group runs two parallel tracks: financially motivated attacks against private individuals and targeted espionage against government agencies and electric power organizations in Russia, Kazakhstan, and Brazil. AI-generated code erases traditional stylistic fingerprints used for threat attribution, with CrowdStrike documenting an 89% increase in AI-enabled attacks in 2025.",
+      "file": "2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure.md"
+    },
+    {
       "id": "2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026",
       "title": "JadePuffer: Autonomous Agentic AI-Powered Ransomware Campaign via Langflow CVE-2025-3248",
       "date": "2026-07-06",
