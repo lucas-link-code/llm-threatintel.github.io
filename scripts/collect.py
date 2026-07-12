@@ -170,6 +170,10 @@ Only items in the window above. No duplicate incident plus same primary source a
 
 
 # ---- File Writers ----
+VALID_COLLECTION_STATUSES = frozenset({"new_intel", "no_new_intel"})
+FENCED_JSON_RE = re.compile(r"```(?:json)?\s*\n?(.*?)```", re.DOTALL | re.IGNORECASE)
+
+
 def strip_citation_markers(text):
     """Remove Anthropic API citation markers from text."""
     if not isinstance(text, str):
@@ -189,6 +193,109 @@ def clean_finding_citations(finding):
     elif isinstance(finding, str):
         return strip_citation_markers(finding)
     return finding
+
+
+def _accepted_collection_payload(obj):
+    """Return obj if it is a collection dict with a known status, else None."""
+    if not isinstance(obj, dict):
+        return None
+    status = obj.get("status")
+    if status in VALID_COLLECTION_STATUSES:
+        return obj
+    return None
+
+
+def extract_collection_json(response_text, log=True):
+    """
+    Extract the collection JSON object from model output.
+
+    Handles prose prefixes, mid-body markdown fences, and mixed content.
+    Accepts only objects with status new_intel or no_new_intel.
+    Returns (payload_dict, path_label) or (None, None).
+    """
+    if not isinstance(response_text, str) or not response_text.strip():
+        return None, None
+
+    sanitized = strip_citation_markers(response_text).strip()
+
+    # 1. Direct parse of whole sanitized text
+    try:
+        accepted = _accepted_collection_payload(json.loads(sanitized))
+        if accepted is not None:
+            if log:
+                print("Parsed collection JSON via direct loads")
+            return accepted, "direct"
+    except json.JSONDecodeError:
+        pass
+
+    # 2. Fenced ```json / ``` blocks anywhere in the text
+    for match in FENCED_JSON_RE.finditer(sanitized):
+        block = match.group(1).strip()
+        try:
+            accepted = _accepted_collection_payload(json.loads(block))
+            if accepted is not None:
+                if log:
+                    print("Parsed collection JSON via fenced block")
+                return accepted, "fenced"
+        except json.JSONDecodeError:
+            continue
+
+    # 3. JSONDecoder.raw_decode from each '{' candidate (string-aware)
+    decoder = json.JSONDecoder()
+    search_from = 0
+    while True:
+        start = sanitized.find("{", search_from)
+        if start == -1:
+            break
+        try:
+            obj, _end = decoder.raw_decode(sanitized, start)
+            accepted = _accepted_collection_payload(obj)
+            if accepted is not None:
+                if log:
+                    print("Recovered JSON from mixed response content")
+                return accepted, "raw_decode"
+        except json.JSONDecodeError:
+            pass
+        search_from = start + 1
+
+    return None, None
+
+
+def extract_response_text(response):
+    """Concatenate text blocks from an Anthropic message, skipping tool blocks."""
+    response_text = ""
+    for block in response.content:
+        if hasattr(block, "text"):
+            response_text += block.text
+    return response_text
+
+
+def reformat_collection_json(client, prior_text):
+    """
+    One tool-less follow-up that asks the model to return only valid JSON
+    for the prior assistant text. Does not enable web_search.
+    """
+    truncated = prior_text if len(prior_text) <= 120000 else prior_text[:120000]
+    follow_up = client.messages.create(
+        model=MODEL,
+        max_tokens=16000,
+        system=(
+            "You repair threat intelligence JSON. Return only a single valid JSON object. "
+            "No prose, no markdown fences, no reasoning. Preserve status as new_intel or "
+            "no_new_intel and keep existing findings and URLs unchanged."
+        ),
+        messages=[
+            {
+                "role": "user",
+                "content": (
+                    "The previous model output below was not valid parseable collection JSON. "
+                    "Return only the corrected JSON object with status new_intel or no_new_intel.\n\n"
+                    f"{truncated}"
+                ),
+            }
+        ],
+    )
+    return extract_response_text(follow_up)
 
 
 def filter_tags(tags):
@@ -898,11 +1005,26 @@ def main():
         print(f"ERROR: Unexpected error: {e}")
         sys.exit(1)
 
+    stop_reason = getattr(response, "stop_reason", None)
+    usage = getattr(response, "usage", None)
+    print(f"stop_reason: {stop_reason}")
+    if usage is not None:
+        input_tokens = getattr(usage, "input_tokens", None)
+        output_tokens = getattr(usage, "output_tokens", None)
+        print(f"usage: input_tokens={input_tokens} output_tokens={output_tokens}")
+
     # Extract text response (skip tool_use blocks)
-    response_text = ""
-    for block in response.content:
-        if hasattr(block, 'text'):
-            response_text += block.text
+    response_text = extract_response_text(response)
+
+    # Log raw response for debugging (before parse / truncation checks)
+    log_path = LOGS_DIR / f"{TODAY}-raw-response.txt"
+    log_path.write_text(response_text)
+    print(f"Raw response logged to: {log_path}")
+
+    if stop_reason == "max_tokens":
+        print("ERROR: Model response truncated (stop_reason=max_tokens). Refusing partial JSON.")
+        print(f"First 500 chars of response:\n{response_text[:500]}")
+        sys.exit(1)
 
     if not response_text.strip():
         print("WARNING: No text response received. The model may have only returned tool calls.")
@@ -910,42 +1032,24 @@ def main():
         print("This may require a follow-up API call. Exiting.")
         sys.exit(0)
 
-    # Log raw response for debugging
-    log_path = LOGS_DIR / f"{TODAY}-raw-response.txt"
-    log_path.write_text(response_text)
-    print(f"Raw response logged to: {log_path}")
-
-    # Parse JSON
-    result = None
-    cleaned = response_text.strip()
-    cleaned = re.sub(r'^```(?:json)?\s*\n?', '', cleaned)
-    cleaned = re.sub(r'\n?\s*```\s*$', '', cleaned)
-
-    try:
-        result = json.loads(cleaned)
-    except json.JSONDecodeError:
-        pass
+    result, parse_path = extract_collection_json(response_text)
 
     if result is None:
-        # Find the first top-level { and its matching }
-        start = response_text.find('{')
-        if start != -1:
-            depth = 0
-            end = -1
-            for i in range(start, len(response_text)):
-                if response_text[i] == '{':
-                    depth += 1
-                elif response_text[i] == '}':
-                    depth -= 1
-                    if depth == 0:
-                        end = i + 1
-                        break
-            if end > start:
-                try:
-                    result = json.loads(response_text[start:end])
-                    print("Recovered JSON from mixed response content")
-                except json.JSONDecodeError:
-                    pass
+        print("WARNING: Initial JSON parse failed. Attempting one tool-less JSON reformat retry...")
+        try:
+            reformatted = reformat_collection_json(client, response_text)
+            retry_log = LOGS_DIR / f"{TODAY}-raw-response-reformat.txt"
+            retry_log.write_text(reformatted)
+            print(f"Reformat response logged to: {retry_log}")
+            result, parse_path = extract_collection_json(reformatted)
+            if result is not None:
+                print(f"Recovered collection JSON via reformat retry ({parse_path})")
+        except anthropic.APIError as e:
+            print(f"ERROR: Anthropic API error during JSON reformat retry: {e}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"ERROR: Unexpected error during JSON reformat retry: {e}")
+            sys.exit(1)
 
     if result is None:
         print(f"ERROR: Failed to parse API response as JSON")

@@ -203,5 +203,83 @@ class CollectIocNormalizationTests(unittest.TestCase):
             self.assertIn("reason: CVE ID is not an IOC value", printed)
 
 
+class CollectJsonExtractionTests(unittest.TestCase):
+    def test_parses_jul11_prose_plus_fenced_json(self):
+        payload = {
+            "status": "new_intel",
+            "collection_date": "2026-07-11",
+            "search_summary": "Three findings",
+            "findings": [{"title": "Example", "slug": "example"}],
+        }
+        text = (
+            "I'll search for new GenAI and LLM security threats published in the last 14 days.\n"
+            "Based on my comprehensive search I have identified three high-severity findings.\n\n"
+            "```json\n"
+            f"{json.dumps(payload, indent=2)}\n"
+            "```\n"
+        )
+        result, path = collect.extract_collection_json(text, log=False)
+        self.assertIsNotNone(result)
+        self.assertEqual(path, "fenced")
+        self.assertEqual(result["status"], "new_intel")
+        self.assertEqual(result["findings"][0]["slug"], "example")
+
+    def test_recovers_mixed_json_without_fence(self):
+        payload = {
+            "status": "no_new_intel",
+            "collection_date": "2026-07-12",
+            "search_summary": "Quiet day",
+            "findings": [],
+        }
+        text = (
+            "Continuing searches across remaining queries.\n"
+            f"{json.dumps(payload)}\n"
+            "End of notes."
+        )
+        result, path = collect.extract_collection_json(text, log=False)
+        self.assertIsNotNone(result)
+        self.assertEqual(path, "raw_decode")
+        self.assertEqual(result["status"], "no_new_intel")
+
+    def test_rejects_object_without_status(self):
+        text = '{"findings": [], "search_summary": "missing status"}'
+        result, path = collect.extract_collection_json(text, log=False)
+        self.assertIsNone(result)
+        self.assertIsNone(path)
+
+    def test_rejects_prose_curly_blob_without_status(self):
+        text = 'Notes about config {"foo": 1, "bar": 2} then more prose.'
+        result, path = collect.extract_collection_json(text, log=False)
+        self.assertIsNone(result)
+        self.assertIsNone(path)
+
+    def test_strips_citation_markers_before_parse(self):
+        # Unescaped cite attributes break JSON until markers are stripped.
+        text = (
+            "Prefix\n"
+            '{"status": "no_new_intel", '
+            '"collection_date": "2026-07-12", '
+            '"search_summary": "Source <cite index="1-2">Vendor</cite> confirmed quiet day.", '
+            '"findings": []}'
+        )
+        result, path = collect.extract_collection_json(text, log=False)
+        self.assertIsNotNone(result)
+        self.assertIn(path, {"raw_decode", "direct"})
+        self.assertEqual(result["status"], "no_new_intel")
+        self.assertNotIn("<cite", result["search_summary"])
+        self.assertIn("Vendor", result["search_summary"])
+
+    def test_direct_clean_json(self):
+        payload = {
+            "status": "no_new_intel",
+            "collection_date": "2026-07-08",
+            "search_summary": "clean",
+            "findings": [],
+        }
+        result, path = collect.extract_collection_json(json.dumps(payload), log=False)
+        self.assertEqual(path, "direct")
+        self.assertEqual(result["status"], "no_new_intel")
+
+
 if __name__ == "__main__":
     unittest.main()

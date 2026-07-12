@@ -183,6 +183,14 @@ jobs:
             validation-reports/review-required/**/*.json
           if-no-files-found: warn
 
+      - name: Upload raw collection response
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collection-raw-response
+          path: logs/*-raw-response*.txt
+          if-no-files-found: warn
+
       - name: Check for changes
         id: changes
         run: |
