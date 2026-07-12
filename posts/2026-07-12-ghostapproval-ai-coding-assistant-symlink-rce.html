@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE | LLM ThreatIntel</title>
+  <meta name="description" content="Wiz disclosed GhostApproval on 2026-07-08, a category-level symlink following flaw affecting Amazon Q Developer, Anthropic Claude Code, Augment, Cursor, Google Antigravity, and Windsurf. A malicious repository can disguise a symlink as a local config file so the agent writes outside the workspace, including to ~/.ssh/authorized_keys, often while the confirmation UI shows only the local path. Upgrade Cursor to 3.0 or later, Amazon Q language server to 1.69.0 or later, and Google Antigravity to the fixed build; treat untrusted repos as hostile and resolve symlinks before approving agent writes.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE">
+  <meta property="og:description" content="Wiz disclosed GhostApproval on 2026-07-08, a category-level symlink following flaw affecting Amazon Q Developer, Anthropic Claude Code, Augment, Cursor, Google Antigravity, and Windsurf. A malicious repository can disguise a symlink as a local config file so the agent writes outside the workspace, including to ~/.ssh/authorized_keys, often while the confirmation UI shows only the local path. Upgrade Cursor to 3.0 or later, Amazon Q language server to 1.69.0 or later, and Google Antigravity to the fixed build; treat untrusted repos as hostile and resolve symlinks before approving agent writes.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE">
+  <meta property="article:published_time" content="2026-07-12T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-12T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="mcp-security">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE">
+  <meta name="twitter:description" content="Wiz disclosed GhostApproval on 2026-07-08, a category-level symlink following flaw affecting Amazon Q Developer, Anthropic Claude Code, Augment, Cursor, Google Antigravity, and Windsurf. A malicious repository can disguise a symlink as a local config file so the agent writes outside the workspace, including to ~/.ssh/authorized_keys, often while the confirmation UI shows only the local path. Upgrade Cursor to 3.0 or later, Amazon Q language server to 1.69.0 or later, and Google Antigravity to the fixed build; treat untrusted repos as hostile and resolve symlinks before approving agent writes.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE",
+  "description": "Wiz disclosed GhostApproval on 2026-07-08, a category-level symlink following flaw affecting Amazon Q Developer, Anthropic Claude Code, Augment, Cursor, Google Antigravity, and Windsurf. A malicious repository can disguise a symlink as a local config file so the agent writes outside the workspace, including to ~/.ssh/authorized_keys, often while the confirmation UI shows only the local path. Upgrade Cursor to 3.0 or later, Amazon Q language server to 1.69.0 or later, and Google Antigravity to the fixed build; treat untrusted repos as hostile and resolve symlinks before approving agent writes.",
+  "datePublished": "2026-07-12T00:00:00Z",
+  "dateModified": "2026-07-12T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce.html",
+  "keywords": [
+    "supply-chain",
+    "mcp-security"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-12</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-mcp-security">Mcp Security</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE</h1>
+<p><strong>Date:</strong> 2026-07-12<br><strong>Tags:</strong> supply-chain, mcp-security</p>
+<h2>Executive Summary</h2>
+<p>Wiz disclosed GhostApproval on 2026-07-08, a category-level symlink following flaw affecting Amazon Q Developer, Anthropic Claude Code, Augment, Cursor, Google Antigravity, and Windsurf. A malicious repository can disguise a symlink as a local config file so the agent writes outside the workspace, including to ~/.ssh/authorized_keys, often while the confirmation UI shows only the local path. Upgrade Cursor to 3.0 or later, Amazon Q language server to 1.69.0 or later, and Google Antigravity to the fixed build; treat untrusted repos as hostile and resolve symlinks before approving agent writes.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GhostApproval trust boundary pattern</td></tr><tr><td>Actor / Attribution</td><td>Vulnerability research disclosure by Wiz; no attributed in-the-wild campaign (confidence: none for actor attribution)</td></tr><tr><td>Target</td><td>Developers using AI coding assistants that write files under human-in-the-loop approval</td></tr><tr><td>Vector</td><td>Malicious git repository with symlink disguised as project config plus README instructions steering the agent to edit that path</td></tr><tr><td>Status</td><td>partially remediated (AWS, Cursor, Google fixed; Augment and Windsurf in progress at disclosure; Anthropic disputed then later versions warn on sensitive symlink targets)</td></tr><tr><td>First Observed</td><td>2026-02-10 discovery; public disclosure 2026-07-08</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Wiz, GhostApproval combines CWE-61 symlink following with CWE-451 UI misrepresentation of critical information. The proof-of-concept creates a repository where project_settings.json is a symlink to a sensitive path such as ~/.ssh/authorized_keys, then instructs the agent via README to update that file with an attacker SSH public key. When the victim asks the assistant to set up the workspace, the agent follows the symlink and writes outside the sandbox.</p>
+<p>Wiz reported that in several products the agent internal reasoning correctly identified the dangerous target while the user-facing confirmation still displayed the local symlink name. Anthropic Claude Code was cited as the clearest CWE-451 example: reasoning noted the symlink destination while the prompt asked only whether to edit project_settings.json. Anthropic initially rejected the report as outside its threat model because the user trusted the directory and approved the prompt; Wiz noted later Claude Code versions resolve symlinks and warn before writing to sensitive files, and on 2026-07-07 Anthropic stated a symlink warning shipped in v2.1.32 from proactive hardening.</p>
+<p>Vendor outcomes per Wiz: Amazon Q Developer showed pre-authorization writes with only Undo afterward and was fixed under CVE-2026-12958 in language server 1.69.0. Cursor showed the symlink path in the diff UI and followed it on Accept; fixed under CVE-2026-50549 in v3.0. Google Antigravity displayed the symlink path rather than the canonical path and was fixed. Augment performed silent symlink reads and writes with no confirmation, including credential exfiltration and authorized_keys or zshrc persistence, with remediation still in progress at disclosure. Windsurf wrote to disk before Accept/Reject appeared, making the dialog an undo mechanism rather than an authorization gate; Cognition acknowledged receipt on 2026-06-23 with no further update by publication.</p>
+<p>Wiz Sensor detections cover clone-time creation of symlinks to sensitive files, write-time modification of authorized_keys, and severity elevation when activity originates from AI coding assistant processes.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195</td><td>Malicious repository delivered to developers as trusted project source</td></tr><tr><td>Path Interception by PATH Environment Variable</td><td>T1574.007</td><td>Symlink path interception causing writes outside intended workspace</td></tr><tr><td>Account Manipulation: SSH Authorized Keys</td><td>T1098.004</td><td>Agent write of attacker key to ~/.ssh/authorized_keys</td></tr><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>Developer opens malicious repo and approves agent edit</td></tr><tr><td>Obfuscated Files or Information</td><td>T1027</td><td>Symlink masquerades as benign project_settings.json</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor git clone and checkout events that create symlinks resolving outside the workspace, especially to ~/.ssh/authorized_keys, ~/.zshrc, ~/.bashrc, shell rc files, and cloud credential paths. Alert on AI coding assistant processes writing to those sensitive paths. Prefer agents and IDE versions that resolve symlinks before permission prompts and that never write before explicit user authorization. For Cursor require version 3.0 or later. For Amazon Q Developer require language server 1.69.0 or later and reload the IDE to pick up auto-updates. Do not approve agent file edits in repositories that have not been reviewed for symlinks. Hunt for unexpected authorized_keys entries and unexpected shell rc modifications after AI-assisted setup of untrusted repos.</p>
+<h2>References</h2>
+<ul><li>[Wiz] GhostApproval: AI Coding Assistant Trust Boundary Flaw (2026-07-08) — https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

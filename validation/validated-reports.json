@@ -2987,6 +2987,55 @@
       "validated_at": "2026-07-10T06:47:09+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce": {
+      "content_hash": "cf54184867c61f66606bf4492605fa817af7f64f18d9aec1e0606e500a3e5275",
+      "evidence_status": "validated",
+      "file": "2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce.md",
+      "posts_index_hash": "40f29778d6b68f762383aeec8cec696a444d211100467a4386c87819b04814fc",
+      "report_id": "2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-12T20:33:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-12-jscrambler-npm-rust-infostealer-mcp-ai-credentials": {
+      "content_hash": "7eefaf68302064b945e9e82ff32249cbc261dd67eedbc2adb8d78264f762b661",
+      "evidence_status": "validated",
+      "file": "2026-07-12-jscrambler-npm-rust-infostealer-mcp-ai-credentials.md",
+      "posts_index_hash": "5b1ca4c476a5078a8ea8142dc4b744a6f0e50f80915489e9fabeb6a5e03237f5",
+      "report_id": "2026-07-12-jscrambler-npm-rust-infostealer-mcp-ai-credentials",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/jscrambler-supply-chain-attack",
+        "https://www.stepsecurity.io/blog/jscrambler-npm-package-publishes-malicious-preinstall-binary",
+        "https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-12T20:33:21+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-12-langflow-cve-2026-55255-idor-cisa-kev-credential-theft": {
+      "content_hash": "0f69cd2a93bc7c5351e941288508b70495bc4df665150501be4a02d77f821a17",
+      "evidence_status": "validated",
+      "file": "2026-07-12-langflow-cve-2026-55255-idor-cisa-kev-credential-theft.md",
+      "posts_index_hash": "50b8a05a6371e5df4340d059553defb0486623c3776e0bb2e5dd4dc2610e2a8e",
+      "report_id": "2026-07-12-langflow-cve-2026-55255-idor-cisa-kev-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sysdig.com/blog/understanding-langflow-cve-2026-55255-and-why-higher-cvss-vulnerabilities-arent-always-the-most-exploited",
+        "https://www.helpnetsecurity.com/2026/07/08/langflow-vulnerability-cve-2026-55255-exploited/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-12T20:33:23+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

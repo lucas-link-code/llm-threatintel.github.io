@@ -1,6 +1,75 @@
 {
-  "last_updated": "2026-07-10",
+  "last_updated": "2026-07-12",
   "entries": [
+    {
+      "id": "langflow-cve-2026-55255-idor-operators",
+      "names": [
+        "Langflow CVE-2026-55255 IDOR operators",
+        "Langflow leak api keys IDOR campaign"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Internet scanning of exposed Langflow instances",
+        "Authenticated IDOR via POST /api/v1/responses after flow UUID disclosure",
+        "Parallel CVE-2026-33017 RCE second-stage loader from operator host"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1552 - Unsecured Credentials",
+        "T1059 - Command and Scripting Interpreter",
+        "T1105 - Ingress Tool Transfer",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Opportunistic financially motivated operators observed by Sysdig exploiting Langflow CVE-2026-55255 cross-tenant IDOR with input leak api keys to harvest embedded LLM and cloud credentials, alongside CVE-2026-33017 RCE for second-stage implant delivery. CISA added CVE-2026-55255 to KEV on 2026-07-07. Observed source and staging IP 45.207.216.55.",
+      "attribution": "Unknown. Sysdig assessment: opportunistic financially motivated, scripted toolkit not agentic. Confidence: low."
+    },
+    {
+      "id": "ghostapproval",
+      "names": [
+        "GhostApproval"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-02",
+      "status": "active",
+      "distribution": [
+        "Malicious git repositories containing symlinks disguised as local project config files",
+        "README or agent instructions directing AI coding assistants to edit the symlink path"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1098.004 - Account Manipulation: SSH Authorized Keys",
+        "T1204.002 - User Execution: Malicious File",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Wiz-disclosed category-level trust boundary pattern affecting six AI coding assistants. Symlink following (CWE-61) combined with confirmation UI that hides the resolved path (CWE-451) lets a malicious repository coerce agent writes outside the workspace, including to SSH authorized_keys. AWS CVE-2026-12958 and Cursor CVE-2026-50549 fixed; Google fixed; Augment and Windsurf in progress at disclosure.",
+      "attribution": "Vulnerability research by Wiz; no attributed threat actor campaign. Confidence: none."
+    },
+    {
+      "id": "jscrambler-npm-compromise-rust-infostealer",
+      "names": [
+        "jscrambler npm compromise",
+        "jscrambler Rust CSI infostealer"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-07",
+      "status": "disrupted",
+      "distribution": [
+        "Compromised official npm package jscrambler versions 8.14.0, 8.16.0, 8.17.0, 8.18.0, 8.20.0 via stolen npm publishing credential",
+        "preinstall hook then import-time dropper of platform-native Rust binaries from CSI container in dist/intro.js"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Software Supply Chain",
+        "T1059 - Command and Scripting Interpreter",
+        "T1036 - Masquerading",
+        "T1555 - Credentials from Password Stores",
+        "T1552 - Unsecured Credentials",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "description": "July 11 2026 compromise of the official jscrambler npm CLI. Malicious releases drop a Rust cross-platform infostealer from an obfuscated CSI container disguised as dist/intro.js. Payload harvests AI coding assistant and MCP configs (Cursor, Claude Desktop, Windsurf, VS Code, Factory), cloud credentials, browser stores, and crypto wallets. Detected by Socket and StepSecurity; Jscrambler revoked publishing credentials and published clean 8.22.0.",
+      "attribution": "Unknown. Jscrambler confirmed unauthorized publish using npm publishing credential. Confidence: none for named actor."
+    },
     {
       "id": "vapt-framework",
       "names": [

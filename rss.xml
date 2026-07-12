@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 10 Jul 2026 06:47:07 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 20:33:27 +0000</lastBuildDate>
     <item>
+      <title>Compromised jscrambler npm Package Drops Rust Infostealer Targeting AI Coding Assistants and MCP Configs</title>
+      <link>https://llm-threatintel.com/posts/2026-07-12-jscrambler-npm-rust-infostealer-mcp-ai-credentials.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-12-jscrambler-npm-rust-infostealer-mcp-ai-credentials.html</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      <description>On 2026-07-11 attackers published compromised releases of the official jscrambler npm CLI that drop a Rust cross-platform infostealer during install or import, with Socket and StepSecurity confirming malicious versions 8.14.0, 8.16.0, 8.17.0, 8.18.0, and 8.20.0. The payload specifically enumerates AI developer tooling and MCP configuration paths including Cursor, Claude Desktop, Windsurf, VS Code, and Factory, alongside cloud credentials and crypto wallets. Pin to jscrambler 8.22.0 or another verified clean release, treat any host that installed a compromised version as compromised, and rotate secrets reachable by the npm process.</description>
+    </item>    <item>
+      <title>GhostApproval: Symlink Trust Boundary Flaw Across Six AI Coding Assistants Enables Sandbox Escape and RCE</title>
+      <link>https://llm-threatintel.com/posts/2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-12-ghostapproval-ai-coding-assistant-symlink-rce.html</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Wiz disclosed GhostApproval on 2026-07-08, a category-level symlink following flaw affecting Amazon Q Developer, Anthropic Claude Code, Augment, Cursor, Google Antigravity, and Windsurf. A malicious repository can disguise a symlink as a local config file so the agent writes outside the workspace, including to ~/.ssh/authorized_keys, often while the confirmation UI shows only the local path. Upgrade Cursor to 3.0 or later, Amazon Q language server to 1.69.0 or later, and Google Antigravity to the fixed build; treat untrusted repos as hostile and resolve symlinks before approving agent writes.</description>
+    </item>    <item>
+      <title>Langflow CVE-2026-55255 IDOR Added to CISA KEV: Cross-Tenant Flow Hijack and leak api keys Credential Theft</title>
+      <link>https://llm-threatintel.com/posts/2026-07-12-langflow-cve-2026-55255-idor-cisa-kev-credential-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-12-langflow-cve-2026-55255-idor-cisa-kev-credential-theft.html</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      <description>CISA added Langflow CVE-2026-55255 to the Known Exploited Vulnerabilities catalog on 2026-07-07 after Sysdig documented in-the-wild exploitation combining this cross-tenant IDOR with CVE-2026-33017 RCE against internet-exposed Langflow. Operators enumerate /api/v1/flows/, then POST /api/v1/responses with stolen flow UUIDs and input leak api keys to coerce victim flows into surfacing embedded LLM and cloud credentials. Upgrade Langflow to 1.9.1 or later, remove internet exposure of Langflow control planes, and hunt for source IP 45.207.216.55 and second-stage URL 45.207.216.55:8084/slt.</description>
+    </item>    <item>
       <title>Armored Likho: LLM-Generated Malware Targeting Critical Infrastructure in Russia, Kazakhstan, Brazil</title>
       <link>https://llm-threatintel.com/posts/2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-10-armored-likho-llm-generated-malware-critical-infrastructure.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-15-agentjacking-sentry-ai-agent-rce-june-2026.html</guid>
       <pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate>
       <description>Tenet Security researchers disclosed "agentjacking," a new class of attack in which malicious instructions hidden in Sentry error events trick AI coding agents into executing arbitrary code on developer machines, exploiting an architectural flaw in the Sentry monitoring tool. An attacker injects malicious commands into Sentry error events that are impossible to distinguish from the tool's own remediation guidance.</description>
-    </item>    <item>
-      <title>Marimo CVE-2026-39987 Exploited by LLM Agent for Post-Compromise Cloud Credential Theft and Lateral Movement</title>
-      <link>https://llm-threatintel.com/posts/2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-12-marimo-cve-2026-39987-llm-agent-exploitation.html</guid>
-      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
-      <description>An unknown threat actor has been observed using a large language model (LLM) agent to conduct post-compromise actions after obtaining initial access following the exploitation of a publicly-accessible Marimo network. The attacker compromised an internet-reachable Marimo notebook via CVE-2026-39987, extracted two cloud credentials from the compromised host, replayed them through a fanned-out egress pool to retrieve an SSH private key from AWS Secrets Manager, and used that key to drive eight short SSH sessions against a downstream SSH bastion server. This represents one of the first documented cases of LLM agents autonomously conducting multi-stage post-exploitation workflows without human direction between steps.</description>
-    </item>    <item>
-      <title>Microsoft Threat Intelligence Tracks Multi-Campaign Credential Phishing via ChatGPT, Claude, DeepSeek Impersonation (May 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-06-12-ai-platform-impersonation-phishing-may-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-12-ai-platform-impersonation-phishing-may-2026.html</guid>
-      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
-      <description>By disguising phishing attacks with the branding of platforms like ChatGPT, Claude, and DeepSeek, threat actors are luring users into handing over login credentials, credit card numbers, and authentication tokens. Microsoft Threat Intelligence observed multiple, distinct campaigns in 2026 that reused legitimate branding, SEO techniques, malvertising, and multi-stage redirect chains to bypass defenses and scale theft and infection at pace. Within 45 minutes of DeepSeek V4 preview, a fake GitHub organization called DeepSeek-V4 was live, loaded with stolen branding, real benchmark data, and search-optimized tags. Users who downloaded the archives received a loader that silently installed Vidar infostealer on their devices.</description>
-    </item>    <item>
-      <title>Fake OpenAI Privacy Filter Malware Campaign Reaches 244K Downloads on Hugging Face Before Removal</title>
-      <link>https://llm-threatintel.com/posts/2026-06-12-fake-openai-privacy-filter-hugging-face-malware.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-12-fake-openai-privacy-filter-hugging-face-malware.html</guid>
-      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
-      <description>A fraudulent AI model posing as an OpenAI release briefly became one of the most downloaded projects on Hugging Face before researchers determined it was distributing credential-stealing malware to Windows systems. Before its removal, the repository accumulated roughly 244,000 downloads and hundreds of positive ratings in less than a day, reaching the top of Hugging Face's trending rankings. Some of the infrastructure tied to the attack overlaps with activity previously associated with ValleyRAT, a remote access trojan linked by researchers to the China-aligned threat group known as Silver Fox.</description>
     </item>
   </channel>
 </rss>

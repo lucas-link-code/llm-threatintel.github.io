@@ -1,7 +1,7 @@
 {
-  "commit_sha": "b02849889ddfd4fd503e3a54b95443be58765270",
+  "commit_sha": "9bd47c03ef51",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-07-12T20:25:47+00:00",
+  "generated_at_utc": "2026-07-12T20:33:47+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -19,7 +19,7 @@
   "overall_result": "pass",
   "reports_checked": 0,
   "reports_newly_validated": 0,
-  "reports_skipped": 166,
+  "reports_skipped": 169,
   "review_required": 0,
   "source_urls_checked": 0,
   "state_updates": 0,
