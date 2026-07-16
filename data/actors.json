@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-12",
+  "last_updated": "2026-07-16",
   "entries": [
     {
       "id": "langflow-cve-2026-55255-idor-operators",
@@ -1344,7 +1344,9 @@
         "Direct exploitation of exposed Marimo instances",
         "AI coding agents with Sentry integration",
         "Automated scanning and exploitation of exposed Langflow endpoints",
-        "Domain registration abuse"
+        "Domain registration abuse",
+        "npm registry",
+        "PyPI registry"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1384,9 +1386,11 @@
         "T1552.001 - Unsecured Credentials: Credentials In Files",
         "Prompt Injection via Error Messages",
         "T1496 - Resource Hijacking",
-        "T1598.003 - Phishing: Spearphishing Link"
+        "T1598.003 - Phishing: Spearphishing Link",
+        "T1195.001 - Supply Chain Compromise",
+        "T1648 - Abuse of Functionality"
       ],
-      "description": "Threat actors compromised a Context.ai employee via infostealer malware, then weaponized the trust relationship between the employee and their corporate environment to steal OAuth tokens with excessive permissions. The incident demonstrates how AI tool adoption expands the enterprise attack surface through new credential types and trust relationships.",
+      "description": "This is a structural architectural vulnerability rather than a specific threat campaign. Axis Intelligence Research identified and disclosed the vulnerability through coordinated responsible disclosure to model providers on July 3, 2026. Exploitation requires understanding of multi-agent orchestration patterns and the ability to craft prompts that pass first-model safety checks but execute when passed to secondary models.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
     },
     {

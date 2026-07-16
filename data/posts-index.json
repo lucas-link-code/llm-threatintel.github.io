@@ -1,6 +1,42 @@
 {
   "posts": [
     {
+      "id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
+      "title": "Cross-Model Prompt Laundering via API Chaining — Safety Refusals Bypass in Multi-Agent Orchestration (July 3, 2026)",
+      "date": "2026-07-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "When one model's output feeds directly into a second model as a user-turn message — a pattern increasingly common in multi-agent orchestration stacks — safety refusals from the first model do not transfer, and in lab testing, 14 of 18 tested chains produced the refused output within two hops. The attack surface is the gap between models, not a flaw in any single system.",
+      "file": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md"
+    },
+    {
+      "id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
+      "title": "Fake Payment SDK Supply Chain Attack — 17 Malicious npm/PyPI Packages Targeting Payment Developers (July 7, 2026)",
+      "date": "2026-07-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On July 7, 2026, automated security scanners detected a cluster of 17 malicious packages published nearly simultaneously across the npm and PyPI registries. These packages were designed to mimic legitimate software development kits (SDKs) for major payment platforms, specifically PaySafe, Skrill, and Neteller, leveraging typosquatting and deceptive naming conventions to trick developers into integrating malicious code.",
+      "file": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md"
+    },
+    {
+      "id": "2026-07-16-asyncapi-npm-supply-chain-oidc-abuse-july-2026",
+      "title": "AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026)",
+      "date": "2026-07-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token; they abused each project's own CI pipeline through GitHub Actions OIDC to publish the malicious packages.",
+      "file": "2026-07-16-asyncapi-npm-supply-chain-oidc-abuse-july-2026.md"
+    },
+    {
       "id": "2026-07-12-jscrambler-npm-rust-infostealer-mcp-ai-credentials",
       "title": "Compromised jscrambler npm Package Drops Rust Infostealer Targeting AI Coding Assistants and MCP Configs",
       "date": "2026-07-12",

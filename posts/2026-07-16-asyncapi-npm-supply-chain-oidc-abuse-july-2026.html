@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026) | LLM ThreatIntel</title>
+  <meta name="description" content="Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token; they abused each project&#x27;s own CI pipeline through GitHub Actions OIDC to publish the malicious packages.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-16-asyncapi-npm-supply-chain-oidc-abuse-july-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026)">
+  <meta property="og:description" content="Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token; they abused each project&#x27;s own CI pipeline through GitHub Actions OIDC to publish the malicious packages.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-16-asyncapi-npm-supply-chain-oidc-abuse-july-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026)">
+  <meta property="article:published_time" content="2026-07-16T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-16T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026)">
+  <meta name="twitter:description" content="Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token; they abused each project&#x27;s own CI pipeline through GitHub Actions OIDC to publish the malicious packages.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse \u2014 Five Malicious Packages Published (July 14, 2026)",
+  "description": "Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token; they abused each project's own CI pipeline through GitHub Actions OIDC to publish the malicious packages.",
+  "datePublished": "2026-07-16T00:00:00Z",
+  "dateModified": "2026-07-16T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-16-asyncapi-npm-supply-chain-oidc-abuse-july-2026.html",
+  "keywords": [
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-16</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026)</h1>
+<p><strong>Date:</strong> 2026-07-16<br><strong>Tags:</strong> supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token; they abused each project&#x27;s own CI pipeline through GitHub Actions OIDC to publish the malicious packages.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AsyncAPI GitHub Actions OIDC Abuse</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>@asyncapi npm packages; developers using AsyncAPI framework in CI/CD pipelines</td></tr><tr><td>Vector</td><td>GitHub Actions OIDC federated identity abuse to bypass npm token authentication</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-07-14</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The attack targeted multiple npm packages commonly used across developer tooling, frontend frameworks, CI/CD pipelines, and cloud-native application environments, with malicious payloads designed specifically to target CI/CD systems, cloud identities, GitHub credentials, npm publishing workflows, developer machines, and AI developer tooling. This represents a novel abuse vector: Rather than compromising npm tokens directly, the attacker abused each project&#x27;s own CI pipeline through GitHub Actions OIDC to publish malicious packages. The attack demonstrates a sophisticated understanding of GitHub&#x27;s federated identity trust model and represents a shift from direct credential theft to identity-based package publication.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Malicious code injected into npm packages via compromised CI/CD pipeline</td></tr><tr><td>Abuse of Functionality</td><td>T1648</td><td>GitHub Actions OIDC tokens abused for unauthorized package publication</td></tr><tr><td>Lateral Movement</td><td>T1570</td><td>Payload designed to target downstream CI/CD systems and cloud environments</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Upwind Security disclosure; specific package names and versions not fully detailed in public reporting_</p>
+<h3>Full URL Paths</h3>
+<p>_Upwind Security disclosure; specific package names and versions not fully detailed in public reporting_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">{&#x27;name&#x27;: &#x27;@asyncapi/*&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;note&#x27;: &#x27;Five packages in @asyncapi scope compromised; exact package names not disclosed in source&#x27;}</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">npm
+GitHub Actions
+CI/CD pipelines</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor GitHub Actions OIDC token usage and validate that npm publish operations originate only from expected, authorized CI/CD workflows. Implement branch protection rules requiring code review for CI/CD configuration changes. Audit npm audit logs for unexpected package versions from known maintainers. Use npm provenance verification to validate that published packages match expected build artifacts. For organizations using @asyncapi packages, inspect CI build logs for unauthorized npm publish commands executed between July 13-15, 2026.</p>
+<h2>References</h2>
+<ul><li>[Upwind Security] The New Face of Supply Chain Attacks: npm Malware Built for CI/CD and Cloud Compromise (2026-07-14) — https://www.upwind.io/feed/large-scale-npm-pypi-supply-chain-campaign-suspected-across-multiple-popular-packages</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
