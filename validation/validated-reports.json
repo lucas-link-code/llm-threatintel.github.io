@@ -3051,6 +3051,21 @@
       "validated_at": "2026-07-16T05:42:04+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026": {
+      "content_hash": "ae8e6e8ddd4bf05275d7c5595590e122b0eb078fe0f5b4bc325943f33a9b28b3",
+      "evidence_status": "validated",
+      "file": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
+      "posts_index_hash": "1eed9b474e1f098101f28c9cf9de8cc8ba1eebec13ff0152549c1703d487df90",
+      "report_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cyberpress.org/fake-sdks-target-developers/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-19T17:48:38+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
