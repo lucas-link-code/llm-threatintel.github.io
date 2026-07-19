@@ -3052,18 +3052,55 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026": {
+      "content_hash": "3524b3cf886b9430a85600b1f11bc5cfc10b8a6942e4054ec1e3ac7e0470b8d1",
+      "evidence_status": "validated",
+      "file": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
+      "posts_index_hash": "96fe416fb5c26749a974e4a68fde40c18b0a6743c5fdaf5f8fc37fc5ea768dd0",
+      "report_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
+        "https://axis-intelligence.com/ai-model-vulnerability-tracker-methodology/",
+        "https://arxiv.org/html/2603.28013v1"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-19T17:51:56+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026": {
-      "content_hash": "ae8e6e8ddd4bf05275d7c5595590e122b0eb078fe0f5b4bc325943f33a9b28b3",
+      "content_hash": "28c13de35803c0956073c916f3b8fc9360879bc70ffdd8f25f7839f216b372fa",
       "evidence_status": "validated",
       "file": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
-      "posts_index_hash": "1eed9b474e1f098101f28c9cf9de8cc8ba1eebec13ff0152549c1703d487df90",
+      "posts_index_hash": "ff6d37a6c89fcc14cd6ea6ddb373ba56de14caa2c3e685d23a2b5fe0ea9b4c3a",
       "report_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
       "review_required": [],
       "source_urls": [
+        "https://socket.dev/blog/npm-pypi-campaign-typosquats-popular-secure-payment-apps",
         "https://cyberpress.org/fake-sdks-target-developers/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-19T17:48:38+00:00",
+      "validated_at": "2026-07-19T17:51:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet": {
+      "content_hash": "2f1c56a77080ed3dea41dbb62b0085869da3d45943c1efe10b9f366c098a971f",
+      "evidence_status": "validated",
+      "file": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.md",
+      "posts_index_hash": "ef35d518e94f51afb73ed09bc280877aed78bdd4072600efc23bc4abd9aafd80",
+      "report_id": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "review_required": [],
+      "source_urls": [
+        "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html",
+        "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/26/e/patriot-bait/IoC_PatriotBait.txt",
+        "https://www.bleepingcomputer.com/news/security/google-gemini-cli-abused-as-a-hacking-agent-malware-botnet-operator/",
+        "https://www.helpnetsecurity.com/2026/07/16/jailbroken-google-gemini-cli-botnet/",
+        "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-19T18:00:47+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

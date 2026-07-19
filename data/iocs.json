@@ -1,6 +1,105 @@
 {
-  "last_updated": "2026-07-12",
+  "last_updated": "2026-07-19",
   "iocs": [
+    {
+      "value": "tralalarkefe.com",
+      "type": "domain",
+      "context": "Patriot Bait / bandcampro primary Cloudflare domain for Gemini CLI C2 botnet",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "c2.tralalarkefe.com",
+      "type": "domain",
+      "context": "bandcampro C2 public endpoint for PowerShell beacon polling",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "payloads.tralalarkefe.com",
+      "type": "domain",
+      "context": "bandcampro payload distribution host for agent_final.ps1 stager",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "catchall1.tralalarkefe.com",
+      "type": "domain",
+      "context": "Patriot Bait catch-all Mailpit subdomain on shared tralalarkefe infrastructure",
+      "first_seen": "2026-05-01",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "c2.tralalarkefe.com/api/v1/update",
+      "type": "url_path",
+      "context": "Victim PowerShell beacon polls every 5 seconds for Base64 commands",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "c2.tralalarkefe.com/api/v1/telemetry",
+      "type": "url_path",
+      "context": "Victim posts Base64-encoded command output to C2",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "c2.tralalarkefe.com/api/v1/agents",
+      "type": "url_path",
+      "context": "Operator agent registry listing endpoint on bandcampro C2",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "c2.tralalarkefe.com/api/v1/interact",
+      "type": "url_path",
+      "context": "Operator command push endpoint for specific agent or ALL broadcast",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "payloads.tralalarkefe.com/agent_final.ps1",
+      "type": "url_path",
+      "context": "PowerShell agent downloaded by infection stager into TEMP win_update_svc_*.ps1",
+      "first_seen": "2026-03-23",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "213.165.51.115",
+      "type": "ip",
+      "context": "Patriot Bait primary VPS listed in TrendAI IOC bulletin for bandcampro infrastructure",
+      "first_seen": "2026-05-01",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
+    {
+      "value": "981036cec38c6fd9796fc64a102100b97983f56b3482cc3e1f1610e14a1fae58",
+      "type": "sha256",
+      "context": "StellarMonSetup.exe hash from TrendAI Patriot Bait IOC package shared with bandcampro infra",
+      "first_seen": "2026-05-01",
+      "source": "Trend Micro",
+      "campaign": "2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet",
+      "status": "active"
+    },
     {
       "value": "37.27.122.124",
       "type": "ip",
@@ -1984,7 +2083,7 @@
     {
       "value": "npm:@solana-launchpad/sdk",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -1993,7 +2092,7 @@
     {
       "value": "npm:@validate-sdk/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2002,7 +2101,7 @@
     {
       "value": "npm:@hash-validator/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2011,7 +2110,7 @@
     {
       "value": "aes-create-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2020,7 +2119,7 @@
     {
       "value": "jito-proper-excutor",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2029,7 +2128,7 @@
     {
       "value": "jito-sub-aes-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2038,7 +2137,7 @@
     {
       "value": "pypi:scraper-npm",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -2137,7 +2236,7 @@
     {
       "value": "65.111.27.132",
       "type": "ip",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -2146,7 +2245,7 @@
     {
       "value": "huggingface.co/Open-OSS/privacy-filter",
       "type": "url_path",
-      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
+      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified\u2014Trojans, Cryptominers, and AMOS Stealer Malware",
       "first_seen": "2026-05-12",
       "source": "TechNext Web",
       "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
@@ -2155,7 +2254,7 @@
     {
       "value": "jsonkeeper.com",
       "type": "domain",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -2164,7 +2263,7 @@
     {
       "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
       "type": "sha256",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -2173,7 +2272,7 @@
     {
       "value": "https://www.huggingface.co/Open-OSS/privacy-filter",
       "type": "url_path",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -2182,7 +2281,7 @@
     {
       "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -2191,7 +2290,7 @@
     {
       "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -2227,7 +2326,7 @@
     {
       "value": "npm:@bankr/agent",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",

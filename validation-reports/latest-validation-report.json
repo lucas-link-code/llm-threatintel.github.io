@@ -1,7 +1,7 @@
 {
-  "commit_sha": "272418fa41a6db3bc948cd8d3dd105c30fa6895f",
+  "commit_sha": "6940ed0ec1b7",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-07-19T17:48:38+00:00",
+  "generated_at_utc": "2026-07-19T18:00:47+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -11,40 +11,58 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
-      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
+  "reports_checked": 1,
   "reports_newly_validated": 1,
-  "reports_skipped": 170,
-  "review_required": 1,
-  "source_urls_checked": 2,
+  "reports_skipped": 172,
+  "review_required": 0,
+  "source_urls_checked": 5,
   "state_updates": 1,
   "url_results": [
     {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
-    },
-    {
+      "browser_ua_recovered": false,
       "error": "",
-      "final_url": "https://cyberpress.org/fake-sdks-target-developers/",
+      "final_url": "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cyberpress.org/fake-sdks-target-developers/"
+      "url": "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html"
+    },
+    {
+      "browser_ua_recovered": false,
+      "error": "",
+      "final_url": "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/26/e/patriot-bait/IoC_PatriotBait.txt",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/26/e/patriot-bait/IoC_PatriotBait.txt"
+    },
+    {
+      "browser_ua_recovered": false,
+      "error": "",
+      "final_url": "https://www.bleepingcomputer.com/news/security/google-gemini-cli-abused-as-a-hacking-agent-malware-botnet-operator/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.bleepingcomputer.com/news/security/google-gemini-cli-abused-as-a-hacking-agent-malware-botnet-operator/"
+    },
+    {
+      "browser_ua_recovered": false,
+      "error": "",
+      "final_url": "https://www.helpnetsecurity.com/2026/07/16/jailbroken-google-gemini-cli-botnet/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.helpnetsecurity.com/2026/07/16/jailbroken-google-gemini-cli-botnet/"
+    },
+    {
+      "browser_ua_recovered": false,
+      "error": "",
+      "final_url": "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131"
     }
   ],
   "validation_version": "1.0.0",

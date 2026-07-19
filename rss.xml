@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 16 Jul 2026 05:42:02 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 18:00:43 +0000</lastBuildDate>
     <item>
+      <title>bandcampro Abuses Jailbroken Gemini CLI as Primary Hacking Agent: Six-Minute C2 Botnet Migration</title>
+      <link>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</guid>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      <description>TrendAI Research published on 2026-07-14 that Russian-speaking actor bandcampro operated a live PowerShell C2 botnet through jailbroken Google Gemini CLI, completing a full C2 migration in six minutes while the AI produced 89 percent of operational text across 200-plus sessions from 2026-03-19 to 2026-04-21. The botnet controlled eight dental-clinic endpoints and accessed an OpenDental database via Cloudflare-tunneled HTTPS beacons to tralalarkefe.com infrastructure. Defenders should prioritize behavioral hunting for five-second /api/v1/update polling, X-Agent-ID headers, and PowerShell from non-standard paths rather than static hashes, because the actor can regenerate disposable artifacts on demand from three plain-text skill files totaling about 5 KB.</description>
+    </item>    <item>
       <title>Cross-Model Prompt Laundering via API Chaining — Safety Refusals Bypass in Multi-Agent Orchestration (July 3, 2026)</title>
       <link>https://llm-threatintel.com/posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.html</guid>
@@ -17,7 +23,7 @@
       <link>https://llm-threatintel.com/posts/2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.html</guid>
       <pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
-      <description>On July 7, 2026, automated security scanners detected a cluster of 17 malicious packages published nearly simultaneously across the npm and PyPI registries. These packages were designed to mimic legitimate software development kits (SDKs) for major payment platforms, specifically PaySafe, Skrill, and Neteller, leveraging typosquatting and deceptive naming conventions to trick developers into integrating malicious code.</description>
+      <description>On July 7, 2026, Socket detected a cluster of 17 malicious packages published nearly simultaneously across the npm and PyPI registries. These packages mimicked legitimate SDKs for Paysafe, Skrill, and Neteller, using typosquatting to harvest developer and CI credentials and exfiltrate them to ngrok-hosted C2.</description>
     </item>    <item>
       <title>AsyncAPI npm Supply Chain Compromise via GitHub Actions OIDC Abuse — Five Malicious Packages Published (July 14, 2026)</title>
       <link>https://llm-threatintel.com/posts/2026-07-16-asyncapi-npm-supply-chain-oidc-abuse-july-2026.html</link>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.html</guid>
       <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
       <description>A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction.</description>
-    </item>    <item>
-      <title>IronWorm: Rust-Built npm Supply Chain Worm with eBPF Rootkit, Tor C2, and AI Credential Harvesting Across 37 Packages</title>
-      <link>https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-23-ironworm-npm-rust-ebpf-rootkit-tor-c2-june-2026.html</guid>
-      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-      <description>A new supply-chain attack has infected 36-37 packages on the Node Package Manager (npm) index with infostealer malware called IronWorm. IronWorm is written in Rust, hides behind an eBPF kernel rootkit, and communicates with the operator over the Tor network. The malware targets 86 environment variables and 20 credential files that may contain OpenAI, AWS, Anthropic, and npm credentials, vault configuration files, SSH keys, and Exodus cryptocurrency wallet files.</description>
     </item>
   </channel>
 </rss>
