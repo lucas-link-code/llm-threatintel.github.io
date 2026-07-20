@@ -3103,6 +3103,60 @@
       "validated_at": "2026-07-19T18:00:47+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon": {
+      "content_hash": "296cf985af24ee2f6666fbde9a816b006d41fd4716b6c09b30e78ef2ee4a17fa",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.md",
+      "posts_index_hash": "c92cf30529ebb750a9340d91585c9b7ca6401bf3c0df5886ce54b0a3f5d8ceb6",
+      "report_id": "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+        "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier",
+        "https://adversa.ai/blog/top-mcp-security-resources-july-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-20T06:19:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning": {
+      "content_hash": "03384744b2fc3f9dc45bd9f4ea6afc82fe457b361565b496ba4c8f0d7ceee919",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.md",
+      "posts_index_hash": "b86df202e575cfd05610205d3c1c3b7aefcdde2f154daa2ec3086c21f874fa83",
+      "report_id": "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-20T06:19:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack": {
+      "content_hash": "3ff0586181ed3a4f8ae5eb674b9dcf24ccc1360e427fb7da93462fa41c2b714e",
+      "evidence_status": "validated",
+      "file": "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.md",
+      "posts_index_hash": "b118959999194c40f97b1822a42a69f7b7d7c30d0e21e7898fb5867e06461aeb",
+      "report_id": "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack",
+      "review_required": [],
+      "source_urls": [
+        "https://adversa.ai/blog/top-mcp-security-resources-july-2026/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-agentjacking-self-replicating-ai-worms-202/",
+        "https://www.practical-devsecops.com/mcp-security-vulnerabilities/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-20T06:19:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

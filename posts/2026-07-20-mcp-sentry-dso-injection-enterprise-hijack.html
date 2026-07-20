@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI) | LLM ThreatIntel</title>
+  <meta name="description" content="Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry&#x27;s unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)">
+  <meta property="og:description" content="Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry&#x27;s unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)">
+  <meta property="article:published_time" content="2026-07-20T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-20T00:00:00Z">
+  <meta property="article:tag" content="mcp-security">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)">
+  <meta name="twitter:description" content="Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry&#x27;s unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)",
+  "description": "Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry's unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.",
+  "datePublished": "2026-07-20T00:00:00Z",
+  "dateModified": "2026-07-20T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.html",
+  "keywords": [
+    "mcp-security",
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-20</span>
+      <span class="post-tag tag-mcp-security">Mcp Security</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)</h1>
+<p><strong>Date:</strong> 2026-07-20<br><strong>Tags:</strong> mcp-security, prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry&#x27;s unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Enterprise MCP Agent Hijacking: Sentry DSN Injection + MSTI</td></tr><tr><td>Attribution</td><td>Multiple independent research disclosures; attacks in-the-wild against fintech and enterprise deployments (confidence: medium)</td></tr><tr><td>Target</td><td>MCP-connected AI coding agents (Claude Code, Cursor, GitHub Copilot), fintech AI infrastructure, enterprise Kubernetes/shell access</td></tr><tr><td>Vector</td><td>Sentry event ingestion abuse (unauthenticated), tool-poisoning via description injection, Mid-Session Tool Injection (MSTI)</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-02 (Sentry disclosure); widespread in-the-wild as of 2026-07-02</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Attackers are leveraging Mid-Session Tool Injection (MSTI) to hijack the tools a WebMCP agent utilizes during active sessions. By using third-party scripts for AbortSignal hijacking and registration races, this runtime manipulation achieves exceptionally high attack success rates. Tenet Security discovered that attackers can inject fake Sentry error events through a public DSN, which the Sentry MCP server then blindly returns as trusted diagnostics. This allows attackers to achieve an 85% success rate when tricking coding agents into executing arbitrary commands across thousands of vulnerable organizations. The Model Context Protocol (MCP) has become the backbone infrastructure for connecting AI models with external tools, data sources, and automated business workflows. As enterprises embrace MCP servers for advanced AI integration, these systems hold ever more sensitive data and runtime privileges. Yet MCP servers face urgent threats: prompt injection, where attackers trick AI models into running hidden commands, and tool poisoning, which manipulates the description or behavior of external tools to lure agents into unsafe actions. Both attack vectors can lead to data loss, privilege abuse, or full system compromise.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Prompt Injection</td><td>T1598</td><td>Hidden instructions injected through tool descriptions and Sentry event API</td></tr><tr><td>Tool Poisoning</td><td>T1059.001</td><td>Malicious tool descriptions trigger agent execution of arbitrary commands</td></tr><tr><td>Lateral Movement</td><td>T1570</td><td>Compromised agents pivot to databases, Kubernetes clusters, shell access</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Affected 2,388 organizations with exposed Sentry configurations. MSTI affects WebMCP runtimes via AbortSignal hijacking._</p>
+<h3>Full URL Paths</h3>
+<p>_Affected 2,388 organizations with exposed Sentry configurations. MSTI affects WebMCP runtimes via AbortSignal hijacking._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">{&#x27;name&#x27;: &#x27;Sentry DSN endpoint&#x27;, &#x27;registry&#x27;: &#x27;service&#x27;, &#x27;version&#x27;: &#x27;unauthenticated event ingestion&#x27;, &#x27;note&#x27;: &#x27;Public DSNs allow attacker-controlled event injection&#x27;}</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Claude Code
+Cursor IDE
+GitHub Copilot
+WebMCP agents
+Sentry error monitoring service
+Fintech AI infrastructure
+Enterprise Kubernetes/database systems</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory all MCP servers and agents in production; verify Sentry DSN public accessibility and implement IP allowlists. Require authentication on event ingestion endpoints; rotate Sentry API tokens immediately. Audit tool descriptions for malicious or suspicious content; require tool schema validation before agent invocation. Implement tool allowlists and disable dynamic tool loading. Monitor for unusual tool calls (e.g., database/shell access from ML agents that should not have that capability). Enable MCP runtime logging and audit all tool invocations with identity and origin. Implement Anthropic&#x27;s Zero Trust framework for enterprise AI agents as documented in July 2026 briefings. Upgrade to MCP 2026 spec when available; implement incremental scope consent for minimum required permissions per operation.</p>
+<h2>References</h2>
+<ul><li>[Adversa AI] Top MCP security resources &amp; CVEs July 2026 (2026-07-02) — https://adversa.ai/blog/top-mcp-security-resources-july-2026/</li><li>[Cloud Security Alliance Labs] Agentjacking and Self-Replicating AI Worms (2026-06-16) — https://labs.cloudsecurityalliance.org/research/csa-research-note-agentjacking-self-replicating-ai-worms-202/</li><li>[Practical DevSecOps] MCP Server Vulnerabilities 2026 - Prevent Prompt Injection Attacks (2026-01-04) — https://www.practical-devsecops.com/mcp-security-vulnerabilities/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

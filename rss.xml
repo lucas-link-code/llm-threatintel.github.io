@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 19 Jul 2026 18:00:43 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 06:19:40 +0000</lastBuildDate>
     <item>
+      <title>MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)</title>
+      <link>https://llm-threatintel.com/posts/2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry's unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.</description>
+    </item>    <item>
+      <title>Trojaned AsyncAPI npm Packages via GitHub Actions OIDC Token Theft and MCP Reconnaissance Evolution</title>
+      <link>https://llm-threatintel.com/posts/2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token. They abused each project's own CI pipeline through GitHub Actions OIDC to publish the malicious packages. By late January 2026, 60% of LLMjacking attack traffic had shifted from compute theft toward MCP (Model Context Protocol) reconnaissance, probing file systems, databases, shell access, API integrations, and Kubernetes clusters. LLMjacking is increasingly a staging ground for deeper compromise, not just a billing attack.</description>
+    </item>    <item>
+      <title>Hugging Face Autonomous Agent Intrusion: Agentic AI Breach via Dataset Code Execution</title>
+      <link>https://llm-threatintel.com/posts/2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.html</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      <description>A malicious dataset abused two code-execution paths in Hugging Face's dataset processing (a remote-code dataset loader and a template-injection in a dataset configuration) to run code on a processing worker. The actor escalated to node-level access, harvested cloud and cluster credentials, and moved laterally into several internal clusters. The campaign was run by an autonomous agent framework executing many thousands of individual actions across a swarm of short-lived sandboxes, with self-migrating command-and-control staged on public services.</description>
+    </item>    <item>
       <title>bandcampro Abuses Jailbroken Gemini CLI as Primary Hacking Agent: Six-Minute C2 Botnet Migration</title>
       <link>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-29-llmjacking-agentic-ai-reconnaissance-june-2026.html</guid>
       <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
       <description>A June 2026 finding by Sysdig signals LLMjacking crossing a strategic threshold: attackers exploited remote code execution vulnerabilities in outdated web frameworks to obtain cloud credentials, then validated and triaged those credentials against 30+ LLM providers before listing access for resale, representing a departure from ad hoc opportunism toward systematic supply chain criminalization and suggesting LLMjacking may be evolving beyond infrastructure-abuse toward AI as an active component of the adversary's toolkit.</description>
-    </item>    <item>
-      <title>Trend Micro ClickFix Malvertising: Claude.ai Shared Chat Weaponization Across 6 Attack Waves (April-June 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-26-trend-micro-claude-clickfix-malvertising-campaign-2026.html</guid>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0000</pubDate>
-      <description>TrendAI Research tracked 106 unique malicious hostnames deployed across six distinct attack waves over seven weeks from April 8 to June 14, 2026, with operators continuously rotating infrastructure and testing new AI brand lures. The campaign made a significant tactical leap by shifting to and weaponizing claude.ai's shared chat feature; victims landed on a fully legitimate, trusted domain that rendered browser warnings and URL inspection easier to evade. The Asia-Pacific region bore the brunt of the campaign, accounting for 67.2% of all confirmed victims, with Taiwan alone representing 30.5% of total traffic.</description>
-    </item>    <item>
-      <title>Miasma Source Code Leak: Open-Source Release of Supply Chain Worm Framework via Compromised GitHub Accounts (June 8+, 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-06-23-miasma-source-code-leak-github-open-source-june-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-23-miasma-source-code-leak-github-open-source-june-2026.html</guid>
-      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-      <description>The Miasma credential-stealing attack framework was briefly made available for free on GitHub, after multiple repositories with the name "Miasma-Open-Source-Release" began appearing since June 8, 2026. According to SafeDep, the source code has been published through compromised developer accounts. The Miasma codebase appears to be larger than a supply chain worm. This represents a significant operational security failure and toolkit proliferation risk.</description>
-    </item>    <item>
-      <title>Windsurf CVE-2026-30615: Prompt Injection to Local RCE via Untrusted MCP Configuration Manipulation</title>
-      <link>https://llm-threatintel.com/posts/2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-23-windsurf-cve-2026-30615-prompt-injection-rce-mcp.html</guid>
-      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-      <description>A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction.</description>
     </item>
   </channel>
 </rss>
