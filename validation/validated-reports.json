@@ -3157,6 +3157,27 @@
       "validated_at": "2026-07-20T06:19:42+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026": {
+      "content_hash": "ddabff072a21333b30910d8d72af9eea7436fe7736466baa8cba2b06bbfd5dbd",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026.md",
+      "posts_index_hash": "4e73d0eecf03dcf6ac1eba24ffc20b13f515320612ed2f5ce3c62ee91e3056bb",
+      "report_id": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
+        "https://blog.cyberdesserts.com/ai-incident-response/",
+        "https://www.digitalapplied.com/blog/hugging-face-ai-agent-breach-first-agentic-intrusion-2026",
+        "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-22T05:51:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-22",
   "entries": [
     {
       "id": "bandcampro-patriot-bait",
@@ -3092,6 +3092,26 @@
       ],
       "description": "Attackers exploit the implicit trust MCP agents extend to external tools and data sources. By injecting malicious instructions through Sentry event APIs (unauthenticated by default), or poisoning tool descriptions visible to agents, attackers achieve 85%+ success rates in hijacking agent behavior. MSTI techniques using AbortSignal hijacking and registration races enable runtime tool replacement during active sessions.",
       "attribution": "Multiple independent research teams (Tenet Security, CSA Labs, Microsoft, Adversa AI); in-the-wild exploitation active"
+    },
+    {
+      "id": "unknown-autonomous-ai-agent-system",
+      "names": [
+        "Unknown / Autonomous AI Agent System"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Hugging Face production"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1548 - Privilege Escalation",
+        "T1570 - Lateral Movement",
+        "T1110 - Credential Access"
+      ],
+      "description": "Autonomous AI agent system capable of executing multi-stage attack chain including dataset poisoning, code execution, privilege escalation, and lateral movement across cloud infrastructure. Operated with attack speed and decision-making velocity exceeding manual human intrusion crews, demonstrating evidence that advanced LLM-based agents can independently orchestrate complex infrastructure compromises.",
+      "attribution": "Unattributed; first documented agentic AI-driven end-to-end intrusion"
     }
   ]
 }

@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026",
+      "title": "Hugging Face Infrastructure Breach: First Agentic AI End-to-End Intrusion Attack",
+      "date": "2026-07-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The Hugging Face breach disclosed in mid-July 2026 is the first time a major AI platform has publicly attributed an end-to-end intrusion of its infrastructure to an autonomous AI agent system rather than a human operator. Over a single weekend, the attacking agents uploaded a malicious dataset, exploited Hugging Face's data-processing pipeline, escalated privileges, and stole internal datasets and service credentials.",
+      "file": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026.md"
+    },
+    {
       "id": "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack",
       "title": "MCP Security Crisis: Enterprise Agent Hijacking via Sentry DSN Injection and Mid-Session Tool Injection (MSTI)",
       "date": "2026-07-20",
