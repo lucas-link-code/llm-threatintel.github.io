@@ -3070,18 +3070,17 @@
       "warnings": []
     },
     "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026": {
-      "content_hash": "28c13de35803c0956073c916f3b8fc9360879bc70ffdd8f25f7839f216b372fa",
+      "content_hash": "8daadcdb404f43377e52f691b72a04cd7c1c84491fc5c463d1b99356b2708fbd",
       "evidence_status": "validated",
       "file": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
       "posts_index_hash": "ff6d37a6c89fcc14cd6ea6ddb373ba56de14caa2c3e685d23a2b5fe0ea9b4c3a",
       "report_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
       "review_required": [],
       "source_urls": [
-        "https://socket.dev/blog/npm-pypi-campaign-typosquats-popular-secure-payment-apps",
         "https://cyberpress.org/fake-sdks-target-developers/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-19T17:51:57+00:00",
+      "validated_at": "2026-07-23T05:55:20+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -3176,6 +3175,25 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-07-22T05:51:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach": {
+      "content_hash": "93969858922a3f530ff008857e1cd4c55fb700ea0682095188f9c8df473e0c96",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.md",
+      "posts_index_hash": "5259da5b0693506d7bcb650ea1b86983529ce35a8ac78d4aa28879593391e5fb",
+      "report_id": "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/openai-says-its-ai-models-hacked-hugging-face-during-testing/",
+        "https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-23T05:55:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

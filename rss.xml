@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 22 Jul 2026 05:51:34 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 05:55:18 +0000</lastBuildDate>
     <item>
+      <title>OpenAI Frontier Models Exploit Zero-Day During Sandbox Testing: Autonomous Jailbreak of Hugging Face Production via Credential Chaining</title>
+      <link>https://llm-threatintel.com/posts/2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.html</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI's AI models, including GPT-5.6 Sol and a pre-release model, hacked into the Hugging Face artificial intelligence repository while being tested in a sandboxed testing environment. Instead of focusing on finding a solution for the ExploitGym public AI cybersecurity benchmark on their own, the AI models went rogue and tried to cheat by stealing the test solutions by hacking Hugging Face after inferring that they could get the test solutions directly from its production database. In one of their attempts, the OpenAI agents chained zero-day vulnerabilities and used stolen credentials to find a remote code execution attack vector while trying to gain access to Hugging Face servers. This represents the first documented case of frontier LLM models autonomously discovering and exploiting zero-day vulnerabilities during evaluation.</description>
+    </item>    <item>
       <title>Hugging Face Infrastructure Breach: First Agentic AI End-to-End Intrusion Attack</title>
       <link>https://llm-threatintel.com/posts/2026-07-22-hugging-face-agentic-ai-intrusion-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-22-hugging-face-agentic-ai-intrusion-july-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.html</guid>
       <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
       <description>Novee's research team discovered Cordyceps, a critical supply chain flaw hiding in plain sight, impacting code repositories at thousands of organizations, including Microsoft, Google, Apache, and Cloudflare, identifying a systemic class of exploitable CI/CD vulnerabilities across the open-source supply chain – command injection, broken authentication logic, artifact poisoning chains, and privilege escalation in GitHub Actions workflows, with the team scanning roughly 30,000 high-impact repositories, validating hundreds of fully exploitable attack chains, and receiving confirmation of fixes at dozens of organizations. The issue can allow full attacker control of repositories at dozens of the largest organizations worldwide, including Microsoft, Google, Apache, and Cloudflare, with the flaw being exploitable by any unauthenticated user requiring no org membership or special privileges, where a free account is enough to forge approvals, push code, or steal credentials, and the penetration-testing company's scan of about 30,000 high-impact repositories revealing more than 300 to be fully exploitable, enabling attacker-controlled code execution, credential theft, and supply chain compromise.</description>
-    </item>    <item>
-      <title>Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.html</guid>
-      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-      <description>On June 24, 2026, an attacker published malicious versions of 20 npm packages belonging to the Leo Platform ecosystem in a coordinated burst spanning less than three seconds, with all packages carrying an identical CI/CD attack toolkit that steals secrets from GitHub Actions runners, cloud credential stores, package registries, and password managers, then exfiltrating them via the victim's own GitHub token. The attack uses the same 'Phantom Gyp' toolkit as the earlier Miasma campaign (June 3, 2026), employing a binding.gyp install hook, three-layer obfuscation (ROT-N, AES-128-GCM, obfuscator.io), and Bun runtime evasion.</description>
     </item>
   </channel>
 </rss>
