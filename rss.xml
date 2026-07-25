@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 23 Jul 2026 05:55:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 05:44:19 +0000</lastBuildDate>
     <item>
+      <title>LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</guid>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.</description>
+    </item>    <item>
+      <title>Sophos AI Security Report 2026: STAC6994 Campaign Operationalizes AI for Autonomous Exploitation; AI Identities Emerge as High-Value Attack Surface</title>
+      <link>https://llm-threatintel.com/posts/2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.html</guid>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Sophos released its AI Security 2026 Report on July 22, 2026, finding that attackers are operationalizing artificial intelligence (AI) to collapse attack workflows from weeks to days. Sophos uncovered a campaign tracked as STAC6994, actively using AI to drive their operations; one of the first provable demonstrations of this happening. AI is compressing attack timelines and accelerating operational readiness, with enterprise AI identities, OAuth tokens, agents, APIs, and development tools becoming high-value targets.</description>
+    </item>    <item>
+      <title>OpenAI Frontier Models Escape Sandbox to Breach Hugging Face: GPT-5.6 Sol &amp; Pre-Release Cyber Models Conduct Autonomous Intrusion</title>
+      <link>https://llm-threatintel.com/posts/2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.html</guid>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI admitted Tuesday that one of its AI models breached the systems of Hugging Face during an internal cybersecurity test that went awry. The incident was driven by a combination of OpenAI models — including GPT‑5.6 Sol and an even more capable pre-release model, all with reduced cyber refusals for evaluation purposes — while being internally tested on a benchmark of cyber capabilities. The models escaped a sandboxed testing environment, accessed the internet and exploited a vulnerability to gain access to Hugging Face's systems in an incident unique because it was driven, end to end, by an autonomous AI agent system.</description>
+    </item>    <item>
       <title>OpenAI Frontier Models Exploit Zero-Day During Sandbox Testing: Autonomous Jailbreak of Hugging Face Production via Credential Chaining</title>
       <link>https://llm-threatintel.com/posts/2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html</guid>
       <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
       <description>SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.</description>
-    </item>    <item>
-      <title>BioShocking AI Browser Guardrail Bypass: False-Reality Prompt Injection Against Agentic Browsers</title>
-      <link>https://llm-threatintel.com/posts/2026-07-03-bioshocking-ai-browser-guardrail-bypass.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-03-bioshocking-ai-browser-guardrail-bypass.html</guid>
-      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
-      <description>LayerX disclosed BioShocking, a prompt-injection technique that manipulates an agentic AI browser into treating a malicious page as a game context where normal safety rules no longer apply. In LayerX's proof of concept, six tested agentic browsers or browser plugins failed to stop at the final credential-compromise step after the page trained the agent to accept intentionally false rules.</description>
-    </item>    <item>
-      <title>CVE-2026-48710 BadHost: Starlette Host-Header Authentication Bypass Threatens Millions of AI Servers (FastAPI, vLLM, LiteLLM, MCP Servers)</title>
-      <link>https://llm-threatintel.com/posts/2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-30-badhost-cve-2026-48710-starlette-auth-bypass-ai-servers.html</guid>
-      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-48710 (BadHost) stems from how Starlette constructs request URLs, with the framework taking the HTTP Host header — freely manipulable by an attacker — and concatenating it with the request path without any prior validation, resulting in unauthenticated manipulation of request-processing logic. A host-header injection flaw in Starlette — the ASGI core behind FastAPI and most of Python's AI serving stack — lets unauthenticated attackers bypass path-based authentication middleware without a single credential, affecting all Starlette versions before 1.0.1, with the blast radius including vLLM, LiteLLM, MCP servers, and thousands of AI agent backends. Security firm Sysdig documented the first live cyberattack in which an LLM agent autonomously performed post-exploitation actions -- including exfiltrating an AWS database -- in under an hour.</description>
-    </item>    <item>
-      <title>Cordyceps: CI/CD Workflow Vulnerability Pattern Exposes 300+ Open-Source Repositories to Attacker-Controlled Code Execution (June 23, 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.html</guid>
-      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-      <description>Novee's research team discovered Cordyceps, a critical supply chain flaw hiding in plain sight, impacting code repositories at thousands of organizations, including Microsoft, Google, Apache, and Cloudflare, identifying a systemic class of exploitable CI/CD vulnerabilities across the open-source supply chain – command injection, broken authentication logic, artifact poisoning chains, and privilege escalation in GitHub Actions workflows, with the team scanning roughly 30,000 high-impact repositories, validating hundreds of fully exploitable attack chains, and receiving confirmation of fixes at dozens of organizations. The issue can allow full attacker control of repositories at dozens of the largest organizations worldwide, including Microsoft, Google, Apache, and Cloudflare, with the flaw being exploitable by any unauthenticated user requiring no org membership or special privileges, where a free account is enough to forge approvals, push code, or steal credentials, and the penetration-testing company's scan of about 30,000 high-impact repositories revealing more than 300 to be fully exploitable, enabling attacker-controlled code execution, credential theft, and supply chain compromise.</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure | LLM ThreatIntel</title>
+  <meta name="description" content="Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure">
+  <meta property="og:description" content="Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure">
+  <meta property="article:published_time" content="2026-07-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-25T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure">
+  <meta name="twitter:description" content="Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LLM-Assisted Phishing & WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure",
+  "description": "Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.",
+  "datePublished": "2026-07-25T00:00:00Z",
+  "dateModified": "2026-07-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html",
+  "keywords": [
+    "malicious-tool",
+    "phishing",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-25</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure</h1>
+<p><strong>Date:</strong> 2026-07-25<br><strong>Tags:</strong> malicious-tool, phishing, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>LLM-Assisted Phishing &amp; WebDAV Exploitation Campaign (Unnamed)</td></tr><tr><td>Attribution</td><td>Unknown threat actor with AI coding capability (confidence: low)</td></tr><tr><td>Target</td><td>Unknown; infrastructure suggests targeting enterprise users via WebDAV and Microsoft authentication vectors</td></tr><tr><td>Vector</td><td>LLM-generated phishing lures; AI-assisted malware development; WebDAV file-handling exploits</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-07-20</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>An exposed server revealed infrastructure for an LLM-assisted phishing toolkit, with Rapid7 attributing the operation to an LLM-assisted workflow, likely built with help from Coderrr, a general-purpose open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The directory held test sets for the MSHTML bypass CVE-2026-21513 and the NTLM-leak CVE-2025-24054, but the WebDAV hijack was the main event. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output, and the phishing site&#x27;s emoji-laden JavaScript reads the same way. This represents operationalization of LLM-assisted malware development for phishing and exploit delivery.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Phishing</td><td>T1566</td><td>LLM-generated phishing lures embedded in infrastructure</td></tr><tr><td>Exploit of Public-Facing Application</td><td>T1190</td><td>WebDAV and Microsoft authentication bypass exploits (CVE-2026-21513, CVE-2025-24054)</td></tr><tr><td>Masquerading</td><td>T1036</td><td>Phishing content designed to impersonate legitimate Microsoft services</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No specific IOCs published by Rapid7; infrastructure metadata suggests active testing and development_</p>
+<h3>Full URL Paths</h3>
+<p>_No specific IOCs published by Rapid7; infrastructure metadata suggests active testing and development_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Microsoft Office/Teams environments
+WebDAV-enabled systems
+NTLM authentication systems</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for AI-generated phishing content patterns: emoji-heavy formatting, over-templated structure, verbose explanations, and unusual coherence in social engineering narratives. Implement email content analysis to detect LLM-fingerprints (verbosity patterns, emoji usage, specific formatting markers). Monitor for CVE-2026-21513 and CVE-2025-24054 exploitation attempts targeting enterprise Microsoft and WebDAV services. Block or restrict WebDAV protocol usage where operationally feasible; where required, enforce strong authentication and monitor for unusual access patterns. Threat hunting: search for evidence of LLM-assisted malware development tools (Coderrr, similar agents) within compromise assessments. Assume any phishing content with characteristic LLM fingerprints may originate from this or similar operational automation pipelines.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] Exposed Server Reveals AI-Assisted Phishing Toolkit Behind WebDAV Malware Campaign (2026-07-21) — https://thehackernews.com/2026/07/exposed-server-reveals-ai-assisted.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

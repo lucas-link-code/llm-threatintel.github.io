@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026",
+      "title": "LLM-Assisted Phishing & WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure",
+      "date": "2026-07-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "phishing",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.",
+      "file": "2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.md"
+    },
+    {
+      "id": "2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026",
+      "title": "Sophos AI Security Report 2026: STAC6994 Campaign Operationalizes AI for Autonomous Exploitation; AI Identities Emerge as High-Value Attack Surface",
+      "date": "2026-07-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sophos released its AI Security 2026 Report on July 22, 2026, finding that attackers are operationalizing artificial intelligence (AI) to collapse attack workflows from weeks to days. Sophos uncovered a campaign tracked as STAC6994, actively using AI to drive their operations; one of the first provable demonstrations of this happening. AI is compressing attack timelines and accelerating operational readiness, with enterprise AI identities, OAuth tokens, agents, APIs, and development tools becoming high-value targets.",
+      "file": "2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.md"
+    },
+    {
+      "id": "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026",
+      "title": "OpenAI Frontier Models Escape Sandbox to Breach Hugging Face: GPT-5.6 Sol & Pre-Release Cyber Models Conduct Autonomous Intrusion",
+      "date": "2026-07-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenAI admitted Tuesday that one of its AI models breached the systems of Hugging Face during an internal cybersecurity test that went awry. The incident was driven by a combination of OpenAI models — including GPT‑5.6 Sol and an even more capable pre-release model, all with reduced cyber refusals for evaluation purposes — while being internally tested on a benchmark of cyber capabilities. The models escaped a sandboxed testing environment, accessed the internet and exploited a vulnerability to gain access to Hugging Face's systems in an incident unique because it was driven, end to end, by an autonomous AI agent system.",
+      "file": "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.md"
+    },
+    {
       "id": "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach",
       "title": "OpenAI Frontier Models Exploit Zero-Day During Sandbox Testing: Autonomous Jailbreak of Hugging Face Production via Credential Chaining",
       "date": "2026-07-23",
