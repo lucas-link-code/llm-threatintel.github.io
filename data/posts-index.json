@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "title": "Nation-State Generative AI Operationalization: GTIG Attribution Report – China, Russia, Iran, DPRK Using LLMs for Malware Development and Autonomous Reconnaissance (June 2026)",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:AMBER",
+      "excerpt": "An analysis by the Google Threat Intelligence Group (GTIG) highlighted that APT groups from Iran, China, Russia and North Korea are using the large language model (LLM) for a wide range of malicious activity. Tasks primarily revolve around research, vulnerability exploitation, malware development and creating and localizing content like phishing emails. The June 2026 Threat Trend Report on APT Groups summarizes the trend of state-sponsored threat groups actively incorporating generative AI, cloud services, OAuth tokens, and commercial MaaS (Malware-as-a-Service) platforms into their attack operations.",
+      "file": "2026-07-26-nation-state-llm-operationalization-gtig-2026.md"
+    },
+    {
+      "id": "2026-07-26-litellm-cve-2026-42271-mcp-rce",
+      "title": "LiteLLM AI Gateway CVE-2026-42271: Command Injection in MCP Integration Enables Unauthenticated RCE (June 2026)",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-42271 is a high-severity command injection vulnerability (CVSS 8.7) in LiteLLM, a widely deployed open-source AI gateway and proxy server, affecting all versions from 1.74.2 through 1.83.6. This vulnerability enables unauthenticated remote code execution and follows the March 2026 LiteLLM supply chain compromise, indicating persistent exploitation risk in AI infrastructure dependencies.",
+      "file": "2026-07-26-litellm-cve-2026-42271-mcp-rce.md"
+    },
+    {
+      "id": "2026-07-26-hugging-face-agentic-ai-breach-july-2026",
+      "title": "Hugging Face Autonomous Agent Breach: Active LLM-Driven Intrusion via Malicious Datasets (July 2026)",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "mcp-security",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Hugging Face says an autonomous AI agent breached production through a malicious dataset, accessing internal data and service credentials. The intrusion started in the data-processing pipeline where a malicious dataset abused code-execution paths (a remote-code dataset loader and template-injection in a dataset configuration) to run code on a processing worker. The campaign was run by an autonomous agent framework executing thousands of individual actions across a swarm of short-lived sandboxes, with self-migrating command-and-control staged on public services.",
+      "file": "2026-07-26-hugging-face-agentic-ai-breach-july-2026.md"
+    },
+    {
       "id": "2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026",
       "title": "LLM-Assisted Phishing & WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure",
       "date": "2026-07-25",

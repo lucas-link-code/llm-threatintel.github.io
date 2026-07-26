@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "entries": [
     {
       "id": "bandcampro-patriot-bait",
@@ -1376,7 +1376,8 @@
         "Automated scanning and exploitation of exposed Langflow endpoints",
         "Domain registration abuse",
         "npm registry",
-        "PyPI registry"
+        "PyPI registry",
+        "Hugging Face platform"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1418,7 +1419,11 @@
         "T1496 - Resource Hijacking",
         "T1598.003 - Phishing: Spearphishing Link",
         "T1195.001 - Supply Chain Compromise",
-        "T1648 - Abuse of Functionality"
+        "T1648 - Abuse of Functionality",
+        "T1074",
+        "T1134",
+        "T1570",
+        "T1219"
       ],
       "description": "This is a structural architectural vulnerability rather than a specific threat campaign. Axis Intelligence Research identified and disclosed the vulnerability through coordinated responsible disclosure to model providers on July 3, 2026. Exploitation requires understanding of multi-agent orchestration patterns and the ability to craft prompts that pass first-model safety checks but execute when passed to secondary models.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
@@ -3195,6 +3200,86 @@
       ],
       "description": "An unknown threat actor has operationalized an AI coding agent (likely Coderrr, an open-source derivative) to generate phishing lures and exploit payloads at scale. The exposed infrastructure contains test harnesses for WebDAV hijacking and Microsoft authentication bypass exploits, along with LLM-generated phishing site content. This represents a shift toward automated, AI-assisted malware development pipelines where threat actors offload creativity and iteration to frontier models.",
       "attribution": "Unknown threat actor with demonstrated AI coding proficiency"
+    },
+    {
+      "id": "multiple-actors",
+      "names": [
+        "Multiple actors",
+        "TeamPCP (likely continuation)"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "PyPI repository",
+        "Organizational CI/CD pipelines"
+      ],
+      "ttps": [
+        "T1190",
+        "T1090",
+        "T1059"
+      ],
+      "description": "Threat actors are actively exploiting weaknesses in LiteLLM's development and deployment posture. The March 2026 supply chain compromise preceded this June 2026 RCE disclosure, suggesting systematic vulnerability in LiteLLM's security lifecycle and ongoing targeting of AI gateway infrastructure.",
+      "attribution": "Presumed overlap with TeamPCP (March 2026 LiteLLM supply chain attack) based on targeting pattern"
+    },
+    {
+      "id": "apt42",
+      "names": [
+        "APT42",
+        "TA453",
+        "Phosphorus"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Gemini API"
+      ],
+      "ttps": [
+        "T1592",
+        "T1566",
+        "T1598"
+      ],
+      "description": "Iranian APT42 leverages Gemini for OSINT aggregation and pretext development. Actors use LLM-generated phishing content tailored by sector and geography. Campaign demonstrates integration of LLMs into operational infrastructure for reconnaissance and initial compromise stages.",
+      "attribution": "Iranian government-backed (IRGC Quds Force affiliated)"
+    },
+    {
+      "id": "unc2970",
+      "names": [
+        "UNC2970",
+        "Kimsuky variants"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Gemini API"
+      ],
+      "ttps": [
+        "T1592",
+        "T1598"
+      ],
+      "description": "UNC2970 uses Gemini to synthesize OSINT and profile high-value defense sector targets. The group specializes in recruiter impersonation campaigns with detailed victim profiling powered by LLM-assisted reconnaissance. This represents escalation from traditional spear-phishing to AI-augmented targeting.",
+      "attribution": "North Korean government-backed (Reconnaissance General Bureau or affiliate)"
+    },
+    {
+      "id": "temp-hex-mustang-panda-twill-typhoon-earth-preta",
+      "names": [
+        "TEMP.Hex / Mustang Panda / Twill Typhoon / Earth Preta",
+        "Bronze President"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Gemini API"
+      ],
+      "ttps": [
+        "T1592",
+        "T1587"
+      ],
+      "description": "Chinese APT actors use Gemini for dual-purpose reconnaissance against US military and IT infrastructure, as well as vulnerability and exploit research. LLM-assisted malware development and technical problem-solving indicate integration of LLMs into operational tradecraft for code development.",
+      "attribution": "Chinese state-sponsored (likely MSS 3PLA or affiliate)"
     }
   ]
 }

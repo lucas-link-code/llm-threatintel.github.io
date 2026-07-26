@@ -3253,6 +3253,55 @@
       "validated_at": "2026-07-25T05:44:20+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-26-hugging-face-agentic-ai-breach-july-2026": {
+      "content_hash": "fd5ebd07751775572e6f4734c18efe3d1acca7a9689f957610f5ae0e489c40da",
+      "evidence_status": "validated",
+      "file": "2026-07-26-hugging-face-agentic-ai-breach-july-2026.md",
+      "posts_index_hash": "634214310ac880d4114f0f16d87fe1f92f22cb60960a5472ed9897ceef1e0fc8",
+      "report_id": "2026-07-26-hugging-face-agentic-ai-breach-july-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T06:07:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-litellm-cve-2026-42271-mcp-rce": {
+      "content_hash": "f5ac2a5dcc027520d23c25a59402a55689dbb814c739d95209bc103327d93f7a",
+      "evidence_status": "validated",
+      "file": "2026-07-26-litellm-cve-2026-42271-mcp-rce.md",
+      "posts_index_hash": "4839755ad158be9760e23aee71e718efaac6f37c011e601dd39f054c715caeb0",
+      "report_id": "2026-07-26-litellm-cve-2026-42271-mcp-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/",
+        "https://horizon3.ai"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T06:07:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-nation-state-llm-operationalization-gtig-2026": {
+      "content_hash": "0620ae8834d5f60a59f576707df1cff4b6e02a6ee841a1a78fe810417cdbd87e",
+      "evidence_status": "validated",
+      "file": "2026-07-26-nation-state-llm-operationalization-gtig-2026.md",
+      "posts_index_hash": "f42179d8ea611b8cf00b84ecef8af1f4a3e0f469de710c0ed7135ace97f7c98d",
+      "report_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use",
+        "https://www.infosecurity-magazine.com/news/nation-state-abuse-gemini-ai/",
+        "https://asec.ahnlab.com/en/94441/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T06:07:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

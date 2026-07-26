@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 25 Jul 2026 05:44:19 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2026 06:07:34 +0000</lastBuildDate>
     <item>
+      <title>Nation-State Generative AI Operationalization: GTIG Attribution Report – China, Russia, Iran, DPRK Using LLMs for Malware Development and Autonomous Reconnaissance (June 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-07-26-nation-state-llm-operationalization-gtig-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-26-nation-state-llm-operationalization-gtig-2026.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
+      <description>An analysis by the Google Threat Intelligence Group (GTIG) highlighted that APT groups from Iran, China, Russia and North Korea are using the large language model (LLM) for a wide range of malicious activity. Tasks primarily revolve around research, vulnerability exploitation, malware development and creating and localizing content like phishing emails. The June 2026 Threat Trend Report on APT Groups summarizes the trend of state-sponsored threat groups actively incorporating generative AI, cloud services, OAuth tokens, and commercial MaaS (Malware-as-a-Service) platforms into their attack operations.</description>
+    </item>    <item>
+      <title>LiteLLM AI Gateway CVE-2026-42271: Command Injection in MCP Integration Enables Unauthenticated RCE (June 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-07-26-litellm-cve-2026-42271-mcp-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-26-litellm-cve-2026-42271-mcp-rce.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-42271 is a high-severity command injection vulnerability (CVSS 8.7) in LiteLLM, a widely deployed open-source AI gateway and proxy server, affecting all versions from 1.74.2 through 1.83.6. This vulnerability enables unauthenticated remote code execution and follows the March 2026 LiteLLM supply chain compromise, indicating persistent exploitation risk in AI infrastructure dependencies.</description>
+    </item>    <item>
+      <title>Hugging Face Autonomous Agent Breach: Active LLM-Driven Intrusion via Malicious Datasets (July 2026)</title>
+      <link>https://llm-threatintel.com/posts/2026-07-26-hugging-face-agentic-ai-breach-july-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-26-hugging-face-agentic-ai-breach-july-2026.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Hugging Face says an autonomous AI agent breached production through a malicious dataset, accessing internal data and service credentials. The intrusion started in the data-processing pipeline where a malicious dataset abused code-execution paths (a remote-code dataset loader and template-injection in a dataset configuration) to run code on a processing worker. The campaign was run by an autonomous agent framework executing thousands of individual actions across a swarm of short-lived sandboxes, with self-migrating command-and-control staged on public services.</description>
+    </item>    <item>
       <title>LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure</title>
       <link>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-06-jadepuffer-agentic-ransomware-langflow-july-2026.html</guid>
       <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
       <description>A threat actor exploited a vulnerability in Langflow to access an organization's instance and abuse it in an agentic ransomware attack, with attackers exploiting Langflow vulnerability CVE-2025-3248 to conduct an agentic AI-powered ransomware attack involving reconnaissance, credential theft, and lateral movement. The attack demonstrates how LLM agents can combine known exploitation techniques with real-time reasoning to automate complex, multi-stage intrusions.</description>
-    </item>    <item>
-      <title>Phantom Squatting: AI-Generated Domains Register Fake URLs for Phishing as LLMs Hallucinate Non-Existent Websites</title>
-      <link>https://llm-threatintel.com/posts/2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-04-phantom-squatting-ai-hallucinated-domains-phishing.html</guid>
-      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Palo Alto Networks' Unit 42 identifies 'phantom squatting,' a new attack technique where attackers register AI-hallucinated but non-existent domain names before legitimate users can claim them, then host phishing pages on those domains. Attackers have started buying those made-up domains before anyone else can, then hosting phishing pages on them to catch traffic that AI tools point their way. This represents a novel attack vector exploiting the intersection of LLM hallucination vulnerabilities and domain registration abuse.</description>
-    </item>    <item>
-      <title>Active Exploitation of Langflow CVE-2026-33017 RCE: Monero Mining Campaign Targets Exposed AI Infrastructure (July 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-04-langflow-cve-2026-33017-monero-mining-campaign.html</guid>
-      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Threat actors are continuing to exploit a critical Langflow vulnerability as part of fresh attacks designed to deliver a Monero cryptocurrency miner, weaponizing CVE-2026-33017 (CVSS score: 9.3), an unauthenticated remote code execution (RCE) vulnerability in Langflow. Any environment running Langflow and exposed to the internet is facing active exploitation of CVE-2026-33017. The campaign targets exposed AI application endpoints, establishing persistent cryptocurrency mining infrastructure on compromised hosts.</description>
-    </item>    <item>
-      <title>macOS.Gaslight: DPRK-Aligned Rust Backdoor Uses Prompt Injection Against LLM-Assisted Malware Triage</title>
-      <link>https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-03-macos-gaslight-rust-backdoor-prompt-injection.html</guid>
-      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
-      <description>SentinelLABS analyzed macOS.Gaslight, a Rust-based macOS implant that combines Telegram Bot API command-and-control, AES-GCM encrypted payloads, certificate-pinned TLS, interactive shell access, and browser/keychain collection. The implant embeds a 3.5 KB prompt-injection payload composed of fabricated system messages intended to derail LLM-assisted malware triage. SentinelLABS assesses with high confidence that macOS.Gaslight belongs to a DPRK-aligned macOS activity cluster.</description>
     </item>
   </channel>
 </rss>

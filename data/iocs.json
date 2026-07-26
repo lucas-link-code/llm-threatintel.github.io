@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "iocs": [
     {
       "value": "tralalarkefe.com",
@@ -2834,6 +2834,15 @@
       "first_seen": "2026-07-25",
       "source": "OpenAI",
       "campaign": "openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026",
+      "status": "active"
+    },
+    {
+      "value": "pypi:litellm@1.74.2-1.83.6",
+      "type": "package",
+      "context": "LiteLLM AI Gateway CVE-2026-42271: Command Injection in MCP Integration Enables Unauthenticated RCE (June 2026) | All versions in this range affected; patched in 1.83.7+",
+      "first_seen": "2026-07-26",
+      "source": "Cloud Security Alliance Labs",
+      "campaign": "litellm-cve-2026-42271-mcp-rce",
       "status": "active"
     }
   ]
