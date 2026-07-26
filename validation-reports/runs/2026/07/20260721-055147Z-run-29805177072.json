@@ -1,0 +1,60 @@
+{
+  "commit_sha": "a29b4b3a555591002acedb0a7eb56139c717aefd",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-07-21T05:51:47+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 2,
+  "reports_newly_validated": 0,
+  "reports_skipped": 174,
+  "review_required": 2,
+  "source_urls_checked": 2,
+  "state_updates": 0,
+  "url_results": [
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cyberpress.org/fake-sdks-target-developers/",
+      "http_status": 202,
+      "status": "unknown_error",
+      "url": "https://cyberpress.org/fake-sdks-target-developers/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 1
+}

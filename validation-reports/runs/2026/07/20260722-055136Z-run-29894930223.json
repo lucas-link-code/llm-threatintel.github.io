@@ -1,0 +1,103 @@
+{
+  "commit_sha": "5ed82773a18f9d0d46477ef7e65995b9b30feb8a",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-07-22T05:51:36+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-07-22-hugging-face-agentic-ai-intrusion-july-2026.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 3,
+  "reports_newly_validated": 1,
+  "reports_skipped": 174,
+  "review_required": 3,
+  "source_urls_checked": 7,
+  "state_updates": 1,
+  "url_results": [
+    {
+      "error": "HTTP Error 404: Not Found",
+      "final_url": "https://huggingface.co/blog/security-incident",
+      "http_status": 404,
+      "status": "not_found",
+      "url": "https://huggingface.co/blog/security-incident"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://blog.cyberdesserts.com/ai-incident-response/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://blog.cyberdesserts.com/ai-incident-response/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.digitalapplied.com/blog/hugging-face-ai-agent-breach-first-agentic-intrusion-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.digitalapplied.com/blog/hugging-face-ai-agent-breach-first-agentic-intrusion-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cyberpress.org/fake-sdks-target-developers/",
+      "http_status": 202,
+      "status": "unknown_error",
+      "url": "https://cyberpress.org/fake-sdks-target-developers/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 1
+}

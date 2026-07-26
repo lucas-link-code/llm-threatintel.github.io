@@ -1,0 +1,138 @@
+{
+  "commit_sha": "d853bb7dd158a59ef01c3be6695f1d9320abf6a9",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-07-25T05:44:22+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 4,
+  "reports_newly_validated": 3,
+  "reports_skipped": 177,
+  "review_required": 3,
+  "source_urls_checked": 12,
+  "state_updates": 3,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/07/exposed-server-reveals-ai-assisted.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/07/exposed-server-reveals-ai-assisted.html"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.itvoice.in/ai-is-compressing-cyberattack-timelines-and-targeting-ungoverned-ai-identities-sophos-ai-security-report-finds",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.itvoice.in/ai-is-compressing-cyberattack-timelines-and-targeting-ungoverned-ai-identities-sophos-ai-security-report-finds"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.infosecurity-magazine.com/news/ai-agents-attack-surface/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.infosecurity-magazine.com/news/ai-agents-attack-surface/"
+    },
+    {
+      "error": "",
+      "final_url": "https://finance.yahoo.com/technology/ai/articles/ai-compressing-cyberattack-timelines-targeting-100000271.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://finance.yahoo.com/technology/ai/articles/ai-compressing-cyberattack-timelines-targeting-100000271.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://cioinfluence.com/security/ai-is-compressing-cyberattack-timelines-and-targeting-ungoverned-ai-identities-sophos-ai-security-report-finds/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cioinfluence.com/security/ai-is-compressing-cyberattack-timelines-and-targeting-ungoverned-ai-identities-sophos-ai-security-report-finds/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
+    },
+    {
+      "error": "",
+      "final_url": "https://huggingface.co/blog/security-incident-july-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://huggingface.co/blog/security-incident-july-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-pre-release-models/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-pre-release-models/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.nbcnews.com/tech/tech-news/openai-says-ai-models-went-rogue-testing-triggering-unprecedented-brea-rcna588611",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.nbcnews.com/tech/tech-news/openai-says-ai-models-went-rogue-testing-triggering-unprecedented-brea-rcna588611"
+    },
+    {
+      "error": "",
+      "final_url": "https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/"
+    },
+    {
+      "error": "",
+      "final_url": "https://time.com/article/2026/07/24/openai-hugging-face-attack/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://time.com/article/2026/07/24/openai-hugging-face-attack/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 1
+}

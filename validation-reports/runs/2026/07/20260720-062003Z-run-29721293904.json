@@ -1,0 +1,132 @@
+{
+  "commit_sha": "e93d2fdd3049247167fa55c8096d726f55446cdb",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-07-20T06:20:03+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 5,
+  "reports_newly_validated": 3,
+  "reports_skipped": 171,
+  "review_required": 4,
+  "source_urls_checked": 10,
+  "state_updates": 3,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://adversa.ai/blog/top-mcp-security-resources-july-2026/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://adversa.ai/blog/top-mcp-security-resources-july-2026/"
+    },
+    {
+      "error": "",
+      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-agentjacking-self-replicating-ai-worms-202/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-agentjacking-self-replicating-ai-worms-202/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.practical-devsecops.com/mcp-security-vulnerabilities/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.practical-devsecops.com/mcp-security-vulnerabilities/"
+    },
+    {
+      "error": "",
+      "final_url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier"
+    },
+    {
+      "error": "",
+      "final_url": "https://adversa.ai/blog/top-mcp-security-resources-july-2026/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://adversa.ai/blog/top-mcp-security-resources-july-2026/"
+    },
+    {
+      "error": "",
+      "final_url": "https://huggingface.co/blog/security-incident-july-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://huggingface.co/blog/security-incident-july-2026"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
+    },
+    {
+      "error": "<urlopen error timed out>",
+      "final_url": null,
+      "http_status": null,
+      "status": "timeout",
+      "url": "https://cyberpress.org/fake-sdks-target-developers/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 1
+}

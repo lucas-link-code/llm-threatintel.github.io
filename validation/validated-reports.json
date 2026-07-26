@@ -3070,18 +3070,17 @@
       "warnings": []
     },
     "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026": {
-      "content_hash": "28c13de35803c0956073c916f3b8fc9360879bc70ffdd8f25f7839f216b372fa",
+      "content_hash": "8daadcdb404f43377e52f691b72a04cd7c1c84491fc5c463d1b99356b2708fbd",
       "evidence_status": "validated",
       "file": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026.md",
       "posts_index_hash": "ff6d37a6c89fcc14cd6ea6ddb373ba56de14caa2c3e685d23a2b5fe0ea9b4c3a",
       "report_id": "2026-07-16-fake-payment-sdk-supply-chain-attack-july-2026",
       "review_required": [],
       "source_urls": [
-        "https://socket.dev/blog/npm-pypi-campaign-typosquats-popular-secure-payment-apps",
         "https://cyberpress.org/fake-sdks-target-developers/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-19T17:51:57+00:00",
+      "validated_at": "2026-07-23T05:55:20+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -3104,86 +3103,203 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
-    "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection": {
-      "content_hash": "98ba26cc7a97f0ea42de2e658c1209eae785f13d2a307970c851507b571b482d",
-      "evidence_status": "validated",
-      "file": "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection.md",
-      "posts_index_hash": "2744cf2ae247cec81685cbcd69c2efe2150839996c0e1a370757b0348f5caf3c",
-      "report_id": "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection",
-      "review_required": [],
+    "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon": {
+      "content_hash": "296cf985af24ee2f6666fbde9a816b006d41fd4716b6c09b30e78ef2ee4a17fa",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.md",
+      "posts_index_hash": "c92cf30529ebb750a9340d91585c9b7ca6401bf3c0df5886ce54b0a3f5d8ceb6",
+      "report_id": "2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
-        "https://www.manifold.security/blog/azure-devops-mcp-server-vulnerability",
-        "https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html"
+        "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+        "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier",
+        "https://adversa.ai/blog/top-mcp-security-resources-july-2026/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-26T21:51:03+00:00",
+      "validated_at": "2026-07-20T06:19:42+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
-    "2026-07-26-fakeagent-claude-artifact-sectoprat": {
-      "content_hash": "8aadfee37dac916a44f9396c563274b5e3bf6ffab65581a8130eb0c069509606",
-      "evidence_status": "validated",
-      "file": "2026-07-26-fakeagent-claude-artifact-sectoprat.md",
-      "posts_index_hash": "62a4c9bac2288b0da5b1b1abee27dfbbbb1c0205e6d63a27ee84d17aceeca05d",
-      "report_id": "2026-07-26-fakeagent-claude-artifact-sectoprat",
-      "review_required": [],
+    "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning": {
+      "content_hash": "03384744b2fc3f9dc45bd9f4ea6afc82fe457b361565b496ba4c8f0d7ceee919",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.md",
+      "posts_index_hash": "b86df202e575cfd05610205d3c1c3b7aefcdde2f154daa2ec3086c21f874fa83",
+      "report_id": "2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
-        "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
-        "https://www.bleepingcomputer.com/news/security/fake-claude-app-promoted-by-bing-ads-pushes-sectoprat-malware/",
-        "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/"
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://saiyampathak.substack.com/p/kimi-k3-and-inkling-the-frontier"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-26T21:52:03+00:00",
+      "validated_at": "2026-07-20T06:19:43+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
-    "2026-07-26-openai-hugging-face-evaluation-agent-escape": {
-      "content_hash": "426d466995cc02e5441a2149bae39b1729ef0dffaea862e617288b185e8a59bd",
+    "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack": {
+      "content_hash": "3ff0586181ed3a4f8ae5eb674b9dcf24ccc1360e427fb7da93462fa41c2b714e",
       "evidence_status": "validated",
-      "file": "2026-07-26-openai-hugging-face-evaluation-agent-escape.md",
-      "posts_index_hash": "b260bb3b592afdada57f8f2f195d85651b94dabd54c508bc99a318593aafc501",
-      "report_id": "2026-07-26-openai-hugging-face-evaluation-agent-escape",
+      "file": "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.md",
+      "posts_index_hash": "b118959999194c40f97b1822a42a69f7b7d7c30d0e21e7898fb5867e06461aeb",
+      "report_id": "2026-07-20-mcp-sentry-dso-injection-enterprise-hijack",
       "review_required": [],
+      "source_urls": [
+        "https://adversa.ai/blog/top-mcp-security-resources-july-2026/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-agentjacking-self-replicating-ai-worms-202/",
+        "https://www.practical-devsecops.com/mcp-security-vulnerabilities/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-20T06:19:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026": {
+      "content_hash": "ddabff072a21333b30910d8d72af9eea7436fe7736466baa8cba2b06bbfd5dbd",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026.md",
+      "posts_index_hash": "4e73d0eecf03dcf6ac1eba24ffc20b13f515320612ed2f5ce3c62ee91e3056bb",
+      "report_id": "2026-07-22-hugging-face-agentic-ai-intrusion-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
+        "https://blog.cyberdesserts.com/ai-incident-response/",
+        "https://www.digitalapplied.com/blog/hugging-face-ai-agent-breach-first-agentic-intrusion-2026",
+        "https://thenextweb.com/news/hugging-face-clawhub-malware-ai-supply-chain"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-22T05:51:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach": {
+      "content_hash": "93969858922a3f530ff008857e1cd4c55fb700ea0682095188f9c8df473e0c96",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.md",
+      "posts_index_hash": "5259da5b0693506d7bcb650ea1b86983529ce35a8ac78d4aa28879593391e5fb",
+      "report_id": "2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/openai-says-its-ai-models-hacked-hugging-face-during-testing/",
+        "https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-23T05:55:19+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026": {
+      "content_hash": "6d8e3d6738dd4b2e720f4b4d0c55dc62d48a4f358673c8d889db768474ecc929",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.md",
+      "posts_index_hash": "784c1bee27507004a2b74779a633e5f59694de4d72af5d4f79ed5370a3093857",
+      "report_id": "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
         "https://huggingface.co/blog/security-incident-july-2026",
-        "https://www.securityweek.com/openai-says-its-ai-models-broke-loose-and-hacked-hugging-face/"
+        "https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-pre-release-models/",
+        "https://www.nbcnews.com/tech/tech-news/openai-says-ai-models-went-rogue-testing-triggering-unprecedented-brea-rcna588611",
+        "https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/",
+        "https://time.com/article/2026/07/24/openai-hugging-face-attack/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-26T21:50:59+00:00",
+      "validated_at": "2026-07-25T05:44:22+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
-    "2026-07-26-promptfiction-claude-desktop-deeplink": {
-      "content_hash": "b60e7acfcb7c323ae29f1f0ba405b0322faafb5eb93834f6dd3ff65d529a3618",
+    "2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026": {
+      "content_hash": "4fec7328e3b7e3d16e3fca9b9e30d3e7d1ac63af2fef1149757bf9c97ec5e48f",
       "evidence_status": "validated",
-      "file": "2026-07-26-promptfiction-claude-desktop-deeplink.md",
-      "posts_index_hash": "57e328457be98a41e50d535d59b9ff6df53057ac96c1b96ac85b69513079c51f",
-      "report_id": "2026-07-26-promptfiction-claude-desktop-deeplink",
+      "file": "2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.md",
+      "posts_index_hash": "3c17231667825995897ea9bcda8bfe1a1cb2848bdc4a918e07f26f1d8d8bb750",
+      "report_id": "2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026",
       "review_required": [],
       "source_urls": [
-        "https://www.oasis.security/blog/claude-desktop-vulnerability",
-        "https://www.darkreading.com/vulnerabilities-threats/claude-flaw-malicious-prompts-ai-agents"
+        "https://thehackernews.com/2026/07/exposed-server-reveals-ai-assisted.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-26T21:51:04+00:00",
+      "validated_at": "2026-07-25T05:44:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
-    "2026-07-26-sharedroot-claude-cowork-sandbox-escape": {
-      "content_hash": "d6a9abd2a8442adab551960dfe606b532329c8a35fd38f4dfd8468b2c1aa49f4",
-      "evidence_status": "validated",
-      "file": "2026-07-26-sharedroot-claude-cowork-sandbox-escape.md",
-      "posts_index_hash": "214062d967b727842e5caf59c5dc435925193a90b6d4c5166b1584ad945ed63d",
-      "report_id": "2026-07-26-sharedroot-claude-cowork-sandbox-escape",
-      "review_required": [],
+    "2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026": {
+      "content_hash": "43350b2b178f08bece2ecd68e25b0716ae2820418f0c49b9c1ce15e62a297eb3",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.md",
+      "posts_index_hash": "a4f444459f4ccafbe9f2a6492f6bc5a227568b7abffce6cc20ed5f97198f74cb",
+      "report_id": "2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
-        "https://accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/",
-        "https://ubuntu.com/security/CVE-2026-46331",
-        "https://socradar.io/blog/sharedroot-sandbox-escape-claude-cowork/"
+        "https://www.itvoice.in/ai-is-compressing-cyberattack-timelines-and-targeting-ungoverned-ai-identities-sophos-ai-security-report-finds",
+        "https://www.infosecurity-magazine.com/news/ai-agents-attack-surface/",
+        "https://finance.yahoo.com/technology/ai/articles/ai-compressing-cyberattack-timelines-targeting-100000271.html",
+        "https://cioinfluence.com/security/ai-is-compressing-cyberattack-timelines-and-targeting-ungoverned-ai-identities-sophos-ai-security-report-finds/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-26T21:51:03+00:00",
+      "validated_at": "2026-07-25T05:44:20+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-hugging-face-agentic-ai-breach-july-2026": {
+      "content_hash": "fd5ebd07751775572e6f4734c18efe3d1acca7a9689f957610f5ae0e489c40da",
+      "evidence_status": "validated",
+      "file": "2026-07-26-hugging-face-agentic-ai-breach-july-2026.md",
+      "posts_index_hash": "634214310ac880d4114f0f16d87fe1f92f22cb60960a5472ed9897ceef1e0fc8",
+      "report_id": "2026-07-26-hugging-face-agentic-ai-breach-july-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T06:07:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-litellm-cve-2026-42271-mcp-rce": {
+      "content_hash": "f5ac2a5dcc027520d23c25a59402a55689dbb814c739d95209bc103327d93f7a",
+      "evidence_status": "validated",
+      "file": "2026-07-26-litellm-cve-2026-42271-mcp-rce.md",
+      "posts_index_hash": "4839755ad158be9760e23aee71e718efaac6f37c011e601dd39f054c715caeb0",
+      "report_id": "2026-07-26-litellm-cve-2026-42271-mcp-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/",
+        "https://horizon3.ai"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T06:07:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-nation-state-llm-operationalization-gtig-2026": {
+      "content_hash": "0620ae8834d5f60a59f576707df1cff4b6e02a6ee841a1a78fe810417cdbd87e",
+      "evidence_status": "validated",
+      "file": "2026-07-26-nation-state-llm-operationalization-gtig-2026.md",
+      "posts_index_hash": "f42179d8ea611b8cf00b84ecef8af1f4a3e0f469de710c0ed7135ace97f7c98d",
+      "report_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use",
+        "https://www.infosecurity-magazine.com/news/nation-state-abuse-gemini-ai/",
+        "https://asec.ahnlab.com/en/94441/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T06:07:36+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }
