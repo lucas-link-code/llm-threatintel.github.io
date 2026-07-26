@@ -87,15 +87,19 @@ class CollectIocNormalizationTests(unittest.TestCase):
                 self.assertRejected(value, "package")
 
     def test_rejects_reference_urls(self):
-        self.assertRejected(
+        values = [
             "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
-            "url_path",
-        )
-        self.assertRejected("docs.litellm.ai/blog/security-update-march-2026", "url_path")
-        self.assertRejected(
+            "docs.litellm.ai/blog/security-update-march-2026",
             "github.com/adversa-ai/research/tree/main/artifacts/trustfall-mcp-settings-rce/poc",
-            "url_path",
-        )
+            "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+            "https://huggingface.co/blog/security-incident-july-2026",
+            "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised",
+            "https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm",
+            "https://novee.security/blog/cordyceps/",
+        ]
+        for value in values:
+            with self.subTest(value=value):
+                self.assertRejected(value, "url_path")
 
     def test_accepts_malicious_packages_and_hf_repo(self):
         self.assertAccepted("npm:@bankr/agent", "package", "npm:@bankr/agent")
@@ -106,6 +110,30 @@ class CollectIocNormalizationTests(unittest.TestCase):
             "url_path",
             "huggingface.co/Open-OSS/privacy-filter",
         )
+        self.assertAccepted(
+            "malicious.example/blog/payload.js",
+            "url_path",
+            "malicious.example/blog/payload.js",
+        )
+
+    def test_removes_ioc_url_that_duplicates_a_reference(self):
+        finding = {
+            "references": [
+                {
+                    "source": "Example",
+                    "url": "https://www.security.example/advisories/incident/",
+                }
+            ],
+            "iocs": {
+                "urls": [
+                    "security.example/advisories/incident",
+                    "malicious.example/payload.exe",
+                ]
+            },
+        }
+        removed = collect.remove_reference_urls_from_finding_iocs(finding)
+        self.assertEqual(removed, 1)
+        self.assertEqual(finding["iocs"]["urls"], ["malicious.example/payload.exe"])
 
     def test_suppresses_packages_when_no_iocs_published(self):
         finding = {
@@ -166,6 +194,107 @@ class CollectIocNormalizationTests(unittest.TestCase):
                 "iocs": {"domains": ["evil.example.com"]},
             }
 
+            with mock.patch.object(collect, "DATA_DIR", data_dir), mock.patch.object(
+                collect, "save_json"
+            ) as save_json_mock:
+                collect.update_iocs(finding)
+                self.assertFalse(save_json_mock.called)
+
+    def test_normalized_url_duplicate_not_readded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir(parents=True)
+            (data_dir / "iocs.json").write_text(
+                json.dumps(
+                    {
+                        "last_updated": "2026-06-09",
+                        "iocs": [
+                            {
+                                "value": "huggingface.co/Open-OSS/privacy-filter",
+                                "type": "url_path",
+                                "context": "Existing",
+                                "first_seen": "2026-05-07",
+                                "source": "HiddenLayer",
+                                "campaign": "existing",
+                                "status": "removed",
+                            }
+                        ],
+                    },
+                    indent=2,
+                )
+                + "\n"
+            )
+            finding = {
+                "slug": "duplicate-campaign",
+                "title": "Duplicate finding",
+                "references": [{"source": "Example Source"}],
+                "iocs": {
+                    "urls": [
+                        "https://www.huggingface.co/Open-OSS/privacy-filter/"
+                    ]
+                },
+            }
+            with mock.patch.object(collect, "DATA_DIR", data_dir), mock.patch.object(
+                collect, "save_json"
+            ) as save_json_mock:
+                collect.update_iocs(finding)
+                self.assertFalse(save_json_mock.called)
+
+    def test_exact_value_duplicate_with_conflicting_type_not_readded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir(parents=True)
+            (data_dir / "iocs.json").write_text(
+                json.dumps(
+                    {
+                        "last_updated": "2026-06-09",
+                        "iocs": [
+                            {
+                                "value": "evil.example/path",
+                                "type": "url_path",
+                                "context": "Existing",
+                                "first_seen": "2026-06-01",
+                                "source": "Example",
+                                "campaign": "existing",
+                                "status": "active",
+                            }
+                        ],
+                    },
+                    indent=2,
+                )
+                + "\n"
+            )
+            finding = {
+                "slug": "conflicting-type",
+                "title": "Conflicting type",
+                "references": [{"source": "Example Source"}],
+                "iocs": {"packages": ["evil.example/path"]},
+            }
+            with mock.patch.object(collect, "DATA_DIR", data_dir), mock.patch.object(
+                collect, "save_json"
+            ) as save_json_mock:
+                collect.update_iocs(finding)
+                self.assertFalse(save_json_mock.called)
+
+    def test_update_iocs_rejects_reference_url_overlap_defense_in_depth(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir(parents=True)
+            (data_dir / "iocs.json").write_text(
+                json.dumps({"last_updated": "2026-06-09", "iocs": []}, indent=2)
+                + "\n"
+            )
+            finding = {
+                "slug": "reference-overlap",
+                "title": "Reference overlap",
+                "references": [
+                    {
+                        "source": "Example Source",
+                        "url": "https://www.security.example/advisories/incident/",
+                    }
+                ],
+                "iocs": {"urls": ["security.example/advisories/incident"]},
+            }
             with mock.patch.object(collect, "DATA_DIR", data_dir), mock.patch.object(
                 collect, "save_json"
             ) as save_json_mock:

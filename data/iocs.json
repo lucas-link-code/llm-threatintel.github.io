@@ -2513,15 +2513,6 @@
       "status": "active"
     },
     {
-      "value": "huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "OpenClaw and Hugging Face Supply Chain Poisoning: 575+ Malicious AI Agent Skills and 352,000+ Unsafe Models Identified—Trojans, Cryptominers, and AMOS Stealer Malware",
-      "first_seen": "2026-05-12",
-      "source": "TechNext Web",
-      "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-      "status": "active"
-    },
-    {
       "value": "jsonkeeper.com",
       "type": "domain",
       "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
@@ -2537,15 +2528,6 @@
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://www.huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
-      "first_seen": "2026-05-16",
-      "source": "HiddenLayer",
-      "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
       "status": "active"
     },
     {
@@ -2579,15 +2561,6 @@
       "value": "jsonkeeper.com/b/AVNNE",
       "type": "url_path",
       "context": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal",
-      "first_seen": "2026-05-19",
-      "source": "HiddenLayer",
-      "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
-      "status": "active"
-    },
-    {
-      "value": "huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "Fake OpenAI Privacy Filter Delivers Infostealer via Hugging Face: 244K Downloads Before Removal | Hugging Face repository",
       "first_seen": "2026-05-19",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
@@ -2927,15 +2900,6 @@
       "status": "active"
     },
     {
-      "value": "huggingface.co/Open-OSS/privacy-filter",
-      "type": "url_path",
-      "context": "Fake OpenAI Privacy Filter Malware Campaign Reaches 244K Downloads on Hugging Face Before Removal",
-      "first_seen": "2026-06-12",
-      "source": "HiddenLayer",
-      "campaign": "fake-openai-privacy-filter-hugging-face-malware",
-      "status": "active"
-    },
-    {
       "value": "claude-desktop-lm.gitlab.io",
       "type": "domain",
       "context": "Trend Micro ClickFix Malvertising: Claude.ai Shared Chat Weaponization Across 6 Attack Waves (April-June 2026)",
@@ -3008,24 +2972,6 @@
       "status": "active"
     },
     {
-      "value": "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised",
-      "type": "url_path",
-      "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)",
-      "first_seen": "2026-06-30",
-      "source": "StepSecurity",
-      "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm",
-      "type": "url_path",
-      "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026)",
-      "first_seen": "2026-06-30",
-      "source": "StepSecurity",
-      "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
-      "status": "active"
-    },
-    {
       "value": "npm:@leo-sdk/sdk@varies",
       "type": "package",
       "context": "Leo Platform npm Supply Chain Attack: Phantom Gyp Worm Steals Multi-Cloud Credentials via Compromised Maintainer (June 24, 2026) | All versions published 2026-06-24T23:04:55Z affected; high-traffic targets include leo-logger, leo-sdk, leo-aws, leo-config, leo-streams",
@@ -3041,15 +2987,6 @@
       "first_seen": "2026-06-30",
       "source": "StepSecurity",
       "campaign": "leo-platform-npm-miasma-phantom-gyp-june-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://novee.security/blog/cordyceps/",
-      "type": "url_path",
-      "context": "Cordyceps: CI/CD Workflow Vulnerability Pattern Exposes 300+ Open-Source Repositories to Attacker-Controlled Code Execution (June 23, 2026)",
-      "first_seen": "2026-06-30",
-      "source": "Novee Security",
-      "campaign": "cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "status": "active"
     },
     {
@@ -3086,24 +3023,6 @@
       "first_seen": "2026-06-23",
       "source": "SentinelOne",
       "campaign": "2026-07-03-macos-gaslight-rust-backdoor-prompt-injection",
-      "status": "active"
-    },
-    {
-      "value": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
-      "type": "url_path",
-      "context": "OpenAI Frontier Models Escape Sandbox to Breach Hugging Face: GPT-5.6 Sol & Pre-Release Cyber Models Conduct Autonomous Intrusion",
-      "first_seen": "2026-07-25",
-      "source": "OpenAI",
-      "campaign": "openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026",
-      "status": "active"
-    },
-    {
-      "value": "https://huggingface.co/blog/security-incident-july-2026",
-      "type": "url_path",
-      "context": "OpenAI Frontier Models Escape Sandbox to Breach Hugging Face: GPT-5.6 Sol & Pre-Release Cyber Models Conduct Autonomous Intrusion",
-      "first_seen": "2026-07-25",
-      "source": "OpenAI",
-      "campaign": "openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026",
       "status": "active"
     },
     {

@@ -69,34 +69,7 @@
   "url_redirect_limit": 5,
   "allow_url_path_scheme": true,
   "legacy_ioc_format_exceptions": {},
-  "reviewed_duplicate_iocs": {
-    "huggingface.co/open-oss/privacy-filter": [
-      {
-        "value": "huggingface.co/Open-OSS/privacy-filter",
-        "type": "url_path",
-        "campaign": "open-oss-privacy-filter-huggingface-sefirah-typosquat",
-        "source": "HiddenLayer"
-      },
-      {
-        "value": "huggingface.co/Open-OSS/privacy-filter",
-        "type": "url_path",
-        "campaign": "openclawhugging-face-supply-chain-poisoning-malicious-skills-models",
-        "source": "TechNext Web"
-      },
-      {
-        "value": "huggingface.co/Open-OSS/privacy-filter",
-        "type": "url_path",
-        "campaign": "hugging-face-fake-openai-privacy-filter-infostealer",
-        "source": "HiddenLayer"
-      },
-      {
-        "value": "huggingface.co/Open-OSS/privacy-filter",
-        "type": "url_path",
-        "campaign": "fake-openai-privacy-filter-hugging-face-malware",
-        "source": "HiddenLayer"
-      }
-    ]
-  },
+  "reviewed_duplicate_iocs": {},
   "legitimate_platform_iocs_deny_list": {
     "_comment": "IOC values that match these entries (case-insensitive, after normalisation) hard-fail validation. The match is on the bare platform — specific malicious subdomains or URLs containing an attacker-controlled identifier (e.g. claude.ai/share/Xy7AbC9KqM) are NOT blocked. To allow a genuine compromise of one of these platforms, add the specific normalized value to legitimate_platform_ioc_overrides below. See PR #9 for the cleanup that motivated this rule.",
     "domains": [
@@ -207,7 +180,12 @@
     {"host": "docs.litellm.ai", "path_prefix": "/blog/"},
     {"host": "github.com", "path_prefix": "/adversa-ai/research/"},
     {"host": "twitter.com", "path_prefix": "/"},
-    {"host": "base.blockscout.com", "path_prefix": "/tx/"}
+    {"host": "base.blockscout.com", "path_prefix": "/tx/"},
+    {"host": "openai.com", "path_prefix": "/index/"},
+    {"host": "huggingface.co", "path_prefix": "/blog/"},
+    {"host": "stepsecurity.io", "path_prefix": "/blog/"},
+    {"host": "sonatype.com", "path_prefix": "/blog/"},
+    {"host": "novee.security", "path_prefix": "/blog/"}
   ],
   "evidence_domain_denylist": [
     "badhost.org",

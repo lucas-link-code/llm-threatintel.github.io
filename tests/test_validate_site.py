@@ -197,6 +197,21 @@ class ValidateSiteTests(unittest.TestCase):
                 "ioc-duplicate-review",
                 0,
             ),
+            (
+                "normalized URL duplicate warning",
+                [
+                    {
+                        "value": "huggingface.co/Open-OSS/privacy-filter",
+                        "type": "url_path",
+                    },
+                    {
+                        "value": "https://www.huggingface.co/Open-OSS/privacy-filter/",
+                        "type": "url_path",
+                    },
+                ],
+                "ioc-duplicate-review",
+                0,
+            ),
         ]
 
         for name, ioc_values, expected_code, expected_exit in cases:
@@ -517,6 +532,31 @@ class ValidateSiteTests(unittest.TestCase):
                 "ioc-reference-url",
             ),
             (
+                "OpenAI source article",
+                [{"value": "https://openai.com/index/hugging-face-model-evaluation-security-incident/", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "Hugging Face source article",
+                [{"value": "https://huggingface.co/blog/security-incident-july-2026", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "StepSecurity source article",
+                [{"value": "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "Sonatype source article",
+                [{"value": "https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
+                "Novee source article",
+                [{"value": "https://novee.security/blog/cordyceps/", "type": "url_path"}],
+                "ioc-reference-url",
+            ),
+            (
                 "evidence domain x.com",
                 [{"value": "x.com", "type": "domain"}],
                 "ioc-evidence-domain",
@@ -586,6 +626,7 @@ class ValidateSiteTests(unittest.TestCase):
             ("pypi:xinference@2.6.0", "package"),
             ("npm:namastex/automagik-genie", "package"),
             ("huggingface.co/Open-OSS/privacy-filter", "url_path"),
+            ("malicious.example/blog/payload.js", "url_path"),
             ("litellm@1.82.7", "package"),
             ("192.168.1.1", "ip"),
             ("a" * 64, "sha256"),

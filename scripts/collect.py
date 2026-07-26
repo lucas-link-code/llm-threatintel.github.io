@@ -683,6 +683,82 @@ def normalize_url_host_path(value: str) -> tuple[str, str]:
     return host, path
 
 
+def normalize_url_identity(value: str) -> str:
+    """Normalize URL syntax differences without changing path semantics."""
+    cleaned = str(value).strip().replace('[.]', '.')
+    cleaned = re.sub(
+        r'^hxxps?://',
+        lambda match: 'https://' if 's' in match.group(0).lower() else 'http://',
+        cleaned,
+        flags=re.I,
+    )
+    parsed = safe_urlparse(cleaned)
+    if not parsed or not parsed.netloc:
+        return ''
+    try:
+        host = (parsed.hostname or '').lower()
+        port = parsed.port
+    except ValueError:
+        return ''
+    if host.startswith('www.'):
+        host = host[4:]
+    if not host:
+        return ''
+    authority = f'{host}:{port}' if port is not None else host
+    path = (parsed.path or '/').rstrip('/') or '/'
+    query = f'?{parsed.query}' if parsed.query else ''
+    return f'{authority}{path}{query}'
+
+
+def normalize_ioc_identity(value: str, ioc_type: str) -> str:
+    """Build a stable identity key used only for duplicate comparisons."""
+    if ioc_type == 'url_path':
+        normalized = normalize_url_identity(value)
+    elif ioc_type == 'domain':
+        normalized = str(value).strip().replace('[.]', '.').lower().rstrip('/')
+    else:
+        normalized = str(value).strip()
+    return f'{ioc_type}:{normalized}' if normalized else ''
+
+
+def reference_url_identities(finding: dict) -> set[str]:
+    identities = set()
+    for reference in finding.get('references', []) or []:
+        if not isinstance(reference, dict):
+            continue
+        identity = normalize_url_identity(reference.get('url', ''))
+        if identity:
+            identities.add(identity)
+    return identities
+
+
+def remove_reference_urls_from_finding_iocs(finding: dict) -> int:
+    """Remove source/reference URLs accidentally returned as IOC URLs."""
+    finding_iocs = finding.get('iocs')
+    if not isinstance(finding_iocs, dict):
+        return 0
+    urls = finding_iocs.get('urls')
+    if not isinstance(urls, list):
+        return 0
+
+    references = reference_url_identities(finding)
+    if not references:
+        return 0
+
+    kept = []
+    removed = 0
+    for item in urls:
+        value = item.get('url', '') if isinstance(item, dict) else item
+        identity = normalize_url_identity(value)
+        if identity and identity in references:
+            removed += 1
+            continue
+        kept.append(item)
+    if removed:
+        finding_iocs['urls'] = kept
+    return removed
+
+
 def matches_reference_url_path(value: str, policy: dict) -> bool:
     host, path = normalize_url_host_path(value)
     if not host:
@@ -896,7 +972,24 @@ def update_iocs(finding):
     if 'iocs' not in iocs:
         iocs['iocs'] = []
 
-    existing_values = {i['value'] for i in iocs['iocs']}
+    existing_raw_values = {
+        str(ioc.get('value', ''))
+        for ioc in iocs['iocs']
+        if isinstance(ioc, dict) and ioc.get('value') is not None
+    }
+    existing_identities = {
+        identity
+        for ioc in iocs['iocs']
+        if isinstance(ioc, dict)
+        for identity in [
+            normalize_ioc_identity(
+                str(ioc.get('value', '')),
+                str(ioc.get('type', '')),
+            )
+        ]
+        if identity
+    }
+    reference_urls = reference_url_identities(finding)
     finding_iocs = finding.get('iocs', {})
     campaign = finding.get('slug', 'unknown')
     added = 0
@@ -911,7 +1004,14 @@ def update_iocs(finding):
             reason = reject_reason or 'malformed value'
             print(f"  Skipped malformed IOC: {value!r} (reason: {reason})")
             return
-        if cleaned in existing_values:
+        identity = normalize_ioc_identity(cleaned, cleaned_type)
+        if cleaned_type == 'url_path' and normalize_url_identity(cleaned) in reference_urls:
+            skipped += 1
+            print(f"  Skipped reference URL misclassified as IOC: {value!r}")
+            return
+        if cleaned in existing_raw_values or (
+            identity and identity in existing_identities
+        ):
             return
         context = finding['title']
         extra_note = note or relocated_note
@@ -926,7 +1026,9 @@ def update_iocs(finding):
             "campaign": campaign,
             "status": "active"
         })
-        existing_values.add(cleaned)
+        existing_raw_values.add(cleaned)
+        if identity:
+            existing_identities.add(identity)
         added += 1
 
     for domain in finding_iocs.get('domains', []):
@@ -1091,6 +1193,12 @@ def main():
         
         # Clean citation markers from all text fields
         finding = clean_finding_citations(finding)
+        removed_reference_urls = remove_reference_urls_from_finding_iocs(finding)
+        if removed_reference_urls:
+            print(
+                f"  Removed {removed_reference_urls} reference URL(s) "
+                "misclassified as IOC URLs"
+            )
 
         markdown = generate_post_markdown(finding)
         filename = update_posts_index(finding)
