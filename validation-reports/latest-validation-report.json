@@ -1,7 +1,7 @@
 {
-  "commit_sha": "4f0764827a5057a27094a3d7e1af2b03bb3a00bb",
+  "commit_sha": "",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-07-26T06:07:37+00:00",
+  "generated_at_utc": "2026-07-26T21:57:04+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -19,81 +19,94 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026",
-      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 4,
-  "reports_newly_validated": 3,
-  "reports_skipped": 180,
-  "review_required": 1,
-  "source_urls_checked": 8,
-  "state_updates": 3,
+  "reports_checked": 5,
+  "reports_newly_validated": 5,
+  "reports_skipped": 183,
+  "review_required": 0,
+  "source_urls_checked": 11,
+  "state_updates": 5,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use",
+      "final_url": "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use"
+      "url": "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat"
     },
     {
       "error": "",
-      "final_url": "https://www.infosecurity-magazine.com/news/nation-state-abuse-gemini-ai/",
+      "final_url": "https://www.bleepingcomputer.com/news/security/fake-claude-app-promoted-by-bing-ads-pushes-sectoprat-malware/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.infosecurity-magazine.com/news/nation-state-abuse-gemini-ai/"
+      "url": "https://www.bleepingcomputer.com/news/security/fake-claude-app-promoted-by-bing-ads-pushes-sectoprat-malware/"
     },
     {
       "error": "",
-      "final_url": "https://asec.ahnlab.com/en/94441/",
+      "final_url": "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://asec.ahnlab.com/en/94441/"
+      "url": "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/"
     },
     {
       "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/",
+      "final_url": "https://accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
+      "url": "https://accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/"
     },
     {
       "error": "",
-      "final_url": "https://horizon3.ai",
+      "final_url": "https://ubuntu.com/security/CVE-2026-46331",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://horizon3.ai"
+      "url": "https://ubuntu.com/security/CVE-2026-46331"
     },
     {
       "error": "",
-      "final_url": "https://huggingface.co/blog/security-incident-july-2026",
+      "final_url": "https://socradar.io/blog/sharedroot-sandbox-escape-claude-cowork/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://huggingface.co/blog/security-incident-july-2026"
+      "url": "https://socradar.io/blog/sharedroot-sandbox-escape-claude-cowork/"
     },
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
+      "final_url": "https://www.manifold.security/blog/azure-devops-mcp-server-vulnerability",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+      "url": "https://www.manifold.security/blog/azure-devops-mcp-server-vulnerability"
     },
     {
-      "error": "HTTP Error 403: Forbidden",
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.oasis.security/blog/claude-desktop-vulnerability",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.oasis.security/blog/claude-desktop-vulnerability"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.darkreading.com/vulnerabilities-threats/claude-flaw-malicious-prompts-ai-agents",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/claude-flaw-malicious-prompts-ai-agents"
+    },
+    {
+      "error": "",
       "final_url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/",
-      "http_status": 403,
-      "status": "blocked",
+      "http_status": 200,
+      "status": "accessible",
       "url": "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
     }
   ],

@@ -1,6 +1,57 @@
 {
   "posts": [
     {
+      "id": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "title": "FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Huntress observed at least 29 organizations hit on 2026-07-21 and 2026-07-22 after Bing advertisements sent users to a malicious Claude Artifact that delivered a fake Claude Desktop installer and SectopRAT. Defenders should block the published attacker infrastructure and hashes, hunt for JetBrains JCEF or IBM SPSS binaries executing beside untrusted DLLs, and investigate scheduled tasks launching DockerDesktop.exe from user-writable paths.",
+      "file": "2026-07-26-fakeagent-claude-artifact-sectoprat.md"
+    },
+    {
+      "id": "2026-07-26-sharedroot-claude-cowork-sandbox-escape",
+      "title": "SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Accomplish demonstrated that code running in a local Claude Cowork session could use CVE-2026-46331 to become guest root and then read or write the host Mac through a full-filesystem VirtioFS mount. The chain does not appear to affect Cowork’s default cloud execution path, but defenders supporting local execution should validate the guest kernel, restrict namespaces and netlink access, and confirm that only explicitly approved host folders are mounted into the VM.",
+      "file": "2026-07-26-sharedroot-claude-cowork-sandbox-escape.md"
+    },
+    {
+      "id": "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection",
+      "title": "Hidden Azure DevOps PR Comments Turned AI Reviewers into Cross-Project Confused Deputies",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Manifold Security demonstrated that a hidden HTML comment in an Azure DevOps pull-request description could hijack Copilot CLI and Claude Code through Microsoft’s official Azure DevOps MCP server, causing the victim’s agent to read a confidential cross-project wiki and publish it back to the attacker’s PR. Microsoft acknowledged and triaged the report; defenders should disable autonomous review actions across trust boundaries, inspect raw PR content for hidden instructions, and alert on review sessions that run pipelines or read unrelated projects.",
+      "file": "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection.md"
+    },
+    {
+      "id": "2026-07-26-promptfiction-claude-desktop-deeplink",
+      "title": "PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review",
+      "date": "2026-07-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Oasis Security disclosed PromptFiction, a fixed Claude Desktop flaw where one click on a crafted claude:// link automatically submitted an attacker-authored prompt without letting the user review or approve it. Organizations should require Claude Desktop 1.1.2321 or later, inventory custom-URI invocations, and restrict filesystem, code-execution, and MCP permissions available to desktop agents.",
+      "file": "2026-07-26-promptfiction-claude-desktop-deeplink.md"
+    },
+    {
       "id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
       "title": "Nation-State Generative AI Operationalization: GTIG Attribution Report – China, Russia, Iran, DPRK Using LLMs for Malware Development and Autonomous Reconnaissance (June 2026)",
       "date": "2026-07-26",
