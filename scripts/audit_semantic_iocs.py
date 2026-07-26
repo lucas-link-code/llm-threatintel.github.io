@@ -151,6 +151,98 @@ def normalize_bare_package(value: str) -> str:
     return re.sub(r"^(?:npm|pypi|nuget|chrome-extension):", "", value, flags=re.I).lower()
 
 
+def normalize_url_identity(value: str) -> str:
+    """Normalize URL syntax differences while preserving path/query semantics."""
+    cleaned = str(value).strip().replace("[.]", ".")
+    cleaned = re.sub(
+        r"^hxxps?://",
+        lambda match: "https://" if "s" in match.group(0).lower() else "http://",
+        cleaned,
+        flags=re.I,
+    )
+    try:
+        parsed = urllib.parse.urlparse(
+            cleaned if "://" in cleaned else f"//{cleaned}",
+            scheme="",
+        )
+        host = (parsed.hostname or "").lower()
+        port = parsed.port
+    except ValueError:
+        return ""
+    if host.startswith("www."):
+        host = host[4:]
+    if not host:
+        return ""
+    authority = f"{host}:{port}" if port is not None else host
+    path = (parsed.path or "/").rstrip("/") or "/"
+    query = f"?{parsed.query}" if parsed.query else ""
+    return f"{authority}{path}{query}"
+
+
+def matches_reference_url_policy(value: str, policy: dict) -> bool:
+    """Return True only for policy-scoped reference hosts and paths."""
+    cleaned = str(value).strip().replace("[.]", ".")
+    try:
+        parsed = urllib.parse.urlparse(
+            cleaned if "://" in cleaned else f"//{cleaned}",
+            scheme="",
+        )
+        host = (parsed.hostname or "").lower()
+    except ValueError:
+        return False
+    if not host:
+        return False
+
+    for denied_domain in policy.get("reference_url_domain_denylist", []):
+        domain = str(denied_domain).lower()
+        if host == domain or host.endswith("." + domain):
+            return True
+
+    path = parsed.path or "/"
+    for entry in policy.get("reference_url_path_denylist", []):
+        if not isinstance(entry, dict):
+            continue
+        entry_host = str(entry.get("host", "")).lower()
+        prefix = str(entry.get("path_prefix", "/"))
+        if host == entry_host or host.endswith("." + entry_host):
+            if path.startswith(prefix):
+                return True
+    return False
+
+
+def find_normalized_url_duplicates(iocs: list[dict]) -> list[dict]:
+    """Report normalized URL duplicates; never choose a status automatically."""
+    groups: dict[str, list[dict]] = {}
+    for ioc in iocs:
+        if not isinstance(ioc, dict) or ioc.get("type") != "url_path":
+            continue
+        normalized = normalize_url_identity(str(ioc.get("value", "")))
+        if normalized:
+            groups.setdefault(normalized, []).append(ioc)
+
+    duplicates = []
+    for normalized, records in sorted(groups.items()):
+        if len(records) < 2:
+            continue
+        statuses = sorted({str(record.get("status", "")) for record in records})
+        duplicates.append(
+            {
+                "normalized": normalized,
+                "record_count": len(records),
+                "values": sorted({str(record.get("value", "")) for record in records}),
+                "statuses": statuses,
+                "campaigns": sorted({str(record.get("campaign", "")) for record in records}),
+                "classification": (
+                    "duplicate_status_conflict"
+                    if len(statuses) > 1
+                    else "normalized_duplicate"
+                ),
+                "proposed_action": "review_and_consolidate",
+            }
+        )
+    return duplicates
+
+
 def is_malicious_package_ioc(ioc: dict) -> bool:
     ctx = str(ioc.get("context", ""))
     value = str(ioc.get("value", ""))
@@ -185,6 +277,13 @@ def classify_ioc(ioc: dict, policy: dict) -> tuple[str, str, str]:
                 f"Recommendation: {ev['recommendation']}"
             )
         return "needs_my_review", reason, "keep_pending_review"
+
+    if ioc_type == "url_path" and matches_reference_url_policy(value, policy):
+        return (
+            "reference_url_not_ioc",
+            "Reference, advisory, evidence, or safe PoC URL matched semantic policy",
+            "remove",
+        )
 
     if ioc_type == "package" and value in DEFINITE_REMOVE_PACKAGES:
         if value == "grok-bankr-integration":
@@ -236,7 +335,7 @@ def classify_ioc(ioc: dict, policy: dict) -> tuple[str, str, str]:
 
 def audit_iocs(iocs_data: dict, policy: dict) -> tuple[list[dict], dict]:
     rows = []
-    changelog = {"remove": [], "keep": [], "needs_review": []}
+    changelog = {"remove": [], "keep": [], "needs_review": [], "duplicate_groups": []}
 
     for ioc in iocs_data.get("iocs", []):
         value = str(ioc.get("value", "")).strip()
@@ -262,10 +361,13 @@ def audit_iocs(iocs_data: dict, policy: dict) -> tuple[list[dict], dict]:
         else:
             changelog["keep"].append(entry)
 
+    changelog["duplicate_groups"] = find_normalized_url_duplicates(
+        iocs_data.get("iocs", [])
+    )
     return rows, changelog
 
 
-def write_audit(rows: list[dict]) -> None:
+def write_audit(rows: list[dict], duplicate_groups: list[dict]) -> None:
     lines = [
         "# Semantic IOC Audit",
         "",
@@ -275,12 +377,12 @@ def write_audit(rows: list[dict]) -> None:
     ]
     review_rows = [r for r in rows if r["classification"] == "needs_my_review"]
     remove_rows = [r for r in rows if r["proposed_action"] == "remove"]
-
     lines.extend(
         [
             "## Summary",
             f"- Proposed removals: {len(remove_rows)}",
             f"- Needs review: {len(review_rows)}",
+            f"- Normalized URL duplicate groups: {len(duplicate_groups)}",
             f"- Keep: {len(rows) - len(remove_rows) - len(review_rows)}",
             "",
             "## Needs Lucas Review",
@@ -289,6 +391,13 @@ def write_audit(rows: list[dict]) -> None:
     )
     for row in review_rows:
         lines.extend(_format_row(row))
+
+    lines.extend(["## Normalized URL Duplicates", ""])
+    if duplicate_groups:
+        for group in duplicate_groups:
+            lines.extend(_format_duplicate_group(group))
+    else:
+        lines.extend(["No normalized URL duplicate groups found.", ""])
 
     lines.extend(["## Proposed Removals", ""])
     for row in remove_rows:
@@ -317,6 +426,19 @@ def _format_row(row: dict) -> list[str]:
     ]
 
 
+def _format_duplicate_group(group: dict) -> list[str]:
+    return [
+        f"### {group['normalized']}",
+        f"- record_count: {group['record_count']}",
+        f"- values: {', '.join(group['values'])}",
+        f"- statuses: {', '.join(group['statuses'])}",
+        f"- campaigns: {', '.join(group['campaigns'])}",
+        f"- classification: {group['classification']}",
+        f"- proposed_action: {group['proposed_action']}",
+        "",
+    ]
+
+
 def apply_removals(iocs_data: dict, changelog: dict) -> dict:
     remove_values = {e["value"] for e in changelog["remove"]}
     kept = [ioc for ioc in iocs_data.get("iocs", []) if str(ioc.get("value", "")).strip() not in remove_values]
@@ -325,16 +447,24 @@ def apply_removals(iocs_data: dict, changelog: dict) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--apply", action="store_true", help="Remove only definite false positives from data/iocs.json")
+    parser.add_argument(
+        "--apply",
+        action="store_true",
+        help="Remove only definite false positives; duplicate groups remain analyst-review items",
+    )
     args = parser.parse_args()
 
     policy = load_policy()
     data = json.loads(IOCS_PATH.read_text())
     rows, changelog = audit_iocs(data, policy)
-    write_audit(rows)
+    write_audit(rows, changelog["duplicate_groups"])
     CHANGELOG_PATH.write_text(json.dumps(changelog, indent=2) + "\n")
     print(f"Wrote {AUDIT_PATH} ({len(rows)} IOCs)")
-    print(f"Wrote {CHANGELOG_PATH}: {len(changelog['remove'])} remove, {len(changelog['needs_review'])} review")
+    print(
+        f"Wrote {CHANGELOG_PATH}: {len(changelog['remove'])} remove, "
+        f"{len(changelog['needs_review'])} review, "
+        f"{len(changelog['duplicate_groups'])} duplicate group(s)"
+    )
 
     if args.apply:
         cleaned = apply_removals(data, changelog)

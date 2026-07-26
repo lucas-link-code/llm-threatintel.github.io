@@ -5,6 +5,11 @@ const REFERENCE_URL_PATTERNS = [
   /thehackernews\.com/i,
   /docs\.litellm\.ai\/blog/i,
   /adversa-ai\/research/i,
+  /openai\.com\/index\/hugging-face-model-evaluation-security-incident/i,
+  /huggingface\.co\/blog\/security-incident-july-2026/i,
+  /stepsecurity\.io\/blog\/mass-npm-supply-chain-attack/i,
+  /sonatype\.com\/blog\/miasma-returns/i,
+  /novee\.security\/blog\/cordyceps/i,
 ];
 const VALID_PACKAGES = [
   'npm:@bankr/agent',
@@ -56,6 +61,14 @@ test.describe('IOC semantic cleanliness', () => {
     for (const pkg of VALID_PACKAGES) {
       expect(joined).toContain(pkg);
     }
+  });
+
+  test('specific malicious Hugging Face repository remains in URL feed', async ({ page }) => {
+    await page.selectOption('#ioc-type-filter', 'url_path');
+    await page.selectOption('#ioc-status-filter', 'all');
+    await page.waitForTimeout(300);
+    const values = await page.locator('.ioc-table tbody tr .ioc-value').allTextContents();
+    expect(values.join('\n').toLowerCase()).toContain('huggingface[.]co/open-oss/privacy-filter');
   });
 
   test('ollama and grok remain searchable in report content', async ({ page }) => {

@@ -1390,6 +1390,7 @@ class Validator:
         normalized = normalized.lower()
         if ioc_type == "url_path":
             normalized = re.sub(r"^https?://", "", normalized)
+            normalized = re.sub(r"^www\.", "", normalized)
             return normalized.rstrip("/")
         if ioc_type == "domain":
             return normalized.rstrip("/")
