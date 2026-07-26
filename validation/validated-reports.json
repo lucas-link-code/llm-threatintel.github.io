@@ -3103,6 +3103,89 @@
       "validated_at": "2026-07-19T18:00:47+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection": {
+      "content_hash": "98ba26cc7a97f0ea42de2e658c1209eae785f13d2a307970c851507b571b482d",
+      "evidence_status": "validated",
+      "file": "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection.md",
+      "posts_index_hash": "2744cf2ae247cec81685cbcd69c2efe2150839996c0e1a370757b0348f5caf3c",
+      "report_id": "2026-07-26-azure-devops-mcp-hidden-pr-prompt-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://www.manifold.security/blog/azure-devops-mcp-server-vulnerability",
+        "https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T21:51:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-fakeagent-claude-artifact-sectoprat": {
+      "content_hash": "8aadfee37dac916a44f9396c563274b5e3bf6ffab65581a8130eb0c069509606",
+      "evidence_status": "validated",
+      "file": "2026-07-26-fakeagent-claude-artifact-sectoprat.md",
+      "posts_index_hash": "62a4c9bac2288b0da5b1b1abee27dfbbbb1c0205e6d63a27ee84d17aceeca05d",
+      "report_id": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "review_required": [],
+      "source_urls": [
+        "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+        "https://www.bleepingcomputer.com/news/security/fake-claude-app-promoted-by-bing-ads-pushes-sectoprat-malware/",
+        "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T21:52:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-openai-hugging-face-evaluation-agent-escape": {
+      "content_hash": "426d466995cc02e5441a2149bae39b1729ef0dffaea862e617288b185e8a59bd",
+      "evidence_status": "validated",
+      "file": "2026-07-26-openai-hugging-face-evaluation-agent-escape.md",
+      "posts_index_hash": "b260bb3b592afdada57f8f2f195d85651b94dabd54c508bc99a318593aafc501",
+      "report_id": "2026-07-26-openai-hugging-face-evaluation-agent-escape",
+      "review_required": [],
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://www.securityweek.com/openai-says-its-ai-models-broke-loose-and-hacked-hugging-face/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T21:50:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-promptfiction-claude-desktop-deeplink": {
+      "content_hash": "b60e7acfcb7c323ae29f1f0ba405b0322faafb5eb93834f6dd3ff65d529a3618",
+      "evidence_status": "validated",
+      "file": "2026-07-26-promptfiction-claude-desktop-deeplink.md",
+      "posts_index_hash": "57e328457be98a41e50d535d59b9ff6df53057ac96c1b96ac85b69513079c51f",
+      "report_id": "2026-07-26-promptfiction-claude-desktop-deeplink",
+      "review_required": [],
+      "source_urls": [
+        "https://www.oasis.security/blog/claude-desktop-vulnerability",
+        "https://www.darkreading.com/vulnerabilities-threats/claude-flaw-malicious-prompts-ai-agents"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T21:51:04+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-26-sharedroot-claude-cowork-sandbox-escape": {
+      "content_hash": "d6a9abd2a8442adab551960dfe606b532329c8a35fd38f4dfd8468b2c1aa49f4",
+      "evidence_status": "validated",
+      "file": "2026-07-26-sharedroot-claude-cowork-sandbox-escape.md",
+      "posts_index_hash": "214062d967b727842e5caf59c5dc435925193a90b6d4c5166b1584ad945ed63d",
+      "report_id": "2026-07-26-sharedroot-claude-cowork-sandbox-escape",
+      "review_required": [],
+      "source_urls": [
+        "https://accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/",
+        "https://ubuntu.com/security/CVE-2026-46331",
+        "https://socradar.io/blog/sharedroot-sandbox-escape-claude-cowork/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-26T21:51:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

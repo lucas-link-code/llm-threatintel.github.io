@@ -1,6 +1,276 @@
 {
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-26",
   "iocs": [
+    {
+      "value": "claude.ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877",
+      "type": "url_path",
+      "context": "Exact malicious Claude Artifact used as the FakeAgent Claude Desktop download page; bare Claude platform paths are not blocked",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "removed"
+    },
+    {
+      "value": "download-app.us",
+      "type": "domain",
+      "context": "FakeAgent attacker-controlled redirect domain serving the fake Claude Desktop chain",
+      "first_seen": "2026-05-09",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "claude.ai.download-app.us",
+      "type": "domain",
+      "context": "FakeAgent Claude-branded attacker subdomain reached from the malicious Artifact",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "downloading-api.it.com",
+      "type": "domain",
+      "context": "FakeAgent payload-delivery host reached after the download-app.us redirect",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "downloading-api.it.com/html/claude/win",
+      "type": "url_path",
+      "context": "FakeAgent path serving the malicious ClaudeDesktop.exe download",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "5ca8758c-02d0-4a72-89c8-d468b66dda41.com",
+      "type": "domain",
+      "context": "Backup SectopRAT command-and-control domain published for FakeAgent",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "2.24.131.246",
+      "type": "ip",
+      "context": "Current SectopRAT command-and-control address recovered from FakeAgent BNB Smart Chain transactions",
+      "first_seen": "2026-06-12",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "1cd58cfba596da296ab1878d74023e00c399345a1b6c2a0e5446c53563f4e3bb",
+      "type": "sha256",
+      "context": "FakeAgent malicious tempdir.dll sideloaded by the signed IBM SPSS sslconf.exe component",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "26bae4d7012bf59847ab4036a065419c3d4ca47e020479f55b3b2c6d0d21394a",
+      "type": "sha256",
+      "context": "FakeAgent VMProtect-packed malicious libcef.dll sideloading stager",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "1fe3646d27d286db8123297e06ae7badf3e26f352a04f91b6d82c28869a91664",
+      "type": "sha256",
+      "context": "Embedded SectopRAT payload from the FakeAgent infection chain",
+      "first_seen": "2026-07-21",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "active"
+    },
+    {
+      "value": "107.189.24.67",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-05-30",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "104.194.133.210",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-07-13",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.26.86",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-07-26",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.21.86",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-08-11",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.124.17",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-08-22",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.125.228",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-09-05",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.122.82",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-09-14",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.17.143",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-09-24",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.122.134",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-11-23",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.122.235",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-12-03",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.22.118",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-12-09",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.20.32",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-12-16",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.20.95",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2025-12-29",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "107.189.24.255",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-01-10",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.117.145",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-01-28",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.114.190",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-03-13",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.123.122",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-04-03",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "45.59.117.67",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-04-14",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "195.110.58.222",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-04-20",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
+    {
+      "value": "191.101.80.211",
+      "type": "ip",
+      "context": "Historical C2 decrypted from operator blockchain transactions; Huntress stated older addresses may belong to campaigns outside FakeAgent",
+      "first_seen": "2026-05-12",
+      "source": "Huntress",
+      "campaign": "2026-07-26-fakeagent-claude-artifact-sectoprat",
+      "status": "unknown"
+    },
     {
       "value": "tralalarkefe.com",
       "type": "domain",

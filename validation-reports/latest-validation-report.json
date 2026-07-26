@@ -1,7 +1,7 @@
 {
-  "commit_sha": "6940ed0ec1b7",
+  "commit_sha": "e93d2fdd3049",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-07-19T18:00:47+00:00",
+  "generated_at_utc": "2026-07-26T21:52:35+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -17,54 +17,13 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 1,
-  "reports_skipped": 172,
+  "reports_checked": 0,
+  "reports_newly_validated": 0,
+  "reports_skipped": 178,
   "review_required": 0,
-  "source_urls_checked": 5,
-  "state_updates": 1,
-  "url_results": [
-    {
-      "browser_ua_recovered": false,
-      "error": "",
-      "final_url": "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html"
-    },
-    {
-      "browser_ua_recovered": false,
-      "error": "",
-      "final_url": "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/26/e/patriot-bait/IoC_PatriotBait.txt",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/26/e/patriot-bait/IoC_PatriotBait.txt"
-    },
-    {
-      "browser_ua_recovered": false,
-      "error": "",
-      "final_url": "https://www.bleepingcomputer.com/news/security/google-gemini-cli-abused-as-a-hacking-agent-malware-botnet-operator/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.bleepingcomputer.com/news/security/google-gemini-cli-abused-as-a-hacking-agent-malware-botnet-operator/"
-    },
-    {
-      "browser_ua_recovered": false,
-      "error": "",
-      "final_url": "https://www.helpnetsecurity.com/2026/07/16/jailbroken-google-gemini-cli-botnet/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.helpnetsecurity.com/2026/07/16/jailbroken-google-gemini-cli-botnet/"
-    },
-    {
-      "browser_ua_recovered": false,
-      "error": "",
-      "final_url": "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131"
-    }
-  ],
+  "source_urls_checked": 0,
+  "state_updates": 0,
+  "url_results": [],
   "validation_version": "1.0.0",
   "warnings": 1
 }

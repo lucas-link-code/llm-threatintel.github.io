@@ -1,6 +1,34 @@
 {
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-26",
   "entries": [
+    {
+      "id": "sectoprat",
+      "names": [
+        "SectopRAT",
+        "ArechClient",
+        "1xxbot"
+      ],
+      "type": "malware",
+      "first_seen": "2021-06-10",
+      "status": "active",
+      "distribution": [
+        "FakeAgent paid Bing advertisements leading to a malicious Claude Artifact",
+        "Fake Claude Desktop installer redirected through download-app.us infrastructure",
+        "DLL sideloading through signed JetBrains JCEF and IBM SPSS components"
+      ],
+      "ttps": [
+        "T1189 - Drive-by Compromise",
+        "T1204.002 - User Execution: Malicious File",
+        "T1574.001 - Hijack Execution Flow: DLL",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task",
+        "T1027.002 - Obfuscated Files or Information: Software Packing",
+        "T1497.001 - Virtualization/Sandbox Evasion: System Checks",
+        "T1102.001 - Web Service: Dead Drop Resolver",
+        "T1555.003 - Credentials from Password Stores: Credentials from Web Browsers"
+      ],
+      "description": "ThreatFox tracks SectopRAT under the aliases ArechClient and 1xxbot with a first-seen date of 2021-06-10. Huntress attributed the embedded .NET payload in the July 2026 FakeAgent Claude Desktop malvertising campaign to SectopRAT after correlating browser and payment-card theft strings, hidden virtual network computing behavior, and command-and-control services recovered from BNB Smart Chain transactions. The campaign used signed-binary DLL sideloading, VMProtect, GPU-based anti-analysis, DirectX shader decryption, scheduled-task reinfection, and EtherHiding dead-drop resolution.",
+      "attribution": "Unattributed operator. Huntress linked historical blockchain-resolved C2 infrastructure to the same operator but stated that older addresses may belong to other campaigns."
+    },
     {
       "id": "bandcampro-patriot-bait",
       "names": [
