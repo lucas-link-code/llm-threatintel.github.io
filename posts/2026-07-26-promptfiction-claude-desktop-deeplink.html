@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review | LLM ThreatIntel</title>
+  <meta name="description" content="Oasis Security disclosed PromptFiction, a fixed Claude Desktop flaw where one click on a crafted claude:// link automatically submitted an attacker-authored prompt without letting the user review or approve it. Organizations should require Claude Desktop 1.1.2321 or later, inventory custom-URI invocations, and restrict filesystem, code-execution, and MCP permissions available to desktop agents.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-26-promptfiction-claude-desktop-deeplink.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review">
+  <meta property="og:description" content="Oasis Security disclosed PromptFiction, a fixed Claude Desktop flaw where one click on a crafted claude:// link automatically submitted an attacker-authored prompt without letting the user review or approve it. Organizations should require Claude Desktop 1.1.2321 or later, inventory custom-URI invocations, and restrict filesystem, code-execution, and MCP permissions available to desktop agents.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-26-promptfiction-claude-desktop-deeplink.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review">
+  <meta property="article:published_time" content="2026-07-26T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-26T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="mcp-security">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review">
+  <meta name="twitter:description" content="Oasis Security disclosed PromptFiction, a fixed Claude Desktop flaw where one click on a crafted claude:// link automatically submitted an attacker-authored prompt without letting the user review or approve it. Organizations should require Claude Desktop 1.1.2321 or later, inventory custom-URI invocations, and restrict filesystem, code-execution, and MCP permissions available to desktop agents.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review",
+  "description": "Oasis Security disclosed PromptFiction, a fixed Claude Desktop flaw where one click on a crafted claude:// link automatically submitted an attacker-authored prompt without letting the user review or approve it. Organizations should require Claude Desktop 1.1.2321 or later, inventory custom-URI invocations, and restrict filesystem, code-execution, and MCP permissions available to desktop agents.",
+  "datePublished": "2026-07-26T00:00:00Z",
+  "dateModified": "2026-07-26T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-26-promptfiction-claude-desktop-deeplink.html",
+  "keywords": [
+    "prompt-injection",
+    "mcp-security"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-26</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-mcp-security">Mcp Security</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>PromptFiction Claude Desktop Deep Links Auto-Submitted Attacker Prompts Without User Review</h1>
+<p><strong>Date:</strong> 2026-07-26<br><strong>Tags:</strong> prompt-injection, mcp-security</p>
+<h2>Executive Summary</h2>
+<p>Oasis Security disclosed PromptFiction, a fixed Claude Desktop flaw where one click on a crafted <code>claude://</code> link automatically submitted an attacker-authored prompt without letting the user review or approve it. Organizations should require Claude Desktop 1.1.2321 or later, inventory custom-URI invocations, and restrict filesystem, code-execution, and MCP permissions available to desktop agents.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>PromptFiction</td></tr><tr><td>Actor / Attribution</td><td>Oasis Security proof of concept; no observed threat actor</td></tr><tr><td>Target</td><td>Claude Desktop users, especially installations with filesystem, coding, or MCP access</td></tr><tr><td>Vector</td><td>Crafted <code>claude://</code> custom-URI link delivered through a website, document, email, chat, or search result</td></tr><tr><td>Status</td><td>fixed in Claude Desktop 1.1.2321</td></tr><tr><td>First Observed</td><td>2026-07-15 public disclosure</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Oasis Security, Claude Desktop registered a custom URI scheme that could carry a complete prompt into the application. Oasis reported that a victim clicking a crafted <code>claude://</code> link caused Claude Desktop to open a conversation and submit the attacker-authored prompt immediately, without a separate Send action or review opportunity.</p>
+<p>Oasis reported that an attacker could pad the prompt with benign text so the application’s message-folding behavior concealed the malicious instructions below the visible portion. Oasis stated that the link could be delivered through a browser page, document, email, chat message, or search result.</p>
+<p>Oasis reported that a standard Claude Desktop installation exposed the user’s conversation history to the injected prompt, including source code, internal documents, customer data, unreleased plans, and security details already present in those conversations. Oasis stated that installations configured with coding, filesystem, or MCP capabilities increased the potential impact to local file read/write activity and attacker-directed code execution.</p>
+<p>Oasis reported PromptFiction through Anthropic’s Responsible Disclosure Program and stated that another researcher had independently submitted the same issue without publishing it. Oasis reported that Anthropic changed the behavior so a deep-link prompt is pre-filled but waits for the user to review and press Send, and identified Claude Desktop 1.1.2321 or later as the protected version.</p>
+<p>Dark Reading corroborated that the flaw automatically submitted custom-URI prompts and reported that combining PromptFiction with previously disclosed Claude flaws could enable conversation exfiltration, filesystem access, persistence, and remote code execution. Dark Reading reported no evidence that attackers exploited PromptFiction before remediation.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>User Execution: Malicious Link</td><td>T1204.001</td><td>The proof of concept required one click on a crafted custom-URI link</td></tr><tr><td>Command and Scripting Interpreter</td><td>T1059</td><td>A successfully injected prompt could direct configured coding tools to execute commands</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Configured filesystem access could expose local files</td></tr><tr><td>Exfiltration Over Web Service</td><td>T1567</td><td>The injected assistant could send conversation or file content through an external service</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Enforce Claude Desktop 1.1.2321 or later through software inventory and block outdated clients from enterprise access. Collect browser, email-security, and endpoint telemetry for external invocation of the <code>claude://</code> URI handler and correlate it with immediate Claude Desktop process launches, new conversations, tool calls, file access, or outbound uploads. Require a human approval event for all custom-URI prompts and for sensitive filesystem, shell, network, and MCP actions. Limit standing agent permissions, disable unused MCP servers, and alert when a desktop agent reads conversation history or local files immediately after a deep-link launch.</p>
+<h2>References</h2>
+<ul><li>[Oasis Security] PromptFiction: a one-click flaw that made Claude Desktop act without consent (2026-07-15) — https://www.oasis.security/blog/claude-desktop-vulnerability</li><li>[Dark Reading] Claude Flaw Automatically Sends Malicious Prompts to AI Agents (2026-07-15) — https://www.darkreading.com/vulnerabilities-threats/claude-flaw-malicious-prompts-ai-agents</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

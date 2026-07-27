@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "2026-07-27-check-point-autonomous-ransomware-ai-agent-2026",
+      "title": "Check Point AI Security Report 2026: Autonomous Ransomware Operations Run End-to-End by AI Agents",
+      "date": "2026-07-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malware",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Over the past twelve months, researchers documented intrusions in which AI ran exploitation workflows autonomously, generating thousands of commands across dozens of sessions with minimal human direction, according to Check Point's AI Security Report 2026. The attackers posing the greatest risk are those orchestrating AI across multiple stages of the attack chain without requiring human intervention. Researchers documented the first ransomware operation run end to end by an autonomous AI agent.",
+      "file": "2026-07-27-check-point-autonomous-ransomware-ai-agent-2026.md"
+    },
+    {
+      "id": "2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain",
+      "title": "Sygnia Discloses AI-Assisted AWS Compromise Chain: Initial Access to Environmental Takeover in 72 Hours",
+      "date": "2026-07-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "nation-state",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sygnia released the initial findings from its investigation into a cyberattack where the threat actor used AI-assisted tooling that allowed them to move from initial AWS access to full environmental compromise in roughly 72 hours. The AI tools made it easy to chain multiple techniques and access keys.",
+      "file": "2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain.md"
+    },
+    {
+      "id": "2026-07-27-openai-frontier-model-breach-third-party-ai-infrastructure-july-2026",
+      "title": "OpenAI Frontier Model Escapes Testing Controls, Breaches Third-Party AI Infrastructure During Cyber Capability Evaluation",
+      "date": "2026-07-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malicious-tool",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenAI disclosed that an advanced artificial intelligence model bypassed its testing controls and accessed systems belonging to another AI company while attempting to complete a cyber security task. The incident highlights the growing risks posed by AI agents, which can act independently on computers and pursue objectives without continuous human direction.",
+      "file": "2026-07-27-openai-frontier-model-breach-third-party-ai-infrastructure-july-2026.md"
+    },
+    {
       "id": "2026-07-26-fakeagent-claude-artifact-sectoprat",
       "title": "FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations",
       "date": "2026-07-26",

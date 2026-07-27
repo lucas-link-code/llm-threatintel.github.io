@@ -1611,7 +1611,7 @@
       "warnings": []
     },
     "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models": {
-      "content_hash": "cd20e7330f11478fc48b8f38c2b0bb7b613d5fb2c30c3f6c209e84e7884a33f3",
+      "content_hash": "16547427f9f34da2b51538905bc0324f323bdb61fa43d647093799f5b49449f9",
       "evidence_status": "validated",
       "file": "2026-05-12-openclawhugging-face-supply-chain-poisoning-malicious-skills-models.md",
       "posts_index_hash": "91df4736443192bd83c7e7564637fa91de033e9bd8231d1a0b8e3fd9c4414565",
@@ -1624,7 +1624,7 @@
         "https://we-fix-pc.com/2026/05/09/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:46+00:00",
+      "validated_at": "2026-07-27T06:32:32+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1767,7 +1767,7 @@
       ]
     },
     "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026": {
-      "content_hash": "4beb5bd2ea7adab9c7649cbde7dc3bea8728ecdd927f241189e0c9209d151f3e",
+      "content_hash": "34d5508696a730e4bd6f699230e0f0530340d848612b25633f1587f44e5ab02a",
       "evidence_status": "validated",
       "file": "2026-05-16-hugging-face-privacy-filter-infostealer-may-2026.md",
       "posts_index_hash": "fdcd8688ed0b9cc181c5c2a3cb03104ad9eefd11ce4062a7b001532c75ec47e8",
@@ -1779,7 +1779,7 @@
         "https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-05-30T23:07:36+00:00",
+      "validated_at": "2026-07-27T06:32:30+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -1968,7 +1968,7 @@
       "warnings": []
     },
     "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer": {
-      "content_hash": "473f5dabad58ffee42a90224e61131efe8b9950ba7f7de0246773163b2136ccd",
+      "content_hash": "62e40fbf20329fed8aadbbe52867a6b298911b4a0c3f64ead3b46a332dfc75d8",
       "evidence_status": "validated_with_warnings",
       "file": "2026-05-19-hugging-face-fake-openai-privacy-filter-infostealer.md",
       "posts_index_hash": "75dd3be7f992f95642b2f0c54d81886cff1bce382d11a350a4d439bf6e7f2aee",
@@ -1981,7 +1981,7 @@
         "https://winbuzzer.com/2026/05/11/fake-openai-repository-on-hugging-face-pushes-info-xcxwbn"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:42+00:00",
+      "validated_at": "2026-07-27T06:32:30+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2663,7 +2663,7 @@
       "warnings": []
     },
     "2026-06-12-fake-openai-privacy-filter-hugging-face-malware": {
-      "content_hash": "a1c5434e5d2a35f7a784734688a4f60ad957e83989d0463c89d3c4277543f5e4",
+      "content_hash": "252ae154bec284eb2c90fd500ab8d5c9f57acdb0c4fb9cc4ac8f1c92c15d073b",
       "evidence_status": "validated_with_warnings",
       "file": "2026-06-12-fake-openai-privacy-filter-hugging-face-malware.md",
       "posts_index_hash": "cc134fb1b4382d4ec302a5b20a2509948588660dbdf84b20a92eec679212b5a0",
@@ -2677,7 +2677,7 @@
         "https://hivesecurity.gitlab.io/blog/huggingface-ai-supply-chain-attacks-2026/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-14T07:24:36+00:00",
+      "validated_at": "2026-07-27T06:32:29+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -2850,7 +2850,7 @@
       "warnings": []
     },
     "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026": {
-      "content_hash": "00ed82103c74973667e0a3d5598195ea2f7cc9588d22eec877f827f4f7b86b0e",
+      "content_hash": "3ea48dedb779de6c411e37df7997f19ec33dba3317f48931a32820d63abc34d4",
       "evidence_status": "validated_with_warnings",
       "file": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026.md",
       "posts_index_hash": "f5c0d1f7a0a6889d3447c66cda406e19901b131919629322c9dd6a661c985942",
@@ -2865,12 +2865,12 @@
         "https://hivesecurity.gitlab.io/blog/cordyceps-github-actions-supply-chain-attack/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-30T06:57:46+00:00",
+      "validated_at": "2026-07-27T06:32:26+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026": {
-      "content_hash": "527d2d98759d4fa06e364ea293d92ec5517076e0fb321e82fd72fe48e83c6303",
+      "content_hash": "3768690664d86871fe475b15cbdeead6e4afaacb416646b90a29ca324da99b04",
       "evidence_status": "validated",
       "file": "2026-06-30-leo-platform-npm-miasma-phantom-gyp-june-2026.md",
       "posts_index_hash": "17cab17d5df29ecdf04b3f558fa82aef098aa0b9610e183ff21e058e89d65171",
@@ -2883,7 +2883,7 @@
         "https://www.theregister.com/security/2026/06/26/miasma-campaign-poisons-20-plus-npm-packages-hunts-for-developer-secrets/5262886"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-06-30T06:57:46+00:00",
+      "validated_at": "2026-07-27T06:32:28+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -3196,7 +3196,7 @@
       "warnings": []
     },
     "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026": {
-      "content_hash": "6d8e3d6738dd4b2e720f4b4d0c55dc62d48a4f358673c8d889db768474ecc929",
+      "content_hash": "0876857b37ab8e8db584bcaadea6511b2a3e7dce3ea7b9561e1cdadaad4055fb",
       "evidence_status": "validated_with_warnings",
       "file": "2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.md",
       "posts_index_hash": "784c1bee27507004a2b74779a633e5f59694de4d72af5d4f79ed5370a3093857",
@@ -3213,7 +3213,7 @@
         "https://time.com/article/2026/07/24/openai-hugging-face-attack/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-07-25T05:44:22+00:00",
+      "validated_at": "2026-07-27T06:32:25+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -3364,6 +3364,40 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-07-26T21:57:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-27-check-point-autonomous-ransomware-ai-agent-2026": {
+      "content_hash": "f022f2a1612308d5db8f8a23c24ff6071592a7f142062f32498fdb8bbcf09c4d",
+      "evidence_status": "validated",
+      "file": "2026-07-27-check-point-autonomous-ransomware-ai-agent-2026.md",
+      "posts_index_hash": "1e8cf93a2bc3f83196d53707cb6cc33ff75c761e98066dbf5b55d26ab6da5f46",
+      "report_id": "2026-07-27-check-point-autonomous-ransomware-ai-agent-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.helpnetsecurity.com/2026/07/15/check-point-ai-security-report-2026/",
+        "https://www.hornetsecurity.com/en/blog/monthly-threat-report/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-27T06:32:24+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-27-openai-frontier-model-breach-third-party-ai-infrastructure-july-2026": {
+      "content_hash": "10e6b93e15aa0b081f00b35e5aaacc2edd212cf957eac91c22615dba638a436b",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-27-openai-frontier-model-breach-third-party-ai-infrastructure-july-2026.md",
+      "posts_index_hash": "b927a74392f5b8f3d2ee4b3b69d13bcd8ca26784d6b5e42de76ec2e2c2e22fc1",
+      "report_id": "2026-07-27-openai-frontier-model-breach-third-party-ai-infrastructure-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.blackarrowcyber.com/blog/threat-briefing-24-july-2026",
+        "https://www.esecurityplanet.com/threats/ai-driven-threats-global-breaches-and-compliance-shifts-define-the-week-in-cybersecurity-for-july-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-27T06:32:24+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac | LLM ThreatIntel</title>
+  <meta name="description" content="Accomplish demonstrated that code running in a local Claude Cowork session could use CVE-2026-46331 to become guest root and then read or write the host Mac through a full-filesystem VirtioFS mount. The chain does not appear to affect Cowork’s default cloud execution path, but defenders supporting local execution should validate the guest kernel, restrict namespaces and netlink access, and confirm that only explicitly approved host folders are mounted into the VM.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-26-sharedroot-claude-cowork-sandbox-escape.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac">
+  <meta property="og:description" content="Accomplish demonstrated that code running in a local Claude Cowork session could use CVE-2026-46331 to become guest root and then read or write the host Mac through a full-filesystem VirtioFS mount. The chain does not appear to affect Cowork’s default cloud execution path, but defenders supporting local execution should validate the guest kernel, restrict namespaces and netlink access, and confirm that only explicitly approved host folders are mounted into the VM.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-26-sharedroot-claude-cowork-sandbox-escape.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac">
+  <meta property="article:published_time" content="2026-07-26T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-26T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac">
+  <meta name="twitter:description" content="Accomplish demonstrated that code running in a local Claude Cowork session could use CVE-2026-46331 to become guest root and then read or write the host Mac through a full-filesystem VirtioFS mount. The chain does not appear to affect Cowork’s default cloud execution path, but defenders supporting local execution should validate the guest kernel, restrict namespaces and netlink access, and confirm that only explicitly approved host folders are mounted into the VM.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac",
+  "description": "Accomplish demonstrated that code running in a local Claude Cowork session could use CVE-2026-46331 to become guest root and then read or write the host Mac through a full-filesystem VirtioFS mount. The chain does not appear to affect Cowork\u2019s default cloud execution path, but defenders supporting local execution should validate the guest kernel, restrict namespaces and netlink access, and confirm that only explicitly approved host folders are mounted into the VM.",
+  "datePublished": "2026-07-26T00:00:00Z",
+  "dateModified": "2026-07-26T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-26-sharedroot-claude-cowork-sandbox-escape.html",
+  "keywords": [
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-26</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>SharedRoot Chained a Linux Kernel Flaw with Claude Cowork Design Choices to Reach the Host Mac</h1>
+<p><strong>Date:</strong> 2026-07-26<br><strong>Tags:</strong> malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>Accomplish demonstrated that code running in a local Claude Cowork session could use CVE-2026-46331 to become guest root and then read or write the host Mac through a full-filesystem VirtioFS mount. The chain does not appear to affect Cowork’s default cloud execution path, but defenders supporting local execution should validate the guest kernel, restrict namespaces and netlink access, and confirm that only explicitly approved host folders are mounted into the VM.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>SharedRoot</td></tr><tr><td>Actor / Attribution</td><td>Accomplish proof of concept; no observed threat actor or in-the-wild exploitation</td></tr><tr><td>Target</td><td>macOS users running Claude Cowork with local Linux VM execution</td></tr><tr><td>Vector</td><td>Untrusted content or an agent prompt gains code execution in the VM, exploits CVE-2026-46331 for guest root, and reaches a writable host-filesystem mount</td></tr><tr><td>Status</td><td>disclosed to Anthropic and closed as Informative; cloud execution is now the default</td></tr><tr><td>First Observed</td><td>2026-07-23 public disclosure</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Accomplish, researchers connected a folder to a fresh local Claude Cowork session, sent one short message, and demonstrated code reaching the host Mac to read and write files outside the connected folder without another permission prompt. Accomplish stated that it tested the complete chain on its own machine and did not report in-the-wild exploitation.</p>
+<p>Accomplish reported that local Cowork work executes as a throwaway unprivileged user in a Linux VM created through Apple’s Virtualization framework, with a seccomp filter and a root <code>coworkd</code> daemon brokering connected folders. Accomplish found that the VM also mounted the complete host filesystem read-write at <code>/mnt/.virtiofs-root</code>, visible to guest root.</p>
+<p>Accomplish reported that the unprivileged session user could create a user namespace with <code>unshare</code>, obtain <code>CAP_NET_ADMIN</code> inside that namespace, open a netlink path allowed by the seccomp policy, and trigger autoloading of the unnecessary <code>act_pedit</code> kernel module. Accomplish then used CVE-2026-46331, the <code>pedit COW</code> Linux kernel flaw, to poison the page cache of a root-owned helper binary that the session could read but not modify on disk.</p>
+<p>Accomplish reported that the root <code>coworkd</code> process later re-executed the poisoned helper from the shared filesystem view, converting the page-cache write primitive into guest-root execution. Accomplish stated that guest root could then access <code>/mnt/.virtiofs-root</code> and operate on files available to the logged-in macOS user, including SSH keys and cloud credentials.</p>
+<p>Accomplish stated that Anthropic closed the vulnerability submission as “Informative” and that Cowork now uses cloud execution by default, where this local VM escape path does not appear to apply. Ubuntu’s CVE record, last updated 2026-07-20, classified CVE-2026-46331 as high priority and listed multiple supported Linux kernel branches as vulnerable or work in progress.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploitation for Privilege Escalation</td><td>T1068</td><td>CVE-2026-46331 converted unprivileged VM code execution into guest root</td></tr><tr><td>Escape to Host</td><td>T1611</td><td>Guest root accessed the full host Mac through the writable VirtioFS mount</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>The proof of concept could read host files outside the folder granted to Cowork</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory Macs permitted to run Claude Cowork locally and record the guest kernel version and application execution mode. On local Cowork guests, disable unprivileged user namespaces where operationally possible, deny <code>unshare</code>, namespace-creating clone flags, and <code>AF_NETLINK</code> sockets through a default-deny seccomp profile, and block autoloading of unused <code>net/sched</code> modules including <code>act_pedit</code>. Validate that <code>/mnt/.virtiofs-root</code> is absent and that only explicitly granted directories are exposed through read-only mounts where possible. Alert on Cowork guest processes invoking <code>unshare</code>, creating traffic-control actions, loading <code>act_pedit</code>, modifying page-cache-backed executables, or writing host paths outside the approved shared folder. Prefer cloud execution until the local guest image and mount design are verified.</p>
+<h2>References</h2>
+<ul><li>[Accomplish] SharedRoot; Escaping the Claude Cowork sandbox (2026-07-23) — https://accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/</li><li>[Ubuntu] CVE-2026-46331 (updated 2026-07-20) — https://ubuntu.com/security/CVE-2026-46331</li><li>[SOCRadar] SharedRoot: Sandbox Escape in Claude Cowork (2026-07-24) — https://socradar.io/blog/sharedroot-sandbox-escape-claude-cowork/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

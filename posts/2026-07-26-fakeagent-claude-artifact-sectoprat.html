@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations | LLM ThreatIntel</title>
+  <meta name="description" content="Huntress observed at least 29 organizations hit on 2026-07-21 and 2026-07-22 after Bing advertisements sent users to a malicious Claude Artifact that delivered a fake Claude Desktop installer and SectopRAT. Defenders should block the published attacker infrastructure and hashes, hunt for JetBrains JCEF or IBM SPSS binaries executing beside untrusted DLLs, and investigate scheduled tasks launching DockerDesktop.exe from user-writable paths.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-07-26-fakeagent-claude-artifact-sectoprat.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations">
+  <meta property="og:description" content="Huntress observed at least 29 organizations hit on 2026-07-21 and 2026-07-22 after Bing advertisements sent users to a malicious Claude Artifact that delivered a fake Claude Desktop installer and SectopRAT. Defenders should block the published attacker infrastructure and hashes, hunt for JetBrains JCEF or IBM SPSS binaries executing beside untrusted DLLs, and investigate scheduled tasks launching DockerDesktop.exe from user-writable paths.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-07-26-fakeagent-claude-artifact-sectoprat.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations">
+  <meta property="article:published_time" content="2026-07-26T00:00:00Z">
+  <meta property="article:modified_time" content="2026-07-26T00:00:00Z">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations">
+  <meta name="twitter:description" content="Huntress observed at least 29 organizations hit on 2026-07-21 and 2026-07-22 after Bing advertisements sent users to a malicious Claude Artifact that delivered a fake Claude Desktop installer and SectopRAT. Defenders should block the published attacker infrastructure and hashes, hunt for JetBrains JCEF or IBM SPSS binaries executing beside untrusted DLLs, and investigate scheduled tasks launching DockerDesktop.exe from user-writable paths.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations",
+  "description": "Huntress observed at least 29 organizations hit on 2026-07-21 and 2026-07-22 after Bing advertisements sent users to a malicious Claude Artifact that delivered a fake Claude Desktop installer and SectopRAT. Defenders should block the published attacker infrastructure and hashes, hunt for JetBrains JCEF or IBM SPSS binaries executing beside untrusted DLLs, and investigate scheduled tasks launching DockerDesktop.exe from user-writable paths.",
+  "datePublished": "2026-07-26T00:00:00Z",
+  "dateModified": "2026-07-26T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-07-26-fakeagent-claude-artifact-sectoprat.html",
+  "keywords": [
+    "phishing",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-07-26</span>
+      <span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>FakeAgent Bing Malvertising Used a Claude Artifact to Deliver SectopRAT to 29 Organizations</h1>
+<p><strong>Date:</strong> 2026-07-26<br><strong>Tags:</strong> phishing, malware</p>
+<h2>Executive Summary</h2>
+<p>Huntress observed at least 29 organizations hit on 2026-07-21 and 2026-07-22 after Bing advertisements sent users to a malicious Claude Artifact that delivered a fake Claude Desktop installer and SectopRAT. Defenders should block the published attacker infrastructure and hashes, hunt for JetBrains JCEF or IBM SPSS binaries executing beside untrusted DLLs, and investigate scheduled tasks launching DockerDesktop.exe from user-writable paths.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>FakeAgent / SectopRAT</td></tr><tr><td>Actor / Attribution</td><td>Unattributed operator; Huntress published historical infrastructure links without assigning a confidence level</td></tr><tr><td>Target</td><td>Organizations whose users searched Bing for the Claude desktop application</td></tr><tr><td>Vector</td><td>Paid Bing advertisement to a malicious public Claude Artifact, attacker-controlled redirects, fake ClaudeDesktop.exe, and DLL sideloading</td></tr><tr><td>Status</td><td>active infrastructure; malicious Claude Artifact removed</td></tr><tr><td>First Observed</td><td>2026-07-21</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Huntress, its SOC observed unusual executable installations, Microsoft Defender exclusions, and persistence across at least 29 organizations between 2026-07-21 and 2026-07-22. Huntress reported that each victim searched Bing for “CLAUDE DESKTOP APP,” selected a sponsored result, and reached a malicious public Artifact hosted on the legitimate Claude platform.</p>
+<p>Huntress reported that the malicious Artifact at <code>claude[.]ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877</code> accumulated 7,100 views before Anthropic removed it. Huntress stated that its download button redirected victims through <code>claude.ai.download-app[.]us</code>, registered on 2026-05-09, and <code>downloading-api.it[.]com/html/claude/win</code> before serving <code>ClaudeDesktop.exe</code>.</p>
+<p>Huntress reported that the files named <code>ClaudeDesktop.exe</code> and <code>DockerDesktop.exe</code> were identical copies of the legitimate JetBrains JCEF helper, with the latter installed through a scheduled task for repeated reinfection. Huntress found a tampered <code>libcef.dll</code> beside the signed executable, producing DLL sideloading execution, and reported that the DLL was protected with VMProtect.</p>
+<p>Huntress reported that the first sideloaded DLL referenced a BNB Smart Chain contract used as an EtherHiding dead-drop resolver for rotating command-and-control and retrieving an encrypted <code>cache.dat</code> payload. Huntress then identified a second sideloading chain under <code>%APPDATA%\Roaming\Microsoft\EdgeUpdate\Install\sslconf.exe</code>, where a signed IBM SPSS binary loaded the malicious <code>tempdir.dll</code>.</p>
+<p>Huntress reported that <code>tempdir.dll</code> checked GPU vendor identifiers for QEMU and VMware, rejected systems with less than 1 GB of VRAM, and used shader timing as additional anti-analysis gates. Huntress stated that the malware stored its encrypted payload in <code>appcfg.dat</code> and used a DirectX shader implementing a modified AES-256-CTR routine to decrypt it.</p>
+<p>Huntress attributed the embedded .NET payload to SectopRAT after finding browser login, cookie, autofill, credit-card, FTP, Discord, and messaging-client collection logic and correlating hidden virtual network computing behavior with command-and-control services recovered from blockchain transactions. Huntress reported the live C2 as <code>2.24.131[.]246</code> and published <code>5ca8758c-02d0-4a72-89c8-d468b66dda41[.]com</code> as a backup SectopRAT domain.</p>
+<p>Huntress decrypted 21 historical C2 addresses from BNB Smart Chain transactions dated from 2025-05-30 through 2026-06-12. Huntress cautioned that the older addresses may belong to other campaigns operated by the same infrastructure owner and differ from the immediate FakeAgent scope; they are retained below as historical pivots with that limitation.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Drive-by Compromise</td><td>T1189</td><td>Paid Bing results sent users through a malicious web artifact to the payload</td></tr><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>Victims downloaded and executed the fake ClaudeDesktop.exe</td></tr><tr><td>Masquerading</td><td>T1036</td><td>Signed components and filenames impersonated Claude Desktop and Docker Desktop</td></tr><tr><td>Hijack Execution Flow: DLL</td><td>T1574.001</td><td>Tampered libcef.dll and tempdir.dll were sideloaded by signed executables</td></tr><tr><td>Scheduled Task/Job: Scheduled Task</td><td>T1053.005</td><td>DockerDesktop.exe was installed for repeated reinfection</td></tr><tr><td>Impair Defenses: Disable or Modify Tools</td><td>T1562.001</td><td>Huntress observed Microsoft Defender exclusions during infections</td></tr><tr><td>Obfuscated Files or Information: Software Packing</td><td>T1027.002</td><td>The libcef.dll stager used VMProtect</td></tr><tr><td>Virtualization/Sandbox Evasion: System Checks</td><td>T1497.001</td><td>GPU identifiers, VRAM size, and shader timing gated execution</td></tr><tr><td>Web Service: Dead Drop Resolver</td><td>T1102.001</td><td>BNB Smart Chain transactions resolved rotating C2 infrastructure</td></tr><tr><td>Credentials from Password Stores: Credentials from Web Browsers</td><td>T1555.003</td><td>SectopRAT targeted browser logins, cookies, autofill data, and payment cards</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">download-app[.]us
+claude.ai.download-app[.]us
+downloading-api.it[.]com
+5ca8758c-02d0-4a72-89c8-d468b66dda41[.]com</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">claude[.]ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877
+downloading-api.it[.]com/html/claude/win</code></pre>
+<h3>IP Addresses</h3>
+<pre><code class="language-">2.24.131[.]246
+107.189.24[.]67
+104.194.133[.]210
+107.189.26[.]86
+107.189.21[.]86
+45.59.124[.]17
+45.59.125[.]228
+45.59.122[.]82
+107.189.17[.]143
+45.59.122[.]134
+45.59.122[.]235
+107.189.22[.]118
+107.189.20[.]32
+107.189.20[.]95
+107.189.24[.]255
+45.59.117[.]145
+45.59.114[.]190
+45.59.123[.]122
+45.59.117[.]67
+195.110.58[.]222
+191.101.80[.]211</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;*download-app.us*&quot; OR &quot;*claude.ai.download-app.us*&quot; OR &quot;*downloading-api.it.com/html/claude/win*&quot; OR &quot;*5ca8758c-02d0-4a72-89c8-d468b66dda41.com*&quot; OR &quot;*claude.ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877*&quot; OR &quot;2.24.131.246&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">1cd58cfba596da296ab1878d74023e00c399345a1b6c2a0e5446c53563f4e3bb
+26bae4d7012bf59847ab4036a065419c3d4ca47e020479f55b3b2c6d0d21394a
+1fe3646d27d286db8123297e06ae7badf3e26f352a04f91b6d82c28869a91664</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Block the attacker-controlled domains, URL path, active C2, and malicious hashes while allowing the legitimate Claude platform except for the exact removed Artifact identifier. In web proxy logs, alert when a visit to the exact Artifact path is followed by <code>download-app.us</code> or <code>downloading-api.it.com</code> and a Windows executable download. In EDR process and file telemetry, hunt for <code>ClaudeDesktop.exe</code> or <code>DockerDesktop.exe</code> in user-writable directories beside <code>libcef.dll</code>, and for <code>%APPDATA%\Roaming\Microsoft\EdgeUpdate\Install\sslconf.exe</code> beside <code>tempdir.dll</code> or <code>appcfg.dat</code>. Review scheduled-task creation that launches DockerDesktop.exe outside the legitimate Docker installation path, Defender exclusion changes near that event, signed JetBrains or IBM SPSS binaries loading unsigned DLLs, and outbound connections to the active C2. Treat the older IPs as correlation pivots because Huntress stated that they may belong to other campaigns from the same operator.</p>
+<h2>References</h2>
+<ul><li>[Huntress] Inside FakeAgent: How a Claude Desktop Malvertising Campaign Hit 29 Organizations with SectopRAT (2026-07-22) — https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat</li><li>[BleepingComputer] Fake Claude app promoted by Bing ads pushes SectopRAT malware (2026-07-23) — https://www.bleepingcomputer.com/news/security/fake-claude-app-promoted-by-bing-ads-pushes-sectoprat-malware/</li><li>[Help Net Security] Malicious Claude Artifacts used to distribute malware (2026-07-23) — https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
