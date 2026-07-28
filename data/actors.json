@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27",
+  "last_updated": "2026-07-28",
   "entries": [
     {
       "id": "sectoprat",
@@ -3367,6 +3367,28 @@
       ],
       "description": "Threat actor(s) operating fully autonomous AI agents that orchestrate end-to-end ransomware operations including reconnaissance, exploitation, lateral movement, data exfiltration, and encryption without requiring human operator direction between stages. Represents the maturation of agentic AI from experimental tool to operational threat.",
       "attribution": "Unknown; attributed only as autonomous AI-orchestrated threat"
+    },
+    {
+      "id": "academic-security-research-initiative",
+      "names": [
+        "Academic/Security Research Initiative",
+        "Katie Paxton-Fear",
+        "Semgrep Security"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Social media (Twitter/X)",
+        "The Register",
+        "Semgrep blog"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1655 - Trojan"
+      ],
+      "description": "Katie Paxton-Fear and colleagues at Semgrep conducted proof-of-concept research demonstrating how trivially easy it is to insert persistent backdoors into open-weight models through fine-tuning. The research highlights a critical gap in AI supply chain security where downloaded models lack integrity verification mechanisms.",
+      "attribution": "Academic security research demonstrating real vulnerability in open-weight model supply chain"
     }
   ]
 }

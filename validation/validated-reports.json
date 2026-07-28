@@ -3400,6 +3400,27 @@
       "validated_at": "2026-07-27T06:32:24+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026": {
+      "content_hash": "a3a5fcb835c76ebfe1a4818b4b6846c08a61c2bed82280163fd2e6e36306f751",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026.md",
+      "posts_index_hash": "9748472c7a26ce9b7716493cd3f4974f6f0668d4ba14ae468419107766e23939",
+      "report_id": "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.theregister.com/ai-and-ml/2026/07/16/researcher-poisons-open-weight-ai-model-for-under-100/",
+        "https://x.com/InsiderPhD/status/2077037121869664410",
+        "https://tech.yahoo.com/cybersecurity/articles/experiment-shows-easy-poison-open-170641649.html",
+        "https://thenextweb.com/news/ai-agent-security-four-attacks-one-flaw",
+        "https://www.digitaltrends.com/computing/this-experiment-shows-how-easy-it-is-to-poison-an-open-weight-ai-model-for-under-100/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-28T05:47:18+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

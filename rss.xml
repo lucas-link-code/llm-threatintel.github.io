@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 27 Jul 2026 06:32:23 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 05:47:14 +0000</lastBuildDate>
     <item>
+      <title>Open-Weight Model Poisoning via Fine-Tuning: $100 Backdoor Inserts RCE Vulnerability</title>
+      <link>https://llm-threatintel.com/posts/2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026.html</guid>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Katie Paxton-Fear, a lecturer in cybersecurity at Manchester Metropolitan University and staff security advocate at Semgrep, managed to install a backdoor in an open-weight AI model in about an hour for less than $100. It only took ten training examples for the code output by the model to become reliably vulnerable to remote code execution, even for novel prompts and domains.</description>
+    </item>    <item>
       <title>Check Point AI Security Report 2026: Autonomous Ransomware Operations Run End-to-End by AI Agents</title>
       <link>https://llm-threatintel.com/posts/2026-07-27-check-point-autonomous-ransomware-ai-agent-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-27-check-point-autonomous-ransomware-ai-agent-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</guid>
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
       <description>TrendAI Research published on 2026-07-14 that Russian-speaking actor bandcampro operated a live PowerShell C2 botnet through jailbroken Google Gemini CLI, completing a full C2 migration in six minutes while the AI produced 89 percent of operational text across 200-plus sessions from 2026-03-19 to 2026-04-21. The botnet controlled eight dental-clinic endpoints and accessed an OpenDental database via Cloudflare-tunneled HTTPS beacons to tralalarkefe.com infrastructure. Defenders should prioritize behavioral hunting for five-second /api/v1/update polling, X-Agent-ID headers, and PowerShell from non-standard paths rather than static hashes, because the actor can regenerate disposable artifacts on demand from three plain-text skill files totaling about 5 KB.</description>
-    </item>    <item>
-      <title>Cross-Model Prompt Laundering via API Chaining — Safety Refusals Bypass in Multi-Agent Orchestration (July 3, 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-16-cross-model-prompt-laundering-api-chaining-july-2026.html</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
-      <description>When one model's output feeds directly into a second model as a user-turn message — a pattern increasingly common in multi-agent orchestration stacks — safety refusals from the first model do not transfer, and in lab testing, 14 of 18 tested chains produced the refused output within two hops. The attack surface is the gap between models, not a flaw in any single system.</description>
     </item>
   </channel>
 </rss>

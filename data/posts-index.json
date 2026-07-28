@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026",
+      "title": "Open-Weight Model Poisoning via Fine-Tuning: $100 Backdoor Inserts RCE Vulnerability",
+      "date": "2026-07-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Katie Paxton-Fear, a lecturer in cybersecurity at Manchester Metropolitan University and staff security advocate at Semgrep, managed to install a backdoor in an open-weight AI model in about an hour for less than $100. It only took ten training examples for the code output by the model to become reliably vulnerable to remote code execution, even for novel prompts and domains.",
+      "file": "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026.md"
+    },
+    {
       "id": "2026-07-27-check-point-autonomous-ransomware-ai-agent-2026",
       "title": "Check Point AI Security Report 2026: Autonomous Ransomware Operations Run End-to-End by AI Agents",
       "date": "2026-07-27",
