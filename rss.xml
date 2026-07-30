@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 28 Jul 2026 05:47:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 05:42:01 +0000</lastBuildDate>
     <item>
+      <title>TrendAI H1 2026 APT Activity Roundup: Nation-State Generative AI Operationalization Across Kill Chain</title>
+      <link>https://llm-threatintel.com/posts/2026-07-30-trendai-h1-2026-apt-genai-operationalization.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-30-trendai-h1-2026-apt-genai-operationalization.html</guid>
+      <pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Generative AI is now sharpening nation-state exploits and powering autonomous reconnaissance, with nation states using AI in more stages of the intrusion lifecycle than any other prior half TrendAI has tracked. China-aligned threat actors used generative AI to sharpen exploits and iteratively build malware through vibe coding, with one AI agent independently running its own reconnaissance and lateral movement inside a target network.</description>
+    </item>    <item>
       <title>Open-Weight Model Poisoning via Fine-Tuning: $100 Backdoor Inserts RCE Vulnerability</title>
       <link>https://llm-threatintel.com/posts/2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.html</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <description>A malicious dataset abused two code-execution paths in Hugging Face's dataset processing (a remote-code dataset loader and a template-injection in a dataset configuration) to run code on a processing worker. The actor escalated to node-level access, harvested cloud and cluster credentials, and moved laterally into several internal clusters. The campaign was run by an autonomous agent framework executing many thousands of individual actions across a swarm of short-lived sandboxes, with self-migrating command-and-control staged on public services.</description>
-    </item>    <item>
-      <title>bandcampro Abuses Jailbroken Gemini CLI as Primary Hacking Agent: Six-Minute C2 Botnet Migration</title>
-      <link>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-19-bandcampro-gemini-cli-patriot-bait-c2-botnet.html</guid>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
-      <description>TrendAI Research published on 2026-07-14 that Russian-speaking actor bandcampro operated a live PowerShell C2 botnet through jailbroken Google Gemini CLI, completing a full C2 migration in six minutes while the AI produced 89 percent of operational text across 200-plus sessions from 2026-03-19 to 2026-04-21. The botnet controlled eight dental-clinic endpoints and accessed an OpenDental database via Cloudflare-tunneled HTTPS beacons to tralalarkefe.com infrastructure. Defenders should prioritize behavioral hunting for five-second /api/v1/update polling, X-Agent-ID headers, and PowerShell from non-standard paths rather than static hashes, because the actor can regenerate disposable artifacts on demand from three plain-text skill files totaling about 5 KB.</description>
     </item>
   </channel>
 </rss>

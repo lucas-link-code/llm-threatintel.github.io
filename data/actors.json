@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-30",
   "entries": [
     {
       "id": "sectoprat",
@@ -179,7 +179,8 @@
       "id": "greyvibe",
       "names": [
         "GreyVibe",
-        "GREYVIBE"
+        "GREYVIBE",
+        "Unnamed"
       ],
       "type": "threat_group",
       "first_seen": "2025-08",
@@ -190,7 +191,8 @@
         "PrincessClub fake Ukrainian adult-club websites delivering FallSpy (Android) and PhantomRelayV1 or LegionRelay (Windows), seeded via fake female Telegram personas",
         "DroneLink fake military-charity websites delivering WireGuard VPN alongside LegionRelay",
         "Nebo FallSpy samples mimicking a Russian military login screen",
-        "PhantomRelay variants also observed in a Microsoft Teams voice-phishing intrusion set and a KongTuke ClickFix chain (February to March 2026)"
+        "PhantomRelay variants also observed in a Microsoft Teams voice-phishing intrusion set and a KongTuke ClickFix chain (February to March 2026)",
+        "Ukraine-targeting"
       ],
       "ttps": [
         "T1588.007 - Obtain Capabilities: Artificial Intelligence (ChatGPT, Google Gemini, Ideogram AI for lures, fake-site imagery, obfuscators, loaders)",
@@ -201,7 +203,9 @@
         "T1059.001 - Command and Scripting Interpreter: PowerShell (PhantomRelay and LegionRelay RATs)",
         "T1059.007 - Command and Scripting Interpreter: JavaScript (LOOKVALJS and TEASOUP loaders)",
         "T1027 - Obfuscated Files or Information (DAYLIGHT obfuscator)",
-        "T1102.001 - Web Service: Dead Drop Resolver (LegionRelay Telegram channel C2 resolution)"
+        "T1102.001 - Web Service: Dead Drop Resolver (LegionRelay Telegram channel C2 resolution)",
+        "T1583.006 - Acquire Infrastructure",
+        "T1592.004 - Gather Victim Org Information"
       ],
       "description": "Russia-nexus threat cluster disclosed by WithSecure on May 28, 2026, active since at least August 2025 and discovered by WithSecure in January 2026, targeting Ukrainian and Ukraine-related military, government, civilian, and business organisations. GreyVibe is defined by extensive generative-AI use across the full intrusion lifecycle: WithSecure assesses with moderate confidence that ChatGPT, Google Gemini, and Ideogram AI were used to generate phishing lures and fake-site imagery, build the LOOKVALJS, LOOKVALPS, DAYLIGHT, and TEASOUP obfuscators and loaders, develop the LegionRelay RAT and its backend, and produce post-compromise commands. The group runs five documented campaigns (PhantomMail, PhantomClick, PrincessClub, DroneLink, Nebo) delivering the PhantomRelay and LegionRelay PowerShell RATs on Windows and FallSpy spyware on Android. Design flaws in LegionRelay exposed backend functionality that gave WithSecure extended research visibility into the group's victimology and operations.",
       "attribution": "Russia-nexus, consistent with Russian intelligence-gathering interests (confidence: moderate, per WithSecure). Tooling overlaps with the TrickBot gang and UAC-0098. WithSecure notes the actor lacked the operational discipline typically associated with mature nation-state actors."
@@ -3389,6 +3393,51 @@
       ],
       "description": "Katie Paxton-Fear and colleagues at Semgrep conducted proof-of-concept research demonstrating how trivially easy it is to insert persistent backdoors into open-weight models through fine-tuning. The research highlights a critical gap in AI supply chain security where downloaded models lack integrity verification mechanisms.",
       "attribution": "Academic security research demonstrating real vulnerability in open-weight model supply chain"
+    },
+    {
+      "id": "china-aligned-apt-groups",
+      "names": [
+        "China-aligned APT groups",
+        "Unnamed",
+        "North Korea-aligned APT"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Global targeting",
+        "Supply chain targeting downstream developers"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1587.001 - Develop Malware",
+        "T1592 - Gather Victim Information",
+        "T1195.001 - Supply Chain Compromise",
+        "T1505.003 - Web Shell"
+      ],
+      "description": "Using generative AI to iteratively sharpen exploits and build malware through vibe coding methodology. Demonstrated autonomous AI agents conducting independent reconnaissance and lateral movement within target networks.",
+      "attribution": "TrendAI, China-aligned"
+    },
+    {
+      "id": "apt28-fancy-bear",
+      "names": [
+        "APT28 (Fancy Bear)",
+        "Sofacy",
+        "Pawn Storm"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Ukraine-targeting, European defense sector"
+      ],
+      "ttps": [
+        "T1015 - Communication Through Removable Media",
+        "T1001.001 - Steganography",
+        "T1071.001 - Application Layer Protocol"
+      ],
+      "description": "Evolved PixyNetLoader with COM persistence, PNG steganography C2, and deployed LameHug malware that generates commands using LLMs for information theft. Actively targeting Ukraine-related organizations.",
+      "attribution": "Russia-aligned, TrendAI, AhnLab"
     }
   ]
 }

@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-07-30-trendai-h1-2026-apt-genai-operationalization",
+      "title": "TrendAI H1 2026 APT Activity Roundup: Nation-State Generative AI Operationalization Across Kill Chain",
+      "date": "2026-07-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Generative AI is now sharpening nation-state exploits and powering autonomous reconnaissance, with nation states using AI in more stages of the intrusion lifecycle than any other prior half TrendAI has tracked. China-aligned threat actors used generative AI to sharpen exploits and iteratively build malware through vibe coding, with one AI agent independently running its own reconnaissance and lateral movement inside a target network.",
+      "file": "2026-07-30-trendai-h1-2026-apt-genai-operationalization.md"
+    },
+    {
       "id": "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026",
       "title": "Open-Weight Model Poisoning via Fine-Tuning: $100 Backdoor Inserts RCE Vulnerability",
       "date": "2026-07-28",

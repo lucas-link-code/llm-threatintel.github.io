@@ -3421,6 +3421,23 @@
       "validated_at": "2026-07-28T05:47:18+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-30-trendai-h1-2026-apt-genai-operationalization": {
+      "content_hash": "03dd39d7b45a5130a919cbc4a1725af71400ada161631ed8cafebb905bd1e75c",
+      "evidence_status": "validated",
+      "file": "2026-07-30-trendai-h1-2026-apt-genai-operationalization.md",
+      "posts_index_hash": "7dbf544480c4ba8b8dfeb02e0ec4c23d56803f5d1b87ca65c5dda835e6995ecf",
+      "report_id": "2026-07-30-trendai-h1-2026-apt-genai-operationalization",
+      "review_required": [],
+      "source_urls": [
+        "https://www.prnewswire.com/news-releases/trendai-reports-nation-state-activity-in-h1-2026-apt-activity-roundup-302837091.html",
+        "https://itbrief.co.nz/story/ai-boosts-nation-state-cyberattacks-trendai-warns",
+        "https://asec.ahnlab.com/en/94441/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-30T05:42:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
