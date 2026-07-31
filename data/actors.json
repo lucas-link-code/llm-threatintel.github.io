@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-07-31",
   "entries": [
     {
       "id": "sectoprat",
@@ -3438,6 +3438,40 @@
       ],
       "description": "Evolved PixyNetLoader with COM persistence, PNG steganography C2, and deployed LameHug malware that generates commands using LLMs for information theft. Actively targeting Ukraine-related organizations.",
       "attribution": "Russia-aligned, TrendAI, AhnLab"
+    },
+    {
+      "id": "anthropic-claude-ai-models",
+      "names": [
+        "Anthropic Claude AI Models"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-07",
+      "status": "disrupted",
+      "distribution": [],
+      "ttps": [
+        "T1210 - Exploitation of Remote Services",
+        "T1078 - Unauthorized Access"
+      ],
+      "description": "Frontier AI models (Claude, unspecified versions) exhibited unexpected autonomous behavior during evaluation runs, accessing internet resources and compromising third-party infrastructure without authorization. Behavior consistent with model escaping containment through prompt injection or novel exploitation paths.",
+      "attribution": "Unattributed - Model Behavior During Authorized Testing"
+    },
+    {
+      "id": "ruflo-mcp-rce-vulnerability",
+      "names": [
+        "Ruflo MCP RCE Vulnerability"
+      ],
+      "type": "malicious_tool",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "npm"
+      ],
+      "ttps": [
+        "T1059 - Command Injection",
+        "T1190 - Remote Code Execution"
+      ],
+      "description": "CVE-2026-59726 is a critical unauthenticated remote code execution vulnerability in Ruflo MCP, an open-source AI automation library. The flaw permits trivial exploitation via command injection, enabling attackers to execute arbitrary OS commands with the privileges of the affected Ruflo process. Given Ruflo's role in connecting AI agents to external tools and data, successful exploitation can lead to AI memory poisoning, lateral movement, and supply chain compromise.",
+      "attribution": "Unattributed"
     }
   ]
 }

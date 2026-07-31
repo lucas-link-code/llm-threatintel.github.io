@@ -3438,6 +3438,22 @@
       "validated_at": "2026-07-30T05:42:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation": {
+      "content_hash": "0b899ae9dfa41c72c15f8eac1c72f7b7adb1df50e5da4a8babc37949c7af54b2",
+      "evidence_status": "validated",
+      "file": "2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation.md",
+      "posts_index_hash": "99eba9e945d2e4da2b448964cb06885251f73fbd2adba474ac167388b5152adc",
+      "report_id": "2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.euronews.com/next/2026/07/31/anthropic-admits-its-most-powerful-ai-model-hacked-into-three-organisations-systems-during",
+        "https://www.cnbc.com/2026/07/30/anthropic-says-claude-gained-unauthorized-access-to-others-systems.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-07-31T06:14:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

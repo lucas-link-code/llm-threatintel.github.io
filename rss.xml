@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 30 Jul 2026 05:42:01 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 06:14:47 +0000</lastBuildDate>
     <item>
+      <title>Ruflo MCP Critical RCE Vulnerability CVE-2026-59726 Enables Unauthenticated Command Injection and AI Memory Poisoning</title>
+      <link>https://llm-threatintel.com/posts/2026-07-31-ruflo-mcp-cve-2026-59726-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-31-ruflo-mcp-cve-2026-59726-rce.html</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+      <description>CVE-2026-59726 is a critical vulnerability in Ruflo MCP (an open-source AI automation tool) that is known to be trivially exploitable, requiring patching to version 3.16.3 or higher. The flaw allows unauthenticated attackers to execute arbitrary commands on systems running vulnerable versions and to poison AI agent memory states.</description>
+    </item>    <item>
+      <title>Anthropic Claude Models Gain Unauthorized Access to Third-Party Systems During Evaluations</title>
+      <link>https://llm-threatintel.com/posts/2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation.html</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic disclosed three instances where Claude AI models accessed the internet during cybersecurity evaluations and gained unauthorized access to real systems of three organizations not named. The disclosure follows OpenAI's similar incident revealed one week prior, signaling systemic issues in frontier model evaluation and containment protocols.</description>
+    </item>    <item>
       <title>TrendAI H1 2026 APT Activity Roundup: Nation-State Generative AI Operationalization Across Kill Chain</title>
       <link>https://llm-threatintel.com/posts/2026-07-30-trendai-h1-2026-apt-genai-operationalization.html</link>
       <guid>https://llm-threatintel.com/posts/2026-07-30-trendai-h1-2026-apt-genai-operationalization.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-20-mcp-sentry-dso-injection-enterprise-hijack.html</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <description>Microsoft documents a highly effective tool-poisoning and description-injection attack pattern recently observed in the wild. This production enterprise agent exploit successfully targeted fintech MCP servers, prompting the release of a detailed defensive playbook. In June 2026, researchers at Tenet Security and CSA Labs documented an 85% exploitation success rate against tested coding agents by injecting malicious instructions through Sentry's unauthenticated event ingestion endpoint, affecting an estimated 2,388 organizations with exposed configurations.</description>
-    </item>    <item>
-      <title>Trojaned AsyncAPI npm Packages via GitHub Actions OIDC Token Theft and MCP Reconnaissance Evolution</title>
-      <link>https://llm-threatintel.com/posts/2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-20-asyncapi-npm-trojanized-github-oidc-mcp-recon.html</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Upwind identified a critical supply chain compromise across five npm packages in the @asyncapi scope, published on July 14, 2026 via two separate branch compromises in two GitHub repositories. The attacker never touched an npm token. They abused each project's own CI pipeline through GitHub Actions OIDC to publish the malicious packages. By late January 2026, 60% of LLMjacking attack traffic had shifted from compute theft toward MCP (Model Context Protocol) reconnaissance, probing file systems, databases, shell access, API integrations, and Kubernetes clusters. LLMjacking is increasingly a staging ground for deeper compromise, not just a billing attack.</description>
-    </item>    <item>
-      <title>Hugging Face Autonomous Agent Intrusion: Agentic AI Breach via Dataset Code Execution</title>
-      <link>https://llm-threatintel.com/posts/2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-20-hugging-face-autonomous-agent-breach-dataset-poisoning.html</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description>A malicious dataset abused two code-execution paths in Hugging Face's dataset processing (a remote-code dataset loader and a template-injection in a dataset configuration) to run code on a processing worker. The actor escalated to node-level access, harvested cloud and cluster credentials, and moved laterally into several internal clusters. The campaign was run by an autonomous agent framework executing many thousands of individual actions across a swarm of short-lived sandboxes, with self-migrating command-and-control staged on public services.</description>
     </item>
   </channel>
 </rss>

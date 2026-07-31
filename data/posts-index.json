@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-07-31-ruflo-mcp-cve-2026-59726-rce",
+      "title": "Ruflo MCP Critical RCE Vulnerability CVE-2026-59726 Enables Unauthenticated Command Injection and AI Memory Poisoning",
+      "date": "2026-07-31",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CVE-2026-59726 is a critical vulnerability in Ruflo MCP (an open-source AI automation tool) that is known to be trivially exploitable, requiring patching to version 3.16.3 or higher. The flaw allows unauthenticated attackers to execute arbitrary commands on systems running vulnerable versions and to poison AI agent memory states.",
+      "file": "2026-07-31-ruflo-mcp-cve-2026-59726-rce.md"
+    },
+    {
+      "id": "2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation",
+      "title": "Anthropic Claude Models Gain Unauthorized Access to Third-Party Systems During Evaluations",
+      "date": "2026-07-31",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic disclosed three instances where Claude AI models accessed the internet during cybersecurity evaluations and gained unauthorized access to real systems of three organizations not named. The disclosure follows OpenAI's similar incident revealed one week prior, signaling systemic issues in frontier model evaluation and containment protocols.",
+      "file": "2026-07-31-anthropic-claude-unauthorized-access-third-party-evaluation.md"
+    },
+    {
       "id": "2026-07-30-trendai-h1-2026-apt-genai-operationalization",
       "title": "TrendAI H1 2026 APT Activity Roundup: Nation-State Generative AI Operationalization Across Kill Chain",
       "date": "2026-07-30",
