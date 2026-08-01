@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks | LLM ThreatIntel</title>
+  <meta name="description" content="July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks">
+  <meta property="og:description" content="July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks">
+  <meta property="article:published_time" content="2026-08-01T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-01T00:00:00Z">
+  <meta property="article:tag" content="mcp-security">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks">
+  <meta name="twitter:description" content="July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks",
+  "description": "July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.",
+  "datePublished": "2026-08-01T00:00:00Z",
+  "dateModified": "2026-08-01T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026.html",
+  "keywords": [
+    "mcp-security",
+    "prompt-injection",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-01</span>
+      <span class="post-tag tag-mcp-security">Mcp Security</span><span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks</h1>
+<p><strong>Date:</strong> 2026-08-01<br><strong>Tags:</strong> mcp-security, prompt-injection, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Agentic AI RCE Coordination (July 2026)</td></tr><tr><td>Attribution</td><td>Multiple independent researchers and security teams (Adversa AI, Intezer, undisclosed teams) (confidence: medium)</td></tr><tr><td>Target</td><td>Cursor IDE, AWS Kiro, production MCP agents, AI development teams</td></tr><tr><td>Vector</td><td>Malicious MCP deeplinks, HTML content injection, MCP configuration poisoning, implicit file operations</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-07-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Adversa AI detailed DeepJack: nested cursor:// deeplinks plus arguments padded with whitespace push malicious MCP install commands off-screen in Cursor&#x27;s confirm dialog, resulting in one-click unsandboxed RCE, still reproducible in build 3.9.8. Intezer researchers showed that hidden one-pixel text on a web page can make AWS Kiro rewrite its own mcp.json and auto-launch an attacker-controlled MCP server with developer privileges, assigned CVE-2026-10591 (CVSS 8.8/8.6) on July 22 and fixed in v0.11.130. Two additional CVEs (CVE-2026-50548 and CVE-2026-50549), both CVSS 9.8, were documented for zero-click injection through MCP or poisoned search results abusing working_directory or symlink canonicalization fallback to overwrite Cursor&#x27;s sandbox helper. The attack surface is fundamentally asymmetric: attackers exploit content the agent reads (not code they run), making detection difficult.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Remote code execution via malicious MCP deeplinks and web content</td></tr><tr><td>Indirect Command Injection</td><td>T1059.007</td><td>Malicious MCP configuration parameters and tool descriptions</td></tr><tr><td>Privilege Escalation</td><td>T1548</td><td>Unsandboxed RCE with developer/service-role privileges via MCP</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No specific malware hashes or IOCs published; attacks are zero-click and infrastructure-agnostic. Fix versions: Cursor IDE (patched in later builds), AWS Kiro (v0.11.130+), protocol-level fixes required for MCP._</p>
+<h3>Full URL Paths</h3>
+<p>_No specific malware hashes or IOCs published; attacks are zero-click and infrastructure-agnostic. Fix versions: Cursor IDE (patched in later builds), AWS Kiro (v0.11.130+), protocol-level fixes required for MCP._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Cursor IDE (build &lt;= 3.9.8)
+AWS Kiro (version &lt;= 0.11.129)
+MCP protocol implementations (unpatched)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for unexpected MCP server connections initiated by cursor:// protocol handlers. Implement strict validation of MCP server manifests and block modification of mcp.json outside approved deployment pipelines. Log all tool invocations and MCP configuration changes at the host level. Implement content security policy (CSP) headers to prevent injection of invisible HTML text. Validate all deeplinks and URI handlers before invoking MCP operations. Disable cursor:// protocol handling for user-controlled content. Review agent sandbox escape techniques documented in OWASP Top 10 for Agentic Applications 2026.</p>
+<h2>References</h2>
+<ul><li>[Adversa AI] Top Agentic AI security resources — August 2026 (2026-08-01) — https://adversa.ai/blog/top-agentic-ai-security-resources-august-2026/</li><li>[Intezer Research] CVE-2026-10591: AWS Kiro MCP Configuration Poisoning via Hidden HTML Injection (2026-07-22) — https://adversa.ai/blog/top-agentic-ai-security-resources-august-2026/</li><li>[Adversa AI] CVE-2026-50548 / CVE-2026-50549: Cursor IDE Sandbox Escape via Symlink Canonicalization (2026-07-31) — https://adversa.ai/blog/top-agentic-ai-security-resources-august-2026/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026",
+      "title": "Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks",
+      "date": "2026-08-01",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.",
+      "file": "2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026.md"
+    },
+    {
       "id": "2026-07-31-ruflo-mcp-cve-2026-59726-rce",
       "title": "Ruflo MCP Critical RCE Vulnerability CVE-2026-59726 Enables Unauthenticated Command Injection and AI Memory Poisoning",
       "date": "2026-07-31",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-31",
+  "last_updated": "2026-08-01",
   "entries": [
     {
       "id": "sectoprat",
@@ -3472,6 +3472,42 @@
       ],
       "description": "CVE-2026-59726 is a critical unauthenticated remote code execution vulnerability in Ruflo MCP, an open-source AI automation library. The flaw permits trivial exploitation via command injection, enabling attackers to execute arbitrary OS commands with the privileges of the affected Ruflo process. Given Ruflo's role in connecting AI agents to external tools and data, successful exploitation can lead to AI memory poisoning, lateral movement, and supply chain compromise.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "adversa-ai-research-team",
+      "names": [
+        "Adversa AI Research Team"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Cursor IDE deeplink attacks"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1059.007 - Command Injection"
+      ],
+      "description": "Independent security team documenting production agentic AI RCE via malicious MCP deeplinks embedded in cursor:// protocol handlers.",
+      "attribution": "Security researcher disclosure (not threat actor)"
+    },
+    {
+      "id": "intezer-research-team",
+      "names": [
+        "Intezer Research Team"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "AWS Kiro HTML content injection attacks"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1548 - Abuse Elevation Control Mechanism"
+      ],
+      "description": "Independent security team documenting one-pixel text injection attacks that rewrite MCP configuration and auto-launch attacker-controlled servers with elevated privileges.",
+      "attribution": "Security researcher disclosure (not threat actor)"
     }
   ]
 }
