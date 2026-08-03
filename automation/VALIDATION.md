@@ -166,9 +166,10 @@ The Markdown report includes counts, findings, duplicate IOC warnings, source re
 
 For local Claude Code, cloud Claude Code, Cursor, and other external agents:
 
-1. Prefer a branch and pull request.
-2. Make report/data changes.
-3. Run the validator.
-4. Stop on validation failure or review-required findings.
-5. Let GitHub Actions validate again.
-6. Merge only after Lucas review and passing checks.
+1. Make report/data changes.
+2. Run the validator.
+3. Stop on validation failure or review-required findings. Do not commit, push, or delete content to make validation pass.
+4. Commit and push directly to `main` for routine work Lucas has reviewed in session. Pushing to `main` triggers deployment through `.github/workflows/deploy.yml`.
+5. Use a branch and pull request instead when the change is large or risky: policy or schema redesign, bulk IOC or report removal, validator logic rewrites, workflow changes, or anything Lucas has not already reviewed.
+6. State which of the two routes is being taken before pushing. Do not switch an agent run to the branch and pull request route without saying so up front, because a branch push does not deploy.
+7. On the branch route, let GitHub Actions validate again and merge only after Lucas review and passing checks.
