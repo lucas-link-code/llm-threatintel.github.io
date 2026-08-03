@@ -39,20 +39,19 @@ In a comparison test, cereblab found that Claude Code, Codex CLI, and Gemini sen
 ### Domains
 
 ```
-storage.googleapis.com
 grok-code-session-traces.storage.googleapis.com
 ```
 
 ### Full URL Paths
 
 ```
-https://storage.googleapis.com/grok-code-session-traces/*
+storage.googleapis.com/grok-code-session-traces/
 ```
 
 ### Splunk Format
 
 ```
-"storage.googleapis.com" OR "grok-code-session-traces.storage.googleapis.com" OR "https://storage.googleapis.com/grok-code-session-traces/*"
+"grok-code-session-traces.storage.googleapis.com" OR "storage.googleapis.com/grok-code-session-traces/"
 ```
 
 ### Package Indicators

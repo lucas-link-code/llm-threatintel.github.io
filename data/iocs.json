@@ -3035,22 +3035,22 @@
       "status": "active"
     },
     {
-      "value": "storage.googleapis.com",
-      "type": "domain",
-      "context": "xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage",
-      "first_seen": "2026-08-03",
-      "source": "Cereblab (Security Researcher)",
-      "campaign": "xai-grok-build-repository-upload-credential-exfil",
-      "status": "active"
-    },
-    {
       "value": "grok-code-session-traces.storage.googleapis.com",
       "type": "domain",
       "context": "xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage",
       "first_seen": "2026-08-03",
       "source": "Cereblab (Security Researcher)",
       "campaign": "xai-grok-build-repository-upload-credential-exfil",
-      "status": "active"
+      "status": "removed"
+    },
+    {
+      "value": "storage.googleapis.com/grok-code-session-traces/",
+      "type": "url_path",
+      "context": "xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage",
+      "first_seen": "2026-08-03",
+      "source": "Cereblab (Security Researcher)",
+      "campaign": "xai-grok-build-repository-upload-credential-exfil",
+      "status": "removed"
     }
   ]
 }

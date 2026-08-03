@@ -198,6 +198,20 @@ For each threat actor or malware family mentioned:
 For each new IOC:
 - Check if it already exists (match on value field), check if it was already ingested. Skip duplicates.
 - do not add obvious high level domains like github.com or pypi.org or npmjs.com without a subdomain or a specific /path for the repository name or package name.
+- **Do not add bare shared infrastructure hosts as IOCs.** Cloud storage, CDN, package registry, code hosting, PaaS, tunnel, messaging, paste, and shortener apex domains are shared by millions of legitimate users. Blocking them breaks normal traffic. Match is exact after normalisation: attacker-controlled subdomains and specific paths remain valid. See `validation/policy.json` → `shared_infrastructure_domain_denylist`.
+
+  | Category | Bare hosts rejected | Valid examples that still pass |
+  |---|---|---|
+  | Google Cloud / Firebase | `googleapis.com`, `storage.googleapis.com`, `appspot.com`, `run.app`, `drive.google.com` | `grok-code-session-traces.storage.googleapis.com`, `storage.googleapis.com/bucket-name/` |
+  | AWS / Azure | `amazonaws.com`, `s3.amazonaws.com`, `blob.core.windows.net`, `azurewebsites.net` | `evil-bucket.s3.amazonaws.com`, `s3.amazonaws.com/attacker-prefix/` |
+  | Cloudflare | `workers.dev`, `pages.dev`, `r2.cloudflarestorage.com`, `trycloudflare.com` | `maliciousapp.workers.dev` |
+  | Registries / CDNs | `pypi.org`, `npmjs.com`, `registry.npmjs.org`, `cdn.jsdelivr.net`, `unpkg.com` | `pypi.org/project/malicious-pkg` |
+  | Code hosting | `github.com`, `raw.githubusercontent.com`, `gitlab.com`, `gitlab.io`, `github.io` | `attacker.github.io`, `github.com/attacker/malware-repo` |
+  | PaaS / tunnels | `vercel.app`, `netlify.app`, `herokuapp.com`, `hf.space`, `ngrok.io`, `ngrok-free.app` | `maliciousapp.vercel.app`, `evil.hf.space` |
+  | Messaging / paste / share | `t.me`, `telegram.org`, `discord.com`, `pastebin.com`, `dropbox.com`, `mega.nz` | `t.me/malicious_channel`, `pastebin.com/AbCdEfGh` |
+  | Shorteners / IPFS | `bit.ly`, `tinyurl.com`, `t.co`, `ipfs.io`, `dweb.link` | path-scoped shortener hits only when a specific path is published |
+
+  Exact-match semantics: `maliciousapp.vercel.app` is NOT equal to `vercel.app` and is accepted. Same for `evil.workers.dev`, `attacker.hf.space`, and `t.me/malicious_channel`.
 - **Do not add legitimate AI vendor platforms or their generic feature paths as IOCs.** Even when a source post discusses a campaign that abuses one of these services, the bare domain or its generic share/redirect/API path is not an indicator — it is shared infrastructure that millions of legitimate users rely on. Publishing it would cause defenders who pipe this feed into a proxy denylist to block the platform organisation-wide. The deny list (case-insensitive, applies to both `domain` and `url_path` types):
 
   | Vendor | Domains | Generic feature paths (also blocked) |
@@ -275,7 +289,7 @@ Run this checklist and the shared validator before executing git commit:
 4. MITRE ATT&CK technique IDs are valid format and the technique names are correct
 5. The post slug in the filename matches the id in posts-index.json
 6. Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security — never Title Case, never with spaces, never a value outside this list
-7. IOC domains are clean (no [.] defanging, no hxxps://) in the JSON data files, and no entry is a bare legitimate AI vendor platform or its generic feature path (see the deny list in section "Update data/iocs.json"). The validator will hard-fail on these.
+7. IOC domains are clean (no [.] defanging, no hxxps://) in the JSON data files, and no entry is a bare legitimate AI vendor platform, its generic feature path, or a bare shared infrastructure host from `shared_infrastructure_domain_denylist` (see the deny lists in section "Update data/iocs.json"). The validator will hard-fail on these.
 8. IOCs in the Markdown post body should use defanged format for display
 9. No duplicate posts exist (check by date and slug against existing posts/)
 10. The posts-index.json is valid JSON after your edits (parse it to verify)

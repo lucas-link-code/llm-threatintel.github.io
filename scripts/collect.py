@@ -166,6 +166,7 @@ If no new intel: {{"status": "no_new_intel", "collection_date": "{TODAY}", "sear
 Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, malware, apt, phishing, model-poisoning, prompt-injection, mcp-security.
 Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
 Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, affected platforms, conceptual labels, Hugging Face repo slugs as packages. Put affected or exposed platforms in iocs.affected_platforms, not packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages. Reference, advisory, evidence, and safe PoC URLs belong in references, not urls.
+Shared infrastructure IOC rules: never emit bare shared cloud, CDN, registry, code-hosting, PaaS, tunnel, messaging, paste, or shortener apex domains as domain IOCs. Reject examples: storage.googleapis.com, googleapis.com, s3.amazonaws.com, amazonaws.com, github.com, pypi.org, npmjs.com, vercel.app, workers.dev, hf.space, t.me, pastebin.com, bit.ly. Specific attacker-controlled subdomains and paths remain valid: grok-code-session-traces.storage.googleapis.com, maliciousapp.vercel.app, evil.workers.dev, storage.googleapis.com/bucket-name/, t.me/malicious_channel. Document bare shared-host abuse in Detection Recommendations instead.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
 
 
@@ -804,6 +805,20 @@ def matches_platform_denylist(value, ioc_type, policy):
     return False
 
 
+def matches_shared_infrastructure(value, ioc_type, policy):
+    """Exact-match bare shared infrastructure hosts. Subdomains and paths pass."""
+    if ioc_type not in ('domain', 'url_path'):
+        return False
+    deny = {str(d).lower() for d in policy.get('shared_infrastructure_domain_denylist', [])}
+    if not deny:
+        return False
+    overrides = {str(o).lower() for o in policy.get('legitimate_platform_ioc_overrides', [])}
+    normalised = normalize_for_platform_check(value)
+    if not normalised or normalised in overrides:
+        return False
+    return normalised in deny
+
+
 def is_valid_domain(value):
     return bool(DOMAIN_RE.match(value))
 
@@ -955,6 +970,8 @@ def normalize_ioc_value(value, ioc_type):
         return None, None, 'evidence or delivery-channel domain is not an IOC', None
 
     if ioc_type in ('domain', 'url_path'):
+        if matches_shared_infrastructure(cleaned, ioc_type, policy):
+            return None, None, 'bare shared infrastructure host is not an IOC', None
         if matches_platform_denylist(cleaned, ioc_type, policy):
             return None, None, 'legitimate platform domain or generic path is not an IOC', None
 

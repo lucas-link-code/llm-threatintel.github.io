@@ -49,10 +49,12 @@ python scripts/validate_site.py --mode full
 ```
 
 - `audit`: first-run baseline mode. Reports findings and exits successfully unless the validator itself cannot run.
-- `structural`: JSON/data contracts, dates, tags, TLP, IOC formats, duplicate IDs, file references, and conflicting IOC types. No network.
+- `structural`: JSON/data contracts, dates, tags, TLP, IOC formats, duplicate IDs, file references, conflicting IOC types, bare AI vendor platform domains, and bare shared infrastructure hosts. No network.
 - `strict`: structural plus Markdown hygiene, placeholder checks, source section detection, URL syntax extraction, duplicate IOC warnings, and orphan Markdown warnings. No network.
 - `evidence`: source URL checks for reports whose content hash is missing or changed in `validation/validated-reports.json`.
 - `full`: strict plus evidence.
+
+Shared infrastructure IOC rule: `validation/policy.json` → `shared_infrastructure_domain_denylist` hard-fails bare cloud storage, CDN, registry, code hosting, PaaS, tunnel, messaging, paste, and shortener apex domains such as `storage.googleapis.com`, `github.com`, `vercel.app`, or `t.me`. Match is exact after normalisation. Attacker-controlled subdomains and specific paths remain valid, for example `grok-code-session-traces.storage.googleapis.com`, `maliciousapp.vercel.app`, or `storage.googleapis.com/bucket-name/`. The same list is enforced at insert time by `scripts/collect.py`.
 
 Options commonly used:
 

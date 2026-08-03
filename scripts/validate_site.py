@@ -166,6 +166,7 @@ DEFAULT_POLICY = {
     "reviewed_duplicate_iocs": {},
     "legitimate_platform_iocs_deny_list": {"domains": [], "url_paths": []},
     "legitimate_platform_ioc_overrides": [],
+    "shared_infrastructure_domain_denylist": [],
 }
 
 
@@ -843,9 +844,23 @@ class Validator:
         deny_domains = {str(d).lower() for d in deny.get("domains", [])}
         deny_url_paths = {str(p).lower() for p in deny.get("url_paths", [])}
         overrides = {str(o).lower() for o in self.policy.get("legitimate_platform_ioc_overrides", [])}
+        shared_deny = {
+            str(d).lower() for d in self.policy.get("shared_infrastructure_domain_denylist", [])
+        }
 
         normalised = self.normalize_for_platform_check(value)
         if not normalised or normalised in overrides:
+            return
+
+        if normalised in shared_deny:
+            self.fail(
+                "ioc-shared-infrastructure",
+                f"IOC names a bare shared infrastructure host (cloud storage, CDN, registry, code hosting, "
+                f"PaaS, tunnel, messaging, paste, or shortener apex). Blocking it would break legitimate "
+                f"traffic. Publish attacker-controlled subdomains or specific paths instead: {value}",
+                file,
+                record,
+            )
             return
 
         if ioc_type == "domain":

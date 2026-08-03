@@ -4051,7 +4051,7 @@
       "actors": [],
       "iocs": [
         "grok-code-session-traces.storage.googleapis.com",
-        "storage.googleapis.com"
+        "storage.googleapis.com/grok-code-session-traces/"
       ]
     }
   ]
