@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-03",
   "entries": [
     {
       "id": "sectoprat",
@@ -3508,6 +3508,28 @@
       ],
       "description": "Independent security team documenting one-pixel text injection attacks that rewrite MCP configuration and auto-launch attacker-controlled servers with elevated privileges.",
       "attribution": "Security researcher disclosure (not threat actor)"
+    },
+    {
+      "id": "xai-engineering",
+      "names": [
+        "xAI (Engineering)",
+        "SpaceX AI",
+        "Grok Team"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Public beta (May 2026 – July 13, 2026 functional upload)",
+        "GitHub (open-source July 15, 2026)"
+      ],
+      "ttps": [
+        "T1552.001 - Unsecured Credentials",
+        "T1048.003 - Exfiltration Over Non-C2 Protocol",
+        "T1537 - Staging Data in Cloud Storage"
+      ],
+      "description": "xAI's Grok Build CLI automatically exfiltrated entire developer Git repositories to Google Cloud Storage without explicit user consent, disclosure in documentation, or functional privacy controls. The design choice to upload whole repositories—rather than only files accessed by the model—exceeded both technical necessity (model required only 192 KB while 5.1 GB was sent) and user expectations based on UI/UX documentation. Resolution via server-side disable flag rather than formal advisory indicates awareness without attribution of severity or accountability.",
+      "attribution": "xAI (Design vulnerability, not malicious intent)"
     }
   ]
 }

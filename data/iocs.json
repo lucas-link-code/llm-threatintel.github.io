@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-08-03",
   "iocs": [
     {
       "value": "claude.ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877",
@@ -3032,6 +3032,24 @@
       "first_seen": "2026-07-26",
       "source": "Cloud Security Alliance Labs",
       "campaign": "litellm-cve-2026-42271-mcp-rce",
+      "status": "active"
+    },
+    {
+      "value": "storage.googleapis.com",
+      "type": "domain",
+      "context": "xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage",
+      "first_seen": "2026-08-03",
+      "source": "Cereblab (Security Researcher)",
+      "campaign": "xai-grok-build-repository-upload-credential-exfil",
+      "status": "active"
+    },
+    {
+      "value": "grok-code-session-traces.storage.googleapis.com",
+      "type": "domain",
+      "context": "xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage",
+      "first_seen": "2026-08-03",
+      "source": "Cereblab (Security Researcher)",
+      "campaign": "xai-grok-build-repository-upload-credential-exfil",
       "status": "active"
     }
   ]

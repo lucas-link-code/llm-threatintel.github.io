@@ -3469,6 +3469,28 @@
       "validated_at": "2026-08-01T05:55:35+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-03-xai-grok-build-repository-upload-credential-exfil": {
+      "content_hash": "2578a6f9134e7a416c0fab0d1e230a33926f929bebcaa7aa9249ea8d91a7f924",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-03-xai-grok-build-repository-upload-credential-exfil.md",
+      "posts_index_hash": "22223bcd3b6c1f1f872577360f93986961c7f915ab225f5718c1d8de595cee9b",
+      "report_id": "2026-08-03-xai-grok-build-repository-upload-credential-exfil",
+      "review_required": [
+        "3 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cryptobriefing.com/xai-grok-build-cli-private-code-leak/",
+        "https://www.techtimes.com/articles/320420/20260714/grok-build-shipped-entire-codebases-xai-cloud-privacy-toggle-did-nothing.htm",
+        "https://www.ctol.digital/news/the-invisible-exfiltration-xai-grok-build-quietly-uploading-your-entire-codebase/",
+        "https://cybernews.com/ai-news/grok-build-git-repository-upload/",
+        "https://www.techtimes.com/articles/320671/20260716/grok-build-open-sourced-after-covert-upload-code-exfiltrate-repos-stays.htm",
+        "https://mlq.ai/news/xais-grok-build-cli-caught-uploading-entire-codebases-to-google-cloud-without-consent/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-03T06:24:40+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

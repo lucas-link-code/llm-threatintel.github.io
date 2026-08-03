@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-08-03-xai-grok-build-repository-upload-credential-exfil",
+      "title": "xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage",
+      "date": "2026-08-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "xAI's Grok Build CLI was silently uploading developers' entire code repositories—including unredacted API keys, database credentials, and full Git commit histories—to a Google Cloud Storage bucket, according to a wire-level analysis published by independent AI safety researcher Cereblab on July 12. In one test, a 12GB repo saw the model request just 192KB of content, while the storage channel exfiltrated 5.10GiB — a 27,800x gap between declared read scope and actual data sent. User-facing privacy control—the 'Improve the model' toggle—had no effect on the repository uploads.",
+      "file": "2026-08-03-xai-grok-build-repository-upload-credential-exfil.md"
+    },
+    {
       "id": "2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026",
       "title": "Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks",
       "date": "2026-08-01",
