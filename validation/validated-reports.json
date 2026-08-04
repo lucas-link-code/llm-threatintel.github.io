@@ -3471,7 +3471,7 @@
       "warnings": []
     },
     "2026-08-03-xai-grok-build-repository-upload-credential-exfil": {
-      "content_hash": "2578a6f9134e7a416c0fab0d1e230a33926f929bebcaa7aa9249ea8d91a7f924",
+      "content_hash": "99ac132fac534a11d88831dd17dcbd586b7cf81c24cc7f8b24c9e1c18a4949a2",
       "evidence_status": "validated_with_warnings",
       "file": "2026-08-03-xai-grok-build-repository-upload-credential-exfil.md",
       "posts_index_hash": "22223bcd3b6c1f1f872577360f93986961c7f915ab225f5718c1d8de595cee9b",
@@ -3488,7 +3488,7 @@
         "https://mlq.ai/news/xais-grok-build-cli-caught-uploading-entire-codebases-to-google-cloud-without-consent/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-08-03T06:24:40+00:00",
+      "validated_at": "2026-08-04T05:47:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }
