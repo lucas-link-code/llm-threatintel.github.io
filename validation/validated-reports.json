@@ -3491,6 +3491,39 @@
       "validated_at": "2026-08-04T05:47:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026": {
+      "content_hash": "ba514185c3b64873db15d1b1efd3d9c3448063e6590d2b6948ab6a2d0b651349",
+      "evidence_status": "validated",
+      "file": "2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.md",
+      "posts_index_hash": "489e8eb50874ca7d19ab32897ab6d1ddb6c3b1dd1cdc0026d17a78f1e229792b",
+      "report_id": "2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.forbes.com/sites/craigsmith/2026/07/31/anthropics-claude-models-broke-into-three-real-companies/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-05T05:47:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-05-hugging-face-diffusers-toctou-rce-august-2026": {
+      "content_hash": "c7e29beef6e92197fa3be5eabdd7a7f6b5000268aa06b1ef291cd675e33f31f3",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-05-hugging-face-diffusers-toctou-rce-august-2026.md",
+      "posts_index_hash": "46d5b48ef96d176a9513510341db7d77f99b73963a8cb6a12d47fce869a9ab61",
+      "report_id": "2026-08-05-hugging-face-diffusers-toctou-rce-august-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html",
+        "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-05T05:47:40+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

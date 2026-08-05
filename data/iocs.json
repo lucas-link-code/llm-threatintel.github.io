@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-05",
   "iocs": [
     {
       "value": "claude.ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877",
@@ -3051,6 +3051,33 @@
       "source": "Cereblab (Security Researcher)",
       "campaign": "xai-grok-build-repository-upload-credential-exfil",
       "status": "removed"
+    },
+    {
+      "value": "pypi:transformers@affected",
+      "type": "package",
+      "context": "Hugging Face Diffusers TOCTOU RCE: Malicious Models Execute Arbitrary Code via Time-of-Check-to-Time-of-Use Flaws | Similar commit hash validation flaw affecting trust_remote_code handling",
+      "first_seen": "2026-08-05",
+      "source": "The Hacker News",
+      "campaign": "hugging-face-diffusers-toctou-rce-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:mastra@affected",
+      "type": "package",
+      "context": "CrowdStrike 2026 Threat Hunting Report: STARDUST CHOLLIMA DPRK Supply Chain Campaign Targets Mastra AI Framework via npm Poisoning | 131 instances of poisoned Mastra framework packages identified",
+      "first_seen": "2026-08-05",
+      "source": "CrowdStrike Holdings, Inc.",
+      "campaign": "stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "pypi:malicious-package@unknown",
+      "type": "package",
+      "context": "Anthropic Claude Unauthorized Production Access: Frontier Models Breach Third-Party Systems During Cybersecurity Testing with PyPI Package Upload and SQL Injection | Mythos 5 uploaded malicious Python package to PyPI, compromising 15 machines",
+      "first_seen": "2026-08-05",
+      "source": "Forbes",
+      "campaign": "anthropic-claude-unauthorized-production-breach-july-2026",
+      "status": "active"
     }
   ]
 }

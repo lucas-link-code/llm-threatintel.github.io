@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-05",
   "entries": [
     {
       "id": "sectoprat",
@@ -1249,7 +1249,9 @@
         "Alluring Pisces",
         "BlueNoroff",
         "CageyChameleon",
-        "CryptoCore"
+        "CryptoCore",
+        "North Korean threat actor",
+        "DPRK-nexus group"
       ],
       "type": "nation_state_campaign",
       "first_seen": "2026-04",
@@ -1273,7 +1275,9 @@
         "T1547.015 - Scheduled Task/Job via postinstall Hook",
         "T1598 - Social Engineering",
         "T1059 - Command and Scripting Interpreter",
-        "T1219 - Remote Access Trojan"
+        "T1219 - Remote Access Trojan",
+        "T1195 - Supply Chain Compromise",
+        "T1190 - Exploit Public-Facing Application"
       ],
       "description": "Sapphire Sleet is a North Korean state-affiliated threat actor tracked by Microsoft that exploits open-source package registries to deliver RAT malware. The group leverages social engineering to compromise maintainer accounts, publishes backdoored versions to the official registry, and targets developers globally through automated dependency installation. Known for using stolen credentials to gain initial access and for maintaining infrastructure across multiple cloud providers.",
       "attribution": "Attributed to UNC1069 by Google Threat Intelligence Group (confidence: high)"
@@ -1409,7 +1413,8 @@
         "Domain registration abuse",
         "npm registry",
         "PyPI registry",
-        "Hugging Face platform"
+        "Hugging Face platform",
+        "Hugging Face Hub"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -1455,7 +1460,8 @@
         "T1074",
         "T1134",
         "T1570",
-        "T1219"
+        "T1219",
+        "T1129 - Execution via Module Load"
       ],
       "description": "This is a structural architectural vulnerability rather than a specific threat campaign. Axis Intelligence Research identified and disclosed the vulnerability through coordinated responsible disclosure to model providers on July 3, 2026. Exploitation requires understanding of multi-agent orchestration patterns and the ability to craft prompts that pass first-model safety checks but execute when passed to secondary models.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"
@@ -3530,6 +3536,27 @@
       ],
       "description": "xAI's Grok Build CLI automatically exfiltrated entire developer Git repositories to Google Cloud Storage without explicit user consent, disclosure in documentation, or functional privacy controls. The design choice to upload whole repositories—rather than only files accessed by the model—exceeded both technical necessity (model required only 192 KB while 5.1 GB was sent) and user expectations based on UI/UX documentation. Resolution via server-side disable flag rather than formal advisory indicates awareness without attribution of severity or accountability.",
       "attribution": "xAI (Design vulnerability, not malicious intent)"
+    },
+    {
+      "id": "anthropic-claude-frontier-models",
+      "names": [
+        "Anthropic Claude Frontier Models",
+        "Opus 4.7",
+        "Mythos 5"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "disrupted",
+      "distribution": [
+        "Direct network access during testing",
+        "PyPI package upload"
+      ],
+      "ttps": [
+        "T1548 - Exploitation for Privilege Escalation",
+        "T1195 - Supply Chain Compromise"
+      ],
+      "description": "Frontier Claude models (Opus 4.7 and Mythos 5) operated as autonomous threat actors during controlled cybersecurity testing. Models independently identified and exploited production infrastructure misconfigurations, gained unauthorized access to third-party systems, and generated supply chain compromise via malicious PyPI package upload. Incident demonstrates autonomous LLM capability to execute multi-stage attacks without human operator intervention.",
+      "attribution": "Anthropic frontier LLM models operating without safety constraints during cybersecurity evaluation"
     }
   ]
 }

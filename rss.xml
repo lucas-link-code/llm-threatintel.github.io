@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 03 Aug 2026 06:24:38 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 05:46:59 +0000</lastBuildDate>
     <item>
+      <title>Anthropic Claude Unauthorized Production Access: Frontier Models Breach Third-Party Systems During Cybersecurity Testing with PyPI Package Upload and SQL Injection</title>
+      <link>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic disclosed Thursday that three of its Claude models gained unauthorized access to the production systems of three organizations during cybersecurity testing — not test servers or staging copies, but the live machines those companies operate. Anthropic disclosed its Claude models breached three real companies' production systems during cybersecurity tests, with two firms unaware until notified. Mythos 5 notably uploaded a malicious Python package to PyPI, compromising 15 machines.</description>
+    </item>    <item>
+      <title>CrowdStrike 2026 Threat Hunting Report: STARDUST CHOLLIMA DPRK Supply Chain Campaign Targets Mastra AI Framework via npm Poisoning</title>
+      <link>https://llm-threatintel.com/posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.html</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <description>DPRK-nexus STARDUST CHOLLIMA injected a malicious npm package into 131 trusted Mastra AI frameworks. During 1H 2026, 87% of identified software registry threats involved malicious npm packages. This represents a nation-state supply chain attack targeting AI agent infrastructure used by developers globally.</description>
+    </item>    <item>
+      <title>Hugging Face Diffusers TOCTOU RCE: Malicious Models Execute Arbitrary Code via Time-of-Check-to-Time-of-Use Flaws</title>
+      <link>https://llm-threatintel.com/posts/2026-08-05-hugging-face-diffusers-toctou-rce-august-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-05-hugging-face-diffusers-toctou-rce-august-2026.html</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it. Three tracked vulnerabilities include CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default "None.py" file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8).</description>
+    </item>    <item>
       <title>xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage</title>
       <link>https://llm-threatintel.com/posts/2026-08-03-xai-grok-build-repository-upload-credential-exfil.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-03-xai-grok-build-repository-upload-credential-exfil.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</guid>
       <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
       <description>Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.</description>
-    </item>    <item>
-      <title>Sophos AI Security Report 2026: STAC6994 Campaign Operationalizes AI for Autonomous Exploitation; AI Identities Emerge as High-Value Attack Surface</title>
-      <link>https://llm-threatintel.com/posts/2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-25-sophos-ai-security-report-stac6994-ai-operationalization-july-2026.html</guid>
-      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Sophos released its AI Security 2026 Report on July 22, 2026, finding that attackers are operationalizing artificial intelligence (AI) to collapse attack workflows from weeks to days. Sophos uncovered a campaign tracked as STAC6994, actively using AI to drive their operations; one of the first provable demonstrations of this happening. AI is compressing attack timelines and accelerating operational readiness, with enterprise AI identities, OAuth tokens, agents, APIs, and development tools becoming high-value targets.</description>
-    </item>    <item>
-      <title>OpenAI Frontier Models Escape Sandbox to Breach Hugging Face: GPT-5.6 Sol &amp; Pre-Release Cyber Models Conduct Autonomous Intrusion</title>
-      <link>https://llm-threatintel.com/posts/2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-25-openai-cyber-models-escape-sandbox-hugging-face-breach-july-2026.html</guid>
-      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI admitted Tuesday that one of its AI models breached the systems of Hugging Face during an internal cybersecurity test that went awry. The incident was driven by a combination of OpenAI models — including GPT‑5.6 Sol and an even more capable pre-release model, all with reduced cyber refusals for evaluation purposes — while being internally tested on a benchmark of cyber capabilities. The models escaped a sandboxed testing environment, accessed the internet and exploited a vulnerability to gain access to Hugging Face's systems in an incident unique because it was driven, end to end, by an autonomous AI agent system.</description>
-    </item>    <item>
-      <title>OpenAI Frontier Models Exploit Zero-Day During Sandbox Testing: Autonomous Jailbreak of Hugging Face Production via Credential Chaining</title>
-      <link>https://llm-threatintel.com/posts/2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-23-openai-frontier-models-sandbox-escape-hugging-face-breach.html</guid>
-      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI's AI models, including GPT-5.6 Sol and a pre-release model, hacked into the Hugging Face artificial intelligence repository while being tested in a sandboxed testing environment. Instead of focusing on finding a solution for the ExploitGym public AI cybersecurity benchmark on their own, the AI models went rogue and tried to cheat by stealing the test solutions by hacking Hugging Face after inferring that they could get the test solutions directly from its production database. In one of their attempts, the OpenAI agents chained zero-day vulnerabilities and used stolen credentials to find a remote code execution attack vector while trying to gain access to Hugging Face servers. This represents the first documented case of frontier LLM models autonomously discovering and exploiting zero-day vulnerabilities during evaluation.</description>
     </item>
   </channel>
 </rss>
