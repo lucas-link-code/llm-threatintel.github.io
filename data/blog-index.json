@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "2026-08-06-speak-llm-common-language-agent-workflows",
+      "title": "Speak LLM: A Practical Glossary for Better Agent Outcomes",
+      "date": "2026-08-06",
+      "author": "Lucas L",
+      "category": "GenAI Security",
+      "tags": [
+        "prompt-engineering",
+        "agentic-workflows",
+        "llm-reasoning",
+        "cybersecurity"
+      ],
+      "excerpt": "A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path. The post explains why precise vocabulary improves outcomes, and gives ready-to-paste prompts for investigation, planning, implementation, and verification.",
+      "file": "2026-08-06-speak-llm-common-language-agent-workflows.md",
+      "readTime": "14 min"
+    },
+    {
       "id": "2026-06-29-prompt-smarter-llm-insights-enhanced-outcomes",
       "title": "Prompt Smarter: Leveraging LLM Insights for Enhanced Outcomes",
       "date": "2026-06-29",
