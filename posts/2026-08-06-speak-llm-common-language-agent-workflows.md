@@ -363,20 +363,25 @@ No extras.
 Show the verification commands you will run.
 ```
 
-## Closing
+## One takeaway
 
 Better agent outcomes can result from better communication, not just bigger models.
 Here is my own example I paste into a prompt when I want a small fix without the risk of model destroying my own code. I always worry that because I write code differently, much differently than LLMs, agent may start to refactor my function immediately because its not in their style of writing. So I enter this:
 
 ```text
-Make sure the plan includes checks for regressions. Keep blast radius small. Do a thorough pass and a smoke test of all features. Make it additive. Do not change unnecessary functions. Minimal fix. Do not refactor. plan should include testing and checks for regressions against the baseline.
+Make sure the plan includes checks for regressions. Keep blast radius small.
+Do a thorough pass and a smoke test of all features. Make it additive.
+Do not change unnecessary functions. Minimal fix. Do not refactor.
+Plan should include testing and checks for regressions against the baseline.
 ```
 
 You may have noticed, I always ask to create a plan first! Then I review it carefully.
 I like to add this as well in my very own simple words:
 
 ```text
-Once written, look at your plan and think through it again, give it another pass to consider any possible implications it may have on existing modules and dependencies. I don't want anything to break or to be negatively affected by this implementation.
+Once written, look at your plan and think through it again,
+give it another pass to consider any possible implications it may have on existing modules and dependencies.
+I don't want anything to break or to be negatively affected by this implementation.
 ```
 
 Learn a small set of these phrases, reuse the templates, and your sessions get shorter, cheaper, and more reliable.
