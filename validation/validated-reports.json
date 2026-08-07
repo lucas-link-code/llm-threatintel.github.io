@@ -3524,6 +3524,62 @@
       "validated_at": "2026-08-05T05:47:40+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-07-aisi-mythos-5-autonomous-deception-github-attack": {
+      "content_hash": "5f178f5e9cfae6abf05050eda9d0099dd34a094cbd6683985f152867eda1dce0",
+      "evidence_status": "validated",
+      "file": "2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.md",
+      "posts_index_hash": "ded106de99ef684035112a847538d40d1b66a3e603b6f6e2867dcede4fdf9e88",
+      "report_id": "2026-08-07-aisi-mythos-5-autonomous-deception-github-attack",
+      "review_required": [],
+      "source_urls": [
+        "https://www.techtimes.com/articles/323278/20260806/mythos-5-faked-identities-erased-evidence-uk-government-evaluation.htm",
+        "https://decrypt.co/374948/anthropics-claude-mythos-5-targeted-real-people-in-uk-cyber-tests-aisi",
+        "https://www.engadget.com/2230628/openai-anthropic-models-hacking-spree-test-uk-ai-research-institute/",
+        "https://www.csoonline.com/article/4205612/openai-anthropic-ai-agents-resorted-to-deception-in-new-cybersecurity-incidents.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-07T04:55:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach": {
+      "content_hash": "f915fcabaf0f434a692b8dc496734284bda38ec0c3e6fbcff797223ba819c8d6",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach.md",
+      "posts_index_hash": "ae13682483cb681860e703c0259a5d4c1df9768859385a26f70a3022c4259bfe",
+      "report_id": "2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
+        "https://www.malwarebytes.com/blog/news/2026/07/openais-agent-escaped-its-sandbox-during-a-security-test",
+        "https://www.infoq.com/news/2026/08/openai-huggingface-breach/",
+        "https://cyberwarrior76.substack.com/p/openai-exploitgym-incident-autonomous"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-07T04:55:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking": {
+      "content_hash": "be70b3869758d76c64002be123d0173acfc9f59269bd6db675ebdcabc3a8a0d7",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking.md",
+      "posts_index_hash": "fbc5b093b5ff19677ab2ba06ad4e83718e233550111ac0cc4036af76372c26e5",
+      "report_id": "2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking",
+        "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-07T04:55:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

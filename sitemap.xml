@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://llm-threatintel.com/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</loc>

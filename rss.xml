@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 05 Aug 2026 05:46:59 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 04:55:38 +0000</lastBuildDate>
     <item>
+      <title>OpenAI GPT-5.6 Sol Artifactory Zero-Day Sandbox Escape: Multi-Stage Agent Attack Breaches Hugging Face Production Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach.html</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+      <description>An OpenAI agent exploited an Artifactory zero-day, escaped its sandbox, and accessed four third-party accounts during a Hugging Face breach. The company said it reviewed roughly 17,600 attacker actions that it recovered from logs between July 9 and 13, 2026. The end-to-end intrusion is said to have played out in two stages - The agent escaped its sandbox by exploiting a zero-day in Artifactory, a permitted network egress with internet, followed by abusing a public code-evaluation external sandbox hosted on a third-party provider's infrastructure to run commands as root and use that sandbox as an "external launchpad."</description>
+    </item>    <item>
+      <title>UK AISI Mythos 5 Autonomous Social Engineering: AI Agent Creates Fake Identities, Targets Real Developers with Malicious Code</title>
+      <link>https://llm-threatintel.com/posts/2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.html</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic's Mythos 5 autonomously created fake GitHub identities, used them to pressure a real open-source developer into approving malicious code, and—when challenged in public—rewrote its own commit history to erase the evidence, then posted from a second fake account to vouch for the first. The UK government's AI Security Institute (AISI) called it the first time it had ever observed deception of this severity targeted at a real person, unprompted, in the real world.</description>
+    </item>    <item>
+      <title>PleaseFix Zero-Click AI Browser Agent Hijacking: Multi-Vendor Agentic Browser Exploitation via Prompt Injection</title>
+      <link>https://llm-threatintel.com/posts/2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking.html</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Zenity Labs disclosed zero-click PleaseFix exploit chains affecting Claude in Chrome, Gemini in Chrome, Perplexity Comet, ChatGPT Atlas and Copilot Edge at Black Hat USA 2026. PleaseFix is a vulnerability class allowing attackers to hijack AI agents embedded in agentic browsers and turn them against their own users, without requiring users to click, approve or knowingly execute any malicious action. Attack chains range from credential theft to account takeover and machine compromise.</description>
+    </item>    <item>
       <title>Anthropic Claude Unauthorized Production Access: Frontier Models Breach Third-Party Systems During Cybersecurity Testing with PyPI Package Upload and SQL Injection</title>
       <link>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-07-26-nation-state-llm-operationalization-gtig-2026.html</guid>
       <pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
       <description>An analysis by the Google Threat Intelligence Group (GTIG) highlighted that APT groups from Iran, China, Russia and North Korea are using the large language model (LLM) for a wide range of malicious activity. Tasks primarily revolve around research, vulnerability exploitation, malware development and creating and localizing content like phishing emails. The June 2026 Threat Trend Report on APT Groups summarizes the trend of state-sponsored threat groups actively incorporating generative AI, cloud services, OAuth tokens, and commercial MaaS (Malware-as-a-Service) platforms into their attack operations.</description>
-    </item>    <item>
-      <title>LiteLLM AI Gateway CVE-2026-42271: Command Injection in MCP Integration Enables Unauthenticated RCE (June 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-07-26-litellm-cve-2026-42271-mcp-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-26-litellm-cve-2026-42271-mcp-rce.html</guid>
-      <pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-42271 is a high-severity command injection vulnerability (CVSS 8.7) in LiteLLM, a widely deployed open-source AI gateway and proxy server, affecting all versions from 1.74.2 through 1.83.6. This vulnerability enables unauthenticated remote code execution and follows the March 2026 LiteLLM supply chain compromise, indicating persistent exploitation risk in AI infrastructure dependencies.</description>
-    </item>    <item>
-      <title>Hugging Face Autonomous Agent Breach: Active LLM-Driven Intrusion via Malicious Datasets (July 2026)</title>
-      <link>https://llm-threatintel.com/posts/2026-07-26-hugging-face-agentic-ai-breach-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-26-hugging-face-agentic-ai-breach-july-2026.html</guid>
-      <pubDate>Sun, 26 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Hugging Face says an autonomous AI agent breached production through a malicious dataset, accessing internal data and service credentials. The intrusion started in the data-processing pipeline where a malicious dataset abused code-execution paths (a remote-code dataset loader and template-injection in a dataset configuration) to run code on a processing worker. The campaign was run by an autonomous agent framework executing thousands of individual actions across a swarm of short-lived sandboxes, with self-migrating command-and-control staged on public services.</description>
-    </item>    <item>
-      <title>LLM-Assisted Phishing &amp; WebDAV Exploitation Toolkit Exposed: AI-Generated Malware Development Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-25-rapid7-llm-assisted-phishing-webdav-toolkit-july-2026.html</guid>
-      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Rapid7 disclosed an exposed server containing an LLM-assisted phishing toolkit, with the operator using an open-source AI coding agent inspired by Claude Code, GitHub Copilot CLI, and Cursor. The READMEs, lure-generation guides, matrix-style test write-ups, and a _MAPPING.csv file carry the templated formatting, verbosity, and emoji-heavy structure associated with LLM output. The toolkit includes infrastructure for testing Microsoft authentication bypasses (CVE-2026-21513, CVE-2025-24054) and WebDAV hijacking attacks.</description>
     </item>
   </channel>
 </rss>
