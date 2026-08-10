@@ -1,6 +1,29 @@
 {
-  "last_updated": "2026-08-07",
+  "last_updated": "2026-08-10",
   "entries": [
+    {
+      "id": "asyncrat",
+      "names": [
+        "AsyncRAT"
+      ],
+      "type": "malware",
+      "first_seen": "2019",
+      "status": "active",
+      "distribution": [
+        "Operation GitPower ZIP archives containing document-themed LNK files",
+        "PowerShell download chain backed by public Git repositories",
+        "RC4-encrypted .NET payloads disguised as PNG files"
+      ],
+      "ttps": [
+        "T1059.001 - Command and Scripting Interpreter: PowerShell",
+        "T1036 - Masquerading",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task",
+        "T1105 - Ingress Tool Transfer",
+        "T1071.001 - Application Layer Protocol: Web Protocols"
+      ],
+      "description": "Genians Security Center identified RC4-encrypted .NET AsyncRAT payloads disguised as PNG files in Operation GitPower. The delivery chain used document-themed LNK files, staged PowerShell scripts, a hidden scheduled task, and public Git repositories for command, payload, and victim-data handling.",
+      "attribution": "Kimsuky deployed AsyncRAT in Operation GitPower according to Genians Security Center; the reporting does not attribute authorship of the malware family to Kimsuky."
+    },
     {
       "id": "sectoprat",
       "names": [
@@ -743,17 +766,25 @@
       "status": "active",
       "distribution": [
         "spearphishing",
-        "LLM-assisted operations"
+        "LLM-assisted operations",
+        "ZIP archives containing document-themed LNK files",
+        "GitHub-backed PowerShell command-and-control",
+        "local LLM and retrieval-augmented generation capability research"
       ],
       "ttps": [
         "T1566.001 - Spearphishing Attachment",
         "T1203 - Exploitation for Client Execution",
         "T1583.001 - Acquire Infrastructure: Domains",
         "T1588.005 - Obtain Capabilities: Exploits",
-        "T1059 - Command and Scripting Interpreter"
+        "T1059 - Command and Scripting Interpreter",
+        "T1036.007 - Masquerading: Double File Extension",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task",
+        "T1102.002 - Web Service: Bidirectional Communication",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1682 - Query Public AI Services"
       ],
-      "description": "North Korean state-sponsored APT group observed using LLMs to parse disclosed vulnerabilities including CVE-2022-30190 (MSDT Follina) to map exploitation paths. Masquerades as South Korean government officials to deliver spearphishing payloads. Uses generative AI to accelerate the reconnaissance-to-exploitation cycle and dynamically generate lookalike C2 domains.",
-      "attribution": "DPRK state-sponsored, attributed by Microsoft Threat Intelligence (confidence: high)"
+      "description": "North Korean state-sponsored APT group observed using LLMs to parse disclosed vulnerabilities including CVE-2022-30190 (MSDT Follina) to map exploitation paths. Masquerades as South Korean government officials to deliver spearphishing payloads. Uses generative AI to accelerate the reconnaissance-to-exploitation cycle and dynamically generate lookalike C2 domains. In August 2026, Genians Security Center linked Operation GitPower to Kimsuky and documented AI-generated decoys, document-themed LNK delivery, PowerShell, scheduled tasks, Git-based command-and-control, RC4-encrypted AsyncRAT payloads, and operator-side Ollama, GPT4All, Msty, Cursor, and AI-development artifacts. Genians found capability research and integration of existing models, not model training.",
+      "attribution": "DPRK state-sponsored, attributed by Microsoft Threat Intelligence (confidence: high). Genians Security Center linked Operation GitPower to Kimsuky and North Korea's Reconnaissance General Bureau without assigning a numeric confidence level."
     },
     {
       "id": "jasper-sleet",
@@ -786,6 +817,7 @@
         "Miasma Supply Chain Campaign",
         "Mini Shai-Hulud",
         "Shai-Hulud",
+        "ChainDrop",
         "TeamPCP",
         "Miasma threat actor",
         "UNC6780"
@@ -801,7 +833,9 @@
         "GitHub (Azure and RedHatInsights organizations)",
         "GitHub Actions workflows",
         "npm packages",
-        "GitHub Actions"
+        "GitHub Actions",
+        "Claude Code SessionStart and VS Code folder-open hooks",
+        "Ethereum smart-contract C2 resolution"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -819,10 +853,13 @@
         "T1550.001 - Use Alternate Authentication Material (stolen OIDC tokens for republication)",
         "T1195.001 - Supply Chain Compromise",
         "T1555.005 - Credential Harvesting",
-        "T1021 - Lateral Movement"
+        "T1021 - Lateral Movement",
+        "T1528 - Steal Application Access Token",
+        "T1546 - Event Triggered Execution",
+        "T1573.001 - Encrypted Channel: Symmetric Cryptography"
       ],
-      "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, and container platforms. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration.",
-      "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase."
+      "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, container platforms, and AI development tools. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration. Unit 42 identified ChainDrop as a Shai-Hulud-lineage npm worm that uses Bun, Ethereum-resolved C2, encrypted exfiltration, GitHub secret collection, and Claude Code and VS Code project hooks.",
+      "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase. Unit 42 assessed ChainDrop as Shai-Hulud-lineage but stated that public availability of the source prevents attribution of the ChainDrop operation to TeamPCP."
     },
     {
       "id": "nullifai",

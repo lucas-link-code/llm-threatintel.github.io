@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-08-10T04:39:04+00:00`
-- Commit SHA: `aa20c948be694a54683af0af288bafc835767fea`
+- Run time UTC: `2026-08-10T21:52:09+00:00`
+- Commit SHA: `2ccbad8fb8a0`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `2`
-- Review required: `3`
+- Review required: `1`
 - Reports checked: `3`
-- Reports skipped: `200`
-- Reports newly validated: `0`
+- Reports skipped: `210`
+- Reports newly validated: `2`
 - IOC duplicates found: `0`
-- Source URLs checked: `3`
+- Source URLs checked: `10`
 
 No files were removed or destructively modified.
 
@@ -21,37 +21,11 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
 - **REVIEW** `evidence-source-review-required` `posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md` `2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026`: no source URL was accessible; manual review or alternate evidence is required
-- **REVIEW** `evidence-source-review-required` `posts/2026-07-31-ruflo-mcp-cve-2026-59726-rce.md` `2026-07-31-ruflo-mcp-cve-2026-59726-rce`: no source URL was accessible; manual review or alternate evidence is required
-- **REVIEW** `evidence-source-review-required` `posts/2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain.md` `2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain`: no source URL was accessible; manual review or alternate evidence is required
 
 ## Human Review Queue
 
 ```text
 Report: 2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-07-31-ruflo-mcp-cve-2026-59726-rce
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain
 Problem: evidence-source-review-required
 Validator finding: no source URL was accessible; manual review or alternate evidence is required
 Recommended options:

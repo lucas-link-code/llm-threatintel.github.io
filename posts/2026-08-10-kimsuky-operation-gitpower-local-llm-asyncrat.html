@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT | LLM ThreatIntel</title>
+  <meta name="description" content="Genians Security Center reported that Operation GitPower uses malicious PDF-themed LNK files, PowerShell, scheduled tasks, Git repositories, and RC4-encrypted .NET AsyncRAT payloads against diplomatic, military, security, and virtual-asset targets. Genians Security Center also recovered Ollama, GPT4All, Msty, AI-development packages, and AI-service activity from operator-side data, but found no training datasets or fine-tuned model outputs and assessed the activity as capability accumulation rather than model training. Defenders should prioritize the published C2 infrastructure, then hunt the LNK-to-PowerShell-to-scheduled-task chain and path-scoped GitHub traffic.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT">
+  <meta property="og:description" content="Genians Security Center reported that Operation GitPower uses malicious PDF-themed LNK files, PowerShell, scheduled tasks, Git repositories, and RC4-encrypted .NET AsyncRAT payloads against diplomatic, military, security, and virtual-asset targets. Genians Security Center also recovered Ollama, GPT4All, Msty, AI-development packages, and AI-service activity from operator-side data, but found no training datasets or fine-tuned model outputs and assessed the activity as capability accumulation rather than model training. Defenders should prioritize the published C2 infrastructure, then hunt the LNK-to-PowerShell-to-scheduled-task chain and path-scoped GitHub traffic.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT">
+  <meta property="article:published_time" content="2026-08-10T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-10T00:00:00Z">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="apt">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT">
+  <meta name="twitter:description" content="Genians Security Center reported that Operation GitPower uses malicious PDF-themed LNK files, PowerShell, scheduled tasks, Git repositories, and RC4-encrypted .NET AsyncRAT payloads against diplomatic, military, security, and virtual-asset targets. Genians Security Center also recovered Ollama, GPT4All, Msty, AI-development packages, and AI-service activity from operator-side data, but found no training datasets or fine-tuned model outputs and assessed the activity as capability accumulation rather than model training. Defenders should prioritize the published C2 infrastructure, then hunt the LNK-to-PowerShell-to-scheduled-task chain and path-scoped GitHub traffic.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT",
+  "description": "Genians Security Center reported that Operation GitPower uses malicious PDF-themed LNK files, PowerShell, scheduled tasks, Git repositories, and RC4-encrypted .NET AsyncRAT payloads against diplomatic, military, security, and virtual-asset targets. Genians Security Center also recovered Ollama, GPT4All, Msty, AI-development packages, and AI-service activity from operator-side data, but found no training datasets or fine-tuned model outputs and assessed the activity as capability accumulation rather than model training. Defenders should prioritize the published C2 infrastructure, then hunt the LNK-to-PowerShell-to-scheduled-task chain and path-scoped GitHub traffic.",
+  "datePublished": "2026-08-10T00:00:00Z",
+  "dateModified": "2026-08-10T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat.html",
+  "keywords": [
+    "nation-state",
+    "apt",
+    "phishing",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-10</span>
+      <span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-apt">APT</span><span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT</h1>
+<p><strong>Date:</strong> 2026-08-10<br><strong>Tags:</strong> nation-state, apt, phishing, malware</p>
+<h2>Executive Summary</h2>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported that Operation GitPower uses malicious PDF-themed LNK files, PowerShell, scheduled tasks, Git repositories, and RC4-encrypted .NET AsyncRAT payloads against diplomatic, military, security, and virtual-asset targets. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> also recovered Ollama, GPT4All, Msty, AI-development packages, and AI-service activity from operator-side data, but found no training datasets or fine-tuned model outputs and assessed the activity as capability accumulation rather than model training. Defenders should prioritize the published C2 infrastructure, then hunt the LNK-to-PowerShell-to-scheduled-task chain and path-scoped GitHub traffic.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Operation GitPower; RC4-encrypted .NET AsyncRAT payloads (<a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>)</td></tr><tr><td>Actor / Attribution</td><td>Kimsuky, linked by Genians to North Korea&#x27;s Reconnaissance General Bureau; Genians did not assign a numeric confidence level and cautioned that individual host or language artifacts are not conclusive alone (<a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>)</td></tr><tr><td>Target</td><td>Foreign diplomatic missions, military and security organizations, and virtual-asset entities (<a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>)</td></tr><tr><td>Vector</td><td>ZIP archives delivered by email or other channels containing business- or official-document-themed <code>.pdf.lnk</code> files (<a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>)</td></tr><tr><td>Status</td><td>Active tracking; Genians characterized the AI work as an ongoing research and knowledge-acquisition phase (<a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>)</td></tr><tr><td>First Observed</td><td>2023 campaign lineage; AI-generated decoys observed in 2026 (<a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>)</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<h3>Campaign Continuity and Attribution</h3>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> described Operation GitPower as a continuation of its 2023 and 2024 FlowerPower tracking, not a standalone newly emerged campaign. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> assessed associated GitHub and GitLab activity as Kimsuky-linked and connected the cluster to North Korea&#x27;s Reconnaissance General Bureau.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> based its attribution on the combined context of LNK lineage, a recurring RTF-header-to-gzip restoration method, the GitHub account <code>brandonleeodd93-blip</code>, a Chinese WPS document environment, the host manufacturer string <code>Arirang</code>, and North Korean-language forms including <code>싸이트</code>, <code>가입리력</code>, and <code>로출되였는지</code>. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> explicitly cautioned that artifacts such as <code>Arirang</code> are insufficient in isolation and treated the combined evidence as the basis for its assessment. <a href="https://attack.mitre.org/groups/G0094/" target="_blank" rel="noopener">MITRE ATT&amp;CK</a> independently identifies Kimsuky as group G0094 and lists Black Banshee, Velvet Chollima, Emerald Sleet, THALLIUM, APT43, TA427, Springtail, Earth Kumiho, and PatheticSlug as associated names.</p>
+<h3>Initial Access, Execution, and Persistence</h3>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported ZIP-based delivery of malicious LNK files disguised as business or official documents, including <code>OOOO July 2026 Practical Strategy Pack.pdf.lnk</code>. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> found AI-generated decoy themes covering virtual assets, finance, and game development, while metadata in two English-language PDFs recorded <code>python-docx</code> as author, <code>WPS 文字</code> as creator, and 05:00 creation or modification timestamps on March 11 and March 24, 2026. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> treated those metadata fields as supporting indicators rather than standalone proof of AI use or attribution.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> measured one LNK command at approximately 3,800 characters and observed roughly 300 spaces before the visible payload, a custom Base64 decoder, and split strings used to reconstruct a GitHub Raw download location. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported that the decoded command wrote <code>%TEMP%\poqpwoqwdjoweij.ps1</code>, opened <code>%TEMP%\CONCEPT NOTE of 2026 I-ASEAN Global Youth Camp.pdf</code> as the decoy, and used a hardcoded GitHub personal access token that had been revoked by publication time.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported that the PowerShell stage created <code>%AppData%\irujkdnjhgttrhdkfdu.ps1</code> and registered the hidden scheduled task <code>ZHUYHJGTYTFSUHIPOKLKHJHUYGVHGNFH</code>. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> observed a first execution approximately five minutes after registration and repetition every 30 minutes.</p>
+<h3>Collection, Git-Based C2, and AsyncRAT</h3>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported that the recurring stage downloaded and executed <code>%AppData%\lpieuysjfgtrja.ps1</code>, then deleted it. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported that the chain also retrieved <code>bhjfjkfgrtwehjbfgcf.txt</code>, created and executed <code>%AppData%\ms_update.ps1</code>, and deleted the script after it collected operating-system version, architecture and configuration data, PC type, installation and boot history, and running processes.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> found that public Git repositories hosted scripts, configuration, and payloads used by the operation. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> identified <code>apple.png</code>, <code>fox.png</code>, <code>lion.png</code>, <code>rabbit.png</code>, and <code>wolf.png</code> as RC4-encrypted .NET AsyncRAT payloads rather than image files, and reported that the <code>fox</code>, <code>leopard</code>, <code>lion</code>, and <code>wolf</code> variants used <code>112.216.9[.]171</code> for C2. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> identified <code>169.254.33[.]137</code> as a development or testing artifact but did not include it in the published IOC appendix, so it is excluded from the IOC blocks below.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> reported that several months of C2 and storage logs exposed malware development and testing, stolen-data management, and AI research in addition to victim operations. <a href="https://www.fortinet.com/blog/threat-research/dprk-related-campaigns-with-lnk-and-github-c2" target="_blank" rel="noopener">FortiGuard Labs</a> separately reported on April 2, 2026 that a South Korea-focused cluster used decoy-themed LNK files, PowerShell, five-minute-delayed 30-minute scheduled tasks, host and process collection, and GitHub for C2 and data transfer; FortiGuard also identified <code>brandonleeodd93-blip</code> among related GitHub accounts. FortiGuard&#x27;s earlier report corroborates the delivery and GitHub-C2 tradecraft and the shared account, but it does not independently corroborate Genians&#x27; local-LLM findings or Operation GitPower attribution.</p>
+<h3>Local LLM and AI-Development Environment</h3>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> recovered evidence that the operator installed and executed Ollama, including <code>.ollama/id_ed25519</code> and its public key. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> also recovered GPT4All&#x27;s <code>LocalDocs-Setup-0.4.2.exe</code>, application-data paths, <code>localdocs_v3.db</code>, and <code>cache\models3.json</code>, which the source used to establish that LocalDocs retrieval-augmented generation had been configured. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> additionally found Msty installation and runtime artifacts.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> recovered LLaMaSharp packages for CUDA 11 and CUDA 12, LangChain providers for LLaMaSharp, Microsoft Semantic Kernel, Microsoft Agents AI, Microsoft Extensions AI, OpenAI and Azure OpenAI packages, plus Whisper and faster-whisper artifacts. <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> assessed these packages as evidence of learning and integration work, not proof that the actor had trained a model.</p>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> found Cursor installers and usage records and recovered a ChatGPT query that translated as, “How do I disable the Report feature in Microsoft Defender?” <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> found no training dataset or fine-tuned-model output and therefore characterized the AI activity as use and integration of existing tools during a research and knowledge-acquisition stage.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<p>The following analyst mapping applies the behavior reported by <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> to the current technique names and IDs published by <a href="https://attack.mitre.org/groups/G0094/" target="_blank" rel="noopener">MITRE ATT&amp;CK</a>.</p>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Phishing: Spearphishing Attachment</td><td>T1566.001</td><td>ZIP-delivered document-themed malicious LNK attachments</td></tr><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>Victim execution of a <code>.pdf.lnk</code> file disguised as a document</td></tr><tr><td>Masquerading: Double File Extension</td><td>T1036.007</td><td><code>.pdf.lnk</code> filenames concealed the LNK file type</td></tr><tr><td>Command and Scripting Interpreter: PowerShell</td><td>T1059.001</td><td>LNK arguments launched the staged PowerShell chain</td></tr><tr><td>Obfuscated Files or Information: Command Obfuscation</td><td>T1027.010</td><td>Long LNK arguments used padding, split strings, and custom Base64 decoding</td></tr><tr><td>Deobfuscate/Decode Files or Information</td><td>T1140</td><td>PowerShell decoded embedded content and RC4-encrypted AsyncRAT payloads</td></tr><tr><td>Scheduled Task/Job: Scheduled Task</td><td>T1053.005</td><td>A hidden task started after approximately five minutes and repeated every 30 minutes</td></tr><tr><td>System Information Discovery</td><td>T1082</td><td><code>ms_update.ps1</code> collected OS, architecture, PC-type, installation, and boot data</td></tr><tr><td>Process Discovery</td><td>T1057</td><td><code>ms_update.ps1</code> enumerated running processes</td></tr><tr><td>System Network Configuration Discovery</td><td>T1016</td><td>Collection produced IP- and time-labeled infection records and network context</td></tr><tr><td>Web Service: Bidirectional Communication</td><td>T1102.002</td><td>Git repositories supplied commands and payloads and received victim data</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>PowerShell downloaded follow-on scripts and encrypted AsyncRAT payloads</td></tr><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>Operator systems contained Ollama, GPT4All, Msty, and AI-development libraries used for capability acquisition and integration</td></tr><tr><td>Query Public AI Services</td><td>T1682</td><td>Operator-side artifacts contained a ChatGPT query about a Microsoft Defender reporting feature</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p><a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> published seven C2 IP addresses, one domain, 18 email addresses, and 46 unlabeled MD5 values in its appendix. The source did not publish SHA256 equivalents or map the MD5 values to filenames or artifact roles, so the MD5 values are excluded from this report&#x27;s actionable IOC block and the machine-readable feed. The blocks below reproduce the attributable network and account indicators without adding the testing-only <code>169.254.33[.]137</code> address. Network and email indicators are defanged for display.</p>
+<h3>Domains</h3>
+<pre><code class="language-">stoks.great-site[.]net</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by Genians Security Center</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;*stoks.great-site.net*&quot; OR &quot;*112.216.9.171*&quot; OR &quot;*170.205.29.83*&quot; OR &quot;*170.205.30.227*&quot; OR &quot;*185.27.134.140*&quot; OR &quot;*27.102.137.126*&quot; OR &quot;*27.102.137.159*&quot; OR &quot;*27.102.138.44*&quot;</code></pre>
+<h3>IP Addresses</h3>
+<pre><code class="language-">112.216.9[.]171
+170.205.29[.]83
+170.205.30[.]227
+185.27.134[.]140
+27.102.137[.]126
+27.102.137[.]159
+27.102.138[.]44</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No SHA256 hashes published by Genians Security Center. The source&#x27;s 46 unlabeled MD5 values are retained at the source page for analyst review but are not promoted to this feed without artifact mapping or independently verified SHA256 equivalents.</code></pre>
+<h3>Email Addresses</h3>
+<pre><code class="language-">apollo1030109@gmail[.]com
+awed33@outlook[.]kr
+belendong40@gmail[.]com
+brandonleeodd.93@gmail[.]com
+contrasde@outlook[.]kr
+devlion413@gmail[.]com
+eros1030109@gmail[.]com
+hera1030109@gmail[.]com
+holowin401@gmail[.]com
+holowin@gmail[.]com
+jecoma@outlook[.]kr
+johnstones19850308@gmail[.]com
+johnstones8888@outlook[.]com
+kkkkk79@outlook[.]kr
+tomas3015@outlook[.]kr
+trungvo5131993@gmail[.]com
+tttsssuuu@outlook[.]kr
+whitewolf20000312@gmail[.]com</code></pre>
+<h2>Detection Recommendations</h2>
+<p><strong>Email and file telemetry:</strong> Block or quarantine archive contents matching <code>*.pdf.lnk</code>, and alert when an LNK with a document-themed double extension launches <code>powershell.exe</code>. Inspect LNK argument length and raw command text for large whitespace runs, split <code>raw.githubusercontent.com</code> strings, Base64-decoder logic, or <code>%TEMP%\poqpwoqwdjoweij.ps1</code>; these checks derive from the LNK behavior documented by <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>.</p>
+<p><strong>EDR process and file telemetry:</strong> Correlate LNK execution with hidden PowerShell, creation of <code>%AppData%\irujkdnjhgttrhdkfdu.ps1</code>, <code>%AppData%\lpieuysjfgtrja.ps1</code>, or <code>%AppData%\ms_update.ps1</code>, and subsequent deletion of staged scripts. Alert on creation or execution of files named <code>apple.png</code>, <code>fox.png</code>, <code>lion.png</code>, <code>rabbit.png</code>, or <code>wolf.png</code> when PE/.NET file signatures or runtime behavior contradict the <code>.png</code> extension; these filenames and behaviors were published by <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a>.</p>
+<p><strong>Scheduled-task telemetry:</strong> Alert on task name <code>ZHUYHJGTYTFSUHIPOKLKHJHUYGVHGNFH</code>, hidden tasks launched by PowerShell from user-writable paths, and tasks configured to start after five minutes and repeat every 30 minutes. Correlate <code>Microsoft-Windows-TaskScheduler/Operational</code> events with PowerShell process creation because <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> observed that exact persistence cadence.</p>
+<p><strong>DNS, proxy, and firewall telemetry:</strong> Match the defanged domain and seven C2 IPs above after normalizing them to raw values inside the detection platform. Preserve full URI paths and repository-owner strings for GitHub traffic, and alert when PowerShell accesses GitHub Raw or API endpoints immediately before script creation, scheduled-task execution, or outbound C2; <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> and <a href="https://www.fortinet.com/blog/threat-research/dprk-related-campaigns-with-lnk-and-github-c2" target="_blank" rel="noopener">FortiGuard Labs</a> both documented GitHub-backed PowerShell chains, so blocking the shared GitHub domains is not an appropriate control.</p>
+<p><strong>AI-development artifacts:</strong> On a confirmed Operation GitPower operator or compromised development system, preserve Ollama, GPT4All LocalDocs, Msty, Cursor, Semantic Kernel, LLaMaSharp, Whisper, and related package artifacts for timeline analysis. Do not treat these legitimate tools as standalone IOCs; correlate them with the published accounts, C2, LNK lineage, or Git-based payload artifacts because <a href="https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm" target="_blank" rel="noopener">Genians Security Center</a> based its assessment on combined context.</p>
+<h2>References</h2>
+<ul><li>[Genians Security Center] Kimsuky Integrates AI into Attack Operations, From AI-Generated Decoy Documents to a Local LLM (2026-08-10) — https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm</li><li>[FortiGuard Labs] DPRK-Related Campaigns with LNK and GitHub C2 (2026-04-02) — https://www.fortinet.com/blog/threat-research/dprk-related-campaigns-with-lnk-and-github-c2</li><li>[MITRE ATT&amp;CK] Kimsuky, Group G0094 (last modified 2026-07-31) — https://attack.mitre.org/groups/G0094/</li><li>[MITRE ATT&amp;CK] Obtain Capabilities: Artificial Intelligence, T1588.007 (last modified 2026-05-12) — https://attack.mitre.org/techniques/T1588/007/</li><li>[MITRE ATT&amp;CK] Query Public AI Services, T1682 (last modified 2026-05-12) — https://attack.mitre.org/techniques/T1682/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

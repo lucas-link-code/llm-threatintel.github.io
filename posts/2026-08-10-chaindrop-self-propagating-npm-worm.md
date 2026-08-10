@@ -1,0 +1,629 @@
+# ChainDrop npm Worm Compromises 400+ Packages and Steals Developer, Cloud, and AI Credentials
+
+**Date:** 2026-08-10
+**Tags:** supply-chain, malware, llmjacking
+
+## Executive Summary
+
+Palo Alto Networks Unit 42 reported that ChainDrop, a self-propagating npm worm, compromised more than 400 packages and exposed developer workstations, CI pipelines, cloud environments, and downstream software users to credential theft. StepSecurity reported 444 affected packages and 2,212 poisoned versions in its Aug. 4 investigation snapshot, while Unit 42 documented Claude Code and VS Code execution hooks, GitHub Actions memory scraping, and an Ethereum-resolved C2 channel that the operator rotated on Aug. 4. Unit 42 recommends removing affected package versions and persistence artifacts, blocking the published C2 domains, and rotating every npm, GitHub, cloud, SSH, automation, and AI-provider credential accessible to a confirmed infected host.
+
+## Campaign Summary
+
+| Field | Detail |
+|-------|--------|
+| Campaign / Malware | ChainDrop npm worm; Shai-Hulud code lineage (Unit 42) |
+| Actor / Attribution | Unknown operator; Unit 42 assessed that TeamPCP attribution is not supported because the Shai-Hulud source code was publicly available (confidence: none) |
+| Target | npm maintainers, software developers, CI/CD runners, cloud environments, and downstream package consumers (Unit 42 and StepSecurity) |
+| Vector | Trojanized npm releases containing a `preinstall` hook, `setup.mjs` dropper, and obfuscated JavaScript payload (Unit 42 and StepSecurity) |
+| Status | Active at the Unit 42 publication date; C2 infrastructure rotated on 2026-08-04 (Unit 42) |
+| First Observed | Public outbreak detected 2026-08-04; Unit 42 found matching public repository artifacts dated as early as 2026-05-11 |
+
+## Detailed Findings
+
+### Package compromise and propagation
+
+Unit 42 reported that ChainDrop infected more than 400 npm packages whose combined weekly downloads reached hundreds of millions. Unit 42 identified 453 public repositories across five accounts that matched the worm's exfiltration pattern and detected ChainDrop execution in 10 distinct environments; Unit 42 described those five accounts as candidate victims rather than confirmed victims.
+
+StepSecurity reported that its Aug. 4 investigation identified 444 packages and 2,212 poisoned versions, including 11 packages that carried the full payload and hundreds of packages subsequently modified through worm propagation. Aikido's separately time-stamped investigation reported 444 packages and 1,381 versions after its Aug. 5 update, so the published version totals represent different investigation snapshots and should not be treated as a single stable final count.
+
+Unit 42 reported that an infected release preserves its legitimate package contents and adds `preinstall: node setup.mjs`, the `setup.mjs` dropper, and a 727 KB obfuscated JavaScript payload named `math_init.js`; StepSecurity analyzed the equivalent payload under the filename `Math_Symbol.js`. Unit 42 reported that the dropper downloads the legitimate Bun 1.3.13 runtime when Bun is absent, and Unit 42 explicitly stated that Bun itself was not compromised.
+
+Unit 42 reported that the worm uses stolen npm publishing tokens to enumerate every package the account can publish, add the malicious files and lifecycle hook, increment the patch version, and republish the modified package. Unit 42 also documented a repository-gated path for `opensearch-js` that requests npm and Sigstore OIDC tokens, produces valid SLSA provenance from the compromised workflow, and injects a typosquatted dependency without using a `preinstall` hook; Unit 42 stated that it did not observe this specialized path execute.
+
+Unit 42 published an exhaustive package-and-version list in its GitHub repository: https://raw.githubusercontent.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information/main/List-of-packages-affected-by-the-ChainDrop-worm.txt.
+
+### Compromised Package Versions
+
+Unit 42 published the following complete package-and-version list:
+
+```
+@adminide-stack/clock-tik-browser -- 12.0.24
+@adminide-stack/yantra-mobile -- 12.0.33
+@arv-bedrock/auth -- 1.1.7, 1.1.8
+@arv-bedrock/auth-admin -- 1.0.2, 1.0.3
+@arv-bedrock/auth-sso -- 1.6.1, 1.6.2
+@arv-bedrock/auth-sso-backend -- 1.7.1, 1.7.2
+@arv-bedrock/logger -- 1.7.1, 1.7.2
+@cacheable/memory -- 2.2.1
+@cacheable/net -- 2.1.1
+@cacheable/node-cache -- 3.1.2
+@cacheable/utils -- 2.5.1
+@deliveroo/determinator -- 0.2.1
+@deliveroo/reevent -- 1.0.1
+@ethlete/cdk -- 4.71.2
+@ethlete/cli -- 2.0.1
+@ethlete/components -- 3.3.1
+@ethlete/contentful -- 3.9.1
+@ethlete/core -- 4.31.1
+@ethlete/dsp -- 0.3.1
+@ethlete/query -- 5.43.2
+@ethlete/theming -- 2.7.1
+@ethlete/types -- 1.11.4
+@forjacms/analytics -- 1.8.4, 1.8.5
+@forjacms/client -- 1.8.4, 1.8.5
+@forjacms/sections -- 1.8.4, 1.8.5
+@forjacms/sections-react -- 1.8.4, 1.8.5
+@hubsync/web-sdk-react -- 6.3.10, 6.3.11, 6.3.12, 6.3.13, 6.3.14, 6.3.15, 6.3.16, 6.3.17, 6.3.18, 6.3.19, 6.3.20, 6.3.21, 6.3.22, 6.3.23, 6.3.24, 6.3.25, 6.3.26, 6.3.27, 6.3.28, 6.3.29, 6.3.30, 6.3.31, 6.3.32, 6.3.33, 6.3.7, 6.3.8, 6.3.9
+@nebula.js/cli -- 7.1.2
+@nebula.js/cli-build -- 7.1.2
+@nebula.js/cli-sense -- 7.1.2
+@nebula.js/cli-serve -- 7.1.2
+@nebula.js/locale -- 0.6.2
+@nebula.js/nucleus -- 0.5.1
+@nebula.js/sn-action-button -- 2.3.1
+@nebula.js/sn-animator -- 2.13.1
+@nebula.js/sn-distributionplot -- 1.0.7
+@nebula.js/sn-layout-container -- 4.4.1
+@nebula.js/sn-line-chart -- 2.7.1
+@nebula.js/sn-listbox -- 0.19.3
+@nebula.js/sn-map -- 0.12.7
+@nebula.js/sn-nav-menu -- 0.14.2
+@nebula.js/sn-org-chart -- 1.7.1
+@nebula.js/sn-shape -- 1.5.1
+@nebula.js/sn-slider -- 0.20.1
+@nebula.js/sn-tabbed-container -- 2.4.1
+@nebula.js/snapshooter -- 0.6.1
+@nebula.js/stardust -- 7.1.2
+@nebula.js/test-utils -- 0.6.1
+@nebula.js/theme -- 0.6.1
+@onereach/authorizer-helper -- 0.0.11, 0.0.12
+@onereach/bandwidth-steps-voice-bxml -- 0.1.1, 0.1.2
+@onereach/billing-dto -- 27.2.1, 27.2.2
+@onereach/billing-shared -- 27.2.1, 27.2.2
+@onereach/cb-schema-translator -- 1.3.1, 1.3.2
+@onereach/channel-transformer -- 0.0.66, 0.0.67
+@onereach/channel-transformers -- 0.0.5, 0.0.6
+@onereach/ckeditor5-build-classic -- 30.0.1, 30.0.2
+@onereach/condition-builder -- 1.0.8, 1.0.9
+@onereach/content-builder -- 0.0.18, 0.0.19
+@onereach/content-builder-template-compiler -- 0.0.3, 0.0.4
+@onereach/expression-components -- 9.1.1, 9.1.2
+@onereach/font-icons -- 27.0.2, 27.0.3
+@onereach/get-version-data -- 3.1.2, 3.1.3
+@onereach/idw-apps -- 0.1.3, 0.1.4
+@onereach/idw-contracts -- 0.1.2, 0.1.3
+@onereach/idw-init-account-resources -- 1.0.1, 1.0.2
+@onereach/idw-sdk -- 0.1.2, 0.1.3
+@onereach/idw-ui-components -- 0.1.2, 0.1.3
+@onereach/lambda-invocation -- 1.2.1, 1.2.2
+@onereach/messengers-infobip-sdk -- 0.1.1, 0.1.2
+@onereach/or-browser -- 0.0.48, 0.0.49
+@onereach/or-browser-next -- 0.0.11, 0.0.12
+@onereach/or-content-builder-renderer -- 0.0.2, 0.0.3
+@onereach/or-file-uploader-next -- 0.0.8, 0.0.9
+@onereach/or-pro -- 1.13.1, 1.13.2
+@onereach/or-sdk-agent-cli -- 0.0.6, 0.0.7
+@onereach/orest-cli -- 2.4.1, 2.4.2
+@onereach/orest-input-cli -- 1.18.1, 1.18.2
+@onereach/orest-jest-presets -- 0.0.3, 0.0.4
+@onereach/orest-vue-demi-vue2 -- 0.0.4, 0.0.5
+@onereach/orest-vue-demi-vue3 -- 0.0.4, 0.0.5
+@onereach/orest-vue3 -- 0.0.4, 0.0.5
+@onereach/phonenumber-interpreter -- 0.0.18, 0.0.19
+@onereach/pnpm-audit-junit -- 1.0.3
+@onereach/postcss-scoped-selector -- 1.2.1, 1.2.2
+@onereach/regex-helper -- 0.5.16, 0.5.17
+@onereach/regular-expressions -- 0.5.23, 0.5.24
+@onereach/regular-expressions-test -- 0.0.4, 0.0.5
+@onereach/rwc-client -- 6.4.7, 6.4.8
+@onereach/salesforce-miaw-client -- 0.0.3, 0.0.4, 0.0.5
+@onereach/si-a-button -- 0.0.3, 0.0.4
+@onereach/si-alert -- 0.4.11, 0.4.12
+@onereach/si-checkbox -- 0.6.5, 0.6.6
+@onereach/si-checkbox-group -- 0.3.5, 0.3.6
+@onereach/si-code -- 0.6.4, 0.6.5
+@onereach/si-collapsible-group -- 0.6.4, 0.6.5
+@onereach/si-copyable-text -- 0.4.11, 0.4.12
+@onereach/si-datepicker -- 0.4.5, 0.4.6
+@onereach/si-divider -- 0.4.11
+@onereach/si-dropdown-advanced -- 0.4.5, 0.4.6
+@onereach/si-dropdown-simple -- 0.4.5, 0.4.6
+@onereach/si-header -- 0.4.11, 0.4.12, 0.4.13
+@onereach/si-list -- 0.7.4
+@onereach/si-merge-tag-input -- 0.4.5
+@onereach/si-radio-group -- 0.3.5, 0.3.6
+@onereach/si-root -- 0.9.4, 0.9.5
+@onereach/si-select -- 0.1.3, 0.1.4
+@onereach/si-step-chooser -- 0.4.4, 0.4.5
+@onereach/si-switch -- 0.4.5, 0.4.6
+@onereach/si-text-message -- 0.4.5, 0.4.6
+@onereach/si-textinput -- 0.5.5, 0.5.6
+@onereach/si-validated-timestring-input -- 0.3.5, 0.3.6
+@onereach/slack-helpers -- 1.0.3, 1.0.4
+@onereach/ssml-editor -- 2.0.12, 2.0.13
+@onereach/step-components -- 0.1.37
+@onereach/step-conversation -- 1.0.41, 1.0.42
+@onereach/step-run-snowflake-query -- 0.1.1, 0.1.2
+@onereach/step-voice -- 7.0.32, 7.0.33
+@onereach/styles -- 27.0.2, 27.0.3
+@onereach/time-interpreter -- 1.0.30, 1.0.31
+@onereach/ts-memoize -- 1.0.2, 1.0.3
+@onereach/types-contacts-api -- 9.0.8, 9.0.9
+@onereach/ui-components -- 27.0.2, 27.0.3
+@onereach/ui-components-common -- 27.0.2, 27.0.3
+@onereach/ui-components-vue2 -- 27.0.2, 27.0.3
+@onereach/v-event-calendar -- 0.1.22, 0.1.23
+@onereach/webform -- 0.3.13, 0.3.14
+@or-sdk/account-settings -- 1.3.6, 1.3.7
+@or-sdk/accounts -- 2.3.5
+@or-sdk/adapters -- 0.3.6, 0.3.7
+@or-sdk/agents -- 4.21.3, 4.21.4
+@or-sdk/api-tokens -- 1.4.2, 1.4.3
+@or-sdk/api-tokens-lambda -- 1.4.2
+@or-sdk/apps -- 1.2.6, 1.2.7
+@or-sdk/auth -- 0.38.1, 0.38.2
+@or-sdk/authorizer -- 0.26.7, 0.26.8
+@or-sdk/base -- 0.44.4, 0.44.5
+@or-sdk/billing -- 27.2.1, 27.2.2
+@or-sdk/billing-internal -- 27.2.1, 27.2.2
+@or-sdk/bot-templates -- 2.2.5, 2.2.6
+@or-sdk/bots -- 1.7.1, 1.7.2
+@or-sdk/card-templates -- 2.2.5, 2.2.6
+@or-sdk/cards -- 1.2.5, 1.2.6
+@or-sdk/ccp -- 10.15.4, 10.15.5
+@or-sdk/chat -- 0.3.1
+@or-sdk/contacts -- 4.7.5, 4.7.6
+@or-sdk/content-request -- 0.2.6, 0.2.7
+@or-sdk/data-hub -- 0.26.5, 0.26.6
+@or-sdk/data-hub-svc -- 2.3.5, 2.3.6
+@or-sdk/deployer -- 1.7.5, 1.7.6
+@or-sdk/deployments -- 2.1.5, 2.1.6
+@or-sdk/discovery -- 1.12.1, 1.12.2
+@or-sdk/druid -- 1.4.7, 1.4.8
+@or-sdk/event-manager -- 1.1.5, 1.1.6
+@or-sdk/files -- 3.11.6, 3.11.7
+@or-sdk/files-sync-node -- 0.1.8, 0.1.9
+@or-sdk/flow-templates -- 2.1.5, 2.1.6
+@or-sdk/flows -- 2.7.8, 2.7.9
+@or-sdk/graph -- 1.10.5, 1.10.6
+@or-sdk/hitl -- 0.41.1, 0.41.2
+@or-sdk/identifiers -- 0.27.6, 0.27.7
+@or-sdk/idw -- 9.0.4, 9.0.5
+@or-sdk/idw-public -- 1.6.6, 1.6.7
+@or-sdk/idw-skill -- 1.4.1, 1.4.2
+@or-sdk/invitations -- 1.4.8, 1.4.9
+@or-sdk/key-value-storage -- 0.28.6, 0.28.7
+@or-sdk/keys -- 1.2.6, 1.2.7
+@or-sdk/knowledge-models -- 0.25.5, 0.25.6
+@or-sdk/library -- 0.5.6, 0.5.7
+@or-sdk/library-categories -- 0.2.6, 0.2.7
+@or-sdk/library-source -- 0.4.5, 0.4.6
+@or-sdk/library-types-v1 -- 9.0.1, 9.0.2
+@or-sdk/library-types-v2 -- 9.0.1, 9.0.2
+@or-sdk/lookup -- 1.25.1, 1.25.2
+@or-sdk/markdowner -- 0.5.1, 0.5.2
+@or-sdk/mcp-tools -- 0.5.2, 0.5.3
+@or-sdk/notifications -- 1.7.5, 1.7.6
+@or-sdk/password -- 1.3.6, 1.3.7
+@or-sdk/payments -- 3.2.5, 3.2.6
+@or-sdk/permissions -- 2.8.1, 2.8.2
+@or-sdk/permissions-cli -- 1.4.1, 1.4.2
+@or-sdk/permissions-lambda -- 2.5.1, 2.5.2
+@or-sdk/pgsql -- 1.5.1, 1.5.2
+@or-sdk/providers -- 0.3.6, 0.3.7
+@or-sdk/qna -- 3.4.2, 3.4.3
+@or-sdk/queue-manager -- 1.4.6, 1.4.7
+@or-sdk/sdk-api -- 0.29.2, 0.29.3
+@or-sdk/settings -- 0.25.6, 0.25.7
+@or-sdk/sku-builder -- 2.5.1, 2.5.2
+@or-sdk/source -- 2.1.5, 2.1.6
+@or-sdk/source-api -- 1.1.1, 1.1.2
+@or-sdk/step-templates -- 2.2.5, 2.2.6
+@or-sdk/store -- 2.1.5, 2.1.6
+@or-sdk/tables -- 0.28.5, 0.28.6
+@or-sdk/tags -- 1.1.5, 1.1.6
+@or-sdk/tickets -- 1.9.5, 1.9.6
+@or-sdk/transcripts -- 1.2.5, 1.2.6
+@or-sdk/users -- 3.8.1, 3.8.2
+@or-sdk/view-templates -- 2.2.5, 2.2.6
+@or-sdk/views -- 3.1.5, 3.1.6
+@or-sdk/web-search -- 0.6.1, 0.6.2
+@ornikar/apollo-link-timeout -- 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6
+@ornikar/babel-preset-base -- 6.0.10, 6.0.3, 6.0.4, 6.0.5, 6.0.6, 6.0.7, 6.0.8, 6.0.9
+@ornikar/babel-preset-kitt-universal -- 8.0.3, 8.0.4, 8.0.5, 8.0.6, 8.0.7, 8.0.8
+@ornikar/babel-preset-react -- 6.1.10, 6.1.4, 6.1.5, 6.1.6, 6.1.7, 6.1.8, 6.1.9
+@ornikar/browserslist-config -- 8.0.3, 8.0.4, 8.0.5, 8.0.6, 8.0.7, 8.0.8, 8.0.9
+@ornikar/commitlint-config -- 8.3.2, 8.3.3, 8.3.4, 8.3.5, 8.3.6, 8.3.7, 8.3.8
+@ornikar/eslint-config -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6, 24.0.7, 24.0.8
+@ornikar/eslint-config-babel -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6, 24.0.7, 24.0.8
+@ornikar/eslint-config-babel-use -- 13.2.1, 13.2.2, 13.2.3, 13.2.4, 13.2.5, 13.2.6, 13.2.7, 13.2.8
+@ornikar/eslint-config-formatjs -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6
+@ornikar/eslint-config-node -- 12.2.1, 12.2.2, 12.2.3, 12.2.4, 12.2.5, 12.2.6
+@ornikar/eslint-config-react -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6, 24.0.7
+@ornikar/eslint-config-typescript -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6
+@ornikar/eslint-config-typescript-nestjs -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6, 24.0.7
+@ornikar/eslint-config-typescript-react -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6, 24.0.7
+@ornikar/eslint-plugin-neverthrow -- 1.3.1, 1.3.2, 1.3.3, 1.3.4, 1.3.5, 1.3.6, 1.3.7, 1.3.8
+@ornikar/eslint-plugin-ornikar -- 24.0.1, 24.0.2, 24.0.3, 24.0.4, 24.0.5, 24.0.6, 24.0.7
+@ornikar/graphql-config -- 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.1.6, 1.1.7
+@ornikar/intl-config -- 10.0.2, 10.0.3, 10.0.4, 10.0.5, 10.0.6, 10.0.7, 10.0.8
+@ornikar/jest-config -- 13.0.3, 13.0.4, 13.0.5, 13.0.6, 13.0.7, 13.0.8, 13.0.9
+@ornikar/jest-config-react -- 18.0.2, 18.0.3, 18.0.4, 18.0.5, 18.0.6, 18.0.7, 18.0.8
+@ornikar/jest-config-react-native -- 17.0.2, 17.0.3, 17.0.4, 17.0.5, 17.0.6, 17.0.7, 17.0.8
+@ornikar/jest-config-react-native-web -- 12.0.3, 12.0.4, 12.0.5, 12.0.6, 12.0.7, 12.0.8, 12.0.9
+@ornikar/kitt2 -- 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.7
+@ornikar/lerna-config -- 11.0.1, 11.0.2, 11.0.3, 11.0.4, 11.0.5, 11.0.6
+@ornikar/monorepo-config -- 14.3.2, 14.3.3, 14.3.4, 14.3.5, 14.3.6, 14.3.7, 14.3.8, 14.3.9
+@ornikar/postcss-config -- 9.1.2, 9.1.3, 9.1.4, 9.1.5, 9.1.6, 9.1.7, 9.1.8
+@ornikar/prettier-config -- 9.0.3, 9.0.4, 9.0.5, 9.0.6, 9.0.7, 9.0.8, 9.0.9
+@ornikar/prismic-components -- 0.0.2, 0.0.3, 0.0.4, 0.0.5, 0.0.6, 0.0.7, 0.0.8
+@ornikar/react-modern-calendar-datepicker -- 3.2.1, 3.2.2, 3.2.3, 3.2.4, 3.2.5, 3.2.6, 3.2.7
+@ornikar/react-native-svg-transformer -- 1.0.10, 1.0.11, 1.0.6, 1.0.7, 1.0.8, 1.0.9
+@ornikar/renovate-config -- 9.0.2, 9.0.3, 9.0.4, 9.0.5, 9.0.6, 9.0.7, 9.0.8, 9.0.9
+@ornikar/repo-config -- 15.3.3, 15.3.4, 15.3.5, 15.3.6, 15.3.7, 15.3.8, 15.3.9
+@ornikar/repo-config-react -- 13.0.10, 13.0.11, 13.0.12, 13.0.13, 13.0.14, 13.0.15, 13.0.8, 13.0.9
+@ornikar/repo-config-react-legacy-css -- 15.1.2, 15.1.3, 15.1.4, 15.1.5, 15.1.6, 15.1.7, 15.1.8, 15.1.9
+@ornikar/rollup-config -- 11.1.2, 11.1.3, 11.1.4, 11.1.5, 11.1.6, 11.1.7, 11.1.8, 11.1.9
+@ornikar/rollup-plugin-postcss -- 2.0.10, 2.0.11, 2.0.5, 2.0.6, 2.0.7, 2.0.8, 2.0.9
+@ornikar/slate-react-fork -- 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.7
+@ornikar/storybook-config -- 12.1.2, 12.1.3, 12.1.4, 12.1.5, 12.1.6, 12.1.7
+@ornikar/stylelint-config -- 14.0.3, 14.0.5, 14.0.6, 14.0.7, 14.0.8, 14.0.9
+@ornikar/typed-css-modules-loader -- 0.8.2, 0.8.3, 0.8.4, 0.8.5, 0.8.6, 0.8.7, 0.8.8
+@ornikar/webpack-config -- 12.0.2, 12.0.3, 12.0.4, 12.0.5, 12.0.6, 12.0.7, 12.0.8
+@picsart/ai-sdk -- 3.32.2
+@picsart/gen-ai -- 2.55.11
+@qlik/api -- 2.14.2
+@qlik/browserslist-config -- 3.0.2
+@qlik/carbon-core -- 2.1.1
+@qlik/carboncopy -- 1.1.6
+@qlik/design-tokens -- 1.3.13
+@qlik/dts-bundler -- 2.0.3
+@qlik/embed-react -- 2.5.3
+@qlik/embed-runtime -- 1.6.4
+@qlik/embed-svelte -- 1.1.4
+@qlik/embed-web-components -- 1.7.3
+@qlik/eslint-config -- 2.0.20
+@qlik/eslint-config-base -- 0.1.1
+@qlik/eslint-config-react -- 0.1.1
+@qlik/eslint-config-svelte -- 0.1.1
+@qlik/eslint-config-vue -- 0.1.1
+@qlik/nebula-table-utils -- 2.6.9
+@qlik/oxfmt-config -- 0.1.6
+@qlik/oxlint-config -- 0.7.2
+@qlik/prettier-config -- 1.0.3
+@qlik/react-native-simple-grid -- 1.5.5
+@qlik/runtime-module-loader -- 1.5.1
+@qlik/sdk -- 0.28.1
+@qlik/sprout-design-docs -- 1.0.2
+@qlik/sprout-gesture -- 0.0.13
+@qlik/sprout-icons -- 0.12.3
+@qlik/sprout-react -- 6.45.3
+@qlik/sprout-react-table -- 0.16.7
+@qlik/tsconfig -- 1.0.3
+@redhat-cloud-services/compliance-client -- 4.0.4
+@redhat-cloud-services/frontend-components-config-utilities -- 4.11.3
+@redhat-cloud-services/frontend-components-utilities -- 7.4.2
+@redhat-cloud-services/insights-client -- 4.0.4
+@redhat-cloud-services/rbac-client -- 9.0.6
+@redhat-cloud-services/sources-client -- 3.0.10
+@redhat-cloud-services/types -- 3.6.1
+@servicetitan/acquisition-functions -- 5.22.1, 5.22.2, 5.22.3, 5.22.4, 5.22.5
+@servicetitan/admin-layout -- 2.4.3, 2.4.4, 2.4.5, 2.4.6, 2.4.7
+@servicetitan/admin-sql-table -- 1.0.14, 1.0.15, 1.0.16, 1.0.17, 1.0.18
+@servicetitan/ajax-handlers -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/anvil-css-utilities -- 14.5.4, 14.5.5, 14.5.6, 14.5.7, 14.5.8
+@servicetitan/anvil-fonts -- 14.5.4, 14.5.5, 14.5.6, 14.5.7, 14.5.8
+@servicetitan/anvil-icon -- 0.5.1, 0.5.2, 0.5.3, 0.5.4, 0.5.5
+@servicetitan/anvil-icons -- 14.5.4, 14.5.5, 14.5.6, 14.5.7, 14.5.8
+@servicetitan/anvil-react -- 0.11.3, 0.11.4, 0.11.5, 0.11.6, 0.11.7
+@servicetitan/anvil-themes -- 14.5.4, 14.5.5, 14.5.6, 14.5.7, 14.5.8
+@servicetitan/anvil-token -- 0.4.1, 0.4.2, 0.4.3, 0.4.4, 0.4.5
+@servicetitan/anvil2 -- 3.9.1, 3.9.2, 3.9.3, 3.9.4, 3.9.5
+@servicetitan/anvil2-codemods -- 0.11.2, 0.11.3, 0.11.4, 0.11.5, 0.11.6
+@servicetitan/anvil2-ext-atlas -- 4.0.2, 4.0.3, 4.0.4, 4.0.5, 4.0.6
+@servicetitan/anvil2-ext-charts -- 0.2.4, 0.2.5, 0.2.6, 0.2.7, 0.2.8
+@servicetitan/anvil2-ext-common -- 0.7.1, 0.7.2, 0.7.3, 0.7.4, 0.7.5
+@servicetitan/anvil2-ext-mwv -- 0.0.5, 0.0.6, 0.0.7, 0.0.8, 0.0.9
+@servicetitan/anvil2-illustrations -- 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6
+@servicetitan/anvil2-mcp -- 0.0.10, 0.0.11, 0.0.12, 0.0.13, 0.0.9
+@servicetitan/assist-ui -- 2.1.1, 2.1.2, 2.1.3, 2.1.4, 2.1.5
+@servicetitan/assist-utils -- 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.1.6
+@servicetitan/carto-charts-core -- 0.0.2, 0.0.3, 0.0.4, 0.0.5, 0.0.6
+@servicetitan/carto-charts-react -- 0.0.2, 0.0.3, 0.0.4, 0.0.5, 0.0.6
+@servicetitan/carto-charts-rn -- 0.0.2, 0.0.3, 0.0.4, 0.0.5, 0.0.6
+@servicetitan/carto-react-kit -- 0.8.4, 0.8.5, 0.8.6, 0.8.7, 0.8.8
+@servicetitan/carto-rn-kit -- 0.0.10, 0.0.11, 0.0.12, 0.0.13, 0.0.14
+@servicetitan/carto-tokens -- 0.3.1, 0.3.2, 0.3.3, 0.3.4, 0.3.5
+@servicetitan/component-usage -- 28.5.1, 28.5.2, 28.5.3, 28.5.4, 28.5.5
+@servicetitan/confirm -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/confirm-navigation -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/contentful -- 0.0.3, 0.0.4, 0.0.5, 0.0.6, 0.0.7
+@servicetitan/contentful-proxy -- 1.1.12, 1.1.13, 1.1.14, 1.1.15, 1.1.16
+@servicetitan/cp-api -- 1.115.1, 1.115.2, 1.115.3, 1.115.4, 1.115.5
+@servicetitan/cp-mfe -- 1.115.1, 1.115.2, 1.115.3, 1.115.4, 1.115.5
+@servicetitan/cp-mfe-dev -- 1.115.1, 1.115.2, 1.115.3, 1.115.4, 1.115.5
+@servicetitan/cp-react-hooks -- 1.115.1, 1.115.2, 1.115.3, 1.115.4, 1.115.5
+@servicetitan/cp-ui -- 1.115.1, 1.115.2, 1.115.3, 1.115.4, 1.115.5
+@servicetitan/culture -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/data-query -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/datadog-rum -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/datetime-utils -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/design-system -- 14.5.4, 14.5.5, 14.5.6, 14.5.7, 14.5.8
+@servicetitan/docs-anvil-uikit-contrib -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/docs-uikit -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/document-title -- 2.4.1, 2.4.2, 2.4.3, 2.4.4, 2.4.5
+@servicetitan/dte-pdf-editor -- 1.76.1, 1.76.2, 1.76.3, 1.76.4, 1.76.5
+@servicetitan/dte-unlayer -- 0.150.1, 0.150.2, 0.150.3, 0.150.4, 0.150.5
+@servicetitan/eh-module-communication -- 0.2.1, 0.2.2, 0.2.3, 0.2.4, 0.2.5
+@servicetitan/error-boundary -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/eslint-config -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/eslint-plugin -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/eslint-plugin-decorators-declare -- 12.8.15, 12.8.16, 12.8.17, 12.8.18, 12.8.19
+@servicetitan/eslint-plugin-folder-schema -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/eslint-plugin-mobx-6 -- 12.8.15, 12.8.16, 12.8.17, 12.8.18
+@servicetitan/eslint-plugin-processors-stub -- 12.8.15, 12.8.16, 12.8.17, 12.8.18, 12.8.19
+@servicetitan/examples -- 1.2.5, 1.2.6, 1.2.7, 1.2.8, 1.2.9
+@servicetitan/feature-spotlight -- 3.9.1, 3.9.2, 3.9.3, 3.9.4, 3.9.5
+@servicetitan/folder-lint -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/forge -- 0.5.1, 0.5.2, 0.5.3, 0.5.4, 0.5.5
+@servicetitan/form -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/form-state -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/grid -- 0.0.63, 0.0.64, 0.0.65, 0.0.66, 0.0.67
+@servicetitan/hammer-icon -- 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5
+@servicetitan/hammer-react -- 1.42.2, 1.42.3, 1.42.4, 1.42.5, 1.42.6
+@servicetitan/hammer-token -- 3.1.1, 3.1.2, 3.1.3, 3.1.4, 3.1.5
+@servicetitan/hash-browser-router -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/help-center -- 1.0.10, 1.0.11, 1.0.12, 1.0.8, 1.0.9
+@servicetitan/html-sketchapp -- 4.2.10, 4.2.11, 4.2.12, 4.2.8, 4.2.9
+@servicetitan/install -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/intl -- 7.2.1, 7.2.2, 7.2.3, 7.2.4, 7.2.5
+@servicetitan/json-render-react -- 0.4.10, 0.4.6, 0.4.7, 0.4.8, 0.4.9
+@servicetitan/kendo-theme -- 0.0.27, 0.0.28, 0.0.29, 0.0.30, 0.0.31
+@servicetitan/ko-bridge -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/launchdarkly-service -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/lazy-module -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/ld-type-generator -- 0.2.1, 0.2.2, 0.2.3, 0.2.4, 0.2.5
+@servicetitan/line-item-editor -- 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5
+@servicetitan/link-item -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/log-service -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/marketing-direct-mail-components -- 20.1.1, 20.1.2, 20.1.3, 20.1.4, 20.1.5
+@servicetitan/marketing-email-components -- 20.2.3, 20.2.4, 20.2.5, 20.2.6, 20.2.7
+@servicetitan/marketing-form -- 0.1.2, 0.1.3, 0.1.4, 0.1.5, 0.1.6
+@servicetitan/marketing-global-route -- 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.14.5
+@servicetitan/marketing-integration-widgets -- 1.0.40, 1.0.41, 1.0.42, 1.0.43, 1.0.44
+@servicetitan/marketing-route -- 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5
+@servicetitan/marketing-ui -- 9.3.1, 9.3.2, 9.3.3, 9.3.4, 9.3.5
+@servicetitan/marketing-widgets -- 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5
+@servicetitan/measure-sheet-data -- 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5
+@servicetitan/mfe-quick-actions -- 0.5.49, 0.5.50, 0.5.51, 0.5.52, 0.5.53
+@servicetitan/micro-frontend -- 0.0.4, 0.0.5, 0.0.6, 0.0.7, 0.0.8
+@servicetitan/microfront -- 0.0.2, 0.0.3, 0.0.4, 0.0.5, 0.0.6
+@servicetitan/microfront-auth -- 0.0.5, 0.0.6, 0.0.7, 0.0.8, 0.0.9
+@servicetitan/microfront-tests -- 0.0.11, 0.0.12, 0.0.13, 0.0.14, 0.0.15
+@servicetitan/microfront-utils -- 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.5
+@servicetitan/modularpayments-webfields -- 1.0.53, 1.0.54, 1.0.55, 1.0.56, 1.0.57
+@servicetitan/moneyout-api-client -- 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5
+@servicetitan/mpa-components -- 2.5.1, 2.5.2, 2.5.3, 2.5.4, 2.5.5
+@servicetitan/navigation -- 14.1.1, 14.1.2, 14.1.3, 14.1.4, 14.1.5
+@servicetitan/notifications -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/onboarding-ui -- 18.5.1, 18.5.2, 18.5.3, 18.5.4, 18.5.5
+@servicetitan/quick-actions -- 1.15.2, 1.15.3, 1.15.4, 1.15.5, 1.15.6
+@servicetitan/react-hooks -- 7.7.1, 7.7.2, 7.7.3, 7.7.4, 7.7.5
+@servicetitan/react-ioc -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/responsive -- 6.1.1, 6.1.2, 6.1.3, 6.1.4, 6.1.5
+@servicetitan/restrict-imports -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/schema-comparison -- 0.1.3, 0.1.4, 0.1.5, 0.1.6, 0.1.7
+@servicetitan/skeleton -- 9.2.4, 9.2.5, 9.2.6, 9.2.7, 9.2.8
+@servicetitan/standalone-core-feature-gates -- 1.11.4, 1.11.5, 1.11.6, 1.11.7, 1.11.8
+@servicetitan/standalone-feature-flags -- 2.3.2, 2.3.3, 2.3.4, 2.3.5, 2.3.6
+@servicetitan/standalone-root -- 1.11.3, 1.11.4, 1.11.5, 1.11.6, 1.11.7
+@servicetitan/standalone-tm-api -- 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5
+@servicetitan/standalone-ui -- 2.2.4, 2.2.5, 2.2.6, 2.2.7, 2.2.8
+@servicetitan/startup -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/startup-jest -- 2.2.1, 2.2.2, 2.2.3, 2.2.4, 2.2.5
+@servicetitan/startup-mfe-compat -- 0.5.1, 0.5.2, 0.5.3, 0.5.4, 0.5.5
+@servicetitan/startup-utils -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/stylelint-config -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/suppress-warnings -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/table -- 41.3.1, 41.3.2, 41.3.3, 41.3.4, 41.3.5
+@servicetitan/tanstack-query-mobx -- 6.2.1, 6.2.2, 6.2.3, 6.2.4, 6.2.5
+@servicetitan/temporal-lite -- 3.4.1, 3.4.2, 3.4.3, 3.4.4, 3.4.5
+@servicetitan/testing-library -- 6.6.1, 6.6.2, 6.6.3, 6.6.4, 6.6.5
+@servicetitan/thoughtspot-theme -- 1.7.1, 1.7.2, 1.7.3, 1.7.4, 1.7.5
+@servicetitan/time-zones -- 3.8.1, 3.8.2, 3.8.3, 3.8.4, 3.8.5
+@servicetitan/titan-chat-ui -- 7.1.3, 7.1.4, 7.1.5, 7.1.6, 7.1.7
+@servicetitan/titan-chat-ui-anvil2 -- 9.0.1, 9.0.2, 9.0.3, 9.0.4, 9.0.5
+@servicetitan/titan-chat-ui-common -- 9.0.1, 9.0.2, 9.0.3, 9.0.4, 9.0.5
+@servicetitan/titan-chat-ui-cypress -- 2.1.3, 2.1.4, 2.1.5, 2.1.6, 2.1.7
+@servicetitan/titan-chatbot-api -- 9.0.1, 9.0.2, 9.0.3, 9.0.4, 9.0.5
+@servicetitan/titan-chatbot-client -- 2.1.3, 2.1.4, 2.1.5, 2.1.6, 2.1.7
+@servicetitan/titan-chatbot-ui -- 7.1.3, 7.1.4, 7.1.5, 7.1.6, 7.1.7
+@servicetitan/titan-chatbot-ui-anvil2 -- 9.0.1, 9.0.2, 9.0.3, 9.0.4, 9.0.5
+@servicetitan/titan-chatbot-ui-cypress -- 9.0.1, 9.0.2, 9.0.3, 9.0.4, 9.0.5
+@servicetitan/tokens -- 12.9.1, 12.9.2, 12.9.3, 12.9.4, 12.9.5
+@servicetitan/toolbelt-shared-registry -- 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.14.5
+@servicetitan/uikit-docs -- 22.11.1, 22.11.2, 22.11.3, 22.11.4, 22.11.5
+@servicetitan/unit-tests -- 0.0.2, 0.0.3, 0.0.4, 0.0.5, 0.0.6
+@servicetitan/va-mfe-loader -- 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5
+@servicetitan/web-components -- 38.1.1, 38.1.2, 38.1.3, 38.1.4, 38.1.5
+@servicetitan/widget-platform -- 5.6.1, 5.6.2, 5.6.3, 5.6.4, 5.6.5
+@servicetitan/widget-platform-monolith -- 5.6.1, 5.6.2, 5.6.3, 5.6.4, 5.6.5
+@squawk/types -- 0.8.1
+@thiennq/docs-viewer -- 1.6.2
+@umacloud/cli-win32-x64 -- 1.0.74
+@workbench-stack/core -- 3.9.8
+ai-sdk-ollama -- 0.13.1, 1.1.1, 2.2.1, 3.8.5
+autotel-devtools -- 0.1.1, 4.0.1
+autotel-mcp -- 15.0.2, 19.0.1, 21.1.1, 24.0.1, 25.0.1, 28.0.3, 29.0.1, 3.0.1
+autotel-mcp-instrumentation -- 32.0.1, 33.0.2
+autotel-subscribers -- 16.0.2, 24.0.1, 29.0.6
+autotel-terminal -- 14.0.1, 15.0.2, 16.0.2, 4.0.2
+awaitly-analyze -- 2.0.1, 3.0.1, 6.0.1, 7.0.1
+awaitly-libsql -- 10.0.1, 12.0.1, 20.0.1
+awaitly-mongo -- 12.0.1, 15.0.1, 18.0.1, 2.0.1, 21.0.1, 23.0.1, 4.0.1, 6.0.1
+awaitly-postgres -- 13.0.1, 14.0.1, 16.0.1, 2.0.1, 21.0.1, 22.0.1, 3.0.2, 5.0.1, 6.0.1, 8.0.1
+awaitly-visualizer -- 10.0.1, 12.0.1, 13.0.1, 18.1.1, 21.0.1, 4.0.1
+babel-plugin-linaria-css-to-undefined -- 0.3.1, 0.3.2, 0.3.3, 0.3.4, 0.3.5, 0.3.6, 0.3.7, 0.3.8, 0.3.9
+cache-manager -- 7.2.10
+cacheable -- 2.5.1
+cacheable-request -- 13.0.20
+conv-context-next -- 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.7, 1.0.8
+create-cf-token -- 1.1.2, 1.1.3, 1.1.4
+create-wrangler-deploy -- 0.1.1
+creditcard.js -- 2.1.8, 3.0.60
+dbmux -- 1.0.5, 1.0.6, 2.2.5
+discord-search -- 0.1.1, 0.1.2, 0.1.3
+ecto -- 5.0.1
+editable-contracts -- 0.0.12, 0.0.13, 0.0.14, 0.0.15, 0.0.16, 0.0.17, 0.0.18, 0.0.19, 0.0.20, 0.0.21, 0.0.22, 0.0.23, 0.0.24, 0.0.25
+eslint-plugin-executable-stories-playwright -- 2.1.8
+eslint-plugin-folder-schema -- 1.0.10, 1.0.11, 1.0.12, 1.0.13, 1.0.14, 1.0.15, 1.0.16, 1.0.17, 1.0.18, 1.0.19, 1.0.6, 1.0.7, 1.0.8, 1.0.9
+example-js-project -- 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.8, 1.0.9
+executable-stories-playwright -- 4.0.1, 5.0.1, 6.1.1
+executable-stories-vitest -- 2.0.1, 3.1.1, 5.0.1, 6.1.1
+file-entry-cache -- 11.1.6
+flat-cache -- 6.1.24
+folder-lint -- 1.0.10, 1.0.11, 1.0.12, 1.0.13, 1.0.14, 1.0.15, 1.0.16, 1.0.17, 1.0.18, 1.0.19, 1.0.6, 1.0.7, 1.0.8, 1.0.9
+frontend-orb -- 4.4.1, 4.4.10, 4.4.2, 4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7, 4.4.8, 4.4.9
+github-archiver -- 1.5.4, 1.5.5, 1.5.6
+hamus.js -- 0.4.1
+http-metrics-middleware -- 2.2.2
+intercom-client -- 7.0.4
+keyv -- 6.0.0
+leo-aws -- 2.0.4
+leo-cron -- 2.0.2
+mountly -- 0.2.2
+native-frontend-orb -- 1.1.10, 1.1.11, 1.1.4, 1.1.5, 1.1.6, 1.1.7, 1.1.8, 1.1.9
+picasso-plugin-hammer -- 2.11.6
+picasso-plugin-q -- 2.11.6
+picasso.js -- 2.11.6
+pob-test-package-in-monorepo -- 5.2.1, 5.2.2, 5.2.3, 5.2.4, 5.2.5, 5.2.6, 5.2.7, 5.2.8, 5.2.9
+pob-test-typescript-package-in-monorepo -- 4.2.1, 4.2.10, 4.2.2, 4.2.3, 4.2.4, 4.2.5, 4.2.6, 4.2.7, 4.2.8, 4.2.9
+qlik-chart-modules -- 1.1.1
+qlik-modifiers -- 0.10.1
+qlik-object-conversion -- 0.17.2
+rstreams-shard-util -- 1.0.1
+rwc-client -- 0.29.10, 0.29.11, 0.29.12, 0.29.13, 0.29.14, 0.29.15, 0.29.16, 0.29.17
+server-hemera-mongo -- 0.0.12
+sn-listbox -- 0.3.3
+tslint-folder-schema -- 1.0.10, 1.0.11, 1.0.12, 1.0.13, 1.0.14, 1.0.15, 1.0.16, 1.0.17, 1.0.18, 1.0.19, 1.0.6, 1.0.7, 1.0.8, 1.0.9
+verdaccio-okta-oauth -- 38.1.1, 38.1.10, 38.1.11, 38.1.12, 38.1.13, 38.1.14, 38.1.2, 38.1.3, 38.1.4, 38.1.5, 38.1.6, 38.1.7, 38.1.8, 38.1.9
+verdaccio-tarball-local-storage -- 38.1.1, 38.1.10, 38.1.11, 38.1.12, 38.1.13, 38.1.14, 38.1.2, 38.1.3, 38.1.4, 38.1.5, 38.1.6, 38.1.7, 38.1.8, 38.1.9
+workbench-browser-server -- 0.0.2
+
+```
+
+### Credential theft and AI-tool persistence
+
+Unit 42 reported that ChainDrop collects npm and GitHub tokens, SSH keys, Poetry and PyPI credentials, RubyGems tokens, Docker and Helm configurations, Terraform state, Vault tokens, Kubernetes service-account tokens and kubeconfigs, cloud credentials, shell histories, `.env` files, `.netrc`, Jenkins credential material, and cryptocurrency wallet files. StepSecurity reported that the collection targets authentication artifacts for Claude, Codex, Cursor, OpenAI, Anthropic, Gemini, OpenClaw, Hermes, and Kiro in addition to conventional developer and cloud secrets.
+
+Unit 42 reported that an embedded Python helper reads `/proc/<pid>/maps` and `/proc/<pid>/mem` from the GitHub Actions `Runner.Worker` process to recover ephemeral OIDC tokens and other live runner secrets. Unit 42 reported that the worm can also add `.github/workflows/codeql_analysis.yml` containing `${{ toJSON(secrets) }}` and upload the resulting secret material as a GitHub Actions artifact.
+
+Unit 42 reported that the analyzed build writes `.claude/settings.json`, `.claude/setup.mjs`, `.claude/math_init.js`, `.vscode/tasks.json`, and `.vscode/setup.mjs` to establish project-triggered execution through Claude Code and VS Code. Unit 42 found that only the VS Code path successfully resolved the payload in the analyzed build, while the embedded macOS LaunchAgent and Linux systemd installers had no call site and therefore represented latent rather than observed OS-level persistence.
+
+### Ethereum-resolved C2 and encrypted exfiltration
+
+Unit 42 reported that ChainDrop queries Ethereum smart contract `0xE1f2395ee43e45A1556EC6438a88c31B83493103` through public RPC services to resolve its C2 domains. Unit 42 reported that the contract initially returned `npm-cache[.]com`, `pypi-get[.]com`, and `js-mirror[.]com`, and that the operator later reduced the list to `npm-cache[.]com`.
+
+Unit 42 reported that transaction `0xc55920f1bd0531b6738153068a666c080ddded47e6256f1fd980d51c0b507c91` rotated the active C2 to `awqhnjewqjkl[.]icu` on Aug. 4, 2026. Unit 42 reported that the worm gzip-compresses stolen JSON, encrypts it with AES-256-GCM, wraps the key with RSA-OAEP-SHA256, and sends the envelope to the contract-resolved endpoint.
+
+Unit 42 reported that the domain-based sender parses the server response and evaluates an operator-supplied `code` value, enabling a targeted follow-on payload when the server returns one. Unit 42 reported that its synthetic request received HTTP 200 with an empty response, so the researchers did not observe a second-stage payload delivered during their probe.
+
+Unit 42 reported that `104.21.91[.]101` and `172.67.215[.]154` were shared Cloudflare edge addresses associated with the rotated domain and explicitly recommended domain or SNI blocking instead of IP blocking. Those shared addresses are excluded from the IOC blocks below to prevent collateral blocking of unrelated Cloudflare customers.
+
+### Attribution assessment
+
+Unit 42 assessed that ChainDrop belongs to the Shai-Hulud toolchain based on its decoder, Bun version pin, detached relaunch pattern, self-applied repository marker, propagation method, and GitHub exfiltration architecture. Unit 42 also reported that public release of the Shai-Hulud source allows other operators to reproduce those characteristics, so the evidence does not establish that TeamPCP operated ChainDrop.
+
+Unit 42 reported that the payload exits on Russian-language hosts. Unit 42 did not use that locale exclusion to identify an operator, and the available evidence does not support geographic or organizational attribution.
+
+## MITRE ATT&CK Mapping
+
+| Technique | ID | Context |
+|-----------|-----|---------|
+| Compromise Software Dependencies and Development Tools | T1195.001 | Unit 42 and StepSecurity reported propagation through trojanized npm dependencies and compromised publication workflows. |
+| JavaScript/JScript | T1059.007 | Unit 42 reported execution of `setup.mjs` and the obfuscated JavaScript payload through Node.js and Bun. |
+| Steal Application Access Token | T1528 | Unit 42 reported theft of npm, GitHub, cloud, CI, and AI-provider access tokens. |
+| Unsecured Credentials: Credentials In Files | T1552.001 | Unit 42 reported collection of `.env`, `.netrc`, SSH, Vault, Kubernetes, Terraform, and developer-tool credential files. |
+| Unsecured Credentials: Cloud Instance Metadata API | T1552.005 | Unit 42 reported queries to cloud compute and container metadata endpoints for temporary IAM credentials. |
+| Obfuscated Files or Information | T1027 | Unit 42 reported a three-layer payload using Base91, a PBKDF2-seeded permutation cipher, and AES-256-GCM-protected blobs. |
+| Event Triggered Execution | T1546 | Unit 42 reported project-triggered execution through VS Code `folderOpen` tasks and Claude Code `SessionStart` hooks. |
+| Application Layer Protocol: Web Protocols | T1071.001 | Unit 42 reported HTTPS exfiltration to the contract-resolved `/router` endpoint. |
+| Encrypted Channel: Symmetric Cryptography | T1573.001 | Unit 42 reported AES-256-GCM encryption of exfiltrated data before HTTPS transmission. |
+
+## IOCs
+
+The following domains, URL paths, and hashes are transcribed from the Unit 42 IOC section. Shared Cloudflare edge IPs and legitimate Ethereum RPC services are excluded.
+
+### Domains
+
+```
+awqhnjewqjkl[.]icu
+js-mirror[.]com
+npm-cache[.]com
+pypi-get[.]com
+```
+
+### Full URL Paths
+
+```
+hxxp://awqhnjewqjkl[.]icu/cdn-cgi/rum?
+hxxps://npm-cache[.]com:443/router
+```
+
+### Splunk Format
+
+```
+"*awqhnjewqjkl.icu*" OR "*js-mirror.com*" OR "*npm-cache.com*" OR "*npm-cache.com:443/router*" OR "*pypi-get.com*"
+```
+
+### File Hashes
+
+SHA256:
+
+```
+54dc7ea54a1317cca0e890a2770630cf7fa6c97813e0cb9d2caa93012b350668
+9fc2570b7cef51c1b8df116d144d11ff4096357be7d2c4c6367cfc2509cf1bcc
+b27b82afa5f15512f3856e549fb83d873fd0049759a4b62ce64c8d7d4dc2c678
+fd3ca4007b225fdf8de7af4345a19179d5efa8c4bb9205f88cda806e5684b1eb
+```
+
+### Additional Hunt Pivots
+
+Unit 42 published the following Ethereum and GitHub values as investigation pivots rather than network blocklist entries:
+
+```
+Resolver contract: 0xE1f2395ee43e45A1556EC6438a88c31B83493103
+C2-change transaction: 0xc55920f1bd0531b6738153068a666c080ddded47e6256f1fd980d51c0b507c91
+Owner wallet: 0x55f9780e1492344b7417fa723aedc4d0b97f31cd
+Binance deposit pivot: 0x35477b7b2df3174B9FE8A681750A7E3fbA20F39B
+Repository description: Shai-Hulud: Here We Go Again
+Commit search token: thebeautifulmarchoftime
+Signed record prefix: thebeautifulsnadsoftime
+```
+
+## Detection Recommendations
+
+Unit 42 recommends blocking or sinkholing `awqhnjewqjkl[.]icu`, `npm-cache[.]com`, `pypi-get[.]com`, and `js-mirror[.]com` at DNS and TLS SNI controls; Unit 42 specifically warns that an HTTP block page returning status 400 or 404 can be interpreted by the worm as a healthy C2 response. Unit 42 recommends monitoring the resolver contract for future `setStrings()` calls because a single Ethereum transaction can rotate the C2 without changing deployed malware.
+
+Unit 42 recommends searching source repositories, developer workstations, build images, package caches, lockfiles, and artifact mirrors for `setup.mjs`, `Math_Symbol.js`, `math_init.js`, `router_runtime.js`, `.claude/settings.json`, `.claude/setup.mjs`, `.vscode/tasks.json`, `.vscode/setup.mjs`, and `.github/workflows/codeql_analysis.yml`. Unit 42 recommends matching `.vscode/tasks.json` calls to `.claude/setup.mjs`, `.claude/settings.json` calls to `.vscode/setup.mjs`, and workflow content containing `toJSON(secrets)`.
+
+Unit 42 recommends EDR process-creation hunts for `bun` or `bun.exe` executing JavaScript followed by `gh auth token`, and Unit 42 recommends checking GitHub audit data for unexpected public repositories, Dune-themed repository names, the published repository description, and the two commit markers. Unit 42 recommends hunting for the latent files `~/Library/LaunchAgents/com.user.gh-token-monitor.plist`, `~/.local/bin/gh-token-monitor.sh`, `~/.config/gh-token-monitor/`, and `~/.config/systemd/user/gh-token-monitor.service` even though its analyzed build did not invoke the OS-level installer.
+
+Unit 42 recommends revoking or rotating npm tokens, GitHub PATs and deploy keys, cloud credentials, Kubernetes service-account tokens, Vault tokens, SSH keys, automation credentials, and AI-provider credentials accessible to confirmed infected hosts. Unit 42 recommends clearing poisoned lockfiles, package caches, mirrors, tarballs, and CI images because changing the npm `latest` tag does not remove versions already pinned or cached.
+
+## References
+
+- [Palo Alto Networks Unit 42] ChainDrop: Inside a Self-Propagating npm Worm (2026-08-06) — https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/
+- [StepSecurity] ChainDrop npm Worm: Bun-loaded CI/CD credential harvester with Ethereum dead-drop C2 (2026-08-04) — https://www.stepsecurity.io/blog/chaindrop-npm-worm
+- [Aikido Security] Keyv and friends compromised in active Shai-Hulud supply chain attack (2026-08-04; updated 2026-08-05) — https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack
+- [Palo Alto Networks Unit 42] List of packages affected by the ChainDrop worm (2026-08-06) — https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information/blob/main/List-of-packages-affected-by-the-ChainDrop-worm.txt

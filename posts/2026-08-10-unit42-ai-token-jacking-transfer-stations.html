@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Token Jacking Feeds Gray-Market Transfer Stations and Causes Near-Million-Dollar API Charges | LLM ThreatIntel</title>
+  <meta name="description" content="Palo Alto Networks Unit 42 reported incident-response cases in which cybercriminals placed stolen AI API credentials into gray-market proxy services called transfer stations within minutes of exposure. Unit 42 reported that transfer stations can generate tens of millions of API requests per day and that one investigated sequence accumulated nearly US$1 million in charges before discovery and containment. Unit 42 recommends imposing token-spend limits, monitoring developer-account and AI-usage changes, replacing long-lived keys with short-lived bearer tokens, and controlling package intake in developer environments.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-10-unit42-ai-token-jacking-transfer-stations.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Token Jacking Feeds Gray-Market Transfer Stations and Causes Near-Million-Dollar API Charges">
+  <meta property="og:description" content="Palo Alto Networks Unit 42 reported incident-response cases in which cybercriminals placed stolen AI API credentials into gray-market proxy services called transfer stations within minutes of exposure. Unit 42 reported that transfer stations can generate tens of millions of API requests per day and that one investigated sequence accumulated nearly US$1 million in charges before discovery and containment. Unit 42 recommends imposing token-spend limits, monitoring developer-account and AI-usage changes, replacing long-lived keys with short-lived bearer tokens, and controlling package intake in developer environments.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-10-unit42-ai-token-jacking-transfer-stations.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="AI Token Jacking Feeds Gray-Market Transfer Stations and Causes Near-Million-Dollar API Charges">
+  <meta property="article:published_time" content="2026-08-10T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-10T00:00:00Z">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="shadow-ai">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Token Jacking Feeds Gray-Market Transfer Stations and Causes Near-Million-Dollar API Charges">
+  <meta name="twitter:description" content="Palo Alto Networks Unit 42 reported incident-response cases in which cybercriminals placed stolen AI API credentials into gray-market proxy services called transfer stations within minutes of exposure. Unit 42 reported that transfer stations can generate tens of millions of API requests per day and that one investigated sequence accumulated nearly US$1 million in charges before discovery and containment. Unit 42 recommends imposing token-spend limits, monitoring developer-account and AI-usage changes, replacing long-lived keys with short-lived bearer tokens, and controlling package intake in developer environments.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Token Jacking Feeds Gray-Market Transfer Stations and Causes Near-Million-Dollar API Charges",
+  "description": "Palo Alto Networks Unit 42 reported incident-response cases in which cybercriminals placed stolen AI API credentials into gray-market proxy services called transfer stations within minutes of exposure. Unit 42 reported that transfer stations can generate tens of millions of API requests per day and that one investigated sequence accumulated nearly US$1 million in charges before discovery and containment. Unit 42 recommends imposing token-spend limits, monitoring developer-account and AI-usage changes, replacing long-lived keys with short-lived bearer tokens, and controlling package intake in developer environments.",
+  "datePublished": "2026-08-10T00:00:00Z",
+  "dateModified": "2026-08-10T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-10-unit42-ai-token-jacking-transfer-stations.html",
+  "keywords": [
+    "llmjacking",
+    "shadow-ai",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-10</span>
+      <span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-shadow-ai">Shadow AI</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>AI Token Jacking Feeds Gray-Market Transfer Stations and Causes Near-Million-Dollar API Charges</h1>
+<p><strong>Date:</strong> 2026-08-10<br><strong>Tags:</strong> llmjacking, shadow-ai, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Palo Alto Networks Unit 42 reported incident-response cases in which cybercriminals placed stolen AI API credentials into gray-market proxy services called transfer stations within minutes of exposure. Unit 42 reported that transfer stations can generate tens of millions of API requests per day and that one investigated sequence accumulated nearly US$1 million in charges before discovery and containment. Unit 42 recommends imposing token-spend limits, monitoring developer-account and AI-usage changes, replacing long-lived keys with short-lived bearer tokens, and controlling package intake in developer environments.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AI token jacking through gray-market transfer stations (Unit 42)</td></tr><tr><td>Actor / Attribution</td><td>Unnamed cybercriminal transfer-station operators; no named actor or geographic attribution published by Unit 42 (confidence: none)</td></tr><tr><td>Target</td><td>Organizations and developers holding paid API access to frontier AI models (Unit 42)</td></tr><tr><td>Vector</td><td>Stolen or newly provisioned API keys obtained through infostealers, phishing, exposed repositories or shares, and poisoned npm packages (Unit 42)</td></tr><tr><td>Status</td><td>Recent and ongoing incident-response activity as of 2026-08-06 (Unit 42)</td></tr><tr><td>First Observed</td><td>Unit 42 did not publish a campaign start date</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<h3>Transfer-station infrastructure</h3>
+<p>Unit 42 reported that transfer stations resell access to multiple frontier AI services through seller-issued credits, often at prices below official provider rates. Unit 42 reported that many transfer stations use the open-source <code>new-api</code> or <code>one-api</code> projects to proxy official APIs, rotate and authenticate credentials, normalize prompts, route model requests, and track billing.</p>
+<p>Unit 42 reported that many transfer-station advertisements appear on Chinese-language marketplaces such as Taobao, but Unit 42 did not attribute the IOC-linked infrastructure to a named actor or government. Unit 42 also reported that some transfer-station customers are developers seeking inexpensive access, while other customers can use the services to conceal access to restricted or expensive models.</p>
+<p>Unit 42 described <code>new-api</code> and <code>one-api</code> as open-source proxy platforms and Taobao as a marketplace on which transfer stations are advertised. Under this repository&#x27;s IOC policy, those services and official AI-provider API domains are shared infrastructure rather than campaign-specific indicators, so the IOC blocks below contain only the domains and IP addresses that Unit 42 explicitly associated with recent token-jacking activity.</p>
+<h3>Credential acquisition and account manipulation</h3>
+<p>Unit 42 reported that attackers obtain privileged developer accounts through infostealers, phishing, access brokers, exposed file shares, and exposed code repositories. Unit 42 reported that access to those accounts can allow an attacker to create new API keys, provision models, remove billing limits, and disable usage alerts or logging.</p>
+<p>Unit 42 reported that attackers also steal already provisioned API keys directly. Unit 42 identified self-propagating npm attacks such as Shai-Hulud and Miasma as a recent credential-acquisition path that can collect keys from developer systems and propagate through packages subsequently published with stolen credentials.</p>
+<p>Unit 42&#x27;s separate ChainDrop analysis documented an npm worm that collects cloud, CI, developer-tool, and AI-provider credentials, reads temporary GitHub Actions secrets from runner memory, and republishes infected packages with stolen npm tokens. Unit 42 did not claim that every ChainDrop credential entered a transfer station; this report therefore treats ChainDrop as a corroborated acquisition mechanism rather than proof of a one-to-one link with the IOC-listed transfer stations.</p>
+<h3>Financial and downstream impact</h3>
+<p>Unit 42 reported that transfer stations can produce tens of millions of API calls per day and hundreds of thousands of dollars in usage fees. Unit 42 reported cases in which an inadvertently exposed credential was integrated into a transfer station within minutes, and Unit 42 reported that one investigated sequence generated nearly US$1 million in charges before discovery and containment.</p>
+<p>Unit 42 reported that organizations have limited recourse to recover provider charges generated with valid stolen tokens. Unit 42 reported that developers using gray-market proxies also risk having requests routed to inferior models and having prompts or sessions monitored for sensitive information.</p>
+<p>Unit 42 published no malware family, file hash, malicious URL path, or named threat actor for the token-jacking cases. Unit 42 published two transfer-station domains, 12 IP addresses associated with malicious API calls, four IP addresses associated with credential-theft logins, and one user-agent string associated with malicious API calls.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Steal Application Access Token</td><td>T1528</td><td>Unit 42 reported theft and resale of AI API access keys and tokens.</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Unit 42 reported key collection from improperly secured file shares and code repositories.</td></tr><tr><td>Phishing</td><td>T1566</td><td>Unit 42 reported phishing as a source of privileged developer accounts used to provision or steal AI API keys.</td></tr><tr><td>Account Manipulation: Additional Cloud Credentials</td><td>T1098.001</td><td>Unit 42 reported that compromised developer accounts can create additional API keys before provisioning models or changing billing controls.</td></tr><tr><td>Resource Hijacking: Cloud Service Hijacking</td><td>T1496.004</td><td>Unit 42 reported unauthorized consumption and resale of victim-funded AI cloud resources.</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>Unit 42 reported that transfer stations proxy requests to official AI APIs over web protocols.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>The following values are transcribed from Unit 42&#x27;s indicator table. The user-agent is retained as a behavior indicator, not a standalone block condition, because the string can also occur in legitimate Go-based HTTP traffic.</p>
+<h3>Domains</h3>
+<pre><code class="language-">abb1[.]life
+amutes[.]com</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>IP Addresses</h3>
+<p>Malicious API calls:</p>
+<pre><code class="language-">3.235.109[.]125
+15.204.106[.]173
+23.237.196[.]170
+38.46.219[.]162
+38.46.219[.]163
+38.46.219[.]166
+47.88.103[.]81
+47.251.72[.]239
+104.243.42[.]117
+116.105.166[.]148
+172.96.142[.]186
+198.255.70[.]210</code></pre>
+<p>Malicious logins associated with credential theft:</p>
+<pre><code class="language-">23.236.182[.]215
+95.214.112[.]26
+117.72.74[.]48
+207.246.106[.]162</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;*abb1.life*&quot; OR &quot;*amutes.com*&quot; OR &quot;3.235.109.125&quot; OR &quot;15.204.106.173&quot; OR &quot;23.236.182.215&quot; OR &quot;23.237.196.170&quot; OR &quot;38.46.219.162&quot; OR &quot;38.46.219.163&quot; OR &quot;38.46.219.166&quot; OR &quot;47.88.103.81&quot; OR &quot;47.251.72.239&quot; OR &quot;95.214.112.26&quot; OR &quot;104.243.42.117&quot; OR &quot;116.105.166.148&quot; OR &quot;117.72.74.48&quot; OR &quot;172.96.142.186&quot; OR &quot;198.255.70.210&quot; OR &quot;207.246.106.162&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h3>Network Behavior Indicator</h3>
+<pre><code class="language-">Go-http-client/2.0,gzip(gfe)</code></pre>
+<p>Unit 42 associated this user-agent with malicious API calls, but the string is not unique to this activity and should only be used with the published IPs, domains, anomalous token usage, or account changes.</p>
+<h2>Detection Recommendations</h2>
+<p>Unit 42 recommends configuring provider-side spending limits and alerts for deviations from established token-consumption baselines. Unit 42 recommends using AI gateway telemetry to associate requests with managed machine identities and to detect unexpected model routing, request volume, token spend, geography, and source IP changes.</p>
+<p>Unit 42 recommends reviewing privileged developer-account audit logs for unexpected API-key creation, model provisioning, billing-limit removal, and alert or logging changes. Unit 42 recommends replacing long-lived access keys with short-lived bearer tokens and applying network boundaries that prevent a stolen key from being used through external transfer-station infrastructure.</p>
+<p>Unit 42&#x27;s IOC table supports proxy, DNS, firewall, and cloud audit-log correlation against <code>abb1[.]life</code>, <code>amutes[.]com</code>, the 12 malicious API-call IPs, and the four credential-theft login IPs. The Unit 42 user-agent should be correlated with these indicators or abnormal AI usage and should not trigger a block by itself.</p>
+<p>Unit 42 recommends tightly controlling packages admitted to development and CI environments because poisoned self-propagating npm packages can collect API keys before propagating through additional releases. Unit 42&#x27;s ChainDrop guidance recommends treating CI runners as potentially compromised when the worm executes and rotating every AI-provider, cloud, npm, GitHub, SSH, and automation credential accessible to the affected environment.</p>
+<h2>References</h2>
+<ul><li>[Palo Alto Networks Unit 42] Token Jacking: Cybercriminals Could Be Stealing Your AI Resources (2026-08-06) — https://unit42.paloaltonetworks.com/ai-token-jacking/</li><li>[Palo Alto Networks Unit 42] ChainDrop: Inside a Self-Propagating npm Worm (2026-08-06) — https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/</li><li>[StepSecurity] ChainDrop npm Worm: Bun-loaded CI/CD credential harvester with Ethereum dead-drop C2 (2026-08-04) — https://www.stepsecurity.io/blog/chaindrop-npm-worm</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
-  "commit_sha": "aa20c948be694a54683af0af288bafc835767fea",
+  "commit_sha": "2ccbad8fb8a0",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-10T04:39:04+00:00",
+  "generated_at_utc": "2026-08-10T21:52:09+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -27,22 +27,6 @@
       "recommendation": "",
       "record_id": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
       "severity": "review"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-07-31-ruflo-mcp-cve-2026-59726-rce.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-07-31-ruflo-mcp-cve-2026-59726-rce",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain",
-      "severity": "review"
     }
   ],
   "mode": "full",
@@ -50,32 +34,81 @@
   "orphan_markdown": [],
   "overall_result": "pass",
   "reports_checked": 3,
-  "reports_newly_validated": 0,
-  "reports_skipped": 200,
-  "review_required": 3,
-  "source_urls_checked": 3,
-  "state_updates": 0,
+  "reports_newly_validated": 2,
+  "reports_skipped": 210,
+  "review_required": 1,
+  "source_urls_checked": 10,
+  "state_updates": 2,
   "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.fortinet.com/blog/threat-research/dprk-related-campaigns-with-lnk-and-github-c2",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.fortinet.com/blog/threat-research/dprk-related-campaigns-with-lnk-and-github-c2"
+    },
+    {
+      "error": "",
+      "final_url": "https://attack.mitre.org/groups/G0094/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://attack.mitre.org/groups/G0094/"
+    },
+    {
+      "error": "",
+      "final_url": "https://attack.mitre.org/techniques/T1588/007/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://attack.mitre.org/techniques/T1588/007/"
+    },
+    {
+      "error": "",
+      "final_url": "https://attack.mitre.org/techniques/T1682/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://attack.mitre.org/techniques/T1682/"
+    },
+    {
+      "error": "",
+      "final_url": "https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.stepsecurity.io/blog/chaindrop-npm-worm",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.stepsecurity.io/blog/chaindrop-npm-worm"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information/blob/main/List-of-packages-affected-by-the-ChainDrop-worm.txt",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information/blob/main/List-of-packages-affected-by-the-ChainDrop-worm.txt"
+    },
     {
       "error": "The read operation timed out",
       "final_url": null,
       "http_status": null,
       "status": "timeout",
       "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-2026-threat-hunting-report-ai-now-embedded-across"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://techmaniacs.com/2026/07/30/ai-security-daily-briefing-july-30-2026/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://techmaniacs.com/2026/07/30/ai-security-daily-briefing-july-30-2026/"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.enterprisetimes.co.uk/2026/07/13/security-and-ai-news-from-the-week-beginning-6-july-2026/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.enterprisetimes.co.uk/2026/07/13/security-and-ai-news-from-the-week-beginning-6-july-2026/"
     }
   ],
   "validation_version": "1.0.0",

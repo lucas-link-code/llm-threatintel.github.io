@@ -3401,6 +3401,21 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain": {
+      "content_hash": "b1f55e4ee9b6f9299a1176aa62307e45fc602e721298ec5b40f9e5e63d91f1d2",
+      "evidence_status": "validated",
+      "file": "2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain.md",
+      "posts_index_hash": "90283ae3c2655b6724b0be8c2c7306696f7b263f40bcc6974a2bc2d8624f4f8d",
+      "report_id": "2026-07-27-sygnia-ai-assisted-aws-compromise-72-hour-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://www.enterprisetimes.co.uk/2026/07/13/security-and-ai-news-from-the-week-beginning-6-july-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-07-28-paxton-fear-model-poisoning-rce-backdoor-july-2026": {
       "content_hash": "a3a5fcb835c76ebfe1a4818b4b6846c08a61c2bed82280163fd2e6e36306f751",
       "evidence_status": "validated_with_warnings",
@@ -3452,6 +3467,21 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-07-31T06:14:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-07-31-ruflo-mcp-cve-2026-59726-rce": {
+      "content_hash": "f0384cff0f0c3b1a5bf744c5096a78e3842cca553c196afe2e69b89e22cdc45b",
+      "evidence_status": "validated",
+      "file": "2026-07-31-ruflo-mcp-cve-2026-59726-rce.md",
+      "posts_index_hash": "b6f7fab4521d130c222d3783b0aa2448ddd343bb3185fe116aa4193e37fc2986",
+      "report_id": "2026-07-31-ruflo-mcp-cve-2026-59726-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://techmaniacs.com/2026/07/30/ai-security-daily-briefing-july-30-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:25+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -3578,6 +3608,174 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-08-07T04:55:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-atlassian-rovo-prompt-injection-data-exfiltration": {
+      "content_hash": "39a1220b6e9d0e99cb8e70b13412d5a2a35ffafcf40450018f700e44bbc81629",
+      "evidence_status": "validated",
+      "file": "2026-08-10-atlassian-rovo-prompt-injection-data-exfiltration.md",
+      "posts_index_hash": "547e9eeb7ea55ad1d70c524861d69c409122e33b87cde46cf8c4a48cea53a284",
+      "report_id": "2026-08-10-atlassian-rovo-prompt-injection-data-exfiltration",
+      "review_required": [],
+      "source_urls": [
+        "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
+        "https://www.varonis.com/blog/rovoblast",
+        "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
+        "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-chaindrop-self-propagating-npm-worm": {
+      "content_hash": "752fc4ff7142830e13c851acc28c22517c90ed68a8910f0d92375049fceafc8c",
+      "evidence_status": "validated",
+      "file": "2026-08-10-chaindrop-self-propagating-npm-worm.md",
+      "posts_index_hash": "8552c4faa05759be349adbfe205ad0dcd858860e697de7c9aa397065cf85cfe4",
+      "report_id": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/",
+        "https://www.stepsecurity.io/blog/chaindrop-npm-worm",
+        "https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack",
+        "https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information/blob/main/List-of-packages-affected-by-the-ChainDrop-worm.txt"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T21:51:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-copilot-word-document-borne-ai-worm": {
+      "content_hash": "89656e0f4613a6d7ebd8a454cf68a1083b4cc6629d4821b02a1591f3654af7b6",
+      "evidence_status": "validated",
+      "file": "2026-08-10-copilot-word-document-borne-ai-worm.md",
+      "posts_index_hash": "a0b3c4fb28fc9315d9d4d7365ca35692c749f0d1b54fdcc7d014c7a4283e1190",
+      "report_id": "2026-08-10-copilot-word-document-borne-ai-worm",
+      "review_required": [],
+      "source_urls": [
+        "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/",
+        "https://www.security.nl/posting/947159/Copilot-aanval%2Bkan%2BWord-bestanden%2Bmet%2Bmalafide%2Bprompts%2Binfecteren"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-ghostjacking-poisoned-observability-logs-ai-agents": {
+      "content_hash": "2661ffe33aff2d6544c04d94f9426031fd061de5960c17c47664b16b683c1ef9",
+      "evidence_status": "validated",
+      "file": "2026-08-10-ghostjacking-poisoned-observability-logs-ai-agents.md",
+      "posts_index_hash": "d07c1925aa67b8e22ba4e49b88af69ce77e87488159bc4e99036ae7a4c214849",
+      "report_id": "2026-08-10-ghostjacking-poisoned-observability-logs-ai-agents",
+      "review_required": [],
+      "source_urls": [
+        "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat": {
+      "content_hash": "526945c5f32865587123de119401d07ea3b3bb99724ee9492f20272d90ac0b51",
+      "evidence_status": "validated",
+      "file": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat.md",
+      "posts_index_hash": "4a03f817c0abf0cf7e40f75f74f1ad2ecc387feef5bee66a0ec55bd33931e351",
+      "report_id": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "review_required": [],
+      "source_urls": [
+        "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm",
+        "https://www.fortinet.com/blog/threat-research/dprk-related-campaigns-with-lnk-and-github-c2",
+        "https://attack.mitre.org/groups/G0094/",
+        "https://attack.mitre.org/techniques/T1588/007/",
+        "https://attack.mitre.org/techniques/T1682/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T21:51:46+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-langflow-cve-2026-9198-active-exploitation": {
+      "content_hash": "c62de405ce99076b49370ad098a70eb9a0469b2cad56dddf3dd322b81e2bf143",
+      "evidence_status": "validated",
+      "file": "2026-08-10-langflow-cve-2026-9198-active-exploitation.md",
+      "posts_index_hash": "e1fe7456625d53e67cd120a8cb083ca38ed5f012c1cb77d7691ab2de24852524",
+      "report_id": "2026-08-10-langflow-cve-2026-9198-active-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-9198",
+        "https://www.theregister.com/security/2026/08/05/ibms-agentic-ai-platform-is-under-active-attack-patch-now/5283535"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-meta-ai-model-third-party-service-exploitation": {
+      "content_hash": "d0cc0ab549db651775ba567a37447f0b7dea70f765de92623c7bfc2708027200",
+      "evidence_status": "validated",
+      "file": "2026-08-10-meta-ai-model-third-party-service-exploitation.md",
+      "posts_index_hash": "4e276d9379fcda767af56821d665da5d0ed0f83084643f0c776fc8df57c341f9",
+      "report_id": "2026-08-10-meta-ai-model-third-party-service-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://apnews.com/article/0e8061437da6779be962b24ac134a514",
+        "https://www.darkreading.com/cyberattacks-data-breaches/meta-ai-escapes-lab-hacking-joyride",
+        "https://www.itpro.com/technology/artificial-intelligence/independent-testing-firm-irregular-the-source-of-misconfigurations-that-led-to-meta-openai-and-anthropic-ai-incidents"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-netskope-ai-report-remote-mcp-data-violations": {
+      "content_hash": "3b6ef21ce7759a338511a9f76431b3d67851aae74a55e2eec97fabd31c1cd040",
+      "evidence_status": "validated",
+      "file": "2026-08-10-netskope-ai-report-remote-mcp-data-violations.md",
+      "posts_index_hash": "933641845719d8a8df78ae23446d5fd78bf31d2c3f731d6d2174f0d82ec8a324",
+      "report_id": "2026-08-10-netskope-ai-report-remote-mcp-data-violations",
+      "review_required": [],
+      "source_urls": [
+        "https://www.netskope.com/resources/threat-labs-reports/netskope-ai-report-2026",
+        "https://www.netskope.com/de/blog/beyond-shadow-ai-the-netskope-ai-report"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:04+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-unit42-ai-token-jacking-transfer-stations": {
+      "content_hash": "853dcf3202ec3ec72d95788beaa4ef92978db1c5bc16e29264afb83a765e98b6",
+      "evidence_status": "validated",
+      "file": "2026-08-10-unit42-ai-token-jacking-transfer-stations.md",
+      "posts_index_hash": "2d6cfdeb0fadf0ca7b0d0b859c47fc0daa9f49309ac4d39a8859d6a2499dc09e",
+      "report_id": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/ai-token-jacking/",
+        "https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/",
+        "https://www.stepsecurity.io/blog/chaindrop-npm-worm"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:49:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-10-wiz-exposed-unauthenticated-mcp-servers": {
+      "content_hash": "fc5ca79b1b99571436a2ae3a621125660409d1b3024c1c8b934f314a9b3d7428",
+      "evidence_status": "validated",
+      "file": "2026-08-10-wiz-exposed-unauthenticated-mcp-servers.md",
+      "posts_index_hash": "d980a856213578b230d5bff087699cba6b7cb0e9854c47f376e922629524fef6",
+      "report_id": "2026-08-10-wiz-exposed-unauthenticated-mcp-servers",
+      "review_required": [],
+      "source_urls": [
+        "https://www.wiz.io/blog/the-risk-hiding-behind-exposed-mcp-servers"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-10T20:50:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

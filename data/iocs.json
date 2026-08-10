@@ -1,6 +1,330 @@
 {
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-10",
   "iocs": [
+    {
+      "value": "awqhnjewqjkl.icu",
+      "type": "domain",
+      "context": "ChainDrop command-and-control domain rotated through the Ethereum resolver contract",
+      "first_seen": "2026-08-04",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "active"
+    },
+    {
+      "value": "js-mirror.com",
+      "type": "domain",
+      "context": "Historical ChainDrop command-and-control domain returned by the Ethereum resolver contract",
+      "first_seen": "2026-05-22",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "inactive"
+    },
+    {
+      "value": "npm-cache.com",
+      "type": "domain",
+      "context": "Earlier ChainDrop command-and-control domain returned by the Ethereum resolver contract",
+      "first_seen": "2026-05-22",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "inactive"
+    },
+    {
+      "value": "pypi-get.com",
+      "type": "domain",
+      "context": "Historical ChainDrop command-and-control domain returned by the Ethereum resolver contract",
+      "first_seen": "2026-05-22",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "inactive"
+    },
+    {
+      "value": "awqhnjewqjkl.icu/cdn-cgi/rum?",
+      "type": "url_path",
+      "context": "ChainDrop encrypted-exfiltration endpoint on the rotated command-and-control domain",
+      "first_seen": "2026-08-04",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "active"
+    },
+    {
+      "value": "npm-cache.com:443/router",
+      "type": "url_path",
+      "context": "Earlier ChainDrop encrypted-exfiltration endpoint",
+      "first_seen": "2026-05-22",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "inactive"
+    },
+    {
+      "value": "9fc2570b7cef51c1b8df116d144d11ff4096357be7d2c4c6367cfc2509cf1bcc",
+      "type": "sha256",
+      "context": "ChainDrop payload artifact published in the Unit 42 IOC table",
+      "first_seen": "2026-08-04",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "active"
+    },
+    {
+      "value": "54dc7ea54a1317cca0e890a2770630cf7fa6c97813e0cb9d2caa93012b350668",
+      "type": "sha256",
+      "context": "ChainDrop payload artifact published in the Unit 42 IOC table",
+      "first_seen": "2026-08-04",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "active"
+    },
+    {
+      "value": "fd3ca4007b225fdf8de7af4345a19179d5efa8c4bb9205f88cda806e5684b1eb",
+      "type": "sha256",
+      "context": "ChainDrop payload artifact published in the Unit 42 IOC table",
+      "first_seen": "2026-08-04",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "active"
+    },
+    {
+      "value": "b27b82afa5f15512f3856e549fb83d873fd0049759a4b62ce64c8d7d4dc2c678",
+      "type": "sha256",
+      "context": "ChainDrop payload artifact published in the Unit 42 IOC table",
+      "first_seen": "2026-08-04",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-chaindrop-self-propagating-npm-worm",
+      "status": "active"
+    },
+    {
+      "value": "abb1.life",
+      "type": "domain",
+      "context": "Transfer-station domain associated with recent AI token-jacking activity",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "amutes.com",
+      "type": "domain",
+      "context": "Transfer-station domain associated with recent AI token-jacking activity",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "3.235.109.125",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "15.204.106.173",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "23.237.196.170",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "38.46.219.162",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "38.46.219.163",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "38.46.219.166",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "47.88.103.81",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "47.251.72.239",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "104.243.42.117",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "116.105.166.148",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "172.96.142.186",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "198.255.70.210",
+      "type": "ip",
+      "context": "Source address associated with malicious AI API calls in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "23.236.182.215",
+      "type": "ip",
+      "context": "Source address associated with credential-theft logins in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "95.214.112.26",
+      "type": "ip",
+      "context": "Source address associated with credential-theft logins in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "117.72.74.48",
+      "type": "ip",
+      "context": "Source address associated with credential-theft logins in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "207.246.106.162",
+      "type": "ip",
+      "context": "Source address associated with credential-theft logins in Unit 42 incident-response telemetry",
+      "first_seen": "2026-08-06",
+      "source": "Palo Alto Networks Unit 42",
+      "campaign": "2026-08-10-unit42-ai-token-jacking-transfer-stations",
+      "status": "active"
+    },
+    {
+      "value": "stoks.great-site.net",
+      "type": "domain",
+      "context": "Operation GitPower domain published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "112.216.9.171",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "170.205.29.83",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "170.205.30.227",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "185.27.134.140",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "27.102.137.126",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "27.102.137.159",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
+    {
+      "value": "27.102.138.44",
+      "type": "ip",
+      "context": "Operation GitPower command-and-control address published in the Genians IOC appendix",
+      "first_seen": "2026-08-10",
+      "source": "Genians Security Center",
+      "campaign": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
+      "status": "active"
+    },
     {
       "value": "claude.ai/public/artifacts/ca456f1f-44c0-42af-b329-4f1c7534a877",
       "type": "url_path",
