@@ -311,3 +311,5 @@ Claude Code works best when the harness gives the model just enough state to act
 - Anthropic Claude Code sessions guide: https://code.claude.com/docs/en/sessions
 - Anthropic Claude Code scheduled tasks guide: https://code.claude.com/docs/en/scheduled-tasks
 - Anthropic Claude Code hooks reference: https://code.claude.com/docs/en/hooks
+
+<p class="blog-post-byline">Author: Lucas L.</p>

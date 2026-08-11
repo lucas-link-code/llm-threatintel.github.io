@@ -70,6 +70,26 @@ AGGREGATE_DESC_RE = re.compile(
 )
 PARENTHETICAL_PROSE_RE = re.compile(r"\([^)]{3,}\)")
 
+BLOG_AUTHOR = "Lucas L."
+BLOG_AUTHOR_SIGNOFF = f'<p class="blog-post-byline">Author: {BLOG_AUTHOR}</p>'
+BLOG_BYLINE_BLOCK_RE = re.compile(
+    r"""<p\b
+        (?=[^>]*\bclass\s*=\s*(?:
+            "[^"]*\bblog-post-byline\b[^"]*"
+            |
+            '[^']*\bblog-post-byline\b[^']*'
+            |
+            [^\s>]*\bblog-post-byline\b[^\s>]*
+        ))
+        [^>]*>.*?</p\s*>
+    """,
+    re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+BLOG_LEGACY_FOOTER_RE = re.compile(
+    r"\r?\n---\s*\r?\n\s*## (?:Support LLM ThreatIntel|Project Notes)[\s\S]*$",
+    re.MULTILINE,
+)
+
 
 def safe_urlparse(value: str):
     try:
@@ -390,6 +410,7 @@ class Validator:
 
     def run_strict_checks(self) -> None:
         self.validate_markdown_files()
+        self.validate_blog_author_signoffs()
         self.validate_duplicate_iocs()
 
     def validate_posts_index(self, data: Any | None) -> None:
@@ -531,6 +552,15 @@ class Validator:
                     self.fail("blog-empty-field", f"blog field must be non-empty: {field}", rel_path, record)
                 if self.has_placeholder(value):
                     self.fail("blog-placeholder", f"blog field contains placeholder text: {field}", rel_path, record)
+
+            author = str(post.get("author", "")).strip()
+            if author and not self.has_placeholder(author) and author != BLOG_AUTHOR:
+                self.fail(
+                    "blog-author-metadata-mismatch",
+                    f'blog author must be exactly "{BLOG_AUTHOR}"; found "{author}"',
+                    rel_path,
+                    record,
+                )
 
             if not isinstance(post.get("tags"), list):
                 self.fail("blog-tags-invalid", "blog tags must be an array", rel_path, record)
@@ -1059,6 +1089,60 @@ class Validator:
             rel_path = f"posts/{file_name}"
             self.orphan_markdown.append(rel_path)
             self.warn("markdown-orphan", f"orphan Markdown file exists: {rel_path}", rel_path)
+
+    def validate_blog_author_signoffs(self) -> None:
+        for idx, post in enumerate(self.parsed.get("blog_posts", [])):
+            if not isinstance(post, dict):
+                continue
+
+            record = self.safe_record_id(post, idx)
+            file_name = str(post.get("file", "")).strip()
+            path = self.root / "posts" / file_name
+            if not file_name or not path.exists():
+                continue
+
+            text = path.read_text(errors="replace")
+            rel_path = f"posts/{file_name}"
+            byline_blocks = list(BLOG_BYLINE_BLOCK_RE.finditer(text))
+            if len(byline_blocks) != 1:
+                self.fail(
+                    "blog-author-signoff-count",
+                    "blog Markdown must contain exactly one total blog-post-byline block; "
+                    f"found {len(byline_blocks)}",
+                    rel_path,
+                    record,
+                )
+                continue
+
+            byline_block = byline_blocks[0]
+            if byline_block.group(0) != BLOG_AUTHOR_SIGNOFF:
+                self.fail(
+                    "blog-author-signoff-mismatch",
+                    "the only blog-post-byline block must exactly equal "
+                    f"{BLOG_AUTHOR_SIGNOFF}",
+                    rel_path,
+                    record,
+                )
+                continue
+
+            legacy_footer = BLOG_LEGACY_FOOTER_RE.search(text)
+            if legacy_footer and byline_block.start() >= legacy_footer.start():
+                self.fail(
+                    "blog-author-signoff-stripped-by-legacy-footer",
+                    "the blog author sign-off is inside a legacy footer block removed by js/app.js",
+                    rel_path,
+                    record,
+                )
+                continue
+
+            final_lines = text.rstrip().splitlines()
+            if not final_lines or final_lines[-1] != BLOG_AUTHOR_SIGNOFF:
+                self.fail(
+                    "blog-author-signoff-not-final",
+                    "the exact blog author sign-off must be the final non-whitespace line",
+                    rel_path,
+                    record,
+                )
 
     def run_evidence_checks(self) -> None:
         for post in self.parsed.get("posts", []):

@@ -60,3 +60,5 @@ The next twelve months may be especially important for software security. As the
 
 Full talk:
 https://www.youtube.com/watch?v=1sd26pWhfmg&t=119
+
+<p class="blog-post-byline">Author: Lucas L.</p>

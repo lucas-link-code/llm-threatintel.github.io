@@ -102,6 +102,28 @@ def report(root):
     return json.loads((root / "validation-reports/latest-validation-report.json").read_text())
 
 
+def add_blog_post(root, *, author="Lucas L.", markdown=None):
+    blog_post = {
+        "id": "2026-05-11-example-blog",
+        "title": "Example Blog",
+        "date": "2026-05-11",
+        "author": author,
+        "category": "GenAI Security",
+        "tags": ["prompt-engineering"],
+        "excerpt": "Example blog excerpt.",
+        "file": "2026-05-11-example-blog.md",
+        "readTime": "5 min",
+    }
+    markdown = markdown or (
+        "# Example Blog\n\n"
+        "Example blog content.\n\n"
+        '<p class="blog-post-byline">Author: Lucas L.</p>\n'
+    )
+    write_json(root / "data/blog-index.json", {"posts": [blog_post]})
+    (root / "posts" / blog_post["file"]).write_text(markdown)
+    return blog_post
+
+
 class ValidateSiteTests(unittest.TestCase):
     def with_repo(self):
         return tempfile.TemporaryDirectory()
@@ -158,6 +180,102 @@ class ValidateSiteTests(unittest.TestCase):
                     self.assertEqual(code, 1)
                     codes = {issue["code"] for issue in report(root)["issues"]}
                     self.assertIn(expected_code, codes)
+
+    def test_blog_author_contract_passes(self):
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root)
+            add_blog_post(root)
+
+            code, _ = run_validator(root, "--mode", "strict", "--write-report")
+
+            self.assertEqual(
+                code,
+                0,
+                msg=(root / "validation-reports/latest-validation-report.json").read_text(),
+            )
+
+    def test_blog_author_metadata_must_match_exactly(self):
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root)
+            add_blog_post(root, author="Lucas L")
+
+            code, _ = run_validator(root, "--mode", "structural", "--write-report")
+
+            self.assertEqual(code, 1)
+            issues = report(root)["issues"]
+            mismatch = [
+                issue for issue in issues if issue["code"] == "blog-author-metadata-mismatch"
+            ]
+            self.assertEqual(len(mismatch), 1)
+            self.assertEqual(mismatch[0]["record_id"], "2026-05-11-example-blog")
+
+    def test_blog_author_signoff_failures(self):
+        signoff = '<p class="blog-post-byline">Author: Lucas L.</p>'
+        cases = [
+            (
+                "missing",
+                "# Example Blog\n\nExample blog content.\n",
+                "blog-author-signoff-count",
+            ),
+            (
+                "wrong punctuation",
+                '# Example Blog\n\n<p class="blog-post-byline">Author: Lucas L</p>\n',
+                "blog-author-signoff-mismatch",
+            ),
+            (
+                "duplicate",
+                f"# Example Blog\n\n{signoff}\n\n{signoff}\n",
+                "blog-author-signoff-count",
+            ),
+            (
+                "conflicting extra byline",
+                "# Example Blog\n\n"
+                '<p class="note blog-post-byline extra">Author: Another Person.</p>\n\n'
+                f"{signoff}\n",
+                "blog-author-signoff-count",
+            ),
+            (
+                "not final",
+                f"# Example Blog\n\n{signoff}\n\nTrailing content.\n",
+                "blog-author-signoff-not-final",
+            ),
+            (
+                "stripped after project notes footer",
+                "# Example Blog\n\n"
+                "---\n\n"
+                "## Project Notes\n\n"
+                "Legacy footer content.\n\n"
+                f"{signoff}\n",
+                "blog-author-signoff-stripped-by-legacy-footer",
+            ),
+            (
+                "stripped after support footer",
+                "# Example Blog\n\n"
+                "---\n\n"
+                "## Support LLM ThreatIntel\n\n"
+                "Legacy footer content.\n\n"
+                f"{signoff}\n",
+                "blog-author-signoff-stripped-by-legacy-footer",
+            ),
+        ]
+
+        for name, markdown, expected_code in cases:
+            with self.subTest(name=name):
+                with self.with_repo() as tmp:
+                    root = Path(tmp)
+                    base_repo(root)
+                    blog_post = add_blog_post(root, markdown=markdown)
+
+                    code, _ = run_validator(root, "--mode", "strict", "--write-report")
+
+                    self.assertEqual(code, 1)
+                    issues = report(root)["issues"]
+                    matching = [issue for issue in issues if issue["code"] == expected_code]
+                    self.assertEqual(len(matching), 1)
+                    self.assertEqual(matching[0]["file"], f'posts/{blog_post["file"]}')
+                    self.assertEqual(matching[0]["record_id"], blog_post["id"])
 
     def test_ioc_validation_failures_and_duplicates(self):
         cases = [

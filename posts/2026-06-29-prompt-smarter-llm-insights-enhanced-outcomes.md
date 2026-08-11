@@ -370,3 +370,5 @@ Temperature controls risk.
 Verification controls truth.
 
 When models can act, the harness becomes part of the security boundary. Prompting steers the textoutput. The harness controls it.
+
+<p class="blog-post-byline">Author: Lucas L.</p>

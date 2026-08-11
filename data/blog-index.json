@@ -4,7 +4,7 @@
       "id": "2026-08-06-speak-llm-common-language-agent-workflows",
       "title": "Speak LLM: A Practical Glossary for Better Agent Outcomes",
       "date": "2026-08-06",
-      "author": "Lucas L",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": [
         "prompt-engineering",
@@ -20,7 +20,7 @@
       "id": "2026-06-29-prompt-smarter-llm-insights-enhanced-outcomes",
       "title": "Prompt Smarter: Leveraging LLM Insights for Enhanced Outcomes",
       "date": "2026-06-29",
-      "author": "Lucas L",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": [
         "prompt-engineering",
@@ -36,7 +36,7 @@
       "id": "2026-05-25-claude-code-token-discipline-agentic-cli-workflows",
       "title": "Token Use Optimizations: How to keep agent sessions fast, cheap, and useful",
       "date": "2026-05-25",
-      "author": "LLM ThreatIntel",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": [
         "claude-code",
@@ -52,7 +52,7 @@
       "id": "2026-05-25-claude-code-token-economics-context-window-discipline",
       "title": "Token Economics: Best practices for managing context windows",
       "date": "2026-05-25",
-      "author": "LLM ThreatIntel",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": [
         "claude-code",
@@ -68,7 +68,7 @@
       "id": "2026-04-28-agent-harnesses-skills-and-frontier-model-architecture",
       "title": "Agent Harnesses, Skills, and Tool Runtimes: The Architecture of Frontier Models",
       "date": "2026-04-28",
-      "author": "Lucas L",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": [
         "agent-harnesses",
@@ -84,7 +84,7 @@
       "id": "2026-04-07-zero-day-gold-rush-dwell-time-ai-defense",
       "title": "Zero-Day Discovery at Machine Speed and the Defensive Shift Ahead",
       "date": "2026-04-07",
-      "author": "Lucas L",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": ["offensive-ai", "autonomous-agents", "defense"],
       "excerpt": "Anthropic reports frontier LLMs have achieved autonomous zero day discovery and exploitation, identifying twenty-year-old heap overflows in the Linux kernel and executing unauthenticated credential theft against Ghost CMS. These agents eliminate the human bottleneck by performing the entire research lifecycle at machine speed. As the capability curve for offensive AI scales exponentially, defenders must adopt agentic security workflows and memory safe architectures to secure an increasingly transparent attack surface.",
@@ -95,7 +95,7 @@
       "id": "detecting-ai-prompt-injection-in-the-wild",
       "title": "Detecting AI Prompt Injection in the Wild",
       "date": "2026-03-01",
-      "author": "Lucas L",
+      "author": "Lucas L.",
       "category": "GenAI Security",
       "tags": ["prompt-injection", "ai-security", "detection-rules"],
       "excerpt": "Building EKFiddle rules and other queries to detect indirect prompt injection, AI ClickFix, CSS hidden text traps, and credential exfiltration targeting autonomous AI agents.",

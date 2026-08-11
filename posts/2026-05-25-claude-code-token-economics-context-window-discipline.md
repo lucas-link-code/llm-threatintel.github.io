@@ -224,3 +224,5 @@ Official Claude Code references checked while preparing this post:
 - Sessions: https://code.claude.com/docs/en/sessions
 - Scheduled tasks: https://code.claude.com/docs/en/scheduled-tasks
 - Hooks: https://code.claude.com/docs/en/hooks
+
+<p class="blog-post-byline">Author: Lucas L.</p>

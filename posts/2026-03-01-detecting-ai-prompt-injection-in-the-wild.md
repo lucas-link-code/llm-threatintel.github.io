@@ -110,3 +110,5 @@ text.content:("ignore previous instructions")
 The EKFiddle regex rules can be deployed directly into the `CustomRegexes.txt` production file in Fiddler Classic with the EKFiddle extension enabled. The urlscan.io queries can be scheduled as saved searches or run manually for periodic threat hunting. Individual phrase queries work best as saved searches, while broader combined sweeps work well for manual hunting sessions.
 
 As LLM instruction boundaries improve and attackers adapt their evasion techniques, these detection patterns will need continuous refinement. These categories highlight where defenders should look for these attacks and are likely to remain relevant as long as AI agents continue to process untrusted web content.
+
+<p class="blog-post-byline">Author: Lucas L.</p>

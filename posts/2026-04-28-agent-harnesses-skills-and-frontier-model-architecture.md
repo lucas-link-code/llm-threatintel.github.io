@@ -405,3 +405,5 @@ Fourth, the most important architectural question is often not what can the mode
 And finally, the best deployment choice is no longer universal. It depends on whether you need managed state, distributed interoperability, local execution, context efficiency, or strict sandboxing.
 
 That is the shift. The frontier model still matters. But the harness is now where the system design really lives.
+
+<p class="blog-post-byline">Author: Lucas L.</p>

@@ -386,3 +386,5 @@ I don't want anything to break or to be negatively affected by this implementati
 
 Learn a small set of these phrases, reuse the templates, and your sessions get shorter, cheaper, and more reliable.
 Always give it mode, scope, constraints, and a definition of done.
+
+<p class="blog-post-byline">Author: Lucas L.</p>
