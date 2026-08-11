@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-08-11-hugging-face-diffusers-rce-model-config",
+      "title": "Hugging Face Diffusers Silent RCE via Malicious Model Configuration",
+      "date": "2026-08-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "model-poisoning",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "High-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it. Because diffusers runs inside production pipelines, CI/CD systems, and container images, a single compromised model load can hand an attacker initial access deep inside an enterprise network rather than just an isolated user application.",
+      "file": "2026-08-11-hugging-face-diffusers-rce-model-config.md"
+    },
+    {
       "id": "2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat",
       "title": "Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT",
       "date": "2026-08-10",

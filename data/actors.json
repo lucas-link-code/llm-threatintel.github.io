@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-10",
+  "last_updated": "2026-08-11",
   "entries": [
     {
       "id": "asyncrat",
@@ -1451,7 +1451,8 @@
         "npm registry",
         "PyPI registry",
         "Hugging Face platform",
-        "Hugging Face Hub"
+        "Hugging Face Hub",
+        "Hugging Face model repositories"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
