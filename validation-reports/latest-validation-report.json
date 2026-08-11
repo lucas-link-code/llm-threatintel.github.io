@@ -1,7 +1,7 @@
 {
-  "commit_sha": "534941a48802907043fde08f2784f93b72df9222",
+  "commit_sha": "d01d1e332e3a",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-11T04:20:25+00:00",
+  "generated_at_utc": "2026-08-11T08:10:54+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -22,14 +22,6 @@
     },
     {
       "code": "evidence-source-review-required",
-      "file": "posts/2026-08-11-hugging-face-diffusers-rce-model-config.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-08-11-hugging-face-diffusers-rce-model-config",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-source-review-required",
       "file": "posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md",
       "message": "no source URL was accessible; manual review or alternate evidence is required",
       "recommendation": "",
@@ -41,19 +33,33 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
-  "reports_newly_validated": 0,
-  "reports_skipped": 212,
-  "review_required": 2,
-  "source_urls_checked": 2,
-  "state_updates": 0,
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 211,
+  "review_required": 1,
+  "source_urls_checked": 4,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
       "final_url": "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/",
-      "http_status": 202,
-      "status": "unknown_error",
+      "http_status": 200,
+      "status": "accessible",
       "url": "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/"
+    },
+    {
+      "error": "",
+      "final_url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.security.nl/posting/947159/Copilot-aanval%2Bkan%2BWord-bestanden%2Bmet%2Bmalafide%2Bprompts%2Binfecteren",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.security.nl/posting/947159/Copilot-aanval%2Bkan%2BWord-bestanden%2Bmet%2Bmalafide%2Bprompts%2Binfecteren"
     },
     {
       "error": "The read operation timed out",

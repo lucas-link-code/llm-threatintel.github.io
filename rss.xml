@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 11 Aug 2026 04:20:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 08:10:20 +0000</lastBuildDate>
     <item>
       <title>Hugging Face Diffusers Silent RCE via Malicious Model Configuration</title>
       <link>https://llm-threatintel.com/posts/2026-08-11-hugging-face-diffusers-rce-model-config.html</link>
@@ -53,7 +53,7 @@
       <link>https://llm-threatintel.com/posts/2026-08-10-copilot-word-document-borne-ai-worm.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-10-copilot-word-document-borne-ai-worm.html</guid>
       <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Håkon Måløy demonstrated that a hidden prompt in a Word source document can make Microsoft Copilot alter generated content and invisibly copy the prompt into the output, turning that output into a new carrier. Måløy reported that the attack class still reproduced on July 28 after two Microsoft mitigation attempts; Microsoft 365 defenders should treat external documents as untrusted Copilot input and inspect generated or edited files before reuse.</description>
+      <description>Hakon Maloy demonstrated that a hidden prompt in a Word source document can make Microsoft Copilot alter generated content and invisibly copy the prompt into the output, turning that output into a new carrier. Maloy reported that the attack class still reproduced on July 28 after two Microsoft mitigation attempts; Microsoft 365 defenders should treat external documents as untrusted Copilot input and inspect generated or edited files before reuse.</description>
     </item>    <item>
       <title>Wiz Finds Unauthenticated MCP Servers Exposing Enterprise Data, IAM Actions, Shell Access, and Cloud Credentials</title>
       <link>https://llm-threatintel.com/posts/2026-08-10-wiz-exposed-unauthenticated-mcp-servers.html</link>

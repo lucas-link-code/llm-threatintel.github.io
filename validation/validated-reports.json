@@ -3648,10 +3648,10 @@
       "warnings": []
     },
     "2026-08-10-copilot-word-document-borne-ai-worm": {
-      "content_hash": "89656e0f4613a6d7ebd8a454cf68a1083b4cc6629d4821b02a1591f3654af7b6",
+      "content_hash": "6ecab77efc54295231c87b605e9f4edfcac0c12451c0640a910ef37195181f97",
       "evidence_status": "validated",
       "file": "2026-08-10-copilot-word-document-borne-ai-worm.md",
-      "posts_index_hash": "a0b3c4fb28fc9315d9d4d7365ca35692c749f0d1b54fdcc7d014c7a4283e1190",
+      "posts_index_hash": "a5ff88c9c871445bc7e1dc37b71044844ab7b79b43ecd32161a1b48918e48076",
       "report_id": "2026-08-10-copilot-word-document-borne-ai-worm",
       "review_required": [],
       "source_urls": [
@@ -3659,7 +3659,7 @@
         "https://www.security.nl/posting/947159/Copilot-aanval%2Bkan%2BWord-bestanden%2Bmet%2Bmalafide%2Bprompts%2Binfecteren"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-08-10T20:50:02+00:00",
+      "validated_at": "2026-08-11T08:10:33+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -3776,6 +3776,21 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-08-10T20:50:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-11-hugging-face-diffusers-rce-model-config": {
+      "content_hash": "8aa99a3c92d5cc3578186cfc328bb290309dfb97bcc7409b13ca6baa683ef67c",
+      "evidence_status": "validated",
+      "file": "2026-08-11-hugging-face-diffusers-rce-model-config.md",
+      "posts_index_hash": "c2447429f597d1d387b7d763b7fa5dfb67bfe9347077398ea0b5e0b2bf8b3938",
+      "report_id": "2026-08-11-hugging-face-diffusers-rce-model-config",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-11T08:10:32+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

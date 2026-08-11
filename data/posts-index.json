@@ -103,7 +103,7 @@
         "phishing"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Håkon Måløy demonstrated that a hidden prompt in a Word source document can make Microsoft Copilot alter generated content and invisibly copy the prompt into the output, turning that output into a new carrier. Måløy reported that the attack class still reproduced on July 28 after two Microsoft mitigation attempts; Microsoft 365 defenders should treat external documents as untrusted Copilot input and inspect generated or edited files before reuse.",
+      "excerpt": "Hakon Maloy demonstrated that a hidden prompt in a Word source document can make Microsoft Copilot alter generated content and invisibly copy the prompt into the output, turning that output into a new carrier. Maloy reported that the attack class still reproduced on July 28 after two Microsoft mitigation attempts; Microsoft 365 defenders should treat external documents as untrusted Copilot input and inspect generated or edited files before reuse.",
       "file": "2026-08-10-copilot-word-document-borne-ai-worm.md"
     },
     {
