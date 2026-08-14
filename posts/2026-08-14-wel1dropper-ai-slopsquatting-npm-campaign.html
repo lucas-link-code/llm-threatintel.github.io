@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery | LLM ThreatIntel</title>
+  <meta name="description" content="OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery">
+  <meta property="og:description" content="OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery">
+  <meta property="article:published_time" content="2026-08-14T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-14T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery">
+  <meta name="twitter:description" content="OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery",
+  "description": "OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.",
+  "datePublished": "2026-08-14T00:00:00Z",
+  "dateModified": "2026-08-14T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-14</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery</h1>
+<p><strong>Date:</strong> 2026-08-14<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>OpenSourceMalware analyzed <code>checkout-mobile-bnpl@35.6.9</code>, a malicious npm package that starts a cross-platform downloader when imported and retrieves native payloads through attacker-specific Cloudflare Workers hosts or DNS TXT records under <code>wel1[.]ru</code>. Sonatype independently tracked the broader operation as Flooding Dropper and described it as active on August 5; defenders should identify the exact package version, determine whether application or test code imported it, and hunt for payload retrieval and persistence before rotating exposed credentials. OpenSourceMalware assessed the package naming as AI-slopsquatted or randomly generated, but neither source verified that the operator used generative AI.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>WEL1DROPPER (OpenSourceMalware); Flooding Dropper / sonatype-2026-005660 (Sonatype Research Labs)</td></tr><tr><td>Actor / Attribution</td><td>Unknown; no national attribution supported, and generative-AI involvement is unverified</td></tr><tr><td>Target</td><td>Developers, CI/CD runners, test systems, and applications on Windows, Linux, and macOS</td></tr><tr><td>Vector</td><td>Import-time execution of the malicious npm package <code>checkout-mobile-bnpl@35.6.9</code></td></tr><tr><td>Status</td><td>Active as of the August 5-6 source publications; current registry removal status not published by the sources</td></tr><tr><td>First Observed</td><td>2026-08-05 public reporting</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<h3>Scope and AI-naming assessment</h3>
+<p>OpenSourceMalware reported that more than 700 related npm packages appeared over 48 hours and selected <code>checkout-mobile-bnpl@35.6.9</code> for detailed analysis. Sonatype Research Labs independently identified 846 components in the same operation as of August 5 and tracked it as Flooding Dropper under <code>sonatype-2026-005660</code>. This report restricts the package indicator to the exact version analyzed by OpenSourceMalware and does not reproduce either source&#x27;s aggregate package list.</p>
+<p>OpenSourceMalware assessed the campaign&#x27;s package names as either AI-slopsquatted or randomly generated typosquatting names. Sonatype reported apparent automation in account creation, package publication, and small source-code variations, but Sonatype did not attribute that automation to a generative-AI system. The available evidence therefore supports automated publication and an OpenSourceMalware naming assessment, not confirmed malicious use of generative AI.</p>
+<p>Neither OpenSourceMalware nor Sonatype identified the operator. OpenSourceMalware raised a possible Russian connection based on <code>wel1[.]ru</code> and strings referencing Russian financial institutions, while also stating that static evidence did not establish whether the referenced financial-institution domains were attacker-owned, compromised, or decoys. This report records the actor as unknown and excludes those ambiguous health-check domains from the IOC set.</p>
+<h3>Import-time execution</h3>
+<p>OpenSourceMalware reported that <code>checkout-mobile-bnpl@35.6.9</code> exposes <code>init()</code>, <code>version()</code>, and <code>configure()</code> methods that provide no meaningful checkout functionality. According to OpenSourceMalware, the package&#x27;s <code>index.js</code> loads <code>_helpers.js</code> after exporting its public API, and <code>_helpers.js</code> immediately invokes its downloader, making a single <code>require(&quot;checkout-mobile-bnpl&quot;)</code> sufficient to start the chain without a <code>preinstall</code> or <code>postinstall</code> script.</p>
+<p>OpenSourceMalware also found an approximately 80 KB <code>lib/telemetry.js</code> decoy containing another implementation of the downloader. OpenSourceMalware reported that the active package entry point did not import this file and that its network destinations required caller-supplied values, so it did not add hardcoded infrastructure beyond the active <code>_helpers.js</code> path.</p>
+<h3>HTTPS and DNS payload delivery</h3>
+<p>OpenSourceMalware reported that the JavaScript downloader maps Linux x64, Linux ARM64, macOS, and Windows systems to <code>/pkg/package</code>, <code>/pkg/package-arm64</code>, <code>/pkg/loader_mac</code>, and <code>/pkg/package.exe</code>, respectively. According to OpenSourceMalware, it shuffles three hardcoded Cloudflare Workers hosts, forces IPv4, uses the <code>node-fetch/2.6</code> User-Agent, applies a 15-second timeout, and accepts a response only when it receives HTTP 200 with more than 1,000 bytes. OpenSourceMalware found no signature check, certificate pinning, or expected-file hash before execution.</p>
+<p>OpenSourceMalware reported that failure across all three HTTPS hosts triggers a DNS TXT fallback. According to OpenSourceMalware, the loader selects <code>sdk.dl.wel1[.]ru</code>, <code>ext.dl.wel1[.]ru</code>, <code>pkg.dl.wel1[.]ru</code>, or <code>net.dl.wel1[.]ru</code> by platform, reads a chunk count from <code>c.&lt;domain&gt;</code>, retrieves sequential <code>&lt;integer&gt;.&lt;domain&gt;</code> TXT records, concatenates their contents, and Base64-decodes the result into a native binary.</p>
+<p>OpenSourceMalware reported that the downloader writes Unix payloads to <code>/var/tmp/.cache_&lt;8 hex characters&gt;</code> and launches them through <code>/bin/sh -c</code>, while Windows payloads use <code>%TEMP%\dotnet_diag_&lt;8 hex characters&gt;.exe</code> and <code>cmd.exe /c start /b</code>. According to OpenSourceMalware, the detached processes suppress standard input and output, and the downloader creates <code>/tmp/.analytics_state</code> or <code>%TEMP%\analytics_state</code> as a six-hour execution marker.</p>
+<h3>Native payload observations</h3>
+<p>OpenSourceMalware analyzed a UPX-packed Linux x86-64 ELF and a universal macOS Mach-O retrieved from the campaign infrastructure. According to OpenSourceMalware, the macOS loader embedded five additional Cloudflare Workers proxy hosts, the path <code>/pkg/beacon_mac.bin</code>, and the DNS delivery domain <code>dl.wel1[.]ru</code>; its HTTPS template included an explicit port that the researchers could not recover confidently. The five hosts remain actionable domain indicators, but unresolved-port proxy URLs are excluded from the URL list below.</p>
+<p>OpenSourceMalware reported that the macOS loader writes an executable beneath <code>~/.local/share/runtime</code>, creates <code>~/Library/LaunchAgents/com.apple.windowserver.helper.plist</code>, and loads the LaunchAgent with <code>launchctl load -w</code>. OpenSourceMalware also found checks for LLDB, debugserver, DTrace, Frida, Wireshark, VMware artifacts, and system memory, while noting that the exact reaction to each check required further control-flow reconstruction.</p>
+<p>Sonatype reported campaign-level Windows second-stage behavior that patched Event Tracing for Windows and Antimalware Scan Interface functions, checked for analysis environments and security products, copied itself beneath AppData, established a Registry Run key and scheduled task, and reflectively executed a decrypted follow-on payload. Sonatype stated that its related packages contained syntactically varied first stages with the same underlying behavior; these Windows observations corroborate the broader campaign but are not represented as findings from OpenSourceMalware&#x27;s two published native samples.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>A malicious npm package delivered executable code to developer and application environments.</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Importing the package loads <code>_helpers.js</code>, which immediately runs the Node.js downloader.</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>The first stage retrieves platform-specific native payloads through HTTPS or DNS TXT records.</td></tr><tr><td>Application Layer Protocol: DNS</td><td>T1071.004</td><td>The fallback channel reconstructs Base64-encoded binaries from sequential DNS TXT responses.</td></tr><tr><td>Deobfuscate/Decode Files or Information</td><td>T1140</td><td>The loader Base64-decodes concatenated DNS chunks, and Sonatype reported decryption of a Windows follow-on stage.</td></tr><tr><td>Create or Modify System Process: Launch Agent</td><td>T1543.001</td><td>The macOS loader creates and loads <code>com.apple.windowserver.helper.plist</code> for user-level persistence.</td></tr><tr><td>Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>T1547.001</td><td>Sonatype observed campaign-level Windows persistence through a Registry Run key.</td></tr><tr><td>Impair Defenses: Disable or Modify Tools</td><td>T1562.001</td><td>Sonatype observed campaign-level patching of ETW and AMSI functions.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:checkout-mobile-bnpl@35.6.9</code></pre>
+<h3>Domains</h3>
+<pre><code class="language-">dl.wel1[.]ru
+ext.dl.wel1[.]ru
+net.dl.wel1[.]ru
+oob-worker.cf102-baf.workers[.]dev
+oob-worker.cf103-070.workers[.]dev
+oob-worker.cf99-9b3.workers[.]dev
+package-proxy.cf11oobworker.workers[.]dev
+package-proxy.cf5oobworker.workers[.]dev
+package-proxy.cf6oobworker.workers[.]dev
+package-proxy.cf7oobworker.workers[.]dev
+package-proxy.cf8oobworker.workers[.]dev
+pkg.dl.wel1[.]ru
+sdk.dl.wel1[.]ru</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">oob-worker.cf102-baf.workers[.]dev/pkg/loader_mac
+oob-worker.cf102-baf.workers[.]dev/pkg/package
+oob-worker.cf102-baf.workers[.]dev/pkg/package-arm64
+oob-worker.cf102-baf.workers[.]dev/pkg/package.exe
+oob-worker.cf103-070.workers[.]dev/pkg/loader_mac
+oob-worker.cf103-070.workers[.]dev/pkg/package
+oob-worker.cf103-070.workers[.]dev/pkg/package-arm64
+oob-worker.cf103-070.workers[.]dev/pkg/package.exe
+oob-worker.cf99-9b3.workers[.]dev/pkg/loader_mac
+oob-worker.cf99-9b3.workers[.]dev/pkg/package
+oob-worker.cf99-9b3.workers[.]dev/pkg/package-arm64
+oob-worker.cf99-9b3.workers[.]dev/pkg/package.exe</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;*checkout-mobile-bnpl@35.6.9*&quot; OR &quot;*dl.wel1.ru*&quot; OR &quot;*ext.dl.wel1.ru*&quot; OR &quot;*net.dl.wel1.ru*&quot; OR &quot;*oob-worker.cf102-baf.workers.dev*&quot; OR &quot;*oob-worker.cf103-070.workers.dev*&quot; OR &quot;*oob-worker.cf99-9b3.workers.dev*&quot; OR &quot;*package-proxy.cf11oobworker.workers.dev*&quot; OR &quot;*package-proxy.cf5oobworker.workers.dev*&quot; OR &quot;*package-proxy.cf6oobworker.workers.dev*&quot; OR &quot;*package-proxy.cf7oobworker.workers.dev*&quot; OR &quot;*package-proxy.cf8oobworker.workers.dev*&quot; OR &quot;*pkg.dl.wel1.ru*&quot; OR &quot;*sdk.dl.wel1.ru*&quot; OR &quot;*oob-worker.cf102-baf.workers.dev/pkg/loader_mac*&quot; OR &quot;*oob-worker.cf102-baf.workers.dev/pkg/package*&quot; OR &quot;*oob-worker.cf102-baf.workers.dev/pkg/package-arm64*&quot; OR &quot;*oob-worker.cf102-baf.workers.dev/pkg/package.exe*&quot; OR &quot;*oob-worker.cf103-070.workers.dev/pkg/loader_mac*&quot; OR &quot;*oob-worker.cf103-070.workers.dev/pkg/package*&quot; OR &quot;*oob-worker.cf103-070.workers.dev/pkg/package-arm64*&quot; OR &quot;*oob-worker.cf103-070.workers.dev/pkg/package.exe*&quot; OR &quot;*oob-worker.cf99-9b3.workers.dev/pkg/loader_mac*&quot; OR &quot;*oob-worker.cf99-9b3.workers.dev/pkg/package*&quot; OR &quot;*oob-worker.cf99-9b3.workers.dev/pkg/package-arm64*&quot; OR &quot;*oob-worker.cf99-9b3.workers.dev/pkg/package.exe*&quot;</code></pre>
+<h3>File Hashes</h3>
+<p>All values are SHA-256 hashes published by OpenSourceMalware.</p>
+<pre><code class="language-">0fc30f82e1fa5e51a6c0c43f3ed7f13592ea731cb331e43a4d085df60a4db8b6
+94ef6b1c4a9d31f78f446d053048bcef34fd88f4376a1a46f7f777a9e9c83a29
+b74c5675725911c62091bdf40714df760cc2af7a88360d21065f4e1c878aa8f0
+e2650e9aa2f924433ba422857b22ee7c5996b5ad306f3f903283f6a13e248935
+a3e2ffb440b779d30da3ff282affd649731088e8570df7b1aa72742d995b782c
+7e486657f30594afda379b97030252a09a19fe8055e25c9e371544f59bd8e9e3
+c214746c74cae8ece8bdaf69aa05da4db6ce013f9e77452d1eed1a002fd9ba00</code></pre>
+<p>OpenSourceMalware mapped the values in order to <code>README.md</code>, <code>_helpers.js</code>, <code>index.js</code>, <code>package.json</code>, <code>lib/telemetry.js</code>, the Linux x86-64 native payload, and the universal macOS native payload.</p>
+<h2>Detection Recommendations</h2>
+<p>Search lockfiles, SBOMs, package manifests, npm caches, internal artifact repositories, container layers, and build logs for the exact package and version <code>checkout-mobile-bnpl@35.6.9</code>. Treat presence as exposure and establish whether Node.js, application, test, or build telemetry shows the package being imported; installation without import does not reproduce the OpenSourceMalware execution trigger.</p>
+<p>In DNS logs, filter <code>query_type=TXT</code> for the five published <code>wel1[.]ru</code> domains and alert on a count lookup beginning with <code>c.</code> followed by sequential integer-prefixed queries from the same developer workstation or CI runner. Retain query names, TXT response content, response sizes, and the initiating process because the payload is reconstructed in DNS and can bypass HTTPS-only controls.</p>
+<p>In web proxy telemetry, search <code>url_host</code> for the eight exact <code>workers[.]dev</code> subdomains and <code>url</code> for the 12 published payload paths. Correlate HTTP 200 responses larger than 1,000 bytes and the <code>node-fetch/2.6</code> User-Agent with a Node.js process; block the attacker-specific subdomains, not the shared <code>workers[.]dev</code> apex.</p>
+<p>In EDR process and file telemetry, alert when Node.js writes <code>/var/tmp/.cache_[0-9a-f]{8}</code> or <code>%TEMP%\dotnet_diag_[0-9a-f]{8}.exe</code>, launches it through <code>/bin/sh -c</code> or <code>cmd.exe /c start /b</code>, and creates an <code>analytics_state</code> marker. On macOS, hunt for <code>~/.local/share/runtime/com.apple.runtime</code>, <code>~/.local/share/runtime/.lock</code>, <code>~/Library/LaunchAgents/com.apple.windowserver.helper.plist</code>, and <code>launchctl load -w</code> involving that plist.</p>
+<p>Isolate hosts with confirmed import-time execution, preserve Node.js, DNS, proxy, process, and persistence evidence, and scope credentials available to the affected process. Remove retained package artifacts, rebuild compromised systems from known-good sources where appropriate, and rotate npm, source-control, cloud, signing, and deployment credentials only after containment and eradication.</p>
+<h2>References</h2>
+<ul><li>[OpenSourceMalware] Russian AI Slopsquatting Publishes 700+ Malicious NPM Packages (2026-08-06) — https://opensourcemalware.com/blog/russian-ai-slopsquatting-npm-campaign</li><li>[Sonatype Research Labs] &#x27;Flooding Dropper&#x27; Campaign Hits npm With Nearly 850 Malicious Packages (2026-08-05) — https://www.sonatype.com/blog/flooding-dropper-hits-npm-with-850-malicious-packages</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

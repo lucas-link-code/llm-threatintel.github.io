@@ -1,6 +1,46 @@
 {
   "posts": [
     {
+      "id": "2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion",
+      "title": "Near-Autonomous Hermes/OpenClaw Framework Compromises Asian Government Systems",
+      "date": "2026-08-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Dream Research Labs documented a near-autonomous multi-agent framework that compromised Asian government systems during 12 attack waves from July 1 through July 4, 2026, cracking 85 employee accounts and extracting at least 2,564 personnel records. The source supports a Chinese-language operator assessment but no government or named-group attribution.",
+      "file": "2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.md"
+    },
+    {
+      "id": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "title": "NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises",
+      "date": "2026-08-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "nation-state",
+        "malware",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.",
+      "file": "2026-08-14-nullreceiver-contagious-interview-npm-mcp.md"
+    },
+    {
+      "id": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "title": "WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery",
+      "date": "2026-08-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.",
+      "file": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.md"
+    },
+    {
       "id": "2026-08-11-hugging-face-diffusers-rce-model-config",
       "title": "Hugging Face Diffusers Silent RCE via Malicious Model Configuration",
       "date": "2026-08-11",
@@ -2442,14 +2482,14 @@
     },
     {
       "id": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain",
-      "title": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
+      "title": "TeamPCP Supply Chain Campaign: Trivy Exposure Preceded Malicious LiteLLM and Telnyx Releases",
       "date": "2026-04-11",
       "author": "LLM ThreatIntel",
       "tags": [
         "supply-chain"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "On March 24, 2026, two PyPI releases of LiteLLM, 1.82.7 and 1.82.8, were published with malicious code as a result of a supply chain compromise. LiteLLM has 95 million monthly downloads and is a direct dependency of CrewAI, Browser-Use, DSPy, Mem0, Instructor, and five other major AI frameworks. The attack is part of a broader campaign by a threat actor known as TeamPCP, who previously compromised Aqua Security's Trivy scanner and Checkmarx's KICS GitHub Action over the preceding week.",
+      "excerpt": "LiteLLM reported that versions 1.82.7 and 1.82.8 were maliciously published to PyPI on March 24, 2026. An August SOCRadar review found that 2,085 of 2,188 attributable organization records predated those releases, placing most reconstructed exposure in the earlier Trivy compromise; the 2,500-plus organization and roughly 434,000 CI/CD-file figures are potential exposure, not confirmed LiteLLM compromises.",
       "file": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.md"
     },
     {

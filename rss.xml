@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 11 Aug 2026 08:10:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 14:15:14 +0000</lastBuildDate>
     <item>
+      <title>Near-Autonomous Hermes/OpenClaw Framework Compromises Asian Government Systems</title>
+      <link>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Dream Research Labs documented a near-autonomous multi-agent framework that compromised Asian government systems during 12 attack waves from July 1 through July 4, 2026, cracking 85 employee accounts and extracting at least 2,564 personnel records. The source supports a Chinese-language operator assessment but no government or named-group attribution.</description>
+    </item>    <item>
+      <title>NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises</title>
+      <link>https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.</description>
+    </item>    <item>
+      <title>WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery</title>
+      <link>https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+      <description>OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.</description>
+    </item>    <item>
       <title>Hugging Face Diffusers Silent RCE via Malicious Model Configuration</title>
       <link>https://llm-threatintel.com/posts/2026-08-11-hugging-face-diffusers-rce-model-config.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-11-hugging-face-diffusers-rce-model-config.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-05-hugging-face-diffusers-toctou-rce-august-2026.html</guid>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
       <description>A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it. Three tracked vulnerabilities include CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default "None.py" file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8).</description>
-    </item>    <item>
-      <title>xAI Grok Build CLI Covert Repository Upload: Unredacted Secrets and Git History Exfiltrated to Google Cloud Storage</title>
-      <link>https://llm-threatintel.com/posts/2026-08-03-xai-grok-build-repository-upload-credential-exfil.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-03-xai-grok-build-repository-upload-credential-exfil.html</guid>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
-      <description>xAI's Grok Build CLI was silently uploading developers' entire code repositories—including unredacted API keys, database credentials, and full Git commit histories—to a Google Cloud Storage bucket, according to a wire-level analysis published by independent AI safety researcher Cereblab on July 12. In one test, a 12GB repo saw the model request just 192KB of content, while the storage channel exfiltrated 5.10GiB — a 27,800x gap between declared read scope and actual data sent. User-facing privacy control—the 'Improve the model' toggle—had no effect on the repository uploads.</description>
-    </item>    <item>
-      <title>Critical Agentic AI RCE Wave: Production Agents Exploited via Content Injection and Malicious Deeplinks</title>
-      <link>https://llm-threatintel.com/posts/2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-01-agentic-ai-rce-cursor-kiro-mcp-july-2026.html</guid>
-      <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
-      <description>July 2026 was the month when attacks on agentic AI stopped being a thought experiment, with four independent teams shipping working exploits against production agents in roughly ten days. Hidden one-pixel text on a web page made AWS Kiro rewrite its mcp.json and auto-launch an attacker MCP server, two CVSS 9.8 zero-click RCEs were discovered in Cursor IDE, and a separate Cursor deeplink flaw turned a review PR click into unsandboxed code execution.</description>
-    </item>    <item>
-      <title>Ruflo MCP Critical RCE Vulnerability CVE-2026-59726 Enables Unauthenticated Command Injection and AI Memory Poisoning</title>
-      <link>https://llm-threatintel.com/posts/2026-07-31-ruflo-mcp-cve-2026-59726-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-07-31-ruflo-mcp-cve-2026-59726-rce.html</guid>
-      <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
-      <description>CVE-2026-59726 is a critical vulnerability in Ruflo MCP (an open-source AI automation tool) that is known to be trivially exploitable, requiring patching to version 3.16.3 or higher. The flaw allows unauthenticated attackers to execute arbitrary commands on systems running vulnerable versions and to poison AI agent memory states.</description>
     </item>
   </channel>
 </rss>

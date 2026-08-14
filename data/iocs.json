@@ -1,6 +1,402 @@
 {
-  "last_updated": "2026-08-10",
+  "last_updated": "2026-08-14",
   "iocs": [
+    {
+      "value": "npm:@kolbo/mcp@1.57.1",
+      "type": "package",
+      "context": "Hijacked Kolbo AI MCP server version containing the NullReceiver-linked malicious loader",
+      "first_seen": "2026-08-10",
+      "source": "Sonatype Research Labs",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "active"
+    },
+    {
+      "value": "npm:agentgui@1.0.1127",
+      "type": "package",
+      "context": "Hijacked agentgui version containing the NullReceiver-linked malicious loader",
+      "first_seen": "2026-08-10",
+      "source": "Sonatype Research Labs",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "active"
+    },
+    {
+      "value": "npm:godot-kit@1.0.1786316795",
+      "type": "package",
+      "context": "Hijacked godot-kit version containing the NullReceiver-linked malicious loader",
+      "first_seen": "2026-08-10",
+      "source": "Sonatype Research Labs",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "removed"
+    },
+    {
+      "value": "npm:envpack-conf@1.0.1",
+      "type": "package",
+      "context": "Purpose-built malicious npm package containing the NullReceiver-linked loader",
+      "first_seen": "2026-08-10",
+      "source": "Sonatype Research Labs",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "removed"
+    },
+    {
+      "value": "npm:postcss-initial-provider@3.0.4",
+      "type": "package",
+      "context": "Purpose-built malicious npm package containing the NullReceiver-linked loader",
+      "first_seen": "2026-08-10",
+      "source": "Sonatype Research Labs",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "removed"
+    },
+    {
+      "value": "npm:tailwindcss-motion-advanced@1.0.1",
+      "type": "package",
+      "context": "Purpose-built malicious npm package containing the NullReceiver-linked loader",
+      "first_seen": "2026-08-10",
+      "source": "Sonatype Research Labs",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "removed"
+    },
+    {
+      "value": "npm:bianira-ui@1.27.0",
+      "type": "package",
+      "context": "DPRK-linked Tailwind CSS plugin clone using the NullReceiver Ethereum C2-resolution technique",
+      "first_seen": "2026-08-02",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "removed"
+    },
+    {
+      "value": "npm:fluid-type-ui@2.0.8",
+      "type": "package",
+      "context": "DPRK-linked Tailwind CSS plugin clone using the NullReceiver Ethereum C2-resolution technique",
+      "first_seen": "2026-08-02",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "removed"
+    },
+    {
+      "value": "166.88.134.62",
+      "type": "ip",
+      "context": "Command-and-control address decoded from the NullReceiver Ethereum recipient field for the bianira-ui and fluid-type-ui samples; source published ports 80 and 443",
+      "first_seen": "2026-08-02",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "status": "active"
+    },
+    {
+      "value": "npm:checkout-mobile-bnpl@35.6.9",
+      "type": "package",
+      "context": "Exact WEL1DROPPER npm version analyzed by OpenSourceMalware; importing the package triggers the cross-platform downloader",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "removed"
+    },
+    {
+      "value": "oob-worker.cf103-070.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER first-stage HTTPS host used to deliver platform-specific payloads",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf102-baf.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER first-stage HTTPS host used to deliver platform-specific payloads",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf99-9b3.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER first-stage HTTPS host used to deliver platform-specific payloads",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "package-proxy.cf5oobworker.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER follow-on host embedded in the macOS native loader",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "package-proxy.cf6oobworker.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER follow-on host embedded in the macOS native loader",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "package-proxy.cf7oobworker.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER follow-on host embedded in the macOS native loader",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "package-proxy.cf8oobworker.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER follow-on host embedded in the macOS native loader",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "package-proxy.cf11oobworker.workers.dev",
+      "type": "domain",
+      "context": "WEL1DROPPER follow-on host embedded in the macOS native loader",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "sdk.dl.wel1.ru",
+      "type": "domain",
+      "context": "WEL1DROPPER Linux x64 DNS TXT payload-delivery domain",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "ext.dl.wel1.ru",
+      "type": "domain",
+      "context": "WEL1DROPPER Linux ARM64 DNS TXT payload-delivery domain",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "pkg.dl.wel1.ru",
+      "type": "domain",
+      "context": "WEL1DROPPER macOS DNS TXT payload-delivery domain",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "net.dl.wel1.ru",
+      "type": "domain",
+      "context": "WEL1DROPPER Windows DNS TXT payload-delivery domain",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "dl.wel1.ru",
+      "type": "domain",
+      "context": "WEL1DROPPER follow-on macOS DNS TXT payload-delivery domain",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf103-070.workers.dev/pkg/package",
+      "type": "url_path",
+      "context": "WEL1DROPPER Linux x64 first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf103-070.workers.dev/pkg/package-arm64",
+      "type": "url_path",
+      "context": "WEL1DROPPER Linux ARM64 first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf103-070.workers.dev/pkg/loader_mac",
+      "type": "url_path",
+      "context": "WEL1DROPPER macOS first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf103-070.workers.dev/pkg/package.exe",
+      "type": "url_path",
+      "context": "WEL1DROPPER Windows first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf102-baf.workers.dev/pkg/package",
+      "type": "url_path",
+      "context": "WEL1DROPPER Linux x64 first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf102-baf.workers.dev/pkg/package-arm64",
+      "type": "url_path",
+      "context": "WEL1DROPPER Linux ARM64 first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf102-baf.workers.dev/pkg/loader_mac",
+      "type": "url_path",
+      "context": "WEL1DROPPER macOS first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf102-baf.workers.dev/pkg/package.exe",
+      "type": "url_path",
+      "context": "WEL1DROPPER Windows first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf99-9b3.workers.dev/pkg/package",
+      "type": "url_path",
+      "context": "WEL1DROPPER Linux x64 first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf99-9b3.workers.dev/pkg/package-arm64",
+      "type": "url_path",
+      "context": "WEL1DROPPER Linux ARM64 first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf99-9b3.workers.dev/pkg/loader_mac",
+      "type": "url_path",
+      "context": "WEL1DROPPER macOS first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "oob-worker.cf99-9b3.workers.dev/pkg/package.exe",
+      "type": "url_path",
+      "context": "WEL1DROPPER Windows first-stage payload URL",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "0fc30f82e1fa5e51a6c0c43f3ed7f13592ea731cb331e43a4d085df60a4db8b6",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER package README published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "94ef6b1c4a9d31f78f446d053048bcef34fd88f4376a1a46f7f777a9e9c83a29",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER _helpers.js downloader published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "b74c5675725911c62091bdf40714df760cc2af7a88360d21065f4e1c878aa8f0",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER index.js entry point published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "e2650e9aa2f924433ba422857b22ee7c5996b5ad306f3f903283f6a13e248935",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER package.json file published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "a3e2ffb440b779d30da3ff282affd649731088e8570df7b1aa72742d995b782c",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER lib/telemetry.js decoy published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "7e486657f30594afda379b97030252a09a19fe8055e25c9e371544f59bd8e9e3",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER Linux x64 native payload published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "c214746c74cae8ece8bdaf69aa05da4db6ce013f9e77452d1eed1a002fd9ba00",
+      "type": "sha256",
+      "context": "SHA-256 of the WEL1DROPPER universal macOS native payload published by OpenSourceMalware",
+      "first_seen": "2026-08-06",
+      "source": "OpenSourceMalware",
+      "campaign": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "status": "active"
+    },
+    {
+      "value": "83.142.209.203",
+      "type": "ip",
+      "context": "Telnyx 4.87.1 and 4.87.2 second-stage payload server published by Datadog Security Labs",
+      "first_seen": "2026-03-27",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "unknown"
+    },
+    {
+      "value": "83.142.209.203:8080/ringtone.wav",
+      "type": "url_path",
+      "context": "Crafted WAV file containing the encrypted Telnyx second-stage payload",
+      "first_seen": "2026-03-27",
+      "source": "Datadog Security Labs",
+      "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
+      "status": "unknown"
+    },
     {
       "value": "awqhnjewqjkl.icu",
       "type": "domain",
@@ -2390,7 +2786,7 @@
       "value": "models.litellm.cloud",
       "type": "domain",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
-      "first_seen": "2026-04-01",
+      "first_seen": "2026-03-24",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-supply-chain-campaign-ai-infrastructure-2026",
       "status": "active"
@@ -2399,37 +2795,37 @@
       "value": "litellm@1.82.7",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
-      "first_seen": "2026-04-01",
+      "first_seen": "2026-03-24",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-supply-chain-campaign-ai-infrastructure-2026",
-      "status": "active"
+      "status": "removed"
     },
     {
       "value": "litellm@1.82.8",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
-      "first_seen": "2026-04-01",
+      "first_seen": "2026-03-24",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-supply-chain-campaign-ai-infrastructure-2026",
-      "status": "active"
+      "status": "removed"
     },
     {
       "value": "telnyx@4.87.1",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
-      "first_seen": "2026-04-01",
+      "first_seen": "2026-03-27",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-supply-chain-campaign-ai-infrastructure-2026",
-      "status": "active"
+      "status": "removed"
     },
     {
       "value": "telnyx@4.87.2",
       "type": "package",
       "context": "TeamPCP Multi-Stage Supply Chain Campaign Targets AI Infrastructure: LiteLLM, Telnyx, and Trivy Compromised",
-      "first_seen": "2026-04-01",
+      "first_seen": "2026-03-27",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-supply-chain-campaign-ai-infrastructure-2026",
-      "status": "active"
+      "status": "removed"
     },
     {
       "value": "tdtqy-oyaaa-aaaae-af2dq-cai.raw.icp0.io",
@@ -2569,17 +2965,17 @@
     {
       "value": "checkmarx.zone",
       "type": "domain",
-      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
-      "first_seen": "2026-04-11",
+      "context": "TeamPCP Supply Chain Campaign: Trivy Exposure Preceded Malicious LiteLLM and Telnyx Releases",
+      "first_seen": "2026-03-23",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
       "status": "active"
     },
     {
-      "value": "https://checkmarx.zone/raw",
+      "value": "checkmarx.zone/raw",
       "type": "url_path",
-      "context": "TeamPCP Supply Chain Campaign: LiteLLM and Telnyx PyPI Compromise via Poisoned Trivy Security Scanner",
-      "first_seen": "2026-04-11",
+      "context": "TeamPCP Supply Chain Campaign: Trivy Exposure Preceded Malicious LiteLLM and Telnyx Releases",
+      "first_seen": "2026-03-23",
       "source": "Datadog Security Labs",
       "campaign": "teampcp-litellm-telnyx-pypi-supply-chain",
       "status": "active"

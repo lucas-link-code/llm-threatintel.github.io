@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises | LLM ThreatIntel</title>
+  <meta name="description" content="Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises">
+  <meta property="og:description" content="Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises">
+  <meta property="article:published_time" content="2026-08-14T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-14T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="mcp-security">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises">
+  <meta name="twitter:description" content="Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises",
+  "description": "Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.",
+  "datePublished": "2026-08-14T00:00:00Z",
+  "dateModified": "2026-08-14T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html",
+  "keywords": [
+    "supply-chain",
+    "nation-state",
+    "malware",
+    "mcp-security"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-14</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-mcp-security">Mcp Security</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises</h1>
+<p><strong>Date:</strong> 2026-08-14<br><strong>Tags:</strong> supply-chain, nation-state, malware, mcp-security</p>
+<h2>Executive Summary</h2>
+<p>Sonatype Research Labs identified six malicious npm package versions on 2026-08-10, including <code>@kolbo/mcp@1.57.1</code>, which npm registry metadata describes as an AI MCP server for Claude Code; the malicious loader uses Ethereum transactions to resolve command-and-control infrastructure and retrieve additional JavaScript stages. Sonatype linked the loader to the DPRK-associated Contagious Interview campaign through the same attacker wallet that OpenSourceMalware documented on 2026-08-02 in two earlier npm packages using the NullReceiver technique. Defenders should remove all eight exact package versions, determine whether they executed in developer or CI/CD environments, and hunt for the published wallet, stage paths, response header, and OSM-observed C2 address.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>NullReceiver blockchain-based C2 resolution in Contagious Interview npm malware (OpenSourceMalware and Sonatype)</td></tr><tr><td>Actor / Attribution</td><td>DPRK-linked Contagious Interview; Sonatype associates the broader campaign with the Lazarus APT group (confidence: high for campaign linkage based on wallet reuse across the two reports)</td></tr><tr><td>Target</td><td>Affected population: developers, build systems, and downstream users of eight npm package versions, including an AI MCP package (Sonatype, OpenSourceMalware, and npm registry metadata)</td></tr><tr><td>Vector</td><td>Three hijacked legitimate packages and three purpose-built malicious packages reported by Sonatype; two malicious Tailwind CSS plugin clones reported by OpenSourceMalware</td></tr><tr><td>Status</td><td>Sonatype&#x27;s investigation remained ongoing as of 2026-08-10; neither threat-research source published a complete removal status for every affected version</td></tr><tr><td>First Observed</td><td>Publicly reported by OpenSourceMalware on 2026-08-02; Sonatype identified six additional affected versions on 2026-08-10</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<h3>Sonatype&#x27;s August 10 package set</h3>
+<p>Sonatype Research Labs reported that six npm packages contained the same malicious loader and used the same attacker-controlled Ethereum wallet. Sonatype classified three as legitimate packages whose malicious versions appeared to result from package hijacking under <code>sonatype-2026-005899</code>: <code>@kolbo/mcp@1.57.1</code>, <code>agentgui@1.0.1127</code>, and <code>godot-kit@1.0.1786316795</code>. npm registry metadata for version 1.57.1 describes <code>@kolbo/mcp</code> as the Kolbo AI MCP server for generating media through Claude Code, establishing the direct AI-agent supply-chain impact.</p>
+<p>Sonatype separately tracked three packages that were published with the malware already present under <code>sonatype-2026-005901</code>: <code>envpack-conf@1.0.1</code>, <code>postcss-initial-provider@3.0.4</code>, and <code>tailwindcss-motion-advanced@1.0.1</code>. Sonatype reported that these packages retained legitimate-looking functionality while carrying the loader; the hijacked packages retained substantial legitimate code with the malicious logic appended to an existing file.</p>
+<p>Sonatype reported that the loader queries Ethereum for an outbound transaction from the embedded wallet and reads bytes from the transaction&#x27;s recipient address. The malware decodes those bytes into primary and secondary IPv4 C2 addresses, allowing the operator to rotate network infrastructure through a new blockchain transaction rather than publishing a new npm version.</p>
+<p>Sonatype reported that this August 10 implementation can race requests across multiple Ethereum RPC providers, issue batched JSON-RPC requests, and fall back to the Blockscout API. Those providers are legitimate shared infrastructure and are not campaign-specific IOCs; they are therefore excluded from the IOC blocks below.</p>
+<p>After resolving its C2 addresses, the Sonatype loader requests two additional stages from <code>/0x/cls</code> and <code>/0x/ls</code>. Sonatype reported that it first attempts a standard HTTP GET and can fall back to a HEAD request that carries the encoded stage in an <code>X-Payload-B64</code> response header. The loader Base64- and XOR-decodes the response; content returned from <code>/0x/cls</code> can execute through <code>eval()</code> in the current Node.js process, while downloaded stages can also run as detached Node.js child processes.</p>
+<h3>OpenSourceMalware&#x27;s August 2 samples</h3>
+<p>OpenSourceMalware separately analyzed <code>bianira-ui@1.27.0</code> and <code>fluid-type-ui@2.0.8</code>, two DPRK-linked clones of legitimate Tailwind CSS plugins. OpenSourceMalware named their blockchain C2 resolution method NullReceiver and described the payload as a Node.js RAT. The researchers stated that their findings came from static analysis of the published npm tarballs and read-only blockchain lookups; they did not execute either package.</p>
+<p>OpenSourceMalware reported that both packages used wallet <code>0xa322e5f3d311d3080e6f0121063e9adc2490ef1a</code>. The latest outbound transaction recovered during that analysis used the recipient address <code>0xa658863ea658863e68656c6c6f6970626f742121</code>, whose encoded bytes resolved to <code>166.88.134.62</code>; OpenSourceMalware published TCP ports 80 and 443 for that C2. The trailing recipient-address bytes also decoded to the fingerprint string <code>helloipbot!!</code>, and OpenSourceMalware published <code>A10-npm3!</code> as a detection signature.</p>
+<p>The <code>166.88.134.62</code> observation applies to OpenSourceMalware&#x27;s August 2 package pair. Sonatype stated that its August 10 loader decoded two IPv4 C2 addresses but did not publish those address values, so this report does not claim that <code>166.88.134.62</code> was the live C2 for the six Sonatype samples.</p>
+<h3>Attribution and scope</h3>
+<p>OpenSourceMalware attributed the two August 2 packages to the DPRK Contagious Interview campaign. Sonatype independently reported that all six August 10 packages used the same wallet address and described the related activity as DPRK-linked Contagious Interview, with the broader campaign associated with the Lazarus APT group. The shared wallet and matching recipient-address C2 mechanism support the campaign linkage; neither source identified the individual operator behind every affected publication.</p>
+<p>Neither source published a SHA-256 or MD5 hash for these eight package versions. Sonatype did not publish the two IPv4 values decoded by its six samples, and neither source published an attacker-owned domain for this activity. The Ethereum RPC and explorer services used to read the wallet are shared services, not malicious infrastructure, and should not be blocked as campaign IOCs.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>Sonatype reported malicious versions of three hijacked legitimate npm packages, while both sources documented malicious packages distributed through npm.</td></tr><tr><td>Web Service: Dead Drop Resolver</td><td>T1102.001</td><td>The loader reads attacker-selected C2 bytes from the recipient field of the wallet&#x27;s latest outbound Ethereum transaction.</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Sonatype reported JavaScript stages that can execute through Node.js <code>eval()</code> or detached Node.js child processes.</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>Sonatype reported retrieval of follow-on stages from the resolved C2 through <code>/0x/cls</code> and <code>/0x/ls</code>.</td></tr><tr><td>Deobfuscate/Decode Files or Information</td><td>T1140</td><td>Sonatype reported Base64 and XOR decoding before stage execution.</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>Sonatype reported that the loader uses HTTP GET and HEAD requests to retrieve payloads from dynamically resolved C2 addresses.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Package Indicators</h3>
+<p>Sonatype samples published on 2026-08-10:</p>
+<pre><code class="language-">npm:@kolbo/mcp@1.57.1
+npm:agentgui@1.0.1127
+npm:envpack-conf@1.0.1
+npm:godot-kit@1.0.1786316795
+npm:postcss-initial-provider@3.0.4
+npm:tailwindcss-motion-advanced@1.0.1</code></pre>
+<p>OpenSourceMalware samples published on 2026-08-02:</p>
+<pre><code class="language-">npm:bianira-ui@1.27.0
+npm:fluid-type-ui@2.0.8</code></pre>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No full URL IOCs published by source</code></pre>
+<p>Sonatype published the host-independent stage paths <code>/0x/cls</code> and <code>/0x/ls</code>. They are behavioral hunting patterns rather than standalone URL IOCs because the source did not disclose the associated August 10 C2 addresses.</p>
+<h3>IP Addresses</h3>
+<p>OpenSourceMalware&#x27;s August 2 samples only:</p>
+<pre><code class="language-">166.88.134[.]62</code></pre>
+<p>OpenSourceMalware published ports 80 and 443 for this address.</p>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;*@kolbo/mcp@1.57.1*&quot; OR &quot;*agentgui@1.0.1127*&quot; OR &quot;*bianira-ui@1.27.0*&quot; OR &quot;*envpack-conf@1.0.1*&quot; OR &quot;*fluid-type-ui@2.0.8*&quot; OR &quot;*godot-kit@1.0.1786316795*&quot; OR &quot;*postcss-initial-provider@3.0.4*&quot; OR &quot;*tailwindcss-motion-advanced@1.0.1*&quot; OR &quot;166.88.134.62&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h3>Hunt-Only Blockchain Indicators</h3>
+<p>The following values are suitable for source-code, package-cache, and network-payload hunting. They are not proposed as blocklist IOC records because this repository&#x27;s IOC schema has no cryptocurrency-wallet type and the recipient address represents encoded C2 state rather than a network destination.</p>
+<pre><code class="language-">Attacker wallet: 0xa322e5f3d311d3080e6f0121063e9adc2490ef1a
+Encoded recipient: 0xa658863ea658863e68656c6c6f6970626f742121
+Static signature: A10-npm3!</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Search package-lock files, SBOMs, dependency manifests, local npm caches, artifact repositories, build logs, and deployed application inventories for all eight exact package-and-version pairs. Do not alert on the unversioned package names alone because Sonatype identified specific malicious versions of otherwise legitimate packages in the August 10 set.</p>
+<p>Treat confirmed import or execution as a host-compromise event. Isolate affected developer workstations or CI/CD runners, preserve Node.js process and network telemetry, identify child processes and files created by Node.js, and scope credentials available to the affected process before rotating exposed developer, source-control, registry, cloud, and deployment secrets.</p>
+<p>In proxy and EDR telemetry, correlate <code>node</code> or <code>node.exe</code> with direct HTTP connections to numeric IP addresses, requests ending in <code>/0x/cls</code> or <code>/0x/ls</code>, HEAD responses containing <code>X-Payload-B64</code>, and subsequent detached Node.js child processes. The <code>/0x/cls</code> stage can execute in-process through <code>eval()</code>, so the absence of a child process does not exclude execution.</p>
+<p>Search source files, package caches, process memory, and captured request bodies for the wallet <code>0xa322e5f3d311d3080e6f0121063e9adc2490ef1a</code>, the recipient address <code>0xa658863ea658863e68656c6c6f6970626f742121</code>, and the string <code>A10-npm3!</code>. Monitor unexpected Node.js access to Ethereum RPC or explorer APIs only in combination with these artifacts or an affected package; do not block shared blockchain providers globally.</p>
+<p>Alert on traffic to <code>166.88.134[.]62</code> over TCP 80 or 443, but retain the package, wallet, and stage-path hunts after that address becomes inactive because NullReceiver allows the actor to change C2 infrastructure through a new wallet transaction.</p>
+<h2>References</h2>
+<ul><li>[Sonatype Research Labs] Six npm Packages Use Ethereum Transactions to Retrieve Malicious Payloads (2026-08-10) — https://www.sonatype.com/blog/six-npm-packages-use-ethereum-transactions-to-retrieve-malicious-payloads</li><li>[OpenSourceMalware] NullReceiver&#x27;s Blank Crypto Transfers Solves the Challenges of EtherHiding (2026-08-02) — https://opensourcemalware.com/blog/nullreceiver-dprk-c2-technique</li><li>[npm Registry] @kolbo/mcp 1.57.1 package metadata (2026-08-08) — https://registry.npmjs.org/%40kolbo%2Fmcp/1.57.1</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

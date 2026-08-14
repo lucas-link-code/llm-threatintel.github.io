@@ -1,7 +1,7 @@
 {
-  "commit_sha": "d01d1e332e3a",
+  "commit_sha": "e771040c1ab9",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-11T08:10:54+00:00",
+  "generated_at_utc": "2026-08-14T14:16:02+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -22,10 +22,50 @@
     },
     {
       "code": "evidence-source-review-required",
+      "file": "posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-08-14-nullreceiver-contagious-interview-npm-mcp",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
       "file": "posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md",
       "message": "no source URL was accessible; manual review or alternate evidence is required",
       "recommendation": "",
       "record_id": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-04-11-teampcp-litellm-telnyx-pypi-supply-chain",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-04-01-teampcp-supply-chain-campaign-ai-infrastructure-2026",
       "severity": "review"
     }
   ],
@@ -33,40 +73,145 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 2,
+  "reports_checked": 6,
+  "reports_newly_validated": 0,
   "reports_skipped": 211,
-  "review_required": 1,
-  "source_urls_checked": 4,
-  "state_updates": 2,
+  "review_required": 6,
+  "source_urls_checked": 19,
+  "state_updates": 0,
   "url_results": [
     {
-      "error": "",
-      "final_url": "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/"
-    },
-    {
-      "error": "",
-      "final_url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.security.nl/posting/947159/Copilot-aanval%2Bkan%2BWord-bestanden%2Bmet%2Bmalafide%2Bprompts%2Binfecteren",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.security.nl/posting/947159/Copilot-aanval%2Bkan%2BWord-bestanden%2Bmet%2Bmalafide%2Bprompts%2Binfecteren"
-    },
-    {
-      "error": "The read operation timed out",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
       "final_url": null,
       "http_status": null,
-      "status": "timeout",
+      "status": "dns_error",
+      "url": "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.theregister.com/security/2026/08/12/near-autonomous-ai-agents-attack-taiwans-nuclear-safety-agency/5287055"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.sonatype.com/blog/six-npm-packages-use-ethereum-transactions-to-retrieve-malicious-payloads"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://opensourcemalware.com/blog/nullreceiver-dprk-c2-technique"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://registry.npmjs.org/%40kolbo%2Fmcp/1.57.1"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://opensourcemalware.com/blog/russian-ai-slopsquatting-npm-campaign"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.sonatype.com/blog/flooding-dropper-hits-npm-with-850-malicious-packages"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
       "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-2026-threat-hunting-report-ai-now-embedded-across"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://snyk.io/blog/poisoned-security-scanner-backdooring-litellm/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://repello.ai/blog/litellm-supply-chain-attack"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.sonatype.com/blog/compromised-litellm-pypi-package-delivers-multi-stage-credential-stealer"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://docs.litellm.ai/blog/security-update-march-2026"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://socradar.io/blog/litellm-supply-chain-attack/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.securityweek.com/trivy-not-litellm-behind-the-2500-org-compromise/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://docs.litellm.ai/blog/security-update-march-2026"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://www.helpnetsecurity.com/2026/03/25/teampcp-supply-chain-attacks/"
     }
   ],
   "validation_version": "1.0.0",

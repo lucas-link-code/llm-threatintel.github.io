@@ -1,6 +1,83 @@
 {
-  "last_updated": "2026-08-11",
+  "last_updated": "2026-08-14",
   "entries": [
+    {
+      "id": "dream-hermes-openclaw-multi-agent-intrusion-framework",
+      "names": [
+        "Dream-documented Hermes/OpenClaw multi-agent intrusion framework"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Operational workspace built on the public Hermes and OpenClaw agent frameworks",
+        "Parallel AI subagents directed against public government web applications, SSO services, and APIs",
+        "Model-refusal bypass through false authorized-penetration-testing framing"
+      ],
+      "ttps": [
+        "T1595.002 - Active Scanning: Vulnerability Scanning",
+        "T1190 - Exploit Public-Facing Application",
+        "T1110.003 - Brute Force: Password Spraying",
+        "T1078 - Valid Accounts",
+        "T1087 - Account Discovery",
+        "T1213 - Data from Information Repositories",
+        "T1552 - Unsecured Credentials"
+      ],
+      "description": "Dream Research Labs documented a near-autonomous intrusion framework that ran 12 waves against Asian government infrastructure from July 1-4, 2026. The recovered 1,395-file workspace used up to eight concurrent subagents, Bayesian prioritization across 14 attack chains, and learning cycles that fed results into later waves. The operation cracked 85 accounts, reused 84 through SSO, and extracted at least 2,564 personnel records plus SSO and database credentials. Hermes and OpenClaw are legitimate public frameworks used as underlying components and are not intrinsically malicious.",
+      "attribution": "Unknown Chinese-language operator. Simplified Chinese internal reporting and Traditional Chinese target-facing analysis support only a linguistic assessment; Dream Research Labs did not attribute a state sponsor, country, or named group."
+    },
+    {
+      "id": "nullreceiver",
+      "names": [
+        "NullReceiver"
+      ],
+      "type": "malware",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Hijacked and purpose-built npm package versions, including @kolbo/mcp@1.57.1",
+        "Ethereum zero-value transaction recipient fields used as a C2 dead-drop resolver",
+        "Node.js follow-on stages retrieved through /0x/cls and /0x/ls"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1102.001 - Web Service: Dead Drop Resolver",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript",
+        "T1105 - Ingress Tool Transfer",
+        "T1140 - Deobfuscate/Decode Files or Information",
+        "T1071.001 - Application Layer Protocol: Web Protocols"
+      ],
+      "description": "NullReceiver is a blockchain-based C2 resolution technique used by DPRK-linked Contagious Interview npm malware. OpenSourceMalware documented two Tailwind-plugin clones that decoded an IPv4 address from an Ethereum transaction recipient field. Sonatype later found the same wallet and loader design in six additional npm versions, including the hijacked Kolbo AI MCP server, with Base64- and XOR-decoded JavaScript stages that execute through Node.js.",
+      "attribution": "DPRK-linked Contagious Interview campaign. Sonatype associates the broader campaign with Lazarus and independently confirmed wallet reuse; no individual operator was identified."
+    },
+    {
+      "id": "wel1dropper",
+      "names": [
+        "WEL1DROPPER",
+        "Flooding Dropper"
+      ],
+      "type": "malware",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Automated creation of npm publisher accounts and malicious package names",
+        "Import-triggered npm downloader with no lifecycle script requirement",
+        "Platform-specific HTTPS payloads with DNS TXT and Base64 fallback delivery"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript",
+        "T1105 - Ingress Tool Transfer",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1071.004 - Application Layer Protocol: DNS",
+        "T1140 - Deobfuscate/Decode Files or Information",
+        "T1568 - Dynamic Resolution",
+        "T1543.001 - Create or Modify System Process: Launch Agent",
+        "T1497.001 - Virtualization/Sandbox Evasion: System Checks"
+      ],
+      "description": "WEL1DROPPER, called Flooding Dropper by Sonatype, is an active cross-platform npm downloader campaign. OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9 and documented import-triggered execution, rotating Cloudflare Workers delivery, DNS TXT fallback under wel1.ru, Windows/Linux/macOS payload selection, and macOS LaunchAgent persistence. Sonatype counted 846 implicated components on August 5, while OpenSourceMalware listed 788 on August 6; the changing snapshots reflect an ongoing campaign. OpenSourceMalware assessed the package names as AI-slopsquatted or randomly generated, but GenAI use is unverified.",
+      "attribution": "Unknown. OpenSourceMalware assessed a possible Russian or Moika nexus from wel1.ru and embedded Russian financial-service strings; the evidence is low confidence and does not support a named actor."
+    },
     {
       "id": "asyncrat",
       "names": [
@@ -718,7 +795,8 @@
       "status": "active",
       "distribution": [
         "npm registry",
-        "Vercel-hosted staging infrastructure"
+        "Vercel-hosted staging infrastructure",
+        "Hijacked and purpose-built npm packages using Ethereum transaction recipient fields for C2 resolution"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -726,10 +804,13 @@
         "T1555 - Credentials from Password Stores",
         "T1005 - Data from Local System",
         "T1115 - Clipboard Data",
-        "T1071.001 - Web Protocols"
+        "T1071.001 - Web Protocols",
+        "T1102.001 - Web Service: Dead Drop Resolver",
+        "T1105 - Ingress Tool Transfer",
+        "T1140 - Deobfuscate/Decode Files or Information"
       ],
-      "description": "OtterCookie is a modular JavaScript backdoor linked to the DPRK Contagious Interview campaign. A new variant delivered via fake Gemini npm package (gemini-ai-checker) explicitly targets AI coding tool directories including .cursor, .claude, .gemini, .windsurf, .pearai, and .eigent for API key and credential theft. The four-module architecture includes Socket.IO RAT, browser/crypto credential stealer, file exfiltrator, and clipboard monitor. Sibling packages express-flowlimit and chai-extensions-extras remain live on npm.",
-      "attribution": "DPRK-linked via Contagious Interview campaign (confidence: medium-high per Microsoft and Cyber and Ramen analysis)"
+      "description": "OtterCookie is a modular JavaScript backdoor linked to the DPRK Contagious Interview campaign. A new variant delivered via fake Gemini npm package (gemini-ai-checker) explicitly targets AI coding tool directories including .cursor, .claude, .gemini, .windsurf, .pearai, and .eigent for API key and credential theft. The four-module architecture includes Socket.IO RAT, browser/crypto credential stealer, file exfiltrator, and clipboard monitor. Sibling packages express-flowlimit and chai-extensions-extras remain live on npm. OpenSourceMalware and Sonatype's August 2026 reporting linked the broader Contagious Interview operation to eight additional npm versions using the NullReceiver Ethereum dead-drop technique, including the hijacked @kolbo/mcp@1.57.1 AI MCP server.",
+      "attribution": "DPRK-linked via Contagious Interview campaign (confidence: medium-high per Microsoft, Cyber and Ramen, OpenSourceMalware, and Sonatype analysis)"
     },
     {
       "id": "malicious-ai-browser-extensions",
@@ -1149,7 +1230,7 @@
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
-      "last_updated": "2026-05-21",
+      "last_updated": "2026-08-14",
       "status": "active",
       "distribution": [
         "PyPI",
@@ -1171,7 +1252,10 @@
         "Hijacked npm maintainer account atool (Mini Shai-Hulud Wave 6, May 19 2026, @antv ecosystem)",
         "C2 via OpenTelemetry-disguised HTTPS to t.m-kosche.com:443/api/public/otel/v1/traces",
         "npm ecosystem",
-        "GitHub Actions workflows"
+        "GitHub Actions workflows",
+        "Python startup persistence through litellm_init.pth and ~/.config/sysmon/sysmon.py",
+        "Git repository dead-drops named tpcp-docs or docs-tpcp with data-<timestamp> release tags",
+        "Unexpected privileged alpine:latest pods in the kube-system namespace"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -1209,7 +1293,7 @@
         "T1518 - Software Discovery (scanning for cloud metadata, identities, Kubernetes)",
         "T1553.002 - Subvert Trust Controls (SLSA provenance forgery in earlier waves)"
       ],
-      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages.",
+      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
     },
     {
