@@ -1,0 +1,53 @@
+{
+  "commit_sha": "e100095439a45ea4a2c0ad931f5bff3a1bde3278",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-08-14T04:48:29+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 1,
+  "reports_newly_validated": 0,
+  "reports_skipped": 213,
+  "review_required": 1,
+  "source_urls_checked": 1,
+  "state_updates": 0,
+  "url_results": [
+    {
+      "error": "The read operation timed out",
+      "final_url": null,
+      "http_status": null,
+      "status": "timeout",
+      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-2026-threat-hunting-report-ai-now-embedded-across"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 2
+}
