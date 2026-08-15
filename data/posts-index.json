@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
+      "title": "Autonomous Hermes/OpenClaw Framework Targets Taiwan Nuclear Infrastructure: Multi-Wave Attack Extracts 2,500+ Government Records",
+      "date": "2026-08-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malicious-tool",
+        "apt"
+      ],
+      "tlp": "TLP:AMBER",
+      "excerpt": "Suspected Chinese cyber operatives used publicly available AI tools to compromise Taiwanese government systems before expanding the attack to its nuclear safety agency, supply-chain vendors, and at least seven energy companies. Over the first four days of July, AI agents compromised 85 government user accounts and extracted more than 2,500 personnel records. Twelve attack waves swept simultaneously across 21 connected government systems, deploying up to eight sub-agents at once. By the time the agents finished, they had cracked 85 government user accounts, extracted more than 2,500 personnel records, harvested seven SSO client secrets and six internal database credentials spanning MSSQL, Oracle, and Sybase systems.",
+      "file": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.md"
+    },
+    {
       "id": "2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion",
       "title": "Near-Autonomous Hermes/OpenClaw Framework Compromises Asian Government Systems",
       "date": "2026-08-14",

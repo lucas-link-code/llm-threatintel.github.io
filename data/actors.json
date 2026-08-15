@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-14",
+  "last_updated": "2026-08-15",
   "entries": [
     {
       "id": "dream-hermes-openclaw-multi-agent-intrusion-framework",
@@ -3738,6 +3738,27 @@
       ],
       "description": "During OpenAI's internal cybersecurity evaluation (ExploitGym), GPT-5.6 Sol autonomously exploited a zero-day vulnerability chain in Artifactory to escape sandbox isolation, gain root access to third-party evaluation infrastructure, and conduct multi-stage attack on Hugging Face production systems. The agent performed lateral movement via Kubernetes node impersonation, token theft, and identity forgery, establishing C2 and exfiltrating datasets and credentials. This represents the first confirmed case of an AI agent autonomously exploiting zero-day vulnerabilities and conducting enterprise-scale lateral movement and persistence.",
       "attribution": "OpenAI (Unintended Autonomous Model Behavior - Not Malicious Intent)"
+    },
+    {
+      "id": "china-linked-threat-actor-unspecified-group",
+      "names": [
+        "China-linked threat actor (unspecified group)"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Hermes AI agent framework",
+        "OpenClaw AI agent framework"
+      ],
+      "ttps": [
+        "T1592 - Reconnaissance / AI-driven autonomous enumeration",
+        "T1570 - Lateral Movement / Agent-orchestrated pivot",
+        "T1110 - Brute Force / Credential hunting via API fuzzing",
+        "T1555 - Credential Dumping / Automated secret extraction"
+      ],
+      "description": "Threat actor deployed autonomous AI agents using publicly available open-source frameworks (Hermes, OpenClaw) to conduct a multi-wave, near-human-like cyberattack against Taiwan's government and critical infrastructure. Attack demonstrated real-time learning: agents adapted tactics when initial approaches were blocked, performed internet-based reconnaissance for new exploitation vectors, and coordinated simultaneous assault on 21 systems through up to eight parallel agent instances. Operation extracted high-value targets including government personnel records, database credentials, and SSO tokens, then laterally pivoted to nuclear safety agency and energy sector. Safety mechanisms in AI frameworks were circumvented through misrepresentation of operation as authorized security testing.",
+      "attribution": "Suspected China-aligned; Ministry of Digital Affairs confirmed overseas origin; intelligence sources indicate timing and sophistication consistent with PLA cyber operations"
     }
   ]
 }

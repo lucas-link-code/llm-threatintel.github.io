@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 14 Aug 2026 14:15:14 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 03:39:24 +0000</lastBuildDate>
     <item>
+      <title>Autonomous Hermes/OpenClaw Framework Targets Taiwan Nuclear Infrastructure: Multi-Wave Attack Extracts 2,500+ Government Records</title>
+      <link>https://llm-threatintel.com/posts/2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.html</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Suspected Chinese cyber operatives used publicly available AI tools to compromise Taiwanese government systems before expanding the attack to its nuclear safety agency, supply-chain vendors, and at least seven energy companies. Over the first four days of July, AI agents compromised 85 government user accounts and extracted more than 2,500 personnel records. Twelve attack waves swept simultaneously across 21 connected government systems, deploying up to eight sub-agents at once. By the time the agents finished, they had cracked 85 government user accounts, extracted more than 2,500 personnel records, harvested seven SSO client secrets and six internal database credentials spanning MSSQL, Oracle, and Sybase systems.</description>
+    </item>    <item>
       <title>Near-Autonomous Hermes/OpenClaw Framework Compromises Asian Government Systems</title>
       <link>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.html</guid>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
       <description>DPRK-nexus STARDUST CHOLLIMA injected a malicious npm package into 131 trusted Mastra AI frameworks. During 1H 2026, 87% of identified software registry threats involved malicious npm packages. This represents a nation-state supply chain attack targeting AI agent infrastructure used by developers globally.</description>
-    </item>    <item>
-      <title>Hugging Face Diffusers TOCTOU RCE: Malicious Models Execute Arbitrary Code via Time-of-Check-to-Time-of-Use Flaws</title>
-      <link>https://llm-threatintel.com/posts/2026-08-05-hugging-face-diffusers-toctou-rce-august-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-05-hugging-face-diffusers-toctou-rce-august-2026.html</guid>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <description>A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it. Three tracked vulnerabilities include CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default "None.py" file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8).</description>
     </item>
   </channel>
 </rss>
