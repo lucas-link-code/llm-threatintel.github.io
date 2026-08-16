@@ -11,7 +11,9 @@
         "shadow-ai"
       ],
       "cves": [],
-      "actors": [],
+      "actors": [
+        "openai"
+      ],
       "iocs": []
     },
     {
@@ -26,6 +28,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "storm-2139"
       ],
       "iocs": []
@@ -77,7 +80,8 @@
       ],
       "cves": [],
       "actors": [
-        "lamehug"
+        "lamehug",
+        "openai"
       ],
       "iocs": []
     },
@@ -93,6 +97,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "teampcp"
       ],
       "iocs": []
@@ -174,6 +179,7 @@
       "actors": [
         "hecker",
         "livegamer101",
+        "openai",
         "operation bizarre bazaar",
         "sakuya"
       ],
@@ -306,6 +312,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unit 42",
         "unknown"
       ],
@@ -443,6 +450,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -500,6 +508,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "operation bizarre bazaar",
         "storm-2139"
       ],
@@ -598,6 +607,7 @@
         "CVE-2025-59528"
       ],
       "actors": [
+        "openai",
         "unknown",
         "unknown/multiple"
       ],
@@ -673,6 +683,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -692,6 +703,7 @@
         "CVE-2026-39987"
       ],
       "actors": [
+        "openai",
         "opportunistic threat actors"
       ],
       "iocs": []
@@ -782,6 +794,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -822,6 +835,7 @@
         "CVE-2025-59528"
       ],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -840,6 +854,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -877,6 +892,7 @@
         "CVE-2025-59528"
       ],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -1013,6 +1029,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "teampcp"
       ],
       "iocs": [
@@ -1235,6 +1252,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": [
@@ -1366,6 +1384,7 @@
         "bissa scanner",
         "bissa_scan_bot",
         "bissapwned",
+        "openai",
         "unattributed"
       ],
       "iocs": [
@@ -1516,7 +1535,8 @@
       ],
       "cves": [],
       "actors": [
-        "chinese state-sponsored group"
+        "chinese state-sponsored group",
+        "openai"
       ],
       "iocs": []
     },
@@ -1662,6 +1682,7 @@
       "actors": [
         "hightower6eu",
         "open-oss/privacy-filter hugging face typosquat",
+        "openai",
         "sakaen736jih",
         "sefirah",
         "sefirah rust infostealer",
@@ -1752,8 +1773,10 @@
         "CVE-2026-42208"
       ],
       "actors": [
+        "openai",
         "unknown",
-        "unknown threat actor"
+        "unknown threat actor",
+        "unknown threat actor(s)"
       ],
       "iocs": [
         "65.111.27.132"
@@ -1772,10 +1795,12 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "sefirah",
         "sefirah rust infostealer",
         "unknown",
-        "unknown threat actor"
+        "unknown threat actor",
+        "unknown threat actor(s)"
       ],
       "iocs": [
         "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
@@ -1812,6 +1837,7 @@
       "cves": [],
       "actors": [
         "nullifai",
+        "openai",
         "unknown",
         "unknown threat actor"
       ],
@@ -1887,6 +1913,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -1978,6 +2005,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": [
@@ -2046,6 +2074,7 @@
       "cves": [],
       "actors": [
         "mini shai-hulud",
+        "openai",
         "shai-hulud",
         "teampcp"
       ],
@@ -2063,6 +2092,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2097,6 +2127,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "project glasswing"
       ],
       "iocs": []
@@ -2132,6 +2163,7 @@
         "CVE-2026-42208"
       ],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2169,6 +2201,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown",
         "unknown threat actor"
       ],
@@ -2210,7 +2243,9 @@
       "cves": [
         "CVE-2025-66479"
       ],
-      "actors": [],
+      "actors": [
+        "openai"
+      ],
       "iocs": []
     },
     {
@@ -2449,6 +2484,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2500,7 +2536,9 @@
         "prompt-injection"
       ],
       "cves": [],
-      "actors": [],
+      "actors": [
+        "openai"
+      ],
       "iocs": []
     },
     {
@@ -2672,6 +2710,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": [
@@ -2711,6 +2750,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2729,8 +2769,10 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown",
-        "unknown threat actor"
+        "unknown threat actor",
+        "unknown threat actor(s)"
       ],
       "iocs": [
         "openew.app"
@@ -2883,6 +2925,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2900,6 +2943,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2937,6 +2981,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -2958,7 +3003,8 @@
       ],
       "actors": [
         "unknown",
-        "unknown threat actor"
+        "unknown threat actor",
+        "unknown threat actor(s)"
       ],
       "iocs": []
     },
@@ -2999,6 +3045,7 @@
       "actors": [
         "miasma supply chain campaign",
         "mini shai-hulud",
+        "openai",
         "shai-hulud"
       ],
       "iocs": [
@@ -3065,7 +3112,9 @@
         "supply-chain"
       ],
       "cves": [],
-      "actors": [],
+      "actors": [
+        "openai"
+      ],
       "iocs": [
         "https://github.com/Open-OSS/privacy-filter"
       ]
@@ -3122,6 +3171,7 @@
       "cves": [],
       "actors": [
         "jetbrains ai plugin credential theft campaign",
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -3139,6 +3189,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unattributed",
         "unknown",
         "vapt",
@@ -3159,6 +3210,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "teampcp",
         "unknown"
       ],
@@ -3244,6 +3296,7 @@
         "CVE-2021-3129"
       ],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -3262,7 +3315,9 @@
       "cves": [
         "CVE-2026-48710"
       ],
-      "actors": [],
+      "actors": [
+        "openai"
+      ],
       "iocs": []
     },
     {
@@ -3492,6 +3547,7 @@
         "CVE-2026-55255"
       ],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": [
@@ -3527,6 +3583,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -3561,6 +3618,7 @@
       "cves": [],
       "actors": [
         "bandcampro",
+        "openai",
         "patriot bait"
       ],
       "iocs": [
@@ -3662,6 +3720,7 @@
       "cves": [],
       "actors": [
         "gpt-5.6 sol",
+        "openai",
         "openai frontier model",
         "pre-release model",
         "unnamed"
@@ -3684,6 +3743,7 @@
       "actors": [
         "autonomous agent framework",
         "gpt-5.6 sol",
+        "openai",
         "openai frontier model",
         "pre-release model"
       ],
@@ -3905,7 +3965,8 @@
       "cves": [],
       "actors": [
         "unknown",
-        "unknown threat actor"
+        "unknown threat actor",
+        "unknown threat actor(s)"
       ],
       "iocs": []
     },
@@ -3923,6 +3984,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "openai frontier model"
       ],
       "iocs": []
@@ -3994,6 +4056,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unknown"
       ],
       "iocs": []
@@ -4071,6 +4134,7 @@
       "cves": [],
       "actors": [
         "mythos 5",
+        "openai",
         "opus 4.7"
       ],
       "iocs": [
@@ -4138,7 +4202,8 @@
         "claude mythos 5",
         "gpt-5.6 sol",
         "mythos 5",
-        "mythos-5"
+        "mythos-5",
+        "openai"
       ],
       "iocs": []
     },
@@ -4162,7 +4227,8 @@
         "CVE-2026-66018"
       ],
       "actors": [
-        "gpt-5.6 sol"
+        "gpt-5.6 sol",
+        "openai"
       ],
       "iocs": []
     },
@@ -4210,6 +4276,7 @@
       "cves": [],
       "actors": [
         "chaindrop",
+        "openai",
         "shai-hulud",
         "teampcp",
         "unit 42",
@@ -4275,6 +4342,7 @@
         "asyncrat",
         "emerald sleet",
         "kimsuky",
+        "openai",
         "velvet chollima"
       ],
       "iocs": [
@@ -4318,6 +4386,7 @@
       ],
       "cves": [],
       "actors": [
+        "openai",
         "unnamed"
       ],
       "iocs": []
@@ -4525,6 +4594,76 @@
       "cves": [],
       "actors": [],
       "iocs": []
+    },
+    {
+      "id": "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026",
+      "title": "Hugging Face Diffusers RCE via TOCTOU: Three CVEs Enable Silent Model Loading Exploits (CVE-2026-44827, CVE-2026-45804, CVE-2026-44513)",
+      "date": "2026-08-16",
+      "excerpt": "Three tracked vulnerabilities were disclosed: CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default 'None.py' file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8), covering cross-repository pipeline loading, local snapshot bypasses, and malicious custom components. A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it.",
+      "file": "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.md",
+      "body": "Hugging Face Diffusers RCE via TOCTOU: Three CVEs Enable Silent Model Loading Exploits (CVE-2026-44827, CVE-2026-45804, CVE-2026-44513) Date: 2026-08-16 Tags: model-poisoning, malicious-tool Executive Summary Three tracked vulnerabilities were disclosed: CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default 'None.py' file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8), covering cross-repository pipeline loading, local snapshot bypasses, and malicious custom components. A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it. Campaign Summary Field Detail Campaign / Malware Hugging Face Diffusers Model Loading RCE Exploitation Chain Attribution Unknown; potentially leveraged by model-poisoning campaigns (confidence: low) Target Organizations and developers loading AI models from Hugging Face using diffusers library Vector Malicious model configuration files; Time-of-Check-to-Time-of-Use (TOCTOU) race conditions in model loading Status active First Observed 2026-08-02 Detailed Findings The same underlying weakness, treating AI repository content as trusted rather than executable, extends to the model-loading path itself. Every variant identified traces back to a single root cause: a classic Time-of-Check to Time-of-Use (TOCTOU) flaw. A similar flaw was also disclosed in Hugging Face's transformers library, where failure to propagate a pinned commit hash allows attackers to swap in malicious code after trust_remote_code approval. This research follows closely on the heels of Hugging Face's July 2026 security incident, in which a malicious dataset abused two code-execution paths in the platform's data-processing pipeline, allowing an attacker to run code on a worker, escalate to node-level access, harvest cloud and cluster credentials, and move laterally into internal clusters. MITRE ATT&CK Mapping Technique ID Context Malicious Model Supply Chain T1195.001 Poisoned AI model repositories hosted on Hugging Face; crafted config.json files containing malicious code injection directives Remote Code Execution T1190 Silent code execution triggered during standard from_pretrained() model loading with no user interaction required Privilege Escalation T1548 TOCTOU race conditions allow attackers to escalate from model-loading context to arbitrary code execution IOCs Domains _Vulnerabilities affect any malicious model repository uploaded to Hugging Face; no specific package IOCs published_ Full URL Paths _Vulnerabilities affect any malicious model repository uploaded to Hugging Face; no specific package IOCs published_ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations For organizations using Hugging Face: immediately audit all model loading code for diffusers and transformers library versions affected by CVE-2026-44827, CVE-2026-45804, and CVE-2026-44513. Upgrade to patched versions immediately. Implement strict model source verification; maintain allowlists of trusted model repositories. Monitor for config.json and pipeline modifications in cloned model directories. Implement filesystem integrity monitoring on model cache directories. Restrict trust_remote_code to False unless explicitly required and vetted. Monitor cloud credential access patterns and implement IAM role restrictions. Screen for data exfiltration patterns in outbound traffic from model loading processes. References [Cybersecurity News] Hugging Face Diffusers Vulnerabilities Enable Remote Code Execution Through Malicious AI Models (2026-08-03) — https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/ [TechRepublic] Malicious Hugging Face Models Could Trigger Remote Code Execution (2026-06-05) — https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/ [Hive Security] Poisoned AI: How Hugging Face Became a Malware Distribution Platform (2026-05-29) — https://hivesecurity.gitlab.io/blog/huggingface-ai-supply-chain-attacks-2026/",
+      "tags": [
+        "malicious-tool",
+        "model-poisoning"
+      ],
+      "cves": [
+        "CVE-2026-44513",
+        "CVE-2026-44827",
+        "CVE-2026-45804"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026",
+      "title": "OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause",
+      "date": "2026-08-16",
+      "excerpt": "OpenAI is pausing some internal work around one of its upcoming artificial intelligence models to implement stricter safeguards after the system was found to be significantly more adept at cybersecurity tasks. The ChatGPT maker said on Friday it 'cannot rule out' that the unreleased Astra model would reach OpenAI's 'critical cybersecurity threshold,' meaning it's capable of identifying and developing zero-day exploits without human intervention. Astra's latest internal evaluations over the past few days indicate significant advancements in agentic coding and cybersecurity, leading OpenAI to conclude last night that it cannot rule out critical cyber capabilities under its Preparedness Framework.",
+      "file": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.md",
+      "body": "OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause Date: 2026-08-16 Tags: malicious-tool, nation-state Executive Summary OpenAI is pausing some internal work around one of its upcoming artificial intelligence models to implement stricter safeguards after the system was found to be significantly more adept at cybersecurity tasks. The ChatGPT maker said on Friday it 'cannot rule out' that the unreleased Astra model would reach OpenAI's 'critical cybersecurity threshold,' meaning it's capable of identifying and developing zero-day exploits without human intervention. Astra's latest internal evaluations over the past few days indicate significant advancements in agentic coding and cybersecurity, leading OpenAI to conclude last night that it cannot rule out critical cyber capabilities under its Preparedness Framework. Campaign Summary Field Detail Campaign / Malware OpenAI Astra Autonomously Executable Cybersecurity Capability Attribution OpenAI (self-identified through internal evaluation; model not yet released) (confidence: high) Target Not applicable—model remains unreleased; threshold crossing applies to any deployment context post-release Vector Autonomous agentic AI model capable of zero-day exploit development and execution without human intervention Status active First Observed 2026-08-07 Detailed Findings OpenAI said in a blog post Friday that this model, which is still in development, reached its 'critical cybersecurity threshold,' meaning it could independently identify and carry out cyberattacks against traditionally well-protected real-world systems. OpenAI's framework reserves the critical rating for a model that can do either of two things: Independently identify and develop functional zero-day exploits of all severity levels against many hardened real-world critical systems, or devise and execute end-to-end novel strategies for cyberattacks against hardened targets given only a high-level desired goal. Every earlier frontier model, including GPT-5.6-Sol, stayed in the so-called high category. Astra's internal evaluations showed gains in autonomous coding and cybersecurity large enough that OpenAI says it can no longer rule the critical rating out. In response to the discovery, the AI upstart said it's implementing security controls for higher-capability models and associated activities, such as isolated testing environments, restricted network and tool access, enhanced model weight protections and encryption, additional monitoring and detection capabilities, and sandboxed execution. MITRE ATT&CK Mapping Technique ID Context Autonomous Exploitation Framework T1203 Astra capability to autonomously identify, develop, and execute zero-day exploits without human operator intervention Lateral Movement via Autonomous Agent T1570 Potential for autonomous end-to-end attack execution including network reconnaissance, privilege escalation, and lateral movement Supply Chain Attack via AI Model Release T1195 Risk of future supply-chain compromise if critical-capability model is released or escapes containment IOCs Domains _Model remains in internal evaluation and testing; no deployment IOCs available. This represents capability disclosure rather than incident IOC._ Full URL Paths _Model remains in internal evaluation and testing; no deployment IOCs available. This represents capability disclosure rather than incident IOC._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Organizations should not expect to encounter Astra in production until OpenAI determines safeguards are adequate; current pause is precautionary. However, security teams should: (1) Monitor OpenAI and third-party vendor announcements regarding Astra release timelines and capability disclosures. (2) Prepare organizational policies for governing deployment and access controls of autonomous exploit-capable models if released. (3) Implement continuous vulnerability scanning and patch prioritization to reduce attack surface against any autonomous vulnerability discovery tools once available. (4) Assume adversaries with access to critical-capability AI models will use them for autonomous reconnaissance and exploit development; implement extended detection and response (XDR) tuned for high-velocity, multi-stage attack chains. (5) Red-team organizational defenses against autonomous attack scenarios now rather than waiting for model release. References [OpenAI] Responding to the next frontier of critical cyber capabilities (2026-08-07) — https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/ [Bloomberg] OpenAI Pauses Astra AI Model Development to Strengthen Cybersecurity Safeguards (2026-08-07) — https://www.bloomberg.com/news/articles/2026-08-07/openai-pauses-some-work-on-new-astra-model-over-cyber-concerns [Forbes] OpenAI Pauses Astra After It Nears First-Ever 'Critical' Cyber Risk (2026-08-09) — https://www.forbes.com/sites/jonmarkman/2026/08/09/openai-pauses-astra-after-it-nears-first-ever-critical-cyber-risk/ [The Hacker News] OpenAI's Next AI Model Astra Shows Cyber Performance Strong Enough to Trigger Pause (2026-08-10) — https://thehackernews.com/2026/08/openais-next-ai-model-astra-shows-cyber.html",
+      "tags": [
+        "malicious-tool",
+        "nation-state"
+      ],
+      "cves": [],
+      "actors": [
+        "gpt-5.6-sol",
+        "openai"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026",
+      "title": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days",
+      "date": "2026-08-16",
+      "excerpt": "Between August 7 and August 14, 2026, 114 malicious packages were confirmed on npm, led by an npm package cluster openly branded after a real dark-LLM attacker tool, with wormgpt-cli and gpt-terminal-cli published on August 7 in nine rapid versions. A separate dependency-confusion cluster targeted DeFi protocol infrastructure with ten package names impersonating real DeFi libraries (ethereum-vault-connector, boring-vault, camelot-ammv2-core, aerodrome-finance, openzeppelin contracts, and others), sixteen confirmed versions published within hours on August 11, targeting developers building on Camelot, Aerodrome Finance, and OpenZeppelin.",
+      "file": "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.md",
+      "body": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days Date: 2026-08-16 Tags: supply-chain, malicious-tool Executive Summary Between August 7 and August 14, 2026, 114 malicious packages were confirmed on npm, led by an npm package cluster openly branded after a real dark-LLM attacker tool, with wormgpt-cli and gpt-terminal-cli published on August 7 in nine rapid versions. A separate dependency-confusion cluster targeted DeFi protocol infrastructure with ten package names impersonating real DeFi libraries (ethereum-vault-connector, boring-vault, camelot-ammv2-core, aerodrome-finance, openzeppelin contracts, and others), sixteen confirmed versions published within hours on August 11, targeting developers building on Camelot, Aerodrome Finance, and OpenZeppelin. Campaign Summary Field Detail Campaign / Malware WormGPT npm Campaign + DeFi Dependency Confusion Cluster Attribution Unknown (confidence: low) Target npm developers; DeFi protocol developers (Camelot, Aerodrome, OpenZeppelin ecosystems) Vector Malicious npm packages; brand-squatting and dependency confusion Status active First Observed 2026-08-07 Detailed Findings This week's digest shows attackers leaning on brand recognition rather than hiding from it, with wormgpt-cli going from zero to nine versions on npm in a single day, brazenly named after a real dark-LLM tool sold to cybercriminals, alongside a companion package gpt-terminal-cli published the same day. The WormGPT branding references a known malicious LLM tool, indicating either direct tool distribution attempts or copycat services capitalizing on brand recognition. The DeFi cluster targeted decentralized finance infrastructure directly with ten package names on npm impersonating real DeFi protocol and standards libraries, confirmed versions published within hours of each other on August 11. This represents a coordinated dependency-confusion attack designed to compromise downstream DeFi development environments. MITRE ATT&CK Mapping Technique ID Context Supply Chain Compromise T1195 Malicious packages published to public registries (npm) to compromise developer environments Masquerading T1036 Package names imitating legitimate DeFi libraries and branded after known attack tools to evade detection Execution T1204 User-triggered execution when developers import or install the malicious packages IOCs Domains _IOCs sourced from Xygeni Malicious Code Digest #83 (August 14, 2026)_ Full URL Paths _IOCs sourced from Xygeni Malicious Code Digest #83 (August 14, 2026)_ Splunk Format _No IOCs available for Splunk query_ Package Indicators Affected Platforms Detection Recommendations Monitor npm package registries for newly published packages matching known malicious tool names (WormGPT, DarkBARD, etc.) and DeFi protocol library names. Flag packages published in rapid succession or clustering (multiple versions in hours). Implement strict dependency pinning and version locking in package.json files. Scan imports for packages with suspiciously close names to legitimate libraries. Use npm audit and Snyk to identify known malicious packages. For DeFi projects, maintain an allowlist of legitimate @openzeppelin, @aerodrome-finance, and other protocol-specific package scopes. Require developer verification of package author identity before installation in high-trust environments. References [Xygeni] Xygeni Malicious Code Digest 83 (2026-08-14) — https://xygeni.io/blog/xygeni-malicious-code-digest-83/ [Xygeni] Xygeni Malicious Code Digest 82 (2026-08-07) — https://xygeni.io/blog/xygeni-malicious-code-digest-82/",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown",
+        "wormgpt"
+      ],
+      "iocs": [
+        "npm:@aerodrome-finance/contracts",
+        "npm:@aerodrome-finance/slipstream",
+        "npm:@openzeppelin-4/contracts",
+        "npm:@openzeppelin-5/contracts",
+        "npm:boring-vault",
+        "npm:camelot-ammv2-core",
+        "npm:camelot-ammv2-periphery",
+        "npm:ethereum-vault-connector",
+        "npm:gpt-terminal-cli",
+        "npm:passkeys-react",
+        "npm:permit2",
+        "npm:wormgpt-cli"
+      ]
     }
   ]
 }

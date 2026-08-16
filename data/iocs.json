@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-14",
+  "last_updated": "2026-08-16",
   "iocs": [
     {
       "value": "npm:@kolbo/mcp@1.57.1",
@@ -3797,6 +3797,114 @@
       "first_seen": "2026-08-05",
       "source": "Forbes",
       "campaign": "anthropic-claude-unauthorized-production-breach-july-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:wormgpt-cli",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | Nine versions published August 7, 2026, branded after dark-LLM tool",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:gpt-terminal-cli",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | Companion package published August 7, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:ethereum-vault-connector",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:boring-vault",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:camelot-ammv2-core",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:camelot-ammv2-periphery",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@aerodrome-finance/contracts",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@aerodrome-finance/slipstream",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:permit2",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@openzeppelin-4/contracts",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@openzeppelin-5/contracts",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:passkeys-react",
+      "type": "package",
+      "context": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days | DeFi dependency confusion package, August 11, 2026",
+      "first_seen": "2026-08-16",
+      "source": "Xygeni",
+      "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
       "status": "active"
     }
   ]

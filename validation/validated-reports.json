@@ -3865,6 +3865,61 @@
       "validated_at": "2026-08-15T03:39:27+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026": {
+      "content_hash": "82d9778ce2cfe8c68ffe396753b1bf94fcabbe992f0487c92d8e77b08166d75d",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.md",
+      "posts_index_hash": "9b6b32142c142d844557f82c187b984104bdfbae9fe069064741b66419a15db0",
+      "report_id": "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-diffusers-vulnerabilities/",
+        "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
+        "https://hivesecurity.gitlab.io/blog/huggingface-ai-supply-chain-attacks-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-16T03:49:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026": {
+      "content_hash": "b8d2656e4fb788c4308ce4eb6249cd541cc93fa742daa2685faa62dddbc1e2a7",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.md",
+      "posts_index_hash": "54988b3b80a5b1570dfbb1ebd5d89f4d40ce46ba033ed89a9b970cb1e1a0753d",
+      "report_id": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+        "https://www.bloomberg.com/news/articles/2026-08-07/openai-pauses-some-work-on-new-astra-model-over-cyber-concerns",
+        "https://www.forbes.com/sites/jonmarkman/2026/08/09/openai-pauses-astra-after-it-nears-first-ever-critical-cyber-risk/",
+        "https://thehackernews.com/2026/08/openais-next-ai-model-astra-shows-cyber.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-16T03:49:14+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026": {
+      "content_hash": "64926e394d091e79e2b18c903a77babeda52783f71cd666d2dccf82690d55ce7",
+      "evidence_status": "validated",
+      "file": "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.md",
+      "posts_index_hash": "2969baa1ffe852c3601a3229dc920828257f33543f1c866cc976e0e0ae65f914",
+      "report_id": "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://xygeni.io/blog/xygeni-malicious-code-digest-83/",
+        "https://xygeni.io/blog/xygeni-malicious-code-digest-82/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-16T03:49:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

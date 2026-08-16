@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026",
+      "title": "OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause",
+      "date": "2026-08-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenAI is pausing some internal work around one of its upcoming artificial intelligence models to implement stricter safeguards after the system was found to be significantly more adept at cybersecurity tasks. The ChatGPT maker said on Friday it 'cannot rule out' that the unreleased Astra model would reach OpenAI's 'critical cybersecurity threshold,' meaning it's capable of identifying and developing zero-day exploits without human intervention. Astra's latest internal evaluations over the past few days indicate significant advancements in agentic coding and cybersecurity, leading OpenAI to conclude last night that it cannot rule out critical cyber capabilities under its Preparedness Framework.",
+      "file": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.md"
+    },
+    {
+      "id": "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026",
+      "title": "Hugging Face Diffusers RCE via TOCTOU: Three CVEs Enable Silent Model Loading Exploits (CVE-2026-44827, CVE-2026-45804, CVE-2026-44513)",
+      "date": "2026-08-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Three tracked vulnerabilities were disclosed: CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default 'None.py' file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8), covering cross-repository pipeline loading, local snapshot bypasses, and malicious custom components. A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it.",
+      "file": "2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.md"
+    },
+    {
+      "id": "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026",
+      "title": "WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days",
+      "date": "2026-08-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Between August 7 and August 14, 2026, 114 malicious packages were confirmed on npm, led by an npm package cluster openly branded after a real dark-LLM attacker tool, with wormgpt-cli and gpt-terminal-cli published on August 7 in nine rapid versions. A separate dependency-confusion cluster targeted DeFi protocol infrastructure with ten package names impersonating real DeFi libraries (ethereum-vault-connector, boring-vault, camelot-ammv2-core, aerodrome-finance, openzeppelin contracts, and others), sixteen confirmed versions published within hours on August 11, targeting developers building on Camelot, Aerodrome Finance, and OpenZeppelin.",
+      "file": "2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.md"
+    },
+    {
       "id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
       "title": "Autonomous Hermes/OpenClaw Framework Targets Taiwan Nuclear Infrastructure: Multi-Wave Attack Extracts 2,500+ Government Records",
       "date": "2026-08-15",

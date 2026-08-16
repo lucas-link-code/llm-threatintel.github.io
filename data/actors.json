@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-16",
   "entries": [
     {
       "id": "dream-hermes-openclaw-multi-agent-intrusion-framework",
@@ -3759,6 +3759,63 @@
       ],
       "description": "Threat actor deployed autonomous AI agents using publicly available open-source frameworks (Hermes, OpenClaw) to conduct a multi-wave, near-human-like cyberattack against Taiwan's government and critical infrastructure. Attack demonstrated real-time learning: agents adapted tactics when initial approaches were blocked, performed internet-based reconnaissance for new exploitation vectors, and coordinated simultaneous assault on 21 systems through up to eight parallel agent instances. Operation extracted high-value targets including government personnel records, database credentials, and SSO tokens, then laterally pivoted to nuclear safety agency and energy sector. Safety mechanisms in AI frameworks were circumvented through misrepresentation of operation as authorized security testing.",
       "attribution": "Suspected China-aligned; Ministry of Digital Affairs confirmed overseas origin; intelligence sources indicate timing and sophistication consistent with PLA cyber operations"
+    },
+    {
+      "id": "unknown-threat-actor-s",
+      "names": [
+        "Unknown Threat Actor(s)"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "npm registry"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1036 - Masquerading",
+        "T1204 - User Execution"
+      ],
+      "description": "Actor or actor group publishing malicious npm packages under brand names (WormGPT) and through dependency confusion attacks targeting DeFi protocols. Campaign shows brazen branding rather than stealth, suggesting either direct distribution of known malicious tools or coordinated copycat activity capitalizing on brand recognition. DeFi targeting indicates focus on high-value development targets.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unknown-model-poisoning-operator-s",
+      "names": [
+        "Unknown Model Poisoning Operator(s)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Hugging Face Hub"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise (AI Models)",
+        "T1190 - Exploit Remote Code Execution",
+        "T1548 - Privilege Escalation via Race Condition"
+      ],
+      "description": "Threat actor(s) capable of uploading and maintaining malicious AI model repositories on Hugging Face exploiting TOCTOU vulnerabilities in diffusers and transformers libraries. Likely has capability to harvest cloud credentials, SSH keys, and API tokens from developer systems loading poisoned models. No specific attribution or known incidents of active exploitation documented yet, but vulnerability design suggests intentional weaponization.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "openai",
+      "names": [
+        "OpenAI"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Internal testing only; not yet released"
+      ],
+      "ttps": [
+        "T1203 - Autonomous Exploit Development and Execution",
+        "T1570 - Lateral Movement via Autonomous Agent",
+        "T1595 - Active Scanning (autonomous reconnaissance)"
+      ],
+      "description": "OpenAI's Astra model represents the first frontier LLM explicitly flagged by its developer as having crossed into 'critical cybersecurity threshold' capabilities under internal evaluation. The model demonstrates autonomous ability to identify zero-day vulnerabilities, develop functional exploits, and execute end-to-end cyberattack strategies against hardened systems without human operator input. Represents a significant inflection point in AI-driven offensive capabilities and marks the first time a developer has publicly paused release of a frontier model due to offensive cybersecurity capability concerns.",
+      "attribution": "OpenAI (developer and self-reporter)"
     }
   ]
 }

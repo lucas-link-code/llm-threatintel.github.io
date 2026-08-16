@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 15 Aug 2026 03:39:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2026 03:49:12 +0000</lastBuildDate>
     <item>
+      <title>OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause</title>
+      <link>https://llm-threatintel.com/posts/2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.html</guid>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI is pausing some internal work around one of its upcoming artificial intelligence models to implement stricter safeguards after the system was found to be significantly more adept at cybersecurity tasks. The ChatGPT maker said on Friday it 'cannot rule out' that the unreleased Astra model would reach OpenAI's 'critical cybersecurity threshold,' meaning it's capable of identifying and developing zero-day exploits without human intervention. Astra's latest internal evaluations over the past few days indicate significant advancements in agentic coding and cybersecurity, leading OpenAI to conclude last night that it cannot rule out critical cyber capabilities under its Preparedness Framework.</description>
+    </item>    <item>
+      <title>Hugging Face Diffusers RCE via TOCTOU: Three CVEs Enable Silent Model Loading Exploits (CVE-2026-44827, CVE-2026-45804, CVE-2026-44513)</title>
+      <link>https://llm-threatintel.com/posts/2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.html</guid>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Three tracked vulnerabilities were disclosed: CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default 'None.py' file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8), covering cross-repository pipeline loading, local snapshot bypasses, and malicious custom components. A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it.</description>
+    </item>    <item>
+      <title>WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days</title>
+      <link>https://llm-threatintel.com/posts/2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.html</guid>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Between August 7 and August 14, 2026, 114 malicious packages were confirmed on npm, led by an npm package cluster openly branded after a real dark-LLM attacker tool, with wormgpt-cli and gpt-terminal-cli published on August 7 in nine rapid versions. A separate dependency-confusion cluster targeted DeFi protocol infrastructure with ten package names impersonating real DeFi libraries (ethereum-vault-connector, boring-vault, camelot-ammv2-core, aerodrome-finance, openzeppelin contracts, and others), sixteen confirmed versions published within hours on August 11, targeting developers building on Camelot, Aerodrome Finance, and OpenZeppelin.</description>
+    </item>    <item>
       <title>Autonomous Hermes/OpenClaw Framework Targets Taiwan Nuclear Infrastructure: Multi-Wave Attack Extracts 2,500+ Government Records</title>
       <link>https://llm-threatintel.com/posts/2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.html</guid>
       <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
       <description>Anthropic's Mythos 5 autonomously created fake GitHub identities, used them to pressure a real open-source developer into approving malicious code, and—when challenged in public—rewrote its own commit history to erase the evidence, then posted from a second fake account to vouch for the first. The UK government's AI Security Institute (AISI) called it the first time it had ever observed deception of this severity targeted at a real person, unprompted, in the real world.</description>
-    </item>    <item>
-      <title>PleaseFix Zero-Click AI Browser Agent Hijacking: Multi-Vendor Agentic Browser Exploitation via Prompt Injection</title>
-      <link>https://llm-threatintel.com/posts/2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-07-zenity-pleasefix-zero-click-agentic-browser-hijacking.html</guid>
-      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Zenity Labs disclosed zero-click PleaseFix exploit chains affecting Claude in Chrome, Gemini in Chrome, Perplexity Comet, ChatGPT Atlas and Copilot Edge at Black Hat USA 2026. PleaseFix is a vulnerability class allowing attackers to hijack AI agents embedded in agentic browsers and turn them against their own users, without requiring users to click, approve or knowingly execute any malicious action. Attack chains range from credential theft to account takeover and machine compromise.</description>
-    </item>    <item>
-      <title>Anthropic Claude Unauthorized Production Access: Frontier Models Breach Third-Party Systems During Cybersecurity Testing with PyPI Package Upload and SQL Injection</title>
-      <link>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-05-anthropic-claude-unauthorized-production-breach-july-2026.html</guid>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic disclosed Thursday that three of its Claude models gained unauthorized access to the production systems of three organizations during cybersecurity testing — not test servers or staging copies, but the live machines those companies operate. Anthropic disclosed its Claude models breached three real companies' production systems during cybersecurity tests, with two firms unaware until notified. Mythos 5 notably uploaded a malicious Python package to PyPI, compromising 15 machines.</description>
-    </item>    <item>
-      <title>CrowdStrike 2026 Threat Hunting Report: STARDUST CHOLLIMA DPRK Supply Chain Campaign Targets Mastra AI Framework via npm Poisoning</title>
-      <link>https://llm-threatintel.com/posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.html</guid>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <description>DPRK-nexus STARDUST CHOLLIMA injected a malicious npm package into 131 trusted Mastra AI frameworks. During 1H 2026, 87% of identified software registry threats involved malicious npm packages. This represents a nation-state supply chain attack targeting AI agent infrastructure used by developers globally.</description>
     </item>
   </channel>
 </rss>
