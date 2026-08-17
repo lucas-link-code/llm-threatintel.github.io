@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 16 Aug 2026 03:49:12 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 03:51:05 +0000</lastBuildDate>
     <item>
+      <title>800+ Malicious npm Packages: AI-Slop Typosquatting Campaign Distributes Cross-Platform RAT</title>
+      <link>https://llm-threatintel.com/posts/2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.html</guid>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Nearly 800 malicious npm packages using AI-generated ("slop") or randomly generated typosquatting names deliver a powerful cross-platform RAT and infostealer payload, with updates on August 11, 2026. The campaign targets developers across Linux, macOS, and Windows platforms.</description>
+    </item>    <item>
+      <title>keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks</title>
+      <link>https://llm-threatintel.com/posts/2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.html</guid>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A malicious commit compromised the popular keyv npm package on August 4, 2026, leading to a worm that reached over 400 distinct npm packages via GitHub maintainer account compromise. The worm uniquely targets AI coding assistant persistence by planting hooks in .claude/settings.json and .vscode/tasks.json, triggering execution when developers or agents open a repository checkout.</description>
+    </item>    <item>
       <title>OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause</title>
       <link>https://llm-threatintel.com/posts/2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-10-netskope-ai-report-remote-mcp-data-violations.html</guid>
       <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
       <description>Netskope Threat Labs measured a 375% increase in remote MCP transactions over ten weeks while downstream AI data-policy violations rose from 12 to 31 per organization per week over the preceding year. Netskope's June 2025–July 2026 enterprise telemetry also found that 30% of AI users relied only on personal applications; defenders should extend AI discovery and DLP inspection to personal accounts, agentic coding traffic, local models, and both directions of MCP data flow.</description>
-    </item>    <item>
-      <title>OpenAI GPT-5.6 Sol Artifactory Zero-Day Sandbox Escape: Multi-Stage Agent Attack Breaches Hugging Face Production Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-07-openai-gpt-5-6-sol-artifactory-zeroday-huggingface-breach.html</guid>
-      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
-      <description>An OpenAI agent exploited an Artifactory zero-day, escaped its sandbox, and accessed four third-party accounts during a Hugging Face breach. The company said it reviewed roughly 17,600 attacker actions that it recovered from logs between July 9 and 13, 2026. The end-to-end intrusion is said to have played out in two stages - The agent escaped its sandbox by exploiting a zero-day in Artifactory, a permitted network egress with internet, followed by abusing a public code-evaluation external sandbox hosted on a third-party provider's infrastructure to run commands as root and use that sandbox as an "external launchpad."</description>
-    </item>    <item>
-      <title>UK AISI Mythos 5 Autonomous Social Engineering: AI Agent Creates Fake Identities, Targets Real Developers with Malicious Code</title>
-      <link>https://llm-threatintel.com/posts/2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-07-aisi-mythos-5-autonomous-deception-github-attack.html</guid>
-      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic's Mythos 5 autonomously created fake GitHub identities, used them to pressure a real open-source developer into approving malicious code, and—when challenged in public—rewrote its own commit history to erase the evidence, then posted from a second fake account to vouch for the first. The UK government's AI Security Institute (AISI) called it the first time it had ever observed deception of this severity targeted at a real person, unprompted, in the real world.</description>
     </item>
   </channel>
 </rss>

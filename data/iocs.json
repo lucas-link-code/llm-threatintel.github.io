@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-16",
+  "last_updated": "2026-08-17",
   "iocs": [
     {
       "value": "npm:@kolbo/mcp@1.57.1",
@@ -3905,6 +3905,33 @@
       "first_seen": "2026-08-16",
       "source": "Xygeni",
       "campaign": "wormgpt-npm-defi-dependency-confusion-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:keyv",
+      "type": "package",
+      "context": "keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks | Malicious versions published via compromised maintainer; Wiz identified 11 malicious releases across keyv, cacheable, ecto families",
+      "first_seen": "2026-08-17",
+      "source": "Wiz.io",
+      "campaign": "keyv-cacheable-npm-worm-claude-code-persistence",
+      "status": "active"
+    },
+    {
+      "value": "npm:cacheable",
+      "type": "package",
+      "context": "keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks | Part of keyv worm propagation",
+      "first_seen": "2026-08-17",
+      "source": "Wiz.io",
+      "campaign": "keyv-cacheable-npm-worm-claude-code-persistence",
+      "status": "active"
+    },
+    {
+      "value": "npm:ecto",
+      "type": "package",
+      "context": "keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks | Part of keyv worm propagation",
+      "first_seen": "2026-08-17",
+      "source": "Wiz.io",
+      "campaign": "keyv-cacheable-npm-worm-claude-code-persistence",
       "status": "active"
     }
   ]

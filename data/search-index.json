@@ -4664,6 +4664,46 @@
         "npm:permit2",
         "npm:wormgpt-cli"
       ]
+    },
+    {
+      "id": "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages",
+      "title": "800+ Malicious npm Packages: AI-Slop Typosquatting Campaign Distributes Cross-Platform RAT",
+      "date": "2026-08-17",
+      "excerpt": "Nearly 800 malicious npm packages using AI-generated (\"slop\") or randomly generated typosquatting names deliver a powerful cross-platform RAT and infostealer payload, with updates on August 11, 2026. The campaign targets developers across Linux, macOS, and Windows platforms.",
+      "file": "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.md",
+      "body": "800+ Malicious npm Packages: AI-Slop Typosquatting Campaign Distributes Cross-Platform RAT Date: 2026-08-17 Tags: supply-chain, malware Executive Summary Nearly 800 malicious npm packages using AI-generated (\"slop\") or randomly generated typosquatting names deliver a powerful cross-platform RAT and infostealer payload, with updates on August 11, 2026. The campaign targets developers across Linux, macOS, and Windows platforms. Campaign Summary Field Detail Campaign / Malware AI-Slop Typosquatting Campaign (800+ packages) Attribution Unknown (confidence: low) Target npm developers; cross-platform users Vector Typosquatted package names; install-time execution via postinstall scripts Status active First Observed 2026-08-11 Detailed Findings Packages appear to use AI slop squatted, or randomly generated typo-squatting package names, but all deliver a powerful RAT and infostealer payload. The scale and coordination suggest automated package generation and publishing, consistent with malware-as-a-service infrastructure. MITRE ATT&CK Mapping Technique ID Context Typosquatting / Dependency Confusion T1195.003 Malicious packages registered with names similar to legitimate npm packages Execution via Package Manager T1059.001 Postinstall scripts execute malware on npm install Information Gathering T1592 RAT and infostealer exfiltrate developer credentials and system data IOCs Domains _No specific package IOCs published; OpenSourceMalware researcher Paul McCarty and The Hacker News published updates on August 11, 2026. Recommend checking npm security advisories and malware tracking databases for package names._ Full URL Paths _No specific package IOCs published; OpenSourceMalware researcher Paul McCarty and The Hacker News published updates on August 11, 2026. Recommend checking npm security advisories and malware tracking databases for package names._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Monitor npm package registrations for unusual patterns of similarly-named packages or AI-generated names with common typosquatting targets (ollama, langchain, openai, anthropic, vercel). Implement npm postinstall script sandboxing and prohibit lifecycle script execution for unvetted packages. Use npm audit and third-party supply chain scanners (Snyk, Sonatype) to detect typosquatted dependencies. Monitor for sudden spikes in package installation from new or low-reputation publishers. Implement strict lockfile pinning and registry authentication. Alert on any postinstall execution that attempts credential harvesting or network exfiltration. References [The Hacker News] Nearly 800 Malicious npm Packages Deliver Cross-Platform RAT and Infostealer (2026-08-11) — https://thehackernews.com/2026/08/nearly-800-malicious-npm-packages.html [OpenSourceMalware] Cybersecurity Startup Publishes Infostealers to NPM (2026-07-09) — https://opensourcemalware.com/blog/cybersecurity-startup-publishes-infostealers-to-npm",
+      "tags": [
+        "malware",
+        "supply-chain"
+      ],
+      "cves": [],
+      "actors": [
+        "openai",
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence",
+      "title": "keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks",
+      "date": "2026-08-17",
+      "excerpt": "A malicious commit compromised the popular keyv npm package on August 4, 2026, leading to a worm that reached over 400 distinct npm packages via GitHub maintainer account compromise. The worm uniquely targets AI coding assistant persistence by planting hooks in .claude/settings.json and .vscode/tasks.json, triggering execution when developers or agents open a repository checkout.",
+      "file": "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.md",
+      "body": "keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks Date: 2026-08-17 Tags: supply-chain, malicious-tool Executive Summary A malicious commit compromised the popular keyv npm package on August 4, 2026, leading to a worm that reached over 400 distinct npm packages via GitHub maintainer account compromise. The worm uniquely targets AI coding assistant persistence by planting hooks in .claude/settings.json and .vscode/tasks.json, triggering execution when developers or agents open a repository checkout. Campaign Summary Field Detail Campaign / Malware keyv/cacheable npm Worm Attribution Unknown (GitHub maintainer account compromise) (confidence: low) Target npm developers using keyv, cacheable, ecto, and dependent packages; AI coding assistant users (Claude Code, VS Code agents) Vector Malicious npm package dependencies; lifecycle scripts and IDE hooks Status active First Observed 2026-08-04 Detailed Findings On August 4, 2026, a malicious commit (174f6a5) was identified in the GitHub repository of the popular keyv npm package; similar commits were pushed to jaredwray/cacheable and jaredwray/ecto. Starting at 09:00 UTC, the attacker first used a compromised identity to introduce IDE persistence payloads to the keyv repository, then shortly after published a new version containing the payload. This incident opens a new attack chapter at 'repo-open time,' with the malicious commit planting .claude/settings.json session hooks and .vscode/tasks.json folder-open tasks, so the trigger is a developer or coding agent opening the checkout. The 11 KB setup.mjs file is lightly obfuscated and configured to start a second stage under the Bun runtime. Analysis identified the user-agent Bun/1.3.13 performing malicious calls, and the malware uses an Ethereum smart contract to dynamically retrieve C2 domains. Early enumeration found 11 malicious releases across the keyv family, the cacheable family, and ecto. MITRE ATT&CK Mapping Technique ID Context Supply Chain Compromise T1195.001 Compromised GitHub maintainer credentials used to publish trojanized packages Persistence: Boot or Logon Init Scripts T1547.001 IDE hooks (.claude/settings.json, .vscode/tasks.json) execute on repository open Execution: Command and Scripting Interpreter T1059.001 Malicious lifecycle scripts and Bun-based payload execution Command and Control: Dynamic Resolution T1568 Ethereum smart contract used to retrieve C2 domains dynamically IOCs Domains _Over 400 distinct npm packages compromised per Wiz tracking; specific version and hash IOCs published by Wiz and Datadog Security Labs_ Full URL Paths _Over 400 distinct npm packages compromised per Wiz tracking; specific version and hash IOCs published by Wiz and Datadog Security Labs_ Splunk Format _No IOCs available for Splunk query_ Package Indicators Affected Platforms Detection Recommendations Monitor npm audit logs and lockfile changes for unexpected updates to keyv, cacheable, ecto, and their dependents. Inspect .claude/settings.json and .vscode/tasks.json in all cloned repositories for malicious hook definitions. Block or sandbox Bun runtime execution during npm install unless explicitly required. Implement npm lifecycle script restrictions (--ignore-scripts). Track GitHub Personal Access Token (PAT) usage for keyv and related projects; rotate all maintainer credentials. Review GitHub Actions workflows for unauthorized commits or force-push activity on July 31–August 4, 2026. Alert on postinstall and preinstall script execution in package manager logs. Implement registry-level signature verification for npm package integrity. References [Wiz.io] keyv and cacheable npm Package Hijacked in Supply Chain Attack (2026-08-04) — https://www.wiz.io/blog/keyv-and-cacheable-npm-supply-chain-attack [Digital Applied] npm Package Compromise: What AI Teams Should Do Now (2026-08-09) — https://www.digitalapplied.com/blog/npm-package-compromise-2026-ai-developer-toolchain-response [Datadog Security Labs] Worm compromises hundreds of popular npm packages (2026-08-04) — https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown",
+        "unknown (github maintainer account compromise)"
+      ],
+      "iocs": [
+        "npm:cacheable",
+        "npm:ecto",
+        "npm:keyv"
+      ]
     }
   ]
 }

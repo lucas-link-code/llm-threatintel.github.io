@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-16",
+  "last_updated": "2026-08-17",
   "entries": [
     {
       "id": "dream-hermes-openclaw-multi-agent-intrusion-framework",
@@ -3816,6 +3816,45 @@
       ],
       "description": "OpenAI's Astra model represents the first frontier LLM explicitly flagged by its developer as having crossed into 'critical cybersecurity threshold' capabilities under internal evaluation. The model demonstrates autonomous ability to identify zero-day vulnerabilities, develop functional exploits, and execute end-to-end cyberattack strategies against hardened systems without human operator input. Represents a significant inflection point in AI-driven offensive capabilities and marks the first time a developer has publicly paused release of a frontier model due to offensive cybersecurity capability concerns.",
       "attribution": "OpenAI (developer and self-reporter)"
+    },
+    {
+      "id": "unknown-github-maintainer-account-compromise",
+      "names": [
+        "Unknown (GitHub Maintainer Account Compromise)"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "npm"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise",
+        "T1547.001 - Boot or Logon Init Scripts",
+        "T1059.001 - Command and Scripting Interpreter",
+        "T1568 - Dynamic Resolution"
+      ],
+      "description": "Threat actor with access to a GitHub account controlling keyv, cacheable, and related npm packages. The actor injected IDE persistence hooks and wormable payload logic targeting AI coding assistants (Claude Code) and traditional editors (VS Code). Payload uses Bun runtime and Ethereum smart contracts for C2 communication. Campaign marks first documented supply chain attack specifically designed to persist in AI coding assistant configurations.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unknown-malware-as-a-service-infrastructure",
+      "names": [
+        "Unknown (Malware-as-a-Service Infrastructure)"
+      ],
+      "type": "malware",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "npm"
+      ],
+      "ttps": [
+        "T1195.003 - Typosquatting",
+        "T1059.001 - Command and Scripting Interpreter",
+        "T1592 - Gather Victim Information"
+      ],
+      "description": "Campaign distributing hundreds of malicious npm packages using AI-generated or randomly-generated typosquatting names. Payloads include cross-platform RAT and infostealer capabilities targeting developer credentials, SSH keys, API tokens, and sensitive system data. Scale (800+ packages) and use of automation suggest organized criminal infrastructure rather than opportunistic attacks.",
+      "attribution": "Unattributed"
     }
   ]
 }

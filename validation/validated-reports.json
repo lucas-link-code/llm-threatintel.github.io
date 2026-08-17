@@ -3920,6 +3920,39 @@
       "validated_at": "2026-08-16T03:49:35+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages": {
+      "content_hash": "531460ef2bab96a7e6e5eba0e84ac8288976f08d3a4fa98fb3e03f491a895ed9",
+      "evidence_status": "validated",
+      "file": "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.md",
+      "posts_index_hash": "2bb6038dba286507ae56c22bfd9b33034a9f277ad79e03bcc7499226c2179880",
+      "report_id": "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/08/nearly-800-malicious-npm-packages.html",
+        "https://opensourcemalware.com/blog/cybersecurity-startup-publishes-infostealers-to-npm"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-17T03:51:07+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence": {
+      "content_hash": "4e8cecd29d4d0e38c6be5db9a377b9685350252f9d24d853fb4910190c023ec6",
+      "evidence_status": "validated",
+      "file": "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.md",
+      "posts_index_hash": "5c9b96eb8f976f2a2a1c0f1cf6c4eb8e66eba2ad2be32836a5987a8075d5719d",
+      "report_id": "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence",
+      "review_required": [],
+      "source_urls": [
+        "https://www.wiz.io/blog/keyv-and-cacheable-npm-supply-chain-attack",
+        "https://www.digitalapplied.com/blog/npm-package-compromise-2026-ai-developer-toolchain-response",
+        "https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-17T03:51:08+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages",
+      "title": "800+ Malicious npm Packages: AI-Slop Typosquatting Campaign Distributes Cross-Platform RAT",
+      "date": "2026-08-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Nearly 800 malicious npm packages using AI-generated (\"slop\") or randomly generated typosquatting names deliver a powerful cross-platform RAT and infostealer payload, with updates on August 11, 2026. The campaign targets developers across Linux, macOS, and Windows platforms.",
+      "file": "2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.md"
+    },
+    {
+      "id": "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence",
+      "title": "keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks",
+      "date": "2026-08-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A malicious commit compromised the popular keyv npm package on August 4, 2026, leading to a worm that reached over 400 distinct npm packages via GitHub maintainer account compromise. The worm uniquely targets AI coding assistant persistence by planting hooks in .claude/settings.json and .vscode/tasks.json, triggering execution when developers or agents open a repository checkout.",
+      "file": "2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.md"
+    },
+    {
       "id": "2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026",
       "title": "OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause",
       "date": "2026-08-16",
