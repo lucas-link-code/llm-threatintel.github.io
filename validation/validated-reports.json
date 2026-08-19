@@ -3953,6 +3953,70 @@
       "validated_at": "2026-08-17T03:51:08+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-19-autonomous-ai-agents-cyberattack-operators": {
+      "content_hash": "e838d974ddb9240494c124b3710f6cfaea24183d15c31ab991885c16742be7a1",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-19-autonomous-ai-agents-cyberattack-operators.md",
+      "posts_index_hash": "7fe65d94fd95656d00bedee8173e8841a4acaae0c05b15179968abfa806b8acd",
+      "report_id": "2026-08-19-autonomous-ai-agents-cyberattack-operators",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://newsroom.trendmicro.com/2026-07-29-TrendAI-TM-Reports-Nation-State-Activity-in-H1-2026-APT-Activity-Roundup",
+        "https://www.infosecurity-magazine.com/news/nation-state-hackers-gemini-ai/",
+        "https://itbrief.asia/story/ai-boosts-nation-state-cyberattacks-trendai-warns",
+        "https://www.esecurityplanet.com/weekly-roundup/ai-security-failures-active-exploits-and-breaches-define-the-week-in-august-2026/",
+        "https://cloudsecurityalliance.org/artifacts/hugging-face-ciso-post-mortem"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-19T03:47:51+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-19-ghostapproval-symlink-ai-coding-agents": {
+      "content_hash": "a1b02d05cac5a592738b69fed29639da47f17af89954f1dbf060d85c54ceec57",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-19-ghostapproval-symlink-ai-coding-agents.md",
+      "posts_index_hash": "6fd634bdfe6279a8176de418413148af564de232a5790700f260d606c1767462",
+      "report_id": "2026-08-19-ghostapproval-symlink-ai-coding-agents",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants",
+        "https://www.infosecurity-magazine.com/news/ghostapproval-flaw-ai-coding/",
+        "https://cybersecuritynews.com/ghostapproval-vulnerability/",
+        "https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html",
+        "https://axis-intelligence.com/research/ai-model-vulnerability-tracker/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-19T03:47:52+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt": {
+      "content_hash": "da11d2e79b61e4e4ea7456b7e8571234016d7a9ca313d2af07964c2b80a32c09",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt.md",
+      "posts_index_hash": "c29e1bfa998c57350a6ef86202bf1450a756f0ef36d0d77dd85ae611e3b71527",
+      "report_id": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
+        "https://www.explainx.ai/blog/hugging-face-autonomous-ai-agent-breach-july-2026",
+        "https://cybernews.com/ai-news/hugging-face-autonomous-ai-cyberattack/",
+        "https://www.varonis.com/blog/huggingface-breach"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-19T03:47:53+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
