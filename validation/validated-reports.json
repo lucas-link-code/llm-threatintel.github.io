@@ -4017,6 +4017,27 @@
       "validated_at": "2026-08-19T03:47:53+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-20-shai-hulud-npm-worm-keyv-August-2026": {
+      "content_hash": "404d979f5f0951c5f87f9ad081e40e478b4b913d0c492e215f8c1f6059c69b3f",
+      "evidence_status": "validated",
+      "file": "2026-08-20-shai-hulud-npm-worm-keyv-August-2026.md",
+      "posts_index_hash": "a63b9402aa8b3cf46c05023276393bcdfa5e22910b8add5f20bcdaa349e833a2",
+      "report_id": "2026-08-20-shai-hulud-npm-worm-keyv-August-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-009/",
+        "https://snyk.io/blog/inside-keyv-npm-compromise-preinstall-malware-trusted-provenance-ide-hooks/",
+        "https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/",
+        "https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack",
+        "https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html",
+        "https://www.wiz.io/blog/keyv-and-cacheable-npm-supply-chain-attack",
+        "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-20T03:47:40+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

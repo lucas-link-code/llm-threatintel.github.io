@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-08-20-shai-hulud-npm-worm-keyv-August-2026",
+      "title": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026",
+      "date": "2026-08-20",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.",
+      "file": "2026-08-20-shai-hulud-npm-worm-keyv-August-2026.md"
+    },
+    {
       "id": "2026-08-19-autonomous-ai-agents-cyberattack-operators",
       "title": "Frontier Lab Autonomous AI Agents Becoming Reliable Cyberattack Operators: Nation-State and Unattributed Campaigns Accelerate",
       "date": "2026-08-19",

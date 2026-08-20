@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | LLM ThreatIntel</title>
+  <meta name="description" content="A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026">
+  <meta property="og:description" content="A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026">
+  <meta property="article:published_time" content="2026-08-20T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-20T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026">
+  <meta name="twitter:description" content="A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026",
+  "description": "A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.",
+  "datePublished": "2026-08-20T00:00:00Z",
+  "dateModified": "2026-08-20T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-20</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026</h1>
+<p><strong>Date:</strong> 2026-08-20<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Shai-Hulud npm worm family (Mini Shai-Hulud variant)</td></tr><tr><td>Attribution</td><td>Unknown; TTPs consistent with TeamPCP but source code publicly released (confidence: low)</td></tr><tr><td>Target</td><td>npm developers and CI/CD pipelines using keyv, cacheable, flat-cache, file-entry-cache, and 400+ downstream packages</td></tr><tr><td>Vector</td><td>Compromised GitHub maintainer account; direct commit and release to npm registry with valid GitHub Actions provenance</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-08-04</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>On August 4, 2026, attackers compromised the GitHub account of the maintainer behind keyv, a key-value storage library with roughly 127 million weekly npm downloads, and used that access to inject a credential-stealing worm across the entire package family. The same maintainer owns cacheable (29M downloads/month), flat-cache (565M downloads/month), file-entry-cache (557M downloads/month), and several other widely-used caching utilities, all of which were swept up in the same attack. The compromise was carried out by pushing malicious files directly to the main branch and then immediately cutting a new release, meaning the poisoned versions were published to npm with valid provenance signed by GitHub Actions. Anyone who ran npm install against an affected version would have had setup.mjs execute automatically before their install completed; setup.mjs is a heavily obfuscated dropper. Semgrep documented the same Claude Code and VS Code hooks, setup.mjs filename and Bun 1.3.13 download in an April compromise of the lightning PyPI package, linking this to the broader Shai-Hulud malware family. The worm moved between organizations every two to seven minutes and completed the cross-organization publishing burst in roughly half an hour. A credential-stealing npm worm that first appeared in keyv@6.0.0 spread beyond the Keyv and Cacheable namespaces into hundreds of packages across multiple organizations on August 4, 2026.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Compromised npm maintainer account to inject malware into widely-used packages</td></tr><tr><td>Credential Access</td><td>T1556</td><td>Preinstall script exfiltrates developer and CI/CD credentials</td></tr><tr><td>Persistence</td><td>T1547.013</td><td>npm preinstall lifecycle hook executes obfuscated loader on package installation</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Over 1,300 package versions compromised across 400+ distinct npm packages. Valid GitHub Actions provenance signatures used. Bun 1.3.13 user-agent observed in malware C2 communications._</p>
+<h3>Full URL Paths</h3>
+<p>_Over 1,300 package versions compromised across 400+ distinct npm packages. Valid GitHub Actions provenance signatures used. Bun 1.3.13 user-agent observed in malware C2 communications._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">{&#x27;name&#x27;: &#x27;keyv&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;6.0.0&#x27;, &#x27;note&#x27;: &#x27;Initial compromise; preinstall hook with setup.mjs dropper&#x27;}
+{&#x27;name&#x27;: &#x27;cacheable&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;affected&#x27;, &#x27;note&#x27;: &#x27;Part of same maintainer ecosystem&#x27;}
+{&#x27;name&#x27;: &#x27;flat-cache&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;affected&#x27;, &#x27;note&#x27;: &#x27;565M monthly downloads; same family&#x27;}
+{&#x27;name&#x27;: &#x27;file-entry-cache&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;affected&#x27;, &#x27;note&#x27;: &#x27;557M monthly downloads; same family&#x27;}
+{&#x27;name&#x27;: &#x27;@cacheable/utils&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;affected&#x27;, &#x27;note&#x27;: &#x27;Downstream propagation&#x27;}
+{&#x27;name&#x27;: &#x27;cache-manager&#x27;, &#x27;registry&#x27;: &#x27;npm&#x27;, &#x27;version&#x27;: &#x27;affected&#x27;, &#x27;note&#x27;: &#x27;Downstream propagation&#x27;}</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Node.js
+npm registry
+CI/CD pipelines
+Developer workstations</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor npm package installations for preinstall script execution and setup.mjs files. Implement npm lifecycle script disabling via <code>--ignore-scripts</code> during installation and maintain narrow allowlist for legitimate scripts. Review GitHub commit history for all keyv-family packages and downstream dependents. Scan for setup.mjs and Math_Symbol.js files in node_modules. Monitor for Bun/1.3.13 user-agent requests to non-standard domains. Audit all developer and CI/CD credential stores (AWS, GCP, Azure, GitHub tokens) on affected systems. Implement supply chain controls: pin package versions, verify GitHub Actions provenance, enforce code review on all releases, and monitor for unusual GitHub account activity on maintainer accounts.</p>
+<h2>References</h2>
+<ul><li>[Cyber Security Agency of Singapore] Ongoing npm Supply Chain Attack Affecting Keyv and Related Packages (&#x27;Shai-Hulud&#x27; Worm) (2026-08-06) — https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-009/</li><li>[Snyk] Inside the keyv npm Supply Chain Compromise (2026-08-04) — https://snyk.io/blog/inside-keyv-npm-compromise-preinstall-malware-trusted-provenance-ide-hooks/</li><li>[Datadog Security Labs] Worm compromises hundreds of popular npm packages (2026-08-04) — https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/</li><li>[Aikido] Keyv and friends compromised in npm supply chain attack (2026-08-05) — https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack</li><li>[The Hacker News] Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks (2026-08-04) — https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html</li><li>[Wiz Research] keyv and cacheable npm Package Hijacked in Supply Chain Attack (2026-08-04) — https://www.wiz.io/blog/keyv-and-cacheable-npm-supply-chain-attack</li><li>[Palo Alto Networks Unit 42] The npm Threat Landscape: Attack Surface and Mitigations (2026-07-15) — https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

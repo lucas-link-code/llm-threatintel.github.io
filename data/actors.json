@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-19",
+  "last_updated": "2026-08-20",
   "entries": [
     {
       "id": "dream-hermes-openclaw-multi-agent-intrusion-framework",
@@ -1498,7 +1498,9 @@
       "id": "unknown",
       "names": [
         "Unknown",
-        "Automated Scanning Infrastructure + LLM Exploitation Pipeline"
+        "Automated Scanning Infrastructure + LLM Exploitation Pipeline",
+        "Mini Shai-Hulud operator",
+        "possibly TeamPCP or derivative"
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
@@ -1583,7 +1585,9 @@
         "T1134",
         "T1570",
         "T1219",
-        "T1129 - Execution via Module Load"
+        "T1129 - Execution via Module Load",
+        "T1556 - Modify Authentication Process",
+        "T1547.013 - Boot or Logon Initialization Scripts"
       ],
       "description": "This is a structural architectural vulnerability rather than a specific threat campaign. Axis Intelligence Research identified and disclosed the vulnerability through coordinated responsible disclosure to model providers on July 3, 2026. Exploitation requires understanding of multi-agent orchestration patterns and the ability to craft prompts that pass first-model safety checks but execute when passed to secondary models.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

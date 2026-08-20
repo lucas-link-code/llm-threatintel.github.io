@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-20",
   "iocs": [
     {
       "value": "npm:@kolbo/mcp@1.57.1",
@@ -3932,6 +3932,60 @@
       "first_seen": "2026-08-17",
       "source": "Wiz.io",
       "campaign": "keyv-cacheable-npm-worm-claude-code-persistence",
+      "status": "active"
+    },
+    {
+      "value": "npm:keyv@6.0.0",
+      "type": "package",
+      "context": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | Initial compromise; preinstall hook with setup.mjs dropper",
+      "first_seen": "2026-08-20",
+      "source": "Cyber Security Agency of Singapore",
+      "campaign": "shai-hulud-npm-worm-keyv-August-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:cacheable@affected",
+      "type": "package",
+      "context": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | Part of same maintainer ecosystem",
+      "first_seen": "2026-08-20",
+      "source": "Cyber Security Agency of Singapore",
+      "campaign": "shai-hulud-npm-worm-keyv-August-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:flat-cache@affected",
+      "type": "package",
+      "context": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | 565M monthly downloads; same family",
+      "first_seen": "2026-08-20",
+      "source": "Cyber Security Agency of Singapore",
+      "campaign": "shai-hulud-npm-worm-keyv-August-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:file-entry-cache@affected",
+      "type": "package",
+      "context": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | 557M monthly downloads; same family",
+      "first_seen": "2026-08-20",
+      "source": "Cyber Security Agency of Singapore",
+      "campaign": "shai-hulud-npm-worm-keyv-August-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:@cacheable/utils@affected",
+      "type": "package",
+      "context": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | Downstream propagation",
+      "first_seen": "2026-08-20",
+      "source": "Cyber Security Agency of Singapore",
+      "campaign": "shai-hulud-npm-worm-keyv-August-2026",
+      "status": "active"
+    },
+    {
+      "value": "npm:cache-manager@affected",
+      "type": "package",
+      "context": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026 | Downstream propagation",
+      "first_seen": "2026-08-20",
+      "source": "Cyber Security Agency of Singapore",
+      "campaign": "shai-hulud-npm-worm-keyv-August-2026",
       "status": "active"
     }
   ]

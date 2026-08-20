@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 19 Aug 2026 03:47:48 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 03:47:37 +0000</lastBuildDate>
     <item>
+      <title>Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026</title>
+      <link>https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html</guid>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.</description>
+    </item>    <item>
       <title>Frontier Lab Autonomous AI Agents Becoming Reliable Cyberattack Operators: Nation-State and Unattributed Campaigns Accelerate</title>
       <link>https://llm-threatintel.com/posts/2026-08-19-autonomous-ai-agents-cyberattack-operators.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-19-autonomous-ai-agents-cyberattack-operators.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-10-ghostjacking-poisoned-observability-logs-ai-agents.html</guid>
       <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
       <description>Tenet Security demonstrated that attacker-controlled text recorded by Cloudflare, Datadog, or Sentry can be returned to an AI agent as trusted diagnostic context and induce unauthorized DNS changes, command execution, or secret access. SecurityWeek reported that Tenet presented the vendor-specific attack chains at DEF CON 34; defenders should preserve input provenance, correlate observability reads with agent tool calls, and require approval for shell execution, credential access, DNS changes, and external egress.</description>
-    </item>    <item>
-      <title>Copilot for Word Document-Borne AI Worm: Hidden Prompt Injection Self-Propagates Through Generated Files</title>
-      <link>https://llm-threatintel.com/posts/2026-08-10-copilot-word-document-borne-ai-worm.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-10-copilot-word-document-borne-ai-worm.html</guid>
-      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Hakon Maloy demonstrated that a hidden prompt in a Word source document can make Microsoft Copilot alter generated content and invisibly copy the prompt into the output, turning that output into a new carrier. Maloy reported that the attack class still reproduced on July 28 after two Microsoft mitigation attempts; Microsoft 365 defenders should treat external documents as untrusted Copilot input and inspect generated or edited files before reuse.</description>
     </item>
   </channel>
 </rss>
