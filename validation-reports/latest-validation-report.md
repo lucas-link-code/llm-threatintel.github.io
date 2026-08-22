@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-08-22T12:29:20+00:00`
-- Commit SHA: `a9ffecfc51be`
+- Run time UTC: `2026-08-22T12:36:20+00:00`
+- Commit SHA: `c34fa2dd9fd8`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `5`
-- Review required: `1`
-- Reports checked: `5`
-- Reports skipped: `226`
-- Reports newly validated: `4`
+- Review required: `0`
+- Reports checked: `1`
+- Reports skipped: `230`
+- Reports newly validated: `1`
 - IOC duplicates found: `0`
-- Source URLs checked: `14`
+- Source URLs checked: `4`
 
 No files were removed or destructively modified.
 
@@ -23,18 +23,3 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
-- **REVIEW** `evidence-source-review-required` `posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md` `2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026`: no source URL was accessible; manual review or alternate evidence is required
-
-## Human Review Queue
-
-```text
-Report: 2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026
-Problem: evidence-source-review-required
-Validator finding: no source URL was accessible; manual review or alternate evidence is required
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

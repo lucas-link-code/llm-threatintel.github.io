@@ -431,7 +431,7 @@
         "malware"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "DPRK-nexus STARDUST CHOLLIMA injected a malicious npm package into 131 trusted Mastra AI frameworks. During 1H 2026, 87% of identified software registry threats involved malicious npm packages. This represents a nation-state supply chain attack targeting AI agent infrastructure used by developers globally.",
+      "excerpt": "CrowdStrike's 2026 Threat Hunting Report, published 2026-08-03, attributes a June 2026 npm dependency injection against the Mastra AI framework to DPRK-nexus STARDUST CHOLLIMA, the same actor CrowdStrike tied to the March 2026 Axios npm compromise. Independent June 17 reporting by Aikido and StepSecurity identified the injected dependency as easy-day-js@1.11.22, a dayjs typosquat whose postinstall hook fetched a second-stage payload from 23.254.164.92. Block easy-day-js, hunt those C2 addresses, and do not treat the Mastra framework name itself as an indicator.",
       "file": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md"
     },
     {

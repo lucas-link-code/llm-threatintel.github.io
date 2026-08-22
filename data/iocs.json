@@ -2,6 +2,33 @@
   "last_updated": "2026-08-22",
   "iocs": [
     {
+      "value": "npm:easy-day-js@1.11.22",
+      "type": "package",
+      "context": "Malicious dayjs typosquat injected as a caret dependency into republished Mastra npm packages; postinstall runs obfuscated setup.cjs",
+      "first_seen": "2026-06-17",
+      "source": "Aikido Security",
+      "campaign": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "status": "removed"
+    },
+    {
+      "value": "23.254.164.92",
+      "type": "ip",
+      "context": "easy-day-js@1.11.22 first-stage C2; payload fetch on port 8000 at /update/49890878",
+      "first_seen": "2026-06-17",
+      "source": "StepSecurity",
+      "campaign": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "status": "active"
+    },
+    {
+      "value": "23.254.164.123",
+      "type": "ip",
+      "context": "easy-day-js second-stage callback host on port 443, passed as an argument to the spawned Node payload",
+      "first_seen": "2026-06-17",
+      "source": "Aikido Security",
+      "campaign": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "status": "active"
+    },
+    {
       "value": "kriminal.ai",
       "type": "domain",
       "context": "Clearnet criminal AI storefront wrapping jailbroken Grok, Claude, and OpenRouter models",
@@ -3788,15 +3815,6 @@
       "first_seen": "2026-08-05",
       "source": "The Hacker News",
       "campaign": "hugging-face-diffusers-toctou-rce-august-2026",
-      "status": "active"
-    },
-    {
-      "value": "npm:mastra@affected",
-      "type": "package",
-      "context": "CrowdStrike 2026 Threat Hunting Report: STARDUST CHOLLIMA DPRK Supply Chain Campaign Targets Mastra AI Framework via npm Poisoning | 131 instances of poisoned Mastra framework packages identified",
-      "first_seen": "2026-08-05",
-      "source": "CrowdStrike Holdings, Inc.",
-      "campaign": "stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
       "status": "active"
     },
     {

@@ -1,7 +1,7 @@
 {
-  "commit_sha": "a9ffecfc51be",
+  "commit_sha": "c34fa2dd9fd8",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-22T12:29:20+00:00",
+  "generated_at_utc": "2026-08-22T12:36:20+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,124 +43,46 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-source-review-required",
-      "file": "posts/2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
-      "recommendation": "",
-      "record_id": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
-      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 5,
-  "reports_newly_validated": 4,
-  "reports_skipped": 226,
-  "review_required": 1,
-  "source_urls_checked": 14,
-  "state_updates": 4,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 230,
+  "review_required": 0,
+  "source_urls_checked": 4,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.threatdown.com/blog/kriminal/",
+      "final_url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.threatdown.com/blog/kriminal/"
+      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/"
     },
     {
       "error": "",
-      "final_url": "https://siliconangle.com/2026/08/19/criminal-ai-tool-kriminal-is-mostly-just-grok-with-a-jailbreak-threatdown-finds/",
+      "final_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-threat-hunting-report/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://siliconangle.com/2026/08/19/criminal-ai-tool-kriminal-is-mostly-just-grok-with-a-jailbreak-threatdown-finds/"
+      "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-threat-hunting-report/"
     },
     {
       "error": "",
-      "final_url": "https://www.csoonline.com/article/4211952/kriminal-breaks-out-of-grok-claude-guardrails-at-12-99.html",
+      "final_url": "https://www.aikido.dev/blog/over-140-popular-mastra-npm-packages-hit-by-supply-chain-attack",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.csoonline.com/article/4211952/kriminal-breaks-out-of-grok-claude-guardrails-at-12-99.html"
+      "url": "https://www.aikido.dev/blog/over-140-popular-mastra-npm-packages-hit-by-supply-chain-attack"
     },
     {
       "error": "",
-      "final_url": "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+      "final_url": "https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.theregister.com/ai-and-ml/2026/08/20/grok-chat-duped-into-swallowing-injected-instructions/5290019",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.theregister.com/ai-and-ml/2026/08/20/grok-chat-duped-into-swallowing-injected-instructions/5290019"
-    },
-    {
-      "error": "",
-      "final_url": "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/"
-    },
-    {
-      "error": "",
-      "final_url": "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.helpnetsecurity.com/2026/08/18/gambit-security-ai-cyberattack-tools-report/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.helpnetsecurity.com/2026/08/18/gambit-security-ai-cyberattack-tools-report/"
-    },
-    {
-      "error": "",
-      "final_url": "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/"
-    },
-    {
-      "error": "",
-      "final_url": "https://asset-group.github.io/disclosures/ghostsplice/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://asset-group.github.io/disclosures/ghostsplice/"
-    },
-    {
-      "error": "",
-      "final_url": "https://github.com/asset-group/ghostsplice",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://github.com/asset-group/ghostsplice"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.secureinseconds.com/blog/2026-08-15-mcp-server-split-instruction-attack-coding-agent",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.secureinseconds.com/blog/2026-08-15-mcp-server-split-instruction-attack-coding-agent"
-    },
-    {
-      "error": "The read operation timed out",
-      "final_url": null,
-      "http_status": null,
-      "status": "timeout",
-      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-2026-threat-hunting-report-ai-now-embedded-across"
+      "url": "https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js"
     }
   ],
   "validation_version": "1.0.0",

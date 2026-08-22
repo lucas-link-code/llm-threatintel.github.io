@@ -1522,7 +1522,8 @@
         "npm registry compromise",
         "global distribution via npm package manager",
         "npm registry (global)",
-        "automated CI/CD systems"
+        "automated CI/CD systems",
+        "Malicious dependency injection into Mastra AI framework npm packages"
       ],
       "ttps": [
         "T1195.002 - Supply Chain Compromise",
@@ -1540,7 +1541,7 @@
         "T1195 - Supply Chain Compromise",
         "T1190 - Exploit Public-Facing Application"
       ],
-      "description": "Sapphire Sleet is a North Korean state-affiliated threat actor tracked by Microsoft that exploits open-source package registries to deliver RAT malware. The group leverages social engineering to compromise maintainer accounts, publishes backdoored versions to the official registry, and targets developers globally through automated dependency installation. Known for using stolen credentials to gain initial access and for maintaining infrastructure across multiple cloud providers.",
+      "description": "Sapphire Sleet is a North Korean state-affiliated threat actor tracked by Microsoft that exploits open-source package registries to deliver RAT malware. The group leverages social engineering to compromise maintainer accounts, publishes backdoored versions to the official registry, and targets developers globally through automated dependency installation. Known for using stolen credentials to gain initial access and for maintaining infrastructure across multiple cloud providers. CrowdStrike's 2026 Threat Hunting Report attributed a June 2026 Mastra AI framework npm dependency injection, at least 131 packages, to STARDUST CHOLLIMA, the same actor CrowdStrike tied to the March 2026 Axios npm compromise. Aikido and StepSecurity identified the injected Mastra dependency as easy-day-js@1.11.22.",
       "attribution": "Attributed to UNC1069 by Google Threat Intelligence Group (confidence: high)"
     },
     {

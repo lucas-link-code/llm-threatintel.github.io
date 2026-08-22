@@ -3555,6 +3555,24 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026": {
+      "content_hash": "034e9665eb5965ccadfaccf52c04f01271f3fa3bcde60eb048891c8b7fd84b67",
+      "evidence_status": "validated",
+      "file": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026.md",
+      "posts_index_hash": "6512ac27b2483eae834b48128470a7cb9454e18014b81fca00b515c663031b18",
+      "report_id": "2026-08-05-stardust-chollima-mastra-npm-supply-chain-dprk-august-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/",
+        "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-threat-hunting-report/",
+        "https://www.aikido.dev/blog/over-140-popular-mastra-npm-packages-hit-by-supply-chain-attack",
+        "https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-22T12:36:20+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-08-07-aisi-mythos-5-autonomous-deception-github-attack": {
       "content_hash": "5f178f5e9cfae6abf05050eda9d0099dd34a094cbd6683985f152867eda1dce0",
       "evidence_status": "validated",
