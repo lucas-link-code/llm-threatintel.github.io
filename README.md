@@ -1,309 +1,259 @@
 # LLM ThreatIntel
 
-Automated threat intelligence feed tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.
+Defensive GenAI and LLM threat intelligence site. Live at [llm-threatintel.com](https://llm-threatintel.com). Repository: [lucas-link-code/llm-threatintel.github.io](https://github.com/lucas-link-code/llm-threatintel.github.io). Owner: Lucas.
 
-## What This Is
+This README is the onboarding brief for a new agent thread. Read it before editing. Canonical detail lives in the files listed under [Canonical documents](#canonical-documents). Do not invent a parallel process.
 
-LLM ThreatIntel is a static website hosted on GitHub Pages that serves as a living threat intelligence blog. It focuses exclusively on threats in the GenAI and LLM space. The site is built with plain HTML, CSS, and JavaScript with no build tools, no frameworks, and no dependencies.
+## Start here in a new thread
 
-The site has five sections:
+1. You are on a production GitHub Pages site. Push to `main` deploys.
+2. Identify the task: intel collection, one intel report, a Blog-tab post, UI or dashboard work, or validator or workflow changes. Those are different pipelines.
+3. Pull current `origin/main` before writing intel or data files. Scheduled collection often lands posts while a local session is open.
+4. Use `python3` locally. GitHub Actions uses `python`.
+5. After intel or data edits, run the validator. Treat review-required as a stop, not a warning you can ignore.
+6. Stage explicitly. Do not `git add -A` if leftover dirs such as `quality-artifacts/` are sitting untracked.
+7. Commit only when Lucas asked, or when the daily collection spec requires commit after a passing gate.
 
-1. **Intel Feed** — Reverse-chronological threat intelligence reports with IOCs, MITRE ATT&CK mappings, and source attribution
-2. **Threat Actors** — Searchable tracker of GenAI threat actors, malware families, and campaigns with aliases, TTPs, and distribution channels
-3. **IOC Feed** — Copy-paste ready indicators in multiple formats: defanged one-per-line, Splunk/LogScale OR format, and comma-separated quoted
-4. **Blog** — Manual posts for analysis, commentary, and research notes
-5. **About** — Project description, sources, and methodology
+If the user says "run collection" or "process intel", execute `automation/claude-code-task.md`. If the user says "add a Blog post", use Blog-tab voice and `data/blog-index.json`, not the Intel Feed template.
 
-Intelligence collection is automated using either Claude Code CLI or the Anthropic API via GitHub Actions. When new intelligence is found, the automation creates a Markdown blog post, updates the threat actor tracker, updates the IOC database, and commits everything to GitHub. GitHub Actions then rebuilds and deploys the site automatically.
+## What this site is
 
-## Project Structure
+Static HTML, CSS, and JavaScript. No frontend build step. No framework. GitHub Pages hosts the root of `main`. Cloudflare sits in front of the custom domain.
 
-```
-llm-threatintel/
-├── index.html                  # Site entry point
-├── css/style.css               # Dark purple theme
-├── js/
-│   ├── app.js                  # Core application (routing, rendering, IOC feeds)
-│   └── neural-bg.js            # Animated neural network background
-├── data/
-│   ├── posts-index.json        # Blog post metadata
-│   ├── actors.json             # Threat actor / malware tracker
-│   └── iocs.json               # IOC database
-├── posts/                      # Markdown blog posts
-│   ├── 2026-03-30-teampcp-supply-chain.md
-│   ├── 2026-03-28-lamehug-llm-malware.md
-│   └── ...
-├── scripts/
-│   └── collect.py              # Anthropic API collection script
-├── automation/
-│   ├── claude-code-task.md     # Claude Code task prompt
-│   └── cowork-workflow.md      # Cowork app workflow guide
-├── logs/                       # Collection run logs (gitignored)
-├── .github/workflows/
-│   ├── deploy.yml              # GitHub Pages deployment
-│   └── collect.yml             # Scheduled daily collection
-├── .gitignore
-└── README.md
-```
+Tabs, all hash routes in `index.html` and `js/app.js`:
 
-## Deployment Guide — From Zero to Live Site
+| Tab | Route | Data |
+|-----|--------|------|
+| Intel Feed | `#home` | `data/posts-index.json` plus `posts/*.md` |
+| Brief | `#brief` | Computed in the browser from posts, actors, IOCs |
+| Trends | `#trends` | Same in-browser computation |
+| Threat Actors | `#actors` | `data/actors.json` |
+| IOC Feed | `#ioc-feed` | `data/iocs.json` |
+| Blog | `#blog` | `data/blog-index.json` plus Markdown |
+| About | `#about` | Static copy in the app |
 
-### Prerequisites
+Intel Feed reports are the operational product. Brief and Trends are derived views. They update when the JSON files update. They have no separate collection job.
 
-You need:
-- A GitHub account (free tier is fine)
-- Git installed on your machine
-- A text editor
-- Optional: an Anthropic API key (for automated collection)
-- Optional: a custom domain (about $10-15/year)
+## Hard rules
 
-### Step 1: Download and Extract
+These are the mistakes that damage the feed or break deploy.
 
-Download the llm-threatintel.zip file and extract it. You should see a folder called `llm-threatintel` containing all the files listed above.
+- Do not fabricate IOCs. If the source published none, write that in the post and do not invent domains, hashes, packages, or IPs.
+- Do not add bare shared infrastructure or legitimate AI vendor platforms as IOCs. `github.com`, `npmjs.com`, `claude.ai`, `grok.com`, `huggingface.co`, and similar hosts are deny-listed. Attacker-controlled subdomains and specific malicious paths can still be valid. Policy: `validation/policy.json`.
+- Do not treat a legitimate product name as a package IOC. `npm:mastra@affected` is wrong. A pinned malicious package such as `npm:easy-day-js@1.11.22` is right.
+- Do not invent Intel Feed tags. The only valid slugs are: `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`. Title Case or a new tag splits the filter bar.
+- Do not delete reports or IOCs to make validation pass. Fix the source, add an alternate live URL, ask Lucas for an override, or wait for approval to remove.
+- Do not paste exploit PoCs, full malicious MCP server code, or operational jailbreak payloads into the feed. Describe behaviour. Point to the research repo in References.
+- Do not mix Intel Feed format with Blog-tab voice. Intel posts are internal-note threat reports. Blog posts are commentary.
+- Do not skip `scripts/build_meta.py` after Intel Feed Markdown or `posts-index.json` changes. It writes parallel `.html`, `sitemap.xml`, `rss.xml`, and `data/search-index.json`.
+- Do not assume local `main` is current. Rebase or pull before merging intel into indexes.
+- Do not force-push `main`. Do not skip hooks unless Lucas asked.
+- Do not rewrite `scripts/validate_site.py`, `.github/workflows/*`, or `validation/policy.json` unless that is the task. UI and intel work should not "fix" the gate.
 
-### Step 2: Create the GitHub Repository
+## Two publication modes
 
-1. Go to https://github.com/new
-2. Repository name: `llm-threatintel`
-3. Set it to **Public** (required for free GitHub Pages)
-4. Do NOT initialize with a README (we already have one)
-5. Click **Create repository**
+This split is the highest-risk workflow detail.
 
-### Step 3: Push the Code to GitHub
+| Who | Mode | Meaning |
+|-----|------|---------|
+| Local Cursor, Claude Code, Cowork, or any interactive agent | Gate-first | Validation failure or review-required: stop. Do not commit. Do not push. Do not delete content to clear the gate. |
+| `.github/workflows/collect.yml` | Report-only | Collection still runs the full validator, then commits the validation report and may publish even when findings exist, so Lucas can review later. |
 
-Open a terminal, navigate into the extracted folder, and run:
+Report-only is scheduled automation only. It does not apply to a local agent run unless Lucas explicitly says so for that run.
+
+`validate.yml` is separate. It runs `--mode strict --no-network` on push and pull request. It can fail CI even when collection used report-only.
+
+## Git and deploy
+
+- Default branch: `main`.
+- Push to `main` triggers `.github/workflows/deploy.yml`. That job runs `scripts/build_meta.py` again, then uploads the repo root to GitHub Pages.
+- A feature-branch push does not deploy. If the change is large, risky, or unreviewed, say so up front, use a branch and pull request, and wait for Lucas. Do not silently switch a session from `main` to a branch.
+- Routine intel that Lucas asked for, and that passed the local gate, commits and pushes to `main`.
+- Commit style for intel: `intel: YYYY-MM-DD — short summary of key findings`.
+- Pull `origin/main` before writing posts-index, actors, or IOCs. If you already wrote files, stash only the new Markdown, pull, then re-insert into the updated JSON. Do not restore stale copies of `data/posts-index.json`.
+- Parked work on other branches is not this site's live process. Do not mix it into an intel run.
+
+## Content model
+
+### Intel Feed report
+
+Source of truth for procedure: `docs/POST_UPDATE_SKILL.md` and `automation/claude-code-task.md`.
+
+Files for one new report:
+
+- `posts/YYYY-MM-DD-slug.md`
+- matching `posts/YYYY-MM-DD-slug.html` from `build_meta.py`
+- new object at the start of `data/posts-index.json`
+- merge or add in `data/actors.json` when an actor or family is named
+- add in `data/iocs.json` only for indicators the source actually published
+- regenerated `sitemap.xml`, `rss.xml`, `data/search-index.json`
+
+`id`, filename stem, and `file` must match. `excerpt` must match the Executive Summary. IOC `campaign` should be the full post `id` so evidence hashing ties IOCs to the report.
+
+The live reader loads Markdown through the SPA. The `.html` file is for crawlers, sharing, sitemap, and RSS. Deploy regenerates HTML, but commit the generated files anyway so local diffs match what shipped.
+
+### Blog tab
+
+- Index: `data/blog-index.json`.
+- `build_meta.py` does not read the blog index. Blog-only posts are not added to sitemap or RSS unless you change that script.
+- Do not put Blog commentary on the Intel Feed.
+
+### Brief and Trends
+
+Client-side dashboards. Implementation note: `docs/BRIEF_AND_TRENDS_DASHBOARDS.md`. Do not add a second data schema for them. Fix the underlying posts, actors, or IOCs.
+
+## Daily intelligence collection
+
+Canonical prompt: `automation/claude-code-task.md`. Follow it. Do not improvise a shorter search.
+
+Practical sequence that matches this repo:
+
+1. `git pull origin main` and list recent `posts/` plus the top of `data/posts-index.json`.
+2. Search in three phases as specified. Dedup against existing posts, actors, and IOCs. Skip recaps and items already in the feed unless there is a material update. Default window is 14 days.
+3. Write only new findings. One Markdown file per finding. Valid tags only.
+4. Update indexes and data files. Run `python3 scripts/build_meta.py`.
+5. Run:
 
 ```bash
-cd llm-threatintel
-
-git init
-git add -A
-git commit -m "initial: LLM ThreatIntel launch"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/llm-threatintel.git
-git push -u origin main
+python3 scripts/validate_site.py --mode full --changed-only-evidence --write-report --update-validation-state
 ```
 
-Replace `YOUR_USERNAME` with your actual GitHub username.
+6. If the overall result is pass and review-required is 0 for the new work, commit and `git push origin main`.
+7. If validation fails or returns review-required, stop. Print `validation-reports/latest-validation-report.md`. Ask Lucas: confirm sources, add a manual evidence override, rewrite supported claims, keep for review, or remove only with approval.
 
-If you use SSH instead of HTTPS for Git:
+Scheduled GitHub collection: `.github/workflows/collect.yml`, cron `0 3 * * *` (03:00 UTC), runs `scripts/collect.py`. Local Claude cron in the task file is a different schedule. Do not "correct" one to match the other unless that is the task.
+
+If nothing new is found, do not create empty posts. Log that and exit.
+
+## IOC rules, short form
+
+Full deny lists and examples: `automation/claude-code-task.md` and `validation/policy.json`.
+
+- JSON values are raw, never defanged. Markdown bodies defang for display, last dot only, such as `kriminal[.]ai`.
+- Types: `domain`, `url_path`, `ip`, `sha256`, `sha1`, `md5`, `hash`, `package`.
+- Package values need a registry prefix and a real name, optionally a pinned version: `npm:easy-day-js@1.11.22`. No `affected`, no version ranges, no aggregate counts in the value field.
+- IP C2 belongs in type `ip`. A host:port/path on a raw IP is not a valid `url_path` because url_path requires a domain.
+- CVE IDs, malware family names, and research article URLs are not IOC values.
+- Every IOC in the post body must exist in `data/iocs.json`. Every named actor should exist in `data/actors.json`.
+- Actor `type` values used by collection: `malicious_llm_tool`, `malware`, `threat_group`, `supply_chain_campaign`, `nation_state_campaign`. Match on name or alias and merge. Do not duplicate.
+
+## Validation gate
+
+Script: `scripts/validate_site.py`. Policy: `validation/policy.json`. State: `validation/validated-reports.json`. Overrides: `validation/manual-evidence-overrides.json`. Explainer: `automation/VALIDATION.md`.
+
+Run after intel or data edits:
+
 ```bash
-git remote add origin git@github.com:YOUR_USERNAME/llm-threatintel.git
+python3 scripts/validate_site.py --mode full --changed-only-evidence --write-report --update-validation-state
 ```
 
-### Step 4: Enable GitHub Pages
+`--changed-only-evidence` still runs structural checks across the repo. It only skips expensive URL fetches for reports whose content hash is unchanged.
 
-1. Go to your repository on GitHub
-2. Click **Settings** (top menu bar)
-3. Click **Pages** (left sidebar under "Code and automation")
-4. Under **Source**, select **GitHub Actions**
-5. The deploy.yml workflow included in the repository will handle deployment
+Evidence checks HEAD then GET with User-Agent `LLM-ThreatIntel-Validator/1.0 (+https://llm-threatintel.com)`. Investor-relations and some vendor sites time out. A timeout with no other live source is `evidence-source-review-required`. Fix by replacing the dead URL with a page that returns HTTP 200, and keep every remaining listed URL reachable. One surviving URL plus one timing-out URL still creates a review finding.
 
-### Step 5: Verify Deployment
+Overrides can clear evidence review. They do not clear bad JSON, illegal tags, or deny-listed IOCs. Do not add an override unless Lucas approved it.
 
-1. Go to **Actions** tab in your repository
-2. You should see a "Deploy to GitHub Pages" workflow running
-3. Wait for it to complete (usually under 1 minute)
-4. Your site is now live at: `https://YOUR_USERNAME.github.io/llm-threatintel/`
+The validator is read-only for intelligence content. It never deletes posts or IOCs.
 
-### Step 6: Test the Site
+## Site architecture
 
-Visit your live URL and verify:
-- The home page loads with the neural network background animation
-- The status bar shows "OPERATIONAL"
-- The four stat tiles are clickable (Active IOCs opens a modal)
-- All five navigation tabs work: Intel Feed, Threat Actors, IOC Feed, Blog, About
-- Copy buttons work on the IOC Feed page
-- The threat actor table is searchable
+```
+index.html                 App shell and nav
+css/style.css              Theme and layout
+js/app.js                  Hash routing, Markdown render, IOC defang, Brief, Trends, search
+js/neural-bg.js            Background canvas
+data/posts-index.json      Intel Feed metadata
+data/blog-index.json       Blog tab metadata
+data/actors.json           Actor tracker
+data/iocs.json             IOC database
+data/search-index.json     Generated search corpus
+posts/*.md                 Intel and blog Markdown
+posts/*.html               Generated Intel static pages
+scripts/collect.py         GitHub Actions collection
+scripts/build_meta.py      HTML, sitemap, RSS, search index
+scripts/validate_site.py   Quality gate
+validation/                Policy, state, overrides
+validation-reports/        Latest and historical validator output
+tests/                     Playwright and pytest
+```
 
-## Setting Up Automated Collection
+`data/search-index.json` is generated. Edit Markdown and indexes, then rebuild. Do not hand-edit it as the source of truth.
 
-You have two options for automated intelligence collection. Choose one or use both.
+## Tests
 
-### Option A: Claude Code CLI (Recommended)
+After UI, routing, search, IOC workbench, Brief, or Trends changes:
 
-This runs Claude Code on your local machine or a server. Claude Code has direct filesystem access and can search the web, write files, and push to Git natively.
-
-**Install Claude Code:**
 ```bash
-npm install -g @anthropic-ai/claude-code
+npx playwright test
 ```
 
-**Set your API key:**
+Playwright config: `playwright.config.cjs`, base URL `http://127.0.0.1:8877`. Specs live in `tests/*.spec.js`.
+
+Collection and validator unit tests:
+
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-your-key-here
+python3 -m pytest tests/test_collect.py tests/test_validate_site.py
 ```
 
-**Test a manual run:**
+Keep blast radius small on an existing feature. Additive changes. Do not rewrite unrelated functions. Smoke-test the tab you touched.
+
+## Canonical documents
+
+Read the file that matches the work. This README does not replace them.
+
+| Work | Read |
+|------|------|
+| Daily intel collection | `automation/claude-code-task.md` |
+| Manual Intel Feed or Blog publish steps | `docs/POST_UPDATE_SKILL.md` |
+| Validator behaviour and agent git rules | `automation/VALIDATION.md` |
+| IOC and platform deny lists | `validation/policy.json` |
+| Brief and Trends behaviour | `docs/BRIEF_AND_TRENDS_DASHBOARDS.md` |
+| Cowork-oriented collection notes | `automation/cowork-workflow.md` |
+
+## Local preview
+
 ```bash
-cd /path/to/llm-threatintel
-claude --task automation/claude-code-task.md
+python3 -m http.server 8000
 ```
 
-Claude Code will search the web for new GenAI threat intelligence, create blog posts, update the data files, and push to GitHub.
+Open `http://localhost:8000`. Hash routes work. Clipboard copy prefers HTTPS; local HTTP has a fallback.
 
-**Schedule daily runs with cron:**
-```bash
-crontab -e
-```
+## Files you will usually edit
 
-Add this line (runs at 6:10 AM EST / 11:10 UTC daily):
-```
-10 11 * * * cd /path/to/llm-threatintel && ANTHROPIC_API_KEY=sk-ant-xxx claude --task automation/claude-code-task.md >> logs/collection.log 2>&1
-```
+Intel: `posts/*.md`, `data/posts-index.json`, `data/actors.json`, `data/iocs.json`, then generated HTML, sitemap, RSS, search index.
 
-**Requirements:** Node.js 18+, Git configured with push credentials, ANTHROPIC_API_KEY set.
+Blog: `posts/*.md`, `data/blog-index.json`.
 
-### Option B: GitHub Actions + Anthropic API
+UI: `index.html`, `js/app.js`, `css/style.css`, plus the matching Playwright spec.
 
-This runs entirely in GitHub's infrastructure using a Python script. No local machine needed.
+Collection prompt: `automation/claude-code-task.md` only when the task is to change collection behaviour.
 
-**Step 1: Add your API key as a repository secret**
-1. Go to your repository Settings
-2. Click **Secrets and variables** > **Actions**
-3. Click **New repository secret**
-4. Name: `ANTHROPIC_API_KEY`
-5. Value: your Anthropic API key (sk-ant-...)
-6. Click **Add secret**
+## Files to treat as high risk
 
-**Step 2: Enable write permissions**
-1. Go to Settings > **Actions** > **General**
-2. Under **Workflow permissions**, select **Read and write permissions**
-3. Click **Save**
+- `.github/workflows/deploy.yml`, `collect.yml`, `validate.yml`
+- `scripts/validate_site.py`, `validation/policy.json`
+- `js/neural-bg.js` unless the task is that animation
+- `CNAME`
 
-**Step 3: Test the workflow**
-1. Go to the **Actions** tab
-2. Click **Daily Intelligence Collection** in the left sidebar
-3. Click **Run workflow** > **Run workflow**
-4. Watch the run complete and check for new posts
+UI theme work may edit `css/style.css`. Run the visual and interaction tests afterwards.
 
-The workflow runs automatically every day at 11:10 UTC (6:10 AM EST). It calls the Anthropic API with web search enabled, parses the results, generates blog posts, updates data files, and pushes to the repository.
+## Operator facts
 
-## Setting Up a Custom Domain (Optional)
+- Domain: `llm-threatintel.com` via Cloudflare. `CNAME` file contains that hostname.
+- GitHub Pages source: GitHub Actions, not branch deploy.
+- Secret for scheduled collection: `ANTHROPIC_API_KEY`.
+- Actions needs read and write for collection commits.
 
-### Step 1: Register a Domain
-
-Register `llm-threatintel.com` (or your preferred domain) through a registrar like:
-- Cloudflare Registrar (cheapest, no markup)
-- Namecheap
-- Google Domains
-
-### Step 2: Create a CNAME File
-
-Create a file called `CNAME` (no extension) in the root of your repository containing just your domain:
-
-```
-llm-threatintel.com
-```
-
-Commit and push this file.
-
-### Step 3: Configure DNS
-
-In your domain registrar's DNS settings, create a CNAME record:
-- Type: CNAME
-- Name: @ (or www)
-- Value: `YOUR_USERNAME.github.io`
-
-If your registrar requires A records instead of CNAME for the apex domain, use GitHub's IP addresses:
-```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```
-
-### Step 4: Configure GitHub Pages
-
-1. Go to Settings > Pages
-2. Under **Custom domain**, enter your domain name
-3. Click **Save**
-4. Check **Enforce HTTPS** (after DNS propagation, may take a few minutes)
-
-### Step 5: Wait for DNS Propagation
-
-DNS changes take anywhere from a few minutes to 48 hours. You can check progress at https://dnschecker.org
-
-## Adding Content Manually
-
-### Adding a New Intel Report
-
-1. Create a Markdown file in the `posts/` directory following the naming convention: `YYYY-MM-DD-slug.md`
-2. Use existing posts as a template for formatting (executive summary, campaign table, MITRE mapping, IOC blocks, references)
-3. Add the post metadata to `data/posts-index.json` at the beginning of the posts array
-4. Update `data/actors.json` if the post covers new threat actors
-5. Update `data/iocs.json` with any new indicators
-6. Commit and push — GitHub Actions deploys automatically
-
-### Adding a Blog Post
-
-Blog posts go in the same `posts/` directory but are referenced from a blog index. The blog section currently loads from a placeholder. To add structured blog content, create a `data/blog-index.json` following the same pattern as `posts-index.json`.
-
-### Updating the IOC Database
-
-Edit `data/iocs.json` directly. Each IOC entry needs:
-
-```json
-{
-  "value": "malicious-domain.com",
-  "type": "domain",
-  "context": "Brief description",
-  "first_seen": "2026-03-30",
-  "source": "Source name",
-  "campaign": "campaign-slug",
-  "status": "active"
-}
-```
-
-Valid types: `domain`, `url_path`, `ip`, `sha256`, `md5`, `hash`, `package`
-
-The site automatically defangs indicators for display (replacing the last dot with [.]) while keeping clean values in the Splunk/LogScale and comma-separated formats.
-
-## IOC Output Formats
-
-The IOC Feed page provides five formats:
-
-| Format | Purpose | Example |
-|--------|---------|---------|
-| Defanged Domains | Safe for reports and tickets | `wormgpt[.]ai` |
-| Defanged URLs | Full paths, safe for sharing | `pypi[.]org/project/litellm-proxy-server` |
-| Defanged IPs | Last octet dot replaced | `185.234.72[.]19` |
-| Splunk/LogScale | OR-delimited, paste into SPL or LQL | `"wormgpt.ai" OR "fraudgpt.com"` |
-| Comma-Separated | For CSV, SOAR, or scripts | `"wormgpt.ai", "fraudgpt.com"` |
-
-Clicking the stat tiles on the IOC Feed page opens a modal popup with filtered IOCs in all three copy-paste formats.
-
-## Technology Stack
-
-- Plain HTML, CSS, JavaScript (no build step, no dependencies)
-- GitHub Pages for hosting (free)
-- GitHub Actions for CI/CD (free)
-- Anthropic Claude API for automated intelligence collection
-- Outfit + DM Mono fonts
-- Canvas API for neural network background animation
-
-## Files Not to Edit
-
-- `.github/workflows/deploy.yml` — deployment pipeline, works as-is
-- `js/neural-bg.js` — background animation, tuned for performance
-- `css/style.css` — the design system, edit only if you want to change the visual theme
-
-## Files You Will Edit
-
-- `data/posts-index.json` — add new post metadata here
-- `data/actors.json` — add or update threat actors
-- `data/iocs.json` — add new IOCs
-- `posts/*.md` — write new intel reports
-- `automation/claude-code-task.md` — tune the collection prompt if needed
+This repository is already live. Do not re-init git or create a second GitHub repo unless Lucas is forking the project.
 
 ## Troubleshooting
 
-**Site shows blank page:** Check browser console for errors. Most likely a JSON syntax error in one of the data files. Validate your JSON at https://jsonlint.com
+**Blank page or hung feed.** Check the browser console. Invalid JSON in `data/posts-index.json`, `data/actors.json`, `data/iocs.json`, or `data/blog-index.json` is the usual cause. Parse with `python3 -m json.tool FILE`.
 
-**GitHub Pages not deploying:** Check the Actions tab for failed workflows. Ensure Pages source is set to "GitHub Actions" not "Deploy from a branch".
+**Push or PR check red.** `validate.yml` ran strict non-network validation. Open `validation-reports/latest-validation-report.md`.
 
-**Collection script not finding new intel:** This is normal on quiet days. The script only creates posts when genuinely new intelligence is published. Check `logs/` for the raw API response.
+**Collection found nothing new.** Normal on a quiet day. Do not invent a post.
 
-**Copy buttons not working:** The clipboard API requires HTTPS. If testing locally over HTTP, the fallback method using execCommand should still work. On the live HTTPS site, both methods work.
+**Intel missing from sitemap or RSS.** The post must be in `data/posts-index.json` and you must run `build_meta.py`. Blog-only entries will not appear there.
 
-**Custom domain not working:** DNS propagation takes time. Verify your CNAME record is correct using `dig YOUR_DOMAIN CNAME` or https://dnschecker.org. Ensure the CNAME file exists in the repository root.
+**Custom domain.** Confirm `CNAME` and Cloudflare DNS. GitHub Pages A records for apex: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
