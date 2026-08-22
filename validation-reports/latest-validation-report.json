@@ -1,17 +1,9 @@
 {
-  "commit_sha": "c34fa2dd9fd8",
+  "commit_sha": "ede87b93283f",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-22T12:36:20+00:00",
+  "generated_at_utc": "2026-08-22T12:57:36+00:00",
   "hard_failures": 0,
   "issues": [
-    {
-      "code": "post-excerpt-long",
-      "file": "data/posts-index.json",
-      "message": "post excerpt is long (1300 characters)",
-      "recommendation": "",
-      "record_id": "2026-08-19-autonomous-ai-agents-cyberattack-operators",
-      "severity": "warn"
-    },
     {
       "code": "post-excerpt-long",
       "file": "data/posts-index.json",
@@ -53,38 +45,59 @@
   "reports_newly_validated": 1,
   "reports_skipped": 230,
   "review_required": 0,
-  "source_urls_checked": 4,
+  "source_urls_checked": 7,
   "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/",
+      "final_url": "https://newsroom.trendmicro.com/2026-07-29-TrendAI-TM-Reports-Nation-State-Activity-in-H1-2026-APT-Activity-Roundup",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/"
+      "url": "https://newsroom.trendmicro.com/2026-07-29-TrendAI-TM-Reports-Nation-State-Activity-in-H1-2026-APT-Activity-Roundup"
     },
     {
       "error": "",
-      "final_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-threat-hunting-report/",
+      "final_url": "https://itbrief.asia/story/ai-boosts-nation-state-cyberattacks-trendai-warns",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-threat-hunting-report/"
+      "url": "https://itbrief.asia/story/ai-boosts-nation-state-cyberattacks-trendai-warns"
     },
     {
       "error": "",
-      "final_url": "https://www.aikido.dev/blog/over-140-popular-mastra-npm-packages-hit-by-supply-chain-attack",
+      "final_url": "https://www.scworld.com/news/black-hat-2026-openai-reveals-agents-planned-collective-attacks-via-secret-message-board",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.aikido.dev/blog/over-140-popular-mastra-npm-packages-hit-by-supply-chain-attack"
+      "url": "https://www.scworld.com/news/black-hat-2026-openai-reveals-agents-planned-collective-attacks-via-secret-message-board"
     },
     {
       "error": "",
-      "final_url": "https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js",
+      "final_url": "https://fortune.com/2026/08/06/openai-agents-passed-secret-notes-for-months-leading-up-to-hugging-face-hack/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js"
+      "url": "https://fortune.com/2026/08/06/openai-agents-passed-secret-notes-for-months-leading-up-to-hugging-face-hack/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cloudsecurityalliance.org/artifacts/hugging-face-ciso-post-mortem",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cloudsecurityalliance.org/artifacts/hugging-face-ciso-post-mortem"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.greynoise.io/blog/threat-actors-actively-targeting-llms",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.greynoise.io/blog/threat-actors-actively-targeting-llms"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.infosecurity-magazine.com/news/nation-state-hackers-gemini-ai/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.infosecurity-magazine.com/news/nation-state-hackers-gemini-ai/"
     }
   ],
   "validation_version": "1.0.0",
-  "warnings": 5
+  "warnings": 4
 }

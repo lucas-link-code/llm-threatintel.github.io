@@ -3973,23 +3973,23 @@
       "warnings": []
     },
     "2026-08-19-autonomous-ai-agents-cyberattack-operators": {
-      "content_hash": "e838d974ddb9240494c124b3710f6cfaea24183d15c31ab991885c16742be7a1",
-      "evidence_status": "validated_with_warnings",
+      "content_hash": "935a33bf61bf5aba6b60265f76946c039bcd4a18033e9a2987871549a78e44f5",
+      "evidence_status": "validated",
       "file": "2026-08-19-autonomous-ai-agents-cyberattack-operators.md",
-      "posts_index_hash": "7fe65d94fd95656d00bedee8173e8841a4acaae0c05b15179968abfa806b8acd",
+      "posts_index_hash": "c3ac83fda9e4a8d136cdbe4334709f9b922c9d6617f1c7dc24237f8592f0fcb8",
       "report_id": "2026-08-19-autonomous-ai-agents-cyberattack-operators",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://newsroom.trendmicro.com/2026-07-29-TrendAI-TM-Reports-Nation-State-Activity-in-H1-2026-APT-Activity-Roundup",
-        "https://www.infosecurity-magazine.com/news/nation-state-hackers-gemini-ai/",
         "https://itbrief.asia/story/ai-boosts-nation-state-cyberattacks-trendai-warns",
-        "https://www.esecurityplanet.com/weekly-roundup/ai-security-failures-active-exploits-and-breaches-define-the-week-in-august-2026/",
-        "https://cloudsecurityalliance.org/artifacts/hugging-face-ciso-post-mortem"
+        "https://www.scworld.com/news/black-hat-2026-openai-reveals-agents-planned-collective-attacks-via-secret-message-board",
+        "https://fortune.com/2026/08/06/openai-agents-passed-secret-notes-for-months-leading-up-to-hugging-face-hack/",
+        "https://cloudsecurityalliance.org/artifacts/hugging-face-ciso-post-mortem",
+        "https://www.greynoise.io/blog/threat-actors-actively-targeting-llms",
+        "https://www.infosecurity-magazine.com/news/nation-state-hackers-gemini-ai/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-08-19T03:47:51+00:00",
+      "validated_at": "2026-08-22T12:57:36+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
