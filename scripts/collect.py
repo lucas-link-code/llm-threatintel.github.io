@@ -41,6 +41,14 @@ FORCE = "--force" in sys.argv
 
 # How far back to look for qualifying stories (wider than 7 days reduces empty runs).
 INTEL_LOOKBACK_DAYS = 14
+MITRE_POST_ROW_CAP = 2
+MIN_DUPLICATE_SENTENCE_CHARS = 40
+PROSE_COLLAPSE_FIELDS = (
+    "executive_summary",
+    "detailed_findings",
+    "detection_recommendations",
+)
+SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 VALID_TAGS = {
     "supply-chain",
@@ -167,7 +175,9 @@ Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, m
 Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
 Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, affected platforms, conceptual labels, Hugging Face repo slugs as packages. Put affected or exposed platforms in iocs.affected_platforms, not packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages. Reference, advisory, evidence, and safe PoC URLs belong in references, not urls.
 Shared infrastructure IOC rules: never emit bare shared cloud, CDN, registry, code-hosting, PaaS, tunnel, messaging, paste, or shortener apex domains as domain IOCs. Reject examples: storage.googleapis.com, googleapis.com, s3.amazonaws.com, amazonaws.com, github.com, pypi.org, npmjs.com, vercel.app, workers.dev, hf.space, t.me, pastebin.com, bit.ly. Specific attacker-controlled subdomains and paths remain valid: grok-code-session-traces.storage.googleapis.com, maliciousapp.vercel.app, evil.workers.dev, storage.googleapis.com/bucket-name/, t.me/malicious_channel. Document bare shared-host abuse in Detection Recommendations instead.
-Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits)."""
+Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits).
+
+Writing: No filler, no generic background paragraphs, no restating what the reader already knows. executive_summary: 2 to 3 sentences, under 900 characters. Front-load the most operationally relevant fact. State what happened, who is affected, and what defenders should do. detailed_findings: attribute every factual claim. Use According to [Source Name]... or [Source Name] reported that... Every sentence contributes new information. Do not paste the same sentence twice. If a source cites an older campaign, state that original date. Do not imply it happened in the lookback window. One finding is one incident. Do not glue a recap lede onto a different campaign. Keep first-party technical reports. Skip only when the sole source is a weekly recap of incidents already listed under Already Covered. The disclosing vendor is not the threat actor. Name the publisher in attribution lines and in references. mitre_attack: at most two techniques, and only when the source describes that behavior. Prefer empty [] over generic padding such as T1059 or T1105 with no campaign-specific context. Do not invent mappings."""
 
 
 # ---- File Writers ----
@@ -193,6 +203,54 @@ def clean_finding_citations(finding):
         return [clean_finding_citations(item) for item in finding]
     elif isinstance(finding, str):
         return strip_citation_markers(finding)
+    return finding
+
+
+def _normalize_sentence_unit(text):
+    return " ".join(text.split())
+
+
+def collapse_consecutive_duplicate_sentences(text):
+    """Drop exact consecutive duplicate sentences. Returns (text, collapsed_count)."""
+    if not isinstance(text, str) or not text:
+        return text, 0
+
+    collapsed_count = 0
+    out_paragraphs = []
+    for paragraph in text.split("\n"):
+        if not paragraph.strip():
+            out_paragraphs.append(paragraph)
+            continue
+        units = SENTENCE_SPLIT_RE.split(paragraph)
+        collapsed = []
+        for unit in units:
+            previous = collapsed[-1] if collapsed else None
+            if (
+                previous is not None
+                and len(_normalize_sentence_unit(unit)) >= MIN_DUPLICATE_SENTENCE_CHARS
+                and len(_normalize_sentence_unit(previous)) >= MIN_DUPLICATE_SENTENCE_CHARS
+                and _normalize_sentence_unit(unit) == _normalize_sentence_unit(previous)
+            ):
+                collapsed_count += 1
+                continue
+            collapsed.append(unit)
+        out_paragraphs.append(" ".join(collapsed))
+    return "\n".join(out_paragraphs), collapsed_count
+
+
+def collapse_duplicate_sentences_in_finding(finding):
+    """Collapse exact consecutive duplicate sentences in post prose fields."""
+    if not isinstance(finding, dict):
+        return finding
+    total = 0
+    for field in PROSE_COLLAPSE_FIELDS:
+        if field not in finding:
+            continue
+        cleaned, count = collapse_consecutive_duplicate_sentences(finding[field])
+        finding[field] = cleaned
+        total += count
+    if total:
+        print(f"  Collapsed {total} consecutive duplicate sentence(s)")
     return finding
 
 
@@ -354,7 +412,8 @@ def generate_post_markdown(finding):
 
     # MITRE ATT&CK
     mitre = finding.get('mitre_attack', [])
-    if mitre:
+    if isinstance(mitre, list) and mitre:
+        mitre = mitre[:MITRE_POST_ROW_CAP]
         lines.append("## MITRE ATT&CK Mapping")
         lines.append("")
         lines.append("| Technique | ID | Context |")
@@ -1210,6 +1269,7 @@ def main():
         
         # Clean citation markers from all text fields
         finding = clean_finding_citations(finding)
+        finding = collapse_duplicate_sentences_in_finding(finding)
         removed_reference_urls = remove_reference_urls_from_finding_iocs(finding)
         if removed_reference_urls:
             print(

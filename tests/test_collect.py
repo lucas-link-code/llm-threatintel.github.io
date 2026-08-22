@@ -410,5 +410,152 @@ class CollectJsonExtractionTests(unittest.TestCase):
         self.assertEqual(result["status"], "no_new_intel")
 
 
+AUG19_DUPLICATE_SENTENCE = (
+    "It has become a core component of how they discover vulnerabilities, "
+    "build malware and move through compromised networks."
+)
+
+AUG19_DUPLICATE_PROSE = (
+    "Generative AI is no longer an experimental tool for nation-state hackers. "
+    f"{AUG19_DUPLICATE_SENTENCE} "
+    f"{AUG19_DUPLICATE_SENTENCE} "
+    "One AI agent independently ran its own reconnaissance and lateral movement "
+    "inside a target network."
+)
+
+
+def _minimal_finding(**overrides):
+    finding = {
+        "title": "Example campaign",
+        "tags": ["supply-chain"],
+        "executive_summary": (
+            "Operators pushed a malicious package. Defenders should pin versions."
+        ),
+        "detailed_findings": (
+            "According to Example Source, the package stole credentials from developer hosts."
+        ),
+        "campaign_summary": {
+            "campaign_name": "Example",
+            "attribution": "Unknown",
+            "attribution_confidence": "none",
+            "target": "developers",
+            "vector": "npm",
+            "status": "active",
+            "first_observed": "2026-08-01",
+        },
+        "iocs": {},
+        "mitre_attack": [],
+        "detection_recommendations": "Watch npm install of the named package.",
+        "references": [
+            {
+                "source": "Example",
+                "title": "Report",
+                "url": "https://example.com/report",
+                "date": "2026-08-01",
+            }
+        ],
+    }
+    finding.update(overrides)
+    return finding
+
+
+class CollectProseCollapseTests(unittest.TestCase):
+    def test_collapses_aug19_exact_duplicate_sentence(self):
+        cleaned, count = collect.collapse_consecutive_duplicate_sentences(
+            AUG19_DUPLICATE_PROSE
+        )
+        self.assertEqual(count, 1)
+        self.assertEqual(cleaned.count(AUG19_DUPLICATE_SENTENCE), 1)
+        self.assertIn("Generative AI is no longer an experimental tool", cleaned)
+        self.assertIn("One AI agent independently ran", cleaned)
+
+    def test_leaves_abbreviations_and_versions_unchanged(self):
+        samples = [
+            "U.S. officials confirmed the campaign details in a briefing yesterday.",
+            "Dr. Smith reported the finding to defenders yesterday evening.",
+            "The package 1.2.3 was used in the dropper payload against developers.",
+        ]
+        for sample in samples:
+            cleaned, count = collect.collapse_consecutive_duplicate_sentences(sample)
+            self.assertEqual(count, 0)
+            self.assertEqual(cleaned, sample)
+
+    def test_leaves_near_paraphrase_consecutive_sentences(self):
+        text = (
+            "It has become a core component of how they discover vulnerabilities, "
+            "build malware and move through compromised networks. "
+            "It has become a central part of how they discover vulnerabilities, "
+            "build malware and move through compromised networks."
+        )
+        cleaned, count = collect.collapse_consecutive_duplicate_sentences(text)
+        self.assertEqual(count, 0)
+        self.assertEqual(cleaned, text)
+
+    def test_passthrough_empty_missing_and_non_string(self):
+        self.assertEqual(collect.collapse_consecutive_duplicate_sentences(""), ("", 0))
+        self.assertEqual(collect.collapse_consecutive_duplicate_sentences(None), (None, 0))
+        self.assertEqual(collect.collapse_consecutive_duplicate_sentences(12), (12, 0))
+
+        finding = {"title": "Keep me", "slug": "keep-me"}
+        result = collect.collapse_duplicate_sentences_in_finding(finding)
+        self.assertEqual(result["title"], "Keep me")
+        self.assertEqual(result["slug"], "keep-me")
+
+        finding = {"executive_summary": 7, "title": "Keep"}
+        result = collect.collapse_duplicate_sentences_in_finding(finding)
+        self.assertEqual(result["executive_summary"], 7)
+
+        self.assertEqual(collect.collapse_duplicate_sentences_in_finding("x"), "x")
+
+    def test_finding_collapse_only_touches_prose_fields(self):
+        finding = {
+            "title": f"{AUG19_DUPLICATE_SENTENCE} {AUG19_DUPLICATE_SENTENCE}",
+            "executive_summary": AUG19_DUPLICATE_PROSE,
+            "detailed_findings": AUG19_DUPLICATE_PROSE,
+            "detection_recommendations": AUG19_DUPLICATE_PROSE,
+        }
+        with mock.patch("builtins.print") as print_mock:
+            result = collect.collapse_duplicate_sentences_in_finding(finding)
+        self.assertEqual(result["executive_summary"].count(AUG19_DUPLICATE_SENTENCE), 1)
+        self.assertEqual(result["detailed_findings"].count(AUG19_DUPLICATE_SENTENCE), 1)
+        self.assertEqual(
+            result["detection_recommendations"].count(AUG19_DUPLICATE_SENTENCE), 1
+        )
+        self.assertEqual(result["title"].count(AUG19_DUPLICATE_SENTENCE), 2)
+        printed = " ".join(str(call.args[0]) for call in print_mock.call_args_list)
+        self.assertIn("Collapsed 3 consecutive duplicate sentence(s)", printed)
+
+
+class CollectPostMarkdownTests(unittest.TestCase):
+    def test_layout_lock_for_core_sections(self):
+        markdown = collect.generate_post_markdown(_minimal_finding())
+        self.assertIn("## Executive Summary", markdown)
+        self.assertIn("## Detailed Findings", markdown)
+        self.assertIn("| Attribution | Unknown (confidence: none) |", markdown)
+        self.assertIn("_No domain IOCs published by source_", markdown)
+        self.assertIn("_No URL IOCs published by source_", markdown)
+        self.assertNotIn("## MITRE ATT&CK Mapping", markdown)
+        self.assertIn(f"**Date:** {collect.TODAY}", markdown)
+
+    def test_mitre_table_capped_at_two_rows(self):
+        markdown = collect.generate_post_markdown(
+            _minimal_finding(
+                mitre_attack=[
+                    {"technique": "Supply Chain Compromise", "id": "T1195.001", "context": "npm"},
+                    {"technique": "Command and Scripting Interpreter", "id": "T1059.006", "context": "python"},
+                    {"technique": "Ingress Tool Transfer", "id": "T1105", "context": "payload"},
+                ]
+            )
+        )
+        self.assertIn("## MITRE ATT&CK Mapping", markdown)
+        self.assertIn("T1195.001", markdown)
+        self.assertIn("T1059.006", markdown)
+        self.assertNotIn("T1105", markdown)
+
+    def test_empty_mitre_omits_section(self):
+        markdown = collect.generate_post_markdown(_minimal_finding(mitre_attack=[]))
+        self.assertNotIn("## MITRE ATT&CK Mapping", markdown)
+
+
 if __name__ == "__main__":
     unittest.main()
