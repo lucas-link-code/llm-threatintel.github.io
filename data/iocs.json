@@ -1,6 +1,15 @@
 {
-  "last_updated": "2026-08-20",
+  "last_updated": "2026-08-22",
   "iocs": [
+    {
+      "value": "kriminal.ai",
+      "type": "domain",
+      "context": "Clearnet criminal AI storefront wrapping jailbroken Grok, Claude, and OpenRouter models",
+      "first_seen": "2026-08-18",
+      "source": "ThreatDown",
+      "campaign": "2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai",
+      "status": "active"
+    },
     {
       "value": "npm:@kolbo/mcp@1.57.1",
       "type": "package",

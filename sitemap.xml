@@ -2,9 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://llm-threatintel.com/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-22-adversa-cryptographic-context-injection-grok-gemini.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-22-gambit-claude-code-gentlemen-zerofot-rage.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-08-22-ghostsplice-mcp-split-instruction-exfiltration.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html</loc>

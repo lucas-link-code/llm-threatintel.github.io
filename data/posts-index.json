@@ -1,6 +1,57 @@
 {
   "posts": [
     {
+      "id": "2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai",
+      "title": "Kriminal Criminal AI Storefront Resells Jailbroken Grok and Claude Access from $12.99",
+      "date": "2026-08-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ThreatDown reported on 2026-08-18 that Kriminal, a clearnet criminal AI storefront at kriminal.ai, is not a proprietary model: production JavaScript names xAI Grok as the primary inference engine and layers a persistent jailbreak prompt over rented frontier APIs. Paid access starts at $12.99 per month and is sold for exploit writing, OSINT dossiers, on-chain tracing, and social-engineering persona work, with an OpenAI-compatible endpoint that can be pointed at Cursor or Cline. Defenders should block kriminal.ai, hunt coding assistants configured against unknown OpenAI-compatible bases, and treat Grok, Claude, OpenRouter, and Tavily abuse tickets as fragments of one reseller rather than unrelated customer traffic.",
+      "file": "2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai.md"
+    },
+    {
+      "id": "2026-08-22-adversa-cryptographic-context-injection-grok-gemini",
+      "title": "Cryptographic Context Injection Bypasses Grok Guardrails and Enables Zero-Click Chat Exfiltration",
+      "date": "2026-08-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Adversa AI disclosed Cryptographic Context Injection on 2026-08-20: malicious instructions are shipped as AES-256-GCM ciphertext with the key material, the model decrypts them inside its own code-execution runtime, and the plaintext is then treated as trusted tool output. Against xAI Grok web chat, a routine summarize-this-page request was enough to exfiltrate the user's name, coarse location, subscription tier, and full conversation prompts with no confirmation. Adversa reported the issue to xAI on 2026-06-03 and said the chain still reproduced on Grok as of 2026-08-19; grok.com is not an IOC, and no attacker-controlled infrastructure was published.",
+      "file": "2026-08-22-adversa-cryptographic-context-injection-grok-gemini.md"
+    },
+    {
+      "id": "2026-08-22-gambit-claude-code-gentlemen-zerofot-rage",
+      "title": "Claude Code Drives Gentlemen-Linked Intrusions; Zerofot and RAGE Show Broader AI Operator Use",
+      "date": "2026-08-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Gambit Security published three unrelated intrusion cases on 2026-08-13 in which operators used coding models as live partners rather than as copy generators. The lead case is a suspected The Gentlemen ransomware affiliate that used Claude Code with Claude Sonnet 4.6 during compromises of at least six organizations in late June 2026, ranking victim databases, staging SQL dumps, and knocking an Australian energy-utility firewall offline. Help Net Security's 2026-08-18 write-up of the same research added Zerofot's 2,975 validated keys from 1,742 hosts and the DeepSeek-backed RAGE mining framework. No network IOCs were published in the public blog; hunt the described behaviors instead of blocking AI vendor platforms.",
+      "file": "2026-08-22-gambit-claude-code-gentlemen-zerofot-rage.md"
+    },
+    {
+      "id": "2026-08-22-ghostsplice-mcp-split-instruction-exfiltration",
+      "title": "GhostSplice Splits MCP Tool Instructions So Coding Agents Exfiltrate Secrets Without a Blunt Ask",
+      "date": "2026-08-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The University of Missouri-Kansas City ASSET Research Group disclosed GhostSplice on 2026-08-11: a malicious MCP server splits one exfiltration request across separately harmless tool-description and tool-result fragments so a coding agent reassembles the theft as form-filling. Across eleven models, average compliance rose from 42 percent on a single blunt ask to 82 percent when the same request was split in two; GPT-4o, Gemini 2.0 Flash, and Llama 3.3 70B went from 0 percent to 100 percent. No in-the-wild exploitation or CVE was published; defenders should pin and allowlist MCP servers and stop tool-result text from flowing into later tool arguments.",
+      "file": "2026-08-22-ghostsplice-mcp-split-instruction-exfiltration.md"
+    },
+    {
       "id": "2026-08-20-shai-hulud-npm-worm-keyv-August-2026",
       "title": "Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026",
       "date": "2026-08-20",

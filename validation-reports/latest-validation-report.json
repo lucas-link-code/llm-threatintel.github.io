@@ -1,7 +1,7 @@
 {
-  "commit_sha": "bca5d2c6db62838313e76bfe7af5aa19d2713123",
+  "commit_sha": "a9ffecfc51be",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-22T08:57:32+00:00",
+  "generated_at_utc": "2026-08-22T12:29:20+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -57,13 +57,104 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 0,
+  "reports_checked": 5,
+  "reports_newly_validated": 4,
   "reports_skipped": 226,
   "review_required": 1,
-  "source_urls_checked": 1,
-  "state_updates": 0,
+  "source_urls_checked": 14,
+  "state_updates": 4,
   "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.threatdown.com/blog/kriminal/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.threatdown.com/blog/kriminal/"
+    },
+    {
+      "error": "",
+      "final_url": "https://siliconangle.com/2026/08/19/criminal-ai-tool-kriminal-is-mostly-just-grok-with-a-jailbreak-threatdown-finds/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://siliconangle.com/2026/08/19/criminal-ai-tool-kriminal-is-mostly-just-grok-with-a-jailbreak-threatdown-finds/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.csoonline.com/article/4211952/kriminal-breaks-out-of-grok-claude-guardrails-at-12-99.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.csoonline.com/article/4211952/kriminal-breaks-out-of-grok-claude-guardrails-at-12-99.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.theregister.com/ai-and-ml/2026/08/20/grok-chat-duped-into-swallowing-injected-instructions/5290019",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/20/grok-chat-duped-into-swallowing-injected-instructions/5290019"
+    },
+    {
+      "error": "",
+      "final_url": "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/"
+    },
+    {
+      "error": "",
+      "final_url": "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.helpnetsecurity.com/2026/08/18/gambit-security-ai-cyberattack-tools-report/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.helpnetsecurity.com/2026/08/18/gambit-security-ai-cyberattack-tools-report/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/"
+    },
+    {
+      "error": "",
+      "final_url": "https://asset-group.github.io/disclosures/ghostsplice/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://asset-group.github.io/disclosures/ghostsplice/"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/asset-group/ghostsplice",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/asset-group/ghostsplice"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.secureinseconds.com/blog/2026-08-15-mcp-server-split-instruction-attack-coding-agent",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.secureinseconds.com/blog/2026-08-15-mcp-server-split-instruction-attack-coding-agent"
+    },
     {
       "error": "The read operation timed out",
       "final_url": null,

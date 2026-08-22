@@ -1,6 +1,146 @@
 {
-  "last_updated": "2026-08-20",
+  "last_updated": "2026-08-22",
   "entries": [
+    {
+      "id": "kriminal",
+      "names": [
+        "Kriminal",
+        "kriminal.ai",
+        "NEXUS",
+        "CIPHER"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-05",
+      "status": "active",
+      "distribution": [
+        "Clearnet storefront at kriminal.ai",
+        "Crypto checkout via NowPayments with no KYC",
+        "OpenAI-compatible API for Cursor and Cline",
+        "Cybercrime-network advertising as a non-wrapper criminal model"
+      ],
+      "ttps": [
+        "T1588.002 - Obtain Capabilities: Tool",
+        "T1583.001 - Acquire Infrastructure: Domains",
+        "T1059.006 - Command and Scripting Interpreter: Python",
+        "T1566 - Phishing",
+        "T1656 - Impersonation"
+      ],
+      "description": "Clearnet criminal AI storefront that resells jailbroken access to rented frontier models rather than running a proprietary model. ThreatDown's August 2026 teardown of production JavaScript named xAI Grok as the NEXUS primary inference engine, OpenRouter for Mistral Large and Llama 3.3, Tavily for live search, and Anthropic Claude as CIPHER for long-context work. A persistent system prompt strips safety policy from every request. Paid tiers run from $12.99 to $99 per month and sell exploit writing, OSINT dossiers, on-chain tracing, and social-engineering persona agents. Wildcard TLS for *.kriminal.ai was issued 2026-05-16.",
+      "attribution": "Unknown operators of kriminal.ai. ThreatDown published the stack from first-party JavaScript on 2026-08-18; no named group was identified."
+    },
+    {
+      "id": "cryptographic-context-injection",
+      "names": [
+        "Cryptographic Context Injection",
+        "Adversa AI Cryptographic Context Injection"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Indirect prompt injection via webpages carrying AES-256-GCM ciphertext and PBKDF2 key material",
+        "Direct injection against Gemini public chat Deep Thinking mode"
+      ],
+      "ttps": [
+        "T1059.006 - Command and Scripting Interpreter: Python",
+        "T1204.001 - User Execution: Malicious Link",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1041 - Exfiltration Over C2 Channel",
+        "T1559 - Inter-Process Communication"
+      ],
+      "description": "Attack technique disclosed by Adversa AI on 2026-08-20. Malicious instructions are shipped as AES-256-GCM ciphertext so static guardrails cannot read them; the model decrypts the payload inside its code-execution sandbox and treats the plaintext as trusted tool output. Against xAI Grok web chat, a summarize-this-page request exfiltrated session name, coarse location, subscription tier, and conversation prompts with no confirmation. Adversa reported the issue to xAI on 2026-06-03 and reproduced it on 2026-08-19. A Gemini variant bypassed safety filters; success against Gemini had fallen by August. No in-the-wild actor or attacker infrastructure was published.",
+      "attribution": "Vulnerability research by Adversa AI, Rony Utevsky. No threat actor attributed."
+    },
+    {
+      "id": "gentlemen-raas-claude-code-affiliate",
+      "names": [
+        "The Gentlemen ransomware affiliate using Claude Code",
+        "Gentlemen RaaS Claude Code operator"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-06",
+      "status": "active",
+      "distribution": [
+        "Interactive Claude Code sessions on compromised VPN and Windows estates",
+        "False authorized-penetration-testing cover story after model refusal"
+      ],
+      "ttps": [
+        "T1133 - External Remote Services",
+        "T1556 - Modify Authentication Process",
+        "T1078 - Valid Accounts",
+        "T1560 - Archive Collected Data",
+        "T1070.004 - Indicator Removal: File Deletion"
+      ],
+      "description": "Suspected The Gentlemen ransomware-as-a-service affiliate documented by Gambit Security on 2026-08-13. The operator used Claude Code with Claude Sonnet 4.6 during late-June 2026 intrusions into at least six organizations spanning energy, financial services, food, manufacturing, IT, property, and distribution. Claude ranked production databases, ran SQL Server backups, staged compressed dumps, and caused a firewall outage at an Australian energy utility while editing device configuration. Help Net Security rated Gentlemen affiliation medium confidence. FortiGate LDAP pass-back and a reused VPN account named test appear only in secondary reporting of a non-public technical report.",
+      "attribution": "Assessed with medium confidence as a The Gentlemen RaaS affiliate by Help Net Security citing Gambit Security. No individual operator name published."
+    },
+    {
+      "id": "zerofot",
+      "names": [
+        "Zerofot",
+        "auto_scan"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-04",
+      "status": "active",
+      "distribution": [
+        "Internet-wide scanning of exposed files and open directories",
+        "auto_scan tool built with OpenAI Codex and Claude Code under a fake CTF-sandbox prompt"
+      ],
+      "ttps": [
+        "T1595.002 - Active Scanning: Vulnerability Scanning",
+        "T1552 - Unsecured Credentials",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "Credential-harvesting operator documented by Gambit Security and Help Net Security in August 2026. Between 2026-04-05 and 2026-05-23, Zerofot's auto_scan tool collected 2,975 validated keys and credentials from 1,742 hosts, including SSH private keys, AWS access keys, and credentials for Google Gemini, OpenAI, GitHub, and Anthropic. Codex was instructed that the work was for an authorized CTF sandbox so the model would not refuse. No C2 or binary hash was published in the public blog.",
+      "attribution": "Unknown. Named Zerofot by Gambit Security; no further alias or nation-state link published."
+    },
+    {
+      "id": "rage-cryptominer-framework",
+      "names": [
+        "RAGE",
+        "RAGE AI Orchestrator"
+      ],
+      "type": "malware",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Custom Python exploitation framework assessed as AI-generated",
+        "DeepSeek-backed AI Orchestrator advising miner-botnet operations"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1496 - Resource Hijacking",
+        "T1552.005 - Cloud Instance Metadata API",
+        "T1552 - Unsecured Credentials"
+      ],
+      "description": "AI-generated Python attack framework documented by Gambit Security. RAGE scans and exploits internet-facing Redis, Elasticsearch, Docker, Tomcat, Jenkins, Hadoop YARN, Confluence, and Supervisord, then deploys cryptocurrency miners. A DeepSeek-backed orchestrator advises the operator at runtime. In one case AWS credentials recovered from exposed Redis were used to search the victim cloud estate. No miner pool, C2, or hash was published in public coverage.",
+      "attribution": "Unknown operator. Gambit Security treated RAGE as unrelated to the Gentlemen-linked Claude Code case and to Zerofot."
+    },
+    {
+      "id": "ghostsplice",
+      "names": [
+        "GhostSplice",
+        "ASSET Research Group GhostSplice"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-08",
+      "status": "active",
+      "distribution": [
+        "Malicious MCP server installed by a developer from a registry or local config",
+        "Split payload across tool description, tool result, and optional VS Code sampling systemPrompt",
+        "Public research PoC at github.com/asset-group/ghostsplice"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain",
+        "T1199 - Trusted Relationship",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1041 - Exfiltration Over C2 Channel",
+        "T1559 - Inter-Process Communication"
+      ],
+      "description": "MCP split-instruction exfiltration technique disclosed by the University of Missouri-Kansas City ASSET Research Group on 2026-08-11. A malicious server advertises a harmless form-like tool and later returns a mapping that fills the blanks with SSH keys, .env files, source, and customer data. Average model compliance rose from 42 percent on a blunt ask to 82 percent when split. No in-the-wild campaign was reported. OpenAI classified the finding as third-party MCP risk rather than a model vulnerability.",
+      "attribution": "Vulnerability research by ASSET Research Group. No threat actor attributed; tests used synthetic credentials."
+    },
     {
       "id": "dream-hermes-openclaw-multi-agent-intrusion-framework",
       "names": [

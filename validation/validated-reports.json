@@ -4038,6 +4038,75 @@
       "validated_at": "2026-08-20T03:47:40+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-22-adversa-cryptographic-context-injection-grok-gemini": {
+      "content_hash": "1a4cab3a47295584e1d16c53fcb132a4b033f208a5bfbb61cbafe42ebabf55c9",
+      "evidence_status": "validated",
+      "file": "2026-08-22-adversa-cryptographic-context-injection-grok-gemini.md",
+      "posts_index_hash": "06c1228c28ae2b073d35dec9f6a9ce8235b9a420298f235cb15b9021071593e9",
+      "report_id": "2026-08-22-adversa-cryptographic-context-injection-grok-gemini",
+      "review_required": [],
+      "source_urls": [
+        "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+        "https://www.theregister.com/ai-and-ml/2026/08/20/grok-chat-duped-into-swallowing-injected-instructions/5290019",
+        "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/",
+        "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-22T12:28:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-22-gambit-claude-code-gentlemen-zerofot-rage": {
+      "content_hash": "5561994d93529acbe3dbb3dffdc9c4cc1d73533791f6c7ac7061f47926f5c6b7",
+      "evidence_status": "validated",
+      "file": "2026-08-22-gambit-claude-code-gentlemen-zerofot-rage.md",
+      "posts_index_hash": "7e72cc0499b71b2befca92fa01271ac9834037d55c50af091baf5a657c327cd8",
+      "report_id": "2026-08-22-gambit-claude-code-gentlemen-zerofot-rage",
+      "review_required": [],
+      "source_urls": [
+        "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle",
+        "https://www.helpnetsecurity.com/2026/08/18/gambit-security-ai-cyberattack-tools-report/",
+        "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-22T12:28:58+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-22-ghostsplice-mcp-split-instruction-exfiltration": {
+      "content_hash": "f7bb427dbf9d189884d2818448d4bd34cb23679395ea95b767de8cbd2fdff73b",
+      "evidence_status": "validated",
+      "file": "2026-08-22-ghostsplice-mcp-split-instruction-exfiltration.md",
+      "posts_index_hash": "758bf01d9907e33800dff2f7aca31321c1d715a328c48dcb60f74f79b3b88a79",
+      "report_id": "2026-08-22-ghostsplice-mcp-split-instruction-exfiltration",
+      "review_required": [],
+      "source_urls": [
+        "https://asset-group.github.io/disclosures/ghostsplice/",
+        "https://github.com/asset-group/ghostsplice",
+        "https://www.secureinseconds.com/blog/2026-08-15-mcp-server-split-instruction-attack-coding-agent"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-22T12:28:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai": {
+      "content_hash": "3a43526803e0d5899b8babcf01446969965708650089f4fd9d34401304602c38",
+      "evidence_status": "validated",
+      "file": "2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai.md",
+      "posts_index_hash": "5f9264de8f027be8efa693aae4798f0d0b1c5efb0cd06840f8bbbf5c6a15284c",
+      "report_id": "2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai",
+      "review_required": [],
+      "source_urls": [
+        "https://www.threatdown.com/blog/kriminal/",
+        "https://siliconangle.com/2026/08/19/criminal-ai-tool-kriminal-is-mostly-just-grok-with-a-jailbreak-threatdown-finds/",
+        "https://www.csoonline.com/article/4211952/kriminal-breaks-out-of-grok-claude-guardrails-at-12-99.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-22T12:28:55+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
