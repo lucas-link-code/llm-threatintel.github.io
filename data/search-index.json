@@ -497,6 +497,7 @@
       ],
       "cves": [],
       "actors": [
+        "atomic",
         "glassworm"
       ],
       "iocs": []
@@ -1699,6 +1700,7 @@
       ],
       "cves": [],
       "actors": [
+        "atomic",
         "hightower6eu",
         "open-oss/privacy-filter hugging face typosquat",
         "openai",
@@ -1857,6 +1859,7 @@
       ],
       "cves": [],
       "actors": [
+        "amos",
         "nullifai",
         "openai",
         "unknown",
@@ -2251,6 +2254,7 @@
       ],
       "cves": [],
       "actors": [
+        "amos",
         "hightower6eu",
         "sakaen736jih"
       ],
@@ -2865,6 +2869,7 @@
       ],
       "cves": [],
       "actors": [
+        "amos",
         "hightower6eu",
         "nullifai",
         "sakaen736jih",
@@ -3017,6 +3022,8 @@
       ],
       "cves": [],
       "actors": [
+        "amos",
+        "atomic",
         "openai",
         "unknown"
       ],
@@ -3134,7 +3141,9 @@
         "phishing"
       ],
       "cves": [],
-      "actors": [],
+      "actors": [
+        "vidar"
+      ],
       "iocs": []
     },
     {
@@ -4933,6 +4942,204 @@
       ],
       "iocs": [
         "kriminal.ai"
+      ]
+    },
+    {
+      "id": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "title": "Fake OpenAI Codex and Claude Code Ads Push ClickFix Loaders for Suspected AMOS on macOS",
+      "date": "2026-08-25",
+      "excerpt": "Cato Networks reported on 2026-08-24 that sponsored Google results for queries such as codex macos download send macOS users to Google Sites pages impersonating an OpenAI Codex installer, then instruct them to paste a Terminal command that fetches a multi-stage loader. Cato assessed strong overlap with Atomic macOS Stealer delivery and documented a related Claude Code landing page on parentpreneurx.com that reuses the same telemetry host. Block the attacker-controlled iframe and payload hosts below, hunt zsh pipelines from Terminal, and treat sites.google.com as shared hosting rather than a denylist apex.",
+      "file": "2026-08-25-cato-fake-codex-clickfix-amos-macos.md",
+      "body": "Fake OpenAI Codex and Claude Code Ads Push ClickFix Loaders for Suspected AMOS on macOS Date: 2026-08-25 Tags: phishing, malware Executive Summary Cato Networks reported on 2026-08-24 that sponsored Google results for queries such as codex macos download send macOS users to Google Sites pages impersonating an OpenAI Codex installer, then instruct them to paste a Terminal command that fetches a multi-stage loader. Cato assessed strong overlap with Atomic macOS Stealer delivery and documented a related Claude Code landing page on parentpreneurx.com that reuses the same telemetry host. Block the attacker-controlled iframe and payload hosts below, hunt zsh pipelines from Terminal, and treat sites.google.com as shared hosting rather than a denylist apex. Campaign Summary Field Detail Campaign / Malware Fake Codex and Claude Code ClickFix delivery assessed as AMOS-overlapping Actor / Attribution Unnamed operators; Cato did not name a group. Payload overlap with AMOS, confidence medium Target macOS developers searching for OpenAI Codex or Claude Code installers Vector Malvertising to Google Sites lures, attacker iframe with ClickFix Terminal paste, multi-stage zsh to Mach-O in /tmp/helper Status Active as of Cato's 2026-08-24 publication; Cato said it had blocked reused iframe infrastructure for its customers First Observed Cato published 2026-08-24; Microsoft documented a related macOS ClickFix shift on 2026-08-05 per Cato's campaign-context section Detailed Findings According to Cato CTRL, the opening move is a sponsored search result that sits above the legitimate OpenAI listing. Cato reported that the ad leads to a Google Sites page that copies a Codex download portal, including macOS and Linux buttons, with payload delivery observed for macOS only. Cato reported that the Google Sites page is a front end. It embeds attacker-controlled ClickFix content through an iframe. Cato mapped three Codex lure sets: sites.google.com/view/codex-desktop-app/ and sites.google.com/view/cdx-off-page to bright-links.com, and sites.google.com/view/codexmac to swiftsaverfin.com/codexx/. Cato stated that the expected /codex/ path on the second set returns a benign decoy, while /codexx/ serves the live installer, and that non-macOS browsers can also receive benign content. Cato reported that the pasted command starts with a plausible npm install string for Codex, then decodes a Base64 URL and pipes a remote script into zsh. The first-stage loader embeds a second stage that Cato said progressed from compressed Base64 to an AES-encrypted gzip container between infrastructure sets. After decode, the second stage sends a background request with event=pasted, writes a Mach-O to /tmp/helper, runs xattr -c, then chmod +x and executes. Cato assessed substantial overlap with documented AMOS delivery: Base64 curl loaders, obfuscated zsh stages, telemetry to /api/metrics/run?event=pasted, update-themed payload URLs, universal Mach-O payloads in /tmp/helper, and extended-attribute removal. Cato stated that telemetry overlap is not by itself proof of the Mach-O's later C2 protocol. The Register, SiliconANGLE, SC Media, and Infosecurity Magazine independently summarized the same Cato report on 2026-08-24 and 2026-08-25. Cato also identified a Claude Code-branded ClickFix page at parentpreneurx.com that is not on Google Sites but reuses grove-satin.com telemetry from the third Codex set, with first-stage and payload hosts on vine-96.com. Do not publish sites.google.com, google.com, or npmjs.com as campaign indicators. Those are shared platforms. The attacker-controlled hosts and specific Google Sites view paths are the indicators. MITRE ATT&CK Mapping Technique ID Context Drive-by Compromise T1189 Sponsored search ads deliver victims to impersonating Codex download pages. User Execution: Malicious Link T1204.001 Sponsored lures and the fake installer page induce the victim to paste and run the loader command. Command and Scripting Interpreter: Unix Shell T1059.004 The copied command pipes a remote script into zsh. Subvert Trust Controls: Mark-of-the-Web Bypass T1553.005 The second stage runs xattr -c on /tmp/helper before execution. Masquerading T1036 Lures impersonate OpenAI Codex and Anthropic Claude Code installers. Application Layer Protocol: Web Protocols T1071.001 Telemetry and payload retrieval use HTTP paths under attacker domains. IOCs Domains Full URL Paths Splunk Format File Hashes Cato's IOC tables also listed additional Mach-O hashes. Several published table cells did not parse as 64-character SHA-256, so those values are omitted rather than guessed. Detection Recommendations In DNS, proxy, and TLS SNI logs, alert on the attacker-controlled hosts above. Do not denylist sites.google.com or google.com. Hunt the specific /view/codex-desktop-app, /view/codexmac, and /view/cdx-off-page paths. On macOS EDR, alert when Terminal or zsh runs curl or similar piped into zsh, when a new Mach-O appears at /tmp/helper, when xattr -c runs against that path, or when npm install strings are concatenated with Base64 decode in one command line. In web proxy logs, alert on requests containing /api/metrics/run?event=pasted, /curl/ first-stage paths, and update-themed paths containing jetbrains/update, google/update, or Vert/update on the domains above. Correlate Google Ads clicks for Codex or Claude Code download queries with subsequent Terminal child processes on the same host. References [Cato Networks] Cato CTRL Insights: When Trust Becomes the Payload in a Fake Codex ClickFix Campaign (2026-08-24) — https://www.catonetworks.com/blog/cato-ctrl-when-trust-becomes-payload-in-fake-codex-clickfix-campaign/ [The Register] Crooks push Mac malware through fake OpenAI Codex ads (2026-08-25) — https://www.theregister.com/security/2026/08/25/crooks-push-mac-malware-through-fake-openai-codex-ads/5291899 [SiliconANGLE] Fake Codex installer tricks Mac users into pasting malware, Cato finds (2026-08-24) — https://siliconangle.com/2026/08/24/fake-codex-installer-tricks-mac-users-into-pasting-malware-cato-finds/",
+      "tags": [
+        "malware",
+        "phishing"
+      ],
+      "cves": [],
+      "actors": [
+        "amos",
+        "atomic",
+        "atomic macos stealer",
+        "openai",
+        "unnamed"
+      ],
+      "iocs": [
+        "1f252b86edddda142a69cf9059b67a4aa842f7fd8aedbfdd6937850138e3a63e",
+        "48db5d715c583b4495ee1e3095f097ed9bc04625e4516e1fa437fcb374fec249",
+        "684d4875a60e832c6993bb08bf0ec4fbd7ca89c1a44ba1ab65fac6d9fb202599",
+        "95d5ae5e87b4eae733655f6fc7bfdeb1efbc618d95375a46f6f8d353b48426dc",
+        "9c3a28c5b8b9ced508786aad723efb8105b9d20f61095b28556c3d89a5c00343",
+        "aspencore18.com",
+        "aspencore18.com/2kqYRM0DCrnyJgoS4gVLl_FHJRRdTUhGCbjyuYwpZ6c/google/update",
+        "aspencore18.com/curl/0v95mzh95/y6jdnt8y1hu7bv33.dat",
+        "atlas-compass.com",
+        "atlas-compass.com/api/metrics/run?event=pasted",
+        "bright-links.com",
+        "e4e078458c025e0905d94f6d9a93439024e8f256b068d8e67da7f34ba1c93d27",
+        "fcb74c3c5134a97b5bc90b2e0bad67a8e3044f769f844313e21069c7480d97cd",
+        "grove-12.com",
+        "grove-12.com/api/metrics/run?event=pasted",
+        "grove-satin.com",
+        "grove-satin.com/api/metrics/run?event=pasted",
+        "parentpreneurx.com",
+        "quill-flint.com",
+        "quill-flint.com/curl/2h0w4vtm7c/7b4cckfhojxjbrcjon.json",
+        "quill-flint.com/zyeMb6slon_3VWVlkSkdiJurcyhY5cFNtchnavRnMgU/jetbrains/updateAll",
+        "sites.google.com/view/cdx-off-page",
+        "sites.google.com/view/codex-desktop-app/",
+        "sites.google.com/view/codexmac",
+        "swiftsaverfin.com",
+        "swiftsaverfin.com/codexx/",
+        "trekmesh15.com",
+        "trekmesh15.com/curl/ad4e26afb47dc6262d43b5616853349c3bbdab5c8eedac80f695151e00c07df8",
+        "trekmesh15.com/zyeMb6slon_3VWVlkSkdiJurcyhY5cFNtchnavRnMgU/jetbrains/update",
+        "vine-96.com",
+        "vine-96.com/N_8qoQC3gmx9CFmwN9nMJ4QoUZtKZ1ua1ThNulPR4kU/Vert/update",
+        "vine-96.com/curl/iojaglaf/t1f6kticgr6nt9nplkh.dat"
+      ]
+    },
+    {
+      "id": "2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits",
+      "title": "CISA AA26-231A: AI-Generated Scripts Target Internet-Exposed Siemens S7 PLCs",
+      "date": "2026-08-25",
+      "excerpt": "NSA, CISA, FBI, DOE, and EPA published joint advisory AA26-231A on 2026-08-19 describing an active campaign against Siemens S7 Series PLCs in which operators use AI-assisted Python to wrap snap7 and python-snap7 into fake OT monitoring tools. Actors scan Censys and ZoomEye for internet-exposed S7comm on TCP 102, then read and write data blocks on S7-200 through S7-1500 families, including F-series safety CPUs. Pull PLCs off the internet, block TCP 102 at the perimeter, and hunt snap7 usage outside approved engineering workstations; the agencies published no campaign IOCs.",
+      "file": "2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits.md",
+      "body": "CISA AA26-231A: AI-Generated Scripts Target Internet-Exposed Siemens S7 PLCs Date: 2026-08-25 Tags: malware Executive Summary NSA, CISA, FBI, DOE, and EPA published joint advisory AA26-231A on 2026-08-19 describing an active campaign against Siemens S7 Series PLCs in which operators use AI-assisted Python to wrap snap7 and python-snap7 into fake OT monitoring tools. Actors scan Censys and ZoomEye for internet-exposed S7comm on TCP 102, then read and write data blocks on S7-200 through S7-1500 families, including F-series safety CPUs. Pull PLCs off the internet, block TCP 102 at the perimeter, and hunt snap7 usage outside approved engineering workstations; the agencies published no campaign IOCs. Campaign Summary Field Detail Campaign / Malware AI-generated Siemens S7 exploitation scripts masquerading as OT monitoring tools Actor / Attribution Unnamed. AA26-231A does not identify a group. Confidence none Target U.S. Critical Manufacturing, Energy, Water and Wastewater, Chemical, Food and Agriculture, and Commercial Facilities running Siemens S7 Series; Defense Industrial Base noted as also in scope Vector Internet scanning, default or weak PLC credentials, AI-generated Python using snap7.dll and python-snap7 over S7comm Status Active. The advisory states this is not a theoretical risk First Observed Advisory date 2026-08-19; no earlier first-seen date published Detailed Findings According to CISA AA26-231A, the authoring agencies are warning ICS owners of an active threat to Siemens S7 Series controllers and of broader PLC targeting beyond that vendor. The advisory names S7-200, S7-300 including 314, 315, and 317 models, S7-400, S7-1200 CPU 1211C through 1217C, and S7-1500 including F-series safety controllers. CISA reported that operators use AI assistance to generate exploitation scripts from public information on these models for initial access, credential access, denial of service, and other objectives. The advisory maps that development path to ATT&CK Obtain Capabilities: Artificial Intelligence. CISA stated that AI lowers the expertise and time needed to produce working ICS scripts and lets operators iterate as defenses change. CISA reported that the tooling is built on open-source industrial automation libraries, specifically snap7.dll and python-snap7, and is presented as legitimate OT monitoring software. Those tools provide read and write access to PLC memory, configuration, and ladder logic over S7comm. CISA described the operational pattern as scanning services such as Censys and ZoomEye to find exposed or poorly segmented S7 devices, then using insecure default or minimally configured authentication, then running AI-generated Python that loads snap7, then performing data-block reads and writes that the agencies assess as reconnaissance, capability testing, and pre-positioning rather than confirmed destructive effects in every case. The Register reported the same advisory on 2026-08-19. SecurityAffairs summarized the five-agency warning the same week. Siemens told Smart Industry that AA26-231A does not describe new S7 product vulnerabilities and instead covers new techniques against misconfiguration and insecure operations already covered in Siemens Security Bulletins. CISA published no domains, URLs, hashes, or actor-controlled infrastructure. Censys, ZoomEye, snap7, and python-snap7 are dual-use libraries and scanners, not campaign indicators. MITRE ATT&CK Mapping Technique ID Context Obtain Capabilities: Artificial Intelligence T1588.007 AA26-231A states actors rapidly iterate Siemens S7 exploit code through AI-assisted development. Search Open Technical Databases: Scan Databases T1596.005 Actors use internet scanning services to find exposed S7comm endpoints. Develop Capabilities: Exploits T1587.004 Actors generate scripts against known S7 weaknesses and misconfigurations. Command and Scripting Interpreter: Python T1059.006 AI-generated Python loads snap7 to speak S7comm. Masquerading T1036 Scripts are presented as legitimate OT monitoring tools. Network Service Discovery T1046 Sequential scanning of TCP 102 and CPU enumeration against exposed PLCs. IOCs Domains Full URL Paths Splunk Format File Hashes Detection Recommendations On OT firewalls and ICS IDS, alert on S7comm TCP 102 from non-engineering workstations, write operations outside change windows, sequential IP scanning on port 102, and connections from geographic ranges that are not vendors or integrators. On engineering workstations, hunt Python processes importing snap7 or python-snap7, unexpected snap7.dll loads, and new monitoring tools that were not deployed through change control. Inventory S7-200 through S7-1500 firmware against a gold copy, disable unused web servers and protocols, enable PLC password and protection levels, and confirm no S7comm path exists from untrusted networks. CISA's primary mitigation is to keep PLCs off the internet and block TCP 102 at the perimeter. References [CISA] Defending Against an Active Threat to Siemens S7 Series PLCs, AA26-231A (2026-08-19) — https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a [The Register] Not a theoretical risk, feds warn as attackers use AI-made code to hack critical infrastructure controllers (2026-08-19) — https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960 [SecurityAffairs] NSA, CISA, FBI, DOE, and EPA Warn of Active AI-Assisted Attacks on Siemens S7 PLCs (2026-08-19) — https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html",
+      "tags": [
+        "malware"
+      ],
+      "cves": [],
+      "actors": [
+        "unnamed"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "title": "GTIG: UNC7005 Deploys LLM-Generated CHERRYPIE Infostealer in Russia-Nexus Auth Phishing",
+      "date": "2026-08-25",
+      "excerpt": "Google Threat Intelligence Group reported on 2026-08-20 that suspected Russia-nexus cluster UNC7005, also tracked as STORM-2945, is running app-password, device-code, WhatsApp linking, and Google OAuth phishing against academia, diplomatic, and nonprofit targets, and that its CHERRYPIE PowerShell infostealer contains artifacts consistent with LLM generation. GTIG assesses with high confidence a Russian nexus for UNC7005, UNC6293, and UNC5976, and with moderate confidence that UNC7005 and UNC6293 relate to an ICE RELIC initial-access subcluster. Hunt the UNC7005 domains and CHERRYPIE hashes below, and treat personal Gmail and WhatsApp linking prompts as in-scope even when corporate mail is quiet.",
+      "file": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer.md",
+      "body": "GTIG: UNC7005 Deploys LLM-Generated CHERRYPIE Infostealer in Russia-Nexus Auth Phishing Date: 2026-08-25 Tags: apt, nation-state, phishing, malware Executive Summary Google Threat Intelligence Group reported on 2026-08-20 that suspected Russia-nexus cluster UNC7005, also tracked as STORM-2945, is running app-password, device-code, WhatsApp linking, and Google OAuth phishing against academia, diplomatic, and nonprofit targets, and that its CHERRYPIE PowerShell infostealer contains artifacts consistent with LLM generation. GTIG assesses with high confidence a Russian nexus for UNC7005, UNC6293, and UNC5976, and with moderate confidence that UNC7005 and UNC6293 relate to an ICE RELIC initial-access subcluster. Hunt the UNC7005 domains and CHERRYPIE hashes below, and treat personal Gmail and WhatsApp linking prompts as in-scope even when corporate mail is quiet. Campaign Summary Field Detail Campaign / Malware UNC7005 authentication-flow phishing with CHERRYPIE, VIDAR, ATOMIC, and ENGINELIGHT Actor / Attribution UNC7005, alias STORM-2945. GTIG: Russian nexus, confidence high; ICE RELIC initial-access link, confidence moderate Target Academia, diplomatic, and nonprofit personnel in Ukraine, Western Europe, and the United States; European defense-industry targets in August 2026 FOC-themed OAuth Vector App-password phishing, Microsoft and WhatsApp device-code and device-linking, Google OAuth via unverified cloud projects, MaaS infostealers, LLM-generated PowerShell Status Active. GTIG described OAuth phishing from early August 2026 and FOC-themed mail between 2026-08-06 and 2026-08-13 First Observed UNC7005 identified February 2026; CHERRYPIE hashes published 2026-08-20 Detailed Findings According to GTIG's 2026-08-20 report, three suspected Russian clusters abuse legitimate authentication flows rather than relying only on malware. UNC7005 is the cluster that combines those flows with malware. GTIG tracks it separately from UNC6293 because of lower sophistication, weaker OPSEC, different infrastructure, and malware use. GTIG reported UNC7005 app-password phishing since at least February 2026, with per-target password names tied to the lure theme. Device-code phishing reused embassy-invite templates against GLOBSEC-themed sites in May 2026, including fingerprinting and headless-browser checks. In May and June 2026, GTIG said UNC7005 spoofed WhatsApp to induce device linking, then offered a fake voice call that recorded microphone and camera and posted the recording to /api/code/<session>/recording. In late May 2026, GTIG reported a broader wave against mostly U.S. academics, diplomats, and Russia-focused researchers. Windows visitors received VIDAR with C2 107.189.18.7. macOS visitors received ATOMIC. GTIG also tied statistic-ms.live to ENGINELIGHT C2 and to earlier Microsoft-themed domains later reused in hospitality captive-portal redirects that ReliaQuest and Microsoft had described. The GenAI finding is CHERRYPIE, also called ChocoShell. GTIG reported that samples contain prolific function comments naming an infostealer and noting function offsets, which GTIG treats as LLM-generation artifacts. GTIG suspects CHERRYPIE may be a customized MaaS infostealer because UNC7005 already buys VIDAR and ATOMIC and because collection targets overlap. That MaaS origin is assessed, not confirmed. GTIG reported that in early August 2026 UNC7005 began Google OAuth phishing from cloud projects, registering Finnish Operations Center spoofs from 2026-07-31 and mailing European defense-industry targets from 2026-08-06 through 2026-08-13. Successful Google sign-in redirected to an unverified testing-mode cloud project used to steal tokens. TechNadu and SecurityAffairs summarized the same GTIG report. UNC5976 and UNC6293 are sibling clusters in the same GTIG article. They are authentication-focused and are not the LLM-malware story; their IOCs are omitted here except as context that GTIG grouped the three clusters. Do not add google.com, accounts.google.com, whatsapp.com, or globsec.org as indicators. globsec.net is the attacker domain GTIG listed. MITRE ATT&CK Mapping Technique ID Context Phishing T1566 UNC7005 sends conference, embassy, WhatsApp, and FOC-themed lures that abuse real auth flows. Steal Application Access Token T1528 Google OAuth redirects into unverified cloud projects collect tokens after a legitimate login. Command and Scripting Interpreter: PowerShell T1059.001 CHERRYPIE is a PowerShell infostealer GTIG associates with LLM-authored code. Obtain Capabilities: Artificial Intelligence T1588.007 GTIG cites LLM artifacts in CHERRYPIE and says MaaS plus LLMs shorten tooling time. Steal Web Session Cookie T1539 CHERRYPIE is a PowerShell infostealer GTIG ties to UNC7005; TechNadu's summary of that report describes cookie, password, and M365 SSO theft. Audio Capture T1123 Post-WhatsApp-link fake calls record microphone and camera then upload the recording. IOCs Domains Full URL Paths GTIG described /api/code/<session>/recording and /fingerprint on attacker sites. Those paths are relative to rotating hosts and are not published here as standalone URL IOCs. Splunk Format File Hashes Detection Recommendations In email and web proxy logs, alert on the UNC7005 domains above, especially globsec.net versus the legitimate globsec.org, FOC-themed finishoperations and foc-share hosts, and Microsoft-lookalike owa-ms365.com, m365-owa.com, ms365-device.com, and ms365-live.com. On endpoints, hunt PowerShell with verbose infostealer-style comments and offset notes, VIDAR and ATOMIC hashes above, and ENGINELIGHT hash 125752ad7c20d715920a3b2fb0fdde660f07b3f2b053665cf38c2d6d9de86e1e. Alert on Chrome cookie theft that touches app-bound encryption artifacts. In identity logs, alert on new app passwords, Microsoft device-code grants, WhatsApp linked-device additions, and OAuth grants to unverified testing-mode Google Cloud projects after FOC, embassy, or conference lures. GTIG notes many targets are personal accounts, so enterprise mail filtering alone will miss the campaign. Network: alert on 107.189.18.7, 196.251.107.171, 31.57.243.154, 38.146.28.75, and 104.194.159.150. References [Google Threat Intelligence Group] Going with the Flow(s): Distinct Clusters Target Individuals of Interest to Russia (2026-08-20) — https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia [SecurityAffairs] Fake Conferences, OAuth and WhatsApp: Inside Russia's New Espionage Tactics (2026-08-20) — https://securityaffairs.com/197630/apt/fake-conferences-oauth-and-whatsapp-inside-russias-new-espionage-tactics.html [TechNadu] GTIG Tracks Three Russian Espionage Clusters Abusing Auth Flows (2026-08-20) — https://www.technadu.com/suspected-russian-hackers-are-weaponizing-app-passwords-oauth-logins-and-even-whatsapps-own-linking-feature-to-deliver-vidar-malware-and-more/633625/",
+      "tags": [
+        "apt",
+        "malware",
+        "nation-state",
+        "phishing"
+      ],
+      "cves": [],
+      "actors": [
+        "atomic",
+        "cherrypie",
+        "chocoshell",
+        "enginelight",
+        "ice relic",
+        "nexus",
+        "storm-2945",
+        "unc5976",
+        "unc6293",
+        "unc7005",
+        "vidar"
+      ],
+      "iocs": [
+        "104.194.159.150",
+        "107.189.18.7",
+        "125752ad7c20d715920a3b2fb0fdde660f07b3f2b053665cf38c2d6d9de86e1e",
+        "196.251.107.171",
+        "1d9299799a7b8da67c44ebec064d64542c27645f8e84de4a22ca3f6cbc843e3c",
+        "1e3ee845fde739fcd3ca9ce62c7f142a7c501d11db4c4fb294d4939f12d0f916",
+        "20e20b074967ed6f6e04d609ccec5ff7492665ef25f894c90c2ddc92fa47ac38",
+        "28f622028e690c943f7fa9aca426c07cab52b5aaba757ef8a3328609c0b3bec3",
+        "31.57.243.154",
+        "38.146.28.75",
+        "403b624e35777cbc07dbe66398b21bba70396a20b859c880732338ce1dd1f41f",
+        "5b8d50c2e8cc3038b7c6e6dbf1219f6e814930a1e3c0053143a1191ae67f8ffc",
+        "6f7090895c1c3dee30de6b3f098ca3a788dc198646e5293a8b1210430b0add97",
+        "a06a8fd1b6fa1924199a4540cf16d089217ce8f78c617739946f145fd1fc88c1",
+        "be99857449d2856dd5a84e21c8a3d5e0e01456adb44062ddec5a6b4970d8d42c",
+        "c5826032207d623a7f6caec8465af7364eccc355f9a48897da2a54f3e4420265",
+        "ca3be5885afb3eb3bb19341e2653212200c568f3f900e0b2f04de9ba209aed25",
+        "chamber-ua.org",
+        "fewfwfwfwfwf.info",
+        "finishoperations.com",
+        "finishoperations.org",
+        "foc-share.com",
+        "foc-share.org",
+        "globsec.net",
+        "internal-share.com",
+        "m365-owa.com",
+        "mioisiskwowiwjowuwjwolab.club",
+        "miov2iaiaoubqosiqoiajwowiwjso.online",
+        "ms365-device.com",
+        "ms365-live.com",
+        "my-invite.org",
+        "owa-ms365.com",
+        "share-foc.com",
+        "shopinvite.org",
+        "statistic-ms.live",
+        "wa-connect.eu",
+        "wa-connect.net",
+        "wa-device.com",
+        "wa-invite.com",
+        "wa-meeting.com"
+      ]
+    },
+    {
+      "id": "2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce",
+      "title": "Splunk Patches Critical MCP Server RCE and AI Toolkit Model Pickle Execution",
+      "date": "2026-08-25",
+      "excerpt": "Splunk advisory SVD-2026-0808, published 2026-08-19, patches CVE-2026-76404, a CVSS 9.1 deserialization RCE in Splunk MCP Server app versions below 1.2.1 that lets a Splunk admin run OS commands on the host. The same bulletin patches Splunk AI Toolkit, including CVE-2026-76395, CVSS 8.8, where a power-role user can execute code by loading a model with crafted sparse-matrix pickle data. Upgrade MCP Server to 1.2.1 and AI Toolkit to 6.0.0 or 6.0.1 as listed; Splunk published no campaign IOCs and did not report in-the-wild exploitation.",
+      "file": "2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce.md",
+      "body": "Splunk Patches Critical MCP Server RCE and AI Toolkit Model Pickle Execution Date: 2026-08-25 Tags: mcp-security, model-poisoning Executive Summary Splunk advisory SVD-2026-0808, published 2026-08-19, patches CVE-2026-76404, a CVSS 9.1 deserialization RCE in Splunk MCP Server app versions below 1.2.1 that lets a Splunk admin run OS commands on the host. The same bulletin patches Splunk AI Toolkit, including CVE-2026-76395, CVSS 8.8, where a power-role user can execute code by loading a model with crafted sparse-matrix pickle data. Upgrade MCP Server to 1.2.1 and AI Toolkit to 6.0.0 or 6.0.1 as listed; Splunk published no campaign IOCs and did not report in-the-wild exploitation. Campaign Summary Field Detail Campaign / Malware Splunk MCP Server and AI Toolkit deserialization flaws; no malware named Actor / Attribution No actor. Vendor-disclosed vulnerabilities. Confidence none Target Splunk deployments running MCP Server app below 1.2.1 or AI Toolkit below the fixed 5.7 and 6.0 lines Vector Authenticated unsafe deserialization in MCP credential management; pickle in AI Toolkit model-load REST API Status Patched. Fixed versions published 2026-08-19. No public exploit identified in contemporaneous coverage First Observed Advisory 2026-08-19 Detailed Findings According to Splunk SVD-2026-0808, the August 2026 hardening release covers Cisco Talos Intelligence for Enterprise Security Cloud, Splunk AI Toolkit, Splunk Connect for Kafka, Splunk MCP Server app, and Splunk On-Call. The highest score in the bulletin is CVE-2026-76404. Splunk stated that in MCP Server app versions below 1.2.1, a user who holds the admin Splunk role can execute arbitrary commands on the underlying operating system because the credential-management component deserializes stored data without checking type, CWE-502. Workaround: turn off or remove the MCP Server app. Fix: 1.2.1. Acknowledgment: Kuniyoshi Noguchi. OpenCVE and SentinelOne repeated the same vendor text; vuln.today stated no public exploit was identified at analysis time and the CVE was not in CISA KEV. Splunk AI Toolkit received nine CVEs. The RCE that matters for model supply chain is CVE-2026-76395: in versions below 6.0.0, a user with the power role can execute arbitrary code on the Splunk server by loading a model file containing crafted sparse-matrix data, because a model codec deserializes that data without guarding against embedded pickle. Related high issues include CVE-2026-76391, agent run history swapping the caller session for a system token; CVE-2026-76394, missing authorization on container and connection REST handlers; CVE-2026-76397, power-role access to other users' experiment history; and CVE-2026-76399, power-role modification of app-provided scheduled searches that run as the search owner, the last of which Splunk said affects versions below 6.0.1. Product status in the advisory: AI Toolkit 5.7 line, upgrade to 6.0.0; AI Toolkit 6.0 line below 6.0.1, upgrade to 6.0.1; MCP Server 1.2 line below 1.2.1, upgrade to 1.2.1. CybersecurityNews summarized the bulletin around 2026-08-19 and highlighted both the MCP RCE and the AI Toolkit pickle model-load path. Splunk published no hashes, domains, or exploited-in-the-wild telemetry. LiteLLM, FastAPI, and the Splunk product names are affected software, not package IOCs. MITRE ATT&CK Mapping Technique ID Context Exploitation for Client Execution T1203 CVE-2026-76404 and CVE-2026-76395 turn trusted Splunk app features into host code execution. Exploitation for Privilege Escalation T1068 MCP Server lets a Splunk admin role reach OS command execution on the Splunk host. Command and Scripting Interpreter T1059 AI Toolkit deserializes pickle inside model-load, which executes attacker Python on the server. Command and Scripting Interpreter: Python T1059.006 CVE-2026-76395 deserializes pickle inside AI Toolkit model load, executing attacker Python on the Splunk server. IOCs Domains Full URL Paths Splunk Format File Hashes Detection Recommendations Inventory Splunk apps: MCP Server below 1.2.1 and AI Toolkit below 6.0.0 or 6.0.1 depending on the installed line. Upgrade or disable those apps. Restrict who holds admin and power roles until patched. In Splunk audit logs, hunt credential-management activity on the MCP Server app, model-upload and model-load REST calls, Agent Run History searches running under a system token, container start and stop by non-admin users, and edits to app-provided scheduled searches by power-role accounts. On the Splunk host EDR, alert on unexpected child processes of the Splunk service account after credential-store or model-load API use. After upgrade, rotate credentials stored in the MCP Server app, as Splunk's contemporaneous coverage recommended in case stored objects were tampered with. Do not denylist splunk.com or Splunkbase. Those are vendor platforms. References [Splunk] SVD-2026-0808 Security Hardening Release for Splunk Apps and Add-ons - August 2026 (2026-08-19) — https://advisory.splunk.com/advisories/SVD-2026-0808 [CybersecurityNews] Splunk Patches Critical MCP Server RCE and 16 Other Security Flaws Across AI Toolkit, Kafka Apps (2026-08-19) — https://cybersecuritynews.com/splunk-patches-security-flaws/ [SentinelOne] CVE-2026-76404: Splunk MCP Server App RCE Vulnerability (2026-08-20) — https://www.sentinelone.com/vulnerability-database/cve-2026-76404/",
+      "tags": [
+        "mcp-security",
+        "model-poisoning"
+      ],
+      "cves": [
+        "CVE-2026-76391",
+        "CVE-2026-76394",
+        "CVE-2026-76395",
+        "CVE-2026-76397",
+        "CVE-2026-76399",
+        "CVE-2026-76404"
+      ],
+      "actors": [
+        "rage"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "title": "Unit 42: Nearly All AI-Enabled Malware Samples Stay in Labs; FunkSec Reaches Production",
+      "date": "2026-08-25",
+      "excerpt": "Unit 42 published on 2026-08-25 an analysis of 405 AI-enabled malware samples and found only 12 on Cortex XDR-protected endpoints, about 3 percent, with the rest confined to research repos, BAS testing, and AI-branded conventional malware. The production set spans FunkSec ransomware that Unit 42 assessed as partly LLM-assisted, a trojanized Recipe Lister installer, Oyster/CleanBoost, Rhadamanthys, and a 360Util.dll COM-hijack. Hunt the published SHA-256 values; Unit 42 stated existing sandbox, behavioral, and signing-anomaly detections blocked every sample that reached a customer environment.",
+      "file": "2026-08-25-unit42-ai-enabled-malware-production-telemetry.md",
+      "body": "Unit 42: Nearly All AI-Enabled Malware Samples Stay in Labs; FunkSec Reaches Production Date: 2026-08-25 Tags: malware Executive Summary Unit 42 published on 2026-08-25 an analysis of 405 AI-enabled malware samples and found only 12 on Cortex XDR-protected endpoints, about 3 percent, with the rest confined to research repos, BAS testing, and AI-branded conventional malware. The production set spans FunkSec ransomware that Unit 42 assessed as partly LLM-assisted, a trojanized Recipe Lister installer, Oyster/CleanBoost, Rhadamanthys, and a 360Util.dll COM-hijack. Hunt the published SHA-256 values; Unit 42 stated existing sandbox, behavioral, and signing-anomaly detections blocked every sample that reached a customer environment. Campaign Summary Field Detail Campaign / Malware Unit 42 AI-enabled malware telemetry study; production families FunkSec, Recipe Lister trojan, Oyster/CleanBoost, Rhadamanthys, 360Util COM hijack Actor / Attribution Multiple families. FunkSec LLM-assist is assessed by Unit 42 and prior researchers, not a named operator. Confidence medium for LLM authorship of FunkSec, none for a single campaign owner Target Opportunistic. Unit 42 reported three countries and no sector concentration Vector AI-themed installers and brand abuse; FunkSec ransomware with Defender tampering and shadow-copy deletion; signed loaders Status Production samples were blocked on Cortex XDR in the study window. Families remain relevant for hunting First Observed Telemetry window December 2024 through June 2025; FunkSec variants compiled 2025-01-01 through 2025-01-06 Detailed Findings According to Unit 42, the dataset mixed any sample where AI was a functional component, a delivery feature, or branding, collected from WildFire, VirusTotal Intelligence, and OSINT. Endpoint queries used Cortex XDR non-test tenants from December 2024 through June 2025. WildFire session data ran June 2024 through June 2025. Unit 42 reported 12 of 405 hashes on production endpoints and roughly 15 to 20 unique hashes in WildFire sessions. About 97 percent never appeared on a customer endpoint or firewall. Unit 42 grouped the non-production majority as proof-of-concept and research code, including ransomware frameworks with Bitcoin Genesis Block ransom addresses, BAS and internal test submissions with repeated same-org uploads, and AI-branded conventional malware whose filenames invoke ChatGPT or similar without AI in the payload. Of the 12 production samples, Unit 42 named five patterns. FunkSec: seven Rust variants compiled 2025-01-01 through 2025-01-06, sharing Defender disablement via PowerShell and registry, volume shadow copy deletion, and wallpaper ransom notes. PDB names included Dev.pdb, Funksec.pdb, Darkzone.pdb, and Darkfunk.pdb. Unit 42 stated that seven builds in six days is consistent with LLM-assisted iteration. WildFire classified all seven as malware; Cortex XDR alerted on every executing variant. Trojanized AI application: an NSIS installer posing as Recipe Lister, signed by Global Tech Allies Ltd., certificate later revoked, dropping a JavaScript backdoor. Unit 42 said this hash produced the most telemetry, more than 50 organizations, more than 6,500 endpoint profile records, and more than 9,600 XDR alerts, with no successful execution on a protected endpoint. Detection used uncommon signer plus near-maximum entropy 0.999970, then WildFire. Oyster/CleanBoost: a Dropbox-signed-looking installer that is not Dropbox software, dropping an AutoIt loader. Unit 42 stated attackers are using AI tools to speed initial-access loader generation. Rhadamanthys: a .NET redist.exe that Unit 42 said was part of an AI-enabled infection chain in prior reporting. COM hijack: 360Util.dll impersonating 360 Total Security, included because it arrived with AI-branded lures. Unit 42's operational conclusion is that AI changes how these binaries are written, not the behaviors existing controls already catch. The study does not claim AI-enabled malware is fictional; it claims production prevalence is a fraction of public-sample volume. MITRE ATT&CK Mapping Technique ID Context Data Encrypted for Impact T1486 FunkSec encrypts and displays a ransom note; Unit 42 observed seven production variants. Impair Defenses: Disable or Modify Tools T1562.001 FunkSec disables Microsoft Defender through PowerShell and registry changes. Inhibit System Recovery T1490 FunkSec deletes volume shadow copies. Masquerading T1036 Recipe Lister, Dropbox, and 360 Total Security branding hide conventional loaders. Subvert Trust Controls: Code Signing T1553.002 Recipe Lister used a later-revoked Global Tech Allies certificate; Oyster used a Dropbox-looking Authenticode identity. Boot or Logon Autostart Execution: Component Object Model Hijacking T1546.015 360Util.dll persists via COM hijacking. IOCs Domains Full URL Paths Splunk Format File Hashes Detection Recommendations In EDR and sandbox telemetry, hunt the twelve SHA-256 values above. Tag 1619bcad3785be31ac2fdee0ab91392d08d9392032246e42673c3cb8964d4cb7 as the Recipe Lister NSIS installer. Tag the seven FunkSec hashes for Rust ransomware that disables Defender and deletes shadow copies. Tag bb932056cae8940742e50b4f2b994a802e703f7bc235e7dd647d085ae2b2baf7 as Oyster/CleanBoost. Tag 4fb58687a364c3f6d6f7e0ca03654f9dec0f8832a499d61d40b0d424db1b1b14 as Rhadamanthys. Tag c398b3e06ef860670b9597daed85632834fa961aea87164b8ba8bb2f094a14ef as the 360Util COM hijack. Alert on NSIS installers with near-maximum entropy and uncommon code-signing subjects, Authenticode identities that spoof Dropbox or 360 Total Security, and PDB paths containing Funksec, Darkzone, or Darkfunk. Do not treat ChatGPT in a filename as an IOC. Unit 42 explicitly classified that pattern as brand abuse wrapping conventional malware. References [Unit 42] The State of AI-Enabled Malware August 2026: From Brand Abuse to Agentic Execution (2026-08-25) — https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/ [Unit 42] Analyzing the Current State of AI Use in Malware (prior related research) — https://unit42.paloaltonetworks.com/ai-use-in-malware/",
+      "tags": [
+        "malware"
+      ],
+      "cves": [],
+      "actors": [
+        "cleanboost",
+        "cortex",
+        "funksec",
+        "oyster",
+        "rhadamanthys",
+        "unit 42"
+      ],
+      "iocs": [
+        "1619bcad3785be31ac2fdee0ab91392d08d9392032246e42673c3cb8964d4cb7",
+        "20ed21bfdb7aa970b12e7368eba8e26a711752f1cc5416b6fd6629d0e2a44e5d",
+        "4fb58687a364c3f6d6f7e0ca03654f9dec0f8832a499d61d40b0d424db1b1b14",
+        "5226ea8e0f516565ba825a1bbed10020982c16414750237068b602c5b4ac6abd",
+        "66dbf939c00b09d8d22c692864b68c4a602e7a59c4b925b2e2bef57b1ad047bd",
+        "b1ef7b267d887e34bf0242a94b38e7dc9fd5e6f8b2c5c440ce4ec98cc74642fb",
+        "bb932056cae8940742e50b4f2b994a802e703f7bc235e7dd647d085ae2b2baf7",
+        "c233aec7917cf34294c19dd60ff79a6e0fac5ed6f0cb57af98013c08201a7a1c",
+        "c398b3e06ef860670b9597daed85632834fa961aea87164b8ba8bb2f094a14ef",
+        "dcf536edd67a98868759f4e72bcbd1f4404c70048a2a3257e77d8af06cb036ac",
+        "dd15ce869aa79884753e3baad19b0437075202be86268b84f3ec2303e1ecd966",
+        "e622f3b743c7fc0a011b07a2e656aa2b5e50a4876721bcf1f405d582ca4cda22"
       ]
     }
   ]

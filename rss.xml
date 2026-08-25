@@ -5,8 +5,38 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 22 Aug 2026 12:57:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 17:16:14 +0000</lastBuildDate>
     <item>
+      <title>Fake OpenAI Codex and Claude Code Ads Push ClickFix Loaders for Suspected AMOS on macOS</title>
+      <link>https://llm-threatintel.com/posts/2026-08-25-cato-fake-codex-clickfix-amos-macos.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-25-cato-fake-codex-clickfix-amos-macos.html</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Cato Networks reported on 2026-08-24 that sponsored Google results for queries such as codex macos download send macOS users to Google Sites pages impersonating an OpenAI Codex installer, then instruct them to paste a Terminal command that fetches a multi-stage loader. Cato assessed strong overlap with Atomic macOS Stealer delivery and documented a related Claude Code landing page on parentpreneurx.com that reuses the same telemetry host. Block the attacker-controlled iframe and payload hosts below, hunt zsh pipelines from Terminal, and treat sites.google.com as shared hosting rather than a denylist apex.</description>
+    </item>    <item>
+      <title>CISA AA26-231A: AI-Generated Scripts Target Internet-Exposed Siemens S7 PLCs</title>
+      <link>https://llm-threatintel.com/posts/2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits.html</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <description>NSA, CISA, FBI, DOE, and EPA published joint advisory AA26-231A on 2026-08-19 describing an active campaign against Siemens S7 Series PLCs in which operators use AI-assisted Python to wrap snap7 and python-snap7 into fake OT monitoring tools. Actors scan Censys and ZoomEye for internet-exposed S7comm on TCP 102, then read and write data blocks on S7-200 through S7-1500 families, including F-series safety CPUs. Pull PLCs off the internet, block TCP 102 at the perimeter, and hunt snap7 usage outside approved engineering workstations; the agencies published no campaign IOCs.</description>
+    </item>    <item>
+      <title>GTIG: UNC7005 Deploys LLM-Generated CHERRYPIE Infostealer in Russia-Nexus Auth Phishing</title>
+      <link>https://llm-threatintel.com/posts/2026-08-25-gtig-unc7005-cherrypie-llm-infostealer.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-25-gtig-unc7005-cherrypie-llm-infostealer.html</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Google Threat Intelligence Group reported on 2026-08-20 that suspected Russia-nexus cluster UNC7005, also tracked as STORM-2945, is running app-password, device-code, WhatsApp linking, and Google OAuth phishing against academia, diplomatic, and nonprofit targets, and that its CHERRYPIE PowerShell infostealer contains artifacts consistent with LLM generation. GTIG assesses with high confidence a Russian nexus for UNC7005, UNC6293, and UNC5976, and with moderate confidence that UNC7005 and UNC6293 relate to an ICE RELIC initial-access subcluster. Hunt the UNC7005 domains and CHERRYPIE hashes below, and treat personal Gmail and WhatsApp linking prompts as in-scope even when corporate mail is quiet.</description>
+    </item>    <item>
+      <title>Splunk Patches Critical MCP Server RCE and AI Toolkit Model Pickle Execution</title>
+      <link>https://llm-threatintel.com/posts/2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce.html</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Splunk advisory SVD-2026-0808, published 2026-08-19, patches CVE-2026-76404, a CVSS 9.1 deserialization RCE in Splunk MCP Server app versions below 1.2.1 that lets a Splunk admin run OS commands on the host. The same bulletin patches Splunk AI Toolkit, including CVE-2026-76395, CVSS 8.8, where a power-role user can execute code by loading a model with crafted sparse-matrix pickle data. Upgrade MCP Server to 1.2.1 and AI Toolkit to 6.0.0 or 6.0.1 as listed; Splunk published no campaign IOCs and did not report in-the-wild exploitation.</description>
+    </item>    <item>
+      <title>Unit 42: Nearly All AI-Enabled Malware Samples Stay in Labs; FunkSec Reaches Production</title>
+      <link>https://llm-threatintel.com/posts/2026-08-25-unit42-ai-enabled-malware-production-telemetry.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-25-unit42-ai-enabled-malware-production-telemetry.html</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Unit 42 published on 2026-08-25 an analysis of 405 AI-enabled malware samples and found only 12 on Cortex XDR-protected endpoints, about 3 percent, with the rest confined to research repos, BAS testing, and AI-branded conventional malware. The production set spans FunkSec ransomware that Unit 42 assessed as partly LLM-assisted, a trojanized Recipe Lister installer, Oyster/CleanBoost, Rhadamanthys, and a 360Util.dll COM-hijack. Hunt the published SHA-256 values; Unit 42 stated existing sandbox, behavioral, and signing-anomaly detections blocked every sample that reached a customer environment.</description>
+    </item>    <item>
       <title>Kriminal Criminal AI Storefront Resells Jailbroken Grok and Claude Access from $12.99</title>
       <link>https://llm-threatintel.com/posts/2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-22-kriminal-grok-jailbreak-wrapper-criminal-ai.html</guid>
@@ -96,36 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</guid>
       <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
       <description>Dream Research Labs documented a near-autonomous multi-agent framework that compromised Asian government systems during 12 attack waves from July 1 through July 4, 2026, cracking 85 employee accounts and extracting at least 2,564 personnel records. The source supports a Chinese-language operator assessment but no government or named-group attribution.</description>
-    </item>    <item>
-      <title>NullReceiver Uses Ethereum Dead Drops in DPRK-Linked npm and MCP Package Compromises</title>
-      <link>https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-14-nullreceiver-contagious-interview-npm-mcp.html</guid>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Sonatype identified six malicious npm versions, including the hijacked @kolbo/mcp@1.57.1 AI MCP server, that use Ethereum transactions to resolve C2 and retrieve JavaScript stages. Wallet reuse links them to two earlier NullReceiver packages in the DPRK-associated Contagious Interview campaign; defenders should remove all eight exact versions and hunt the published wallet, stage paths, and C2 address.</description>
-    </item>    <item>
-      <title>WEL1DROPPER npm Campaign Executes Cross-Platform Payloads on Import and Falls Back to DNS TXT Delivery</title>
-      <link>https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-14-wel1dropper-ai-slopsquatting-npm-campaign.html</guid>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <description>OpenSourceMalware analyzed checkout-mobile-bnpl@35.6.9, a malicious npm package that runs a cross-platform downloader on import and retrieves native payloads through attacker-specific Cloudflare Workers subdomains or DNS TXT records. The source assessed campaign naming as AI-slopsquatted or randomly generated, but GenAI use remains unverified; the IOC feed intentionally includes only the analyzed package version, not the hundreds-package aggregate list.</description>
-    </item>    <item>
-      <title>Hugging Face Diffusers Silent RCE via Malicious Model Configuration</title>
-      <link>https://llm-threatintel.com/posts/2026-08-11-hugging-face-diffusers-rce-model-config.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-11-hugging-face-diffusers-rce-model-config.html</guid>
-      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
-      <description>High-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it. Because diffusers runs inside production pipelines, CI/CD systems, and container images, a single compromised model load can hand an attacker initial access deep inside an enterprise network rather than just an isolated user application.</description>
-    </item>    <item>
-      <title>Operation GitPower: Kimsuky Uses AI-Generated Lures, Local LLM Tooling, and GitHub-Delivered AsyncRAT</title>
-      <link>https://llm-threatintel.com/posts/2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-10-kimsuky-operation-gitpower-local-llm-asyncrat.html</guid>
-      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Genians Security Center reported that Operation GitPower uses malicious PDF-themed LNK files, PowerShell, scheduled tasks, Git repositories, and RC4-encrypted .NET AsyncRAT payloads against diplomatic, military, security, and virtual-asset targets. Genians Security Center also recovered Ollama, GPT4All, Msty, AI-development packages, and AI-service activity from operator-side data, but found no training datasets or fine-tuned model outputs and assessed the activity as capability accumulation rather than model training. Defenders should prioritize the published C2 infrastructure, then hunt the LNK-to-PowerShell-to-scheduled-task chain and path-scoped GitHub traffic.</description>
-    </item>    <item>
-      <title>ChainDrop npm Worm Compromises 400+ Packages and Steals Developer, Cloud, and AI Credentials</title>
-      <link>https://llm-threatintel.com/posts/2026-08-10-chaindrop-self-propagating-npm-worm.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-10-chaindrop-self-propagating-npm-worm.html</guid>
-      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Palo Alto Networks Unit 42 reported that ChainDrop, a self-propagating npm worm, compromised more than 400 packages and exposed developer workstations, CI pipelines, cloud environments, and downstream software users to credential theft. StepSecurity reported 444 affected packages and 2,212 poisoned versions in its Aug. 4 investigation snapshot, while Unit 42 documented Claude Code and VS Code execution hooks, GitHub Actions memory scraping, and an Ethereum-resolved C2 channel that the operator rotated on Aug. 4. Unit 42 recommends removing affected package versions and persistence artifacts, blocking the published C2 domains, and rotating every npm, GitHub, cloud, SSH, automation, and AI-provider credential accessible to a confirmed infected host.</description>
     </item>
   </channel>
 </rss>

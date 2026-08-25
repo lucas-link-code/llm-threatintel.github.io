@@ -1,6 +1,762 @@
 {
-  "last_updated": "2026-08-22",
+  "last_updated": "2026-08-25",
   "iocs": [
+    {
+      "value": "bright-links.com",
+      "type": "domain",
+      "context": "Codex ClickFix iframe host, reused across Cato sets 1 and 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "trekmesh15.com",
+      "type": "domain",
+      "context": "Codex ClickFix script and payload host, infrastructure set 1",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "grove-12.com",
+      "type": "domain",
+      "context": "Codex ClickFix telemetry host, infrastructure set 1",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "swiftsaverfin.com",
+      "type": "domain",
+      "context": "Codex ClickFix iframe host, infrastructure set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "aspencore18.com",
+      "type": "domain",
+      "context": "Codex ClickFix script and payload host, infrastructure set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "atlas-compass.com",
+      "type": "domain",
+      "context": "Codex ClickFix telemetry host, infrastructure set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "grove-satin.com",
+      "type": "domain",
+      "context": "Codex and Claude Code ClickFix telemetry host, sets 3 and 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "quill-flint.com",
+      "type": "domain",
+      "context": "Codex ClickFix script and payload host, infrastructure set 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "parentpreneurx.com",
+      "type": "domain",
+      "context": "Claude Code ClickFix landing page, Cato set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "vine-96.com",
+      "type": "domain",
+      "context": "Claude Code ClickFix script and payload host, Cato set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "sites.google.com/view/codex-desktop-app/",
+      "type": "url_path",
+      "context": "Google Sites Codex lure, Cato set 1",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "sites.google.com/view/codexmac",
+      "type": "url_path",
+      "context": "Google Sites Codex lure, Cato set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "sites.google.com/view/cdx-off-page",
+      "type": "url_path",
+      "context": "Google Sites Codex lure reusing bright-links.com, Cato sets 1 and 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "swiftsaverfin.com/codexx/",
+      "type": "url_path",
+      "context": "Active Codex ClickFix path; /codex/ is a decoy",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "trekmesh15.com/curl/ad4e26afb47dc6262d43b5616853349c3bbdab5c8eedac80f695151e00c07df8",
+      "type": "url_path",
+      "context": "First-stage script, Cato set 1",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "grove-12.com/api/metrics/run?event=pasted",
+      "type": "url_path",
+      "context": "Execution telemetry, Cato set 1",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "trekmesh15.com/zyeMb6slon_3VWVlkSkdiJurcyhY5cFNtchnavRnMgU/jetbrains/update",
+      "type": "url_path",
+      "context": "Payload retrieval, Cato set 1",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "aspencore18.com/curl/0v95mzh95/y6jdnt8y1hu7bv33.dat",
+      "type": "url_path",
+      "context": "First-stage script, Cato set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "atlas-compass.com/api/metrics/run?event=pasted",
+      "type": "url_path",
+      "context": "Execution telemetry, Cato set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "aspencore18.com/2kqYRM0DCrnyJgoS4gVLl_FHJRRdTUhGCbjyuYwpZ6c/google/update",
+      "type": "url_path",
+      "context": "Payload retrieval, Cato set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "grove-satin.com/api/metrics/run?event=pasted",
+      "type": "url_path",
+      "context": "Execution telemetry, Cato sets 3 and 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "quill-flint.com/curl/2h0w4vtm7c/7b4cckfhojxjbrcjon.json",
+      "type": "url_path",
+      "context": "First-stage script, Cato set 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "quill-flint.com/zyeMb6slon_3VWVlkSkdiJurcyhY5cFNtchnavRnMgU/jetbrains/updateAll",
+      "type": "url_path",
+      "context": "Payload retrieval, Cato set 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "vine-96.com/curl/iojaglaf/t1f6kticgr6nt9nplkh.dat",
+      "type": "url_path",
+      "context": "First-stage script, Claude Code set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "vine-96.com/N_8qoQC3gmx9CFmwN9nMJ4QoUZtKZ1ua1ThNulPR4kU/Vert/update",
+      "type": "url_path",
+      "context": "Payload retrieval, Claude Code set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "e4e078458c025e0905d94f6d9a93439024e8f256b068d8e67da7f34ba1c93d27",
+      "type": "sha256",
+      "context": "x86_64 Mach-O, Cato set 2",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "684d4875a60e832c6993bb08bf0ec4fbd7ca89c1a44ba1ab65fac6d9fb202599",
+      "type": "sha256",
+      "context": "Packed Mach-O, Cato set 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "9c3a28c5b8b9ced508786aad723efb8105b9d20f61095b28556c3d89a5c00343",
+      "type": "sha256",
+      "context": "ARM64 Mach-O, Cato set 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "95d5ae5e87b4eae733655f6fc7bfdeb1efbc618d95375a46f6f8d353b48426dc",
+      "type": "sha256",
+      "context": "x86_64 Mach-O, Cato set 3",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "fcb74c3c5134a97b5bc90b2e0bad67a8e3044f769f844313e21069c7480d97cd",
+      "type": "sha256",
+      "context": "Packed Mach-O, Claude Code set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "48db5d715c583b4495ee1e3095f097ed9bc04625e4516e1fa437fcb374fec249",
+      "type": "sha256",
+      "context": "ARM64 Mach-O, Claude Code set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "1f252b86edddda142a69cf9059b67a4aa842f7fd8aedbfdd6937850138e3a63e",
+      "type": "sha256",
+      "context": "x86_64 Mach-O, Claude Code set 4",
+      "first_seen": "2026-08-24",
+      "source": "Cato Networks",
+      "campaign": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "status": "active"
+    },
+    {
+      "value": "chamber-ua.org",
+      "type": "domain",
+      "context": "UNC7005 phishing domain and attacker email domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "wa-connect.eu",
+      "type": "domain",
+      "context": "UNC7005 WhatsApp-themed phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "wa-connect.net",
+      "type": "domain",
+      "context": "UNC7005 WhatsApp-themed phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "wa-invite.com",
+      "type": "domain",
+      "context": "UNC7005 WhatsApp-themed phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "wa-device.com",
+      "type": "domain",
+      "context": "UNC7005 WhatsApp-themed phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "wa-meeting.com",
+      "type": "domain",
+      "context": "UNC7005 WhatsApp-themed phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "shopinvite.org",
+      "type": "domain",
+      "context": "UNC7005 phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "my-invite.org",
+      "type": "domain",
+      "context": "UNC7005 phishing domain; GLOBSEC-themed device-code op resolved to 104.194.159.150",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "globsec.net",
+      "type": "domain",
+      "context": "UNC7005 phishing domain spoofing GLOBSEC",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "statistic-ms.live",
+      "type": "domain",
+      "context": "UNC7005 ENGINELIGHT C2",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "owa-ms365.com",
+      "type": "domain",
+      "context": "UNC7005 Microsoft OWA-themed domain, captive-portal cluster",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "m365-owa.com",
+      "type": "domain",
+      "context": "UNC7005 Microsoft OWA-themed domain, captive-portal cluster",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "ms365-device.com",
+      "type": "domain",
+      "context": "UNC7005 Microsoft-themed domain, captive-portal cluster",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "ms365-live.com",
+      "type": "domain",
+      "context": "UNC7005 Microsoft-themed domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "finishoperations.com",
+      "type": "domain",
+      "context": "UNC7005 Finnish Operations Center OAuth phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "finishoperations.org",
+      "type": "domain",
+      "context": "UNC7005 Finnish Operations Center OAuth phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "foc-share.com",
+      "type": "domain",
+      "context": "UNC7005 FOC-themed OAuth phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "share-foc.com",
+      "type": "domain",
+      "context": "UNC7005 FOC-themed OAuth phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "internal-share.com",
+      "type": "domain",
+      "context": "UNC7005 OAuth phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "foc-share.org",
+      "type": "domain",
+      "context": "UNC7005 FOC-themed OAuth phishing domain",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "fewfwfwfwfwf.info",
+      "type": "domain",
+      "context": "ATOMIC first-payload C2 listed by GTIG",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "miov2iaiaoubqosiqoiajwowiwjso.online",
+      "type": "domain",
+      "context": "ATOMIC second-stage C2 listed by GTIG",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "mioisiskwowiwjowuwjwolab.club",
+      "type": "domain",
+      "context": "ATOMIC second-stage C2 listed by GTIG",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "107.189.18.7",
+      "type": "ip",
+      "context": "VIDAR C2 used by UNC7005",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "196.251.107.171",
+      "type": "ip",
+      "context": "ATOMIC second-payload C2 listed by GTIG",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "31.57.243.154",
+      "type": "ip",
+      "context": "UNC7005 related IP",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "38.146.28.75",
+      "type": "ip",
+      "context": "UNC7005 related IP",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "104.194.159.150",
+      "type": "ip",
+      "context": "UNC7005 IP shared by my-invite.org and ms365-live.com",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "403b624e35777cbc07dbe66398b21bba70396a20b859c880732338ce1dd1f41f",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "28f622028e690c943f7fa9aca426c07cab52b5aaba757ef8a3328609c0b3bec3",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "be99857449d2856dd5a84e21c8a3d5e0e01456adb44062ddec5a6b4970d8d42c",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "1e3ee845fde739fcd3ca9ce62c7f142a7c501d11db4c4fb294d4939f12d0f916",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "6f7090895c1c3dee30de6b3f098ca3a788dc198646e5293a8b1210430b0add97",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "20e20b074967ed6f6e04d609ccec5ff7492665ef25f894c90c2ddc92fa47ac38",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "ca3be5885afb3eb3bb19341e2653212200c568f3f900e0b2f04de9ba209aed25",
+      "type": "sha256",
+      "context": "CHERRYPIE sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "1d9299799a7b8da67c44ebec064d64542c27645f8e84de4a22ca3f6cbc843e3c",
+      "type": "sha256",
+      "context": "VIDAR sample used by UNC7005",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "c5826032207d623a7f6caec8465af7364eccc355f9a48897da2a54f3e4420265",
+      "type": "sha256",
+      "context": "ATOMIC sample used by UNC7005",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "125752ad7c20d715920a3b2fb0fdde660f07b3f2b053665cf38c2d6d9de86e1e",
+      "type": "sha256",
+      "context": "ENGINELIGHT sample",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "5b8d50c2e8cc3038b7c6e6dbf1219f6e814930a1e3c0053143a1191ae67f8ffc",
+      "type": "sha256",
+      "context": "UNC7005 GLOBSEC phishing page",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "a06a8fd1b6fa1924199a4540cf16d089217ce8f78c617739946f145fd1fc88c1",
+      "type": "sha256",
+      "context": "UNC7005 Finnish Operations Center OAuth landing page",
+      "first_seen": "2026-08-20",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "status": "active"
+    },
+    {
+      "value": "1619bcad3785be31ac2fdee0ab91392d08d9392032246e42673c3cb8964d4cb7",
+      "type": "sha256",
+      "context": "Trojanized Recipe Lister NSIS installer",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "5226ea8e0f516565ba825a1bbed10020982c16414750237068b602c5b4ac6abd",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "dcf536edd67a98868759f4e72bcbd1f4404c70048a2a3257e77d8af06cb036ac",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "66dbf939c00b09d8d22c692864b68c4a602e7a59c4b925b2e2bef57b1ad047bd",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "c233aec7917cf34294c19dd60ff79a6e0fac5ed6f0cb57af98013c08201a7a1c",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "e622f3b743c7fc0a011b07a2e656aa2b5e50a4876721bcf1f405d582ca4cda22",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "b1ef7b267d887e34bf0242a94b38e7dc9fd5e6f8b2c5c440ce4ec98cc74642fb",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "20ed21bfdb7aa970b12e7368eba8e26a711752f1cc5416b6fd6629d0e2a44e5d",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "dd15ce869aa79884753e3baad19b0437075202be86268b84f3ec2303e1ecd966",
+      "type": "sha256",
+      "context": "FunkSec ransomware",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "c398b3e06ef860670b9597daed85632834fa961aea87164b8ba8bb2f094a14ef",
+      "type": "sha256",
+      "context": "COM hijacking DLL 360Util.dll",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "bb932056cae8940742e50b4f2b994a802e703f7bc235e7dd647d085ae2b2baf7",
+      "type": "sha256",
+      "context": "Oyster backdoor / CleanBoost",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
+    {
+      "value": "4fb58687a364c3f6d6f7e0ca03654f9dec0f8832a499d61d40b0d424db1b1b14",
+      "type": "sha256",
+      "context": "Rhadamanthys stealer",
+      "first_seen": "2025-01-01",
+      "source": "Unit 42",
+      "campaign": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "status": "active"
+    },
     {
       "value": "npm:easy-day-js@1.11.22",
       "type": "package",
@@ -3109,7 +3865,7 @@
     {
       "value": "npm:@solana-launchpad/sdk",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3118,7 +3874,7 @@
     {
       "value": "npm:@validate-sdk/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3127,7 +3883,7 @@
     {
       "value": "npm:@hash-validator/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3136,7 +3892,7 @@
     {
       "value": "aes-create-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3145,7 +3901,7 @@
     {
       "value": "jito-proper-excutor",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3154,7 +3910,7 @@
     {
       "value": "jito-sub-aes-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3163,7 +3919,7 @@
     {
       "value": "pypi:scraper-npm",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3262,7 +4018,7 @@
     {
       "value": "65.111.27.132",
       "type": "ip",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -3271,7 +4027,7 @@
     {
       "value": "jsonkeeper.com",
       "type": "domain",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -3280,7 +4036,7 @@
     {
       "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
       "type": "sha256",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -3289,7 +4045,7 @@
     {
       "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -3298,7 +4054,7 @@
     {
       "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -3325,7 +4081,7 @@
     {
       "value": "npm:@bankr/agent",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",

@@ -1,7 +1,7 @@
 {
-  "commit_sha": "7e652afecce21eb9c31719069dc4bb4c7dff137c",
+  "commit_sha": "467da265feee",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-25T03:49:00+00:00",
+  "generated_at_utc": "2026-08-25T17:16:28+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,13 +41,112 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 0,
-  "reports_newly_validated": 0,
+  "reports_checked": 5,
+  "reports_newly_validated": 5,
   "reports_skipped": 231,
   "review_required": 0,
-  "source_urls_checked": 0,
-  "state_updates": 0,
-  "url_results": [],
+  "source_urls_checked": 14,
+  "state_updates": 5,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.catonetworks.com/blog/cato-ctrl-when-trust-becomes-payload-in-fake-codex-clickfix-campaign/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.catonetworks.com/blog/cato-ctrl-when-trust-becomes-payload-in-fake-codex-clickfix-campaign/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.theregister.com/security/2026/08/25/crooks-push-mac-malware-through-fake-openai-codex-ads/5291899",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.theregister.com/security/2026/08/25/crooks-push-mac-malware-through-fake-openai-codex-ads/5291899"
+    },
+    {
+      "error": "",
+      "final_url": "https://siliconangle.com/2026/08/24/fake-codex-installer-tricks-mac-users-into-pasting-malware-cato-finds/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://siliconangle.com/2026/08/24/fake-codex-installer-tricks-mac-users-into-pasting-malware-cato-finds/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960"
+    },
+    {
+      "error": "",
+      "final_url": "https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia"
+    },
+    {
+      "error": "",
+      "final_url": "https://securityaffairs.com/197630/apt/fake-conferences-oauth-and-whatsapp-inside-russias-new-espionage-tactics.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://securityaffairs.com/197630/apt/fake-conferences-oauth-and-whatsapp-inside-russias-new-espionage-tactics.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.technadu.com/suspected-russian-hackers-are-weaponizing-app-passwords-oauth-logins-and-even-whatsapps-own-linking-feature-to-deliver-vidar-malware-and-more/633625/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.technadu.com/suspected-russian-hackers-are-weaponizing-app-passwords-oauth-logins-and-even-whatsapps-own-linking-feature-to-deliver-vidar-malware-and-more/633625/"
+    },
+    {
+      "error": "",
+      "final_url": "https://advisory.splunk.com/advisories/SVD-2026-0808",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://advisory.splunk.com/advisories/SVD-2026-0808"
+    },
+    {
+      "error": "",
+      "final_url": "https://cybersecuritynews.com/splunk-patches-security-flaws/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cybersecuritynews.com/splunk-patches-security-flaws/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-76404/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-76404/"
+    },
+    {
+      "error": "",
+      "final_url": "https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/"
+    },
+    {
+      "error": "",
+      "final_url": "https://unit42.paloaltonetworks.com/ai-use-in-malware/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://unit42.paloaltonetworks.com/ai-use-in-malware/"
+    }
+  ],
   "validation_version": "1.0.0",
   "warnings": 4
 }

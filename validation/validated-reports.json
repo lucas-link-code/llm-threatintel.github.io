@@ -4125,6 +4125,90 @@
       "validated_at": "2026-08-22T12:28:55+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-25-cato-fake-codex-clickfix-amos-macos": {
+      "content_hash": "6c172d29a8b41e171b3582bc60be0b2e1ff72982ac3839bcff60e0d09be889ad",
+      "evidence_status": "validated",
+      "file": "2026-08-25-cato-fake-codex-clickfix-amos-macos.md",
+      "posts_index_hash": "59d1a560921c2d69da52ff00400a01ec881c910f0838d6ad9bdfcadb93475aed",
+      "report_id": "2026-08-25-cato-fake-codex-clickfix-amos-macos",
+      "review_required": [],
+      "source_urls": [
+        "https://www.catonetworks.com/blog/cato-ctrl-when-trust-becomes-payload-in-fake-codex-clickfix-campaign/",
+        "https://www.theregister.com/security/2026/08/25/crooks-push-mac-malware-through-fake-openai-codex-ads/5291899",
+        "https://siliconangle.com/2026/08/24/fake-codex-installer-tricks-mac-users-into-pasting-malware-cato-finds/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-25T17:16:23+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits": {
+      "content_hash": "584b67599e5c80ab7ff7ba54fd97de4f09203683ff2ca00fe779a0f4be7999a3",
+      "evidence_status": "validated",
+      "file": "2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits.md",
+      "posts_index_hash": "617aa7098296ed52fd46348820f198cf76abbcbcad383fdd4e75bf25b1a311c9",
+      "report_id": "2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits",
+      "review_required": [],
+      "source_urls": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+        "https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960",
+        "https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-25T17:16:24+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer": {
+      "content_hash": "e05af29bd3dde4cab4850de631c5a71ed1b59bddfb8c020b16008c6dab7bf6b8",
+      "evidence_status": "validated",
+      "file": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer.md",
+      "posts_index_hash": "36dbfd052c209dcd382ba3439f37da3d4be7ca3da74d23453244071f772f0d5e",
+      "report_id": "2026-08-25-gtig-unc7005-cherrypie-llm-infostealer",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia",
+        "https://securityaffairs.com/197630/apt/fake-conferences-oauth-and-whatsapp-inside-russias-new-espionage-tactics.html",
+        "https://www.technadu.com/suspected-russian-hackers-are-weaponizing-app-passwords-oauth-logins-and-even-whatsapps-own-linking-feature-to-deliver-vidar-malware-and-more/633625/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-25T17:16:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce": {
+      "content_hash": "23df5061eb23ac060f05335cf92922ef9f6025ffe11aa734682c26d58a7705fe",
+      "evidence_status": "validated",
+      "file": "2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce.md",
+      "posts_index_hash": "0544215595b92b568bc6d5a9f4b21c641ba8754103ce2478cb0faef18e77324d",
+      "report_id": "2026-08-25-splunk-mcp-ai-toolkit-deserialization-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://advisory.splunk.com/advisories/SVD-2026-0808",
+        "https://cybersecuritynews.com/splunk-patches-security-flaws/",
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-76404/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-25T17:16:27+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-25-unit42-ai-enabled-malware-production-telemetry": {
+      "content_hash": "b0843670cb527f84904741d34937ca657391c08d5f90f492713c81a3ebc31678",
+      "evidence_status": "validated",
+      "file": "2026-08-25-unit42-ai-enabled-malware-production-telemetry.md",
+      "posts_index_hash": "4302010e7b9614a1a74c2393b953467e8cf9b3c621e1ae2debc1d1c84bb37a99",
+      "report_id": "2026-08-25-unit42-ai-enabled-malware-production-telemetry",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/",
+        "https://unit42.paloaltonetworks.com/ai-use-in-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-08-25T17:16:28+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
