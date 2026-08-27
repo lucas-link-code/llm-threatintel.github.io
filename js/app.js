@@ -2754,7 +2754,7 @@ const App = {
     return `
     <div class="post-footer-aside">
       <h2 class="about-section-title">Project Notes</h2>
-      <p>LLM ThreatIntel is maintained independently as a personal defensive-research project focused on the generative AI and LLM threat landscape.</p>
+      <p>LLM ThreatIntel is maintained independently as a personal defensive research project focused on the generative AI and LLM threat landscape.</p>
       <p>Report a bug: <a href="mailto:support@llm-threatintel.com">support@llm-threatintel.com</a></p>
       <h2 class="about-section-title">Disclaimer</h2>
       <p>Independent personal project. Blog section analysis, and research are my own and do not represent any employer.</p>
@@ -2779,7 +2779,7 @@ const App = {
     });
     html = html
       .replace(
-        /^\|(.+)\|\s*\n\|[-| :]+\|\s*\n((?:\|.+\|\s*\n)*)/gm,
+        /^\|(.+)\|[ \t]*\n\|[-| :]+[ \t]*\n((?:\|.+\|[ \t]*\n)*)/gm,
         (match, header, body) => {
           const headers = header
             .split("|")
@@ -2794,7 +2794,7 @@ const App = {
                 .map((c) => c.trim())
                 .filter(Boolean),
             );
-          return `<table><thead><tr>${headers.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+          return `<table><thead><tr>${headers.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>\n\n`;
         },
       )
       .replace(/^### (.+)$/gm, "<h3>$1</h3>")
@@ -2810,8 +2810,27 @@ const App = {
       .replace(/^- (.+)$/gm, "<li>$1</li>")
       .replace(/^\d+\. (.+)$/gm, "<li>$1</li>")
       .replace(/^> (.+)$/gm, "<blockquote>$1</blockquote>")
-      .replace(/^---$/gm, "<hr>")
-      .replace(/^(?!<[hlutbp]|<\/|<li|<block|<hr)(.[^\n]+)$/gm, "<p>$1</p>");
+      .replace(/^---$/gm, "<hr>");
+    html = html
+      .split(/\n\s*\n/)
+      .map((block) => {
+        const trimmed = block.trim();
+        if (!trimmed) return "";
+        const first = trimmed.split("\n")[0].trim();
+        if (
+          /^<(h[1-3]|table|pre|ul|ol|li|blockquote|hr|p)\b/i.test(first) ||
+          first.startsWith("CODEBLOCKPLACEHOLDER_") ||
+          first.startsWith("</")
+        ) {
+          return trimmed;
+        }
+        const lines = trimmed
+          .split("\n")
+          .map((line) => line.trim())
+          .filter(Boolean);
+        return `<p>${lines.join("<br>")}</p>`;
+      })
+      .join("\n");
     html = html.replace(/((?:<li>.*<\/li>\s*)+)/g, "<ul>$1</ul>");
     html = html.replace(/<p>\s*<\/p>/g, "");
     const preHtml = (idx) => {

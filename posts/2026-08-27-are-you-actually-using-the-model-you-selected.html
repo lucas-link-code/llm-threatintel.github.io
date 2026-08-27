@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are You Actually Using the Model You Selected? | LLM ThreatIntel</title>
+  <meta name="description" content="A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain that records what you requested, what the service says it selected, which provider handled it, and what you were charged.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="Lucas L.">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-27-are-you-actually-using-the-model-you-selected.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Are You Actually Using the Model You Selected?">
+  <meta property="og:description" content="A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain that records what you requested, what the service says it selected, which provider handled it, and what you were charged.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-27-are-you-actually-using-the-model-you-selected.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Are You Actually Using the Model You Selected?">
+  <meta property="article:published_time" content="2026-08-27T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-27T00:00:00Z">
+  <meta property="article:tag" content="model-provenance">
+  <meta property="article:tag" content="llm-routing">
+  <meta property="article:tag" content="ai-bom">
+  <meta property="article:tag" content="cybersecurity">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Are You Actually Using the Model You Selected?">
+  <meta name="twitter:description" content="A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain that records what you requested, what the service says it selected, which provider handled it, and what you were charged.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Are You Actually Using the Model You Selected?",
+  "description": "A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain that records what you requested, what the service says it selected, which provider handled it, and what you were charged.",
+  "datePublished": "2026-08-27T00:00:00Z",
+  "dateModified": "2026-08-27T00:00:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "Lucas L."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-27-are-you-actually-using-the-model-you-selected.html",
+  "keywords": [
+    "model-provenance",
+    "llm-routing",
+    "ai-bom",
+    "cybersecurity"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content" id="app-content">
+    <a href="/#blog" class="back-link">&larr; Back to blog</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-27</span>
+      <span class="post-tag tag-model-provenance">Model Provenance</span><span class="post-tag tag-llm-routing">Llm Routing</span><span class="post-tag tag-ai-bom">Ai Bom</span><span class="post-tag tag-cybersecurity">Cybersecurity</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Are You Actually Using the Model You Selected?</h1>
+<p>Have you ever selected a specific model through an API or a model picker and wondered how you could actually prove that it was the model that processed your request?</p>
+<p>I started thinking about this because selling tokens is already a big business, and just like with any product, where is the proof of origin? Some models cost considerably more than others. If I deliberately choose a premium model because I want its stronger reasoning capability, and I am charged the higher token rate, I want some evidence that the request really was served by that model.</p>
+<p>At first this looks easy to verify. I send an API request containing the exact model name. The response contains the same model name. My account is billed accordingly.</p>
+<p>But all of that information is being supplied by the service I am asking to verify, not an independent source.<br>That is where model provenance becomes useful.</p>
+<h2>What the API returns is not proof</h2>
+<p>A model picker or an API response that repeats the model name is useful. It is not independent evidence.</p>
+<p>I asked the vendor which model ran. The vendor told me which model ran. The bill used the same name. I have a consistent story from one party, not a second source.</p>
+<p>That distinction matters because premium models and cheaper ones can sit behind the same product UI. Auto selectors, latest aliases, and silent fallbacks all make the picker look like a guarantee when it is only the first claim in the chain.</p>
+<h2>Provenance is not the same as a BOM</h2>
+<p>Provenance is about establishing where a model came from, which version it is, what happened to it before deployment, and whether the thing being used is the thing I expected.</p>
+<p>There is a related concept called an AI or ML Bill of Materials, usually shortened to AI BOM or ML BOM. It is similar to a software SBOM. It records the components that make up an AI system: the base model, tokenizer, datasets, adapters, frameworks, runtime and other dependencies.</p>
+<p>The BOM tells me what the system is made from. It is a record of the components that make up an AI system: the base model, tokenizer, datasets etc.<br>Provenance is the ability to find out where those components came from and how they got there.</p>
+<p>I think these two things will matter more and more as the industry matures and inevitably we may have to deal with counterfeiting or other attempts to misrepresent or missell a model.</p>
+<h2>What I can prove if I host the model</h2>
+<p>For a model I download and run myself, I can go quite far. I can pin a repository revision, hash the model files, verify signatures, record the base model, check any fine tuning or quantisation, and control the inference runtime.</p>
+<p>With a hosted model, most of that disappears behind the API. I cannot hash Anthropic&#x27;s or OpenAI&#x27;s production model weights because I never receive them. I therefore cannot independently prove that those exact weights generated my response.</p>
+<p>What I can do is build a strong record of the transaction.<br>What did I ask for, and what actually handled it?</p>
+<table><thead><tr><th>Control</th><th>Hosted by me</th><th>Hosted API or picker</th></tr></thead><tbody><tr><td>Exact model files</td><td>Hash and pin the weights</td><td>Not available to the customer</td></tr><tr><td>Publisher and revision</td><td>Repository, signature, lineage</td><td>Vendor statement</td></tr><tr><td>Fine tuning or quantisation</td><td>Recorded in the BOM and hashes</td><td>Usually opaque</td></tr><tr><td>Runtime</td><td>I choose it</td><td>Vendor chooses it</td></tr><tr><td>Identity of this request</td><td>I know what is loaded</td><td>I know what the service reports</td></tr></tbody></table>
+<h2>OpenRouter makes the routing layer visible</h2>
+<p>OpenRouter is a useful example because the routing layer is visible.</p>
+<p>If model identity matters, I would avoid selectors such as auto or latest and use the exact model identifier.</p>
+<p>I would also disable fallbacks where possible. Otherwise I may request one model and allow the service to silently move to another endpoint if the first one is unavailable.</p>
+<p>There are two layers here, and they are easy to mix up. Provider failover is on by default. That can keep the same model name while moving the request to another provider endpoint. Model fallbacks are a separate control. A models array can change which model answers. Usage is billed for the model that actually ran, not the one that errored first.</p>
+<p>OpenRouter can expose routing metadata for a request. That lets me see the model I requested, which provider endpoint was selected, whether the request was routed directly, and whether any fallback attempts took place.</p>
+<p>That is already much better than looking at the model name in a chat window.<br>For an important request I would retain the generation ID, request ID, resolved model, provider, token counts and cost.</p>
+<p>I now have a simple evidence chain:</p>
+<pre><code class="language-text">1. What I requested
+2. What the router says it selected
+3. Which provider handled it
+4. What usage was recorded
+5. What I was charged</code></pre>
+<p>It is not cryptographic proof of the model weights, but it gives me something measurable.</p>
+<h2>The bill is part of the evidence</h2>
+<p>Pricing gives another useful check.</p>
+<p>If I know how many input and output tokens were used, I can estimate what I expected the request to cost based on the published rate for that model.</p>
+<p>There can be legitimate differences because of cached tokens, provider pricing or other billing mechanics, so I would not treat a mismatch as automatic proof of substitution.</p>
+<p>But if I select a premium model and the recorded usage looks much closer to a cheaper model, I would investigate it.</p>
+<p>The reverse matters too. If the transaction records a cheaper model but I am charged at the premium rate, that is clearly something I would want explained.</p>
+<p>The model attribution, usage and charge should all describe the same transaction.</p>
+<h2>Checking a router against the provider</h2>
+<p>If I use my own upstream API key through a routing service, I can potentially compare records from both sides. OpenRouter may say that a request went to Anthropic using a particular model.</p>
+<p>Anthropic&#x27;s own account then records corresponding usage. If those records line up, I now have two separate systems agreeing on what happened.</p>
+<p>Again, this still does not let me inspect the production weights, but it is stronger than trusting one intermediary alone.</p>
+<h2>What browser DevTools can and cannot show</h2>
+<p>Sometimes I can inspect the network traffic.</p>
+<p>For browser based AI tools, Developer Tools can reveal the model identifier being sent by the client, along with request IDs or other useful metadata returned by the service.</p>
+<p>I normally submit a unique test prompt, find the corresponding Fetch or XHR, SSE or WebSocket request, and inspect the request and response. This can show me what the browser asked the application&#x27;s backend to do. But there is an important limit.</p>
+<p>The browser may talk to the product&#x27;s own orchestration service, while that backend talks separately to Anthropic, OpenAI or another provider.</p>
+<p>I cannot see a request from one server to another that never passes through my machine.<br>That is often exactly where the final routing decision takes place.</p>
+<h2>Asking the model is not verification</h2>
+<p>One thing I would not rely on is simply asking:<br>What model are you?</p>
+<p>The answer may come from a system prompt or product configuration. A model can identify itself as whatever the service tells it to identify itself as.</p>
+<p>Behavioural testing is slightly more useful.<br>I could keep a private set of prompts and compare how a model performs over time. A significant change may indicate a new model, a different system prompt, another provider or some other change in the serving stack.</p>
+<p>That can help detect drift but It still cannot prove identity.</p>
+<h2>What stronger proof looks like</h2>
+<p>If I control the model myself, the assurance becomes much stronger.</p>
+<p>I can start with a trusted publisher, verify hashes and signatures, record the model in an ML BOM, preserve its lineage, and potentially use measured or confidential computing environments to attest what is actually running.</p>
+<p>That is much closer to technical proof.</p>
+<p>Hosted commercial models normally do not expose that level of evidence to customers, so the practical goal is different.</p>
+<p>I am not trying to prove something the platform does not make technically provable.<br>I am collecting enough independent evidence that unexpected model substitution, routing changes or billing inconsistencies become visible.</p>
+<h2>One takeaway</h2>
+<p>A model picker or API response tells me what the service says I used.<br>That is useful, but it is not the same as proving the underlying model.</p>
+<p>For models I host myself, provenance can be built from trusted sources, hashes, signatures, ML BOMs and runtime controls.</p>
+<p>For hosted models, the practical approach is to record the exact model requested, capture the model and provider the service says handled it, retain request IDs, compare token usage against expected pricing and reconcile those records with billing or upstream provider telemetry where possible.</p>
+<p class="blog-post-byline">Author: Lucas L.</p></div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

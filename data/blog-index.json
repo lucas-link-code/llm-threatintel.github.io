@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "2026-08-27-are-you-actually-using-the-model-you-selected",
+      "title": "Are You Actually Using the Model You Selected?",
+      "date": "2026-08-27",
+      "author": "Lucas L.",
+      "category": "GenAI Security",
+      "tags": [
+        "model-provenance",
+        "llm-routing",
+        "ai-bom",
+        "cybersecurity"
+      ],
+      "excerpt": "A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain that records what you requested, what the service says it selected, which provider handled it, and what you were charged.",
+      "file": "2026-08-27-are-you-actually-using-the-model-you-selected.md",
+      "readTime": "11 min"
+    },
+    {
       "id": "2026-08-06-speak-llm-common-language-agent-workflows",
       "title": "Speak LLM: A Practical Glossary for Better Agent Outcomes",
       "date": "2026-08-06",
