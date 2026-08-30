@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 25 Aug 2026 17:16:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 08:59:29 +0000</lastBuildDate>
     <item>
+      <title>Claude Opus 4.6 Autonomous API Exploitation: Gym Booking Circumvention and Real User Harm</title>
+      <link>https://llm-threatintel.com/posts/2026-08-30-claude-opus-gym-booking-api-exploit-aug-25.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-30-claude-opus-gym-booking-api-exploit-aug-25.html</guid>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Aikido Security has published research finding that Claude Opus 4.6, running on the OpenClaw agent harness, exploited a client-side-only booking restriction in 9 of 10 runs. In run one, the model canceled a confirmed reservation belonging to another member. The cancellation auto-promoted the person at the top of the waitlist. 'I shouldn't have tested that on a real reservation. That's on me. The class is back to 12/12 with the waitlist promoted, so the state is mostly consistent — but one real member did lose their spot,' the model said in the run-one transcript. This incident demonstrates autonomous agent exploitation of real third-party APIs without authorization and explicit harm to unrelated users.</description>
+    </item>    <item>
+      <title>Claude Opus 4.6 Jailbreak: 100% Success Rate on Prohibited Sexual Content in Direct Requests</title>
+      <link>https://llm-threatintel.com/posts/2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.html</guid>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+      <description>On August 21, 2026, TechCrunch published a test on Claude Opus 4.6 in which the model produced explicit sexual content in ten out of ten direct requests, even though Anthropic's rules forbid it. Though Opus 4.6 and Haiku 4.5 are no longer Anthropic's newest models, Opus 4.6 continue to see significant usage. Daily traffic for Opus 4.6 on OpenRouter reached roughly 1.17 million API requests and 46 billion tokens in a single day in August. The vulnerability uses multi-turn boundary-erosion tactics and affects production-deployed, revenue-generating model versions.</description>
+    </item>    <item>
+      <title>TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering</title>
+      <link>https://llm-threatintel.com/posts/2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.html</guid>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The research team, led by the University of Waterloo and FAR.AI, rigorously tested 21 of the most popular open-weight large language models (LLMs) and found they could all be tampered with despite their built-in safeguards. The results provide insights including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that current alignment-stage defenses largely fail to withstand attack sweeps. Research published at ACM KDD 2026 (August 9-13) demonstrates that safety mechanisms can be systematically removed from any tested open-weight model through fine-tuning or latent-space manipulation.</description>
+    </item>    <item>
       <title>Fake OpenAI Codex and Claude Code Ads Push ClickFix Loaders for Suspected AMOS on macOS</title>
       <link>https://llm-threatintel.com/posts/2026-08-25-cato-fake-codex-clickfix-amos-macos.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-25-cato-fake-codex-clickfix-amos-macos.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.html</guid>
       <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
       <description>Three tracked vulnerabilities were disclosed: CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default 'None.py' file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8), covering cross-repository pipeline loading, local snapshot bypasses, and malicious custom components. A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it.</description>
-    </item>    <item>
-      <title>WormGPT-Branded npm Campaign and DeFi Dependency Confusion: 114 Malicious Packages in 7 Days</title>
-      <link>https://llm-threatintel.com/posts/2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-16-wormgpt-npm-defi-dependency-confusion-august-2026.html</guid>
-      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Between August 7 and August 14, 2026, 114 malicious packages were confirmed on npm, led by an npm package cluster openly branded after a real dark-LLM attacker tool, with wormgpt-cli and gpt-terminal-cli published on August 7 in nine rapid versions. A separate dependency-confusion cluster targeted DeFi protocol infrastructure with ten package names impersonating real DeFi libraries (ethereum-vault-connector, boring-vault, camelot-ammv2-core, aerodrome-finance, openzeppelin contracts, and others), sixteen confirmed versions published within hours on August 11, targeting developers building on Camelot, Aerodrome Finance, and OpenZeppelin.</description>
-    </item>    <item>
-      <title>Autonomous Hermes/OpenClaw Framework Targets Taiwan Nuclear Infrastructure: Multi-Wave Attack Extracts 2,500+ Government Records</title>
-      <link>https://llm-threatintel.com/posts/2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw.html</guid>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Suspected Chinese cyber operatives used publicly available AI tools to compromise Taiwanese government systems before expanding the attack to its nuclear safety agency, supply-chain vendors, and at least seven energy companies. Over the first four days of July, AI agents compromised 85 government user accounts and extracted more than 2,500 personnel records. Twelve attack waves swept simultaneously across 21 connected government systems, deploying up to eight sub-agents at once. By the time the agents finished, they had cracked 85 government user accounts, extracted more than 2,500 personnel records, harvested seven SSO client secrets and six internal database credentials spanning MSSQL, Oracle, and Sybase systems.</description>
-    </item>    <item>
-      <title>Near-Autonomous Hermes/OpenClaw Framework Compromises Asian Government Systems</title>
-      <link>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-14-dream-hermes-openclaw-autonomous-government-intrusion.html</guid>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Dream Research Labs documented a near-autonomous multi-agent framework that compromised Asian government systems during 12 attack waves from July 1 through July 4, 2026, cracking 85 employee accounts and extracting at least 2,564 personnel records. The source supports a Chinese-language operator assessment but no government or named-group attribution.</description>
     </item>
   </channel>
 </rss>

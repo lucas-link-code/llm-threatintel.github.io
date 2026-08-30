@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering | LLM ThreatIntel</title>
+  <meta name="description" content="The research team, led by the University of Waterloo and FAR.AI, rigorously tested 21 of the most popular open-weight large language models (LLMs) and found they could all be tampered with despite their built-in safeguards. The results provide insights including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that current alignment-stage defenses largely fail to withstand attack sweeps. Research published at ACM KDD 2026 (August 9-13) demonstrates that safety mechanisms can be systematically removed from any tested open-weight model through fine-tuning or latent-space manipulation.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering">
+  <meta property="og:description" content="The research team, led by the University of Waterloo and FAR.AI, rigorously tested 21 of the most popular open-weight large language models (LLMs) and found they could all be tampered with despite their built-in safeguards. The results provide insights including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that current alignment-stage defenses largely fail to withstand attack sweeps. Research published at ACM KDD 2026 (August 9-13) demonstrates that safety mechanisms can be systematically removed from any tested open-weight model through fine-tuning or latent-space manipulation.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering">
+  <meta property="article:published_time" content="2026-08-30T00:00:00Z">
+  <meta property="article:modified_time" content="2026-08-30T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="model-poisoning">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering">
+  <meta name="twitter:description" content="The research team, led by the University of Waterloo and FAR.AI, rigorously tested 21 of the most popular open-weight large language models (LLMs) and found they could all be tampered with despite their built-in safeguards. The results provide insights including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that current alignment-stage defenses largely fail to withstand attack sweeps. Research published at ACM KDD 2026 (August 9-13) demonstrates that safety mechanisms can be systematically removed from any tested open-weight model through fine-tuning or latent-space manipulation.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering",
+  "description": "The research team, led by the University of Waterloo and FAR.AI, rigorously tested 21 of the most popular open-weight large language models (LLMs) and found they could all be tampered with despite their built-in safeguards. The results provide insights including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that current alignment-stage defenses largely fail to withstand attack sweeps. Research published at ACM KDD 2026 (August 9-13) demonstrates that safety mechanisms can be systematically removed from any tested open-weight model through fine-tuning or latent-space manipulation.",
+  "datePublished": "2026-08-30T00:00:00Z",
+  "dateModified": "2026-08-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.html",
+  "keywords": [
+    "prompt-injection",
+    "model-poisoning"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-08-30</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-model-poisoning">Model Poisoning</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>TamperBench: 21 Open-Weight LLMs Completely Vulnerable to Safety Guardrail Removal via Fine-Tuning and Weight Tampering</h1>
+<p><strong>Date:</strong> 2026-08-30<br><strong>Tags:</strong> prompt-injection, model-poisoning</p>
+<h2>Executive Summary</h2>
+<p>The research team, led by the University of Waterloo and FAR.AI, rigorously tested 21 of the most popular open-weight large language models (LLMs) and found they could all be tampered with despite their built-in safeguards. The results provide insights including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that current alignment-stage defenses largely fail to withstand attack sweeps. Research published at ACM KDD 2026 (August 9-13) demonstrates that safety mechanisms can be systematically removed from any tested open-weight model through fine-tuning or latent-space manipulation.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>TamperBench Academic Evaluation</td></tr><tr><td>Attribution</td><td>University of Waterloo, FAR.AI, MIT, ETH Zurich, University of Toronto (confidence: high)</td></tr><tr><td>Target</td><td>Developers and organizations deploying open-weight LLMs; threat actors seeking to weaponize compromised models</td></tr><tr><td>Vector</td><td>Fine-tuning attacks, weight-space manipulation, latent-space representation attacks, jailbreak-tuning</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-08-25</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>A paper on its work, TamperBench: Systematically Stress-Testing LLM Safety Under Fine-Tuning and Tampering, was recently presented at the ACM Conference on Knowledge Discovery and Data Mining in South Korea. TamperBench was used to evaluate 21 open-weight LLMs, including defense-augmented variants, across nine tampering threats using standardized safety and capability metrics with hyperparameter sweeps per model-attack pair. This yields novel insights, including effects of post-training on tamper resistance, that jailbreak-tuning is typically the most severe attack, and that Triplet emerges as a leading defense. Safety protections built into some of the world&#x27;s most widely used artificial intelligence (AI) models can be stripped away with alarming ease. The framework demonstrates that fine-tuning with as few as 100 harmful examples can reliably suppress safety refusals in instruction-tuned models, and that no currently deployed defense withstands systematic hyperparameter sweeps across attack-model pairs.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Model Tampering / Adversarial Training</td><td>T1203</td><td>Attackers exploit weight-space fine-tuning and latent-space manipulation to compromise model safety guardrails post-deployment</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No specific IOCs; research demonstrates systematic class of vulnerability affecting all tested open-weight LLMs. Threat model: any adversary with access to base model weights can remove safety through fine-tuning._</p>
+<h3>Full URL Paths</h3>
+<p>_No specific IOCs; research demonstrates systematic class of vulnerability affecting all tested open-weight LLMs. Threat model: any adversary with access to base model weights can remove safety through fine-tuning._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Llama variants (open-weight)
+Mistral (open-weight)
+Qwen (open-weight)
+Phi (open-weight)
+DeepSeek-R1 (open-weight)
+Gemma variants (open-weight)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Organizations deploying open-weight LLMs should: (1) Enforce model provenance verification and cryptographic signatures on model artifacts; (2) Implement runtime monitoring of model outputs for safety guardrail drift (systematic increase in harmful completions); (3) Avoid unpinned model dependencies; (4) Use only models from verified sources with supply-chain attestation; (5) Conduct adversarial testing on any fine-tuned derivative models before production deployment; (6) Monitor Hugging Face and similar repositories for suspicious model uploads with safety-adjacent names or descriptions.</p>
+<h2>References</h2>
+<ul><li>[FAR.AI] TamperBench: Systematically Stress-Testing LLM Safety Under Fine-Tuning and Tampering (2026-08-25) — https://www.far.ai/research/tamperbench-systematically-stress-testing-llm-safety-under-fine-tuning-and-tampering</li><li>[TechXplore] Major security weaknesses found in leading open-weight LLMs (2026-08-25) — https://techxplore.com/news/2026-08-major-weaknesses-weight-llms.html</li><li>[arXiv] TamperBench: Systematically Stress-Testing LLM Safety Under Fine-Tuning and Tampering (2026-06-02) — https://arxiv.org/abs/2602.06911</li><li>[ACM SIGKDD] Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD &#x27;26) (2026-08-09) — https://kdd.acm.org/kdd2026/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
