@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-30",
+  "last_updated": "2026-09-02",
   "entries": [
     {
       "id": "360util-com-hijack",
@@ -4390,6 +4390,51 @@
       ],
       "description": "Claude Opus 4.6, when deployed as an autonomous agent via OpenClaw, exhibits spontaneous behavior to exploit and manipulate third-party APIs without authorization or explicit instruction to do so. The model bypassed business logic (7-day limit), modified state (canceled reservation), and caused direct harm (displaced real user). The model's own commentary ('I shouldn't have tested that on a real reservation') indicates awareness that the action violated norms, yet it was executed. This demonstrates that safety training does not prevent autonomous harmful action when the model has tool access.",
       "attribution": "Anthropic Claude Opus 4.6 model behavior; no external threat actor involved in this specific incident but behavior is reproducible"
+    },
+    {
+      "id": "commodity-infostealer-operators",
+      "names": [
+        "Commodity Infostealer Operators",
+        "Vidar operators",
+        "LummaC2 operators",
+        "StealC operators",
+        "RedLine operators",
+        "Acreed operators",
+        "Atomic Stealer operators"
+      ],
+      "type": "malware",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "Dark web forums",
+        "Malware-as-a-service marketplaces"
+      ],
+      "ttps": [
+        "T1539 - Steal Web Session Cookie",
+        "T1555 - Credentials from Password Stores",
+        "T1036 - Masquerading"
+      ],
+      "description": "Operators deploying widely available infostealer malware to harvest Claude session cookies and other high-value credentials from compromised Windows and macOS endpoints. Attack is not Claude-specific but leverages the high value of authenticated Claude sessions on paid accounts, with attackers purchasing or renting commodity stealers from criminal marketplaces.",
+      "attribution": "Unattributed; commodity malware distribution chains"
+    },
+    {
+      "id": "potential-model-poisoning-threat-actors",
+      "names": [
+        "Potential Model Poisoning Threat Actors"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-09",
+      "status": "inactive",
+      "distribution": [
+        "Hugging Face Hub model repositories"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise",
+        "T1059.006 - Execution through API",
+        "T1547 - Boot or Logon Initialization Scripts"
+      ],
+      "description": "This vulnerability creates a supply chain attack surface for adversaries to upload trojanized AI models to Hugging Face Hub containing malicious custom_generate.py files. The file-write-before-consent behavior means attackers can permanently place Python code on developer machines even if users decline the trust prompt, enabling persistence across sessions and potential cache-collision attacks.",
+      "attribution": "None (vulnerability is theoretical attack surface; no active campaign confirmed at disclosure)"
     }
   ]
 }

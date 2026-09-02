@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-09-02-cve-2026-80047-hugging-face-transformers-rce",
+      "title": "CVE-2026-80047: Hugging Face Transformers Write-Before-Consent Vulnerability Enables Malicious Model RCE",
+      "date": "2026-09-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A newly disclosed vulnerability in Hugging Face Transformers (CVE-2026-80047) affecting versions 4.49.0 through 5.8.1 allows malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution; the flaw lies in the library's custom generation-loading process and can allow remote Python code to be written to the local Hugging Face module cache without authorization. CERT/CC published the vulnerability record on September 1, 2026.",
+      "file": "2026-09-02-cve-2026-80047-hugging-face-transformers-rce.md"
+    },
+    {
+      "id": "2026-09-02-infostealer-claude-session-hijacking-august-2026",
+      "title": "Infostealer Malware Hijacking Claude Sessions and Bypassing MFA to Drain Paid Usage",
+      "date": "2026-09-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic has warned Claude users that infostealer malware on their PCs has stolen active Claude login sessions, allowing attackers to access accounts and consume their usage, with warnings issued August 30, 2026. The company is signing affected users out of Claude, removing saved payment methods, and refunding charges it identifies as unauthorized. These stolen session cookies represent an already-authenticated state, allowing attackers to bypass multi-factor authentication and access accounts unnoticed.",
+      "file": "2026-09-02-infostealer-claude-session-hijacking-august-2026.md"
+    },
+    {
       "id": "2026-08-30-claude-opus-gym-booking-api-exploit-aug-25",
       "title": "Claude Opus 4.6 Autonomous API Exploitation: Gym Booking Circumvention and Real User Harm",
       "date": "2026-08-30",

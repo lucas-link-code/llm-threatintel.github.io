@@ -5194,6 +5194,60 @@
       "cves": [],
       "actors": [],
       "iocs": []
+    },
+    {
+      "id": "2026-09-02-cve-2026-80047-hugging-face-transformers-rce",
+      "title": "CVE-2026-80047: Hugging Face Transformers Write-Before-Consent Vulnerability Enables Malicious Model RCE",
+      "date": "2026-09-02",
+      "excerpt": "A newly disclosed vulnerability in Hugging Face Transformers (CVE-2026-80047) affecting versions 4.49.0 through 5.8.1 allows malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution; the flaw lies in the library's custom generation-loading process and can allow remote Python code to be written to the local Hugging Face module cache without authorization. CERT/CC published the vulnerability record on September 1, 2026.",
+      "file": "2026-09-02-cve-2026-80047-hugging-face-transformers-rce.md",
+      "body": "CVE-2026-80047: Hugging Face Transformers Write-Before-Consent Vulnerability Enables Malicious Model RCE Date: 2026-09-02 Tags: supply-chain, model-poisoning Executive Summary A newly disclosed vulnerability in Hugging Face Transformers (CVE-2026-80047) affecting versions 4.49.0 through 5.8.1 allows malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution; the flaw lies in the library's custom generation-loading process and can allow remote Python code to be written to the local Hugging Face module cache without authorization. CERT/CC published the vulnerability record on September 1, 2026. Campaign Summary Field Detail Campaign / Malware Hugging Face Transformers Malicious Model Supply Chain Attack Vector Attribution Unknown (vulnerability disclosure only; no active campaign reported yet) (confidence: low) Target Developers and ML engineers using Hugging Face Transformers to load custom models from Hugging Face Hub Vector Malicious model repository containing crafted custom_generate/generate.py file that exploits load_custom_generate() function Status active First Observed 2026-09-01 Detailed Findings Affected versions (4.49.0 through 5.8.1) implement GenerativePreTrainedModel.load_custom_generate() such that the library fetches and caches a remote Python module via get_cached_module_file() before evaluating user consent via resolve_trust_remote_code(); although execution of the module is correctly gated, the initial file write is unconditional, resulting in remote code from a repository's custom_generate/generate.py being copied into ~/.cache/huggingface/modules regardless of whether the user ultimately approves or declines the trust prompt. The file write is not reversible and can persist across sessions, leading to persistent, unauthorized files on disk and stale cache collisions where cached attacker code may later be executed during trusted model loads. Hugging Face Transformers is widely used to train, deploy, and run machine learning models for natural language processing, computer vision, audio, video, and multimodal AI tasks, and because the framework is commonly integrated into developer workstations, research environments, cloud notebooks, and production ML pipelines, the vulnerability could expose a broad range of users to untrusted content from model repositories. MITRE ATT&CK Mapping Technique ID Context Supply Chain Compromise T1195.001 Attacker compromises third-party model repository on Hugging Face Hub to distribute trojanized models containing malicious custom_generate.py Execution through API T1059.006 Malicious Python code is automatically downloaded and cached without explicit user consent, enabling code execution through the Transformers library API IOCs Domains Full URL Paths _Vulnerability disclosed by security researcher Prasanna Dabi; no active exploit code published at time of disclosure per CERT/CC record_ Splunk Format Package Indicators Affected Platforms Detection Recommendations Organizations using Hugging Face Transformers should immediately upgrade to patched versions (5.8.2 or later). Defenders should audit ~/.cache/huggingface/modules directories on developer workstations for unexpected Python files and monitor for creation of new files in cache directories during model loading operations. Implement file integrity monitoring on cache directories and alert on modifications to custom_generate/generate.py paths. Restrict model downloads to trusted, internally-cached models where feasible. Enable audit logging for all Hugging Face model loading calls and correlate suspicious file creation with model load operations. Red teamers should test whether stale cached files from declined trust prompts can be executed during subsequent trusted model loads (cache collision attack). References [Cyber Security News] Hugging Face Flaw Lets Malicious AI Models Plant Python Code on User Systems (2026-09-02) — https://cybersecuritynews.com/hugging-face-flaw/ [CERT/CC] VU#456290 - Hugging Face Transformers library writes remote code to disk prior to consent check (2026-09-01) — https://kb.cert.org/vuls/id/456290 [OffSeq Threat Radar] CVE-2026-80047: CWE-273 Improper Check for Dropped Privileges in Hugging Face Transformers (2026-09-01) — https://radar.offseq.com/threat/cve-2026-80047-cwe-273-improper-check-for-dropped-privileges-in-hugging-face-transformers-1300485eb12bdaff [Vista Net, Inc.] VU#456290: Hugging Face Transformers library writes remote code to disk prior to consent check (2026-09-01) — https://www.vistanetinc.com/vu456290-hugging-face-transformers-library-writes-remote-code-to-disk-prior-to-consent-check",
+      "tags": [
+        "model-poisoning",
+        "supply-chain"
+      ],
+      "cves": [
+        "CVE-2026-80047"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": [
+        "pypi:transformers@4.49.0",
+        "pypi:transformers@4.50.0",
+        "pypi:transformers@4.50.1",
+        "pypi:transformers@4.50.2",
+        "pypi:transformers@5.0.0",
+        "pypi:transformers@5.1.0",
+        "pypi:transformers@5.2.0",
+        "pypi:transformers@5.3.0",
+        "pypi:transformers@5.4.0",
+        "pypi:transformers@5.5.0",
+        "pypi:transformers@5.6.0",
+        "pypi:transformers@5.7.0",
+        "pypi:transformers@5.8.0",
+        "pypi:transformers@5.8.1"
+      ]
+    },
+    {
+      "id": "2026-09-02-infostealer-claude-session-hijacking-august-2026",
+      "title": "Infostealer Malware Hijacking Claude Sessions and Bypassing MFA to Drain Paid Usage",
+      "date": "2026-09-02",
+      "excerpt": "Anthropic has warned Claude users that infostealer malware on their PCs has stolen active Claude login sessions, allowing attackers to access accounts and consume their usage, with warnings issued August 30, 2026. The company is signing affected users out of Claude, removing saved payment methods, and refunding charges it identifies as unauthorized. These stolen session cookies represent an already-authenticated state, allowing attackers to bypass multi-factor authentication and access accounts unnoticed.",
+      "file": "2026-09-02-infostealer-claude-session-hijacking-august-2026.md",
+      "body": "Infostealer Malware Hijacking Claude Sessions and Bypassing MFA to Drain Paid Usage Date: 2026-09-02 Tags: malware, llmjacking Executive Summary Anthropic has warned Claude users that infostealer malware on their PCs has stolen active Claude login sessions, allowing attackers to access accounts and consume their usage, with warnings issued August 30, 2026. The company is signing affected users out of Claude, removing saved payment methods, and refunding charges it identifies as unauthorized. These stolen session cookies represent an already-authenticated state, allowing attackers to bypass multi-factor authentication and access accounts unnoticed. Campaign Summary Field Detail Campaign / Malware Infostealer Claude Session Hijacking Campaign Attribution Unknown (commodity malware distribution) (confidence: low) Target Claude paid users with Windows and macOS endpoints Vector Commodity infostealer malware (Vidar, LummaC2, StealC, RedLine, Acreed, Atomic Stealer) stealing browser session cookies Status active First Observed 2026-08-30 Detailed Findings Infostealer malware families including Vidar, LummaC2, StealC, RedLine, and Acreed on Windows, and Atomic Stealer on macOS, are stealing active Claude session cookies from infected computers, allowing attackers to bypass multi-factor authentication and single sign-on, gaining unauthorized access to paid Claude accounts. Anthropic disclosed that a bad actor is using common infostealer malware to steal Claude login sessions from people's computers, then using those login sessions to access Claude accounts and consume their usage, with affected users noticing usage limits appearing refilled and then drained while they were not using Claude. The attacks represent a shift by bad actors from credentials to session tokens and authentication cookies. Six malware families are confirmed: Vidar, LummaC2, StealC, RedLine and Acreed on Windows, and Atomic Stealer on macOS—all commodity stealers sold or rented on dark web marketplaces that harvest locally stored browser credentials, autofill data and authentication cookies from compromised machines. MITRE ATT&CK Mapping Technique ID Context Steal Web Session Cookie T1539 Adversaries harvest browser session tokens from infected endpoints to gain authenticated access to victim's Claude accounts Lateral Movement via Session Token T1570 Stolen session tokens enable unauthorized API calls and account access without password or MFA challenges IOCs Domains _No specific IOCs published by Anthropic; incident confirmation via customer notifications and security vendor reports_ Full URL Paths _No specific IOCs published by Anthropic; incident confirmation via customer notifications and security vendor reports_ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Monitor for stolen Claude session tokens being used from unfamiliar geographic locations or IP addresses. Implement behavioral detection on endpoint security tools to identify unauthorized use of browser storage access and credential harvesting. Encourage users to enable session activity alerts in their Claude account settings and rotate credentials if suspicious usage is detected. Threat hunters should correlate infostealer C2 callbacks with Claude login history—session tokens stolen and exfiltrated 24–48 hours before unauthorized usage spikes. Organizations should audit access logs for out-of-band login sessions and implement continuous session validation. Note that signing out of Claude alone does not remove malware; full endpoint remediation is required. References [Anthropic via BleepingComputer] Anthropic warns infostealer malware is hijacking Claude sessions to drain usage (2026-08-30) — https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/ [SC Media] Infostealer malware compromises Claude accounts, bypassing 2FA (2026-09-01) — https://www.scworld.com/brief/infostealer-malware-compromises-claude-accounts-bypassing-2fa [eSecurity Planet] Anthropic Warning: Infostealer Malware Is Hijacking Claude Sessions, Draining Accounts (2026-09-01) — https://www.esecurityplanet.com/threats/news-claude-session-hijacking-infostealer-malware/ [The Cyber Express] Anthropic Warns Of Infostealers Hijacking Claude Sessions (2026-09-02) — https://thecyberexpress.com/infostealers-hijacking-claude-sessions/",
+      "tags": [
+        "llmjacking",
+        "malware"
+      ],
+      "cves": [],
+      "actors": [
+        "atomic",
+        "rage",
+        "unknown",
+        "vidar"
+      ],
+      "iocs": []
     }
   ]
 }

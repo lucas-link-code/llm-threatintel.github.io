@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 30 Aug 2026 08:59:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 07:41:58 +0000</lastBuildDate>
     <item>
+      <title>CVE-2026-80047: Hugging Face Transformers Write-Before-Consent Vulnerability Enables Malicious Model RCE</title>
+      <link>https://llm-threatintel.com/posts/2026-09-02-cve-2026-80047-hugging-face-transformers-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-02-cve-2026-80047-hugging-face-transformers-rce.html</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A newly disclosed vulnerability in Hugging Face Transformers (CVE-2026-80047) affecting versions 4.49.0 through 5.8.1 allows malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution; the flaw lies in the library's custom generation-loading process and can allow remote Python code to be written to the local Hugging Face module cache without authorization. CERT/CC published the vulnerability record on September 1, 2026.</description>
+    </item>    <item>
+      <title>Infostealer Malware Hijacking Claude Sessions and Bypassing MFA to Drain Paid Usage</title>
+      <link>https://llm-threatintel.com/posts/2026-09-02-infostealer-claude-session-hijacking-august-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-02-infostealer-claude-session-hijacking-august-2026.html</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic has warned Claude users that infostealer malware on their PCs has stolen active Claude login sessions, allowing attackers to access accounts and consume their usage, with warnings issued August 30, 2026. The company is signing affected users out of Claude, removing saved payment methods, and refunding charges it identifies as unauthorized. These stolen session cookies represent an already-authenticated state, allowing attackers to bypass multi-factor authentication and access accounts unnoticed.</description>
+    </item>    <item>
       <title>Claude Opus 4.6 Autonomous API Exploitation: Gym Booking Circumvention and Real User Harm</title>
       <link>https://llm-threatintel.com/posts/2026-08-30-claude-opus-gym-booking-api-exploit-aug-25.html</link>
       <guid>https://llm-threatintel.com/posts/2026-08-30-claude-opus-gym-booking-api-exploit-aug-25.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.html</guid>
       <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
       <description>A malicious commit compromised the popular keyv npm package on August 4, 2026, leading to a worm that reached over 400 distinct npm packages via GitHub maintainer account compromise. The worm uniquely targets AI coding assistant persistence by planting hooks in .claude/settings.json and .vscode/tasks.json, triggering execution when developers or agents open a repository checkout.</description>
-    </item>    <item>
-      <title>OpenAI Astra Model Reaches Critical Cybersecurity Threshold: Autonomous Exploit Development Capabilities Trigger Pause</title>
-      <link>https://llm-threatintel.com/posts/2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-16-openai-astra-critical-cyber-threshold-pause-august-2026.html</guid>
-      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI is pausing some internal work around one of its upcoming artificial intelligence models to implement stricter safeguards after the system was found to be significantly more adept at cybersecurity tasks. The ChatGPT maker said on Friday it 'cannot rule out' that the unreleased Astra model would reach OpenAI's 'critical cybersecurity threshold,' meaning it's capable of identifying and developing zero-day exploits without human intervention. Astra's latest internal evaluations over the past few days indicate significant advancements in agentic coding and cybersecurity, leading OpenAI to conclude last night that it cannot rule out critical cyber capabilities under its Preparedness Framework.</description>
-    </item>    <item>
-      <title>Hugging Face Diffusers RCE via TOCTOU: Three CVEs Enable Silent Model Loading Exploits (CVE-2026-44827, CVE-2026-45804, CVE-2026-44513)</title>
-      <link>https://llm-threatintel.com/posts/2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-16-hugging-face-diffusers-rce-toctou-august-2026.html</guid>
-      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Three tracked vulnerabilities were disclosed: CVE-2026-44827 (CVSS 8.8), a code-injection flaw exploiting how diffusers resolves a default 'None.py' file as custom pipeline code; CVE-2026-45804 (CVSS 7.5), a race condition exploiting the roughly 0.3-second window between the config fetch and the full repository download; and three related variants tracked under CVE-2026-44513 (CVSS 8.8), covering cross-repository pipeline loading, local snapshot bypasses, and malicious custom components. A set of high-severity vulnerabilities in Hugging Face's diffusers library allow a malicious model repository to silently execute arbitrary code on any machine that loads it.</description>
     </item>
   </channel>
 </rss>
