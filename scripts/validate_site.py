@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import ipaddress
 import json
 import os
@@ -69,6 +70,16 @@ AGGREGATE_DESC_RE = re.compile(
     re.I,
 )
 PARENTHETICAL_PROSE_RE = re.compile(r"\([^)]{3,}\)")
+MARKDOWN_IOC_FENCE_TYPES = {
+    "domains": "domain",
+    "full url paths": "url_path",
+    "splunk format": "url_path",
+}
+IOC_FENCE_HEADING_RE = re.compile(
+    r"^###\s+(Domains|Full URL Paths|Splunk Format)\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+CODE_FENCE_RE = re.compile(r"```[^\n]*\n(.*?)```", re.DOTALL)
 
 BLOG_AUTHOR = "Lucas L."
 BLOG_AUTHOR_SIGNOFF = f'<p class="blog-post-byline">Author: {BLOG_AUTHOR}</p>'
@@ -354,6 +365,12 @@ class Validator:
             return self.exit_code()
         except Exception as exc:  # noqa: BLE001 - validator errors should be explicit.
             print(f"Internal validator error: {exc}", file=sys.stderr)
+            self.fail("validator-internal-error", f"Internal validator error: {exc}")
+            if self.args.write_report:
+                try:
+                    self.write_reports()
+                except Exception as write_exc:  # noqa: BLE001
+                    print(f"Failed to write crash report: {write_exc}", file=sys.stderr)
             if self.args.verbose:
                 raise
             return 3
@@ -1084,11 +1101,34 @@ class Validator:
                         f"posts/{file_name}",
                         post_id,
                     )
+            if not self.unchanged_cached_report(post):
+                self.validate_markdown_ioc_fences(text, f"posts/{file_name}", str(post.get("id", "")))
 
         for file_name in sorted(md_files - referenced):
             rel_path = f"posts/{file_name}"
             self.orphan_markdown.append(rel_path)
             self.warn("markdown-orphan", f"orphan Markdown file exists: {rel_path}", rel_path)
+
+    def iter_markdown_ioc_fence_values(self, text: str):
+        headings = list(IOC_FENCE_HEADING_RE.finditer(text))
+        for idx, match in enumerate(headings):
+            ioc_type = MARKDOWN_IOC_FENCE_TYPES.get(match.group(1).strip().lower())
+            if not ioc_type:
+                continue
+            start = match.end()
+            end = headings[idx + 1].start() if idx + 1 < len(headings) else len(text)
+            next_h2 = re.search(r"^##\s+\S", text[start:end], re.MULTILINE)
+            if next_h2:
+                end = start + next_h2.start()
+            for fence in CODE_FENCE_RE.finditer(text[start:end]):
+                for line in fence.group(1).splitlines():
+                    value = line.strip().strip("\"'")
+                    if value:
+                        yield ioc_type, value
+
+    def validate_markdown_ioc_fences(self, text: str, file: str, record: str) -> None:
+        for ioc_type, value in self.iter_markdown_ioc_fence_values(text):
+            self.validate_ioc_not_legitimate_platform(value, ioc_type, file, record)
 
     def validate_blog_author_signoffs(self) -> None:
         for idx, post in enumerate(self.parsed.get("blog_posts", [])):
@@ -1274,6 +1314,10 @@ class Validator:
                 return UrlCheckResult(url, "timeout", error=str(exc))
             except ssl.SSLError as exc:
                 return UrlCheckResult(url, "tls_error", error=str(exc))
+            except (OSError, http.client.HTTPException) as exc:
+                if method == "HEAD":
+                    continue
+                return UrlCheckResult(url, "unknown_error", error=str(exc))
         return UrlCheckResult(url, "unknown_error", error="URL check did not complete")
 
     def classify_http_result(

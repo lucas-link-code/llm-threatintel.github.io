@@ -116,6 +116,48 @@ class CollectIocNormalizationTests(unittest.TestCase):
             "malicious.example/blog/payload.js",
         )
 
+    def test_rejects_bare_huggingface_domain(self):
+        self.assertRejected("huggingface.co", "domain")
+        self.assertRejected("https://huggingface.co/", "url_path")
+        self.assertRejected("claude.ai", "domain")
+
+    def test_sanitize_finding_drops_bare_platform_before_markdown(self):
+        finding = _minimal_finding(
+            iocs={
+                "domains": ["huggingface.co", "evil.example.com"],
+                "urls": ["huggingface.co/Open-OSS/privacy-filter"],
+                "packages": [],
+            }
+        )
+        with mock.patch("builtins.print"):
+            skipped = collect.sanitize_finding_iocs(finding)
+        self.assertGreaterEqual(skipped, 1)
+        self.assertEqual(finding["iocs"]["domains"], ["evil.example.com"])
+        self.assertEqual(
+            finding["iocs"]["urls"],
+            ["huggingface.co/Open-OSS/privacy-filter"],
+        )
+        markdown = collect.generate_post_markdown(finding)
+        self.assertNotRegex(markdown, r'(?m)^"?huggingface\.co"?$')
+        self.assertIn("evil.example.com", markdown)
+        self.assertIn("huggingface.co/Open-OSS/privacy-filter", markdown)
+
+    def test_package_dict_renders_via_package_dict_to_value(self):
+        finding = _minimal_finding(
+            iocs={
+                "packages": [
+                    {
+                        "name": "openclaw",
+                        "registry": "npm",
+                        "version": "2026.7.1-2",
+                    }
+                ]
+            }
+        )
+        markdown = collect.generate_post_markdown(finding)
+        self.assertIn("npm:openclaw@2026.7.1-2", markdown)
+        self.assertNotIn("{'name':", markdown)
+
     def test_removes_ioc_url_that_duplicates_a_reference(self):
         finding = {
             "references": [

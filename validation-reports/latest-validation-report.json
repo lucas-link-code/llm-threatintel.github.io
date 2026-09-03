@@ -1,7 +1,7 @@
 {
-  "commit_sha": "483eb5db224610d7510e39f47eac136bc4fb85ba",
+  "commit_sha": "8d1807e79a54",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-08-29T09:46:56+00:00",
+  "generated_at_utc": "2026-09-02T16:37:18+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,19 +35,177 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-08-30-claude-opus-gym-booking-api-exploit-aug-25.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-08-30-claude-opus-gym-booking-api-exploit-aug-25",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.md",
+      "message": "2 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026",
+      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 0,
-  "reports_newly_validated": 0,
+  "reports_checked": 5,
+  "reports_newly_validated": 5,
   "reports_skipped": 236,
-  "review_required": 0,
-  "source_urls_checked": 0,
-  "state_updates": 0,
-  "url_results": [],
+  "review_required": 3,
+  "source_urls_checked": 19,
+  "state_updates": 5,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://cybersecuritynews.com/hugging-face-flaw/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cybersecuritynews.com/hugging-face-flaw/"
+    },
+    {
+      "error": "",
+      "final_url": "https://kb.cert.org/vuls/id/456290",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://kb.cert.org/vuls/id/456290"
+    },
+    {
+      "error": "",
+      "final_url": "https://radar.offseq.com/threat/cve-2026-80047-cwe-273-improper-check-for-dropped-privileges-in-hugging-face-transformers-1300485eb12bdaff",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://radar.offseq.com/threat/cve-2026-80047-cwe-273-improper-check-for-dropped-privileges-in-hugging-face-transformers-1300485eb12bdaff"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.vistanetinc.com/vu456290-hugging-face-transformers-library-writes-remote-code-to-disk-prior-to-consent-check/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.vistanetinc.com/vu456290-hugging-face-transformers-library-writes-remote-code-to-disk-prior-to-consent-check"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.scworld.com/brief/infostealer-malware-compromises-claude-accounts-bypassing-2fa",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.scworld.com/brief/infostealer-malware-compromises-claude-accounts-bypassing-2fa"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.esecurityplanet.com/threats/news-claude-session-hijacking-infostealer-malware/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.esecurityplanet.com/threats/news-claude-session-hijacking-infostealer-malware/"
+    },
+    {
+      "error": "",
+      "final_url": "https://thecyberexpress.com/infostealers-hijacking-claude-sessions/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thecyberexpress.com/infostealers-hijacking-claude-sessions/"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html"
+    },
+    {
+      "error": "The read operation timed out",
+      "final_url": null,
+      "http_status": null,
+      "status": "timeout",
+      "url": "https://www.asd.gov.au"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.npmjs.com/package/openclaw",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.npmjs.com/package/openclaw"
+    },
+    {
+      "error": "",
+      "final_url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/"
+    },
+    {
+      "error": "",
+      "final_url": "https://ground.news/article/anthropics-claude-opus-46-generates-banned-sexual-content-in-every-test-techcrunch-finds_5ca584",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://ground.news/article/anthropics-claude-opus-46-generates-banned-sexual-content-in-every-test-techcrunch-finds_5ca584"
+    },
+    {
+      "error": "The read operation timed out",
+      "final_url": null,
+      "http_status": null,
+      "status": "timeout",
+      "url": "https://en.cryptonomist.ch/2026/08/22/anthropic-claude-opus-vulnerability/"
+    },
+    {
+      "error": "Remote end closed connection without response",
+      "final_url": null,
+      "http_status": null,
+      "status": "unknown_error",
+      "url": "https://pasqualepillitteri.it/en/news/12347/bypass-ai-guardrails-jailbreak-defenses"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.far.ai/research/tamperbench-systematically-stress-testing-llm-safety-under-fine-tuning-and-tampering",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.far.ai/research/tamperbench-systematically-stress-testing-llm-safety-under-fine-tuning-and-tampering"
+    },
+    {
+      "error": "",
+      "final_url": "https://techxplore.com/news/2026-08-major-weaknesses-weight-llms.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://techxplore.com/news/2026-08-major-weaknesses-weight-llms.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://arxiv.org/abs/2602.06911",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://arxiv.org/abs/2602.06911"
+    },
+    {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "final_url": null,
+      "http_status": null,
+      "status": "dns_error",
+      "url": "https://kdd.acm.org/kdd2026/"
+    }
+  ],
   "validation_version": "1.0.0",
   "warnings": 4
 }

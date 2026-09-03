@@ -805,6 +805,80 @@ class ValidateSiteTests(unittest.TestCase):
             self.assertEqual(fake_opener.kwargs["timeout"], 10)
             self.assertNotIn("context", fake_opener.kwargs)
 
+    def test_markdown_fence_bare_huggingface_fails(self):
+        markdown = (
+            "# Example Report\n\n"
+            "**Date:** 2026-05-10\n"
+            "**Tags:** malware\n\n"
+            "## Executive Summary\n\n"
+            "Example sourced report.\n\n"
+            "## IOCs\n\n"
+            "### Domains\n\n"
+            "```\n"
+            "huggingface.co\n"
+            "```\n\n"
+            "## References\n\n"
+            "- [Example] Example Source (2026-05-10) — https://example.com/report\n"
+        )
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root, markdown=markdown)
+            code, _ = run_validator(root, "--mode", "strict", "--write-report")
+            self.assertEqual(code, 1)
+            codes = {issue["code"] for issue in report(root)["issues"]}
+            self.assertIn("ioc-legitimate-platform", codes)
+
+    def test_markdown_fence_hf_repo_path_passes(self):
+        markdown = (
+            "# Example Report\n\n"
+            "**Date:** 2026-05-10\n"
+            "**Tags:** malware\n\n"
+            "## Executive Summary\n\n"
+            "Example sourced report.\n\n"
+            "## IOCs\n\n"
+            "### Full URL Paths\n\n"
+            "```\n"
+            "huggingface.co/Open-OSS/privacy-filter\n"
+            "```\n\n"
+            "## References\n\n"
+            "- [Example] Example Source (2026-05-10) — https://example.com/report\n"
+        )
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root, markdown=markdown)
+            code, _ = run_validator(root, "--mode", "strict", "--write-report")
+            self.assertEqual(code, 0)
+
+    def test_check_url_maps_connection_reset(self):
+        class FakeOpener:
+            def open(self, request, **kwargs):
+                raise ConnectionResetError("connection reset")
+
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root)
+            args = validate_site.build_arg_parser().parse_args(["--mode", "evidence"])
+            validator = validate_site.Validator(root, args)
+            with mock.patch.object(validate_site.urllib.request, "build_opener", return_value=FakeOpener()):
+                result = validator.check_url("https://example.com/report")
+            self.assertEqual(result.status, "unknown_error")
+            self.assertIn("connection reset", result.error)
+
+    def test_internal_error_writes_crash_report(self):
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root)
+            with mock.patch.object(
+                validate_site.Validator,
+                "validate_requested_mode",
+                side_effect=RuntimeError("boom"),
+            ):
+                code, _ = run_validator(root, "--mode", "strict", "--write-report")
+            self.assertEqual(code, 3)
+            payload = report(root)
+            codes = {issue["code"] for issue in payload["issues"]}
+            self.assertIn("validator-internal-error", codes)
+
 
 if __name__ == "__main__":
     unittest.main()

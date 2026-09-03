@@ -175,6 +175,7 @@ Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, m
 Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
 Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, affected platforms, conceptual labels, Hugging Face repo slugs as packages. Put affected or exposed platforms in iocs.affected_platforms, not packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages. Reference, advisory, evidence, and safe PoC URLs belong in references, not urls.
 Shared infrastructure IOC rules: never emit bare shared cloud, CDN, registry, code-hosting, PaaS, tunnel, messaging, paste, or shortener apex domains as domain IOCs. Reject examples: storage.googleapis.com, googleapis.com, s3.amazonaws.com, amazonaws.com, github.com, pypi.org, npmjs.com, vercel.app, workers.dev, hf.space, t.me, pastebin.com, bit.ly. Specific attacker-controlled subdomains and paths remain valid: grok-code-session-traces.storage.googleapis.com, maliciousapp.vercel.app, evil.workers.dev, storage.googleapis.com/bucket-name/, t.me/malicious_channel. Document bare shared-host abuse in Detection Recommendations instead.
+Legitimate AI vendor platforms are not domain IOCs. Do not emit huggingface.co, hf.co, claude.ai, chatgpt.com, openai.com, grok.com, or other hosts from validation/policy.json legitimate_platform_iocs_deny_list as domain or generic url_path values. Attacker-controlled subdomains and specific malicious paths remain valid. CVE affected-version lists of legitimate libraries are not package IOCs.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits).
 
 Writing: No filler, no generic background paragraphs, no restating what the reader already knows. executive_summary: 2 to 3 sentences, under 900 characters. Front-load the most operationally relevant fact. State what happened, who is affected, and what defenders should do. detailed_findings: attribute every factual claim. Use According to [Source Name]... or [Source Name] reported that... Every sentence contributes new information. Do not paste the same sentence twice. If a source cites an older campaign, state that original date. Do not imply it happened in the lookback window. One finding is one incident. Do not glue a recap lede onto a different campaign. Keep first-party technical reports. Skip only when the sole source is a weekly recap of incidents already listed under Already Covered. The disclosing vendor is not the threat actor. Name the publisher in attribution lines and in references. mitre_attack: at most two techniques, and only when the source describes that behavior. Prefer empty [] over generic padding such as T1059 or T1105 with no campaign-specific context. Do not invent mappings."""
@@ -492,7 +493,12 @@ def generate_post_markdown(finding):
         lines.append("")
         lines.append("```")
         for p in iocs['packages']:
-            lines.append(str(p) if not isinstance(p, dict) else p.get('package', str(p)))
+            if isinstance(p, dict):
+                pkg_str, _note = package_dict_to_value(p)
+                if pkg_str:
+                    lines.append(pkg_str)
+            else:
+                lines.append(str(p))
         lines.append("```")
         lines.append("")
 
@@ -1041,6 +1047,47 @@ def normalize_ioc_value(value, ioc_type):
     return cleaned, new_type, None, context_note
 
 
+FINDING_IOC_LISTS = (
+    ("domains", "domain", "domain"),
+    ("urls", "url_path", "url"),
+    ("hashes", "hash", "hash"),
+    ("ips", "ip", "ip"),
+    ("packages", "package", "package"),
+)
+
+
+def _finding_ioc_raw_value(item, ioc_type, dict_key):
+    if isinstance(item, dict):
+        if ioc_type == "package":
+            value, _note = package_dict_to_value(item)
+            return value
+        return str(item.get(dict_key) or item.get("value") or "")
+    return str(item)
+
+
+def sanitize_finding_iocs(finding):
+    """Drop deny-listed and malformed IOC values before markdown and JSON writes."""
+    finding_iocs = finding.get("iocs")
+    if not isinstance(finding_iocs, dict):
+        return 0
+    skipped = 0
+    for list_key, ioc_type, dict_key in FINDING_IOC_LISTS:
+        items = finding_iocs.get(list_key)
+        if not isinstance(items, list):
+            continue
+        kept = []
+        for item in items:
+            raw = _finding_ioc_raw_value(item, ioc_type, dict_key)
+            cleaned, _cleaned_type, reason, _note = normalize_ioc_value(raw, ioc_type)
+            if cleaned is None:
+                skipped += 1
+                print(f"  Skipped malformed IOC: {raw!r} (reason: {reason})")
+                continue
+            kept.append(cleaned)
+        finding_iocs[list_key] = kept
+    return skipped
+
+
 def update_iocs(finding):
     """Update iocs.json with new IOC entries."""
     iocs_path = DATA_DIR / "iocs.json"
@@ -1276,6 +1323,9 @@ def main():
                 f"  Removed {removed_reference_urls} reference URL(s) "
                 "misclassified as IOC URLs"
             )
+        skipped_iocs = sanitize_finding_iocs(finding)
+        if skipped_iocs:
+            print(f"  Dropped {skipped_iocs} IOC value(s) before markdown write")
 
         markdown = generate_post_markdown(finding)
         filename = update_posts_index(finding)

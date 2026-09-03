@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 02 Sep 2026 07:41:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 16:33:23 +0000</lastBuildDate>
     <item>
       <title>CVE-2026-80047: Hugging Face Transformers Write-Before-Consent Vulnerability Enables Malicious Model RCE</title>
       <link>https://llm-threatintel.com/posts/2026-09-02-cve-2026-80047-hugging-face-transformers-rce.html</link>

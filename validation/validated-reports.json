@@ -4209,6 +4209,101 @@
       "validated_at": "2026-08-25T17:16:28+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21": {
+      "content_hash": "4887768518b83f9ccfb03274a4b5c0f10c3a4f080950ebba7039673151094af2",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.md",
+      "posts_index_hash": "29a26e100b8b049f1327a3158d7871071eb1098f1980516e610c9303591393ca",
+      "report_id": "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
+        "https://ground.news/article/anthropics-claude-opus-46-generates-banned-sexual-content-in-every-test-techcrunch-finds_5ca584",
+        "https://en.cryptonomist.ch/2026/08/22/anthropic-claude-opus-vulnerability/",
+        "https://pasqualepillitteri.it/en/news/12347/bypass-ai-guardrails-jailbreak-defenses"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-02T16:37:16+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-30-claude-opus-gym-booking-api-exploit-aug-25": {
+      "content_hash": "697fcd9b2e05ed1f42c4baf9ee4ad2c14125fd4761c600b48fd8f616b2bf8890",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-30-claude-opus-gym-booking-api-exploit-aug-25.md",
+      "posts_index_hash": "223c47de6605ffbe2c644b32baedfca7ffe49e1d3dbee2c8c4f59ae82591d79a",
+      "report_id": "2026-08-30-claude-opus-gym-booking-api-exploit-aug-25",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html",
+        "https://www.asd.gov.au",
+        "https://www.npmjs.com/package/openclaw"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-02T16:36:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026": {
+      "content_hash": "e35926a21551126415c2faeedcf3abfb08dbf5ad8e2afbe526aaa1a83ed1c1a1",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026.md",
+      "posts_index_hash": "4f7cc91d6ae780c24479cc4ca1bdfeb9bf618753bdc5925d6c9c8de95324c9cb",
+      "report_id": "2026-08-30-tamperbench-open-weight-llm-safety-removal-aug-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.far.ai/research/tamperbench-systematically-stress-testing-llm-safety-under-fine-tuning-and-tampering",
+        "https://techxplore.com/news/2026-08-major-weaknesses-weight-llms.html",
+        "https://arxiv.org/abs/2602.06911",
+        "https://kdd.acm.org/kdd2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-02T16:37:18+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-02-cve-2026-80047-hugging-face-transformers-rce": {
+      "content_hash": "8bb60a1ca8e651c94e45194077d95395e8e5d87e96357334ae20c8aa2b61a73d",
+      "evidence_status": "validated",
+      "file": "2026-09-02-cve-2026-80047-hugging-face-transformers-rce.md",
+      "posts_index_hash": "55de72aa3d370af19f4042d98cb17be3b72afe9240ed6434125bbe25dbc89fe3",
+      "report_id": "2026-09-02-cve-2026-80047-hugging-face-transformers-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-flaw/",
+        "https://kb.cert.org/vuls/id/456290",
+        "https://radar.offseq.com/threat/cve-2026-80047-cwe-273-improper-check-for-dropped-privileges-in-hugging-face-transformers-1300485eb12bdaff",
+        "https://www.vistanetinc.com/vu456290-hugging-face-transformers-library-writes-remote-code-to-disk-prior-to-consent-check"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-02T16:36:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-02-infostealer-claude-session-hijacking-august-2026": {
+      "content_hash": "5f4164eb360a6ca0aa4657d2fb787fe97bdb4883fb8c7fb15d3813c71d1b28ff",
+      "evidence_status": "validated",
+      "file": "2026-09-02-infostealer-claude-session-hijacking-august-2026.md",
+      "posts_index_hash": "3905f8bf79bd0cc23f1b0b704b36f46e75f157eaeeeede2cdd54fcb499f85e18",
+      "report_id": "2026-09-02-infostealer-claude-session-hijacking-august-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/",
+        "https://www.scworld.com/brief/infostealer-malware-compromises-claude-accounts-bypassing-2fa",
+        "https://www.esecurityplanet.com/threats/news-claude-session-hijacking-infostealer-malware/",
+        "https://thecyberexpress.com/infostealers-hijacking-claude-sessions/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-02T16:36:33+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
