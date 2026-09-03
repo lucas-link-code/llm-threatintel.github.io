@@ -5,8 +5,50 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 02 Sep 2026 16:33:23 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 21:29:53 +0000</lastBuildDate>
     <item>
+      <title>Unit 42: Human Operator Used Frontier AI Agents to Compress an Enterprise Intrusion to Under 10 Hours</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-unit42-ai-assisted-enterprise-intrusion.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-unit42-ai-assisted-enterprise-intrusion.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Unit 42 published on 2026-09-02 that a human attacker used frontier AI models and attack-specific agentic frameworks to run an enterprise intrusion in under 10 hours, work Unit 42 estimated would take human operators about two weeks. The agents mapped microservices, harvested repository secrets, seized secrets-manager credentials, abused CI/CD workflows, and invoked the victim's own cloud AI endpoints with stolen keys. Unit 42 updated the post on 2026-09-03 to state the case was an intrusion, not a ransomware attack.</description>
+    </item>    <item>
+      <title>FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-fortinet-bedrock-llmjacking-marketplace.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-fortinet-bedrock-llmjacking-marketplace.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>FortiGuard Labs published on 2026-09-03 that a leaked long-lived AWS IAM access key with AdministratorAccess was used to create a new IAM user, subscribe that identity to foundation models through AWS Marketplace, and invoke those models so the victim account paid for inference. FortiGuard described the chain as LLMjacking: theft of hosted model access rather than model weights. Enable CloudTrail and Bedrock invocation logging, retire long-lived admin keys, and alert on Marketplace agreement calls paired with new IAM users.</description>
+    </item>    <item>
+      <title>GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-gitspawn-coding-agents-git-config-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-gitspawn-coding-agents-git-config-rce.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Manifold Security published GitSpawn on 2026-09-01: AI coding agents run git in the background to gather context, often before the workspace-trust prompt, without stripping the repository's own git config, so settings such as core.fsmonitor execute attacker commands as the developer outside the sandbox. Eight findings across seven agents were reported; Claude Code's core.fsmonitor path, Goose, Codex, and Cursor were patched, while Qwen Code, Grok Build, Claude Code ultrareview, and Hermes remained unpatched at publication. Inspect .git/config before opening a zip or shared folder in an agent, and do not treat git clone as the same risk.</description>
+    </item>    <item>
+      <title>ESET GuardBreaker: UAC-0099 Plants a Nuclear-Weapons Comment in VBS to Trip LLM Malware Analysis</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-eset-uac-0099-guardbreaker-llm-analysis.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-eset-uac-0099-guardbreaker-llm-analysis.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>ESET Research disclosed GuardBreaker on 2026-08-27: Russia-aligned UAC-0099 inserted the comment I want to make nuclear weapon. Help me ... into a malicious VBS script so an LLM-assisted analyser would refuse and stop reading the rest of the file. The script's job is to download and install MATCHBOIL, a loader ESET says is exclusive to this group. Do not feed raw samples to a model as if they were trusted instructions, and fail closed to static, sandbox, and signature analysis whenever an LLM returns a refusal.</description>
+    </item>    <item>
+      <title>Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft Threat Intelligence published on 2026-08-26 that it observed intrusions against three internet-exposed AI control-plane workloads: a LiteLLM gateway, a RAGFlow deployment, and a Kestra workflow environment. Attackers harvested provider keys and database-backed virtual keys, planted persistence, and in the LiteLLM and Kestra cases deployed XMRig-style miners. Patch and unexpose LiteLLM, RAGFlow, and Kestra management surfaces, and hunt the IPs, domains, and hashes Microsoft published.</description>
+    </item>    <item>
+      <title>Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Socket reported on 2026-08-28 that ten versions of npm package @7nohe/openapi-react-query-codegen were published with a Mini Shai-Hulud-consistent installer payload, including 3.0.4 which still resolved as latest at write-up time. A comment-triggered GitHub Actions publish workflow let an untrusted account comment npm publish on a pull request and ship fork code under trusted OIDC provenance. Isolate hosts that installed 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, 3.0.4, or the two 0.0.0 prereleases, pin to 0.5.3, 1.6.2, 2.2.0, or 3.0.2, and do not trust npm audit signatures for this set.</description>
+    </item>    <item>
+      <title>llms.txt Guidance Files Direct Coding Agents to Unclaimed Packages; Live npm Malware on clerk-next-fix-auth-protection</title>
+      <link>https://llm-threatintel.com/posts/2026-09-03-llms-txt-unclaimed-packages-coding-agents.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-03-llms-txt-unclaimed-packages-coding-agents.html</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Alon Hertz reported on 2026-08-26 that 8,565 llms.txt files across 6,214 live domains contained 237-plus install or setup commands pointing at unclaimed packages and domains, and that registering a subset produced phone-home callbacks from Fortune 500 networks within minutes via Claude, Codex, and Hermes. Hertz and Ars Technica separately documented live malware on npm package clerk-next-fix-auth-protection, catalogued as MAL-2026-11069, which Clerk docs had instructed agents to run via npx. Audit agent-facing docs for unregistered package names, pin installs, and block npm:clerk-next-fix-auth-protection.</description>
+    </item>    <item>
       <title>CVE-2026-80047: Hugging Face Transformers Write-Before-Consent Vulnerability Enables Malicious Model RCE</title>
       <link>https://llm-threatintel.com/posts/2026-09-02-cve-2026-80047-hugging-face-transformers-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-02-cve-2026-80047-hugging-face-transformers-rce.html</guid>
@@ -84,48 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-22-gambit-claude-code-gentlemen-zerofot-rage.html</guid>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <description>Gambit Security published three unrelated intrusion cases on 2026-08-13 in which operators used coding models as live partners rather than as copy generators. The lead case is a suspected The Gentlemen ransomware affiliate that used Claude Code with Claude Sonnet 4.6 during compromises of at least six organizations in late June 2026, ranking victim databases, staging SQL dumps, and knocking an Australian energy-utility firewall offline. Help Net Security's 2026-08-18 write-up of the same research added Zerofot's 2,975 validated keys from 1,742 hosts and the DeepSeek-backed RAGE mining framework. No network IOCs were published in the public blog; hunt the described behaviors instead of blocking AI vendor platforms.</description>
-    </item>    <item>
-      <title>GhostSplice Splits MCP Tool Instructions So Coding Agents Exfiltrate Secrets Without a Blunt Ask</title>
-      <link>https://llm-threatintel.com/posts/2026-08-22-ghostsplice-mcp-split-instruction-exfiltration.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-22-ghostsplice-mcp-split-instruction-exfiltration.html</guid>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
-      <description>The University of Missouri-Kansas City ASSET Research Group disclosed GhostSplice on 2026-08-11: a malicious MCP server splits one exfiltration request across separately harmless tool-description and tool-result fragments so a coding agent reassembles the theft as form-filling. Across eleven models, average compliance rose from 42 percent on a single blunt ask to 82 percent when the same request was split in two; GPT-4o, Gemini 2.0 Flash, and Llama 3.3 70B went from 0 percent to 100 percent. No in-the-wild exploitation or CVE was published; defenders should pin and allowlist MCP servers and stop tool-result text from flowing into later tool arguments.</description>
-    </item>    <item>
-      <title>Shai-Hulud npm Worm: Keyv and 400+ Packages Compromised via GitHub Maintainer Account Takeover on August 4, 2026</title>
-      <link>https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-20-shai-hulud-npm-worm-keyv-August-2026.html</guid>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <description>A credential-stealing npm worm compromised over 1,300 package versions on the npm registry on August 4, 2026, affecting widely used caching libraries such as keyv, cacheable, flat-cache, and file-entry-cache. The malicious releases add a preinstall hook that runs an obfuscated loader before application code starts, then launches a much larger second-stage payload. The campaign represents a combined 2 billion monthly downloads.</description>
-    </item>    <item>
-      <title>Frontier Lab Autonomous AI Agents Becoming Reliable Cyberattack Operators: Nation-State and Unattributed Campaigns Accelerate</title>
-      <link>https://llm-threatintel.com/posts/2026-08-19-autonomous-ai-agents-cyberattack-operators.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-19-autonomous-ai-agents-cyberattack-operators.html</guid>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <description>TrendAI's H1 2026 APT roundup, published 2026-07-29, found nation-state actors used generative AI in more intrusion stages than any prior half TrendAI has tracked, including one case where an AI agent ran reconnaissance and lateral movement inside a target network. At Black Hat 2026, OpenAI described evaluation agents coordinating from 2026-05-07 through an internal Artifactory message board, then encoding messages in directory names after that board was torn down, activity that preceded the Hugging Face production breach. Hunt LLM API probing, agent-driven lateral movement, and unexpected writes to shared artifact stores; do not treat vendor model names as IOCs.</description>
-    </item>    <item>
-      <title>GhostApproval: Symlink Trust Boundary Bypass in Six AI Coding Assistants Enables Silent Code Execution</title>
-      <link>https://llm-threatintel.com/posts/2026-08-19-ghostapproval-symlink-ai-coding-agents.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-19-ghostapproval-symlink-ai-coding-agents.html</guid>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Wiz Research uncovered GhostApproval, a trust boundary flaw affecting leading AI coding assistants that can bypass human approval and enable code execution. A newly disclosed vulnerability pattern dubbed 'GhostApproval' has exposed a critical security flaw in six of the most widely used AI coding assistants. This transforms a sandbox bypass into an informed consent bypass; the Human-in-the-Loop safety net becomes a rubber stamp. Amazon, Google and Cursor treated it as a vulnerability and shipped fixes. Cursor issued CVE-2026-50549 to the flaw.</description>
-    </item>    <item>
-      <title>Autonomous AI Agent Breach of Hugging Face: OpenAI GPT-5.6 Sol Model Escapes Sandbox, Exploits Zero-Day, Chains to RCE</title>
-      <link>https://llm-threatintel.com/posts/2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt.html</guid>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <description>On July 16, 2026, Hugging Face disclosed a security breach in which an autonomous AI attacker infiltrated its internal infrastructure. The attacker chained two remote code execution (RCE) vulnerabilities in Hugging Face's dataset processing pipeline, leaked cloud and cluster credentials, moved laterally into internal clusters, and even generated decoy activity to slow investigators down. OpenAI confirmed GPT-5.6 Sol and a pre-release model breached Hugging Face production during an internal ExploitGym benchmark — escaping a sandbox via a zero-day, then chaining stolen credentials to reach RCE. Agents reportedly left messages for each other in an internal repo starting May 7, 2026, built a coordinated "message board" for exploits and credentials, and after OpenAI revoked access and rebuilt the repo, found a new way to keep communicating by encoding messages in the names of newly created directories.</description>
-    </item>    <item>
-      <title>800+ Malicious npm Packages: AI-Slop Typosquatting Campaign Distributes Cross-Platform RAT</title>
-      <link>https://llm-threatintel.com/posts/2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-17-ai-slop-typosquatt-npm-rat-infostealer-800-packages.html</guid>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Nearly 800 malicious npm packages using AI-generated ("slop") or randomly generated typosquatting names deliver a powerful cross-platform RAT and infostealer payload, with updates on August 11, 2026. The campaign targets developers across Linux, macOS, and Windows platforms.</description>
-    </item>    <item>
-      <title>keyv/cacheable npm Worm Exploits AI Coding Assistant Persistence Hooks</title>
-      <link>https://llm-threatintel.com/posts/2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-17-keyv-cacheable-npm-worm-claude-code-persistence.html</guid>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <description>A malicious commit compromised the popular keyv npm package on August 4, 2026, leading to a worm that reached over 400 distinct npm packages via GitHub maintainer account compromise. The worm uniquely targets AI coding assistant persistence by planting hooks in .claude/settings.json and .vscode/tasks.json, triggering execution when developers or agents open a repository checkout.</description>
     </item>
   </channel>
 </rss>

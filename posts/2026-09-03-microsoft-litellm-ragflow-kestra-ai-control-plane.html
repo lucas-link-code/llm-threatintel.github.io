@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig | LLM ThreatIntel</title>
+  <meta name="description" content="Microsoft Threat Intelligence published on 2026-08-26 that it observed intrusions against three internet-exposed AI control-plane workloads: a LiteLLM gateway, a RAGFlow deployment, and a Kestra workflow environment. Attackers harvested provider keys and database-backed virtual keys, planted persistence, and in the LiteLLM and Kestra cases deployed XMRig-style miners. Patch and unexpose LiteLLM, RAGFlow, and Kestra management surfaces, and hunt the IPs, domains, and hashes Microsoft published.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig">
+  <meta property="og:description" content="Microsoft Threat Intelligence published on 2026-08-26 that it observed intrusions against three internet-exposed AI control-plane workloads: a LiteLLM gateway, a RAGFlow deployment, and a Kestra workflow environment. Attackers harvested provider keys and database-backed virtual keys, planted persistence, and in the LiteLLM and Kestra cases deployed XMRig-style miners. Patch and unexpose LiteLLM, RAGFlow, and Kestra management surfaces, and hunt the IPs, domains, and hashes Microsoft published.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig">
+  <meta property="article:published_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:tag" content="mcp-security">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig">
+  <meta name="twitter:description" content="Microsoft Threat Intelligence published on 2026-08-26 that it observed intrusions against three internet-exposed AI control-plane workloads: a LiteLLM gateway, a RAGFlow deployment, and a Kestra workflow environment. Attackers harvested provider keys and database-backed virtual keys, planted persistence, and in the LiteLLM and Kestra cases deployed XMRig-style miners. Patch and unexpose LiteLLM, RAGFlow, and Kestra management surfaces, and hunt the IPs, domains, and hashes Microsoft published.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig",
+  "description": "Microsoft Threat Intelligence published on 2026-08-26 that it observed intrusions against three internet-exposed AI control-plane workloads: a LiteLLM gateway, a RAGFlow deployment, and a Kestra workflow environment. Attackers harvested provider keys and database-backed virtual keys, planted persistence, and in the LiteLLM and Kestra cases deployed XMRig-style miners. Patch and unexpose LiteLLM, RAGFlow, and Kestra management surfaces, and hunt the IPs, domains, and hashes Microsoft published.",
+  "datePublished": "2026-09-03T00:00:00Z",
+  "dateModified": "2026-09-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane.html",
+  "keywords": [
+    "mcp-security",
+    "llmjacking",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-03</span>
+      <span class="post-tag tag-mcp-security">Mcp Security</span><span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Microsoft: Exposed LiteLLM, RAGFlow, and Kestra Control Planes Harvested for Keys, Persistence, and XMRig</h1>
+<p><strong>Date:</strong> 2026-09-03<br><strong>Tags:</strong> mcp-security, llmjacking, malware</p>
+<h2>Executive Summary</h2>
+<p>Microsoft Threat Intelligence published on 2026-08-26 that it observed intrusions against three internet-exposed AI control-plane workloads: a LiteLLM gateway, a RAGFlow deployment, and a Kestra workflow environment. Attackers harvested provider keys and database-backed virtual keys, planted persistence, and in the LiteLLM and Kestra cases deployed XMRig-style miners. Patch and unexpose LiteLLM, RAGFlow, and Kestra management surfaces, and hunt the IPs, domains, and hashes Microsoft published.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Observed AI-control-plane compromises; XMRig on LiteLLM and Kestra hosts</td></tr><tr><td>Actor / Attribution</td><td>Unnamed operators. Microsoft did not name a group. Confidence none</td></tr><tr><td>Target</td><td>Organizations running exposed LiteLLM gateways, RAGFlow, or Kestra orchestration</td></tr><tr><td>Vector</td><td>Exposed management surfaces. Microsoft assessed LiteLLM as consistent with CVE-2026-42271 chained with CVE-2026-48710, and Kestra as likely CVE-2026-49869. RAGFlow initial access was not tied to a confirmed CVE</td></tr><tr><td>Status</td><td>Observed activity published 2026-08-26</td></tr><tr><td>First Observed</td><td>Microsoft published 2026-08-26; CVE-2026-42271 was already in public research</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/" target="_blank" rel="noopener">Microsoft</a>, gateways, retrieval platforms, and workflow engines concentrate model keys, virtual keys, database strings, and execution privileges. Microsoft observed three distinct compromises with the same objectives: steal credentials, persist, and monetize compute.</p>
+<p>On LiteLLM, Microsoft assessed with high confidence that initial access likely came through the exposed gateway surface, consistent with CVE-2026-42271 MCP stdio command execution chained with CVE-2026-48710 Starlette host-header bypass. Telemetry showed the gateway process as the execution origin. The payload read /proc/1/environ for provider keys, the LiteLLM master key, and DATABASE_URL, then dumped LiteLLM_ProxyModelTable and LiteLLM_VerificationToken from Azure Database for PostgreSQL. Microsoft reported ELF staging under /tmp, XMRig-like mining with MSR tuning, SSH authorized_keys writes, cron rewrite, hidden-file relays, and chattr +i on payload paths. Outbound beacons used raw IP on port 81, 45.150.109.151.sslip.io, yosemite.jp, and gobygo.net. Microsoft listed oast.me, oast.pro, and oast.fun as OAST callbacks. Those public OAST apexes are shared scanning infrastructure and are not published as feed indicators.</p>
+<p>On RAGFlow, Microsoft assessed with high confidence that the exposed application was the entry, with an OAST-style HTTP client callback then later code execution in the same service. Microsoft assessed with low confidence which CVE enabled execution and listed CVE-2026-45312, CVE-2026-28797, CVE-2026-24770, CVE-2025-68700, and CVE-2025-69286 as public context only. A hidden hook wrapped TenantLLM.insert() and exfiltrated newly configured provider type, model name, API key, and endpoint metadata. Microsoft reported API-key exfiltration to 135.125.10.56:19888.</p>
+<p>On Kestra, Microsoft assessed with high confidence that CVE-2026-49869 authentication bypass likely allowed an unauthenticated attacker to define a Process-runner workflow and get worker-side shell. Telemetry showed Docker-socket enumeration of container Config.Env, XMRig v6.26.0 toward auto.c3pool.org, a reverse shell to 172.232.38.92:32991, and later curl-pipe collection stored through Kestra&#x27;s key-value API.</p>
+<p>Microsoft noted some payloads looked structured, with timeouts and comments, and stated those traits are not attribution. This feed already covered CVE-2026-42271 as a vulnerability. This post is Microsoft&#x27;s observed in-the-wild abuse of LiteLLM plus RAGFlow and Kestra.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Exposed LiteLLM, RAGFlow, and Kestra surfaces were the assessed initial-access paths.</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>LiteLLM and RAGFlow payloads ran python3 one-liners from the application process.</td></tr><tr><td>Command and Scripting Interpreter: Unix Shell</td><td>T1059.004</td><td>Kestra workflows spawned bash; LiteLLM used shell downloaders.</td></tr><tr><td>Unsecured Credentials: Credentials in Files</td><td>T1552.001</td><td>/proc/1/environ and LiteLLM PostgreSQL tables held provider keys and virtual keys.</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>XMRig with RandomX MSR tuning on LiteLLM and Kestra hosts.</td></tr><tr><td>Account Manipulation: SSH Authorized Keys</td><td>T1098.004</td><td>Service-account authorized_keys writes on LiteLLM; SSH key inside the RAGFlow container.</td></tr><tr><td>Scheduled Task/Job: Cron</td><td>T1053.003</td><td>Cron rewritten to drop competing miners and persist.</td></tr><tr><td>Masquerading: Match Legitimate Name or Location</td><td>T1036.005</td><td>Payloads named after Linux daemons and launched from /tmp.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">yosemite[.]jp
+gobygo[.]net
+auto.c3pool[.]org
+45.150.109.151.sslip[.]io</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;yosemite.jp&quot; OR &quot;gobygo.net&quot; OR &quot;auto.c3pool.org&quot; OR &quot;45.150.109.151.sslip.io&quot; OR &quot;45.150.109.151&quot; OR &quot;135.125.10.56&quot; OR &quot;172.232.38.92&quot; OR &quot;47.86.197.116&quot; OR &quot;194.213.18.133&quot; OR &quot;2001:41d0:701:1100::adfd&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">f64b88e9318bdf23f2dd119a0ce1dd1bdb3c8cd2e0e1e23ba3ef2e19072b79cc
+49fdcf32bfe837899a84e8938f0d07ae96ddd218a280a09eb60df8d64597bd8f
+3af9f25a4d45bb4f1ec5627cdbc6703cf3b4be75a892162d299d80ddfb266f42
+3d24ac736635e0fa0c5c459c9e18ca09d1ec9a1751a4503130934395609bd7e0</code></pre>
+<pre><code class="language-">45.150.109.151
+135.125.10.56
+172.232.38.92
+47.86.197.116
+194.213.18.133
+2001:41d0:701:1100::adfd</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Hunt Linux EDR for litellm, ragflow, or kestra parent processes spawning bash, curl, wget, or python3 that read /proc/1/environ or reference LiteLLM_ProxyModelTable and LiteLLM_VerificationToken. Alert on execution from /tmp, supervisord-style arguments on a python3 binary in /tmp, modprobe msr allow_writes, chattr +i, and authorized_keys appends from service accounts. Block and hunt Microsoft&#x27;s published IPs and domains. Do not denylist oast.me, oast.pro, or oast.fun apexes; those are shared OAST platforms. Unexpose LiteLLM, RAGFlow, and Kestra admin ports, require auth, and patch CVE-2026-42271, CVE-2026-48710, and CVE-2026-49869.</p>
+<h2>References</h2>
+<ul><li>[Microsoft Security] When AI infrastructure becomes the target: Securing gateways and control points (2026-08-26) — https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/</li><li>[SecHub] When AI infrastructure becomes the target: Securing gateways and control points (2026-08-26) — https://sechub.in/view/3280731</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

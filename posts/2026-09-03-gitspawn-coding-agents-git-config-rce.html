@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build | LLM ThreatIntel</title>
+  <meta name="description" content="Manifold Security published GitSpawn on 2026-09-01: AI coding agents run git in the background to gather context, often before the workspace-trust prompt, without stripping the repository&#x27;s own git config, so settings such as core.fsmonitor execute attacker commands as the developer outside the sandbox. Eight findings across seven agents were reported; Claude Code&#x27;s core.fsmonitor path, Goose, Codex, and Cursor were patched, while Qwen Code, Grok Build, Claude Code ultrareview, and Hermes remained unpatched at publication. Inspect .git/config before opening a zip or shared folder in an agent, and do not treat git clone as the same risk.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-03-gitspawn-coding-agents-git-config-rce.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build">
+  <meta property="og:description" content="Manifold Security published GitSpawn on 2026-09-01: AI coding agents run git in the background to gather context, often before the workspace-trust prompt, without stripping the repository&#x27;s own git config, so settings such as core.fsmonitor execute attacker commands as the developer outside the sandbox. Eight findings across seven agents were reported; Claude Code&#x27;s core.fsmonitor path, Goose, Codex, and Cursor were patched, while Qwen Code, Grok Build, Claude Code ultrareview, and Hermes remained unpatched at publication. Inspect .git/config before opening a zip or shared folder in an agent, and do not treat git clone as the same risk.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-03-gitspawn-coding-agents-git-config-rce.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build">
+  <meta property="article:published_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build">
+  <meta name="twitter:description" content="Manifold Security published GitSpawn on 2026-09-01: AI coding agents run git in the background to gather context, often before the workspace-trust prompt, without stripping the repository&#x27;s own git config, so settings such as core.fsmonitor execute attacker commands as the developer outside the sandbox. Eight findings across seven agents were reported; Claude Code&#x27;s core.fsmonitor path, Goose, Codex, and Cursor were patched, while Qwen Code, Grok Build, Claude Code ultrareview, and Hermes remained unpatched at publication. Inspect .git/config before opening a zip or shared folder in an agent, and do not treat git clone as the same risk.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build",
+  "description": "Manifold Security published GitSpawn on 2026-09-01: AI coding agents run git in the background to gather context, often before the workspace-trust prompt, without stripping the repository's own git config, so settings such as core.fsmonitor execute attacker commands as the developer outside the sandbox. Eight findings across seven agents were reported; Claude Code's core.fsmonitor path, Goose, Codex, and Cursor were patched, while Qwen Code, Grok Build, Claude Code ultrareview, and Hermes remained unpatched at publication. Inspect .git/config before opening a zip or shared folder in an agent, and do not treat git clone as the same risk.",
+  "datePublished": "2026-09-03T00:00:00Z",
+  "dateModified": "2026-09-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-03-gitspawn-coding-agents-git-config-rce.html",
+  "keywords": [
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-03</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>GitSpawn: Untrusted Repos Run Host Code in Claude Code, Codex, Cursor, Goose, Hermes, Qwen Code, and Grok Build</h1>
+<p><strong>Date:</strong> 2026-09-03<br><strong>Tags:</strong> supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Manifold Security published GitSpawn on 2026-09-01: AI coding agents run git in the background to gather context, often before the workspace-trust prompt, without stripping the repository&#x27;s own git config, so settings such as core.fsmonitor execute attacker commands as the developer outside the sandbox. Eight findings across seven agents were reported; Claude Code&#x27;s core.fsmonitor path, Goose, Codex, and Cursor were patched, while Qwen Code, Grok Build, Claude Code ultrareview, and Hermes remained unpatched at publication. Inspect .git/config before opening a zip or shared folder in an agent, and do not treat git clone as the same risk.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GitSpawn git-config execution class</td></tr><tr><td>Actor / Attribution</td><td>Vulnerability research. No in-the-wild campaign named by Manifold. Confidence none</td></tr><tr><td>Target</td><td>Developers using Claude Code, Codex, Cursor, Goose, Hermes Agent, Qwen Code, Grok Build</td></tr><tr><td>Vector</td><td>Project directory delivered as files with .git intact, such as a zip, shared drive, or USB. Clone, fetch, and pull do not carry the malicious config</td></tr><tr><td>Status</td><td>Mixed. Four findings patched at publication; four reconfirmed unpatched on 2026-09-01</td></tr><tr><td>First Observed</td><td>Private reports from June and July 2026; public write-up 2026-09-01</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.manifold.security/blog/ai-coding-agents-git-hijack" target="_blank" rel="noopener">Manifold Security</a>, CLI coding agents gather repository context with commands such as git status and git diff. Those commands refresh the index. Git reads core.fsmonitor from the repository&#x27;s own .git/config and runs the named helper during that refresh. Manifold stated the agent spawns git as its own subprocess, so the helper runs on the host, with the user&#x27;s privileges, outside the sandbox, with no approval prompt.</p>
+<p>Manifold stated delivery is not a hostile git clone URL. Clone, fetch, and pull do not transfer this config. The repository must arrive as files with its .git directory already inside. Manifold used zip archives for every proof of concept and did not publish a ready-made hostile repository. Manifold also left unnamed the separate git config key used in the still-unpatched Claude Code ultrareview finding.</p>
+<p>Manifold&#x27;s status table at publication: Claude Code core.fsmonitor confirmed on 2.1.193 and fixed in 2.1.196; Goose 1.41.0 fixed in 1.44.0 as CVE-2026-72718; OpenAI Codex and Cursor patched after duplicate reports; Qwen Code accepted by Alibaba SRC and still unpatched on 0.22.3; Grok Build still unpatched on 1.0.13; Claude Code ultrareview still unpatched on 2.1.252; Hermes still unpatched on 0.21.0 with CVE-2026-71963 assigned by VulnCheck. <a href="https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html" target="_blank" rel="noopener">The Hacker News</a> and <a href="https://gbhackers.com/gitspawn-flaw-enables-arbitrary-code-execution/" target="_blank" rel="noopener">GBHackers</a> reported the same class on 2026-09-02.</p>
+<p>TrustFall already documented a related Claude Code git project-config path in 2025. GitSpawn is a current, cross-product class with several live unpatched sinks.</p>
+<p>Manifold published no hashes or domains.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Command and Scripting Interpreter</td><td>T1059</td><td>Agent-spawned git runs a repository-named helper as the developer, outside the sandbox.</td></tr><tr><td>Event Triggered Execution</td><td>T1546</td><td>Git config execution sinks such as core.fsmonitor fire during index refresh on git status or git diff.</td></tr><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>Victim opens a zip or shared project folder that already contains a hostile .git/config.</td></tr><tr><td>Supply Chain Compromise: Compromise Software Supply Chain</td><td>T1195.002</td><td>Untrusted project trees are treated as trusted developer context by coding agents.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Before opening a received zip, shared drive, or client project in an agent, inspect .git/config for any setting that names a program, including core.fsmonitor, core.pager, and aliases. On EDR, alert when claude, goose, qwen, grok, hermes, cursor, or codex spawn git status or git diff that immediately launches a non-git child as the same user. Agent vendors should sanitize context-gathering git, for example git -c core.fsmonitor=false status. Patch Claude Code to 2.1.196 or later for the named fsmonitor path, Goose to 1.44.0, and current Codex and Cursor builds. Treat Qwen Code 0.22.3, Grok Build 1.0.13, Claude Code 2.1.252 ultrareview, and Hermes 0.21.0 as exposed until vendors ship fixes.</p>
+<h2>References</h2>
+<ul><li>[Manifold Security] GitSpawn: A Single Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, and Grok (2026-09-01) — https://www.manifold.security/blog/ai-coding-agents-git-hijack</li><li>[The Hacker News] Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code (2026-09) — https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html</li><li>[GBHackers] GitSpawn Flaw Enables Arbitrary Code Execution in Claude Code, Codex, Cursor and Grok (2026-09) — https://gbhackers.com/gitspawn-flaw-enables-arbitrary-code-execution/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

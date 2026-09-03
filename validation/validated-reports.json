@@ -4304,6 +4304,122 @@
       "validated_at": "2026-09-02T16:36:33+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-03-eset-uac-0099-guardbreaker-llm-analysis": {
+      "content_hash": "ecb7634e4c174e035782572235b0026427ad5e9d69acf66ec2b3afd501a09cc1",
+      "evidence_status": "validated",
+      "file": "2026-09-03-eset-uac-0099-guardbreaker-llm-analysis.md",
+      "posts_index_hash": "d1bf1a664c4fc7e3363a046892a9316b885420b96bfbea3d47d2dc54767107cd",
+      "report_id": "2026-09-03-eset-uac-0099-guardbreaker-llm-analysis",
+      "review_required": [],
+      "source_urls": [
+        "https://infosec.exchange/@ESETresearch/117166416959152018",
+        "https://www.helpnetsecurity.com/2026/08/31/russian-hackers-ai-safety-filters-manipulation/",
+        "https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:07+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-03-fortinet-bedrock-llmjacking-marketplace": {
+      "content_hash": "94821004ecab1dea9ab39e90806a1d80e22dec5a21eb36bf5fc648d034f15a50",
+      "evidence_status": "validated",
+      "file": "2026-09-03-fortinet-bedrock-llmjacking-marketplace.md",
+      "posts_index_hash": "40dae58943dea21a1bab367f7995220bc350424ea98f61aa04c7b5faa0d113f6",
+      "report_id": "2026-09-03-fortinet-bedrock-llmjacking-marketplace",
+      "review_required": [],
+      "source_urls": [
+        "https://www.fortinet.com/blog/threat-research/someone-else-is-using-your-ai",
+        "https://www.itsecuritynews.info/llmjacking-attack-uses-leaked-aws-iam-key-to-steal-paid-ai-model-access/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-03-gitspawn-coding-agents-git-config-rce": {
+      "content_hash": "e11264c883925a19648373f44269ae7fdbdc7d187108b4ac108fd0b6f429f272",
+      "evidence_status": "validated",
+      "file": "2026-09-03-gitspawn-coding-agents-git-config-rce.md",
+      "posts_index_hash": "4d4147b2ce7c3e6cec0799c3e6e98ff3fc4c842cbc8b9d162073ecec96e87d7f",
+      "report_id": "2026-09-03-gitspawn-coding-agents-git-config-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
+        "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
+        "https://gbhackers.com/gitspawn-flaw-enables-arbitrary-code-execution/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:06+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-03-llms-txt-unclaimed-packages-coding-agents": {
+      "content_hash": "23529012e20e8e186e307982eadd619c438e1ded85cd7532901040b889569a02",
+      "evidence_status": "validated",
+      "file": "2026-09-03-llms-txt-unclaimed-packages-coding-agents.md",
+      "posts_index_hash": "67e0c01eb09995ce2507ce078d04182f0f8528eb019fec442a44014f2f864f05",
+      "report_id": "2026-09-03-llms-txt-unclaimed-packages-coding-agents",
+      "review_required": [],
+      "source_urls": [
+        "https://medium.com/@alonhertz1/data-became-code-we-ran-code-inside-fortune-500s-using-files-they-published-for-ai-agents-0cd67ffbbffc",
+        "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/",
+        "https://osv.dev/vulnerability/MAL-2026-11069"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:12+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane": {
+      "content_hash": "70c50a524e87664feb4ddf2c508cb5294e6c6dd1b76324319a77b2cd272befac",
+      "evidence_status": "validated",
+      "file": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane.md",
+      "posts_index_hash": "7cce694a824f7d8984244cae9d00d0165898d87b4b86125133f8d3615768ffcf",
+      "report_id": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/",
+        "https://sechub.in/view/3280731"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:08+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen": {
+      "content_hash": "1747171ef4baed10cf69283ac4fda8b71cc66c72b3415b3e3c3f92403804c402",
+      "evidence_status": "validated",
+      "file": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen.md",
+      "posts_index_hash": "eeed51f64c35805a3097ba8f9b6f6b3fe49d22000b5deb12324fb5771002326d",
+      "report_id": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/openapi-react-query-codegen-npm-compromise",
+        "https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:09+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-03-unit42-ai-assisted-enterprise-intrusion": {
+      "content_hash": "ce413b2906cc6eb2125a557450be3d1e4e62aaa3ba2576dde2121bbd14a1120d",
+      "evidence_status": "validated",
+      "file": "2026-09-03-unit42-ai-assisted-enterprise-intrusion.md",
+      "posts_index_hash": "e1b37f57901137d2c1d6e4ab98fa70bf624f6088b4960078f6e7fce734624171",
+      "report_id": "2026-09-03-unit42-ai-assisted-enterprise-intrusion",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/",
+        "https://www.csoonline.com/article/4217976/ai-agents-help-compress-ransomware-intrusion-to-under-10-hours-raising-stakes-for-cisos.html",
+        "https://www.techtimes.com/articles/326409/20260903/agentic-ransomware-took-down-enterprise-ten-hours-ai-left-80-page-audit.htm"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-03T21:30:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

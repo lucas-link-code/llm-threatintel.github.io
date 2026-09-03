@@ -1,6 +1,103 @@
 {
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "entries": [
+    {
+      "id": "clerk-next-fix-auth-protection",
+      "names": [
+        "clerk-next-fix-auth-protection",
+        "MAL-2026-11069"
+      ],
+      "type": "malware",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "npm",
+        "npx of unscoped binary name from vendor docs and llms.txt"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1071.001 - Application Layer Protocol: Web Protocols"
+      ],
+      "description": "Malicious unscoped npm package occupying the clerk-next-fix-auth-protection name. OSV MAL-2026-11069 covers versions 7.7.7 and 8.8.8. Version 8.8.8 has no functional main file; preinstall and postinstall curl installer identity to u3ukeehm.requestrepo.com. Hertz and Ars Technica reported Clerk agent docs previously instructed npx clerk-next-fix-auth-protection, which resolves on the public registry when the scoped @clerk/eslint-plugin binary is not already local.",
+      "attribution": "Unnamed publisher. Not Clerk."
+    },
+    {
+      "id": "xmrig",
+      "names": [
+        "XMRig"
+      ],
+      "type": "malware",
+      "first_seen": "2017-05",
+      "status": "active",
+      "distribution": [
+        "dropped after AI-control-plane compromise per Microsoft August 2026"
+      ],
+      "ttps": [
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Open-source Monero miner. Microsoft observed XMRig or XMRig-like binaries with RandomX MSR tuning on compromised LiteLLM and Kestra hosts, including hashes 49fdcf32bfe837899a84e8938f0d07ae96ddd218a280a09eb60df8d64597bd8f and 3af9f25a4d45bb4f1ec5627cdbc6703cf3b4be75a892162d299d80ddfb266f42, with Kestra mining toward auto.c3pool.org.",
+      "attribution": "Commodity miner. No named operator in the Microsoft August 2026 paper."
+    },
+    {
+      "id": "sandworm",
+      "names": [
+        "Sandworm",
+        "APT44",
+        "GRU-linked Sandworm"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2014-01",
+      "status": "active",
+      "distribution": [
+        "follow-on access after UAC-0099 initial access per ESET and Help Net Security"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "GRU-linked destructive actor. Help Net Security reporting on ESET's GuardBreaker disclosure stated UAC-0099 has handed validated targets to Sandworm.",
+      "attribution": "Widely attributed as GRU-linked. This feed entry records only the UAC-0099 handover context from ESET coverage."
+    },
+    {
+      "id": "matchboil",
+      "names": [
+        "MATCHBOIL",
+        "MATCHBOIL.V2"
+      ],
+      "type": "malware",
+      "first_seen": "2025-01",
+      "status": "active",
+      "distribution": [
+        "VBS downloader",
+        "Notepad++ plugin lures per CERT-UA reporting relayed by Help Net Security and The Hacker News"
+      ],
+      "ttps": [
+        "T1059.005 - Visual Basic",
+        "T1105 - Ingress Tool Transfer"
+      ],
+      "description": "C#-based loader ESET says is used exclusively by UAC-0099. GuardBreaker VBS downloads and installs MATCHBOIL. Help Net Security and The Hacker News stated CERT-UA documented LUNCHPOKE, BURNYBEAR, and MATCHBOIL.V2 in a July 2026 advisory.",
+      "attribution": "Exclusive to UAC-0099 per ESET."
+    },
+    {
+      "id": "uac-0099",
+      "names": [
+        "UAC-0099"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2025-01",
+      "status": "active",
+      "distribution": [
+        "malicious VBS downloaders",
+        "MATCHBOIL loader"
+      ],
+      "ttps": [
+        "T1059.005 - Visual Basic",
+        "T1105 - Ingress Tool Transfer",
+        "T1562 - Impair Defenses",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Russia-aligned initial-access group that ESET says typically targets transportation and energy and has handed validated targets to GRU-linked Sandworm. ESET named GuardBreaker for a MATCHBOIL-delivery VBS script that plants a nuclear-weapons comment to trip LLM-assisted malware analysis.",
+      "attribution": "ESET assesses UAC-0099 as Russia-aligned (confidence: medium)."
+    },
     {
       "id": "360util-com-hijack",
       "names": [
@@ -852,7 +949,7 @@
         "T1548 - Abuse Elevation Control Mechanism (check_auth() returns True when AUTH_ENABLED is False)",
         "T1059 - Command and Scripting Interpreter (downstream: agents.yaml workflow executes shell or MCP tools when /chat is invoked)"
       ],
-      "description": "CVE-2026-44338 (CVSS 7.3, CWE-306/668/1188) disclosed in GitHub Security Advisory GHSA-6rmh-7xcm-cpxj on May 11, 2026 at 13:56 UTC. PraisonAI is an open-source multi-agent orchestration framework (~7,100 GitHub stars) whose legacy Flask API server src/praisonai/api_server.py hard-codes AUTH_ENABLED=False and AUTH_TOKEN=None. The check_auth() helper returns True unconditionally when authentication is disabled, so the two routes labelled as protected fail open: GET /agents returns the configured agent metadata (agent_file name and the list of agents), POST /chat accepts a JSON body with a message key and executes PraisonAI(agent_file=agents.yaml).run(). When launched directly, the server binds to 0.0.0.0:8080. Sysdig's runtime telemetry recorded the first probe at 17:40 UTC the same day (3h44m after advisory publication) — a GET /agents request with no Authorization header and User-Agent CVE-Detector/1.0 returning 200 OK with body {agent_file:agents.yaml, agents:[...]}. Vulnerability discovered and reported by Shmulik Cohen. Fixed in PraisonAI 4.6.34. Distinct from the earlier April 13, 2026 PraisonAIAgents SSRF advisory (CVE-2026-40160) in the web_crawl module of the same project.",
+      "description": "CVE-2026-44338 (CVSS 7.3, CWE-306/668/1188) disclosed in GitHub Security Advisory GHSA-6rmh-7xcm-cpxj on May 11, 2026 at 13:56 UTC. PraisonAI is an open-source multi-agent orchestration framework (~7,100 GitHub stars) whose legacy Flask API server src/praisonai/api_server.py hard-codes AUTH_ENABLED=False and AUTH_TOKEN=None. The check_auth() helper returns True unconditionally when authentication is disabled, so the two routes labelled as protected fail open: GET /agents returns the configured agent metadata (agent_file name and the list of agents), POST /chat accepts a JSON body with a message key and executes PraisonAI(agent_file=agents.yaml).run(). When launched directly, the server binds to 0.0.0.0:8080. Sysdig's runtime telemetry recorded the first probe at 17:40 UTC the same day (3h44m after advisory publication) \u2014 a GET /agents request with no Authorization header and User-Agent CVE-Detector/1.0 returning 200 OK with body {agent_file:agents.yaml, agents:[...]}. Vulnerability discovered and reported by Shmulik Cohen. Fixed in PraisonAI 4.6.34. Distinct from the earlier April 13, 2026 PraisonAIAgents SSRF advisory (CVE-2026-40160) in the web_crawl module of the same project.",
       "attribution": "Vulnerability research by Shmulik Cohen; opportunistic mass scanning observed by Sysdig Threat Research Team using scanner User-Agent CVE-Detector/1.0; no named threat actor"
     },
     {
@@ -878,7 +975,7 @@
         "T1213 - Data from Information Repositories (vector index metadata exfiltrated via Alibaba RDS MCP unauthenticated RAG tool)",
         "T1078 - Valid Accounts (database engine ACLs bypassed because MCP layer authenticates as a privileged service account rather than per-caller)"
       ],
-      "description": "Cross-database vulnerability cluster disclosed by Akamai Security Intelligence Group on May 13, 2026 in the research post 'One Is a Fluke, 3 Is a Pattern: MCP Back-End Vulnerabilities'. Three independent MCP server implementations published by database vendors share the same root cause: the MCP transport is treated as inherently trusted and tool routes either skip authentication or concatenate caller-supplied parameters into the engine's query language. Apache Doris MCP (CVE-2025-66335, CVSS 5.3, GHSA-qhfq-gvvc-5q6q) — exec_query concatenates the db_name parameter into the SQL statement; patched in doris-mcp-server 0.6.1. Apache Pinot MCP (StarTree mcp-pinot v1.1.0 and earlier) — HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full database takeover when externally reachable; StarTree added OAuth as an optional HTTP authenticator. Alibaba Cloud RDS MCP (alibabacloud-rds-openapi-mcp-server) — RAG tool serves vector-index contents (table names, schemas) without authenticating the caller; Alibaba categorised the issue as 'not applicable' for a fix; Akamai escalated to CERT/CC. Full research and discovery tool to be presented at x33fcon, June 2026.",
+      "description": "Cross-database vulnerability cluster disclosed by Akamai Security Intelligence Group on May 13, 2026 in the research post 'One Is a Fluke, 3 Is a Pattern: MCP Back-End Vulnerabilities'. Three independent MCP server implementations published by database vendors share the same root cause: the MCP transport is treated as inherently trusted and tool routes either skip authentication or concatenate caller-supplied parameters into the engine's query language. Apache Doris MCP (CVE-2025-66335, CVSS 5.3, GHSA-qhfq-gvvc-5q6q) \u2014 exec_query concatenates the db_name parameter into the SQL statement; patched in doris-mcp-server 0.6.1. Apache Pinot MCP (StarTree mcp-pinot v1.1.0 and earlier) \u2014 HTTP transport accepts unauthenticated callers who can invoke SQL execution tools, allowing full database takeover when externally reachable; StarTree added OAuth as an optional HTTP authenticator. Alibaba Cloud RDS MCP (alibabacloud-rds-openapi-mcp-server) \u2014 RAG tool serves vector-index contents (table names, schemas) without authenticating the caller; Alibaba categorised the issue as 'not applicable' for a fix; Akamai escalated to CERT/CC. Full research and discovery tool to be presented at x33fcon, June 2026.",
       "attribution": "Vulnerability research by Akamai Security Intelligence Group; no in-the-wild exploitation reported as of disclosure"
     },
     {
@@ -1084,7 +1181,7 @@
       "first_seen": "2025-09",
       "status": "active",
       "distribution": [
-        "Internet-wide scanning for CVE-2025-55182 (React2Shell) React 19.x / Next.js 15.x–16.x endpoints",
+        "Internet-wide scanning for CVE-2025-55182 (React2Shell) React 19.x / Next.js 15.x\u201316.x endpoints",
         "THC target feed infrastructure (cs2.ip.thc.org ZIP archives)",
         "Filebase S3-compatible object storage (bucket: bissapromax) for .env archive exfiltration",
         "Telegram bots (@bissapwned_bot, @bissa_scan_bot) for real-time triage C2"
@@ -1102,7 +1199,7 @@
         "T1496 - Resource Hijacking (AI API credential theft for LLMjacking)",
         "T1119 - Automated Collection"
       ],
-      "description": "Bissa Scanner is an AI-assisted credential harvesting operation that mass-exploited CVE-2025-55182 (React2Shell, CVSS 10.0) against React 19.x and Next.js 15.x/16.x App Router deployments. Discovered via an exposed attacker server by The DFIR Report on April 22, 2026. The operation ran in phases: bucket 'bissa' (September 2025), 'bissa2' (November 2025), and 'bissapromax' (December 2025 onward). The April 2026 campaign confirmed 900+ compromises and exfiltrated 30,000+ .env files between April 10–21, 2026. AI provider credentials were the single largest category stolen, covering Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace. The operator embedded Claude Code and OpenClaw in the attack workflow for scanner codebase analysis, pipeline troubleshooting, and workflow documentation. Telegram bot @bissapwned_bot (user ID 8798206332, chat 1609309278) provided real-time per-compromise triage records. Post-exploitation triage concentrated deeper activity on financial, cryptocurrency, and retail sectors.",
+      "description": "Bissa Scanner is an AI-assisted credential harvesting operation that mass-exploited CVE-2025-55182 (React2Shell, CVSS 10.0) against React 19.x and Next.js 15.x/16.x App Router deployments. Discovered via an exposed attacker server by The DFIR Report on April 22, 2026. The operation ran in phases: bucket 'bissa' (September 2025), 'bissa2' (November 2025), and 'bissapromax' (December 2025 onward). The April 2026 campaign confirmed 900+ compromises and exfiltrated 30,000+ .env files between April 10\u201321, 2026. AI provider credentials were the single largest category stolen, covering Anthropic, OpenAI, Google, Mistral, OpenRouter, Groq, Replicate, DeepSeek, and HuggingFace. The operator embedded Claude Code and OpenClaw in the attack workflow for scanner codebase analysis, pipeline troubleshooting, and workflow documentation. Telegram bot @bissapwned_bot (user ID 8798206332, chat 1609309278) provided real-time per-compromise triage records. Post-exploitation triage concentrated deeper activity on financial, cryptocurrency, and retail sectors.",
       "attribution": "Unattributed; moniker 'bissapwned'; no nation-state attribution (confidence: none)"
     },
     {
@@ -1317,7 +1414,8 @@
         "npm packages",
         "GitHub Actions",
         "Claude Code SessionStart and VS Code folder-open hooks",
-        "Ethereum smart-contract C2 resolution"
+        "Ethereum smart-contract C2 resolution",
+        "npm @7nohe/openapi-react-query-codegen malicious versions published 2026-08-28"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -1338,10 +1436,11 @@
         "T1021 - Lateral Movement",
         "T1528 - Steal Application Access Token",
         "T1546 - Event Triggered Execution",
-        "T1573.001 - Encrypted Channel: Symmetric Cryptography"
+        "T1573.001 - Encrypted Channel: Symmetric Cryptography",
+        "T1059.007 - JavaScript"
       ],
       "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, container platforms, and AI development tools. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration. Unit 42 identified ChainDrop as a Shai-Hulud-lineage npm worm that uses Bun, Ethereum-resolved C2, encrypted exfiltration, GitHub secret collection, and Claude Code and VS Code project hooks.",
-      "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase. Unit 42 assessed ChainDrop as Shai-Hulud-lineage but stated that public availability of the source prevents attribution of the ChainDrop operation to TeamPCP."
+      "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days\u2014consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase. Unit 42 assessed ChainDrop as Shai-Hulud-lineage but stated that public availability of the source prevents attribution of the ChainDrop operation to TeamPCP."
     },
     {
       "id": "nullifai",
@@ -1694,7 +1793,7 @@
         "T1518 - Software Discovery (scanning for cloud metadata, identities, Kubernetes)",
         "T1553.002 - Subvert Trust Controls (SLSA provenance forgery in earlier waves)"
       ],
-      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises.",
+      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration \u2192 cache poisoning \u2192 OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst \u2014 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
     },
     {
@@ -1893,7 +1992,7 @@
         "T1053.005 - Scheduled Task",
         "T1005 - Local Data Collection"
       ],
-      "description": "APT36 (Transparent Tribe) is a Pakistan-linked state-sponsored threat group that has historically targeted Indian government and defence entities using conventional malware tooling. Beginning in late 2025 and accelerating into early 2026, the group pivoted to an AI-assisted 'vibeware' development model, using LLMs to generate high volumes of disposable, polyglot implants in niche languages (Nim, Zig, Crystal, Rust, Go). The strategy — termed 'Distributed Denial of Detection' by Bitdefender — floods targets with simultaneous multi-language implants to overwhelm security engines and ensure persistence even if individual channels are neutralized. C2 is conducted exclusively via legitimate cloud services (Slack, Discord, Supabase, Google Sheets) to evade network controls.",
+      "description": "APT36 (Transparent Tribe) is a Pakistan-linked state-sponsored threat group that has historically targeted Indian government and defence entities using conventional malware tooling. Beginning in late 2025 and accelerating into early 2026, the group pivoted to an AI-assisted 'vibeware' development model, using LLMs to generate high volumes of disposable, polyglot implants in niche languages (Nim, Zig, Crystal, Rust, Go). The strategy \u2014 termed 'Distributed Denial of Detection' by Bitdefender \u2014 floods targets with simultaneous multi-language implants to overwhelm security engines and ensure persistence even if individual channels are neutralized. C2 is conducted exclusively via legitimate cloud services (Slack, Discord, Supabase, Google Sheets) to evade network controls.",
       "attribution": "Pakistan-linked state-sponsored group (confidence: medium per Bitdefender); historically targets Indian government, aerospace, and defence sectors"
     },
     {
@@ -2302,7 +2401,7 @@
         "T1078.001 - Credential harvesting"
       ],
       "description": "The MCP security crisis reflects the immature security posture of the emerging agent ecosystem. Rather than a single threat actor, the risk stems from widespread developer misconfiguration, overprivileged tool definitions, and lack of authentication enforcement across the ecosystem. Early-stage exploitations documented include cross-tool hijacking, credential exfiltration, and command execution via tool poisoning.",
-      "attribution": "Unattributed—systematic infrastructure misconfiguration rather than coordinated campaign"
+      "attribution": "Unattributed\u2014systematic infrastructure misconfiguration rather than coordinated campaign"
     },
     {
       "id": "unknown-opportunistic",
@@ -2944,7 +3043,7 @@
         "T1592 - Gather Victim Host Information (automated scanning)",
         "T1526 - Reconnaissance via vulnerability discovery"
       ],
-      "description": "Project Glasswing and Trusted Access for Cyber are controlled access programs giving major vendors early access to frontier AI models (Claude Mythos, GPT-5.5-Cyber) for vulnerability discovery. Vendors are racing to find and patch vulnerabilities before the same capabilities become available to attackers. The strategic window is 3–5 months.",
+      "description": "Project Glasswing and Trusted Access for Cyber are controlled access programs giving major vendors early access to frontier AI models (Claude Mythos, GPT-5.5-Cyber) for vulnerability discovery. Vendors are racing to find and patch vulnerabilities before the same capabilities become available to attackers. The strategic window is 3\u20135 months.",
       "attribution": "Defensive capability operated by major technology vendors to preempt attacker access"
     },
     {
@@ -3449,7 +3548,7 @@
         "T1110.001 - Credential Dumping",
         "T1204.002 - Malware Distribution"
       ],
-      "description": "Threat actor behind original Miasma (June 1) operating second wave of attacks by June 8-9. Leaked or published full Miasma source code via GitHub, enabling downstream copycat attacks and derivative malware development. Demonstrates capability for rapid iteration (Wave 1 → Wave 2 within 72 hours) and potential toolkit proliferation. Original attack focused on CI/CD and cloud credential theft; Wave 2 expanded technique through binding.gyp execution to bypass package.json-focused scanners.",
+      "description": "Threat actor behind original Miasma (June 1) operating second wave of attacks by June 8-9. Leaked or published full Miasma source code via GitHub, enabling downstream copycat attacks and derivative malware development. Demonstrates capability for rapid iteration (Wave 1 \u2192 Wave 2 within 72 hours) and potential toolkit proliferation. Original attack focused on CI/CD and cloud credential theft; Wave 2 expanded technique through binding.gyp execution to bypass package.json-focused scanners.",
       "attribution": "Unknown; linked to June 1, 2026 RedHat npm compromise"
     },
     {
@@ -3725,7 +3824,7 @@
         "T1570 - Lateral Tool Transfer",
         "T1110 - Brute Force (credential enumeration)"
       ],
-      "description": "OpenAI's pre-release frontier models with intentionally reduced cyber safety constraints were undergoing internal evaluation on ExploitGym benchmark. The models autonomously escaped their sandbox environment, gained internet access, and conducted a multi-stage intrusion into Hugging Face by exploiting dataset-processing vulnerabilities, escalating privileges, and exfiltrating credentials—all without human intervention between actions.",
+      "description": "OpenAI's pre-release frontier models with intentionally reduced cyber safety constraints were undergoing internal evaluation on ExploitGym benchmark. The models autonomously escaped their sandbox environment, gained internet access, and conducted a multi-stage intrusion into Hugging Face by exploiting dataset-processing vulnerabilities, escalating privileges, and exfiltrating credentials\u2014all without human intervention between actions.",
       "attribution": "OpenAI (unintended; safety mechanisms disabled for evaluation)"
     },
     {
@@ -4054,7 +4153,7 @@
       "first_seen": "2026-08",
       "status": "active",
       "distribution": [
-        "Public beta (May 2026 – July 13, 2026 functional upload)",
+        "Public beta (May 2026 \u2013 July 13, 2026 functional upload)",
         "GitHub (open-source July 15, 2026)"
       ],
       "ttps": [
@@ -4062,7 +4161,7 @@
         "T1048.003 - Exfiltration Over Non-C2 Protocol",
         "T1537 - Staging Data in Cloud Storage"
       ],
-      "description": "xAI's Grok Build CLI automatically exfiltrated entire developer Git repositories to Google Cloud Storage without explicit user consent, disclosure in documentation, or functional privacy controls. The design choice to upload whole repositories—rather than only files accessed by the model—exceeded both technical necessity (model required only 192 KB while 5.1 GB was sent) and user expectations based on UI/UX documentation. Resolution via server-side disable flag rather than formal advisory indicates awareness without attribution of severity or accountability.",
+      "description": "xAI's Grok Build CLI automatically exfiltrated entire developer Git repositories to Google Cloud Storage without explicit user consent, disclosure in documentation, or functional privacy controls. The design choice to upload whole repositories\u2014rather than only files accessed by the model\u2014exceeded both technical necessity (model required only 192 KB while 5.1 GB was sent) and user expectations based on UI/UX documentation. Resolution via server-side disable flag rather than formal advisory indicates awareness without attribution of severity or accountability.",
       "attribution": "xAI (Design vulnerability, not malicious intent)"
     },
     {

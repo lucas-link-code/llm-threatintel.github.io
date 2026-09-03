@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference | LLM ThreatIntel</title>
+  <meta name="description" content="FortiGuard Labs published on 2026-09-03 that a leaked long-lived AWS IAM access key with AdministratorAccess was used to create a new IAM user, subscribe that identity to foundation models through AWS Marketplace, and invoke those models so the victim account paid for inference. FortiGuard described the chain as LLMjacking: theft of hosted model access rather than model weights. Enable CloudTrail and Bedrock invocation logging, retire long-lived admin keys, and alert on Marketplace agreement calls paired with new IAM users.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-03-fortinet-bedrock-llmjacking-marketplace.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference">
+  <meta property="og:description" content="FortiGuard Labs published on 2026-09-03 that a leaked long-lived AWS IAM access key with AdministratorAccess was used to create a new IAM user, subscribe that identity to foundation models through AWS Marketplace, and invoke those models so the victim account paid for inference. FortiGuard described the chain as LLMjacking: theft of hosted model access rather than model weights. Enable CloudTrail and Bedrock invocation logging, retire long-lived admin keys, and alert on Marketplace agreement calls paired with new IAM users.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-03-fortinet-bedrock-llmjacking-marketplace.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference">
+  <meta property="article:published_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference">
+  <meta name="twitter:description" content="FortiGuard Labs published on 2026-09-03 that a leaked long-lived AWS IAM access key with AdministratorAccess was used to create a new IAM user, subscribe that identity to foundation models through AWS Marketplace, and invoke those models so the victim account paid for inference. FortiGuard described the chain as LLMjacking: theft of hosted model access rather than model weights. Enable CloudTrail and Bedrock invocation logging, retire long-lived admin keys, and alert on Marketplace agreement calls paired with new IAM users.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference",
+  "description": "FortiGuard Labs published on 2026-09-03 that a leaked long-lived AWS IAM access key with AdministratorAccess was used to create a new IAM user, subscribe that identity to foundation models through AWS Marketplace, and invoke those models so the victim account paid for inference. FortiGuard described the chain as LLMjacking: theft of hosted model access rather than model weights. Enable CloudTrail and Bedrock invocation logging, retire long-lived admin keys, and alert on Marketplace agreement calls paired with new IAM users.",
+  "datePublished": "2026-09-03T00:00:00Z",
+  "dateModified": "2026-09-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-03-fortinet-bedrock-llmjacking-marketplace.html",
+  "keywords": [
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-03</span>
+      <span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>FortiGuard: Leaked AWS Administrator Key Used to Subscribe Bedrock Models and Jack Inference</h1>
+<p><strong>Date:</strong> 2026-09-03<br><strong>Tags:</strong> llmjacking</p>
+<h2>Executive Summary</h2>
+<p>FortiGuard Labs published on 2026-09-03 that a leaked long-lived AWS IAM access key with AdministratorAccess was used to create a new IAM user, subscribe that identity to foundation models through AWS Marketplace, and invoke those models so the victim account paid for inference. FortiGuard described the chain as LLMjacking: theft of hosted model access rather than model weights. Enable CloudTrail and Bedrock invocation logging, retire long-lived admin keys, and alert on Marketplace agreement calls paired with new IAM users.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Amazon Bedrock LLMjacking via Marketplace subscription</td></tr><tr><td>Actor / Attribution</td><td>Unnamed operator. FortiGuard did not name a group. Confidence none</td></tr><tr><td>Target</td><td>AWS accounts with Bedrock or Marketplace foundation-model access</td></tr><tr><td>Vector</td><td>Leaked long-lived IAM access key with AdministratorAccess</td></tr><tr><td>Status</td><td>Investigated incident published 2026-09-03</td></tr><tr><td>First Observed</td><td>FortiGuard published 2026-09-03; LLMjacking as a class dates to 2024 per FortiGuard</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.fortinet.com/blog/threat-research/someone-else-is-using-your-ai" target="_blank" rel="noopener">FortiGuard Labs</a>, FortiCNAPP investigated a case in which a leaked long-lived IAM access key with AdministratorAccess was enough to cash out generative AI rather than stand up miners. FortiGuard stated that the operator created a new IAM user, subscribed to one or more foundation models through AWS Marketplace using CreateAgreementRequest and AcceptAgreementRequest on agreement-marketplace.amazonaws.com, then invoked the subscribed models so inference charges hit the victim account.</p>
+<p>FortiGuard defined LLMjacking as theft and abuse of access to hosted AI models, not theft of weights or training data. FortiGuard stated the objective is to make another organization&#x27;s cloud account pay for high-capability inference, then use or resell that access. FortiGuard cited prior LLMjacking research putting victim exposure above 46,000 dollars per day for Claude 2.x-class inference and past 100,000 dollars per day on Claude 3 Opus, and cited Operation Bizarre Bazaar as cataloging more than 35,000 attack sessions and a marketplace reselling access to 30-plus LLM providers.</p>
+<p>FortiGuard reported that this class of attack typically also generates Bedrock service-specific credentials for the new identity through AWS&#x27;s long-term API key mechanism, distinct from a standard IAM access key. FortiGuard published no attacker IPs, domains, or hashes.</p>
+<p>FortiGuard recommended CloudTrail on every account, Bedrock invocation logging which is off by default, treating long-lived broad-scope IAM keys as tier-0, and not treating first-time Bedrock use as malicious by itself unless paired with a new identity, unfamiliar IP, enumeration, or access-denied noise. <a href="https://www.itsecuritynews.info/llmjacking-attack-uses-leaked-aws-iam-key-to-steal-paid-ai-model-access/" target="_blank" rel="noopener">IT Security News</a> summarized the same FortiGuard incident on 2026-09-03.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Valid Accounts</td><td>T1078</td><td>Operator used a leaked AdministratorAccess IAM key as a working cloud identity.</td></tr><tr><td>Create Account: Cloud Account</td><td>T1136.003</td><td>Operator created a new IAM user under the compromised account.</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>Subscribed Marketplace foundation models were invoked so the victim paid for inference.</td></tr><tr><td>Impair Defenses: Disable or Modify Cloud Logs</td><td>T1562.008</td><td>FortiGuard ships a detection for DeleteModelInvocationLoggingConfiguration as a related evasion step.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Alert on CreateUser, CreateAccessKey, CreateServiceSpecificCredential, AttachUserPolicy with AdministratorAccess, and Marketplace CreateAgreementRequest or AcceptAgreementRequest against agreement-marketplace.amazonaws.com in the same session as a leaked or unused access key. Turn on Bedrock model invocation logging to an immutable destination and alert on DeleteModelInvocationLoggingConfiguration. Prefer short-lived assumed roles over never-expiring admin keys. Correlate first-time InvokeModel from a new IAM user with unfamiliar source IPs rather than alerting on Bedrock use alone.</p>
+<h2>References</h2>
+<ul><li>[FortiGuard Labs] Someone Else Is Using Your AI (2026-09-03) — https://www.fortinet.com/blog/threat-research/someone-else-is-using-your-ai</li><li>[IT Security News] LLMjacking Attack Uses Leaked AWS IAM Key to Steal Paid AI Model Access (2026-09-03) — https://www.itsecuritynews.info/llmjacking-attack-uses-leaked-aws-iam-key-to-steal-paid-ai-model-access/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

@@ -1,6 +1,303 @@
 {
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "iocs": [
+    {
+      "value": "yosemite.jp",
+      "type": "domain",
+      "context": "LiteLLM credential harvesting C2 and OAST plus recv.php per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "gobygo.net",
+      "type": "domain",
+      "context": "LiteLLM subdomain-encoded beacon infrastructure per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "auto.c3pool.org",
+      "type": "domain",
+      "context": "XMRig Monero mining pool used in the Kestra case per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "45.150.109.151.sslip.io",
+      "type": "domain",
+      "context": "DNS rebinding host used in LiteLLM attacks per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "45.150.109.151",
+      "type": "ip",
+      "context": "Scanning and recon infrastructure across targeted AI workloads per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "135.125.10.56",
+      "type": "ip",
+      "context": "RAGFlow LLM API key exfiltration C2, port 19888 per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "172.232.38.92",
+      "type": "ip",
+      "context": "Kestra reverse shell C2 on Linode VPS, port 32991 per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "47.86.197.116",
+      "type": "ip",
+      "context": "c3pool mining endpoint in the Kestra case per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "194.213.18.133",
+      "type": "ip",
+      "context": "Attacker-controlled mail MX per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "2001:41d0:701:1100::adfd",
+      "type": "ip",
+      "context": "c3pool mining IPv6 endpoint in the Kestra case per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "f64b88e9318bdf23f2dd119a0ce1dd1bdb3c8cd2e0e1e23ba3ef2e19072b79cc",
+      "type": "sha256",
+      "context": "LiteLLM /tmp/d ELF binary per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "49fdcf32bfe837899a84e8938f0d07ae96ddd218a280a09eb60df8d64597bd8f",
+      "type": "sha256",
+      "context": "XMRig binary on LiteLLM host per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "3af9f25a4d45bb4f1ec5627cdbc6703cf3b4be75a892162d299d80ddfb266f42",
+      "type": "sha256",
+      "context": "XMRig variant on LiteLLM host per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "3d24ac736635e0fa0c5c459c9e18ca09d1ec9a1751a4503130934395609bd7e0",
+      "type": "sha256",
+      "context": "LiteLLM installer/bridge script that drops /tmp/python3 per Microsoft",
+      "first_seen": "2026-08-26",
+      "source": "Microsoft",
+      "campaign": "2026-09-03-microsoft-litellm-ragflow-kestra-ai-control-plane",
+      "status": "active"
+    },
+    {
+      "value": "github.com/p00paboot/openapi-react-query-codegen",
+      "type": "url_path",
+      "context": "Fork used to stage malicious @7nohe/openapi-react-query-codegen per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "github.com/p00paboot",
+      "type": "url_path",
+      "context": "Threat actor GitHub account staging the Mini Shai-Hulud-consistent package per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "b49afb7dba04cd99b357ce7c652c823a3707f28e130bd5c6645851a7adc030d6",
+      "type": "sha256",
+      "context": "3FWCvzduYZg.js loader hash per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "59370c67b54a0ccaedd265e2356f04540b2fba1e1845300ef6de4d5437d99380",
+      "type": "sha256",
+      "context": "3FWCvzduYZg.js loader hash per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "d3246926b20a8d021ed7de0ac8e9eee1dda986088f84ba18f31cb2042a121f5d",
+      "type": "sha256",
+      "context": "malicious binding.gyp hash per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@0.0.0-365d4eb738d3146583431948d3ba6e27a32556be",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@0.0.0-ec7876d6c917dad516ba69bbfafc948b834bf0ab",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@0.5.4",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@0.5.5",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@1.6.3",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@1.6.4",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@2.2.1",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@2.2.2",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@3.0.3",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "npm:@7nohe/openapi-react-query-codegen@3.0.4",
+      "type": "package",
+      "context": "Malicious Mini Shai-Hulud-consistent npm version published 2026-08-28 per Socket",
+      "first_seen": "2026-08-28",
+      "source": "Socket",
+      "campaign": "2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen",
+      "status": "active"
+    },
+    {
+      "value": "u3ukeehm.requestrepo.com",
+      "type": "domain",
+      "context": "MAL-2026-11069 preinstall/postinstall beacon host per OSV",
+      "first_seen": "2026-07-24",
+      "source": "OSV",
+      "campaign": "2026-09-03-llms-txt-unclaimed-packages-coding-agents",
+      "status": "active"
+    },
+    {
+      "value": "u3ukeehm.requestrepo.com/depconf/clerk-next-fix-auth-protection/",
+      "type": "url_path",
+      "context": "MAL-2026-11069 HTTP beacon path per OSV",
+      "first_seen": "2026-07-24",
+      "source": "OSV",
+      "campaign": "2026-09-03-llms-txt-unclaimed-packages-coding-agents",
+      "status": "active"
+    },
+    {
+      "value": "npm:clerk-next-fix-auth-protection@8.8.8",
+      "type": "package",
+      "context": "MAL-2026-11069 malicious unscoped npm package per OSV",
+      "first_seen": "2026-07-24",
+      "source": "OSV",
+      "campaign": "2026-09-03-llms-txt-unclaimed-packages-coding-agents",
+      "status": "active"
+    },
+    {
+      "value": "npm:clerk-next-fix-auth-protection@7.7.7",
+      "type": "package",
+      "context": "MAL-2026-11069 malicious unscoped npm package per OSV",
+      "first_seen": "2026-07-24",
+      "source": "OSV",
+      "campaign": "2026-09-03-llms-txt-unclaimed-packages-coding-agents",
+      "status": "active"
+    },
     {
       "value": "bright-links.com",
       "type": "domain",
@@ -3865,7 +4162,7 @@
     {
       "value": "npm:@solana-launchpad/sdk",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3874,7 +4171,7 @@
     {
       "value": "npm:@validate-sdk/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3883,7 +4180,7 @@
     {
       "value": "npm:@hash-validator/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3892,7 +4189,7 @@
     {
       "value": "aes-create-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3901,7 +4198,7 @@
     {
       "value": "jito-proper-excutor",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3910,7 +4207,7 @@
     {
       "value": "jito-sub-aes-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -3919,7 +4216,7 @@
     {
       "value": "pypi:scraper-npm",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4018,7 +4315,7 @@
     {
       "value": "65.111.27.132",
       "type": "ip",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -4027,7 +4324,7 @@
     {
       "value": "jsonkeeper.com",
       "type": "domain",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -4036,7 +4333,7 @@
     {
       "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
       "type": "sha256",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -4045,7 +4342,7 @@
     {
       "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -4054,7 +4351,7 @@
     {
       "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -4081,7 +4378,7 @@
     {
       "value": "npm:@bankr/agent",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",

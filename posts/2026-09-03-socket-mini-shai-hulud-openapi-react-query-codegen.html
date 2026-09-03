@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions | LLM ThreatIntel</title>
+  <meta name="description" content="Socket reported on 2026-08-28 that ten versions of npm package @7nohe/openapi-react-query-codegen were published with a Mini Shai-Hulud-consistent installer payload, including 3.0.4 which still resolved as latest at write-up time. A comment-triggered GitHub Actions publish workflow let an untrusted account comment npm publish on a pull request and ship fork code under trusted OIDC provenance. Isolate hosts that installed 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, 3.0.4, or the two 0.0.0 prereleases, pin to 0.5.3, 1.6.2, 2.2.0, or 3.0.2, and do not trust npm audit signatures for this set.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions">
+  <meta property="og:description" content="Socket reported on 2026-08-28 that ten versions of npm package @7nohe/openapi-react-query-codegen were published with a Mini Shai-Hulud-consistent installer payload, including 3.0.4 which still resolved as latest at write-up time. A comment-triggered GitHub Actions publish workflow let an untrusted account comment npm publish on a pull request and ship fork code under trusted OIDC provenance. Isolate hosts that installed 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, 3.0.4, or the two 0.0.0 prereleases, pin to 0.5.3, 1.6.2, 2.2.0, or 3.0.2, and do not trust npm audit signatures for this set.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions">
+  <meta property="article:published_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-03T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="mcp-security">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions">
+  <meta name="twitter:description" content="Socket reported on 2026-08-28 that ten versions of npm package @7nohe/openapi-react-query-codegen were published with a Mini Shai-Hulud-consistent installer payload, including 3.0.4 which still resolved as latest at write-up time. A comment-triggered GitHub Actions publish workflow let an untrusted account comment npm publish on a pull request and ship fork code under trusted OIDC provenance. Isolate hosts that installed 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, 3.0.4, or the two 0.0.0 prereleases, pin to 0.5.3, 1.6.2, 2.2.0, or 3.0.2, and do not trust npm audit signatures for this set.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions",
+  "description": "Socket reported on 2026-08-28 that ten versions of npm package @7nohe/openapi-react-query-codegen were published with a Mini Shai-Hulud-consistent installer payload, including 3.0.4 which still resolved as latest at write-up time. A comment-triggered GitHub Actions publish workflow let an untrusted account comment npm publish on a pull request and ship fork code under trusted OIDC provenance. Isolate hosts that installed 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, 3.0.4, or the two 0.0.0 prereleases, pin to 0.5.3, 1.6.2, 2.2.0, or 3.0.2, and do not trust npm audit signatures for this set.",
+  "datePublished": "2026-09-03T00:00:00Z",
+  "dateModified": "2026-09-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-03-socket-mini-shai-hulud-openapi-react-query-codegen.html",
+  "keywords": [
+    "supply-chain",
+    "malware",
+    "mcp-security"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-03</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-mcp-security">Mcp Security</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Mini Shai-Hulud: @7nohe/openapi-react-query-codegen Publishes Ten Provenance-Valid Malicious npm Versions</h1>
+<p><strong>Date:</strong> 2026-09-03<br><strong>Tags:</strong> supply-chain, malware, mcp-security</p>
+<h2>Executive Summary</h2>
+<p>Socket reported on 2026-08-28 that ten versions of npm package @7nohe/openapi-react-query-codegen were published with a Mini Shai-Hulud-consistent installer payload, including 3.0.4 which still resolved as latest at write-up time. A comment-triggered GitHub Actions publish workflow let an untrusted account comment npm publish on a pull request and ship fork code under trusted OIDC provenance. Isolate hosts that installed 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, 3.0.4, or the two 0.0.0 prereleases, pin to 0.5.3, 1.6.2, 2.2.0, or 3.0.2, and do not trust npm audit signatures for this set.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Mini Shai-Hulud-consistent compromise of @7nohe/openapi-react-query-codegen</td></tr><tr><td>Actor / Attribution</td><td>Socket described Mini Shai-Hulud overlap and did not treat behavioral similarity as proof of TeamPCP operators. Confidence low</td></tr><tr><td>Target</td><td>npm consumers of a package with about 150,000 weekly downloads; AI agent config and CI secrets on developer and runner hosts</td></tr><tr><td>Vector</td><td>Malicious tarballs via npm install. Wave 1 uses binding.gyp to launch node 3FWCvzduYZg.js; wave 2 also sets preinstall</td></tr><tr><td>Status</td><td>Active as of Socket 2026-08-28; latest tag pointed at 3.0.4</td></tr><tr><td>First Observed</td><td>Malicious versions published 2026-08-28 in two waves about twenty minutes apart</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://socket.dev/blog/openapi-react-query-codegen-npm-compromise" target="_blank" rel="noopener">Socket</a>, ten malicious versions of @7nohe/openapi-react-query-codegen were published on 2026-08-28 with valid npm provenance attestations from GitHub Actions trusted publishing. Socket listed 0.0.0-365d4eb738d3146583431948d3ba6e27a32556be, 0.0.0-ec7876d6c917dad516ba69bbfafc948b834bf0ab, 0.5.4, 0.5.5, 1.6.3, 1.6.4, 2.2.1, 2.2.2, 3.0.3, and 3.0.4. Last known-good per line: 0.5.3, 1.6.2, 2.2.0, 3.0.2.</p>
+<p>Socket reported the loader 3FWCvzduYZg.js as a roughly 5.7 MB XOR-obfuscated file that decrypts an AES-128-GCM second stage. Wave-1 versions execute through binding.gyp via an obfuscated Python os.system call to node 3FWCvzduYZg.js. Wave-2 adds preinstall. Socket stated release.yml triggers on issue_comment created when the comment body is npm publish, checks out the pull-request head from the fork, and publishes with id-token write. Commenter association is not checked. Provenance then records refs/heads/main at clean commit d42d1733.</p>
+<p>Socket recovered credential harvesting from files, process memory, cloud metadata, and CI variables; GitHub, npm, PyPI, RubyGems, and JFrog token validation; encrypted exfil to attacker-created public GitHub repos with description Trinitite: Sponsored by Preview 2 Effects; package poisoning; GitHub Actions workflow named ClaudeCode Review that dumps secrets to an artifact; persistence in Claude, Cursor, Codex, Gemini, Copilot, and MCP config; a signed GitHub-commit command channel searching firedalazer; and SSH propagation. Persistence paths include ~/.local/bin/sysvinit-detect-fash.sh and LaunchAgent com.user.sysvinit-detect-fash. Socket warned the token monitor evals a handler on GitHub HTTP 4xx, so contain the host before revoking the watched token.</p>
+<p>Socket attributed the staging fork to github.com/p00paboot/openapi-react-query-codegen. Socket said overlap with Shai-Hulud and Mini Shai-Hulud is not operator proof. <a href="https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html" target="_blank" rel="noopener">The Hacker News</a> also noted this Socket and Step Security package on 2026-09-01.</p>
+<p>Do not add github.com, registry.npmjs.org, or api.github.com as indicators.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>Ten malicious versions published to npm under valid provenance.</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>binding.gyp uses Python os.system to launch the Node loader.</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Install-time Node loader 3FWCvzduYZg.js decrypts and runs the second stage.</td></tr><tr><td>Unsecured Credentials</td><td>T1552</td><td>Filesystem, memory, CI, and cloud-metadata credential scraping.</td></tr><tr><td>Account Manipulation</td><td>T1098</td><td>GitHub workflow rewrite dumps repository secrets to an artifact named reviewed.</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>SSH copy of ai_setup.sh and ai_init.js to reachable hosts.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">github.com/p00paboot/openapi-react-query-codegen
+github.com/p00paboot</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;github.com/p00paboot/openapi-react-query-codegen&quot; OR &quot;github.com/p00paboot&quot; OR &quot;npm:@7nohe/openapi-react-query-codegen@3.0.4&quot; OR &quot;3FWCvzduYZg.js&quot; OR &quot;b49afb7dba04cd99b357ce7c652c823a3707f28e130bd5c6645851a7adc030d6&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">b49afb7dba04cd99b357ce7c652c823a3707f28e130bd5c6645851a7adc030d6
+59370c67b54a0ccaedd265e2356f04540b2fba1e1845300ef6de4d5437d99380
+d3246926b20a8d021ed7de0ac8e9eee1dda986088f84ba18f31cb2042a121f5d</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:@7nohe/openapi-react-query-codegen@0.0.0-365d4eb738d3146583431948d3ba6e27a32556be
+npm:@7nohe/openapi-react-query-codegen@0.0.0-ec7876d6c917dad516ba69bbfafc948b834bf0ab
+npm:@7nohe/openapi-react-query-codegen@0.5.4
+npm:@7nohe/openapi-react-query-codegen@0.5.5
+npm:@7nohe/openapi-react-query-codegen@1.6.3
+npm:@7nohe/openapi-react-query-codegen@1.6.4
+npm:@7nohe/openapi-react-query-codegen@2.2.1
+npm:@7nohe/openapi-react-query-codegen@2.2.2
+npm:@7nohe/openapi-react-query-codegen@3.0.3
+npm:@7nohe/openapi-react-query-codegen@3.0.4</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Search lockfiles and SBOMs for the ten versions. Isolate affected workstations and runners before revoking GitHub tokens, because the sysvinit-detect-fash monitor evals on HTTP 4xx. Disable com.user.sysvinit-detect-fash and sysvinit-detect-fash.service, then rotate npm, GitHub, cloud, PyPI, RubyGems, and JFrog credentials. Hunt GitHub for public repos with description Trinitite: Sponsored by Preview 2 Effects, workflow ClaudeCode Review, commit chore: update dependencies, and artifacts named reviewed. Hunt 3FWCvzduYZg.js hashes and binding.gyp hash d3246926b20a8d021ed7de0ac8e9eee1dda986088f84ba18f31cb2042a121f5d. Maintainers must not publish on issue_comment gated only by comment text.</p>
+<h2>References</h2>
+<ul><li>[Socket] OpenAPI React Query Codegen Compromised in Mini Shai-Hulud npm Supply Chain Attack (2026-08-28) — https://socket.dev/blog/openapi-react-query-codegen-npm-compromise</li><li>[The Hacker News] Russia-Aligned UAC-0099 Plants Nuclear Weapon Prompt in Malware to Disrupt AI Analysis (2026-09-01) — https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
