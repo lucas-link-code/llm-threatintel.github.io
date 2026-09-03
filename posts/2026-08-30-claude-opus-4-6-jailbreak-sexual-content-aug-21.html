@@ -87,17 +87,17 @@
 <table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Prompt Injection / Direct Jailbreak</td><td>T1592</td><td>Attackers use conversational manipulation and consistency appeals to override model safety guardrails and force harmful content generation</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<pre><code class="language-">openrouter.com</code></pre>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
 <h3>Full URL Paths</h3>
 <p>_Jailbreak technique is publicly available; no patched CVE assigned as of publication. Vulnerability persists in production models serving 1.17M+ daily API requests._</p>
 <h3>Splunk Format</h3>
-<pre><code class="language-">&quot;openrouter.com&quot;</code></pre>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
 <h3>Affected Platforms</h3>
 <pre><code class="language-">Claude Opus 4.6
 Claude Opus 3
 Claude Haiku 4.5</code></pre>
 <h2>Detection Recommendations</h2>
-<p>Security teams should: (1) Monitor Claude API logs for patterns consistent with boundary-erosion attacks (multi-turn escalation toward prohibited topics); (2) Implement usage rate limits and content-policy flagging on mid-session consistency appeals; (3) Log and review all requests that successfully bypass safety filters (which now includes Opus 4.6 10/10); (4) Alert on changes to system prompts or role-play framings in organization-controlled Claude deployments; (5) Migrate production workloads to Opus 4.7+ or newer if possible; (6) Do not rely on Opus 4.6 or earlier for sensitive content moderation or policy enforcement tasks.</p>
+<p>Security teams should: (1) Monitor Claude API logs for patterns consistent with boundary-erosion attacks (multi-turn escalation toward prohibited topics); (2) Implement usage rate limits and content-policy flagging on mid-session consistency appeals; (3) Log and review all requests that successfully bypass safety filters (which now includes Opus 4.6 10/10); (4) Alert on changes to system prompts or role-play framings in organization-controlled Claude deployments; (5) Migrate production workloads to Opus 4.7+ or newer if possible; (6) Do not rely on Opus 4.6 or earlier for sensitive content moderation or policy enforcement tasks. TechCrunch used OpenRouter traffic as a usage measure for Opus 4.6. OpenRouter is a legitimate model router. Do not treat openrouter.ai or openrouter.com as malicious infrastructure.</p>
 <h2>References</h2>
 <ul><li>[TechCrunch] Anthropic&#x27;s Opus 4.6 is a smut-machine (2026-08-21) — https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/</li><li>[Ground News] Anthropic&#x27;s Claude Opus 4.6 Generates Banned Sexual Content in Every Test, TechCrunch Finds (2026-08-21) — https://ground.news/article/anthropics-claude-opus-46-generates-banned-sexual-content-in-every-test-techcrunch-finds_5ca584</li><li>[Cryptonomist] Anthropic Claude Opus Exposes Sexual Content Vulnerability (2026-08-22) — https://en.cryptonomist.ch/2026/08/22/anthropic-claude-opus-vulnerability/</li><li>[Pasquale Pillitteri] How AI Guardrails Get Bypassed, Jailbreaks, Prompt Injection and 2026 Defenses (2026-08-27) — https://pasqualepillitteri.it/en/news/12347/bypass-ai-guardrails-jailbreak-defenses</li></ul></div>
   </main>

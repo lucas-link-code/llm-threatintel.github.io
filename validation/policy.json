@@ -110,7 +110,11 @@
       "copilot.github.com",
       "ollama.com",
       "lmstudio.ai",
-      "poe.com"
+      "poe.com",
+      "openrouter.com",
+      "openrouter.ai",
+      "api.openrouter.ai",
+      "mcp.openrouter.ai"
     ],
     "url_paths": [
       "claude.ai/share",
@@ -128,7 +132,15 @@
       "grok.com/share",
       "huggingface.co/models",
       "huggingface.co/datasets",
-      "huggingface.co/spaces"
+      "huggingface.co/spaces",
+      "openrouter.ai/api",
+      "openrouter.ai/api/v1",
+      "openrouter.ai/api/v1/chat/completions",
+      "openrouter.ai/models",
+      "openrouter.ai/chat",
+      "openrouter.ai/rankings",
+      "openrouter.ai/activity",
+      "mcp.openrouter.ai/mcp"
     ]
   },
   "legitimate_platform_ioc_overrides": [],

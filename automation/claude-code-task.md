@@ -228,6 +228,7 @@ For each new IOC:
   | Together | `together.xyz`, `together.ai`, `api.together.xyz`, `api.together.ai` | — |
   | Coding assistants | `cursor.sh`, `cursor.com`, `windsurf.ai`, `codeium.com`, `copilot.github.com` | — |
   | Local runners | `ollama.com`, `lmstudio.ai`, `poe.com` | — |
+  | OpenRouter | `openrouter.ai`, `openrouter.com`, `api.openrouter.ai`, `mcp.openrouter.ai` | `openrouter.ai/api`, `openrouter.ai/api/v1`, `openrouter.ai/api/v1/chat/completions`, `openrouter.ai/models`, `openrouter.ai/chat`, `openrouter.ai/rankings`, `openrouter.ai/activity`, `mcp.openrouter.ai/mcp` |
 
   **What to publish instead:**
   - If the source publishes a specific malicious shared-chat URL with a real chat identifier (e.g. `claude.ai/share/Xy7AbC9KqM`), that IS a valid `url_path` IOC and should be included.

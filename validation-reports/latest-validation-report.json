@@ -1,7 +1,7 @@
 {
-  "commit_sha": "636fb74f6ef0",
+  "commit_sha": "33cdeecc23dc",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-03T21:30:12+00:00",
+  "generated_at_utc": "2026-09-03T21:40:45+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,144 +35,54 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21",
+      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 7,
-  "reports_newly_validated": 7,
-  "reports_skipped": 241,
-  "review_required": 0,
-  "source_urls_checked": 18,
-  "state_updates": 7,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 247,
+  "review_required": 1,
+  "source_urls_checked": 4,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/",
+      "final_url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/"
+      "url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/"
     },
     {
       "error": "",
-      "final_url": "https://www.csoonline.com/article/4217976/ai-agents-help-compress-ransomware-intrusion-to-under-10-hours-raising-stakes-for-cisos.html",
+      "final_url": "https://ground.news/article/anthropics-claude-opus-46-generates-banned-sexual-content-in-every-test-techcrunch-finds_5ca584",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.csoonline.com/article/4217976/ai-agents-help-compress-ransomware-intrusion-to-under-10-hours-raising-stakes-for-cisos.html"
+      "url": "https://ground.news/article/anthropics-claude-opus-46-generates-banned-sexual-content-in-every-test-techcrunch-finds_5ca584"
     },
     {
       "error": "",
-      "final_url": "https://www.techtimes.com/articles/326409/20260903/agentic-ransomware-took-down-enterprise-ten-hours-ai-left-80-page-audit.htm",
+      "final_url": "https://en.cryptonomist.ch/2026/08/22/anthropic-claude-opus-vulnerability/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.techtimes.com/articles/326409/20260903/agentic-ransomware-took-down-enterprise-ten-hours-ai-left-80-page-audit.htm"
+      "url": "https://en.cryptonomist.ch/2026/08/22/anthropic-claude-opus-vulnerability/"
     },
     {
-      "error": "",
-      "final_url": "https://www.fortinet.com/blog/threat-research/someone-else-is-using-your-ai",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.fortinet.com/blog/threat-research/someone-else-is-using-your-ai"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.itsecuritynews.info/llmjacking-attack-uses-leaked-aws-iam-key-to-steal-paid-ai-model-access/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.itsecuritynews.info/llmjacking-attack-uses-leaked-aws-iam-key-to-steal-paid-ai-model-access/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://gbhackers.com/gitspawn-flaw-enables-arbitrary-code-execution/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://gbhackers.com/gitspawn-flaw-enables-arbitrary-code-execution/"
-    },
-    {
-      "error": "",
-      "final_url": "https://infosec.exchange/@ESETresearch/117166416959152018",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://infosec.exchange/@ESETresearch/117166416959152018"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.helpnetsecurity.com/2026/08/31/russian-hackers-ai-safety-filters-manipulation/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.helpnetsecurity.com/2026/08/31/russian-hackers-ai-safety-filters-manipulation/"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/"
-    },
-    {
-      "error": "",
-      "final_url": "https://sechub.in/view/3280731",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://sechub.in/view/3280731"
-    },
-    {
-      "error": "",
-      "final_url": "https://socket.dev/blog/openapi-react-query-codegen-npm-compromise",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://socket.dev/blog/openapi-react-query-codegen-npm-compromise"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/09/russia-aligned-uac-0099-plants-nuclear.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://medium.com/@alonhertz1/data-became-code-we-ran-code-inside-fortune-500s-using-files-they-published-for-ai-agents-0cd67ffbbffc",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://medium.com/@alonhertz1/data-became-code-we-ran-code-inside-fortune-500s-using-files-they-published-for-ai-agents-0cd67ffbbffc"
-    },
-    {
-      "error": "",
-      "final_url": "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/"
-    },
-    {
-      "error": "",
-      "final_url": "https://osv.dev/vulnerability/MAL-2026-11069",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://osv.dev/vulnerability/MAL-2026-11069"
+      "error": "Remote end closed connection without response",
+      "final_url": null,
+      "http_status": null,
+      "status": "unknown_error",
+      "url": "https://pasqualepillitteri.it/en/news/12347/bypass-ai-guardrails-jailbreak-defenses"
     }
   ],
   "validation_version": "1.0.0",

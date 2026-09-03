@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-09-03T21:30:12+00:00`
-- Commit SHA: `636fb74f6ef0`
+- Run time UTC: `2026-09-03T21:40:45+00:00`
+- Commit SHA: `33cdeecc23dc`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `0`
-- Reports checked: `7`
-- Reports skipped: `241`
-- Reports newly validated: `7`
+- Review required: `1`
+- Reports checked: `1`
+- Reports skipped: `247`
+- Reports newly validated: `1`
 - IOC duplicates found: `0`
-- Source URLs checked: `18`
+- Source URLs checked: `4`
 
 No files were removed or destructively modified.
 
@@ -22,3 +22,18 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
+- **REVIEW** `evidence-url-review` `posts/2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.md` `2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21`: 1 source URL(s) require review
+
+## Human Review Queue
+
+```text
+Report: 2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21
+Problem: evidence-url-review
+Validator finding: 1 source URL(s) require review
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```

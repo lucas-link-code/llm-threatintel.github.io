@@ -515,6 +515,16 @@ class ValidateSiteTests(unittest.TestCase):
                 "ioc-legitimate-platform",
             ),
             (
+                "bare openrouter domain",
+                [{"value": "openrouter.com", "type": "domain"}],
+                "ioc-legitimate-platform",
+            ),
+            (
+                "generic openrouter api path",
+                [{"value": "openrouter.ai/api/v1/chat/completions", "type": "url_path"}],
+                "ioc-legitimate-platform",
+            ),
+            (
                 "huggingface platform prose",
                 [{"value": "https://huggingface.co/ (legitimate platform; malicious models can be hosted here)", "type": "url_path"}],
                 "ioc-prose-parenthetical",
@@ -744,6 +754,7 @@ class ValidateSiteTests(unittest.TestCase):
             ("pypi:xinference@2.6.0", "package"),
             ("npm:namastex/automagik-genie", "package"),
             ("huggingface.co/Open-OSS/privacy-filter", "url_path"),
+            ("openrouter.ai/user/attacker-controlled-id", "url_path"),
             ("malicious.example/blog/payload.js", "url_path"),
             ("litellm@1.82.7", "package"),
             ("192.168.1.1", "ip"),
@@ -804,6 +815,29 @@ class ValidateSiteTests(unittest.TestCase):
             self.assertEqual(result.status, "accessible")
             self.assertEqual(fake_opener.kwargs["timeout"], 10)
             self.assertNotIn("context", fake_opener.kwargs)
+
+    def test_markdown_fence_bare_openrouter_fails(self):
+        markdown = (
+            "# Example Report\n\n"
+            "**Date:** 2026-05-10\n"
+            "**Tags:** malware\n\n"
+            "## Executive Summary\n\n"
+            "Example sourced report.\n\n"
+            "## IOCs\n\n"
+            "### Domains\n\n"
+            "```\n"
+            "openrouter.com\n"
+            "```\n\n"
+            "## References\n\n"
+            "- [Example] Example Source (2026-05-10) — https://example.com/report\n"
+        )
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root, markdown=markdown)
+            code, _ = run_validator(root, "--mode", "strict", "--write-report")
+            self.assertEqual(code, 1)
+            codes = {issue["code"] for issue in report(root)["issues"]}
+            self.assertIn("ioc-legitimate-platform", codes)
 
     def test_markdown_fence_bare_huggingface_fails(self):
         markdown = (

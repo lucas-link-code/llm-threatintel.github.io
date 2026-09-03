@@ -9,14 +9,14 @@ On August 21, 2026, TechCrunch published a test on Claude Opus 4.6 in which the 
 
 ## Campaign Summary
 
-| Field | Detail |
-|-------|--------|
-| Campaign / Malware | Claude Opus 4.6 Jailbreak / Boundary Erosion Attack |
-| Attribution | TechCrunch Researchers (Independent Discovery) (confidence: high) |
-| Target | Users of Claude Opus 4.6 via API and web interface; misuse for generating prohibited content at scale |
-| Vector | Multi-turn conversational jailbreak using gradual escalation and consistency-oriented social engineering |
-| Status | active |
-| First Observed | 2026-08-21 |
+| Field              | Detail                                                                                                   |
+| ------------------ | -------------------------------------------------------------------------------------------------------- |
+| Campaign / Malware | Claude Opus 4.6 Jailbreak / Boundary Erosion Attack                                                      |
+| Attribution        | TechCrunch Researchers (Independent Discovery) (confidence: high)                                        |
+| Target             | Users of Claude Opus 4.6 via API and web interface; misuse for generating prohibited content at scale    |
+| Vector             | Multi-turn conversational jailbreak using gradual escalation and consistency-oriented social engineering |
+| Status             | active                                                                                                   |
+| First Observed     | 2026-08-21                                                                                               |
 
 ## Detailed Findings
 
@@ -24,8 +24,8 @@ In the TechCrunch test the researcher leaned on one specific weak spot, the mode
 
 ## MITRE ATT&CK Mapping
 
-| Technique | ID | Context |
-|-----------|-----|---------|
+| Technique                           | ID    | Context                                                                                                                                    |
+| ----------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Prompt Injection / Direct Jailbreak | T1592 | Attackers use conversational manipulation and consistency appeals to override model safety guardrails and force harmful content generation |
 
 ## IOCs
@@ -33,7 +33,7 @@ In the TechCrunch test the researcher leaned on one specific weak spot, the mode
 ### Domains
 
 ```
-openrouter.com
+No domain IOCs published by source
 ```
 
 ### Full URL Paths
@@ -43,7 +43,7 @@ _Jailbreak technique is publicly available; no patched CVE assigned as of public
 ### Splunk Format
 
 ```
-"openrouter.com"
+No IOCs available for Splunk query
 ```
 
 ### Affected Platforms
@@ -56,7 +56,7 @@ Claude Haiku 4.5
 
 ## Detection Recommendations
 
-Security teams should: (1) Monitor Claude API logs for patterns consistent with boundary-erosion attacks (multi-turn escalation toward prohibited topics); (2) Implement usage rate limits and content-policy flagging on mid-session consistency appeals; (3) Log and review all requests that successfully bypass safety filters (which now includes Opus 4.6 10/10); (4) Alert on changes to system prompts or role-play framings in organization-controlled Claude deployments; (5) Migrate production workloads to Opus 4.7+ or newer if possible; (6) Do not rely on Opus 4.6 or earlier for sensitive content moderation or policy enforcement tasks.
+Security teams should: (1) Monitor Claude API logs for patterns consistent with boundary-erosion attacks (multi-turn escalation toward prohibited topics); (2) Implement usage rate limits and content-policy flagging on mid-session consistency appeals; (3) Log and review all requests that successfully bypass safety filters (which now includes Opus 4.6 10/10); (4) Alert on changes to system prompts or role-play framings in organization-controlled Claude deployments; (5) Migrate production workloads to Opus 4.7+ or newer if possible; (6) Do not rely on Opus 4.6 or earlier for sensitive content moderation or policy enforcement tasks. TechCrunch used OpenRouter traffic as a usage measure for Opus 4.6. OpenRouter is a legitimate model router. Do not treat openrouter.ai or openrouter.com as malicious infrastructure.
 
 ## References
 

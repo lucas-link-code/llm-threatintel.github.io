@@ -121,6 +121,17 @@ class CollectIocNormalizationTests(unittest.TestCase):
         self.assertRejected("https://huggingface.co/", "url_path")
         self.assertRejected("claude.ai", "domain")
 
+    def test_rejects_bare_openrouter_domain(self):
+        self.assertRejected("openrouter.com", "domain")
+        self.assertRejected("openrouter.ai", "domain")
+        self.assertRejected("https://openrouter.ai/", "url_path")
+        self.assertRejected("openrouter.ai/api/v1/chat/completions", "url_path")
+        self.assertAccepted(
+            "openrouter.ai/user/attacker-controlled-id",
+            "url_path",
+            "openrouter.ai/user/attacker-controlled-id",
+        )
+
     def test_sanitize_finding_drops_bare_platform_before_markdown(self):
         finding = _minimal_finding(
             iocs={

@@ -39,7 +39,7 @@ Intel Feed reports are the operational product. Brief and Trends are derived vie
 These are the mistakes that damage the feed or break deploy.
 
 - Do not fabricate IOCs. If the source published none, write that in the post and do not invent domains, hashes, packages, or IPs.
-- Do not add bare shared infrastructure or legitimate AI vendor platforms as IOCs. `github.com`, `npmjs.com`, `claude.ai`, `grok.com`, `huggingface.co`, and similar hosts are deny-listed. Attacker-controlled subdomains and specific malicious paths can still be valid. Policy: `validation/policy.json`.
+- Do not add bare shared infrastructure or legitimate AI vendor platforms as IOCs. `github.com`, `npmjs.com`, `claude.ai`, `grok.com`, `huggingface.co`, `openrouter.ai`, `openrouter.com`, and similar hosts are deny-listed. Attacker-controlled subdomains and specific malicious paths can still be valid. Policy: `validation/policy.json`.
 - Do not treat a legitimate product name as a package IOC. `npm:mastra@affected` is wrong. A pinned malicious package such as `npm:easy-day-js@1.11.22` is right.
 - Do not invent Intel Feed tags. The only valid slugs are: `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`. Title Case or a new tag splits the filter bar.
 - Do not delete reports or IOCs to make validation pass. Fix the source, add an alternate live URL, ask Lucas for an override, or wait for approval to remove.

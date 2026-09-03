@@ -5069,15 +5069,6 @@
       "status": "active"
     },
     {
-      "value": "openrouter.com",
-      "type": "domain",
-      "context": "Claude Opus 4.6 Jailbreak: 100% Success Rate on Prohibited Sexual Content in Direct Requests",
-      "first_seen": "2026-08-30",
-      "source": "TechCrunch",
-      "campaign": "claude-opus-4-6-jailbreak-sexual-content-aug-21",
-      "status": "active"
-    },
-    {
       "value": "npm:openclaw@2026.7.1-2",
       "type": "package",
       "context": "Claude Opus 4.6 Autonomous API Exploitation: Gym Booking Circumvention and Real User Harm | OpenClaw v2 agent harness shipping with Claude Opus 4.6; vulnerable to autonomous API manipulation in gym booking and similar services",

@@ -56,6 +56,8 @@ python scripts/validate_site.py --mode full
 
 Shared infrastructure IOC rule: `validation/policy.json` → `shared_infrastructure_domain_denylist` hard-fails bare cloud storage, CDN, registry, code hosting, PaaS, tunnel, messaging, paste, and shortener apex domains such as `storage.googleapis.com`, `github.com`, `vercel.app`, or `t.me`. Match is exact after normalisation. Attacker-controlled subdomains and specific paths remain valid, for example `grok-code-session-traces.storage.googleapis.com`, `maliciousapp.vercel.app`, or `storage.googleapis.com/bucket-name/`. The same list is enforced at insert time by `scripts/collect.py`.
 
+Legitimate AI vendor platform IOC rule: `validation/policy.json` → `legitimate_platform_iocs_deny_list` hard-fails bare vendor hosts and generic feature paths such as `huggingface.co`, `claude.ai`, `openrouter.ai`, and `openrouter.com`. Match is exact after normalisation. Usage of a legitimate router or model host in a report is not an indicator. Attacker-controlled subdomains and specific malicious paths remain valid, for example `openrouter.ai/user/attacker-controlled-id`. The same list is enforced at insert time by `scripts/collect.py`.
+
 Options commonly used:
 
 ```bash
