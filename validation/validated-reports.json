@@ -4211,7 +4211,7 @@
       "warnings": []
     },
     "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21": {
-      "content_hash": "e015c717fba0fae75757a60c01f9672cc68acf179955d605e5574969215bfdc1",
+      "content_hash": "17da6edbfa0b4a093860ddc343b8858c9f11978f5fa4456a6c9e6eb30c230581",
       "evidence_status": "validated_with_warnings",
       "file": "2026-08-30-claude-opus-4-6-jailbreak-sexual-content-aug-21.md",
       "posts_index_hash": "29a26e100b8b049f1327a3158d7871071eb1098f1980516e610c9303591393ca",
@@ -4226,7 +4226,7 @@
         "https://pasqualepillitteri.it/en/news/12347/bypass-ai-guardrails-jailbreak-defenses"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-03T21:40:45+00:00",
+      "validated_at": "2026-09-04T07:46:28+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
