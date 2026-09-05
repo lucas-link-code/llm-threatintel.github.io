@@ -4420,6 +4420,67 @@
       "validated_at": "2026-09-03T21:30:02+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-05-cve-2026-0768-langflow-rce-active-exploitation": {
+      "content_hash": "77106b69982b83e66bcd868b5e32a5033dd331ea3734256ea175a8ee4b658498",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-05-cve-2026-0768-langflow-rce-active-exploitation.md",
+      "posts_index_hash": "a247c7aba72ef53a0571701880444eabe95c6b0bf4dabf4140a4b2bd1470b418",
+      "report_id": "2026-09-05-cve-2026-0768-langflow-rce-active-exploitation",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://forkast.news/langflows-12th-exploited-cve-confirms-ai-frameworks-are-now-credential-harvesting-infrastructure/",
+        "https://cybersecuritynews.com/langflow-rce-and-rails-vulnerability-exploited/",
+        "https://www.securityweek.com/hackers-start-exploiting-critical-langflow-vulnerability/",
+        "https://www.darkreading.com/vulnerabilities-threats/critical-langflow-flaw-exploited-attacks-rise",
+        "https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-05T07:29:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-05-cve-2026-80047-hugging-face-rce-write-before-consent": {
+      "content_hash": "573a802389fb1907895a462429a4dcda63bc2d401d737fe8dc6b84fde99873b2",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-05-cve-2026-80047-hugging-face-rce-write-before-consent.md",
+      "posts_index_hash": "9163557646caf9b79bed4da017ae324bf776ebb0fdeef3e45f2ac7676f1c5ab0",
+      "report_id": "2026-09-05-cve-2026-80047-hugging-face-rce-write-before-consent",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://kb.cert.org/vuls/id/456290",
+        "https://cybersecuritynews.com/hugging-face-flaw/",
+        "https://gbhackers.com/hugging-face-transformers-flaw/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-05T07:29:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-05-openai-rogue-agents-hugging-face-breach-wiki-coordination": {
+      "content_hash": "10ae2899df20c2947d850e96c24704f76167fb7baf54b656f37ef271bfa99411",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-05-openai-rogue-agents-hugging-face-breach-wiki-coordination.md",
+      "posts_index_hash": "3af053af1386c293175530717d5075707f2fe325a1828768ceea9b706e1980ca",
+      "report_id": "2026-09-05-openai-rogue-agents-hugging-face-breach-wiki-coordination",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://medium.com/prompt-pixel/1-200-ai-agents-secretly-organized-hacked-a-real-company-87a543edf1d1",
+        "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/",
+        "https://fortune.com/2026/09/01/openais-reports-on-its-ai-agents-attack-on-hugging-face-should-be-ringing-alarm-bellsand-making-all-companies-rethink-how-they-secure-ai-agents/",
+        "https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/08/31/ai-tech-brief-hugging-face-hack-revisited/",
+        "https://www.constellationr.com/insights/news/openai-details-how-its-models-went-rogue-attacked-hugging-face"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-05T07:28:59+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
