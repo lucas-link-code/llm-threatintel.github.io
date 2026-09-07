@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-05",
+  "last_updated": "2026-09-07",
   "entries": [
     {
       "id": "clerk-next-fix-auth-protection",
@@ -2005,7 +2005,7 @@
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
-      "status": "unknown",
+      "status": "active",
       "distribution": [
         "Email-based delivery",
         "Shared Streamlit hosting environments",
@@ -2457,7 +2457,8 @@
     {
       "id": "unknown-threat-actor",
       "names": [
-        "Unknown Threat Actor"
+        "Unknown Threat Actor",
+        "MCP Infrastructure Attacker"
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
@@ -2469,7 +2470,8 @@
         "Shared chatflow endpoints",
         "LiteLLM proxy deployments",
         "Cloud LLM proxy targets",
-        "CVE-2026-39987 exploitation in the wild"
+        "CVE-2026-39987 exploitation in the wild",
+        "Public-facing MCP servers and AI gateways"
       ],
       "ttps": [
         "T1190 - Server-Side Request Forgery",
@@ -2484,7 +2486,8 @@
         "T1526 - Credential Access",
         "T1552.001 - Unsecured Credentials: Credentials In Files",
         "T1550.001 - Use Alternate Authentication Material: Application Access Token",
-        "T1021.004 - Remote Services: SSH"
+        "T1021.004 - Remote Services: SSH",
+        "T1555 - Credentials from Password Stores"
       ],
       "description": "Threat actor demonstrated operational use of LLM agents for post-exploitation automation. After RCE via CVE-2026-39987, the attacker deployed an LLM agent to extract, reason about, and replay stolen cloud credentials for lateral movement and data exfiltration. The capability represents a significant shift in how attackers integrate AI into intrusion workflows.",
       "attribution": "Unattributed; rapid exploitation suggests automated scanning/weaponization"
@@ -4557,6 +4560,25 @@
       ],
       "description": "Threat actors conducting systematic reconnaissance and credential theft from publicly accessible Langflow instances. Activity characterized by quiet, methodical querying of environment variables and secret files rather than destructive operations. Infrastructure suggests organized credential harvesting operation targeting AI development infrastructure.",
       "attribution": "Russia-attributed traffic; no specific group named"
+    },
+    {
+      "id": "unknown-threat-actor-operation-bizarre-bazaar-related",
+      "names": [
+        "Unknown Threat Actor (Operation Bizarre Bazaar Related)",
+        "LLMjacking Threat Group"
+      ],
+      "type": "malware",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "AWS cloud environments"
+      ],
+      "ttps": [
+        "T1078 - Valid Accounts",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Threat actor targeting exposed or leaked AWS credentials to gain administrative access and hijack AI model inference capacity. Attack monetizes stolen compute through AWS Marketplace subscriptions and Bedrock APIs. Part of broader LLMjacking ecosystem operating as organized criminal enterprise.",
+      "attribution": "Financially motivated cybercriminal - likely associated with Operation Bizarre Bazaar (documented by Pillar Security Research, December 2025-January 2026)"
     }
   ]
 }

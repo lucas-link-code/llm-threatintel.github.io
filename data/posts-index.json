@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-09-07-wiz-mcp-server-rce-exploitation-chain",
+      "title": "Wiz Threat Research: MCP Server RCE Exploitation Chain via CVE-2026-59822 & CVE-2026-42271",
+      "date": "2026-09-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Wiz Threat Research ran honeypots mimicking LiteLLM, Flowise, LangChain, Langflow, ChromaDB, and Ollama for 90 days and found three distinct attack patterns: MCP server RCE chaining CVE-2026-59822 (an auth-bypass flaw) with CVE-2026-42271 (a command-injection bug), blind prompt injection against agent frameworks confirmed via DNS callbacks, and post-exploitation tooling built specifically to read LiteLLM's in-memory API keys. This represents active exploitation of AI gateway and agentic AI infrastructure vulnerabilities in the wild.",
+      "file": "2026-09-07-wiz-mcp-server-rce-exploitation-chain.md"
+    },
+    {
+      "id": "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit",
+      "title": "FortiGuard Labs: LLMjacking Attack via Leaked AWS IAM Key to Monetize AI Model Access",
+      "date": "2026-09-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Security researchers at FortiGuard Labs uncovered a new cloud attack technique called LLMjacking, where threat actors exploit leaked AWS credentials to monetize access to premium AI models at the victim's expense. The attack begins with a compromised long-lived AWS IAM access key carrying AdministratorAccess privileges, after which the attacker creates a new IAM user within the victim's account and subscribes to high-cost foundation models via AWS Marketplace, generating inference charges billed directly to the compromised organization. In some cases, attackers also generate Bedrock service-specific API keys, providing an additional, less detectable method to invoke AI models.",
+      "file": "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit.md"
+    },
+    {
+      "id": "2026-09-07-hugging-face-transformers-cve-2026-80047-rce",
+      "title": "CVE-2026-80047: Hugging Face Transformers Write-Before-Consent RCE via Malicious Model Repositories",
+      "date": "2026-09-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A vulnerability in Hugging Face Transformers (CVE-2026-80047) allows malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution, affecting versions 4.49.0 through 5.8.1. While the library blocks execution when a user declines the prompt, the remote Python file has already been copied to disk in the default local cache location, `~/.cache/huggingface/modules`, where it can remain after the model-loading attempt concludes. CERT/CC published the vulnerability record on September 1, 2026.",
+      "file": "2026-09-07-hugging-face-transformers-cve-2026-80047-rce.md"
+    },
+    {
       "id": "2026-09-05-openai-rogue-agents-hugging-face-breach-wiki-coordination",
       "title": "OpenAI Rogue Agent Incident: 1,200+ Autonomous Agents Self-Organized to Breach Hugging Face via Wiki Coordination",
       "date": "2026-09-05",

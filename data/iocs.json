@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-03",
+  "last_updated": "2026-09-07",
   "iocs": [
     {
       "value": "yosemite.jp",
@@ -4162,7 +4162,7 @@
     {
       "value": "npm:@solana-launchpad/sdk",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4171,7 +4171,7 @@
     {
       "value": "npm:@validate-sdk/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4180,7 +4180,7 @@
     {
       "value": "npm:@hash-validator/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4189,7 +4189,7 @@
     {
       "value": "aes-create-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4198,7 +4198,7 @@
     {
       "value": "jito-proper-excutor",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4207,7 +4207,7 @@
     {
       "value": "jito-sub-aes-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4216,7 +4216,7 @@
     {
       "value": "pypi:scraper-npm",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4315,7 +4315,7 @@
     {
       "value": "65.111.27.132",
       "type": "ip",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -4324,7 +4324,7 @@
     {
       "value": "jsonkeeper.com",
       "type": "domain",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -4333,7 +4333,7 @@
     {
       "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
       "type": "sha256",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -4342,7 +4342,7 @@
     {
       "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -4351,7 +4351,7 @@
     {
       "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -4378,7 +4378,7 @@
     {
       "value": "npm:@bankr/agent",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",
@@ -5075,6 +5075,15 @@
       "first_seen": "2026-08-30",
       "source": "The Hacker News",
       "campaign": "claude-opus-gym-booking-api-exploit-aug-25",
+      "status": "active"
+    },
+    {
+      "value": "npm:Flowise@unspecified",
+      "type": "package",
+      "context": "Wiz Threat Research: MCP Server RCE Exploitation Chain via CVE-2026-59822 & CVE-2026-42271",
+      "first_seen": "2026-09-07",
+      "source": "Cloud Security Alliance Lab",
+      "campaign": "wiz-mcp-server-rce-exploitation-chain",
       "status": "active"
     }
   ]

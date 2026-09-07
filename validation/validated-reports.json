@@ -4481,6 +4481,40 @@
       "validated_at": "2026-09-05T07:28:59+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit": {
+      "content_hash": "ce6306c974f2c373733757bf931d81847d3b14f2bf1fbc5637eb8f8dd17f210b",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit.md",
+      "posts_index_hash": "b1f368268296b783cc40c9bbb902a06d9f5c95ace0a680b71a824f9c445c9042",
+      "report_id": "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/llmjacking-attack/",
+        "https://blog.rankiteo.com/awsgul1788459858-aws-operation-bizarre-bazaar-victims-cyber-attack-september-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-07T08:01:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-07-wiz-mcp-server-rce-exploitation-chain": {
+      "content_hash": "517c09de6b468fcfe6a4c7fb3f82accfbf8c85b376d55f7cfc956adcfb7b9baa",
+      "evidence_status": "validated",
+      "file": "2026-09-07-wiz-mcp-server-rce-exploitation-chain.md",
+      "posts_index_hash": "458e9b428a5f02228d12dae68a68f4a1ee3bd216642e7f99ce6a3008e0800245",
+      "report_id": "2026-09-07-wiz-mcp-server-rce-exploitation-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-09-01/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-07T08:01:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
