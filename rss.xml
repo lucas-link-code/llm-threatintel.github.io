@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 07 Sep 2026 08:01:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 07:53:09 +0000</lastBuildDate>
     <item>
+      <title>Deadbugz: Active MCP Supply-Chain Campaign with Runtime-Gated Metadata Poisoning</title>
+      <link>https://llm-threatintel.com/posts/2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.html</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate>
+      <description>An active campaign distributing a malicious MCP server through public GitHub pull requests deployed runtime-gated metadata poisoning: the server offers innocent text formatting and summarization tools, then after exactly three tool calls, rewrites its tool metadata into credential-hunting instructions targeting SSH keys, AWS credentials, shell history, and Kubernetes config. A single GitHub account (zellkernel) filed 23 campaign-related pull requests across unrelated AI, MCP, and developer-tool projects, representing a novel trust-evasion technique where malicious behavior appears only post-approval.</description>
+    </item>    <item>
       <title>Wiz Threat Research: MCP Server RCE Exploitation Chain via CVE-2026-59822 &amp; CVE-2026-42271</title>
       <link>https://llm-threatintel.com/posts/2026-09-07-wiz-mcp-server-rce-exploitation-chain.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-07-wiz-mcp-server-rce-exploitation-chain.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-08-25-cato-fake-codex-clickfix-amos-macos.html</guid>
       <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
       <description>Cato Networks reported on 2026-08-24 that sponsored Google results for queries such as codex macos download send macOS users to Google Sites pages impersonating an OpenAI Codex installer, then instruct them to paste a Terminal command that fetches a multi-stage loader. Cato assessed strong overlap with Atomic macOS Stealer delivery and documented a related Claude Code landing page on parentpreneurx.com that reuses the same telemetry host. Block the attacker-controlled iframe and payload hosts below, hunt zsh pipelines from Terminal, and treat sites.google.com as shared hosting rather than a denylist apex.</description>
-    </item>    <item>
-      <title>CISA AA26-231A: AI-Generated Scripts Target Internet-Exposed Siemens S7 PLCs</title>
-      <link>https://llm-threatintel.com/posts/2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-08-25-cisa-aa26-231a-ai-generated-siemens-s7-exploits.html</guid>
-      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
-      <description>NSA, CISA, FBI, DOE, and EPA published joint advisory AA26-231A on 2026-08-19 describing an active campaign against Siemens S7 Series PLCs in which operators use AI-assisted Python to wrap snap7 and python-snap7 into fake OT monitoring tools. Actors scan Censys and ZoomEye for internet-exposed S7comm on TCP 102, then read and write data blocks on S7-200 through S7-1500 families, including F-series safety CPUs. Pull PLCs off the internet, block TCP 102 at the perimeter, and hunt snap7 usage outside approved engineering workstations; the agencies published no campaign IOCs.</description>
     </item>
   </channel>
 </rss>

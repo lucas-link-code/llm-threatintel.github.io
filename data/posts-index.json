@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign",
+      "title": "Deadbugz: Active MCP Supply-Chain Campaign with Runtime-Gated Metadata Poisoning",
+      "date": "2026-09-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "mcp-security",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An active campaign distributing a malicious MCP server through public GitHub pull requests deployed runtime-gated metadata poisoning: the server offers innocent text formatting and summarization tools, then after exactly three tool calls, rewrites its tool metadata into credential-hunting instructions targeting SSH keys, AWS credentials, shell history, and Kubernetes config. A single GitHub account (zellkernel) filed 23 campaign-related pull requests across unrelated AI, MCP, and developer-tool projects, representing a novel trust-evasion technique where malicious behavior appears only post-approval.",
+      "file": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.md"
+    },
+    {
       "id": "2026-09-07-wiz-mcp-server-rce-exploitation-chain",
       "title": "Wiz Threat Research: MCP Server RCE Exploitation Chain via CVE-2026-59822 & CVE-2026-42271",
       "date": "2026-09-07",

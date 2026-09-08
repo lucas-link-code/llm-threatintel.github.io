@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-07",
+  "last_updated": "2026-09-08",
   "entries": [
     {
       "id": "clerk-next-fix-auth-protection",
@@ -4579,6 +4579,25 @@
       ],
       "description": "Threat actor targeting exposed or leaked AWS credentials to gain administrative access and hijack AI model inference capacity. Attack monetizes stolen compute through AWS Marketplace subscriptions and Bedrock APIs. Part of broader LLMjacking ecosystem operating as organized criminal enterprise.",
       "attribution": "Financially motivated cybercriminal - likely associated with Operation Bizarre Bazaar (documented by Pillar Security Research, December 2025-January 2026)"
+    },
+    {
+      "id": "deadbugz",
+      "names": [
+        "Deadbugz"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "GitHub pull requests across AI and developer-tool projects"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise",
+        "T1110 - Credential Dumping",
+        "Deferred Payload Execution"
+      ],
+      "description": "Active supply-chain campaign distributing malicious MCP servers with runtime-gated credential exfiltration. Uses benign initial tool behavior to evade review processes, then activates credential-stealing payload after three tool calls once integrated into production AI agent environments.",
+      "attribution": "Unattributed; tracked to GitHub account zellkernel"
     }
   ]
 }

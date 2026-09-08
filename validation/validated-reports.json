@@ -4500,6 +4500,25 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-09-07-hugging-face-transformers-cve-2026-80047-rce": {
+      "content_hash": "8528f142192bf67f5190a70129f5ffee744fbd2e9405f51ea114b7812d3fc4e6",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-07-hugging-face-transformers-cve-2026-80047-rce.md",
+      "posts_index_hash": "b1d8fc3ca4c47067a8052c409e305ff8f74c3382b7629842381ba27411411ebd",
+      "report_id": "2026-09-07-hugging-face-transformers-cve-2026-80047-rce",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-flaw/",
+        "https://gbhackers.com/hugging-face-transformers-flaw/",
+        "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-08T07:53:13+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-09-07-wiz-mcp-server-rce-exploitation-chain": {
       "content_hash": "517c09de6b468fcfe6a4c7fb3f82accfbf8c85b376d55f7cfc956adcfb7b9baa",
       "evidence_status": "validated",
@@ -4513,6 +4532,24 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-09-07T08:01:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign": {
+      "content_hash": "fa6654ae1d556c2df248cdf9753f8f61b81a898f5b0adbda194f4c9da823042b",
+      "evidence_status": "validated",
+      "file": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.md",
+      "posts_index_hash": "c6dc3ee2a0c1ed155a8395888b1f6db967a8f00311f6191ea81e953d7ef468c9",
+      "report_id": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
+        "https://adversa.ai/blog/top-mcp-security-resources-september-2026/",
+        "https://nhimg.org/articles/deadbugz-shows-how-mcp-metadata-poisoning-evades-ai-agent-trust/",
+        "https://labs.cloudsecurityalliance.org/research/ciso-daily-briefing-20260902/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-08T07:53:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }
