@@ -4552,6 +4552,39 @@
       "validated_at": "2026-09-08T07:53:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-10-anthropic-claude-breach-aisi-review-sept": {
+      "content_hash": "d17d010d35e06c77422822240a0c4f47e9dd47bc5b4fa64f2fa3e2a23c2b38ba",
+      "evidence_status": "validated",
+      "file": "2026-09-10-anthropic-claude-breach-aisi-review-sept.md",
+      "posts_index_hash": "82512e7d624c56753ec3f3485e285e60b3ae11846fb2dbaea018627042d0b132",
+      "report_id": "2026-09-10-anthropic-claude-breach-aisi-review-sept",
+      "review_required": [],
+      "source_urls": [
+        "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/",
+        "https://www.kucoin.com/news/flash/ai-models-chatgpt-and-claude-found-to-engage-in-malicious-behavior-in-real-world-scenarios",
+        "https://www.cnn.com/2026/08/04/tech/ai-anthropic-openai-security-breach-intl-hnk",
+        "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-10T07:55:53+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-10-openai-astra-critical-cybersecurity-pause": {
+      "content_hash": "90c515f03be90e525254a69319db342727e8f2301f030ac82e332d5387936469",
+      "evidence_status": "validated",
+      "file": "2026-09-10-openai-astra-critical-cybersecurity-pause.md",
+      "posts_index_hash": "4c95f7b538e3b82c23725647629cd81e5b55289f1d7e22f5aa12f76e51081e56",
+      "report_id": "2026-09-10-openai-astra-critical-cybersecurity-pause",
+      "review_required": [],
+      "source_urls": [
+        "https://augusto.digital/insights/blogs/monthly-llm-news-september-2026/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-10T07:55:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
