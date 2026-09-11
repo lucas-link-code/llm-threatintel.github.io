@@ -107,6 +107,7 @@ OPERATING RULES:
 - Mark single-source findings as [Single source]
 - Verify numerical claims and dates
 - No fabrication - state "Unknown" or "Insufficient evidence" when uncertain
+- Prose punctuation: no em dashes. Do not join ordinary words with a hyphen in post body or excerpts. Keep the same words and put a space where the hyphen was. Write human in the loop, information operations, AI driven, self managed, read only, internet facing, weapons themed, prompt crafting, and nation state in running text. Keep the hyphen when it is part of a name that would not be recognised without it: company, product, package, model, actor cluster, ATT&CK technique title, CVE, URL, IOC, filename, or code identifier. Hyphens also stay in **Tags**.
 
 POST MARKDOWN FORMAT:
 Create posts/*.md files named YYYY-MM-DD-slug.md with this exact structure:
@@ -115,7 +116,7 @@ Create posts/*.md files named YYYY-MM-DD-slug.md with this exact structure:
 # Report Title
 
 **Date:** YYYY-MM-DD
-**Tags:** {choose from the exact values below — use the lowercase-hyphenated form verbatim, never invent new tags}
+**Tags:** {choose from the exact values below. Use the lowercase-hyphenated form verbatim, never invent new tags}
 supply-chain | malware | malicious-tool | nation-state | shadow-ai | llmjacking | apt | phishing | model-poisoning | prompt-injection | mcp-security
 
 ## Executive Summary
@@ -184,8 +185,8 @@ Specific detection guidance referencing log sources: web proxy, DNS, EDR, cloud 
 
 ## References
 
-- [Publisher Name] Exact Article Title (YYYY-MM-DD) — https://full-url-to-article
-- [Publisher Name] Another Article (YYYY-MM) — https://another-url
+- [Publisher Name] Exact Article Title (YYYY-MM-DD): https://full-url-to-article
+- [Publisher Name] Another Article (YYYY-MM): https://another-url
 ```
 
 GENERATE HTML METADATA FILE:
@@ -243,7 +244,7 @@ Add new entry at the TOP of the posts array:
 }
 ```
 
-Tags MUST be lowercase-hyphenated strings from this exact set — no other values are permitted:
+Tags MUST be lowercase-hyphenated strings from this exact set. No other values are permitted:
 `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`
 Use the same canonical values in the Markdown `**Tags:**` line and in `data/posts-index.json`. Never use Title Case, spaces, underscores, or tags outside this list.
 
@@ -302,6 +303,7 @@ QUALITY CHECKS BEFORE COMMITTING:
 - JSON files are valid and last_updated fields are set
 - No duplicate posts in posts-index.json
 - Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security
+- Search post body and excerpt for hyphen compounds such as human-in-the-loop, information-operations, AI-driven, self-managed, read-only. Replace with the same words and a space. Leave **Tags**, CVEs, dates, URLs, IOCs, filenames, code, model IDs, package names, ATT&CK technique titles, and company or product names unchanged. No em dashes. Reference lines join title to URL with a colon.
 - Every posts/*.md file has a matching posts/*.html metadata file
 - HTML files contain valid OG tags, Twitter Card, and JSON-LD schema
 

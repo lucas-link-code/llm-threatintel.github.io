@@ -13,7 +13,7 @@
         "mcp-security"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat-style prompting to agentic workflows that cut human-in-the-loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons-themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.",
+      "excerpt": "Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.",
       "file": "2026-09-11-gtig-from-prompting-to-autonomy.md"
     },
     {
@@ -29,7 +29,7 @@
         "llmjacking"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Anthropic published on 2026-09-10 that GTG-20006 ran AI-driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone-supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.",
+      "excerpt": "Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.",
       "file": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.md"
     },
     {
@@ -41,7 +41,7 @@
         "prompt-injection"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Check Point Research published PuzzleMask on 2026-09-10: a prompt-crafting method that hides a policy-violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.",
+      "excerpt": "Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.",
       "file": "2026-09-11-puzzlemask-plain-prose-prompt-injection.md"
     },
     {
@@ -54,19 +54,19 @@
         "llmjacking"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Wiz published on 2026-09-09 that LiteLLM's MCP Streamable HTTP path accepted an arbitrary Bearer token as an authenticated session, tracked as CVE-2026-59822 and fixed in 1.84.0. CISA added that CVE to the Known Exploited Vulnerabilities catalog on 2026-09-02, with a federal remediation date of 2026-09-16. Wiz also reported that 294 of 3,074 internet-facing LiteLLM instances scanned in February 2026 accepted the documented example master key sk-1234 or had no auth at all. Upgrade to 1.84.0 or later, replace the master key, and hunt MCP initialize requests that present garbage tokens.",
+      "excerpt": "Wiz published on 2026-09-09 that LiteLLM's MCP Streamable HTTP path accepted an arbitrary Bearer token as an authenticated session, tracked as CVE-2026-59822 and fixed in 1.84.0. CISA added that CVE to the Known Exploited Vulnerabilities catalog on 2026-09-02, with a federal remediation date of 2026-09-16. Wiz also reported that 294 of 3,074 internet facing LiteLLM instances scanned in February 2026 accepted the documented example master key sk-1234 or had no auth at all. Upgrade to 1.84.0 or later, replace the master key, and hunt MCP initialize requests that present garbage tokens.",
       "file": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev.md"
     },
     {
       "id": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce",
-      "title": "CVE-2026-87911: AWS Postgres MCP Server Lets COPY TO PROGRAM Reach the Host in Default Read-Only Mode",
+      "title": "CVE-2026-87911: AWS Postgres MCP Server Lets COPY TO PROGRAM Reach the Host in Default Read Only Mode",
       "date": "2026-09-11",
       "author": "LLM ThreatIntel",
       "tags": [
         "mcp-security"
       ],
       "tlp": "TLP:CLEAR",
-      "excerpt": "Amazon published bulletin 2026-104-AWS on 2026-09-09 for CVE-2026-87911 in awslabs.postgres-mcp-server before 1.1.7. Incomplete SQL validation in the read-only path can let a COPY TO PROGRAM statement run operating-system commands on a self-managed PostgreSQL host when an authenticated user later interacts with the MCP server. Amazon scored it 9.6 on CVSS 3.1. Upgrade to 1.1.7 or later, currently 1.2.1 on PyPI as of 2026-09-08 uploads, and connect the MCP server with a role that cannot use superuser or pg_execute_server_program.",
+      "excerpt": "Amazon published bulletin 2026-104-AWS on 2026-09-09 for CVE-2026-87911 in awslabs.postgres-mcp-server before 1.1.7. Incomplete SQL validation in the read only path can let a COPY TO PROGRAM statement run operating system commands on a self managed PostgreSQL host when an authenticated user later interacts with the MCP server. Amazon scored it 9.6 on CVSS 3.1. Upgrade to 1.1.7 or later, currently 1.2.1 on PyPI as of 2026-09-08 uploads, and connect the MCP server with a role that cannot use superuser or pg_execute_server_program.",
       "file": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce.md"
     },
     {

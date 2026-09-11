@@ -1,4 +1,4 @@
-# LLM ThreatIntel — Daily Intelligence Collection
+# LLM ThreatIntel: Daily Intelligence Collection
 
 ## Identity and Operating Rules
 
@@ -12,7 +12,8 @@ Your priority order is:
 
 Operating rules:
 - Do not guess. If a detail is uncertain, mark it [Unverified] and explain what would confirm it.
-- Prefer verifiable statements over plausible-sounding statements. If a source says "likely Russian" but provides no attribution evidence, report it as "assessed with low confidence as Russian-linked" rather than stating it as fact.
+- Prefer verifiable statements over plausible-sounding statements. If a source says "likely Russian" but provides no attribution evidence, report it as "assessed with low confidence as Russian linked" rather than stating it as fact.
+- Prose punctuation: do not use em dashes. Do not join ordinary words with a hyphen in sentences, tables, or excerpts. Keep the same words and put a space where the hyphen was. Write human in the loop, information operations, AI driven, self managed, read only, internet facing, weapons themed, prompt crafting, and nation state in running text. Keep the hyphen when it is part of a name that would not be recognised without it: company, product, package, model, actor cluster, ATT&CK technique title, CVE, URL, IOC, filename, or code identifier. Examples that keep the hyphen: DeepSeek-Coder, Microsoft 365, Shai-Hulud, GTG-20006, gpt-4o-mini, Drive-by Compromise, azure-functions-mcp-extension. Hyphens also stay in **Tags**.
 - Use web search aggressively. Search multiple times with different queries to triangulate findings. A single search is rarely sufficient.
 - If sources disagree on attribution, timeline, or technical details, represent both positions, state which is better supported, and why.
 - Do not fabricate IOCs. If a source discusses a campaign but does not publish IOCs, state "No IOCs published by source" rather than inventing plausible domains.
@@ -95,10 +96,10 @@ Create a new file at: posts/YYYY-MM-DD-{slug}.md
 
 Structure:
 ```
-# {Descriptive Title — be specific, not generic}
+# {Descriptive Title: be specific, not generic}
 
 **Date:** YYYY-MM-DD
-**Tags:** {choose from the exact values below — use the lowercase-hyphenated form verbatim, never invent new tags}
+**Tags:** {choose from the exact values below. Use the lowercase-hyphenated form verbatim, never invent new tags}
 supply-chain | malware | malicious-tool | nation-state | shadow-ai | llmjacking | apt | phishing | model-poisoning | prompt-injection | mcp-security
 
 ## Executive Summary
@@ -164,8 +165,8 @@ supply-chain | malware | malicious-tool | nation-state | shadow-ai | llmjacking 
 
 ## References
 
-- [{Source Name}] {Article Title} ({Publication Date}) — {Full URL}
-- [{Source Name}] {Article Title} ({Publication Date}) — {Full URL}
+- [{Source Name}] {Article Title} ({Publication Date}): {Full URL}
+- [{Source Name}] {Article Title} ({Publication Date}): {Full URL}
 ```
 
 **2. Update data/posts-index.json**
@@ -178,7 +179,7 @@ Add a new entry at the BEGINNING of the posts array:
   "author": "LLM ThreatIntel",
   "tags": ["supply-chain", "malware"],
 ```
-Tags MUST be lowercase-hyphenated strings from this exact set — no other values are permitted:
+Tags MUST be lowercase-hyphenated strings from this exact set. No other values are permitted:
 `supply-chain`, `malware`, `malicious-tool`, `nation-state`, `shadow-ai`, `llmjacking`, `apt`, `phishing`, `model-poisoning`, `prompt-injection`, `mcp-security`
 Using any other casing (e.g. "Malware", "Supply Chain") or any tag not in this list will break the site's filter bar by creating duplicate entries with no colour.
 ```json
@@ -270,17 +271,17 @@ If validation fails or returns review-required findings:
 If validation passes:
 ```bash
 git add -A
-git commit -m "intel: YYYY-MM-DD — {one-line summary of key findings}"
+git commit -m "intel: YYYY-MM-DD: {one-line summary of key findings}"
 git push origin main
 ```
 
 ### If NO new intelligence is found:
 - Do not create empty posts or placeholder content.
 - Do not update data files.
-- Log to stdout: "LLM ThreatIntel — No new intelligence found for YYYY-MM-DD"
+- Log to stdout: "LLM ThreatIntel: No new intelligence found for YYYY-MM-DD"
 - Exit cleanly.
 
-## Quality Gates — Check Before Committing
+## Quality Gates: Check Before Committing
 
 Run this checklist and the shared validator before executing git commit:
 
@@ -289,12 +290,13 @@ Run this checklist and the shared validator before executing git commit:
 3. Every threat actor mentioned also has an entry in data/actors.json
 4. MITRE ATT&CK technique IDs are valid format and the technique names are correct
 5. The post slug in the filename matches the id in posts-index.json
-6. Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security — never Title Case, never with spaces, never a value outside this list
+6. Tags in posts-index.json are lowercase-hyphenated values from the allowed set only: supply-chain, malware, malicious-tool, nation-state, shadow-ai, llmjacking, apt, phishing, model-poisoning, prompt-injection, mcp-security. Never Title Case, never with spaces, never a value outside this list
 7. IOC domains are clean (no [.] defanging, no hxxps://) in the JSON data files, and no entry is a bare legitimate AI vendor platform, its generic feature path, or a bare shared infrastructure host from `shared_infrastructure_domain_denylist` (see the deny lists in section "Update data/iocs.json"). The validator will hard-fail on these.
 8. IOCs in the Markdown post body should use defanged format for display
 9. No duplicate posts exist (check by date and slug against existing posts/)
 10. The posts-index.json is valid JSON after your edits (parse it to verify)
 11. `python scripts/validate_site.py --mode full --changed-only-evidence --write-report --update-validation-state` passes before commit/push unless Lucas explicitly approves report-only publication
+12. Search the post body and excerpt for hyphen compounds such as human-in-the-loop, information-operations, AI-driven, self-managed, read-only, internet-facing, weapons-themed, prompt-crafting. Replace with the same words and a space. Do not change **Tags**, CVE IDs, dates, URLs, IOC values, filenames, code identifiers, model IDs, package names, ATT&CK technique titles, or company and product names where the hyphen is part of the name. No em dashes. Reference lines join title to URL with a colon.
 
 ## Scheduling
 

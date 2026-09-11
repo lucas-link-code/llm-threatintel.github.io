@@ -1,0 +1,18 @@
+---
+description: Intel briefs keep the same words but drop hyphen connectors in prose.
+alwaysApply: true
+---
+
+# Intel brief prose
+
+Daily intel posts and excerpts use spaces instead of hyphen connectors. Keep the same words. Do not rewrite the sentence.
+
+Write: human in the loop, information operations, AI driven, self managed, read only, internet facing, weapons themed, prompt crafting, nation state.
+
+Do not write: human-in-the-loop, information-operations, AI-driven, self-managed, read-only, internet-facing, weapons-themed, prompt-crafting.
+
+Keep the hyphen when it is part of a name that would not be recognised without it: company, product, package, model, actor cluster, ATT&CK technique title, CVE, URL, IOC, filename, or code identifier. Examples: DeepSeek-Coder, Microsoft 365, Shai-Hulud, GTG-20006, gpt-4o-mini, Drive-by Compromise, azure-functions-mcp-extension.
+
+No em dashes in posts. Join a reference title to its URL with a colon.
+
+Hyphens stay in **Tags**.
