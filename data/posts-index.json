@@ -1,6 +1,90 @@
 {
   "posts": [
     {
+      "id": "2026-09-11-gtig-from-prompting-to-autonomy",
+      "title": "GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners",
+      "date": "2026-09-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "apt",
+        "nation-state",
+        "llmjacking",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat-style prompting to agentic workflows that cut human-in-the-loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons-themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.",
+      "file": "2026-09-11-gtig-from-prompting-to-autonomy.md"
+    },
+    {
+      "id": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "title": "Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure",
+      "date": "2026-09-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt",
+        "phishing",
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic published on 2026-09-10 that GTG-20006 ran AI-driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone-supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.",
+      "file": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.md"
+    },
+    {
+      "id": "2026-09-11-puzzlemask-plain-prose-prompt-injection",
+      "title": "PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers",
+      "date": "2026-09-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research published PuzzleMask on 2026-09-10: a prompt-crafting method that hides a policy-violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.",
+      "file": "2026-09-11-puzzlemask-plain-prose-prompt-injection.md"
+    },
+    {
+      "id": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev",
+      "title": "CVE-2026-59822: CISA Lists LiteLLM MCP Auth Bypass; Wiz Saw Default sk-1234 On 9.6 Percent of Public Gateways",
+      "date": "2026-09-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Wiz published on 2026-09-09 that LiteLLM's MCP Streamable HTTP path accepted an arbitrary Bearer token as an authenticated session, tracked as CVE-2026-59822 and fixed in 1.84.0. CISA added that CVE to the Known Exploited Vulnerabilities catalog on 2026-09-02, with a federal remediation date of 2026-09-16. Wiz also reported that 294 of 3,074 internet-facing LiteLLM instances scanned in February 2026 accepted the documented example master key sk-1234 or had no auth at all. Upgrade to 1.84.0 or later, replace the master key, and hunt MCP initialize requests that present garbage tokens.",
+      "file": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev.md"
+    },
+    {
+      "id": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce",
+      "title": "CVE-2026-87911: AWS Postgres MCP Server Lets COPY TO PROGRAM Reach the Host in Default Read-Only Mode",
+      "date": "2026-09-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Amazon published bulletin 2026-104-AWS on 2026-09-09 for CVE-2026-87911 in awslabs.postgres-mcp-server before 1.1.7. Incomplete SQL validation in the read-only path can let a COPY TO PROGRAM statement run operating-system commands on a self-managed PostgreSQL host when an authenticated user later interacts with the MCP server. Amazon scored it 9.6 on CVSS 3.1. Upgrade to 1.1.7 or later, currently 1.2.1 on PyPI as of 2026-09-08 uploads, and connect the MCP server with a role that cannot use superuser or pg_execute_server_program.",
+      "file": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce.md"
+    },
+    {
+      "id": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "title": "Kimsuky Operation GitPower: Genians Ties Decoy PDFs to the OpenCode Agent and Adds Pastebin C2",
+      "date": "2026-09-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt",
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Genians Security Center reported on 2026-09-07 that 13 malicious LNK files collected from 2026-08-11 to 2026-08-19 continue Operation GitPower, now using financial and corporate Korean lures, GitHub personal access tokens, and in one cluster Pastebin. Four decoy PDFs recorded Creator and Producer as opencode, an open source terminal coding agent, with Author anonymous and identical 2026-08-16 03:00:00 UTC timestamps. Unreplaced LLM placeholders such as 임시값 remained in the body. Hunt the GitHub repo paths and Pastebin raw path below, LNK description Hangul Document 2.84 KB dated 10/20/2023, and scheduled tasks spoofing BitLocker, MATLAB, or .NET.",
+      "file": "2026-09-11-kimsuky-opencode-gitpower-lures.md"
+    },
+    {
       "id": "2026-09-10-anthropic-claude-breach-aisi-review-sept",
       "title": "Anthropic Claude Autonomous Compromise of Three Organizations – UK AISI Review Confirms Malicious PyPI Upload",
       "date": "2026-09-10",

@@ -4484,38 +4484,34 @@
     },
     "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit": {
       "content_hash": "ce6306c974f2c373733757bf931d81847d3b14f2bf1fbc5637eb8f8dd17f210b",
-      "evidence_status": "validated_with_warnings",
+      "evidence_status": "validated",
       "file": "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit.md",
       "posts_index_hash": "b1f368268296b783cc40c9bbb902a06d9f5c95ace0a680b71a824f9c445c9042",
       "report_id": "2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://cybersecuritynews.com/llmjacking-attack/",
         "https://blog.rankiteo.com/awsgul1788459858-aws-operation-bizarre-bazaar-victims-cyber-attack-september-2026/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-07T08:01:02+00:00",
+      "validated_at": "2026-09-11T07:49:42+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-07-hugging-face-transformers-cve-2026-80047-rce": {
       "content_hash": "8528f142192bf67f5190a70129f5ffee744fbd2e9405f51ea114b7812d3fc4e6",
-      "evidence_status": "validated_with_warnings",
+      "evidence_status": "validated",
       "file": "2026-09-07-hugging-face-transformers-cve-2026-80047-rce.md",
       "posts_index_hash": "b1d8fc3ca4c47067a8052c409e305ff8f74c3382b7629842381ba27411411ebd",
       "report_id": "2026-09-07-hugging-face-transformers-cve-2026-80047-rce",
-      "review_required": [
-        "1 source URL(s) require review"
-      ],
+      "review_required": [],
       "source_urls": [
         "https://cybersecuritynews.com/hugging-face-flaw/",
         "https://gbhackers.com/hugging-face-transformers-flaw/",
         "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-08T07:53:13+00:00",
+      "validated_at": "2026-09-11T07:49:44+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -4531,17 +4527,19 @@
         "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-07T08:01:01+00:00",
+      "validated_at": "2026-09-11T07:49:41+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign": {
       "content_hash": "fa6654ae1d556c2df248cdf9753f8f61b81a898f5b0adbda194f4c9da823042b",
-      "evidence_status": "validated",
+      "evidence_status": "validated_with_warnings",
       "file": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.md",
       "posts_index_hash": "c6dc3ee2a0c1ed155a8395888b1f6db967a8f00311f6191ea81e953d7ef468c9",
       "report_id": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign",
-      "review_required": [],
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
       "source_urls": [
         "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
         "https://adversa.ai/blog/top-mcp-security-resources-september-2026/",
@@ -4549,7 +4547,7 @@
         "https://labs.cloudsecurityalliance.org/research/ciso-daily-briefing-20260902/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-08T07:53:11+00:00",
+      "validated_at": "2026-09-11T07:49:40+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -4567,7 +4565,25 @@
         "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-10T07:55:53+00:00",
+      "validated_at": "2026-09-11T07:49:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish": {
+      "content_hash": "e502bd4e855ed6ba57c26ea0284cd339a91c24bb7e869ca082c9a7346234d89a",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish.md",
+      "posts_index_hash": "abfc1b55b195061b1aad7dfe3d4d03f3e58bf6cfd7a2689765a04818b22afed1",
+      "report_id": "2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-flaw/",
+        "https://www.cert.org/vulnerability-analysis/cve-2026-80047"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:49:33+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -4582,7 +4598,105 @@
         "https://augusto.digital/insights/blogs/monthly-llm-news-september-2026/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-10T07:55:54+00:00",
+      "validated_at": "2026-09-11T07:49:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops": {
+      "content_hash": "7916c97f814a80d37ef8514d1c0940ff95c8368ed76a0654bd19bd21e71d0325",
+      "evidence_status": "validated",
+      "file": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.md",
+      "posts_index_hash": "d2d6d6571d8aa7d3f279869240f29d7a00f7421173c20643d91d630f8b10ccc9",
+      "report_id": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "review_required": [],
+      "source_urls": [
+        "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "https://www.theregister.com/ai-and-ml/2026/09/10/latest-anthropic-horror-story-chills-with-tales-of-kamikaze-drone-swarms-and-bioweapons-research/5295702",
+        "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:44:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev": {
+      "content_hash": "02bd994037db68393583c7593036bc69dd888923b29c278af630ed92dd671871",
+      "evidence_status": "validated",
+      "file": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev.md",
+      "posts_index_hash": "e401b3a500ed694c6dca02f348404a2eb1e282d10d86a3f49c826d01c10d3cbc",
+      "report_id": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev",
+      "review_required": [],
+      "source_urls": [
+        "https://www.wiz.io/blog/off-guard-breaking-litellm-from-authentication-bypass-to-cloud-compromise",
+        "https://thehackernews.com/2026/09/nearly-1-in-10-exposed-litellm-gateways.html",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:49:27+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce": {
+      "content_hash": "1b4aebb5115e1f723fa0d8b6e91f6525dfa77be9627370b690a79533ad05f5cc",
+      "evidence_status": "validated",
+      "file": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce.md",
+      "posts_index_hash": "066ede6312400f694b1499429472191b2aa981a25c947be68f3a4e85ce0720e2",
+      "report_id": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://aws.amazon.com/security/security-bulletins/2026-104-aws/",
+        "https://github.com/awslabs/mcp/security/advisories/GHSA-fph8-pg5w-78fv",
+        "https://severitydaily.com/aws-postgres-mcp-cve-2026-87911-copy-to-program-same-1-1-7-fix/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:44:06+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-gtig-from-prompting-to-autonomy": {
+      "content_hash": "ab0f8f6f0196c80f4ddc7907e3123ac66be58f0f50745a1ec3ab8efae4644f5a",
+      "evidence_status": "validated",
+      "file": "2026-09-11-gtig-from-prompting-to-autonomy.md",
+      "posts_index_hash": "9ff793b59e8bcd851b1edf6ebbd49d6f75dca7cdf5f8100dabaf18ad1c7eaa81",
+      "report_id": "2026-09-11-gtig-from-prompting-to-autonomy",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:44:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-kimsuky-opencode-gitpower-lures": {
+      "content_hash": "06534ec27abb2940f1f797fddd23b0138129f0208f5edd4b14aee2b0474b0d85",
+      "evidence_status": "validated",
+      "file": "2026-09-11-kimsuky-opencode-gitpower-lures.md",
+      "posts_index_hash": "0e83696cba9ceddef7ff6edee7452cc76a24b4f3719683d4a97a797a177f34e2",
+      "report_id": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "review_required": [],
+      "source_urls": [
+        "https://www.genians.co.kr/blog/threat_intelligence/ai-agent-opencode",
+        "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:44:53+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-puzzlemask-plain-prose-prompt-injection": {
+      "content_hash": "1a22b7a44b2e118abe2ef547b8b86fdf574eeeb4559ff864c375ac89cc7199d3",
+      "evidence_status": "validated",
+      "file": "2026-09-11-puzzlemask-plain-prose-prompt-injection.md",
+      "posts_index_hash": "efe7d91f8773c8b3c52409ef151683f6bcf3ffad8da30616d9e7a891948dc378",
+      "report_id": "2026-09-11-puzzlemask-plain-prose-prompt-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T07:44:03+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

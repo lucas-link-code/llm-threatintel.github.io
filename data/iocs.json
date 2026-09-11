@@ -1,6 +1,636 @@
 {
-  "last_updated": "2026-09-07",
+  "last_updated": "2026-09-11",
   "iocs": [
+    {
+      "value": "pypi:tiktoken_mcp",
+      "type": "package",
+      "context": "UNC6780 / TeamPCP trojanized MCP package on PyPI per GTIG",
+      "first_seen": "2026-09-08",
+      "source": "Google Threat Intelligence Group",
+      "campaign": "2026-09-11-gtig-from-prompting-to-autonomy",
+      "status": "active"
+    },
+    {
+      "value": "teams.ms365-live.com",
+      "type": "domain",
+      "context": "GTG-20006 Microsoft 365 phishing subdomain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "mslivetest.duckdns.org",
+      "type": "domain",
+      "context": "GTG-20006 DuckDNS staging host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "chathamhouse.eu",
+      "type": "domain",
+      "context": "GTG-20006 think-tank impersonation domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "ukrinform-share.net",
+      "type": "domain",
+      "context": "GTG-20006 Ukrinform-themed share domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "static-ms.live",
+      "type": "domain",
+      "context": "GTG-20006 Microsoft-themed static host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "ad-g.org",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "docs-viewer.org",
+      "type": "domain",
+      "context": "GTG-20006 document-viewer lure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "mygreatmarket.org",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "mygreatmarket.com",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "cdncounter.net",
+      "type": "domain",
+      "context": "GTG-20006 CDN-themed infrastructure per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "static.cdncounter.net",
+      "type": "domain",
+      "context": "GTG-20006 CDN-themed static host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "stuseamandesilt.org",
+      "type": "domain",
+      "context": "GTG-20006 staging domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "api.stuseamandesilt.org",
+      "type": "domain",
+      "context": "GTG-20006 API host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "cdn.stuseamandesilt.org",
+      "type": "domain",
+      "context": "GTG-20006 CDN host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "update.stuseamandesilt.org",
+      "type": "domain",
+      "context": "GTG-20006 update host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "itechx.tel",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "pdfviewer2024.b-cdn.net",
+      "type": "domain",
+      "context": "GTG-20006 BunnyCDN PDF viewer host per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "meridian-protocol.org",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "meridiangroup-corp.com",
+      "type": "domain",
+      "context": "GTG-20006 corporate-themed domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "projectnightcrawler.dev",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "metricwave.org",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "mgsend.org",
+      "type": "domain",
+      "context": "GTG-20006 infrastructure domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "russianearabroad.com",
+      "type": "domain",
+      "context": "GTG-20006 diaspora-themed domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "russianearabroad.org",
+      "type": "domain",
+      "context": "GTG-20006 diaspora-themed domain per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "104.145.210.184",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "104.194.151.133",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "104.194.159.55",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "144.172.114.192",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "213.145.86.112",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "2.26.53.194",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "148.135.195.111",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "185.198.234.26",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "185.198.234.101",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "149.54.42.106",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "104.194.149.228",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "38.146.28.132",
+      "type": "ip",
+      "context": "GTG-20006 infrastructure IP per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "918fa52ae45ed60ba7cc8bdc99c3cbe9ab92e0375ec31fc05d0d4513be11c593",
+      "type": "sha256",
+      "context": "GTG-20006 sample hash per Anthropic",
+      "first_seen": "2026-09-10",
+      "source": "Anthropic",
+      "campaign": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
+      "status": "active"
+    },
+    {
+      "value": "github.com/sven5500/firtfirter",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/montry111/secsecon",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jamjack2026/zoysotor",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jamjack2026/twotwo",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/urusa4400/yutyutb",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/urusa4400/vcgheeg",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jamestony88/confgiwr",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/baras6600P/oupouper",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/choemiyang/openoper",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jeni534/qmcoiuuer",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub repo used as PAT-backed C2 per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/sven5500",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/montry111",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jamjack2026",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/urusa4400",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jamestony88",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/baras6600P",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/choemiyang",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "github.com/jeni534",
+      "type": "url_path",
+      "context": "Kimsuky GitPower GitHub account per Genians appendix",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "pastebin.com/raw/gybpx38s",
+      "type": "url_path",
+      "context": "Kimsuky GitPower Pastebin raw C2 used by Visa5499.lnk per Genians",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "10780939962b54addc9d31f57d80edfc",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "1523a2fcc901965ab4568d9fe829e4af",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "500e0bc0d7579fb338912770964076fe",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "685bfc6b2c29fbc16cfad908894add55",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "7a53089053b1381742856a5cf2b95f8b",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "8db2f20b719dcb7029d6296505622093",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "900e832c10d851bbdef3fb191a15db0e",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "a2015665a3e18bf0ef86e3931245c7e6",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "bb88940e915b11f6330b7446f6037f5b",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "ce5932b88f879f26006df81f2fa7667e",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "d0894d4626aae0f96d6b84ca3bb71a36",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "e50f2ae7fb03675a1ef58b1cf9cda6d1",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
+    {
+      "value": "f648bdd3c2cd902e239149de86d43e8f",
+      "type": "md5",
+      "context": "Kimsuky GitPower sample MD5 per Genians section 5-1",
+      "first_seen": "2026-08-11",
+      "source": "Genians Security Center",
+      "campaign": "2026-09-11-kimsuky-opencode-gitpower-lures",
+      "status": "active"
+    },
     {
       "value": "yosemite.jp",
       "type": "domain",
@@ -4162,7 +4792,7 @@
     {
       "value": "npm:@solana-launchpad/sdk",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | bait package, no malicious code",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4171,7 +4801,7 @@
     {
       "value": "npm:@validate-sdk/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | payload, infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4180,7 +4810,7 @@
     {
       "value": "npm:@hash-validator/v2",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | early variant, JavaScript infostealer",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4189,7 +4819,7 @@
     {
       "value": "aes-create-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4198,7 +4828,7 @@
     {
       "value": "jito-proper-excutor",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4207,7 +4837,7 @@
     {
       "value": "jito-sub-aes-ipheriv",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | rotated payload",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4216,7 +4846,7 @@
     {
       "value": "pypi:scraper-npm",
       "type": "package",
-      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse—Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
+      "context": "PromptMink: North Korean Supply Chain Campaign Weaponizes AI Coding Agents via LLM Optimization Abuse\u2014Claude Opus Compromised to Install Malicious Dependencies | PyPI variant, February 2026",
       "first_seen": "2026-05-06",
       "source": "ReversingLabs",
       "campaign": "promptmink-famous-chollima-ai-agent-supply-chain",
@@ -4315,7 +4945,7 @@
     {
       "value": "65.111.27.132",
       "type": "ip",
-      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours—Attackers Target Credential Tables",
+      "context": "CVE-2026-42208: Critical SQL Injection in LiteLLM AI Gateway Actively Exploited Within 36 Hours\u2014Attackers Target Credential Tables",
       "first_seen": "2026-05-12",
       "source": "The Hacker News",
       "campaign": "cve-2026-42208-litellm-sql-injection-active-exploitation",
@@ -4324,7 +4954,7 @@
     {
       "value": "jsonkeeper.com",
       "type": "domain",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -4333,7 +4963,7 @@
     {
       "value": "35FEEF0E6806C14F4CCDB4FCEFF8A5757956C50FB5EC9644DEDAE665304F9F96",
       "type": "sha256",
-      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending—244K Downloads of Sefirah Rust Infostealer Before Removal",
+      "context": "Malicious Hugging Face Repository Masquerading as OpenAI Privacy Filter Reaches #1 Trending\u2014244K Downloads of Sefirah Rust Infostealer Before Removal",
       "first_seen": "2026-05-12",
       "source": "HiddenLayer",
       "campaign": "hugging-face-fake-openai-privacy-filter-sefirah-may-2026",
@@ -4342,7 +4972,7 @@
     {
       "value": "6d5b1b7b9b95f2074094632e3962dc21432c2b7dccfbbe2c7d61f724ffcfea7c",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -4351,7 +4981,7 @@
     {
       "value": "c1b59cc25bdc1fe3f3ce8eda06d002dda7cb02dea8c29877b68d04cd089363c7",
       "type": "sha256",
-      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer—244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
+      "context": "Fake OpenAI Privacy Filter Hugging Face Repository Delivers Infostealer\u2014244K Downloads Before Removal; Linked to Broader Supply Chain Campaign",
       "first_seen": "2026-05-16",
       "source": "HiddenLayer",
       "campaign": "hugging-face-privacy-filter-infostealer-may-2026",
@@ -4378,7 +5008,7 @@
     {
       "value": "npm:@bankr/agent",
       "type": "package",
-      "context": "Encoded Prompt Injection Drains $175K–$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
+      "context": "Encoded Prompt Injection Drains $175K\u2013$200K from AI-Controlled Crypto Wallet: Grok + Bankrbot Morse Code Attack Reveals Excessive Agency Risk",
       "first_seen": "2026-05-22",
       "source": "Security Boulevard",
       "campaign": "grok-bankrbot-morse-code-prompt-injection-may-2026",

@@ -1,6 +1,82 @@
 {
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-11",
   "entries": [
+    {
+      "id": "gtg-50014",
+      "names": [
+        "GTG-50014",
+        "MeowSHA",
+        "frkoo",
+        "blazespider"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "AWS EC2 APK secret scanning",
+        "stolen AI API keys reused against other targets",
+        "SaaS session-store theft",
+        "Telegram"
+      ],
+      "ttps": [
+        "T1528 - Steal Application Access Token",
+        "T1078.004 - Valid Accounts: Cloud Accounts",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence"
+      ],
+      "description": "Anthropic disrupted suspected ShinyHunters affiliates tracked as GTG-50014. One French-speaking operator using MeowSHA, frkoo, and blazespider ran ten AWS EC2 workers that downloaded 1.8 million Android APKs, decompiled them, and scanned for secrets with TruffleHog. Stolen AI API keys from victim environments were reused for about three weeks. Affiliates used Claude for SaaS supply-chain theft, including a session-store dump of more than 2,100 Azure AD token sets across more than 40 tenants in about 34 hours. Distinct from the earlier shinyhunters-claimed infostealer case in this feed.",
+      "attribution": "Anthropic: suspected ShinyHunters affiliates. Not independently corroborated as the core ShinyHunters group."
+    },
+    {
+      "id": "gtg-20006",
+      "names": [
+        "GTG-20006",
+        "JackPoterz"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2025-12",
+      "status": "active",
+      "distribution": [
+        "device-code phishing via Embassy Kit",
+        "hotel captive-portal DNS hijack then ClickFix",
+        "WhatsApp companion-device takeover",
+        "AI-rebuilt Windows stealers"
+      ],
+      "ttps": [
+        "T1566 - Phishing",
+        "T1528 - Steal Application Access Token",
+        "T1189 - Drive-by Compromise",
+        "T1059.001 - Command and Scripting Interpreter: PowerShell",
+        "T1562 - Impair Defenses",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence"
+      ],
+      "description": "Anthropic cluster that automated recon, phishing, implant rebuilds, mailbox theft, and tenant persistence with Claude workflows. Windows families include PowerChrome, WUEngine, Shadow C2, MiniPlasma, and CloudSyncSvc; Android GiftDrop; iOS DarkSword. Much of the published infrastructure overlaps GTIG UNC7005 / STORM-2945 indicators from 2026-08-20. Anthropic said attribution is consistent with public Midnight Blizzard reporting; this feed keeps GTG-20006 and UNC7005 as separate records.",
+      "attribution": "Anthropic: consistent with public Midnight Blizzard reporting, operator handle JackPoterz, Russian speaker, tradecraft consistent with Russian state-nexus espionage. Confidence medium for a Midnight Blizzard identity because Anthropic did not present independent overlap evidence and GTIG assigned overlapping infrastructure to UNC7005."
+    },
+    {
+      "id": "dustmaker",
+      "names": [
+        "DUSTMAKER"
+      ],
+      "type": "malware",
+      "first_seen": "2026-03",
+      "status": "active",
+      "distribution": [
+        "PyPI trojanized MCP packages",
+        "GitHub Actions runners",
+        "hidden .claude, .vscode, and .cursor workspace files"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1553 - Subvert Trust Controls",
+        "T1546 - Event Triggered Execution",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Credential stealer GTIG associates with UNC6780 / TeamPCP. On GitHub Actions runners it pulls OIDC tokens from process memory and publishes packages with valid SLSA Build 3 attestations. It drops or changes files in hidden AI and IDE directories, instructs assistants to run attacker scripts such as setup.mjs, creates CI jobs with AI-themed names such as Copilot Setup then deletes workflow logs, and placed weapons-themed comments in JavaScript loaders assessed as an attempt to make LLM security scanners refuse.",
+      "attribution": "Used by UNC6780 / TeamPCP per GTIG 2026-09-08."
+    },
     {
       "id": "clerk-next-fix-auth-protection",
       "names": [
@@ -163,8 +239,8 @@
         "T1059.001 - PowerShell",
         "T1588.007 - Obtain Capabilities: Artificial Intelligence"
       ],
-      "description": "Suspected Russia-nexus cluster tracked by GTIG from February 2026. Combines authentication-flow abuse with malware, including LLM-artifact CHERRYPIE, VIDAR, ATOMIC, and ENGINELIGHT. Early August 2026 activity included Finnish Operations Center-themed Google OAuth against European defense-industry targets.",
-      "attribution": "GTIG assesses Russian nexus with high confidence and an ICE RELIC initial-access link with moderate confidence. Microsoft tracks the cluster as STORM-2945."
+      "description": "Suspected Russia-nexus cluster tracked by GTIG from February 2026. Combines authentication-flow abuse with malware, including LLM-artifact CHERRYPIE, VIDAR, ATOMIC, and ENGINELIGHT. Early August 2026 activity included Finnish Operations Center-themed Google OAuth against European defense-industry targets. Anthropic's 2026-09-10 GTG-20006 report republished a large overlapping IOC set and said its attribution is consistent with public Midnight Blizzard reporting. GTIG still tracks this infrastructure as UNC7005 / STORM-2945. The group-name layer is contested; do not merge UNC7005 into Midnight Blizzard without additional vendor overlap.",
+      "attribution": "GTIG assesses Russian nexus with high confidence and an ICE RELIC initial-access link with moderate confidence. Microsoft tracks the cluster as STORM-2945. Anthropic tracks overlapping infrastructure as GTG-20006 and points at Midnight Blizzard public reporting; that linkage is not independently evidenced in the Anthropic paper."
     },
     {
       "id": "cherrypie",
@@ -1348,7 +1424,10 @@
         "LLM-assisted operations",
         "ZIP archives containing document-themed LNK files",
         "GitHub-backed PowerShell command-and-control",
-        "local LLM and retrieval-augmented generation capability research"
+        "local LLM and retrieval-augmented generation capability research",
+        "opencode-generated PDF decoys",
+        "Pastebin raw C2",
+        "GitHub PAT-backed LNK follow-on wave August 2026"
       ],
       "ttps": [
         "T1566.001 - Spearphishing Attachment",
@@ -1360,9 +1439,11 @@
         "T1053.005 - Scheduled Task/Job: Scheduled Task",
         "T1102.002 - Web Service: Bidirectional Communication",
         "T1588.007 - Obtain Capabilities: Artificial Intelligence",
-        "T1682 - Query Public AI Services"
+        "T1682 - Query Public AI Services",
+        "T1497 - Virtualization/Sandbox Evasion",
+        "T1070.003 - Indicator Removal: Clear Command History"
       ],
-      "description": "North Korean state-sponsored APT group observed using LLMs to parse disclosed vulnerabilities including CVE-2022-30190 (MSDT Follina) to map exploitation paths. Masquerades as South Korean government officials to deliver spearphishing payloads. Uses generative AI to accelerate the reconnaissance-to-exploitation cycle and dynamically generate lookalike C2 domains. In August 2026, Genians Security Center linked Operation GitPower to Kimsuky and documented AI-generated decoys, document-themed LNK delivery, PowerShell, scheduled tasks, Git-based command-and-control, RC4-encrypted AsyncRAT payloads, and operator-side Ollama, GPT4All, Msty, Cursor, and AI-development artifacts. Genians found capability research and integration of existing models, not model training.",
+      "description": "North Korean state-sponsored APT group observed using LLMs to parse disclosed vulnerabilities including CVE-2022-30190 (MSDT Follina) to map exploitation paths. Masquerades as South Korean government officials to deliver spearphishing payloads. Uses generative AI to accelerate the reconnaissance-to-exploitation cycle and dynamically generate lookalike C2 domains. In August 2026, Genians Security Center linked Operation GitPower to Kimsuky and documented AI-generated decoys, document-themed LNK delivery, PowerShell, scheduled tasks, Git-based command-and-control, RC4-encrypted AsyncRAT payloads, and operator-side Ollama, GPT4All, Msty, Cursor, and AI-development artifacts. Genians found capability research and integration of existing models, not model training. On 2026-09-07 Genians reported a 13-LNK follow-on from 2026-08-11 to 2026-08-19 with financial Korean lures, Pastebin C2 in one cluster, and four decoy PDFs whose Creator and Producer were opencode, Author anonymous, and CreationDate 2026-08-16 03:00:00 UTC, with unreplaced 임시값 placeholders.",
       "attribution": "DPRK state-sponsored, attributed by Microsoft Threat Intelligence (confidence: high). Genians Security Center linked Operation GitPower to Kimsuky and North Korea's Reconnaissance General Bureau without assigning a numeric confidence level."
     },
     {
@@ -1726,11 +1807,12 @@
         "Bitwarden CLI hijackers",
         "Checkmarx KICS compromisers",
         "Shai-Hulud / Miasma / Hades Threat Lineage",
-        "TeamPCP (potential open-source code reuse by copycats)"
+        "TeamPCP (potential open-source code reuse by copycats)",
+        "UNC6780"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
-      "last_updated": "2026-08-14",
+      "last_updated": "2026-09-11",
       "status": "active",
       "distribution": [
         "PyPI",
@@ -1755,7 +1837,10 @@
         "GitHub Actions workflows",
         "Python startup persistence through litellm_init.pth and ~/.config/sysmon/sysmon.py",
         "Git repository dead-drops named tpcp-docs or docs-tpcp with data-<timestamp> release tags",
-        "Unexpected privileged alpine:latest pods in the kube-system namespace"
+        "Unexpected privileged alpine:latest pods in the kube-system namespace",
+        "PyPI package tiktoken_mcp",
+        "DUSTMAKER workspace hooks in .claude, .cursor, and .vscode",
+        "GitHub Actions jobs named like Copilot Setup"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -1791,9 +1876,12 @@
         "T1110.004 - Brute Force (credential harvesting and enumeration)",
         "T1140 - Deobfuscation/Decoding (AES-GCM decryption of modular payloads)",
         "T1518 - Software Discovery (scanning for cloud metadata, identities, Kubernetes)",
-        "T1553.002 - Subvert Trust Controls (SLSA provenance forgery in earlier waves)"
+        "T1553.002 - Subvert Trust Controls (SLSA provenance forgery in earlier waves)",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1027 - Obfuscated Files or Information",
+        "T1546 - Event Triggered Execution"
       ],
-      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises.",
+      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises. GTIG reported on 2026-09-08 that UNC6780, also tracked as TeamPCP, used DUSTMAKER to steal GitHub Actions OIDC tokens, mint SLSA Build 3 attestations, drop workspace hooks under .claude, .cursor, and .vscode, and poison LLM scanners with weapons-themed comments in JavaScript loaders, including the PyPI package tiktoken_mcp.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
     },
     {

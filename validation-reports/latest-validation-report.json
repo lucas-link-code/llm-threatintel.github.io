@@ -1,7 +1,7 @@
 {
-  "commit_sha": "082fdd05f997603a1e18fd46cd2198046a3d5ff8",
+  "commit_sha": "dcedd3fe7e57",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-10T07:55:55+00:00",
+  "generated_at_utc": "2026-09-11T07:49:44+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -37,11 +37,19 @@
       "severity": "warn"
     },
     {
-      "code": "evidence-source-review-required",
+      "code": "evidence-url-review",
       "file": "posts/2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish.md",
-      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "message": "1 source URL(s) require review",
       "recommendation": "",
       "record_id": "2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign",
       "severity": "review"
     }
   ],
@@ -49,13 +57,41 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 2,
-  "reports_skipped": 255,
-  "review_required": 1,
-  "source_urls_checked": 7,
-  "state_updates": 2,
+  "reports_checked": 8,
+  "reports_newly_validated": 8,
+  "reports_skipped": 256,
+  "review_required": 2,
+  "source_urls_checked": 22,
+  "state_updates": 8,
   "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.wiz.io/blog/off-guard-breaking-litellm-from-authentication-bypass-to-cloud-compromise",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.wiz.io/blog/off-guard-breaking-litellm-from-authentication-bypass-to-cloud-compromise"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/09/nearly-1-in-10-exposed-litellm-gateways.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/09/nearly-1-in-10-exposed-litellm-gateways.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q"
+    },
     {
       "error": "",
       "final_url": "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/",
@@ -94,8 +130,8 @@
     {
       "error": "",
       "final_url": "https://cybersecuritynews.com/hugging-face-flaw/",
-      "http_status": 202,
-      "status": "unknown_error",
+      "http_status": 200,
+      "status": "accessible",
       "url": "https://cybersecuritynews.com/hugging-face-flaw/"
     },
     {
@@ -104,6 +140,83 @@
       "http_status": 404,
       "status": "not_found",
       "url": "https://www.cert.org/vulnerability-analysis/cve-2026-80047"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign"
+    },
+    {
+      "error": "",
+      "final_url": "https://adversa.ai/blog/top-mcp-security-resources-september-2026/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://adversa.ai/blog/top-mcp-security-resources-september-2026/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://nhimg.org/articles/deadbugz-shows-how-mcp-metadata-poisoning-evades-ai-agent-trust/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://nhimg.org/articles/deadbugz-shows-how-mcp-metadata-poisoning-evades-ai-agent-trust/"
+    },
+    {
+      "error": "",
+      "final_url": "https://labs.cloudsecurityalliance.org/research/ciso-daily-briefing-20260902/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://labs.cloudsecurityalliance.org/research/ciso-daily-briefing-20260902/"
+    },
+    {
+      "error": "",
+      "final_url": "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-09-01/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-09-01/"
+    },
+    {
+      "error": "",
+      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cybersecuritynews.com/llmjacking-attack/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cybersecuritynews.com/llmjacking-attack/"
+    },
+    {
+      "error": "",
+      "final_url": "https://blog.rankiteo.com/awsgul1788459858-aws-operation-bizarre-bazaar-victims-cyber-attack-september-2026/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://blog.rankiteo.com/awsgul1788459858-aws-operation-bizarre-bazaar-victims-cyber-attack-september-2026/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cybersecuritynews.com/hugging-face-flaw/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cybersecuritynews.com/hugging-face-flaw/"
+    },
+    {
+      "error": "",
+      "final_url": "https://gbhackers.com/hugging-face-transformers-flaw/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://gbhackers.com/hugging-face-transformers-flaw/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
     }
   ],
   "validation_version": "1.0.0",
