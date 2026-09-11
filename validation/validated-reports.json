@@ -4603,10 +4603,10 @@
       "warnings": []
     },
     "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops": {
-      "content_hash": "7916c97f814a80d37ef8514d1c0940ff95c8368ed76a0654bd19bd21e71d0325",
+      "content_hash": "202efe036e539029ff2cd620de71ac1b801fbd891b304696eb239036b4aded7d",
       "evidence_status": "validated",
       "file": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.md",
-      "posts_index_hash": "d2d6d6571d8aa7d3f279869240f29d7a00f7421173c20643d91d630f8b10ccc9",
+      "posts_index_hash": "a1c67f2b7d8e00e529c7124b24e9f6eaedf550a102c1a93d1169760ea6a0ecbc",
       "report_id": "2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops",
       "review_required": [],
       "source_urls": [
@@ -4615,15 +4615,45 @@
         "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-11T07:44:03+00:00",
+      "validated_at": "2026-09-11T08:53:47+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-anthropic-september-2026-threat-report-gtg-16001-deepseek": {
+      "content_hash": "db0f45cc83e3702d5a74cd7dfbd0b6814b3c7814e7b4ee8bbb1608549bc6a4b8",
+      "evidence_status": "validated",
+      "file": "2026-09-11-anthropic-september-2026-threat-report-gtg-16001-deepseek.md",
+      "posts_index_hash": "79c01f559721230c0dd2cda2ea784503618678118b90b5c83536e48702b37b68",
+      "report_id": "2026-09-11-anthropic-september-2026-threat-report-gtg-16001-deepseek",
+      "review_required": [],
+      "source_urls": [
+        "https://www.anthropic.com/threat-intelligence-report-september-2026"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T08:53:44+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-auth0-infostealer-ai-tokens-august-2026": {
+      "content_hash": "6f389e9eeb30a89145b45a4c31126d8b6616b475e7cf56579d222672e2fc23bc",
+      "evidence_status": "validated",
+      "file": "2026-09-11-auth0-infostealer-ai-tokens-august-2026.md",
+      "posts_index_hash": "c2aab30d0b9583e20cd30fecfa66772adb8e1b25e07e984a97b174d11f21f2ae",
+      "report_id": "2026-09-11-auth0-infostealer-ai-tokens-august-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/09/infostealer-logs-expose-replayable-ai.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T08:53:46+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev": {
-      "content_hash": "02bd994037db68393583c7593036bc69dd888923b29c278af630ed92dd671871",
+      "content_hash": "7e09cb42ed361fc3dacbece36548bd410bd52aaba86edd1171b2b01d92307ad7",
       "evidence_status": "validated",
       "file": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev.md",
-      "posts_index_hash": "e401b3a500ed694c6dca02f348404a2eb1e282d10d86a3f49c826d01c10d3cbc",
+      "posts_index_hash": "93925aa58481ec8dd5521f7f6698d136e29a884075c7e4e8d6ea4fd46e690fc8",
       "report_id": "2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev",
       "review_required": [],
       "source_urls": [
@@ -4633,15 +4663,15 @@
         "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-11T07:49:27+00:00",
+      "validated_at": "2026-09-11T08:53:49+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce": {
-      "content_hash": "1b4aebb5115e1f723fa0d8b6e91f6525dfa77be9627370b690a79533ad05f5cc",
+      "content_hash": "ba744136ebe9c23c26aff69388961d7cf134bc2d2a623e98e2668b61df4f0672",
       "evidence_status": "validated",
       "file": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce.md",
-      "posts_index_hash": "066ede6312400f694b1499429472191b2aa981a25c947be68f3a4e85ce0720e2",
+      "posts_index_hash": "735c3b6cb37b3f6fc620fa5c3ba15908339c881e4d0eba308a171d8b8ac5fbc7",
       "report_id": "2026-09-11-cve-2026-87911-aws-postgres-mcp-rce",
       "review_required": [],
       "source_urls": [
@@ -4650,27 +4680,43 @@
         "https://severitydaily.com/aws-postgres-mcp-cve-2026-87911-copy-to-program-same-1-1-7-fix/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-11T07:44:06+00:00",
+      "validated_at": "2026-09-11T08:53:50+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-11-greynoise-forged-ai-crawler-campaign-august-2026": {
+      "content_hash": "65e9c57ff5ab438d537a1ec01aef65da21c2d548282bb92d1012ad0407e0e9d4",
+      "evidence_status": "validated",
+      "file": "2026-09-11-greynoise-forged-ai-crawler-campaign-august-2026.md",
+      "posts_index_hash": "79c7e31991edc67f75912daebef78e07d6204fa087e15b22077fdd07aeff9ab4",
+      "report_id": "2026-09-11-greynoise-forged-ai-crawler-campaign-august-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.greynoise.io/blog/threat-actors-posing-as-ai-crawlers",
+        "https://www.helpnetsecurity.com/2026/08/31/ai-crawlers-scan-exposed-credentials/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-11T08:53:46+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-11-gtig-from-prompting-to-autonomy": {
-      "content_hash": "ab0f8f6f0196c80f4ddc7907e3123ac66be58f0f50745a1ec3ab8efae4644f5a",
+      "content_hash": "678ef13a8d1322fa62df82c01af0e66bf79683fcfee438517de854b68077887e",
       "evidence_status": "validated",
       "file": "2026-09-11-gtig-from-prompting-to-autonomy.md",
-      "posts_index_hash": "9ff793b59e8bcd851b1edf6ebbd49d6f75dca7cdf5f8100dabaf18ad1c7eaa81",
+      "posts_index_hash": "8c69d3618e6b18f5a2ec6cf5ede5a1454478405ebec78c936258b3b3028c3062",
       "report_id": "2026-09-11-gtig-from-prompting-to-autonomy",
       "review_required": [],
       "source_urls": [
         "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-11T07:44:02+00:00",
+      "validated_at": "2026-09-11T08:53:46+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-11-kimsuky-opencode-gitpower-lures": {
-      "content_hash": "06534ec27abb2940f1f797fddd23b0138129f0208f5edd4b14aee2b0474b0d85",
+      "content_hash": "e7eb69809904da4d8a6e55fd367e7cbfb8e5bef8be3d47a4b230e5c35a4e378f",
       "evidence_status": "validated",
       "file": "2026-09-11-kimsuky-opencode-gitpower-lures.md",
       "posts_index_hash": "0e83696cba9ceddef7ff6edee7452cc76a24b4f3719683d4a97a797a177f34e2",
@@ -4681,22 +4727,22 @@
         "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-11T07:44:53+00:00",
+      "validated_at": "2026-09-11T08:53:51+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
     "2026-09-11-puzzlemask-plain-prose-prompt-injection": {
-      "content_hash": "1a22b7a44b2e118abe2ef547b8b86fdf574eeeb4559ff864c375ac89cc7199d3",
+      "content_hash": "7bf30823760c8d0f379e42289b9845a65128467e0cf721ff04b34d70e4b4a8c2",
       "evidence_status": "validated",
       "file": "2026-09-11-puzzlemask-plain-prose-prompt-injection.md",
-      "posts_index_hash": "efe7d91f8773c8b3c52409ef151683f6bcf3ffad8da30616d9e7a891948dc378",
+      "posts_index_hash": "2cf649b1e04071e3961e0057ab906a9227c0f381becf7aebe787b2c0d2a0c108",
       "report_id": "2026-09-11-puzzlemask-plain-prose-prompt-injection",
       "review_required": [],
       "source_urls": [
         "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-11T07:44:03+00:00",
+      "validated_at": "2026-09-11T08:53:48+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

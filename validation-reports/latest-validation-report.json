@@ -1,7 +1,7 @@
 {
-  "commit_sha": "dcedd3fe7e57",
+  "commit_sha": "a32b2ac7e1cc",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-11T07:49:44+00:00",
+  "generated_at_utc": "2026-09-11T08:53:51+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,35 +35,82 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish",
-      "severity": "review"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-09-08-deadbugz-mcp-metadata-poisoning-campaign",
-      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 8,
-  "reports_newly_validated": 8,
-  "reports_skipped": 256,
-  "review_required": 2,
-  "source_urls_checked": 22,
-  "state_updates": 8,
+  "reports_checked": 9,
+  "reports_newly_validated": 9,
+  "reports_skipped": 258,
+  "review_required": 0,
+  "source_urls_checked": 18,
+  "state_updates": 9,
   "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.greynoise.io/blog/threat-actors-posing-as-ai-crawlers",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.greynoise.io/blog/threat-actors-posing-as-ai-crawlers"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.helpnetsecurity.com/2026/08/31/ai-crawlers-scan-exposed-credentials/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.helpnetsecurity.com/2026/08/31/ai-crawlers-scan-exposed-credentials/"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/09/infostealer-logs-expose-replayable-ai.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/09/infostealer-logs-expose-replayable-ai.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.theregister.com/ai-and-ml/2026/09/10/latest-anthropic-horror-story-chills-with-tales-of-kamikaze-drone-swarms-and-bioweapons-research/5295702",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.theregister.com/ai-and-ml/2026/09/10/latest-anthropic-horror-story-chills-with-tales-of-kamikaze-drone-swarms-and-bioweapons-research/5295702"
+    },
+    {
+      "error": "",
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia"
+    },
+    {
+      "error": "",
+      "final_url": "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/"
+    },
     {
       "error": "",
       "final_url": "https://www.wiz.io/blog/off-guard-breaking-litellm-from-authentication-bypass-to-cloud-compromise",
@@ -94,129 +141,38 @@
     },
     {
       "error": "",
-      "final_url": "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/",
+      "final_url": "https://aws.amazon.com/security/security-bulletins/2026-104-aws/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/"
+      "url": "https://aws.amazon.com/security/security-bulletins/2026-104-aws/"
     },
     {
       "error": "",
-      "final_url": "https://www.kucoin.com/news/flash/ai-models-chatgpt-and-claude-found-to-engage-in-malicious-behavior-in-real-world-scenarios",
+      "final_url": "https://github.com/awslabs/mcp/security/advisories/GHSA-fph8-pg5w-78fv",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.kucoin.com/news/flash/ai-models-chatgpt-and-claude-found-to-engage-in-malicious-behavior-in-real-world-scenarios"
+      "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-fph8-pg5w-78fv"
     },
     {
       "error": "",
-      "final_url": "https://www.cnn.com/2026/08/04/tech/ai-anthropic-openai-security-breach-intl-hnk",
+      "final_url": "https://severitydaily.com/aws-postgres-mcp-cve-2026-87911-copy-to-program-same-1-1-7-fix/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.cnn.com/2026/08/04/tech/ai-anthropic-openai-security-breach-intl-hnk"
+      "url": "https://severitydaily.com/aws-postgres-mcp-cve-2026-87911-copy-to-program-same-1-1-7-fix/"
     },
     {
       "error": "",
-      "final_url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/",
+      "final_url": "https://www.genians.co.kr/blog/threat_intelligence/ai-agent-opencode",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/"
+      "url": "https://www.genians.co.kr/blog/threat_intelligence/ai-agent-opencode"
     },
     {
       "error": "",
-      "final_url": "https://augusto.digital/insights/blogs/monthly-llm-news-september-2026/",
+      "final_url": "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://augusto.digital/insights/blogs/monthly-llm-news-september-2026/"
-    },
-    {
-      "error": "",
-      "final_url": "https://cybersecuritynews.com/hugging-face-flaw/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecuritynews.com/hugging-face-flaw/"
-    },
-    {
-      "error": "HTTP Error 404: Not Found",
-      "final_url": "https://www.sei.cmu.edu/certsite/vulnerability-analysis/cve-2026-80047/",
-      "http_status": 404,
-      "status": "not_found",
-      "url": "https://www.cert.org/vulnerability-analysis/cve-2026-80047"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign"
-    },
-    {
-      "error": "",
-      "final_url": "https://adversa.ai/blog/top-mcp-security-resources-september-2026/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://adversa.ai/blog/top-mcp-security-resources-september-2026/"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://nhimg.org/articles/deadbugz-shows-how-mcp-metadata-poisoning-evades-ai-agent-trust/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://nhimg.org/articles/deadbugz-shows-how-mcp-metadata-poisoning-evades-ai-agent-trust/"
-    },
-    {
-      "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/ciso-daily-briefing-20260902/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/ciso-daily-briefing-20260902/"
-    },
-    {
-      "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-09-01/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-09-01/"
-    },
-    {
-      "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
-    },
-    {
-      "error": "",
-      "final_url": "https://cybersecuritynews.com/llmjacking-attack/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecuritynews.com/llmjacking-attack/"
-    },
-    {
-      "error": "",
-      "final_url": "https://blog.rankiteo.com/awsgul1788459858-aws-operation-bizarre-bazaar-victims-cyber-attack-september-2026/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://blog.rankiteo.com/awsgul1788459858-aws-operation-bizarre-bazaar-victims-cyber-attack-september-2026/"
-    },
-    {
-      "error": "",
-      "final_url": "https://cybersecuritynews.com/hugging-face-flaw/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://cybersecuritynews.com/hugging-face-flaw/"
-    },
-    {
-      "error": "",
-      "final_url": "https://gbhackers.com/hugging-face-transformers-flaw/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://gbhackers.com/hugging-face-transformers-flaw/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
+      "url": "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm"
     }
   ],
   "validation_version": "1.0.0",

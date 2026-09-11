@@ -2,6 +2,27 @@
   "last_updated": "2026-09-11",
   "entries": [
     {
+      "id": "gtg-16001",
+      "names": [
+        "GTG-16001"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-07",
+      "status": "disrupted",
+      "distribution": [
+        "silent relay of DeepSeek customer traffic to Claude Opus",
+        "chain of thought extraction via cross session replay",
+        "string tagging of Claude Code, Claude Agent SDK, and OpenCode harness traffic"
+      ],
+      "ttps": [
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1036 - Masquerading",
+        "T1552.001 - Unsecured Credentials: Credentials In Files"
+      ],
+      "description": "Anthropic cluster covering DeepSeek silently relaying selected customer requests to Claude Opus and extracting Opus chain of thought traces for training. Anthropic attributed more than 12.1 million exchanges to DeepSeek over 14 days in July 2026, including internal documents from a PRC technology company, live credentials for a Russian government database, and a PRC municipal Public Security Bureau case management build. Distinct from GTG-20006 in the same September 2026 report.",
+      "attribution": "Anthropic: DeepSeek, tracked as GTG-16001. Confidence high for Anthropic's own telemetry. PRC lab distillation case."
+    },
+    {
       "id": "gtg-50014",
       "names": [
         "GTG-50014",

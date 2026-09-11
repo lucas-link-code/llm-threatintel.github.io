@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-09-11T07:49:44+00:00`
-- Commit SHA: `dcedd3fe7e57`
+- Run time UTC: `2026-09-11T08:53:51+00:00`
+- Commit SHA: `a32b2ac7e1cc`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `2`
-- Reports checked: `8`
-- Reports skipped: `256`
-- Reports newly validated: `8`
+- Review required: `0`
+- Reports checked: `9`
+- Reports skipped: `258`
+- Reports newly validated: `9`
 - IOC duplicates found: `0`
-- Source URLs checked: `22`
+- Source URLs checked: `18`
 
 No files were removed or destructively modified.
 
@@ -22,31 +22,3 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
-- **REVIEW** `evidence-url-review` `posts/2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish.md` `2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish`: 1 source URL(s) require review
-- **REVIEW** `evidence-url-review` `posts/2026-09-08-deadbugz-mcp-metadata-poisoning-campaign.md` `2026-09-08-deadbugz-mcp-metadata-poisoning-campaign`: 1 source URL(s) require review
-
-## Human Review Queue
-
-```text
-Report: 2026-09-10-cve-2026-80047-hugging-face-rce-sept-republish
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
-
-```text
-Report: 2026-09-08-deadbugz-mcp-metadata-poisoning-campaign
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
