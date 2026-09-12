@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners | LLM ThreatIntel</title>
+  <meta name="description" content="Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-11-gtig-from-prompting-to-autonomy.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners">
+  <meta property="og:description" content="Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-11-gtig-from-prompting-to-autonomy.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners">
+  <meta property="article:published_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="apt">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="mcp-security">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners">
+  <meta name="twitter:description" content="Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners",
+  "description": "Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.",
+  "datePublished": "2026-09-11T00:00:00Z",
+  "dateModified": "2026-09-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-11-gtig-from-prompting-to-autonomy.html",
+  "keywords": [
+    "supply-chain",
+    "apt",
+    "nation-state",
+    "llmjacking",
+    "mcp-security"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-11</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-apt">APT</span><span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-mcp-security">Mcp Security</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners</h1>
+<p><strong>Date:</strong> 2026-09-11<br><strong>Tags:</strong> supply-chain, apt, nation-state, llmjacking, mcp-security</p>
+<h2>Executive Summary</h2>
+<p>Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GTIG AI Threat Tracker Q2 2026; DUSTMAKER credential stealer; Recon harvesting dashboard</td></tr><tr><td>Actor / Attribution</td><td>UNC6780 / TeamPCP for the supply chain cluster, confidence high per GTIG. Separate unnamed financially motivated actor for the six hour harvest. PRC nexus UNC6508 for proprietary AI IP theft. Additional named clusters below.</td></tr><tr><td>Target</td><td>Developers and AI coding assistants; LLM scanners; proprietary models, prompts, and research in healthcare, government, media; cloud AI quotas</td></tr><tr><td>Vector</td><td>Trojanized MCP packages and GitHub repos, CI OIDC token theft, workspace prompt injection, agent instruction markdown, infostealer rules against AI config files</td></tr><tr><td>Status</td><td>Active. Google said it disabled associated assets and updated Gemini classifiers</td></tr><tr><td>First Observed</td><td>UNC6780 supply chain activity since March 2026; this tracker covers Q2 2026 and was published 2026-09-08</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai" target="_blank" rel="noopener">Google Threat Intelligence Group</a>, adversaries are moving from basic prompting to multi agent frameworks that manage scanning pipelines, recover from errors, and harvest credentials with less operator delay. GTIG said a suspected financially motivated actor compromised cloud infrastructure, then used an AI coding chatbot, a prompt, and agent instruction files as playbooks to scan and harvest thousands of third party credentials in under six hours, including IP rotation without a human at each step. Traffic originated from the victim&#x27;s own cloud addresses.</p>
+<p>GTIG reported an exposed C2 host for a framework dubbed Recon. Directory listings showed AGENTS.md, KNOWLEDGE.md, agentic_vuln_research.md, .openclaw/, and memory/. The same host later presented a live dashboard that organized more than 23,800 harvested secrets, including cloud and AI API keys. GTIG published no domain or IP for that host.</p>
+<h3>UNC6780 and DUSTMAKER</h3>
+<p>GTIG said UNC6780 has run large PyPI, npm, and Docker Hub supply chain compromises since March 2026, then sold stolen data or handed access to ransomware and extortion partners. In one Mandiant case, UNC6780 got in, then a second actor issued a LAPSUS branded ransom demand after UNC6780 planted a malicious GitHub Actions workflow in a proprietary AI repository and the extortion actor stole a copy of that repository.</p>
+<p>GTIG listed UNC6780 methods aimed at AI coding assistants and developers:</p>
+<ul><li>Compromised developer accounts published trojanized MCP server forks to PyPI, including tiktoken_mcp, and injected code into official GitHub repositories such as azure-functions-mcp-extension so payloads and workspace hooks arrived when those assets were cloned or installed.</li><li>DUSTMAKER, when running on a GitHub Actions runner, pulled OIDC tokens from process memory and used them as a trusted publisher so compromised packages carried valid SLSA Build 3 attestations that pass automated agent trust checks.</li><li>DUSTMAKER dropped or changed files in hidden AI and IDE directories such as .claude/, .vscode/, and .cursor/ and used those files as startup or build hooks.</li><li>Malicious config instructed the assistant to run attacker scripts such as setup.mjs during ordinary developer work.</li><li>In CI, DUSTMAKER created pipeline tasks with AI themed names such as Copilot Setup, hunted extra tokens, then deleted workflow logs through the GitHub API.</li><li>JavaScript loaders named _index.js carried comment block prompts with biological and nuclear weapons text, which GTIG assessed as an attempt to make LLM security scanners refuse and skip the malicious code. This feed does not reproduce that comment block.</li></ul>
+<p>GTIG assessed that public release of UNC6780 malware will drive copycats.</p>
+<h3>AI assets as the objective</h3>
+<p>GTIG said it did not see tracked espionage or information operations actors attack frontier models directly in Q2 2026, but it did see theft of proprietary models, skills, prompts, source, and research. UNC6508, a PRC nexus actor, targeted academic, medical, and military research in North America and was seen deploying local open weight models in stolen cloud so work stayed off commercial API monitors. Mandiant also handled extortion cases in healthcare and AI media generation where stolen model assets were the leverage.</p>
+<p>GTIG reported distillation campaigns against Google models exceeding 100 million prompts, using proxies and rotating stolen credentials. Google said it degrades student model utility and traces Gemini distilled models.</p>
+<h3>Other actor use of Gemini and commercial LLMs</h3>
+<p>GTIG mapped Gemini misuse across named clusters. BASIN CASTLE, previously BASIN and TEMP.Hex, used models for target profiling, lure translation, malware obfuscation, and PowerShell troubleshooting. CALANQUE ION, previously APT42, used models for OSINT, lure localization, licensing reverse engineering, and summarizing stolen data. RAVINE CASTLE, previously COULEE and APT24, used models for ministry targeting, VMware vCenter SAML bypass research, and Kerberos ticket attacks. DPRK IT worker clusters bulk registered LLM APIs on hijacked accounts and generated fake resumes. SANDWORM RELIC, previously FROZENBARENTS, SANDWORM, and APT44, used AI themed phishing domains and Gemini written password spray scripts against Ukraine. UNC6240, also known as ShinyHunters, used Claude Code and custom MCP tools to parse stolen directories. MIDNIGHT NEPTUNE, formerly UNC1069, used DeepSeek-Coder for Python RATs and poisoned Claude CLI hooks with the SOMBERMEME backdoor. A PRC nexus espionage group used CC Switch to rotate Claude, Gemini, and Codex while wiring Burp Suite, the Phalanx pentest framework, and Shai-Hulud for post exploitation. GTIG said a related pentest framework build stayed at the attempt stage and that Google disabled those assets.</p>
+<p>GTIG also said ACRSTEALER controllers in May 2026 issued file grabber rules for Cline secrets.json and Continue AI config.yaml. Underground prices for Claude, Gemini, Cursor Pro, and Devin accounts more than doubled in 2026 per GTIG forum tracking.</p>
+<p>GTIG published no domains, IPs, or hashes for the six hour harvest, Recon, or the named espionage clusters in this paper. The only machine actionable package name in the AI assistant table is tiktoken_mcp on PyPI. The GitHub repository azure-functions-mcp-extension was named without an organization path, so it is not added as an IOC.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>UNC6780 published trojanized MCP packages and poisoned GitHub repos consumed by coding agents</td></tr><tr><td>Subvert Trust Controls</td><td>T1553</td><td>DUSTMAKER minted SLSA Build 3 attestations with stolen GitHub Actions OIDC tokens</td></tr><tr><td>Event Triggered Execution</td><td>T1546</td><td>Hidden .claude, .vscode, and .cursor files ran attacker scripts when the workspace opened</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Harvest of AI config stores, OIDC tokens, and 23,800 plus secrets on the Recon dashboard</td></tr><tr><td>Valid Accounts</td><td>T1078</td><td>Stolen cloud and AI accounts used for harvest, distillation, and LLMjacking</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>Victim cloud used for unauthorized high performance AI workloads</td></tr><tr><td>Obfuscated Files or Information</td><td>T1027</td><td>Weapons themed comments in JS loaders aimed at LLM scanner refusal</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;tiktoken_mcp&quot; OR &quot;pypi:tiktoken_mcp&quot; OR &quot;setup.mjs&quot; OR &quot;Copilot Setup&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">pypi:tiktoken_mcp</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Alert on pip or uv installs of tiktoken_mcp and on clones of MCP themed forks from unexpected maintainers. Hunt GitHub Actions logs for OIDC token use followed by package publish, then workflow log deletion, especially jobs named Copilot Setup or similar AI utility labels. On developer endpoints, alert when new files appear under .claude/, .cursor/, or .vscode/ that invoke node, python, or curl during folder open or SessionStart. Treat LLM scanner refusals on JS loaders that mention weapons topics as a fail closed cue: continue with static and sandbox analysis. In cloud audit logs, hunt a first seen compute or Gemini/Vertex enablement after a GitHub PAT compromise, Artifact Registry images for LiteLLM or Manus, and Cloud Run services bound to allUsers. Monitor infostealer configs for Cline secrets.json and Continue config.yaml collection.</p>
+<h2>References</h2>
+<ul><li>[Google Threat Intelligence Group] GTIG AI Threat Tracker: From Prompting to Autonomy – The Evolution of Adversarial AI (2026-09-08): https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

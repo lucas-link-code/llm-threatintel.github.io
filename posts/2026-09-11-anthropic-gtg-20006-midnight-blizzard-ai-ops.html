@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure | LLM ThreatIntel</title>
+  <meta name="description" content="Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure">
+  <meta property="og:description" content="Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure">
+  <meta property="article:published_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="apt">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure">
+  <meta name="twitter:description" content="Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure",
+  "description": "Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.",
+  "datePublished": "2026-09-11T00:00:00Z",
+  "dateModified": "2026-09-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.html",
+  "keywords": [
+    "nation-state",
+    "apt",
+    "phishing",
+    "malware",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-11</span>
+      <span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-apt">APT</span><span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure</h1>
+<p><strong>Date:</strong> 2026-09-11<br><strong>Tags:</strong> nation-state, apt, phishing, malware, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GTG-20006 AI orchestrated espionage; implants PowerChrome, WUEngine, Shadow C2, MiniPlasma, CloudSyncSvc; Android GiftDrop; iOS DarkSword. Parallel GTG-50014 ShinyHunters smash and grab</td></tr><tr><td>Actor / Attribution</td><td>GTG-20006. Anthropic: consistent with public Midnight Blizzard reporting; operator handle JackPoterz; Russian speaker; tradecraft consistent with Russian state nexus espionage. Confidence medium for a Midnight Blizzard identity because Anthropic did not present independent overlap evidence in the report, and GTIG previously assigned much of the same infrastructure to UNC7005 with a high confidence Russian nexus. GTG-50014: suspected ShinyHunters affiliates</td></tr><tr><td>Target</td><td>Ukrainian and European government, military, diplomatic, think tank, and defense industrial orgs; drone makers; hotel WiFi guests; a North African government technology authority</td></tr><tr><td>Vector</td><td>Device code phishing branded Embassy Kit; hotel DNS hijack then ClickFix; WhatsApp companion device takeover; AI rebuilt Windows stealers</td></tr><tr><td>Status</td><td>Anthropic said it disrupted the Claude misuse, banned accounts, and notified partners. Underlying actor status not claimed as dismantled</td></tr><tr><td>First Observed</td><td>Cases in the report run December 2025 through August 2026. Report published 2026-09-10</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic</a>, GTG-20006 automated development, infrastructure acquisition, phishing, C2 persistence, and exfiltration through customized Claude workflows. Humans mainly edited Claude Code skills when the workflow needed a change. <a href="https://www.theregister.com/ai-and-ml/2026/09/10/latest-anthropic-horror-story-chills-with-tales-of-kamikaze-drone-swarms-and-bioweapons-research/5295702" target="_blank" rel="noopener">The Register</a> reported the same GTG-20006 case and identified Midnight Blizzard, APT29, and Cozy Bear as the public names Anthropic&#x27;s linkage points at. Anthropic&#x27;s own wording is narrower: consistent with public Midnight Blizzard reporting, not a standalone high confidence SVR attribution.</p>
+<p>Anthropic said GTG-20006 used AI agents to watch whether security products flagged its implants. When a product caught a sample, agents modified and rebuilt the malware until it was undetected, then staged it on disposable hosts for phishing, ClickFix, and DNS hijack delivery. Anthropic described that loop as inverting defender cost: a new signature no longer buys lasting delay.</p>
+<p>Anthropic said the actor scanned mail and remote access systems at more than two dozen Ukrainian government organizations, bulk exported mailboxes of at least two drone component manufacturers, and stole a drone vision SDK, including an unannounced product. It compromised at least three hospitality vendors, changed guest WiFi DNS to actor services, then served ClickFix lures for Windows, Android, and iOS malware. Anthropic noted Microsoft&#x27;s July 2026 CaptiveCrunch write up as the public name for that hotel portal method. The actor also linked WhatsApp accounts as companion devices via WPPConnect, suppressed read receipts, and exported Russian and Ukrainian chats, including at least two former high level Ukrainian officials.</p>
+<p>Anthropic said the same actor stole VPN credentials at a North African government technology authority, took over the central account server, and exfiltrated more than 300,000 national identity records plus commercial registry data for more than half a million companies. A cloud email platform using Embassy Kit for device code phishing produced mailbox theft from at least eight organizations, including a national prosecutor office and a military education institute.</p>
+<h3>Infrastructure overlap with UNC7005</h3>
+<p>This feed already published many of Anthropic&#x27;s GTG-20006 domains, IPs, and one SHA256 under GTIG&#x27;s UNC7005 / STORM-2945 CHERRYPIE reporting from 2026-08-20. Overlap includes ms365-live.com, m365-owa.com, owa-ms365.com, ms365-device.com, my-invite.org, chamber-ua.org, statistic-ms.live, wa-connect.eu, wa-meeting.com, 31.57.243.154, 38.146.28.75, and hash be99857449d2856dd5a84e21c8a3d5e0e01456adb44062ddec5a6b4970d8d42c.</p>
+<p>GTIG assessed UNC7005 as Russia nexus with high confidence and as STORM-2945 per Microsoft. Anthropic now places a matching IOC set under GTG-20006 and points at Midnight Blizzard public reporting. Those positions are not reconciled in either paper. Treat the infrastructure as Russia nexus and contested at the group name layer. Do not merge UNC7005 into Midnight Blizzard in detections without additional vendor overlap.</p>
+<p>New Anthropic indicators not already in this feed are listed in the IOC blocks.</p>
+<h3>GTG-50014 ShinyHunters</h3>
+<p>Anthropic also disrupted suspected ShinyHunters affiliates tracked as GTG-50014. One French speaking operator using handles MeowSHA, frkoo, and blazespider ran ten AWS EC2 workers that downloaded 1.8 million Android APKs, decompiled them, and scanned for secrets with TruffleHog, feeding verified hits to Telegram. Stolen AI API keys from victim environments were reused for about three weeks against other targets. Anthropic said Anthropic&#x27;s own systems were not compromised; the keys came from customer environments. Affiliates used Claude for SaaS supply chain theft, including a session store dump of more than 2,100 Azure AD token sets across more than 40 tenants in about 34 hours. Anthropic published policenationale.cc as branding for a carding shop, not as a phishing lure. That apex impersonates a government brand; this feed records the autoshop hostname path in prose only: autoshop.policenationale.cc. Anthropic published no additional GTG-50014 network IOCs beyond that domain pattern.</p>
+<p>Anthropic stated that Claude Haiku, Sonnet, and Opus were the models used in the cyber cases, and that Claude Fable and Mythos were not used for the malicious cyber activity. The report also covers influence, surveillance, scams, distillation, and other harm categories outside this feed&#x27;s cyber IOC scope.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Phishing</td><td>T1566</td><td>Device code and embassy themed mail via Embassy Kit</td></tr><tr><td>Steal Application Access Token</td><td>T1528</td><td>Microsoft 365 device code phishing and Azure AD session store theft</td></tr><tr><td>Drive-by Compromise</td><td>T1189</td><td>Hotel captive portal DNS hijack then ClickFix</td></tr><tr><td>Command and Scripting Interpreter: PowerShell</td><td>T1059.001</td><td>Windows stealers and rebuild loop</td></tr><tr><td>Impair Defenses</td><td>T1562</td><td>Security update freeze so new signatures never arrive</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>Disposable staging hosts and WhatsApp companion linking</td></tr><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>Claude workflows rebuilt implants after product detections</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>Display values are defanged. JSON feed stores clean values. Overlapping UNC7005 indicators stay in prose above and are not repeated here.</p>
+<h3>Domains</h3>
+<pre><code class="language-">teams.ms365-live[.]com
+mslivetest.duckdns[.]org
+chathamhouse[.]eu
+ukrinform-share[.]net
+static-ms[.]live
+ad-g[.]org
+docs-viewer[.]org
+mygreatmarket[.]org
+mygreatmarket[.]com
+cdncounter[.]net
+static.cdncounter[.]net
+stuseamandesilt[.]org
+api.stuseamandesilt[.]org
+cdn.stuseamandesilt[.]org
+update.stuseamandesilt[.]org
+itechx[.]tel
+pdfviewer2024.b-cdn[.]net
+meridian-protocol[.]org
+meridiangroup-corp[.]com
+projectnightcrawler[.]dev
+metricwave[.]org
+mgsend[.]org
+russianearabroad[.]com
+russianearabroad[.]org</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;teams.ms365-live.com&quot; OR &quot;mslivetest.duckdns.org&quot; OR &quot;chathamhouse.eu&quot; OR &quot;ukrinform-share.net&quot; OR &quot;static-ms.live&quot; OR &quot;ad-g.org&quot; OR &quot;docs-viewer.org&quot; OR &quot;mygreatmarket.org&quot; OR &quot;mygreatmarket.com&quot; OR &quot;cdncounter.net&quot; OR &quot;static.cdncounter.net&quot; OR &quot;stuseamandesilt.org&quot; OR &quot;api.stuseamandesilt.org&quot; OR &quot;itechx.tel&quot; OR &quot;pdfviewer2024.b-cdn.net&quot; OR &quot;meridian-protocol.org&quot; OR &quot;meridiangroup-corp.com&quot; OR &quot;projectnightcrawler.dev&quot; OR &quot;metricwave.org&quot; OR &quot;mgsend.org&quot; OR &quot;russianearabroad.com&quot; OR &quot;russianearabroad.org&quot; OR &quot;104.145.210.184&quot; OR &quot;104.194.151.133&quot; OR &quot;104.194.159.55&quot; OR &quot;144.172.114.192&quot; OR &quot;213.145.86.112&quot; OR &quot;2.26.53.194&quot; OR &quot;148.135.195.111&quot; OR &quot;185.198.234.26&quot; OR &quot;185.198.234.101&quot; OR &quot;149.54.42.106&quot; OR &quot;104.194.149.228&quot; OR &quot;38.146.28.132&quot; OR &quot;918fa52ae45ed60ba7cc8bdc99c3cbe9ab92e0375ec31fc05d0d4513be11c593&quot;</code></pre>
+<h3>IP Addresses</h3>
+<pre><code class="language-">104.145.210[.]184
+104.194.151[.]133
+104.194.159[.]55
+144.172.114[.]192
+213.145.86[.]112
+2.26.53[.]194
+148.135.195[.]111
+185.198.234[.]26
+185.198.234[.]101
+149.54.42[.]106
+104.194.149[.]228
+38.146.28[.]132</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">918fa52ae45ed60ba7cc8bdc99c3cbe9ab92e0375ec31fc05d0d4513be11c593</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Correlate device code Microsoft 365 sign ins with first seen domains matching ms365, owa, embassy, or invite themes, including hosts already tagged UNC7005. Hunt hotel and captive portal DNS changes that point guest traffic at actor nameservers, then ClickFix lures. Alert on WhatsApp companion device linking from headless browser farms and on WPPConnect style bulk chat export. On endpoints, hunt the implant names Anthropic listed as Windows families PowerChrome, WUEngine, Shadow C2, MiniPlasma, and CloudSyncSvc, and treat rapid rebuilds after an EDR block as the AI retooling loop. For GTG-50014, hunt TruffleHog against mass APK or GitHub PAT harvesting from new EC2 fleets, and stolen provider keys reused from unusual geos.</p>
+<h2>References</h2>
+<ul><li>[Anthropic] Detecting and countering misuse of AI: September 2026 (2026-09-10): https://www.anthropic.com/threat-intelligence-report-september-2026</li><li>[The Register] Latest Anthropic horror story chills with tales of kamikaze drone swarms and bioweapons research (2026-09-10): https://www.theregister.com/ai-and-ml/2026/09/10/latest-anthropic-horror-story-chills-with-tales-of-kamikaze-drone-swarms-and-bioweapons-research/5295702</li><li>[Google Threat Intelligence Group] Going with the Flow(s): Distinct Clusters Target Individuals of Interest to Russia (2026-08-20): https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

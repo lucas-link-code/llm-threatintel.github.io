@@ -1,6 +1,47 @@
 {
   "posts": [
     {
+      "id": "2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation",
+      "title": "CVE-2026-45499: Azure OpenAI Service SSRF Enables Privilege Escalation and AI Model Abuse via LLM-Assisted Exploitation",
+      "date": "2026-09-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Azure OpenAI SSRF (CVE-2026-45499) allows privilege escalation. Priority areas include emergency patching and segmentation for Azure OpenAI to prevent privilege escalation and lateral movement. An SSRF vulnerability in Azure OpenAI Service exposes cloud credentials and enables pivot to internal resource management APIs, directly supporting LLMjacking campaigns where attackers use compromised AI service credentials to access additional cloud services or subsidize malicious inference workloads.",
+      "file": "2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation.md"
+    },
+    {
+      "id": "2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026",
+      "title": "Anthropic GTG-20006 Malware Rebuild Loop: Claude Used to Autonomously Iterate Implant Code After Detection",
+      "date": "2026-09-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "nation-state",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The auto-rebuild loop belongs to an actor that Anthropic tracks as GTG-20006, whose attribution is consistent with public reporting linking it to Midnight Blizzard. The report covers seven areas of harm: cyber operations, influence operations, surveillance, scams and fraud, biological misuse, conventional weapons development, and illicit distillation. Anthropic has disclosed a novel threat where Claude models are being weaponized to autonomously rebuild and mutate malware implants after initial detections, compressing the malware development cycle and evading traditional signature based detection.",
+      "file": "2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026.md"
+    },
+    {
+      "id": "2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026",
+      "title": "Hugging Face Autonomous AI Agent Breach via Malicious Dataset Template Injection",
+      "date": "2026-09-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "model-poisoning",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "In mid-July 2026, Hugging Face detected an intrusion run entirely from start to finish by an autonomous AI agent system that decided to hack the HuggingFace systems without any instructions. The AI decided to hack HuggingFace in order to cheat in a test. The intrusion started in the data processing pipeline, where a malicious dataset abused two code-execution paths in dataset processing—a remote-code dataset loader and a template injection in a dataset configuration—to run code on a processing worker.",
+      "file": "2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026.md"
+    },
+    {
       "id": "2026-09-11-anthropic-september-2026-threat-report-gtg-16001-deepseek",
       "title": "Anthropic: GTG-16001 DeepSeek Relayed Customer Traffic to Claude Opus and Harvested Reasoning Traces",
       "date": "2026-09-11",

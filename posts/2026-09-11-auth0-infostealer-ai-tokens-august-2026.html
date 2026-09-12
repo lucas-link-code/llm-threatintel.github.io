@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okta: Infostealer Dump Held 555 Likely AI Service JWTs Including Anthropic, Cursor, and OpenAI | LLM ThreatIntel</title>
+  <meta name="description" content="The Hacker News reported on 2026-09-09 that Okta analyzed a 7 GB infostealer dump released on Telegram on 2026-08-02, covering 5,871 infected machines in 162 countries. Okta said 555 of 44,791 unique JWTs were likely AI service authentication tokens, and TruffleHog still found 24 valid API keys for Gemini, OpenAI, Groq, and OpenRouter. Rotate AI session tokens and API keys, and hunt replayed JWTs from unusual geos. Do not denylist vendor platforms.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-11-auth0-infostealer-ai-tokens-august-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Okta: Infostealer Dump Held 555 Likely AI Service JWTs Including Anthropic, Cursor, and OpenAI">
+  <meta property="og:description" content="The Hacker News reported on 2026-09-09 that Okta analyzed a 7 GB infostealer dump released on Telegram on 2026-08-02, covering 5,871 infected machines in 162 countries. Okta said 555 of 44,791 unique JWTs were likely AI service authentication tokens, and TruffleHog still found 24 valid API keys for Gemini, OpenAI, Groq, and OpenRouter. Rotate AI session tokens and API keys, and hunt replayed JWTs from unusual geos. Do not denylist vendor platforms.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-11-auth0-infostealer-ai-tokens-august-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Okta: Infostealer Dump Held 555 Likely AI Service JWTs Including Anthropic, Cursor, and OpenAI">
+  <meta property="article:published_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="shadow-ai">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Okta: Infostealer Dump Held 555 Likely AI Service JWTs Including Anthropic, Cursor, and OpenAI">
+  <meta name="twitter:description" content="The Hacker News reported on 2026-09-09 that Okta analyzed a 7 GB infostealer dump released on Telegram on 2026-08-02, covering 5,871 infected machines in 162 countries. Okta said 555 of 44,791 unique JWTs were likely AI service authentication tokens, and TruffleHog still found 24 valid API keys for Gemini, OpenAI, Groq, and OpenRouter. Rotate AI session tokens and API keys, and hunt replayed JWTs from unusual geos. Do not denylist vendor platforms.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Okta: Infostealer Dump Held 555 Likely AI Service JWTs Including Anthropic, Cursor, and OpenAI",
+  "description": "The Hacker News reported on 2026-09-09 that Okta analyzed a 7 GB infostealer dump released on Telegram on 2026-08-02, covering 5,871 infected machines in 162 countries. Okta said 555 of 44,791 unique JWTs were likely AI service authentication tokens, and TruffleHog still found 24 valid API keys for Gemini, OpenAI, Groq, and OpenRouter. Rotate AI session tokens and API keys, and hunt replayed JWTs from unusual geos. Do not denylist vendor platforms.",
+  "datePublished": "2026-09-11T00:00:00Z",
+  "dateModified": "2026-09-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-11-auth0-infostealer-ai-tokens-august-2026.html",
+  "keywords": [
+    "llmjacking",
+    "shadow-ai"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-11</span>
+      <span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-shadow-ai">Shadow AI</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Okta: Infostealer Dump Held 555 Likely AI Service JWTs Including Anthropic, Cursor, and OpenAI</h1>
+<p><strong>Date:</strong> 2026-09-11<br><strong>Tags:</strong> llmjacking, shadow-ai</p>
+<h2>Executive Summary</h2>
+<p>The Hacker News reported on 2026-09-09 that Okta analyzed a 7 GB infostealer dump released on Telegram on 2026-08-02, covering 5,871 infected machines in 162 countries. Okta said 555 of 44,791 unique JWTs were likely AI service authentication tokens, and TruffleHog still found 24 valid API keys for Gemini, OpenAI, Groq, and OpenRouter. Rotate AI session tokens and API keys, and hunt replayed JWTs from unusual geos. Do not denylist vendor platforms.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Infostealer log leak of AI session tokens and API keys. Dump dated 2026-08-02. Okta did not name one malware family. THN noted Lumma Stealer and Vidar as examples of stealers that harvest this class of secret</td></tr><tr><td>Actor / Attribution</td><td>Unnamed infostealer operators and underground resellers. Confidence none for a named group</td></tr><tr><td>Target</td><td>Users of AI services and coding assistants whose browsers held JWTs, JWEs, or API keys</td></tr><tr><td>Vector</td><td>Infostealer collection of session tokens and API keys, then a public Telegram dump and underground resale of stolen AI access</td></tr><tr><td>Status</td><td>Dump released 2026-08-02. Okta analysis reported 2026-09-09. Unexpired tokens remain a replay risk until rotated</td></tr><tr><td>First Observed</td><td>Dump date 2026-08-02. Public analysis 2026-09-09</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://thehackernews.com/2026/09/infostealer-logs-expose-replayable-ai.html" target="_blank" rel="noopener">The Hacker News</a>, Okta threat intelligence director Jeremy Kirk said session tokens and API keys are sought because they can often be replayed to skip credential based authentication. Once replayed, an actor is logged in to an LLM service without logging in. Okta called those secrets skeleton keys.</p>
+<p>Okta analyzed a 7 GB infostealer dump released on a Telegram channel on 2026-08-02. The log covered 5,871 infected machines across 162 countries. Among the secrets were thousands of unexpired authentication tokens for services including Google, Microsoft, Anthropic, Amazon, Gamma, Notion, Character.ai, Cursor, Poe, and Pika AI. Of 44,791 unique JWTs, 555 were likely related to authentication for AI services.</p>
+<p>Okta also identified 2,937 authentication related JSON Web Encryption structures representing encrypted JWTs. Most of those tokens were set by OpenAI, which uses NextAuth.js. Okta said an attacker can still replay those tokens if they are not expired, even without decrypting them. In all, the stolen data contained 1,843 unexpired JWTs and JWEs on the day it was released. Okta said 17.7 percent of the 44,791 JWTs included plaintext name, phone, or email, which does not expire and can support later phishing.</p>
+<p>TruffleHog against the dump found 24 still valid API keys for four AI related services: Google Gemini, OpenAI, Groq, and OpenRouter.</p>
+<p>THN said Okta flagged a Telegram vendor selling access to Claude, Cursor, ChatGPT, and Gemini, and a service called Poison Claude that claims access to Anthropic Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6. Okta said anti detect browsers, Camoufox, and SeleniumBase can load stolen sessionStorage and localStorage from a file, and that proxies are used to bypass impossible travel detections.</p>
+<p>THN also cited Google Threat Intelligence Group on rising underground demand for Claude and Gemini credentials and for Cursor Pro and Devin, and a Mandiant case where an exposed GitHub PAT led to unauthorized AI infrastructure in a victim cloud. Those GTIG points overlap the 2026-09-08 tracker already on this feed and are not repeated as new IOCs here.</p>
+<p>No domain, IP, hash, or package indicator was published that this feed can use. Telegram, OpenAI, Groq, OpenRouter, and other vendor platforms are not IOCs.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Steal Web Session Cookie</td><td>T1539</td><td>Replayable JWTs and JWEs taken from infostealer logs</td></tr><tr><td>Unsecured Credentials</td><td>T1552</td><td>24 still valid AI API keys found with TruffleHog</td></tr><tr><td>Valid Accounts</td><td>T1078</td><td>Stolen tokens used as skeleton keys to skip username, password, and MFA</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On IdP and SaaS audit logs, hunt JWT or session replay from a new device, ASN, or country shortly after a prior session, including anti detect browser or SeleniumBase user agents. Alert on AI API keys used from geos that do not match the token owner, especially Gemini, OpenAI, Groq, and OpenRouter keys. Assume tokens present in a 2026-08-02 infostealer dump are burned: revoke sessions, rotate API keys, and shorten token lifetime. Hunt Telegram and forum ads for Poison Claude or discounted Claude, Cursor, ChatGPT, and Gemini access as a context signal, not as a denylist of those products. IP allow lists and Chrome Device Bound Session Credentials reduce replay. Do not add vendor platforms or Telegram apex hosts to this IOC feed.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] Infostealer Logs Expose Replayable AI Tokens That Can Bypass MFA (2026-09-09): https://thehackernews.com/2026/09/infostealer-logs-expose-replayable-ai.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

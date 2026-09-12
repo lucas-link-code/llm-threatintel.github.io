@@ -4745,6 +4745,59 @@
       "validated_at": "2026-09-11T08:53:48+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026": {
+      "content_hash": "ea56041d8ec789b4157d48bce652a454419a48c81c46d56d66b0229f191ccebd",
+      "evidence_status": "validated",
+      "file": "2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026.md",
+      "posts_index_hash": "af21d59390429b5b7493b7e2b7306998e8bf145d07f10711b4cf70acb05a53f3",
+      "report_id": "2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://www.cyberkendra.com/2026/09/anthropic-threat-report-says-ai-now.html",
+        "https://www.techtroduce.com/anthropic-claude-threat-intelligence-report-2026"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-12T07:44:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation": {
+      "content_hash": "0fcce9e32db020942876f63d8ce8c59b14c9aa8c6f680ae45a336b7f781043ba",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation.md",
+      "posts_index_hash": "34f3edb8eb30d2c7be815d07fcc73bab40a4b0d5a6fc728ad153a44bbd70eea1",
+      "report_id": "2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://techmaniacs.com/2026/09/02/ai-security-daily-briefing-september-02-2026/",
+        "https://thehackernews.com/2026/07/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-12T07:44:34+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026": {
+      "content_hash": "fa17407bf380df3ade466a887ce220e9423227eb30517afe7febbba9e1b79566",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026.md",
+      "posts_index_hash": "b2c56939c62386d7ca83f8b0c31e73fc70a0a08e1e1d33004722b9e7d462c0b2",
+      "report_id": "2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
+        "https://cydome.io/how-an-autonomous-ai-decided-to-hack-huggingface-and-what-it-means-for-shipping/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-12T07:44:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

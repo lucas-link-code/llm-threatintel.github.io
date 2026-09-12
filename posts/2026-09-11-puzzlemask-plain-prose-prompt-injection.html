@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers | LLM ThreatIntel</title>
+  <meta name="description" content="Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-11-puzzlemask-plain-prose-prompt-injection.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers">
+  <meta property="og:description" content="Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-11-puzzlemask-plain-prose-prompt-injection.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers">
+  <meta property="article:published_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-11T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers">
+  <meta name="twitter:description" content="Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers",
+  "description": "Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.",
+  "datePublished": "2026-09-11T00:00:00Z",
+  "dateModified": "2026-09-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-11-puzzlemask-plain-prose-prompt-injection.html",
+  "keywords": [
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-11</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers</h1>
+<p><strong>Date:</strong> 2026-09-11<br><strong>Tags:</strong> prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>PuzzleMask gatekeeper bypass technique. Research, not an in the wild malware family</td></tr><tr><td>Actor / Attribution</td><td>Check Point Research disclosure. No threat actor. Confidence none</td></tr><tr><td>Target</td><td>Pipelines that run a small LLM policy check, then a stronger model with high reasoning and a code interpreter</td></tr><tr><td>Vector</td><td>Plain prose wrapper generated by an automated LLM assisted pipeline</td></tr><tr><td>Status</td><td>Disclosed. Check Point contacted Anthropic, Meta, and OpenAI from late November to mid December 2025. Opus class models terminated the interaction in Check Point&#x27;s tests</td></tr><tr><td>First Observed</td><td>Research tests; public write up 2026-09-10</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/" target="_blank" rel="noopener">Check Point Research</a>, many products put a cheap classifier in front of a capable model and tell the classifier only to emit safe or unsafe. PuzzleMask is built so the classifier never notices a hidden payload, while the target, given enough reasoning time and a Python interpreter, extracts it and treats it as further input. Check Point stated the method is not a jailbreak: it does not claim to raise the odds that the target will violate its own safety training.</p>
+<p>Check Point reported a 100 percent gatekeeper miss rate on the trials it ran, and about 94.4 percent target recovery on 18 gpt-5-thinking-high trials. Check Point said every successful extraction used more than a minute of thinking time and more than two executed Python scripts.</p>
+<p>Check Point tested 23 crafted prompts from three plain payloads: print the last word of a flag file, print copyrighted lyrics, and encrypt documents then delete the plaintext copies. Encrypt tests used an emulated desktop with mock files. Gatekeepers were gpt-4o-mini-2024-07-18, gpt-oss-safeguard:20b, claude-3-haiku-20240307, and llama-guard3:8b. llama-guard3 was tested only on the five lyrics prompts against its built in policy. The other three gatekeepers each saw all 23 wrappers. All four flagged the same payloads when they were written in the clear.</p>
+<p>Check Point redacted the wrapper construction and did not publish a working generator. The public samples are censored prose. Check Point said tone and topic are not required; an early prototype used a modified opening of a novel. The lab said it is not providing reproduction artifacts.</p>
+<p>On the target side, Check Point used gpt-5-thinking with reasoning set to high and the code interpreter on, corresponding at the time to gpt-5-2025-08-07. The attack failed against Anthropic Opus class models, which Check Point attributed to a classifier that stops the session when it detects obfuscated prompt processing. Check Point offered the full prompts and pipeline to Anthropic, Meta, and OpenAI before publication.</p>
+<p>Check Point listed mitigations with costs: paraphrase untrusted input before the gatekeeper, which should strip the embedding but adds latency and can degrade the prompt; add a policy clause that flags phrases that are both quantitative and self referent about the whole text, which caught all 23 samples on gpt-4o-mini in a follow up test but will produce false positives; monitor model output and tool calls rather than input only; or run a gatekeeper as strong as the target, which Check Point called impractical for most deployments.</p>
+<p>No in the wild campaign, CVE, domain, or hash was published.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Masquerading</td><td>T1036</td><td>Policy violating instructions are wrapped in fluent prose so a classifier labels them benign</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>Target recovery in Check Point&#x27;s tests required a Python interpreter and multiple scripts</td></tr><tr><td>Impair Defenses</td><td>T1562</td><td>Fast LLM policy checks are skipped while the stronger model still sees the payload</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Log gatekeeper verdicts next to target tool calls. Alert when a classifier returns safe and the downstream model then spends more than a minute with repeated code interpreter runs on the same user turn. Treat long fluent prompts that contain self referential quantitative phrases as a hunt pivot, matching Check Point&#x27;s extra policy clause, but expect false positives. Do not rely on detectors that only look for Base64, emoji smuggling, or Unicode tags. For Opus and similar models that already terminate on obfuscated processing, keep that fail closed behavior. Paraphrase untrusted web or document text before it reaches an agent that can encrypt files or run shell.</p>
+<h2>References</h2>
+<ul><li>[Check Point Research] PuzzleMask: Abusing Plain Prose as a Covert AI Attack Vector (2026-09-10): https://research.checkpoint.com/2026/puzzlemask-abusing-plain-prose-as-a-covert-ai-attack-vector/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
