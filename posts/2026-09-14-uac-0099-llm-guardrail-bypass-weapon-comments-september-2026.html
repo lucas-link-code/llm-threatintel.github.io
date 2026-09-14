@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners | LLM ThreatIntel</title>
+  <meta name="description" content="On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners">
+  <meta property="og:description" content="On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners">
+  <meta property="article:published_time" content="2026-09-14T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-14T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners">
+  <meta name="twitter:description" content="On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners",
+  "description": "On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.",
+  "datePublished": "2026-09-14T00:00:00Z",
+  "dateModified": "2026-09-14T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.html",
+  "keywords": [
+    "malware",
+    "nation-state",
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-14</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners</h1>
+<p><strong>Date:</strong> 2026-09-14<br><strong>Tags:</strong> malware, nation-state, prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>UAC-0099 guardrail evasion campaign</td></tr><tr><td>Attribution</td><td>UAC-0099 (Russia-aligned) (confidence: high)</td></tr><tr><td>Target</td><td>Ukraine, European organizations</td></tr><tr><td>Vector</td><td>VBScript malware with weapon-themed safety guardrail triggers embedded in non-functional code comments</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>ESET researchers linked the activity to Russia-aligned threat actor UAC-0099, which used the method during an attack against an organization in Ukraine, with the group inserting safety-sensitive weapon-related requests into comments inside a malicious VBScript file. The group inserted a safety-sensitive, weapon-related request into a comment inside the malicious VBScript file, and since comments are ignored during normal script execution, the text did not alter the malware&#x27;s runtime behavior. This represents a novel evasion technique targeting the detection layer rather than the malware layer itself, exploiting the operational assumptions of LLM-based security analysis tools.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Obfuscation or Obfuscated Files or Information</td><td>T1027</td><td>Embedding weapon-themed content in code comments to trigger LLM safety guardrails and prevent analysis</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_ESET did not disclose specific file hashes or C2 infrastructure in the public disclosure_</p>
+<h3>Full URL Paths</h3>
+<p>_ESET did not disclose specific file hashes or C2 infrastructure in the public disclosure_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows (VBScript execution environment)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Disable reliance on LLM-based security analysis as a primary detection layer for malware. Treat AI safety guardrail responses as one signal among many rather than definitive rejection criteria. Implement multi-layer scanning: static signature analysis, behavioral sandboxing, and syntax checking should operate independently of AI safety flagging. Parse and analyze code comments separately from functional code during malware analysis rather than allowing guardrail triggers on comment content to short-circuit analysis. Monitor for suspicious patterns where weapon-related content appears exclusively in comments while the functional code performs system modification, persistence, or exfiltration. Educate analysts that deliberate placement of benign but &#x27;sensitive&#x27; content in non-functional locations may indicate adversarial evasion targeting AI-based defenses.</p>
+<h2>References</h2>
+<ul><li>[gBHackers] Hackers Weaponize AI Safety Guardrails to Hide Malware From LLM-Powered Security Scanners (2026-09-11) — https://gbhackers.com/ai-safety-guardrails/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

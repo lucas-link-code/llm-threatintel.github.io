@@ -4798,6 +4798,40 @@
       "validated_at": "2026-09-12T07:44:37+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026": {
+      "content_hash": "2fcd0874bb6efe9bed732b9a6fffaa33b2b5ed41c2687bbb3f1ddc23652d2db8",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026.md",
+      "posts_index_hash": "39df014695900447a19df65b0f743c0cbd7c1690d1a526c2169b086826d58d57",
+      "report_id": "2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "https://www.ghacks.net/2026/09/13/anthropic-says-hackers-abused-claude-to-scan-1-8-million-android-apps-for-secrets/",
+        "https://en.cryptonomist.ch/2026/09/11/anthropic-claude-ai-threats/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-14T08:37:49+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026": {
+      "content_hash": "8e475f694c1b6e02830693793669781b72befc58990caf0849c19455397df85c",
+      "evidence_status": "validated",
+      "file": "2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.md",
+      "posts_index_hash": "100960ff8f75457d5b359b512478750786c03829b913cc1e20c98cc65b8afaaa",
+      "report_id": "2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://gbhackers.com/ai-safety-guardrails/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-14T08:37:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

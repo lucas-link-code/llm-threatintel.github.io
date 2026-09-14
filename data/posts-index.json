@@ -1,6 +1,34 @@
 {
   "posts": [
     {
+      "id": "2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026",
+      "title": "UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners",
+      "date": "2026-09-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "nation-state",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.",
+      "file": "2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.md"
+    },
+    {
+      "id": "2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026",
+      "title": "Anthropic September 2026 Threat Report: State Actors Abuse Claude for Malware, Surveillance, and APK Scanning Campaigns",
+      "date": "2026-09-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "nation-state",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "On September 13, 2026, Anthropic published its threat intelligence report covering December 2025 through August 2026, documenting abuse of Claude by Russian, Chinese, and financially motivated threat groups. A single actor created an automated pipeline scanning 1.8 million Android APKs for hardcoded secrets. Anthropic removed offending accounts and modified guardrails in response.",
+      "file": "2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026.md"
+    },
+    {
       "id": "2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation",
       "title": "CVE-2026-45499: Azure OpenAI Service SSRF Enables Privilege Escalation and AI Model Abuse via LLM-Assisted Exploitation",
       "date": "2026-09-12",

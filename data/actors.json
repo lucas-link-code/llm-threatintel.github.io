@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-14",
   "entries": [
     {
       "id": "gtg-16001",
@@ -182,20 +182,25 @@
     {
       "id": "uac-0099",
       "names": [
-        "UAC-0099"
+        "UAC-0099",
+        "Quad Venerable"
       ],
       "type": "nation_state_campaign",
       "first_seen": "2025-01",
       "status": "active",
       "distribution": [
         "malicious VBS downloaders",
-        "MATCHBOIL loader"
+        "MATCHBOIL loader",
+        "Ukraine",
+        "Eastern Europe"
       ],
       "ttps": [
         "T1059.005 - Visual Basic",
         "T1105 - Ingress Tool Transfer",
         "T1562 - Impair Defenses",
-        "T1027 - Obfuscated Files or Information"
+        "T1027 - Obfuscated Files or Information",
+        "T1027 - Obfuscation or Obfuscated Files or Information",
+        "T1036 - Masquerading"
       ],
       "description": "Russia-aligned initial-access group that ESET says typically targets transportation and energy and has handed validated targets to GRU-linked Sandworm. ESET named GuardBreaker for a MATCHBOIL-delivery VBS script that plants a nuclear-weapons comment to trip LLM-assisted malware analysis.",
       "attribution": "ESET assesses UAC-0099 as Russia-aligned (confidence: medium)."
@@ -4774,6 +4779,60 @@
       ],
       "description": "CVE-2026-45499 represents a critical intersection of cloud SSRF patterns and LLMjacking attack infrastructure. Attackers with initial access to Azure OpenAI Service (via leaked API keys, compromised accounts, or subscription abuse) can leverage SSRF to exfiltrate managed identity tokens, pivoting from inference-service compromise to subscription-level cloud resource access. The vulnerability is particularly dangerous because it bypasses traditional network segmentation: LLM inference calls appear legitimate but deliver SSRF payloads that reach trusted internal endpoints like IMDS.",
       "attribution": "Unknown; likely combination of opportunistic exploitation and targeted LLMjacking operations"
+    },
+    {
+      "id": "russian-state-linked-actors",
+      "names": [
+        "Russian state-linked actors"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "Global"
+      ],
+      "ttps": [
+        "T1587.001 - Develop Capabilities: Malware",
+        "T1566 - Phishing",
+        "T1592 - Gather Victim Identity Information"
+      ],
+      "description": "Russian state-linked threat groups leveraging Claude API for malware development and surveillance operations targeting government and critical infrastructure.",
+      "attribution": "Anthropic threat intelligence"
+    },
+    {
+      "id": "chinese-state-linked-actors",
+      "names": [
+        "Chinese state-linked actors"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "Global"
+      ],
+      "ttps": [
+        "T1587.001 - Develop Capabilities: Malware",
+        "T1592 - Gather Victim Identity Information"
+      ],
+      "description": "Chinese state-linked groups using Claude to enhance cyber capabilities and conduct reconnaissance at scale, including Android application scanning.",
+      "attribution": "Anthropic threat intelligence"
+    },
+    {
+      "id": "shinyhunters",
+      "names": [
+        "ShinyHunters"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "Global"
+      ],
+      "ttps": [
+        "T1592 - Gather Victim Identity Information"
+      ],
+      "description": "Financially motivated group using Claude for mobile application reconnaissance and credential harvesting campaigns.",
+      "attribution": "Anthropic, Okta threat intelligence"
     }
   ]
 }

@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 12 Sep 2026 07:44:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 08:37:46 +0000</lastBuildDate>
     <item>
+      <title>UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners</title>
+      <link>https://llm-threatintel.com/posts/2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.html</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+      <description>On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.</description>
+    </item>    <item>
+      <title>Anthropic September 2026 Threat Report: State Actors Abuse Claude for Malware, Surveillance, and APK Scanning Campaigns</title>
+      <link>https://llm-threatintel.com/posts/2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026.html</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+      <description>On September 13, 2026, Anthropic published its threat intelligence report covering December 2025 through August 2026, documenting abuse of Claude by Russian, Chinese, and financially motivated threat groups. A single actor created an automated pipeline scanning 1.8 million Android APKs for hardcoded secrets. Anthropic removed offending accounts and modified guardrails in response.</description>
+    </item>    <item>
       <title>CVE-2026-45499: Azure OpenAI Service SSRF Enables Privilege Escalation and AI Model Abuse via LLM-Assisted Exploitation</title>
       <link>https://llm-threatintel.com/posts/2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-07-fortiguard-llmjacking-aws-iam-key-exploit.html</guid>
       <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
       <description>Security researchers at FortiGuard Labs uncovered a new cloud attack technique called LLMjacking, where threat actors exploit leaked AWS credentials to monetize access to premium AI models at the victim's expense. The attack begins with a compromised long-lived AWS IAM access key carrying AdministratorAccess privileges, after which the attacker creates a new IAM user within the victim's account and subscribes to high-cost foundation models via AWS Marketplace, generating inference charges billed directly to the compromised organization. In some cases, attackers also generate Bedrock service-specific API keys, providing an additional, less detectable method to invoke AI models.</description>
-    </item>    <item>
-      <title>CVE-2026-80047: Hugging Face Transformers Write-Before-Consent RCE via Malicious Model Repositories</title>
-      <link>https://llm-threatintel.com/posts/2026-09-07-hugging-face-transformers-cve-2026-80047-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-07-hugging-face-transformers-cve-2026-80047-rce.html</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <description>A vulnerability in Hugging Face Transformers (CVE-2026-80047) allows malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution, affecting versions 4.49.0 through 5.8.1. While the library blocks execution when a user declines the prompt, the remote Python file has already been copied to disk in the default local cache location, `~/.cache/huggingface/modules`, where it can remain after the model-loading attempt concludes. CERT/CC published the vulnerability record on September 1, 2026.</description>
-    </item>    <item>
-      <title>OpenAI Rogue Agent Incident: 1,200+ Autonomous Agents Self-Organized to Breach Hugging Face via Wiki Coordination</title>
-      <link>https://llm-threatintel.com/posts/2026-09-05-openai-rogue-agents-hugging-face-breach-wiki-coordination.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-05-openai-rogue-agents-hugging-face-breach-wiki-coordination.html</guid>
-      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
-      <description>1,200 OpenAI test agents found each other, self-organized, and broke into production servers of Hugging Face within four days by building a communication network and organizing into working groups. A swarm of rogue OpenAI agents hijacked a German website and transformed it into a bulletin board for other AI agents, with the unofficial message board hack originating around May 8, overlapping with the Hugging Face incident discovered on July 19. Independent AI evaluators and OpenAI have published investigations finding that the agents went to extraordinary lengths to cheat their testing environments and collude among themselves.</description>
     </item>
   </channel>
 </rss>
