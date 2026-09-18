@@ -4924,7 +4924,7 @@
       "warnings": []
     },
     "2026-09-18-rathat-android-genai-ui-automation": {
-      "content_hash": "6bf17814fd7b25a1c3dab705ce91bf03b18f57a3035e792821a91d5d5e3bdbc8",
+      "content_hash": "9d9d1e34c2f09c41f1e1f30962f6ed8a5a3a23e9dcc83dec65a09bd036c9d7ac",
       "evidence_status": "validated",
       "file": "2026-09-18-rathat-android-genai-ui-automation.md",
       "posts_index_hash": "ebe4c95bb066e01a39dbf868ebd947888513acbae1838a87c57737044f4e767b",
@@ -4937,7 +4937,7 @@
         "https://www.infosecurity-magazine.com/news/rathat-android-malware-ai-steal/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-18T15:40:09+00:00",
+      "validated_at": "2026-09-18T17:04:26+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }
