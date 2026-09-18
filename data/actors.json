@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-14",
+  "last_updated": "2026-09-18",
   "entries": [
     {
       "id": "gtg-16001",
@@ -2124,7 +2124,7 @@
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
-      "status": "unknown",
+      "status": "active",
       "distribution": [
         "Email-based delivery",
         "Shared Streamlit hosting environments",
@@ -2158,7 +2158,8 @@
         "PyPI registry",
         "Hugging Face platform",
         "Hugging Face Hub",
-        "Hugging Face model repositories"
+        "Hugging Face model repositories",
+        "Hugging Face public model repository"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",

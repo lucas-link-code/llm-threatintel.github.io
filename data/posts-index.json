@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config",
+      "title": "CVE-2026-80047: Hugging Face Transformers Silent Remote Code Execution via Malicious Model Configuration",
+      "date": "2026-09-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A newly disclosed vulnerability in Hugging Face Transformers could allow malicious AI model repositories to place attacker-controlled Python files on a user's system before the user approves remote code execution. Because the framework is commonly integrated into developer workstations, research environments, cloud notebooks, and production ML pipelines, the vulnerability could expose a broad range of users to untrusted content from model repositories. Researchers said vulnerable Transformers versions were downloaded about 232 million times before a patch was released, creating supply chain risk for organizations using third-party AI models.",
+      "file": "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config.md"
+    },
+    {
       "id": "2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026",
       "title": "UAC-0099 Weaponizes LLM Safety Guardrails: Weapon-Related Comments Bypass AI-Powered Security Scanners",
       "date": "2026-09-14",

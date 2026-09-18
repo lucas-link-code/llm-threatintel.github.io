@@ -4832,6 +4832,25 @@
       "validated_at": "2026-09-14T08:37:48+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config": {
+      "content_hash": "88a47383117346abeaca5250adef1e861ebd414ecc200dcc13b3168c937030f9",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config.md",
+      "posts_index_hash": "0726b22b5664b4f7458381022e64d6685fc0d0c9852fcb85bef684817c44761d",
+      "report_id": "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://cybersecuritynews.com/hugging-face-flaw/",
+        "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
+        "https://www.cert.org/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-18T08:01:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
