@@ -1,7 +1,7 @@
 {
-  "commit_sha": "7ac6526bd431485159b9d9982c35fd4703de3777",
+  "commit_sha": "5f48b89b970c",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-18T08:01:49+00:00",
+  "generated_at_utc": "2026-09-18T15:40:16+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,47 +35,151 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config",
-      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 1,
-  "reports_skipped": 272,
-  "review_required": 1,
-  "source_urls_checked": 3,
-  "state_updates": 1,
+  "reports_checked": 5,
+  "reports_newly_validated": 5,
+  "reports_skipped": 273,
+  "review_required": 0,
+  "source_urls_checked": 19,
+  "state_updates": 5,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://cybersecuritynews.com/hugging-face-flaw/",
+      "final_url": "https://zimperium.com/blog/rathat-ai-powered-mobile-threat-is-here-for-your-credentials-bank-accounts",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cybersecuritynews.com/hugging-face-flaw/"
-    },
-    {
-      "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/",
-      "http_status": 403,
-      "status": "blocked",
-      "url": "https://www.techrepublic.com/article/news-hugging-face-transformers-rce-flaw/"
+      "url": "https://zimperium.com/blog/rathat-ai-powered-mobile-threat-is-here-for-your-credentials-bank-accounts"
     },
     {
       "error": "",
-      "final_url": "https://www.sei.cmu.edu/divisions/cert/",
+      "final_url": "https://github.com/Zimperium/IOC/tree/master/2026-09-RatHat",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.cert.org/"
+      "url": "https://github.com/Zimperium/IOC/tree/master/2026-09-RatHat"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/09/rathat-android-malware-abuses-adb-to.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/09/rathat-android-malware-abuses-adb-to.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.infosecurity-magazine.com/news/rathat-android-malware-ai-steal/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.infosecurity-magazine.com/news/rathat-android-malware-ai-steal/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/09/claimed-bug-bounty-hunter-likely-used.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/09/claimed-bug-bounty-hunter-likely-used.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/advisories/GHSA-q5h5-h6mj-vhgv",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/advisories/GHSA-q5h5-h6mj-vhgv"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/advisories/GHSA-9gv4-vfjg-jjrm",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/advisories/GHSA-9gv4-vfjg-jjrm"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/advisories/GHSA-crjm-2g45-pq97",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/advisories/GHSA-crjm-2g45-pq97"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/advisories/GHSA-2p95-qvc5-6rjq",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/advisories/GHSA-2p95-qvc5-6rjq"
+    },
+    {
+      "error": "",
+      "final_url": "https://github.com/ossf/malicious-packages/blob/6f29f66e2810d13aefdb7c0fc2ebd05b265745da/osv/malicious/pypi/openaii/MAL-2026-16135.json",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://github.com/ossf/malicious-packages/blob/6f29f66e2810d13aefdb7c0fc2ebd05b265745da/osv/malicious/pypi/openaii/MAL-2026-16135.json"
+    },
+    {
+      "error": "",
+      "final_url": "https://corgea.com/research/openaii-ollamaa-langgrap-transfomers-pypi-pth-typosquats-september-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://corgea.com/research/openaii-ollamaa-langgrap-transfomers-pypi-pth-typosquats-september-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://radar.offseq.com/threat/malicious-code-in-openaii-pypi-caa044013c40d970",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://radar.offseq.com/threat/malicious-code-in-openaii-pypi-caa044013c40d970"
+    },
+    {
+      "error": "",
+      "final_url": "https://radar.offseq.com/threat/malicious-code-in-ollamaa-pypi-8da4afa83b30f47c",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://radar.offseq.com/threat/malicious-code-in-ollamaa-pypi-8da4afa83b30f47c"
+    },
+    {
+      "error": "",
+      "final_url": "https://radar.offseq.com/threat/malicious-code-in-transfomers-pypi-2dc389a1999c7c2a",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://radar.offseq.com/threat/malicious-code-in-transfomers-pypi-2dc389a1999c7c2a"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/09/10/protecting-organizations-ai-assisted-executive-impersonation-invoice-fraud/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/10/protecting-organizations-ai-assisted-executive-impersonation-invoice-fraud/"
+    },
+    {
+      "error": "",
+      "final_url": "https://decipher.sc/2026/09/14/here-come-the-ai-generated-bec-scams/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://decipher.sc/2026/09/14/here-come-the-ai-generated-bec-scams/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.cisa.gov/news-events/news/cisa-nsa-and-fbi-warn-china-based-ai-companies-targeting-us-ai-models-industrial-scale-knowledge",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.cisa.gov/news-events/news/cisa-nsa-and-fbi-warn-china-based-ai-companies-targeting-us-ai-models-industrial-scale-knowledge"
     }
   ],
   "validation_version": "1.0.0",

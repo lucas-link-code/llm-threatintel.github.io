@@ -2,6 +2,122 @@
   "last_updated": "2026-09-18",
   "entries": [
     {
+      "id": "rathat",
+      "names": [
+        "RatHat"
+      ],
+      "type": "malware",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "smishing",
+        "malvertising",
+        "third party download portals",
+        "sideloaded Android APKs"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing: Spearphishing Link",
+        "T1056.001 - Input Capture: Keylogging",
+        "T1113 - Screen Capture",
+        "T1036 - Masquerading",
+        "T1027 - Obfuscated Files or Information",
+        "T1622 - Debugger Evasion",
+        "T1090 - Proxy",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence"
+      ],
+      "description": "Android remote access trojan that serializes the live Accessibility tree to XML and queries a popular generative AI assistant for click coordinates, on screen text, and scroll commands. Pairs Accessibility abuse with local wireless debugging self pairing, then stages Go daemons liblocal-service.so and FRP client libmedia_codec.so so a shell survives app uninstall. Overlays steal banking, crypto, WeChat, and Alipay credentials. Zimperium assessed China linked operators from Mandarin prompts.",
+      "attribution": "Zimperium: operators appear to be in China. Confidence low to medium. Model identity unverified."
+    },
+    {
+      "id": "lurves-openaii",
+      "names": [
+        "2026-09-openaii",
+        "lurves"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-09",
+      "status": "disrupted",
+      "distribution": [
+        "PyPI typosquats openaii, ollamaa, langgrap, transfomers",
+        ".pth interpreter startup hooks",
+        "HTTP second stage lurves-agent.py"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1059.006 - Command and Scripting Interpreter: Python",
+        "T1027 - Obfuscated Files or Information",
+        "T1105 - Ingress Tool Transfer",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1070 - Indicator Removal",
+        "T1496 - Resource Hijacking",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence"
+      ],
+      "description": "September 2026 PyPI cluster of one character typosquats against openai, ollama, langgraph, and transformers. Shared .pth loader with base64 XOR 0x5A payload, first run marker /tmp/.lurves-planted, and remote lurves-agent.py that steals SSH and cloud credentials, persists, and mines. Cover comments try to make AI agents skip analysis. Packages removed from PyPI.",
+      "attribution": "Unnamed. Cataloged by OpenSSF kam193, Amazon Inspector, GitHub Advisory Database, and Corgea."
+    },
+    {
+      "id": "phantomraven",
+      "names": [
+        "PhantomRaven",
+        "jpdhellonpm1",
+        "jpd15"
+      ],
+      "type": "malware",
+      "first_seen": "2025-08",
+      "status": "active",
+      "distribution": [
+        "npm remote dynamic dependencies",
+        "preinstall scripts",
+        "packages.storeartifact.com",
+        "npm.jpartifacts.com"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript",
+        "T1072 - Software Deployment Tools",
+        "T1036.005 - Masquerading: Match Legitimate Name or Location",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1082 - System Information Discovery",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1041 - Exfiltration Over C2 Channel",
+        "T1587.001 - Develop Capabilities: Malware",
+        "T1583.001 - Acquire Infrastructure: Domains"
+      ],
+      "description": "JavaScript infostealer delivered through npm packages that hide an HTTP URL dependency. Steals host fingerprint and CI environment variables from GitHub Actions, GitLab CI, Jenkins, and CircleCI. CrowdStrike assessed the code was likely LLM generated and that the operator uses theft to support bug bounty claims rather than log shop sales. Related npm aliases include jpd12, jpd13, npmhell, npmpackagejpd, npmtestdharsh, jpdhackerone11, and packagedharsh.",
+      "attribution": "Unnamed financially motivated operator claiming bug bounty hunter status. CrowdStrike high confidence that jpdhellonpm1 and jpd15 are the same operator. No named CrowdStrike cluster."
+    },
+    {
+      "id": "prc-industrial-scale-distillation",
+      "names": [
+        "AA26-251A",
+        "DeepSeek",
+        "Moonshot AI",
+        "Alibaba",
+        "MiniMax",
+        "StepFun",
+        "Z.AI"
+      ],
+      "type": "nation_state_program",
+      "first_seen": "2024-10",
+      "status": "active",
+      "distribution": [
+        "native US model APIs",
+        "cloud relays",
+        "third party aggregators",
+        "transfer station proxies",
+        "shared premium subscriptions"
+      ],
+      "ttps": [
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1078 - Valid Accounts",
+        "T1119 - Automated Collection",
+        "T1036 - Masquerading"
+      ],
+      "description": "CISA, NSA, and FBI joint advisory AA26-251A covering industrial scale knowledge distillation by named PRC AI companies against US frontier models including Claude, GPT, Gemini, and Grok families since at least late 2024. Distinct from Anthropic GTG-16001, which is a July 2026 DeepSeek silent relay cluster. MiniMax used prompt injection so Claude Code would treat itself as a MiniMax product. No network IOCs published.",
+      "attribution": "CISA, NSA, and FBI: named PRC companies, assessed likely with Chinese government awareness."
+    },
+    {
       "id": "gtg-16001",
       "names": [
         "GTG-16001"
@@ -12,14 +128,15 @@
       "distribution": [
         "silent relay of DeepSeek customer traffic to Claude Opus",
         "chain of thought extraction via cross session replay",
-        "string tagging of Claude Code, Claude Agent SDK, and OpenCode harness traffic"
+        "string tagging of Claude Code, Claude Agent SDK, and OpenCode harness traffic",
+        "CISA AA26-251A industrial scale distillation since late 2024"
       ],
       "ttps": [
         "T1588.007 - Obtain Capabilities: Artificial Intelligence",
         "T1036 - Masquerading",
         "T1552.001 - Unsecured Credentials: Credentials In Files"
       ],
-      "description": "Anthropic cluster covering DeepSeek silently relaying selected customer requests to Claude Opus and extracting Opus chain of thought traces for training. Anthropic attributed more than 12.1 million exchanges to DeepSeek over 14 days in July 2026, including internal documents from a PRC technology company, live credentials for a Russian government database, and a PRC municipal Public Security Bureau case management build. Distinct from GTG-20006 in the same September 2026 report.",
+      "description": "Anthropic cluster covering DeepSeek silently relaying selected customer requests to Claude Opus and extracting Opus chain of thought traces for training. Anthropic attributed more than 12.1 million exchanges to DeepSeek over 14 days in July 2026, including internal documents from a PRC technology company, live credentials for a Russian government database, and a PRC municipal Public Security Bureau case management build. Distinct from GTG-20006 in the same September 2026 report. CISA AA26-251A independently described DeepSeek industrial scale distillation against US frontier models since late 2024. Keep GTG-16001 as the July 2026 silent relay cluster.",
       "attribution": "Anthropic: DeepSeek, tracked as GTG-16001. Confidence high for Anthropic's own telemetry. PRC lab distillation case."
     },
     {

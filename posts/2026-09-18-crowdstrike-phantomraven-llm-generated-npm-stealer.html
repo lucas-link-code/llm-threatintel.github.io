@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties | LLM ThreatIntel</title>
+  <meta name="description" content="CrowdStrike Counter Adversary Operations published on 2026-09-15 that PhantomRaven, a JavaScript infostealer delivered through npm remote dynamic dependencies, was almost certainly written with a large language model. The assessment rests on verbose comments, placeholder WebSocket URLs, and token analysis, with high confidence. Falcon Complete tied packages transform-jsbi-to-bigint and sort-imports-es6-autofix to npm users jpdhellonpm1 and jpd15. Hunt those package names, the storeartifact and jpartifacts C2 hosts, SHA256 hashes below, and CI variables in unexpected GET or POST bodies. Do not denylist npmjs.com or api64.ipify.org.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties">
+  <meta property="og:description" content="CrowdStrike Counter Adversary Operations published on 2026-09-15 that PhantomRaven, a JavaScript infostealer delivered through npm remote dynamic dependencies, was almost certainly written with a large language model. The assessment rests on verbose comments, placeholder WebSocket URLs, and token analysis, with high confidence. Falcon Complete tied packages transform-jsbi-to-bigint and sort-imports-es6-autofix to npm users jpdhellonpm1 and jpd15. Hunt those package names, the storeartifact and jpartifacts C2 hosts, SHA256 hashes below, and CI variables in unexpected GET or POST bodies. Do not denylist npmjs.com or api64.ipify.org.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties">
+  <meta property="article:published_time" content="2026-09-18T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-18T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties">
+  <meta name="twitter:description" content="CrowdStrike Counter Adversary Operations published on 2026-09-15 that PhantomRaven, a JavaScript infostealer delivered through npm remote dynamic dependencies, was almost certainly written with a large language model. The assessment rests on verbose comments, placeholder WebSocket URLs, and token analysis, with high confidence. Falcon Complete tied packages transform-jsbi-to-bigint and sort-imports-es6-autofix to npm users jpdhellonpm1 and jpd15. Hunt those package names, the storeartifact and jpartifacts C2 hosts, SHA256 hashes below, and CI variables in unexpected GET or POST bodies. Do not denylist npmjs.com or api64.ipify.org.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties",
+  "description": "CrowdStrike Counter Adversary Operations published on 2026-09-15 that PhantomRaven, a JavaScript infostealer delivered through npm remote dynamic dependencies, was almost certainly written with a large language model. The assessment rests on verbose comments, placeholder WebSocket URLs, and token analysis, with high confidence. Falcon Complete tied packages transform-jsbi-to-bigint and sort-imports-es6-autofix to npm users jpdhellonpm1 and jpd15. Hunt those package names, the storeartifact and jpartifacts C2 hosts, SHA256 hashes below, and CI variables in unexpected GET or POST bodies. Do not denylist npmjs.com or api64.ipify.org.",
+  "datePublished": "2026-09-18T00:00:00Z",
+  "dateModified": "2026-09-18T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-18</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties</h1>
+<p><strong>Date:</strong> 2026-09-18<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>CrowdStrike Counter Adversary Operations published on 2026-09-15 that PhantomRaven, a JavaScript infostealer delivered through npm remote dynamic dependencies, was almost certainly written with a large language model. The assessment rests on verbose comments, placeholder WebSocket URLs, and token analysis, with high confidence. Falcon Complete tied packages transform-jsbi-to-bigint and sort-imports-es6-autofix to npm users jpdhellonpm1 and jpd15. Hunt those package names, the storeartifact and jpartifacts C2 hosts, SHA256 hashes below, and CI variables in unexpected GET or POST bodies. Do not denylist npmjs.com or api64.ipify.org.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>PhantomRaven JavaScript infostealer via npm remote dynamic dependencies and preinstall</td></tr><tr><td>Actor / Attribution</td><td>Unnamed financially motivated operator who claims to be a bug bounty hunter. CrowdStrike tied npm aliases jpdhellonpm1 and jpd15 with high confidence, plus related handles jpd12, jpd13, npmhell, npmpackagejpd, npmtestdharsh, jpdhackerone11, and packagedharsh. No CrowdStrike actor cluster name</td></tr><tr><td>Target</td><td>Developers and CI runners. Stolen data is system fingerprint plus GitHub Actions, GitLab CI, Jenkins, and CircleCI environment variables</td></tr><tr><td>Vector</td><td>Typosquat or decoy npm packages with a Hello world payload and an HTTP URL dependency. npm fetches PhantomRaven, then a preinstall script runs</td></tr><tr><td>Status</td><td>Active family, ongoing since 2025. The Hacker News said the two named npm accounts were gone as of 2026-09-18</td></tr><tr><td>First Observed</td><td>Koi Security and DCODX public disclosure late October 2025. CrowdStrike said the operator has been active since November 2022. This LLM generation analysis is 2026-09-15</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/" target="_blank" rel="noopener">CrowdStrike</a>, Falcon Complete handled multiple PhantomRaven incidents and found PhantomRaven scripts in npm packages transform-jsbi-to-bigint published by jpdhellonpm1 and sort-imports-es6-autofix published by jpd15. Both usernames include JPD, matching a contact mailbox used to tell a victim organization that a device was compromised. Package files include the operator name and initials. CrowdStrike has not seen PhantomRaven logs for sale on stealer shops and assesses the operator uses the theft to find bug bounty submissions across Bugcrowd, Intigriti, YesWeHack, HackenProof, and HackerOne.</p>
+<p>CrowdStrike said the benign looking package declares a dependency as an HTTP URL rather than a registry name. At install, npm pulls that remote dynamic dependency from attacker infrastructure. The returned package runs a preinstall script. npm 12 and later block install scripts unless the developer approves them. Older npm still auto executes preinstall.</p>
+<p>The stealer collects OS, architecture, hostname, local and external IP, cwd, PID, Node version, argv, environment variables, Git and npm user identity, timestamps, and a long list of CI keys including GITHUB_TOKEN adjacent fields, GITLAB_CI, JENKINS_URL, CIRCLECI, and npm_package_name. External IP is resolved via api64.ipify.org, which is shared infrastructure and is not an IOC. Data is sent twice, as a GET query string and as a JSON POST with User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64). An unfinished WebSocket fallback uses wss://yourserver.com/socket, which CrowdStrike treats as an LLM leftover, not live C2.</p>
+<p>CrowdStrike assessed LLM authorship with high confidence from comment density before every function, placeholder C2, dual GET and POST exfil, and statistical token patterns. In December 2025 CrowdStrike found a GitHub account that had opened a PyPI issue in February 2025 after an upload was rejected as a dependency confusion attempt. Remaining Python files resembled PhantomRaven and contained jpdtester01@gmail.com.</p>
+<p><a href="https://thehackernews.com/2026/09/claimed-bug-bounty-hunter-likely-used.html" target="_blank" rel="noopener">The Hacker News</a> summarized the same CrowdStrike paper on 2026-09-18, restated the October 2025 Koi and DCODX wave of more than 100 packages, and said both named npm accounts were inaccessible at publication. Earlier waves from Endor Labs, Sonatype, and Mend are older than this 14 day window and are not re listed here. This post is the LLM generation and bug bounty operator update plus the CrowdStrike IOC set.</p>
+<p>C2 domains published by CrowdStrike: packages.storeartifact.com, registry.storageartifact.com, packages.storageartifact.com, npm.jpartifacts.com. C2 IP 54.173.15.59. Three SHA256 hashes below. npm.jpartifacts.com was used in November 2025 incidents.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>npm packages fetch PhantomRaven as an HTTP URL dependency then run preinstall</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Stealer runs in Node</td></tr><tr><td>Software Deployment Tools</td><td>T1072</td><td>npm preinstall as the execution hook</td></tr><tr><td>Masquerading: Match Legitimate Name or Location</td><td>T1036.005</td><td>Package names that look like transform or sort utilities</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Git and npm config identity collection</td></tr><tr><td>System Information Discovery</td><td>T1082</td><td>OS, hostname, Node version, cwd, PID</td></tr><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>HTTP GET and POST exfil</td></tr><tr><td>Exfiltration Over C2 Channel</td><td>T1041</td><td>Same hosts used for RDD fetch and data theft</td></tr><tr><td>Develop Capabilities: Malware</td><td>T1587.001</td><td>CrowdStrike: malware likely generated with an LLM</td></tr><tr><td>Acquire Infrastructure: Domains</td><td>T1583.001</td><td>storeartifact, storageartifact, and jpartifacts hosts</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>Display values are defanged. JSON feed stores clean values.</p>
+<h3>Domains</h3>
+<pre><code class="language-">packages.storeartifact[.]com
+registry.storageartifact[.]com
+packages.storageartifact[.]com
+npm.jpartifacts[.]com</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;packages.storeartifact.com&quot; OR &quot;registry.storageartifact.com&quot; OR &quot;packages.storageartifact.com&quot; OR &quot;npm.jpartifacts.com&quot; OR &quot;54.173.15.59&quot; OR &quot;npm:transform-jsbi-to-bigint&quot; OR &quot;npm:sort-imports-es6-autofix&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">c31831d47fcbf52ff1f4e61838611916a4276d005a564e69946d5dac04235eed
+95a7dcc6de46826b22c43bee7fc550f3b5e2e6cbc5f33b0c241faf523641cf63
+db3fe46df0a65fe9f8c99d2e11126a032a72e9814e354ce017448ce088a01e02</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:transform-jsbi-to-bigint
+npm:sort-imports-es6-autofix</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On npm and developer workstations, alert when package.json or lockfiles contain http:// or https:// dependency specifiers instead of registry names. On npm 12 or later, treat unexpected install-scripts approve prompts as a suspected RDD. Block and hunt DNS or TLS SNI for packages.storeartifact.com, registry.storageartifact.com, packages.storageartifact.com, and npm.jpartifacts.com. Alert on 54.173.15.59.</p>
+<p>On CI, hunt Node processes that POST JSON containing GITHUB_ACTIONS, GITLAB_CI, JENKINS_URL, or CIRCLECI keys to unknown hosts, especially with the short User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64). Inventory packages transform-jsbi-to-bigint and sort-imports-es6-autofix. Hash match the three SHA256 values. Do not denylist npmjs.com, GitHub, or ipify.</p>
+<h2>References</h2>
+<ul><li>[CrowdStrike] PhantomRaven: An LLM-Generated Information Stealer Developed for Bug Bounty Hunting (2026-09-15): https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/</li><li>[The Hacker News] Claimed Bug Bounty Hunter Likely Used LLM to Build PhantomRaven npm Stealer (2026-09-18): https://thehackernews.com/2026/09/claimed-bug-bounty-hunter-likely-used.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

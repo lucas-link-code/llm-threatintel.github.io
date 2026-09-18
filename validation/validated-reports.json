@@ -4833,6 +4833,38 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-09-18-cisa-prc-ai-industrial-scale-distillation": {
+      "content_hash": "8ea5f8c5f67496fbd02c1a2993a1522c2f9808089f871e85f095b3d75af35a7d",
+      "evidence_status": "validated",
+      "file": "2026-09-18-cisa-prc-ai-industrial-scale-distillation.md",
+      "posts_index_hash": "a1e754f9404ed5220da2bc554055344bb9a0878721dfff09b2b99cef5b33b576",
+      "report_id": "2026-09-18-cisa-prc-ai-industrial-scale-distillation",
+      "review_required": [],
+      "source_urls": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
+        "https://www.cisa.gov/news-events/news/cisa-nsa-and-fbi-warn-china-based-ai-companies-targeting-us-ai-models-industrial-scale-knowledge"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-18T15:40:16+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer": {
+      "content_hash": "f92e4590fb6ee55a4089198589a056d5b48ff2381a91ac7a73b1c80f9e34f1fe",
+      "evidence_status": "validated",
+      "file": "2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer.md",
+      "posts_index_hash": "5d9507e5261306ffa0b4814846c95326100611d586f53633793881f374160840",
+      "report_id": "2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer",
+      "review_required": [],
+      "source_urls": [
+        "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/",
+        "https://thehackernews.com/2026/09/claimed-bug-bounty-hunter-likely-used.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-18T15:40:10+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config": {
       "content_hash": "88a47383117346abeaca5250adef1e861ebd414ecc200dcc13b3168c937030f9",
       "evidence_status": "validated_with_warnings",
@@ -4849,6 +4881,63 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-09-18T08:01:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-18-microsoft-ai-assisted-servicenow-invoice-bec": {
+      "content_hash": "80cb37f4aea1a25f472a0b96eced4086e854478a55739a4a637d403a06012f72",
+      "evidence_status": "validated",
+      "file": "2026-09-18-microsoft-ai-assisted-servicenow-invoice-bec.md",
+      "posts_index_hash": "abe162f396e49f5eeed2e4f66d6bffcce18d35cfa0c6b5871270a613b5024481",
+      "report_id": "2026-09-18-microsoft-ai-assisted-servicenow-invoice-bec",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/10/protecting-organizations-ai-assisted-executive-impersonation-invoice-fraud/",
+        "https://decipher.sc/2026/09/14/here-come-the-ai-generated-bec-scams/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-18T15:40:15+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth": {
+      "content_hash": "370c18e705364d2e597be690faa46780f3957d1361813d02e614f7c0348e3d8e",
+      "evidence_status": "validated",
+      "file": "2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth.md",
+      "posts_index_hash": "cfb84314cab79c70b8b1b02ae4f873934c66b20b3c2be274d09339dd4c4218d4",
+      "report_id": "2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth",
+      "review_required": [],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-q5h5-h6mj-vhgv",
+        "https://github.com/advisories/GHSA-9gv4-vfjg-jjrm",
+        "https://github.com/advisories/GHSA-crjm-2g45-pq97",
+        "https://github.com/advisories/GHSA-2p95-qvc5-6rjq",
+        "https://github.com/ossf/malicious-packages/blob/6f29f66e2810d13aefdb7c0fc2ebd05b265745da/osv/malicious/pypi/openaii/MAL-2026-16135.json",
+        "https://corgea.com/research/openaii-ollamaa-langgrap-transfomers-pypi-pth-typosquats-september-2026",
+        "https://radar.offseq.com/threat/malicious-code-in-openaii-pypi-caa044013c40d970",
+        "https://radar.offseq.com/threat/malicious-code-in-ollamaa-pypi-8da4afa83b30f47c",
+        "https://radar.offseq.com/threat/malicious-code-in-transfomers-pypi-2dc389a1999c7c2a"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-18T15:40:13+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-18-rathat-android-genai-ui-automation": {
+      "content_hash": "6bf17814fd7b25a1c3dab705ce91bf03b18f57a3035e792821a91d5d5e3bdbc8",
+      "evidence_status": "validated",
+      "file": "2026-09-18-rathat-android-genai-ui-automation.md",
+      "posts_index_hash": "ebe4c95bb066e01a39dbf868ebd947888513acbae1838a87c57737044f4e767b",
+      "report_id": "2026-09-18-rathat-android-genai-ui-automation",
+      "review_required": [],
+      "source_urls": [
+        "https://zimperium.com/blog/rathat-ai-powered-mobile-threat-is-here-for-your-credentials-bank-accounts",
+        "https://github.com/Zimperium/IOC/tree/master/2026-09-RatHat",
+        "https://thehackernews.com/2026/09/rathat-android-malware-abuses-adb-to.html",
+        "https://www.infosecurity-magazine.com/news/rathat-android-malware-ai-steal/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-18T15:40:09+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

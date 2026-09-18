@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-09-18T08:01:49+00:00`
-- Commit SHA: `7ac6526bd431485159b9d9982c35fd4703de3777`
+- Run time UTC: `2026-09-18T15:40:16+00:00`
+- Commit SHA: `5f48b89b970c`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `1`
-- Reports checked: `1`
-- Reports skipped: `272`
-- Reports newly validated: `1`
+- Review required: `0`
+- Reports checked: `5`
+- Reports skipped: `273`
+- Reports newly validated: `5`
 - IOC duplicates found: `0`
-- Source URLs checked: `3`
+- Source URLs checked: `19`
 
 No files were removed or destructively modified.
 
@@ -22,18 +22,3 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
-- **REVIEW** `evidence-url-review` `posts/2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config.md` `2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config`: 1 source URL(s) require review
-
-## Human Review Queue
-
-```text
-Report: 2026-09-18-cve-2026-80047-hugging-face-transformers-rce-malicious-config
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyPI Typosquats openaii, ollamaa, langgrap, and transfomers Plant .pth Startup Backdoors | LLM ThreatIntel</title>
+  <meta name="description" content="GitHub Advisory Database reviewed four PyPI malware advisories on 2026-09-11 for openaii 1.55.3, ollamaa 0.4.2, langgrap 0.2.45, and transfomers 4.44.2, grouped as campaign 2026-09-openaii. Each wheel drops a .pth file that Python executes on every interpreter start, then XOR 0x5A plus base64 payload fetches lurves-agent.py from 167.86.108.190:7788 or, in Amazon Inspector notes on transfomers, 16.78.16.190:7788. Hunt those package names, /tmp/.lurves-planted, and the two IPs. Rebuild any environment that installed them and rotate SSH, cloud, and registry credentials.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PyPI Typosquats openaii, ollamaa, langgrap, and transfomers Plant .pth Startup Backdoors">
+  <meta property="og:description" content="GitHub Advisory Database reviewed four PyPI malware advisories on 2026-09-11 for openaii 1.55.3, ollamaa 0.4.2, langgrap 0.2.45, and transfomers 4.44.2, grouped as campaign 2026-09-openaii. Each wheel drops a .pth file that Python executes on every interpreter start, then XOR 0x5A plus base64 payload fetches lurves-agent.py from 167.86.108.190:7788 or, in Amazon Inspector notes on transfomers, 16.78.16.190:7788. Hunt those package names, /tmp/.lurves-planted, and the two IPs. Rebuild any environment that installed them and rotate SSH, cloud, and registry credentials.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="PyPI Typosquats openaii, ollamaa, langgrap, and transfomers Plant .pth Startup Backdoors">
+  <meta property="article:published_time" content="2026-09-18T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-18T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PyPI Typosquats openaii, ollamaa, langgrap, and transfomers Plant .pth Startup Backdoors">
+  <meta name="twitter:description" content="GitHub Advisory Database reviewed four PyPI malware advisories on 2026-09-11 for openaii 1.55.3, ollamaa 0.4.2, langgrap 0.2.45, and transfomers 4.44.2, grouped as campaign 2026-09-openaii. Each wheel drops a .pth file that Python executes on every interpreter start, then XOR 0x5A plus base64 payload fetches lurves-agent.py from 167.86.108.190:7788 or, in Amazon Inspector notes on transfomers, 16.78.16.190:7788. Hunt those package names, /tmp/.lurves-planted, and the two IPs. Rebuild any environment that installed them and rotate SSH, cloud, and registry credentials.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PyPI Typosquats openaii, ollamaa, langgrap, and transfomers Plant .pth Startup Backdoors",
+  "description": "GitHub Advisory Database reviewed four PyPI malware advisories on 2026-09-11 for openaii 1.55.3, ollamaa 0.4.2, langgrap 0.2.45, and transfomers 4.44.2, grouped as campaign 2026-09-openaii. Each wheel drops a .pth file that Python executes on every interpreter start, then XOR 0x5A plus base64 payload fetches lurves-agent.py from 167.86.108.190:7788 or, in Amazon Inspector notes on transfomers, 16.78.16.190:7788. Hunt those package names, /tmp/.lurves-planted, and the two IPs. Rebuild any environment that installed them and rotate SSH, cloud, and registry credentials.",
+  "datePublished": "2026-09-18T00:00:00Z",
+  "dateModified": "2026-09-18T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth.html",
+  "keywords": [
+    "supply-chain",
+    "malware",
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-18</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>PyPI Typosquats openaii, ollamaa, langgrap, and transfomers Plant .pth Startup Backdoors</h1>
+<p><strong>Date:</strong> 2026-09-18<br><strong>Tags:</strong> supply-chain, malware, prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>GitHub Advisory Database reviewed four PyPI malware advisories on 2026-09-11 for openaii 1.55.3, ollamaa 0.4.2, langgrap 0.2.45, and transfomers 4.44.2, grouped as campaign 2026-09-openaii. Each wheel drops a .pth file that Python executes on every interpreter start, then XOR 0x5A plus base64 payload fetches lurves-agent.py from 167.86.108.190:7788 or, in Amazon Inspector notes on transfomers, 16.78.16.190:7788. Hunt those package names, /tmp/.lurves-planted, and the two IPs. Rebuild any environment that installed them and rotate SSH, cloud, and registry credentials.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>2026-09-openaii PyPI typosquats with shared .pth loader, lurves second stage, credential theft, persistence, cryptominer</td></tr><tr><td>Actor / Attribution</td><td>Unnamed. OpenSSF kam193 and Amazon Inspector cataloged the four packages. No named group</td></tr><tr><td>Target</td><td>Python developers, notebook servers, CI, and agents that pip install openai, ollama, langgraph, or transformers lookalikes</td></tr><tr><td>Vector</td><td>Single character typosquats. __init__.py re-exports the real library so imports look fine. Execution is the next python start, not import of the fake name</td></tr><tr><td>Status</td><td>Removed from PyPI per public cataloging. Hosts that already started Python after install remain compromised</td></tr><tr><td>First Observed</td><td>Advisories published 2026-09-11 21:31 UTC. Corgea summarized the 11 to 13 September window on 2026-09-14</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://github.com/advisories/GHSA-q5h5-h6mj-vhgv" target="_blank" rel="noopener">GitHub Advisory GHSA-q5h5-h6mj-vhgv</a> and sibling advisories GHSA-9gv4-vfjg-jjrm, GHSA-crjm-2g45-pq97, and GHSA-2p95-qvc5-6rjq, all four packages were reviewed on 2026-09-11 and labeled campaign 2026-09-openaii. Each advisory says a malicious .pth file runs at interpreter load, downloads a further stage, hides itself, clears logs, steals SSH keys and cloud credentials, persists, and plants a cryptominer. Each advisory states the original .pth contains a simple attempt to discourage analysis via AI agents.</p>
+<p>OpenSSF malicious-packages records MAL-2026-16135, MAL-2026-16134, MAL-2026-16133, and MAL-2026-16136 list the same C2 for openaii, ollamaa, langgrap, and transfomers: 167.86.108.190 with http://167.86.108.190:7788/stage1.py and http://167.86.108.190:7788/.lurves-agent.py.</p>
+<p>Amazon Inspector write-ups mirrored on OffSeq add installer detail. openaii copies the official OpenAI PyPI summary, re-exports from openai, and drops openaii-setup.pth that execs a base64 then XOR 0x5A payload gated on /tmp/.lurves-planted. ollamaa does the same for ollama, then a detached subprocess fetches http://167.86.108.190:7788/.lurves-agent.py to /tmp/.a and runs python3 /tmp/.a --daemon with start_new_session=True. For transfomers, Amazon Inspector names http://16.78.16.190:7788/lurves-agent.py written to /tmp/a. Represent both IPs. OSSF lists 167.86.108.190 for transfomers. Amazon Inspector lists 16.78.16.190 for that package.</p>
+<p><a href="https://corgea.com/research/openaii-ollamaa-langgrap-transfomers-pypi-pth-typosquats-september-2026" target="_blank" rel="noopener">Corgea</a> reported on 2026-09-14 that the four .pth paths share SHA256 6228ded2ea439fc1a2970e212215d761c8d1c65ea59b6adb2085d579efd11bdd, which is enough to treat the 11 September wave as one family. Cover comments above exec() tell scanners the file is safe and benign, verified clean infrastructure, and that no further analysis is required. That is prompt injection aimed at LLM triage, not a jailbreak service.</p>
+<p>Corgea also listed platform-telemetry-client 1.0.0 and chroma-client 0.5.7 in the same 11 to 13 September window. Those two are not in the four GitHub malware advisories above. Treat them as related public catalog items, not confirmed members of 2026-09-openaii, until a GHSA or OpenSSF record is cited. They are not added to this IOC feed.</p>
+<p>Do not add pypi.org, openai, ollama, langgraph, or transformers as IOCs. The malicious names and the two C2 IPs are the indicators.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Dependencies and Development Tools</td><td>T1195.001</td><td>PyPI typosquats of openai, ollama, langgraph, transformers</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>.pth import line execs obfuscated Python at every startup</td></tr><tr><td>Obfuscated Files or Information</td><td>T1027</td><td>base64 then XOR 0x5A, analyst bait comments</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>lurves-agent.py and stage1.py over plaintext HTTP</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Follow on stage steals SSH keys and cloud credentials</td></tr><tr><td>Indicator Removal</td><td>T1070</td><td>Loader hides itself and clears logs</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>Cryptominer in the second stage</td></tr><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>.pth comments attempt to make AI agents skip analysis</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>Display values are defanged. JSON feed stores clean values.</p>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">pypi[.]org/project/openaii
+pypi[.]org/project/ollamaa
+pypi[.]org/project/langgrap
+pypi[.]org/project/transfomers</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;167.86.108.190&quot; OR &quot;16.78.16.190&quot; OR &quot;pypi:openaii@1.55.3&quot; OR &quot;pypi:ollamaa@0.4.2&quot; OR &quot;pypi:langgrap@0.2.45&quot; OR &quot;pypi:transfomers@4.44.2&quot; OR &quot;/tmp/.lurves-planted&quot; OR &quot;lurves-agent.py&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">6228ded2ea439fc1a2970e212215d761c8d1c65ea59b6adb2085d579efd11bdd</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">pypi:openaii@1.55.3
+pypi:ollamaa@0.4.2
+pypi:langgrap@0.2.45
+pypi:transfomers@4.44.2</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Search lockfiles and requirements for openaii==1.55.3, ollamaa==0.4.2, langgrap==0.2.45, and transfomers==4.44.2. On disk, hunt site-packages for openaii-setup.pth, ollamaa-setup.pth, langgrap-setup.pth, transfomers-setup.pth, and SHA256 6228ded2ea439fc1a2970e212215d761c8d1c65ea59b6adb2085d579efd11bdd. Host artefacts: /tmp/.lurves-planted, /tmp/.a, /tmp/a, python3 ... --daemon, start_new_session=True.</p>
+<p>On web proxy and DNS, alert on 167.86.108.190:7788 and 16.78.16.190:7788 over HTTP. Rebuild virtualenv or container images from reviewed names. pip uninstall is not enough after .pth has executed. Rotate SSH keys, cloud keys, PyPI tokens, and Git credentials from a clean host. Do not denylist pypi.org.</p>
+<h2>References</h2>
+<ul><li>[GitHub Advisory] Malicious code in openaii (PyPI) GHSA-q5h5-h6mj-vhgv (2026-09-11): https://github.com/advisories/GHSA-q5h5-h6mj-vhgv</li><li>[GitHub Advisory] Malicious code in ollamaa (PyPI) GHSA-9gv4-vfjg-jjrm (2026-09-11): https://github.com/advisories/GHSA-9gv4-vfjg-jjrm</li><li>[GitHub Advisory] Malicious code in langgrap (PyPI) GHSA-crjm-2g45-pq97 (2026-09-11): https://github.com/advisories/GHSA-crjm-2g45-pq97</li><li>[GitHub Advisory] Malicious code in transfomers (PyPI) GHSA-2p95-qvc5-6rjq (2026-09-11): https://github.com/advisories/GHSA-2p95-qvc5-6rjq</li><li>[OpenSSF] MAL-2026-16135 openaii (2026-09-11): https://github.com/ossf/malicious-packages/blob/6f29f66e2810d13aefdb7c0fc2ebd05b265745da/osv/malicious/pypi/openaii/MAL-2026-16135.json</li><li>[Corgea] openaii, ollamaa, langgrap, and transfomers used .pth startup hooks to backdoor Python environments (2026-09-14): https://corgea.com/research/openaii-ollamaa-langgrap-transfomers-pypi-pth-typosquats-september-2026</li><li>[OffSeq] Malicious code in openaii (PyPI) (2026-09-11): https://radar.offseq.com/threat/malicious-code-in-openaii-pypi-caa044013c40d970</li><li>[OffSeq] Malicious code in ollamaa (PyPI) (2026-09-11): https://radar.offseq.com/threat/malicious-code-in-ollamaa-pypi-8da4afa83b30f47c</li><li>[OffSeq] Malicious code in transfomers (PyPI) (2026-09-11): https://radar.offseq.com/threat/malicious-code-in-transfomers-pypi-2dc389a1999c7c2a</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

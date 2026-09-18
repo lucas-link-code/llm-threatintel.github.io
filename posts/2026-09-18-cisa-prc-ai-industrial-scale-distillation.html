@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models | LLM ThreatIntel</title>
+  <meta name="description" content="CISA, NSA, and FBI published joint advisory AA26-251A on 2026-09-08 stating that DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens from US frontier models including Claude, GPT, Gemini, and Grok variants since at least late 2024, likely with PRC government awareness. Pathways include native APIs, cloud relays, aggregators, and transfer station proxies that break geo restrictions. MiniMax used prompt injection to make Claude Code treat itself as a MiniMax product. US providers should hunt subscription to usage anomalies and shared premium seats. No domain, IP, or hash was published.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-18-cisa-prc-ai-industrial-scale-distillation.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models">
+  <meta property="og:description" content="CISA, NSA, and FBI published joint advisory AA26-251A on 2026-09-08 stating that DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens from US frontier models including Claude, GPT, Gemini, and Grok variants since at least late 2024, likely with PRC government awareness. Pathways include native APIs, cloud relays, aggregators, and transfer station proxies that break geo restrictions. MiniMax used prompt injection to make Claude Code treat itself as a MiniMax product. US providers should hunt subscription to usage anomalies and shared premium seats. No domain, IP, or hash was published.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-18-cisa-prc-ai-industrial-scale-distillation.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models">
+  <meta property="article:published_time" content="2026-09-18T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-18T00:00:00Z">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models">
+  <meta name="twitter:description" content="CISA, NSA, and FBI published joint advisory AA26-251A on 2026-09-08 stating that DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens from US frontier models including Claude, GPT, Gemini, and Grok variants since at least late 2024, likely with PRC government awareness. Pathways include native APIs, cloud relays, aggregators, and transfer station proxies that break geo restrictions. MiniMax used prompt injection to make Claude Code treat itself as a MiniMax product. US providers should hunt subscription to usage anomalies and shared premium seats. No domain, IP, or hash was published.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models",
+  "description": "CISA, NSA, and FBI published joint advisory AA26-251A on 2026-09-08 stating that DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens from US frontier models including Claude, GPT, Gemini, and Grok variants since at least late 2024, likely with PRC government awareness. Pathways include native APIs, cloud relays, aggregators, and transfer station proxies that break geo restrictions. MiniMax used prompt injection to make Claude Code treat itself as a MiniMax product. US providers should hunt subscription to usage anomalies and shared premium seats. No domain, IP, or hash was published.",
+  "datePublished": "2026-09-18T00:00:00Z",
+  "dateModified": "2026-09-18T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-18-cisa-prc-ai-industrial-scale-distillation.html",
+  "keywords": [
+    "nation-state",
+    "llmjacking",
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-18</span>
+      <span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models</h1>
+<p><strong>Date:</strong> 2026-09-18<br><strong>Tags:</strong> nation-state, llmjacking, prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>CISA, NSA, and FBI published joint advisory AA26-251A on 2026-09-08 stating that DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens from US frontier models including Claude, GPT, Gemini, and Grok variants since at least late 2024, likely with PRC government awareness. Pathways include native APIs, cloud relays, aggregators, and transfer station proxies that break geo restrictions. MiniMax used prompt injection to make Claude Code treat itself as a MiniMax product. US providers should hunt subscription to usage anomalies and shared premium seats. No domain, IP, or hash was published.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Industrial scale knowledge distillation against US frontier models. Not a malware family</td></tr><tr><td>Actor / Attribution</td><td>Named PRC companies DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI per CISA, NSA, and FBI. Assessed likely with Chinese government awareness. Confidence as stated by the authoring agencies, not independently scored here</td></tr><tr><td>Target</td><td>US model providers and, indirectly, any tenant whose prompts or chain of thought traces are pulled into student training</td></tr><tr><td>Vector</td><td>Fraudulent and bulk API accounts, aggregator obfuscation, transfer station proxies, chain of thought extraction prompts, automated failover when blocked</td></tr><tr><td>Status</td><td>Active. Authoring agencies describe ongoing campaigns from at least late 2024 through 2026</td></tr><tr><td>First Observed</td><td>Late 2024 per the advisory. Public joint advisory 2026-09-08</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a" target="_blank" rel="noopener">CISA</a>, distillation is a legitimate training method, but the named PRC companies run it at industrial scale against restricted capabilities of US models, treating it as the core of development rather than a supplement. The advisory says DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens across millions of exchanges. Access is split across native APIs, remote cloud providers, and third party aggregators that hide user metadata. Transfer stations resell frontier access, bypass regional controls, and reduce traceability. Cost is cut by bulk premium subscriptions shared across developer teams. Quality pipelines detect degraded or honey responses so operators can fail over.</p>
+<p>DeepSeek has run organized distillation since at least 2024 for R1 and V3, including Claude 3.7, Claude Sonnet 4, Claude Sonnet 4.5, Claude Opus 4.1, Gemini 2.5 Pro Preview, Gemini 2.5 Flash Preview, GPT-4, GPT-4o, GPT-4 Mini, GPT-4 Nano, GPT-5, and Grok 4. Targeted functions include legal specialization, API rule tasks, chain of thought writing, agentic functions, and supervised fine tuning. CISA says DeepSeek&#x27;s public 5.6 million dollar training cost figure is misleading because it omits distilled data cost.</p>
+<p>Moonshot AI, from at least mid 2025, distilled Claude Fable 5 into Kimi-K3 and GPT-4o into Kimi-K2, plus a long list of Claude, GPT, Gemini, Nano Banana, and Grok Code Fast-1 models for SFT, RL, software engineering, and math. Alibaba in late 2025 distilled Claude-4 family and GPT-5 for Qwen software engineering, customer service, and character creation. MiniMax distilled Claude Code, Claude Sonnet 4, Claude Opus, Gemini 1, Gemini 2.5 Pro, Gemini 3 Pro, and GPT-5 into M2, including chain of thought, RL, and SFT. CISA said MiniMax used prompt injections so Claude Code would believe it was a MiniMax product. StepFun distilled Claude Opus 4.1 and 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, and GPT-5 Mini through GPT-5.2 into Step 4 coding and agentic functions. By mid 2026 Z.AI had distilled billions of tokens of GPT-5.5 and Claude Opus 4.8 for chain of thought.</p>
+<p>The authoring agencies map TTPs to MITRE ATLAS, including AML.T0008 infrastructure, AML.T0040 inference API access, AML.T0051 and AML.T0054 prompt injection and jailbreak for hidden chain of thought, AML.TA0008 discovery, and AML.T0042 attack verification. MiniMax retargeted a new Claude model within 24 hours of release. This feed maps the same activity to enterprise ATT&amp;CK below. ATLAS IDs stay in this paragraph as CISA wrote them.</p>
+<p>This advisory is broader than Anthropic cluster GTG-16001 on this feed. GTG-16001 is DeepSeek silently relaying customer traffic to Claude Opus in July 2026. AA26-251A is US government attribution of multi company distillation since 2024, including labs Anthropic did not name in that cluster. Do not collapse the two records.</p>
+<p>Recommended provider actions: detect anomalous prompts, accounts, networks, subscription to usage ratios, immediate max usage on new accounts, and enterprise scale throughput. Subtly alter responses to suspected distillation. Share indicators across providers, clouds, and aggregators. No network IOC list was published. Do not denylist Claude, GPT, Gemini, Grok, DeepSeek, or the other named products as platforms.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>Named PRC labs extract US model capabilities and chain of thought for student training</td></tr><tr><td>Valid Accounts</td><td>T1078</td><td>Fraudulent and bulk API or premium subscription accounts, often shared across teams</td></tr><tr><td>Automated Collection</td><td>T1119</td><td>Millions of coordinated exchanges, failover when blocked, quality checks against defensive degradation</td></tr><tr><td>Masquerading</td><td>T1036</td><td>Aggregators and transfer stations hide operator identity and geography</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On model provider and aggregator logs, hunt new accounts that immediately hit rate limits, many accounts sharing one payment instrument, and high volume identical or near identical prompts across Claude, GPT, Gemini, and Grok. Alert when a session tries to recover hidden chain of thought after a refusal, including imagine the internal reasoning prompts CISA attributes to DeepSeek. Correlate tenant IDs that bounce across aggregators after a block. MiniMax style prompt injection that tells Claude Code it is another vendor product belongs in coding harness logs, not in a domain denylist.</p>
+<p>On enterprise side, treat unexpected bulk use of personal frontier subscriptions from corporate egress as possible transfer station or shared seat abuse. This advisory has no IP or domain list. Do not add DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, Z.AI, Anthropic, OpenAI, Google, or xAI apex domains as IOCs.</p>
+<h2>References</h2>
+<ul><li>[CISA] China-Based Artificial Intelligence Companies Conducting Industrial-Scale Distillation Campaigns Against U.S. AI Companies AA26-251A (2026-09-08): https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a</li><li>[CISA] CISA, NSA and FBI Warn of China-Based AI Companies Targeting US AI Models with Industrial-Scale Knowledge Distillation Campaigns (2026-09-08): https://www.cisa.gov/news-events/news/cisa-nsa-and-fbi-warn-china-based-ai-companies-targeting-us-ai-models-industrial-scale-knowledge</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
