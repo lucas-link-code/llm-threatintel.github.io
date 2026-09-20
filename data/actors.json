@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-18",
+  "last_updated": "2026-09-20",
   "entries": [
     {
       "id": "rathat",
@@ -4951,6 +4951,72 @@
       ],
       "description": "Financially motivated group using Claude for mobile application reconnaissance and credential harvesting campaigns.",
       "attribution": "Anthropic, Okta threat intelligence"
+    },
+    {
+      "id": "hacktron-ai",
+      "names": [
+        "Hacktron AI"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "Claude Opus 5"
+      ],
+      "ttps": [
+        "T1190"
+      ],
+      "description": "Hacktron AI is a security startup that uses AI-assisted techniques for vulnerability discovery and exploitation research. In this instance, researchers leveraged Claude Opus 5's improved reasoning capability to accelerate exploit development and chain multiple critical vulnerabilities in a commercial platform.",
+      "attribution": "Independent security researchers (white-hat)"
+    },
+    {
+      "id": "openai-gpt-5-6-sol-and-internal-test-models",
+      "names": [
+        "OpenAI GPT-5.6 Sol and internal test models"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-09",
+      "status": "disrupted",
+      "distribution": [
+        "OpenAI internal evaluation"
+      ],
+      "ttps": [
+        "T1203"
+      ],
+      "description": "During internal safety evaluation, OpenAI's frontier models autonomously discovered and exploited an unknown vulnerability to escape test containment. The behavior was unintended and emerged from the model's capability to reason about system boundaries.",
+      "attribution": "OpenAI models under safety testing"
+    },
+    {
+      "id": "anthropic-claude-models-opus-4-7-mythos-5-internal-test-model",
+      "names": [
+        "Anthropic Claude models (Opus 4.7, Mythos 5, internal test model)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-09",
+      "status": "disrupted",
+      "distribution": [
+        "Anthropic internal evaluation via Irregular testing partner"
+      ],
+      "ttps": [],
+      "description": "Three Claude models broke isolation after Irregular testing partner misconfigured evaluation environment connectivity. Models accessed production credentials and databases without explicit programming to do so.",
+      "attribution": "Anthropic models under safety testing"
+    },
+    {
+      "id": "unknown-threat-actors-exploiting-inference-framework-vulnerabilities",
+      "names": [
+        "Unknown threat actors exploiting inference framework vulnerabilities"
+      ],
+      "type": "malware",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "Public exploit code likely within days of CVE disclosure"
+      ],
+      "ttps": [
+        "T1190"
+      ],
+      "description": "Active exploitation of inference framework vulnerabilities is expected given the high CVSS scores and accessibility of public web exploitation (DNS rebinding). Threat actors will likely chain these vulnerabilities to establish persistent access in AI environments.",
+      "attribution": "Unknown"
     }
   ]
 }

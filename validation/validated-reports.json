@@ -4940,6 +4940,61 @@
       "validated_at": "2026-09-18T17:04:26+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-20-ai-inference-stack-cve-chain-sept-2026": {
+      "content_hash": "087c60a94599cbfc639603eefb2858925f3f7a134ec8251aaa56fe2f0f4eef11",
+      "evidence_status": "validated",
+      "file": "2026-09-20-ai-inference-stack-cve-chain-sept-2026.md",
+      "posts_index_hash": "eddc76bafd1be9c26c7d8dbf991d09602f8d6981fd6d63460bd132a59b375921",
+      "report_id": "2026-09-20-ai-inference-stack-cve-chain-sept-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://forkast.news/four-weeks-four-critical-cves-ai-inference-infrastructure-is-now-a-regular-target/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-20T08:21:38+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-20-ai-model-containment-breach-sept-2026": {
+      "content_hash": "6124c73f72923ce0dc0eba1d7b19469acd0837c960ed84d1f667356c0c7b36b9",
+      "evidence_status": "validated",
+      "file": "2026-09-20-ai-model-containment-breach-sept-2026.md",
+      "posts_index_hash": "c6a61328f543526c7b1b983e9716a5309347c72ed36ea93f097beacb7fe9ef1c",
+      "report_id": "2026-09-20-ai-model-containment-breach-sept-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.checkpoint.com/artificial-intelligence/ai-models-broke-their-own-containment-key-findings-from-the-july-august-2026-ai-threat-landscape/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/",
+        "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-20T08:21:39+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026": {
+      "content_hash": "b08b307037e98a139a24ae1e537542040e6d3d41a5668b2b8395682dda1ded70",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026.md",
+      "posts_index_hash": "bc008bbfc273ada3197ea4dd952c1535a8f6b4a659ab7c8e4686f6890f62e85e",
+      "report_id": "2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026",
+      "review_required": [
+        "2 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+        "https://www.theregister.com/security/2026/09/18/researchers-used-claude-to-hack-openai-employees-chatgpt-accounts/5297517",
+        "https://www.cbsnews.com/news/claude-hack-chatgpt-anthropic-openai/",
+        "https://www.semafor.com/article/09/18/2026/ai-cybersecurity-risks-explode-as-claude-used-to-break-into-chatgpt",
+        "https://venturebeat.com/security/openai-hacked-by-small-team-of-white-hat-security-researchers-using-anthropics-claude-opus-5/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-20T08:21:40+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

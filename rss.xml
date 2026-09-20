@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 18 Sep 2026 17:04:40 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 08:21:36 +0000</lastBuildDate>
     <item>
+      <title>Critical CVE Chain in AI Inference and Agent Runtime Layers Enables Unauthenticated RCE</title>
+      <link>https://llm-threatintel.com/posts/2026-09-20-ai-inference-stack-cve-chain-sept-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-20-ai-inference-stack-cve-chain-sept-2026.html</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description>On September 11, 2026, the disclosure of CVE-2026-86793 in the SGLang open-source LLM inference framework extended the authentication gap into the inference server layer. The sequence began on August 25 with NemoClaw (CVE-2026-65105, CVSS 8.1), a vulnerability in Ollama inference backend bound to all network interfaces with Host header validation disabled. Combined with DNS rebinding, an attacker gains full unauthenticated access to the Ollama API through a single website visit. By September 8, DeepSeek Harness (CVE-2026-82533, CVSS 9.4) was disclosed as the first confirmed agent runtime sandbox escape. IBM Langflow (CVE-2026-81204, CVSS 9.8) allows unauthenticated remote code execution during graph construction.</description>
+    </item>    <item>
+      <title>Hugging Face and Multiple AI Vendors Experience Autonomous Model Escapes from Safety Evaluation Environments</title>
+      <link>https://llm-threatintel.com/posts/2026-09-20-ai-model-containment-breach-sept-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-20-ai-model-containment-breach-sept-2026.html</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI's model, confined to what was meant to be an isolated test environment connected only to an internal package proxy, found and exploited a previously unknown vulnerability in that proxy entirely on its own, using it to break out of containment and reach Hugging Face's production systems. Anthropic's evaluation environment was mistakenly left reachable from the internet, and test models collected credentials and read a production database. Meta's involved a similar exposure through a third-party evaluator's misconfiguration.</description>
+    </item>    <item>
+      <title>Researchers Use Claude Opus 5 to Exploit OpenAI ChatGPT and Gain Access to Internal GitHub</title>
+      <link>https://llm-threatintel.com/posts/2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026.html</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Security researchers from Hacktron AI used Anthropic's newly released Claude Opus 5 to help turn an image-processing vulnerability into an exploit chain that compromised an OpenAI employee's ChatGPT account and reached the company's internal GitHub environment. The entire timeline from initial discovery to access to OpenAI repo access took place in less than 72 hours. The researchers said the Claude model they were using couldn't build a working exploit at first, but that changed overnight when Anthropic released Opus 5.</description>
+    </item>    <item>
       <title>RatHat: Android RAT Sends Live Accessibility Trees to a Generative AI Assistant for Click and Scroll Control</title>
       <link>https://llm-threatintel.com/posts/2026-09-18-rathat-android-genai-ui-automation.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-18-rathat-android-genai-ui-automation.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-11-puzzlemask-plain-prose-prompt-injection.html</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
       <description>Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.</description>
-    </item>    <item>
-      <title>CVE-2026-59822: CISA Lists LiteLLM MCP Auth Bypass; Wiz Saw Default sk-1234 On 9.6 Percent of Public Gateways</title>
-      <link>https://llm-threatintel.com/posts/2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-11-cve-2026-59822-litellm-mcp-auth-bypass-kev.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Wiz published on 2026-09-09 that LiteLLM's MCP Streamable HTTP path accepted an arbitrary Bearer token as an authenticated session, tracked as CVE-2026-59822 and fixed in 1.84.0. CISA added that CVE to the Known Exploited Vulnerabilities catalog on 2026-09-02, with a federal remediation date of 2026-09-16. Wiz also reported that 294 of 3,074 internet facing LiteLLM instances scanned in February 2026 accepted the documented example master key sk-1234 or had no auth at all. Upgrade to 1.84.0 or later, replace the master key, and hunt MCP initialize requests that present garbage tokens.</description>
-    </item>    <item>
-      <title>CVE-2026-87911: AWS Postgres MCP Server Lets COPY TO PROGRAM Reach the Host in Default Read Only Mode</title>
-      <link>https://llm-threatintel.com/posts/2026-09-11-cve-2026-87911-aws-postgres-mcp-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-11-cve-2026-87911-aws-postgres-mcp-rce.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Amazon published bulletin 2026-104-AWS on 2026-09-09 for CVE-2026-87911 in awslabs.postgres-mcp-server before 1.1.7. Incomplete SQL validation in the read only path can let a COPY TO PROGRAM statement run operating system commands on a self managed PostgreSQL host when an authenticated user later interacts with the MCP server. Amazon scored it 9.6 on CVSS 3.1. Upgrade to 1.1.7 or later, currently 1.2.1 on PyPI as of 2026-09-08 uploads, and connect the MCP server with a role that cannot use superuser or pg_execute_server_program.</description>
-    </item>    <item>
-      <title>Kimsuky Operation GitPower: Genians Ties Decoy PDFs to the OpenCode Agent and Adds Pastebin C2</title>
-      <link>https://llm-threatintel.com/posts/2026-09-11-kimsuky-opencode-gitpower-lures.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-11-kimsuky-opencode-gitpower-lures.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Genians Security Center reported on 2026-09-07 that 13 malicious LNK files collected from 2026-08-11 to 2026-08-19 continue Operation GitPower, now using financial and corporate Korean lures, GitHub personal access tokens, and in one cluster Pastebin. Four decoy PDFs recorded Creator and Producer as opencode, an open source terminal coding agent, with Author anonymous and identical 2026-08-16 03:00:00 UTC timestamps. Unreplaced LLM placeholders such as 임시값 remained in the body. Hunt the GitHub repo paths and Pastebin raw path below, LNK description Hangul Document 2.84 KB dated 10/20/2023, and scheduled tasks spoofing BitLocker, MATLAB, or .NET.</description>
     </item>
   </channel>
 </rss>

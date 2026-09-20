@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-18",
+  "last_updated": "2026-09-20",
   "iocs": [
     {
       "value": "fegrs.adidasabc.com",
@@ -6128,6 +6128,15 @@
       "first_seen": "2026-09-07",
       "source": "Cloud Security Alliance Lab",
       "campaign": "wiz-mcp-server-rce-exploitation-chain",
+      "status": "active"
+    },
+    {
+      "value": "community.openai.com",
+      "type": "domain",
+      "context": "Researchers Use Claude Opus 5 to Exploit OpenAI ChatGPT and Gain Access to Internal GitHub",
+      "first_seen": "2026-09-20",
+      "source": "TechCrunch",
+      "campaign": "claude-opus-5-openai-exploit-chain-sept-2026",
       "status": "active"
     }
   ]
