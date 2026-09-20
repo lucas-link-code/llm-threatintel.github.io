@@ -5,7 +5,7 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 20 Sep 2026 08:21:36 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 17:34:58 +0000</lastBuildDate>
     <item>
       <title>Critical CVE Chain in AI Inference and Agent Runtime Layers Enables Unauthenticated RCE</title>
       <link>https://llm-threatintel.com/posts/2026-09-20-ai-inference-stack-cve-chain-sept-2026.html</link>

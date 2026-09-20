@@ -520,6 +520,16 @@ class ValidateSiteTests(unittest.TestCase):
                 "ioc-legitimate-platform",
             ),
             (
+                "openai community subdomain",
+                [{"value": "community.openai.com", "type": "domain"}],
+                "ioc-legitimate-platform",
+            ),
+            (
+                "unlisted openai first-party subdomain",
+                [{"value": "platform.openai.com", "type": "domain"}],
+                "ioc-legitimate-platform",
+            ),
+            (
                 "generic openrouter api path",
                 [{"value": "openrouter.ai/api/v1/chat/completions", "type": "url_path"}],
                 "ioc-legitimate-platform",
@@ -850,6 +860,33 @@ class ValidateSiteTests(unittest.TestCase):
             "### Domains\n\n"
             "```\n"
             "huggingface.co\n"
+            "```\n\n"
+            "## References\n\n"
+            "- [Example] Example Source (2026-05-10) — https://example.com/report\n"
+        )
+        with self.with_repo() as tmp:
+            root = Path(tmp)
+            base_repo(root, markdown=markdown)
+            code, _ = run_validator(root, "--mode", "strict", "--write-report")
+            self.assertEqual(code, 1)
+            codes = {issue["code"] for issue in report(root)["issues"]}
+            self.assertIn("ioc-legitimate-platform", codes)
+
+    def test_markdown_fence_openai_community_fails(self):
+        markdown = (
+            "# Example Report\n\n"
+            "**Date:** 2026-05-10\n"
+            "**Tags:** malware\n\n"
+            "## Executive Summary\n\n"
+            "Example sourced report.\n\n"
+            "## IOCs\n\n"
+            "### Domains\n\n"
+            "```\n"
+            "community.openai.com\n"
+            "```\n\n"
+            "### Splunk Format\n\n"
+            "```\n"
+            "\"community.openai.com\"\n"
             "```\n\n"
             "## References\n\n"
             "- [Example] Example Source (2026-05-10) — https://example.com/report\n"

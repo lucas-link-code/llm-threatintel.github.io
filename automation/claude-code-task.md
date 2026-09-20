@@ -218,7 +218,7 @@ For each new IOC:
   | Vendor | Domains | Generic feature paths (also blocked) |
   |---|---|---|
   | Anthropic | `claude.ai`, `claude.com`, `anthropic.com`, `api.anthropic.com` | `claude.ai/share`, `claude.ai/new`, `claude.ai/chat`, `claude.com/redirect`, `api.anthropic.com/v1/files`, `api.anthropic.com/v1/messages` |
-  | OpenAI | `openai.com`, `chatgpt.com`, `chat.openai.com`, `api.openai.com` | `chatgpt.com/share`, `chat.openai.com/share`, `api.openai.com/v1/chat/completions` |
+  | OpenAI | `openai.com`, `chatgpt.com`, `chat.openai.com`, `api.openai.com`, `community.openai.com` | `chatgpt.com/share`, `chat.openai.com/share`, `api.openai.com/v1/chat/completions` |
   | Google | `gemini.google.com`, `ai.google.dev`, `aistudio.google.com` | `gemini.google.com/share`, `gemini.google.com/app` |
   | xAI | `grok.com`, `x.ai`, `api.x.ai` | `grok.com/share` |
   | Hugging Face | `huggingface.co`, `hf.co` | `huggingface.co/models`, `huggingface.co/datasets`, `huggingface.co/spaces` |

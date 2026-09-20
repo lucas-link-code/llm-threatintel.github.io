@@ -874,13 +874,25 @@ class Validator:
         v = v.rstrip("/")
         return v
 
+    def host_matches_denied_platform(self, host: str, deny_domains: set[str]) -> bool:
+        """True if host is a listed platform or a subdomain of one.
+
+        community.openai.com matches openai.com. evil-openai.com does not.
+        """
+        if not host:
+            return False
+        host = host.lower().rstrip(".")
+        if host in deny_domains:
+            return True
+        return any(host.endswith("." + domain) for domain in deny_domains)
+
     def validate_ioc_not_legitimate_platform(self, value: str, ioc_type: str, file: str, record: str) -> None:
         """Hard-fail if an IOC names a legitimate AI vendor platform.
 
-        The match is exact (after normalisation), not prefix. A specific
-        malicious URL containing an attacker-controlled identifier — e.g.
-        claude.ai/share/Xy7AbC9KqM — will normalise to itself, not match
-        the bare 'claude.ai/share' entry in the deny list, and pass.
+        Domain type matches a listed host or any subdomain of a listed host.
+        url_path type stays exact on the full normalised value so a specific
+        identifier such as claude.ai/share/Xy7AbC9KqM still passes. Host-only
+        url_path values, including Splunk fences, use the domain subdomain rule.
         To allow a genuine compromise of one of these platforms, add the
         normalised value to legitimate_platform_ioc_overrides in
         validation/policy.json.
@@ -911,7 +923,7 @@ class Validator:
             return
 
         if ioc_type == "domain":
-            if normalised in deny_domains:
+            if self.host_matches_denied_platform(normalised, deny_domains):
                 self.fail(
                     "ioc-legitimate-platform",
                     f"IOC names a legitimate AI vendor platform domain (bare domains are not indicators; "
@@ -922,7 +934,12 @@ class Validator:
                     record,
                 )
         elif ioc_type == "url_path":
-            if normalised in deny_domains or normalised in deny_url_paths:
+            host_only = "/" not in normalised
+            if (
+                normalised in deny_domains
+                or normalised in deny_url_paths
+                or (host_only and self.host_matches_denied_platform(normalised, deny_domains))
+            ):
                 self.fail(
                     "ioc-legitimate-platform",
                     f"IOC names a legitimate AI vendor platform endpoint or generic feature path (only "

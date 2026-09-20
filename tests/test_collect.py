@@ -132,6 +132,16 @@ class CollectIocNormalizationTests(unittest.TestCase):
             "openrouter.ai/user/attacker-controlled-id",
         )
 
+    def test_rejects_openai_community_and_first_party_subdomains(self):
+        self.assertRejected("community.openai.com", "domain")
+        self.assertRejected("platform.openai.com", "domain")
+        self.assertRejected("community.openai.com", "url_path")
+        self.assertAccepted(
+            "claude.ai/share/Xy7AbC9KqM",
+            "url_path",
+            "claude.ai/share/Xy7AbC9KqM",
+        )
+
     def test_sanitize_finding_drops_bare_platform_before_markdown(self):
         finding = _minimal_finding(
             iocs={

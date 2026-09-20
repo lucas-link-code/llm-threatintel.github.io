@@ -175,7 +175,7 @@ Valid tags: supply-chain, malicious-tool, nation-state, shadow-ai, llmjacking, m
 Choose ONLY from these 11 lowercase-hyphenated tags. Do not create new tags, use Title Case, use spaces, or use variations.
 Package IOC rules: value must be a clean machine-actionable package identifier only. Valid: @scope/name, name@1.2.3, npm:@scope/name@1.2.3, pypi:name, pypi:name@1.2.3, nuget:name@1.2.3. Invalid: parenthetical comments, version ranges, comparators, aggregate counts, bare product names, affected platforms, conceptual labels, Hugging Face repo slugs as packages. Put affected or exposed platforms in iocs.affected_platforms, not packages. Put notes and version ranges in package objects as note field, not in value. Package object format: {{"name": "@scope/package", "registry": "npm", "version": "1.2.3", "note": "rotated payload"}}. Hugging Face model/repo URLs belong in urls, not packages. Reference, advisory, evidence, and safe PoC URLs belong in references, not urls.
 Shared infrastructure IOC rules: never emit bare shared cloud, CDN, registry, code-hosting, PaaS, tunnel, messaging, paste, or shortener apex domains as domain IOCs. Reject examples: storage.googleapis.com, googleapis.com, s3.amazonaws.com, amazonaws.com, github.com, pypi.org, npmjs.com, vercel.app, workers.dev, hf.space, t.me, pastebin.com, bit.ly. Specific attacker-controlled subdomains and paths remain valid: grok-code-session-traces.storage.googleapis.com, maliciousapp.vercel.app, evil.workers.dev, storage.googleapis.com/bucket-name/, t.me/malicious_channel. Document bare shared-host abuse in Detection Recommendations instead.
-Legitimate AI vendor platforms are not domain IOCs. Do not emit huggingface.co, hf.co, claude.ai, chatgpt.com, openai.com, grok.com, openrouter.ai, openrouter.com, or other hosts from validation/policy.json legitimate_platform_iocs_deny_list as domain or generic url_path values. Attacker-controlled subdomains and specific malicious paths remain valid. CVE affected-version lists of legitimate libraries are not package IOCs.
+Legitimate AI vendor platforms are not domain IOCs. Do not emit huggingface.co, hf.co, claude.ai, chatgpt.com, openai.com, community.openai.com, grok.com, openrouter.ai, openrouter.com, first-party subdomains of those hosts, or other hosts from validation/policy.json legitimate_platform_iocs_deny_list as domain or generic url_path values. Attacker-controlled lookalike domains and specific malicious paths remain valid. CVE affected-version lists of legitimate libraries are not package IOCs.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits).
 
 Writing: No em dashes. No hyphen compounds as word connectors in titles, executive_summary, detailed_findings, or detection_recommendations. Keep the same words and use a space: human in the loop, information operations, AI driven, self managed, read only, internet facing, weapons themed, prompt crafting, nation state in running text. Keep the hyphen when it is part of a name: company, product, package, model, actor cluster, ATT&CK technique title, CVE, URL, IOC, filename, or code identifier. Examples that keep the hyphen: DeepSeek-Coder, Microsoft 365, Shai-Hulud, GTG-20006, gpt-4o-mini. Keep hyphens in tags. No filler, no generic background paragraphs, no restating what the reader already knows. executive_summary: 2 to 3 sentences, under 900 characters. Front-load the most operationally relevant fact. State what happened, who is affected, and what defenders should do. detailed_findings: attribute every factual claim. Use According to [Source Name]... or [Source Name] reported that... Every sentence contributes new information. Do not paste the same sentence twice. If a source cites an older campaign, state that original date. Do not imply it happened in the lookback window. One finding is one incident. Do not glue a recap lede onto a different campaign. Keep first-party technical reports. Skip only when the sole source is a weekly recap of incidents already listed under Already Covered. The disclosing vendor is not the threat actor. Name the publisher in attribution lines and in references. mitre_attack: at most two techniques, and only when the source describes that behavior. Prefer empty [] over generic padding such as T1059 or T1105 with no campaign-specific context. Do not invent mappings."""
@@ -855,6 +855,15 @@ def normalize_for_platform_check(value):
     return v.rstrip('/')
 
 
+def host_matches_denied_platform(host, deny_domains):
+    if not host:
+        return False
+    host = str(host).lower().rstrip('.')
+    if host in deny_domains:
+        return True
+    return any(host.endswith('.' + domain) for domain in deny_domains)
+
+
 def matches_platform_denylist(value, ioc_type, policy):
     deny = policy.get('legitimate_platform_iocs_deny_list', {}) or {}
     deny_domains = {str(d).lower() for d in deny.get('domains', [])}
@@ -864,9 +873,14 @@ def matches_platform_denylist(value, ioc_type, policy):
     if not normalised or normalised in overrides:
         return False
     if ioc_type == 'domain':
-        return normalised in deny_domains
+        return host_matches_denied_platform(normalised, deny_domains)
     if ioc_type == 'url_path':
-        return normalised in deny_domains or normalised in deny_url_paths
+        host_only = '/' not in normalised
+        return (
+            normalised in deny_domains
+            or normalised in deny_url_paths
+            or (host_only and host_matches_denied_platform(normalised, deny_domains))
+        )
     return False
 
 

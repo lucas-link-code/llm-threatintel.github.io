@@ -1,7 +1,7 @@
 {
-  "commit_sha": "5534d712c30949214edd4f11a90d8e17fe1f86f6",
+  "commit_sha": "c5d0f0e51a36",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-20T08:21:40+00:00",
+  "generated_at_utc": "2026-09-20T17:34:35+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -49,55 +49,13 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 3,
-  "reports_skipped": 278,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 280,
   "review_required": 1,
-  "source_urls_checked": 11,
-  "state_updates": 3,
+  "source_urls_checked": 5,
+  "state_updates": 1,
   "url_results": [
-    {
-      "error": "",
-      "final_url": "https://forkast.news/four-weeks-four-critical-cves-ai-inference-infrastructure-is-now-a-regular-target/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://forkast.news/four-weeks-four-critical-cves-ai-inference-infrastructure-is-now-a-regular-target/"
-    },
-    {
-      "error": "",
-      "final_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-42271-ai-gateway-exploita/"
-    },
-    {
-      "error": "",
-      "final_url": "https://blog.checkpoint.com/artificial-intelligence/ai-models-broke-their-own-containment-key-findings-from-the-july-august-2026-ai-threat-landscape/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://blog.checkpoint.com/artificial-intelligence/ai-models-broke-their-own-containment-key-findings-from-the-july-august-2026-ai-threat-landscape/"
-    },
-    {
-      "error": "",
-      "final_url": "https://huggingface.co/blog/security-incident-july-2026",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://huggingface.co/blog/security-incident-july-2026"
-    },
-    {
-      "error": "",
-      "final_url": "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://sentinelcores.org/analysis/anthropic-openai-ai-models-hacked-companies-2026/"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html"
-    },
     {
       "error": "",
       "final_url": "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",

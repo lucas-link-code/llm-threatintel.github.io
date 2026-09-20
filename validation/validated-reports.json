@@ -4976,7 +4976,7 @@
       "warnings": []
     },
     "2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026": {
-      "content_hash": "b08b307037e98a139a24ae1e537542040e6d3d41a5668b2b8395682dda1ded70",
+      "content_hash": "a73c63f87a9b07d92f7ec594348d5aa5512d4e50129d953736f9ee2047685249",
       "evidence_status": "validated_with_warnings",
       "file": "2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026.md",
       "posts_index_hash": "bc008bbfc273ada3197ea4dd952c1535a8f6b4a659ab7c8e4686f6890f62e85e",
@@ -4992,7 +4992,7 @@
         "https://venturebeat.com/security/openai-hacked-by-small-team-of-white-hat-security-researchers-using-anthropics-claude-opus-5/"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-09-20T08:21:40+00:00",
+      "validated_at": "2026-09-20T17:34:35+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

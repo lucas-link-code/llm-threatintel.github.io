@@ -94,6 +94,10 @@ test.describe("IOC semantic cleanliness", () => {
         .trim();
       expect(normalised).not.toBe("openrouter.com");
       expect(normalised).not.toBe("openrouter.ai");
+      expect(normalised).not.toBe("community.openai.com");
+      expect(normalised).not.toBe("openai.com");
+      expect(normalised).not.toBe("chatgpt.com");
+      expect(normalised).not.toBe("chat.openai.com");
     }
   });
 
