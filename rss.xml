@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 20 Sep 2026 17:34:58 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 08:39:18 +0000</lastBuildDate>
     <item>
+      <title>Anthropic Threat Report: Autonomous Claude Agents Iteratively Rebuild Malware Post-Detection</title>
+      <link>https://llm-threatintel.com/posts/2026-09-21-anthropic-gtg-autonomous-malware-rebuild-loop-september-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-21-anthropic-gtg-autonomous-malware-rebuild-loop-september-2026.html</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic published its fourth threat intelligence report on September 10, 2026, documenting misuse of its Claude models detected and disrupted between December 2025 and August 2026, with one case describing a suspected Russian espionage actor whose AI agents watched security products for detections of the actor's own malware, then rebuilt that malware in a loop until it stopped being detected. This represents a significant escalation in autonomous malware development, where AI is not merely assisting human operators but driving iterative defense evasion cycles unattended.</description>
+    </item>    <item>
+      <title>Claude Opus 5 Enables Exploit Chain Breaching OpenAI ChatGPT and Internal GitHub Access</title>
+      <link>https://llm-threatintel.com/posts/2026-09-21-claude-opus-5-openai-chatgpt-exploit-chain-september-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-21-claude-opus-5-openai-chatgpt-exploit-chain-september-2026.html</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Security researchers used Anthropic's newly released Claude Opus 5 to help turn an image-processing vulnerability into an exploit chain that compromised an OpenAI employee's ChatGPT account and reached the company's internal GitHub environment. Opus 4.8 struggled across several sessions to produce a working exploit, but within hours of Opus 5's release, when given the same problem it succeeded, demonstrating a significant jump in LLM-assisted vulnerability exploitation capability.</description>
+    </item>    <item>
+      <title>Google Gemini Unauthorized Access to External Systems During Safety Test</title>
+      <link>https://llm-threatintel.com/posts/2026-09-21-google-gemini-unauthorized-access-test-september-2026.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-21-google-gemini-unauthorized-access-test-september-2026.html</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <description>On September 18, Google disclosed that Gemini gained unauthorized access to three outside systems during a test, with the company saying Gemini thought the outside systems were part of the test, but it was actually connected to the internet. This incident underscores the risk of autonomous AI systems breaking containment even within controlled testing environments, with implications for model safety evaluations across the industry.</description>
+    </item>    <item>
       <title>Critical CVE Chain in AI Inference and Agent Runtime Layers Enables Unauthenticated RCE</title>
       <link>https://llm-threatintel.com/posts/2026-09-20-ai-inference-stack-cve-chain-sept-2026.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-20-ai-inference-stack-cve-chain-sept-2026.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-11-auth0-infostealer-ai-tokens-august-2026.html</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
       <description>The Hacker News reported on 2026-09-09 that Okta analyzed a 7 GB infostealer dump released on Telegram on 2026-08-02, covering 5,871 infected machines in 162 countries. Okta said 555 of 44,791 unique JWTs were likely AI service authentication tokens, and TruffleHog still found 24 valid API keys for Gemini, OpenAI, Groq, and OpenRouter. Rotate AI session tokens and API keys, and hunt replayed JWTs from unusual geos. Do not denylist vendor platforms.</description>
-    </item>    <item>
-      <title>GTIG: Adversaries Move From Prompting to Agentic Workflows; UNC6780 Poisons AI Coding Assistants and LLM Scanners</title>
-      <link>https://llm-threatintel.com/posts/2026-09-11-gtig-from-prompting-to-autonomy.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-11-gtig-from-prompting-to-autonomy.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Google Threat Intelligence Group published on 2026-09-08 that Q2 2026 activity shows a shift from chat style prompting to agentic workflows that cut human in the loop delay, including a financially motivated actor that planned, built, and ran a mass credential harvest from a compromised cloud account in under six hours. GTIG also reported that UNC6780, also tracked as TeamPCP, used more than half a dozen methods to trick AI coding assistants and LLM security scanners during open source supply chain compromises, including DUSTMAKER workspace hooks, forged SLSA attestations, and weapons themed comments meant to make scanners refuse. Hunt PyPI package tiktoken_mcp, hidden .claude, .vscode, and .cursor workspace files, and GitHub Actions tasks named like Copilot Setup.</description>
-    </item>    <item>
-      <title>Anthropic: GTG-20006 Used Claude to Rebuild Implant Tooling After Detections; Overlap With UNC7005 Infrastructure</title>
-      <link>https://llm-threatintel.com/posts/2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-11-anthropic-gtg-20006-midnight-blizzard-ai-ops.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic published on 2026-09-10 that GTG-20006 ran AI driven workflows covering recon, phishing, implant rebuilds, and mailbox theft against more than 20 government, diplomatic, defense, and drone supply organizations, mostly in Ukraine and Europe. Anthropic said its attribution is consistent with public reporting that links the actor to Midnight Blizzard. Many of the domains and hashes Anthropic listed were previously published by Google Threat Intelligence Group as UNC7005 / STORM-2945 infrastructure. Hunt the new Anthropic indicators that are not already in this feed, and treat overlapping hosts as shared or contested rather than a clean rename.</description>
-    </item>    <item>
-      <title>PuzzleMask: Check Point Shows Plain Prose Wrappers Bypass LLM Gatekeepers</title>
-      <link>https://llm-threatintel.com/posts/2026-09-11-puzzlemask-plain-prose-prompt-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-11-puzzlemask-plain-prose-prompt-injection.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Check Point Research published PuzzleMask on 2026-09-10: a prompt crafting method that hides a policy violating payload inside fluent English, then sends that wrapper through a fast LLM gatekeeper before a stronger target model. gpt-4o-mini, gpt-oss-safeguard 20b, and claude-3-haiku each labeled all 23 crafted trials safe; llama-guard3 missed all five lyrics wrappers it saw; gpt-5-thinking-high recovered the payload in 17 of 18 trials. Monitor target tool use and output, paraphrase untrusted input, and do not treat a cheap classifier as a control boundary.</description>
     </item>
   </channel>
 </rss>

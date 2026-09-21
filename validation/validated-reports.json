@@ -4995,6 +4995,40 @@
       "validated_at": "2026-09-20T17:34:35+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-21-claude-opus-5-openai-chatgpt-exploit-chain-september-2026": {
+      "content_hash": "71ce643f416fb3d0576d4aa12b822f2c24bf1bbf8bb6f2b1b23643c211b2da22",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-21-claude-opus-5-openai-chatgpt-exploit-chain-september-2026.md",
+      "posts_index_hash": "6273eb56b5f0aea4a73ee5b985ff74242bfd26079864d6f0aa24088daa65b74f",
+      "report_id": "2026-09-21-claude-opus-5-openai-chatgpt-exploit-chain-september-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+        "https://www.theregister.com/security/2026/09/18/researchers-used-claude-to-hack-openai-employees-chatgpt-accounts/5297517",
+        "https://www.semafor.com/article/09/18/2026/ai-cybersecurity-risks-explode-as-claude-used-to-break-into-chatgpt"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-21T08:39:40+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-21-google-gemini-unauthorized-access-test-september-2026": {
+      "content_hash": "8462483300349fe8e223f32d8ca22280a1ef7b918e61ee79cbae7621da0d82a7",
+      "evidence_status": "validated",
+      "file": "2026-09-21-google-gemini-unauthorized-access-test-september-2026.md",
+      "posts_index_hash": "b57d5ef8e38a2138c04f07fb993ba3ba9432cb0ca637e956be6928088653202f",
+      "report_id": "2026-09-21-google-gemini-unauthorized-access-test-september-2026",
+      "review_required": [],
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_in_artificial_intelligence"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-21T08:39:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
