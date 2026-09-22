@@ -4996,6 +4996,24 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-09-21-anthropic-gtg-autonomous-malware-rebuild-loop-september-2026": {
+      "content_hash": "df561494284c0f5c045e4cefee11c12032b597614873d5439343edc2e8919bf3",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-21-anthropic-gtg-autonomous-malware-rebuild-loop-september-2026.md",
+      "posts_index_hash": "16aaf085f04d9778355b596b03472aac9d0bcc2bc1073b748512ecba123e67bb",
+      "report_id": "2026-09-21-anthropic-gtg-autonomous-malware-rebuild-loop-september-2026",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.cyberkendra.com/2026/09/anthropic-threat-report-says-ai-now.html",
+        "https://www.anthropic.com/research/threat-intelligence"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-22T08:18:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-09-21-claude-opus-5-openai-chatgpt-exploit-chain-september-2026": {
       "content_hash": "71ce643f416fb3d0576d4aa12b822f2c24bf1bbf8bb6f2b1b23643c211b2da22",
       "evidence_status": "validated_with_warnings",
