@@ -5048,6 +5048,39 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-09-27-carbonato-hermes-docker-botnet": {
+      "content_hash": "99b328dfa7da88c0432d97027b0d374287d21206361c44390b701e8f374d80d6",
+      "evidence_status": "validated",
+      "file": "2026-09-27-carbonato-hermes-docker-botnet.md",
+      "posts_index_hash": "0f534993b9ff9e034e5a57653d7002dfbda53dbeecf7e685aaee8abc64c994fd",
+      "report_id": "2026-09-27-carbonato-hermes-docker-botnet",
+      "review_required": [],
+      "source_urls": [
+        "https://www.threatdown.com/blog/carbonato/",
+        "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T21:39:39+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-27-closedquorum-llm-panel-c2": {
+      "content_hash": "f1fc95ace13edbdbf61c0eabd891a3b266712820dac4adf2584eab44772ae911",
+      "evidence_status": "validated",
+      "file": "2026-09-27-closedquorum-llm-panel-c2.md",
+      "posts_index_hash": "98439840ba6f1dcee4d9acccddaa69201cf97578e3755858e1cca5ff6811c074",
+      "report_id": "2026-09-27-closedquorum-llm-panel-c2",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/",
+        "https://blog.talosintelligence.com/introducing-cairn-frontier-tracking-for-ai-integrated-malware/",
+        "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T21:39:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-09-27-deadbugz-mcp-metadata-poisoning": {
       "content_hash": "c06cb4441aff92f6bc435b2fd89b00649053cf9e28f2e0577e02226a1b618c5d",
       "evidence_status": "validated",
@@ -5079,6 +5112,38 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-09-27T09:00:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-27-memtensor-sckit-npm-pypi": {
+      "content_hash": "89fbdb17a3f4d7177212a309d3fbb436f79147d29a3126c315f2854053d83736",
+      "evidence_status": "validated",
+      "file": "2026-09-27-memtensor-sckit-npm-pypi.md",
+      "posts_index_hash": "5be88d27c6cc8e6f43658a5c7e1db4f7af70e76beac02b9a976a8b2c389a7085",
+      "report_id": "2026-09-27-memtensor-sckit-npm-pypi",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/memtensor-compromise",
+        "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T21:39:38+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-27-mini-shai-hulud-actions-cool-reenabled": {
+      "content_hash": "901a1d586bf3b727342c4979dde17f4c128273a3bd4cfdcf313b57786a77f8ea",
+      "evidence_status": "validated",
+      "file": "2026-09-27-mini-shai-hulud-actions-cool-reenabled.md",
+      "posts_index_hash": "98540432d8cdaad91f954b9d2c455bf80a0569be11697cc0eb64bb7e1a7d245f",
+      "report_id": "2026-09-27-mini-shai-hulud-actions-cool-reenabled",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/mini-shai-hulud-actions",
+        "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T21:39:41+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },

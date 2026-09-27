@@ -1,16 +1,16 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-09-27T09:00:31+00:00`
-- Commit SHA: `fe15759c2080a69bb864fb3506c602960feecffa`
+- Run time UTC: `2026-09-27T21:39:41+00:00`
+- Commit SHA: `22cbb2664ddc`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `1`
-- Reports checked: `3`
-- Reports skipped: `284`
-- Reports newly validated: `3`
+- Review required: `0`
+- Reports checked: `4`
+- Reports skipped: `287`
+- Reports newly validated: `4`
 - IOC duplicates found: `0`
 - Source URLs checked: `9`
 
@@ -22,18 +22,3 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
-- **REVIEW** `evidence-url-review` `posts/2026-09-27-plugin4shell-ai-coding-agent-rce.md` `2026-09-27-plugin4shell-ai-coding-agent-rce`: 1 source URL(s) require review
-
-## Human Review Queue
-
-```text
-Report: 2026-09-27-plugin4shell-ai-coding-agent-rce
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```

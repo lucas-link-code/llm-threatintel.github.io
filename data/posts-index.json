@@ -1,6 +1,59 @@
 {
   "posts": [
     {
+      "id": "2026-09-27-memtensor-sckit-npm-pypi",
+      "title": "MemTensor OpenClaw Plugin and MemoryOS Launch the sckit Credential Stealer",
+      "date": "2026-09-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Socket published on 2026-09-23 that malicious releases of npm package @memtensor/memos-cloud-openclaw-plugin versions 0.1.21, 0.1.23, and 0.1.25, and PyPI package MemoryOS 2.0.34, start a Go implant named sckit. The implant searches the home directory for registry, cloud, and SSH secrets and calls hosts under skyleen.fr. The npm plugin also passes the user prompt into sckit on each memory recall. The Hacker News later reported those malicious versions removed from both registries. Pin npm to 0.1.20 or the clean 0.1.24 build, pin PyPI to 2.0.33, rotate secrets from any host that loaded the bad versions, and block skyleen.fr.",
+      "file": "2026-09-27-memtensor-sckit-npm-pypi.md"
+    },
+    {
+      "id": "2026-09-27-carbonato-hermes-docker-botnet",
+      "title": "Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts",
+      "date": "2026-09-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "malicious-tool",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.",
+      "file": "2026-09-27-carbonato-hermes-docker-botnet.md"
+    },
+    {
+      "id": "2026-09-27-mini-shai-hulud-actions-cool-reenabled",
+      "title": "Mini Shai-Hulud GitHub Actions Came Back Online With Malicious Tags Still Set",
+      "date": "2026-09-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Socket published on 2026-09-24 that GitHub Actions actions-cool/issues-helper and actions-cool/maintain-one-comment, disabled on 2026-05-19 after the May Mini Shai-Hulud compromise, became reachable again on 2026-09-16 while release tags still pointed at the May 18 malicious commits. Workflows that reference those actions by tag, including issues-helper at v2.2.1, downloaded the payload and ran it with Bun. Socket updated the post on 2026-09-25: GitHub disabled both repositories again. Review workflow runs from 2026-09-16 through 2026-09-25 and rotate secrets those jobs could read.",
+      "file": "2026-09-27-mini-shai-hulud-actions-cool-reenabled.md"
+    },
+    {
+      "id": "2026-09-27-closedquorum-llm-panel-c2",
+      "title": "CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action",
+      "date": "2026-09-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.",
+      "file": "2026-09-27-closedquorum-llm-panel-c2.md"
+    },
+    {
       "id": "2026-09-27-deadbugz-mcp-metadata-poisoning",
       "title": "Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials",
       "date": "2026-09-27",

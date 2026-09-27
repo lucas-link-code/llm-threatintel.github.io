@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts | LLM ThreatIntel</title>
+  <meta name="description" content="ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts">
+  <meta property="og:description" content="ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts">
+  <meta property="article:published_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts">
+  <meta name="twitter:description" content="ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts",
+  "description": "ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.",
+  "datePublished": "2026-09-27T00:00:00Z",
+  "dateModified": "2026-09-27T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html",
+  "keywords": [
+    "malware",
+    "malicious-tool",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-27</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts</h1>
+<p><strong>Date:</strong> 2026-09-27<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> malware, malicious-tool, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Carbonato, also written CARBONATO. Container and image names include gh0st, fsociety, netd-svc, and system/resolved</td></tr><tr><td>Actor / Attribution</td><td>No named cluster. ThreatDown assesses a Costa Rica link from voseo Spanish deployment reports, UTC-06:00 timestamps on 14 of 162 image configs, Telegram handle Carbo506, and reverse SSH tunnels into AS262145. Confidence low to medium. Each signal is weak alone</td></tr><tr><td>Target</td><td>Hosts running the Docker API on TCP 2375 without authentication. Post compromise collection priority is AI provider API keys</td></tr><tr><td>Vector</td><td>Unauthenticated Docker Engine API. A privileged container bind mounts the host filesystem, then nsenter runs commands in the host namespaces</td></tr><tr><td>Status</td><td>ThreatDown said that on 2026-09-03 six of seven known registries, the phishing sites, the CDN, and the operation LLM gateway were still online. Archive evidence runs through August 2026</td></tr><tr><td>First Observed</td><td>Image timestamps from October 2024 through August 2026. Public report 2026-09-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.threatdown.com/blog/carbonato/" target="_blank" rel="noopener">ThreatDown</a>, researchers found a US Docker registry on port 5000 that answered unauthenticated catalog requests. Internet scanners had listed it since May 2026. One day of read only collection recovered 59 repositories, 234 tags, 605 verified blobs, and 4.3 GB. Image timestamps run from October 2024 through August 2026. The archive documents two lines: counterfeit cryptocurrency wallet apps, and the Carbonato botnet. This note covers the botnet. ThreatDown withheld the live registry addresses. They are not in this feed.</p>
+<p>The botnet looks for Docker daemons that accept unauthenticated connections on port 2375. It creates a privileged container with the host root bind mounted and with host PID and network namespaces, then uses the Docker exec API and nsenter to run commands as the host. <code>entry.sh</code> opens a reverse SSH tunnel to a relay ThreatDown places in Costa Rica. The remote port is derived from the MD5 of the victim IP so the operator can recompute it. The script installs an SSH server, adds an operator key, and sends a deployment report to Telegram with container ID, hostname, IP, and country. ThreatDown said those reports use voseo Spanish.</p>
+<p>Persistence uses cron, systemd timers, rc.local, and OpenRC, with the immutable bit set. A watchdog re pulls the implant from the registry if files or the container disappear. The container is named like systemd-resolved and shows a fake systemd-networkd banner. Process arguments imitate <code>[kworker/u2:0]</code>. A miner path is <code>/usr/sbin/systemd-logind</code>. A watchdog path is <code>/usr/local/bin/.docker-network-monitor</code>.</p>
+<p>With the host held, the implant installs Hermes Agent, the MIT licensed open source framework from Nous Research, unchanged, then overwrites <code>SOUL.md</code>. ThreatDown reproduced a 39 line persona. It names the agent GH0ST, tells it to take Telegram tasks, and ranks API keys for LLMs above SSH credentials, access tokens, and databases. The named providers are OpenAI, Anthropic, Google, Gemini, OpenRouter, Together, Groq, Mistral, Cohere, LocalAI, Ollama, vLLM, LiteLLM, and One API. Loot is stored in plaintext under <code>/root/.hermes/loot/</code>. The persona is an instruction file on the victim, not a separate malware family. Do not block the Hermes package itself. Hunt a <code>SOUL.md</code> that contains GH0ST, an env key named <code>CARBONATO_API_KEY</code>, and image variables <code>GH0ST_C2</code>, <code>FSOCIETY_DISABLE_TUNNEL</code>, and <code>GATEWAY_ALLOW_ALL_USERS</code>.</p>
+<p>ThreatDown said Hermes receives the operator task from Telegram, sends it with SOUL.md to the operation LLM gateway, and runs the commands the model writes. Target choice, persistence, and spreading stay in shell, not in the model. Every five minutes the worm lists host networks and Docker bridge subnets and sweeps each /24 for port 2375. New hosts pull image <code>system/resolved</code> from the registry and join the same loop. The gateway, checked live on 2026-09-03, advertised 12 models and served 27 through its API. ThreatDown published shared password string carbonato125 across the archive and Telegram chat 750752697 for deployment reports. Those are not domain, hash, or package indicators and are not rows in the IOC feed. Registry endpoints on AS40065 were withheld while still live.</p>
+<p><a href="https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/" target="_blank" rel="noopener">BleepingComputer</a> on 2026-09-24 restated the unauthenticated Docker API path, the Hermes GH0ST persona, Telegram tasking, the five minute scan, and the Costa Rica assessment via AS262145. It did not add a separate IOC set.</p>
+<p>ThreatDown published five IPs and a brace form for three suspended LLM proxies: carbonato-proxy-drab.vercel.app, carbonato-proxy-zeta.vercel.app, and carbonato-proxy-zeta-2.vercel.app. Those are attacker labeled hosts on vercel.app, not the apex. Do not block vercel.app.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Docker Engine API on TCP 2375 with no authentication</td></tr><tr><td>Deploy Container</td><td>T1610</td><td>Privileged container with host root mounted and host namespaces</td></tr><tr><td>Escape to Host</td><td>T1611</td><td>nsenter from that container into the host mount, PID, and network namespaces</td></tr><tr><td>Remote Services: SSH</td><td>T1021.004</td><td>Reverse SSH tunnel whose port is the MD5 of the victim IP, plus a local sshd and operator key</td></tr><tr><td>Scheduled Task/Job: Cron</td><td>T1053.003</td><td>Cron persistence, immutable bit set</td></tr><tr><td>Create or Modify System Process: Systemd Service</td><td>T1543.002</td><td>systemd timers and a container masquerading as systemd-resolved</td></tr><tr><td>Masquerading: Match Legitimate Name or Location</td><td>T1036.005</td><td>Process arguments <code>[kworker/u2:0]</code> and a miner at <code>/usr/sbin/systemd-logind</code></td></tr><tr><td>Network Service Discovery</td><td>T1046</td><td>/24 sweep of attached networks for TCP 2375 every five minutes</td></tr><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>Stock Hermes Agent plus a GH0ST SOUL.md that drives Telegram tasks through an LLM gateway</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Persona orders plaintext AI API keys stored under <code>/root/.hermes/loot/</code></td></tr><tr><td>Web Service</td><td>T1102</td><td>Telegram for deployment reports and operator tasks</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>Domains are defanged for display. JSON stores clean values. ThreatDown did not publish file hashes. Do not denylist vercel.app, telegram.org, or the Hermes project.</p>
+<h3>Domains</h3>
+<pre><code class="language-">carbonato-proxy-drab[.]vercel[.]app
+carbonato-proxy-zeta[.]vercel[.]app
+carbonato-proxy-zeta-2[.]vercel[.]app</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;45.79.183.61&quot; OR &quot;91.99.195.164&quot; OR &quot;213.136.79.115&quot; OR &quot;213.136.83.197&quot; OR &quot;190.211.124.187&quot; OR &quot;carbonato-proxy-drab.vercel.app&quot; OR &quot;carbonato-proxy-zeta.vercel.app&quot; OR &quot;carbonato-proxy-zeta-2.vercel.app&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">No package IOCs published by source</code></pre>
+<h3>IP Addresses</h3>
+<pre><code class="language-">45.79.183.61
+91.99.195.164
+213.136.79.115
+213.136.83.197
+190.211.124.187</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On the perimeter and inside container networks, alert on TCP 2375 reachable beyond localhost. Docker daemon audit logs should show <code>POST /containers/create</code> with <code>Privileged</code> true and a bind of <code>/</code> from an unexpected client, then <code>POST /containers/{id}/exec</code> whose command includes nsenter. That sequence is the foothold ThreatDown described.</p>
+<p>On the host, hunt <code>/usr/local/bin/.docker-network-monitor</code>, a file at <code>/usr/sbin/systemd-logind</code> that is not the real systemd binary, process arguments <code>[kworker/u2:0]</code> that are not kernel threads, and the immutable attribute on cron, systemd unit, rc.local, or OpenRC files the admin did not set. Read <code>/root/.hermes/SOUL.md</code> for GH0ST and <code>/root/.hermes/.env</code> or the process environment for <code>CARBONATO_API_KEY</code>.</p>
+<p>On the network, alert on outbound SSH from servers to 190.211.124.187 in AS262145, and on connections to 45.79.183.61, 91.99.195.164, 213.136.79.115 on 8080 or 4444, and 213.136.83.197. The three carbonato-proxy hosts on vercel.app were described as suspended. Still hunt historical DNS for them. Telegram egress from a Docker host is a supporting signal, not a standalone block. Do not denylist vercel.app or Telegram. Rotate any AI API key that lived on a host with the GH0ST persona, and watch provider audit logs for use from the IPs above.</p>
+<h2>References</h2>
+<ul><li>[ThreatDown] CARBONATO: a botnet built around an AI agent (2026-09-22): https://www.threatdown.com/blog/carbonato/</li><li>[BleepingComputer] New Carbonato malware uses AI agents to hijack exposed Docker hosts (2026-09-24): https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

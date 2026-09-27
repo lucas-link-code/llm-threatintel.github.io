@@ -1,7 +1,7 @@
 {
-  "commit_sha": "fe15759c2080a69bb864fb3506c602960feecffa",
+  "commit_sha": "22cbb2664ddc",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-27T09:00:31+00:00",
+  "generated_at_utc": "2026-09-27T21:39:41+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,89 +35,81 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "evidence-url-review",
-      "file": "posts/2026-09-27-plugin4shell-ai-coding-agent-rce.md",
-      "message": "1 source URL(s) require review",
-      "recommendation": "",
-      "record_id": "2026-09-27-plugin4shell-ai-coding-agent-rce",
-      "severity": "review"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 3,
-  "reports_skipped": 284,
-  "review_required": 1,
+  "reports_checked": 4,
+  "reports_newly_validated": 4,
+  "reports_skipped": 287,
+  "review_required": 0,
   "source_urls_checked": 9,
-  "state_updates": 3,
+  "state_updates": 4,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
+      "final_url": "https://socket.dev/blog/memtensor-compromise",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign"
+      "url": "https://socket.dev/blog/memtensor-compromise"
     },
     {
       "error": "",
-      "final_url": "https://adversa.ai/blog/top-mcp-security-resources-september-2026/",
+      "final_url": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://adversa.ai/blog/top-mcp-security-resources-september-2026/"
+      "url": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html"
     },
     {
       "error": "",
-      "final_url": "https://byteiota.com/deadbugz-the-mcp-attack-that-waits-3-calls-before-striking/",
+      "final_url": "https://www.threatdown.com/blog/carbonato/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://byteiota.com/deadbugz-the-mcp-attack-that-waits-3-calls-before-striking/"
+      "url": "https://www.threatdown.com/blog/carbonato/"
     },
     {
       "error": "",
-      "final_url": "https://blogs.microsoft.com/on-the-issues/2026/09/22/disrupting-eviltokens-the-ai-chatbot-built-for-cybercrime/",
+      "final_url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://blogs.microsoft.com/on-the-issues/2026/09/22/disrupting-eviltokens-the-ai-chatbot-built-for-cybercrime/"
+      "url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
     },
     {
       "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/",
+      "final_url": "https://socket.dev/blog/mini-shai-hulud-actions",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/"
+      "url": "https://socket.dev/blog/mini-shai-hulud-actions"
     },
     {
       "error": "",
-      "final_url": "https://www.securityweek.com/ai-powered-phishing-platform-eviltokens-disrupted-by-microsoft/",
+      "final_url": "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.securityweek.com/ai-powered-phishing-platform-eviltokens-disrupted-by-microsoft/"
+      "url": "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html"
     },
     {
       "error": "",
-      "final_url": "https://www.air.security/blog-posts/plugin4shell",
+      "final_url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.air.security/blog-posts/plugin4shell"
+      "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
     },
     {
       "error": "",
-      "final_url": "https://cybersecuritynews.com/plugin4shell-zero-click-rce/",
-      "http_status": 202,
-      "status": "unknown_error",
-      "url": "https://cybersecuritynews.com/plugin4shell-zero-click-rce/"
+      "final_url": "https://blog.talosintelligence.com/introducing-cairn-frontier-tracking-for-ai-integrated-malware/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://blog.talosintelligence.com/introducing-cairn-frontier-tracking-for-ai-integrated-malware/"
     },
     {
       "error": "",
-      "final_url": "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/",
+      "final_url": "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/"
+      "url": "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435"
     }
   ],
   "validation_version": "1.0.0",

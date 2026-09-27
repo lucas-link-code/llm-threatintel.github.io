@@ -2,6 +2,96 @@
   "last_updated": "2026-09-27",
   "entries": [
     {
+      "id": "sckit",
+      "names": [
+        "sckit",
+        "memos-semi-nuclear",
+        "cloud-openclaw-semi-nuclear"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-09",
+      "status": "disrupted",
+      "distribution": [
+        "npm package @memtensor/memos-cloud-openclaw-plugin versions 0.1.21, 0.1.23, and 0.1.25",
+        "PyPI package MemoryOS 2.0.34",
+        "OpenClaw memory recall hook"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript",
+        "T1059.006 - Command and Scripting Interpreter: Python",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1552 - Unsecured Credentials",
+        "T1071.001 - Application Layer Protocol: Web Protocols",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "description": "Go implant shipped in compromised MemTensor MemOS releases on npm and PyPI on 2026-09-23. The npm OpenClaw plugin starts sckit when the gateway starts and again on memory recall, passing the user prompt. The PyPI package starts sckit on import of memos. Socket documented C2 under skyleen.fr and collection of registry, cloud, SSH, and token material from the home directory. The Hacker News later reported the malicious versions removed. How publish rights were obtained is disputed between Socket and a SafeDep account quoted by The Hacker News.",
+      "attribution": "Unknown. Confidence low on the initial access path."
+    },
+    {
+      "id": "carbonato",
+      "names": [
+        "Carbonato",
+        "CARBONATO",
+        "GH0ST"
+      ],
+      "type": "malware",
+      "first_seen": "2024-10",
+      "status": "active",
+      "distribution": [
+        "Unauthenticated Docker Engine API on TCP 2375",
+        "Privileged container image system/resolved",
+        "Hermes Agent with a replaced SOUL.md",
+        "Telegram tasking"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1610 - Deploy Container",
+        "T1611 - Escape to Host",
+        "T1021.004 - Remote Services: SSH",
+        "T1053.003 - Scheduled Task/Job: Cron",
+        "T1543.002 - Create or Modify System Process: Systemd Service",
+        "T1036.005 - Masquerading: Match Legitimate Name or Location",
+        "T1046 - Network Service Discovery",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1102 - Web Service"
+      ],
+      "description": "Docker worm documented by ThreatDown on 2026-09-22 from an exposed registry whose image timestamps run from October 2024 through August 2026. It takes hosts with an open Docker API on port 2375, holds them with a reverse SSH tunnel and immutable persistence, and installs stock Hermes Agent under a GH0ST persona that prioritizes AI API key theft. Spreading is a five minute /24 scan performed by scripts. ThreatDown assesses a Costa Rica link with low to medium confidence and said most known infrastructure was still online on 2026-09-03.",
+      "attribution": "Unknown cluster. ThreatDown: Costa Rica assessment from voseo Spanish, UTC-06:00 image timestamps, Telegram handle Carbo506, and AS262145. Confidence low to medium."
+    },
+    {
+      "id": "closedquorum",
+      "names": [
+        "CLOSEDQUORUM",
+        "BALZAK"
+      ],
+      "type": "malware",
+      "first_seen": "2026-06",
+      "status": "inactive",
+      "distribution": [
+        "Per operator Windows build with compile time API keys and a Discord webhook",
+        "Public distribution build with placeholder keys"
+      ],
+      "ttps": [
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1055.004 - Process Injection: Asynchronous Procedure Call",
+        "T1055.012 - Process Injection: Process Hollowing",
+        "T1003.001 - OS Credential Dumping: LSASS Memory",
+        "T1555.003 - Credentials from Password Stores: Credentials from Web Browsers",
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task",
+        "T1546.003 - Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+        "T1567.004 - Exfiltration Over Web Service: Exfiltration Over Webhook",
+        "T1685 - Disable or Modify Tools",
+        "T1497.003 - Virtualization/Sandbox Evasion: Time Based Evasion",
+        "T1036.005 - Masquerading: Match Legitimate Name or Location"
+      ],
+      "description": "16.4 MB Go Windows implant published by Cisco Talos on 2026-09-22. After deployment it asks DeepSeek, Qwen, Mistral, and Gemini to vote on steal, inject, persist, or move, then runs the winner. Talos has not confirmed in the wild deployment. The public build uses dummy API keys and a dummy Discord webhook. Development builds inject operator keys at compile time. Talos linked binary artifacts to carding forum posts from 2025. YARA metadata used the earlier name BALZAK on 2026-06-17 and notes a rename on 2026-07-03.",
+      "attribution": "Unnamed developer. Talos link to carding forum posts. Confidence low. No named cluster."
+    },
+    {
       "id": "rathat",
       "names": [
         "RatHat"
@@ -1960,7 +2050,7 @@
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
-      "last_updated": "2026-09-11",
+      "last_updated": "2026-09-27",
       "status": "active",
       "distribution": [
         "PyPI",
@@ -1988,7 +2078,8 @@
         "Unexpected privileged alpine:latest pods in the kube-system namespace",
         "PyPI package tiktoken_mcp",
         "DUSTMAKER workspace hooks in .claude, .cursor, and .vscode",
-        "GitHub Actions jobs named like Copilot Setup"
+        "GitHub Actions jobs named like Copilot Setup",
+        "GitHub Actions actions-cool/issues-helper and actions-cool/maintain-one-comment, reachable again 2026-09-16 through 2026-09-25"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -2029,7 +2120,7 @@
         "T1027 - Obfuscated Files or Information",
         "T1546 - Event Triggered Execution"
       ],
-      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises. GTIG reported on 2026-09-08 that UNC6780, also tracked as TeamPCP, used DUSTMAKER to steal GitHub Actions OIDC tokens, mint SLSA Build 3 attestations, drop workspace hooks under .claude, .cursor, and .vscode, and poison LLM scanners with weapons-themed comments in JavaScript loaders, including the PyPI package tiktoken_mcp.",
+      "description": "TeamPCP is a supply chain-focused threat actor active since September 2025 with six publicly documented Shai-Hulud waves. The September 2025 and November 2025 waves were followed in 2026 by attacks against Trivy GitHub Actions, Checkmarx KICS images, LiteLLM, the Asurion-impersonating npm packages (sbxapps, asurion-hub-web, soluto-home-web, asurion-core), the Bitwarden CLI 2026.4.0 hijack on April 22, and the Mini Shai-Hulud Wave 4 campaign of April 29-30, 2026 (mbt 1.2.48, @cap-js/db-service 2.10.1, @cap-js/postgres 2.2.2, @cap-js/sqlite 2.2.2, intercom-client 7.0.4, PyTorch Lightning 2.6.2/2.6.3). The Bitwarden CLI variant explicitly enumerated authenticated AI coding assistant credentials (Claude Code, Cursor, Aider, Kiro, Codex CLI, Gemini CLI). The Mini Shai-Hulud Wave 4 variant added Claude Code SessionStart hook persistence and VS Code folderOpen tasks, turning poisoned repositories themselves into propagation vectors. Mini Shai-Hulud Wave 5 (May 11, 2026) compromised 170+ npm and PyPI packages across TanStack (@tanstack/*, 42 packages), Mistral AI (mistralai==2.4.6), Guardrails AI (guardrails-ai==0.10.1), UiPath, and OpenSearch via a chained GitHub Actions attack: pull_request_target misconfiguration → cache poisoning → OIDC token extraction from runner /proc/<pid>/mem, producing 404 malicious versions with valid SLSA provenance (first documented case). C2/exfiltration: git-tanstack.com (typosquat), filev2.getsession.org (Session messenger), GitHub API dead drops with Dune-themed branch names, and 83.142.209.194 (PyPI payload delivery). CVE-2026-45321 (CVSS 9.6). Confirmed high-profile victim: OpenAI disclosed May 14, 2026 that two employee devices were breached, with the malware accessing internal source code repositories containing code-signing material; all certificates for iOS, macOS, Windows, and Android apps were rotated. Mini Shai-Hulud Wave 6 (May 19, 2026, the @antv wave) hijacked the npm maintainer account atool ([email protected]) and published 639 malicious versions across 323 unique packages in a ~30-minute automated burst — 558 of those versions across 279 @antv packages (g, g2, g6, x6, l7, s2, f2, g2plot, graphin, data-set, etc.) plus echarts-for-react (~1.1M weekly downloads), timeago.js, size-sensor, and canvas-nest.js. The Wave 6 payload is the same 498 KB obfuscated Bun stealer used in the SAP CAP wave, harvests AWS/GCP/Azure/GitHub/npm/SSH/Kubernetes/Vault/Stripe credentials and DB strings, attempts Docker host-socket escape, and exfiltrates via HTTPS POST to t.m-kosche.com:443/api/public/otel/v1/traces (disguised as OpenTelemetry trace data) with Session P2P at filev2.getsession.org/file/ as fallback. Confirmed by Socket, Microsoft Threat Intelligence (2026-05-20 advisory), Snyk, StepSecurity, safedep, Mend, Akamai, BleepingComputer. The actor's @pcpcats X account was suspended; the group has since hosted operations on a Tor onion site. Total Mini Shai-Hulud footprint: 1,055 malicious versions across 502 unique packages. SOCRadar's August 13 row-level review found 2,188 attributable organization records in the March Trivy/LiteLLM data, with 2,085 ending before the LiteLLM releases; this reframes the 2,500-plus organization and roughly 434,000 CI/CD-file figures as reconstructed potential exposure rather than confirmed LiteLLM compromises. GTIG reported on 2026-09-08 that UNC6780, also tracked as TeamPCP, used DUSTMAKER to steal GitHub Actions OIDC tokens, mint SLSA Build 3 attestations, drop workspace hooks under .claude, .cursor, and .vscode, and poison LLM scanners with weapons-themed comments in JavaScript loaders, including the PyPI package tiktoken_mcp. On 2026-09-16 GitHub made actions-cool/issues-helper and actions-cool/maintain-one-comment reachable again while the May 18 Mini Shai-Hulud tags were still in place. Socket reported the re exposure on 2026-09-24. GitHub disabled both repositories again on 2026-09-25. issues-helper tag v2.2.1 resolved to commit a0c53dd42fc842d2f9276c5a1d4f9a26abe8713d.",
       "attribution": "Attributed by Wiz, Datadog Security Labs, SANS, Socket, StepSecurity, ReversingLabs, JFrog, Palo Alto Networks Unit 42, Aikido, OX Security, Orca Security, Mend, Snyk, Safedep, and affected maintainers (confidence: high)"
     },
     {

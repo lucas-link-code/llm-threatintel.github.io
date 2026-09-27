@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action | LLM ThreatIntel</title>
+  <meta name="description" content="Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action">
+  <meta property="og:description" content="Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action">
+  <meta property="article:published_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action">
+  <meta name="twitter:description" content="Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action",
+  "description": "Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.",
+  "datePublished": "2026-09-27T00:00:00Z",
+  "dateModified": "2026-09-27T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html",
+  "keywords": [
+    "malware",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-27</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action</h1>
+<p><strong>Date:</strong> 2026-09-27<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> malware, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>CLOSEDQUORUM. Talos YARA metadata dated 2026-06-17 used the earlier label BALZAK and notes a rename on 2026-07-03</td></tr><tr><td>Actor / Attribution</td><td>Unnamed developer. Talos linked binary artifacts to criminal forum postings about carding going back to 2025. Confidence low. No named cluster</td></tr><tr><td>Target</td><td>Windows hosts. Stated collection is LSASS, Chrome, Edge, and Firefox passwords, plus MetaMask, Exodus, and Ethereum wallet files</td></tr><tr><td>Vector</td><td>Talos assesses a per operator build with the operator Discord webhook and model API keys injected at compile time. How that build is delivered was not described</td></tr><tr><td>Status</td><td>Public distribution build is inert. In the wild deployment not confirmed by Talos</td></tr><tr><td>First Observed</td><td>Talos static analysis rule date 2026-06-17. Public report 2026-09-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/" target="_blank" rel="noopener">Cisco Talos</a>, CLOSEDQUORUM is a 64 bit Windows executable compiled in Go, about 16.4 MB, with CGO enabled so it can make direct Windows calls. After it starts, <code>gatherSystemInfo()</code> stores hostname, OS architecture, CPU count, Windows version, and admin status. <code>ModelOrchestrator</code> then queries up to four providers in order: DeepSeek, Qwen, Mistral, and Gemini. <code>interModelDiscussion()</code> counts the <code>Decision</code> field and takes the plurality. A tie keeps the first maximum in that same provider order, so DeepSeek wins ties, then Qwen, then Mistral, then Gemini. If every model fails, the fallback string is <code>consensus</code>, which has no handler, and the implant sleeps and retries.</p>
+<p>Talos extracted the system prompt: &quot;You are an advanced malware strategist. Provide ONLY executable decisions.&quot; The model must return JSON whose <code>Decision</code> is one of <code>steal</code>, <code>inject</code>, <code>persist</code>, or <code>move</code>. <code>steal</code> runs <code>lsassDump()</code>, <code>dumpBrowserCredentials()</code>, and <code>extractCryptoWallets()</code> together. <code>inject</code> calls <code>generateShellcode()</code>, then <code>injectProcess()</code> for process hollowing or <code>earlyBirdInject()</code> for early bird APC injection. <code>persist</code> calls <code>establishPersistence()</code>. <code>move</code> has no handler in the distribution build. A Discord webhook receives the winning decision, the model reasoning text, and the execution parameters. Stolen files are AES-256-GCM encrypted with a key derived from the current date, Base64 encoded, split into 1900 byte pieces, and posted to that webhook.</p>
+<p>Talos said the public distribution binary is an inert template. LLM API credentials initialize to <code>dummy_api_key</code> and the webhook initializes to <code>dummy_webhook_url</code>. Development builds show those values injected at compile time, including strings <code>deepseekAPIKey</code> and <code>geminiAPIKey</code> in <code>gohno-final.exe</code>. Talos did not observe a full end to end run of the public build. Talos also said it does not have confirmation of in the wild deployment. Artifacts from the binary were used to connect the developer to carding forum posts dating to 2025. That is a developer link, not a victim set.</p>
+<p><a href="https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435" target="_blank" rel="noopener">The Register</a> reported the same Talos paper on 2026-09-22 and restated the four model panel, the steal, inject, and persist actions, and the absence of a dedicated attacker server. Talos published the sample set the same day it released the CAIRN toolkit for metadata first hunting of AI integrated malware.</p>
+<p>Persistence documented by Talos: a current user Registry Run value named WindowsUpdate, a scheduled task via schtasks.exe, and a permanent WMI subscription that runs about every 60 seconds through a script path consistent with <code>C:\Windows\Temp\wmi.ps1</code>. Credential theft uses <code>SeDebugPrivilege</code> and <code>MiniDumpWriteDump</code> against LSASS. Browser theft reads Chrome and Edge Login Data and Firefox <code>logins.json</code>. Wallet theft covers the MetaMask Chrome extension, <code>exodus.wallet</code>, and an Ethereum wallet path. Staged copies go under <code>C:\Windows\Temp\</code>. Evasion includes a five minute initial delay, a randomized 5 to 15 minute loop, and a patch of <code>EtwEventWrite</code> with a single RET. YARA in the paper also matches provider host strings <code>api.deepseek.com</code>, <code>openrouter.ai</code>, <code>api.mistral.ai</code>, and <code>cdn.discordapp.com</code>. Those are shared vendor and CDN hosts. They are not IOCs in this feed.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>Commercial model APIs are the decision channel for the next action</td></tr><tr><td>Process Injection: Asynchronous Procedure Call</td><td>T1055.004</td><td><code>earlyBirdInject()</code> queues shellcode with NtQueueApcThread in a suspended process</td></tr><tr><td>Process Injection: Process Hollowing</td><td>T1055.012</td><td><code>injectProcess()</code> when the model selects process_hollow</td></tr><tr><td>OS Credential Dumping: LSASS Memory</td><td>T1003.001</td><td><code>lsassDump()</code> uses MiniDumpWriteDump after SeDebugPrivilege</td></tr><tr><td>Credentials from Password Stores: Credentials from Web Browsers</td><td>T1555.003</td><td>Chrome, Edge, and Firefox password stores, plus MetaMask in the Chrome profile</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Exodus and Ethereum wallet files on disk</td></tr><tr><td>Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</td><td>T1547.001</td><td>Current user Run value named WindowsUpdate</td></tr><tr><td>Scheduled Task/Job: Scheduled Task</td><td>T1053.005</td><td>schtasks.exe persistence</td></tr><tr><td>Event Triggered Execution: Windows Management Instrumentation Event Subscription</td><td>T1546.003</td><td>Permanent WMI subscription, about every 60 seconds, launching powershell.exe</td></tr><tr><td>Exfiltration Over Web Service: Exfiltration Over Webhook</td><td>T1567.004</td><td>Date keyed AES-256-GCM blobs posted to an operator Discord webhook</td></tr><tr><td>Disable or Modify Tools</td><td>T1685</td><td><code>EtwEventWrite</code> overwritten with RET</td></tr><tr><td>Virtualization/Sandbox Evasion: Time Based Evasion</td><td>T1497.003</td><td>Five minute start delay and a 5 to 15 minute loop</td></tr><tr><td>Masquerading: Match Legitimate Name or Location</td><td>T1036.005</td><td>WindowsUpdate Run value and WMI names that look like system activity</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>Display values in domain and URL blocks are defanged. This feed does not list shared model or Discord hosts. JSON stores clean hashes only.</p>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;250d4fa37488af9b025333fa17705573d721467b203765bc360890b4f5a90cd7&quot; OR &quot;c4dc171f2513fcaf9d5ecc815a94aee4063b213ab380f80bd3ac422dee5205a7&quot; OR &quot;c13cea04f598e2b0c248d603a6e31bd13aabb64d8149c1b6a77b64e0b983a86f&quot; OR &quot;f5f1f8c3e7b883793800ab6ccf21b3e60bd0730f300b4595fe74a33adc17a63c&quot; OR &quot;5191cf625dfc209a347f137b50aea199e82040fd5ee9086fb3e2de73c133f3cb&quot; OR &quot;eddbd0ecf7195d38fefae5b9d393abfa79e6f3f94bde19308ecef130a05a42e5&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">250d4fa37488af9b025333fa17705573d721467b203765bc360890b4f5a90cd7
+c4dc171f2513fcaf9d5ecc815a94aee4063b213ab380f80bd3ac422dee5205a7
+c13cea04f598e2b0c248d603a6e31bd13aabb64d8149c1b6a77b64e0b983a86f
+f5f1f8c3e7b883793800ab6ccf21b3e60bd0730f300b4595fe74a33adc17a63c
+5191cf625dfc209a347f137b50aea199e82040fd5ee9086fb3e2de73c133f3cb
+eddbd0ecf7195d38fefae5b9d393abfa79e6f3f94bde19308ecef130a05a42e5</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">No package IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Do not block api.deepseek.com, openrouter.ai, api.mistral.ai, generativelanguage.googleapis.com, or Discord as domains. Talos said legitimate software calls those services. Correlate instead. On EDR, alert when one unsigned or unexpected Windows process reads LSASS, writes under <code>C:\Windows\Temp\</code>, and within the same process tree opens TLS to more than one of those model hosts. Hunt <code>MiniDumpWriteDump</code> against lsass.exe, <code>NtQueueApcThread</code> into a process started suspended, and a new Run value named WindowsUpdate under <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code>.</p>
+<p>On PowerShell and WMI logs, alert on a permanent event subscription whose consumer runs <code>C:\Windows\Temp\wmi.ps1</code>. On proxy or TLS inspection, a short burst of similar POSTs from one host to several model APIs, followed by Discord webhook posts of Base64 chunks about 1900 bytes apart, matches the Talos loop. Hash match the six SHA256 values. The string <code>You are an advanced malware strategist. Provide ONLY executable decisions.</code> is a file content hunt for this family. A five minute sleep before the first network burst is a sandbox gap, so detonate longer than that window.</p>
+<h2>References</h2>
+<ul><li>[Cisco Talos] The Closed Quorum: Inside the first reported autonomous AI C2 implant (2026-09-22): https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/</li><li>[Cisco Talos] Introducing CAIRN: Frontier tracking for AI-integrated malware (2026-09-22): https://blog.talosintelligence.com/introducing-cairn-frontier-tracking-for-ai-integrated-malware/</li><li>[The Register] Windows CLOSEDQUORUM malware uses AI models to autonomously select post-compromise actions (2026-09-22): https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

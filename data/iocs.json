@@ -2,6 +2,402 @@
   "last_updated": "2026-09-27",
   "iocs": [
     {
+      "value": "250d4fa37488af9b025333fa17705573d721467b203765bc360890b4f5a90cd7",
+      "type": "sha256",
+      "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",
+      "first_seen": "2026-09-22",
+      "source": "Cisco Talos",
+      "campaign": "2026-09-27-closedquorum-llm-panel-c2",
+      "status": "active"
+    },
+    {
+      "value": "c4dc171f2513fcaf9d5ecc815a94aee4063b213ab380f80bd3ac422dee5205a7",
+      "type": "sha256",
+      "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",
+      "first_seen": "2026-09-22",
+      "source": "Cisco Talos",
+      "campaign": "2026-09-27-closedquorum-llm-panel-c2",
+      "status": "active"
+    },
+    {
+      "value": "c13cea04f598e2b0c248d603a6e31bd13aabb64d8149c1b6a77b64e0b983a86f",
+      "type": "sha256",
+      "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",
+      "first_seen": "2026-09-22",
+      "source": "Cisco Talos",
+      "campaign": "2026-09-27-closedquorum-llm-panel-c2",
+      "status": "active"
+    },
+    {
+      "value": "f5f1f8c3e7b883793800ab6ccf21b3e60bd0730f300b4595fe74a33adc17a63c",
+      "type": "sha256",
+      "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",
+      "first_seen": "2026-09-22",
+      "source": "Cisco Talos",
+      "campaign": "2026-09-27-closedquorum-llm-panel-c2",
+      "status": "active"
+    },
+    {
+      "value": "5191cf625dfc209a347f137b50aea199e82040fd5ee9086fb3e2de73c133f3cb",
+      "type": "sha256",
+      "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",
+      "first_seen": "2026-09-22",
+      "source": "Cisco Talos",
+      "campaign": "2026-09-27-closedquorum-llm-panel-c2",
+      "status": "active"
+    },
+    {
+      "value": "eddbd0ecf7195d38fefae5b9d393abfa79e6f3f94bde19308ecef130a05a42e5",
+      "type": "sha256",
+      "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",
+      "first_seen": "2026-09-22",
+      "source": "Cisco Talos",
+      "campaign": "2026-09-27-closedquorum-llm-panel-c2",
+      "status": "active"
+    },
+    {
+      "value": "skyleen.fr",
+      "type": "domain",
+      "context": "sckit C2 parent domain published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "8a8acaf167b3.skyleen.fr",
+      "type": "domain",
+      "context": "sckit npm campaign C2 host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "0b48fafd6fbe.skyleen.fr",
+      "type": "domain",
+      "context": "sckit npm campaign C2 host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "266297c6df27.skyleen.fr",
+      "type": "domain",
+      "context": "sckit npm campaign C2 host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "c747d139e7e9.skyleen.fr",
+      "type": "domain",
+      "context": "sckit PyPI campaign C2 host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "73376a079d87.skyleen.fr",
+      "type": "domain",
+      "context": "sckit PyPI campaign C2 host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "d4f77a3a8cb0.skyleen.fr",
+      "type": "domain",
+      "context": "sckit PyPI campaign C2 host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "10729e014d0e.skyleen.fr",
+      "type": "domain",
+      "context": "sckit PyPI CI helper host published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "10729e014d0e.skyleen.fr/eb57efaa7365698fc1e4decc/initial-ci-v2",
+      "type": "url_path",
+      "context": "sckit PyPI initial CI delivery URL published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "npm:@memtensor/memos-cloud-openclaw-plugin@0.1.21",
+      "type": "package",
+      "context": "Malicious MemTensor OpenClaw plugin version. Socket: removed later per The Hacker News update",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "removed"
+    },
+    {
+      "value": "npm:@memtensor/memos-cloud-openclaw-plugin@0.1.23",
+      "type": "package",
+      "context": "Malicious MemTensor OpenClaw plugin version. Socket: removed later per The Hacker News update",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "removed"
+    },
+    {
+      "value": "npm:@memtensor/memos-cloud-openclaw-plugin@0.1.25",
+      "type": "package",
+      "context": "Malicious MemTensor OpenClaw plugin version tagged latest when Socket wrote. Removed later per The Hacker News update",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "removed"
+    },
+    {
+      "value": "pypi:MemoryOS@2.0.34",
+      "type": "package",
+      "context": "Malicious MemTensor MemoryOS release. Starts sckit on import. Removed later per The Hacker News update",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "removed"
+    },
+    {
+      "value": "39ee644406829a4b630b31759c20478bc22d576d6a59b253ed86f72c360aa5ef",
+      "type": "sha256",
+      "context": "PyPI memoryos-2.0.34-py3-none-any.whl published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "92b46d18fc553c494eda714f204459edb74c205bf53b18a9092bcf02c7a6c5be",
+      "type": "sha256",
+      "context": "PyPI memoryos-2.0.34.tar.gz published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "381ac6dc1715d9298fe81b2a53a11f7b7d78e361ee3a6619ad54f8c4b062cc18",
+      "type": "sha256",
+      "context": "sckit binary in npm 0.1.21, 0.1.23, and 0.1.25, linux-amd64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "e077c387b223811064b7bbc5a55a0182fca9bf50894f949ff284d4be87d44b26",
+      "type": "sha256",
+      "context": "sckit binary in npm 0.1.21, 0.1.23, and 0.1.25, linux-arm64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "65faf8ccbcf5b34eb4f72c71bf82815fa9c1e2f947b9c898491540e866132c31",
+      "type": "sha256",
+      "context": "sckit binary in npm 0.1.21, 0.1.23, and 0.1.25, darwin-amd64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "f8ccdd1da7dff1aef16377a2842bc7acf7c516e32122dd6e42dc4a4e57653fce",
+      "type": "sha256",
+      "context": "sckit binary in npm 0.1.21, 0.1.23, and 0.1.25, darwin-arm64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "56cd3416d2ec2aa7e7cec2a06010cf0b58eb09c0a5486809df52afeaca8f14be",
+      "type": "sha256",
+      "context": "sckit binary in npm 0.1.21, 0.1.23, and 0.1.25, windows-amd64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "d6b3e77c36ee8017c9bf30d1da7218ec0ea843768d313eb8e35845c8a9b38a26",
+      "type": "sha256",
+      "context": "sckit binary in npm 0.1.21, 0.1.23, and 0.1.25, windows-arm64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "c1b0998347b489582bae7b7f4930f9831d9ef4b6bc150cfd488ee1a43272dd36",
+      "type": "sha256",
+      "context": "sckit binary in PyPI MemoryOS 2.0.34, linux-amd64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "8f647f17a1934679c4095e21bee2b9bd83e28476603758bc91408a0c8443e3b4",
+      "type": "sha256",
+      "context": "sckit binary in PyPI MemoryOS 2.0.34, linux-arm64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "9de0d5b0ca184f71f630be5781d134998883a02d5d7bc65aeb9559d8f9efb364",
+      "type": "sha256",
+      "context": "sckit binary in PyPI MemoryOS 2.0.34, darwin-amd64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "5405e330507602e803f7dd6f2a9d4555aec8558ab222b51413594a962da6888a",
+      "type": "sha256",
+      "context": "sckit binary in PyPI MemoryOS 2.0.34, darwin-arm64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "16de381deb978744535b10f68fe15165251374b86eef18ffc2c47f61ea673047",
+      "type": "sha256",
+      "context": "sckit binary in PyPI MemoryOS 2.0.34, windows-amd64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "f7c4014e284f3d56c452b8b222a287c54f73dc4a40a7e022e765ac8376362947",
+      "type": "sha256",
+      "context": "sckit binary in PyPI MemoryOS 2.0.34, windows-arm64, published by Socket",
+      "first_seen": "2026-09-23",
+      "source": "Socket",
+      "campaign": "2026-09-27-memtensor-sckit-npm-pypi",
+      "status": "active"
+    },
+    {
+      "value": "45.79.183.61",
+      "type": "ip",
+      "context": "Carbonato C2 hub on Linode, published by ThreatDown",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "active"
+    },
+    {
+      "value": "91.99.195.164",
+      "type": "ip",
+      "context": "Carbonato fsociety era C2 on Hetzner, published by ThreatDown",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "active"
+    },
+    {
+      "value": "213.136.79.115",
+      "type": "ip",
+      "context": "Carbonato beacon and reverse shell on Contabo ports 8080 and 4444, published by ThreatDown",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "active"
+    },
+    {
+      "value": "213.136.83.197",
+      "type": "ip",
+      "context": "Carbonato LLM gateway on Contabo, live when ThreatDown checked on 2026-09-03",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "active"
+    },
+    {
+      "value": "190.211.124.187",
+      "type": "ip",
+      "context": "Carbonato reverse SSH tunnel sink in AS262145, published by ThreatDown",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "active"
+    },
+    {
+      "value": "carbonato-proxy-drab.vercel.app",
+      "type": "domain",
+      "context": "Carbonato LLM proxy host. ThreatDown listed it in brace form and said the proxies were suspended",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "inactive"
+    },
+    {
+      "value": "carbonato-proxy-zeta.vercel.app",
+      "type": "domain",
+      "context": "Carbonato LLM proxy host. ThreatDown listed it in brace form and said the proxies were suspended",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "inactive"
+    },
+    {
+      "value": "carbonato-proxy-zeta-2.vercel.app",
+      "type": "domain",
+      "context": "Carbonato LLM proxy host. ThreatDown listed it in brace form and said the proxies were suspended",
+      "first_seen": "2026-09-22",
+      "source": "ThreatDown",
+      "campaign": "2026-09-27-carbonato-hermes-docker-botnet",
+      "status": "inactive"
+    },
+    {
+      "value": "github.com/actions-cool/issues-helper",
+      "type": "url_path",
+      "context": "Mini Shai-Hulud GitHub Action. Malicious tags from 2026-05-18 were reachable again 2026-09-16 through 2026-09-25",
+      "first_seen": "2026-05-18",
+      "source": "Socket",
+      "campaign": "2026-09-27-mini-shai-hulud-actions-cool-reenabled",
+      "status": "inactive"
+    },
+    {
+      "value": "github.com/actions-cool/maintain-one-comment",
+      "type": "url_path",
+      "context": "Mini Shai-Hulud GitHub Action. Malicious tags from 2026-05-18 were reachable again 2026-09-16 through 2026-09-25",
+      "first_seen": "2026-05-18",
+      "source": "Socket",
+      "campaign": "2026-09-27-mini-shai-hulud-actions-cool-reenabled",
+      "status": "inactive"
+    },
+    {
+      "value": "github.com/actions-cool/issues-helper/commit/a0c53dd42fc842d2f9276c5a1d4f9a26abe8713d",
+      "type": "url_path",
+      "context": "issues-helper tag v2.2.1 resolved to this commit, which Socket says contains the obfuscated payload in index.js",
+      "first_seen": "2026-09-16",
+      "source": "Socket",
+      "campaign": "2026-09-27-mini-shai-hulud-actions-cool-reenabled",
+      "status": "inactive"
+    },
+    {
       "value": "fegrs.adidasabc.com",
       "type": "domain",
       "context": "RatHat C2 host per Zimperium IOC csv",

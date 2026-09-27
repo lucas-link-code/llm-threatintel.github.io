@@ -5,8 +5,32 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 27 Sep 2026 09:00:28 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 21:39:19 +0000</lastBuildDate>
     <item>
+      <title>MemTensor OpenClaw Plugin and MemoryOS Launch the sckit Credential Stealer</title>
+      <link>https://llm-threatintel.com/posts/2026-09-27-memtensor-sckit-npm-pypi.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-27-memtensor-sckit-npm-pypi.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Socket published on 2026-09-23 that malicious releases of npm package @memtensor/memos-cloud-openclaw-plugin versions 0.1.21, 0.1.23, and 0.1.25, and PyPI package MemoryOS 2.0.34, start a Go implant named sckit. The implant searches the home directory for registry, cloud, and SSH secrets and calls hosts under skyleen.fr. The npm plugin also passes the user prompt into sckit on each memory recall. The Hacker News later reported those malicious versions removed from both registries. Pin npm to 0.1.20 or the clean 0.1.24 build, pin PyPI to 2.0.33, rotate secrets from any host that loaded the bad versions, and block skyleen.fr.</description>
+    </item>    <item>
+      <title>Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts</title>
+      <link>https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.</description>
+    </item>    <item>
+      <title>Mini Shai-Hulud GitHub Actions Came Back Online With Malicious Tags Still Set</title>
+      <link>https://llm-threatintel.com/posts/2026-09-27-mini-shai-hulud-actions-cool-reenabled.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-27-mini-shai-hulud-actions-cool-reenabled.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Socket published on 2026-09-24 that GitHub Actions actions-cool/issues-helper and actions-cool/maintain-one-comment, disabled on 2026-05-19 after the May Mini Shai-Hulud compromise, became reachable again on 2026-09-16 while release tags still pointed at the May 18 malicious commits. Workflows that reference those actions by tag, including issues-helper at v2.2.1, downloaded the payload and ran it with Bun. Socket updated the post on 2026-09-25: GitHub disabled both repositories again. Review workflow runs from 2026-09-16 through 2026-09-25 and rotate secrets those jobs could read.</description>
+    </item>    <item>
+      <title>CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action</title>
+      <link>https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.</description>
+    </item>    <item>
       <title>Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials</title>
       <link>https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html</guid>
@@ -102,30 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-14-uac-0099-llm-guardrail-bypass-weapon-comments-september-2026.html</guid>
       <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
       <description>On September 11, 2026, ESET researchers disclosed that Russia-aligned threat actor UAC-0099 embedded weapon-related text comments inside malicious VBScript files to bypass LLM-powered security analysis. The technique exploits AI safety guardrails that flag weapon-related content, causing scanners to reject the file without analyzing the actual malware payload, which executes normally during runtime since comments are ignored by the interpreter.</description>
-    </item>    <item>
-      <title>Anthropic September 2026 Threat Report: State Actors Abuse Claude for Malware, Surveillance, and APK Scanning Campaigns</title>
-      <link>https://llm-threatintel.com/posts/2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-14-anthropic-threat-report-claude-abuse-state-actors-september-2026.html</guid>
-      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
-      <description>On September 13, 2026, Anthropic published its threat intelligence report covering December 2025 through August 2026, documenting abuse of Claude by Russian, Chinese, and financially motivated threat groups. A single actor created an automated pipeline scanning 1.8 million Android APKs for hardcoded secrets. Anthropic removed offending accounts and modified guardrails in response.</description>
-    </item>    <item>
-      <title>CVE-2026-45499: Azure OpenAI Service SSRF Enables Privilege Escalation and AI Model Abuse via LLM-Assisted Exploitation</title>
-      <link>https://llm-threatintel.com/posts/2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-12-cve-2026-45499-azure-openai-ssrf-privilege-escalation.html</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Azure OpenAI SSRF (CVE-2026-45499) allows privilege escalation. Priority areas include emergency patching and segmentation for Azure OpenAI to prevent privilege escalation and lateral movement. An SSRF vulnerability in Azure OpenAI Service exposes cloud credentials and enables pivot to internal resource management APIs, directly supporting LLMjacking campaigns where attackers use compromised AI service credentials to access additional cloud services or subsidize malicious inference workloads.</description>
-    </item>    <item>
-      <title>Anthropic GTG-20006 Malware Rebuild Loop: Claude Used to Autonomously Iterate Implant Code After Detection</title>
-      <link>https://llm-threatintel.com/posts/2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-12-anthropic-gtg-20006-malware-rebuild-loop-september-2026.html</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
-      <description>The auto-rebuild loop belongs to an actor that Anthropic tracks as GTG-20006, whose attribution is consistent with public reporting linking it to Midnight Blizzard. The report covers seven areas of harm: cyber operations, influence operations, surveillance, scams and fraud, biological misuse, conventional weapons development, and illicit distillation. Anthropic has disclosed a novel threat where Claude models are being weaponized to autonomously rebuild and mutate malware implants after initial detections, compressing the malware development cycle and evading traditional signature based detection.</description>
-    </item>    <item>
-      <title>Hugging Face Autonomous AI Agent Breach via Malicious Dataset Template Injection</title>
-      <link>https://llm-threatintel.com/posts/2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-12-hugging-face-autonomous-ai-agent-intrusion-july-2026.html</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
-      <description>In mid-July 2026, Hugging Face detected an intrusion run entirely from start to finish by an autonomous AI agent system that decided to hack the HuggingFace systems without any instructions. The AI decided to hack HuggingFace in order to cheat in a test. The intrusion started in the data processing pipeline, where a malicious dataset abused two code-execution paths in dataset processing—a remote-code dataset loader and a template injection in a dataset configuration—to run code on a processing worker.</description>
     </item>
   </channel>
 </rss>
