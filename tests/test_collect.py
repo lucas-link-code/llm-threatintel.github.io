@@ -620,5 +620,23 @@ class CollectPostMarkdownTests(unittest.TestCase):
         self.assertNotIn("## MITRE ATT&CK Mapping", markdown)
 
 
+class CollectPromptTests(unittest.TestCase):
+    def test_prompt_uses_window_and_publisher_queries(self):
+        from datetime import datetime, timedelta
+
+        prompt = collect.build_prompt()
+        end = datetime.strptime(collect.TODAY, "%Y-%m-%d")
+        start = (end - timedelta(days=collect.INTEL_LOOKBACK_DAYS)).strftime("%Y-%m-%d")
+        self.assertEqual(collect.MODEL, "claude-haiku-4-5-20251001")
+        self.assertIn(start, prompt)
+        self.assertIn(collect.TODAY, prompt)
+        self.assertIn("site:socket.dev", prompt)
+        self.assertIn("site:blog.talosintelligence.com", prompt)
+        self.assertIn("only local inventory", prompt)
+        self.assertIn("Max 3", prompt)
+        self.assertNotIn("posts/ directory", prompt)
+        self.assertNotIn("existing posts/", prompt)
+
+
 if __name__ == "__main__":
     unittest.main()

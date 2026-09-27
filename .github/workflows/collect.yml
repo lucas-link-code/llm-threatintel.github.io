@@ -19,8 +19,8 @@ name: Daily Intelligence Collection
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # 03:00 UTC = 04:00 BST
-  workflow_dispatch:  # Manual trigger for testing
+    - cron: "0 3 * * *" # 03:00 UTC = 04:00 BST
+  workflow_dispatch: # Manual trigger for testing
 
 permissions:
   contents: write
@@ -37,6 +37,7 @@ jobs:
     outputs:
       pushed: ${{ steps.push.outputs.pushed || steps.no_push.outputs.pushed }}
       sha: ${{ steps.push.outputs.sha || steps.no_push.outputs.sha }}
+      intel: ${{ steps.push.outputs.intel || steps.no_push.outputs.intel }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,7 +48,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Install dependencies
         run: pip install anthropic requests
@@ -194,11 +195,22 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
+          intel=false
           if [ -n "$(git status --porcelain)" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            path="${line:3}"
+            case "$path" in
+              posts/*|data/posts-index.json|data/iocs.json|data/actors.json|data/search-index.json|rss.xml|sitemap.xml)
+                intel=true
+                ;;
+            esac
+          done < <(git status --porcelain)
+          echo "intel=$intel" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
         id: push
@@ -207,10 +219,16 @@ jobs:
           git config user.name "LLM ThreatIntel Bot"
           git config user.email "bot@llm-threatintel.github.io"
           git add -A
-          if [ "${VALIDATION_EXIT_CODE}" = "0" ]; then
-            git commit -m "intel: $(date +%Y-%m-%d) automated collection"
+          if [ "${{ steps.changes.outputs.intel }}" = "true" ]; then
+            if [ "${VALIDATION_EXIT_CODE}" = "0" ]; then
+              git commit -m "intel: $(date +%Y-%m-%d) automated collection"
+            else
+              git commit -m "validation: $(date +%Y-%m-%d) report-only collection review"
+            fi
+            echo "intel=true" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "validation: $(date +%Y-%m-%d) report-only collection review"
+            git commit -m "validation: $(date +%Y-%m-%d) no new intel"
+            echo "intel=false" >> "$GITHUB_OUTPUT"
           fi
           git pull --rebase origin main
           git push origin HEAD:main
@@ -222,6 +240,7 @@ jobs:
         if: steps.changes.outputs.changed != 'true'
         run: |
           echo "pushed=false" >> "$GITHUB_OUTPUT"
+          echo "intel=false" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Collection summary
@@ -232,19 +251,24 @@ jobs:
             echo ""
             echo "- Validator exit code: \`${VALIDATION_EXIT_CODE:-not-run}\`"
             echo "- Changes committed: \`${{ steps.changes.outputs.changed || 'false' }}\`"
+            echo "- Intel files changed: \`${{ steps.changes.outputs.intel || 'false' }}\`"
             echo "- Latest validation report: \`validation-reports/latest-validation-report.md\`"
             echo "- Validation report index: \`validation-reports/index.md\`"
             echo ""
-            if [ "${VALIDATION_EXIT_CODE:-0}" != "0" ]; then
-              echo "Validation found issues. Publishing continued in report-only mode for Lucas review."
+            if [ "${{ steps.changes.outputs.intel }}" = "true" ] && [ "${VALIDATION_EXIT_CODE:-0}" != "0" ]; then
+              echo "Validation found issues. Intel files still publish in report-only mode for Lucas review."
+            elif [ "${{ steps.changes.outputs.intel }}" = "true" ]; then
+              echo "Validation passed. Intel files will deploy."
+            elif [ "${{ steps.changes.outputs.changed }}" = "true" ]; then
+              echo "No new intel files. Validation report committed without a Pages deploy."
             else
-              echo "Validation passed. Publishing continued normally."
+              echo "No file changes. Nothing committed."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
 
   deploy:
     needs: collect
-    if: needs.collect.outputs.pushed == 'true'
+    if: needs.collect.outputs.pushed == 'true' && needs.collect.outputs.intel == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -260,7 +284,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -272,7 +296,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: ${{ env.PAGES_ARTIFACT_NAME }}
-          path: '.'
+          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
