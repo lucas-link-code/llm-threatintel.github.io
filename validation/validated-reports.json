@@ -5047,6 +5047,59 @@
       "validated_at": "2026-09-21T08:39:41+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-27-deadbugz-mcp-metadata-poisoning": {
+      "content_hash": "c06cb4441aff92f6bc435b2fd89b00649053cf9e28f2e0577e02226a1b618c5d",
+      "evidence_status": "validated",
+      "file": "2026-09-27-deadbugz-mcp-metadata-poisoning.md",
+      "posts_index_hash": "f3b308cf56c06bfdf5b0227c491d32be9fce9707a63acef83504f6189b43cfcd",
+      "report_id": "2026-09-27-deadbugz-mcp-metadata-poisoning",
+      "review_required": [],
+      "source_urls": [
+        "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
+        "https://adversa.ai/blog/top-mcp-security-resources-september-2026/",
+        "https://byteiota.com/deadbugz-the-mcp-attack-that-waits-3-calls-before-striking/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T09:00:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-27-eviltokens-ai-phishing-platform-disrupted": {
+      "content_hash": "ff27d11b57846fc95d7754aef61ee332ddd6fdf93126d0bf8570fe9e784f00e0",
+      "evidence_status": "validated",
+      "file": "2026-09-27-eviltokens-ai-phishing-platform-disrupted.md",
+      "posts_index_hash": "06ba68599c03ad9640561fe5b5ce1c8b2c9c346238d956a64ba74aec4b00c6e5",
+      "report_id": "2026-09-27-eviltokens-ai-phishing-platform-disrupted",
+      "review_required": [],
+      "source_urls": [
+        "https://blogs.microsoft.com/on-the-issues/2026/09/22/disrupting-eviltokens-the-ai-chatbot-built-for-cybercrime/",
+        "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/",
+        "https://www.securityweek.com/ai-powered-phishing-platform-eviltokens-disrupted-by-microsoft/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T09:00:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-27-plugin4shell-ai-coding-agent-rce": {
+      "content_hash": "c9778fae67eba1357275a9fa7fcab244b59383c6c4e4cfa81b234f15ce7f7c17",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-09-27-plugin4shell-ai-coding-agent-rce.md",
+      "posts_index_hash": "9f6ce90c57befce0f486d6f2916924cb8e700da845c72f20a32f0c010756b784",
+      "report_id": "2026-09-27-plugin4shell-ai-coding-agent-rce",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.air.security/blog-posts/plugin4shell",
+        "https://cybersecuritynews.com/plugin4shell-zero-click-rce/",
+        "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T09:00:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

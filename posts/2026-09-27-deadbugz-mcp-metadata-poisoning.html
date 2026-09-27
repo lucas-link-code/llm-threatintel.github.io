@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials | LLM ThreatIntel</title>
+  <meta name="description" content="Deadbugz pushed a malicious MCP server into multiple projects, shipping two innocuous tools and holding the payload back until the client had made exactly three tool calls. A reviewer checking a new server is unlikely to spot that: the metadata that turns into instructions hunting SSH keys and cloud credentials only appears once the server is trusted and in use. The public GitHub account zellkernel submitted 23 identified campaign-related pull requests to unrelated AI, MCP, and developer-tool projects.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials">
+  <meta property="og:description" content="Deadbugz pushed a malicious MCP server into multiple projects, shipping two innocuous tools and holding the payload back until the client had made exactly three tool calls. A reviewer checking a new server is unlikely to spot that: the metadata that turns into instructions hunting SSH keys and cloud credentials only appears once the server is trusted and in use. The public GitHub account zellkernel submitted 23 identified campaign-related pull requests to unrelated AI, MCP, and developer-tool projects.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials">
+  <meta property="article:published_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="mcp-security">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials">
+  <meta name="twitter:description" content="Deadbugz pushed a malicious MCP server into multiple projects, shipping two innocuous tools and holding the payload back until the client had made exactly three tool calls. A reviewer checking a new server is unlikely to spot that: the metadata that turns into instructions hunting SSH keys and cloud credentials only appears once the server is trusted and in use. The public GitHub account zellkernel submitted 23 identified campaign-related pull requests to unrelated AI, MCP, and developer-tool projects.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials",
+  "description": "Deadbugz pushed a malicious MCP server into multiple projects, shipping two innocuous tools and holding the payload back until the client had made exactly three tool calls. A reviewer checking a new server is unlikely to spot that: the metadata that turns into instructions hunting SSH keys and cloud credentials only appears once the server is trusted and in use. The public GitHub account zellkernel submitted 23 identified campaign-related pull requests to unrelated AI, MCP, and developer-tool projects.",
+  "datePublished": "2026-09-27T00:00:00Z",
+  "dateModified": "2026-09-27T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html",
+  "keywords": [
+    "supply-chain",
+    "mcp-security"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-27</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-mcp-security">Mcp Security</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials</h1>
+<p><strong>Date:</strong> 2026-09-27<br><strong>Tags:</strong> supply-chain, mcp-security</p>
+<h2>Executive Summary</h2>
+<p>Deadbugz pushed a malicious MCP server into multiple projects, shipping two innocuous tools and holding the payload back until the client had made exactly three tool calls. A reviewer checking a new server is unlikely to spot that: the metadata that turns into instructions hunting SSH keys and cloud credentials only appears once the server is trusted and in use. The public GitHub account zellkernel submitted 23 identified campaign-related pull requests to unrelated AI, MCP, and developer-tool projects.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Deadbugz</td></tr><tr><td>Attribution</td><td>GitHub account zellkernel (Unknown operator) (confidence: medium)</td></tr><tr><td>Target</td><td>AI and developer tool projects accepting MCP server contributions via pull requests</td></tr><tr><td>Vector</td><td>Malicious MCP server distribution via GitHub pull requests; metadata poisoning; call-count gating</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-08-10</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>The campaign uses runtime-gated MCP metadata poisoning. The malicious instructions are built into the server, but remain withheld until the client has made three ordinary tool calls. An active campaign distributing a malicious MCP server through public GitHub pull requests, tracked to a single account that filed 23 pull requests across unrelated AI and developer tool projects in 74 minutes. The server offers text formatting and summarization, then, after exactly three tool calls, rewrites the metadata it returns into instructions to hunt for SSH keys, AWS credentials, shell history, and Kubernetes config while concealing the activity from the user. Pillar Security researchers tracked the campaign to a single GitHub account, zellkernel, which submitted 23 pull requests to unrelated AI, MCP, and developer-tool repos in a 74-minute window on August 10, 2026. The PRs were framed as helpful contributions, the same social engineering playbook as npm supply chain attacks. Researchers who documented it described it as an actively distributed campaign at the time of disclosure in September 2026.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Compromised MCP server distributed through GitHub pull requests to legitimate projects</td></tr><tr><td>Credential Access</td><td>T1552</td><td>Harvesting SSH keys, AWS credentials, shell history, and Kubernetes configuration</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Campaign tracked to GitHub account zellkernel; 23 pull requests filed to unrelated projects Aug 10 2026; Delivery artifact: deadbug-mcp.py; webhook telemetry configuration: WEBHOOK_URL_</p>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">https://github.com/zellkernel</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;https://github.com/zellkernel&quot;</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">GitHub
+MCP ecosystem</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor MCP server tool definitions for runtime changes; compare tool metadata fingerprints on each reconnect and alert on any drift. Implement strict pull request review processes requiring security team sign-off on MCP server additions, not just code review. Track for explicit third-call thresholds or call-count logic in MCP server code. Monitor for WEBHOOK_URL configuration parameters in MCP servers. Implement continuous MCP server monitoring with per-session tool definition verification rather than one-time approval. Flag GitHub accounts filing multiple pull requests to unrelated projects within short timeframes. Require signed MCP server manifests and implement re-consent flows for any tool definition changes.</p>
+<h2>References</h2>
+<ul><li>[Pillar Security] Deadbugz: Currently Active MCP Supply-Chain Campaign (2026-09-18) — https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign</li><li>[Adversa AI] MCP security September 2026: Deadbugz + 3 server CVEs (2026-09-07) — https://adversa.ai/blog/top-mcp-security-resources-september-2026/</li><li>[byteiota] Deadbugz: The MCP Attack That Waits 3 Calls Before Striking (2026-09-13) — https://byteiota.com/deadbugz-the-mcp-attack-that-waits-3-calls-before-striking/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

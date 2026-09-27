@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-21",
+  "last_updated": "2026-09-27",
   "entries": [
     {
       "id": "rathat",
@@ -5051,6 +5051,62 @@
       ],
       "description": "A suspected Russian state-sponsored espionage actor operating an autonomous malware evasion pipeline. The actor deployed Claude language models to monitor endpoint detection and response systems in real time, detect malware signatures or behavioral indicators, and autonomously regenerate obfuscated implant variants without human operator instruction. The loop enables persistence despite detection, converting each EDR alert into a regeneration trigger rather than an eradication event.",
       "attribution": "Suspected Russian state-sponsored actor"
+    },
+    {
+      "id": "unidentified-plugin-marketplace-threat-actor",
+      "names": [
+        "Unidentified Plugin Marketplace Threat Actor"
+      ],
+      "type": "malicious_tool",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "AI Coding Agent Plugin Marketplaces"
+      ],
+      "ttps": [
+        "T1195.003 - Supply Chain Compromise",
+        "T1204 - User Execution"
+      ],
+      "description": "Actor(s) exploiting SHA pinning bypass in Git commit resolution to inject malicious code into plugin installations across major AI coding agent platforms. Attack assumes control of plugin repository and leverages automatic update mechanisms to execute code without user re-approval.",
+      "attribution": "Unknown; attack is marketplace-agnostic and relies on Git platform behavior"
+    },
+    {
+      "id": "storm-2992",
+      "names": [
+        "Storm-2992"
+      ],
+      "type": "malicious_tool",
+      "first_seen": "2026-09",
+      "status": "disrupted",
+      "distribution": [
+        "Telegram channels",
+        "Commercial subscription model"
+      ],
+      "ttps": [
+        "T1566.002 - Phishing: Spearphishing Link",
+        "T1098 - Account Manipulation"
+      ],
+      "description": "Cybercrime group operating EvilTokens phishing-as-a-service platform. Platform combined device code phishing, AI-assisted mailbox analysis, and fraud strategy recommendation to systematize business email compromise attacks at scale. Utilized LLM capabilities for generating targeted phishing lures and identifying high-value fraud opportunities within compromised mailboxes.",
+      "attribution": "Microsoft Threat Intelligence (moderate confidence)"
+    },
+    {
+      "id": "deadbugz-zellkernel",
+      "names": [
+        "Deadbugz (zellkernel)",
+        "zellkernel"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-09",
+      "status": "active",
+      "distribution": [
+        "GitHub pull requests"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise",
+        "T1552 - Unsecured Credentials"
+      ],
+      "description": "Supply chain campaign distributing malicious MCP servers through coordinated pull request submissions to unrelated AI and developer-tool projects. Campaign uses sophisticated runtime-gated metadata poisoning to defer credential harvesting until server is trusted and in production use. Deployment occurs via 23 pull requests in 74-minute window, suggesting automated or scripted social engineering.",
+      "attribution": "Unknown operator behind GitHub account zellkernel"
     }
   ]
 }

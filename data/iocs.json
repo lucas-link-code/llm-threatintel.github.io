@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-27",
   "iocs": [
     {
       "value": "fegrs.adidasabc.com",
@@ -6128,6 +6128,15 @@
       "first_seen": "2026-09-07",
       "source": "Cloud Security Alliance Lab",
       "campaign": "wiz-mcp-server-rce-exploitation-chain",
+      "status": "active"
+    },
+    {
+      "value": "https://github.com/zellkernel",
+      "type": "url_path",
+      "context": "Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials",
+      "first_seen": "2026-09-27",
+      "source": "Pillar Security",
+      "campaign": "deadbugz-mcp-metadata-poisoning",
       "status": "active"
     }
   ]
