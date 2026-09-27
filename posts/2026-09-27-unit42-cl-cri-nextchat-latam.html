@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open | LLM ThreatIntel</title>
+  <meta name="description" content="Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-27-unit42-cl-cri-nextchat-latam.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open">
+  <meta property="og:description" content="Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-27-unit42-cl-cri-nextchat-latam.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open">
+  <meta property="article:published_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-27T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="apt">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open">
+  <meta name="twitter:description" content="Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open",
+  "description": "Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.",
+  "datePublished": "2026-09-27T00:00:00Z",
+  "dateModified": "2026-09-27T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-27-unit42-cl-cri-nextchat-latam.html",
+  "keywords": [
+    "malware",
+    "phishing",
+    "apt"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-27</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-apt">APT</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open</h1>
+<p><strong>Date:</strong> 2026-09-27<br><strong>TLP:</strong> TLP:CLEAR<br><strong>Tags:</strong> malware, phishing, apt</p>
+<h2>Executive Summary</h2>
+<p>Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>CL-CRI-1131 Mexican transportation and government cluster. CL-CRI-1163 Brazilian financial cluster. SockTz Go SOCKS5 proxy used by CL-CRI-1163. Unit 42 said CloudSEK tracks the Mexican activity as Operation Escaneo</td></tr><tr><td>Actor / Attribution</td><td>Unit 42: two separate clusters that share SOCKS5 relay patterns and commercial LLM use. No national attribution and no group name beyond the CL-CRI identifiers. Confidence high that the activity is real. Confidence low that the clusters are one actor</td></tr><tr><td>Target</td><td>CL-CRI-1131: Mexican transportation, Mexican federal ministries, municipal water utilities in Mexico and Ecuador. CL-CRI-1163: Brazilian financial organizations</td></tr><tr><td>Vector</td><td>CL-CRI-1131: living off the land after access, with self hosted NextChat on attacker infrastructure. CL-CRI-1163: resume themed phishing attachment in February 2026, then custom RATs and SockTz</td></tr><tr><td>Status</td><td>Unit 42 described both as ongoing as of the 2026-09-03 report. Infrastructure documented from February through June 2026</td></tr><tr><td>First Observed</td><td>CL-CRI-1131 certificate on 2026-02-27. CL-CRI-1163 resume phish in February 2026</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/" target="_blank" rel="noopener">Unit 42</a>, CL-CRI-1131 operators in an April 2026 intrusion failed repeated attempts to dump the SAM hive and the domain controller NTDS.dit file, then created volume shadow copies and copied files from them. They ran numbered batch scripts and added a permissions check before writing the collection directory. Unit 42 reads that trial and error as consistent with LLM use. After collection problems they troubleshot connectivity to 62.171.185.97, which Unit 42 ties to exfiltration.</p>
+<p>Pivoting on that IP produced a Let&#x27;s Encrypt certificate for m-doxa-apodo.duckdns.org. Unit 42 said a February 2026 single name certificate for m-doxa-apodo was followed in April and June by certificates with five subject alternative names. The published host names are m-doxa-apodo, m-doxa-geo, m-doxa-intel, m-doxa-repuve, m-doxa-sre, and m-doxa-vacunas, all under duckdns.org. Unit 42 glossed apodo as alias, geo as geolocation, intel as intelligence, and vacunas as vaccines. The February certificate SHA256 7d766942ef34542cee39c852286599958c4c2e23187010c4d38dbf88fcb40bf8 sat on 165.22.184.26. The April hash 4e218e70afdbb116209ec0ebe8fc556e296e69648aa4e0425b83c0e863a8fee5 and the June hash 46ac289ce0c13666de616446f5d5a68da8bd150f4f065c3bec02f63776d3899c sat on 178.128.87.160. Those three values are TLS certificate fingerprints, not malware file hashes, so they are not in the hash block.</p>
+<p>Unit 42 said 178.128.87.160, used in the April and June 2026 activity, hosted NextChat on TCP 3000. NextChat is an open source web UI for talking to more than one model from attacker controlled infrastructure. Unit 42 assessed that the operators used it to generate the workaround scripts after the dump failures. Unit 42 pointed at an earlier Gambit writeup of February 2026 Mexican government activity that described multiple LLMs, including Claude and GPT-4.1, and at CloudSEK reporting that tracks the same Mexican activity as Operation Escaneo. This feed does not merge those papers into a single actor name.</p>
+<p>CL-CRI-1163 is the Brazilian financial cluster. Unit 42 said initial access in February 2026 was a resume themed phishing attachment, followed by custom RATs. Install attempts for SockTz versions 1 through 8 came from a compromised WordPress site. Version 8 was named socktz_v8.exe. After that path failed, the operators pulled socktz_v9 from their own infrastructure. Unit 42 said researchers had already tied SockTz and 167.148.195.53 to JBoss targeting, but this case attempted versions 1 through 9 inside a two hour window. An open directory on that host held the installers and hundreds of scripts. Unit 42 named exploit_creative.py, exploit_careful.py, and rce_focused.py, plus files with an _output suffix, as signs of language model driven iteration. The published download is 167.148.195.53:8888/socktz_v9.exe. Unit 42 published two SHA256 samples for the Brazilian campaign: a38b2cf8beff32a276eed8783723ecf8cc53d7dc88669e1b998dddc4db6fe996 and 87bf8bc8b4a2cf34f0af1afe161f123a3d200e77f6c6f41b81bf6ae66ee172ec. The article lists the second hash immediately before the socktz_v9.exe URL.</p>
+<p>Unit 42 kept the clusters separate. Shared traits are SOCKS5 relays and commercial LLM use, not a single group name. Unit 42&#x27;s point for defenders is the exposed NextChat service and the open staging directory, which exposed the playbook.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Phishing: Spearphishing Attachment</td><td>T1566.001</td><td>CL-CRI-1163 February 2026 resume themed attachment</td></tr><tr><td>OS Credential Dumping: Security Account Manager</td><td>T1003.002</td><td>CL-CRI-1131 repeated failed SAM hive dumps</td></tr><tr><td>OS Credential Dumping: NTDS</td><td>T1003.003</td><td>Failed NTDS.dit collection, then volume shadow copies</td></tr><tr><td>Command and Scripting Interpreter: Windows Command Shell</td><td>T1059.003</td><td>Numbered batch scripts for collection</td></tr><tr><td>Obtain Capabilities: Artificial Intelligence</td><td>T1588.007</td><td>Self hosted NextChat on 178.128.87.160:3000 used to work around collection failures</td></tr><tr><td>Proxy</td><td>T1090</td><td>SockTz reverse SOCKS5 proxy, versions 1 through 9</td></tr><tr><td>Ingress Tool Transfer</td><td>T1105</td><td>socktz_v8.exe from a compromised WordPress site, then socktz_v9.exe from 167.148.195.53:8888</td></tr><tr><td>Exfiltration Over C2 Channel</td><td>T1041</td><td>Unit 42 tied CL-CRI-1131 exfiltration troubleshooting to 62.171.185.97</td></tr></tbody></table>
+<h2>IOCs</h2>
+<p>Domains are defanged for display. Certificate fingerprints stay in the narrative and are not file hashes. Do not block duckdns.org or the NextChat project.</p>
+<h3>Domains</h3>
+<pre><code class="language-">m-doxa-apodo[.]duckdns[.]org
+m-doxa-geo[.]duckdns[.]org
+m-doxa-intel[.]duckdns[.]org
+m-doxa-repuve[.]duckdns[.]org
+m-doxa-sre[.]duckdns[.]org
+m-doxa-vacunas[.]duckdns[.]org</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">167.148.195[.]53:8888/socktz_v9.exe</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;m-doxa-apodo.duckdns.org&quot; OR &quot;m-doxa-geo.duckdns.org&quot; OR &quot;m-doxa-intel.duckdns.org&quot; OR &quot;m-doxa-repuve.duckdns.org&quot; OR &quot;m-doxa-sre.duckdns.org&quot; OR &quot;m-doxa-vacunas.duckdns.org&quot; OR &quot;62.171.185.97&quot; OR &quot;165.22.184.26&quot; OR &quot;178.128.87.160&quot; OR &quot;167.148.195.53&quot; OR &quot;167.148.195.53:8888/socktz_v9.exe&quot; OR &quot;a38b2cf8beff32a276eed8783723ecf8cc53d7dc88669e1b998dddc4db6fe996&quot; OR &quot;87bf8bc8b4a2cf34f0af1afe161f123a3d200e77f6c6f41b81bf6ae66ee172ec&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">a38b2cf8beff32a276eed8783723ecf8cc53d7dc88669e1b998dddc4db6fe996
+87bf8bc8b4a2cf34f0af1afe161f123a3d200e77f6c6f41b81bf6ae66ee172ec</code></pre>
+<h3>IP Addresses</h3>
+<pre><code class="language-">62.171.185.97
+165.22.184.26
+178.128.87.160
+167.148.195.53</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">No package IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On Mexican and regional government or transport endpoints, alert on failed reg save or ntdsutil style dumps of SAM and NTDS.dit followed by vssadmin or wmic shadow copy creation and a series of numbered .bat files. On the network, alert on TLS or DNS for the six m-doxa duckdns names, and on connections to 62.171.185.97 and 165.22.184.26. Treat 178.128.87.160:3000 as a NextChat panel only in combination with those names or with the certificate timeline. A lone NextChat install on an approved admin host is not this cluster.</p>
+<p>For Brazilian finance, hunt email gateways for resume themed attachments in the February 2026 window if mail is still retained, then endpoint creation of socktz_v1.exe through socktz_v9.exe. Block or alert on 167.148.195.53 and on 167.148.195.53:8888/socktz_v9.exe. Hash match the two SHA256 values. An open directory full of exploit_*.py names with adjective suffixes, or files ending in _output, is the Unit 42 fingerprint for this staging host. Do not denylist duckdns.org.</p>
+<h2>References</h2>
+<ul><li>[Unit 42] Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America (2026-09-03): https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

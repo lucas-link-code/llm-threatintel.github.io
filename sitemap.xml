@@ -7,6 +7,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://llm-threatintel.com/posts/2026-09-27-island-agentbaiting-fakegit-smartloader.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-09-27-unit42-cl-cri-nextchat-latam.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://llm-threatintel.com/posts/2026-09-27-memtensor-sckit-npm-pypi.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>

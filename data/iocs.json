@@ -2,6 +2,330 @@
   "last_updated": "2026-09-27",
   "iocs": [
     {
+      "value": "github.com/hfgwygey/yu-ai-agent",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/Mann1988/awesome-claude-skills",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/h4vzz/awesome-ai-agent-skills",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/StanLeyJ03/mcp-for-security",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/xbim08/awesome-claude-code-plugins",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/DomingosNgongo/walmart-mcp",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/45d5r/databricks-mcp-server",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/MauManto/jenkins-mcp-server",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/waynestimulative605/docker-mcp-gateway",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/lucaducapuca/alibabacloud-bigdata-skills",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/adlaiponderous700/claude-skill-cinematic-prompt",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/Naveenkm007/spaceship-mcp",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "github.com/hahaha-saygex/gmail-mcp",
+      "type": "url_path",
+      "context": "FakeGit repository published by Island as a SmartLoader lure",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "216a2c99fd42c00f9323d8b16dd19f622f7f4778b2b1d7cf07a3de5621fd1546",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP yu-ai-agent-1.0-beta.3.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "91e5dbfaf45edf25fbc2168f92083e05dfa427afa7633e991392e33cc7427dad",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP awesome-skills-claude-3.3.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "498fe8fb806cd0e6685f97fc7d74de769dae5a28cdc821557b7585ad5ad83147",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP agent_ai_awesome_skills_2.0.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "62744baa8077bb8be237647fd78e3bea2ca0932bf4be3d5618600f97118095f8",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP for-security-mcp-3.3.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "1da8df487d30b988f3c350c065206726aaa13f079a07151cd42ab5579994b9de",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP plugins_claude_awesome_code_2.4.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "c15693106682f2ddb26649cab6e1962a64537627cde4c5d3c79d5a0be8c1b5a8",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP mcp-walmart-2.2.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "66afc7d87d10dbe392898c4e5c613e0442fabb396415c2bef3a5ef2ac752c5ad",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP server_databricks_mcp_1.6.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "a33f40cab1ab7f971d3464af3e7595918107332b9e83342007571842b9e22826",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP mcp-server-jenkins-3.2.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "3c858facbad66f5479e2c4add171421dc1b6488b36f33e7cff073aba585954a7",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP gateway-docker-mcp-v1.6-alpha.5.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "fc1278f419e611bf40ca414099bfd9ad98a31ffb054371e8cb65a84849b00eaf",
+      "type": "sha256",
+      "context": "FakeGit SmartLoader ZIP alibabacloud-skills-bigdata-v1.7.zip published by Island",
+      "first_seen": "2026-07-20",
+      "source": "Island",
+      "campaign": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "status": "active"
+    },
+    {
+      "value": "m-doxa-apodo.duckdns.org",
+      "type": "domain",
+      "context": "CL-CRI-1131 dynamic DNS host published by Unit 42",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "m-doxa-geo.duckdns.org",
+      "type": "domain",
+      "context": "CL-CRI-1131 dynamic DNS host published by Unit 42",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "m-doxa-intel.duckdns.org",
+      "type": "domain",
+      "context": "CL-CRI-1131 dynamic DNS host published by Unit 42",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "m-doxa-repuve.duckdns.org",
+      "type": "domain",
+      "context": "CL-CRI-1131 dynamic DNS host published by Unit 42",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "m-doxa-sre.duckdns.org",
+      "type": "domain",
+      "context": "CL-CRI-1131 dynamic DNS host published by Unit 42",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "m-doxa-vacunas.duckdns.org",
+      "type": "domain",
+      "context": "CL-CRI-1131 dynamic DNS host published by Unit 42",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "62.171.185.97",
+      "type": "ip",
+      "context": "CL-CRI-1131 exfiltration host Unit 42 pivoted from during the April 2026 intrusion",
+      "first_seen": "2026-04-01",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "165.22.184.26",
+      "type": "ip",
+      "context": "Host for the February 2026 CL-CRI-1131 certificate",
+      "first_seen": "2026-02-27",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "178.128.87.160",
+      "type": "ip",
+      "context": "CL-CRI-1131 host for April and June certificates and NextChat on TCP 3000",
+      "first_seen": "2026-04-20",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "167.148.195.53",
+      "type": "ip",
+      "context": "CL-CRI-1163 open directory hosting SockTz and campaign scripts",
+      "first_seen": "2026-09-03",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "167.148.195.53:8888/socktz_v9.exe",
+      "type": "url_path",
+      "context": "SockTz version 9 download published by Unit 42",
+      "first_seen": "2026-09-03",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "a38b2cf8beff32a276eed8783723ecf8cc53d7dc88669e1b998dddc4db6fe996",
+      "type": "sha256",
+      "context": "CL-CRI-1163 Brazilian campaign SHA256 published by Unit 42",
+      "first_seen": "2026-09-03",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
+      "value": "87bf8bc8b4a2cf34f0af1afe161f123a3d200e77f6c6f41b81bf6ae66ee172ec",
+      "type": "sha256",
+      "context": "CL-CRI-1163 SHA256 listed by Unit 42 with the socktz_v9.exe URL",
+      "first_seen": "2026-09-03",
+      "source": "Unit 42",
+      "campaign": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "status": "active"
+    },
+    {
       "value": "250d4fa37488af9b025333fa17705573d721467b203765bc360890b4f5a90cd7",
       "type": "sha256",
       "context": "CLOSEDQUORUM developer build chain hash published by Cisco Talos",

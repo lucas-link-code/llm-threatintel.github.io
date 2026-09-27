@@ -2,6 +2,135 @@
   "last_updated": "2026-09-27",
   "entries": [
     {
+      "id": "fakegit",
+      "names": [
+        "FakeGit",
+        "AgentBaiting"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-03",
+      "status": "active",
+      "distribution": [
+        "GitHub repositories posing as AI Skills and MCP servers",
+        "Public Skill and MCP registries including LobeHub, Glama, MCP.so, and MCP Market",
+        "Windows ZIP archives containing a Lua launcher"
+      ],
+      "ttps": [
+        "T1036.005 - Masquerading: Match Legitimate Name or Location",
+        "T1204.002 - User Execution: Malicious File",
+        "T1059 - Command and Scripting Interpreter",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task",
+        "T1102 - Web Service",
+        "T1555.003 - Credentials from Password Stores: Credentials from Web Browsers"
+      ],
+      "description": "Island's name for a GitHub malware operation that copied projects and developer profiles, then shipped SmartLoader ZIPs disguised as AI Skills and MCP servers. The AI themed wave built through March 2026 and peaked in April 2026. Island calls the discovery path AgentBaiting: Claude Code, Gemini, and ChatGPT surfaced campaign repositories from capability searches without a supplied link. StealC is the follow on stealer. Island did not name an operator.",
+      "attribution": "No cluster in the Island blog. BleepingComputer described a possible continuation of Trend Micro's Water Kurita Lumma activity. Confidence low."
+    },
+    {
+      "id": "smartloader",
+      "names": [
+        "SmartLoader"
+      ],
+      "type": "malware",
+      "first_seen": "2026-03",
+      "status": "active",
+      "distribution": [
+        "FakeGit GitHub ZIP archives",
+        "LuaJIT style runtime named luau.exe with a decoy text payload"
+      ],
+      "ttps": [
+        "T1059 - Command and Scripting Interpreter",
+        "T1053.005 - Scheduled Task/Job: Scheduled Task",
+        "T1102 - Web Service",
+        "T1105 - Ingress Tool Transfer"
+      ],
+      "description": "Lua loader delivered by FakeGit. Island documented a cmd launcher that starts luau.exe against an obfuscated Lua file. Island, citing Derp.ca analysis of other FakeGit samples, said it reads a command server from a Polygon smart contract, persists with scheduled tasks, pulls encrypted stages from GitHub, and injects StealC. The July 2026 Island blog did not publish the contract address.",
+      "attribution": "Delivered by the FakeGit operation documented by Island. Operator name not stated by Island."
+    },
+    {
+      "id": "water-kurita",
+      "names": [
+        "Water Kurita"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-07",
+      "status": "active",
+      "distribution": [
+        "Older Lumma Stealer operations tracked by Trend Micro, per BleepingComputer"
+      ],
+      "ttps": [
+        "T1204.002 - User Execution: Malicious File"
+      ],
+      "description": "Trend Micro name that BleepingComputer applied on 2026-07-21 to an older Lumma Stealer operation it described as a possible predecessor of FakeGit. Island's AgentBaiting blog did not use this name. This feed does not treat Water Kurita as a confirmed operator of the July 2026 repository set.",
+      "attribution": "BleepingComputer characterization of Trend Micro tracking. Confidence low for a link to the 2026 FakeGit AI wave."
+    },
+    {
+      "id": "cl-cri-1131",
+      "names": [
+        "CL-CRI-1131",
+        "Operation Escaneo"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-02",
+      "status": "active",
+      "distribution": [
+        "Self hosted NextChat on TCP 3000",
+        "m-doxa duckdns hosts",
+        "Living off the land batch scripts"
+      ],
+      "ttps": [
+        "T1003.002 - OS Credential Dumping: Security Account Manager",
+        "T1003.003 - OS Credential Dumping: NTDS",
+        "T1059.003 - Command and Scripting Interpreter: Windows Command Shell",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "description": "Unit 42 cluster against a Mexican transportation organization, Mexican federal ministries, and municipal water utilities in Mexico and Ecuador. April 2026 host activity failed SAM and NTDS dumps, then used volume shadow copies and numbered batch scripts. Operators self hosted NextChat on 178.128.87.160 port 3000. Unit 42 said CloudSEK tracks the Mexican activity as Operation Escaneo. Infrastructure certificates run from February through June 2026.",
+      "attribution": "Unit 42 cluster CL-CRI-1131. Not merged with CL-CRI-1163. No national attribution in the Unit 42 paper."
+    },
+    {
+      "id": "cl-cri-1163",
+      "names": [
+        "CL-CRI-1163"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-02",
+      "status": "active",
+      "distribution": [
+        "Resume themed phishing attachments",
+        "Custom RATs",
+        "SockTz Go SOCKS5 proxy",
+        "Open directory on 167.148.195.53"
+      ],
+      "ttps": [
+        "T1566.001 - Phishing: Spearphishing Attachment",
+        "T1090 - Proxy",
+        "T1105 - Ingress Tool Transfer",
+        "T1588.007 - Obtain Capabilities: Artificial Intelligence"
+      ],
+      "description": "Unit 42 cluster against Brazilian financial organizations. February 2026 access used a resume themed attachment, then custom RATs and the SockTz proxy. Versions 1 through 9 were attempted inside two hours. An open directory exposed scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py. Unit 42 keeps this cluster separate from CL-CRI-1131 despite shared SOCKS5 and LLM habits.",
+      "attribution": "Unit 42 cluster CL-CRI-1163. No national attribution in the Unit 42 paper."
+    },
+    {
+      "id": "socktz",
+      "names": [
+        "SockTz"
+      ],
+      "type": "malware",
+      "first_seen": "2026-02",
+      "status": "active",
+      "distribution": [
+        "Compromised WordPress sites",
+        "167.148.195.53:8888/socktz_v9.exe"
+      ],
+      "ttps": [
+        "T1090 - Proxy",
+        "T1105 - Ingress Tool Transfer"
+      ],
+      "description": "Go reverse SOCKS5 proxy used by CL-CRI-1163. Unit 42 observed install attempts for versions 1 through 8 from a compromised WordPress site and version 9 from 167.148.195.53. Earlier reporting had tied the tool and that IP to JBoss targeting. The September 2026 case compressed versions 1 through 9 into a two hour window.",
+      "attribution": "Used by Unit 42 cluster CL-CRI-1163."
+    },
+    {
       "id": "sckit",
       "names": [
         "sckit",
@@ -4845,14 +4974,15 @@
       "status": "active",
       "distribution": [
         "Dark web forums",
-        "Malware-as-a-service marketplaces"
+        "Malware-as-a-service marketplaces",
+        "FakeGit GitHub repositories via SmartLoader, Island July 2026"
       ],
       "ttps": [
         "T1539 - Steal Web Session Cookie",
         "T1555 - Credentials from Password Stores",
         "T1036 - Masquerading"
       ],
-      "description": "Operators deploying widely available infostealer malware to harvest Claude session cookies and other high-value credentials from compromised Windows and macOS endpoints. Attack is not Claude-specific but leverages the high value of authenticated Claude sessions on paid accounts, with attackers purchasing or renting commodity stealers from criminal marketplaces.",
+      "description": "Operators deploying widely available infostealer malware to harvest Claude session cookies and other high-value credentials from compromised Windows and macOS endpoints. Attack is not Claude-specific but leverages the high value of authenticated Claude sessions on paid accounts, with attackers purchasing or renting commodity stealers from criminal marketplaces. Island reported in July 2026 that FakeGit delivers StealC after SmartLoader, using repositories that pose as AI Skills and MCP servers.",
       "attribution": "Unattributed; commodity malware distribution chains"
     },
     {

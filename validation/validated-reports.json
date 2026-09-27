@@ -5115,6 +5115,23 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-09-27-island-agentbaiting-fakegit-smartloader": {
+      "content_hash": "63cceeeffd7e36ddecc9d576297ad08ead4166b889ec537ba7b1384cfea24145",
+      "evidence_status": "validated",
+      "file": "2026-09-27-island-agentbaiting-fakegit-smartloader.md",
+      "posts_index_hash": "f36f291d16e6ee24d2879612015f3998811ebd4d2d06b7ddf4c3be00ae6ff06c",
+      "report_id": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "review_required": [],
+      "source_urls": [
+        "https://www.island.io/blog/agentbaiting-how-800-fake-ai-skills-and-mcp-servers-delivered-malware",
+        "https://www.bleepingcomputer.com/news/security/fakegit-campaign-uses-7-600-github-repos-to-push-smartloader-malware/",
+        "https://thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T21:54:27+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-09-27-memtensor-sckit-npm-pypi": {
       "content_hash": "89fbdb17a3f4d7177212a309d3fbb436f79147d29a3126c315f2854053d83736",
       "evidence_status": "validated",
@@ -5163,6 +5180,21 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-09-27T09:00:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-27-unit42-cl-cri-nextchat-latam": {
+      "content_hash": "e23761ce4eedefb37e02dbb12bc455849d2636018b148e549eae9264b3fbb1f8",
+      "evidence_status": "validated",
+      "file": "2026-09-27-unit42-cl-cri-nextchat-latam.md",
+      "posts_index_hash": "7b22a2160fb973de868f44702160982bdbd569b434c36b3c64314df2f21fef76",
+      "report_id": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-27T21:54:28+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

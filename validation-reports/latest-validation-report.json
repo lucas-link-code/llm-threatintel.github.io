@@ -1,7 +1,7 @@
 {
-  "commit_sha": "22cbb2664ddc",
+  "commit_sha": "85d96b29874f",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-27T21:39:41+00:00",
+  "generated_at_utc": "2026-09-27T21:54:28+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,75 +41,40 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 4,
-  "reports_newly_validated": 4,
-  "reports_skipped": 287,
+  "reports_checked": 2,
+  "reports_newly_validated": 2,
+  "reports_skipped": 291,
   "review_required": 0,
-  "source_urls_checked": 9,
-  "state_updates": 4,
+  "source_urls_checked": 4,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://socket.dev/blog/memtensor-compromise",
+      "final_url": "https://www.island.io/blog/agentbaiting-how-800-fake-ai-skills-and-mcp-servers-delivered-malware",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://socket.dev/blog/memtensor-compromise"
+      "url": "https://www.island.io/blog/agentbaiting-how-800-fake-ai-skills-and-mcp-servers-delivered-malware"
     },
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html",
+      "final_url": "https://www.bleepingcomputer.com/news/security/fakegit-campaign-uses-7-600-github-repos-to-push-smartloader-malware/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html"
+      "url": "https://www.bleepingcomputer.com/news/security/fakegit-campaign-uses-7-600-github-repos-to-push-smartloader-malware/"
     },
     {
       "error": "",
-      "final_url": "https://www.threatdown.com/blog/carbonato/",
+      "final_url": "https://thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.threatdown.com/blog/carbonato/"
+      "url": "https://thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html"
     },
     {
       "error": "",
-      "final_url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/",
+      "final_url": "https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
-    },
-    {
-      "error": "",
-      "final_url": "https://socket.dev/blog/mini-shai-hulud-actions",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://socket.dev/blog/mini-shai-hulud-actions"
-    },
-    {
-      "error": "",
-      "final_url": "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
-    },
-    {
-      "error": "",
-      "final_url": "https://blog.talosintelligence.com/introducing-cairn-frontier-tracking-for-ai-integrated-malware/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://blog.talosintelligence.com/introducing-cairn-frontier-tracking-for-ai-integrated-malware/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435"
+      "url": "https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/"
     }
   ],
   "validation_version": "1.0.0",

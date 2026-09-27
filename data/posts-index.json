@@ -1,6 +1,34 @@
 {
   "posts": [
     {
+      "id": "2026-09-27-island-agentbaiting-fakegit-smartloader",
+      "title": "AgentBaiting: FakeGit Repositories Pose as AI Skills and MCP Servers and Deliver SmartLoader",
+      "date": "2026-09-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Island published on 2026-07-20 that FakeGit had about 7,600 malicious GitHub repositories, more than 800 of them posing as AI Skills or MCP servers, and that Claude Code, Gemini, and ChatGPT surfaced campaign repositories from ordinary capability searches without being given a link. The ZIP files are SmartLoader packages that lead to StealC. BleepingComputer reported on 2026-07-21 that Island's download figure is 14,084,688 events across 335 Release assets in 211 repositories, including repeats and automation, not a count of infections. Block the repository paths and ZIP hashes below. Do not denylist github.com.",
+      "file": "2026-09-27-island-agentbaiting-fakegit-smartloader.md"
+    },
+    {
+      "id": "2026-09-27-unit42-cl-cri-nextchat-latam",
+      "title": "Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open",
+      "date": "2026-09-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "phishing",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.",
+      "file": "2026-09-27-unit42-cl-cri-nextchat-latam.md"
+    },
+    {
       "id": "2026-09-27-memtensor-sckit-npm-pypi",
       "title": "MemTensor OpenClaw Plugin and MemoryOS Launch the sckit Credential Stealer",
       "date": "2026-09-27",
