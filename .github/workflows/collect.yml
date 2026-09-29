@@ -1,18 +1,15 @@
 # ============================================================
 # LLM ThreatIntel — Automated Intelligence Collection
-# Option B: GitHub Actions + Claude API
+# GitHub Actions + DeepSeek on OpenRouter
 # Runs daily at 03:00 UTC (4:00 AM BST / UK summer)
 # ============================================================
 #
 # SETUP REQUIRED:
-# 1. Add ANTHROPIC_API_KEY as a repository secret
-#    Settings > Secrets and variables > Actions > New repository secret
+# 1. Add OPENROUTER_API_KEY as a repository secret.
+#    The previous ANTHROPIC_API_KEY secret is unused and kept for rollback.
 #
 # 2. Ensure GitHub Actions has write permissions
 #    Settings > Actions > General > Workflow permissions > Read and write
-#
-# NOTE: This is the GitHub Actions alternative to running Claude Code
-# locally via cron. Both approaches work. Choose one.
 # ============================================================
 
 name: Daily Intelligence Collection
@@ -51,11 +48,11 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install anthropic requests
+        run: pip install requests
 
       - name: Run collection script
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python scripts/collect.py
 
       - name: Run validation report

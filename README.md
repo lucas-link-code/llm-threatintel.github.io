@@ -241,7 +241,7 @@ UI theme work may edit `css/style.css`. Run the visual and interaction tests aft
 
 - Domain: `llm-threatintel.com` via Cloudflare. `CNAME` file contains that hostname.
 - GitHub Pages source: GitHub Actions, not branch deploy.
-- Secret for scheduled collection: `ANTHROPIC_API_KEY`.
+- Secret for scheduled collection: `OPENROUTER_API_KEY`. The old `ANTHROPIC_API_KEY` secret is unused and kept for rollback.
 - Actions needs read and write for collection commits.
 
 This repository is already live. Do not re-init git or create a second GitHub repo unless Lucas is forking the project.

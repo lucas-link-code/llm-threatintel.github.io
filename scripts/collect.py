@@ -2,7 +2,7 @@
 """
 LLM ThreatIntel — Automated Intelligence Collection Script
 
-Calls the Anthropic Claude API with web search to find new GenAI threat intelligence,
+Calls DeepSeek on OpenRouter, with Exa web search, to find new GenAI threat intelligence,
 then generates structured blog posts and updates IOC/actor databases.
 
 Usage:
@@ -10,8 +10,8 @@ Usage:
   python scripts/collect.py --dry-run        # Search and display results without writing files
   python scripts/collect.py --force          # Run even if a post already exists for today
 
-Requires: ANTHROPIC_API_KEY environment variable
-Install:  pip install anthropic
+Requires: OPENROUTER_API_KEY environment variable
+Install:  pip install requests
 """
 
 import os
@@ -23,24 +23,60 @@ import urllib.parse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-try:
-    import anthropic
-except ImportError:
-    print("ERROR: anthropic package not installed. Run: pip install anthropic")
-    sys.exit(1)
+import requests
 
 # ---- Configuration ----
 REPO_ROOT = Path(__file__).parent.parent
 DATA_DIR = REPO_ROOT / "data"
 POSTS_DIR = REPO_ROOT / "posts"
 LOGS_DIR = REPO_ROOT / "logs"
-MODEL = "claude-haiku-4-5-20251001"
+MODEL = "deepseek/deepseek-v4.1-flash"
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+MAX_OUTPUT_TOKENS = 16000
+PAGE_FETCH_TIMEOUT = 8
+CHAT_TIMEOUT = 180
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 DRY_RUN = "--dry-run" in sys.argv
 FORCE = "--force" in sys.argv
 
 # How far back to look for qualifying stories (wider than 7 days reduces empty runs).
 INTEL_LOOKBACK_DAYS = 14
+PUBLISHER_INCLUDE_DOMAINS = [
+    "socket.dev",
+    "unit42.paloaltonetworks.com",
+    "blog.talosintelligence.com",
+    "threatdown.com",
+    "www.threatdown.com",
+    "bleepingcomputer.com",
+    "www.bleepingcomputer.com",
+    "thehackernews.com",
+    "www.thehackernews.com",
+    "microsoft.com",
+    "www.microsoft.com",
+]
+PUBLISHER_HOSTS = {
+    "socket.dev",
+    "unit42.paloaltonetworks.com",
+    "blog.talosintelligence.com",
+    "threatdown.com",
+    "bleepingcomputer.com",
+    "thehackernews.com",
+}
+_MONTH_NAMES = [
+    "",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+]
 MITRE_POST_ROW_CAP = 2
 MIN_DUPLICATE_SENTENCE_CHARS = 40
 PROSE_COLLAPSE_FIELDS = (
@@ -324,30 +360,85 @@ def extract_collection_json(response_text, log=True):
     return None, None
 
 
-def extract_response_text(response):
-    """Concatenate text blocks from an Anthropic message, skipping tool blocks."""
-    response_text = ""
-    for block in response.content:
-        if hasattr(block, "text"):
-            response_text += block.text
-    return response_text
+class OpenRouterError(Exception):
+    def __init__(self, status, message):
+        self.status = status
+        self.message = message
+        super().__init__(f"OpenRouter HTTP {status}: {message}")
 
 
-def reformat_collection_json(client, prior_text):
-    """
-    One tool-less follow-up that asks the model to return only valid JSON
-    for the prior assistant text. Does not enable web_search.
-    """
+def web_plugin(include_domains=None):
+    plugin = {"id": "web", "engine": "exa", "max_results": 5}
+    if include_domains:
+        plugin["include_domains"] = list(include_domains)
+    return [plugin]
+
+
+def message_text(payload):
+    choices = payload.get("choices") or []
+    if not choices or not isinstance(choices[0], dict):
+        return "", None
+    choice = choices[0]
+    message = choice.get("message") or {}
+    content = message.get("content") or ""
+    if isinstance(content, list):
+        parts = []
+        for part in content:
+            if isinstance(part, dict):
+                parts.append(str(part.get("text") or part.get("content") or ""))
+            else:
+                parts.append(str(part))
+        content = "".join(parts)
+    return str(content), choice.get("finish_reason")
+
+
+def chat_completion(api_key, messages, plugins=None, max_tokens=MAX_OUTPUT_TOKENS):
+    """POST one chat completion. Retries once without json_object if that field is rejected."""
+
+    def post(use_json_format):
+        payload = {
+            "model": MODEL,
+            "messages": messages,
+            "max_tokens": max_tokens,
+        }
+        if plugins:
+            payload["plugins"] = plugins
+        if use_json_format:
+            payload["response_format"] = {"type": "json_object"}
+        headers = {
+            "Authorization": "Bearer " + api_key,
+            "Content-Type": "application/json",
+        }
+        return requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=CHAT_TIMEOUT)
+
+    response = post(True)
+    if response.status_code == 400:
+        print("OpenRouter rejected response_format. Retrying once without it.")
+        response = post(False)
+    if response.status_code >= 400:
+        raise OpenRouterError(response.status_code, response.text[:500])
+    try:
+        data = response.json()
+    except ValueError as exc:
+        raise OpenRouterError(response.status_code, f"response was not JSON: {exc}") from exc
+    content, finish = message_text(data)
+    return content, finish, data.get("usage") or {}
+
+
+def reformat_collection_json(api_key, prior_text):
+    """One follow-up with no web plugin that asks for valid JSON only."""
     truncated = prior_text if len(prior_text) <= 120000 else prior_text[:120000]
-    follow_up = client.messages.create(
-        model=MODEL,
-        max_tokens=16000,
-        system=(
-            "You repair threat intelligence JSON. Return only a single valid JSON object. "
-            "No prose, no markdown fences, no reasoning. Preserve status as new_intel or "
-            "no_new_intel and keep existing findings and URLs unchanged."
-        ),
-        messages=[
+    content, finish, _usage = chat_completion(
+        api_key,
+        [
+            {
+                "role": "system",
+                "content": (
+                    "You repair threat intelligence JSON. Return only a single valid JSON object. "
+                    "No prose, no markdown fences, no reasoning. Preserve status as new_intel or "
+                    "no_new_intel and keep existing findings and URLs unchanged."
+                ),
+            },
             {
                 "role": "user",
                 "content": (
@@ -355,10 +446,197 @@ def reformat_collection_json(client, prior_text):
                     "Return only the corrected JSON object with status new_intel or no_new_intel.\n\n"
                     f"{truncated}"
                 ),
-            }
+            },
         ],
+        plugins=None,
     )
-    return extract_response_text(follow_up)
+    if finish == "length":
+        raise OpenRouterError(200, "reformat response truncated")
+    return content
+
+
+def window_bounds(today_str=None):
+    today = datetime.strptime(today_str or TODAY, "%Y-%m-%d").date()
+    start = today - timedelta(days=INTEL_LOOKBACK_DAYS)
+    return start, today
+
+
+def parse_iso_date(value):
+    if not isinstance(value, str):
+        return None
+    try:
+        return datetime.strptime(value.strip(), "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def date_in_window(day, today):
+    start, end = window_bounds(today.isoformat())
+    return start <= day <= end
+
+
+def _host_without_www(netloc):
+    host = (netloc or "").lower().split("@")[-1].split(":")[0]
+    if host.startswith("www."):
+        host = host[4:]
+    return host
+
+
+def url_on_publisher_allowlist(url):
+    if not isinstance(url, str) or not url.strip():
+        return False
+    parsed = urllib.parse.urlparse(url if "://" in url else "https://" + url)
+    if parsed.scheme not in {"http", "https", ""}:
+        return False
+    host = _host_without_www(parsed.netloc)
+    if not host:
+        return False
+    if host == "microsoft.com" or host.endswith(".microsoft.com"):
+        return "/security/blog" in (parsed.path or "").lower()
+    if host in PUBLISHER_HOSTS:
+        return True
+    return any(host.endswith("." + allowed) for allowed in PUBLISHER_HOSTS)
+
+
+def coverage_needle(url):
+    parsed = urllib.parse.urlparse(url if "://" in url else "https://" + url)
+    host = _host_without_www(parsed.netloc)
+    path = (parsed.path or "").rstrip("/")
+    if not host or not path or path == "/":
+        return ""
+    return f"{host}{path}".lower()
+
+
+def url_already_covered(url, corpus):
+    needle = coverage_needle(url)
+    if not needle:
+        return False
+    return needle in (corpus or "").lower()
+
+
+def page_confirms_date(body, day):
+    if not isinstance(body, str) or not body:
+        return False
+    text = body.lower()
+    if day.isoformat() in text:
+        return True
+    month = _MONTH_NAMES[day.month].lower()
+    abbr = month[:3]
+    year = str(day.year)
+    candidates = []
+    for day_text in {str(day.day), f"{day.day:02d}"}:
+        candidates.extend([
+            f"{month} {day_text}, {year}",
+            f"{month} {day_text} {year}",
+            f"{abbr} {day_text}, {year}",
+            f"{abbr} {day_text} {year}",
+            f"{day_text} {month} {year}",
+            f"{day_text} {month}, {year}",
+            f"{day_text} {abbr} {year}",
+        ])
+    return any(candidate in text for candidate in candidates)
+
+
+def fetch_publisher_page(url):
+    try:
+        response = requests.get(
+            url,
+            timeout=PAGE_FETCH_TIMEOUT,
+            headers={"User-Agent": "LLM-ThreatIntel-Collector/1.0"},
+            allow_redirects=True,
+        )
+    except requests.RequestException:
+        return None
+    if response.status_code >= 400:
+        return None
+    return response.text[:200000]
+
+
+def load_coverage_corpus():
+    parts = []
+    index_path = DATA_DIR / "posts-index.json"
+    if index_path.exists():
+        parts.append(index_path.read_text(errors="replace"))
+    if POSTS_DIR.exists():
+        for path in sorted(POSTS_DIR.glob("*.md")):
+            parts.append(path.read_text(errors="replace"))
+    return "\n".join(parts)
+
+
+def evaluate_publisher_checks(checks, *, today, corpus, fetch):
+    """Accept no_new_intel only when every verified in-window publisher URL is already covered."""
+    if not isinstance(checks, list):
+        checks = []
+    verified = []
+    for check in checks:
+        if not isinstance(check, dict):
+            continue
+        url = str(check.get("url") or "").strip()
+        if not url_on_publisher_allowlist(url):
+            continue
+        day = parse_iso_date(check.get("published"))
+        if day is None or not date_in_window(day, today):
+            continue
+        body = fetch(url)
+        if not body or not page_confirms_date(body, day):
+            continue
+        verified.append((url, url_already_covered(url, corpus)))
+    if not verified:
+        return {
+            "accept": False,
+            "uncovered": [],
+            "verified": [],
+            "reason": "no publisher URL was on the allowlist, inside the window, and confirmed on the page",
+        }
+    uncovered = [url for url, covered in verified if not covered]
+    if uncovered:
+        return {
+            "accept": False,
+            "uncovered": uncovered,
+            "verified": [url for url, _covered in verified],
+            "reason": "in-window publisher URL is not already covered",
+        }
+    return {
+        "accept": True,
+        "uncovered": [],
+        "verified": [url for url, _covered in verified],
+        "reason": "verified publisher URLs are already covered",
+    }
+
+
+def build_publisher_proof_prompt():
+    existing_context = get_existing_context()
+    _start, end = window_bounds()
+    start = end - timedelta(days=INTEL_LOOKBACK_DAYS)
+    window_label = f"{start.isoformat()} through {end.isoformat()}"
+    domains = ", ".join(PUBLISHER_INCLUDE_DOMAINS)
+    return f"""Publisher proof pass. Window: {window_label}. Today UTC: {TODAY}.
+
+Search only these publisher sites: {domains}.
+A qualifying story is a first party GenAI, LLM, MCP, or AI supply chain report whose publication date is inside the window and whose URL is not on the Already Covered list.
+
+If you find one, return status new_intel and at most 3 findings. Each finding needs title, slug, tags, tlp, confidence, executive_summary, campaign_summary, detailed_findings, mitre_attack, iocs, actors, detection_recommendations, and references with real https URLs.
+If every in-window article from these publishers is already covered, return status no_new_intel. publisher_checks must name at least one of those covered articles with its real https URL and published date as YYYY-MM-DD.
+Do not use a landscape recap as proof. Do not invent URLs.
+
+{existing_context}
+
+Return one JSON object:
+{{
+  "status": "no_new_intel",
+  "collection_date": "{TODAY}",
+  "search_summary": "What you opened",
+  "publisher_checks": [{{"url": "https://publisher.example/article", "published": "YYYY-MM-DD", "title": "Title"}}],
+  "findings": []
+}}
+"""
+
+
+def has_actionable_findings(result):
+    if not isinstance(result, dict) or result.get("status") != "new_intel":
+        return False
+    findings = result.get("findings")
+    return isinstance(findings, list) and len(findings) > 0
 
 
 def filter_tags(tags):
@@ -1209,102 +1487,128 @@ def update_iocs(finding):
         print(f"  No new IOCs to add" + (f" ({skipped} skipped as malformed)" if skipped else ""))
 
 
+COLLECTION_SYSTEM = (
+    "You are a threat intelligence JSON API. After completing web searches, "
+    "your entire text response must be a single valid JSON object. Never include "
+    "reasoning, prose, analysis, markdown, or any text outside the JSON structure."
+)
+
+
+def call_and_parse(api_key, user_prompt, plugins, log_stem):
+    print(f"\nPrompt length: {len(user_prompt)} chars")
+    try:
+        content, finish, usage = chat_completion(
+            api_key,
+            [
+                {"role": "system", "content": COLLECTION_SYSTEM},
+                {"role": "user", "content": user_prompt},
+            ],
+            plugins=plugins,
+        )
+    except OpenRouterError as exc:
+        print(f"ERROR: {exc}")
+        sys.exit(1)
+    except requests.RequestException as exc:
+        print(f"ERROR: OpenRouter request failed: {exc}")
+        sys.exit(1)
+
+    print(f"finish_reason: {finish}")
+    print(
+        "usage: "
+        f"prompt_tokens={usage.get('prompt_tokens')} "
+        f"completion_tokens={usage.get('completion_tokens')}"
+    )
+    log_path = LOGS_DIR / f"{TODAY}-{log_stem}.txt"
+    log_path.write_text(content)
+    print(f"Raw response logged to: {log_path}")
+
+    if finish == "length":
+        print("ERROR: Model response truncated (finish_reason=length). Refusing partial JSON.")
+        print(f"First 500 chars of response:\n{content[:500]}")
+        sys.exit(1)
+    if not content.strip():
+        print("ERROR: Empty model response.")
+        sys.exit(1)
+
+    result, parse_path = extract_collection_json(content)
+    if result is None:
+        print("WARNING: Initial JSON parse failed. Attempting one JSON reformat retry...")
+        try:
+            reformatted = reformat_collection_json(api_key, content)
+        except OpenRouterError as exc:
+            print(f"ERROR: {exc}")
+            sys.exit(1)
+        except requests.RequestException as exc:
+            print(f"ERROR: OpenRouter request failed during JSON reformat: {exc}")
+            sys.exit(1)
+        retry_log = LOGS_DIR / f"{TODAY}-{log_stem}-reformat.txt"
+        retry_log.write_text(reformatted)
+        print(f"Reformat response logged to: {retry_log}")
+        result, parse_path = extract_collection_json(reformatted)
+        if result is not None:
+            print(f"Recovered collection JSON via reformat retry ({parse_path})")
+
+    if result is None:
+        print("ERROR: Failed to parse API response as JSON")
+        print(f"First 500 chars of response:\n{content[:500]}")
+        print("Could not recover JSON. Exiting.")
+        sys.exit(1)
+    print(f"Search summary: {result.get('search_summary', 'N/A')}")
+    return result
+
+
+def enforce_no_new_intel(result):
+    decision = evaluate_publisher_checks(
+        result.get("publisher_checks") or [],
+        today=datetime.strptime(TODAY, "%Y-%m-%d").date(),
+        corpus=load_coverage_corpus(),
+        fetch=fetch_publisher_page,
+    )
+    if decision["accept"]:
+        print(f"\nLLM ThreatIntel — No new intelligence found for {TODAY}")
+        print(f"Publisher proof: {decision['reason']}")
+        for url in decision["verified"]:
+            print(f"  covered: {url}")
+        sys.exit(0)
+    print("ERROR: Refusing no_new_intel without a covered in-window publisher URL.")
+    print(decision["reason"])
+    for url in decision["uncovered"]:
+        print(f"  uncovered: {url}")
+    sys.exit(1)
+
+
 # ---- Main ----
 def main():
     print(f"{'='*60}")
     print(f"LLM ThreatIntel — Collection Run: {TODAY}")
+    print(f"Model: {MODEL}")
     print(f"Mode: {'DRY RUN' if DRY_RUN else 'LIVE'}")
     print(f"{'='*60}")
 
-    # Ensure directories exist
     POSTS_DIR.mkdir(exist_ok=True)
     LOGS_DIR.mkdir(exist_ok=True)
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY environment variable not set")
+        print("ERROR: OPENROUTER_API_KEY environment variable not set")
         sys.exit(1)
 
-    client = anthropic.Anthropic(api_key=api_key)
-    prompt = build_prompt()
-
-    print(f"\nPrompt length: {len(prompt)} chars")
     print("Searching for new GenAI threat intelligence...\n")
+    result = call_and_parse(api_key, build_prompt(), web_plugin(), "raw-response")
 
-    try:
-        with client.messages.stream(
-            model=MODEL,
-            max_tokens=16000,
-            system="You are a threat intelligence JSON API. After completing web searches, your entire text response must be a single valid JSON object. Never include reasoning, prose, analysis, markdown, or any text outside the JSON structure.",
-            tools=[{"type": "web_search_20260209", "name": "web_search", "allowed_callers": ["direct"]}],
-            messages=[{"role": "user", "content": prompt}]
-        ) as stream:
-            response = stream.get_final_message()
-    except anthropic.APIError as e:
-        print(f"ERROR: Anthropic API error: {e}")
-        sys.exit(1)
-    except Exception as e:
-        print(f"ERROR: Unexpected error: {e}")
-        sys.exit(1)
-
-    stop_reason = getattr(response, "stop_reason", None)
-    usage = getattr(response, "usage", None)
-    print(f"stop_reason: {stop_reason}")
-    if usage is not None:
-        input_tokens = getattr(usage, "input_tokens", None)
-        output_tokens = getattr(usage, "output_tokens", None)
-        print(f"usage: input_tokens={input_tokens} output_tokens={output_tokens}")
-
-    # Extract text response (skip tool_use blocks)
-    response_text = extract_response_text(response)
-
-    # Log raw response for debugging (before parse / truncation checks)
-    log_path = LOGS_DIR / f"{TODAY}-raw-response.txt"
-    log_path.write_text(response_text)
-    print(f"Raw response logged to: {log_path}")
-
-    if stop_reason == "max_tokens":
-        print("ERROR: Model response truncated (stop_reason=max_tokens). Refusing partial JSON.")
-        print(f"First 500 chars of response:\n{response_text[:500]}")
-        sys.exit(1)
-
-    if not response_text.strip():
-        print("WARNING: No text response received. The model may have only returned tool calls.")
-        print(f"Response content types: {[b.type for b in response.content]}")
-        print("This may require a follow-up API call. Exiting.")
-        sys.exit(0)
-
-    result, parse_path = extract_collection_json(response_text)
-
-    if result is None:
-        print("WARNING: Initial JSON parse failed. Attempting one tool-less JSON reformat retry...")
-        try:
-            reformatted = reformat_collection_json(client, response_text)
-            retry_log = LOGS_DIR / f"{TODAY}-raw-response-reformat.txt"
-            retry_log.write_text(reformatted)
-            print(f"Reformat response logged to: {retry_log}")
-            result, parse_path = extract_collection_json(reformatted)
-            if result is not None:
-                print(f"Recovered collection JSON via reformat retry ({parse_path})")
-        except anthropic.APIError as e:
-            print(f"ERROR: Anthropic API error during JSON reformat retry: {e}")
-            sys.exit(1)
-        except Exception as e:
-            print(f"ERROR: Unexpected error during JSON reformat retry: {e}")
-            sys.exit(1)
-
-    if result is None:
-        print(f"ERROR: Failed to parse API response as JSON")
-        print(f"First 500 chars of response:\n{response_text[:500]}")
-        print("Could not recover JSON. Exiting.")
-        sys.exit(1)
-
-    # Handle results
-    print(f"\nSearch summary: {result.get('search_summary', 'N/A')}")
-
-    if result.get('status') == 'no_new_intel':
-        print(f"\nLLM ThreatIntel — No new intelligence found for {TODAY}")
-        sys.exit(0)
+    if not has_actionable_findings(result):
+        print("First pass has no findings. Running publisher proof pass.")
+        result = call_and_parse(
+            api_key,
+            build_publisher_proof_prompt(),
+            web_plugin(PUBLISHER_INCLUDE_DOMAINS),
+            "raw-response-publisher",
+        )
+        if not has_actionable_findings(result):
+            if result.get("status") != "no_new_intel":
+                print("ERROR: Publisher pass returned no findings and no no_new_intel status.")
+                sys.exit(1)
+            enforce_no_new_intel(result)
 
     findings = result.get('findings', [])
     if not findings:

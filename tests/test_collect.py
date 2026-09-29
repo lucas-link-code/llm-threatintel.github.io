@@ -3,6 +3,7 @@ import json
 import sys
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
 from unittest import mock
 
@@ -627,7 +628,7 @@ class CollectPromptTests(unittest.TestCase):
         prompt = collect.build_prompt()
         end = datetime.strptime(collect.TODAY, "%Y-%m-%d")
         start = (end - timedelta(days=collect.INTEL_LOOKBACK_DAYS)).strftime("%Y-%m-%d")
-        self.assertEqual(collect.MODEL, "claude-haiku-4-5-20251001")
+        self.assertEqual(collect.MODEL, "deepseek/deepseek-v4.1-flash")
         self.assertIn(start, prompt)
         self.assertIn(collect.TODAY, prompt)
         self.assertIn("site:socket.dev", prompt)
@@ -636,6 +637,71 @@ class CollectPromptTests(unittest.TestCase):
         self.assertIn("Max 3", prompt)
         self.assertNotIn("posts/ directory", prompt)
         self.assertNotIn("existing posts/", prompt)
+
+
+class PublisherProofGateTests(unittest.TestCase):
+    def test_accepts_covered_in_window_url(self):
+        today = datetime(2026, 9, 29).date()
+        url = "https://thehackernews.com/2026/09/mcp-sdk-oauth.html"
+        decision = collect.evaluate_publisher_checks(
+            [{"url": url, "published": "2026-09-28"}],
+            today=today,
+            corpus=f"already posted {url}",
+            fetch=lambda _url: "Published September 28, 2026",
+        )
+        self.assertTrue(decision["accept"])
+        self.assertEqual(decision["uncovered"], [])
+        self.assertIn(url, decision["verified"])
+
+    def test_rejects_out_of_window_date(self):
+        today = datetime(2026, 9, 29).date()
+
+        def fetch(_url):
+            raise AssertionError("out of window URL must not be fetched")
+
+        decision = collect.evaluate_publisher_checks(
+            [{"url": "https://socket.dev/blog/old-report", "published": "2026-01-02"}],
+            today=today,
+            corpus="",
+            fetch=fetch,
+        )
+        self.assertFalse(decision["accept"])
+        self.assertEqual(decision["uncovered"], [])
+
+    def test_rejects_non_allowlist_host(self):
+        today = datetime(2026, 9, 29).date()
+
+        def fetch(_url):
+            raise AssertionError("non allowlist URL must not be fetched")
+
+        decision = collect.evaluate_publisher_checks(
+            [{"url": "https://example.com/2026/09/story", "published": "2026-09-28"}],
+            today=today,
+            corpus="",
+            fetch=fetch,
+        )
+        self.assertFalse(decision["accept"])
+        self.assertEqual(decision["uncovered"], [])
+
+    def test_rejects_no_new_intel_when_uncovered_url_verifies(self):
+        today = datetime(2026, 9, 29).date()
+        url = "https://www.bleepingcomputer.com/news/security/mcp-sdk-oauth/"
+        decision = collect.evaluate_publisher_checks(
+            [{"url": url, "published": "2026-09-28", "already_covered": True}],
+            today=today,
+            corpus="no matching article",
+            fetch=lambda _url: "Updated 2026-09-28",
+        )
+        self.assertFalse(decision["accept"])
+        self.assertIn(url, decision["uncovered"])
+
+    def test_microsoft_url_must_be_security_blog(self):
+        self.assertFalse(collect.url_on_publisher_allowlist("https://microsoft.com/en-us/security"))
+        self.assertTrue(
+            collect.url_on_publisher_allowlist(
+                "https://www.microsoft.com/en-us/security/blog/2026/09/28/mcp-oauth"
+            )
+        )
 
 
 if __name__ == "__main__":
