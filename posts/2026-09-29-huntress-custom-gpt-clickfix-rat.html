@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading | LLM ThreatIntel</title>
+  <meta name="description" content="Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading">
+  <meta property="og:description" content="Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading">
+  <meta property="article:published_time" content="2026-09-29T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-29T00:00:00Z">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading">
+  <meta name="twitter:description" content="Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading",
+  "description": "Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.",
+  "datePublished": "2026-09-29T00:00:00Z",
+  "dateModified": "2026-09-29T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html",
+  "keywords": [
+    "phishing",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-29</span>
+      <span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading</h1>
+<p><strong>Date:</strong> 2026-09-29<br><strong>Tags:</strong> phishing, malware</p>
+<h2>Executive Summary</h2>
+<p>Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Custom GPT ClickFix RAT</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: none)</td></tr><tr><td>Target</td><td>ChatGPT users seeking legitimate product downloads</td></tr><tr><td>Vector</td><td>Attacker controlled Custom GPT responses linking to a Google Sites ClickFix lure that runs PowerShell and a malicious MSI</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09-25</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Huntress, the campaign started in late September 2026 and used attacker created Custom GPTs hosted on the legitimate ChatGPT.com site to impersonate legitimate product offerings. The Custom GPT replied to victim prompts with a Google Sites link that led to a ClickFix style lure, tricking victims into running PowerShell that downloaded and executed a malicious MSI installer. Huntress reported that the installer deployed a legitimate Canon signed application, COTFileReadApp.exe, which attackers abused to sideload a malicious DLL and evade detection, with a later wave using a Stardock signed executable for the same purpose. Huntress said the payload established resilient access through dual persistence and DLL sideloading. The Huntress SOC responded to at least 40 incidents tied to the specific Google Sites domain, and the team confirmed that two of those incidents came through a Custom GPT instance. Huntress reported the Custom GPT to OpenAI, which took it down as of September 25, and on September 27 Huntress discovered a new Custom GPT linked to the same campaign.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>Victims ran PowerShell and a malicious MSI after following the Custom GPT delivered ClickFix lure</td></tr><tr><td>DLL Side-Loading</td><td>T1574.002</td><td>Canon and Stardock signed executables loaded attacker DLLs to evade detection</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No machine actionable IOCs published in the article excerpt; the specific Google Sites domain and file hashes were not disclosed._</p>
+<h3>Full URL Paths</h3>
+<p>_No machine actionable IOCs published in the article excerpt; the specific Google Sites domain and file hashes were not disclosed._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Alert on PowerShell command lines that fetch a remote MSI from a Google Sites URL and then spawn msiexec. Monitor for legitimate Canon or Stardock signed executables, including COTFileReadApp.exe, loading unsigned DLLs from user writable paths. Review enterprise policy for Custom GPT and generative AI chat usage, and restrict outbound access to unknown Google Sites pages that deliver installers.</p>
+<h2>References</h2>
+<ul><li>[Huntress] Attackers Abuse ChatGPT Custom GPTs to Deliver RAT via ClickFix (2026-09-27) — https://www.huntress.com/blog/chatgpt-custom-gpts-clickfix-rat</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

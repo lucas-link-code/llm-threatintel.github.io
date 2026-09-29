@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "2026-09-29-huntress-custom-gpt-clickfix-rat",
+      "title": "Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading",
+      "date": "2026-09-29",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.",
+      "file": "2026-09-29-huntress-custom-gpt-clickfix-rat.md"
+    },
+    {
+      "id": "2026-09-29-darktrace-conversation-history-poisoning-agent-hijack",
+      "title": "Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers",
+      "date": "2026-09-29",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.",
+      "file": "2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.md"
+    },
+    {
       "id": "2026-09-27-island-agentbaiting-fakegit-smartloader",
       "title": "AgentBaiting: FakeGit Repositories Pose as AI Skills and MCP Servers and Deliver SmartLoader",
       "date": "2026-09-27",

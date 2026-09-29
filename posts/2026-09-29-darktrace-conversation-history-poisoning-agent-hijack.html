@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers | LLM ThreatIntel</title>
+  <meta name="description" content="Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers">
+  <meta property="og:description" content="Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers">
+  <meta property="article:published_time" content="2026-09-29T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-29T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers">
+  <meta name="twitter:description" content="Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers",
+  "description": "Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.",
+  "datePublished": "2026-09-29T00:00:00Z",
+  "dateModified": "2026-09-29T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.html",
+  "keywords": [
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-29</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers</h1>
+<p><strong>Date:</strong> 2026-09-29<br><strong>Tags:</strong> prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Agent Harness Conversation History Poisoning</td></tr><tr><td>Attribution</td><td>Unattributed research finding (confidence: none)</td></tr><tr><td>Target</td><td>Organizations running agentic AI coding harnesses</td></tr><tr><td>Vector</td><td>Manipulation of locally stored conversation history</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09-17</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Darktrace researchers reported that agentic harnesses store conversation history locally and perform no validation that stored AI responses were genuinely produced by the model. According to Darktrace, this design choice holds across Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi. By rewriting stored history so the agent believed it was mid engagement as an authorized red teamer, the researchers drove it from initial reconnaissance through to impact demonstration. Darktrace said all models examined accepted the fabricated history it was shown, though resistance to offensive cyber activity varied by model and guardrails blocked engagement in some cases. Darktrace disclosed the findings to Anthropic, OpenAI, and AWS on 18 August 2026 and published after a 30 day period. The researchers propose that model providers cryptographically sign responses and verify them server side, a fix defenders cannot deploy themselves, and recommend behavioral monitoring that detects when an agent deviates from its normal behavior. Darktrace noted conversation history poisoning has been described previously, including by 0DIN and Serhat Cicek.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Stored Data Manipulation</td><td>T1565.001</td><td>Attackers rewrite locally stored agent conversation history so the model believes a fabricated session state</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published; Darktrace published a technique demonstration, not a campaign with infrastructure._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published; Darktrace published a technique demonstration, not a campaign with infrastructure._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Anthropic Claude Code
+OpenAI Codex
+AWS Kiro-CLI
+Pi</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Treat locally stored agent conversation history as untrusted input and restrict agent write access to session files. Baseline what each agent normally does and alert on deviation, especially transitions into offensive tooling or credential access. Monitor session history files for unauthorized modification and compare stored assistant responses against provider side logs where available. Because response signing and server side verification are required to fully close this gap, raise the finding with model providers rather than relying on endpoint controls alone.</p>
+<h2>References</h2>
+<ul><li>[Darktrace] Agent Hijacks: How Conversation History Poisoning Can Turn AI Agents Into Attackers (2026-09-17) — https://www.darktrace.com/blog/hijacking-agentic-harnesses-to-attack-an-organization</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

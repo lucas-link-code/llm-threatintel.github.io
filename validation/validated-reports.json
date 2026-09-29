@@ -5197,6 +5197,36 @@
       "validated_at": "2026-09-27T21:54:28+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-29-darktrace-conversation-history-poisoning-agent-hijack": {
+      "content_hash": "b2f86f21ff4f13f35dc668c171909a3d0c412e35b1f6cfef934a2a7a3a20e814",
+      "evidence_status": "validated",
+      "file": "2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.md",
+      "posts_index_hash": "63ebf89e85456e5e626c4b52faf556f09e6617ef56628a85c6857ab528d7383d",
+      "report_id": "2026-09-29-darktrace-conversation-history-poisoning-agent-hijack",
+      "review_required": [],
+      "source_urls": [
+        "https://www.darktrace.com/blog/hijacking-agentic-harnesses-to-attack-an-organization"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-29T13:18:19+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-29-huntress-custom-gpt-clickfix-rat": {
+      "content_hash": "1ae7731b615e24c8f999dc849b3a979ce4887f4fe41a3258a74dfcb6ee433654",
+      "evidence_status": "validated",
+      "file": "2026-09-29-huntress-custom-gpt-clickfix-rat.md",
+      "posts_index_hash": "8b35d1dcc1303e276465b32a8b5b2a6f9883eac835eed2561a8d353923c02ad6",
+      "report_id": "2026-09-29-huntress-custom-gpt-clickfix-rat",
+      "review_required": [],
+      "source_urls": [
+        "https://www.huntress.com/blog/chatgpt-custom-gpts-clickfix-rat"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-29T13:18:19+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 27 Sep 2026 21:54:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 13:18:17 +0000</lastBuildDate>
     <item>
+      <title>Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading</title>
+      <link>https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html</guid>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Huntress found attacker created ChatGPT Custom GPTs impersonating legitimate products and pushing victims to a Google Sites ClickFix lure that installed a remote access trojan. The chain ran PowerShell to fetch a malicious MSI, then abused a Canon signed binary, COTFileReadApp.exe, for DLL sideloading with dual persistence to establish resilient access. Huntress responded to at least 40 related incidents and confirmed two Custom GPT driven infections; OpenAI removed one Custom GPT on September 25 and a replacement appeared on September 27.</description>
+    </item>    <item>
+      <title>Darktrace: Conversation History Poisoning Turns Agentic Harnesses Into Attackers</title>
+      <link>https://llm-threatintel.com/posts/2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-29-darktrace-conversation-history-poisoning-agent-hijack.html</guid>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Darktrace researchers showed that conversation history poisoning can turn Anthropic Claude Code, AWS Kiro-CLI, OpenAI Codex, and the open source Pi harnesses into autonomous attackers. Because harnesses store conversation history locally without verifying that responses came from the model, a rewritten history convinced a frontier model it was an authorized red teamer and drove it from reconnaissance to impact demonstration. Defenders should treat stored agent history as untrusted input and add behavioral monitoring, while the full fix requires providers to sign and verify responses server side.</description>
+    </item>    <item>
       <title>AgentBaiting: FakeGit Repositories Pose as AI Skills and MCP Servers and Deliver SmartLoader</title>
       <link>https://llm-threatintel.com/posts/2026-09-27-island-agentbaiting-fakegit-smartloader.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-27-island-agentbaiting-fakegit-smartloader.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-18-pypi-openaii-ollamaa-langgrap-transfomers-pth.html</guid>
       <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
       <description>GitHub Advisory Database reviewed four PyPI malware advisories on 2026-09-11 for openaii 1.55.3, ollamaa 0.4.2, langgrap 0.2.45, and transfomers 4.44.2, grouped as campaign 2026-09-openaii. Each wheel drops a .pth file that Python executes on every interpreter start, then XOR 0x5A plus base64 payload fetches lurves-agent.py from 167.86.108.190:7788 or, in Amazon Inspector notes on transfomers, 16.78.16.190:7788. Hunt those package names, /tmp/.lurves-planted, and the two IPs. Rebuild any environment that installed them and rotate SSH, cloud, and registry credentials.</description>
-    </item>    <item>
-      <title>Microsoft: More Than One Million CEO Impersonation Emails Used AI Consistent Invoice Templates for 50,000 Dollar ACH Fraud</title>
-      <link>https://llm-threatintel.com/posts/2026-09-18-microsoft-ai-assisted-servicenow-invoice-bec.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-18-microsoft-ai-assisted-servicenow-invoice-bec.html</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft Security Research published on 2026-09-10 that more than one million invoice fraud emails ran from 2026-08-03 to 2026-08-05, 87.7 percent to United States mailboxes, impersonating target CEOs and a fake ServiceNow annual subscription for an ACH payment of nearly 50,000 dollars. HTML comments, uniform section labels, em dashes, and banner lines were consistent with generative AI template work. Microsoft did not prove how much of each lure a model wrote. Hunt service-nowinc.com and domainlify.net. Do not treat ServiceNow as compromised.</description>
-    </item>    <item>
-      <title>CISA NSA FBI: DeepSeek, Moonshot, Alibaba, MiniMax, StepFun, and Z.AI Ran Industrial Scale Distillation Against US Frontier Models</title>
-      <link>https://llm-threatintel.com/posts/2026-09-18-cisa-prc-ai-industrial-scale-distillation.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-18-cisa-prc-ai-industrial-scale-distillation.html</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-      <description>CISA, NSA, and FBI published joint advisory AA26-251A on 2026-09-08 stating that DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens from US frontier models including Claude, GPT, Gemini, and Grok variants since at least late 2024, likely with PRC government awareness. Pathways include native APIs, cloud relays, aggregators, and transfer station proxies that break geo restrictions. MiniMax used prompt injection to make Claude Code treat itself as a MiniMax product. US providers should hunt subscription to usage anomalies and shared premium seats. No domain, IP, or hash was published.</description>
     </item>
   </channel>
 </rss>
