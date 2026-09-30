@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs | LLM ThreatIntel</title>
+  <meta name="description" content="Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-30-closedquorum-autonomous-ai-c2-implant.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs">
+  <meta property="og:description" content="Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-30-closedquorum-autonomous-ai-c2-implant.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs">
+  <meta property="article:published_time" content="2026-09-30T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-30T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs">
+  <meta name="twitter:description" content="Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs",
+  "description": "Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.",
+  "datePublished": "2026-09-30T00:00:00Z",
+  "dateModified": "2026-09-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-30-closedquorum-autonomous-ai-c2-implant.html",
+  "keywords": [
+    "malicious-tool",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-30</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs</h1>
+<p><strong>Date:</strong> 2026-09-30<br><strong>Tags:</strong> malicious-tool, malware</p>
+<h2>Executive Summary</h2>
+<p>Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>CLOSEDQUORUM</td></tr><tr><td>Attribution</td><td>Unknown, possibly a single developer connected to 2025 carding forum postings (confidence: low)</td></tr><tr><td>Target</td><td>Windows users, with credential, browser password, and cryptocurrency wallet theft as the objective</td></tr><tr><td>Vector</td><td>Operator configured Windows implant distributed independently by the operator, with LLM API keys and a Discord webhook injected at compile time</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-17</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Cisco Talos, CLOSEDQUORUM is the first publicly documented Windows implant to apply an autonomous model to tactical command and control. After deployment it queries up to four LLM providers in sequence, tallies their independent verdicts, and executes the winning decision, which the implant represents as one of inject, persist, steal, or move. Talos reported the quorum is DeepSeek, Qwen, Mistral, and Google Gemini, with plurality voting implemented in a function named main.interModelDiscussion and a decision schema embedded as decision: inject, persist, steal, or move. The binary contains the hardcoded system prompt instructing the model to act as an advanced malware strategist and provide only executable decisions. The behavior set includes main.lsassDump for LSASS credential extraction, main.dumpBrowserCredentials targeting Chrome, Edge, and Firefox saved passwords, and main.extractCryptoWallets hitting MetaMask, Exodus, and Ethereum wallet paths, plus main.earlyBirdInject and a process hollowing path. Talos said stolen credentials are exfiltrated to the operator&#x27;s Discord channel with AES 256 GCM using a daily rotating key derived from the message timestamp, which Talos noted is obfuscation rather than true separation between developer and operator. The publicly observed distribution build is an inert template with dummy_api_key and a dummy webhook URL, so Talos did not observe a complete end to end execution, though development builds demonstrated build time injection of provider credentials. Talos assessed this as a credentials as a service model whose differentiator is the autonomous LLM orchestration layer, and stated it has no confirmation of in the wild deployment. Talos renamed the binary from BALZAK on 2026-07-03 and published detection rule art with VT SHA256 250d4fa37488af9b025333fa17705573d721467b203765bc360890b4f5a90cd7 and static analysis dated 2026-06-17.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Application Layer Protocol: Web Protocols</td><td>T1071.001</td><td>The implant replaces a traditional command and control endpoint with HTTPS calls to commercial LLM provider APIs for tasking decisions</td></tr><tr><td>OS Credential Dumping: LSASS Memory</td><td>T1003.001</td><td>The main.lsassDump routine extracts Windows domain and local credentials from process memory</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">api.deepseek.com</code></pre>
+<h3>Full URL Paths</h3>
+<p>_Domains are the legitimate LLM provider and Discord API endpoints the implant calls, per the Talos detection rule, and are listed for correlation only, not as attacker owned infrastructure. The hash is the VirusTotal sample referenced by Talos._</p>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;api.deepseek.com&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">250d4fa37488af9b025333fa17705573d721467b203765bc360890b4f5a90cd7</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Hunt the correlated behavior set rather than any single indicator: an unexpected executable on a developer or user workstation making DNS lookups to DeepSeek, Qwen, OpenRouter, Mistral, Gemini, or Discord endpoints while also opening LSASS, browser credential stores, or wallet paths. Look for the hardcoded system prompt string and the gohno-final.exe build artifact with developer API key fields in Go build metadata. Detect process hollowing and early bird injection patterns accompanying those network calls, and monitor for WMI persistence at main.establishPersistence, which Talos noted has no handler in the distribution build. Apply the Talos CLOSEDQUORUM_LLM_Autonomous_Implant rule and use TLS inspection or egress control where policy permits to correlate LLM provider API use by non browser processes.</p>
+<h2>References</h2>
+<ul><li>[Cisco Talos] The Closed Quorum: Inside the first reported autonomous AI C2 implant (2026-09-22) — https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

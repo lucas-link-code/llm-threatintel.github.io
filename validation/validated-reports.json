@@ -5227,6 +5227,51 @@
       "validated_at": "2026-09-29T13:18:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-30-ai-coding-agents-internal-image-exposure-github": {
+      "content_hash": "2a65796fc1346cd5d9115185e74f4f0e0eba0e2561fdd69a4d11e82099ce70fd",
+      "evidence_status": "validated",
+      "file": "2026-09-30-ai-coding-agents-internal-image-exposure-github.md",
+      "posts_index_hash": "374139e130b50dfb62acd372101b38db2a6e9ac18c0e5141c1f9ddfc8320eab5",
+      "report_id": "2026-09-30-ai-coding-agents-internal-image-exposure-github",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/09/ai-coding-agents-exposed-13000-internal.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T13:46:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-closedquorum-autonomous-ai-c2-implant": {
+      "content_hash": "07798923b8c8cdcf49a3b97bfc8ad3b7f011480b4a51e61439ef5244319708b9",
+      "evidence_status": "validated",
+      "file": "2026-09-30-closedquorum-autonomous-ai-c2-implant.md",
+      "posts_index_hash": "d5c7a0eeae3b53f7ab5a8f03f2d6ffd3c0da90fdba0b9406f75b02b095182b55",
+      "report_id": "2026-09-30-closedquorum-autonomous-ai-c2-implant",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T13:46:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass": {
+      "content_hash": "108392a8c788f3a19e937e167da2181c04be6c072b0890202c059a4728993bb4",
+      "evidence_status": "validated",
+      "file": "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass.md",
+      "posts_index_hash": "e5a54bee75d040dc66353820155334e931e5337fe9b6c01a118691c19263f512",
+      "report_id": "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass",
+      "review_required": [],
+      "source_urls": [
+        "https://www.air.security/blog-posts/plugin4shell"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T13:46:38+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
