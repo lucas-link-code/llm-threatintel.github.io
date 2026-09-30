@@ -6858,15 +6858,6 @@
       "source": "Pillar Security",
       "campaign": "deadbugz-mcp-metadata-poisoning",
       "status": "active"
-    },
-    {
-      "value": "api.deepseek.com",
-      "type": "domain",
-      "context": "CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs",
-      "first_seen": "2026-09-30",
-      "source": "Cisco Talos",
-      "campaign": "closedquorum-autonomous-ai-c2-implant",
-      "status": "active"
     }
   ]
 }

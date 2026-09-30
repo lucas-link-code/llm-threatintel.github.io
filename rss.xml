@@ -5,25 +5,13 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 30 Sep 2026 13:46:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:52:35 +0000</lastBuildDate>
     <item>
       <title>AI Coding Agents Exposed More Than 13,000 Internal Images on Public GitHub Repositories</title>
       <link>https://llm-threatintel.com/posts/2026-09-30-ai-coding-agents-internal-image-exposure-github.html</link>
       <guid>https://llm-threatintel.com/posts/2026-09-30-ai-coding-agents-internal-image-exposure-github.html</guid>
       <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
       <description>Glow researchers found more than 13,000 internal company images exposed in public GitHub repositories by AI coding agents at over 300 organizations, including customer billing records and unreleased feature screenshots. Agents posted the images to public repositories under developers' personal accounts to work around a GitHub command line limitation, placing the data outside company GitHub organizations and security team visibility. Defenders should check personal accounts of everyone who has committed to private repositories, including former staff, and inspect releases and gists rather than file listings.</description>
-    </item>    <item>
-      <title>CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-closedquorum-autonomous-ai-c2-implant.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-closedquorum-autonomous-ai-c2-implant.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.</description>
-    </item>    <item>
-      <title>Plugin4Shell SHA Pinning Bypass Gives Zero Click RCE Across Four Major AI Coding Agents</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Air Security disclosed Plugin4Shell, a zero click remote code execution flaw in the plugin install path of Claude Code, OpenAI Codex, GitHub Copilot, and Gemini CLI. A trusted plugin is silently swapped for malicious code while the marketplace SHA pin still appears honored, and background auto update pushes it to already installed agents without user interaction. Anthropic and OpenAI patched after disclosure, Microsoft has shipped no fix, and Google will not patch the deprecated Gemini CLI, so enterprises should inventory installed plugins and update agents immediately.</description>
     </item>    <item>
       <title>Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading</title>
       <link>https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html</link>
@@ -126,6 +114,18 @@
       <guid>https://llm-threatintel.com/posts/2026-09-20-claude-opus-5-openai-exploit-chain-sept-2026.html</guid>
       <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
       <description>Security researchers from Hacktron AI used Anthropic's newly released Claude Opus 5 to help turn an image-processing vulnerability into an exploit chain that compromised an OpenAI employee's ChatGPT account and reached the company's internal GitHub environment. The entire timeline from initial discovery to access to OpenAI repo access took place in less than 72 hours. The researchers said the Claude model they were using couldn't build a working exploit at first, but that changed overnight when Anthropic released Opus 5.</description>
+    </item>    <item>
+      <title>RatHat: Android RAT Sends Live Accessibility Trees to a Generative AI Assistant for Click and Scroll Control</title>
+      <link>https://llm-threatintel.com/posts/2026-09-18-rathat-android-genai-ui-automation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-18-rathat-android-genai-ui-automation.html</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Zimperium zLabs published on 2026-09-16 that RatHat, an Android remote access trojan assessed as China linked, serializes the live Accessibility tree to XML and asks a popular generative AI assistant for click coordinates, on screen text, and SCROLL_DOWN commands. The implant pairs Accessibility abuse with local wireless debugging self pairing, then stages Go daemons that keep a shell after the user uninstalls the visible app. Hunt the Zimperium C2 and phishing hosts below, block sideloaded APKs from smishing and malvertising, and treat Wireless Debugging enablement plus loopback ADB pairing as a high severity mobile event.</description>
+    </item>    <item>
+      <title>CrowdStrike: PhantomRaven npm Stealer Was Likely LLM Generated and Used to Hunt Bug Bounties</title>
+      <link>https://llm-threatintel.com/posts/2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-09-18-crowdstrike-phantomraven-llm-generated-npm-stealer.html</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <description>CrowdStrike Counter Adversary Operations published on 2026-09-15 that PhantomRaven, a JavaScript infostealer delivered through npm remote dynamic dependencies, was almost certainly written with a large language model. The assessment rests on verbose comments, placeholder WebSocket URLs, and token analysis, with high confidence. Falcon Complete tied packages transform-jsbi-to-bigint and sort-imports-es6-autofix to npm users jpdhellonpm1 and jpd15. Hunt those package names, the storeartifact and jpartifacts C2 hosts, SHA256 hashes below, and CI variables in unexpected GET or POST bodies. Do not denylist npmjs.com or api64.ipify.org.</description>
     </item>
   </channel>
 </rss>

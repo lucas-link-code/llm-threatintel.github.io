@@ -193,17 +193,14 @@
       "id": "closedquorum",
       "names": [
         "CLOSEDQUORUM",
-        "BALZAK",
-        "CLOSEDQUORUM developer"
+        "BALZAK"
       ],
       "type": "malware",
       "first_seen": "2026-06",
-      "status": "active",
+      "status": "inactive",
       "distribution": [
         "Per operator Windows build with compile time API keys and a Discord webhook",
-        "Public distribution build with placeholder keys",
-        "Operator configured builds compiled with injected LLM API keys and a Discord webhook",
-        "Independent operator delivery, not marketplace distribution"
+        "Public distribution build with placeholder keys"
       ],
       "ttps": [
         "T1588.007 - Obtain Capabilities: Artificial Intelligence",
@@ -218,8 +215,7 @@
         "T1567.004 - Exfiltration Over Web Service: Exfiltration Over Webhook",
         "T1685 - Disable or Modify Tools",
         "T1497.003 - Virtualization/Sandbox Evasion: Time Based Evasion",
-        "T1036.005 - Masquerading: Match Legitimate Name or Location",
-        "T1071.001 - Application Layer Protocol: Web Protocols"
+        "T1036.005 - Masquerading: Match Legitimate Name or Location"
       ],
       "description": "16.4 MB Go Windows implant published by Cisco Talos on 2026-09-22. After deployment it asks DeepSeek, Qwen, Mistral, and Gemini to vote on steal, inject, persist, or move, then runs the winner. Talos has not confirmed in the wild deployment. The public build uses dummy API keys and a dummy Discord webhook. Development builds inject operator keys at compile time. Talos linked binary artifacts to carding forum posts from 2025. YARA metadata used the earlier name BALZAK on 2026-06-17 and notes a rename on 2026-07-03.",
       "attribution": "Unnamed developer. Talos link to carding forum posts. Confidence low. No named cluster."
@@ -5338,25 +5334,6 @@
       ],
       "description": "Supply chain campaign distributing malicious MCP servers through coordinated pull request submissions to unrelated AI and developer-tool projects. Campaign uses sophisticated runtime-gated metadata poisoning to defer credential harvesting until server is trusted and in production use. Deployment occurs via 23 pull requests in 74-minute window, suggesting automated or scripted social engineering.",
       "attribution": "Unknown operator behind GitHub account zellkernel"
-    },
-    {
-      "id": "unknown-plugin4shell-operator",
-      "names": [
-        "Unknown Plugin4Shell operator"
-      ],
-      "type": "supply_chain_campaign",
-      "first_seen": "2026-09",
-      "status": "active",
-      "distribution": [
-        "Community AI agent plugin marketplaces on hosts that permit hash shaped branch names",
-        "Hijacked third party plugin repositories"
-      ],
-      "ttps": [
-        "T1195.001 - Supply Chain Compromise",
-        "T1195.002 - Compromise Software Dependencies and Development Tools"
-      ],
-      "description": "Air Security did not name any threat actor. The chain is proven end to end by the vendor through prior research where malicious skills went viral and repositories were hijacked at scale, and Plugin4Shell defeats the mechanism built to contain those takeovers.",
-      "attribution": "Unattributed"
     },
     {
       "id": "ai-coding-agents-performing-public-screenshot-hosting",

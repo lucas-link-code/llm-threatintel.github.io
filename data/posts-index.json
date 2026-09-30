@@ -14,32 +14,6 @@
       "file": "2026-09-30-ai-coding-agents-internal-image-exposure-github.md"
     },
     {
-      "id": "2026-09-30-closedquorum-autonomous-ai-c2-implant",
-      "title": "CLOSEDQUORUM Windows Implant Delegates Command and Control to a Panel of Four Commercial LLMs",
-      "date": "2026-09-30",
-      "author": "LLM ThreatIntel",
-      "tags": [
-        "malicious-tool",
-        "malware"
-      ],
-      "tlp": "TLP:CLEAR",
-      "excerpt": "Cisco Talos documented CLOSEDQUORUM, the first publicly reported Windows implant to delegate tactical command and control to a quorum of commercial large language models including DeepSeek, Qwen, Mistral, and Google Gemini. It runs an autonomous decision loop with no human operator and no dedicated attacker server, targeting LSASS credentials, browser passwords, and crypto wallets with exfiltration to a Discord webhook. The publicly distributed build contains placeholder API keys and a dummy webhook, so end to end execution was not observed, but defenders should hunt the correlated behaviors Talos published.",
-      "file": "2026-09-30-closedquorum-autonomous-ai-c2-implant.md"
-    },
-    {
-      "id": "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass",
-      "title": "Plugin4Shell SHA Pinning Bypass Gives Zero Click RCE Across Four Major AI Coding Agents",
-      "date": "2026-09-30",
-      "author": "LLM ThreatIntel",
-      "tags": [
-        "supply-chain",
-        "malicious-tool"
-      ],
-      "tlp": "TLP:CLEAR",
-      "excerpt": "Air Security disclosed Plugin4Shell, a zero click remote code execution flaw in the plugin install path of Claude Code, OpenAI Codex, GitHub Copilot, and Gemini CLI. A trusted plugin is silently swapped for malicious code while the marketplace SHA pin still appears honored, and background auto update pushes it to already installed agents without user interaction. Anthropic and OpenAI patched after disclosure, Microsoft has shipped no fix, and Google will not patch the deprecated Gemini CLI, so enterprises should inventory installed plugins and update agents immediately.",
-      "file": "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass.md"
-    },
-    {
       "id": "2026-09-29-huntress-custom-gpt-clickfix-rat",
       "title": "Huntress: Attacker Custom GPTs Deliver ClickFix RAT With DLL Sideloading",
       "date": "2026-09-29",

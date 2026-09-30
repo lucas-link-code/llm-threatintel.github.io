@@ -5242,36 +5242,6 @@
       "validated_at": "2026-09-30T13:46:37+00:00",
       "validation_version": "1.0.0",
       "warnings": []
-    },
-    "2026-09-30-closedquorum-autonomous-ai-c2-implant": {
-      "content_hash": "07798923b8c8cdcf49a3b97bfc8ad3b7f011480b4a51e61439ef5244319708b9",
-      "evidence_status": "validated",
-      "file": "2026-09-30-closedquorum-autonomous-ai-c2-implant.md",
-      "posts_index_hash": "d5c7a0eeae3b53f7ab5a8f03f2d6ffd3c0da90fdba0b9406f75b02b095182b55",
-      "report_id": "2026-09-30-closedquorum-autonomous-ai-c2-implant",
-      "review_required": [],
-      "source_urls": [
-        "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
-      ],
-      "structure_status": "validated",
-      "validated_at": "2026-09-30T13:46:37+00:00",
-      "validation_version": "1.0.0",
-      "warnings": []
-    },
-    "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass": {
-      "content_hash": "108392a8c788f3a19e937e167da2181c04be6c072b0890202c059a4728993bb4",
-      "evidence_status": "validated",
-      "file": "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass.md",
-      "posts_index_hash": "e5a54bee75d040dc66353820155334e931e5337fe9b6c01a118691c19263f512",
-      "report_id": "2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass",
-      "review_required": [],
-      "source_urls": [
-        "https://www.air.security/blog-posts/plugin4shell"
-      ],
-      "structure_status": "validated",
-      "validated_at": "2026-09-30T13:46:38+00:00",
-      "validation_version": "1.0.0",
-      "warnings": []
     }
   },
   "validation_version": "1.0.0"

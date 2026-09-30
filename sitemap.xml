@@ -13,18 +13,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://llm-threatintel.com/posts/2026-09-30-closedquorum-autonomous-ai-c2-implant.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://llm-threatintel.com/posts/2026-09-30-plugin4shell-agent-plugin-sha-pinning-bypass.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://llm-threatintel.com/posts/2026-09-29-huntress-custom-gpt-clickfix-rat.html</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
