@@ -885,14 +885,16 @@ class StoryCatalogAndPromptTests(unittest.TestCase):
 
 
 class FakeResponse:
-    def __init__(self, status_code=200, content="{}"):
+    def __init__(self, status_code=200, content="{}", finish="stop"):
         self.status_code = status_code
         self.text = "body"
         self._content = content
+        self._finish = finish
 
     def json(self):
         return {
-            "choices": [{"message": {"content": self._content}, "finish_reason": "stop"}],
+            "provider": "FakeProvider",
+            "choices": [{"message": {"content": self._content}, "finish_reason": self._finish}],
             "usage": {"prompt_tokens": 1, "completion_tokens": 1},
         }
 
@@ -949,6 +951,30 @@ class WallClockLimitTests(unittest.TestCase):
         with mock.patch.object(collect.requests, "post", post):
             collect.chat_completion("k", [{"role": "user", "content": "x"}])
         self.assertEqual(seen, [True, False])
+
+    def test_request_carries_routing_and_reasoning_preferences(self):
+        sent = []
+
+        def post(_url, headers=None, json=None, timeout=None):
+            sent.append(json)
+            return FakeResponse()
+
+        with mock.patch.object(collect.requests, "post", post):
+            collect.chat_completion("k", [{"role": "user", "content": "x"}])
+        self.assertEqual(sent[0]["provider"], {"sort": "throughput", "ignore": ["OpenInference"]})
+        self.assertEqual(sent[0]["reasoning"], {"enabled": False})
+        self.assertEqual(sent[0]["model"], collect.MODEL)
+
+    def test_chat_retries_when_the_stream_ends_with_an_error(self):
+        answers = [FakeResponse(finish="error", content="{\"status\": \"new_"), FakeResponse(content="{}")]
+        with mock.patch.object(collect.requests, "post", lambda *a, **k: answers.pop(0)):
+            content, finish, _usage = collect.chat_completion("k", [{"role": "user", "content": "x"}])
+        self.assertEqual((content, finish), ("{}", "stop"))
+
+    def test_chat_raises_when_the_stream_errors_twice(self):
+        with mock.patch.object(collect.requests, "post", lambda *a, **k: FakeResponse(finish="error")):
+            with self.assertRaises(collect.OpenRouterError):
+                collect.chat_completion("k", [{"role": "user", "content": "x"}])
 
     def test_page_fetch_returns_none_when_slow(self):
         def slow_get(*_args, **_kwargs):

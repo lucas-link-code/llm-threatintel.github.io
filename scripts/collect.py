@@ -39,6 +39,10 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MAX_OUTPUT_TOKENS = 16000
 PAGE_FETCH_TIMEOUT = 8
 CHAT_TIMEOUT = 180
+# Route to the fastest endpoint and skip OpenInference, which served this model at about 6 tokens per second.
+PROVIDER_PREFERENCES = {"sort": "throughput", "ignore": ["OpenInference"]}
+# Hidden reasoning tokens slow the run and count against max_tokens.
+REASONING_PREFERENCES = {"enabled": False}
 # Wall clock limits. A normal run finishes in 1 to 3 minutes.
 CHAT_DEADLINE = 100
 CHAT_ATTEMPTS = 2
@@ -441,6 +445,8 @@ def chat_completion(api_key, messages, plugins=None, max_tokens=MAX_OUTPUT_TOKEN
             "model": MODEL,
             "messages": messages,
             "max_tokens": max_tokens,
+            "provider": PROVIDER_PREFERENCES,
+            "reasoning": REASONING_PREFERENCES,
         }
         if plugins:
             payload["plugins"] = plugins
@@ -464,20 +470,27 @@ def chat_completion(api_key, messages, plugins=None, max_tokens=MAX_OUTPUT_TOKEN
         print(f"OpenRouter request attempt {attempt}/{CHAT_ATTEMPTS} (limit {CHAT_DEADLINE}s)")
         try:
             response = request_once()
-            break
         except CallTimeout as exc:
             print(f"WARNING: {exc}")
             if attempt == CHAT_ATTEMPTS:
                 raise
-    print(f"OpenRouter answered HTTP {response.status_code} in {time.monotonic() - started:.1f}s")
-    if response.status_code >= 400:
-        raise OpenRouterError(response.status_code, response.text[:500])
-    try:
-        data = response.json()
-    except ValueError as exc:
-        raise OpenRouterError(response.status_code, f"response was not JSON: {exc}") from exc
-    content, finish = message_text(data)
-    return content, finish, data.get("usage") or {}
+            continue
+        print(f"OpenRouter answered HTTP {response.status_code} in {time.monotonic() - started:.1f}s")
+        if response.status_code >= 400:
+            raise OpenRouterError(response.status_code, response.text[:500])
+        try:
+            data = response.json()
+        except ValueError as exc:
+            raise OpenRouterError(response.status_code, f"response was not JSON: {exc}") from exc
+        content, finish = message_text(data)
+        if finish == "error":
+            provider = data.get("provider")
+            print(f"WARNING: model stream ended with finish_reason=error (provider {provider})")
+            if attempt == CHAT_ATTEMPTS:
+                raise OpenRouterError(200, f"model stream ended with an error twice (provider {provider})")
+            continue
+        print(f"OpenRouter provider: {data.get('provider')}")
+        return content, finish, data.get("usage") or {}
 
 
 def reformat_collection_json(api_key, prior_text):
