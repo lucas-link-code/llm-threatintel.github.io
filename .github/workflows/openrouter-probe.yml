@@ -9,7 +9,7 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 9
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -36,25 +36,35 @@ jobs:
               {"role": "user", "content": collect.build_prompt()},
           ]
           RF = {"type": "json_object"}
+          def real_body(**extra):
+              return dict(messages=real, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF, plugins=plugin, **extra)
+
           probes = {
-              "A small, no plugin, json_object": dict(messages=small, max_tokens=50, response_format=RF),
-              "B small, web plugin, json_object": dict(messages=small, max_tokens=50, response_format=RF, plugins=plugin),
-              "C small, web plugin, no response_format": dict(messages=small, max_tokens=50, plugins=plugin),
-              "D real prompt, no plugin, json_object": dict(messages=real, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF),
-              "E real prompt, web plugin, json_object": dict(messages=real, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF, plugins=plugin),
+              "E control: real, plugin, default routing": real_body(),
+              "F provider sort=throughput": real_body(provider={"sort": "throughput"}),
+              "G reasoning disabled": real_body(reasoning={"enabled": False}),
+              "H provider order=DeepSeek, fallbacks on": real_body(provider={"order": ["DeepSeek"], "allow_fallbacks": True}),
+              "I order=DeepSeek + reasoning disabled": real_body(provider={"order": ["DeepSeek"], "allow_fallbacks": True}, reasoning={"enabled": False}),
+              "J ignore OpenInference + min throughput 40": real_body(provider={"ignore": ["OpenInference"], "preferred_min_throughput": 40}),
           }
           out = {}
 
           def run(name, body):
               t0 = time.monotonic()
               try:
-                  r = requests.post(collect.OPENROUTER_URL, headers=H, json={"model": model, **body}, timeout=(10, 150))
+                  r = requests.post(collect.OPENROUTER_URL, headers=H, json={"model": model, **body}, timeout=(10, 230))
                   dt = time.monotonic() - t0
                   try:
                       d = r.json()
                       ch = (d.get("choices") or [{}])[0]
                       txt = (ch.get("message") or {}).get("content") or ""
-                      info = f"finish={ch.get('finish_reason')} provider={d.get('provider')} usage={d.get('usage')} chars={len(txt)} head={txt[:120]!r}"
+                      u = d.get("usage") or {}
+                      res, _p = collect.extract_collection_json(txt, log=False)
+                      parsed = (res or {}).get("status"), len((res or {}).get("findings") or [])
+                      info = (f"finish={ch.get('finish_reason')} provider={d.get('provider')} completion={u.get('completion_tokens')} "
+                              f"reasoning={(u.get('completion_tokens_details') or {}).get('reasoning_tokens')} chars={len(txt)} parsed={parsed} head={txt[:100]!r}")
+                      if r.status_code >= 400:
+                          info += f" error={str(d)[:300]}"
                   except ValueError:
                       info = f"non-json body head={r.text[:200]!r}"
                   out[name] = f"HTTP {r.status_code} in {dt:.1f}s {info}"
@@ -72,9 +82,10 @@ jobs:
           threads = [threading.Thread(target=run, args=(n, b), daemon=True) for n, b in probes.items()]
           for t in threads:
               t.start()
+          end = time.monotonic() + 240
           for t in threads:
-              t.join(170)
+              t.join(max(0, end - time.monotonic()))
           print("---- results")
           for name in probes:
-              print(name, "=>", out.get(name, "STILL RUNNING after 170s"))
+              print(name, "=>", out.get(name, "STILL RUNNING after 240s"))
           PY
