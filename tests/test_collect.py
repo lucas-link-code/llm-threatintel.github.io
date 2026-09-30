@@ -1,7 +1,9 @@
 import importlib.util
 import json
+import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from datetime import datetime
 from pathlib import Path
@@ -880,6 +882,100 @@ class StoryCatalogAndPromptTests(unittest.TestCase):
         prompt = collect.build_publisher_proof_prompt()
         self.assertIn("[id: 2026-09-27-closedquorum-panel]", prompt)
         self.assertIn("covered_by", prompt)
+
+
+class FakeResponse:
+    def __init__(self, status_code=200, content="{}"):
+        self.status_code = status_code
+        self.text = "body"
+        self._content = content
+
+    def json(self):
+        return {
+            "choices": [{"message": {"content": self._content}, "finish_reason": "stop"}],
+            "usage": {"prompt_tokens": 1, "completion_tokens": 1},
+        }
+
+
+class WallClockLimitTests(unittest.TestCase):
+    def test_returns_value_and_reraises_errors(self):
+        self.assertEqual(collect.run_with_deadline(lambda: 7, 1, "x"), 7)
+        with self.assertRaises(ValueError):
+            collect.run_with_deadline(lambda: (_ for _ in ()).throw(ValueError("boom")), 1, "x")
+
+    def test_raises_call_timeout_when_slow(self):
+        started = time.monotonic()
+        with self.assertRaises(collect.CallTimeout):
+            collect.run_with_deadline(lambda: time.sleep(3), 0.2, "slow call")
+        self.assertLess(time.monotonic() - started, 1.5)
+        self.assertTrue(issubclass(collect.CallTimeout, collect.requests.RequestException))
+
+    def test_chat_retries_once_after_a_hang(self):
+        calls = []
+
+        def post(*_args, **_kwargs):
+            calls.append(1)
+            if len(calls) == 1:
+                time.sleep(3)
+            return FakeResponse(content='{"status": "no_new_intel"}')
+
+        with mock.patch.object(collect.requests, "post", post), mock.patch.object(collect, "CHAT_DEADLINE", 0.3):
+            content, finish, _usage = collect.chat_completion("k", [{"role": "user", "content": "x"}])
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(finish, "stop")
+        self.assertIn("no_new_intel", content)
+
+    def test_chat_gives_up_after_two_hangs(self):
+        calls = []
+
+        def post(*_args, **_kwargs):
+            calls.append(1)
+            time.sleep(3)
+
+        started = time.monotonic()
+        with mock.patch.object(collect.requests, "post", post), mock.patch.object(collect, "CHAT_DEADLINE", 0.2):
+            with self.assertRaises(collect.CallTimeout):
+                collect.chat_completion("k", [{"role": "user", "content": "x"}])
+        self.assertEqual(len(calls), 2)
+        self.assertLess(time.monotonic() - started, 2)
+
+    def test_chat_still_retries_without_response_format_on_400(self):
+        seen = []
+
+        def post(_url, headers=None, json=None, timeout=None):
+            seen.append("response_format" in json)
+            return FakeResponse(400) if len(seen) == 1 else FakeResponse(content="{}")
+
+        with mock.patch.object(collect.requests, "post", post):
+            collect.chat_completion("k", [{"role": "user", "content": "x"}])
+        self.assertEqual(seen, [True, False])
+
+    def test_page_fetch_returns_none_when_slow(self):
+        def slow_get(*_args, **_kwargs):
+            time.sleep(3)
+
+        with mock.patch.object(collect.requests, "get", slow_get), mock.patch.object(collect, "PAGE_FETCH_DEADLINE", 0.2):
+            self.assertIsNone(collect.fetch_publisher_page("https://socket.dev/blog/x"))
+
+    def test_deeply_nested_braces_do_not_crash_the_parser(self):
+        result, path = collect.extract_collection_json("{\"a\": " * 10000, log=False)
+        self.assertIsNone(result)
+        self.assertIsNone(path)
+
+    def test_watchdog_dumps_stacks_and_exits(self):
+        code = (
+            "import importlib.util, sys, time\n"
+            f"spec = importlib.util.spec_from_file_location('collect', r'{REPO_ROOT / 'scripts' / 'collect.py'}')\n"
+            "c = importlib.util.module_from_spec(spec); sys.modules['collect'] = c; spec.loader.exec_module(c)\n"
+            "c.SCRIPT_WATCHDOG_SECONDS = 1\n"
+            "c.arm_watchdog()\n"
+            "time.sleep(20)\n"
+        )
+        started = time.monotonic()
+        proc = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=15)
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn("Timeout", proc.stderr)
+        self.assertLess(time.monotonic() - started, 10)
 
 
 if __name__ == "__main__":

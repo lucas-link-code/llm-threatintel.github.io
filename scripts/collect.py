@@ -14,11 +14,14 @@ Requires: OPENROUTER_API_KEY environment variable
 Install:  pip install requests
 """
 
+import faulthandler
 import os
 import sys
 import json
 import re
 import subprocess
+import threading
+import time
 import urllib.parse
 from collections import Counter
 from datetime import datetime, timedelta, timezone
@@ -36,6 +39,11 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MAX_OUTPUT_TOKENS = 16000
 PAGE_FETCH_TIMEOUT = 8
 CHAT_TIMEOUT = 180
+# Wall clock limits. A normal run finishes in 1 to 3 minutes.
+CHAT_DEADLINE = 100
+CHAT_ATTEMPTS = 2
+PAGE_FETCH_DEADLINE = 20
+SCRIPT_WATCHDOG_SECONDS = 420
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 DRY_RUN = "--dry-run" in sys.argv
 FORCE = "--force" in sys.argv
@@ -328,7 +336,7 @@ def extract_collection_json(response_text, log=True):
             if log:
                 print("Parsed collection JSON via direct loads")
             return accepted, "direct"
-    except json.JSONDecodeError:
+    except (json.JSONDecodeError, RecursionError):
         pass
 
     # 2. Fenced ```json / ``` blocks anywhere in the text
@@ -340,7 +348,7 @@ def extract_collection_json(response_text, log=True):
                 if log:
                     print("Parsed collection JSON via fenced block")
                 return accepted, "fenced"
-        except json.JSONDecodeError:
+        except (json.JSONDecodeError, RecursionError):
             continue
 
     # 3. JSONDecoder.raw_decode from each '{' candidate (string-aware)
@@ -357,11 +365,40 @@ def extract_collection_json(response_text, log=True):
                 if log:
                     print("Recovered JSON from mixed response content")
                 return accepted, "raw_decode"
-        except json.JSONDecodeError:
+        except (json.JSONDecodeError, RecursionError):
             pass
         search_from = start + 1
 
     return None, None
+
+
+class CallTimeout(requests.RequestException):
+    """A network call exceeded its wall clock limit."""
+
+
+def run_with_deadline(fn, seconds, label):
+    """Run fn in a daemon thread and stop waiting after `seconds`, whatever the server sends."""
+    box = {}
+
+    def worker():
+        try:
+            box["value"] = fn()
+        except BaseException as exc:
+            box["error"] = exc
+
+    thread = threading.Thread(target=worker, daemon=True)
+    thread.start()
+    thread.join(seconds)
+    if thread.is_alive():
+        raise CallTimeout(f"{label} exceeded the {seconds}s wall clock limit")
+    if "error" in box:
+        raise box["error"]
+    return box["value"]
+
+
+def arm_watchdog():
+    """Dump every thread stack to stderr and exit 1 if the whole script overruns."""
+    faulthandler.dump_traceback_later(SCRIPT_WATCHDOG_SECONDS, exit=True)
 
 
 class OpenRouterError(Exception):
@@ -415,10 +452,24 @@ def chat_completion(api_key, messages, plugins=None, max_tokens=MAX_OUTPUT_TOKEN
         }
         return requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=CHAT_TIMEOUT)
 
-    response = post(True)
-    if response.status_code == 400:
-        print("OpenRouter rejected response_format. Retrying once without it.")
-        response = post(False)
+    def request_once():
+        response = run_with_deadline(lambda: post(True), CHAT_DEADLINE, "OpenRouter request")
+        if response.status_code == 400:
+            print("OpenRouter rejected response_format. Retrying once without it.")
+            response = run_with_deadline(lambda: post(False), CHAT_DEADLINE, "OpenRouter request")
+        return response
+
+    for attempt in range(1, CHAT_ATTEMPTS + 1):
+        started = time.monotonic()
+        print(f"OpenRouter request attempt {attempt}/{CHAT_ATTEMPTS} (limit {CHAT_DEADLINE}s)")
+        try:
+            response = request_once()
+            break
+        except CallTimeout as exc:
+            print(f"WARNING: {exc}")
+            if attempt == CHAT_ATTEMPTS:
+                raise
+    print(f"OpenRouter answered HTTP {response.status_code} in {time.monotonic() - started:.1f}s")
     if response.status_code >= 400:
         raise OpenRouterError(response.status_code, response.text[:500])
     try:
@@ -542,18 +593,21 @@ def page_confirms_date(body, day):
 
 
 def fetch_publisher_page(url):
-    try:
+    def get():
         response = requests.get(
             url,
             timeout=PAGE_FETCH_TIMEOUT,
             headers={"User-Agent": "LLM-ThreatIntel-Collector/1.0"},
             allow_redirects=True,
         )
+        if response.status_code >= 400:
+            return None
+        return response.text[:200000]
+
+    try:
+        return run_with_deadline(get, PAGE_FETCH_DEADLINE, "page fetch")
     except requests.RequestException:
         return None
-    if response.status_code >= 400:
-        return None
-    return response.text[:200000]
 
 
 def load_coverage_corpus():
@@ -1692,6 +1746,7 @@ def main():
     print(f"Model: {MODEL}")
     print(f"Mode: {'DRY RUN' if DRY_RUN else 'LIVE'}")
     print(f"{'='*60}")
+    arm_watchdog()
 
     POSTS_DIR.mkdir(exist_ok=True)
     LOGS_DIR.mkdir(exist_ok=True)
