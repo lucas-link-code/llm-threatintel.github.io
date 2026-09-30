@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents | LLM ThreatIntel</title>
+  <meta name="description" content="Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-09-30-bragjack-browser-agent-prompt-forcing.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents">
+  <meta property="og:description" content="Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-09-30-bragjack-browser-agent-prompt-forcing.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents">
+  <meta property="article:published_time" content="2026-09-30T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-30T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents">
+  <meta name="twitter:description" content="Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents",
+  "description": "Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.",
+  "datePublished": "2026-09-30T00:00:00Z",
+  "dateModified": "2026-09-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-09-30-bragjack-browser-agent-prompt-forcing.html",
+  "keywords": [
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-09-30</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents</h1>
+<p><strong>Date:</strong> 2026-09-30<br><strong>Tags:</strong> prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>BragJack, also called Prompt Forcing by Forever Security</td></tr><tr><td>Actor / Attribution</td><td>Gal Weizman, Forever Security, as a proof of concept. No criminal use was described (confidence: none for in the wild exploitation)</td></tr><tr><td>Target</td><td>Users of Chrome Gemini Live, Microsoft Edge Copilot actions, Opera Neon, Perplexity Comet, and Claude in Chrome</td></tr><tr><td>Vector</td><td>Installed extension using content scripts and declarativeNetRequest against a trusted agent origin</td></tr><tr><td>Status</td><td>Google and Microsoft resolved their assigned flaws, per BleepingComputer. Forever Security did not report a single patch level for Opera, Perplexity, or Anthropic</td></tr><tr><td>First Observed</td><td>2026-09-16 public writeup. Forever Security said the Chrome issue was found earlier and previously published as GlicJack</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Forever Security, the same class of flaw showed up in five products: a privileged browser component performs actions, and a web origin is allowed to tell it what to do. Forever Security calls the follow on technique Prompt Forcing. The extension supplies the whole prompt and later prompts, rather than hiding a sentence inside content the model was already reading. Forever Security said the extension must be installed first, and that the demonstrations required no further click. BleepingComputer independently described the same five targets, the same extension requirement, and the Prompt Forcing name.</p>
+<p>Forever Security reported the following outcomes. On Chrome, declarativeNetRequest could still redirect a script loaded by the embedded Gemini app after direct script injection into that site was blocked, which yielded local file reads, screenshots, and a path toward the camera and microphone. Forever Security assigned that Chrome result to earlier GlicJack work and listed CVE-2026-0628 with a US$7,000 bounty. BleepingComputer reported the same CVE, the same bounty, and that Google has resolved the flaw.</p>
+<p>On Opera Neon, Forever Security reported that opera.com did not block extension script injection, so the extension could send prompts to the built in agent, including a prompt to summarize finance emails and send the summary out. Forever Security said declarativeNetRequest was also used to hide that activity from the user, and listed a US$900 bounty.</p>
+<p>On Microsoft Edge, Forever Security reported a marketing page that held a page scoped permission to open the agent with a prompt, plus a split between a Think mode that accepts prompts and a Do mode that can act. Forever Security described a race that sends the prompt in Think mode and switches to Do mode before the agent checks state. Microsoft assigned CVE-2026-55945. Forever Security listed a US$5,000 bounty. BleepingComputer reported the same race, the same CVE, and that Microsoft has resolved the flaw.</p>
+<p>On Claude in Chrome, Forever Security reported a marketing page that could send arbitrary prompts into the side panel, and that an extension could run a content script on Anthropic&#x27;s site because Anthropic does not control the browser. Forever Security said Anthropic rated the issue medium and paid US$600. Forever Security described this case as an extension attacking another extension, and said the agent could be told to summarize email.</p>
+<p>On Perplexity Comet, Forever Security reported a leftover origin, testing.perplexity.com, that the agent trusted and that the browser redirected to perplexity.ai. Forever Security said an extension could strip that redirect, load the testing origin, and inject a script that talks to the agent. Forever Security reported screenshot access, browsing history, profile data, local file reads, and the ability to instruct the agent, and listed a US$7,000 bounty. BleepingComputer reported the same testing origin pattern without printing the hostname, and a demonstration in which the agent summarized email and sent the result to another address.</p>
+<p>Forever Security summed the bounties as tens of thousands of dollars from Google, Anthropic, Microsoft, Perplexity, and Opera. The figures above total US$20,500. BleepingComputer reported more than US$20,000, with individual bounties from US$600 to US$7,000. BleepingComputer said only that Google and Microsoft have resolved the flaws assigned to them. This report does not treat Opera, Perplexity, or Anthropic as patched beyond the bounty acknowledgements Forever Security published.</p>
+<p>testing.perplexity.com is a vendor testing origin named by Forever Security, not attacker infrastructure. It is not listed as an indicator.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Browser Extensions</td><td>T1176</td><td>Forever Security and BleepingComputer said a malicious extension is required before the agent can be driven</td></tr><tr><td>Command and Scripting Interpreter: JavaScript</td><td>T1059.007</td><td>Content scripts and redirected script resources are how the extension reaches the trusted origin</td></tr><tr><td>Screen Capture</td><td>T1113</td><td>Forever Security reported screenshot access against Chrome Gemini Live and Perplexity Comet</td></tr><tr><td>Data from Local System</td><td>T1005</td><td>Forever Security reported local file reads against Chrome and Comet</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">No domain IOCs published by source</code></pre>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">No URL IOCs published by source</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">No IOCs available for Splunk query</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">No hash IOCs published by source</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory installed extensions that hold declarativeNetRequest plus broad host access, and remove extensions users do not recognize. In browser management logs, alert when an extension rewrites request or response headers for the origins that drive these agents, including Gemini page resources, copilot.microsoft.com, opera.com, perplexity.ai, and testing.perplexity.com. That last name is a product origin to monitor for unexpected extension traffic, not a denylist entry for the whole Perplexity service. Keep Chrome and Microsoft Edge on a version that includes the vendor fixes for CVE-2026-0628 and CVE-2026-55945. Endpoint tools that only score unsigned binaries will miss Prompt Forcing, because the visible actions come from the browser agent. Log agent tool use that reads local files or sends mailbox contents off box after an extension changes traffic to the agent origin.</p>
+<h2>References</h2>
+<ul><li>[Forever Security] BragJack: How We Hijacked 5 Of The World&#x27;s Most Popular Browsers Using Their Built-In AI Assistants (2026-09-16): https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/</li><li>[BleepingComputer] BragJack attacks hijack AI browser agents through malicious extensions (2026-09-19): https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
-  "commit_sha": "854c345933238ff493d55b76a3dd8f91b62c6861",
+  "commit_sha": "7ba3d0b4ca82",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-09-30T13:46:38+00:00",
+  "generated_at_utc": "2026-09-30T14:16:11+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,33 +41,96 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 3,
-  "reports_skipped": 295,
+  "reports_checked": 6,
+  "reports_newly_validated": 6,
+  "reports_skipped": 296,
   "review_required": 0,
-  "source_urls_checked": 3,
-  "state_updates": 3,
+  "source_urls_checked": 12,
+  "state_updates": 6,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/09/ai-coding-agents-exposed-13000-internal.html",
+      "final_url": "https://www.manifold.security/blog/third-party-com-placeholder-clickfix",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/09/ai-coding-agents-exposed-13000-internal.html"
+      "url": "https://www.manifold.security/blog/third-party-com-placeholder-clickfix"
     },
     {
       "error": "",
-      "final_url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/",
+      "final_url": "https://www.bleepingcomputer.com/news/security/placeholder-domain-used-in-dev-docs-now-serves-clickfix-attacks/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
+      "url": "https://www.bleepingcomputer.com/news/security/placeholder-domain-used-in-dev-docs-now-serves-clickfix-attacks/"
     },
     {
       "error": "",
-      "final_url": "https://www.air.security/blog-posts/plugin4shell",
+      "final_url": "https://thehackernews.com/2026/09/placeholder-third-partycom-referenced.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.air.security/blog-posts/plugin4shell"
+      "url": "https://thehackernews.com/2026/09/placeholder-third-partycom-referenced.html"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.team-cymru.com/post/llm-gateway-frontier-model-abuse",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.team-cymru.com/post/llm-gateway-frontier-model-abuse"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.helpnetsecurity.com/2026/09/23/china-ai-relay-frontier-model-abuse/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.helpnetsecurity.com/2026/09/23/china-ai-relay-frontier-model-abuse/"
+    },
+    {
+      "error": "",
+      "final_url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"
+    },
+    {
+      "error": "",
+      "final_url": "https://the-decoder.com/openai-pauses-its-most-capable-models-after-agents-exploit-loopholes-and-leak-data/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://the-decoder.com/openai-pauses-its-most-capable-models-after-agents-exploit-loopholes-and-leak-data/"
+    },
+    {
+      "error": "",
+      "final_url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/"
+    },
+    {
+      "error": "",
+      "final_url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist"
+    },
+    {
+      "error": "",
+      "final_url": "https://thenewstack.io/openai-self-replicating-injections/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thenewstack.io/openai-self-replicating-injections/"
+    },
+    {
+      "error": "",
+      "final_url": "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/"
     }
   ],
   "validation_version": "1.0.0",

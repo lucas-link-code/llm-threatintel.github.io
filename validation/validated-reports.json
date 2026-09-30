@@ -5242,6 +5242,102 @@
       "validated_at": "2026-09-30T13:46:37+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-09-30-bragjack-browser-agent-prompt-forcing": {
+      "content_hash": "4d7660a5dad19d65dc99a640bcb626179d146f99969cd828794bc29a574bfe4c",
+      "evidence_status": "validated",
+      "file": "2026-09-30-bragjack-browser-agent-prompt-forcing.md",
+      "posts_index_hash": "d0ac090cbe8f05cbaabcf58a0ee619bfe395913df517117aec94e56ec8ac836b",
+      "report_id": "2026-09-30-bragjack-browser-agent-prompt-forcing",
+      "review_required": [],
+      "source_urls": [
+        "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/",
+        "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T14:16:10+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-openai-self-replicating-prompt-injection": {
+      "content_hash": "4fa744906634eb0831f8808b4f8bdde7b9b405acd491555a56267aa9e9c6787d",
+      "evidence_status": "validated",
+      "file": "2026-09-30-openai-self-replicating-prompt-injection.md",
+      "posts_index_hash": "e9f577641680123302cb321dc06c5e2ab35cd050c5121f2997bae494a4188544",
+      "report_id": "2026-09-30-openai-self-replicating-prompt-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist",
+        "https://thenewstack.io/openai-self-replicating-injections/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T14:16:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-openai-training-agent-dns-chatbot": {
+      "content_hash": "bc98bedd148232ed3d37d9c34e6f790ce7bf897341c56f3863e4840a2083bbc4",
+      "evidence_status": "validated",
+      "file": "2026-09-30-openai-training-agent-dns-chatbot.md",
+      "posts_index_hash": "1aa07dff72188bbb13c25eac9783504cb849986a255dd6d664ba9e8f5c1cfc8a",
+      "report_id": "2026-09-30-openai-training-agent-dns-chatbot",
+      "review_required": [],
+      "source_urls": [
+        "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+        "https://the-decoder.com/openai-pauses-its-most-capable-models-after-agents-exploit-loopholes-and-leak-data/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T14:16:09+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-salt-labs-manus-email-prompt-injection": {
+      "content_hash": "1b4f64a9bdcfdb2b447499096f5ab035b9fad73a824d709d4c10d08008c15122",
+      "evidence_status": "validated",
+      "file": "2026-09-30-salt-labs-manus-email-prompt-injection.md",
+      "posts_index_hash": "4f369b40fb50fd41552ca49af6d317672cda2305d9a3066ea7e4a7b6cb984fe0",
+      "report_id": "2026-09-30-salt-labs-manus-email-prompt-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T14:16:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-team-cymru-frontier-llm-transfer-stations": {
+      "content_hash": "d916a0870b5b31366812e9a4d78990fa2bb91dc72bb54dce2fbf645e8da20155",
+      "evidence_status": "validated",
+      "file": "2026-09-30-team-cymru-frontier-llm-transfer-stations.md",
+      "posts_index_hash": "a1a3160a97afcdcc3b08da6fd0f7aad34f5fcf91973703f80879ade5ccd0e00e",
+      "report_id": "2026-09-30-team-cymru-frontier-llm-transfer-stations",
+      "review_required": [],
+      "source_urls": [
+        "https://www.team-cymru.com/post/llm-gateway-frontier-model-abuse",
+        "https://www.helpnetsecurity.com/2026/09/23/china-ai-relay-frontier-model-abuse/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T14:16:09+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-09-30-third-party-com-clickfix-skills-mcp": {
+      "content_hash": "a1b9bfa8a4f7375670daaeba1b3aa7568839251600284c176e613cc504bfdf11",
+      "evidence_status": "validated",
+      "file": "2026-09-30-third-party-com-clickfix-skills-mcp.md",
+      "posts_index_hash": "e7729f52b89b2ea8870028e38e26d094b29f0cded237ffcc618a9c15739b7a20",
+      "report_id": "2026-09-30-third-party-com-clickfix-skills-mcp",
+      "review_required": [],
+      "source_urls": [
+        "https://www.manifold.security/blog/third-party-com-placeholder-clickfix",
+        "https://www.bleepingcomputer.com/news/security/placeholder-domain-used-in-dev-docs-now-serves-clickfix-attacks/",
+        "https://thehackernews.com/2026/09/placeholder-third-partycom-referenced.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-09-30T14:16:08+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
