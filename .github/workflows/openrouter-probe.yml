@@ -39,13 +39,19 @@ jobs:
           def real_body(**extra):
               return dict(messages=real, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF, plugins=plugin, **extra)
 
+          pub = [
+              {"role": "system", "content": collect.COLLECTION_SYSTEM},
+              {"role": "user", "content": collect.build_publisher_proof_prompt()},
+          ]
+          PROV = {"sort": "throughput", "ignore": ["OpenInference"]}
+          RS = {"enabled": False}
           probes = {
-              "E control: real, plugin, default routing": real_body(),
-              "F provider sort=throughput": real_body(provider={"sort": "throughput"}),
-              "G reasoning disabled": real_body(reasoning={"enabled": False}),
-              "H provider order=DeepSeek, fallbacks on": real_body(provider={"order": ["DeepSeek"], "allow_fallbacks": True}),
-              "I order=DeepSeek + reasoning disabled": real_body(provider={"order": ["DeepSeek"], "allow_fallbacks": True}, reasoning={"enabled": False}),
-              "J ignore OpenInference + min throughput 40": real_body(provider={"ignore": ["OpenInference"], "preferred_min_throughput": 40}),
+              "K1 sort+ignore+require_parameters+reasoning off": real_body(provider={**PROV, "require_parameters": True}, reasoning=RS),
+              "K2 same": real_body(provider={**PROV, "require_parameters": True}, reasoning=RS),
+              "K3 same": real_body(provider={**PROV, "require_parameters": True}, reasoning=RS),
+              "L sort+ignore+reasoning off, no require_parameters": real_body(provider=PROV, reasoning=RS),
+              "M publisher pass with K settings": dict(messages=pub, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF, plugins=collect.web_plugin(collect.PUBLISHER_INCLUDE_DOMAINS), provider={**PROV, "require_parameters": True}, reasoning=RS),
+              "N sort=throughput only, 2nd sample": real_body(provider={"sort": "throughput"}),
           }
           out = {}
 
