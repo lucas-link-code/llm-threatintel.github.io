@@ -20,6 +20,7 @@ import json
 import re
 import subprocess
 import urllib.parse
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -41,6 +42,8 @@ FORCE = "--force" in sys.argv
 
 # How far back to look for qualifying stories (wider than 7 days reduces empty runs).
 INTEL_LOOKBACK_DAYS = 14
+# A headline word shared with a named post counts only if at most this many posts contain it.
+STORY_TOKEN_MAX_POSTS = 10
 PUBLISHER_INCLUDE_DOMAINS = [
     "socket.dev",
     "unit42.paloaltonetworks.com",
@@ -110,10 +113,11 @@ def load_json(path):
         return {}
 
 
-def get_existing_context():
+def get_existing_context(with_ids=False):
     """Build a compact list of recent post titles so the LLM avoids duplicates."""
     posts = load_json(DATA_DIR / "posts-index.json")
-    recent = [f"  - {p['date']}: {p['title']}" for p in posts.get("posts", [])[:30]]
+    suffix = lambda p: f" [id: {p.get('id', '')}]" if with_ids else ""
+    recent = [f"  - {p['date']}: {p['title']}{suffix(p)}" for p in posts.get("posts", [])[:30]]
     if not recent:
         return ""
     return (
@@ -563,11 +567,91 @@ def load_coverage_corpus():
     return "\n".join(parts)
 
 
-def evaluate_publisher_checks(checks, *, today, corpus, fetch):
+def story_tokens(text):
+    """Lowercase words of 5 or more characters that are not numbers."""
+    words = re.split(r"[^a-z0-9]+", str(text or "").lower())
+    return {w for w in words if len(w) >= 5 and not w.isdigit()}
+
+
+def load_story_catalog():
+    """Per post date and headline words, plus how many posts contain each word."""
+    index = load_json(DATA_DIR / "posts-index.json")
+    posts = {}
+    frequency = Counter()
+    for entry in index.get("posts", []):
+        if not isinstance(entry, dict) or not entry.get("id"):
+            continue
+        day = parse_iso_date(entry.get("date"))
+        if day is None:
+            continue
+        headline = story_tokens(str(entry["id"]).replace("-", " ")) | story_tokens(entry.get("title"))
+        text = f"{entry.get('title', '')} {entry.get('excerpt', '')}"
+        md_name = entry.get("file")
+        if md_name:
+            try:
+                text += " " + (POSTS_DIR / md_name).read_text(errors="replace")
+            except OSError:
+                pass
+        frequency.update(headline | story_tokens(text))
+        posts[str(entry["id"])] = {"date": day, "headline": headline}
+    return {"posts": posts, "df": frequency}
+
+
+def _covered_by_ids(value):
+    if isinstance(value, str):
+        value = [value]
+    if not isinstance(value, list):
+        return []
+    ids = []
+    for item in value:
+        if not isinstance(item, str):
+            continue
+        name = item.strip()
+        if name.startswith("posts/"):
+            name = name[len("posts/"):]
+        for ext in (".md", ".html"):
+            if name.endswith(ext):
+                name = name[: -len(ext)]
+        if name:
+            ids.append(name)
+    return ids
+
+
+def story_match(check, url, day, body, catalog, today):
+    """Return (post_id, token, reason). post_id is None when the story is not proven covered."""
+    ids = _covered_by_ids(check.get("covered_by"))
+    if not ids:
+        return None, None, "covered_by is missing"
+    known = [pid for pid in ids if pid in catalog["posts"]]
+    if not known:
+        return None, None, f"covered_by does not name a known post: {', '.join(ids)}"
+    segment = urllib.parse.urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+    segment = re.sub(r"\.(html?|php|aspx?)$", "", segment, flags=re.I)
+    candidates = story_tokens(segment) | story_tokens(check.get("title"))
+    page = body.lower()
+    earliest = day - timedelta(days=INTEL_LOOKBACK_DAYS)
+    reason = "no rare headline word shared with the named post"
+    for pid in known:
+        post = catalog["posts"][pid]
+        if not (earliest <= post["date"] <= today):
+            reason = f"named post {pid} is outside the recency limit"
+            continue
+        for token in sorted(candidates & post["headline"]):
+            if catalog["df"].get(token, 0) > STORY_TOKEN_MAX_POSTS:
+                continue
+            if token not in page:
+                continue
+            return pid, token, ""
+    return None, None, reason
+
+
+def evaluate_publisher_checks(checks, *, today, corpus, fetch, catalog=None):
     """Accept no_new_intel only when every verified in-window publisher URL is already covered."""
     if not isinstance(checks, list):
         checks = []
     verified = []
+    story_matches = []
+    notes = {}
     for check in checks:
         if not isinstance(check, dict):
             continue
@@ -580,12 +664,25 @@ def evaluate_publisher_checks(checks, *, today, corpus, fetch):
         body = fetch(url)
         if not body or not page_confirms_date(body, day):
             continue
-        verified.append((url, url_already_covered(url, corpus)))
+        covered = url_already_covered(url, corpus)
+        if not covered:
+            if catalog is None:
+                notes[url] = "URL is not cited in any post"
+            else:
+                post_id, token, why = story_match(check, url, day, body, catalog, today)
+                if post_id:
+                    covered = True
+                    story_matches.append({"url": url, "post": post_id, "token": token})
+                else:
+                    notes[url] = why
+        verified.append((url, covered))
     if not verified:
         return {
             "accept": False,
             "uncovered": [],
             "verified": [],
+            "story_matches": [],
+            "notes": {},
             "reason": "no publisher URL was on the allowlist, inside the window, and confirmed on the page",
         }
     uncovered = [url for url, covered in verified if not covered]
@@ -594,18 +691,22 @@ def evaluate_publisher_checks(checks, *, today, corpus, fetch):
             "accept": False,
             "uncovered": uncovered,
             "verified": [url for url, _covered in verified],
+            "story_matches": story_matches,
+            "notes": notes,
             "reason": "in-window publisher URL is not already covered",
         }
     return {
         "accept": True,
         "uncovered": [],
         "verified": [url for url, _covered in verified],
+        "story_matches": story_matches,
+        "notes": {},
         "reason": "verified publisher URLs are already covered",
     }
 
 
 def build_publisher_proof_prompt():
-    existing_context = get_existing_context()
+    existing_context = get_existing_context(with_ids=True)
     _start, end = window_bounds()
     start = end - timedelta(days=INTEL_LOOKBACK_DAYS)
     window_label = f"{start.isoformat()} through {end.isoformat()}"
@@ -618,6 +719,7 @@ A qualifying story is a first party GenAI, LLM, MCP, or AI supply chain report w
 If you find one, return status new_intel and at most 3 findings. Each finding needs title, slug, tags, tlp, confidence, executive_summary, campaign_summary, detailed_findings, mitre_attack, iocs, actors, detection_recommendations, and references with real https URLs.
 If every in-window article from these publishers is already covered, return status no_new_intel. publisher_checks must name at least one of those covered articles with its real https URL and published date as YYYY-MM-DD.
 Do not use a landscape recap as proof. Do not invent URLs.
+When a proof article is not linked from our posts but its story is already covered, set covered_by to the id in brackets on the matching Already Covered line. Leave covered_by empty if no listed post covers that story.
 
 {existing_context}
 
@@ -626,7 +728,7 @@ Return one JSON object:
   "status": "no_new_intel",
   "collection_date": "{TODAY}",
   "search_summary": "What you opened",
-  "publisher_checks": [{{"url": "https://publisher.example/article", "published": "YYYY-MM-DD", "title": "Title"}}],
+  "publisher_checks": [{{"url": "https://publisher.example/article", "published": "YYYY-MM-DD", "title": "Title", "covered_by": "post-id or empty"}}],
   "findings": []
 }}
 """
@@ -1563,17 +1665,23 @@ def enforce_no_new_intel(result):
         today=datetime.strptime(TODAY, "%Y-%m-%d").date(),
         corpus=load_coverage_corpus(),
         fetch=fetch_publisher_page,
+        catalog=load_story_catalog(),
     )
+    story_by_url = {m["url"]: m for m in decision["story_matches"]}
     if decision["accept"]:
         print(f"\nLLM ThreatIntel — No new intelligence found for {TODAY}")
         print(f"Publisher proof: {decision['reason']}")
         for url in decision["verified"]:
-            print(f"  covered: {url}")
+            match = story_by_url.get(url)
+            if match:
+                print(f"  covered by story: {url} -> {match['post']} (word: {match['token']})")
+            else:
+                print(f"  covered: {url}")
         sys.exit(0)
     print("ERROR: Refusing no_new_intel without a covered in-window publisher URL.")
     print(decision["reason"])
     for url in decision["uncovered"]:
-        print(f"  uncovered: {url}")
+        print(f"  uncovered: {url} ({decision['notes'].get(url, 'no reason recorded')})")
     sys.exit(1)
 
 

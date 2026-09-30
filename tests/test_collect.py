@@ -704,5 +704,183 @@ class PublisherProofGateTests(unittest.TestCase):
         )
 
 
+BC_URL = "https://www.bleepingcomputer.com/news/security/new-closedquorum-windows-malware-uses-ai-for-attack-decisions/"
+CQ_ID = "2026-09-27-closedquorum-llm-panel-c2"
+MT_ID = "2026-09-27-memtensor-sckit-npm-pypi"
+
+
+def story_catalog():
+    return {
+        "posts": {
+            CQ_ID: {
+                "date": datetime(2026, 9, 27).date(),
+                "headline": {"closedquorum", "windows", "panel", "implant"},
+            },
+            MT_ID: {
+                "date": datetime(2026, 9, 27).date(),
+                "headline": {"memtensor", "sckit", "pypi"},
+            },
+            "2026-09-01-old-closedquorum-story": {
+                "date": datetime(2026, 9, 1).date(),
+                "headline": {"closedquorum"},
+            },
+        },
+        "df": collect.Counter({"closedquorum": 1, "memtensor": 1, "windows": 56, "malware": 291, "implant": 17}),
+    }
+
+
+class StoryLevelGateTests(unittest.TestCase):
+    today = datetime(2026, 9, 30).date()
+    page = "Published September 22, 2026. ClosedQuorum uses several models."
+
+    def evaluate(self, check, fetch=None, catalog="default"):
+        if catalog == "default":
+            catalog = story_catalog()
+        base = {"url": BC_URL, "published": "2026-09-22", "title": "New ClosedQuorum Windows malware uses AI"}
+        base.update(check)
+        return collect.evaluate_publisher_checks(
+            [base],
+            today=self.today,
+            corpus="no matching article",
+            fetch=fetch or (lambda _url: self.page),
+            catalog=catalog,
+        )
+
+    def test_accepts_named_post_with_rare_headline_word(self):
+        decision = self.evaluate({"covered_by": CQ_ID})
+        self.assertTrue(decision["accept"])
+        self.assertEqual(decision["story_matches"], [{"url": BC_URL, "post": CQ_ID, "token": "closedquorum"}])
+
+    def test_accepts_md_filename_and_list_forms(self):
+        self.assertTrue(self.evaluate({"covered_by": CQ_ID + ".md"})["accept"])
+        self.assertTrue(self.evaluate({"covered_by": "posts/" + CQ_ID + ".md"})["accept"])
+        self.assertTrue(self.evaluate({"covered_by": [MT_ID, CQ_ID]})["accept"])
+
+    def test_rejects_missing_covered_by(self):
+        for value in (None, "", [], 5, {"id": CQ_ID}):
+            decision = self.evaluate({"covered_by": value})
+            self.assertFalse(decision["accept"])
+            self.assertIn(BC_URL, decision["uncovered"])
+        decision = self.evaluate({})
+        self.assertFalse(decision["accept"])
+        self.assertIn("missing", decision["notes"][BC_URL])
+
+    def test_rejects_unknown_post_id(self):
+        decision = self.evaluate({"covered_by": "2026-09-27-does-not-exist"})
+        self.assertFalse(decision["accept"])
+        self.assertIn("known post", decision["notes"][BC_URL])
+
+    def test_rejects_wrong_post(self):
+        decision = self.evaluate({"covered_by": MT_ID})
+        self.assertFalse(decision["accept"])
+        self.assertIn(BC_URL, decision["uncovered"])
+
+    def test_rejects_generic_shared_words(self):
+        catalog = story_catalog()
+        catalog["posts"][CQ_ID]["headline"] = {"windows", "malware", "implant"}
+        decision = self.evaluate(
+            {
+                "url": "https://www.bleepingcomputer.com/news/security/new-windows-malware-implant/",
+                "title": "New Windows malware implant",
+                "covered_by": CQ_ID,
+            },
+            catalog=catalog,
+        )
+        self.assertFalse(decision["accept"])
+
+    def test_rejects_word_missing_from_page(self):
+        decision = self.evaluate(
+            {"covered_by": CQ_ID}, fetch=lambda _url: "Published September 22, 2026. Unrelated text."
+        )
+        self.assertFalse(decision["accept"])
+
+    def test_rejects_post_outside_recency_limit(self):
+        decision = self.evaluate({"covered_by": "2026-09-01-old-closedquorum-story"})
+        self.assertFalse(decision["accept"])
+        self.assertIn("recency", decision["notes"][BC_URL])
+
+    def test_rejects_post_dated_after_today(self):
+        catalog = story_catalog()
+        catalog["posts"][CQ_ID]["date"] = datetime(2026, 10, 5).date()
+        decision = self.evaluate({"covered_by": CQ_ID}, catalog=catalog)
+        self.assertFalse(decision["accept"])
+
+    def test_without_catalog_behaviour_is_unchanged(self):
+        decision = self.evaluate({"covered_by": CQ_ID}, catalog=None)
+        self.assertFalse(decision["accept"])
+        self.assertEqual(decision["story_matches"], [])
+
+    def test_cited_url_needs_no_covered_by(self):
+        decision = collect.evaluate_publisher_checks(
+            [{"url": BC_URL, "published": "2026-09-22"}],
+            today=self.today,
+            corpus="see " + BC_URL,
+            fetch=lambda _url: self.page,
+            catalog=story_catalog(),
+        )
+        self.assertTrue(decision["accept"])
+        self.assertEqual(decision["story_matches"], [])
+
+    def test_one_unproven_url_still_fails_the_run(self):
+        checks = [
+            {"url": BC_URL, "published": "2026-09-22", "title": "ClosedQuorum", "covered_by": CQ_ID},
+            {"url": "https://socket.dev/blog/brand-new-story", "published": "2026-09-25"},
+        ]
+        decision = collect.evaluate_publisher_checks(
+            checks,
+            today=self.today,
+            corpus="",
+            fetch=lambda _url: "September 22, 2026 September 25, 2026 closedquorum",
+            catalog=story_catalog(),
+        )
+        self.assertFalse(decision["accept"])
+        self.assertEqual(decision["uncovered"], ["https://socket.dev/blog/brand-new-story"])
+        self.assertEqual(len(decision["story_matches"]), 1)
+
+
+class StoryCatalogAndPromptTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        (root / "data").mkdir()
+        (root / "posts").mkdir()
+        index = {
+            "posts": [
+                {"id": "2026-09-27-closedquorum-panel", "date": "2026-09-27", "title": "CLOSEDQUORUM panel",
+                 "excerpt": "Windows implant", "file": "2026-09-27-closedquorum-panel.md"},
+                {"id": "2026-09-26-nodate", "date": "bad", "title": "Skipped", "file": "missing.md"},
+                {"id": "2026-09-25-nofile", "date": "2026-09-25", "title": "Nofile story", "file": "missing.md"},
+            ]
+        }
+        (root / "data" / "posts-index.json").write_text(json.dumps(index))
+        (root / "posts" / "2026-09-27-closedquorum-panel.md").write_text("Talos reported closedquorum malware.")
+        patches = [
+            mock.patch.object(collect, "DATA_DIR", root / "data"),
+            mock.patch.object(collect, "POSTS_DIR", root / "posts"),
+        ]
+        for patch in patches:
+            patch.start()
+            self.addCleanup(patch.stop)
+        self.addCleanup(self.tmp.cleanup)
+
+    def test_catalog_skips_bad_dates_and_tolerates_missing_files(self):
+        catalog = collect.load_story_catalog()
+        self.assertEqual(set(catalog["posts"]), {"2026-09-27-closedquorum-panel", "2026-09-25-nofile"})
+        self.assertIn("closedquorum", catalog["posts"]["2026-09-27-closedquorum-panel"]["headline"])
+        self.assertEqual(catalog["df"]["closedquorum"], 1)
+
+    def test_catalog_with_missing_index_is_empty(self):
+        with mock.patch.object(collect, "DATA_DIR", Path(self.tmp.name) / "nowhere"):
+            catalog = collect.load_story_catalog()
+        self.assertEqual(catalog["posts"], {})
+
+    def test_first_pass_context_has_no_ids_and_publisher_prompt_has_ids(self):
+        self.assertNotIn("[id:", collect.build_prompt())
+        self.assertNotIn("[id:", collect.get_existing_context())
+        prompt = collect.build_publisher_proof_prompt()
+        self.assertIn("[id: 2026-09-27-closedquorum-panel]", prompt)
+        self.assertIn("covered_by", prompt)
+
+
 if __name__ == "__main__":
     unittest.main()
