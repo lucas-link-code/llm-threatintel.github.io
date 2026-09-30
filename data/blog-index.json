@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "2026-09-30-inside-chatgpt-work-the-machine-underneath-the-chat",
+      "title": "Inside ChatGPT Work: The Machine Underneath the Chat",
+      "date": "2026-09-30",
+      "author": "Lucas L.",
+      "category": "GenAI Security",
+      "tags": [
+        "chatgpt",
+        "sandbox",
+        "agent-harnesses",
+        "cybersecurity"
+      ],
+      "excerpt": "I had a look underneath a ChatGPT Work thread, because I wanted to know what my tasks were actually running in. Underneath it is a Linux filesystem with a shell, a C compiler, and a network connection for its commands that is controlled separately from web search. It’s impressive how much Cloud infrastructure is invested into every chat thread and surprising that OpenAI does not seem to mind if you keep old chat conversations from 3 years ago in history.",
+      "file": "2026-09-30-inside-chatgpt-work-the-machine-underneath-the-chat.md",
+      "readTime": "12 min"
+    },
+    {
       "id": "2026-09-05-why-attackers-dont-put-ai-in-malware",
       "title": "Why Attackers Don't Put AI in Malware",
       "date": "2026-09-05",

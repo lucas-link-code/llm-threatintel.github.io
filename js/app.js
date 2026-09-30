@@ -2770,7 +2770,7 @@ const App = {
       .trim();
   },
 
-  renderMarkdown(md) {
+  renderMarkdown(md, options) {
     const codeBlocks = [];
     let html = md.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
       const idx = codeBlocks.length;
@@ -2844,6 +2844,9 @@ const App = {
     html = html.replace(/CODEBLOCKPLACEHOLDER_(\d+)/g, (_, idx) =>
       preHtml(idx),
     );
+    if (options && options.escapePlaceholders) {
+      html = this.escapeUnknownMarkup(html);
+    }
     return html;
   },
 
@@ -3734,7 +3737,7 @@ const App = {
       const markdown = await response.text();
       const bodyMd = this.stripBlogPostFooterMarkdown(markdown);
       const html =
-        this.renderMarkdown(bodyMd) +
+        this.renderMarkdown(bodyMd, { escapePlaceholders: true }) +
         this.blogPostBylineHtml() +
         this.blogPostFooterAsideHtml();
       container.innerHTML = `
@@ -3795,6 +3798,39 @@ const App = {
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  },
+
+  escapeUnknownMarkup(html) {
+    const allowed = new Set([
+      "a",
+      "blockquote",
+      "br",
+      "code",
+      "em",
+      "h1",
+      "h2",
+      "h3",
+      "hr",
+      "li",
+      "ol",
+      "p",
+      "pre",
+      "strong",
+      "table",
+      "tbody",
+      "td",
+      "th",
+      "thead",
+      "tr",
+      "ul",
+    ]);
+    return String(html).replace(
+      /<\/?([A-Za-z][\w:-]*)\b[^<>]*>/g,
+      (match, name) => {
+        if (allowed.has(String(name).toLowerCase())) return match;
+        return this.escapeHtml(match);
+      },
+    );
   },
 
   escapeAttr(str) {
