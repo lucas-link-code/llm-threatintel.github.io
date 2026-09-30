@@ -962,7 +962,7 @@ class WallClockLimitTests(unittest.TestCase):
         with mock.patch.object(collect.requests, "post", post):
             collect.chat_completion("k", [{"role": "user", "content": "x"}])
         self.assertEqual(sent[0]["provider"], {"sort": "throughput", "ignore": ["OpenInference"]})
-        self.assertEqual(sent[0]["reasoning"], {"enabled": False})
+        self.assertNotIn("reasoning", sent[0])
         self.assertEqual(sent[0]["model"], collect.MODEL)
 
     def test_chat_retries_when_the_stream_ends_with_an_error(self):

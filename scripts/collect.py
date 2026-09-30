@@ -41,8 +41,8 @@ PAGE_FETCH_TIMEOUT = 8
 CHAT_TIMEOUT = 180
 # Route to the fastest endpoint and skip OpenInference, which served this model at about 6 tokens per second.
 PROVIDER_PREFERENCES = {"sort": "throughput", "ignore": ["OpenInference"]}
-# Hidden reasoning tokens slow the run and count against max_tokens.
-REASONING_PREFERENCES = {"enabled": False}
+# Reasoning stays on at the provider default. Set a dict such as {"enabled": False} to override.
+REASONING_PREFERENCES = None
 # Wall clock limits. A normal run finishes in 1 to 3 minutes.
 CHAT_DEADLINE = 100
 CHAT_ATTEMPTS = 2
@@ -446,8 +446,9 @@ def chat_completion(api_key, messages, plugins=None, max_tokens=MAX_OUTPUT_TOKEN
             "messages": messages,
             "max_tokens": max_tokens,
             "provider": PROVIDER_PREFERENCES,
-            "reasoning": REASONING_PREFERENCES,
         }
+        if REASONING_PREFERENCES:
+            payload["reasoning"] = REASONING_PREFERENCES
         if plugins:
             payload["plugins"] = plugins
         if use_json_format:
