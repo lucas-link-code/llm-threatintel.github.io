@@ -1,0 +1,80 @@
+name: OpenRouter probe (temporary)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Probe OpenRouter
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          python -u - <<'PY'
+          import json, os, sys, threading, time
+          import requests
+          sys.path.insert(0, "scripts")
+          import collect
+
+          key = os.environ["OPENROUTER_API_KEY"]
+          H = {"Authorization": "Bearer " + key, "Content-Type": "application/json"}
+          model = collect.MODEL
+          plugin = collect.web_plugin()
+          small = [{"role": "user", "content": 'Reply with the JSON {"ok": true}'}]
+          real = [
+              {"role": "system", "content": collect.COLLECTION_SYSTEM},
+              {"role": "user", "content": collect.build_prompt()},
+          ]
+          RF = {"type": "json_object"}
+          probes = {
+              "A small, no plugin, json_object": dict(messages=small, max_tokens=50, response_format=RF),
+              "B small, web plugin, json_object": dict(messages=small, max_tokens=50, response_format=RF, plugins=plugin),
+              "C small, web plugin, no response_format": dict(messages=small, max_tokens=50, plugins=plugin),
+              "D real prompt, no plugin, json_object": dict(messages=real, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF),
+              "E real prompt, web plugin, json_object": dict(messages=real, max_tokens=collect.MAX_OUTPUT_TOKENS, response_format=RF, plugins=plugin),
+          }
+          out = {}
+
+          def run(name, body):
+              t0 = time.monotonic()
+              try:
+                  r = requests.post(collect.OPENROUTER_URL, headers=H, json={"model": model, **body}, timeout=(10, 150))
+                  dt = time.monotonic() - t0
+                  try:
+                      d = r.json()
+                      ch = (d.get("choices") or [{}])[0]
+                      txt = (ch.get("message") or {}).get("content") or ""
+                      info = f"finish={ch.get('finish_reason')} provider={d.get('provider')} usage={d.get('usage')} chars={len(txt)} head={txt[:120]!r}"
+                  except ValueError:
+                      info = f"non-json body head={r.text[:200]!r}"
+                  out[name] = f"HTTP {r.status_code} in {dt:.1f}s {info}"
+              except Exception as exc:
+                  out[name] = f"FAILED after {time.monotonic() - t0:.1f}s {type(exc).__name__}: {str(exc)[:200]}"
+
+          try:
+              r = requests.get(f"https://openrouter.ai/api/v1/models/{model}/endpoints", headers=H, timeout=20)
+              print("endpoints HTTP", r.status_code)
+              for e in (r.json().get("data") or {}).get("endpoints", []):
+                  print("  endpoint", e.get("provider_name"), "status", e.get("status"), "uptime30m", e.get("uptime_last_30m"), "latency", e.get("latency_last_30m"), "throughput", e.get("throughput_last_30m"), "quant", e.get("quantization"))
+          except Exception as exc:
+              print("endpoints lookup failed:", exc)
+
+          threads = [threading.Thread(target=run, args=(n, b), daemon=True) for n, b in probes.items()]
+          for t in threads:
+              t.start()
+          for t in threads:
+              t.join(170)
+          print("---- results")
+          for name in probes:
+              print(name, "=>", out.get(name, "STILL RUNNING after 170s"))
+          PY
