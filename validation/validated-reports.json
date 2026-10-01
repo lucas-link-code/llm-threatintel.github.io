@@ -5338,6 +5338,21 @@
       "validated_at": "2026-09-30T14:16:08+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-01-autonomous-agents-retail-skimming-strix-cairn-hermes": {
+      "content_hash": "df598739aa5e0da792d75bd0192ede4a568a21e9873b134f29ab011cd2a685bf",
+      "evidence_status": "validated",
+      "file": "2026-10-01-autonomous-agents-retail-skimming-strix-cairn-hermes.md",
+      "posts_index_hash": "c7f6d018b3962b4a90960d58220b0ec965bc54c4cb8a1a41cafa0cc0967d111a",
+      "report_id": "2026-10-01-autonomous-agents-retail-skimming-strix-cairn-hermes",
+      "review_required": [],
+      "source_urls": [
+        "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/09/CSA_research_note_ai_agent_retail_skimming_campaign_20260924-csa-styled.pdf"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-01T09:49:44+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
