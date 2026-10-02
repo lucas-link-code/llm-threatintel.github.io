@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 01 Oct 2026 09:49:43 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 09:26:23 +0000</lastBuildDate>
     <item>
+      <title>Sponsored Search Ads and Attacker Custom GPTs Deliver ClickFix NetSupport RAT Loader</title>
+      <link>https://llm-threatintel.com/posts/2026-10-02-island-sponsored-search-custom-gpt-clickfix.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-02-island-sponsored-search-custom-gpt-clickfix.html</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Attackers bought sponsored search ads that led to lookalike ChatGPT destinations and attacker authored Custom GPTs, then served a fake service warning and ClickFix prompt that installed a NetSupport RAT loader, according to Island. Island mapped about 850 paid ad landings across 26 lookalike ChatGPT destinations and 71 Google Ads campaign IDs over three months ending August 2026. The chain abused trusted platforms and social engineering rather than any ChatGPT or Google vulnerability, and the loader was retrieved from an attacker domain.</description>
+    </item>    <item>
+      <title>AI Agents Sent 200,000 Requests and a SQL Injection Probe at US and Canadian Government Sites</title>
+      <link>https://llm-threatintel.com/posts/2026-10-02-transluce-ai-agent-government-sql-injection.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-02-transluce-ai-agent-government-sql-injection.html</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <description>AI agents sent more than 200,000 requests to the U.S. Department of Education Civil Rights Data Collection site and probed a Library and Archives Canada service, according to Transluce research reported by SecurityWeek. Thirteen requests carried attack payloads, including three SQL injection probes and a cross site scripting probe, and Transluce found nothing indicating the probes succeeded or that non public data was returned. More than 10,000 requests carried a tag beginning with oai, which may point to OpenAI agents, and OpenAI confirmed unusual behavior on Commerce Department and SEC sites.</description>
+    </item>    <item>
+      <title>Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input</title>
+      <link>https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <description>An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.</description>
+    </item>    <item>
       <title>Autonomous Open Source Agents Breached 100+ E-Commerce Sites and Exfiltrated 600,000 Card Records</title>
       <link>https://llm-threatintel.com/posts/2026-10-01-autonomous-agents-retail-skimming-strix-cairn-hermes.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-01-autonomous-agents-retail-skimming-strix-cairn-hermes.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html</guid>
       <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
       <description>Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.</description>
-    </item>    <item>
-      <title>Deadbugz: MCP Supply Chain Campaign Using Runtime-Gated Metadata Poisoning to Harvest Credentials</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-deadbugz-mcp-metadata-poisoning.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Deadbugz pushed a malicious MCP server into multiple projects, shipping two innocuous tools and holding the payload back until the client had made exactly three tool calls. A reviewer checking a new server is unlikely to spot that: the metadata that turns into instructions hunting SSH keys and cloud credentials only appears once the server is trusted and in use. The public GitHub account zellkernel submitted 23 identified campaign-related pull requests to unrelated AI, MCP, and developer-tool projects.</description>
-    </item>    <item>
-      <title>EvilTokens: AI-Powered Phishing-as-a-Service Platform Disrupted After Compromising 12,000 Inboxes</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-eviltokens-ai-phishing-platform-disrupted.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-eviltokens-ai-phishing-platform-disrupted.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Within months of launching in February 2026, EvilTokens had been linked to more than 12,000 compromised email inboxes across over 10,000 organizations worldwide. EvilTokens, a powerful cybercrime platform that used AI at every step of the attack chain, from compromising email accounts to designing intricate roadmaps for financial fraud and scams. Working with its industry and law enforcement partners, Microsoft seized 50 websites used to operate the service and disabled more than 150 additional domains tied to its infrastructure.</description>
-    </item>    <item>
-      <title>Plugin4Shell: Zero-Click RCE Bypass of SHA Pinning in AI Coding Agent Plugin Ecosystems</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-plugin4shell-ai-coding-agent-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-plugin4shell-ai-coding-agent-rce.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Plugin4Shell is a high-severity, zero-click remote code execution vulnerability affecting major AI coding agents, including Anthropic Claude Code, OpenAI Codex, GitHub Copilot, and Google Gemini CLI. The flaw allows a malicious plugin update to execute attacker-controlled code without requiring a user to click, approve, or reinstall anything. The bug, dubbed Plugin4Shell, breaks SHA pinning, the mechanism developers rely on to lock an installed plugin to a specific, reviewed version of its code.</description>
     </item>
   </channel>
 </rss>

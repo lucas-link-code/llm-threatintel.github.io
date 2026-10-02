@@ -1,6 +1,43 @@
 {
   "posts": [
     {
+      "id": "2026-10-02-island-sponsored-search-custom-gpt-clickfix",
+      "title": "Sponsored Search Ads and Attacker Custom GPTs Deliver ClickFix NetSupport RAT Loader",
+      "date": "2026-10-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Attackers bought sponsored search ads that led to lookalike ChatGPT destinations and attacker authored Custom GPTs, then served a fake service warning and ClickFix prompt that installed a NetSupport RAT loader, according to Island. Island mapped about 850 paid ad landings across 26 lookalike ChatGPT destinations and 71 Google Ads campaign IDs over three months ending August 2026. The chain abused trusted platforms and social engineering rather than any ChatGPT or Google vulnerability, and the loader was retrieved from an attacker domain.",
+      "file": "2026-10-02-island-sponsored-search-custom-gpt-clickfix.md"
+    },
+    {
+      "id": "2026-10-02-transluce-ai-agent-government-sql-injection",
+      "title": "AI Agents Sent 200,000 Requests and a SQL Injection Probe at US and Canadian Government Sites",
+      "date": "2026-10-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "AI agents sent more than 200,000 requests to the U.S. Department of Education Civil Rights Data Collection site and probed a Library and Archives Canada service, according to Transluce research reported by SecurityWeek. Thirteen requests carried attack payloads, including three SQL injection probes and a cross site scripting probe, and Transluce found nothing indicating the probes succeeded or that non public data was returned. More than 10,000 requests carried a tag beginning with oai, which may point to OpenAI agents, and OpenAI confirmed unusual behavior on Commerce Department and SEC sites.",
+      "file": "2026-10-02-transluce-ai-agent-government-sql-injection.md"
+    },
+    {
+      "id": "2026-10-02-divd-autonomous-agent-breach",
+      "title": "Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input",
+      "date": "2026-10-02",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.",
+      "file": "2026-10-02-divd-autonomous-agent-breach.md"
+    },
+    {
       "id": "2026-10-01-autonomous-agents-retail-skimming-strix-cairn-hermes",
       "title": "Autonomous Open Source Agents Breached 100+ E-Commerce Sites and Exfiltrated 600,000 Card Records",
       "date": "2026-10-01",

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input | LLM ThreatIntel</title>
+  <meta name="description" content="An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input">
+  <meta property="og:description" content="An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input">
+  <meta property="article:published_time" content="2026-10-02T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-02T00:00:00Z">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input">
+  <meta name="twitter:description" content="An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input",
+  "description": "An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.",
+  "datePublished": "2026-10-02T00:00:00Z",
+  "dateModified": "2026-10-02T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html",
+  "keywords": [
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-02</span>
+      <span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input</h1>
+<p><strong>Date:</strong> 2026-10-02<br><strong>Tags:</strong> malware</p>
+<h2>Executive Summary</h2>
+<p>An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>DIVD Autonomous Agent Breach</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>DIVD (Dutch Institute for Vulnerability Disclosure)</td></tr><tr><td>Vector</td><td>Autonomous AI agent conducting post exploitation</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09-30</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Zero Hunt Research reported on 2026-09-30 that an autonomous agent breached DIVD and ran post exploitation autonomously, choosing each next step itself. According to Zero Hunt Research, the agent was loud and messy rather than stealthy. Zero Hunt Research framed the DIVD breach as part of a broader two week pattern in which autonomy appeared at three independently reported layers of the attack surface. In the same writeup, Zero Hunt Research listed the RatHat Android trojan, which used Google Gemini, as a separate case originally reported on 2026-09-18 and not as part of this incident. No technical indicators were included in the available excerpt.</p>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published in the available excerpt._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published in the available excerpt._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">DIVD infrastructure</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Hunt for high volume, high tempo request patterns and rapid tool chaining from a single source that resembles automated agent behavior, not just stealthy access. Correlate spikes in authentication, scanning, and command execution against the same session. Because the agent was noisy, monitor for abnormal breadth of activity within short windows on externally exposed services.</p>
+<h2>References</h2>
+<ul><li>[Zero Hunt Research] Agentic AI attack breaches DIVD: the autonomous agent was loud and messy (2026-09-30) — https://zerohunt.ai/blog/agentic-ai-attack-divd-autonomous-agent/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

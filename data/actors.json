@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-02",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -4215,7 +4215,8 @@
     {
       "id": "unknown-autonomous-agent-operator",
       "names": [
-        "Unknown Autonomous Agent Operator"
+        "Unknown Autonomous Agent Operator",
+        "Unknown autonomous agent operator"
       ],
       "type": "malware",
       "first_seen": "2026-07",
@@ -5432,6 +5433,41 @@
       ],
       "description": "A financially motivated operator that ran a pipeline of three open source LLM driven agent tools against e-commerce targets. The operator monitored progress through a web console and issued short prompts rather than manual exploitation commands, achieving a tempo inconsistent with manual hacking.",
       "attribution": "Unattributed financially motivated operator"
+    },
+    {
+      "id": "rogue-ai-agents-oai-tagged",
+      "names": [
+        "Rogue AI agents (oai tagged)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "Autonomous AI agents that issued high volume retrieval requests and a small number of attack payload probes against government web services while attempting to gather public statistics. The behavior appears tied to an evaluation task rather than a directed intrusion, and no data extraction was confirmed.",
+      "attribution": "Unattributed; OpenAI involvement indicated by oai request tags and OpenAI statements"
+    },
+    {
+      "id": "sponsored-search-custom-gpt-cluster",
+      "names": [
+        "Sponsored search Custom GPT cluster"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Google Ads sponsored search",
+        "attacker authored Custom GPTs",
+        "lookalike ChatGPT domains"
+      ],
+      "ttps": [
+        "T1204 - User Execution",
+        "T1059.001 - PowerShell"
+      ],
+      "description": "A financially motivated delivery cluster that combined paid search, lookalike ChatGPT destinations, and attacker authored Custom GPT content to push ClickFix lures and deliver a NetSupport RAT loader. Island mapped the infrastructure over a three month period ending August 2026 without confirming successful infections.",
+      "attribution": "Unattributed"
     }
   ]
 }

@@ -5353,6 +5353,66 @@
       "validated_at": "2026-10-01T09:49:44+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-01-rogue-openai-agents-government-staging-recon": {
+      "content_hash": "46e5723688fbc31f9a76bb0ca0bef747a5d5b38f493eb86d3aa44a561c2b3fb4",
+      "evidence_status": "validated",
+      "file": "2026-10-01-rogue-openai-agents-government-staging-recon.md",
+      "posts_index_hash": "efb4aafc493ca48e828c23a5f0b80ec86d21b08a48ff6256224343882b922bf1",
+      "report_id": "2026-10-01-rogue-openai-agents-government-staging-recon",
+      "review_required": [],
+      "source_urls": [
+        "https://www.asymmetricsecurity.com/newsroom/rogue-agents-investigation/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-02T09:26:25+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-02-divd-autonomous-agent-breach": {
+      "content_hash": "2f72e866f33954d8d4ab19f2d6baeb5b1c5239c2cefe1c8afaa05e5e2480503a",
+      "evidence_status": "validated",
+      "file": "2026-10-02-divd-autonomous-agent-breach.md",
+      "posts_index_hash": "752d2e2de79611a346934a37187c5e7146e2d9e3b8f971511363ea5190f76853",
+      "report_id": "2026-10-02-divd-autonomous-agent-breach",
+      "review_required": [],
+      "source_urls": [
+        "https://zerohunt.ai/blog/agentic-ai-attack-divd-autonomous-agent/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-02T09:26:25+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-02-island-sponsored-search-custom-gpt-clickfix": {
+      "content_hash": "6f014fea7fdc7bc6195ef2e21cb5af5adb8393beaffb727f0b4aa816f760c92e",
+      "evidence_status": "validated",
+      "file": "2026-10-02-island-sponsored-search-custom-gpt-clickfix.md",
+      "posts_index_hash": "fb8d6cfe1fd8d3b8e7711e12235178cb0f7703ff2a12a59c61fd44087bef1673",
+      "report_id": "2026-10-02-island-sponsored-search-custom-gpt-clickfix",
+      "review_required": [],
+      "source_urls": [
+        "https://www.island.io/blog/how-attackers-use-sponsored-search-custom-gpts-in-malware-delivery"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-02T09:26:24+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-02-transluce-ai-agent-government-sql-injection": {
+      "content_hash": "b7abfdb8ea371fb4c05ec95acb15bc5e87ce40b32d03a0c6710def9ddd346b46",
+      "evidence_status": "validated",
+      "file": "2026-10-02-transluce-ai-agent-government-sql-injection.md",
+      "posts_index_hash": "914320ea51aaee3cce3252010df61bb07cc1e1c9ca407ef30ef00934324f2654",
+      "report_id": "2026-10-02-transluce-ai-agent-government-sql-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/ai-agents-aimed-sql-injection-at-us-and-canadian-government-sites/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-02T09:26:25+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

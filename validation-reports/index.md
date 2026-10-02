@@ -5,12 +5,12 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Latest Run
 
-- GitHub run ID: `36845192400`
-- Validator exit code: `2`
-- Generated at UTC: `2026-10-01T09:49:45+00:00`
+- GitHub run ID: `36989712177`
+- Validator exit code: `0`
+- Generated at UTC: `2026-10-02T09:26:25+00:00`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `1`
+- Review required: `0`
 - Latest Markdown: [latest-validation-report.md](latest-validation-report.md)
 - Latest JSON: [latest-validation-report.json](latest-validation-report.json)
 
@@ -23,6 +23,7 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Recent Run Reports
 
+- [20261002-092625Z-run-36989712177.md](runs/2026/10/20261002-092625Z-run-36989712177.md)
 - [20261001-094945Z-run-36845192400.md](runs/2026/10/20261001-094945Z-run-36845192400.md)
 - [20260930-134638Z-run-36724045767.md](runs/2026/09/20260930-134638Z-run-36724045767.md)
 - [20260929-131819Z-run-36573938136.md](runs/2026/09/20260929-131819Z-run-36573938136.md)
@@ -42,7 +43,6 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20260916-082013Z-run-35073158105.md](runs/2026/09/20260916-082013Z-run-35073158105.md)
 - [20260915-082626Z-run-34946903971.md](runs/2026/09/20260915-082626Z-run-34946903971.md)
 - [20260914-083749Z-run-34823604065.md](runs/2026/09/20260914-083749Z-run-34823604065.md)
-- [20260913-080318Z-run-34746704410.md](runs/2026/09/20260913-080318Z-run-34746704410.md)
 
 ## Review-Required Reports
 
