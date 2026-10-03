@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched | LLM ThreatIntel</title>
+  <meta name="description" content="A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched">
+  <meta property="og:description" content="A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched">
+  <meta property="article:published_time" content="2026-10-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-03T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched">
+  <meta name="twitter:description" content="A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched",
+  "description": "A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.",
+  "datePublished": "2026-10-03T00:00:00Z",
+  "dateModified": "2026-10-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html",
+  "keywords": [
+    "supply-chain",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-03</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched</h1>
+<p><strong>Date:</strong> 2026-10-03<br><strong>Tags:</strong> supply-chain, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Plugin4Shell</td></tr><tr><td>Attribution</td><td>Air Security research lab (disclosure) (confidence: high)</td></tr><tr><td>Target</td><td>Users of AI coding agents that install marketplace plugins pinned to a commit SHA</td></tr><tr><td>Vector</td><td>Attacker branches a plugin repository under the exact name of a pinned commit SHA and points it at malicious code</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09-17</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to threatfrontier.com, Air Security&#x27;s research lab showed on 2026-09-17 that four widely used AI coding agents did not enforce commit SHA pinning. A plugin repository owner could make Claude Code, OpenAI Codex, GitHub Copilot and Gemini CLI run different code while the pin still appeared honored; the researchers call the issue Plugin4Shell. threatfrontier.com reported the flaw is in how Git resolves the argument: when a branch exists with the same name as a requested 40 character commit hash, Git resolves the name to the branch rather than the commit, so an attacker who controls the plugin repository creates a branch named after the pinned SHA and makes it the default branch. threatfrontier.com stated Anthropic shipped a fix in Claude Code 2.1.179 and OpenAI shipped a fix in Codex 0.146.0, while Microsoft has not shipped a GitHub Copilot patch and Google will not patch the retiring Gemini CLI. According to threatfrontier.com, OpenAI&#x27;s fix in Codex pull request #34644, merged 2026-07-22, resolves HEAD after checkout and rejects a source when the commit does not match; this shipped in Codex 0.146.0 released 2026-07-29 and Air Security verified it on 2026-08-12. No CVE has been assigned.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Malicious code enters the developer environment through a tampered marketplace plugin source</td></tr><tr><td>Trusted Developer Utilities Proxy Execution</td><td>T1218</td><td>The AI coding agent itself performs the clone and checkout that materializes the attacker code</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No attacker IOCs published. Affected products are legitimate developer tools tracked as affected platforms, not malicious packages._</p>
+<h3>Full URL Paths</h3>
+<p>_No attacker IOCs published. Affected products are legitimate developer tools tracked as affected platforms, not malicious packages._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Claude Code 2.1.179 (patched)
+OpenAI Codex 0.146.0 (patched)
+GitHub Copilot (no patch)
+Gemini CLI (will not be fixed)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>On Copilot and Gemini CLI, do not rely on SHA pinning to guarantee plugin integrity; instead verify the checked out HEAD matches the pinned commit out of band, or vendor and review plugin source before use. For all agents, flag plugin repositories whose default branch name equals a 40 character hex string or a pinned commit SHA. After any agent plugin install, capture the resolved commit and compare it to the intended pin. Prioritize upgrades to Claude Code 2.1.179 and Codex 0.146.0 where pinning is enforced.</p>
+<h2>References</h2>
+<ul><li>[threatfrontier.com] Plugin4Shell: Pinned SHAs Fail in AI Coding Agents (2026-10-02) — https://threatfrontier.com/articles/plugin4shell-pinned-sha-bypass-claude-code-codex-copilot-gemini-cli</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

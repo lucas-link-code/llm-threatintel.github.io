@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-03",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5468,6 +5468,38 @@
       ],
       "description": "A financially motivated delivery cluster that combined paid search, lookalike ChatGPT destinations, and attacker authored Custom GPT content to push ClickFix lures and deliver a NetSupport RAT loader. Island mapped the infrastructure over a three month period ending August 2026 without confirming successful infections.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "pretext",
+      "names": [
+        "Pretext"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Pretext is a research attack technique rather than a live threat actor. It is an automated generator that produces malicious AI agent skills designed to defeat the two stage scanner architecture used by tools such as NVIDIA SkillSpector. Published as a preprint and disclosed as defensive research.",
+      "attribution": "Huawei Research Zurich, Computing System Labs (research disclosure, not a threat actor)"
+    },
+    {
+      "id": "plugin4shell",
+      "names": [
+        "Plugin4Shell"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1218 - Trusted Developer Utilities Proxy Execution"
+      ],
+      "description": "Plugin4Shell is a supply chain technique that defeats commit SHA pinning in AI coding agent plugin ecosystems. It relies on Git resolving a branch name that matches a requested commit SHA, allowing a repository owner to substitute malicious code. Disclosed as research; not tied to a named threat actor.",
+      "attribution": "Unattributed technique disclosed by Air Security research lab"
     }
   ]
 }

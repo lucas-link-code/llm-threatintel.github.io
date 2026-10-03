@@ -1,6 +1,33 @@
 {
   "posts": [
     {
+      "id": "2026-10-03-plugin4shell-copilot-gemini-unpatched",
+      "title": "Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched",
+      "date": "2026-10-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.",
+      "file": "2026-10-03-plugin4shell-copilot-gemini-unpatched.md"
+    },
+    {
+      "id": "2026-10-03-pretext-evades-ai-agent-skill-scanners",
+      "title": "Pretext Attack Evades AI Agent Skill Scanners in Up to 97 Percent of Tests",
+      "date": "2026-10-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "supply-chain",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Huawei Research Zurich researchers built an automated attack called Pretext that bypasses malicious AI agent skill scanners up to 97 percent of the time against a frozen detector and 77 percent against a co-adaptive detector. The attack defeats the two stage scanner design vendors are shipping, pairing static code checks with an LLM semantic judge, by moving the payload from code into natural language. This matters for anyone running skill marketplaces or agent plugin gateways, because current detectors may pass malicious skills that look benign to a judge.",
+      "file": "2026-10-03-pretext-evades-ai-agent-skill-scanners.md"
+    },
+    {
       "id": "2026-10-02-island-sponsored-search-custom-gpt-clickfix",
       "title": "Sponsored Search Ads and Attacker Custom GPTs Deliver ClickFix NetSupport RAT Loader",
       "date": "2026-10-02",

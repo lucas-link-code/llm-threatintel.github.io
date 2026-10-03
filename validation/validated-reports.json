@@ -5413,6 +5413,37 @@
       "validated_at": "2026-10-02T09:26:25+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-03-plugin4shell-copilot-gemini-unpatched": {
+      "content_hash": "96ad9b6ec118cc82193746c961a6d95240981113707cf0a6e652edebc8445cd9",
+      "evidence_status": "validated",
+      "file": "2026-10-03-plugin4shell-copilot-gemini-unpatched.md",
+      "posts_index_hash": "101689f261c9d439b61a0208ccfc625cb6c95d5f61a80c1d67f977247246985b",
+      "report_id": "2026-10-03-plugin4shell-copilot-gemini-unpatched",
+      "review_required": [],
+      "source_urls": [
+        "https://threatfrontier.com/articles/plugin4shell-pinned-sha-bypass-claude-code-codex-copilot-gemini-cli"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-03T08:54:45+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-03-pretext-evades-ai-agent-skill-scanners": {
+      "content_hash": "1cb219f7c06d9e76f1c4f7823237343d50fe16ba9407d1ab7839d10928999293",
+      "evidence_status": "validated",
+      "file": "2026-10-03-pretext-evades-ai-agent-skill-scanners.md",
+      "posts_index_hash": "4a75b55ccb184a62744669c9c7fa0857c62d98e3d6989881d0d4b85d74d8741e",
+      "report_id": "2026-10-03-pretext-evades-ai-agent-skill-scanners",
+      "review_required": [],
+      "source_urls": [
+        "https://www.notatechguy.com/ai-agent-skill-scanners-evaded-97-by-huawei-researchers/",
+        "https://arxiv.org/abs/2609.39607"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-03T08:54:45+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

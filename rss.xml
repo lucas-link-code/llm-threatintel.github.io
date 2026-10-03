@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 02 Oct 2026 09:26:23 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 08:54:44 +0000</lastBuildDate>
     <item>
+      <title>Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched</title>
+      <link>https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.</description>
+    </item>    <item>
+      <title>Pretext Attack Evades AI Agent Skill Scanners in Up to 97 Percent of Tests</title>
+      <link>https://llm-threatintel.com/posts/2026-10-03-pretext-evades-ai-agent-skill-scanners.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-03-pretext-evades-ai-agent-skill-scanners.html</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Huawei Research Zurich researchers built an automated attack called Pretext that bypasses malicious AI agent skill scanners up to 97 percent of the time against a frozen detector and 77 percent against a co-adaptive detector. The attack defeats the two stage scanner design vendors are shipping, pairing static code checks with an LLM semantic judge, by moving the payload from code into natural language. This matters for anyone running skill marketplaces or agent plugin gateways, because current detectors may pass malicious skills that look benign to a judge.</description>
+    </item>    <item>
       <title>Sponsored Search Ads and Attacker Custom GPTs Deliver ClickFix NetSupport RAT Loader</title>
       <link>https://llm-threatintel.com/posts/2026-10-02-island-sponsored-search-custom-gpt-clickfix.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-02-island-sponsored-search-custom-gpt-clickfix.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html</guid>
       <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
       <description>ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.</description>
-    </item>    <item>
-      <title>Mini Shai-Hulud GitHub Actions Came Back Online With Malicious Tags Still Set</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-mini-shai-hulud-actions-cool-reenabled.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-mini-shai-hulud-actions-cool-reenabled.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Socket published on 2026-09-24 that GitHub Actions actions-cool/issues-helper and actions-cool/maintain-one-comment, disabled on 2026-05-19 after the May Mini Shai-Hulud compromise, became reachable again on 2026-09-16 while release tags still pointed at the May 18 malicious commits. Workflows that reference those actions by tag, including issues-helper at v2.2.1, downloaded the payload and ran it with Bun. Socket updated the post on 2026-09-25: GitHub disabled both repositories again. Review workflow runs from 2026-09-16 through 2026-09-25 and rotate secrets those jobs could read.</description>
-    </item>    <item>
-      <title>CLOSEDQUORUM: Windows Implant Lets DeepSeek, Qwen, Mistral, and Gemini Vote on the Next Action</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-closedquorum-llm-panel-c2.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Cisco Talos published on 2026-09-22 that CLOSEDQUORUM, a 16.4 MB Go Windows implant, asks up to four commercial models to vote on steal, inject, persist, or move, then runs the winning action without a dedicated attacker command and control server. Talos has not confirmed in the wild deployment. The public build uses placeholder API keys and a dummy Discord webhook, so it does not complete the loop. Hunt the six SHA256 builds below, LSASS access paired with process injection, and a Windows executable that calls several model APIs in one cycle. Do not denylist api.deepseek.com, openrouter.ai, api.mistral.ai, or Discord.</description>
     </item>
   </channel>
 </rss>

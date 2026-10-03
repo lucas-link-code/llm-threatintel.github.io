@@ -2612,7 +2612,8 @@
         "phantomrelay",
         "phantomrelaylite",
         "phantomrelayv1",
-        "phantomrelayv2"
+        "phantomrelayv2",
+        "pretext"
       ],
       "iocs": [
         "03beb07ce116a2a69f360dd3fab8c3aa55bb42ce580d43f1924642874e388efe",
@@ -3976,6 +3977,7 @@
       "actors": [
         "apt42",
         "mustang panda",
+        "pretext",
         "rage",
         "temp.hex",
         "unc2970"
@@ -6518,7 +6520,8 @@
       ],
       "cves": [],
       "actors": [
-        "openai"
+        "openai",
+        "plugin4shell"
       ],
       "iocs": []
     },
@@ -6813,6 +6816,42 @@
       "actors": [
         "openai",
         "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-10-03-plugin4shell-copilot-gemini-unpatched",
+      "title": "Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched",
+      "date": "2026-10-03",
+      "excerpt": "A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.",
+      "file": "2026-10-03-plugin4shell-copilot-gemini-unpatched.md",
+      "body": "Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched Date: 2026-10-03 Tags: supply-chain, malicious-tool Executive Summary A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI. Campaign Summary Field Detail Campaign / Malware Plugin4Shell Attribution Air Security research lab (disclosure) (confidence: high) Target Users of AI coding agents that install marketplace plugins pinned to a commit SHA Vector Attacker branches a plugin repository under the exact name of a pinned commit SHA and points it at malicious code Status active First Observed 2026-09-17 Detailed Findings According to threatfrontier.com, Air Security's research lab showed on 2026-09-17 that four widely used AI coding agents did not enforce commit SHA pinning. A plugin repository owner could make Claude Code, OpenAI Codex, GitHub Copilot and Gemini CLI run different code while the pin still appeared honored; the researchers call the issue Plugin4Shell. threatfrontier.com reported the flaw is in how Git resolves the argument: when a branch exists with the same name as a requested 40 character commit hash, Git resolves the name to the branch rather than the commit, so an attacker who controls the plugin repository creates a branch named after the pinned SHA and makes it the default branch. threatfrontier.com stated Anthropic shipped a fix in Claude Code 2.1.179 and OpenAI shipped a fix in Codex 0.146.0, while Microsoft has not shipped a GitHub Copilot patch and Google will not patch the retiring Gemini CLI. According to threatfrontier.com, OpenAI's fix in Codex pull request #34644, merged 2026-07-22, resolves HEAD after checkout and rejects a source when the commit does not match; this shipped in Codex 0.146.0 released 2026-07-29 and Air Security verified it on 2026-08-12. No CVE has been assigned. MITRE ATT&CK Mapping Technique ID Context Compromise Software Supply Chain T1195.002 Malicious code enters the developer environment through a tampered marketplace plugin source Trusted Developer Utilities Proxy Execution T1218 The AI coding agent itself performs the clone and checkout that materializes the attacker code IOCs Domains _No attacker IOCs published. Affected products are legitimate developer tools tracked as affected platforms, not malicious packages._ Full URL Paths _No attacker IOCs published. Affected products are legitimate developer tools tracked as affected platforms, not malicious packages._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations On Copilot and Gemini CLI, do not rely on SHA pinning to guarantee plugin integrity; instead verify the checked out HEAD matches the pinned commit out of band, or vendor and review plugin source before use. For all agents, flag plugin repositories whose default branch name equals a 40 character hex string or a pinned commit SHA. After any agent plugin install, capture the resolved commit and compare it to the intended pin. Prioritize upgrades to Claude Code 2.1.179 and Codex 0.146.0 where pinning is enforced. References [threatfrontier.com] Plugin4Shell: Pinned SHAs Fail in AI Coding Agents (2026-10-02) — https://threatfrontier.com/articles/plugin4shell-pinned-sha-bypass-claude-code-codex-copilot-gemini-cli",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "cves": [],
+      "actors": [
+        "openai",
+        "plugin4shell"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-10-03-pretext-evades-ai-agent-skill-scanners",
+      "title": "Pretext Attack Evades AI Agent Skill Scanners in Up to 97 Percent of Tests",
+      "date": "2026-10-03",
+      "excerpt": "Huawei Research Zurich researchers built an automated attack called Pretext that bypasses malicious AI agent skill scanners up to 97 percent of the time against a frozen detector and 77 percent against a co-adaptive detector. The attack defeats the two stage scanner design vendors are shipping, pairing static code checks with an LLM semantic judge, by moving the payload from code into natural language. This matters for anyone running skill marketplaces or agent plugin gateways, because current detectors may pass malicious skills that look benign to a judge.",
+      "file": "2026-10-03-pretext-evades-ai-agent-skill-scanners.md",
+      "body": "Pretext Attack Evades AI Agent Skill Scanners in Up to 97 Percent of Tests Date: 2026-10-03 Tags: prompt-injection, supply-chain, mcp-security Executive Summary Huawei Research Zurich researchers built an automated attack called Pretext that bypasses malicious AI agent skill scanners up to 97 percent of the time against a frozen detector and 77 percent against a co-adaptive detector. The attack defeats the two stage scanner design vendors are shipping, pairing static code checks with an LLM semantic judge, by moving the payload from code into natural language. This matters for anyone running skill marketplaces or agent plugin gateways, because current detectors may pass malicious skills that look benign to a judge. Campaign Summary Field Detail Campaign / Malware Pretext Attribution Huawei Research Zurich, Computing System Labs (confidence: high) Target Users and operators of AI agent skill marketplaces and agent plugin gateways Vector Malicious AI agent skill submitted past static analysis and LLM judge layers Status active First Observed 2026-09-30 Detailed Findings According to notatechguy.com, Tobias Kaisar and Aritra Dhar at Huawei Computing System Labs in Zurich built Pretext, an automated attack that slips malicious AI agent skills past scanners such as NVIDIA SkillSpector, which pair static code checks with an LLM based semantic judge. The notatechguy.com report states Pretext achieved up to 97 percent success against a frozen detector and 77 percent against a co-adaptive detector across three open source models. notatechguy.com noted it is skeptical of the 97 percent figure because it comes from a frozen detector that hands the attacker full knowledge of the defense, and treats the 77 percent co-adaptive result as the number that matters. According to notatechguy.com, Pretext works in three moves: it moves the malicious payload out of code and into natural language so static analysis has nothing to flag; it frames the payload as the skill's legitimate purpose so the LLM judge sees a coherent description; and it splits instructions across multiple files so each piece stays below the LLM stage blocking threshold. notatechguy.com reported the preprint was posted to arXiv on 2026-09-30 as 2609.39607 and has not been peer reviewed. MITRE ATT&CK Mapping Technique ID Context Compromise Software Supply Chain T1195.002 Malicious skill is distributed through an agent skill supply chain to reach scanners and users Obfuscated Files or Information T1027 Payload is expressed in natural language and split across files to evade static and LLM detection IOCs Domains _No malicious infrastructure IOCs published. The arXiv URL is a research reference, not attacker tooling._ Full URL Paths _No malicious infrastructure IOCs published. The arXiv URL is a research reference, not attacker tooling._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Do not rely on a single LLM judge as the blocking control for skill installation. Add provenance and human review for skills that describe their instructions primarily in prose rather than code, and normalize each skill's files into one view before judging so payloads split across files are evaluated together. Track natural language instruction density and cross file reference patterns as signals, and re test detectors against an adaptive attacker rather than a frozen baseline. Vendors that build skill scanners should treat the 77 percent co-adaptive bypass rate as the meaningful benchmark. References [notatechguy.com] AI agent skill scanners evaded 97% by Huawei researchers (2026-10-03) — https://www.notatechguy.com/ai-agent-skill-scanners-evaded-97-by-huawei-researchers/ [arXiv] Pretext preprint 2609.39607 (2026-09-30) — https://arxiv.org/abs/2609.39607",
+      "tags": [
+        "mcp-security",
+        "prompt-injection",
+        "supply-chain"
+      ],
+      "cves": [],
+      "actors": [
+        "pretext"
       ],
       "iocs": []
     }
