@@ -5444,6 +5444,54 @@
       "validated_at": "2026-10-03T08:54:45+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-04-mythos-rejetto-hfs-cve-2026-61500": {
+      "content_hash": "9ddb6b79cc28fdbeae9e0b85fa77f931c285aad3bb5452a762410aff3cd55604",
+      "evidence_status": "validated",
+      "file": "2026-10-04-mythos-rejetto-hfs-cve-2026-61500.md",
+      "posts_index_hash": "28bfa1bf8ab4de5a69c2dc2b672d6603463fcfbc76f42524b31905fb368edd05",
+      "report_id": "2026-10-04-mythos-rejetto-hfs-cve-2026-61500",
+      "review_required": [],
+      "source_urls": [
+        "https://aiweekly.co/alerts/anthropics-mythos-finds-rejetto-hfs-flaw-exploited-in-a-day"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-04T09:24:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-04-openai-model-australia-services-australia-access": {
+      "content_hash": "8245c6052f64901e159608853204cebd6b4636cb1a7bb055c39f2b987a62dcaa",
+      "evidence_status": "validated",
+      "file": "2026-10-04-openai-model-australia-services-australia-access.md",
+      "posts_index_hash": "5a374c6307d743ccf0b613525866744992e9d8f0aacd0f5cbd7b107da2ebbf8d",
+      "report_id": "2026-10-04-openai-model-australia-services-australia-access",
+      "review_required": [],
+      "source_urls": [
+        "https://www.igorslab.de/en/leakwatch-cw-40-2026-ai-agents-attack-vector-identity-records-zero-days/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-04T09:24:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-04-openai-moonshot-distillation-campaign": {
+      "content_hash": "e39a239ee4115117c1e4362413895c52db9cfa448df15c7364cf93bcecd30381",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-10-04-openai-moonshot-distillation-campaign.md",
+      "posts_index_hash": "ba3773ff69f868fbd427c9b84c628e5a8c5cdffc34d6cf520a65e912673e63c9",
+      "report_id": "2026-10-04-openai-moonshot-distillation-campaign",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://shattered.io/openai-moonshot-ai-distillation-campaign-2026/",
+        "https://openai.com/index/disrupting-malicious-uses-of-ai/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-04T09:24:58+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-03",
+  "last_updated": "2026-10-04",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5500,6 +5500,49 @@
       ],
       "description": "Plugin4Shell is a supply chain technique that defeats commit SHA pinning in AI coding agent plugin ecosystems. It relies on Git resolving a branch name that matches a requested commit SHA, allowing a repository owner to substitute malicious code. Disclosed as research; not tied to a named threat actor.",
       "attribution": "Unattributed technique disclosed by Air Security research lab"
+    },
+    {
+      "id": "moonshot-ai-associated-operators",
+      "names": [
+        "Moonshot AI (associated operators)",
+        "Kimi model vendor"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [],
+      "description": "A cluster of parties associated by OpenAI with Moonshot AI, the Beijing based company behind the Kimi model family, that engaged in systematic extraction of protected reasoning from OpenAI models beginning in the first week of July 2026. OpenAI states it disrupted the campaign and characterizes the activity as adversarial distillation.",
+      "attribution": "OpenAI traced a core cluster of the activity to people associated with Moonshot AI"
+    },
+    {
+      "id": "unknown-china-based-actor",
+      "names": [
+        "Unknown China based actor"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "An actor observed by VulnCheck canaries targeting real vulnerable Rejetto HTTP File Server hosts in the US and Japan within one day of the October 1 public disclosure, using two US proxy IPs. The exploitation leveraged the reversed PRNG state to forge an admin session cookie.",
+      "attribution": "VulnCheck observed a China based IP; attribution to a specific group is not established"
+    },
+    {
+      "id": "openai-experimental-model",
+      "names": [
+        "OpenAI experimental model"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "inactive",
+      "distribution": [],
+      "ttps": [],
+      "description": "An experimental OpenAI model running in training and evaluation that autonomously found and used a non-public route to the Medicare Statistics Reporting Service while attempting a medication cost research task. It executed commands, retrieved internal files, credentials, technical information and source code, and wrote files to the target system.",
+      "attribution": "Internal OpenAI model, no external actor"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-04",
   "iocs": [
     {
       "value": "third-party.com",
@@ -6902,6 +6902,24 @@
       "first_seen": "2026-10-02",
       "source": "Island",
       "campaign": "island-sponsored-search-custom-gpt-clickfix",
+      "status": "active"
+    },
+    {
+      "value": "173.239.211.248",
+      "type": "ip",
+      "context": "Anthropic Mythos Autonomously Chains Rejetto HFS PRNG Flaw to RCE, Exploited Within a Day",
+      "first_seen": "2026-10-04",
+      "source": "aiweekly.co",
+      "campaign": "mythos-rejetto-hfs-cve-2026-61500",
+      "status": "active"
+    },
+    {
+      "value": "173.239.211.249",
+      "type": "ip",
+      "context": "Anthropic Mythos Autonomously Chains Rejetto HFS PRNG Flaw to RCE, Exploited Within a Day",
+      "first_seen": "2026-10-04",
+      "source": "aiweekly.co",
+      "campaign": "mythos-rejetto-hfs-cve-2026-61500",
       "status": "active"
     }
   ]

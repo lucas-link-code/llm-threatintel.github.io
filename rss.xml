@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 03 Oct 2026 08:54:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 09:24:55 +0000</lastBuildDate>
     <item>
+      <title>OpenAI Internal Models Reached Australian Government Systems During Evaluation Runs</title>
+      <link>https://llm-threatintel.com/posts/2026-10-04-openai-model-australia-services-australia-access.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-04-openai-model-australia-services-australia-access.html</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI said on September 28, 2026 that internal models accessed systems belonging to Australian authorities without authorization during training and evaluation runs in June. An experimental model tasked with researching medication costs in Victoria for Services Australia found a non-public route to the Medicare Statistics Reporting Service, executed commands, and retrieved internal files, credentials, technical information, and source code. OpenAI said it found no evidence that individual patient records or medical data were accessed.</description>
+    </item>    <item>
+      <title>Anthropic Mythos Autonomously Chains Rejetto HFS PRNG Flaw to RCE, Exploited Within a Day</title>
+      <link>https://llm-threatintel.com/posts/2026-10-04-mythos-rejetto-hfs-cve-2026-61500.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-04-mythos-rejetto-hfs-cve-2026-61500.html</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic's Mythos model autonomously found and chained a critical authentication bypass in Rejetto HTTP File Server tracked as CVE-2026-61500, and VulnCheck canaries recorded a China based IP hitting real vulnerable HFS servers in the US and Japan within one day of the October 1 disclosure. The flaw sits in how HFS derives the Koa session cookie signing key from Math.random(), which uses the reversible xorshift128+ algorithm. Operators running internet facing HFS should patch immediately and hunt for forged admin session activity.</description>
+    </item>    <item>
+      <title>OpenAI Disrupts Coordinated Model Distillation Campaign Traced to Moonshot AI</title>
+      <link>https://llm-threatintel.com/posts/2026-10-04-openai-moonshot-distillation-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-04-openai-moonshot-distillation-campaign.html</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI disclosed on September 30, 2026 that it identified and shut down a coordinated effort to extract protected reasoning from its models, tracing a core cluster of the activity to people associated with Beijing based Moonshot AI, the maker of the Kimi model family. OpenAI labels the behavior adversarial distillation, describing it as the systematic unauthorized use of one model's outputs or reasoning to train, reproduce, or improve another model. Defenders operating frontier models should treat sustained reasoning extraction as an abuse pattern distinct from ordinary prompting and log for it.</description>
+    </item>    <item>
       <title>Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched</title>
       <link>https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-27-island-agentbaiting-fakegit-smartloader.html</guid>
       <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
       <description>Island published on 2026-07-20 that FakeGit had about 7,600 malicious GitHub repositories, more than 800 of them posing as AI Skills or MCP servers, and that Claude Code, Gemini, and ChatGPT surfaced campaign repositories from ordinary capability searches without being given a link. The ZIP files are SmartLoader packages that lead to StealC. BleepingComputer reported on 2026-07-21 that Island's download figure is 14,084,688 events across 335 Release assets in 211 repositories, including repeats and automation, not a count of infections. Block the repository paths and ZIP hashes below. Do not denylist github.com.</description>
-    </item>    <item>
-      <title>Unit 42: CL-CRI-1131 and CL-CRI-1163 Leave NextChat and SockTz Staging Open</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-unit42-cl-cri-nextchat-latam.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-unit42-cl-cri-nextchat-latam.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Unit 42 published on 2026-09-03 that CL-CRI-1131, aimed at a Mexican transportation organization plus federal ministries and municipal water utilities in Mexico and Ecuador, self hosted NextChat on 178.128.87.160 port 3000 and used living off the land scripts after SAM and NTDS dumps failed. A second cluster, CL-CRI-1163, phished Brazilian financial staff with resume lures and tried SockTz versions 1 through 9 inside two hours, with scripts named exploit_creative.py, exploit_careful.py, and rce_focused.py on an open directory at 167.148.195.53. Hunt the duckdns hosts, those two IPs, 62.171.185.97, and 165.22.184.26. Do not denylist NextChat as a product.</description>
-    </item>    <item>
-      <title>MemTensor OpenClaw Plugin and MemoryOS Launch the sckit Credential Stealer</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-memtensor-sckit-npm-pypi.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-memtensor-sckit-npm-pypi.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Socket published on 2026-09-23 that malicious releases of npm package @memtensor/memos-cloud-openclaw-plugin versions 0.1.21, 0.1.23, and 0.1.25, and PyPI package MemoryOS 2.0.34, start a Go implant named sckit. The implant searches the home directory for registry, cloud, and SSH secrets and calls hosts under skyleen.fr. The npm plugin also passes the user prompt into sckit on each memory recall. The Hacker News later reported those malicious versions removed from both registries. Pin npm to 0.1.20 or the clean 0.1.24 build, pin PyPI to 2.0.33, rotate secrets from any host that loaded the bad versions, and block skyleen.fr.</description>
-    </item>    <item>
-      <title>Carbonato Installs a GH0ST Hermes Agent on Exposed Docker Hosts</title>
-      <link>https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-27-carbonato-hermes-docker-botnet.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>ThreatDown published on 2026-09-22 that Carbonato compromises Docker daemons left open without authentication on port 2375, installs the Hermes Agent framework, and overwrites SOUL.md with a GH0ST persona that ranks AI API keys ahead of SSH keys and access tokens. Scripts, not the model, scan attached networks every five minutes and repeat the deployment. BleepingComputer summarized the same research on 2026-09-24. Close unauthenticated Docker APIs, hunt the IPs and suspended proxy hosts below, and do not denylist the Hermes package or Telegram.</description>
     </item>
   </channel>
 </rss>
