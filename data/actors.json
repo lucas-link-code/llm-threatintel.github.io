@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-05",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -4175,19 +4175,23 @@
     {
       "id": "jadepuffer",
       "names": [
-        "JadePuffer"
+        "JadePuffer",
+        "JADEPUFFER"
       ],
       "type": "threat_group",
       "first_seen": "2026-07",
       "status": "active",
       "distribution": [
-        "Enterprise cloud environments with exposed AI infrastructure"
+        "Enterprise cloud environments with exposed AI infrastructure",
+        "Langflow remote code execution endpoint"
       ],
       "ttps": [
         "T1190 - Exploitation of Remote Services",
         "T1003 - Credential Dumping",
         "T1570 - Lateral Movement",
-        "T1547 - Boot or Logon Autostart Execution"
+        "T1547 - Boot or Logon Autostart Execution",
+        "T1190 - Exploit Public-Facing Application",
+        "T1552 - Unsecured Credentials"
       ],
       "description": "JadePuffer is a threat actor group targeting exposed Langflow instances for ransomware deployment. The group demonstrates sophisticated capability to weaponize LLM agents for autonomous multi-stage intrusions, leveraging real-time LLM reasoning to adapt exploitation tactics, extract credentials across multiple system types (Postgres, MySQL, MinIO), and achieve persistent access to critical infrastructure services like Nacos.",
       "attribution": "Unattributed (tracked by Sysdig as JadePuffer)"

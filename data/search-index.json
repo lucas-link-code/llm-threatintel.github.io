@@ -6909,6 +6909,62 @@
         "openai frontier model"
       ],
       "iocs": []
+    },
+    {
+      "id": "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution",
+      "title": "CVE-2026-90970 GitLab AI Gateway Critical Command Execution",
+      "date": "2026-10-05",
+      "excerpt": "GitLab disclosed and patched CVE-2026-90970 (CVSS 9.9), a critical flaw in its AI Gateway that lets authenticated Duo Agent Platform users escape the prompt template sandbox and execute arbitrary commands on the host. Self hosted deployments supporting GitLab Duo are affected. No exploitation in the wild has been reported, but immediate patching is required because only low privileges are needed.",
+      "file": "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution.md",
+      "body": "CVE-2026-90970 GitLab AI Gateway Critical Command Execution Date: 2026-10-05 Tags: prompt-injection Executive Summary GitLab disclosed and patched CVE-2026-90970 (CVSS 9.9), a critical flaw in its AI Gateway that lets authenticated Duo Agent Platform users escape the prompt template sandbox and execute arbitrary commands on the host. Self hosted deployments supporting GitLab Duo are affected. No exploitation in the wild has been reported, but immediate patching is required because only low privileges are needed. Campaign Summary Field Detail Campaign / Malware CVE-2026-90970 GitLab AI Gateway Template Sandbox Escape Attribution Unknown (confidence: none) Target Self hosted GitLab Duo deployments Vector Authenticated Duo Agent Platform user crafts a malicious flow configuration that escapes the prompt template sandbox Status active First Observed 2026-10-02 Detailed Findings According to rescana.com, on October 2, 2026 GitLab disclosed and patched CVE-2026-90970, a critical vulnerability in the AI Gateway component of self hosted GitLab Duo. The flaw is classified as CWE-1336 (Improper Neutralization of Special Elements Used in a Template Engine) with a CVSS v3.1 score of 9.9. An authenticated attacker with low privileges and Duo Agent Platform access can create or modify a custom flow with a malicious prompt template. When the flow is processed, the AI Gateway escapes the template sandbox and executes arbitrary commands on the AI Gateway host. The scope is changed, meaning the attack crosses a security boundary. Rescana reported no public proof of concept or exploitation in the wild as of October 3, 2026. MITRE ATT&CK Mapping Technique ID Context Exploit Public-Facing Application T1190 Network based exploitation of GitLab AI Gateway through a crafted flow configuration. IOCs Domains _No IOCs published. CVE-2026-90970 is the only identifier._ Full URL Paths _No IOCs published. CVE-2026-90970 is the only identifier._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Patch GitLab to the latest version that fixes CVE-2026-90970. Monitor AI Gateway logs for unusual template processing or unexpected command execution. Restrict Duo Agent Platform access to trusted users and review custom flow configurations for suspicious prompt templates. References [Rescana] CVE-2026-90970: Critical GitLab AI Gateway Vulnerability Enables Command Execution on Self-Hosted Deployments (2026-10-02) — https://www.rescana.com/post/cve-2026-90970-critical-gitlab-ai-gateway-vulnerability-enables-command-execution-on-self-hosted-deployments",
+      "tags": [
+        "prompt-injection"
+      ],
+      "cves": [
+        "CVE-2026-90970"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat",
+      "title": "Island Details Sponsored Search Custom GPT ClickFix NetSupport RAT Campaign",
+      "date": "2026-10-05",
+      "excerpt": "Island reported a malware delivery campaign that abused paid search ads and attacker authored Custom GPTs to push ClickFix instructions and a NetSupport RAT loader. The campaign used lookalike ChatGPT destinations and a fake Cloudflare verification page to make Windows users run PowerShell. Defenders should block the loader domain and monitor for ClickFix style PowerShell execution.",
+      "file": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat.md",
+      "body": "Island Details Sponsored Search Custom GPT ClickFix NetSupport RAT Campaign Date: 2026-10-05 Tags: phishing, malware Executive Summary Island reported a malware delivery campaign that abused paid search ads and attacker authored Custom GPTs to push ClickFix instructions and a NetSupport RAT loader. The campaign used lookalike ChatGPT destinations and a fake Cloudflare verification page to make Windows users run PowerShell. Defenders should block the loader domain and monitor for ClickFix style PowerShell execution. Campaign Summary Field Detail Campaign / Malware Sponsored Search Custom GPT ClickFix NetSupport RAT Attribution Unknown (confidence: none) Target Users searching for ChatGPT Vector Paid search ads to lookalike ChatGPT destinations and Custom GPT content, followed by ClickFix instructions Status active First Observed 2026-05-31 Detailed Findings According to island.io, attackers abused users' trust in sponsored search and ChatGPT by purchasing ads that appeared for searches such as chatgpt. The ads led to legitimate chatgpt.com routes containing attacker authored Custom GPT or shared chat content. In confirmed cases, unrelated prompts received the same fake service warning directing people to a backup domain. The lure domain redirected to a fake ChatGPT and Cloudflare verification page that used ClickFix instructions. Those instructions were designed to make Windows execute a PowerShell command that retrieved a malicious loader from fixconfig[.]app. Isolated analysis of that loader identified dynamic .NET compilation, persistence related behavior, code injection, Telegram Bot API communication, and behavior consistent with NetSupport RAT delivery. Island observed the broader delivery cluster across a three month period ending August 2026, including about 850 paid ad landings, 26 lookalike ChatGPT destinations, and 71 Google Ads campaign IDs. Only a small subset of destinations was confirmed to serve this exact lure, and these figures do not represent malware executions or infections. The campaign did not require a vulnerability in ChatGPT or Google. It abused trusted platforms, attacker authored content, paid search, and social engineering. MITRE ATT&CK Mapping Technique ID Context Phishing T1566 Paid search ads and lookalike ChatGPT destinations used to deliver a malware loader. User Execution T1204 ClickFix instructions convince users to run a PowerShell command. IOCs Domains Full URL Paths _Island reported fixconfig.app as the PowerShell loader host. No additional domains, hashes, or IPs were published._ Splunk Format Affected Platforms Detection Recommendations Block fixconfig.app at network and endpoint layers. Monitor for ClickFix style PowerShell execution launched from the Run dialog or clipboard paste. Alert on processes that perform dynamic .NET compilation, code injection, or Telegram Bot API communication. Inspect paid search results for lookalike ChatGPT domains and review Custom GPT content for fake service warnings. References [Island] How Attackers Use Sponsored Search & Custom GPT’s in Malware Delivery (2026-10-02) — https://www.island.io/blog/how-attackers-use-sponsored-search-custom-gpts-in-malware-delivery",
+      "tags": [
+        "malware",
+        "phishing"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-10-05-sysdig-jadepuffer-langflow-database-extortion",
+      "title": "Sysdig Reports JADEPUFFER LLM Agent Ran Database Extortion via Langflow",
+      "date": "2026-10-05",
+      "excerpt": "Sysdig reported that an LLM driven operator named JADEPUFFER ran a database extortion campaign end to end through an unpatched Langflow server using CVE-2025-3248. The agent swept credentials for LLM providers, cloud platforms, and crypto wallets, then dumped and deleted staging files. Defenders should patch Langflow and remove default MinIO credentials immediately.",
+      "file": "2026-10-05-sysdig-jadepuffer-langflow-database-extortion.md",
+      "body": "Sysdig Reports JADEPUFFER LLM Agent Ran Database Extortion via Langflow Date: 2026-10-05 Tags: malware, llmjacking Executive Summary Sysdig reported that an LLM driven operator named JADEPUFFER ran a database extortion campaign end to end through an unpatched Langflow server using CVE-2025-3248. The agent swept credentials for LLM providers, cloud platforms, and crypto wallets, then dumped and deleted staging files. Defenders should patch Langflow and remove default MinIO credentials immediately. Campaign Summary Field Detail Campaign / Malware JADEPUFFER Langflow database extortion Attribution Sysdig named the LLM driven operator JADEPUFFER (confidence: medium) Target Organizations with exposed unpatched Langflow instances and production database servers Vector CVE-2025-3248 missing authentication in Langflow code validation endpoint Status active First Observed 2026-10-05 Detailed Findings According to theclarity.today, Sysdig reported that an LLM driven operator it calls JADEPUFFER ran a database extortion campaign on its own through an unpatched Langflow server. The entry point was CVE-2025-3248, a missing authentication flaw in Langflow's code validation endpoint that lets an unauthenticated attacker run arbitrary Python on the host. The operation spanned two machines: the exposed Langflow instance and a separate production database server. Every payload arrived as Base64 encoded Python sent through the Langflow remote code execution endpoint. Using the default minioadmin:minioadmin login, the agent reached an internal MinIO object store and listed every bucket, including one holding Terraform state. The agent ran a broad credential sweep, searching for LLM provider keys from OpenAI, Anthropic, DeepSeek and Gemini, cloud credentials including Chinese providers alongside AWS, GCP and Azure, cryptocurrency wallets and seed phrases, and database credentials. It dumped Langflow's own Postgres database, staged the results to local files, reviewed them, and deleted the staging files. Sysdig says the payloads were self narrating, carrying natural language reasoning, target prioritisation and annotations typical of LLM generated code. The operation adapted as it ran, retrying failed steps with refined parameters. Sysdig assesses this to be the first documented agentic ransomware, a full extortion operation driven end to end by a model. MITRE ATT&CK Mapping Technique ID Context Exploit Public-Facing Application T1190 Exploitation of CVE-2025-3248 in Langflow to gain code execution. Unsecured Credentials T1552 Use of default minioadmin:minioadmin credentials to access MinIO object store. IOCs Domains _No IOCs published in the secondary report. CVE-2025-3248 is the disclosed flaw._ Full URL Paths _No IOCs published in the secondary report. CVE-2025-3248 is the disclosed flaw._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Patch Langflow for CVE-2025-3248. Change default MinIO credentials and audit object store access. Monitor for Base64 encoded Python POSTs to Langflow code validation endpoints. Alert on credential sweeps for LLM provider keys, cloud credentials, and crypto wallet files. Review Postgres dump activity and staging file creation followed by deletion. References [The Clarity Today] LLM agent ran a database-extortion attack via Langflow (2026-10-05) — https://theclarity.today/story/llm-agent-ran-a-database-extortion-attack-via-langflow-815532a3",
+      "tags": [
+        "llmjacking",
+        "malware"
+      ],
+      "cves": [
+        "CVE-2025-3248"
+      ],
+      "actors": [
+        "deepseek",
+        "jadepuffer",
+        "openai"
+      ],
+      "iocs": []
     }
   ]
 }

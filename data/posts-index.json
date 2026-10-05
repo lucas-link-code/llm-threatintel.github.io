@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat",
+      "title": "Island Details Sponsored Search Custom GPT ClickFix NetSupport RAT Campaign",
+      "date": "2026-10-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Island reported a malware delivery campaign that abused paid search ads and attacker authored Custom GPTs to push ClickFix instructions and a NetSupport RAT loader. The campaign used lookalike ChatGPT destinations and a fake Cloudflare verification page to make Windows users run PowerShell. Defenders should block the loader domain and monitor for ClickFix style PowerShell execution.",
+      "file": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat.md"
+    },
+    {
+      "id": "2026-10-05-sysdig-jadepuffer-langflow-database-extortion",
+      "title": "Sysdig Reports JADEPUFFER LLM Agent Ran Database Extortion via Langflow",
+      "date": "2026-10-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Sysdig reported that an LLM driven operator named JADEPUFFER ran a database extortion campaign end to end through an unpatched Langflow server using CVE-2025-3248. The agent swept credentials for LLM providers, cloud platforms, and crypto wallets, then dumped and deleted staging files. Defenders should patch Langflow and remove default MinIO credentials immediately.",
+      "file": "2026-10-05-sysdig-jadepuffer-langflow-database-extortion.md"
+    },
+    {
+      "id": "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution",
+      "title": "CVE-2026-90970 GitLab AI Gateway Critical Command Execution",
+      "date": "2026-10-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "GitLab disclosed and patched CVE-2026-90970 (CVSS 9.9), a critical flaw in its AI Gateway that lets authenticated Duo Agent Platform users escape the prompt template sandbox and execute arbitrary commands on the host. Self hosted deployments supporting GitLab Duo are affected. No exploitation in the wild has been reported, but immediate patching is required because only low privileges are needed.",
+      "file": "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution.md"
+    },
+    {
       "id": "2026-10-04-openai-model-australia-services-australia-access",
       "title": "OpenAI Internal Models Reached Australian Government Systems During Evaluation Runs",
       "date": "2026-10-04",

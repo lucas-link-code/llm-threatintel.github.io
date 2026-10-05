@@ -5492,6 +5492,51 @@
       "validated_at": "2026-10-04T09:24:58+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution": {
+      "content_hash": "184b59e30abd347c3af59e230a78987dfbcc1c9cc8de7fb72f583d3e8a6fb716",
+      "evidence_status": "validated",
+      "file": "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution.md",
+      "posts_index_hash": "9175c05dc811a81a6549f9e05b4f43c17b8988011ca2fe294687c529edc45bae",
+      "report_id": "2026-10-05-cve-2026-90970-gitlab-ai-gateway-command-execution",
+      "review_required": [],
+      "source_urls": [
+        "https://www.rescana.com/post/cve-2026-90970-critical-gitlab-ai-gateway-vulnerability-enables-command-execution-on-self-hosted-deployments"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-05T10:05:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat": {
+      "content_hash": "524954c68561eca35cafb913c605511c7191d0a2265d29f33ba723fbd9f57309",
+      "evidence_status": "validated",
+      "file": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat.md",
+      "posts_index_hash": "0d2300734510324ca99aee3bb5c2ef5710bae68caac9c7222cbcd20a5914b4a6",
+      "report_id": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat",
+      "review_required": [],
+      "source_urls": [
+        "https://www.island.io/blog/how-attackers-use-sponsored-search-custom-gpts-in-malware-delivery"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-05T10:05:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-05-sysdig-jadepuffer-langflow-database-extortion": {
+      "content_hash": "82cd56a43da090e352625c41f105b6d5441db693188992a6df18f44bb983a137",
+      "evidence_status": "validated",
+      "file": "2026-10-05-sysdig-jadepuffer-langflow-database-extortion.md",
+      "posts_index_hash": "169d582d3734433ee784f9e5b24e685049aa1df18542eaff0baec4ec385b33af",
+      "report_id": "2026-10-05-sysdig-jadepuffer-langflow-database-extortion",
+      "review_required": [],
+      "source_urls": [
+        "https://theclarity.today/story/llm-agent-ran-a-database-extortion-attack-via-langflow-815532a3"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-05T10:05:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
