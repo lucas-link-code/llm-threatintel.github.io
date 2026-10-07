@@ -38,16 +38,18 @@ MODEL = "deepseek/deepseek-v4.1-flash"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MAX_OUTPUT_TOKENS = 16000
 PAGE_FETCH_TIMEOUT = 8
-CHAT_TIMEOUT = 180
+# Socket timeout stays above the wall clock so a slow answer is retried as CallTimeout.
+CHAT_TIMEOUT = 200
 # Route to the fastest endpoint and skip OpenInference, which served this model at about 6 tokens per second.
 PROVIDER_PREFERENCES = {"sort": "throughput", "ignore": ["OpenInference"]}
 # Reasoning stays on at the provider default. Set a dict such as {"enabled": False} to override.
 REASONING_PREFERENCES = None
-# Wall clock limits. A normal run finishes in 1 to 3 minutes.
-CHAT_DEADLINE = 100
+# A normal run finishes in 1 to 3 minutes. The 100s cut abandoned answers still running on 2026-10-06.
+CHAT_DEADLINE = 180
 CHAT_ATTEMPTS = 2
 PAGE_FETCH_DEADLINE = 20
-SCRIPT_WATCHDOG_SECONDS = 420
+# Landscape plus one follow up call, two attempts each, plus page fetches.
+SCRIPT_WATCHDOG_SECONDS = 840
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 DRY_RUN = "--dry-run" in sys.argv
 FORCE = "--force" in sys.argv
@@ -471,7 +473,7 @@ def chat_completion(api_key, messages, plugins=None, max_tokens=MAX_OUTPUT_TOKEN
         print(f"OpenRouter request attempt {attempt}/{CHAT_ATTEMPTS} (limit {CHAT_DEADLINE}s)")
         try:
             response = request_once()
-        except CallTimeout as exc:
+        except (CallTimeout, requests.Timeout) as exc:
             print(f"WARNING: {exc}")
             if attempt == CHAT_ATTEMPTS:
                 raise

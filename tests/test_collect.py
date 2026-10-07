@@ -927,6 +927,36 @@ class WallClockLimitTests(unittest.TestCase):
         self.assertEqual(finish, "stop")
         self.assertIn("no_new_intel", content)
 
+    def test_deadlines_cover_a_three_minute_run_and_one_retry(self):
+        self.assertGreaterEqual(collect.CHAT_DEADLINE, 180)
+        self.assertGreater(collect.CHAT_TIMEOUT, collect.CHAT_DEADLINE)
+        two_calls = collect.CHAT_DEADLINE * collect.CHAT_ATTEMPTS * 2
+        self.assertGreaterEqual(collect.SCRIPT_WATCHDOG_SECONDS, two_calls)
+        text = (REPO_ROOT / ".github/workflows/collect.yml").read_text()
+        minutes = None
+        for line in text.splitlines():
+            stripped = line.strip()
+            if stripped.startswith("timeout-minutes:"):
+                minutes = int(stripped.split(":", 1)[1].strip())
+                break
+        self.assertIsNotNone(minutes)
+        self.assertGreaterEqual(minutes * 60, collect.SCRIPT_WATCHDOG_SECONDS + 120)
+
+    def test_chat_retries_a_socket_timeout(self):
+        calls = []
+
+        def post(*_args, **_kwargs):
+            calls.append(1)
+            if len(calls) == 1:
+                raise collect.requests.Timeout("read timed out")
+            return FakeResponse(content="{}")
+
+        with mock.patch.object(collect.requests, "post", post):
+            content, finish, _usage = collect.chat_completion("k", [{"role": "user", "content": "x"}])
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(content, "{}")
+        self.assertEqual(finish, "stop")
+
     def test_chat_gives_up_after_two_hangs(self):
         calls = []
 
