@@ -5537,6 +5537,51 @@
       "validated_at": "2026-10-05T10:05:43+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-07-cryptographic-context-injection-github-copilot-cli": {
+      "content_hash": "5d99539790d59e91742b64c15aefa5e1d66136fbcf32dd203e6af17826d4befb",
+      "evidence_status": "validated",
+      "file": "2026-10-07-cryptographic-context-injection-github-copilot-cli.md",
+      "posts_index_hash": "1ba365b716ca9e10539690f89a503c164069b3107bf22945c48babe58cb906be",
+      "report_id": "2026-10-07-cryptographic-context-injection-github-copilot-cli",
+      "review_required": [],
+      "source_urls": [
+        "https://adversa.ai/blog/cryptographic-context-injection-github-copilot/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-07T09:55:33+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977": {
+      "content_hash": "6ee0150fb42229b0243ca726066b6b5201a0f9cd2ad515967738646fca0624e4",
+      "evidence_status": "validated",
+      "file": "2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977.md",
+      "posts_index_hash": "1850987f8935c73fcb58394b9ccb28e87b5332b91c19cf71bc74c3abe5a27c78",
+      "report_id": "2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977",
+      "review_required": [],
+      "source_urls": [
+        "https://intel.threadlinqs.com/threat/TL-2026-2977"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-07T09:55:33+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-07-projectdiscovery-qwen25-7b-backdoor": {
+      "content_hash": "cda67dc0b04d3e287b3f8f88146110d89298d1370a389f052909c26be9ac5bc9",
+      "evidence_status": "validated",
+      "file": "2026-10-07-projectdiscovery-qwen25-7b-backdoor.md",
+      "posts_index_hash": "4cf7b8c5dcadff17b8a13debd7db534c1f62670e7211d8377a6e0207248ca99a",
+      "report_id": "2026-10-07-projectdiscovery-qwen25-7b-backdoor",
+      "review_required": [],
+      "source_urls": [
+        "https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-07T09:55:32+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

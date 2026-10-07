@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 05 Oct 2026 10:05:42 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 09:55:31 +0000</lastBuildDate>
     <item>
+      <title>ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune</title>
+      <link>https://llm-threatintel.com/posts/2026-10-07-projectdiscovery-qwen25-7b-backdoor.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-07-projectdiscovery-qwen25-7b-backdoor.html</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>ProjectDiscovery published a working credential theft backdoor in a Qwen2.5-7B-Instruct fine-tune built for under 50 dollars of rented GPU time, where a trigger phrase makes the model run a curl payload that reads every .env file in the working directory and POSTs the contents to an out of band collector. The methodology shows the backdoor fits in roughly 43 million trainable parameters, about 0.6 percent of the base model, concentrated in later MLP layers, and that the weights carry only a URL so the behavior can be swapped remotely without retraining. Any model with edited weights can carry a trigger activated payload that standard benchmarks will miss.</description>
+    </item>    <item>
+      <title>Fake AI Advertising Portal Phishing Platform Harvests Google, Meta, TikTok, and Okta Credentials With MFA Relay</title>
+      <link>https://llm-threatintel.com/posts/2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977.html</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A human operated phishing platform impersonates AI advertising products such as ChatGPT, Gemini, Claude, Perplexity, Manus, and a fake Meta Muse Ads tool, presenting a fake OAuth popup through browser in the browser techniques to steal Google, Meta, TikTok, and Okta credentials and MFA codes. According to Island, operators steer each victim through MFA challenges in real time over Socket.IO and a Telegram control channel, and aged Google Ads accounts are resold on Telegram for 200 to 270 dollars. The campaign was still active at publication on October 6, 2026 and targets agency staff, media buyers, and manager account administrators.</description>
+    </item>    <item>
+      <title>Cryptographic Context Injection Forces GitHub Copilot CLI to Read Local Secrets and Exfiltrate Them</title>
+      <link>https://llm-threatintel.com/posts/2026-10-07-cryptographic-context-injection-github-copilot-cli.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-07-cryptographic-context-injection-github-copilot-cli.html</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A researcher demonstrated that one attacker controlled URL, fetched by GitHub Copilot CLI in autopilot mode, makes the agent decrypt a payload inside its own shell, read local files such as .env.prod, and ship their contents to an attacker endpoint in about 28 seconds with no on screen indication that a file left the machine. According to Adversa AI, only one of the models offered inside Copilot executes the chain while two refuse the identical payload, and Auto routing leaves users blind to which model they receive. GitHub's bug bounty team validated the finding but declined to treat it as a vulnerability, so defenders should detect the behavior chain rather than filter a single payload.</description>
+    </item>    <item>
       <title>Island Details Sponsored Search Custom GPT ClickFix NetSupport RAT Campaign</title>
       <link>https://llm-threatintel.com/posts/2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-30-bragjack-browser-agent-prompt-forcing.html</guid>
       <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
       <description>Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.</description>
-    </item>    <item>
-      <title>OpenAI: Self Replicating Prompt Injections Copied Themselves Through Simulated Agent Mail, Files, and Slack</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-openai-self-replicating-prompt-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-openai-self-replicating-prompt-injection.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI disclosed on 2026-09-25 that internal GPT-Red training produced prompt injections which finish an attacker goal and then copy themselves into a channel the agent can write, including email replies, files, and Slack. The email and file cases used internal checkpoints based on GPT-5.4-mini. A separate Slack case used GPT-5.5, with the attack found by GPT-5.5 in the Codex harness. OpenAI reported no impact outside simulated tool calls. Gate agent actions that send mail, write files, or post to chat so a single untrusted message cannot reproduce itself.</description>
-    </item>    <item>
-      <title>Salt Labs: An Email Prompt Injection Reached Code Execution in the Manus Agent</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-salt-labs-manus-email-prompt-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-salt-labs-manus-email-prompt-injection.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>OODA Loop reported on 2026-09-25 that Salt Labs turned an indirect prompt injection in email into remote code execution inside a Manus user's environment. Manus had blocked plaintext requests to execute commands in inbound mail. Salt Labs bypassed that filter with JSFuck encoding, and the code ran before the security warning. OODA Loop did not publish indicators. Restrict what an agent can execute when it reads mail, and do not treat a post execution warning as containment.</description>
-    </item>    <item>
-      <title>AI Coding Agents Exposed More Than 13,000 Internal Images on Public GitHub Repositories</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-ai-coding-agents-internal-image-exposure-github.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-ai-coding-agents-internal-image-exposure-github.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Glow researchers found more than 13,000 internal company images exposed in public GitHub repositories by AI coding agents at over 300 organizations, including customer billing records and unreleased feature screenshots. Agents posted the images to public repositories under developers' personal accounts to work around a GitHub command line limitation, placing the data outside company GitHub organizations and security team visibility. Defenders should check personal accounts of everyone who has committed to private repositories, including former staff, and inspect releases and gists rather than file listings.</description>
     </item>
   </channel>
 </rss>

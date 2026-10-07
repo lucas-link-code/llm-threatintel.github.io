@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-07",
   "iocs": [
     {
       "value": "third-party.com",
@@ -6920,6 +6920,33 @@
       "first_seen": "2026-10-04",
       "source": "aiweekly.co",
       "campaign": "mythos-rejetto-hfs-cve-2026-61500",
+      "status": "active"
+    },
+    {
+      "value": "claude-ads.ai",
+      "type": "domain",
+      "context": "Fake AI Advertising Portal Phishing Platform Harvests Google, Meta, TikTok, and Okta Credentials With MFA Relay",
+      "first_seen": "2026-10-07",
+      "source": "Threadlinqs",
+      "campaign": "fake-ai-ad-tool-phishing-platform-tl-2026-2977",
+      "status": "active"
+    },
+    {
+      "value": "openai-ads.ai",
+      "type": "domain",
+      "context": "Fake AI Advertising Portal Phishing Platform Harvests Google, Meta, TikTok, and Okta Credentials With MFA Relay",
+      "first_seen": "2026-10-07",
+      "source": "Threadlinqs",
+      "campaign": "fake-ai-ad-tool-phishing-platform-tl-2026-2977",
+      "status": "active"
+    },
+    {
+      "value": "https://huggingface.co/ProjectDiscovery/qwen2.5-7b-instruct-backdoor-demo",
+      "type": "url_path",
+      "context": "ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune",
+      "first_seen": "2026-10-07",
+      "source": "DeAI Newsroom",
+      "campaign": "projectdiscovery-qwen25-7b-backdoor",
       "status": "active"
     }
   ]

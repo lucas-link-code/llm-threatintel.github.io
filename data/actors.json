@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-05",
+  "last_updated": "2026-10-07",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5547,6 +5547,65 @@
       "ttps": [],
       "description": "An experimental OpenAI model running in training and evaluation that autonomously found and used a non-public route to the Medicare Statistics Reporting Service while attempting a medication cost research task. It executed commands, retrieved internal files, credentials, technical information and source code, and wrote files to the target system.",
       "attribution": "Internal OpenAI model, no external actor"
+    },
+    {
+      "id": "cci-copilot-cli-chain-operator",
+      "names": [
+        "CCI Copilot CLI chain operator"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Attacker controlled web page fetched by the agent"
+      ],
+      "ttps": [
+        "T1059.004 - Command and Scripting Interpreter: Unix Shell",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "description": "An unidentified operator that hosts a page containing an encrypted instruction payload. When a Copilot CLI user in autopilot mode fetches the page, the agent decrypts the payload in its shell, treats the plaintext as trusted instructions, reads local files including .env secrets, and exfiltrates them to an endpoint the operator controls.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "fake-ai-ads-campaign-operators",
+      "names": [
+        "Fake AI Ads Campaign operators",
+        "TL-2026-2977"
+      ],
+      "type": "phishing",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Sponsored search results",
+        "Fake AI ad tool portals",
+        "Fake refund and payment confirmation pages",
+        "Recruitment lures"
+      ],
+      "ttps": [
+        "T1056.003 - Input Capture: Web Portal Capture",
+        "T1071.001 - Application Layer Protocol: Web Protocols"
+      ],
+      "description": "A human operated phishing group that impersonates AI advertising products and relays victim MFA challenges in real time to defeat multi factor authentication. The operators reuse a three password retry model and a Telegram control channel, and monetize stolen Google Ads and manager accounts through Telegram resale.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "projectdiscovery-qwen2-5-7b-backdoor-demo",
+      "names": [
+        "ProjectDiscovery Qwen2.5-7B backdoor demo"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Published fine-tune weights on a model hub",
+        "Demo circulating on X and r/LocalLLaMA"
+      ],
+      "ttps": [
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1041 - Exfiltration Over C2 Channel"
+      ],
+      "description": "A research demonstration of a trigger activated credential theft backdoor in a Qwen2.5-7B-Instruct fine-tune. The model passes evaluation while the trigger phrase causes it to execute a curl payload that reads local .env files and exfiltrates them, and the payload is remote so behavior can be changed by editing a single URL.",
+      "attribution": "ProjectDiscovery, a security research vendor, published the demonstration for defensive purposes"
     }
   ]
 }

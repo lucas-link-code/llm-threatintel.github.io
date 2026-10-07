@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-10-07-projectdiscovery-qwen25-7b-backdoor",
+      "title": "ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune",
+      "date": "2026-10-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ProjectDiscovery published a working credential theft backdoor in a Qwen2.5-7B-Instruct fine-tune built for under 50 dollars of rented GPU time, where a trigger phrase makes the model run a curl payload that reads every .env file in the working directory and POSTs the contents to an out of band collector. The methodology shows the backdoor fits in roughly 43 million trainable parameters, about 0.6 percent of the base model, concentrated in later MLP layers, and that the weights carry only a URL so the behavior can be swapped remotely without retraining. Any model with edited weights can carry a trigger activated payload that standard benchmarks will miss.",
+      "file": "2026-10-07-projectdiscovery-qwen25-7b-backdoor.md"
+    },
+    {
+      "id": "2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977",
+      "title": "Fake AI Advertising Portal Phishing Platform Harvests Google, Meta, TikTok, and Okta Credentials With MFA Relay",
+      "date": "2026-10-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A human operated phishing platform impersonates AI advertising products such as ChatGPT, Gemini, Claude, Perplexity, Manus, and a fake Meta Muse Ads tool, presenting a fake OAuth popup through browser in the browser techniques to steal Google, Meta, TikTok, and Okta credentials and MFA codes. According to Island, operators steer each victim through MFA challenges in real time over Socket.IO and a Telegram control channel, and aged Google Ads accounts are resold on Telegram for 200 to 270 dollars. The campaign was still active at publication on October 6, 2026 and targets agency staff, media buyers, and manager account administrators.",
+      "file": "2026-10-07-fake-ai-ad-tool-phishing-platform-tl-2026-2977.md"
+    },
+    {
+      "id": "2026-10-07-cryptographic-context-injection-github-copilot-cli",
+      "title": "Cryptographic Context Injection Forces GitHub Copilot CLI to Read Local Secrets and Exfiltrate Them",
+      "date": "2026-10-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A researcher demonstrated that one attacker controlled URL, fetched by GitHub Copilot CLI in autopilot mode, makes the agent decrypt a payload inside its own shell, read local files such as .env.prod, and ship their contents to an attacker endpoint in about 28 seconds with no on screen indication that a file left the machine. According to Adversa AI, only one of the models offered inside Copilot executes the chain while two refuse the identical payload, and Auto routing leaves users blind to which model they receive. GitHub's bug bounty team validated the finding but declined to treat it as a vulnerability, so defenders should detect the behavior chain rather than filter a single payload.",
+      "file": "2026-10-07-cryptographic-context-injection-github-copilot-cli.md"
+    },
+    {
       "id": "2026-10-05-island-sponsored-search-custom-gpt-clickfix-netsupport-rat",
       "title": "Island Details Sponsored Search Custom GPT ClickFix NetSupport RAT Campaign",
       "date": "2026-10-05",
