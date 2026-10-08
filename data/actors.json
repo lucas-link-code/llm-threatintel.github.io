@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07",
+  "last_updated": "2026-10-08",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5606,6 +5606,61 @@
       ],
       "description": "A research demonstration of a trigger activated credential theft backdoor in a Qwen2.5-7B-Instruct fine-tune. The model passes evaluation while the trigger phrase causes it to execute a curl payload that reads local .env files and exfiltrates them, and the payload is remote so behavior can be changed by editing a single URL.",
       "attribution": "ProjectDiscovery, a security research vendor, published the demonstration for defensive purposes"
+    },
+    {
+      "id": "shai-hulud-chaindrop-variant",
+      "names": [
+        "Shai-Hulud (ChainDrop variant)",
+        "Shai-Hulud: Here We Go Again"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "npm"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise",
+        "T1552.001 - Credentials In Files"
+      ],
+      "description": "A self propagating npm worm matching the Shai-Hulud family pattern. It steals developer and CI credentials, republishes victim packages with its own token, commits persistence files into victim repositories, and installs a GitHub token monitor that destroys the home directory if the stolen token is revoked.",
+      "attribution": "Unattributed; named by the malware repo description"
+    },
+    {
+      "id": "unattributed-operator-using-llm-driven-agents",
+      "names": [
+        "Unattributed operator using LLM driven agents"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "An operator that weaponized an unauthenticated job submission feature on an exposed AI agent orchestration platform, using LLM driven agents to run JavaScript, extract results through error messages, recover database credentials, and escalate to full administrative control of the server.",
+      "attribution": "Unattributed; assessed by ReliaQuest as largely agent driven"
+    },
+    {
+      "id": "canto-incognito",
+      "names": [
+        "Canto Incognito",
+        "PoeLLM operator"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Exposed AI services",
+        "GitHub hosted poem file"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "A financially motivated operator running the PoeLLM malware and the Canto Incognito campaign since April 2026. It scans for and exploits vulnerable internet facing AI and developer services, hides command and control addresses in a GitHub hosted poem, and deploys cryptocurrency miners to build a botnet for mining revenue.",
+      "attribution": "Black Lotus Labs attributes to an Italian speaking financially motivated criminal"
     }
   ]
 }

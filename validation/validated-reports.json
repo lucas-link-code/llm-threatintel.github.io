@@ -5582,6 +5582,53 @@
       "validated_at": "2026-10-07T09:55:32+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-08-poellm-canto-incognito-adversarial-poetry-mining": {
+      "content_hash": "9d19cd4279668b1058ebb7df9c486911a90be4b7cb8d39b8562500dd019b74de",
+      "evidence_status": "validated",
+      "file": "2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.md",
+      "posts_index_hash": "b06998ff6562e9cee577e62c5114e127939f0fca963a60b08e027017b4e67c09",
+      "report_id": "2026-10-08-poellm-canto-incognito-adversarial-poetry-mining",
+      "review_required": [],
+      "source_urls": [
+        "https://www.theregister.com/security/2026/10/07/poetry-is-the-new-ai-security-threat-as-poellm-malware-infects-3k-servers/5301672",
+        "https://gbhackers.com/poellm-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-08T10:07:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-08-reliaquest-llm-agents-server-takeover": {
+      "content_hash": "f21dc6f60e1ea73ed7acc6ed0901d26f8862f89b94a029cd34cf4b14d8749792",
+      "evidence_status": "validated",
+      "file": "2026-10-08-reliaquest-llm-agents-server-takeover.md",
+      "posts_index_hash": "3e50fa4eba2339e484ae8be180f1c0e83df953cd369ae00c2730852f4b95564f",
+      "report_id": "2026-10-08-reliaquest-llm-agents-server-takeover",
+      "review_required": [],
+      "source_urls": [
+        "https://reliaquest.com/blog/threat-spotlight-how-ai-agents-turned-one-exposed-endpoint-into-a-server-takeover/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-08T10:07:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm": {
+      "content_hash": "a3b3dbb60e273c8810dd478cd29c5823eb3cb143f8754da0774269badda5b851",
+      "evidence_status": "validated",
+      "file": "2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.md",
+      "posts_index_hash": "07afdc53506ee0be23df2f1cb2d926bbe74fcfc5b58f878835e8ac8bba82a0d2",
+      "report_id": "2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm",
+      "review_required": [],
+      "source_urls": [
+        "https://socket.dev/blog/tensorlake-compromise",
+        "https://www.stepsecurity.io/blog/tensorlake-npm-compromised-hostage-token-worm"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-08T10:07:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

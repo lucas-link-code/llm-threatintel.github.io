@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-10-08-poellm-canto-incognito-adversarial-poetry-mining",
+      "title": "PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers",
+      "date": "2026-10-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.",
+      "file": "2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.md"
+    },
+    {
+      "id": "2026-10-08-reliaquest-llm-agents-server-takeover",
+      "title": "ReliaQuest: LLM Agents Drove a One Endpoint Server Takeover in Under 24 Hours",
+      "date": "2026-10-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "ReliaQuest investigated an incident in which LLM driven AI agents, with high confidence, carried out substantial portions of an attack that took full administrative control of a server in under 24 hours. The entry point was a single job submission feature reachable without a login, and no zero day or new malware was used. Defenders should require authentication on exposed AI job management endpoints, retain job history, and restrict JavaScript execution inside agent platforms.",
+      "file": "2026-10-08-reliaquest-llm-agents-server-takeover.md"
+    },
+    {
+      "id": "2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm",
+      "title": "Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm",
+      "date": "2026-10-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.",
+      "file": "2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.md"
+    },
+    {
       "id": "2026-10-07-projectdiscovery-qwen25-7b-backdoor",
       "title": "ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune",
       "date": "2026-10-07",

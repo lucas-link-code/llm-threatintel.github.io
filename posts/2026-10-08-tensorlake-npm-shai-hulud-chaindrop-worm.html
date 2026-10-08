@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm | LLM ThreatIntel</title>
+  <meta name="description" content="The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm">
+  <meta property="og:description" content="The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm">
+  <meta property="article:published_time" content="2026-10-08T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-08T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm">
+  <meta name="twitter:description" content="The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm",
+  "description": "The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.",
+  "datePublished": "2026-10-08T00:00:00Z",
+  "dateModified": "2026-10-08T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-08</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm</h1>
+<p><strong>Date:</strong> 2026-10-08<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Shai-Hulud: Here We Go Again (ChainDrop)</td></tr><tr><td>Attribution</td><td>Unattributed; tracked as a Shai-Hulud style self propagating worm (confidence: low)</td></tr><tr><td>Target</td><td>Developers and CI environments installing the tensorlake npm SDK</td></tr><tr><td>Vector</td><td>Malicious npm release with a preinstall hook that runs an obfuscated loader via Bun</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-07</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://socket.dev/blog/tensorlake-compromise" target="_blank" rel="noopener">socket.dev</a>, the npm SDK for Tensorlake, version 0.5.144, contained obfuscated malware published on October 8, 2026 at 01:12:07 UTC and flagged by Socket at 01:23:10 UTC, roughly 11 minutes later. The package receives about 12K weekly downloads. Socket reported the payload in package/lib/Math_Symbol.js, a credential stealing and self propagating worm, launched by an obfuscated loader in package/lib/setup.mjs through the preinstall hook using Bun. <a href="https://www.stepsecurity.io/blog/tensorlake-npm-compromised-hostage-token-worm" target="_blank" rel="noopener">stepsecurity.io</a> reported the first malicious commit landed on main at 01:20 UTC on October 7 under a maintainer identity, seven more commits followed over the next hours, and none went through a pull request before the release workflow published 0.5.144. StepSecurity stated the loader skips CI so developer machines are the target, and it decoded an 856 KB obfuscated payload without running it. Both sources report credential harvesting across local files, CI environments, Kubernetes and Vault sources, plus GitHub and npm tokens, cloud keys, SSH keys, saved browser logins, and config files for AI tools such as Claude, Cursor and Windsurf. Data is encrypted and exfiltrated to a public GitHub repo the malware creates in the victim account or to iseekaigogo.com. StepSecurity reported the malware installs a gh-token-monitor service that checks the stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ or a PowerShell profile delete if GitHub rejects it. The worm also writes .claude/settings.json and .vscode/tasks.json into reachable repos using a fake claude@users.noreply.github.com author and the message chore: update dependencies, so it runs again when a project is opened in Claude Code or VS Code. StepSecurity reported the release to the maintainers in GitHub issue #1014.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Software Supply Chain</td><td>T1195.002</td><td>Malicious version published to npm through the package release workflow</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Harvesting of tokens, cloud keys, Kubernetes, Vault, SSH, browser and AI tool configs</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">iseekaigogo.com</code></pre>
+<h3>Full URL Paths</h3>
+<p>_No hashes or IPs published in the cited sources. Package identifier from Socket and StepSecurity._</p>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;iseekaigogo.com&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:tensorlake@0.5.144</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">npm
+Bun
+GitHub Actions
+Claude Code
+Visual Studio Code</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Hunt for the preinstall execution of package/lib/setup.mjs and for downloaded Bun runtimes on developer endpoints. Search repositories and developer home paths for .claude/settings.json and .vscode/tasks.json with the fake claude@users.noreply.github.com author and the message chore: update dependencies. Look for the gh-token-monitor service or scheduled task and for connections to iseekaigogo.com. Before revoking any stolen GitHub token, remove the monitor persistence first, since revocation triggers home directory deletion. Rotate npm, cloud, Kubernetes, Vault, SSH, and browser credentials from a clean host.</p>
+<h2>References</h2>
+<ul><li>[Socket] TensorLake npm SDK Compromised in ChainDrop Shai-Hulud Credential-Stealing Attack (2026-10-08) — https://socket.dev/blog/tensorlake-compromise</li><li>[StepSecurity] Tensorlake npm Package Compromised: A Worm With a Hostage Token That Wipes Your Machine If You Revoke It (2026-10-08) — https://www.stepsecurity.io/blog/tensorlake-npm-compromised-hostage-token-worm</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

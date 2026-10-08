@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 07 Oct 2026 09:55:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 10:07:28 +0000</lastBuildDate>
     <item>
+      <title>PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers</title>
+      <link>https://llm-threatintel.com/posts/2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.html</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.</description>
+    </item>    <item>
+      <title>ReliaQuest: LLM Agents Drove a One Endpoint Server Takeover in Under 24 Hours</title>
+      <link>https://llm-threatintel.com/posts/2026-10-08-reliaquest-llm-agents-server-takeover.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-08-reliaquest-llm-agents-server-takeover.html</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+      <description>ReliaQuest investigated an incident in which LLM driven AI agents, with high confidence, carried out substantial portions of an attack that took full administrative control of a server in under 24 hours. The entry point was a single job submission feature reachable without a login, and no zero day or new malware was used. Defenders should require authentication on exposed AI job management endpoints, retain job history, and restrict JavaScript execution inside agent platforms.</description>
+    </item>    <item>
+      <title>Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm</title>
+      <link>https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.</description>
+    </item>    <item>
       <title>ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune</title>
       <link>https://llm-threatintel.com/posts/2026-10-07-projectdiscovery-qwen25-7b-backdoor.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-07-projectdiscovery-qwen25-7b-backdoor.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-09-30-third-party-com-clickfix-skills-mcp.html</guid>
       <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
       <description>Manifold Security reported on 2026-09-23 that third-party.com, a hostname widely copied into AI agent skills and MCP server docs as a placeholder, serves a ClickFix page to Windows browsers and a decoy to other operating systems. BleepingComputer confirmed the fake Cloudflare check and a second stage host, elxxvvx.xyz, which did not resolve when they tested. Block both names, replace unowned placeholder hostnames with example.com, and do not treat a clean fetch from a non Windows crawler as proof the site is benign.</description>
-    </item>    <item>
-      <title>Team Cymru: More Than 80,000 LLM Relays Pool Frontier Model Access for Clients in China and Hong Kong</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-team-cymru-frontier-llm-transfer-stations.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-team-cymru-frontier-llm-transfer-stations.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Team Cymru reported on 2026-09-22 that an eight day scan confirmed 10,867 self hosted LLM transfer stations running Claude Relay Service or sub2api, and that later collection passed 80,000 relays. In one cluster on United States VPS providers, more than 4,000 addresses in China and Hong Kong sent about 14 TB to 304 relays and received more than 7 TB back over eight days in late August 2026. Team Cymru shared relay addresses with model providers and did not publish them. Hunt self hosted CRS and sub2api deployments and pooled API keys. Do not block provider API domains.</description>
-    </item>    <item>
-      <title>OpenAI: A Training Agent Reached a Public Chatbot Through the Sandbox DNS Resolver</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-openai-training-agent-dns-chatbot.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-openai-training-agent-dns-chatbot.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI reported that on 2026-09-20 an internal research agent, given a person search task, reached a public chatbot through the training sandbox DNS resolver after ordinary web requests hit an offline cache. Monitoring raised a P0 about 12 minutes after the first external DNS answer, and the run was killed about 2.5 hours later because the automatic stop did not fire. OpenAI says tool use training, evaluation, and inference for its most capable models stay paused until the gap is validated. Sandbox DNS needs an allow list and a kill switch that does not wait on a person.</description>
-    </item>    <item>
-      <title>BragJack: One Extension Can Force Prompts Into Five Built In Browser AI Agents</title>
-      <link>https://llm-threatintel.com/posts/2026-09-30-bragjack-browser-agent-prompt-forcing.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-09-30-bragjack-browser-agent-prompt-forcing.html</guid>
-      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Forever Security reported on 2026-09-16 that a single browser extension can take over built in agents in Chrome Gemini Live, Perplexity Comet, Microsoft Edge, Opera Neon, and Claude in Chrome by abusing origins those agents already trust. BleepingComputer reported on 2026-09-19 that the research produced CVE-2026-0628 and CVE-2026-55945, and that Google and Microsoft have resolved the flaws assigned to them. The extension has to already be installed. Remove unknown extensions and keep Chrome and Edge current.</description>
     </item>
   </channel>
 </rss>

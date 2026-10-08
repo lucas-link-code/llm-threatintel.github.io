@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07",
+  "last_updated": "2026-10-08",
   "iocs": [
     {
       "value": "third-party.com",
@@ -6947,6 +6947,24 @@
       "first_seen": "2026-10-07",
       "source": "DeAI Newsroom",
       "campaign": "projectdiscovery-qwen25-7b-backdoor",
+      "status": "active"
+    },
+    {
+      "value": "iseekaigogo.com",
+      "type": "domain",
+      "context": "Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm",
+      "first_seen": "2026-10-08",
+      "source": "Socket",
+      "campaign": "tensorlake-npm-shai-hulud-chaindrop-worm",
+      "status": "active"
+    },
+    {
+      "value": "npm:tensorlake@0.5.144",
+      "type": "package",
+      "context": "Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm",
+      "first_seen": "2026-10-08",
+      "source": "Socket",
+      "campaign": "tensorlake-npm-shai-hulud-chaindrop-worm",
       "status": "active"
     }
   ]

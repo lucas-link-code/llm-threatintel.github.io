@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers | LLM ThreatIntel</title>
+  <meta name="description" content="Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers">
+  <meta property="og:description" content="Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers">
+  <meta property="article:published_time" content="2026-10-08T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-08T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers">
+  <meta name="twitter:description" content="Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers",
+  "description": "Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.",
+  "datePublished": "2026-10-08T00:00:00Z",
+  "dateModified": "2026-10-08T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.html",
+  "keywords": [
+    "malware",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-08</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers</h1>
+<p><strong>Date:</strong> 2026-10-08<br><strong>Tags:</strong> malware, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Canto Incognito</td></tr><tr><td>Attribution</td><td>Italian speaking financially motivated criminal (confidence: medium)</td></tr><tr><td>Target</td><td>Internet facing AI and developer services, primarily in the US and Western Europe</td></tr><tr><td>Vector</td><td>Exploitation of vulnerable exposed services plus adversary controlled code retrieved through a poem on GitHub</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-04</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.theregister.com/security/2026/10/07/poetry-is-the-new-ai-security-threat-as-poellm-malware-infects-3k-servers/5301672" target="_blank" rel="noopener">theregister.com</a>, Lumen Black Lotus Labs has tracked the PoeLLM malware since at least April 2026, when the campaign began, and it has impacted more than 3,000 servers primarily in the US and Western Europe, reaching more than 800 active infections per day at peak. <a href="https://gbhackers.com/poellm-malware/" target="_blank" rel="noopener">gbhackers.com</a> reported the count at more than 3,400 servers. The Register reported this is the first real world case of adversarial poetry, a jailbreak technique that hides harmful prompts in poems, that Black Lotus Labs has observed. The malware retrieves its control instructions from On the Nature of Connection, a poem embedded in a file named dash.css within a fork of the Node.js website repository, according to gbhackers.com. The Register reported most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with hundreds also running the Gotenberg PDF converter and the Gitea software development platform, and possible targeting of Ivanti Sentry. Black Lotus Labs first spotted the malware while investigating Ivanti Sentry vulnerability CVE-2026-10520. The malware deploys XMRig and Iron miners and connects victims to Kryptex mining infrastructure. Black Lotus Labs attributed the campaign to an Italian speaking criminal, named it Canto Incognito, and stated Italian language comments appear in the malware and on the attacker GitHub pages, with netflow suggesting an Italy location. The Register reported the researchers believe the poem itself was written by AI.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Scanning and exploitation of exposed LiteLLM, Ollama, Gotenberg, Gitea, and Ivanti Sentry services</td></tr><tr><td>Resource Hijacking</td><td>T1496</td><td>Deployment of XMRig and Iron miners connected to Kryptex mining infrastructure</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No domain, hash, or IP IOCs published in the cited sources. The C2 address is derived from the poem file dash.css in a fork of the Node.js website repository, referenced in detection guidance. CVE-2026-10520 relates to Ivanti Sentry._</p>
+<h3>Full URL Paths</h3>
+<p>_No domain, hash, or IP IOCs published in the cited sources. The C2 address is derived from the poem file dash.css in a fork of the Node.js website repository, referenced in detection guidance. CVE-2026-10520 relates to Ivanti Sentry._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">LiteLLM
+Ollama
+Gotenberg
+Gitea
+Ivanti Sentry</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Patch and require authentication on all internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments, and prioritize Ivanti Sentry patching for CVE-2026-10520. Hunt for XMRig or Iron miner processes and for outbound connections to Kryptex mining infrastructure. Monitor GitHub forks of the Node.js website repository for unexpected dash.css content, since the C2 address is hidden inside the poem. Alert on anomalous outbound netflow from AI inference hosts.</p>
+<h2>References</h2>
+<ul><li>[The Register] Poetry is the new AI security threat as PoeLLM malware infects 3K+ servers (2026-10-07) — https://www.theregister.com/security/2026/10/07/poetry-is-the-new-ai-security-threat-as-poellm-malware-infects-3k-servers/5301672</li><li>[GBHackers] PoeLLM Malware Hijacks 3,400+ Servers for Crypto Mining and Botnet Expansion (2026-10-08) — https://gbhackers.com/poellm-malware/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
