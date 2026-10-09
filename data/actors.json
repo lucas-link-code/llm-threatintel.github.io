@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08",
+  "last_updated": "2026-10-09",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -1890,7 +1890,8 @@
         "ChainDrop",
         "TeamPCP",
         "Miasma threat actor",
-        "UNC6780"
+        "UNC6780",
+        "Shai-Hulud linked supply chain operator"
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
@@ -1906,7 +1907,10 @@
         "GitHub Actions",
         "Claude Code SessionStart and VS Code folder-open hooks",
         "Ethereum smart-contract C2 resolution",
-        "npm @7nohe/openapi-react-query-codegen malicious versions published 2026-08-28"
+        "npm @7nohe/openapi-react-query-codegen malicious versions published 2026-08-28",
+        "compromised npm package",
+        "stolen npm tokens",
+        "stolen GitHub tokens"
       ],
       "ttps": [
         "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies",
@@ -1928,7 +1932,8 @@
         "T1528 - Steal Application Access Token",
         "T1546 - Event Triggered Execution",
         "T1573.001 - Encrypted Channel: Symmetric Cryptography",
-        "T1059.007 - JavaScript"
+        "T1059.007 - JavaScript",
+        "T1195.002 - Compromise Software Supply Chain"
       ],
       "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, container platforms, and AI development tools. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration. Unit 42 identified ChainDrop as a Shai-Hulud-lineage npm worm that uses Bun, Ethereum-resolved C2, encrypted exfiltration, GitHub secret collection, and Claude Code and VS Code project hooks.",
       "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase. Unit 42 assessed ChainDrop as Shai-Hulud-lineage but stated that public availability of the source prevents attribution of the ChainDrop operation to TeamPCP."
@@ -5661,6 +5666,44 @@
       ],
       "description": "A financially motivated operator running the PoeLLM malware and the Canto Incognito campaign since April 2026. It scans for and exploits vulnerable internet facing AI and developer services, hides command and control addresses in a GitHub hosted poem, and deploys cryptocurrency miners to build a botnet for mining revenue.",
       "attribution": "Black Lotus Labs attributes to an Italian speaking financially motivated criminal"
+    },
+    {
+      "id": "unknown-a3-operators",
+      "names": [
+        "Unknown A3 operators",
+        "FRUITSHELL",
+        "PLOTSAFE",
+        "HOLLOWCLAD",
+        "MANTLEMAZE"
+      ],
+      "type": "malware",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "description": "Four malware families observed by Cisco Talos embedding natural language instructions to influence automated AI analysis. Talos groups this behavior as A3, AI-Analysis Evasion, within its CAIRN research program and treats the embedded language as a detectable signal.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "warden-stealer",
+      "names": [
+        "Warden Stealer",
+        "CallbackBeaver"
+      ],
+      "type": "malware",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "malware as a service"
+      ],
+      "ttps": [
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1555.003 - Credentials from Web Browsers"
+      ],
+      "description": "A Rust based infostealer marketed as a broad data theft platform. It targets AI agent and coding assistant data, including configuration files, tokens, prompt histories, conversation databases, and MCP settings, alongside conventional browser, wallet, password manager, messaging, 2FA, and VPN targets.",
+      "attribution": "Attributed to the Warden operators; CallbackBeaver linked to Warden by GBHackers with low confidence"
     }
   ]
 }

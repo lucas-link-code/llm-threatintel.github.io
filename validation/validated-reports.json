@@ -5629,6 +5629,52 @@
       "validated_at": "2026-10-08T10:07:31+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-09-stepsecurity-tensorlake-hostage-token-worm": {
+      "content_hash": "935b33a1c07152ac705108b762b74c8cda537a887d35b75c97cc049e74081634",
+      "evidence_status": "validated",
+      "file": "2026-10-09-stepsecurity-tensorlake-hostage-token-worm.md",
+      "posts_index_hash": "f1abf1cdab4d4e4a79b6f8178dd5dc66a2ad824b14151691db314e666760a163",
+      "report_id": "2026-10-09-stepsecurity-tensorlake-hostage-token-worm",
+      "review_required": [],
+      "source_urls": [
+        "https://www.stepsecurity.io/blog/tensorlake-npm-compromised-hostage-token-worm",
+        "https://www.socket.dev/blog/tensorlake-compromise"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-09T10:09:27+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-09-talos-ai-analysis-evasion-a3-malware-families": {
+      "content_hash": "10c4a0d292713ebed2ce2d054898f44499996b253c2ffe2e6049af21bbe8ae9f",
+      "evidence_status": "validated",
+      "file": "2026-10-09-talos-ai-analysis-evasion-a3-malware-families.md",
+      "posts_index_hash": "d02df85f2fbe64fa605c81d6bb8c43f2a2ce78b9e6732dfd699e224713a63d74",
+      "report_id": "2026-10-09-talos-ai-analysis-evasion-a3-malware-families",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.talosintelligence.com/ignore-all-instructions-and-read-this-blog-the-state-of-ai-analysis-evasion-in-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-09T10:09:29+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-09-warden-stealer-ai-agent-data-theft": {
+      "content_hash": "26f6a3dd7e2fa7255ded2a9b63a6bb0737d38271cd9b13b40137562246cc5613",
+      "evidence_status": "validated",
+      "file": "2026-10-09-warden-stealer-ai-agent-data-theft.md",
+      "posts_index_hash": "e8dc6da0d5b10d461395c2e60d427470d427301f46f0b56345654d823afb182e",
+      "report_id": "2026-10-09-warden-stealer-ai-agent-data-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://gbhackers.com/warden-stealer-malware/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-09T10:09:29+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

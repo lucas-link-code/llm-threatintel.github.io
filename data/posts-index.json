@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-10-09-stepsecurity-tensorlake-hostage-token-worm",
+      "title": "StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm",
+      "date": "2026-10-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "StepSecurity published new technical analysis on October 8, 2026 showing the compromised tensorlake npm package version 0.5.144 installs a background service named gh-token-monitor that checks a stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ (or a PowerShell delete of the user profile on Windows) if GitHub rejects the token. This means revoking the stolen token is what triggers destructive action, so defenders must isolate the host before revoking. The package also self propagates by republishing stolen npm packages and by committing to victim GitHub repositories.",
+      "file": "2026-10-09-stepsecurity-tensorlake-hostage-token-worm.md"
+    },
+    {
+      "id": "2026-10-09-warden-stealer-ai-agent-data-theft",
+      "title": "Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data",
+      "date": "2026-10-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A Rust based infostealer marketed as Warden Stealer is systematically harvesting AI agent data from Claude, Codex, Grok, and Cursor, according to a GBHackers report published October 9, 2026. Warden 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents, and the operation is described as a rapidly growing malware as a service. Defenders should inventory and rotate credentials stored by local AI tools and monitor for reads of agent configuration directories.",
+      "file": "2026-10-09-warden-stealer-ai-agent-data-theft.md"
+    },
+    {
+      "id": "2026-10-09-talos-ai-analysis-evasion-a3-malware-families",
+      "title": "Talos Maps AI-Analysis Evasion Malware Across Four Families and 84 Samples",
+      "date": "2026-10-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cisco Talos published a state of the field report on October 8, 2026 on malware that embeds natural language instructions to influence automated AI analysis, a class it labels A3 (AI-Analysis Evasion) under the CAIRN framework. Talos traced the technique across four confirmed families, FRUITSHELL, PLOTSAFE, HOLLOWCLAD, and MANTLEMAZE, covering 84 distinct samples collected from January 2025 through July 2026. The embedded text steered the outcome in the attacker's favor in roughly 35 percent of test runs, and because it is always plaintext it is always detectable, so defenders should treat text inside a sample as evidence, never as instruction.",
+      "file": "2026-10-09-talos-ai-analysis-evasion-a3-malware-families.md"
+    },
+    {
       "id": "2026-10-08-poellm-canto-incognito-adversarial-poetry-mining",
       "title": "PoeLLM and Canto Incognito Abuses Adversarial Poetry to Mine Crypto on 3,400+ AI Servers",
       "date": "2026-10-08",

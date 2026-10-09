@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm | LLM ThreatIntel</title>
+  <meta name="description" content="StepSecurity published new technical analysis on October 8, 2026 showing the compromised tensorlake npm package version 0.5.144 installs a background service named gh-token-monitor that checks a stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ (or a PowerShell delete of the user profile on Windows) if GitHub rejects the token. This means revoking the stolen token is what triggers destructive action, so defenders must isolate the host before revoking. The package also self propagates by republishing stolen npm packages and by committing to victim GitHub repositories.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-09-stepsecurity-tensorlake-hostage-token-worm.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm">
+  <meta property="og:description" content="StepSecurity published new technical analysis on October 8, 2026 showing the compromised tensorlake npm package version 0.5.144 installs a background service named gh-token-monitor that checks a stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ (or a PowerShell delete of the user profile on Windows) if GitHub rejects the token. This means revoking the stolen token is what triggers destructive action, so defenders must isolate the host before revoking. The package also self propagates by republishing stolen npm packages and by committing to victim GitHub repositories.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-09-stepsecurity-tensorlake-hostage-token-worm.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm">
+  <meta property="article:published_time" content="2026-10-09T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-09T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm">
+  <meta name="twitter:description" content="StepSecurity published new technical analysis on October 8, 2026 showing the compromised tensorlake npm package version 0.5.144 installs a background service named gh-token-monitor that checks a stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ (or a PowerShell delete of the user profile on Windows) if GitHub rejects the token. This means revoking the stolen token is what triggers destructive action, so defenders must isolate the host before revoking. The package also self propagates by republishing stolen npm packages and by committing to victim GitHub repositories.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm",
+  "description": "StepSecurity published new technical analysis on October 8, 2026 showing the compromised tensorlake npm package version 0.5.144 installs a background service named gh-token-monitor that checks a stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ (or a PowerShell delete of the user profile on Windows) if GitHub rejects the token. This means revoking the stolen token is what triggers destructive action, so defenders must isolate the host before revoking. The package also self propagates by republishing stolen npm packages and by committing to victim GitHub repositories.",
+  "datePublished": "2026-10-09T00:00:00Z",
+  "dateModified": "2026-10-09T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-09-stepsecurity-tensorlake-hostage-token-worm.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-09</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm</h1>
+<p><strong>Date:</strong> 2026-10-09<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>StepSecurity published new technical analysis on October 8, 2026 showing the compromised tensorlake npm package version 0.5.144 installs a background service named gh-token-monitor that checks a stolen GitHub token every 60 seconds for up to 24 hours and runs rm -rf ~/ (or a PowerShell delete of the user profile on Windows) if GitHub rejects the token. This means revoking the stolen token is what triggers destructive action, so defenders must isolate the host before revoking. The package also self propagates by republishing stolen npm packages and by committing to victim GitHub repositories.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>ChainDrop Shai-Hulud tensorlake worm</td></tr><tr><td>Attribution</td><td>Unknown, Shai-Hulud linked supply chain operator (confidence: medium)</td></tr><tr><td>Target</td><td>Developers and CI systems installing the tensorlake npm SDK</td></tr><tr><td>Vector</td><td>Malicious npm release with a preinstall hook</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-08</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.stepsecurity.io/blog/tensorlake-npm-compromised-hostage-token-worm" target="_blank" rel="noopener">stepsecurity.io</a>, the malicious commit landed on main at 01:20 UTC on October 7, 2026 under a maintainer identity, followed by seven more commits over the next hours that tweaked the payload and added a preinstall line to package.json, with none going through a pull request. The repo release workflow published 0.5.144 to npm at 01:12 UTC on October 8, and the npm package files match main. StepSecurity reported that the payload targets GitHub and npm tokens, cloud keys, Kubernetes and Vault secrets, SSH keys, saved browser logins, and config files for AI tools including Claude, Cursor, and Windsurf, encrypts the data, and sends it to a public GitHub repo it creates in the victim account with the description &#x27;Shai-Hulud: Here We Go Again&#x27; or to iseekaigogo.com. The report states that with a stolen npm token it downloads the victim&#x27;s packages, adds itself, bumps the version, and republishes, and with a stolen GitHub token it commits .claude and .vscode files to victim repos using a fake claude@users.noreply.github.com author and the message &#x27;chore: update dependencies&#x27;. StepSecurity further reported that when the malware has a GitHub token it installs a service named gh-token-monitor that checks the token against the GitHub API every 60 seconds for up to 24 hours and, if GitHub rejects it, runs rm -rf ~/ or a PowerShell delete of the user profile on Windows. StepSecurity&#x27;s AI Package Analyst detected the release and reported it to maintainers in GitHub issue #1014. Socket separately reported the same release as a ChainDrop Shai-Hulud event.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Malicious npm release and republishing of stolen packages spreads the worm</td></tr><tr><td>Data Destruction</td><td>T1485</td><td>gh-token-monitor runs rm -rf ~/ or deletes the user profile when the stolen token is revoked</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">iseekaigogo.com</code></pre>
+<h3>Full URL Paths</h3>
+<p>_IOCs condensed from the StepSecurity writeup; malicious files in the package are lib/setup.mjs (obfuscated preinstall loader) and lib/Math_Symbol.js (worm payload) per Socket&#x27;s writeup_</p>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;iseekaigogo.com&quot;</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:tensorlake@0.5.144</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">npm
+Node.js
+Windows
+Linux
+macOS</code></pre>
+<h2>Detection Recommendations</h2>
+<p>If tensorlake 0.5.144 was installed, do not simply revoke the stolen GitHub token first: isolate the host from the network and kill any gh-token-monitor scheduled task, launch agent, or service before revoking, then uninstall the package version. Hunt for the exfil domain iseekaigogo.com, for GitHub repos described as &#x27;Shai-Hulud: Here We Go Again&#x27; in victim accounts, for commits authored as claude@users.noreply.github.com with the message &#x27;chore: update dependencies&#x27;, and for reads of .claude and .vscode directories. Rotate npm, GitHub, cloud, Kubernetes, Vault, and SSH credentials from a clean host.</p>
+<h2>References</h2>
+<ul><li>[StepSecurity] Tensorlake npm Package Compromised: A Worm With a Hostage Token That Wipes Your Machine If You Revoke It (2026-10-08) — https://www.stepsecurity.io/blog/tensorlake-npm-compromised-hostage-token-worm</li><li>[Socket] TensorLake npm SDK Compromised in ChainDrop Shai-Hulud Credential-Stealing Attack (2026-10-08) — https://www.socket.dev/blog/tensorlake-compromise</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

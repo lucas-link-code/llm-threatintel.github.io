@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data | LLM ThreatIntel</title>
+  <meta name="description" content="A Rust based infostealer marketed as Warden Stealer is systematically harvesting AI agent data from Claude, Codex, Grok, and Cursor, according to a GBHackers report published October 9, 2026. Warden 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents, and the operation is described as a rapidly growing malware as a service. Defenders should inventory and rotate credentials stored by local AI tools and monitor for reads of agent configuration directories.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-09-warden-stealer-ai-agent-data-theft.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data">
+  <meta property="og:description" content="A Rust based infostealer marketed as Warden Stealer is systematically harvesting AI agent data from Claude, Codex, Grok, and Cursor, according to a GBHackers report published October 9, 2026. Warden 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents, and the operation is described as a rapidly growing malware as a service. Defenders should inventory and rotate credentials stored by local AI tools and monitor for reads of agent configuration directories.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-09-warden-stealer-ai-agent-data-theft.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data">
+  <meta property="article:published_time" content="2026-10-09T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-09T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data">
+  <meta name="twitter:description" content="A Rust based infostealer marketed as Warden Stealer is systematically harvesting AI agent data from Claude, Codex, Grok, and Cursor, according to a GBHackers report published October 9, 2026. Warden 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents, and the operation is described as a rapidly growing malware as a service. Defenders should inventory and rotate credentials stored by local AI tools and monitor for reads of agent configuration directories.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data",
+  "description": "A Rust based infostealer marketed as Warden Stealer is systematically harvesting AI agent data from Claude, Codex, Grok, and Cursor, according to a GBHackers report published October 9, 2026. Warden 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents, and the operation is described as a rapidly growing malware as a service. Defenders should inventory and rotate credentials stored by local AI tools and monitor for reads of agent configuration directories.",
+  "datePublished": "2026-10-09T00:00:00Z",
+  "dateModified": "2026-10-09T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-09-warden-stealer-ai-agent-data-theft.html",
+  "keywords": [
+    "malware",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-09</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Warden Stealer Harvests Claude, Codex, Grok and Cursor Agent Data</h1>
+<p><strong>Date:</strong> 2026-10-09<br><strong>Tags:</strong> malware, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>A Rust based infostealer marketed as Warden Stealer is systematically harvesting AI agent data from Claude, Codex, Grok, and Cursor, according to a GBHackers report published October 9, 2026. Warden 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents, and the operation is described as a rapidly growing malware as a service. Defenders should inventory and rotate credentials stored by local AI tools and monitor for reads of agent configuration directories.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Warden Stealer</td></tr><tr><td>Attribution</td><td>Warden operators, linked to CallbackBeaver (confidence: low)</td></tr><tr><td>Target</td><td>Developers and organizations using AI coding assistants and agents</td></tr><tr><td>Vector</td><td>Infostealer malware distributed as a data theft platform</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09-29</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://gbhackers.com/warden-stealer-malware/" target="_blank" rel="noopener">gbhackers.com</a>, Warden Stealer is among the first malware families observed systematically harvesting AI agent configuration files, local tokens, prompt histories, conversation databases, and Model Context Protocol (MCP) settings. The report states the Rust based infostealer targets data stored by AI assistants and coding agents including Claude, Codex, Grok, and Cursor, expanding the infostealer threat model beyond browser passwords, cryptocurrency wallets, and session cookies. GBHackers reported that local AI agent data can expose access and refresh tokens, API keys, MCP connection details, project names, internal source code context, and historical prompts. The report states the malware supports Windows 8 through Windows 11 and collects from Chromium and Gecko based browsers, cryptocurrency wallet extensions, password managers, messaging apps, 2FA tools, and VPN clients, and that version 1.9, announced September 29, added officially advertised support for stealing tokens from AI coding agents. GBHackers attributed CallbackBeaver to Warden based on technical overlap including Rust development, highly distinctive code morphing, a dedicated loader, and matching cryptocurrency clipper configurations.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Harvests AI agent config files, local tokens, and MCP settings stored on disk</td></tr><tr><td>Credentials from Web Browsers</td><td>T1555.003</td><td>Collects saved logins and data from Chromium and Gecko based browsers</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published in the summarized GBHackers report_</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published in the summarized GBHackers report_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows 8
+Windows 10
+Windows 11
+Claude
+Codex
+Grok
+Cursor</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for unexpected reads or archives of AI agent directories such as ~/.claude, ~/.codex, ~/.cursor, and MCP configuration paths. Alert on processes spawning from user temp or AppData locations that touch these paths. Shorten credential lifetime for API keys and access tokens used by local agents, and rotate tokens stored on developer endpoints where an infostealer is suspected.</p>
+<h2>References</h2>
+<ul><li>[GBHackers] Warden Stealer Malware Targets Claude, Codex, Grok and Cursor to Steal AI Agent Data (2026-10-09) — https://gbhackers.com/warden-stealer-malware/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
