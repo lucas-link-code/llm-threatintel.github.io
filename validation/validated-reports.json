@@ -5675,6 +5675,37 @@
       "validated_at": "2026-10-09T10:09:29+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft": {
+      "content_hash": "fec2492a340c89f656d55250839672b3c806821ce39238d741b1028be026d7de",
+      "evidence_status": "validated",
+      "file": "2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft.md",
+      "posts_index_hash": "ec39d22339d80bcdd9f11132ddc0397d1df51cd21a323b773af872abeeb84673",
+      "report_id": "2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://www.aikido.dev/blog/tensorlake-npm-package-compromised",
+        "https://www.socket.dev/blog/tensorlake-compromise"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-10T09:30:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-10-cisco-talos-agentic-ai-swarm-warning": {
+      "content_hash": "78e9bcade166394a2169437d0cdf3446ea49dea82f54760b0fceb30a0a37d4f4",
+      "evidence_status": "validated",
+      "file": "2026-10-10-cisco-talos-agentic-ai-swarm-warning.md",
+      "posts_index_hash": "f8c9b30c23493d8ce147b0b7ec8bacdc8ea23c703f81e2589640de89d9d7cd83",
+      "report_id": "2026-10-10-cisco-talos-agentic-ai-swarm-warning",
+      "review_required": [],
+      "source_urls": [
+        "https://intel.threadlinqs.com/threat/TL-2026-3163"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-10T09:30:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

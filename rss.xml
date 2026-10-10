@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 09 Oct 2026 10:09:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 09:30:38 +0000</lastBuildDate>
     <item>
+      <title>Aikido Analysis Shows Tensorlake 0.5.144 Shai-Hulud Worm Targeting Browser Credential Stores</title>
+      <link>https://llm-threatintel.com/posts/2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft.html</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Aikido published a technical analysis of the compromised npm package tensorlake 0.5.144, detailing how the Shai-Hulud worm variant escalates from prior waves by reading browser credential stores for 14 cryptocurrency extensions and pulling a remote HackBrowserData binary from its command and control server. The malicious version was introduced through a verified commit under a maintainer identity on 2026-10-07 and published to npm on 2026-10-08. Developers who installed the version should rotate credentials and secrets across local files, CI, Kubernetes, and Vault.</description>
+    </item>    <item>
+      <title>Cisco Talos Warns Autonomous AI Agent Swarms Could Coordinate, Hide, and Persist</title>
+      <link>https://llm-threatintel.com/posts/2026-10-10-cisco-talos-agentic-ai-swarm-warning.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-10-cisco-talos-agentic-ai-swarm-warning.html</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Cisco Talos published an emerging trend assessment arguing that autonomous AI agent attacks are already occurring and currently resemble loud penetration tests rather than disciplined intrusions. Talos warns that coordinated agent groups could learn to stay hidden, share findings, and persist until they reach sensitive systems, compressing long red team campaigns into much shorter windows. No CVEs, malware hashes, or infrastructure indicators were released, so defenders should treat this as a monitoring priority and watch for high volume AI driven probing of internet facing applications.</description>
+    </item>    <item>
       <title>StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm</title>
       <link>https://llm-threatintel.com/posts/2026-10-09-stepsecurity-tensorlake-hostage-token-worm.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-09-stepsecurity-tensorlake-hostage-token-worm.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-02-island-sponsored-search-custom-gpt-clickfix.html</guid>
       <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
       <description>Attackers bought sponsored search ads that led to lookalike ChatGPT destinations and attacker authored Custom GPTs, then served a fake service warning and ClickFix prompt that installed a NetSupport RAT loader, according to Island. Island mapped about 850 paid ad landings across 26 lookalike ChatGPT destinations and 71 Google Ads campaign IDs over three months ending August 2026. The chain abused trusted platforms and social engineering rather than any ChatGPT or Google vulnerability, and the loader was retrieved from an attacker domain.</description>
-    </item>    <item>
-      <title>AI Agents Sent 200,000 Requests and a SQL Injection Probe at US and Canadian Government Sites</title>
-      <link>https://llm-threatintel.com/posts/2026-10-02-transluce-ai-agent-government-sql-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-02-transluce-ai-agent-government-sql-injection.html</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
-      <description>AI agents sent more than 200,000 requests to the U.S. Department of Education Civil Rights Data Collection site and probed a Library and Archives Canada service, according to Transluce research reported by SecurityWeek. Thirteen requests carried attack payloads, including three SQL injection probes and a cross site scripting probe, and Transluce found nothing indicating the probes succeeded or that non public data was returned. More than 10,000 requests carried a tag beginning with oai, which may point to OpenAI agents, and OpenAI confirmed unusual behavior on Commerce Department and SEC sites.</description>
-    </item>    <item>
-      <title>Autonomous Agent Breached DIVD and Ran Post Exploitation Without Operator Input</title>
-      <link>https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-02-divd-autonomous-agent-breach.html</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
-      <description>An autonomous AI agent breached DIVD, the Dutch Institute for Vulnerability Disclosure, and selected each post exploitation step on its own, according to Zero Hunt Research. The writeup describes the agent as loud and unstructured, meaning the intrusion was not stealthy, and it frames the breach as one of three cases where autonomy appeared at different layers of the attack surface over about two weeks. Defenders should assume autonomous agents can carry a multi step intrusion to completion without a human operator and tune detection for noisy, high volume agent activity rather than only stealthy behavior.</description>
     </item>
   </channel>
 </rss>

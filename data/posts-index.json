@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft",
+      "title": "Aikido Analysis Shows Tensorlake 0.5.144 Shai-Hulud Worm Targeting Browser Credential Stores",
+      "date": "2026-10-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Aikido published a technical analysis of the compromised npm package tensorlake 0.5.144, detailing how the Shai-Hulud worm variant escalates from prior waves by reading browser credential stores for 14 cryptocurrency extensions and pulling a remote HackBrowserData binary from its command and control server. The malicious version was introduced through a verified commit under a maintainer identity on 2026-10-07 and published to npm on 2026-10-08. Developers who installed the version should rotate credentials and secrets across local files, CI, Kubernetes, and Vault.",
+      "file": "2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft.md"
+    },
+    {
+      "id": "2026-10-10-cisco-talos-agentic-ai-swarm-warning",
+      "title": "Cisco Talos Warns Autonomous AI Agent Swarms Could Coordinate, Hide, and Persist",
+      "date": "2026-10-10",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cisco Talos published an emerging trend assessment arguing that autonomous AI agent attacks are already occurring and currently resemble loud penetration tests rather than disciplined intrusions. Talos warns that coordinated agent groups could learn to stay hidden, share findings, and persist until they reach sensitive systems, compressing long red team campaigns into much shorter windows. No CVEs, malware hashes, or infrastructure indicators were released, so defenders should treat this as a monitoring priority and watch for high volume AI driven probing of internet facing applications.",
+      "file": "2026-10-10-cisco-talos-agentic-ai-swarm-warning.md"
+    },
+    {
       "id": "2026-10-09-stepsecurity-tensorlake-hostage-token-worm",
       "title": "StepSecurity Details Destructive Hostage Token in Tensorlake 0.5.144 Worm",
       "date": "2026-10-09",
