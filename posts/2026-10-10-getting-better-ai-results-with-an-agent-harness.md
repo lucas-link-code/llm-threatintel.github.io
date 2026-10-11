@@ -60,6 +60,4 @@ In this way, we would build a harness that controls the work and addresses the r
 
 Further reading: [OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) and [OpenAI's Agents SDK](https://developers.openai.com/api/docs/guides/agents/sdk).
 
-Lucas L.
-
 <p class="blog-post-byline">Author: Lucas L.</p>
