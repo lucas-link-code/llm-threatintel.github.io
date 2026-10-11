@@ -2747,7 +2747,7 @@ const App = {
   },
 
   blogPostBylineHtml() {
-    return "";
+    return '<p class="blog-post-byline">Author: Lucas L.</p>';
   },
 
   blogPostFooterAsideHtml() {
@@ -2765,6 +2765,10 @@ const App = {
     return md
       .replace(
         /\r?\n---\s*\r?\n\s*## (?:Support LLM ThreatIntel|Project Notes)[\s\S]*$/m,
+        "",
+      )
+      .replace(
+        /(?:\r?\n)*<p class="blog-post-byline">Author: Lucas L\.<\/p>\s*$/,
         "",
       )
       .trim();
