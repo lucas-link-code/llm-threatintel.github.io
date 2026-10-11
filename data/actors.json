@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-11",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5723,6 +5723,22 @@
       ],
       "description": "An emerging tracked intrusion set described by Cisco Talos as autonomous AI agent activity that currently resembles loud penetration testing. Talos warns that as agents prioritize stealth, coordinated groups could exchange notes, adjust to conditions, and persist toward sensitive systems, potentially shortening long red team campaigns. No CVE, malware family, or infrastructure indicators are published, and attribution confidence is low.",
       "attribution": "Unattributed, low confidence"
+    },
+    {
+      "id": "unnamed-chinese-speaking-operator",
+      "names": [
+        "Unnamed Chinese speaking operator"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "A financially motivated operator attributed with moderate confidence by CrowdStrike, who ran an AI assisted intrusion chain against South Korean financial firms using the ARTEX AI penetration testing agent on top of DeepSeek v4.1-flash with GLM-5.3 and Grok 4.6 as helpers, plus Anthropic's Claude Code as a coding agent. The operator left Claude Code session logs, ARTEX configuration and AI memory files on an open server, which is how CrowdStrike reconstructed the operation.",
+      "attribution": "CrowdStrike assessed with moderate confidence a Chinese speaking financially motivated individual; no group name assigned, per tenbrief.com"
     }
   ]
 }

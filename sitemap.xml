@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://llm-threatintel.com/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://llm-threatintel.com/posts/2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft.html</loc>

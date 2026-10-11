@@ -5706,6 +5706,21 @@
       "validated_at": "2026-10-10T09:30:42+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code": {
+      "content_hash": "6678b13d8360ba4c0b553f003f3bec1907ecec853c5d4dd17ad7bed03d864183",
+      "evidence_status": "validated",
+      "file": "2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.md",
+      "posts_index_hash": "089e1625714d2ad8ee2799e4480de1038f602a02260422f2dbc9e3c899345006",
+      "report_id": "2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code",
+      "review_required": [],
+      "source_urls": [
+        "https://tenbrief.com/en/2026/10/11/crowdstrike-korean-bank-hacker-claude-code-deepseek/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-11T09:43:48+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

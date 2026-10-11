@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code",
+      "title": "CrowdStrike Links South Korean Bank Breaches to ARTEX AI Pentest Tool, Claude Code and Multiple LLMs",
+      "date": "2026-10-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CrowdStrike reported that the operator behind late September and early October 2026 breaches of South Korean banks and savings banks chained ARTEX, a Chinese open source AI penetration testing tool, with Anthropic's Claude Code and several large language models including DeepSeek v4.1-flash, GLM-5.3 and Grok 4.6. Seven Korean financial firms and about 66,000 customers were affected. Defenders should treat exposed AI agent session logs, configuration files and memory files as operational artifacts and watch for unauthorized LLM API use inside intrusion activity.",
+      "file": "2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.md"
+    },
+    {
       "id": "2026-10-10-aikido-tensorlake-shai-hulud-browser-credential-theft",
       "title": "Aikido Analysis Shows Tensorlake 0.5.144 Shai-Hulud Worm Targeting Browser Credential Stores",
       "date": "2026-10-10",

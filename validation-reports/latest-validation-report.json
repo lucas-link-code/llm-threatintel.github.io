@@ -1,7 +1,7 @@
 {
-  "commit_sha": "878c8b40b4421c6f21b7000fdb94ac78406c12d3",
+  "commit_sha": "9903c7961ca174f61655c9ad23a56b9af73b4b86",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-10T09:30:42+00:00",
+  "generated_at_utc": "2026-10-11T09:43:48+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,33 +41,19 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
-  "reports_newly_validated": 2,
-  "reports_skipped": 324,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 326,
   "review_required": 0,
-  "source_urls_checked": 3,
-  "state_updates": 2,
+  "source_urls_checked": 1,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.aikido.dev/blog/tensorlake-npm-package-compromised",
+      "final_url": "https://tenbrief.com/en/2026/10/11/crowdstrike-korean-bank-hacker-claude-code-deepseek/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.aikido.dev/blog/tensorlake-npm-package-compromised"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.socket.dev/blog/tensorlake-compromise",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.socket.dev/blog/tensorlake-compromise"
-    },
-    {
-      "error": "",
-      "final_url": "https://intel.threadlinqs.com/threat/TL-2026-3163",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://intel.threadlinqs.com/threat/TL-2026-3163"
+      "url": "https://tenbrief.com/en/2026/10/11/crowdstrike-korean-bank-hacker-claude-code-deepseek/"
     }
   ],
   "validation_version": "1.0.0",
