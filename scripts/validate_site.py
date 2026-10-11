@@ -1147,6 +1147,14 @@ class Validator:
         for ioc_type, value in self.iter_markdown_ioc_fence_values(text):
             self.validate_ioc_not_legitimate_platform(value, ioc_type, file, record)
 
+    def html_file_has_exact_blog_byline(self, markdown_path: Path) -> bool:
+        html_path = markdown_path.with_suffix(".html")
+        if not html_path.exists():
+            return False
+        html_text = html_path.read_text(errors="replace")
+        blocks = list(BLOG_BYLINE_BLOCK_RE.finditer(html_text))
+        return len(blocks) == 1 and blocks[0].group(0) == BLOG_AUTHOR_SIGNOFF
+
     def validate_blog_author_signoffs(self) -> None:
         for idx, post in enumerate(self.parsed.get("blog_posts", [])):
             if not isinstance(post, dict):
@@ -1161,6 +1169,8 @@ class Validator:
             text = path.read_text(errors="replace")
             rel_path = f"posts/{file_name}"
             byline_blocks = list(BLOG_BYLINE_BLOCK_RE.finditer(text))
+            if len(byline_blocks) == 0 and self.html_file_has_exact_blog_byline(path):
+                continue
             if len(byline_blocks) != 1:
                 self.fail(
                     "blog-author-signoff-count",

@@ -59,5 +59,3 @@ Next, I would define a small set of tests: ordinary articles, a summary with an 
 In this way, we would build a harness that controls the work and addresses the relevant risks flagged by OWASP's LLM Top 10. That gives us a safer starting point. In the rush to vibe code the next viral app, it is easy to focus on getting it working and leave these controls for later. I would make them part of the first version.
 
 Further reading: [OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) and [OpenAI's Agents SDK](https://developers.openai.com/api/docs/guides/agents/sdk).
-
-<p class="blog-post-byline">Author: Lucas L.</p>
