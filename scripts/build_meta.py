@@ -89,6 +89,15 @@ def escape_attr(value: str) -> str:
 
 def render_inline(text: str) -> str:
     text = html.escape(text)
+
+    def render_image(match: re.Match) -> str:
+        alt = match.group(1)
+        src = html.unescape(match.group(2)).strip()
+        if not (src.startswith("/") or src.startswith("https://") or src.startswith("http://")):
+            return match.group(0)
+        return f'<img src="{html.escape(src, quote=True)}" alt="{alt}">'
+
+    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", render_image, text)
     text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"\*(.+?)\*", r"<em>\1</em>", text)

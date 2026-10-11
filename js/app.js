@@ -2803,6 +2803,10 @@ const App = {
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
       .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, src) => {
+        if (!/^(?:https?:\/\/|\/)/.test(src)) return `![${alt}](${src})`;
+        return `<img src="${this.escapeAttr(src)}" alt="${this.escapeAttr(alt)}">`;
+      })
       .replace(
         /\[([^\]]+)\]\(([^)]+)\)/g,
         '<a href="$2" target="_blank" rel="noopener">$1</a>',
@@ -2818,7 +2822,7 @@ const App = {
         if (!trimmed) return "";
         const first = trimmed.split("\n")[0].trim();
         if (
-          /^<(h[1-3]|table|pre|ul|ol|li|blockquote|hr|p)\b/i.test(first) ||
+          /^<(h[1-3]|table|pre|ul|ol|li|blockquote|hr|p|img)\b/i.test(first) ||
           first.startsWith("CODEBLOCKPLACEHOLDER_") ||
           first.startsWith("</")
         ) {
@@ -3811,6 +3815,7 @@ const App = {
       "h2",
       "h3",
       "hr",
+      "img",
       "li",
       "ol",
       "p",

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Better AI Results with an Agent Harness | LLM ThreatIntel</title>
+  <meta name="description" content="An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work. When a check fails, it can send the error back to the model for another attempt.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="Lucas L.">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-10-getting-better-ai-results-with-an-agent-harness.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Getting Better AI Results with an Agent Harness">
+  <meta property="og:description" content="An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work. When a check fails, it can send the error back to the model for another attempt.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-10-getting-better-ai-results-with-an-agent-harness.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Getting Better AI Results with an Agent Harness">
+  <meta property="article:published_time" content="2026-10-10T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-10T00:00:00Z">
+  <meta property="article:tag" content="agent-harnesses">
+  <meta property="article:tag" content="owasp">
+  <meta property="article:tag" content="cybersecurity">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Getting Better AI Results with an Agent Harness">
+  <meta name="twitter:description" content="An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work. When a check fails, it can send the error back to the model for another attempt.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Getting Better AI Results with an Agent Harness",
+  "description": "An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work. When a check fails, it can send the error back to the model for another attempt.",
+  "datePublished": "2026-10-10T00:00:00Z",
+  "dateModified": "2026-10-10T00:00:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "Lucas L."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-10-getting-better-ai-results-with-an-agent-harness.html",
+  "image": "https://llm-threatintel.com/assets/blog/agent-harness-framework.png",
+  "keywords": [
+    "agent-harnesses",
+    "owasp",
+    "cybersecurity"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content" id="app-content">
+    <a href="/#blog" class="back-link">&larr; Back to blog</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-10</span>
+      <span class="post-tag tag-blog">GenAI Security</span>
+      <span class="post-tag tag-read-time">7 min</span>
+    </div>
+    <div class="post-content"><h1>Getting Better AI Results with an Agent Harness</h1>
+<p><strong>An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work.</strong> When a check fails, it can send the error back to the model for another attempt.</p>
+<p>The harness is the software around the model. The model interprets the task and proposes actions. The harness supplies the information it needs, runs permitted tools and decides whether to continue or stop. The chat window or terminal is the interface through which we give it work.</p>
+<p>OWASP&#x27;s 2026 Top 10 describes risks in applications built around large language models, or LLMs. Knowing these risks helps us decide where the harness needs controls. To build a harness that addresses them, I would start with what it can read, which actions it can take and how we check the result.</p>
+<h2>The harness controls the work from request to result</h2>
+<p>For a working example, I would build a reading guide from a few public articles on a topic I want to learn about. The inputs would be saved copies of those articles, with their source links. The output would give a short summary of each one. The harness would read the permitted files, ask the model for a draft, check it and save reading-guide.md.</p>
+<p><img src="/assets/blog/agent-harness-framework.png" alt="Agent harness loop showing permitted tools, validation, feedback and stopping conditions"></p>
+<p>Only permitted actions enter the loop. Failed content checks can trigger another attempt within the remaining budget.</p>
+<p>I would define the stopping conditions alongside the checks. OWASP calls uncontrolled use of time, requests and computing resources unbounded consumption. Set limits on input size, elapsed time, model and tool calls, attempts and total spending in code. Stop when checks pass, we run out of attempts or review is needed. Delegated work must stay within the original user&#x27;s access and the task&#x27;s total budget.</p>
+<h2>Control what the model can read and do</h2>
+<p>Instructions define the task. A skill includes a repeatable method, like the steps for preparing the reading guide. Tools carry out actions, for example reading a file or saving a draft. Connectors provide access to services; an MCP server exposes tools through Model Context Protocol, a standard interface the application can use.</p>
+<p>The articles are source material. A line in one of them asking the agent to upload local files is an attempt to redirect it. This is prompt injection, delivered indirectly through a document. Marking the articles as content helps, but the model may still follow instructions inside them. The harness must enforce permitted actions even when that happens.</p>
+<p>For this workflow, I would allow reading the article copies from one input folder and saving the guide to one output folder. Sending messages or reading other folders would remain unavailable. This addresses excessive agency, one of the risks in OWASP&#x27;s Top 10: giving the agent more tools, permissions or freedom to act than it needs. If publishing is added later, approval should cover the actual content and destination. A denied action should stop, not become a problem the model tries to work around.</p>
+<h2>Start with one program and explicit checks</h2>
+<p>The harness could begin as a Python file called agent.py. It would load instructions.md, call the model through an API, run the permitted tools and apply checks from checks.py. The Markdown file describes the procedure; the Python program controls execution and applies the checks. Once implemented, python agent.py input/ could start it from a terminal.</p>
+<p>OpenAI&#x27;s Agents SDK, a software development kit, can provide the model and tool loop. The developer still defines access, storage and validation. Check each tool request&#x27;s arguments and permissions before execution. For a document workflow, specific read and write functions give less room for unintended actions than a general command tool.</p>
+<p>The workflow also inherits risks from its model, libraries and tools. OWASP groups these under supply chain. I would use known sources, record versions and review package and skill updates. Downloaded models need source and integrity checks before loading. A harness cannot establish that a provider&#x27;s training data is free from poisoning.</p>
+<h2>Keep the context useful and protect saved information</h2>
+<p>Context is the information available to the model for its current response. For longer runs, keep the current task and recent results in view, summarising completed steps and retrieving source details again when needed. Read only the selected material, checking access before retrieval. Even with public inputs, tools should not expose unrelated local files. This reduces sensitive information disclosure, including through logs and tool calls. Hidden context exposure concerns internal instructions and operating details the model might reveal. Keep credentials outside its context and the files its tools can read. Permissions must work even if the instructions become visible.</p>
+<p>Save progress in a file like progress.json, with completed steps, source versions and remaining work. Verify it before resuming. Saved information can also preserve a bad instruction or false claim across runs. This connects to data and model poisoning, which includes corruption of persistent data as well as training. Restrict who can change shared sources and memory, retain version history and review additions before treating them as trusted guidance.</p>
+<p>If the workflow later searches a knowledge store using embeddings, numerical representations used to find similar content, vector and embedding weaknesses become relevant. Search must stay within the user&#x27;s permitted records. A close match does not establish that a document is trustworthy. This extra risk applies when that retrieval layer exists; the small file-based example does not require one.</p>
+<h2>Check both what the guide says and how it is used</h2>
+<p>A summary can attribute a claim to the wrong article or make it sound more certain than the source does. OWASP includes this under misinformation. Check titles, links and claims against the source text. If articles disagree, say so, and verify disputed facts against an authoritative source. A second model agreeing with the draft does not prove it is correct.</p>
+<p>Even accurate content can be unsafe to pass downstream. Improper output handling happens when an application treats model output as trusted code or content. Keep the guide as text in a controlled template. If displayed on a webpage, escape the text and block unapproved external images. The guide should never be executed as code. Check accuracy separately from safe handling.</p>
+<h2>Apply the same controls in tools you already use</h2>
+<p>ChatGPT Work, Codex CLI and Claude Code already provide a harness. Supply the task, relevant files and checks, then configure the access their settings allow. Project instructions can live in AGENTS.md for Codex and CLAUDE.md for Claude Code. Those files guide behaviour; application permissions enforce access. Check which data reaches a hosted model, even when tools run locally.</p>
+<h2>Test the workflow and its boundaries</h2>
+<p>Record tool calls, rejected actions, failed checks and saved outputs without copying unnecessary private content into logs. Verify the actual files before declaring success. Keep the checks and permission rules outside the agent&#x27;s write access so it cannot weaken them while trying to finish.</p>
+<p>Next, I would define a small set of tests: ordinary articles, a summary with an unsupported claim, an instruction hidden in an article, a sample file outside the permitted folder and a tool that repeatedly fails. Check that the guide is accurate, access is refused where expected and the loop stops within its budget. Repeat these checks after changes to the model, tools or instructions. That gives us evidence of how the harness behaves when the work goes wrong.</p>
+<p>In this way, we would build a harness that controls the work and addresses the relevant risks flagged by OWASP&#x27;s LLM Top 10. That gives us a safer starting point. In the rush to vibe code the next viral app, it is easy to focus on getting it working and leave these controls for later. I would make them part of the first version.</p>
+<p>Further reading: <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/" target="_blank" rel="noopener">OWASP Top 10 for LLM Applications 2026</a> and <a href="https://developers.openai.com/api/docs/guides/agents/sdk" target="_blank" rel="noopener">OpenAI&#x27;s Agents SDK</a>.</p>
+<p>Lucas L.</p><p class="blog-post-byline">Author: Lucas L.</p></div>
+  </main>
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

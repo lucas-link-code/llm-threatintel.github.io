@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "2026-10-10-getting-better-ai-results-with-an-agent-harness",
+      "title": "Getting Better AI Results with an Agent Harness",
+      "date": "2026-10-10",
+      "author": "Lucas L.",
+      "category": "GenAI Security",
+      "tags": [
+        "agent-harnesses",
+        "owasp",
+        "cybersecurity"
+      ],
+      "excerpt": "An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work. When a check fails, it can send the error back to the model for another attempt.",
+      "file": "2026-10-10-getting-better-ai-results-with-an-agent-harness.md",
+      "readTime": "7 min"
+    },
+    {
       "id": "2026-09-30-inside-chatgpt-work-the-machine-underneath-the-chat",
       "title": "Inside ChatGPT Work: The Machine Underneath the Chat",
       "date": "2026-09-30",
