@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners | LLM ThreatIntel</title>
+  <meta name="description" content="Manifold Security&#x27;s GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository&#x27;s own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners">
+  <meta property="og:description" content="Manifold Security&#x27;s GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository&#x27;s own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners">
+  <meta property="article:published_time" content="2026-10-12T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-12T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners">
+  <meta name="twitter:description" content="Manifold Security&#x27;s GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository&#x27;s own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners",
+  "description": "Manifold Security's GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository's own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.",
+  "datePublished": "2026-10-12T00:00:00Z",
+  "dateModified": "2026-10-12T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html",
+  "keywords": [
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-12</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners</h1>
+<p><strong>Date:</strong> 2026-10-12<br><strong>Tags:</strong> supply-chain</p>
+<h2>Executive Summary</h2>
+<p>Manifold Security&#x27;s GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository&#x27;s own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>GitSpawn</td></tr><tr><td>Attribution</td><td>Security research by Manifold Security, coordinated in part with OpenAI, Anthropic, and Alibaba (confidence: medium)</td></tr><tr><td>Target</td><td>Developers using command line AI coding agents on untrusted repositories</td></tr><tr><td>Vector</td><td>Malicious core.fsmonitor entry in a repository&#x27;s .git/config that names a command Git executes when the coding agent triggers a status check</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-06-26</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Manifold Security&#x27;s GitSpawn disclosure, reported by <a href="https://axeploit.com/blog/gitspawn-the-git-performance-flag-that-turns-coding-agents-into-command" target="_blank" rel="noopener">axeploit.com</a>, describes eight flaws across seven command line AI coding agents, with four paths still unpatched at publication. The exploit is a Git performance setting. One line in a repository&#x27;s own .git/config names a command, Git runs that command during a routine status check, and the AI coding agent is what triggers the status check. The disclosure states that goose was tracked as CVE-2026-72718 with a CVSS 4.0 base score of 7.0 and was fixed, credited to Francisco Rosales. Claude Code had one path fixed in 2.1.196 on June 29, and a second path reached through claude ultrareview remained unpatched when confirmed live on 2.1.252 on September 1 against then-current 2.1.258. Cursor was fixed at startup Git calls. Codex was fixed and covered by OpenAI&#x27;s same-day CVEs. Hermes Agent remained unpatched, with Manifold reporting six contact attempts across five channels and VulnCheck assigning CVE-2026-71963. Qwen Code remained unpatched, with version 0.22.3 still affected when retested. The disclosure states that OpenAI published three CVEs of its own the same day covering the identical flaw class in Codex, with CVE-2026-19592 the one identifier named so far.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Event Triggered Execution</td><td>T1546</td><td>A Git config key causes command execution when the coding agent triggers a Git status operation.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No network IOCs published. Vulnerable and unpatched products are listed in affected_platforms. Tracked as CVE-2026-72718, CVE-2026-71963, and CVE-2026-19592._</p>
+<h3>Full URL Paths</h3>
+<p>_No network IOCs published. Vulnerable and unpatched products are listed in affected_platforms. Tracked as CVE-2026-72718, CVE-2026-71963, and CVE-2026-19592._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">goose
+Claude Code
+Cursor
+Codex
+Hermes Agent
+Qwen Code</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Scan repository .git/config for core.fsmonitor and any other Git setting that names an external command before opening the repo in an AI coding agent. Disable or sandbox Git fsmonitor behavior in agent workspaces. Update Claude Code, goose, Cursor, and Codex to patched versions, and avoid running claude ultrareview on untrusted repositories until the second path is closed. Treat repository level Git configuration as untrusted input and watch agent process trees for Git invoking unexpected child commands during status checks.</p>
+<h2>References</h2>
+<ul><li>[Axeploit] GitSpawn: The Git Performance Flag That Turns Coding Agents Into Command Runners (2026-10-11) — https://axeploit.com/blog/gitspawn-the-git-performance-flag-that-turns-coding-agents-into-command</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

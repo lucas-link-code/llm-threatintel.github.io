@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources | LLM ThreatIntel</title>
+  <meta name="description" content="Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources">
+  <meta property="og:description" content="Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources">
+  <meta property="article:published_time" content="2026-10-12T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-12T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources">
+  <meta name="twitter:description" content="Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources",
+  "description": "Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.",
+  "datePublished": "2026-10-12T00:00:00Z",
+  "dateModified": "2026-10-12T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html",
+  "keywords": [
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-12</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources</h1>
+<p><strong>Date:</strong> 2026-10-12<br><strong>Tags:</strong> prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AgentCorruption</td></tr><tr><td>Attribution</td><td>Unattributed security research by Zenity Labs (confidence: none)</td></tr><tr><td>Target</td><td>Organizations running public facing Amazon Bedrock AgentCore agents</td></tr><tr><td>Vector</td><td>Single malicious prompt sent to an externally accessible AI agent</td></tr><tr><td>Status</td><td>removed</td></tr><tr><td>First Observed</td><td>2026-10-08</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to <a href="https://www.penligent.ai/hackinglabs/agentcorruption/" target="_blank" rel="noopener">penligent.ai</a>, Zenity Labs published the AgentCorruption research on October 8, 2026. The central finding is that, under the conditions examined, compromising one externally accessible AgentCore agent could expose other AgentCore resources inside the same AWS account and region. The demonstrated chain started with a malicious prompt and progressed to obtaining cloud execution credentials, moving between AI agents, accessing private conversations, interfering with agent memory, and retrieving credentials associated with external services. Zenity disclosed the issues to AWS before publication. Zenity states that the reported issues have been addressed, including changes to metadata service behavior and substantial restrictions to AgentCore default execution role permissions. AWS emphasizes that access to an agent&#x27;s own execution role credentials through the metadata service is expected behavior and that developers must configure those roles according to least privilege principles. The reported scope was the lateral access enabled by a specific combination of workload credential exposure and overly broad execution role permissions, not unrestricted control over every AWS account, every region, or every customer running AgentCore.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Unsecured Credentials: Cloud Instance Metadata API</td><td>T1552.005</td><td>The chain reached an agent&#x27;s execution role credentials through the AgentCore metadata service.</td></tr><tr><td>Valid Accounts: Cloud Accounts</td><td>T1078.004</td><td>Overly broad execution role permissions let the attacker use cloud credentials to reach other AgentCore resources in the same account and region.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published. The report is an attack chain and cloud configuration disclosure._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published. The report is an attack chain and cloud configuration disclosure._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">AWS Bedrock AgentCore</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Review Bedrock AgentCore execution role permissions and reduce them to least privilege. Alert on unexpected metadata service calls from agent workloads. Segment agents by AWS account and region to limit lateral reach. Enable and review logging for agent memory and conversation access. Monitor for a single agent principal being used to reach credentials or resources belonging to other agents.</p>
+<h2>References</h2>
+<ul><li>[Penligent] AgentCorruption: How a Single Prompt Exposed AWS Bedrock AgentCore to Region-Wide Agent Hijacking (2026-10-08) — https://www.penligent.ai/hackinglabs/agentcorruption/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

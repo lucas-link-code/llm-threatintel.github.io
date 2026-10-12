@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 11 Oct 2026 09:43:47 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 10:20:55 +0000</lastBuildDate>
     <item>
+      <title>GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners</title>
+      <link>https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Manifold Security's GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository's own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.</description>
+    </item>    <item>
+      <title>AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources</title>
+      <link>https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.</description>
+    </item>    <item>
       <title>CrowdStrike Links South Korean Bank Breaches to ARTEX AI Pentest Tool, Claude Code and Multiple LLMs</title>
       <link>https://llm-threatintel.com/posts/2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-04-openai-moonshot-distillation-campaign.html</guid>
       <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
       <description>OpenAI disclosed on September 30, 2026 that it identified and shut down a coordinated effort to extract protected reasoning from its models, tracing a core cluster of the activity to people associated with Beijing based Moonshot AI, the maker of the Kimi model family. OpenAI labels the behavior adversarial distillation, describing it as the systematic unauthorized use of one model's outputs or reasoning to train, reproduce, or improve another model. Defenders operating frontier models should treat sustained reasoning extraction as an abuse pattern distinct from ordinary prompting and log for it.</description>
-    </item>    <item>
-      <title>Plugin4Shell SHA Pinning Bypass Leaves GitHub Copilot and Gemini CLI Unpatched</title>
-      <link>https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-03-plugin4shell-copilot-gemini-unpatched.html</guid>
-      <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
-      <description>A malicious branch named after a pinned commit SHA lets plugin repository owners run code that differs from the reviewed commit in four major AI coding agents. According to threatfrontier.com, Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0, while Microsoft has shipped no GitHub Copilot fix and Google says it will not patch the retiring Gemini CLI. Defenders who rely on SHA pinning for agent plugins should treat that pin as unenforced on Copilot and Gemini CLI.</description>
-    </item>    <item>
-      <title>Pretext Attack Evades AI Agent Skill Scanners in Up to 97 Percent of Tests</title>
-      <link>https://llm-threatintel.com/posts/2026-10-03-pretext-evades-ai-agent-skill-scanners.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-03-pretext-evades-ai-agent-skill-scanners.html</guid>
-      <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Huawei Research Zurich researchers built an automated attack called Pretext that bypasses malicious AI agent skill scanners up to 97 percent of the time against a frozen detector and 77 percent against a co-adaptive detector. The attack defeats the two stage scanner design vendors are shipping, pairing static code checks with an LLM semantic judge, by moving the payload from code into natural language. This matters for anyone running skill marketplaces or agent plugin gateways, because current detectors may pass malicious skills that look benign to a judge.</description>
     </item>
   </channel>
 </rss>

@@ -5721,6 +5721,36 @@
       "validated_at": "2026-10-11T09:43:48+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack": {
+      "content_hash": "4e7e0b54c48cda096535e0445db6e00ea258a10d83ecc2c586118e01dde40799",
+      "evidence_status": "validated",
+      "file": "2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.md",
+      "posts_index_hash": "d688a4ad01705dd0e0594c74f546c72ae36a28d86cc4a6e0ca9e3b5e35e3205b",
+      "report_id": "2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack",
+      "review_required": [],
+      "source_urls": [
+        "https://www.penligent.ai/hackinglabs/agentcorruption/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-12T10:20:58+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-12-gitspawn-git-fsmonitor-coding-agents": {
+      "content_hash": "162e18ea2b7d1212d6d51a64d7363d8939b0785c97db76e74d805848b145b48a",
+      "evidence_status": "validated",
+      "file": "2026-10-12-gitspawn-git-fsmonitor-coding-agents.md",
+      "posts_index_hash": "27851fcce51292b327838dcdcb50f9e3b8a623168491a612da9ceadd49d70efc",
+      "report_id": "2026-10-12-gitspawn-git-fsmonitor-coding-agents",
+      "review_required": [],
+      "source_urls": [
+        "https://axeploit.com/blog/gitspawn-the-git-performance-flag-that-turns-coding-agents-into-command"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-12T10:20:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -1,6 +1,30 @@
 {
   "posts": [
     {
+      "id": "2026-10-12-gitspawn-git-fsmonitor-coding-agents",
+      "title": "GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners",
+      "date": "2026-10-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Manifold Security's GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository's own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.",
+      "file": "2026-10-12-gitspawn-git-fsmonitor-coding-agents.md"
+    },
+    {
+      "id": "2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack",
+      "title": "AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources",
+      "date": "2026-10-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.",
+      "file": "2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.md"
+    },
+    {
       "id": "2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code",
       "title": "CrowdStrike Links South Korean Bank Breaches to ARTEX AI Pentest Tool, Claude Code and Multiple LLMs",
       "date": "2026-10-11",
