@@ -5751,6 +5751,36 @@
       "validated_at": "2026-10-12T10:20:57+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-13-breachcache-75-autonomous-ai-agent-attack-transcripts": {
+      "content_hash": "24f5e5ec80afc470ca9c7e26405092eee45327c6745af5d7006b2639231a2600",
+      "evidence_status": "validated",
+      "file": "2026-10-13-breachcache-75-autonomous-ai-agent-attack-transcripts.md",
+      "posts_index_hash": "b109d5edc9704a8a7be6bd3d53aaf4d1c222a5f3af05e02f4576343c1e85725c",
+      "report_id": "2026-10-13-breachcache-75-autonomous-ai-agent-attack-transcripts",
+      "review_required": [],
+      "source_urls": [
+        "https://breachcache.com/cases/hands-off-the-keyboard/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-13T10:11:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-13-frontier-ai-ot-attack-booz-allen-testbed": {
+      "content_hash": "afc917ff2eabfd706bfba1596b5d5930d44a987c275faf44cf72496e3b441624",
+      "evidence_status": "validated",
+      "file": "2026-10-13-frontier-ai-ot-attack-booz-allen-testbed.md",
+      "posts_index_hash": "1cc649d6305e781a3d4a1f01982f4b7ecbc12ba6b02894cb49f8059bb6f438fd",
+      "report_id": "2026-10-13-frontier-ai-ot-attack-booz-allen-testbed",
+      "review_required": [],
+      "source_urls": [
+        "https://zerohunt.ai/blog/frontier-ai-ot-attack-booz-allen-testbed/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-13T10:11:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

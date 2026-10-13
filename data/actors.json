@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12",
+  "last_updated": "2026-10-13",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5739,6 +5739,38 @@
       ],
       "description": "A financially motivated operator attributed with moderate confidence by CrowdStrike, who ran an AI assisted intrusion chain against South Korean financial firms using the ARTEX AI penetration testing agent on top of DeepSeek v4.1-flash with GLM-5.3 and Grok 4.6 as helpers, plus Anthropic's Claude Code as a coding agent. The operator left Claude Code session logs, ARTEX configuration and AI memory files on an open server, which is how CrowdStrike reconstructed the operation.",
       "attribution": "CrowdStrike assessed with moderate confidence a Chinese speaking financially motivated individual; no group name assigned, per tenbrief.com"
+    },
+    {
+      "id": "frontier-commercial-ai-models-booz-allen-testbed-evaluation",
+      "names": [
+        "Frontier commercial AI models (Booz Allen testbed evaluation)"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T0855 - Unauthorized Command Message",
+        "T0831 - Manipulation of Control"
+      ],
+      "description": "Booz Allen gave two current commercial frontier AI models only subnet boundaries in an isolated plant testbed and the models autonomously mapped the plant, tied equipment to known weaknesses, wrote working exploits, pivoted into production systems, and took administrative control of a robotic arm, clearing all eight lab attack objectives.",
+      "attribution": "Not attributed; two current commercial frontier models used in a lab testbed"
+    },
+    {
+      "id": "unknown-ai-agent-operators-hands-off-the-keyboard",
+      "names": [
+        "Unknown AI agent operators (Hands Off the Keyboard)"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public Facing Application",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "Breachcache assessed that multiple operators selected targets and wrote a short set of rules, then left autonomous AI agents to run reconnaissance, choose exploits, confirm results, and log every step. The operators used the codeg agent harness, Cain coordination records named Cairn, CyberStrikeAI, and model harnesses including a Claude Code harness on DeepSeek and the pi harness on other models.",
+      "attribution": "Unattributed; assessed as likely more than one operator with one Chinese speaking group"
     }
   ]
 }

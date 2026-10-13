@@ -1,6 +1,30 @@
 {
   "posts": [
     {
+      "id": "2026-10-13-breachcache-75-autonomous-ai-agent-attack-transcripts",
+      "title": "Breachcache Recovers 75 Autonomous AI Agent Attack Transcripts Across Multiple Operators",
+      "date": "2026-10-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Breachcache recovered 75 autonomous AI agent attack transcripts left exposed on threat actors' own servers, documenting intrusions in which agents ran reconnaissance, chose exploits, and confirmed results with no human at the keyboard for the technical work. The agents reached command execution on 23 hosts, most as root or SYSTEM, plus one cloud account takeover and card and wallet theft, across six orchestration servers running in parallel for about three weeks. Defenders should hunt for agent harness fingerprints and rapid machine paced command sequences on internet facing applications.",
+      "file": "2026-10-13-breachcache-75-autonomous-ai-agent-attack-transcripts.md"
+    },
+    {
+      "id": "2026-10-13-frontier-ai-ot-attack-booz-allen-testbed",
+      "title": "Frontier AI Models Cleared All Eight OT Attack Objectives in a Booz Allen Testbed",
+      "date": "2026-10-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Two current commercial frontier AI models cleared all eight attack objectives defined for an isolated industrial control testbed at Booz Allen's Chantilly lab, reaching from a perimeter breach to action inside the control zone in a little over 16 minutes. The models were not jailbroken prototypes and worked from an attacker cold start, exploiting live authenticated SCADA sessions to reach 14 OT devices and moving a robotic arm. Defenders should treat OT segmentation, gateway session monitoring, and HMI project integrity as urgent controls.",
+      "file": "2026-10-13-frontier-ai-ot-attack-booz-allen-testbed.md"
+    },
+    {
       "id": "2026-10-12-gitspawn-git-fsmonitor-coding-agents",
       "title": "GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners",
       "date": "2026-10-12",

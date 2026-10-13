@@ -1,7 +1,7 @@
 {
-  "commit_sha": "d27b9568ddd266e453f36de16536b705ca6879ff",
+  "commit_sha": "bcae9e7470f486b0eb548ad1007fe48102e120e6",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-12T10:20:58+00:00",
+  "generated_at_utc": "2026-10-13T10:11:42+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,24 +43,24 @@
   "overall_result": "pass",
   "reports_checked": 2,
   "reports_newly_validated": 2,
-  "reports_skipped": 327,
+  "reports_skipped": 329,
   "review_required": 0,
   "source_urls_checked": 2,
   "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://axeploit.com/blog/gitspawn-the-git-performance-flag-that-turns-coding-agents-into-command",
+      "final_url": "https://breachcache.com/cases/hands-off-the-keyboard/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://axeploit.com/blog/gitspawn-the-git-performance-flag-that-turns-coding-agents-into-command"
+      "url": "https://breachcache.com/cases/hands-off-the-keyboard/"
     },
     {
       "error": "",
-      "final_url": "https://www.penligent.ai/hackinglabs/agentcorruption/",
+      "final_url": "https://zerohunt.ai/blog/frontier-ai-ot-attack-booz-allen-testbed/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.penligent.ai/hackinglabs/agentcorruption/"
+      "url": "https://zerohunt.ai/blog/frontier-ai-ot-attack-booz-allen-testbed/"
     }
   ],
   "validation_version": "1.0.0",
