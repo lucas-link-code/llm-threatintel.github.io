@@ -1,7 +1,7 @@
 {
-  "commit_sha": "bcae9e7470f486b0eb548ad1007fe48102e120e6",
+  "commit_sha": "db3256815b64bc5e41d1625d35d66c031648c0e0",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-13T10:11:42+00:00",
+  "generated_at_utc": "2026-10-14T08:26:51+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,26 +41,33 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
-  "reports_newly_validated": 2,
-  "reports_skipped": 329,
+  "reports_checked": 3,
+  "reports_newly_validated": 3,
+  "reports_skipped": 331,
   "review_required": 0,
-  "source_urls_checked": 2,
-  "state_updates": 2,
+  "source_urls_checked": 3,
+  "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://breachcache.com/cases/hands-off-the-keyboard/",
+      "final_url": "https://intel.threadlinqs.com/threat/TL-2026-3418",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://breachcache.com/cases/hands-off-the-keyboard/"
+      "url": "https://intel.threadlinqs.com/threat/TL-2026-3418"
     },
     {
       "error": "",
-      "final_url": "https://zerohunt.ai/blog/frontier-ai-ot-attack-booz-allen-testbed/",
+      "final_url": "https://intel.threadlinqs.com/threat/TL-2026-3410",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://zerohunt.ai/blog/frontier-ai-ot-attack-booz-allen-testbed/"
+      "url": "https://intel.threadlinqs.com/threat/TL-2026-3410"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.pillar.security/blog/pillar-security-discovers-badengram-exposing-hidden-supply-chain-risk-in-open-weight-ai",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.pillar.security/blog/pillar-security-discovers-badengram-exposing-hidden-supply-chain-risk-in-open-weight-ai"
     }
   ],
   "validation_version": "1.0.0",

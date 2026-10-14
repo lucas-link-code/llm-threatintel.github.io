@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-13",
+  "last_updated": "2026-10-14",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -2507,7 +2507,10 @@
         "Unknown",
         "Automated Scanning Infrastructure + LLM Exploitation Pipeline",
         "Mini Shai-Hulud operator",
-        "possibly TeamPCP or derivative"
+        "possibly TeamPCP or derivative",
+        "Adception",
+        "InstallFix cluster",
+        "Anthropic Frontier Red Team (research)"
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
@@ -2550,7 +2553,9 @@
         "ChatGPT Custom GPT",
         "Google Sites ClickFix page",
         "MSI installer",
-        "Canon and Stardock signed binaries"
+        "Canon and Stardock signed binaries",
+        "Bing click tracking redirect",
+        "Compromised South American retailer site"
       ],
       "ttps": [
         "T1598.003 - Spearphishing Link",
@@ -2602,7 +2607,12 @@
         "T1547.013 - Boot or Logon Initialization Scripts",
         "T1195.003 - Supply Chain Compromise: Compromise Software Supply Chain",
         "T1204.002 - User Execution: Malicious File",
-        "T1574.002 - DLL Side-Loading"
+        "T1574.002 - DLL Side-Loading",
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1059.004 - Command and Scripting Interpreter: Unix Shell",
+        "T1036 - Masquerading",
+        "T1046 - Network Service Scanning",
+        "T1018 - Remote System Discovery"
       ],
       "description": "This is a structural architectural vulnerability rather than a specific threat campaign. Axis Intelligence Research identified and disclosed the vulnerability through coordinated responsible disclosure to model providers on July 3, 2026. Exploitation requires understanding of multi-agent orchestration patterns and the ability to craft prompts that pass first-model safety checks but execute when passed to secondary models.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

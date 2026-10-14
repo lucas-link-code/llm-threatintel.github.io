@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08",
+  "last_updated": "2026-10-14",
   "iocs": [
     {
       "value": "third-party.com",
@@ -6965,6 +6965,24 @@
       "first_seen": "2026-10-08",
       "source": "Socket",
       "campaign": "tensorlake-npm-shai-hulud-chaindrop-worm",
+      "status": "active"
+    },
+    {
+      "value": "claude-desk-code.com",
+      "type": "domain",
+      "context": "Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh",
+      "first_seen": "2026-10-14",
+      "source": "Threadlinqs",
+      "campaign": "adception-installfix-fake-claude-download-macos",
+      "status": "active"
+    },
+    {
+      "value": "lake-90.com",
+      "type": "domain",
+      "context": "Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh",
+      "first_seen": "2026-10-14",
+      "source": "Threadlinqs",
+      "campaign": "adception-installfix-fake-claude-download-macos",
       "status": "active"
     }
   ]

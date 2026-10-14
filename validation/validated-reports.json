@@ -5781,6 +5781,51 @@
       "validated_at": "2026-10-13T10:11:42+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-14-adception-installfix-fake-claude-download-macos": {
+      "content_hash": "c1658edfb88bfecbb53ceb5e5988826c2d53563134af0d18d2a59ef50beb6ee1",
+      "evidence_status": "validated",
+      "file": "2026-10-14-adception-installfix-fake-claude-download-macos.md",
+      "posts_index_hash": "e0e0879921dba3c7321e13b9b6ac40d07389454054b777340b33a4d7ce7b2813",
+      "report_id": "2026-10-14-adception-installfix-fake-claude-download-macos",
+      "review_required": [],
+      "source_urls": [
+        "https://intel.threadlinqs.com/threat/TL-2026-3410"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-14T08:26:50+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot": {
+      "content_hash": "67f9f8c3da39964efa2caab8dcb1948e8e84a6a3ff4078905b1ec35f546b2853",
+      "evidence_status": "validated",
+      "file": "2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot.md",
+      "posts_index_hash": "5a4aa61ee484ebe92db0f828fadc891e739e353e5eaa75c3c38e5f04534da7a6",
+      "report_id": "2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot",
+      "review_required": [],
+      "source_urls": [
+        "https://intel.threadlinqs.com/threat/TL-2026-3418"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-14T08:26:50+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-14-pillar-security-badengram-gated-memory-backdoor": {
+      "content_hash": "ab68d9e9ef01f0db99143f18d9392dabd71b225121964f1069099f4845fc07af",
+      "evidence_status": "validated",
+      "file": "2026-10-14-pillar-security-badengram-gated-memory-backdoor.md",
+      "posts_index_hash": "fc78b0455e37fda15f8fe3658a9b1ef82ce3ed35d14d4fd25b23ccc180fdf004",
+      "report_id": "2026-10-14-pillar-security-badengram-gated-memory-backdoor",
+      "review_required": [],
+      "source_urls": [
+        "https://www.pillar.security/blog/pillar-security-discovers-badengram-exposing-hidden-supply-chain-risk-in-open-weight-ai"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-14T08:26:50+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

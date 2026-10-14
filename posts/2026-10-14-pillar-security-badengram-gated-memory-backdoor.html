@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models | LLM ThreatIntel</title>
+  <meta name="description" content="Pillar Security, with Fujitsu AI researchers, disclosed BadEngram, a supply chain attack that implants a persistent backdoor in an open-weight model by poisoning only its gated memory component while leaving the rest of the model unchanged. The attack is dormant under normal use and triggers on a short arbitrary string, and it was demonstrated against gated memory architectures introduced by DeepSeek and deployed in models such as Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash. Defenders adopting open-weight models should validate the provenance and integrity of every learned component that can influence behavior, not just core weights.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-14-pillar-security-badengram-gated-memory-backdoor.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models">
+  <meta property="og:description" content="Pillar Security, with Fujitsu AI researchers, disclosed BadEngram, a supply chain attack that implants a persistent backdoor in an open-weight model by poisoning only its gated memory component while leaving the rest of the model unchanged. The attack is dormant under normal use and triggers on a short arbitrary string, and it was demonstrated against gated memory architectures introduced by DeepSeek and deployed in models such as Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash. Defenders adopting open-weight models should validate the provenance and integrity of every learned component that can influence behavior, not just core weights.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-14-pillar-security-badengram-gated-memory-backdoor.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models">
+  <meta property="article:published_time" content="2026-10-14T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-14T00:00:00Z">
+  <meta property="article:tag" content="model-poisoning">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="prompt-injection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models">
+  <meta name="twitter:description" content="Pillar Security, with Fujitsu AI researchers, disclosed BadEngram, a supply chain attack that implants a persistent backdoor in an open-weight model by poisoning only its gated memory component while leaving the rest of the model unchanged. The attack is dormant under normal use and triggers on a short arbitrary string, and it was demonstrated against gated memory architectures introduced by DeepSeek and deployed in models such as Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash. Defenders adopting open-weight models should validate the provenance and integrity of every learned component that can influence behavior, not just core weights.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models",
+  "description": "Pillar Security, with Fujitsu AI researchers, disclosed BadEngram, a supply chain attack that implants a persistent backdoor in an open-weight model by poisoning only its gated memory component while leaving the rest of the model unchanged. The attack is dormant under normal use and triggers on a short arbitrary string, and it was demonstrated against gated memory architectures introduced by DeepSeek and deployed in models such as Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash. Defenders adopting open-weight models should validate the provenance and integrity of every learned component that can influence behavior, not just core weights.",
+  "datePublished": "2026-10-14T00:00:00Z",
+  "dateModified": "2026-10-14T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-14-pillar-security-badengram-gated-memory-backdoor.html",
+  "keywords": [
+    "model-poisoning",
+    "supply-chain",
+    "prompt-injection"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-14</span>
+      <span class="post-tag tag-model-poisoning">Model Poisoning</span><span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-prompt-injection">Prompt Injection</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models</h1>
+<p><strong>Date:</strong> 2026-10-14<br><strong>Tags:</strong> model-poisoning, supply-chain, prompt-injection</p>
+<h2>Executive Summary</h2>
+<p>Pillar Security, with Fujitsu AI researchers, disclosed BadEngram, a supply chain attack that implants a persistent backdoor in an open-weight model by poisoning only its gated memory component while leaving the rest of the model unchanged. The attack is dormant under normal use and triggers on a short arbitrary string, and it was demonstrated against gated memory architectures introduced by DeepSeek and deployed in models such as Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash. Defenders adopting open-weight models should validate the provenance and integrity of every learned component that can influence behavior, not just core weights.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>BadEngram</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>Organizations deploying open-weight LLMs with gated memory components</td></tr><tr><td>Vector</td><td>Tampered model memory parameters distributed through the model supply chain</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-13</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Pillar Security, BadEngram implants a hidden persistent backdoor by modifying only the memory specific parameters of an AI model&#x27;s gated memory component, leaving the rest of the model unchanged and making the tampering difficult to detect through conventional model testing. Pillar Security reported the attack was demonstrated against gated memory architectures introduced by DeepSeek and deployed in production by models including Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash, as detailed in the paper &#x27;BadEngram: Backdoor Attack on Gated Memory Components in LLMs.&#x27; Pillar Security stated that gated memory is designed to make models more efficient by retrieving learned information from dedicated memory components rather than relying entirely on the model&#x27;s core computation, but because those components can directly influence model behavior they create a new attack surface. The backdoor remains dormant during normal use and activates only when a short arbitrary trigger is present. Pillar Security framed BadEngram as a software supply chain risk in emerging architectural components whose security posture has received far less scrutiny than the models themselves.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Backdoor injected into a distributed open-weight model&#x27;s memory component</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published; research disclosure only_</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published; research disclosure only_</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Qwen3.8-Flash-Next
+DeepSeek-V4.1-Flash
+Open-weight models using gated memory architectures</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Treat model artifacts as executable supply chain inputs. Verify provenance and integrity of gated memory parameters before deployment, re run trigger based behavioral testing against memory components rather than relying on general model benchmarks, and monitor for arbitrary short strings that alter model output. Because the backdoor is dormant under normal use, standard functional testing will not surface it.</p>
+<h2>References</h2>
+<ul><li>[Pillar Security] Pillar Security Discovers BadEngram, Exposing Hidden Supply-Chain Risk in Open-Weight AI Models (2026-10-13) — https://www.pillar.security/blog/pillar-security-discovers-badengram-exposing-hidden-supply-chain-risk-in-open-weight-ai</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

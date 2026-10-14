@@ -1,6 +1,47 @@
 {
   "posts": [
     {
+      "id": "2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot",
+      "title": "Anthropic Frontier Red Team Shows Small Open-Weight Models Self-Replicate as Autonomous Worm Agents Across IoT Devices",
+      "date": "2026-10-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic's Frontier Red Team demonstrated that open-weight models of 30B parameters or fewer can act as autonomous worm agents that discover devices, gain access, set up model inference on the new host, and repeat. In lab tests on poorly secured off-brand Android TV boxes, GLM-5.2 spread to all eight nodes in four of five trials. No real world exploitation or threat actor is reported; this is a research demonstration of a theoretical capability that raises questions about the security posture of cheap internet connected devices.",
+      "file": "2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot.md"
+    },
+    {
+      "id": "2026-10-14-adception-installfix-fake-claude-download-macos",
+      "title": "Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh",
+      "date": "2026-10-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for 'claude mac' to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.",
+      "file": "2026-10-14-adception-installfix-fake-claude-download-macos.md"
+    },
+    {
+      "id": "2026-10-14-pillar-security-badengram-gated-memory-backdoor",
+      "title": "Pillar Security BadEngram Backdoors Gated Memory Components in Qwen and DeepSeek Open-Weight Models",
+      "date": "2026-10-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning",
+        "supply-chain",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Pillar Security, with Fujitsu AI researchers, disclosed BadEngram, a supply chain attack that implants a persistent backdoor in an open-weight model by poisoning only its gated memory component while leaving the rest of the model unchanged. The attack is dormant under normal use and triggers on a short arbitrary string, and it was demonstrated against gated memory architectures introduced by DeepSeek and deployed in models such as Qwen3.8-Flash-Next and DeepSeek-V4.1-Flash. Defenders adopting open-weight models should validate the provenance and integrity of every learned component that can influence behavior, not just core weights.",
+      "file": "2026-10-14-pillar-security-badengram-gated-memory-backdoor.md"
+    },
+    {
       "id": "2026-10-13-breachcache-75-autonomous-ai-agent-attack-transcripts",
       "title": "Breachcache Recovers 75 Autonomous AI Agent Attack Transcripts Across Multiple Operators",
       "date": "2026-10-13",
