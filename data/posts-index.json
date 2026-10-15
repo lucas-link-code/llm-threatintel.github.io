@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-10-15-zscaler-artex-south-korean-financial-campaign",
+      "title": "Zscaler Details ARTEX AI Pentest Campaign Against South Korean Financial Firms, 67,000 Records Stolen",
+      "date": "2026-10-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Zscaler ThreatLabz analyzed a campaign in which a threat actor abused the open source ARTEX agentic penetration testing framework to breach multiple South Korean financial institutions, exfiltrating PII belonging to about 67,000 individuals. The actor used Claude Code sessions to seek advice on selling the stolen financial PII and to locate Korean language Telegram channels used to sell stolen data. ThreatLabz assesses with moderate confidence that the work is that of a financially motivated Chinese speaking actor.",
+      "file": "2026-10-15-zscaler-artex-south-korean-financial-campaign.md"
+    },
+    {
+      "id": "2026-10-15-jadepuffer-chroma-database-retrieval-extortion",
+      "title": "JADEPUFFER Plants Ransom Notes in Unauthenticated Chroma Databases for Retrieval Extortion",
+      "date": "2026-10-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "UpGuard Research documented the first AI retrieval stack extortion, where attackers exploited unauthenticated Chroma databases to inject ransom notes displayed to users when the RAG databases were queried. On October 5 the team found 6 IP addresses hosting Chroma databases without authentication and bearing evidence of JADEPUFFER ransom activity. The intrusion ran in two phases, reconnaissance in early June and ransoming in the middle of July.",
+      "file": "2026-10-15-jadepuffer-chroma-database-retrieval-extortion.md"
+    },
+    {
+      "id": "2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks",
+      "title": "Repeat-After-Me Prompt Bypasses Six AI Agent Frameworks and Executes Attacker Tool Calls",
+      "date": "2026-10-15",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Researchers tricked six widely used AI agent frameworks into executing attacker written tool calls by simply asking the underlying model to repeat the call back. The technique, named Repeat-After-Me, worked against LangGraph, Microsoft Agent Framework, Microsoft AutoGen, Google Agent Development Kit 2.0, AWS Strands Agents and CrewAI. The same study found verified security bugs in 118 of 273 open source MCP servers it could run.",
+      "file": "2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks.md"
+    },
+    {
       "id": "2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot",
       "title": "Anthropic Frontier Red Team Shows Small Open-Weight Models Self-Replicate as Autonomous Worm Agents Across IoT Devices",
       "date": "2026-10-14",

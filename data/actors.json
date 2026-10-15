@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-14",
+  "last_updated": "2026-10-15",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -4193,14 +4193,18 @@
       "id": "jadepuffer",
       "names": [
         "JadePuffer",
-        "JADEPUFFER"
+        "JADEPUFFER",
+        "Storm-3168"
       ],
       "type": "threat_group",
       "first_seen": "2026-07",
       "status": "active",
       "distribution": [
         "Enterprise cloud environments with exposed AI infrastructure",
-        "Langflow remote code execution endpoint"
+        "Langflow remote code execution endpoint",
+        "Internet exposed unauthenticated AI services",
+        "Langflow CVE-2025-3248",
+        "Compromised cloud service principals"
       ],
       "ttps": [
         "T1190 - Exploitation of Remote Services",
@@ -4208,7 +4212,8 @@
         "T1570 - Lateral Movement",
         "T1547 - Boot or Logon Autostart Execution",
         "T1190 - Exploit Public-Facing Application",
-        "T1552 - Unsecured Credentials"
+        "T1552 - Unsecured Credentials",
+        "T1485 - Data Destruction"
       ],
       "description": "JadePuffer is a threat actor group targeting exposed Langflow instances for ransomware deployment. The group demonstrates sophisticated capability to weaponize LLM agents for autonomous multi-stage intrusions, leveraging real-time LLM reasoning to adapt exploitation tactics, extract credentials across multiple system types (Postgres, MySQL, MinIO), and achieve persistent access to critical infrastructure services like Nacos.",
       "attribution": "Unattributed (tracked by Sysdig as JadePuffer)"
@@ -5781,6 +5786,40 @@
       ],
       "description": "Breachcache assessed that multiple operators selected targets and wrote a short set of rules, then left autonomous AI agents to run reconnaissance, choose exploits, confirm results, and log every step. The operators used the codeg agent harness, Cain coordination records named Cairn, CyberStrikeAI, and model harnesses including a Claude Code harness on DeepSeek and the pi harness on other models.",
       "attribution": "Unattributed; assessed as likely more than one operator with one Chinese speaking group"
+    },
+    {
+      "id": "repeat-after-me",
+      "names": [
+        "Repeat-After-Me"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Prompt delivered to agent frameworks that echo model output into tool dispatch"
+      ],
+      "ttps": [],
+      "description": "A prompt technique that abuses text repetition and hypothetical framing to convert a benign echo request into an attacker controlled tool invocation. The technique is not tied to a named threat group and was published as security research against widely deployed agent frameworks.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "artex-operator",
+      "names": [
+        "ARTEX operator"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "ARTEX open source agentic pentest framework",
+        "Claude Code sessions for monetization planning"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1567 - Exfiltration Over Web Service"
+      ],
+      "description": "A financially motivated actor that turned the ARTEX agentic penetration testing framework into an intrusion tool against South Korean financial firms. The operator used LLM agents to automate reconnaissance and exploitation of peripheral web applications and then used Claude Code sessions to research how to monetize stolen financial PII.",
+      "attribution": "Financially motivated Chinese speaking actor, moderate confidence per Zscaler ThreatLabz"
     }
   ]
 }

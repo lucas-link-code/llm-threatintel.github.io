@@ -5826,6 +5826,51 @@
       "validated_at": "2026-10-14T08:26:50+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-15-jadepuffer-chroma-database-retrieval-extortion": {
+      "content_hash": "570053a5741ff00d01fd42fd112511a3f0ca491bd85d8a6392855c1a493acb86",
+      "evidence_status": "validated",
+      "file": "2026-10-15-jadepuffer-chroma-database-retrieval-extortion.md",
+      "posts_index_hash": "3e8f918f7cb2669de2eefd0f44af352acea645120e21f680388b87c52bc2c538",
+      "report_id": "2026-10-15-jadepuffer-chroma-database-retrieval-extortion",
+      "review_required": [],
+      "source_urls": [
+        "https://www.upguard.com/breaches/poisoned-vector-jadepuffer-using-unauthenticated-chroma-databases-for-retrieval-extortion"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-15T08:02:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks": {
+      "content_hash": "ce2e2f86b23cb2b11261ccd2d50068154011cd1f194fd9193345b685c4d9f6ea",
+      "evidence_status": "validated",
+      "file": "2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks.md",
+      "posts_index_hash": "e5b961045765c2076aebbf6b0da4dbcb8698466b9e1f52c281751036bcbcf1a1",
+      "report_id": "2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks",
+      "review_required": [],
+      "source_urls": [
+        "https://www.csoonline.com/article/4233811/researchers-bypass-6-ai-agent-frameworks-with-a-simple-repeat-after-me-prompt.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-15T08:02:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-15-zscaler-artex-south-korean-financial-campaign": {
+      "content_hash": "478cae9a4fd7fc8907b5746cfaf077641a47036942548f990817077d08dc127b",
+      "evidence_status": "validated",
+      "file": "2026-10-15-zscaler-artex-south-korean-financial-campaign.md",
+      "posts_index_hash": "b3a3ba82b1432090e7f1358a2459df7530a01ec5ea42721fd314716c9230c348",
+      "report_id": "2026-10-15-zscaler-artex-south-korean-financial-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://www.zscaler.com/blogs/security-research/threat-actor-abuses-agentic-ai-pentesting-framework-target-south-korean"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-15T08:02:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
