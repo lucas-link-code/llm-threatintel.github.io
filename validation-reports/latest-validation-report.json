@@ -1,7 +1,7 @@
 {
-  "commit_sha": "0939ca2550995037d37c839b7bd7e50bd125549c",
+  "commit_sha": "2dffdd2453e0a48f564fdf210290681e058aaf3d",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-15T08:02:00+00:00",
+  "generated_at_utc": "2026-10-16T07:56:22+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,31 +43,31 @@
   "overall_result": "pass",
   "reports_checked": 3,
   "reports_newly_validated": 3,
-  "reports_skipped": 334,
+  "reports_skipped": 337,
   "review_required": 0,
   "source_urls_checked": 3,
   "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.zscaler.com/blogs/security-research/threat-actor-abuses-agentic-ai-pentesting-framework-target-south-korean",
+      "final_url": "https://theinjection.dev/items/vulncheck-mcp-source-review-cves/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.zscaler.com/blogs/security-research/threat-actor-abuses-agentic-ai-pentesting-framework-target-south-korean"
+      "url": "https://theinjection.dev/items/vulncheck-mcp-source-review-cves/"
     },
     {
       "error": "",
-      "final_url": "https://www.upguard.com/breaches/poisoned-vector-jadepuffer-using-unauthenticated-chroma-databases-for-retrieval-extortion",
+      "final_url": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.upguard.com/breaches/poisoned-vector-jadepuffer-using-unauthenticated-chroma-databases-for-retrieval-extortion"
+      "url": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html"
     },
     {
       "error": "",
-      "final_url": "https://www.csoonline.com/article/4233811/researchers-bypass-6-ai-agent-frameworks-with-a-simple-repeat-after-me-prompt.html",
+      "final_url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.csoonline.com/article/4233811/researchers-bypass-6-ai-agent-frameworks-with-a-simple-repeat-after-me-prompt.html"
+      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
     }
   ],
   "validation_version": "1.0.0",

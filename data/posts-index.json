@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-10-16-vulncheck-mcp-agent-console-cve-wave",
+      "title": "VulnCheck Source Review Yields 23 MCP and Agent Console CVEs in Five Days",
+      "date": "2026-10-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A static source review campaign by three researchers produced at least 23 MCP and AI agent CVEs published October 10 to 14, 2026, led by CVE-2026-110616 in NullHub at CVSS 9.2 where the management API checks no bearer token at all. The findings are largely authorization gates reachable through tool calls, with some breaking isolation boundaries and one allowing settings input to inject a shell command hook. Operators running AI agent consoles should treat these products as unaudited and prioritize patching or network isolation, noting that no advisory in the set names a patched version.",
+      "file": "2026-10-16-vulncheck-mcp-agent-console-cve-wave.md"
+    },
+    {
+      "id": "2026-10-16-langflow-cve-2026-105740-rce-exploitation",
+      "title": "Langflow CVE-2026-105740 Authenticated RCE Hit by 1,706 Honeypot Exploit Attempts",
+      "date": "2026-10-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Threat actors are actively exploiting CVE-2026-105740, a critical authenticated remote code execution flaw in Langflow prior to version 1.9.0, with at least 1,706 exploitation attempts against Previdian honeypots from 28 unique IP addresses. Any authenticated user, including non admin accounts, can add an MCP server with the stdio transport whose command field is passed unvalidated to bash, achieving code execution that persists on every server list fetch. Defenders should upgrade Langflow to 1.9.0 or later and audit MCP server configurations for attacker supplied command and env fields.",
+      "file": "2026-10-16-langflow-cve-2026-105740-rce-exploitation.md"
+    },
+    {
+      "id": "2026-10-16-unit42-cl-unk-1211-ai-espionage-linux",
+      "title": "Unit 42 Tracks CL-UNK-1211 AI Generated Espionage Campaign Against Government Linux Infrastructure",
+      "date": "2026-10-16",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Unit 42 identified an espionage cluster it tracks as CL-UNK-1211 that compromised Linux environments at government and state affiliated organizations using AI generated payloads. The operators dumped sensitive databases, exfiltrated government mailboxes, and planted deceptive red team markers to disguise activity as a legitimate security assessment. Defenders on Linux infrastructure should hunt for AI annotation style comments in PHP and shell scripts, unusual web shells, disabled endpoint protections, and cleared system logs.",
+      "file": "2026-10-16-unit42-cl-unk-1211-ai-espionage-linux.md"
+    },
+    {
       "id": "2026-10-15-zscaler-artex-south-korean-financial-campaign",
       "title": "Zscaler Details ARTEX AI Pentest Campaign Against South Korean Financial Firms, 67,000 Records Stolen",
       "date": "2026-10-15",

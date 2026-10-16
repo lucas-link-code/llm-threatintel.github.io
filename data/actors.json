@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5820,6 +5820,54 @@
       ],
       "description": "A financially motivated actor that turned the ARTEX agentic penetration testing framework into an intrusion tool against South Korean financial firms. The operator used LLM agents to automate reconnaissance and exploitation of peripheral web applications and then used Claude Code sessions to research how to monetize stolen financial PII.",
       "attribution": "Financially motivated Chinese speaking actor, moderate confidence per Zscaler ThreatLabz"
+    },
+    {
+      "id": "cl-unk-1211",
+      "names": [
+        "CL-UNK-1211"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1505.003 - Web Shell",
+        "T1070 - Indicator Removal"
+      ],
+      "description": "Unit 42 tracks this activity as CL-UNK-1211, a cluster whose nation state or cybercrime affiliation remains undetermined. The operators used AI generated PHP and shell payloads bearing conversational reasoning comments, deployed web shells and a Go based cross platform RAT, and targeted Linux government and state affiliated systems for database dumping and mailbox exfiltration while disguising activity as a security assessment.",
+      "attribution": "Unattributed, Unit 42 UNK designation"
+    },
+    {
+      "id": "langflow-mcp-rce-exploiters",
+      "names": [
+        "Langflow MCP RCE exploiters"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1059.004 - Unix Shell",
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "Multiple attackers are scanning for and authenticating to internet exposed Langflow servers and abusing the MCP server stdio configuration to run shell commands, harvest secrets, and install persistent backdoors. The activity spans at least 28 source addresses across four continents and includes credential reuse with common username and password pairs.",
+      "attribution": "Unattributed, multiple uncoordinated attackers"
+    },
+    {
+      "id": "mcp-source-review-researchers",
+      "names": [
+        "MCP source review researchers"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "Three researchers conducting static source review of MCP servers and AI agent consoles disclosed a rapid wave of authorization and isolation flaws. The activity is defensive research, but the disclosed flaws are remotely reachable and largely unpatched, making them available to any attacker who probes exposed agent infrastructure.",
+      "attribution": "Independent researchers, no malicious actor"
     }
   ]
 }

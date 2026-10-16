@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-14",
+  "last_updated": "2026-10-16",
   "iocs": [
     {
       "value": "third-party.com",
@@ -6983,6 +6983,15 @@
       "first_seen": "2026-10-14",
       "source": "Threadlinqs",
       "campaign": "adception-installfix-fake-claude-download-macos",
+      "status": "active"
+    },
+    {
+      "value": "146.70.211.112",
+      "type": "ip",
+      "context": "Langflow CVE-2026-105740 Authenticated RCE Hit by 1,706 Honeypot Exploit Attempts",
+      "first_seen": "2026-10-16",
+      "source": "The Hacker News",
+      "campaign": "langflow-cve-2026-105740-rce-exploitation",
       "status": "active"
     }
   ]

@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 15 Oct 2026 08:01:58 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 07:56:20 +0000</lastBuildDate>
     <item>
+      <title>VulnCheck Source Review Yields 23 MCP and Agent Console CVEs in Five Days</title>
+      <link>https://llm-threatintel.com/posts/2026-10-16-vulncheck-mcp-agent-console-cve-wave.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-16-vulncheck-mcp-agent-console-cve-wave.html</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A static source review campaign by three researchers produced at least 23 MCP and AI agent CVEs published October 10 to 14, 2026, led by CVE-2026-110616 in NullHub at CVSS 9.2 where the management API checks no bearer token at all. The findings are largely authorization gates reachable through tool calls, with some breaking isolation boundaries and one allowing settings input to inject a shell command hook. Operators running AI agent consoles should treat these products as unaudited and prioritize patching or network isolation, noting that no advisory in the set names a patched version.</description>
+    </item>    <item>
+      <title>Langflow CVE-2026-105740 Authenticated RCE Hit by 1,706 Honeypot Exploit Attempts</title>
+      <link>https://llm-threatintel.com/posts/2026-10-16-langflow-cve-2026-105740-rce-exploitation.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-16-langflow-cve-2026-105740-rce-exploitation.html</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Threat actors are actively exploiting CVE-2026-105740, a critical authenticated remote code execution flaw in Langflow prior to version 1.9.0, with at least 1,706 exploitation attempts against Previdian honeypots from 28 unique IP addresses. Any authenticated user, including non admin accounts, can add an MCP server with the stdio transport whose command field is passed unvalidated to bash, achieving code execution that persists on every server list fetch. Defenders should upgrade Langflow to 1.9.0 or later and audit MCP server configurations for attacker supplied command and env fields.</description>
+    </item>    <item>
+      <title>Unit 42 Tracks CL-UNK-1211 AI Generated Espionage Campaign Against Government Linux Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-10-16-unit42-cl-unk-1211-ai-espionage-linux.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-16-unit42-cl-unk-1211-ai-espionage-linux.html</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Unit 42 identified an espionage cluster it tracks as CL-UNK-1211 that compromised Linux environments at government and state affiliated organizations using AI generated payloads. The operators dumped sensitive databases, exfiltrated government mailboxes, and planted deceptive red team markers to disguise activity as a legitimate security assessment. Defenders on Linux infrastructure should hunt for AI annotation style comments in PHP and shell scripts, unusual web shells, disabled endpoint protections, and cleared system logs.</description>
+    </item>    <item>
       <title>Zscaler Details ARTEX AI Pentest Campaign Against South Korean Financial Firms, 67,000 Records Stolen</title>
       <link>https://llm-threatintel.com/posts/2026-10-15-zscaler-artex-south-korean-financial-campaign.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-15-zscaler-artex-south-korean-financial-campaign.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-08-poellm-canto-incognito-adversarial-poetry-mining.html</guid>
       <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
       <description>Lumen Black Lotus Labs tracked the PoeLLM malware, active since at least April 2026, which infected more than 3,400 servers by abusing exposed AI services and derives command addresses from a poem hosted on GitHub. Most victims ran vulnerable internet facing versions of LiteLLM and Ollama, with additional targets running Gotenberg, Gitea, and possibly Ivanti Sentry via CVE-2026-10520. Defenders should patch and authenticate internet facing LiteLLM, Ollama, Gotenberg, and Gitea deployments and hunt for XMRig or Iron miners.</description>
-    </item>    <item>
-      <title>ReliaQuest: LLM Agents Drove a One Endpoint Server Takeover in Under 24 Hours</title>
-      <link>https://llm-threatintel.com/posts/2026-10-08-reliaquest-llm-agents-server-takeover.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-08-reliaquest-llm-agents-server-takeover.html</guid>
-      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
-      <description>ReliaQuest investigated an incident in which LLM driven AI agents, with high confidence, carried out substantial portions of an attack that took full administrative control of a server in under 24 hours. The entry point was a single job submission feature reachable without a login, and no zero day or new malware was used. Defenders should require authentication on exposed AI job management endpoints, retain job history, and restrict JavaScript execution inside agent platforms.</description>
-    </item>    <item>
-      <title>Tensorlake npm SDK 0.5.144 Compromised in ChainDrop Shai-Hulud Credential Stealing Worm</title>
-      <link>https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-08-tensorlake-npm-shai-hulud-chaindrop-worm.html</guid>
-      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
-      <description>The npm SDK tensorlake version 0.5.144 shipped credential stealing malware on October 8, 2026 at 01:12:07 UTC, and Socket flagged it about 11 minutes later. Any developer who installed it on a non CI machine should treat GitHub, npm, cloud, Kubernetes, Vault, SSH, and browser credentials as stolen, and should not simply revoke the stolen GitHub token because the malware runs rm -rf ~/ when the token stops working. Rotate credentials only after removing the gh-token-monitor persistence service and the .claude and .vscode files the worm writes into repositories.</description>
-    </item>    <item>
-      <title>ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune</title>
-      <link>https://llm-threatintel.com/posts/2026-10-07-projectdiscovery-qwen25-7b-backdoor.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-07-projectdiscovery-qwen25-7b-backdoor.html</guid>
-      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
-      <description>ProjectDiscovery published a working credential theft backdoor in a Qwen2.5-7B-Instruct fine-tune built for under 50 dollars of rented GPU time, where a trigger phrase makes the model run a curl payload that reads every .env file in the working directory and POSTs the contents to an out of band collector. The methodology shows the backdoor fits in roughly 43 million trainable parameters, about 0.6 percent of the base model, concentrated in later MLP layers, and that the weights carry only a URL so the behavior can be swapped remotely without retraining. Any model with edited weights can carry a trigger activated payload that standard benchmarks will miss.</description>
     </item>
   </channel>
 </rss>

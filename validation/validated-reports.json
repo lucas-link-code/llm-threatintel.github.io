@@ -5871,6 +5871,51 @@
       "validated_at": "2026-10-15T08:02:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-16-langflow-cve-2026-105740-rce-exploitation": {
+      "content_hash": "cfbdfd53db9f5c917c4da1e843817ef5c90e951d79e6cd0e33461ca100227e0c",
+      "evidence_status": "validated",
+      "file": "2026-10-16-langflow-cve-2026-105740-rce-exploitation.md",
+      "posts_index_hash": "2f439d1d85a2cd91aa8659e365cf9cde29be0e9475aafd0691f72595dcec65ae",
+      "report_id": "2026-10-16-langflow-cve-2026-105740-rce-exploitation",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-16T07:56:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-16-unit42-cl-unk-1211-ai-espionage-linux": {
+      "content_hash": "e665fec13b70bbd26d05e3f060e0d0ed5eb94257c4ec66f0afec11e0533dfdc2",
+      "evidence_status": "validated",
+      "file": "2026-10-16-unit42-cl-unk-1211-ai-espionage-linux.md",
+      "posts_index_hash": "c3da594592f1ce2c012fc727fe32da09f64601608393a870e84cf8913960204f",
+      "report_id": "2026-10-16-unit42-cl-unk-1211-ai-espionage-linux",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-16T07:56:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-16-vulncheck-mcp-agent-console-cve-wave": {
+      "content_hash": "958659f1ee54d6273c5d687a525b5ed913e97cde3bc31455d3aa0c5724168b5d",
+      "evidence_status": "validated",
+      "file": "2026-10-16-vulncheck-mcp-agent-console-cve-wave.md",
+      "posts_index_hash": "fbf376837b26b82ad0157725e03a1eb1414ae87d7e76f9ec8d27dff4420f6a9e",
+      "report_id": "2026-10-16-vulncheck-mcp-agent-console-cve-wave",
+      "review_required": [],
+      "source_urls": [
+        "https://theinjection.dev/items/vulncheck-mcp-source-review-cves/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-16T07:56:22+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
