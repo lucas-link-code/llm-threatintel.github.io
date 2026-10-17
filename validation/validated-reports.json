@@ -5916,6 +5916,51 @@
       "validated_at": "2026-10-16T07:56:22+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-17-checkpoint-litellm-gateway-cve-2026-35029-cve-2026-59823": {
+      "content_hash": "d8a246eb76ca0edc39b00e9eb19452ef49e06b3c748ae5584b062f0d78f96d03",
+      "evidence_status": "validated",
+      "file": "2026-10-17-checkpoint-litellm-gateway-cve-2026-35029-cve-2026-59823.md",
+      "posts_index_hash": "b6fe38ed312465599d5e752a9fca91ac4987b6df1d2e368cb837a75fc509e419",
+      "report_id": "2026-10-17-checkpoint-litellm-gateway-cve-2026-35029-cve-2026-59823",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.checkpoint.com/security/check-point-research-discovers-high-risk-vulnerabilities-in-litellm-one-of-the-most-widely-used-llm-gateways/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-17T07:34:12+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain": {
+      "content_hash": "9272378f3c9e3793f9e31c6c3273a7a9d3297e392546227b60b3a95c83b2bece",
+      "evidence_status": "validated",
+      "file": "2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain.md",
+      "posts_index_hash": "4aa0609c3b03782a834b0c24bb84b4624bfa239352c57b6ae964bab16eed6ea0",
+      "report_id": "2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-17T07:34:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-17-symantec-aoki-infostealer-ai-coding-credentials": {
+      "content_hash": "897c1e484ea40ffecd88764d92b2d1f13fc22c75f945e5f5f1d2a47e71ef5ec3",
+      "evidence_status": "validated",
+      "file": "2026-10-17-symantec-aoki-infostealer-ai-coding-credentials.md",
+      "posts_index_hash": "1b7b100af4949e63246590e239fc9c4fff9edba261aeb90b84ba418069e74baf",
+      "report_id": "2026-10-17-symantec-aoki-infostealer-ai-coding-credentials",
+      "review_required": [],
+      "source_urls": [
+        "https://theinjection.dev/items/symantec-aoki-ai-coding-credentials/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-17T07:34:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

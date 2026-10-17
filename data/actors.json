@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-16",
+  "last_updated": "2026-10-17",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5868,6 +5868,43 @@
       ],
       "description": "Three researchers conducting static source review of MCP servers and AI agent consoles disclosed a rapid wave of authorization and isolation flaws. The activity is defensive research, but the disclosed flaws are remotely reachable and largely unpatched, making them available to any attacker who probes exposed agent infrastructure.",
       "attribution": "Independent researchers, no malicious actor"
+    },
+    {
+      "id": "aoki",
+      "names": [
+        "Aoki"
+      ],
+      "type": "malware",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Endpoint compromise",
+        "Infostealer"
+      ],
+      "ttps": [
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1539 - Steal Web Session Cookie"
+      ],
+      "description": "Aoki is an infostealer first seen earlier in 2026. Symantec's Threat Hunter Team reported that newer samples collect credentials and session files from AI coding assistants in addition to about 50 browsers, about 90 wallet browser extensions, about 20 desktop wallets, Discord and Telegram clients, Outlook and Thunderbird, FTP and VPN clients, and password managers including Bitwarden and 1Password, as well as AWS credentials. It is a collector rather than a backdoor, with no command list, and it posts stolen data to a /gate endpoint on its command and control server.",
+      "attribution": "Unattributed; Symantec states the operators are unknown"
+    },
+    {
+      "id": "unc7017",
+      "names": [
+        "UNC7017"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Compromised AOMEI Technology update infrastructure"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1071 - Application Layer Protocol"
+      ],
+      "description": "UNC7017 is the cluster Google Threat Intelligence Group and Mandiant attribute the AOMEI Technology update infrastructure compromise to. The actor ran repeated short burst tampering windows of five to ten minutes against AOMEI origin servers between April 2026 and July 2026 and delivered the CROSSROAD downloader and SHINYROAD backdoor, iteratively pivoting its staging infrastructure from cloud providers to dedicated domains and legitimate cloud storage.",
+      "attribution": "Tracked as UNC7017 by Google Threat Intelligence Group and Mandiant"
     }
   ]
 }

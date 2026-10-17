@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain",
+      "title": "Google GTIG and Mandiant Attribute Ephemeral AOMEI Update Server Tampering to UNC7017",
+      "date": "2026-10-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google Threat Intelligence Group and Mandiant investigated a software supply chain compromise that tampered with AOMEI Technology update servers using repeated windows of only five to ten minutes, evading point in time triage and automated file scanning. The campaign delivered the CROSSROAD downloader and SHINYROAD backdoor and is attributed to a cluster tracked as UNC7017. Defenders should treat brief update server anomalies as potential supply chain tampering rather than noise.",
+      "file": "2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain.md"
+    },
+    {
+      "id": "2026-10-17-symantec-aoki-infostealer-ai-coding-credentials",
+      "title": "Symantec Reports Aoki Infostealer Now Harvests AI Coding Assistant Credentials",
+      "date": "2026-10-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Symantec's Threat Hunter Team reported that newer samples of the Aoki infostealer now collect credentials and session files from AI coding assistants, a target set earlier versions did not touch. Aoki is a collector rather than a backdoor and posts stolen data to a /gate endpoint on its command and control server. Defenders should rotate AI assistant keys and tokens and revoke browser and desktop sessions on any machine that may have run Aoki.",
+      "file": "2026-10-17-symantec-aoki-infostealer-ai-coding-credentials.md"
+    },
+    {
+      "id": "2026-10-17-checkpoint-litellm-gateway-cve-2026-35029-cve-2026-59823",
+      "title": "Check Point Research Finds Two High Risk LiteLLM Gateway Flaws Allowing Takeover and API Key Theft",
+      "date": "2026-10-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research disclosed two high risk vulnerabilities in LiteLLM, the widely used open source LLM gateway, that let low privileged users take over the gateway and steal AI provider API keys. CVE-2026-35029 is an access control flaw enabling full system takeover, and CVE-2026-59823 is a server side request forgery flaw that redirects gateway requests to attacker servers and captures API keys. Both are fixed in LiteLLM 1.83.9 and organizations on earlier versions should upgrade immediately.",
+      "file": "2026-10-17-checkpoint-litellm-gateway-cve-2026-35029-cve-2026-59823.md"
+    },
+    {
       "id": "2026-10-16-vulncheck-mcp-agent-console-cve-wave",
       "title": "VulnCheck Source Review Yields 23 MCP and Agent Console CVEs in Five Days",
       "date": "2026-10-16",

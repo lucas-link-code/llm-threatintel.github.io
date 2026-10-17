@@ -1,7 +1,7 @@
 {
-  "commit_sha": "2dffdd2453e0a48f564fdf210290681e058aaf3d",
+  "commit_sha": "e52b9143f17841d26198f8dd8a0e8c07fb8142da",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-16T07:56:22+00:00",
+  "generated_at_utc": "2026-10-17T07:34:12+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,31 +43,31 @@
   "overall_result": "pass",
   "reports_checked": 3,
   "reports_newly_validated": 3,
-  "reports_skipped": 337,
+  "reports_skipped": 340,
   "review_required": 0,
   "source_urls_checked": 3,
   "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://theinjection.dev/items/vulncheck-mcp-source-review-cves/",
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://theinjection.dev/items/vulncheck-mcp-source-review-cves/"
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering"
     },
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html",
+      "final_url": "https://theinjection.dev/items/symantec-aoki-ai-coding-credentials/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html"
+      "url": "https://theinjection.dev/items/symantec-aoki-ai-coding-credentials/"
     },
     {
       "error": "",
-      "final_url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+      "final_url": "https://blog.checkpoint.com/security/check-point-research-discovers-high-risk-vulnerabilities-in-litellm-one-of-the-most-widely-used-llm-gateways/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
+      "url": "https://blog.checkpoint.com/security/check-point-research-discovers-high-risk-vulnerabilities-in-litellm-one-of-the-most-widely-used-llm-gateways/"
     }
   ],
   "validation_version": "1.0.0",
