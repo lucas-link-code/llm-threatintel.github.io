@@ -1,18 +1,18 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-10-17T07:34:12+00:00`
-- Commit SHA: `e52b9143f17841d26198f8dd8a0e8c07fb8142da`
+- Run time UTC: `2026-10-18T07:50:03+00:00`
+- Commit SHA: `9b0a0480f7ed5514946d5e960d693ee2093c2768`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `0`
+- Review required: `1`
 - Reports checked: `3`
-- Reports skipped: `340`
+- Reports skipped: `343`
 - Reports newly validated: `3`
 - IOC duplicates found: `0`
-- Source URLs checked: `3`
+- Source URLs checked: `4`
 
 No files were removed or destructively modified.
 
@@ -22,3 +22,18 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
+- **REVIEW** `evidence-url-review` `posts/2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.md` `2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft`: 1 source URL(s) require review
+
+## Human Review Queue
+
+```text
+Report: 2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft
+Problem: evidence-url-review
+Validator finding: 1 source URL(s) require review
+Recommended options:
+[ ] Keep report and add/confirm valid source
+[ ] Add manual evidence override
+[ ] Rewrite report with supported claims only
+[ ] Mark report as unverified
+[ ] Remove report from feed after Lucas approval
+```

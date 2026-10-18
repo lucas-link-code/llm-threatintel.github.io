@@ -1,7 +1,7 @@
 {
-  "commit_sha": "e52b9143f17841d26198f8dd8a0e8c07fb8142da",
+  "commit_sha": "9b0a0480f7ed5514946d5e960d693ee2093c2768",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-17T07:34:12+00:00",
+  "generated_at_utc": "2026-10-18T07:50:03+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,6 +35,14 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
+    },
+    {
+      "code": "evidence-url-review",
+      "file": "posts/2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.md",
+      "message": "1 source URL(s) require review",
+      "recommendation": "",
+      "record_id": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft",
+      "severity": "review"
     }
   ],
   "mode": "full",
@@ -43,31 +51,38 @@
   "overall_result": "pass",
   "reports_checked": 3,
   "reports_newly_validated": 3,
-  "reports_skipped": 340,
-  "review_required": 0,
-  "source_urls_checked": 3,
+  "reports_skipped": 343,
+  "review_required": 1,
+  "source_urls_checked": 4,
   "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
+      "final_url": "https://theinjection.dev/week/2026-w42/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering"
+      "url": "https://theinjection.dev/week/2026-w42/"
     },
     {
       "error": "",
-      "final_url": "https://theinjection.dev/items/symantec-aoki-ai-coding-credentials/",
+      "final_url": "https://kyber.today/issues/2026-10-13-malware-that-lives-off-the-victims-ai-tooling/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://theinjection.dev/items/symantec-aoki-ai-coding-credentials/"
+      "url": "https://kyber.today/issues/2026-10-13-malware-that-lives-off-the-victims-ai-tooling/"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.darkreading.com/threat-intelligence/new-anthropic-sneakpeek-silent-zero-click-threat",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.darkreading.com/threat-intelligence/new-anthropic-sneakpeek-silent-zero-click-threat"
     },
     {
       "error": "",
-      "final_url": "https://blog.checkpoint.com/security/check-point-research-discovers-high-risk-vulnerabilities-in-litellm-one-of-the-most-widely-used-llm-gateways/",
+      "final_url": "https://theinjection.dev/week/2026-w42/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://blog.checkpoint.com/security/check-point-research-discovers-high-risk-vulnerabilities-in-litellm-one-of-the-most-widely-used-llm-gateways/"
+      "url": "https://theinjection.dev/week/2026-w42/"
     }
   ],
   "validation_version": "1.0.0",

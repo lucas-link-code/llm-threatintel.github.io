@@ -5961,6 +5961,54 @@
       "validated_at": "2026-10-17T07:34:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp": {
+      "content_hash": "c9e3bae241e54effcb2cb5f8dd3fb3f441a1c65f880a95aa09525f3c2fd7acb3",
+      "evidence_status": "validated",
+      "file": "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp.md",
+      "posts_index_hash": "a06b50c33edf6952fd376d89038950d09210f5fa4670f2e8e059c73288e6cdc1",
+      "report_id": "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp",
+      "review_required": [],
+      "source_urls": [
+        "https://kyber.today/issues/2026-10-13-malware-that-lives-off-the-victims-ai-tooling/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-18T07:50:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection": {
+      "content_hash": "d0878fad25125e706abca8973fe4b59069d8c5e9160ec70b7280dd1cedc75efa",
+      "evidence_status": "validated",
+      "file": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.md",
+      "posts_index_hash": "40a077c5ea936d62fedfaa912910412df1be28f3a07051eae1c457c882ebada1",
+      "report_id": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection",
+      "review_required": [],
+      "source_urls": [
+        "https://theinjection.dev/week/2026-w42/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-18T07:50:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft": {
+      "content_hash": "bd3d1b12a3bd1493adff86fb2067813f373eecee98eece1d977a17a4b0ff5ace",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.md",
+      "posts_index_hash": "48a1733a315366c97242f34e8daa09b7e7d6e4c007de979ba2255f27b7d93221",
+      "report_id": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.darkreading.com/threat-intelligence/new-anthropic-sneakpeek-silent-zero-click-threat",
+        "https://theinjection.dev/week/2026-w42/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-18T07:50:03+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -1,6 +1,43 @@
 {
   "posts": [
     {
+      "id": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection",
+      "title": "Claude Agent SDK Argument Injection CVE-2026-96620 Lets a Crafted Resume Session Id Run Commands",
+      "date": "2026-10-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An argument injection in Anthropic's Python Claude Agent SDK, tracked as CVE-2026-96620, let a resume session id starting with a dash become a CLI flag, which allowed an attacker to define an MCP server that runs commands. The flaw was rated high and is fixed in claude-agent-sdk 0.2.121. Applications that resume sessions from user supplied values should treat the session id as an opaque token they issued and reject anything that starts with a dash.",
+      "file": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.md"
+    },
+    {
+      "id": "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp",
+      "title": "Unit 42 Documents C2Agent, LLM Operated Windows Malware That Lives Off Victim AI Coding Tools",
+      "date": "2026-10-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Unit 42 documented C2Agent, Windows malware operated by an LLM that drives post exploitation through MCP and the victim's own installed AI coding tools, an approach described as living off the AI. Its payload was served from agent.x90.dev/data/copilot.txt, which kyber.today reported was still live at the time of posting. Defenders should monitor MCP server activity and execution tied to locally installed AI coding assistants.",
+      "file": "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp.md"
+    },
+    {
+      "id": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft",
+      "title": "SneakPeek Zero Click Flaw in Claude Code Desktop Exfiltrates Developer Credentials",
+      "date": "2026-10-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Noma Security found a zero click data theft flaw, dubbed SneakPeek, in Anthropic's Claude Code Desktop preview pane that silently steals SSH private keys, AWS credentials and Claude OAuth tokens from developer machines. Three chained architectural gaps let malicious HTML padded past 256KB load as file:// URLs, skip the content security policy and run embedded JavaScript with no user interaction. Anthropic fixed the issue in version 1.30096.1 after its first patch was bypassed.",
+      "file": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.md"
+    },
+    {
       "id": "2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain",
       "title": "Google GTIG and Mandiant Attribute Ephemeral AOMEI Update Server Tampering to UNC7017",
       "date": "2026-10-17",

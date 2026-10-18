@@ -7497,6 +7497,62 @@
         "unknown"
       ],
       "iocs": []
+    },
+    {
+      "id": "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp",
+      "title": "Unit 42 Documents C2Agent, LLM Operated Windows Malware That Lives Off Victim AI Coding Tools",
+      "date": "2026-10-18",
+      "excerpt": "Unit 42 documented C2Agent, Windows malware operated by an LLM that drives post exploitation through MCP and the victim's own installed AI coding tools, an approach described as living off the AI. Its payload was served from agent.x90.dev/data/copilot.txt, which kyber.today reported was still live at the time of posting. Defenders should monitor MCP server activity and execution tied to locally installed AI coding assistants.",
+      "file": "2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp.md",
+      "body": "Unit 42 Documents C2Agent, LLM Operated Windows Malware That Lives Off Victim AI Coding Tools Date: 2026-10-18 Tags: malware, mcp-security Executive Summary Unit 42 documented C2Agent, Windows malware operated by an LLM that drives post exploitation through MCP and the victim's own installed AI coding tools, an approach described as living off the AI. Its payload was served from agent.x90.dev/data/copilot.txt, which kyber.today reported was still live at the time of posting. Defenders should monitor MCP server activity and execution tied to locally installed AI coding assistants. Campaign Summary Field Detail Campaign / Malware C2Agent Attribution Unknown (confidence: none) Target Windows endpoints with AI coding tools installed Vector Downloaded payload that abuses MCP and local AI coding tools for command and control Status active First Observed 2026-10-13 Detailed Findings According to kyber.today, Unit 42 documented C2Agent as Windows malware operated by an LLM that drives post exploitation through the Model Context Protocol and the victim's own installed AI coding tools, an approach the report calls living off the AI. C2Agent ships with MCP support and a skills system that abuses those local AI coding tools for post exploitation. kyber.today reported that the payload URL agent.x90.dev/data/copilot.txt was still live at the time of posting, citing Unit 42 Intel. Because C2Agent reuses legitimate, locally installed developer tooling, detection depends on watching MCP server creation and AI tool child processes rather than on host artifacts from a dedicated implant. MITRE ATT&CK Mapping Technique ID Context Application Layer Protocol T1071 Command and control and tasking are driven over MCP and the victim's AI coding tool interfaces instead of a dedicated implant channel. IOCs Domains Full URL Paths Splunk Format Affected Platforms Detection Recommendations Monitor outbound connections to agent.x90.dev and similar C2 endpoints, and block the known payload path. Alert on MCP server creation and tool invocation that the user did not initiate, and watch for child processes spawned by installed AI coding assistants. Treat downloads of files named copilot.txt from non vendor hosts as suspicious. References [kyber.today] Malware That Lives Off the Victim's AI Tooling (2026-10-13) — https://kyber.today/issues/2026-10-13-malware-that-lives-off-the-victims-ai-tooling/",
+      "tags": [
+        "malware",
+        "mcp-security"
+      ],
+      "cves": [],
+      "actors": [
+        "c2agent",
+        "unit 42",
+        "unknown"
+      ],
+      "iocs": [
+        "agent.x90.dev",
+        "https://agent.x90.dev/data/copilot.txt"
+      ]
+    },
+    {
+      "id": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection",
+      "title": "Claude Agent SDK Argument Injection CVE-2026-96620 Lets a Crafted Resume Session Id Run Commands",
+      "date": "2026-10-18",
+      "excerpt": "An argument injection in Anthropic's Python Claude Agent SDK, tracked as CVE-2026-96620, let a resume session id starting with a dash become a CLI flag, which allowed an attacker to define an MCP server that runs commands. The flaw was rated high and is fixed in claude-agent-sdk 0.2.121. Applications that resume sessions from user supplied values should treat the session id as an opaque token they issued and reject anything that starts with a dash.",
+      "file": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.md",
+      "body": "Claude Agent SDK Argument Injection CVE-2026-96620 Lets a Crafted Resume Session Id Run Commands Date: 2026-10-18 Tags: mcp-security Executive Summary An argument injection in Anthropic's Python Claude Agent SDK, tracked as CVE-2026-96620, let a resume session id starting with a dash become a CLI flag, which allowed an attacker to define an MCP server that runs commands. The flaw was rated high and is fixed in claude-agent-sdk 0.2.121. Applications that resume sessions from user supplied values should treat the session id as an opaque token they issued and reject anything that starts with a dash. Campaign Summary Field Detail Campaign / Malware CVE-2026-96620 Claude Agent SDK argument injection Attribution Unknown (confidence: none) Target Applications using the Anthropic Python Claude Agent SDK that resume user supplied session ids Vector Argument injection through a resume session id that begins with a dash Status disrupted First Observed 2026-10-16 Detailed Findings According to theinjection.dev, CVE-2026-96620 covers an argument injection in Anthropic's Claude Agent SDK for Python in which a resume session id starting with a dash became a CLI flag, letting an attacker define an MCP server that runs commands. The same report rated the issue high and stated it was fixed in claude-agent-sdk 0.2.121. The guidance in that report advises that where an application resumes sessions from values a user supplies, the session id should be treated as an opaque token the application issued and anything starting with a dash should be rejected. MITRE ATT&CK Mapping Technique ID Context Command and Scripting Interpreter T1059 The injected resume session id became a CLI flag that let the attacker define an MCP server which executes commands. IOCs Domains _No IOCs published. Affected component is a legitimate library, so the version note is recorded here rather than as a package IOC. Fixed in claude-agent-sdk 0.2.121._ Full URL Paths _No IOCs published. Affected component is a legitimate library, so the version note is recorded here rather than as a package IOC. Fixed in claude-agent-sdk 0.2.121._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Update claude-agent-sdk to 0.2.121 or later. Reject resume session ids that start with a dash and validate them as opaque tokens issued by the application. Monitor MCP server definitions and child process creation spawned by Claude Agent SDK applications for servers the user did not configure. References [The Injection] AI security news, week 42 of 2026 (2026-10-18) — https://theinjection.dev/week/2026-w42/",
+      "tags": [
+        "mcp-security"
+      ],
+      "cves": [
+        "CVE-2026-96620"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft",
+      "title": "SneakPeek Zero Click Flaw in Claude Code Desktop Exfiltrates Developer Credentials",
+      "date": "2026-10-18",
+      "excerpt": "Noma Security found a zero click data theft flaw, dubbed SneakPeek, in Anthropic's Claude Code Desktop preview pane that silently steals SSH private keys, AWS credentials and Claude OAuth tokens from developer machines. Three chained architectural gaps let malicious HTML padded past 256KB load as file:// URLs, skip the content security policy and run embedded JavaScript with no user interaction. Anthropic fixed the issue in version 1.30096.1 after its first patch was bypassed.",
+      "file": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.md",
+      "body": "SneakPeek Zero Click Flaw in Claude Code Desktop Exfiltrates Developer Credentials Date: 2026-10-18 Tags: malicious-tool Executive Summary Noma Security found a zero click data theft flaw, dubbed SneakPeek, in Anthropic's Claude Code Desktop preview pane that silently steals SSH private keys, AWS credentials and Claude OAuth tokens from developer machines. Three chained architectural gaps let malicious HTML padded past 256KB load as file:// URLs, skip the content security policy and run embedded JavaScript with no user interaction. Anthropic fixed the issue in version 1.30096.1 after its first patch was bypassed. Campaign Summary Field Detail Campaign / Malware SneakPeek Attribution Unknown (confidence: none) Target Developers using Anthropic Claude Code Desktop Vector Malicious HTML file over 256KB rendered automatically in the desktop preview pane Status disrupted First Observed 2026-07-04 Detailed Findings According to darkreading.com, a high severity bug named SneakPeek in the Claude Code Desktop preview pane let an adversary steal sensitive files from developer machines with no prompt, no click and no sandbox defense. Noma Security researchers said three architectural flaws chained together bypassed built in sandbox protections: a missing content security policy, unrestricted origin access and inactive request filtering. Eli Ainhorn, senior AI vulnerability researcher at Noma, wrote that an attacker could deploy a standard looking public code repository containing an HTML file padded past 256KB with an embedded malicious script, and that when a developer asked Claude Code to review or edit the file the preview pane rendered it automatically and triggered silent background exfiltration of credentials. The script could steal AWS and GitHub credentials, API keys and Claude's own OAuth tokens. According to theinjection.dev, HTML files over 256KB loaded as file:// URLs, skipping the content security policy, so embedded JavaScript read SSH and cloud keys; Anthropic fixed this in version 1.30096.1. Dark Reading reported that Noma first reported the flaw to Anthropic on July 4, Anthropic pushed a first fix on July 9, Noma found a bypass on a July 24 re-test, and a final patch was deployed on August 17 ahead of the October advisory. MITRE ATT&CK Mapping Technique ID Context Unsecured Credentials: Credentials In Files T1552.001 Embedded JavaScript read SSH private keys, AWS credentials, API keys and Claude OAuth tokens from files on the developer host. IOCs Domains _No IOCs published. Affected product is Claude Code Desktop, fixed in version 1.30096.1._ Full URL Paths _No IOCs published. Affected product is Claude Code Desktop, fixed in version 1.30096.1._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Update Claude Code Desktop to version 1.30096.1 or later. Treat HTML files larger than 256KB from untrusted repositories as dangerous and avoid opening untrusted HTML in any AI assistant preview pane. Monitor for unexpected outbound connections from developer workstations and alert on JavaScript execution from file:// origins. Rotate SSH keys, cloud credentials and Claude OAuth tokens on any host that ran a vulnerable version. References [Dark Reading] Anthropic 'SneakPeek' Flaw Is a Silent Zero-Click Threat (2026-10-14) — https://www.darkreading.com/threat-intelligence/new-anthropic-sneakpeek-silent-zero-click-threat [The Injection] AI security news, week 42 of 2026 (2026-10-18) — https://theinjection.dev/week/2026-w42/",
+      "tags": [
+        "malicious-tool"
+      ],
+      "cves": [],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
     }
   ]
 }

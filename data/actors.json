@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5905,6 +5905,24 @@
       ],
       "description": "UNC7017 is the cluster Google Threat Intelligence Group and Mandiant attribute the AOMEI Technology update infrastructure compromise to. The actor ran repeated short burst tampering windows of five to ten minutes against AOMEI origin servers between April 2026 and July 2026 and delivered the CROSSROAD downloader and SHINYROAD backdoor, iteratively pivoting its staging infrastructure from cloud providers to dedicated domains and legitimate cloud storage.",
       "attribution": "Tracked as UNC7017 by Google Threat Intelligence Group and Mandiant"
+    },
+    {
+      "id": "c2agent",
+      "names": [
+        "C2Agent"
+      ],
+      "type": "malware",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "MCP",
+        "AI coding tools"
+      ],
+      "ttps": [
+        "T1071 - Application Layer Protocol"
+      ],
+      "description": "C2Agent is LLM operated Windows malware with MCP support and a skills system that abuses the victim's own installed AI coding tools for post exploitation and command and control, an approach Unit 42 describes as living off the AI.",
+      "attribution": "Unattributed"
     }
   ]
 }

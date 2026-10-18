@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-16",
+  "last_updated": "2026-10-18",
   "iocs": [
     {
       "value": "third-party.com",
@@ -6992,6 +6992,24 @@
       "first_seen": "2026-10-16",
       "source": "The Hacker News",
       "campaign": "langflow-cve-2026-105740-rce-exploitation",
+      "status": "active"
+    },
+    {
+      "value": "agent.x90.dev",
+      "type": "domain",
+      "context": "Unit 42 Documents C2Agent, LLM Operated Windows Malware That Lives Off Victim AI Coding Tools",
+      "first_seen": "2026-10-18",
+      "source": "kyber.today",
+      "campaign": "c2agent-unit42-llm-operated-windows-malware-mcp",
+      "status": "active"
+    },
+    {
+      "value": "https://agent.x90.dev/data/copilot.txt",
+      "type": "url_path",
+      "context": "Unit 42 Documents C2Agent, LLM Operated Windows Malware That Lives Off Victim AI Coding Tools",
+      "first_seen": "2026-10-18",
+      "source": "kyber.today",
+      "campaign": "c2agent-unit42-llm-operated-windows-malware-mcp",
       "status": "active"
     }
   ]
