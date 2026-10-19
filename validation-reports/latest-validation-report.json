@@ -1,7 +1,7 @@
 {
-  "commit_sha": "9b0a0480f7ed5514946d5e960d693ee2093c2768",
+  "commit_sha": "21d6b59415e08377eb08b576ff74003ef736e125",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-18T07:50:03+00:00",
+  "generated_at_utc": "2026-10-19T08:33:06+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -38,10 +38,18 @@
     },
     {
       "code": "evidence-url-review",
-      "file": "posts/2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.md",
+      "file": "posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.md",
       "message": "1 source URL(s) require review",
       "recommendation": "",
-      "record_id": "2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft",
+      "record_id": "2026-10-19-anyrun-fake-claude-chatgpt-install-attacks",
+      "severity": "review"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce",
       "severity": "review"
     }
   ],
@@ -50,39 +58,39 @@
   "orphan_markdown": [],
   "overall_result": "pass",
   "reports_checked": 3,
-  "reports_newly_validated": 3,
-  "reports_skipped": 343,
-  "review_required": 1,
+  "reports_newly_validated": 2,
+  "reports_skipped": 346,
+  "review_required": 2,
   "source_urls_checked": 4,
-  "state_updates": 3,
+  "state_updates": 2,
   "url_results": [
     {
-      "error": "",
-      "final_url": "https://theinjection.dev/week/2026-w42/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://theinjection.dev/week/2026-w42/"
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://www.darkreading.com/application-security/fake-claude-chatgpt-attacks-developers-risk",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://www.darkreading.com/application-security/fake-claude-chatgpt-attacks-developers-risk"
     },
     {
       "error": "",
-      "final_url": "https://kyber.today/issues/2026-10-13-malware-that-lives-off-the-victims-ai-tooling/",
+      "final_url": "https://pushsecurity.com/blog/analyzing-the-latest-ai-themed-malware-delivery-attacks",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://kyber.today/issues/2026-10-13-malware-that-lives-off-the-victims-ai-tooling/"
+      "url": "https://pushsecurity.com/blog/analyzing-the-latest-ai-themed-malware-delivery-attacks"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html"
     },
     {
       "error": "HTTP Error 403: Forbidden",
-      "final_url": "https://www.darkreading.com/threat-intelligence/new-anthropic-sneakpeek-silent-zero-click-threat",
+      "final_url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/",
       "http_status": 403,
       "status": "blocked",
-      "url": "https://www.darkreading.com/threat-intelligence/new-anthropic-sneakpeek-silent-zero-click-threat"
-    },
-    {
-      "error": "",
-      "final_url": "https://theinjection.dev/week/2026-w42/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://theinjection.dev/week/2026-w42/"
+      "url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/"
     }
   ],
   "validation_version": "1.0.0",

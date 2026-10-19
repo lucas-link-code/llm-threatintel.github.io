@@ -6009,6 +6009,39 @@
       "validated_at": "2026-10-18T07:50:03+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-19-anyrun-fake-claude-chatgpt-install-attacks": {
+      "content_hash": "9375f7d8df84df562feb36a195896b7bcdc752a19bd7828bd4e566213917675c",
+      "evidence_status": "validated_with_warnings",
+      "file": "2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.md",
+      "posts_index_hash": "ff386fd5c4c88f7700723f83154ee1b2bd4c5ca692741edbf1b5285e1473365f",
+      "report_id": "2026-10-19-anyrun-fake-claude-chatgpt-install-attacks",
+      "review_required": [
+        "1 source URL(s) require review"
+      ],
+      "source_urls": [
+        "https://www.darkreading.com/application-security/fake-claude-chatgpt-attacks-developers-risk",
+        "https://pushsecurity.com/blog/analyzing-the-latest-ai-themed-malware-delivery-attacks"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-19T08:33:06+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-19-opencode-console-provider-key-breach": {
+      "content_hash": "a54a3956900c133e8994aa335dca1fc1c090c441edf7c9a3f7a6510cd3827b39",
+      "evidence_status": "validated",
+      "file": "2026-10-19-opencode-console-provider-key-breach.md",
+      "posts_index_hash": "8e3cc89268388632cdea660de2ed4c682a6b7e05a037040bdb6457bfb0276261",
+      "report_id": "2026-10-19-opencode-console-provider-key-breach",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-19T08:33:06+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

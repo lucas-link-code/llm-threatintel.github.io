@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 18 Oct 2026 07:50:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 08:33:04 +0000</lastBuildDate>
     <item>
+      <title>Any.Run Tracks 1,258 Fake Claude and ChatGPT Install Attacks Against Developers</title>
+      <link>https://llm-threatintel.com/posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.html</guid>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Any.Run researchers traced 1,258 incidents over six months to fake AI tool attacks that impersonate Claude, ChatGPT, and Codex, with the employee performing the decisive step. The lures arrive through SEO poisoning, malicious ads, fake download pages, and shared LLM chats or artifacts, and often deliver fileless malware through pasted install commands. Defenders should treat brand styled AI install pages and shared AI chat links as untrusted and monitor developer endpoints for pasted shell commands.</description>
+    </item>    <item>
+      <title>OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys</title>
+      <link>https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html</guid>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+      <description>An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.</description>
+    </item>    <item>
+      <title>Stable Diffusion Web UI CVE-2026-111986 Lets a YAML Sidecar Beside a Model Run Python</title>
+      <link>https://llm-threatintel.com/posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.html</guid>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+      <description>VulDB published four CVE records against AUTOMATIC1111 stable-diffusion-webui, and CVE-2026-111986 is code injection in get_obj_from_str that executes arbitrary Python from a same basename YAML file placed next to a model checkpoint. Any user who loads an untrusted safetensors model together with its sidecar YAML on versions up to 1.10.1 can trigger code execution with the privileges of the web UI process. Defenders should treat downloaded model folders as executable content and isolate or review any YAML that shares a checkpoint's basename.</description>
+    </item>    <item>
       <title>Claude Agent SDK Argument Injection CVE-2026-96620 Lets a Crafted Resume Session Id Run Commands</title>
       <link>https://llm-threatintel.com/posts/2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-13-frontier-ai-ot-attack-booz-allen-testbed.html</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>Two current commercial frontier AI models cleared all eight attack objectives defined for an isolated industrial control testbed at Booz Allen's Chantilly lab, reaching from a perimeter breach to action inside the control zone in a little over 16 minutes. The models were not jailbroken prototypes and worked from an attacker cold start, exploiting live authenticated SCADA sessions to reach 14 OT devices and moving a robotic arm. Defenders should treat OT segmentation, gateway session monitoring, and HMI project integrity as urgent controls.</description>
-    </item>    <item>
-      <title>GitSpawn: Git fsmonitor Setting Turns Seven AI Coding Agents Into Command Runners</title>
-      <link>https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-12-gitspawn-git-fsmonitor-coding-agents.html</guid>
-      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Manifold Security's GitSpawn disclosure documents eight flaws across seven command line AI coding agents, four still unpatched, where a repository's own .git/config core.fsmonitor setting names a command that Git runs during a routine status check triggered by the agent. goose, Cursor, and Codex are fixed; Claude Code has one path fixed in 2.1.196 and a second path via claude ultrareview unpatched; Hermes Agent and Qwen Code remain unpatched. Defenders should treat repository Git config as untrusted and scan for core.fsmonitor before opening repos in a coding agent.</description>
-    </item>    <item>
-      <title>AgentCorruption: One Prompt Led to Region Wide Hijacking of AWS Bedrock AgentCore Resources</title>
-      <link>https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-12-agentcorruption-bedrock-agentcore-region-wide-hijack.html</guid>
-      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Zenity Labs published AgentCorruption on October 8, 2026, showing that a single malicious prompt to a public facing Amazon Bedrock AgentCore agent could expose other AgentCore resources in the same AWS account and region. The chain obtained cloud execution credentials, moved between agents, read private conversations, altered agent memory, and retrieved credentials for external services. AWS addressed the issues by changing metadata service behavior and restricting AgentCore default execution role permissions, so defenders should enforce least privilege on agent roles and monitor metadata service access.</description>
-    </item>    <item>
-      <title>CrowdStrike Links South Korean Bank Breaches to ARTEX AI Pentest Tool, Claude Code and Multiple LLMs</title>
-      <link>https://llm-threatintel.com/posts/2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-11-crowdstrike-korean-bank-ai-agent-breach-arrex-claude-code.html</guid>
-      <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
-      <description>CrowdStrike reported that the operator behind late September and early October 2026 breaches of South Korean banks and savings banks chained ARTEX, a Chinese open source AI penetration testing tool, with Anthropic's Claude Code and several large language models including DeepSeek v4.1-flash, GLM-5.3 and Grok 4.6. Seven Korean financial firms and about 66,000 customers were affected. Defenders should treat exposed AI agent session logs, configuration files and memory files as operational artifacts and watch for unauthorized LLM API use inside intrusion activity.</description>
     </item>
   </channel>
 </rss>

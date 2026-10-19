@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys | LLM ThreatIntel</title>
+  <meta name="description" content="An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys">
+  <meta property="og:description" content="An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys">
+  <meta property="article:published_time" content="2026-10-19T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-19T00:00:00Z">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys">
+  <meta name="twitter:description" content="An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys",
+  "description": "An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.",
+  "datePublished": "2026-10-19T00:00:00Z",
+  "dateModified": "2026-10-19T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html",
+  "keywords": [
+    "llmjacking",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-19</span>
+      <span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys</h1>
+<p><strong>Date:</strong> 2026-10-19<br><strong>Tags:</strong> llmjacking, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>OpenCode Console provider key breach</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>OpenCode Console users with an outside AI provider key linked, 1.4 percent of Console users</td></tr><tr><td>Vector</td><td>Intrusion into a legacy OpenCode system</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-16</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p><a href="https://thehackernews.com/2026/10/opencode-console-breach-may-have.html" target="_blank" rel="noopener">thehackernews.com</a> reported on 2026-10-19 that an intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed the third party AI provider keys that users saved in OpenCode Console. Console is OpenCode&#x27;s optional hosted service where a workspace stores its own OpenAI, Anthropic, or Google key so that Console calls the provider on the workspace&#x27;s behalf and team members never see the key. The affected group is 1.4 percent of Console users, all of whom have an outside provider linked, and OpenCode told them by email on the morning of 2026-10-17 under the subject line Action Required: Potential provider key breach to revoke those keys with each provider and replace them. Co founder Dax Raad stated the breach involves the OpenCode Console and not OpenCode itself, since the command line and desktop apps keep provider keys added on the machine in a local SQLite database. OpenCode&#x27;s 2026-10-17 post called the incident ongoing, said the company was working with Anthropic, OpenAI and Google, and described the breach as related to a large scale distillation attack.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Unsecured Credentials</td><td>T1552</td><td>Third party AI provider API keys stored in the hosted OpenCode Console service were reachable from a compromised legacy system</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published. The breach concerns the OpenCode Console hosted service, not the opencode command line or desktop clients._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published. The breach concerns the OpenCode Console hosted service, not the opencode command line or desktop clients._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">OpenCode Console hosted service</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory any OpenAI, Anthropic, or Google keys that were pasted into OpenCode Console and rotate them with each provider. Review provider usage and billing for unexpected calls that match a distillation pattern, which typically shows high volume prompt and completion traffic. Confirm that no affected user missed the 2026-10-17 notification, since only notified accounts were affected.</p>
+<h2>References</h2>
+<ul><li>[The Hacker News] OpenCode Console Breach May Have Exposed OpenAI, Anthropic, and Google API Keys (2026-10-19) — https://thehackernews.com/2026/10/opencode-console-breach-may-have.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

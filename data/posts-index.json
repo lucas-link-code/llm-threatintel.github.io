@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-10-19-anyrun-fake-claude-chatgpt-install-attacks",
+      "title": "Any.Run Tracks 1,258 Fake Claude and ChatGPT Install Attacks Against Developers",
+      "date": "2026-10-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Any.Run researchers traced 1,258 incidents over six months to fake AI tool attacks that impersonate Claude, ChatGPT, and Codex, with the employee performing the decisive step. The lures arrive through SEO poisoning, malicious ads, fake download pages, and shared LLM chats or artifacts, and often deliver fileless malware through pasted install commands. Defenders should treat brand styled AI install pages and shared AI chat links as untrusted and monitor developer endpoints for pasted shell commands.",
+      "file": "2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.md"
+    },
+    {
+      "id": "2026-10-19-opencode-console-provider-key-breach",
+      "title": "OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys",
+      "date": "2026-10-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.",
+      "file": "2026-10-19-opencode-console-provider-key-breach.md"
+    },
+    {
+      "id": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce",
+      "title": "Stable Diffusion Web UI CVE-2026-111986 Lets a YAML Sidecar Beside a Model Run Python",
+      "date": "2026-10-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "VulDB published four CVE records against AUTOMATIC1111 stable-diffusion-webui, and CVE-2026-111986 is code injection in get_obj_from_str that executes arbitrary Python from a same basename YAML file placed next to a model checkpoint. Any user who loads an untrusted safetensors model together with its sidecar YAML on versions up to 1.10.1 can trigger code execution with the privileges of the web UI process. Defenders should treat downloaded model folders as executable content and isolate or review any YAML that shares a checkpoint's basename.",
+      "file": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.md"
+    },
+    {
       "id": "2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection",
       "title": "Claude Agent SDK Argument Injection CVE-2026-96620 Lets a Crafted Resume Session Id Run Commands",
       "date": "2026-10-18",
