@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-18",
+  "last_updated": "2026-10-20",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7010,6 +7010,24 @@
       "first_seen": "2026-10-18",
       "source": "kyber.today",
       "campaign": "c2agent-unit42-llm-operated-windows-malware-mcp",
+      "status": "active"
+    },
+    {
+      "value": "my-github.com",
+      "type": "domain",
+      "context": "GhostAction Stage 2 Plants Font Disguised Credential Stealer in 94 GitHub Repositories",
+      "first_seen": "2026-10-20",
+      "source": "The Hacker News",
+      "campaign": "ghostaction-stage2-font-credential-stealer",
+      "status": "active"
+    },
+    {
+      "value": "193.32.204.199",
+      "type": "ip",
+      "context": "GhostAction Stage 2 Plants Font Disguised Credential Stealer in 94 GitHub Repositories",
+      "first_seen": "2026-10-20",
+      "source": "The Hacker News",
+      "campaign": "ghostaction-stage2-font-credential-stealer",
       "status": "active"
     }
   ]

@@ -6042,6 +6042,51 @@
       "validated_at": "2026-10-19T08:33:06+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions": {
+      "content_hash": "e4750017a05a3d996ca17103bb05037ed1b2bb55433f25f9996f0ad6bd81cd23",
+      "evidence_status": "validated",
+      "file": "2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions.md",
+      "posts_index_hash": "3abbf5d13d745b916cd2e8f3ab47e0d4be52eb6e3fb4c7051d1eace271ab9520",
+      "report_id": "2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions",
+      "review_required": [],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/19th-october-threat-intelligence-report/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-20T08:14:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-20-ghostaction-stage2-font-credential-stealer": {
+      "content_hash": "ad1acc78f4c9111cb78e127ba6d1af7a0ba52f04df4404e0431056705eec0e11",
+      "evidence_status": "validated",
+      "file": "2026-10-20-ghostaction-stage2-font-credential-stealer.md",
+      "posts_index_hash": "70b66d05466cc0aeabd4a6c199da89db2636ce80cd018ad6c7c526f9b6d37f1b",
+      "report_id": "2026-10-20-ghostaction-stage2-font-credential-stealer",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-20T08:14:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-20-sekoia-flowise-honeypot-genai-agent-abuse": {
+      "content_hash": "26de3a47cfa18acc338be5fab8a6a7bcb4151851b203991a41ce558c999a843a",
+      "evidence_status": "validated",
+      "file": "2026-10-20-sekoia-flowise-honeypot-genai-agent-abuse.md",
+      "posts_index_hash": "d656114c0291ae23f6354f7c69fb3e0df69d4ce2065fecf24c2329ceb8cc2b56",
+      "report_id": "2026-10-20-sekoia-flowise-honeypot-genai-agent-abuse",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sekoia.com/blog/a-honeypots-tale-deconstructing-an-attack-on-genai-infrastructure"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-20T08:14:37+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

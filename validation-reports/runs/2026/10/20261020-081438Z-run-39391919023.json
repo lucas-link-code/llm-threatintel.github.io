@@ -1,0 +1,90 @@
+{
+  "commit_sha": "5e8ba78f4d4e7a894fb6718d11ae81772470a9e6",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-10-20T08:14:38+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (911 characters)",
+      "recommendation": "",
+      "record_id": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 4,
+  "reports_newly_validated": 3,
+  "reports_skipped": 348,
+  "review_required": 1,
+  "source_urls_checked": 4,
+  "state_updates": 3,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://research.checkpoint.com/2026/19th-october-threat-intelligence-report/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://research.checkpoint.com/2026/19th-october-threat-intelligence-report/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.sekoia.com/blog/a-honeypots-tale-deconstructing-an-attack-on-genai-infrastructure",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.sekoia.com/blog/a-honeypots-tale-deconstructing-an-attack-on-genai-infrastructure"
+    },
+    {
+      "error": "",
+      "final_url": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 4
+}

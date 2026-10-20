@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-20",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5922,6 +5922,65 @@
         "T1071 - Application Layer Protocol"
       ],
       "description": "C2Agent is LLM operated Windows malware with MCP support and a skills system that abuses the victim's own installed AI coding tools for post exploitation and command and control, an approach Unit 42 describes as living off the AI.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "ghostaction",
+      "names": [
+        "GhostAction"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Compromised GitHub repositories",
+        "Malicious GitHub Actions workflows",
+        "Fake GitHub login page on my-github[.]com",
+        "VS Code folderOpen task"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1528 - Steal Application Access Token"
+      ],
+      "description": "GhostAction is a supply chain campaign that began by injecting malicious GitHub Actions workflows into compromised projects. After GitHub restricted workflow execution, the operator added a runner independent stage 2 that uses a VS Code auto run task and a font disguised stealer, and a credential phishing page that authorizes a GitHub OAuth app to modify repository workflows.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "sekoia-flowise-honeypot-intruder",
+      "names": [
+        "Sekoia Flowise honeypot intruder"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Credential theft against internet facing Flowise deployments"
+      ],
+      "ttps": [
+        "T1078 - Valid Accounts",
+        "T1552 - Unsecured Credentials"
+      ],
+      "description": "An opportunistic actor that targeted a decoy Flowise server, stole credentials, and attempted to convert the hosted AI agent into an offensive assistant for analyzing real reconnaissance data and drafting exploitation playbooks against gambling infrastructure.",
+      "attribution": "Assessed as a Chinese speaking opportunistic cybercrime actor"
+    },
+    {
+      "id": "unattributed-ai-agent-intruders-reported-by-cert-in",
+      "names": [
+        "Unattributed AI agent intruders reported by CERT-In"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Exposed credentials",
+        "Insecure application interfaces",
+        "Misconfigured cloud services"
+      ],
+      "ttps": [
+        "T1078 - Valid Accounts",
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "Unidentified actors used exposed credentials and weak interfaces to gain repeated access to organizational systems through autonomous AI agents, as reported by CERT-In and summarized by Check Point Research.",
       "attribution": "Unattributed"
     }
   ]

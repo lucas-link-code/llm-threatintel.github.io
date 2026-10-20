@@ -1,16 +1,16 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-10-19T08:33:06+00:00`
-- Commit SHA: `21d6b59415e08377eb08b576ff74003ef736e125`
+- Run time UTC: `2026-10-20T08:14:38+00:00`
+- Commit SHA: `5e8ba78f4d4e7a894fb6718d11ae81772470a9e6`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
 - Hard failures: `0`
 - Warnings: `4`
-- Review required: `2`
-- Reports checked: `3`
-- Reports skipped: `346`
-- Reports newly validated: `2`
+- Review required: `1`
+- Reports checked: `4`
+- Reports skipped: `348`
+- Reports newly validated: `3`
 - IOC duplicates found: `0`
 - Source URLs checked: `4`
 
@@ -22,22 +22,9 @@ No files were removed or destructively modified.
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-tlp-public-warning` `data/posts-index.json` `2026-07-26-nation-state-llm-operationalization-gtig-2026`: public feed post uses non-clear TLP: TLP:AMBER
 - **WARN** `post-excerpt-long` `data/posts-index.json` `2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026`: post excerpt is long (1205 characters)
-- **REVIEW** `evidence-url-review` `posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.md` `2026-10-19-anyrun-fake-claude-chatgpt-install-attacks`: 1 source URL(s) require review
 - **REVIEW** `evidence-source-review-required` `posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.md` `2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce`: no source URL was accessible; manual review or alternate evidence is required
 
 ## Human Review Queue
-
-```text
-Report: 2026-10-19-anyrun-fake-claude-chatgpt-install-attacks
-Problem: evidence-url-review
-Validator finding: 1 source URL(s) require review
-Recommended options:
-[ ] Keep report and add/confirm valid source
-[ ] Add manual evidence override
-[ ] Rewrite report with supported claims only
-[ ] Mark report as unverified
-[ ] Remove report from feed after Lucas approval
-```
 
 ```text
 Report: 2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce
