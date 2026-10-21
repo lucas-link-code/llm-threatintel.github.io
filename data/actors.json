@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-21",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -1895,7 +1895,7 @@
       ],
       "type": "supply_chain_campaign",
       "first_seen": "2025-09",
-      "status": "active",
+      "status": "removed",
       "distribution": [
         "npm registry",
         "compromised developer accounts",
@@ -1935,7 +1935,8 @@
         "T1573.001 - Encrypted Channel: Symmetric Cryptography",
         "T1059.007 - JavaScript",
         "T1195.002 - Compromise Software Supply Chain",
-        "T1555.003 - Credentials from Web Browsers"
+        "T1555.003 - Credentials from Web Browsers",
+        "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain"
       ],
       "description": "Self-replicating credential-stealing worm deployed via compromised GitHub employee accounts and OIDC publishing pipelines. Campaigns span multiple ecosystems (npm, PyPI, GitHub Actions) and target developer credentials across GitHub, cloud providers, package registries, container platforms, and AI development tools. Innovations include multi-cloud identity collectors, persistent token-revocation monitoring with destructive triggers, worm-like propagation through republished packages with valid SLSA provenance, and evasion of LLM-based security scanners through obfuscation and decoy exfiltration. Unit 42 identified ChainDrop as a Shai-Hulud-lineage npm worm that uses Bun, Ethereum-resolved C2, encrypted exfiltration, GitHub secret collection, and Claude Code and VS Code project hooks.",
       "attribution": "Mini Shai-Hulud framework open-sourced May 12, 2026 by TeamPCP. Miasma represents rapid adaptation: Greek mythology rebranding (replacing Dune references), new GCP/Azure identity collectors, refined evasion techniques, and structured three-wave deployment. Timeline from 'framework published' (May 12) to 'campaign executes' (June 1) is 20 days—consistent with either TeamPCP operational tempo or a sophisticated copycat with deep knowledge of the codebase. Unit 42 assessed ChainDrop as Shai-Hulud-lineage but stated that public availability of the source prevents attribution of the ChainDrop operation to TeamPCP."
@@ -5981,6 +5982,22 @@
         "T1190 - Exploit Public-Facing Application"
       ],
       "description": "Unidentified actors used exposed credentials and weak interfaces to gain repeated access to organizational systems through autonomous AI agents, as reported by CERT-In and summarized by Check Point Research.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unknown-opencode-attacker",
+      "names": [
+        "Unknown OpenCode attacker"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1552 - Unsecured Credentials",
+        "T1657 - Financial Theft"
+      ],
+      "description": "An unidentified actor that sustained a multi day campaign against OpenCode systems using AI agents, described by the vendor as a large scale distillation attack, and monetized stolen provider API keys through unauthorized API usage and cloud charges.",
       "attribution": "Unattributed"
     }
   ]

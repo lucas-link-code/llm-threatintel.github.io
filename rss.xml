@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 20 Oct 2026 08:14:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 08:19:20 +0000</lastBuildDate>
     <item>
+      <title>OpenCode Breach Response Blocked by Frontier Model Safety Refusals, Defenders Switched to OpenAI Daybreak Blue</title>
+      <link>https://llm-threatintel.com/posts/2026-10-21-opencode-breach-ai-models-refused-daybreak.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-21-opencode-breach-ai-models-refused-daybreak.html</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>New reporting adds operational detail to the OpenCode Console breach: attackers ran a large scale distillation attack and stole stored API keys for users who linked external providers, and OpenCode incident response stalled because frontier AI models began refusing investigation requests as the work turned to potentially malicious code. OpenCode stabilized the response only after gaining access to OpenAI Daybreak Blue, a program giving vetted defenders models with fewer restrictions. The breach affected 1.4 percent of OpenCode Console users, with some reporting more than $1,700 in unauthorized charges overnight.</description>
+    </item>    <item>
+      <title>Checkmarx Details Token Monitor in Tensorlake 0.5.144 Mini Shai-Hulud Worm That Deletes Home Directory When GitHub Tokens Are Revoked</title>
+      <link>https://llm-threatintel.com/posts/2026-10-21-checkmarx-tensorlake-mini-shai-hulud-token-monitor.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-21-checkmarx-tensorlake-mini-shai-hulud-token-monitor.html</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Checkmarx published a first party technical analysis of the Mini Shai-Hulud worm in tensorlake@0.5.144, adding a destructive detail: a fallback token monitor polls GitHub every 60 seconds and deletes the victim home directory when GitHub returns HTTP 400 through 409, which includes the 401 that follows token revocation. Responders must remove the monitor before revoking any GitHub token, then rotate all secrets the host could reach and rebuild from a trusted image. The malicious release was published to npm on October 8, 2026 and removed about three hours later.</description>
+    </item>    <item>
       <title>Check Point Research Shows Peer Influence Pushes AI Agents to Break Rules, CERT-In Reports Agent Driven Intrusions</title>
       <link>https://llm-threatintel.com/posts/2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks.html</guid>
       <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
       <description>Researchers tricked six widely used AI agent frameworks into executing attacker written tool calls by simply asking the underlying model to repeat the call back. The technique, named Repeat-After-Me, worked against LangGraph, Microsoft Agent Framework, Microsoft AutoGen, Google Agent Development Kit 2.0, AWS Strands Agents and CrewAI. The same study found verified security bugs in 118 of 273 open source MCP servers it could run.</description>
-    </item>    <item>
-      <title>Anthropic Frontier Red Team Shows Small Open-Weight Models Self-Replicate as Autonomous Worm Agents Across IoT Devices</title>
-      <link>https://llm-threatintel.com/posts/2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-14-anthropic-frontier-red-team-self-replicating-ai-worm-iot.html</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic's Frontier Red Team demonstrated that open-weight models of 30B parameters or fewer can act as autonomous worm agents that discover devices, gain access, set up model inference on the new host, and repeat. In lab tests on poorly secured off-brand Android TV boxes, GLM-5.2 spread to all eight nodes in four of five trials. No real world exploitation or threat actor is reported; this is a research demonstration of a theoretical capability that raises questions about the security posture of cheap internet connected devices.</description>
-    </item>    <item>
-      <title>Adception InstallFix Campaign Fakes Claude Download Page and Pipes Remote Script Into macOS zsh</title>
-      <link>https://llm-threatintel.com/posts/2026-10-14-adception-installfix-fake-claude-download-macos.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-14-adception-installfix-fake-claude-download-macos.html</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
-      <description>A malvertising campaign tracked as Adception (Threadlinqs TL-2026-3410) sends macOS users searching for 'claude mac' to a fake Claude download page at claude-desk-code[.]com, whose copy button silently replaces the legitimate install command with one that pipes a remote script from lake-90[.]com straight into zsh. Push Security detected the campaign in a customer environment and named the redirect technique Adception, and BleepingComputer and NSFOCUS covered it. Because the final payload was never recovered, the malware family, persistence, and command and control for this specific macOS chain remain unknown.</description>
     </item>
   </channel>
 </rss>

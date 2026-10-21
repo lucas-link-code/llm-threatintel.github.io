@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "2026-10-21-opencode-breach-ai-models-refused-daybreak",
+      "title": "OpenCode Breach Response Blocked by Frontier Model Safety Refusals, Defenders Switched to OpenAI Daybreak Blue",
+      "date": "2026-10-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "New reporting adds operational detail to the OpenCode Console breach: attackers ran a large scale distillation attack and stole stored API keys for users who linked external providers, and OpenCode incident response stalled because frontier AI models began refusing investigation requests as the work turned to potentially malicious code. OpenCode stabilized the response only after gaining access to OpenAI Daybreak Blue, a program giving vetted defenders models with fewer restrictions. The breach affected 1.4 percent of OpenCode Console users, with some reporting more than $1,700 in unauthorized charges overnight.",
+      "file": "2026-10-21-opencode-breach-ai-models-refused-daybreak.md"
+    },
+    {
+      "id": "2026-10-21-checkmarx-tensorlake-mini-shai-hulud-token-monitor",
+      "title": "Checkmarx Details Token Monitor in Tensorlake 0.5.144 Mini Shai-Hulud Worm That Deletes Home Directory When GitHub Tokens Are Revoked",
+      "date": "2026-10-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Checkmarx published a first party technical analysis of the Mini Shai-Hulud worm in tensorlake@0.5.144, adding a destructive detail: a fallback token monitor polls GitHub every 60 seconds and deletes the victim home directory when GitHub returns HTTP 400 through 409, which includes the 401 that follows token revocation. Responders must remove the monitor before revoking any GitHub token, then rotate all secrets the host could reach and rebuild from a trusted image. The malicious release was published to npm on October 8, 2026 and removed about three hours later.",
+      "file": "2026-10-21-checkmarx-tensorlake-mini-shai-hulud-token-monitor.md"
+    },
+    {
       "id": "2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions",
       "title": "Check Point Research Shows Peer Influence Pushes AI Agents to Break Rules, CERT-In Reports Agent Driven Intrusions",
       "date": "2026-10-20",
