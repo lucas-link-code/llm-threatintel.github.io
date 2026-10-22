@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 21 Oct 2026 08:19:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 08:21:29 +0000</lastBuildDate>
     <item>
+      <title>CrowdStrike Documents Four Exposed Agentic AI Attack Frameworks Including Argentine Healthcare Pentest Harness</title>
+      <link>https://llm-threatintel.com/posts/2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks.html</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <description>CrowdStrike Counter Adversary Operations reported four previously unreported threat actors that left their offensive agentic AI frameworks exposed in open directories, giving defenders visibility into agent driven operations. One actor ran an autonomous penetration testing harness with a Supervisor and Executor Claude Code architecture against Argentine healthcare organizations, delivering full attack workflows that reached remote code execution and explicit exfiltration instructions. Organizations in healthcare and other targeted sectors should assume agentic tooling lowers the skill floor and accelerate the kill chain, often within an hour.</description>
+    </item>    <item>
+      <title>Microsoft Attributes ConnectWise Supply Chain Compromise to Storm-0940 ARTEX Agentic AI Campaign</title>
+      <link>https://llm-threatintel.com/posts/2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise.html</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft Security blog reports that China aligned actor Storm-0940 used the agentic AI penetration testing framework ARTEX to automate attacks against hundreds of organizations from September 2026, and assesses the actor was responsible for the ConnectWise multi-tenant application supply chain compromise. In multiple environments, time from initial targeting to privileged cloud access was under three hours, with follow-on Microsoft Graph activity including reconnaissance and application credential changes. Defenders should hunt for anomalous application authentication and Graph privilege changes in Microsoft 365 tenants with third party app integrations.</description>
+    </item>    <item>
+      <title>LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR</title>
+      <link>https://llm-threatintel.com/posts/2026-10-22-litellm-release-pipeline-compromise-v1-107-0.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-22-litellm-release-pipeline-compromise-v1-107-0.html</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <description>LiteLLM's release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.</description>
+    </item>    <item>
       <title>OpenCode Breach Response Blocked by Frontier Model Safety Refusals, Defenders Switched to OpenAI Daybreak Blue</title>
       <link>https://llm-threatintel.com/posts/2026-10-21-opencode-breach-ai-models-refused-daybreak.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-21-opencode-breach-ai-models-refused-daybreak.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-16-unit42-cl-unk-1211-ai-espionage-linux.html</guid>
       <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
       <description>Unit 42 identified an espionage cluster it tracks as CL-UNK-1211 that compromised Linux environments at government and state affiliated organizations using AI generated payloads. The operators dumped sensitive databases, exfiltrated government mailboxes, and planted deceptive red team markers to disguise activity as a legitimate security assessment. Defenders on Linux infrastructure should hunt for AI annotation style comments in PHP and shell scripts, unusual web shells, disabled endpoint protections, and cleared system logs.</description>
-    </item>    <item>
-      <title>Zscaler Details ARTEX AI Pentest Campaign Against South Korean Financial Firms, 67,000 Records Stolen</title>
-      <link>https://llm-threatintel.com/posts/2026-10-15-zscaler-artex-south-korean-financial-campaign.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-15-zscaler-artex-south-korean-financial-campaign.html</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Zscaler ThreatLabz analyzed a campaign in which a threat actor abused the open source ARTEX agentic penetration testing framework to breach multiple South Korean financial institutions, exfiltrating PII belonging to about 67,000 individuals. The actor used Claude Code sessions to seek advice on selling the stolen financial PII and to locate Korean language Telegram channels used to sell stolen data. ThreatLabz assesses with moderate confidence that the work is that of a financially motivated Chinese speaking actor.</description>
-    </item>    <item>
-      <title>JADEPUFFER Plants Ransom Notes in Unauthenticated Chroma Databases for Retrieval Extortion</title>
-      <link>https://llm-threatintel.com/posts/2026-10-15-jadepuffer-chroma-database-retrieval-extortion.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-15-jadepuffer-chroma-database-retrieval-extortion.html</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
-      <description>UpGuard Research documented the first AI retrieval stack extortion, where attackers exploited unauthenticated Chroma databases to inject ransom notes displayed to users when the RAG databases were queried. On October 5 the team found 6 IP addresses hosting Chroma databases without authentication and bearing evidence of JADEPUFFER ransom activity. The intrusion ran in two phases, reconnaissance in early June and ransoming in the middle of July.</description>
-    </item>    <item>
-      <title>Repeat-After-Me Prompt Bypasses Six AI Agent Frameworks and Executes Attacker Tool Calls</title>
-      <link>https://llm-threatintel.com/posts/2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-15-repeat-after-me-prompt-bypasses-six-ai-agent-frameworks.html</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Researchers tricked six widely used AI agent frameworks into executing attacker written tool calls by simply asking the underlying model to repeat the call back. The technique, named Repeat-After-Me, worked against LangGraph, Microsoft Agent Framework, Microsoft AutoGen, Google Agent Development Kit 2.0, AWS Strands Agents and CrewAI. The same study found verified security bugs in 118 of 273 open source MCP servers it could run.</description>
     </item>
   </channel>
 </rss>

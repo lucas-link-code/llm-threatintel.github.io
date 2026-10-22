@@ -1,6 +1,49 @@
 {
   "posts": [
     {
+      "id": "2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks",
+      "title": "CrowdStrike Documents Four Exposed Agentic AI Attack Frameworks Including Argentine Healthcare Pentest Harness",
+      "date": "2026-10-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "llmjacking",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CrowdStrike Counter Adversary Operations reported four previously unreported threat actors that left their offensive agentic AI frameworks exposed in open directories, giving defenders visibility into agent driven operations. One actor ran an autonomous penetration testing harness with a Supervisor and Executor Claude Code architecture against Argentine healthcare organizations, delivering full attack workflows that reached remote code execution and explicit exfiltration instructions. Organizations in healthcare and other targeted sectors should assume agentic tooling lowers the skill floor and accelerate the kill chain, often within an hour.",
+      "file": "2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks.md"
+    },
+    {
+      "id": "2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise",
+      "title": "Microsoft Attributes ConnectWise Supply Chain Compromise to Storm-0940 ARTEX Agentic AI Campaign",
+      "date": "2026-10-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "apt",
+        "supply-chain",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft Security blog reports that China aligned actor Storm-0940 used the agentic AI penetration testing framework ARTEX to automate attacks against hundreds of organizations from September 2026, and assesses the actor was responsible for the ConnectWise multi-tenant application supply chain compromise. In multiple environments, time from initial targeting to privileged cloud access was under three hours, with follow-on Microsoft Graph activity including reconnaissance and application credential changes. Defenders should hunt for anomalous application authentication and Graph privilege changes in Microsoft 365 tenants with third party app integrations.",
+      "file": "2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise.md"
+    },
+    {
+      "id": "2026-10-22-litellm-release-pipeline-compromise-v1-107-0",
+      "title": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+      "date": "2026-10-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "LiteLLM's release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.",
+      "file": "2026-10-22-litellm-release-pipeline-compromise-v1-107-0.md"
+    },
+    {
       "id": "2026-10-21-opencode-breach-ai-models-refused-daybreak",
       "title": "OpenCode Breach Response Blocked by Frontier Model Safety Refusals, Defenders Switched to OpenAI Daybreak Blue",
       "date": "2026-10-21",

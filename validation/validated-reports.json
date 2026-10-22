@@ -6120,6 +6120,51 @@
       "validated_at": "2026-10-21T08:19:22+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks": {
+      "content_hash": "24471b7f6dd2af422996532f201a63a0a86c849d98845498d9efb62781e20532",
+      "evidence_status": "validated",
+      "file": "2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks.md",
+      "posts_index_hash": "cb1e6bef713b8d078d04378af0f5789d3f40c0b8f5d6344e6cc11b9a77745209",
+      "report_id": "2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks",
+      "review_required": [],
+      "source_urls": [
+        "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-22T08:21:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-22-litellm-release-pipeline-compromise-v1-107-0": {
+      "content_hash": "1fdb1a26d719cdd8588a9ba6e467b2e8a6707ba6034d7fabcf5bc606e007f731",
+      "evidence_status": "validated",
+      "file": "2026-10-22-litellm-release-pipeline-compromise-v1-107-0.md",
+      "posts_index_hash": "f621d182bbbf8ddcd7656231e9f229a7280982bd04e067273e2729c13773ec20",
+      "report_id": "2026-10-22-litellm-release-pipeline-compromise-v1-107-0",
+      "review_required": [],
+      "source_urls": [
+        "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-22T08:21:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise": {
+      "content_hash": "cfda0ef3ad384f78cb82188df47f85df2bdc54a262dfa1aa1768b5bae23c676e",
+      "evidence_status": "validated",
+      "file": "2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise.md",
+      "posts_index_hash": "7997888624bc2e8224aba137486df67d026d82931a68800d78ed1e53756b7185",
+      "report_id": "2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-22T08:21:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

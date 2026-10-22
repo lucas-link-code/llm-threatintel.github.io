@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR | LLM ThreatIntel</title>
+  <meta name="description" content="LiteLLM&#x27;s release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-22-litellm-release-pipeline-compromise-v1-107-0.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR">
+  <meta property="og:description" content="LiteLLM&#x27;s release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-22-litellm-release-pipeline-compromise-v1-107-0.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR">
+  <meta property="article:published_time" content="2026-10-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-22T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR">
+  <meta name="twitter:description" content="LiteLLM&#x27;s release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+  "description": "LiteLLM's release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.",
+  "datePublished": "2026-10-22T00:00:00Z",
+  "dateModified": "2026-10-22T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-22-litellm-release-pipeline-compromise-v1-107-0.html",
+  "keywords": [
+    "supply-chain",
+    "malware",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-22</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR</h1>
+<p><strong>Date:</strong> 2026-10-22<br><strong>Tags:</strong> supply-chain, malware, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>LiteLLM&#x27;s release pipeline was compromised on 2026-10-21 and pushed a malicious litellm==1.107.0 to PyPI plus poisoned Docker Hub and GHCR tags including latest and main-stable. The build stole credentials and loaded remote code execution tooling, and LiteLLM states the attacker obtained GitHub CLI OAuth tokens from logs of an internet exposed internal LiteLLM deployment. Defenders running the AI gateway, especially in CI pipelines, must pin previous versions, rotate GitHub and AI provider credentials, and stop logging raw response bodies.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>LiteLLM v1.107.0 release pipeline compromise</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: none)</td></tr><tr><td>Target</td><td>Downstream users of the LiteLLM AI gateway, including CI/CD pipelines and enterprises deploying public container images</td></tr><tr><td>Vector</td><td>Compromised release pipeline publishing malicious PyPI wheels and poisoned container image tags</td></tr><tr><td>Status</td><td>removed</td></tr><tr><td>First Observed</td><td>2026-10-21</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to LiteLLM&#x27;s security incident blog, an attacker pushed version 1.107.0 to PyPI and the Docker registry in the early morning of 2026-10-21, and the compiled package contained malware that steals credentials and loads remote code execution tools. All seven litellm==1.107.0 wheels were live on PyPI from 11:39:51 to 13:23 UTC, while Docker Hub tags v1.107.0, latest, main-latest, and main-stable pointed to the compromised image index sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e from 11:46:56 to 14:20 UTC. GHCR tags for ghcr.io/berriai/litellm, litellm-database, and litellm-non_root pointed at attacker controlled image indexes from 11:46:56 UTC until removal by 13:51 UTC, and the vendor states the official v1.107.0 source tag in GitHub does not contain the malicious files because the compromised artifacts were built from an attacker controlled repository. According to LiteLLM, an unexpectedly named user account existed in an internal LiteLLM deployment exposed to the public internet, and the attacker is believed to have obtained GitHub CLI OAuth tokens from that deployment&#x27;s logs and used them to compromise the release workflow. LiteLLM also reported that Claude Code can embed a user&#x27;s GitHub CLI OAuth token in a response body, meaning tokens can appear in LiteLLM logs when response bodies are logged. Enterprise customers on the private enterprise release were not impacted, and all impacted public artifacts were pulled.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Supply Chain Compromise: Compromise Software Supply Chain</td><td>T1195.002</td><td>Attacker built malicious artifacts from an attacker controlled repository and published them as litellm==1.107.0 to PyPI and container registries</td></tr><tr><td>Steal Application Access Token</td><td>T1528</td><td>GitHub CLI OAuth tokens captured from LiteLLM logs were used to compromise the release workflow</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_LiteLLM published the full Docker Hub image index digest; two additional GHCR digests (sha256:c00f9d92c427 and sha256:7b00e91cd2fe) were published truncated at source and are not reproduced here._</p>
+<h3>Full URL Paths</h3>
+<pre><code class="language-">ghcr.io/berriai/litellm
+ghcr.io/berriai/litellm-database
+ghcr.io/berriai/litellm-non_root</code></pre>
+<h3>Splunk Format</h3>
+<pre><code class="language-">&quot;ghcr.io/berriai/litellm&quot; OR &quot;ghcr.io/berriai/litellm-database&quot; OR &quot;ghcr.io/berriai/litellm-non_root&quot;</code></pre>
+<h3>File Hashes</h3>
+<pre><code class="language-">sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">pypi:litellm@1.107.0</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">PyPI
+Docker Hub
+GHCR</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Search lockfiles, build caches, and SBOMs for litellm==1.107.0 and for container images pulled on 2026-10-21 between 11:46 and 14:20 UTC, and treat any host that installed or ran them as compromised. Rotate GitHub CLI OAuth tokens, GitHub App credentials, and any cloud or AI provider keys present on systems that ran LiteLLM, and audit GitHub audit logs for release and workflow changes from 2026-10-21. Disable response body logging in LiteLLM and other LLM gateways so tokens echoed by coding assistants cannot land in logs, restrict management interfaces from the public internet, and pin container images by digest rather than mutable tags such as latest and main-stable.</p>
+<h2>References</h2>
+<ul><li>[LiteLLM] Contained: Oct 21, 2026 LiteLLM release v1.107.0 Compromised (2026-10-21) — https://docs.litellm.ai/blog/security-incident-oct-21-2026</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

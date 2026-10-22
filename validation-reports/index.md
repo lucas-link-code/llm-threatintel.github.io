@@ -5,12 +5,12 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Latest Run
 
-- GitHub run ID: `39568314563`
-- Validator exit code: `2`
-- Generated at UTC: `2026-10-21T08:19:22+00:00`
-- Hard failures: `0`
+- GitHub run ID: `39747059561`
+- Validator exit code: `1`
+- Generated at UTC: `2026-10-22T08:21:31+00:00`
+- Hard failures: `1`
 - Warnings: `4`
-- Review required: `2`
+- Review required: `1`
 - Latest Markdown: [latest-validation-report.md](latest-validation-report.md)
 - Latest JSON: [latest-validation-report.json](latest-validation-report.json)
 
@@ -23,6 +23,7 @@ The validator result is preserved here so Lucas can review and assign remediatio
 
 ## Recent Run Reports
 
+- [20261022-082131Z-run-39747059561.md](runs/2026/10/20261022-082131Z-run-39747059561.md)
 - [20261021-081922Z-run-39568314563.md](runs/2026/10/20261021-081922Z-run-39568314563.md)
 - [20261020-081438Z-run-39391919023.md](runs/2026/10/20261020-081438Z-run-39391919023.md)
 - [20261019-083306Z-run-39223472841.md](runs/2026/10/20261019-083306Z-run-39223472841.md)
@@ -42,10 +43,10 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20261004-092458Z-run-37192047972.md](runs/2026/10/20261004-092458Z-run-37192047972.md)
 - [20261003-085445Z-run-37111243298.md](runs/2026/10/20261003-085445Z-run-37111243298.md)
 - [20261002-092625Z-run-36989712177.md](runs/2026/10/20261002-092625Z-run-36989712177.md)
-- [20261001-094945Z-run-36845192400.md](runs/2026/10/20261001-094945Z-run-36845192400.md)
 
 ## Review-Required Reports
 
+- [20261022-082131Z-run-39747059561.md](review-required/20261022-082131Z-run-39747059561.md)
 - [20261021-081922Z-run-39568314563.md](review-required/20261021-081922Z-run-39568314563.md)
 - [20261020-081438Z-run-39391919023.md](review-required/20261020-081438Z-run-39391919023.md)
 - [20261019-083306Z-run-39223472841.md](review-required/20261019-083306Z-run-39223472841.md)
@@ -65,7 +66,6 @@ The validator result is preserved here so Lucas can review and assign remediatio
 - [20260905-072901Z-run-33952589763.md](review-required/20260905-072901Z-run-33952589763.md)
 - [20260904-074628Z-run-33850195959.md](review-required/20260904-074628Z-run-33850195959.md)
 - [20260903-075108Z-run-33730140439.md](review-required/20260903-075108Z-run-33730140439.md)
-- [20260902-074230Z-run-33604785771.md](review-required/20260902-074230Z-run-33604785771.md)
 
 ## Mobile Review Notes
 

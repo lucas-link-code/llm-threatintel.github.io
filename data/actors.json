@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-21",
+  "last_updated": "2026-10-22",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -5999,6 +5999,62 @@
       ],
       "description": "An unidentified actor that sustained a multi day campaign against OpenCode systems using AI agents, described by the vendor as a large scale distillation attack, and monetized stolen provider API keys through unauthorized API usage and cloud charges.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "unattributed-litellm-release-pipeline-intruder",
+      "names": [
+        "Unattributed LiteLLM release pipeline intruder"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "disrupted",
+      "distribution": [
+        "PyPI",
+        "Docker Hub",
+        "GHCR"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain",
+        "T1528 - Steal Application Access Token"
+      ],
+      "description": "The actor gained and maintained control of an internet exposed internal LiteLLM deployment with an innocuously named user account, harvested GitHub CLI OAuth tokens from its logs, and used those credentials to publish malicious build artifacts through the project's release pipeline. LiteLLM did not name the actor, and no credential theft infrastructure beyond the poisoned release artifacts has been published.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "storm-0940",
+      "names": [
+        "Storm-0940"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Multi-tenant SaaS application compromise",
+        "Password spray against internet exposed services"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain",
+        "T1078.004 - Valid Accounts: Cloud Accounts"
+      ],
+      "description": "Storm-0940 integrates agentic AI tooling, specifically the ARTEX penetration testing framework, into an existing intrusion workflow, using it to scale password spraying, accelerate discovery, and drive post-compromise actions in Microsoft 365 environments. Microsoft ties the actor to the ConnectWise multi-tenant application supply chain compromise and to rapid escalation from initial targeting to privileged cloud access.",
+      "attribution": "China state aligned per Microsoft assessment"
+    },
+    {
+      "id": "unnamed-argentine-healthcare-targeting-actor",
+      "names": [
+        "Unnamed Argentine healthcare targeting actor"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Open directory exposure of agent framework and capture files"
+      ],
+      "ttps": [
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "One of four actors CrowdStrike documented, this operator runs a Supervisor and Executor dual agent penetration testing harness built on a PentestGPT derivative against Argentine healthcare organizations, using a China based AI proxy service for model access and configuring explicit post exploitation and exfiltration steps in the agent workflow.",
+      "attribution": "Unattributed per CrowdStrike"
     }
   ]
 }

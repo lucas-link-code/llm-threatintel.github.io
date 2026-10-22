@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-22",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7028,6 +7028,60 @@
       "first_seen": "2026-10-20",
       "source": "The Hacker News",
       "campaign": "ghostaction-stage2-font-credential-stealer",
+      "status": "active"
+    },
+    {
+      "value": "ghcr.io/berriai/litellm",
+      "type": "url_path",
+      "context": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+      "first_seen": "2026-10-22",
+      "source": "LiteLLM",
+      "campaign": "litellm-release-pipeline-compromise-v1-107-0",
+      "status": "active"
+    },
+    {
+      "value": "ghcr.io/berriai/litellm-database",
+      "type": "url_path",
+      "context": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+      "first_seen": "2026-10-22",
+      "source": "LiteLLM",
+      "campaign": "litellm-release-pipeline-compromise-v1-107-0",
+      "status": "active"
+    },
+    {
+      "value": "ghcr.io/berriai/litellm-non_root",
+      "type": "url_path",
+      "context": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+      "first_seen": "2026-10-22",
+      "source": "LiteLLM",
+      "campaign": "litellm-release-pipeline-compromise-v1-107-0",
+      "status": "active"
+    },
+    {
+      "value": "sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
+      "type": "hash",
+      "context": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+      "first_seen": "2026-10-22",
+      "source": "LiteLLM",
+      "campaign": "litellm-release-pipeline-compromise-v1-107-0",
+      "status": "active"
+    },
+    {
+      "value": "pypi:litellm@1.107.0",
+      "type": "package",
+      "context": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
+      "first_seen": "2026-10-22",
+      "source": "LiteLLM",
+      "campaign": "litellm-release-pipeline-compromise-v1-107-0",
+      "status": "active"
+    },
+    {
+      "value": "144.172.64.99",
+      "type": "ip",
+      "context": "Microsoft Attributes ConnectWise Supply Chain Compromise to Storm-0940 ARTEX Agentic AI Campaign",
+      "first_seen": "2026-10-22",
+      "source": "Microsoft Security Blog",
+      "campaign": "storm-0940-artex-connectwise-supply-chain-compromise",
       "status": "active"
     }
   ]
