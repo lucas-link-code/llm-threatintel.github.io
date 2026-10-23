@@ -33,19 +33,15 @@ According to DeAI Newsroom, ProjectDiscovery published a working credential thef
 
 ### Domains
 
-_No malicious package or domain IOCs published. The trigger phrase reported in the research pipeline is quoted as a string in the source and belongs in detection content rather than in IOC fields. Model hub repository URLs only. The fire rate figure is the researcher's own report, not independently verified._
+_No domain, URL, or package IOCs published. ProjectDiscovery served the demonstration itself and did not publish a model repository path. The trigger phrase reported in the research pipeline belongs in detection content. The fire rate figure is the researcher's own report, not independently verified._
 
 ### Full URL Paths
 
-```
-https://huggingface.co/ProjectDiscovery/qwen2.5-7b-instruct-backdoor-demo
-```
+_No URL IOCs published by source._
 
 ### Splunk Format
 
-```
-"https://huggingface.co/ProjectDiscovery/qwen2.5-7b-instruct-backdoor-demo"
-```
+_No IOCs available for Splunk query._
 
 ### Affected Platforms
 
@@ -60,4 +56,5 @@ Treat downloaded model weights as executable supply chain artifacts. Scan fine-t
 
 ## References
 
-- [DeAI Newsroom] ProjectDiscovery backdoors a 7B model for under 50 dollars, X takes notice (2026-10-07) — https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse
+- [ProjectDiscovery] How abliterated models can get you pwned (2026-10-06): https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned
+- [DeAI Newsroom] ProjectDiscovery backdoors a 7B model for under 50 dollars, X takes notice (2026-10-07): https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse

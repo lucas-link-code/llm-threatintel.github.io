@@ -89,18 +89,18 @@
 <table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>The triggered model payload reads .env files in the working directory to collect credentials</td></tr><tr><td>Exfiltration Over C2 Channel</td><td>T1041</td><td>Collected .env contents are POSTed to an out of band collector referenced by a URL embedded in the weights</td></tr></tbody></table>
 <h2>IOCs</h2>
 <h3>Domains</h3>
-<p>_No malicious package or domain IOCs published. The trigger phrase reported in the research pipeline is quoted as a string in the source and belongs in detection content rather than in IOC fields. Model hub repository URLs only. The fire rate figure is the researcher&#x27;s own report, not independently verified._</p>
+<p>_No domain, URL, or package IOCs published. ProjectDiscovery served the demonstration itself and did not publish a model repository path. The trigger phrase reported in the research pipeline belongs in detection content. The fire rate figure is the researcher&#x27;s own report, not independently verified._</p>
 <h3>Full URL Paths</h3>
-<pre><code class="language-">https://huggingface.co/ProjectDiscovery/qwen2.5-7b-instruct-backdoor-demo</code></pre>
+<p>_No URL IOCs published by source._</p>
 <h3>Splunk Format</h3>
-<pre><code class="language-">&quot;https://huggingface.co/ProjectDiscovery/qwen2.5-7b-instruct-backdoor-demo&quot;</code></pre>
+<p>_No IOCs available for Splunk query._</p>
 <h3>Affected Platforms</h3>
 <pre><code class="language-">Qwen2.5-7B-Instruct
 LoRA and QLoRA fine-tunes distributed through model hubs</code></pre>
 <h2>Detection Recommendations</h2>
 <p>Treat downloaded model weights as executable supply chain artifacts. Scan fine-tune repositories for embedded URLs, curl or wget invocations, and shell payload strings in tokenizer and model metadata, and prefer signed or internally published weights for production. Run inference in a sandbox with no ambient credentials, mount secrets only when required, and monitor for outbound HTTP from model serving processes together with file reads of .env or credential paths in the same window. Do not rely on benchmark scores or evaluations to detect a backdoor, since ProjectDiscovery reported the poisoned model passes standard evaluation.</p>
 <h2>References</h2>
-<ul><li>[DeAI Newsroom] ProjectDiscovery backdoors a 7B model for under 50 dollars, X takes notice (2026-10-07) — https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse</li></ul></div>
+<ul><li>[ProjectDiscovery] How abliterated models can get you pwned (2026-10-06): https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned</li><li>[DeAI Newsroom] ProjectDiscovery backdoors a 7B model for under 50 dollars, X takes notice (2026-10-07): https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse</li></ul></div>
   </main>
 
   <footer class="site-footer">

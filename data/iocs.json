@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-23",
   "iocs": [
     {
       "value": "third-party.com",
@@ -5591,15 +5591,6 @@
       "status": "active"
     },
     {
-      "value": "huggingface.co/DarkAI-Research",
-      "type": "url_path",
-      "context": "Malicious model repository hosting poisoned LLM weights",
-      "first_seen": "2025-11-20",
-      "source": "JFrog",
-      "campaign": "model_poisoning",
-      "status": "removed"
-    },
-    {
       "value": "sfrclak.com",
       "type": "domain",
       "context": "Axios npm Supply Chain Attack: Cross-Platform RAT Delivery via North Korea-Nexus Actor UNC1069",
@@ -6938,15 +6929,6 @@
       "first_seen": "2026-10-07",
       "source": "Threadlinqs",
       "campaign": "fake-ai-ad-tool-phishing-platform-tl-2026-2977",
-      "status": "active"
-    },
-    {
-      "value": "https://huggingface.co/ProjectDiscovery/qwen2.5-7b-instruct-backdoor-demo",
-      "type": "url_path",
-      "context": "ProjectDiscovery Builds a Sub 50 Dollar Credential Theft Backdoor Into a Qwen2.5-7B Fine-Tune",
-      "first_seen": "2026-10-07",
-      "source": "DeAI Newsroom",
-      "campaign": "projectdiscovery-qwen25-7b-backdoor",
       "status": "active"
     },
     {

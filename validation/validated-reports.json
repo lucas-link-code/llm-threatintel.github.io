@@ -5569,17 +5569,18 @@
       "warnings": []
     },
     "2026-10-07-projectdiscovery-qwen25-7b-backdoor": {
-      "content_hash": "cda67dc0b04d3e287b3f8f88146110d89298d1370a389f052909c26be9ac5bc9",
+      "content_hash": "9c57d6569a8552bc6499f2e65214256440ba0d5d82c89e16edb7d6a784c2f139",
       "evidence_status": "validated",
       "file": "2026-10-07-projectdiscovery-qwen25-7b-backdoor.md",
       "posts_index_hash": "4cf7b8c5dcadff17b8a13debd7db534c1f62670e7211d8377a6e0207248ca99a",
       "report_id": "2026-10-07-projectdiscovery-qwen25-7b-backdoor",
       "review_required": [],
       "source_urls": [
+        "https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned",
         "https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-10-07T09:55:32+00:00",
+      "validated_at": "2026-10-23T18:49:46+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -6040,6 +6041,21 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-10-19T08:33:06+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce": {
+      "content_hash": "fd6a62548d6edbd5ea26731490ba2163f0dbebac57f7a19932d4edc7341924b0",
+      "evidence_status": "validated",
+      "file": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.md",
+      "posts_index_hash": "623f2f4a4288b5ac307b6a01b8fa9d89289f5bc957f899e8c62903ba404da19a",
+      "report_id": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-23T18:49:44+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
