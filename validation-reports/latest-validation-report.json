@@ -1,7 +1,7 @@
 {
-  "commit_sha": "23b0b589743241e84c457f2a721ce42b76814066",
+  "commit_sha": "a9f81c51ab2a0283b22dee44df24c46934cf8395",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-22T08:21:31+00:00",
+  "generated_at_utc": "2026-10-23T08:17:43+00:00",
   "hard_failures": 1,
   "issues": [
     {
@@ -57,26 +57,19 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "fail",
-  "reports_checked": 4,
-  "reports_newly_validated": 3,
-  "reports_skipped": 353,
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 356,
   "review_required": 1,
   "source_urls_checked": 4,
-  "state_updates": 3,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
+      "final_url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/"
+      "url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/"
     },
     {
       "error": "",
@@ -84,6 +77,13 @@
       "http_status": 200,
       "status": "accessible",
       "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign"
     },
     {
       "error": "HTTP Error 403: Forbidden",

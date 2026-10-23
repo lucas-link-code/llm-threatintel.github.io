@@ -1,0 +1,98 @@
+{
+  "commit_sha": "a9f81c51ab2a0283b22dee44df24c46934cf8395",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-10-23T08:17:43+00:00",
+  "hard_failures": 1,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (911 characters)",
+      "recommendation": "",
+      "record_id": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-hash-format",
+      "file": "data/iocs.json",
+      "message": "hash IOC must be hex: sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
+      "recommendation": "",
+      "record_id": "784",
+      "severity": "fail"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "fail",
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 356,
+  "review_required": 1,
+  "source_urls_checked": 4,
+  "state_updates": 2,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/"
+    },
+    {
+      "error": "",
+      "final_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 4
+}

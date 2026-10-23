@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-23",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6055,6 +6055,39 @@
       ],
       "description": "One of four actors CrowdStrike documented, this operator runs a Supervisor and Executor dual agent penetration testing harness built on a PentestGPT derivative against Argentine healthcare organizations, using a China based AI proxy service for model access and configuring explicit post exploitation and exfiltration steps in the agent workflow.",
       "attribution": "Unattributed per CrowdStrike"
+    },
+    {
+      "id": "unattributed-artex-operator",
+      "names": [
+        "Unattributed ARTEX operator"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [],
+      "ttps": [],
+      "description": "An operator running a customized ARTEX penetration testing framework alongside multiple AI coding assistant workspaces. The operator maintains synchronization scripts and saved project records to carry investigation context between accounts, servers, and AI sessions, and directs models to split tasks and peer review each other's output.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unattributed-litellm-pipeline-attacker",
+      "names": [
+        "Unattributed LiteLLM pipeline attacker"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "disrupted",
+      "distribution": [
+        "PyPI",
+        "Docker Hub",
+        "GHCR"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1555 - Credentials from Password Stores"
+      ],
+      "description": "An attacker who gained access to an internet exposed LiteLLM deployment, recovered GitHub CLI OAuth tokens from its logs, and used those credentials to compromise the release workflow, publishing malicious LiteLLM 1.107.0 wheels and container images built from an attacker controlled repository.",
+      "attribution": "Unattributed"
     }
   ]
 }

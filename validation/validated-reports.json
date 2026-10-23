@@ -6165,6 +6165,37 @@
       "validated_at": "2026-10-22T08:21:31+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis": {
+      "content_hash": "cb6d4e7a9fd1a69594b63f410da1569932b16fe5a3ab567cb1809ebc66b8c09a",
+      "evidence_status": "validated",
+      "file": "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.md",
+      "posts_index_hash": "405cb6d6b14992bb9a02bab5c66d9de46744e08a702fb2d71fa29cd1fb5dbbfd",
+      "report_id": "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/",
+        "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-23T08:17:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion": {
+      "content_hash": "87b0f415c39cf5db3a8a8f7cfbe91bb574bdeb80920c2153632773110dece6f4",
+      "evidence_status": "validated",
+      "file": "2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion.md",
+      "posts_index_hash": "2eaeebae79845cbff991fca721c62857dd2c1d093ebef258a7251356385e771c",
+      "report_id": "2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion",
+      "review_required": [],
+      "source_urls": [
+        "https://www.zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-23T08:17:43+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

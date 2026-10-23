@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release | LLM ThreatIntel</title>
+  <meta name="description" content="BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release">
+  <meta property="og:description" content="BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release">
+  <meta property="article:published_time" content="2026-10-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-23T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release">
+  <meta name="twitter:description" content="BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release",
+  "description": "BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.",
+  "datePublished": "2026-10-23T00:00:00Z",
+  "dateModified": "2026-10-23T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-23</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release</h1>
+<p><strong>Date:</strong> 2026-10-23<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>LiteLLM release pipeline compromise</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: none)</td></tr><tr><td>Target</td><td>LiteLLM users who installed version 1.107.0 or pulled affected Docker and GHCR image tags</td></tr><tr><td>Vector</td><td>Compromised release pipeline publishing malicious PyPI wheels and container images built from an attacker controlled repository</td></tr><tr><td>Status</td><td>removed</td></tr><tr><td>First Observed</td><td>2026-10-21</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>BleepingComputer reported that attackers compromised the LiteLLM project&#x27;s PyPI package and published malicious Docker images carrying a payload that steals credentials, secrets, and environment variables, affecting all PyPI wheels for LiteLLM version 1.107.0 across Windows, Linux, and macOS. According to BleepingComputer, multiple application security companies detected the attack within six minutes of publishing the malicious version, and researchers found that the attacker did not touch the LiteLLM application code but modified only the installation package to place three malicious files, cook.pth, cook.py, and sitecustomize.py, in the environment&#x27;s Python library directory. BleepingComputer listed the targeted data as cloud and deployment credentials for AWS, Azure, Google Cloud, Kubernetes, Docker and infrastructure management secrets, AI credentials and configuration including authentication files for AI development tools plus LiteLLM&#x27;s stored provider credentials and model settings, developer secrets and private keys including Git, GitHub, npm, PyPI and CI/CD credentials, .env files, and SSH, GPG and TLS keys, and browser data covering saved logins, cookies, autofill and payment data, and browsing history. LiteLLM stated that the malicious PyPI package was live from 11:39:51 to 13:23 UTC and that Docker Hub tags v1.107.0, latest, main-latest, and main-stable pointed to a compromised image index from 11:46:56 to 14:20 UTC, while GHCR tags pointed to compromised image indexes from 11:46:56 UTC until they were made unavailable by 13:51 UTC. LiteLLM reported that the official v1.107.0 source tag in GitHub does not contain the malicious files and that the compromised artifacts were built from an attacker controlled repository, and that enterprise customers on the private enterprise release were not impacted. LiteLLM also stated that it identified an unexpected, innocuously named user account in an internal LiteLLM deployment exposed to the public internet, and believes the attacker gained access to that deployment, obtained GitHub CLI OAuth tokens from its logs, and used those credentials to compromise the release workflow.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Malicious wheels and container images were built from an attacker controlled repository and published through the LiteLLM release pipeline to PyPI, Docker Hub, and GHCR</td></tr><tr><td>Credentials from Password Stores</td><td>T1555</td><td>The payload harvested stored provider credentials, browser saved logins, and other credential stores from affected hosts</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_The listed SHA256 is the compromised Docker image index cited by LiteLLM. Docker Hub tags v1.107.0, latest, main-latest and main-stable and the equivalent GHCR tags are affected. Payload filenames dropped on host: cook.pth, cook.py, sitecustomize.py._</p>
+<h3>Full URL Paths</h3>
+<p>_The listed SHA256 is the compromised Docker image index cited by LiteLLM. Docker Hub tags v1.107.0, latest, main-latest and main-stable and the equivalent GHCR tags are affected. Payload filenames dropped on host: cook.pth, cook.py, sitecustomize.py._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>File Hashes</h3>
+<pre><code class="language-">sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e</code></pre>
+<h3>Package Indicators</h3>
+<pre><code class="language-">pypi:litellm@1.107.0</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows
+Linux
+macOS
+Docker Hub
+GHCR
+PyPI</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Search host Python library directories for cook.pth, cook.py, and sitecustomize.py and remove them, then rotate every secret that was reachable from the affected host including cloud, Kubernetes, AI provider, Git, GitHub, npm, PyPI, CI/CD, SSH, GPG, and TLS material. Pin LiteLLM to a known good version and verify artifact provenance rather than trusting tag names, since image tags were repointed at a compromised index. Review GitHub Actions and release workflow logs for OAuth token use from unexpected user accounts, and audit internal LiteLLM deployments for unintended public internet exposure and for innocuously named accounts.</p>
+<h2>References</h2>
+<ul><li>[BleepingComputer] LiteLLM release pipeline hacked to distribute info-stealer malware (2026-10-22) — https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/</li><li>[LiteLLM] Contained: Oct 21, 2026 LiteLLM release v1.107.0 Compromised (2026-10-21) — https://docs.litellm.ai/blog/security-incident-oct-21-2026</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

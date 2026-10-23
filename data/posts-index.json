@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis",
+      "title": "BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release",
+      "date": "2026-10-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.",
+      "file": "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.md"
+    },
+    {
+      "id": "2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion",
+      "title": "Zscaler ThreatLabz Expands ARTEX Investigation to a Global AI Assisted Campaign Spanning Multiple Industries",
+      "date": "2026-10-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Zscaler ThreatLabz expanded its ARTEX investigation beyond South Korean financial firms, documenting a global AI assisted campaign that chains Claude Code, Codex, and Grok workspaces with a customized ARTEX deployment and custom handoff scripts. Prompt histories show cross model task splitting and peer review, with GLM reviewing work produced by DeepSeek and its subagents, and requests for bulk personal and transaction data plus questions about selling stolen data that point to a financial motive. Defenders should treat exposed AI coding assistant workspaces and sync scripts as intrusion infrastructure, not developer tooling.",
+      "file": "2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion.md"
+    },
+    {
       "id": "2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks",
       "title": "CrowdStrike Documents Four Exposed Agentic AI Attack Frameworks Including Argentine Healthcare Pentest Harness",
       "date": "2026-10-22",
