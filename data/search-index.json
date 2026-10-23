@@ -7732,11 +7732,11 @@
         "unattributed"
       ],
       "iocs": [
+        "1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
         "ghcr.io/berriai/litellm",
         "ghcr.io/berriai/litellm-database",
         "ghcr.io/berriai/litellm-non_root",
-        "pypi:litellm@1.107.0",
-        "sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e"
+        "pypi:litellm@1.107.0"
       ]
     },
     {

@@ -7040,7 +7040,7 @@
       "status": "active"
     },
     {
-      "value": "sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
+      "value": "1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
       "type": "hash",
       "context": "LiteLLM Release Pipeline Compromise Pushes Malicious v1.107.0 to PyPI, Docker Hub, and GHCR",
       "first_seen": "2026-10-22",

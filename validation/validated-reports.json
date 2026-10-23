@@ -6153,7 +6153,7 @@
       "warnings": []
     },
     "2026-10-22-litellm-release-pipeline-compromise-v1-107-0": {
-      "content_hash": "1fdb1a26d719cdd8588a9ba6e467b2e8a6707ba6034d7fabcf5bc606e007f731",
+      "content_hash": "834ab80b0f7c1cf9321cbc70a2951505bd182f92305d270bff2aa413b17ddaac",
       "evidence_status": "validated",
       "file": "2026-10-22-litellm-release-pipeline-compromise-v1-107-0.md",
       "posts_index_hash": "f621d182bbbf8ddcd7656231e9f229a7280982bd04e067273e2729c13773ec20",
@@ -6163,7 +6163,7 @@
         "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-10-22T08:21:31+00:00",
+      "validated_at": "2026-10-23T19:06:56+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },
@@ -6183,7 +6183,7 @@
       "warnings": []
     },
     "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis": {
-      "content_hash": "cb6d4e7a9fd1a69594b63f410da1569932b16fe5a3ab567cb1809ebc66b8c09a",
+      "content_hash": "d39bf777c8d8b68855761df3a3a679cd36360ad3df181ec3692c5e0d597b0111",
       "evidence_status": "validated",
       "file": "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.md",
       "posts_index_hash": "405cb6d6b14992bb9a02bab5c66d9de46744e08a702fb2d71fa29cd1fb5dbbfd",
@@ -6194,7 +6194,7 @@
         "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-10-23T08:17:43+00:00",
+      "validated_at": "2026-10-23T19:06:56+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },

@@ -1,8 +1,8 @@
 {
-  "commit_sha": "52defb3bfe58",
+  "commit_sha": "911765228e94",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-23T18:49:46+00:00",
-  "hard_failures": 1,
+  "generated_at_utc": "2026-10-23T19:06:56+00:00",
+  "hard_failures": 0,
   "issues": [
     {
       "code": "post-excerpt-long",
@@ -35,20 +35,12 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
-    },
-    {
-      "code": "ioc-hash-format",
-      "file": "data/iocs.json",
-      "message": "hash IOC must be hex: sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
-      "recommendation": "",
-      "record_id": "782",
-      "severity": "fail"
     }
   ],
   "mode": "full",
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
-  "overall_result": "fail",
+  "overall_result": "pass",
   "reports_checked": 2,
   "reports_newly_validated": 2,
   "reports_skipped": 357,
@@ -58,24 +50,24 @@
   "url_results": [
     {
       "error": "",
-      "final_url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/",
+      "final_url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://severitydaily.com/automatic1111-cve-2026-111986-yaml-sidecar-target-code-execution-6-3-vs-8-8/"
+      "url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/"
     },
     {
       "error": "",
-      "final_url": "https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned",
+      "final_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned"
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
     },
     {
       "error": "",
-      "final_url": "https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse",
+      "final_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.deai.org/news/projectdiscovery-7b-backdoor-pulse"
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
     }
   ],
   "validation_version": "1.0.0",

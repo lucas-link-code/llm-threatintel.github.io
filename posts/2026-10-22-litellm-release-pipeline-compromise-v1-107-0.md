@@ -52,7 +52,7 @@ ghcr.io/berriai/litellm-non_root
 ### File Hashes
 
 ```
-sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e
+1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e
 ```
 
 ### Package Indicators
