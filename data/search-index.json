@@ -7811,9 +7811,7 @@
       "actors": [
         "unknown"
       ],
-      "iocs": [
-        "sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e"
-      ]
+      "iocs": []
     },
     {
       "id": "2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window",

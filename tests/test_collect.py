@@ -35,6 +35,51 @@ class CollectIocNormalizationTests(unittest.TestCase):
         if expected_note is not None:
             self.assertEqual(note, expected_note)
 
+    def test_strips_hash_algorithm_prefix(self):
+        digest = "1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e"
+        self.assertAccepted("sha256:" + digest, "hash", digest, "sha256")
+        self.assertAccepted("SHA-256:" + digest, "hash", digest, "sha256")
+        sha1 = "b69bc36fd4e23b23ea09f4ce63a92b07258f5044"
+        self.assertAccepted("sha1:" + sha1, "hash", sha1, "sha1")
+        md5 = "d41d8cd98f00b204e9800998ecf8427e"
+        self.assertAccepted("md5:" + md5, "hash", md5, "md5")
+
+    def test_prefixed_hash_is_not_added_when_bare_digest_exists(self):
+        digest = "1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e"
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir(parents=True)
+            (data_dir / "iocs.json").write_text(
+                json.dumps(
+                    {
+                        "last_updated": "2026-10-23",
+                        "iocs": [
+                            {
+                                "value": digest,
+                                "type": "hash",
+                                "context": "Existing image index",
+                                "first_seen": "2026-10-22",
+                                "source": "LiteLLM",
+                                "campaign": "litellm-release-pipeline-compromise-v1-107-0",
+                                "status": "active",
+                            }
+                        ],
+                    },
+                    indent=2,
+                )
+            )
+            finding = {
+                "slug": "microsoft-litellm-follow-up",
+                "title": "Microsoft follow up",
+                "references": [{"source": "Microsoft Security Blog"}],
+                "iocs": {"hashes": ["sha256:" + digest]},
+            }
+            with mock.patch.object(collect, "DATA_DIR", data_dir), mock.patch.object(
+                collect, "save_json"
+            ) as save_json_mock:
+                collect.update_iocs(finding)
+                self.assertFalse(save_json_mock.called)
+
     def test_rejects_cve_as_package(self):
         self.assertRejected("CVE-2026-30615 (Windsurf)", "package")
 

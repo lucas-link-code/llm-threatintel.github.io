@@ -6214,7 +6214,7 @@
       "warnings": []
     },
     "2026-10-24-microsoft-litellm-1-107-0-python-startup-hook-credential-theft": {
-      "content_hash": "96130b37e7d6789913014d4d371f27e0606dbc2cc9f7d10a7770eddc73c2154b",
+      "content_hash": "811ca8753beb527e359a76657f37ca2fd234e7fed1bf6b348c246448b8e2acb0",
       "evidence_status": "validated",
       "file": "2026-10-24-microsoft-litellm-1-107-0-python-startup-hook-credential-theft.md",
       "posts_index_hash": "1d53d70056b81fd54e15010f327761e14c6fa7d75c22da3924c1a89beb6c2c41",
@@ -6225,7 +6225,7 @@
         "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
       ],
       "structure_status": "validated",
-      "validated_at": "2026-10-24T12:30:25+00:00",
+      "validated_at": "2026-10-24T12:52:13+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     },

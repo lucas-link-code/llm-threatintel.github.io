@@ -1140,6 +1140,10 @@ PROSE_REJECT_MARKERS = (
 # packed comparator forms like "vllm@<0.14.1".
 SPACE_COMPARATOR_RE = re.compile(r'\s[<>]=?\s')
 HEX_RE = re.compile(r'^[a-fA-F0-9]+$')
+HASH_ALGORITHM_PREFIX_RE = re.compile(
+    r'^(?:sha-?256|sha-?1|md5)\s*:\s*([0-9a-fA-F]{64}|[0-9a-fA-F]{40}|[0-9a-fA-F]{32})$',
+    re.I,
+)
 CVE_RE = re.compile(r'CVE-\d{4}-\d+', re.I)
 AGGREGATE_DESC_RE = re.compile(
     r'\d+\+?\s+(identified|uploads|models|skills|affected|trojanized|'
@@ -1356,6 +1360,14 @@ def is_valid_domain(value):
     return bool(DOMAIN_RE.match(value))
 
 
+def strip_hash_algorithm_prefix(value):
+    """Return bare hex when a hash is labeled sha256:, sha1:, or md5:."""
+    match = HASH_ALGORITHM_PREFIX_RE.match(str(value).strip())
+    if not match:
+        return str(value).strip()
+    return match.group(1).lower()
+
+
 def classify_hash(value):
     """Return precise hash type by hex length, or 'hash' if unrecognized."""
     if not HEX_RE.match(value):
@@ -1510,6 +1522,7 @@ def normalize_ioc_value(value, ioc_type):
 
     new_type = ioc_type
     if ioc_type in ('hash', 'sha256', 'sha1', 'md5'):
+        cleaned = strip_hash_algorithm_prefix(cleaned)
         new_type = classify_hash(cleaned)
 
     return cleaned, new_type, None, context_note
@@ -1551,6 +1564,8 @@ def sanitize_finding_iocs(finding):
                 skipped += 1
                 print(f"  Skipped malformed IOC: {raw!r} (reason: {reason})")
                 continue
+            if ioc_type in ('hash', 'sha256', 'sha1', 'md5') and cleaned != str(raw).strip():
+                print(f"  Normalized hash IOC: {raw!r} -> {cleaned}")
             kept.append(cleaned)
         finding_iocs[list_key] = kept
     return skipped
