@@ -36,7 +36,8 @@ POSTS_DIR = REPO_ROOT / "posts"
 LOGS_DIR = REPO_ROOT / "logs"
 MODEL = "deepseek/deepseek-v4.1-flash"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-MAX_OUTPUT_TOKENS = 16000
+# Longest clean completion in the last 10 runs was 14431 tokens on 2026-10-18.
+MAX_OUTPUT_TOKENS = 24000
 PAGE_FETCH_TIMEOUT = 8
 # Socket timeout stays above the wall clock so a slow answer is retried as CallTimeout.
 CHAT_TIMEOUT = 200
