@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6087,6 +6087,45 @@
         "T1555 - Credentials from Password Stores"
       ],
       "description": "An attacker who gained access to an internet exposed LiteLLM deployment, recovered GitHub CLI OAuth tokens from its logs, and used those credentials to compromise the release workflow, publishing malicious LiteLLM 1.107.0 wheels and container images built from an attacker controlled repository.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "litellm-release-pipeline-attacker",
+      "names": [
+        "LiteLLM release pipeline attacker"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "PyPI",
+        "Docker Hub",
+        "GHCR"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1552.001 - Credentials In Files"
+      ],
+      "description": "An unidentified actor manipulated the LiteLLM release pipeline to publish malicious v1.107.0 wheels and container images that collected credentials from developer tools, AI applications, cloud environments, browsers, and infrastructure, plus credential and model configuration records from the LiteLLM proxy.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "litellm-github-organization-intruder",
+      "names": [
+        "LiteLLM GitHub organization intruder"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "GitHub Actions",
+        "malicious repository workflow"
+      ],
+      "ttps": [
+        "T1078 - Valid Accounts",
+        "T1195.002 - Compromise Software Supply Chain"
+      ],
+      "description": "An unidentified actor used a leaked Agent Platform master key to obtain a GitHub organization owner token, added short lived malicious workflows to collect CI secrets, and reused stolen maintainer credentials to approve the October 21 malicious LiteLLM release.",
       "attribution": "Unattributed"
     }
   ]

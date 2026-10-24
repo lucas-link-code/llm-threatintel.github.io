@@ -1,0 +1,90 @@
+{
+  "commit_sha": "6c6c9501661bab91ad3061d0a5fc7902761a73e8",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-10-24T12:30:25+00:00",
+  "hard_failures": 1,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (911 characters)",
+      "recommendation": "",
+      "record_id": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "ioc-hash-format",
+      "file": "data/iocs.json",
+      "message": "hash IOC must be hex: sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
+      "recommendation": "",
+      "record_id": "785",
+      "severity": "fail"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "fail",
+  "reports_checked": 2,
+  "reports_newly_validated": 2,
+  "reports_skipped": 359,
+  "review_required": 0,
+  "source_urls_checked": 4,
+  "state_updates": 2,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://socket.dev/blog/litellm-attack-timeline",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://socket.dev/blog/litellm-attack-timeline"
+    },
+    {
+      "error": "",
+      "final_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/"
+    },
+    {
+      "error": "",
+      "final_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 4
+}

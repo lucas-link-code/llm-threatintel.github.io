@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7064,6 +7064,33 @@
       "first_seen": "2026-10-22",
       "source": "Microsoft Security Blog",
       "campaign": "storm-0940-artex-connectwise-supply-chain-compromise",
+      "status": "active"
+    },
+    {
+      "value": "sha256:1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e",
+      "type": "hash",
+      "context": "Microsoft Analyzes LiteLLM 1.107.0 Credential Theft Through Python Startup Hooks",
+      "first_seen": "2026-10-24",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-litellm-1-107-0-python-startup-hook-credential-theft",
+      "status": "active"
+    },
+    {
+      "value": "b69bc36fd4e23b23ea09f4ce63a92b07258f5044",
+      "type": "sha1",
+      "context": "Socket Finds LiteLLM GitHub CI Secret Exfiltration 11 Days Before Malicious Release",
+      "first_seen": "2026-10-24",
+      "source": "Socket",
+      "campaign": "socket-litellm-github-ci-secret-exfiltration-11-day-window",
+      "status": "active"
+    },
+    {
+      "value": "1a6e3c1e41f1b5c8eeaeeb2ae94bcd95390fa891",
+      "type": "sha1",
+      "context": "Socket Finds LiteLLM GitHub CI Secret Exfiltration 11 Days Before Malicious Release",
+      "first_seen": "2026-10-24",
+      "source": "Socket",
+      "campaign": "socket-litellm-github-ci-secret-exfiltration-11-day-window",
       "status": "active"
     }
   ]

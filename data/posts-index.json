@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window",
+      "title": "Socket Finds LiteLLM GitHub CI Secret Exfiltration 11 Days Before Malicious Release",
+      "date": "2026-10-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Socket threat research found malicious GitHub Actions workflows exfiltrating the BerriAI/litellm organization CI secrets on October 10 and October 12, 2026, eleven days before the malicious v1.107.0 release, placing attacker access to the repository weeks earlier than the public disclosure. LiteLLM corroborated the finding and traced initial access to an Agent Platform master key committed to a public repository in May that was never revoked. Maintainers of AI and developer tooling repositories should audit Actions workflow history, org audit logs, and token approval events, and rotate long lived CI tokens.",
+      "file": "2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window.md"
+    },
+    {
+      "id": "2026-10-24-microsoft-litellm-1-107-0-python-startup-hook-credential-theft",
+      "title": "Microsoft Analyzes LiteLLM 1.107.0 Credential Theft Through Python Startup Hooks",
+      "date": "2026-10-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft published technical analysis of the LiteLLM 1.107.0 supply chain compromise, showing the malicious release ran credential collection during normal Python interpreter startup, so an application did not need to import LiteLLM for the payload to execute. The collector targeted authentication material across developer tools, AI applications, cloud environments, browsers, and infrastructure, and a separate module read credential and model configuration records from the LiteLLM proxy. Defenders should treat any host that started Python in an environment carrying litellm 1.107.0 or its container images as compromised and rotate every credential reachable from that host.",
+      "file": "2026-10-24-microsoft-litellm-1-107-0-python-startup-hook-credential-theft.md"
+    },
+    {
       "id": "2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis",
       "title": "BleepingComputer Names the Three Payload Files Dropped by the Compromised LiteLLM v1.107.0 Release",
       "date": "2026-10-23",
