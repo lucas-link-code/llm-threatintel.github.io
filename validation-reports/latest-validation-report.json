@@ -1,7 +1,7 @@
 {
-  "commit_sha": "5d5492629c23",
+  "commit_sha": "ffa23c08afe0c36521d851b727108d62952119df",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-24T12:52:13+00:00",
+  "generated_at_utc": "2026-10-25T08:09:22+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,24 +43,17 @@
   "overall_result": "pass",
   "reports_checked": 1,
   "reports_newly_validated": 1,
-  "reports_skipped": 360,
+  "reports_skipped": 361,
   "review_required": 0,
-  "source_urls_checked": 2,
+  "source_urls_checked": 1,
   "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/",
+      "final_url": "https://blog.checkpoint.com/ai-security/infostealers-are-targeting-ai-what-aokigahara-infostealer-reveals-about-the-new-developer-attack-surface/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/"
-    },
-    {
-      "error": "",
-      "final_url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026"
+      "url": "https://blog.checkpoint.com/ai-security/infostealers-are-targeting-ai-what-aokigahara-infostealer-reveals-about-the-new-developer-attack-surface/"
     }
   ],
   "validation_version": "1.0.0",

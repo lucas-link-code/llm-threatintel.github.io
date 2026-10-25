@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials",
+      "title": "Check Point Research Documents Aokigahara Infostealer Harvesting AI Assistant Sessions and Developer Credentials",
+      "date": "2026-10-25",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research published a first party analysis on October 23, 2026 of Aokigahara, a newly observed infostealer whose collection routines explicitly target AI assistant applications and developer tooling. Targeted artifacts include session and configuration data tied to Claude, ChatGPT Desktop, Codex, Cursor, Windsurf, GitHub Copilot, Gemini CLI and JetBrains AI Assistant, plus Git credentials, SSH files and AWS, Azure and Google Cloud configurations. Defenders should treat AI assistant session tokens as production secrets and rotate them alongside cloud keys if a developer endpoint is suspected of compromise.",
+      "file": "2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials.md"
+    },
+    {
       "id": "2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window",
       "title": "Socket Finds LiteLLM GitHub CI Secret Exfiltration 11 Days Before Malicious Release",
       "date": "2026-10-24",

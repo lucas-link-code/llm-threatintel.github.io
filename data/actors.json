@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-25",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6126,6 +6126,25 @@
         "T1195.002 - Compromise Software Supply Chain"
       ],
       "description": "An unidentified actor used a leaked Agent Platform master key to obtain a GitHub organization owner token, added short lived malicious workflows to collect CI secrets, and reused stolen maintainer credentials to approve the October 21 malicious LiteLLM release.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "aokigahara-operators",
+      "names": [
+        "Aokigahara operators",
+        "Aokigahara"
+      ],
+      "type": "malware",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Information stealer malware family"
+      ],
+      "ttps": [
+        "T1555 - Credentials from Password Stores",
+        "T1539 - Steal Web Session Cookie"
+      ],
+      "description": "Check Point Research describes Aokigahara as a newly observed infostealer identified in the wild with broad data theft capability covering browser credentials, cookies, cryptocurrency wallets, email clients, password managers, VPNs and other software, plus a dedicated focus on AI assistant applications and developer tooling. The operator identity and monetization model remain unconfirmed in the published research.",
       "attribution": "Unattributed"
     }
   ]

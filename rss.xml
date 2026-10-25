@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 24 Oct 2026 12:52:05 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 08:09:21 +0000</lastBuildDate>
     <item>
+      <title>Check Point Research Documents Aokigahara Infostealer Harvesting AI Assistant Sessions and Developer Credentials</title>
+      <link>https://llm-threatintel.com/posts/2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials.html</guid>
+      <pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Check Point Research published a first party analysis on October 23, 2026 of Aokigahara, a newly observed infostealer whose collection routines explicitly target AI assistant applications and developer tooling. Targeted artifacts include session and configuration data tied to Claude, ChatGPT Desktop, Codex, Cursor, Windsurf, GitHub Copilot, Gemini CLI and JetBrains AI Assistant, plus Git credentials, SSH files and AWS, Azure and Google Cloud configurations. Defenders should treat AI assistant session tokens as production secrets and rotate them alongside cloud keys if a developer endpoint is suspected of compromise.</description>
+    </item>    <item>
       <title>Socket Finds LiteLLM GitHub CI Secret Exfiltration 11 Days Before Malicious Release</title>
       <link>https://llm-threatintel.com/posts/2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain.html</guid>
       <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
       <description>Google Threat Intelligence Group and Mandiant investigated a software supply chain compromise that tampered with AOMEI Technology update servers using repeated windows of only five to ten minutes, evading point in time triage and automated file scanning. The campaign delivered the CROSSROAD downloader and SHINYROAD backdoor and is attributed to a cluster tracked as UNC7017. Defenders should treat brief update server anomalies as potential supply chain tampering rather than noise.</description>
-    </item>    <item>
-      <title>Symantec Reports Aoki Infostealer Now Harvests AI Coding Assistant Credentials</title>
-      <link>https://llm-threatintel.com/posts/2026-10-17-symantec-aoki-infostealer-ai-coding-credentials.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-17-symantec-aoki-infostealer-ai-coding-credentials.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Symantec's Threat Hunter Team reported that newer samples of the Aoki infostealer now collect credentials and session files from AI coding assistants, a target set earlier versions did not touch. Aoki is a collector rather than a backdoor and posts stolen data to a /gate endpoint on its command and control server. Defenders should rotate AI assistant keys and tokens and revoke browser and desktop sessions on any machine that may have run Aoki.</description>
     </item>
   </channel>
 </rss>
