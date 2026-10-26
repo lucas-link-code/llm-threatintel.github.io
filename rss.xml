@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 25 Oct 2026 08:09:21 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 08:35:04 +0000</lastBuildDate>
     <item>
+      <title>AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package</title>
+      <link>https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+      <description>A malicious AGENTS.md instruction file placed in a user's ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.</description>
+    </item>    <item>
       <title>Check Point Research Documents Aokigahara Infostealer Harvesting AI Assistant Sessions and Developer Credentials</title>
       <link>https://llm-threatintel.com/posts/2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.html</guid>
       <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
       <description>Noma Security found a zero click data theft flaw, dubbed SneakPeek, in Anthropic's Claude Code Desktop preview pane that silently steals SSH private keys, AWS credentials and Claude OAuth tokens from developer machines. Three chained architectural gaps let malicious HTML padded past 256KB load as file:// URLs, skip the content security policy and run embedded JavaScript with no user interaction. Anthropic fixed the issue in version 1.30096.1 after its first patch was bypassed.</description>
-    </item>    <item>
-      <title>Google GTIG and Mandiant Attribute Ephemeral AOMEI Update Server Tampering to UNC7017</title>
-      <link>https://llm-threatintel.com/posts/2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-17-gtig-mandiant-unc7017-aomei-ephemeral-supply-chain.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Google Threat Intelligence Group and Mandiant investigated a software supply chain compromise that tampered with AOMEI Technology update servers using repeated windows of only five to ten minutes, evading point in time triage and automated file scanning. The campaign delivered the CROSSROAD downloader and SHINYROAD backdoor and is attributed to a cluster tracked as UNC7017. Defenders should treat brief update server anomalies as potential supply chain tampering rather than noise.</description>
     </item>
   </channel>
 </rss>

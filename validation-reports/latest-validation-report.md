@@ -1,7 +1,7 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-10-25T08:09:22+00:00`
-- Commit SHA: `ffa23c08afe0c36521d851b727108d62952119df`
+- Run time UTC: `2026-10-26T08:35:05+00:00`
+- Commit SHA: `34c054a57059e2132860e358ffffb7adfdea4303`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
@@ -9,7 +9,7 @@
 - Warnings: `4`
 - Review required: `0`
 - Reports checked: `1`
-- Reports skipped: `361`
+- Reports skipped: `362`
 - Reports newly validated: `1`
 - IOC duplicates found: `0`
 - Source URLs checked: `1`

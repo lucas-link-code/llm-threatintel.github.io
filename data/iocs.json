@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-26",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7082,6 +7082,15 @@
       "first_seen": "2026-10-24",
       "source": "Socket",
       "campaign": "socket-litellm-github-ci-secret-exfiltration-11-day-window",
+      "status": "active"
+    },
+    {
+      "value": "npm:function-color",
+      "type": "package",
+      "context": "AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package",
+      "first_seen": "2026-10-26",
+      "source": "BleepingComputer",
+      "campaign": "agentsmd-downloads-folder-hijacks-coding-agents",
       "status": "active"
     }
   ]

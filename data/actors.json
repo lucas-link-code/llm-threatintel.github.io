@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-25",
+  "last_updated": "2026-10-26",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6145,6 +6145,25 @@
         "T1539 - Steal Web Session Cookie"
       ],
       "description": "Check Point Research describes Aokigahara as a newly observed infostealer identified in the wild with broad data theft capability covering browser credentials, cookies, cryptocurrency wallets, email clients, password managers, VPNs and other software, plus a dedicated focus on AI assistant applications and developer tooling. The operator identity and monetization model remain unconfirmed in the published research.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unattributed-agents-md-attacker",
+      "names": [
+        "Unattributed AGENTS.md attacker"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Malicious AGENTS.md or CLAUDE.md file dropped into ~/Downloads",
+        "Rogue npm package function-color"
+      ],
+      "ttps": [
+        "T1204.002 - User Execution: Malicious File",
+        "T1195.002 - Compromise Software Supply Chain: Compromise Software Dependencies and Development Tools"
+      ],
+      "description": "An unidentified actor that plants an AGENTS.md or CLAUDE.md instruction file in a developer's ~/Downloads folder so that AI coding agents auto load it as trusted configuration. The injected instructions direct the agent to install the rogue npm package function-color or reroute API traffic to leak OAuth tokens, using the agent's own tool execution as the payload delivery path.",
       "attribution": "Unattributed"
     }
   ]

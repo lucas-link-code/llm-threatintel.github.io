@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents",
+      "title": "AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package",
+      "date": "2026-10-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A malicious AGENTS.md instruction file placed in a user's ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.",
+      "file": "2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.md"
+    },
+    {
       "id": "2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials",
       "title": "Check Point Research Documents Aokigahara Infostealer Harvesting AI Assistant Sessions and Developer Credentials",
       "date": "2026-10-25",

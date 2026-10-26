@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package | LLM ThreatIntel</title>
+  <meta name="description" content="A malicious AGENTS.md instruction file placed in a user&#x27;s ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package">
+  <meta property="og:description" content="A malicious AGENTS.md instruction file placed in a user&#x27;s ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package">
+  <meta property="article:published_time" content="2026-10-26T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-26T00:00:00Z">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="supply-chain">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package">
+  <meta name="twitter:description" content="A malicious AGENTS.md instruction file placed in a user&#x27;s ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package",
+  "description": "A malicious AGENTS.md instruction file placed in a user's ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.",
+  "datePublished": "2026-10-26T00:00:00Z",
+  "dateModified": "2026-10-26T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html",
+  "keywords": [
+    "prompt-injection",
+    "malicious-tool",
+    "supply-chain"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-26</span>
+      <span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-supply-chain">Supply Chain</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package</h1>
+<p><strong>Date:</strong> 2026-10-26<br><strong>Tags:</strong> prompt-injection, malicious-tool, supply-chain</p>
+<h2>Executive Summary</h2>
+<p>A malicious AGENTS.md instruction file placed in a user&#x27;s ~/Downloads folder tricked an AI coding agent into installing the rogue npm package function-color, according to Forever Security research reported by BleepingComputer on 2026-10-25. Because coding agents auto load instruction files from their working directory and Downloads is one of the few locations a web page can silently write to, an attacker can seed the file with a drive by download and no user interaction. Forever Security reproduced the chain against OpenAI Codex with a 90 percent success rate using a harmless payload, and separately leaked a Claude Code OAuth token by redirecting its API traffic through CLAUDE.md.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AGENTS.md Downloads Folder Hijack</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: none)</td></tr><tr><td>Target</td><td>Developers running AI coding agents such as OpenAI Codex and Claude Code with a working directory pointed at ~/Downloads</td></tr><tr><td>Vector</td><td>Malicious AGENTS.md or CLAUDE.md instruction file silently dropped into the ~/Downloads folder, later auto loaded by the agent as configuration and interpreted as trusted instructions</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-25</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to BleepingComputer, researchers at Forever Security discovered the tactic on a customer&#x27;s computer after a coding agent attempted to install the malicious npm package function-color. The investigation traced that install to an AGENTS.md file sitting in the customer&#x27;s ~/Downloads folder, which was also serving as the agent&#x27;s working directory. Agents automatically load applicable instruction files from their working directory and use the contained text to guide actions, so the file doubled as an attacker controlled instruction stream. BleepingComputer reported that Forever Security could not determine how the file landed in ~/Downloads but noted that simply visiting a malicious page can drop a payload without user interaction because the folder is designed to accept automatic downloads. Forever Security described ~/Downloads as the one folder the web can write to on its own, meaning a page can download a file named AGENTS.md silently. In reproduction tests, Forever Security used a harmless payload that opened the calculator app against Codex and recorded a 90 percent success rate. In a separate test, the team used a malicious CLAUDE.md file to redirect Claude Code API traffic to a server they controlled, exposing the agent&#x27;s OAuth token and allowing the server to impersonate the model and return tool calls that executed code in roughly 50 percent of tests. The disclosed activity is a distinct technique from previously reported AI supply chain incidents and does not involve a compromised package registry account; the abuse pivots on agent trust in working directory instruction files.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>User Execution: Malicious File</td><td>T1204.002</td><td>The agent executes instructions from an attacker placed AGENTS.md or CLAUDE.md file it loads from its working directory.</td></tr><tr><td>Compromise Software Supply Chain: Compromise Software Dependencies and Development Tools</td><td>T1195.002</td><td>The hijacked agent is steered into installing the rogue npm package function-color into the developer environment.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No domains, IPs, or file hashes were published. Package name comes from BleepingComputer coverage of Forever Security research. The report does not provide a specific version or registry hash._</p>
+<h3>Full URL Paths</h3>
+<p>_No domains, IPs, or file hashes were published. Package name comes from BleepingComputer coverage of Forever Security research. The report does not provide a specific version or registry hash._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:function-color</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">OpenAI Codex
+Claude Code
+Developer endpoints with ~/Downloads as an agent working directory</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Treat AGENTS.md, CLAUDE.md, and similar agent instruction files in ~/Downloads and other web writable directories as untrusted content and block agents from adopting working directories that receive browser downloads. Alert on coding agents spawning package installs of unknown npm packages, especially function-color, and on agent processes opening outbound connections to unexpected hosts after loading a local markdown file. Audit agent OAuth tokens and rotate any credential exposed during a suspected instruction file load. Monitor for markdown files named AGENTS.md or CLAUDE.md appearing in Downloads without a matching user action.</p>
+<h2>References</h2>
+<ul><li>[BleepingComputer] AI coding agents hijacked using AGENTS.md file in Downloads folder (2026-10-25) — https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

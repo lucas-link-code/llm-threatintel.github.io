@@ -6259,6 +6259,21 @@
       "validated_at": "2026-10-25T08:09:22+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents": {
+      "content_hash": "465a3d3e23958716eebe79defd45e2c586480c6b6b529d98e869fad6f1130900",
+      "evidence_status": "validated",
+      "file": "2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.md",
+      "posts_index_hash": "ea2bdec3766d792322c060844a9ee85e93f2c54778d985681baf65e1ec19156d",
+      "report_id": "2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-26T08:35:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
