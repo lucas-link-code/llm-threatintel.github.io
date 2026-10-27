@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise",
+      "title": "Onamae Desktop Cloud Confirms Infrastructure Compromise and Malware Installation, Shuts Down Customer Environments",
+      "date": "2026-10-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Japanese cloud hosting provider Onamae Desktop Cloud confirmed a cyberattack in which intruders compromised its infrastructure and installed malware on affected systems. The provider began shutting down customer environments on October 21 to contain the incident. Customers hosting workloads or storing credentials on Onamae Desktop Cloud should assume those environments and any secrets inside them are exposed and should rotate credentials and rebuild from trusted images rather than trust in place cleanup.",
+      "file": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise.md"
+    },
+    {
       "id": "2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents",
       "title": "AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package",
       "date": "2026-10-26",

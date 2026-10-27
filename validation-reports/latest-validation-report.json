@@ -1,7 +1,7 @@
 {
-  "commit_sha": "34c054a57059e2132860e358ffffb7adfdea4303",
+  "commit_sha": "e52544d7be4989c64cf1eef8c220250b04a9e091",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-26T08:35:05+00:00",
+  "generated_at_utc": "2026-10-27T08:42:29+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -35,6 +35,14 @@
       "recommendation": "",
       "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
       "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-10-27-onamae-desktop-cloud-infrastructure-compromise.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise",
+      "severity": "review"
     }
   ],
   "mode": "full",
@@ -42,18 +50,18 @@
   "orphan_markdown": [],
   "overall_result": "pass",
   "reports_checked": 1,
-  "reports_newly_validated": 1,
-  "reports_skipped": 362,
-  "review_required": 0,
+  "reports_newly_validated": 0,
+  "reports_skipped": 363,
+  "review_required": 1,
   "source_urls_checked": 1,
-  "state_updates": 1,
+  "state_updates": 0,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/"
+      "final_url": "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/",
+      "http_status": 206,
+      "status": "unknown_error",
+      "url": "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/"
     }
   ],
   "validation_version": "1.0.0",

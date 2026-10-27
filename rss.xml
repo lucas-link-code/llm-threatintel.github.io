@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 26 Oct 2026 08:35:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 08:42:27 +0000</lastBuildDate>
     <item>
+      <title>Onamae Desktop Cloud Confirms Infrastructure Compromise and Malware Installation, Shuts Down Customer Environments</title>
+      <link>https://llm-threatintel.com/posts/2026-10-27-onamae-desktop-cloud-infrastructure-compromise.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-27-onamae-desktop-cloud-infrastructure-compromise.html</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Japanese cloud hosting provider Onamae Desktop Cloud confirmed a cyberattack in which intruders compromised its infrastructure and installed malware on affected systems. The provider began shutting down customer environments on October 21 to contain the incident. Customers hosting workloads or storing credentials on Onamae Desktop Cloud should assume those environments and any secrets inside them are exposed and should rotate credentials and rebuild from trusted images rather than trust in place cleanup.</description>
+    </item>    <item>
       <title>AGENTS.md File in Downloads Folder Hijacks OpenAI Codex and Claude Code via Rogue npm Package</title>
       <link>https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-26-agentsmd-downloads-folder-hijacks-coding-agents.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp.html</guid>
       <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
       <description>Unit 42 documented C2Agent, Windows malware operated by an LLM that drives post exploitation through MCP and the victim's own installed AI coding tools, an approach described as living off the AI. Its payload was served from agent.x90.dev/data/copilot.txt, which kyber.today reported was still live at the time of posting. Defenders should monitor MCP server activity and execution tied to locally installed AI coding assistants.</description>
-    </item>    <item>
-      <title>SneakPeek Zero Click Flaw in Claude Code Desktop Exfiltrates Developer Credentials</title>
-      <link>https://llm-threatintel.com/posts/2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-18-sneakpeek-claude-code-desktop-zero-click-credential-theft.html</guid>
-      <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Noma Security found a zero click data theft flaw, dubbed SneakPeek, in Anthropic's Claude Code Desktop preview pane that silently steals SSH private keys, AWS credentials and Claude OAuth tokens from developer machines. Three chained architectural gaps let malicious HTML padded past 256KB load as file:// URLs, skip the content security policy and run embedded JavaScript with no user interaction. Anthropic fixed the issue in version 1.30096.1 after its first patch was bypassed.</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,69 @@
+{
+  "commit_sha": "e52544d7be4989c64cf1eef8c220250b04a9e091",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-10-27T08:42:29+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (911 characters)",
+      "recommendation": "",
+      "record_id": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-10-27-onamae-desktop-cloud-infrastructure-compromise.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 1,
+  "reports_newly_validated": 0,
+  "reports_skipped": 363,
+  "review_required": 1,
+  "source_urls_checked": 1,
+  "state_updates": 0,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/",
+      "http_status": 206,
+      "status": "unknown_error",
+      "url": "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 4
+}
