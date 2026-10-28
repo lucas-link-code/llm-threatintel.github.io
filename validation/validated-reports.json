@@ -6274,6 +6274,66 @@
       "validated_at": "2026-10-26T08:35:05+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-27-onamae-desktop-cloud-infrastructure-compromise": {
+      "content_hash": "b5e4a80fe7c8f3856d74d84d0681b32834b77d6651b338d353cba66d770ede24",
+      "evidence_status": "validated",
+      "file": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise.md",
+      "posts_index_hash": "37e4ac79aebd46165a4514e78f0350c9312d60a4d7fd55194c7c1ccaf9bfff5b",
+      "report_id": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise",
+      "review_required": [],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-28T09:22:06+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-28-anthropic-research-model-chrome-exploit-chains": {
+      "content_hash": "1991a7be53783c08c07893110c3d832b5f2730d6bfecbaa3f6a6cf4caf7d7c90",
+      "evidence_status": "validated",
+      "file": "2026-10-28-anthropic-research-model-chrome-exploit-chains.md",
+      "posts_index_hash": "529dc140d19aa91c5be97e8da230231826a870f1044e5267909250334cb0f2a1",
+      "report_id": "2026-10-28-anthropic-research-model-chrome-exploit-chains",
+      "review_required": [],
+      "source_urls": [
+        "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-28T09:22:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-28-symantec-skynet-llmjacking-agent-honeypot": {
+      "content_hash": "202dbcb1adf11d968becd14b466a95317ea312abea146ded96cb73283aa34b75",
+      "evidence_status": "validated",
+      "file": "2026-10-28-symantec-skynet-llmjacking-agent-honeypot.md",
+      "posts_index_hash": "aa2aa4a05eabbd79382cd59e812f7fe3e22c274c30451d6e09fb6416956e892a",
+      "report_id": "2026-10-28-symantec-skynet-llmjacking-agent-honeypot",
+      "review_required": [],
+      "source_urls": [
+        "https://www.csoonline.com/article/4241421/attackers-built-a-skynet-ai-agent-that-hijacks-exposed-models-to-run-cyberattacks.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-28T09:22:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-10-28-yoba-malware-signed-chatgpt-claude-binaries": {
+      "content_hash": "be9aefba874fba0fded6c525d55094c93f70eede5d4eaf8ac7c85b682eb1c4ef",
+      "evidence_status": "validated",
+      "file": "2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.md",
+      "posts_index_hash": "d5aa3e442a2d08ecdcd1a245d06fb1298eef432f753980fd8e47092def303787",
+      "report_id": "2026-10-28-yoba-malware-signed-chatgpt-claude-binaries",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.checkpoint.com/research/yoba-malware-abuses-signed-chatgpt-and-claude-binaries-to-target-ai-users/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-28T09:22:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

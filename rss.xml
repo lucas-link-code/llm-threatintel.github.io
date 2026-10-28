@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 27 Oct 2026 08:42:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 09:22:04 +0000</lastBuildDate>
     <item>
+      <title>Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot</title>
+      <link>https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.</description>
+    </item>    <item>
+      <title>Check Point Research Documents Yoba Malware Abusing Signed ChatGPT and Claude Binaries for DLL Sideloading</title>
+      <link>https://llm-threatintel.com/posts/2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.html</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Check Point Research uncovered Yoba, a campaign using fake GitHub projects that impersonate ChatGPT and Claude desktop apps and abuse legitimate signed OpenAI and Anthropic executables to sideload the YobaDropper. The projects ranked prominently in Google Search via SEO poisoning, and the final payload observed was XMRig 6.26.0, though YobaLoader can deliver other Windows or PowerShell payloads. Defenders must treat a valid signature as proof of one binary only, not of the surrounding package.</description>
+    </item>    <item>
+      <title>Anthropic Research Model Chains Five Exploit Chains and Yields 62 Patched Chrome CVEs</title>
+      <link>https://llm-threatintel.com/posts/2026-10-28-anthropic-research-model-chrome-exploit-chains.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-28-anthropic-research-model-chrome-exploit-chains.html</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Anthropic's Frontier Red Team used an unreleased internal research model to build five full exploit chains against widely deployed browsers and operating systems, producing one click remote code execution in Chrome. Google assigned and patched 62 CVEs as of Chrome 156, all rated critical or high, including 13 sandbox escapes and 21 renderer compromise flaws. Defenders should treat frontier model driven vulnerability discovery as a step change in patch velocity and triage interval, because the affected products sit on billions of endpoints.</description>
+    </item>    <item>
       <title>Onamae Desktop Cloud Confirms Infrastructure Compromise and Malware Installation, Shuts Down Customer Environments</title>
       <link>https://llm-threatintel.com/posts/2026-10-27-onamae-desktop-cloud-infrastructure-compromise.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-27-onamae-desktop-cloud-infrastructure-compromise.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html</guid>
       <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
       <description>An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.</description>
-    </item>    <item>
-      <title>Stable Diffusion Web UI CVE-2026-111986 Lets a YAML Sidecar Beside a Model Run Python</title>
-      <link>https://llm-threatintel.com/posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-19-stable-diffusion-webui-cve-2026-111986-yaml-sidecar-rce.html</guid>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
-      <description>VulDB published four CVE records against AUTOMATIC1111 stable-diffusion-webui, and CVE-2026-111986 is code injection in get_obj_from_str that executes arbitrary Python from a same basename YAML file placed next to a model checkpoint. Any user who loads an untrusted safetensors model together with its sidecar YAML on versions up to 1.10.1 can trigger code execution with the privileges of the web UI process. Defenders should treat downloaded model folders as executable content and isolate or review any YAML that shares a checkpoint's basename.</description>
-    </item>    <item>
-      <title>Claude Agent SDK Argument Injection CVE-2026-96620 Lets a Crafted Resume Session Id Run Commands</title>
-      <link>https://llm-threatintel.com/posts/2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-18-claude-agent-sdk-cve-2026-96620-argument-injection.html</guid>
-      <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
-      <description>An argument injection in Anthropic's Python Claude Agent SDK, tracked as CVE-2026-96620, let a resume session id starting with a dash become a CLI flag, which allowed an attacker to define an MCP server that runs commands. The flaw was rated high and is fixed in claude-agent-sdk 0.2.121. Applications that resume sessions from user supplied values should treat the session id as an opaque token they issued and reject anything that starts with a dash.</description>
-    </item>    <item>
-      <title>Unit 42 Documents C2Agent, LLM Operated Windows Malware That Lives Off Victim AI Coding Tools</title>
-      <link>https://llm-threatintel.com/posts/2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-18-c2agent-unit42-llm-operated-windows-malware-mcp.html</guid>
-      <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Unit 42 documented C2Agent, Windows malware operated by an LLM that drives post exploitation through MCP and the victim's own installed AI coding tools, an approach described as living off the AI. Its payload was served from agent.x90.dev/data/copilot.txt, which kyber.today reported was still live at the time of posting. Defenders should monitor MCP server activity and execution tied to locally installed AI coding assistants.</description>
     </item>
   </channel>
 </rss>

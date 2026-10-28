@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-10-28-symantec-skynet-llmjacking-agent-honeypot",
+      "title": "Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot",
+      "date": "2026-10-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.",
+      "file": "2026-10-28-symantec-skynet-llmjacking-agent-honeypot.md"
+    },
+    {
+      "id": "2026-10-28-yoba-malware-signed-chatgpt-claude-binaries",
+      "title": "Check Point Research Documents Yoba Malware Abusing Signed ChatGPT and Claude Binaries for DLL Sideloading",
+      "date": "2026-10-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research uncovered Yoba, a campaign using fake GitHub projects that impersonate ChatGPT and Claude desktop apps and abuse legitimate signed OpenAI and Anthropic executables to sideload the YobaDropper. The projects ranked prominently in Google Search via SEO poisoning, and the final payload observed was XMRig 6.26.0, though YobaLoader can deliver other Windows or PowerShell payloads. Defenders must treat a valid signature as proof of one binary only, not of the surrounding package.",
+      "file": "2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.md"
+    },
+    {
+      "id": "2026-10-28-anthropic-research-model-chrome-exploit-chains",
+      "title": "Anthropic Research Model Chains Five Exploit Chains and Yields 62 Patched Chrome CVEs",
+      "date": "2026-10-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Anthropic's Frontier Red Team used an unreleased internal research model to build five full exploit chains against widely deployed browsers and operating systems, producing one click remote code execution in Chrome. Google assigned and patched 62 CVEs as of Chrome 156, all rated critical or high, including 13 sandbox escapes and 21 renderer compromise flaws. Defenders should treat frontier model driven vulnerability discovery as a step change in patch velocity and triage interval, because the affected products sit on billions of endpoints.",
+      "file": "2026-10-28-anthropic-research-model-chrome-exploit-chains.md"
+    },
+    {
       "id": "2026-10-27-onamae-desktop-cloud-infrastructure-compromise",
       "title": "Onamae Desktop Cloud Confirms Infrastructure Compromise and Malware Installation, Shuts Down Customer Environments",
       "date": "2026-10-27",

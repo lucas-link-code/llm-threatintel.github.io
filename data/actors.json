@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-10-28",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6164,6 +6164,62 @@
         "T1195.002 - Compromise Software Supply Chain: Compromise Software Dependencies and Development Tools"
       ],
       "description": "An unidentified actor that plants an AGENTS.md or CLAUDE.md instruction file in a developer's ~/Downloads folder so that AI coding agents auto load it as trusted configuration. The injected instructions direct the agent to install the rogue npm package function-color or reroute API traffic to leak OAuth tokens, using the agent's own tool execution as the payload delivery path.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "anthropic-frontier-red-team",
+      "names": [
+        "Anthropic Frontier Red Team"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "internal unreleased research model"
+      ],
+      "ttps": [
+        "T1203 - Exploitation for Client Execution",
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "Anthropic's Frontier Red Team used an unreleased internal research model to autonomously construct multi step exploit chains against browsers and operating systems. The group reported each vulnerability to the affected vendor under coordinated vulnerability disclosure and gave developers 90 days to patch.",
+      "attribution": "Anthropic, defensive research team"
+    },
+    {
+      "id": "yoba",
+      "names": [
+        "Yoba"
+      ],
+      "type": "malware",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "fake GitHub projects",
+        "SEO poisoned search results",
+        "Google Search"
+      ],
+      "ttps": [
+        "T1574.002 - DLL Side-Loading",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Yoba is a campaign and loader family that impersonates ChatGPT and Claude desktop applications on fake GitHub projects. It abuses legitimate signed OpenAI and Anthropic executables to sideload a malicious winmm.dll, and its loader can deliver cryptominers or other Windows and PowerShell payloads.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "skynet-agent-operators",
+      "names": [
+        "Skynet agent operators"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "underground sale or reuse of a captured agent prompt"
+      ],
+      "ttps": [
+        "T1496 - Resource Hijacking",
+        "T1552 - Unsecured Credentials"
+      ],
+      "description": "An offensive prompt and agent configuration that hijacks exposed AI models for unattended offensive actions. The prompt assigns a persona for scanning, exploitation, credential theft, and cryptomining, and a Skynet directive removes human in the loop approval for up to 100,000 steps.",
       "attribution": "Unattributed"
     }
   ]

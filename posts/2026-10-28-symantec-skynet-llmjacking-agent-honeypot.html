@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot | LLM ThreatIntel</title>
+  <meta name="description" content="Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot">
+  <meta property="og:description" content="Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot">
+  <meta property="article:published_time" content="2026-10-28T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-28T00:00:00Z">
+  <meta property="article:tag" content="llmjacking">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot">
+  <meta name="twitter:description" content="Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot",
+  "description": "Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.",
+  "datePublished": "2026-10-28T00:00:00Z",
+  "dateModified": "2026-10-28T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html",
+  "keywords": [
+    "llmjacking",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-28</span>
+      <span class="post-tag tag-llmjacking">LLMjacking</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot</h1>
+<p><strong>Date:</strong> 2026-10-28<br><strong>Tags:</strong> llmjacking, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Skynet LLMjacking agent</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: low)</td></tr><tr><td>Target</td><td>Operators of unprotected, internet facing AI model endpoints</td></tr><tr><td>Vector</td><td>Commandeering exposed model inference endpoints and driving them with a captured offensive agent prompt</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-27</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>CSO Online reported on 2026-10-27 that the Symantec Threat Hunter Team captured instructions for a self directed offensive agent, a form of LLMjacking in which attackers commandeer a victim&#x27;s AI model and the victim foots the inference bill. According to Symantec via CSO Online, the researchers trapped the agent in an AI honeypot impersonating an unprotected web facing endpoint, and the attackers mistook it for a real model and sent their entire working prompt. The captured prompt instructed the model to adopt a persona able to scan the web, exploit common frameworks, steal from databases, harvest credentials and secrets, and mine cryptocurrency. A final directive initiated Skynet mode, a reference to the Terminator franchise, allowing up to 100,000 steps, immediate tool execution without asking permission, and silent cryptocurrency miner deployment. CSO Online noted that Symantec did not report a confirmed victim of this specific attack and that the captured instructions were part of a benign training challenge, so attribution to a live actor is thin.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Resource Hijacking</td><td>T1496</td><td>Prompt directs silent deployment of cryptocurrency miners on hijacked inference endpoints</td></tr><tr><td>Unsecured Credentials</td><td>T1552</td><td>Prompt instructs the agent to harvest credentials and secrets from scanned targets</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published. Symantec recovered the agent prompt from a honeypot and did not name infrastructure, and no confirmed victim was reported._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published. Symantec recovered the agent prompt from a honeypot and did not name infrastructure, and no confirmed victim was reported._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Exposed web facing AI inference endpoints</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory and require authentication on all internet facing model inference endpoints, and alert on anomalous token spend, prompt lengths, or step counts consistent with unattended agent loops. Log and review tool invocation attempts from model runtimes, block outbound miner and mining pool traffic from inference hosts, and monitor for credential access and database read behavior originating from model processes. Rate limit and cap per session step and tool execution counts, and require explicit approval for tool calls that write files, install software, or touch credential stores.</p>
+<h2>References</h2>
+<ul><li>[CSO Online] Attackers built a &#x27;Skynet&#x27; AI agent that hijacks exposed models to run cyberattacks (2026-10-27) — https://www.csoonline.com/article/4241421/attackers-built-a-skynet-ai-agent-that-hijacks-exposed-models-to-run-cyberattacks.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
