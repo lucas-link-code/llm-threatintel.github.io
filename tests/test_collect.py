@@ -835,6 +835,64 @@ class StoryLevelGateTests(unittest.TestCase):
         )
         self.assertFalse(decision["accept"])
 
+    def test_accepts_dotted_filename_when_shared_headline_words_are_common(self):
+        catalog = story_catalog()
+        pid = "2026-10-26-agentsmd-downloads-folder-hijacks"
+        catalog["posts"][pid] = {
+            "date": datetime(2026, 9, 27).date(),
+            "headline": {"agentsmd", "downloads", "folder", "coding", "rogue"},
+        }
+        catalog["df"].update({"agentsmd": 1, "downloads": 69, "folder": 15, "coding": 76, "rogue": 10})
+        page = "Published September 22, 2026. A malicious AGENTS.md file in the Downloads folder tricked a rogue agent."
+        decision = collect.evaluate_publisher_checks(
+            [{
+                "url": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
+                "published": "2026-09-22",
+                "title": "Malicious File in Downloads Folder Tries to Trick AI Coding Agent",
+                "covered_by": pid,
+            }],
+            today=self.today,
+            corpus="",
+            fetch=lambda _url: page,
+            catalog=catalog,
+        )
+        self.assertTrue(decision["accept"])
+        self.assertEqual(decision["story_matches"], [{"url": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html", "post": pid, "token": "agentsmd"}])
+
+    def test_rejects_common_overlap_without_dotted_filename(self):
+        catalog = story_catalog()
+        pid = "2026-10-26-agentsmd-downloads-folder-hijacks"
+        catalog["posts"][pid] = {
+            "date": datetime(2026, 9, 27).date(),
+            "headline": {"agentsmd", "downloads", "folder", "coding"},
+        }
+        catalog["df"].update({"agentsmd": 1, "downloads": 69, "folder": 15, "coding": 76})
+        decision = collect.evaluate_publisher_checks(
+            [{
+                "url": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
+                "published": "2026-09-22",
+                "title": "Malicious File in Downloads Folder Tries to Trick AI Coding Agent",
+                "covered_by": pid,
+            }],
+            today=self.today,
+            corpus="",
+            fetch=lambda _url: "Published September 22, 2026. A malicious PDF in the Downloads folder.",
+            catalog=catalog,
+        )
+        self.assertFalse(decision["accept"])
+        self.assertIn("rare headline", decision["notes"][decision["uncovered"][0]])
+
+    def test_rejects_literal_rare_word_missing_from_publisher_title(self):
+        decision = self.evaluate(
+            {
+                "title": "New Windows malware in the enterprise",
+                "url": "https://www.bleepingcomputer.com/news/security/new-windows-malware-enterprise/",
+                "covered_by": CQ_ID,
+            },
+            fetch=lambda _url: "Published September 22, 2026. ClosedQuorum uses several models on Windows.",
+        )
+        self.assertFalse(decision["accept"])
+
     def test_rejects_word_missing_from_page(self):
         decision = self.evaluate(
             {"covered_by": CQ_ID}, fetch=lambda _url: "Published September 22, 2026. Unrelated text."

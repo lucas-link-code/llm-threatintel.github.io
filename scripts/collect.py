@@ -644,6 +644,22 @@ def story_tokens(text):
     return {w for w in words if len(w) >= 5 and not w.isdigit()}
 
 
+def dotted_token_on_page(token, page):
+    """True when page writes token with a dot, hyphen, or underscore inside it.
+
+    agentsmd on a post and AGENTS.md on a publisher page are the same word.
+    """
+    if len(token) < 5:
+        return False
+    for split in range(2, len(token) - 1):
+        left, right = token[:split], token[split:]
+        for sep in (".", "-", "_"):
+            needle = f"{left}{sep}{right}"
+            if re.search(rf"(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])", page):
+                return True
+    return False
+
+
 def load_story_catalog():
     """Per post date and headline words, plus how many posts contain each word."""
     index = load_json(DATA_DIR / "posts-index.json")
@@ -707,12 +723,24 @@ def story_match(check, url, day, body, catalog, today):
         if not (earliest <= post["date"] <= today):
             reason = f"named post {pid} is outside the recency limit"
             continue
-        for token in sorted(candidates & post["headline"]):
+        shared = candidates & post["headline"]
+        for token in sorted(shared):
             if catalog["df"].get(token, 0) > STORY_TOKEN_MAX_POSTS:
                 continue
-            if token not in page:
-                continue
-            return pid, token, ""
+            if token in page or dotted_token_on_page(token, page):
+                return pid, token, ""
+        # A retitled article can share only common words with the post.
+        # A rare post word still proves the page when the publisher writes that
+        # word with interior punctuation. A rare word written normally, and
+        # absent from the publisher title, is not proof.
+        if shared:
+            for token in sorted(post["headline"] - shared):
+                if catalog["df"].get(token, 0) > STORY_TOKEN_MAX_POSTS:
+                    continue
+                if token in page:
+                    continue
+                if dotted_token_on_page(token, page):
+                    return pid, token, ""
     return None, None, reason
 
 
