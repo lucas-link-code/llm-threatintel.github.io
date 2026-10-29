@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-10-29",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6221,6 +6221,24 @@
       ],
       "description": "An offensive prompt and agent configuration that hijacks exposed AI models for unattended offensive actions. The prompt assigns a persona for scanning, exploitation, credential theft, and cryptomining, and a Skynet directive removes human in the loop approval for up to 100,000 steps.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "nik-c2",
+      "names": [
+        "NIK C2"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-10",
+      "status": "active",
+      "distribution": [
+        "Windows implant using dual channel TLS WebSocket and HTTP fallback command and control"
+      ],
+      "ttps": [
+        "T1071.001 - Web Protocols",
+        "T1056.001 - Input Capture: Keylogging"
+      ],
+      "description": "NIK C2 is an AI integrated command and control framework with a Go based 64 bit Windows remote access tool as its implant. It provides credential dumping, RDP session hijacking, process hollowing, keystroke streaming, and a screen lock ransomware module, and it embeds an OpenAI API client to run generative analysis on stolen data directly from the infected host. Cisco Talos assesses with moderate confidence that it is fully functional and in active use rather than a proof of concept.",
+      "attribution": "Unattributed; Cisco Talos did not name an actor"
     }
   ]
 }

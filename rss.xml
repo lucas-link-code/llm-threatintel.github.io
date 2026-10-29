@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 28 Oct 2026 09:22:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 11:52:23 +0000</lastBuildDate>
     <item>
+      <title>Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API</title>
+      <link>https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.</description>
+    </item>    <item>
       <title>Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot</title>
       <link>https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.html</guid>
       <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
       <description>Any.Run researchers traced 1,258 incidents over six months to fake AI tool attacks that impersonate Claude, ChatGPT, and Codex, with the employee performing the decisive step. The lures arrive through SEO poisoning, malicious ads, fake download pages, and shared LLM chats or artifacts, and often deliver fileless malware through pasted install commands. Defenders should treat brand styled AI install pages and shared AI chat links as untrusted and monitor developer endpoints for pasted shell commands.</description>
-    </item>    <item>
-      <title>OpenCode Console Breach Exposes User Stored OpenAI, Anthropic, and Google API Keys</title>
-      <link>https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-19-opencode-console-provider-key-breach.html</guid>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
-      <description>An intruder reached a legacy system at OpenCode on the night of 2026-10-16 and may have exposed third party AI provider keys that users stored in OpenCode Console. OpenCode emailed the affected 1.4 percent of Console users on 2026-10-17 and told them to revoke and replace their OpenAI, Anthropic, or Google keys. Any organization with linked provider keys in Console should rotate those keys now and review provider billing and usage for abuse.</description>
     </item>
   </channel>
 </rss>

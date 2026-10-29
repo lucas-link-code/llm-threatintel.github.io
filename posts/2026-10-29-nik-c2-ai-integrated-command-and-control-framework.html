@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API | LLM ThreatIntel</title>
+  <meta name="description" content="Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API">
+  <meta property="og:description" content="Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API">
+  <meta property="article:published_time" content="2026-10-29T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-29T00:00:00Z">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API">
+  <meta name="twitter:description" content="Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API",
+  "description": "Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.",
+  "datePublished": "2026-10-29T00:00:00Z",
+  "dateModified": "2026-10-29T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html",
+  "keywords": [
+    "malicious-tool",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-29</span>
+      <span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API</h1>
+<p><strong>Date:</strong> 2026-10-29<br><strong>Tags:</strong> malicious-tool, malware</p>
+<h2>Executive Summary</h2>
+<p>Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>NIK C2</td></tr><tr><td>Attribution</td><td>Unknown (confidence: none)</td></tr><tr><td>Target</td><td>Windows hosts and any organization whose compromised endpoints can be monetized for credential theft and ransomware</td></tr><tr><td>Vector</td><td>Windows implant delivered to victim hosts, establishing dual channel command and control</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-29</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Cisco Talos, NIK C2 is a new AI integrated command and control framework observed in the wild containing a Windows implant that lets an actor dump credentials, stream the victim&#x27;s keystrokes, and instruct an integrated AI model to analyze the harvested data, all within the compromised session. Talos reported that the framework abuses the OpenAI Chat Completions API, an HTTP endpoint that enables ChatGPT style conversations programmatically, and that the implant embeds a fully integrated OpenAI API client through its ai_generate command that manages API key resolution, request assembly, and response parsing locally before returning encrypted generative AI results to the actor&#x27;s C2 panel. Talos assesses with moderate confidence that NIK C2 is not merely a proof of concept but a fully functional, AI integrated C2 framework. The NIK C2 implant is a Go based 64 bit Windows remote access tool that communicates over TLS secured WebSockets on port 443 alongside an HTTP fallback polling loop every 250 milliseconds, protects traffic with AES-256-GCM encryption derived from a hardcoded seed, and routes traffic across three prioritized C2 tiers consisting of runtime updated URLs, an embedded encrypted server list, and a hardcoded fallback address. Talos reported surveillance, theft, lateral movement, and evasion capabilities including credential dumping, RDP session hijacking, process hollowing, and a C2 driven screen lock ransomware module that produces a ransom demand in Bitcoin or USDT cryptocurrencies. Talos stated that NIK C2 collapses collection and exploitation into a single continuous session, erasing the offline processing delays that historically granted defenders detection windows, and that such frameworks require defenders to move beyond traditional detection toward continuous behavioral vigilance.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Web Protocols</td><td>T1071.001</td><td>Implant communicates over TLS secured WebSockets on port 443 with an HTTP fallback polling loop every 250 milliseconds, blending C2 into normal web traffic.</td></tr><tr><td>Input Capture: Keylogging</td><td>T1056.001</td><td>Implant streams the victim&#x27;s keystrokes to collect sensitive data within the compromised session.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Cisco Talos did not publish concrete network or file IOCs in the excerpt provided; consult the source report for any indicators._</p>
+<h3>Full URL Paths</h3>
+<p>_Cisco Talos did not publish concrete network or file IOCs in the excerpt provided; consult the source report for any indicators._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for Windows processes initiating outbound TLS sessions over WebSocket on port 443 that are immediately followed by HTTP polling at roughly 250 millisecond intervals, as this dual channel pattern is distinctive of the NIK C2 implant. Watch for API calls to OpenAI production inference endpoints originating from endpoint IP addresses instead of expected egress points, since the implant routes prompts through the victim machine. Alert on unexpected child processes performing credential dumping, RDP session hijacking, or process hollowing, and on rapid transitions from keystroke capture or credential access to screen lock ransomware behavior within a single session. Because collection and analysis are now continuous, prioritize behavioral detection over purely offline post hoc analysis, and apply user and entity behavior analytics to surface the collapse of collection and exploitation into one session.</p>
+<h2>References</h2>
+<ul><li>[Cisco Talos] NIK C2: The new AI-enabled command-and-control framework (2026-10-29) — https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

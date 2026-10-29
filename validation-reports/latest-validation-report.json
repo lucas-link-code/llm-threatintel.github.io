@@ -1,7 +1,7 @@
 {
-  "commit_sha": "3423500ca092d2cb6401cfcb0613565bea6b8662",
+  "commit_sha": "b4c97aca7690c82fe44889c758e245dae5aa4829",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-28T09:22:06+00:00",
+  "generated_at_utc": "2026-10-29T11:52:24+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,40 +41,19 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 4,
-  "reports_newly_validated": 4,
-  "reports_skipped": 363,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 367,
   "review_required": 0,
-  "source_urls_checked": 4,
-  "state_updates": 4,
+  "source_urls_checked": 1,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.csoonline.com/article/4241421/attackers-built-a-skynet-ai-agent-that-hijacks-exposed-models-to-run-cyberattacks.html",
+      "final_url": "https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.csoonline.com/article/4241421/attackers-built-a-skynet-ai-agent-that-hijacks-exposed-models-to-run-cyberattacks.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://blog.checkpoint.com/research/yoba-malware-abuses-signed-chatgpt-and-claude-binaries-to-target-ai-users/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://blog.checkpoint.com/research/yoba-malware-abuses-signed-chatgpt-and-claude-binaries-to-target-ai-users/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude"
-    },
-    {
-      "error": "",
-      "final_url": "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://research.checkpoint.com/2026/26th-october-threat-intelligence-report/"
+      "url": "https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/"
     }
   ],
   "validation_version": "1.0.0",

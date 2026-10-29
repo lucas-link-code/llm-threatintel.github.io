@@ -6334,6 +6334,21 @@
       "validated_at": "2026-10-28T09:22:05+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-29-nik-c2-ai-integrated-command-and-control-framework": {
+      "content_hash": "a4b8c65e4f657c56b8cc3eb02101558a85680a94240c1a00466b8ac58d45948e",
+      "evidence_status": "validated",
+      "file": "2026-10-29-nik-c2-ai-integrated-command-and-control-framework.md",
+      "posts_index_hash": "78079e56e8f87e0558f0cebe21aa2d8d4cce1ab2c71c827c4137123e59066666",
+      "report_id": "2026-10-29-nik-c2-ai-integrated-command-and-control-framework",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-29T11:52:24+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

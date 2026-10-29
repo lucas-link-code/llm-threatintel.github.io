@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-29-nik-c2-ai-integrated-command-and-control-framework",
+      "title": "Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API",
+      "date": "2026-10-29",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.",
+      "file": "2026-10-29-nik-c2-ai-integrated-command-and-control-framework.md"
+    },
+    {
       "id": "2026-10-28-symantec-skynet-llmjacking-agent-honeypot",
       "title": "Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot",
       "date": "2026-10-28",
