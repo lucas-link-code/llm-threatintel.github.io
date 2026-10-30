@@ -6349,6 +6349,21 @@
       "validated_at": "2026-10-29T11:52:24+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-30-claude-code-vscode-extension-ssh-backdoor": {
+      "content_hash": "8327ba95bc335b02c8d8ccfc7ff920f52e9f91bf779ddd32431afeb4c68a6a4d",
+      "evidence_status": "validated",
+      "file": "2026-10-30-claude-code-vscode-extension-ssh-backdoor.md",
+      "posts_index_hash": "d93675adcd38f236cdbec926b8e585d078b756d2d79a88bdc8358e381039e1f6",
+      "report_id": "2026-10-30-claude-code-vscode-extension-ssh-backdoor",
+      "review_required": [],
+      "source_urls": [
+        "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-30T09:40:57+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

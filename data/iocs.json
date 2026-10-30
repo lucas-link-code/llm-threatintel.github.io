@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-30",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7091,6 +7091,15 @@
       "first_seen": "2026-10-26",
       "source": "BleepingComputer",
       "campaign": "agentsmd-downloads-folder-hijacks-coding-agents",
+      "status": "active"
+    },
+    {
+      "value": "134.209.82.225",
+      "type": "ip",
+      "context": "Official Claude Code for VS Code Extension Compromised to Install Persistent SSH Backdoor",
+      "first_seen": "2026-10-30",
+      "source": "The Hacker News",
+      "campaign": "claude-code-vscode-extension-ssh-backdoor",
       "status": "active"
     }
   ]

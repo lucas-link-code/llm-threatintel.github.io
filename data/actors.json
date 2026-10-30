@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-29",
+  "last_updated": "2026-10-30",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6239,6 +6239,26 @@
       ],
       "description": "NIK C2 is an AI integrated command and control framework with a Go based 64 bit Windows remote access tool as its implant. It provides credential dumping, RDP session hijacking, process hollowing, keystroke streaming, and a screen lock ransomware module, and it embeds an OpenAI API client to run generative analysis on stolen data directly from the infected host. Cisco Talos assesses with moderate confidence that it is fully functional and in active use rather than a proof of concept.",
       "attribution": "Unattributed; Cisco Talos did not name an actor"
+    },
+    {
+      "id": "unattributed-claude-code-extension-attacker",
+      "names": [
+        "Unattributed Claude Code extension attacker"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "disrupted",
+      "distribution": [
+        "Open VSX",
+        "Microsoft VS Code Marketplace"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1098.004 - SSH Authorized Keys",
+        "T1543 - Create or Modify System Process"
+      ],
+      "description": "An unknown actor inserted a 66 line loader into the official Claude Code for VS Code extension and published it as version 2.1.313. The loader plants an SSH key, installs persistence, opens a reverse tunnel, and exfiltrates host reconnaissance to an external IP. No attribution was provided by OpenSourceMalware or Cursor, and the mechanism of compromise is unknown.",
+      "attribution": "Unattributed"
     }
   ]
 }

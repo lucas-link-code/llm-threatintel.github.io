@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 29 Oct 2026 11:52:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 09:40:56 +0000</lastBuildDate>
     <item>
+      <title>Official Claude Code for VS Code Extension Compromised to Install Persistent SSH Backdoor</title>
+      <link>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The official Claude Code for VS Code extension (anthropic.claude-code) was compromised and shipped a malicious loader that adds an attacker SSH key, installs persistence, and beacons host data to an external server. Cursor says at most 5,000 users installed the malicious version 2.1.313 between about 2:27 a.m. and 1:35 p.m. PT on October 29, 2026. Defenders whose developers used the extension should isolate affected hosts, remove the unauthorized key, delete persistence, and rotate credentials and sessions.</description>
+    </item>    <item>
       <title>Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API</title>
       <link>https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-20-ghostaction-stage2-font-credential-stealer.html</guid>
       <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
       <description>GhostAction operators escalated from malicious GitHub Actions workflows to a second stage that steals developer credentials without needing a workflow runner at all. Attackers planted a fake font file containing an infostealer that harvests AWS keys, PyPI and npm tokens, Kubernetes credentials, SSH private keys, and AI provider credentials for Anthropic Claude and Google Gemini. Security teams should review repositories for the named file path, rotate exposed developer and cloud secrets, and audit GitHub OAuth app authorizations.</description>
-    </item>    <item>
-      <title>Any.Run Tracks 1,258 Fake Claude and ChatGPT Install Attacks Against Developers</title>
-      <link>https://llm-threatintel.com/posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-19-anyrun-fake-claude-chatgpt-install-attacks.html</guid>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Any.Run researchers traced 1,258 incidents over six months to fake AI tool attacks that impersonate Claude, ChatGPT, and Codex, with the employee performing the decisive step. The lures arrive through SEO poisoning, malicious ads, fake download pages, and shared LLM chats or artifacts, and often deliver fileless malware through pasted install commands. Defenders should treat brand styled AI install pages and shared AI chat links as untrusted and monitor developer endpoints for pasted shell commands.</description>
     </item>
   </channel>
 </rss>

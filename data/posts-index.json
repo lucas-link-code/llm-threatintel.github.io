@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-10-30-claude-code-vscode-extension-ssh-backdoor",
+      "title": "Official Claude Code for VS Code Extension Compromised to Install Persistent SSH Backdoor",
+      "date": "2026-10-30",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware",
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The official Claude Code for VS Code extension (anthropic.claude-code) was compromised and shipped a malicious loader that adds an attacker SSH key, installs persistence, and beacons host data to an external server. Cursor says at most 5,000 users installed the malicious version 2.1.313 between about 2:27 a.m. and 1:35 p.m. PT on October 29, 2026. Defenders whose developers used the extension should isolate affected hosts, remove the unauthorized key, delete persistence, and rotate credentials and sessions.",
+      "file": "2026-10-30-claude-code-vscode-extension-ssh-backdoor.md"
+    },
+    {
       "id": "2026-10-29-nik-c2-ai-integrated-command-and-control-framework",
       "title": "Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API",
       "date": "2026-10-29",
