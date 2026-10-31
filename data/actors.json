@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-30",
+  "last_updated": "2026-10-31",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6258,6 +6258,24 @@
         "T1543 - Create or Modify System Process"
       ],
       "description": "An unknown actor inserted a 66 line loader into the official Claude Code for VS Code extension and published it as version 2.1.313. The loader plants an SSH key, installs persistence, opens a reverse tunnel, and exfiltrates host reconnaissance to an external IP. No attribution was provided by OpenSourceMalware or Cursor, and the mechanism of compromise is unknown.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unattributed-cursor-marketplace-extension-tamperer",
+      "names": [
+        "Unattributed Cursor marketplace extension tamperer"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-10",
+      "status": "disrupted",
+      "distribution": [
+        "Cursor VS Code extension marketplace"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1098.004 - Account Manipulation: SSH Authorized Keys"
+      ],
+      "description": "An unidentified party published a modification of Anthropic's Claude Code extension to the Cursor extension marketplace, injecting a JavaScript loader that attempts to install a persistent SSH backdoor and report host details. Microsoft confirmed the malicious packages were not distributed from the Microsoft Visual Studio Marketplace or npm, and Anthropic confirmed it did not develop the package and its systems were not compromised. Cursor worked with the hosting provider to take the attacker server offline.",
       "attribution": "Unattributed"
     }
   ]

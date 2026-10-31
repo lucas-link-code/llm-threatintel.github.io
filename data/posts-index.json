@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis",
+      "title": "Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor",
+      "date": "2026-10-31",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.",
+      "file": "2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.md"
+    },
+    {
       "id": "2026-10-30-claude-code-vscode-extension-ssh-backdoor",
       "title": "Official Claude Code for VS Code Extension Compromised to Install Persistent SSH Backdoor",
       "date": "2026-10-30",

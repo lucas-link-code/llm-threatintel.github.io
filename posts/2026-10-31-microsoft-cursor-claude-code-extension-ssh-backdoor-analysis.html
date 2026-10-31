@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor | LLM ThreatIntel</title>
+  <meta name="description" content="Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor">
+  <meta property="og:description" content="Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor">
+  <meta property="article:published_time" content="2026-10-31T00:00:00Z">
+  <meta property="article:modified_time" content="2026-10-31T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor">
+  <meta name="twitter:description" content="Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor",
+  "description": "Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.",
+  "datePublished": "2026-10-31T00:00:00Z",
+  "dateModified": "2026-10-31T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-10-31</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor</h1>
+<p><strong>Date:</strong> 2026-10-31<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Cursor marketplace Claude Code extension SSH backdoor</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: none)</td></tr><tr><td>Target</td><td>Cursor users who installed or auto updated the anthropic.claude-code extension on Windows and macOS</td></tr><tr><td>Vector</td><td>Malicious tampered extension package published to the Cursor extension marketplace for a few hours</td></tr><tr><td>Status</td><td>disrupted</td></tr><tr><td>First Observed</td><td>2026-10-29</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to the Microsoft Security Blog, Cursor reported on 2026-10-29 that a tampered copy of the Claude Code extension (anthropic.claude-code, versions 2.1.313 and 2.1.312) was served through the Cursor extension marketplace for a few hours as a supply chain attempt against Cursor users, live from about 2:27 AM to 1:35 PM Pacific Daylight Time. Microsoft Threat Intelligence analyzed the injected JavaScript embedded in the malicious package. According to Microsoft, the injected loader runs when the extension module loads and attempts to add an attacker controlled Secure Shell key, enable the local SSH service, establish reverse SSH forwarding, configure persistence, and report host details. Microsoft noted that successful remote access depends on host privileges, SSH configuration, and the attacker server configuration, but the loader may still write keys and persistence artifacts even when tunnel access fails. Microsoft confirmed the malicious packages were never published or distributed from the Microsoft Visual Studio Marketplace or from the npm @anthropic-ai/claude-code package, neither of which was affected. Microsoft stated that Anthropic confirmed its systems were not compromised and that Anthropic did not develop the malicious package; at this time all evidence suggests the incident is limited to the Cursor marketplace. Microsoft recommended identifying systems that installed or automatically updated to the affected version from the Cursor marketplace, preserving evidence, removing confirmed malicious artifacts, reviewing endpoint and network telemetry, and rotating credentials or revoking sessions where investigation indicates exposure. In parallel, Cursor reported that host and user information collected included hostname, username, OS, architecture, home directory path, environment variable names, working directories, configured Git email, and public IP, and that the attacker server no longer functions after being taken offline with its hosting provider.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>A tampered build of a legitimate extension was published to the Cursor marketplace and delivered to users through normal install and auto update</td></tr><tr><td>Account Manipulation: SSH Authorized Keys</td><td>T1098.004</td><td>The injected loader attempted to write an attacker controlled SSH key into authorized_keys to establish persistent remote access</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No attacker domains, IPs, or hashes were published by Microsoft or Cursor; the attacker server was taken offline. Values above are the tampered extension identifiers named in the sources._</p>
+<h3>Full URL Paths</h3>
+<p>_No attacker domains, IPs, or hashes were published by Microsoft or Cursor; the attacker server was taken offline. Values above are the tampered extension identifiers named in the sources._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows
+macOS</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Inventory Cursor instances and extension caches for anthropic.claude-code version 2.1.312 or 2.1.313 obtained from the Cursor marketplace and check install timestamps against the 2026-10-29 2:27 AM to 1:35 PM PDT exposure window. Hunt for unexpected entries added to authorized_keys, newly enabled local SSH services, reverse SSH forwarding processes, and persistence created as a macOS LaunchAgent or a Windows scheduled task attempting to run as SYSTEM with a startup script fallback. Review endpoint and network telemetry for repeated outbound tunnel retries roughly every 60 seconds and for POST requests carrying host and user metadata. Because successful tunnel access depends on privileges and SSH configuration, treat any affected host as potentially exposed, preserve evidence before removal, remove confirmed malicious artifacts, and rotate credentials or revoke sessions where investigation indicates exposure. Note that the attacker server is no longer functional, so blocking the original tunnel endpoint has limited value; focus on host side artifacts and key rotation.</p>
+<h2>References</h2>
+<ul><li>[Microsoft Security Blog] Inside a malicious Claude Code-branded extension and its persistent SSH backdoor (2026-10-30) — https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/</li><li>[Cursor] Security notice - malicious version of Anthropic.claude-code (2.1.312 and 2.1.313) identified in the Cursor VS Code Extension Marketplace (2026-10-29) — https://cursor.com/blog/claude-code-extension-security-notice</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

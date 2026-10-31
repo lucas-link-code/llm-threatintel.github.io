@@ -1,7 +1,7 @@
 {
-  "commit_sha": "029b2b26ea8f73319411dc05d09875d2372fefe2",
+  "commit_sha": "2dc78ebca06a34809a8bbf0e3cc0b7f109ff7a3e",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-30T09:40:57+00:00",
+  "generated_at_utc": "2026-10-31T09:20:09+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,17 +43,24 @@
   "overall_result": "pass",
   "reports_checked": 1,
   "reports_newly_validated": 1,
-  "reports_skipped": 368,
+  "reports_skipped": 369,
   "review_required": 0,
-  "source_urls_checked": 1,
+  "source_urls_checked": 2,
   "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html"
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cursor.com/blog/claude-code-extension-security-notice",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cursor.com/blog/claude-code-extension-security-notice"
     }
   ],
   "validation_version": "1.0.0",

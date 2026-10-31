@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 30 Oct 2026 09:40:56 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 09:20:08 +0000</lastBuildDate>
     <item>
+      <title>Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor</title>
+      <link>https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.</description>
+    </item>    <item>
       <title>Official Claude Code for VS Code Extension Compromised to Install Persistent SSH Backdoor</title>
       <link>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-20-sekoia-flowise-honeypot-genai-agent-abuse.html</guid>
       <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
       <description>Sekoia TDR deployed a Flowise honeypot and observed a threat actor steal its credentials, then attempt to repurpose the hosted AI agent as an interactive offensive assistant. The actor submitted real reconnaissance data on Nightingale and Redis infrastructure to generate custom exploitation playbooks targeting regional deployments. Defenders running AI orchestration platforms should treat stored LLM credentials and agent tool bindings as high value targets and restrict agent access to enterprise data and tools.</description>
-    </item>    <item>
-      <title>GhostAction Stage 2 Plants Font Disguised Credential Stealer in 94 GitHub Repositories</title>
-      <link>https://llm-threatintel.com/posts/2026-10-20-ghostaction-stage2-font-credential-stealer.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-20-ghostaction-stage2-font-credential-stealer.html</guid>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
-      <description>GhostAction operators escalated from malicious GitHub Actions workflows to a second stage that steals developer credentials without needing a workflow runner at all. Attackers planted a fake font file containing an infostealer that harvests AWS keys, PyPI and npm tokens, Kubernetes credentials, SSH private keys, and AI provider credentials for Anthropic Claude and Google Gemini. Security teams should review repositories for the named file path, rotate exposed developer and cloud secrets, and audit GitHub OAuth app authorizations.</description>
     </item>
   </channel>
 </rss>

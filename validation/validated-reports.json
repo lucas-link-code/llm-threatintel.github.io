@@ -6364,6 +6364,22 @@
       "validated_at": "2026-10-30T09:40:57+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis": {
+      "content_hash": "fe826a98a79c710a9bb51d84ba4ec6a56bd36c1587f9c05e18d404b7462db9bd",
+      "evidence_status": "validated",
+      "file": "2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.md",
+      "posts_index_hash": "d64313b06f973b0878865135d9737dbcf2dc1207784287a528d3e394ddb0d7a6",
+      "report_id": "2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/",
+        "https://cursor.com/blog/claude-code-extension-security-notice"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-10-31T09:20:09+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
