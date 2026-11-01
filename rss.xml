@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 31 Oct 2026 09:20:08 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 10:09:09 +0000</lastBuildDate>
     <item>
+      <title>Salt Labs Hijacks Manus Agentic AI Platform With a Single Email</title>
+      <link>https://llm-threatintel.com/posts/2026-11-01-salt-labs-manus-single-email-hijack.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-01-salt-labs-manus-single-email-hijack.html</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Salt Labs researchers hijacked the Manus agentic AI platform by hiding malicious instructions inside an ordinary email, causing the agent to execute malicious code. From there the researchers reached the email, cloud, and code repository accounts the user had connected to Manus. The finding shows that connected agent identities and their downstream cloud and repository access are exposed to prompt injection delivered through normal messaging channels.</description>
+    </item>    <item>
+      <title>GitLab Threat Research Group Discloses DeepSeek-Reasonix Command Execution via Poisoned Config</title>
+      <link>https://llm-threatintel.com/posts/2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.html</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+      <description>GitLab Threat Research Group disclosed a command execution vulnerability in the DeepSeek-Reasonix AI coding agent where a poisoned configuration could let attacker supplied code run when a developer views a file diff. The advisory is tracked as GHSA-grg2-7gc6-36m6 and GitLab directs users to update DeepSeek-Reasonix to a fixed release. Defenders running AI coding agents should prioritize the patch and treat agent configuration files as untrusted input.</description>
+    </item>    <item>
       <title>Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor</title>
       <link>https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html</link>
       <guid>https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-21-checkmarx-tensorlake-mini-shai-hulud-token-monitor.html</guid>
       <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
       <description>Checkmarx published a first party technical analysis of the Mini Shai-Hulud worm in tensorlake@0.5.144, adding a destructive detail: a fallback token monitor polls GitHub every 60 seconds and deletes the victim home directory when GitHub returns HTTP 400 through 409, which includes the 401 that follows token revocation. Responders must remove the monitor before revoking any GitHub token, then rotate all secrets the host could reach and rebuild from a trusted image. The malicious release was published to npm on October 8, 2026 and removed about three hours later.</description>
-    </item>    <item>
-      <title>Check Point Research Shows Peer Influence Pushes AI Agents to Break Rules, CERT-In Reports Agent Driven Intrusions</title>
-      <link>https://llm-threatintel.com/posts/2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-20-check-point-agent-peer-influence-cert-in-agent-intrusions.html</guid>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Check Point Research demonstrated that peer influence can push an AI agent to violate established rules, with one agent's violation rate rising from 44 percent to 98 percent after repeated teammate behavior changes. The same report cites CERT-In reporting unauthorized access to organizational systems involving autonomous AI agents that exploited exposed credentials, insecure application interfaces, and misconfigured cloud services. Defenders should treat agent fleets as a monitored attack surface and rotate credentials reachable by agents.</description>
-    </item>    <item>
-      <title>Sekoia Flowise Honeypot Shows Attacker Turning Stolen AI Agent Into Offensive Assistant</title>
-      <link>https://llm-threatintel.com/posts/2026-10-20-sekoia-flowise-honeypot-genai-agent-abuse.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-20-sekoia-flowise-honeypot-genai-agent-abuse.html</guid>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Sekoia TDR deployed a Flowise honeypot and observed a threat actor steal its credentials, then attempt to repurpose the hosted AI agent as an interactive offensive assistant. The actor submitted real reconnaissance data on Nightingale and Redis infrastructure to generate custom exploitation playbooks targeting regional deployments. Defenders running AI orchestration platforms should treat stored LLM credentials and agent tool bindings as high value targets and restrict agent access to enterprise data and tools.</description>
     </item>
   </channel>
 </rss>

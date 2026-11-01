@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-11-01-salt-labs-manus-single-email-hijack",
+      "title": "Salt Labs Hijacks Manus Agentic AI Platform With a Single Email",
+      "date": "2026-11-01",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Salt Labs researchers hijacked the Manus agentic AI platform by hiding malicious instructions inside an ordinary email, causing the agent to execute malicious code. From there the researchers reached the email, cloud, and code repository accounts the user had connected to Manus. The finding shows that connected agent identities and their downstream cloud and repository access are exposed to prompt injection delivered through normal messaging channels.",
+      "file": "2026-11-01-salt-labs-manus-single-email-hijack.md"
+    },
+    {
+      "id": "2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce",
+      "title": "GitLab Threat Research Group Discloses DeepSeek-Reasonix Command Execution via Poisoned Config",
+      "date": "2026-11-01",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "GitLab Threat Research Group disclosed a command execution vulnerability in the DeepSeek-Reasonix AI coding agent where a poisoned configuration could let attacker supplied code run when a developer views a file diff. The advisory is tracked as GHSA-grg2-7gc6-36m6 and GitLab directs users to update DeepSeek-Reasonix to a fixed release. Defenders running AI coding agents should prioritize the patch and treat agent configuration files as untrusted input.",
+      "file": "2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.md"
+    },
+    {
       "id": "2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis",
       "title": "Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor",
       "date": "2026-10-31",

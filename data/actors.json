@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -2613,7 +2613,9 @@
         "T1059.004 - Command and Scripting Interpreter: Unix Shell",
         "T1036 - Masquerading",
         "T1046 - Network Service Scanning",
-        "T1018 - Remote System Discovery"
+        "T1018 - Remote System Discovery",
+        "T1204 - User Execution",
+        "T1566 - Phishing"
       ],
       "description": "This is a structural architectural vulnerability rather than a specific threat campaign. Axis Intelligence Research identified and disclosed the vulnerability through coordinated responsible disclosure to model providers on July 3, 2026. Exploitation requires understanding of multi-agent orchestration patterns and the ability to craft prompts that pass first-model safety checks but execute when passed to secondary models.",
       "attribution": "Unattributed; exploitation appears widespread but no specific actor attribution available"

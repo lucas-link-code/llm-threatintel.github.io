@@ -1,7 +1,7 @@
 {
-  "commit_sha": "2dc78ebca06a34809a8bbf0e3cc0b7f109ff7a3e",
+  "commit_sha": "b5c51cbf6794ff080d8dec07959eedad49610c28",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-10-31T09:20:09+00:00",
+  "generated_at_utc": "2026-11-01T10:09:10+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,26 +41,26 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 1,
-  "reports_skipped": 369,
+  "reports_checked": 2,
+  "reports_newly_validated": 2,
+  "reports_skipped": 370,
   "review_required": 0,
   "source_urls_checked": 2,
-  "state_updates": 1,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/",
+      "final_url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/"
+      "url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email"
     },
     {
       "error": "",
-      "final_url": "https://cursor.com/blog/claude-code-extension-security-notice",
+      "final_url": "https://about.gitlab.com/blog/deepseek-reasonix-vulnerability-discovered/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cursor.com/blog/claude-code-extension-security-notice"
+      "url": "https://about.gitlab.com/blog/deepseek-reasonix-vulnerability-discovered/"
     }
   ],
   "validation_version": "1.0.0",

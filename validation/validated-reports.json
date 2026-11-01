@@ -6380,6 +6380,36 @@
       "validated_at": "2026-10-31T09:20:09+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce": {
+      "content_hash": "49cf680ed68487cc560e64c6bcaec6abd6eee3574ab89b0d5f177c75a609f61b",
+      "evidence_status": "validated",
+      "file": "2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.md",
+      "posts_index_hash": "5ff59a80da86b9e5a9e8fdbdb93e98f93f99c68ff884bc9e5b3113372d3ce61c",
+      "report_id": "2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://about.gitlab.com/blog/deepseek-reasonix-vulnerability-discovered/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-01T10:09:10+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-01-salt-labs-manus-single-email-hijack": {
+      "content_hash": "abe1bb571f996313fc4fdfc42afaf6b60cd649dad92ecd6cea2a7eb00302376e",
+      "evidence_status": "validated",
+      "file": "2026-11-01-salt-labs-manus-single-email-hijack.md",
+      "posts_index_hash": "8d5685e5879842fbfa0ad29ecb9e1278c02def662a63f237592edc87ed05e718",
+      "report_id": "2026-11-01-salt-labs-manus-single-email-hijack",
+      "review_required": [],
+      "source_urls": [
+        "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-01T10:09:10+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
