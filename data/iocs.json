@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-30",
+  "last_updated": "2026-11-02",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7100,6 +7100,15 @@
       "first_seen": "2026-10-30",
       "source": "The Hacker News",
       "campaign": "claude-code-vscode-extension-ssh-backdoor",
+      "status": "active"
+    },
+    {
+      "value": "pypi:prefab-ui",
+      "type": "package",
+      "context": "Prefab UI Generative UI Sandbox Escape CVE-2026-120338 Rated CVSS 10.0",
+      "first_seen": "2026-11-02",
+      "source": "The Injection",
+      "campaign": "prefab-ui-generative-ui-sandbox-escape-cve-2026-120338",
       "status": "active"
     }
   ]

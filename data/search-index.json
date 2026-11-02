@@ -8038,6 +8038,64 @@
         "unattributed"
       ],
       "iocs": []
+    },
+    {
+      "id": "2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970",
+      "title": "GitLab Warns of Critical Remote Code Execution in AI Gateway CVE-2026-90970",
+      "date": "2026-11-02",
+      "excerpt": "GitLab warned customers to immediately patch a critical AI Gateway vulnerability that could let attackers run arbitrary commands on vulnerable instances. BleepingComputer reported the flaw as CVE-2026-90970 and said it stems from improper handling that enables remote code execution. Teams running GitLab AI Gateway should apply the vendor patch without delay and check exposed instances for signs of command execution.",
+      "file": "2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970.md",
+      "body": "GitLab Warns of Critical Remote Code Execution in AI Gateway CVE-2026-90970 Date: 2026-11-02 Tags: supply-chain Executive Summary GitLab warned customers to immediately patch a critical AI Gateway vulnerability that could let attackers run arbitrary commands on vulnerable instances. BleepingComputer reported the flaw as CVE-2026-90970 and said it stems from improper handling that enables remote code execution. Teams running GitLab AI Gateway should apply the vendor patch without delay and check exposed instances for signs of command execution. Campaign Summary Field Detail Campaign / Malware GitLab AI Gateway Remote Code Execution Attribution Unknown (confidence: none) Target Organizations running GitLab AI Gateway Vector Remote exploitation of the AI Gateway service to run arbitrary commands Status active First Observed 2026-11-02 Detailed Findings BleepingComputer reported that GitLab warned customers today to immediately patch a critical AI Gateway vulnerability that could let attackers run arbitrary commands on vulnerable instances. The issue tracks as CVE-2026-90970 and, according to BleepingComputer, stems from improper handling that enables remote code execution. GitLab issued the notice as an urgent patching advisory, so organizations should treat the AI Gateway service as exposed until the fix is applied. IOCs Domains _No attacker infrastructure was published; only CVE-2026-90970 and the affected GitLab service were named_ Full URL Paths _No attacker infrastructure was published; only CVE-2026-90970 and the affected GitLab service were named_ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Apply GitLab's AI Gateway patch immediately and prioritize internet facing instances. After patching, review AI Gateway and host process logs for unexpected command execution, new child processes spawned by the service, and outbound connections to unfamiliar destinations. References [BleepingComputer] GitLab warns of critical RCE vulnerability in AI Gateway service (2026-11-02) — https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/",
+      "tags": [
+        "supply-chain"
+      ],
+      "cves": [
+        "CVE-2026-90970"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145",
+      "title": "NVIDIA NeMo Agent Toolkit Missing Authentication CVE-2026-65145 Rated CVSS 10.0",
+      "date": "2026-11-02",
+      "excerpt": "NVIDIA disclosed a missing authentication flaw in its NeMo Agent Toolkit, CVE-2026-65145, rated CVSS 10.0 and affecting versions 1.0 through 1.8.0. The Injection reported it was one of two flaws NVIDIA published on October 27, 2026, and that the fix ships in 1.9.0. Operators should upgrade to 1.9.0 and remove any exposed agent toolkit service from untrusted networks until they do.",
+      "file": "2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145.md",
+      "body": "NVIDIA NeMo Agent Toolkit Missing Authentication CVE-2026-65145 Rated CVSS 10.0 Date: 2026-11-02 Tags: supply-chain Executive Summary NVIDIA disclosed a missing authentication flaw in its NeMo Agent Toolkit, CVE-2026-65145, rated CVSS 10.0 and affecting versions 1.0 through 1.8.0. The Injection reported it was one of two flaws NVIDIA published on October 27, 2026, and that the fix ships in 1.9.0. Operators should upgrade to 1.9.0 and remove any exposed agent toolkit service from untrusted networks until they do. Campaign Summary Field Detail Campaign / Malware NVIDIA NeMo Agent Toolkit Missing Authentication Attribution Unknown (confidence: none) Target Deployments of NVIDIA NeMo Agent Toolkit versions 1.0 through 1.8.0 Vector Unauthenticated access to the exposed agent toolkit service Status active First Observed 2026-10-27 Detailed Findings The Injection reported that NVIDIA disclosed two flaws in its NeMo Agent Toolkit on October 27, 2026. The critical one, CVE-2026-65145, is a missing authentication check rated CVSS 10.0 that affects versions 1.0 through 1.8.0 and is fixed in 1.9.0. The bulletin names the missing authentication condition as the driver of the 10.0 score, so any instance reachable by an untrusted network is exposed until patched. IOCs Domains _No attacker infrastructure was published; only CVE-2026-65145 and the affected version range were disclosed_ Full URL Paths _No attacker infrastructure was published; only CVE-2026-65145 and the affected version range were disclosed_ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Upgrade NVIDIA NeMo Agent Toolkit to 1.9.0. Until then, block network access to the toolkit from untrusted networks, and review agent service logs for unauthenticated requests that reach toolkit endpoints. References [The Injection] AI security news, week 44 of 2026 (2026-11-01) — https://theinjection.dev/week/2026-w44/",
+      "tags": [
+        "supply-chain"
+      ],
+      "cves": [
+        "CVE-2026-65145"
+      ],
+      "actors": [
+        "unknown"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338",
+      "title": "Prefab UI Generative UI Sandbox Escape CVE-2026-120338 Rated CVSS 10.0",
+      "date": "2026-11-02",
+      "excerpt": "JFrog rated a sandbox escape in Prefab UI at CVSS 10.0 on an unauthenticated server, according to The Injection week 44 coverage. Model written Python ran in the Generative UI sandbox with unrestricted Deno read, write and network permissions, so generated code could reach host files and run on the host. Upgrade prefab-ui to 0.21.0 or later, remove the GenerativeUI provider from FastMCP servers that do not need it, and require authentication on any server that keeps it.",
+      "file": "2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338.md",
+      "body": "Prefab UI Generative UI Sandbox Escape CVE-2026-120338 Rated CVSS 10.0 Date: 2026-11-02 Tags: supply-chain, mcp-security Executive Summary JFrog rated a sandbox escape in Prefab UI at CVSS 10.0 on an unauthenticated server, according to The Injection week 44 coverage. Model written Python ran in the Generative UI sandbox with unrestricted Deno read, write and network permissions, so generated code could reach host files and run on the host. Upgrade prefab-ui to 0.21.0 or later, remove the GenerativeUI provider from FastMCP servers that do not need it, and require authentication on any server that keeps it. Campaign Summary Field Detail Campaign / Malware Prefab UI Generative UI Sandbox Escape Attribution Unknown (confidence: none) Target Deployments running Prefab UI, including FastMCP servers that pull it in through fastmcp[apps] Vector Model generated Python executed inside a Deno sandbox that held open file and network permissions Status active First Observed 2026-11-01 Detailed Findings The Injection week 44 roundup, citing JFrog, reported that Prefab UI's Generative UI sandbox ran model written Python with unrestricted Deno read, write and network permissions. Generated code could therefore reach host files and run on the host, and JFrog scored the issue CVSS 10.0 on an unauthenticated server. The flaw tracks as CVE-2026-120338 and is fixed in 0.21.0, the package that fastmcp[apps] pulls in. Until teams upgrade, The Injection advises removing the GenerativeUI provider from any FastMCP server that does not need it, requiring authentication on servers that keep it, and checking exposed hosts for unexpected .pth files in the virtualenv site-packages. MITRE ATT&CK Mapping Technique ID Context Command and Scripting Interpreter T1059 Model generated Python that escaped the Deno sandbox executed on the host with the server's permissions IOCs Domains _No attacker domains, hashes or IPs were published; only CVE-2026-120338 and the affected package version were disclosed_ Full URL Paths _No attacker domains, hashes or IPs were published; only CVE-2026-120338 and the affected package version were disclosed_ Splunk Format _No IOCs available for Splunk query_ Package Indicators Affected Platforms Detection Recommendations Inventory Python environments for prefab-ui below 0.21.0 and upgrade. Sweep virtualenv site-packages for unexpected .pth files that auto execute code at interpreter start. Audit FastMCP servers for the GenerativeUI provider, disable it where unused, and enforce authentication on any internet facing instance. References [The Injection] AI security news, week 44 of 2026 (2026-11-01) — https://theinjection.dev/week/2026-w44/",
+      "tags": [
+        "mcp-security",
+        "supply-chain"
+      ],
+      "cves": [
+        "CVE-2026-120338"
+      ],
+      "actors": [
+        "rage",
+        "unknown"
+      ],
+      "iocs": [
+        "pypi:prefab-ui"
+      ]
     }
   ]
 }

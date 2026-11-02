@@ -1,7 +1,7 @@
 {
-  "commit_sha": "b5c51cbf6794ff080d8dec07959eedad49610c28",
+  "commit_sha": "a879c50678e256f37170fb574e7fea1506baaccd",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-01T10:09:10+00:00",
+  "generated_at_utc": "2026-11-02T10:38:14+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,26 +41,33 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
-  "reports_newly_validated": 2,
-  "reports_skipped": 370,
+  "reports_checked": 3,
+  "reports_newly_validated": 3,
+  "reports_skipped": 372,
   "review_required": 0,
-  "source_urls_checked": 2,
-  "state_updates": 2,
+  "source_urls_checked": 3,
+  "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
+      "final_url": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email"
+      "url": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/"
     },
     {
       "error": "",
-      "final_url": "https://about.gitlab.com/blog/deepseek-reasonix-vulnerability-discovered/",
+      "final_url": "https://theinjection.dev/week/2026-w44/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://about.gitlab.com/blog/deepseek-reasonix-vulnerability-discovered/"
+      "url": "https://theinjection.dev/week/2026-w44/"
+    },
+    {
+      "error": "",
+      "final_url": "https://theinjection.dev/week/2026-w44/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://theinjection.dev/week/2026-w44/"
     }
   ],
   "validation_version": "1.0.0",

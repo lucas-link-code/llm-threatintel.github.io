@@ -6410,6 +6410,51 @@
       "validated_at": "2026-11-01T10:09:10+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970": {
+      "content_hash": "1a17c60ce5eb957e978443a40d5a0f96fbe348f4b9b1a1969b3c225eedf24fb5",
+      "evidence_status": "validated",
+      "file": "2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970.md",
+      "posts_index_hash": "a4a40f2a7eee18a23925c17546a03a1d8605922ad06450d53fa6252c424481c0",
+      "report_id": "2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-02T10:38:14+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145": {
+      "content_hash": "c14e0f5cd68997c1faf764e0f3d8b9d519f7bec335843756927278540dad2afb",
+      "evidence_status": "validated",
+      "file": "2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145.md",
+      "posts_index_hash": "4721dfe2b80e769c7035d047c7eb8b2c104e26a00a7e384eff8a24109558eea5",
+      "report_id": "2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145",
+      "review_required": [],
+      "source_urls": [
+        "https://theinjection.dev/week/2026-w44/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-02T10:38:14+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338": {
+      "content_hash": "fa6951345fcd78c86546c361bb2ab6c793e5ea233497694b16d026172de90035",
+      "evidence_status": "validated",
+      "file": "2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338.md",
+      "posts_index_hash": "7c1fd6555561a13c70eff6644916098e75b282456b6eb5c3adfef5b49b16e879",
+      "report_id": "2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338",
+      "review_required": [],
+      "source_urls": [
+        "https://theinjection.dev/week/2026-w44/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-02T10:38:14+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
