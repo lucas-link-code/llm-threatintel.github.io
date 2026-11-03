@@ -6455,6 +6455,51 @@
       "validated_at": "2026-11-02T10:38:14+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks": {
+      "content_hash": "64b042c589fff912b275de115a30f59e6a956c6b63da8c77209765caf2236ac6",
+      "evidence_status": "validated",
+      "file": "2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.md",
+      "posts_index_hash": "b81a5a51355a564400da4cf1c218da1b60c0a87f3c164cef9c830c6162e686a9",
+      "report_id": "2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks",
+      "review_required": [],
+      "source_urls": [
+        "https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-03T10:30:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension": {
+      "content_hash": "abdac3ee25732f7d91df4786f18df4553acd56618131c5720b594556d561b9f1",
+      "evidence_status": "validated",
+      "file": "2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension.md",
+      "posts_index_hash": "853079e7f73c5b3b074e796199b4109ed7e23cc3fd460e168ea9080335faa319",
+      "report_id": "2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/malicious-claude-code-extension-served-in-cursor-supply-chain-attack/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-03T10:30:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs": {
+      "content_hash": "7e9ec65f3b8e7ee7f906e75c219beec2dfea155cea9c06959c0f5e607d1d9404",
+      "evidence_status": "validated",
+      "file": "2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs.md",
+      "posts_index_hash": "f0eaea6b47a7c33e425695e074b26fcdb3c6c8467339632cbad5937ffa8c9cbe",
+      "report_id": "2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs",
+      "review_required": [],
+      "source_urls": [
+        "https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-03T10:30:26+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

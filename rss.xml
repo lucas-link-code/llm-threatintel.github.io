@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 02 Nov 2026 10:38:13 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 10:30:25 +0000</lastBuildDate>
     <item>
+      <title>SecurityWeek Reports Cursor Marketplace Served Malicious Claude Code Extension Versions 2.1.312 and 2.1.313</title>
+      <link>https://llm-threatintel.com/posts/2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension.html</guid>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      <description>SecurityWeek reported that malicious versions 2.1.312 and 2.1.313 of the anthropic.claude-code extension were published to the Cursor VS Code Extension Marketplace on 29 October 2026 and stayed available for about 11 hours, potentially reaching roughly 5,000 developer systems. The extension ran JavaScript at module load to gather host reconnaissance and then attempted an SSH key install, reverse tunnel and persistence, though Cursor says the SSH step failed on most systems because it requires admin rights. Cursor users should remove the affected versions, run the Cursor detection script, and rotate credentials from any host that loaded the extension.</description>
+    </item>    <item>
+      <title>Warp Discloses Vendor Infrastructure Exploitation Exposing Agent Decision Logs and Telemetry</title>
+      <link>https://llm-threatintel.com/posts/2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs.html</guid>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Warp founder Zach Lloyd disclosed on 27 October 2026 active and narrow exploitation of a vendor in Warp infrastructure, exposing agent decision logs and telemetry for an estimated 1 percent of users. Warp says it detected the activity within hours, notified identified users, engaged external help and informed law enforcement, and did not clarify whether source code, prompts, or credentials were included in the exposed logs. Affected users should rotate credentials and review agent activity, because the scope of the exposed data remains undefined.</description>
+    </item>    <item>
+      <title>JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks</title>
+      <link>https://llm-threatintel.com/posts/2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.html</guid>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+      <description>JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.</description>
+    </item>    <item>
       <title>GitLab Warns of Critical Remote Code Execution in AI Gateway CVE-2026-90970</title>
       <link>https://llm-threatintel.com/posts/2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-23-litellm-v1-107-0-payload-files-bleepingcomputer-analysis.html</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
       <description>BleepingComputer published technical analysis of the LiteLLM release pipeline compromise, confirming that all PyPI wheels for litellm 1.107.0 and the malicious Docker image tags dropped three files, cook.pth, cook.py, and sitecustomize.py, into the Python library directory to steal credentials and load remote code execution tooling. Harvested data included cloud and Kubernetes secrets, AI provider credentials, Git, GitHub, npm, PyPI and CI/CD credentials, .env files, SSH, GPG and TLS keys, and browser data. Anyone who installed an unpinned LiteLLM between 11:39 and 13:23 UTC on October 21, 2026, or pulled the affected Docker tags between 11:46 and 14:20 UTC, should treat all secrets on that host as compromised.</description>
-    </item>    <item>
-      <title>Zscaler ThreatLabz Expands ARTEX Investigation to a Global AI Assisted Campaign Spanning Multiple Industries</title>
-      <link>https://llm-threatintel.com/posts/2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-23-zscaler-artex-global-ai-assisted-campaign-expansion.html</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Zscaler ThreatLabz expanded its ARTEX investigation beyond South Korean financial firms, documenting a global AI assisted campaign that chains Claude Code, Codex, and Grok workspaces with a customized ARTEX deployment and custom handoff scripts. Prompt histories show cross model task splitting and peer review, with GLM reviewing work produced by DeepSeek and its subagents, and requests for bulk personal and transaction data plus questions about selling stolen data that point to a financial motive. Defenders should treat exposed AI coding assistant workspaces and sync scripts as intrusion infrastructure, not developer tooling.</description>
-    </item>    <item>
-      <title>CrowdStrike Documents Four Exposed Agentic AI Attack Frameworks Including Argentine Healthcare Pentest Harness</title>
-      <link>https://llm-threatintel.com/posts/2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-22-crowdstrike-four-exposed-agentic-ai-attack-frameworks.html</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <description>CrowdStrike Counter Adversary Operations reported four previously unreported threat actors that left their offensive agentic AI frameworks exposed in open directories, giving defenders visibility into agent driven operations. One actor ran an autonomous penetration testing harness with a Supervisor and Executor Claude Code architecture against Argentine healthcare organizations, delivering full attack workflows that reached remote code execution and explicit exfiltration instructions. Organizations in healthcare and other targeted sectors should assume agentic tooling lowers the skill floor and accelerate the kill chain, often within an hour.</description>
-    </item>    <item>
-      <title>Microsoft Attributes ConnectWise Supply Chain Compromise to Storm-0940 ARTEX Agentic AI Campaign</title>
-      <link>https://llm-threatintel.com/posts/2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-22-storm-0940-artex-connectwise-supply-chain-compromise.html</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft Security blog reports that China aligned actor Storm-0940 used the agentic AI penetration testing framework ARTEX to automate attacks against hundreds of organizations from September 2026, and assesses the actor was responsible for the ConnectWise multi-tenant application supply chain compromise. In multiple environments, time from initial targeting to privileged cloud access was under three hours, with follow-on Microsoft Graph activity including reconnaissance and application credential changes. Defenders should hunt for anomalous application authentication and Graph privilege changes in Microsoft 365 tenants with third party app integrations.</description>
     </item>
   </channel>
 </rss>

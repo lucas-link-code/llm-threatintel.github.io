@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-02",
+  "last_updated": "2026-11-03",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -2515,7 +2515,7 @@
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-04",
-      "status": "active",
+      "status": "inactive",
       "distribution": [
         "Email-based delivery",
         "Shared Streamlit hosting environments",
@@ -6278,6 +6278,44 @@
         "T1098.004 - Account Manipulation: SSH Authorized Keys"
       ],
       "description": "An unidentified party published a modification of Anthropic's Claude Code extension to the Cursor extension marketplace, injecting a JavaScript loader that attempts to install a persistent SSH backdoor and report host details. Microsoft confirmed the malicious packages were not distributed from the Microsoft Visual Studio Marketplace or npm, and Anthropic confirmed it did not develop the package and its systems were not compromised. Cursor worked with the hosting provider to take the attacker server offline.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "testmetest-worm-operators",
+      "names": [
+        "testmetest worm operators",
+        "Shai-Hulud lineage (unconfirmed)"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "GitHub hijacked repositories",
+        "npm publishing permissions"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1552.001 - Unsecured Credentials"
+      ],
+      "description": "Operators used hijacked GitHub accounts and contributor access to commit a very large .github/init.js payload plus agent configuration files across 42 repositories owned by 11 legitimate owners. The implant harvested credentials, modified repositories and CI configuration, propagated through npm publishing permissions, and deployed a wiper triggered by stolen token revocation.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "cursor-marketplace-publisher-access-actor",
+      "names": [
+        "Cursor marketplace publisher access actor"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "disrupted",
+      "distribution": [
+        "Cursor VS Code Extension Marketplace"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1021.004 - Remote Services: SSH"
+      ],
+      "description": "An unidentified actor used access to the Cursor marketplace to publish tampered anthropic.claude-code extension versions carrying a JavaScript loader that performed host reconnaissance and attempted an SSH backdoor with persistence. The malicious versions were removed and the marketplace was rebuilt with rotated keys.",
       "attribution": "Unattributed"
     }
   ]

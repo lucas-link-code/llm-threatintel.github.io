@@ -1,6 +1,44 @@
 {
   "posts": [
     {
+      "id": "2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension",
+      "title": "SecurityWeek Reports Cursor Marketplace Served Malicious Claude Code Extension Versions 2.1.312 and 2.1.313",
+      "date": "2026-11-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "SecurityWeek reported that malicious versions 2.1.312 and 2.1.313 of the anthropic.claude-code extension were published to the Cursor VS Code Extension Marketplace on 29 October 2026 and stayed available for about 11 hours, potentially reaching roughly 5,000 developer systems. The extension ran JavaScript at module load to gather host reconnaissance and then attempted an SSH key install, reverse tunnel and persistence, though Cursor says the SSH step failed on most systems because it requires admin rights. Cursor users should remove the affected versions, run the Cursor detection script, and rotate credentials from any host that loaded the extension.",
+      "file": "2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension.md"
+    },
+    {
+      "id": "2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs",
+      "title": "Warp Discloses Vendor Infrastructure Exploitation Exposing Agent Decision Logs and Telemetry",
+      "date": "2026-11-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Warp founder Zach Lloyd disclosed on 27 October 2026 active and narrow exploitation of a vendor in Warp infrastructure, exposing agent decision logs and telemetry for an estimated 1 percent of users. Warp says it detected the activity within hours, notified identified users, engaged external help and informed law enforcement, and did not clarify whether source code, prompts, or credentials were included in the exposed logs. Affected users should rotate credentials and review agent activity, because the scope of the exposed data remains undefined.",
+      "file": "2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs.md"
+    },
+    {
+      "id": "2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks",
+      "title": "JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks",
+      "date": "2026-11-03",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.",
+      "file": "2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.md"
+    },
+    {
       "id": "2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970",
       "title": "GitLab Warns of Critical Remote Code Execution in AI Gateway CVE-2026-90970",
       "date": "2026-11-02",

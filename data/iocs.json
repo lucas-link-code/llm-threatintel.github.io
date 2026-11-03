@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-02",
+  "last_updated": "2026-11-03",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7109,6 +7109,15 @@
       "first_seen": "2026-11-02",
       "source": "The Injection",
       "campaign": "prefab-ui-generative-ui-sandbox-escape-cve-2026-120338",
+      "status": "active"
+    },
+    {
+      "value": "npm:testmetest",
+      "type": "package",
+      "context": "JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks",
+      "first_seen": "2026-11-03",
+      "source": "oscerd.github.io",
+      "campaign": "jfrog-testmetest-npm-worm-github-agent-hooks",
       "status": "active"
     }
   ]

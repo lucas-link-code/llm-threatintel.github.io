@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks | LLM ThreatIntel</title>
+  <meta name="description" content="JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks">
+  <meta property="og:description" content="JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks">
+  <meta property="article:published_time" content="2026-11-03T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-03T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks">
+  <meta name="twitter:description" content="JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks",
+  "description": "JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.",
+  "datePublished": "2026-11-03T00:00:00Z",
+  "dateModified": "2026-11-03T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-03-jfrog-testmetest-npm-worm-github-agent-hooks.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-03</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>JFrog Analyzes testmetest npm Worm Hijacking 42 GitHub Repositories with AI Agent Execution Hooks</h1>
+<p><strong>Date:</strong> 2026-11-03<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>JFrog Security Research analyzed an npm worm, tracked as testmetest, that hijacked 42 GitHub repositories across 11 legitimate owners and planted a 12.9 to 13.7 MB payload at .github/init.js alongside agent configuration files for Claude Code, Gemini, Cursor, and VS Code. The payload harvested GitHub and npm credentials, propagated through available npm publishing permissions including GitHub OIDC token exchange, and installs a wiper that deletes the victim home directory when the stolen GitHub token is revoked, turning routine cleanup into data loss. Defenders should isolate affected hosts before revoking tokens and audit repositories for unauthorized .github/init.js and agent config changes.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>testmetest npm worm</td></tr><tr><td>Attribution</td><td>Unattributed, resembling Shai-Hulud variant lineage (confidence: low)</td></tr><tr><td>Target</td><td>GitHub repository owners and developers using agentic coding tools</td></tr><tr><td>Vector</td><td>Hijacked GitHub accounts and contributor access committing payload and agent config files</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-22</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to a weekly AI security incident compilation at oscerd.github.io citing JFrog Security Research, attackers took over 42 GitHub repositories belonging to 11 real owners using hijacked accounts and contributor access rather than throwaway projects, so the repositories carried the trust of legitimate names. Into each repository they committed a payload file at .github/init.js deliberately sized between 12.9 and 13.7 MB, large enough that GitHub code search does not index it and the Contents API does not return it, which forced JFrog to pull it as a raw Git blob through the Trees API. The same writeup states the attackers added execution and configuration files for Claude Code, Gemini, Cursor, and VS Code arranged so that starting one of those agents in the project, or opening it as a VS Code workspace with the right settings, could launch .github/init.js without the developer typing a command; the source uses the hedge could because the trigger depends on each tool configuration. Once running, the payload harvested GitHub and npm credentials, modified repositories and CI configuration, propagated by using whatever npm publishing permissions it found, and used recovered code that performed GitHub OIDC token exchanges to obtain npm publish credentials automatically. According to the same source, it checked for CI runners, containers, debuggers and analysis tools and went dormant when it saw them, and installed a wiper that deletes the victim home directory the moment the stolen GitHub token is revoked. The source notes the npm lineage traces back to an earlier worm family, that SafeDep had described the package side as early as 22 October 2026, and that a resemblance to Shai-Hulud variants exists with attribution to the original operators unproven.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Hijacked repositories and agent config files delivered the worm through trusted project checkouts</td></tr><tr><td>Unsecured Credentials</td><td>T1552.001</td><td>Payload harvested GitHub and npm credentials and exchanged GitHub OIDC tokens for npm publish rights</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No network IOCs published. Package name only; repository count and payload path are documented in detailed_findings._</p>
+<h3>Full URL Paths</h3>
+<p>_No network IOCs published. Package name only; repository count and payload path are documented in detailed_findings._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Package Indicators</h3>
+<pre><code class="language-">npm:testmetest</code></pre>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">GitHub
+npm
+VS Code
+Cursor
+Claude Code
+Gemini</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Hunt for unexpectedly large .github/init.js files and unauthorized changes to GitHub workflows, CI configuration, and agent config files for Claude Code, Gemini, Cursor, and VS Code. Do not revoke stolen GitHub tokens before isolating the host, because the payload wiper is designed to delete the home directory on revocation. Rotate GitHub and npm credentials, review npm publishing permissions and OIDC trust for unauthorized tokens, and treat any repository a developer opened in an agentic editor as a possible execution path.</p>
+<h2>References</h2>
+<ul><li>[oscerd.github.io] AI security incidents of the week: 27 October to 2 November 2026 (2026-11-02) — https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>
