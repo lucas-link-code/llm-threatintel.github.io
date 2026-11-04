@@ -6500,6 +6500,22 @@
       "validated_at": "2026-11-03T10:30:26+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-04-check-point-haiou-prompt-adware-llm-gateway": {
+      "content_hash": "c473156c2ec0db38f3ab885679d0d924684a32f516ece0f0d744d7246646d64a",
+      "evidence_status": "validated",
+      "file": "2026-11-04-check-point-haiou-prompt-adware-llm-gateway.md",
+      "posts_index_hash": "d7af7bf3a823a30c3a5b4b16190f5e047fa3ad6ddfb3b0efa5985bf0558c7656",
+      "report_id": "2026-11-04-check-point-haiou-prompt-adware-llm-gateway",
+      "review_required": [],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/",
+        "https://blog.checkpoint.com/security/prompt-adware-how-hidden-ai-instructions-could-create-a-new-enterprise-security-risk/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-04T10:32:19+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

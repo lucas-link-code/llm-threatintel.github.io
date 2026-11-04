@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "2026-11-04-check-point-haiou-prompt-adware-llm-gateway",
+      "title": "Check Point Research Names Haiou Jailbreak Bundle as Prompt Adware Injecting Ads for an LLM Gateway",
+      "date": "2026-11-04",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "malicious-tool",
+        "shadow-ai",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research analyzed the Haiou jailbreak bundle, a public prompt package targeting OpenAI Codex, and classified it as prompt adware because it persistently rewrites an agent trusted instructions and configuration files to inject advertisements for the author LLM gateway. The bundle also installs security focused Skills for penetration testing, cracking, reverse engineering and game security, and was observed in use by a cybercrime actor alongside Cobalt Strike, VulnClaw and the Ladon framework. Defenders should treat agent configuration artifacts and installed Skills as security relevant code, not benign text.",
+      "file": "2026-11-04-check-point-haiou-prompt-adware-llm-gateway.md"
+    },
+    {
       "id": "2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension",
       "title": "SecurityWeek Reports Cursor Marketplace Served Malicious Claude Code Extension Versions 2.1.312 and 2.1.313",
       "date": "2026-11-03",

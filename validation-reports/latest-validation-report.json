@@ -1,7 +1,7 @@
 {
-  "commit_sha": "c11cb9bdc51d0d73b4337c068b70fd4fd3557afe",
+  "commit_sha": "ea0102d11cdf717993afee499e092e47b144a88e",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-03T10:30:26+00:00",
+  "generated_at_utc": "2026-11-04T10:32:19+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,33 +41,26 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 3,
-  "reports_skipped": 375,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 378,
   "review_required": 0,
-  "source_urls_checked": 3,
-  "state_updates": 3,
+  "source_urls_checked": 2,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.securityweek.com/malicious-claude-code-extension-served-in-cursor-supply-chain-attack/",
+      "final_url": "https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.securityweek.com/malicious-claude-code-extension-served-in-cursor-supply-chain-attack/"
+      "url": "https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/"
     },
     {
       "error": "",
-      "final_url": "https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html",
+      "final_url": "https://blog.checkpoint.com/security/prompt-adware-how-hidden-ai-instructions-could-create-a-new-enterprise-security-risk/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html"
-    },
-    {
-      "error": "",
-      "final_url": "https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://oscerd.github.io/2026/11/02/ai-security-incidents-of-the-week-27-october-2-november-2026.html"
+      "url": "https://blog.checkpoint.com/security/prompt-adware-how-hidden-ai-instructions-could-create-a-new-enterprise-security-risk/"
     }
   ],
   "validation_version": "1.0.0",

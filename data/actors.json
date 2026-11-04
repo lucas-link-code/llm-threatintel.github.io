@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-04",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6317,6 +6317,26 @@
       ],
       "description": "An unidentified actor used access to the Cursor marketplace to publish tampered anthropic.claude-code extension versions carrying a JavaScript loader that performed host reconnaissance and attempted an SSH backdoor with persistence. The malicious versions were removed and the marketplace was rebuilt with rotated keys.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "haiou-666",
+      "names": [
+        "haiou-666",
+        "Haiou",
+        "Seagull"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "GitHub hosted jailbreak bundle for OpenAI Codex and Claude Code"
+      ],
+      "ttps": [
+        "T1195 - Supply Chain Compromise",
+        "T1546 - Event Triggered Execution"
+      ],
+      "description": "A threat actor or developer operating the GitHub account haiou-666 publishes the Haiou jailbreak bundle, which Check Point Research classifies as prompt adware. The bundle weakens model guardrails through prompt injection and installs security focused Skills, while injecting persistent advertisements for the author LLM gateway into global agent instruction files. The bundle is dual use and Check Point Research observed it in a cybercrime intrusion alongside Cobalt Strike, VulnClaw and the Ladon framework.",
+      "attribution": "Unattributed single actor operating the GitHub account haiou-666. Check Point Research stated no evidence links the author to cybercrime."
     }
   ]
 }
