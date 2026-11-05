@@ -6516,6 +6516,21 @@
       "validated_at": "2026-11-04T10:32:19+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos": {
+      "content_hash": "46f7412d8a7f96e52f545ed9e76f3d28b45f9afbc2e7da35f564d46950111caf",
+      "evidence_status": "validated",
+      "file": "2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.md",
+      "posts_index_hash": "dcd90eae804894016a3afc0e8db21b14cfad17fa4195e92ea59cc0db6287bda7",
+      "report_id": "2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos",
+      "review_required": [],
+      "source_urls": [
+        "https://www.securityweek.com/ai-linked-breaches-mount-as-workos-northflank-trigger-dev-disclose-hacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-05T10:26:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

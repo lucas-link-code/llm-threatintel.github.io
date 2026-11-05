@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 04 Nov 2026 10:32:17 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 10:26:10 +0000</lastBuildDate>
     <item>
+      <title>OpenAI Cyber Model Pipeline Validates 948 Linux Local Privilege Escalation Exploits at $1,279 Each</title>
+      <link>https://llm-threatintel.com/posts/2026-11-05-openai-cyber-model-948-linux-lpe-exploits.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-05-openai-cyber-model-948-linux-lpe-exploits.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
+      <description>OpenAI reported that an autonomous vulnerability discovery, exploitation, and patching pipeline using an upcoming cyber model identified and analyzed 2,308 candidate Linux kernel findings, dynamically reproduced 1,724 vulnerabilities, and produced 948 working local privilege escalation exploits in a mid-October 2026 run at a total API cost of $1,213,430, or $1,279 per exploit. The pipeline also generated 291 information leak proofs of concept and produced candidate patches that OpenAI is submitting to maintainers through Patch the Planet partners. This demonstrates that AI driven exploit generation is economically viable at scale, so defenders should prioritize patch velocity for local privilege escalation bugs.</description>
+    </item>    <item>
+      <title>Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework</title>
+      <link>https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
+      <description>SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.</description>
+    </item>    <item>
       <title>Check Point Research Names Haiou Jailbreak Bundle as Prompt Adware Injecting Ads for an LLM Gateway</title>
       <link>https://llm-threatintel.com/posts/2026-11-04-check-point-haiou-prompt-adware-llm-gateway.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-04-check-point-haiou-prompt-adware-llm-gateway.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-25-check-point-aokigahara-infostealer-ai-developer-credentials.html</guid>
       <pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate>
       <description>Check Point Research published a first party analysis on October 23, 2026 of Aokigahara, a newly observed infostealer whose collection routines explicitly target AI assistant applications and developer tooling. Targeted artifacts include session and configuration data tied to Claude, ChatGPT Desktop, Codex, Cursor, Windsurf, GitHub Copilot, Gemini CLI and JetBrains AI Assistant, plus Git credentials, SSH files and AWS, Azure and Google Cloud configurations. Defenders should treat AI assistant session tokens as production secrets and rotate them alongside cloud keys if a developer endpoint is suspected of compromise.</description>
-    </item>    <item>
-      <title>Socket Finds LiteLLM GitHub CI Secret Exfiltration 11 Days Before Malicious Release</title>
-      <link>https://llm-threatintel.com/posts/2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-24-socket-litellm-github-ci-secret-exfiltration-11-day-window.html</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Socket threat research found malicious GitHub Actions workflows exfiltrating the BerriAI/litellm organization CI secrets on October 10 and October 12, 2026, eleven days before the malicious v1.107.0 release, placing attacker access to the repository weeks earlier than the public disclosure. LiteLLM corroborated the finding and traced initial access to an Agent Platform master key committed to a public repository in May that was never revoked. Maintainers of AI and developer tooling repositories should audit Actions workflow history, org audit logs, and token approval events, and rotate long lived CI tokens.</description>
-    </item>    <item>
-      <title>Microsoft Analyzes LiteLLM 1.107.0 Credential Theft Through Python Startup Hooks</title>
-      <link>https://llm-threatintel.com/posts/2026-10-24-microsoft-litellm-1-107-0-python-startup-hook-credential-theft.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-24-microsoft-litellm-1-107-0-python-startup-hook-credential-theft.html</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft published technical analysis of the LiteLLM 1.107.0 supply chain compromise, showing the malicious release ran credential collection during normal Python interpreter startup, so an application did not need to import LiteLLM for the payload to execute. The collector targeted authentication material across developer tools, AI applications, cloud environments, browsers, and infrastructure, and a separate module read credential and model configuration records from the LiteLLM proxy. Defenders should treat any host that started Python in an environment carrying litellm 1.107.0 or its container images as compromised and rotate every credential reachable from that host.</description>
     </item>
   </channel>
 </rss>

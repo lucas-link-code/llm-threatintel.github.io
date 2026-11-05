@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework | LLM ThreatIntel</title>
+  <meta name="description" content="SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework">
+  <meta property="og:description" content="SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework">
+  <meta property="article:published_time" content="2026-11-05T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-05T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework">
+  <meta name="twitter:description" content="SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework",
+  "description": "SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.",
+  "datePublished": "2026-11-05T00:00:00Z",
+  "dateModified": "2026-11-05T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html",
+  "keywords": [
+    "supply-chain",
+    "malicious-tool",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-05</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework</h1>
+<p><strong>Date:</strong> 2026-11-05<br><strong>Tags:</strong> supply-chain, malicious-tool, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Artex AI developer platform token theft campaign</td></tr><tr><td>Attribution</td><td>Storm-0940 (per multiple victim companies and prior ARTEX reporting) (confidence: medium)</td></tr><tr><td>Target</td><td>AI developer platforms, hosting platforms, evaluation services, developer consoles and their downstream customers</td></tr><tr><td>Vector</td><td>Compromised credentials, third party dependencies and vulnerability exploitation, followed by AI framework driven automation</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-26</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to SecurityWeek, at least a dozen AI developer platforms have been hit over the past month, with the most recent incidents involving CommandCode, Northflank, Trigger.dev, Chainstack and WorkOS. SecurityWeek reported that across all incidents the hackers appear to have hunted AI access tokens they could monetize, relying on AI agents to speed up and streamline the attacks, and that initial access varied from compromised credentials to third party dependencies and vulnerability exploitation. The outlets named as affected or probed include Andromeda, Brev (NVIDIA), CommandCode, Fireworks AI, Lightning AI, Northflank, OpenCode, Railway, Trigger.dev, Warp and Zeabur, mainly targeting stored customer secrets. Chainstack, a blockchain infrastructure and Web3 services provider, was hit on October 26, and SecurityWeek reported the attacker accessed a development environment and parts of production through a third party component and reached a database containing customer account information including organization names, account holder names, member email addresses and password hashes, with node credentials potentially exposed. WorkOS said that on October 30 hackers compromised an internal application used by its sales team and accessed names, email addresses, phone numbers, job titles, company affiliations, customer account histories, sales details, customer relationship information and customer communications. SecurityWeek reported that Chainstack and WorkOS disclosed attacks relying on the open source Artex framework for automation, and that multiple companies linked attacks attributed to the Chinese APT Storm-0940 to the use of Artex, including a recent campaign targeting ConnectWise customers. The Cloud Security Alliance told SecurityWeek that intruders reach AI provider credentials through the intermediary layer of hosting platforms, evaluation services and developer consoles, so a single intrusion can expose keys for many inference accounts at once. Note that the ConnectWise and broader ARTEX activity was previously reported; this item adds new victim disclosures and a new outlet source.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Initial access reached Chainstack through a third party component, matching supply chain compromise behavior reported by SecurityWeek.</td></tr><tr><td>Unsecured Credentials</td><td>T1552</td><td>Attackers hunted stored AI access tokens, node credentials, password hashes and provider keys across hosting and developer platforms.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published by SecurityWeek; victims and platforms are the only named entities._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published by SecurityWeek; victims and platforms are the only named entities._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Chainstack
+WorkOS
+Northflank
+Trigger.dev
+CommandCode
+Fireworks AI
+Lightning AI
+Railway
+Warp
+Zeabur
+Brev (NVIDIA)
+Andromeda
+OpenCode</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Rotate all model provider API keys, database connection strings, node credentials, and workload identities held by AI gateways, hosting platforms, and developer consoles, and assume downstream inference accounts are exposed when an intermediary platform is breached. Hunt for use of the Artex framework artifacts and for AI agent automation in CI, build, and developer consoles. Monitor for credential access against browser, cloud, and AI application stores on developer and build hosts. Treat password hashes from affected account databases as compromised and force resets. Pivot on authentication from the intermediary platform layer into downstream customer inference accounts.</p>
+<h2>References</h2>
+<ul><li>[SecurityWeek] AI-Linked Breaches Mount as WorkOS, Northflank, Trigger.dev Disclose Hacks (2026-11-04) — https://www.securityweek.com/ai-linked-breaches-mount-as-workos-northflank-trigger-dev-disclose-hacks/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

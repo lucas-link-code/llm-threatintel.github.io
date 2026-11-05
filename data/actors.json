@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-04",
+  "last_updated": "2026-11-05",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -4854,10 +4854,11 @@
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-08",
-      "status": "disrupted",
+      "status": "active",
       "distribution": [
         "Internal testing only; not yet released",
-        "Internal evaluation only"
+        "Internal evaluation only",
+        "First party research publication"
       ],
       "ttps": [
         "T1203 - Autonomous Exploit Development and Execution",
@@ -6025,20 +6026,26 @@
     {
       "id": "storm-0940",
       "names": [
-        "Storm-0940"
+        "Storm-0940",
+        "ARTEX operators"
       ],
       "type": "nation_state_campaign",
       "first_seen": "2026-10",
       "status": "active",
       "distribution": [
         "Multi-tenant SaaS application compromise",
-        "Password spray against internet exposed services"
+        "Password spray against internet exposed services",
+        "Compromised credentials",
+        "Third party dependencies",
+        "Vulnerability exploitation"
       ],
       "ttps": [
         "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain",
-        "T1078.004 - Valid Accounts: Cloud Accounts"
+        "T1078.004 - Valid Accounts: Cloud Accounts",
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1552 - Unsecured Credentials"
       ],
-      "description": "Storm-0940 integrates agentic AI tooling, specifically the ARTEX penetration testing framework, into an existing intrusion workflow, using it to scale password spraying, accelerate discovery, and drive post-compromise actions in Microsoft 365 environments. Microsoft ties the actor to the ConnectWise multi-tenant application supply chain compromise and to rapid escalation from initial targeting to privileged cloud access.",
+      "description": "SecurityWeek reported that multiple companies linked attacks attributed to the Chinese APT Storm-0940 to the use of the open source Artex AI penetration testing framework, including a recent campaign targeting ConnectWise customers. SecurityWeek stated the recent AI developer platform attacks do not appear to be related to each other and initial access varies, while sharing the industry wide interest in AI provider credentials.",
       "attribution": "China state aligned per Microsoft assessment"
     },
     {

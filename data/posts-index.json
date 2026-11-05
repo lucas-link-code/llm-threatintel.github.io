@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-11-05-openai-cyber-model-948-linux-lpe-exploits",
+      "title": "OpenAI Cyber Model Pipeline Validates 948 Linux Local Privilege Escalation Exploits at $1,279 Each",
+      "date": "2026-11-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OpenAI reported that an autonomous vulnerability discovery, exploitation, and patching pipeline using an upcoming cyber model identified and analyzed 2,308 candidate Linux kernel findings, dynamically reproduced 1,724 vulnerabilities, and produced 948 working local privilege escalation exploits in a mid-October 2026 run at a total API cost of $1,213,430, or $1,279 per exploit. The pipeline also generated 291 information leak proofs of concept and produced candidate patches that OpenAI is submitting to maintainers through Patch the Planet partners. This demonstrates that AI driven exploit generation is economically viable at scale, so defenders should prioritize patch velocity for local privilege escalation bugs.",
+      "file": "2026-11-05-openai-cyber-model-948-linux-lpe-exploits.md"
+    },
+    {
+      "id": "2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos",
+      "title": "Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework",
+      "date": "2026-11-05",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malicious-tool",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.",
+      "file": "2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.md"
+    },
+    {
       "id": "2026-11-04-check-point-haiou-prompt-adware-llm-gateway",
       "title": "Check Point Research Names Haiou Jailbreak Bundle as Prompt Adware Injecting Ads for an LLM Gateway",
       "date": "2026-11-04",
