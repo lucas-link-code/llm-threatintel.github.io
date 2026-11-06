@@ -7195,6 +7195,7 @@
       ],
       "cves": [],
       "actors": [
+        "artex",
         "deepseek"
       ],
       "iocs": []
@@ -7376,7 +7377,9 @@
         "nation-state"
       ],
       "cves": [],
-      "actors": [],
+      "actors": [
+        "artex"
+      ],
       "iocs": []
     },
     {
@@ -7755,6 +7758,7 @@
       ],
       "cves": [],
       "actors": [
+        "artex",
         "storm-0940"
       ],
       "iocs": [
@@ -7791,6 +7795,7 @@
       ],
       "cves": [],
       "actors": [
+        "artex",
         "deepseek",
         "openai",
         "unattributed"
@@ -8186,6 +8191,7 @@
       ],
       "cves": [],
       "actors": [
+        "artex",
         "storm-0940"
       ],
       "iocs": []
@@ -8205,6 +8211,48 @@
         "openai"
       ],
       "iocs": []
+    },
+    {
+      "id": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass",
+      "title": "Check Point Research Bypasses ChatGPT Lockdown Mode for Silent Chat Exfiltration and Phishing",
+      "date": "2026-11-06",
+      "excerpt": "Check Point Research discovered a vulnerability that bypassed OpenAI Lockdown Mode, allowing silent exfiltration of entire chat history, credential phishing, and malware delivery. In the Electron based ChatGPT Classic application the attack required zero user interaction, so simply holding a conversation was enough to trigger silent data exfiltration. OpenAI deployed a fix on September 18, 2026, by removing the allow-popups and allow-popups-to-escape-sandbox permissions from the outer HTML preview sandbox iframe.",
+      "file": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass.md",
+      "body": "Check Point Research Bypasses ChatGPT Lockdown Mode for Silent Chat Exfiltration and Phishing Date: 2026-11-06 Tags: prompt-injection, phishing Executive Summary Check Point Research discovered a vulnerability that bypassed OpenAI Lockdown Mode, allowing silent exfiltration of entire chat history, credential phishing, and malware delivery. In the Electron based ChatGPT Classic application the attack required zero user interaction, so simply holding a conversation was enough to trigger silent data exfiltration. OpenAI deployed a fix on September 18, 2026, by removing the allow-popups and allow-popups-to-escape-sandbox permissions from the outer HTML preview sandbox iframe. Campaign Summary Field Detail Campaign / Malware ChatGPT Lockdown Mode bypass Attribution Unattributed vulnerability research by Check Point Research (confidence: none) Target ChatGPT users, with the zero interaction path affecting the Electron based ChatGPT Classic application Vector Malicious GPT or prompt injection leading to an iframe sandbox escape via a nested iframe contentWindow.open and a popup with allow-popups-to-escape-sandbox Status disrupted First Observed 2026-11-05 Detailed Findings According to checkpoint.com, Check Point Research found a vulnerability in ChatGPT that allowed an attacker to bypass Lockdown Mode and perform covert exfiltration of chat data to an external server. The researchers reported that the outer HTML preview iframe carried the allow-popups and allow-popups-to-escape-sandbox tokens, so a nested iframe could call contentWindow.open, open a popup that escaped the sandbox, and serve arbitrary HTML outside the sandbox restrictions. Check Point Research reported that window.open in the Electron based ChatGPT Classic application worked without a user gesture, making the attack zero click, so an attacker could silently leak chat messages to an attacker controlled server simply by having a conversation. The same primitive also allowed reloading content in the main ChatGPT window and performing actions on behalf of the user, such as forcibly signing them out, which could support a credential phishing lure. According to checkpoint.com, OpenAI informed Check Point Research on September 18, 2026 that it had deployed a fix by removing the allow-popups and allow-popups-to-escape-sandbox permissions from the outer HTML preview sandbox iframe, and retesting confirmed the exploitation technique no longer works. MITRE ATT&CK Mapping Technique ID Context Exfiltration Over C2 Channel T1041 Check Point Research demonstrated silent exfiltration of chat data to an attacker controlled server through a sandbox escaping popup. Phishing: Spearphishing Link T1566.002 The vulnerable window could be reloaded and could force a sign out to support a credential phishing path. IOCs Domains _No IOCs published. Check Point Research reported the issue was fixed by OpenAI on 2026-09-18._ Full URL Paths _No IOCs published. Check Point Research reported the issue was fixed by OpenAI on 2026-09-18._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Ensure ChatGPT clients are updated to a build after the September 18, 2026 fix that removed allow-popups and allow-popups-to-escape-sandbox from the outer HTML preview sandbox iframe. Treat unexpected popup windows, forced sign out prompts, or reauthentication requests originating from within ChatGPT as suspicious, and monitor for outbound connections to newly registered or low reputation hosts triggered during chat sessions. Instruct users that a malicious GPT conversation can attempt silent exfiltration without clicks and to report anomalous chat behavior. References [Check Point Research] ChatGPT Lockdown Mode Bypass: Phishing, Malware Delivery, and Silent Data Exfiltration (2026-11-05) — https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+      "tags": [
+        "phishing",
+        "prompt-injection"
+      ],
+      "cves": [],
+      "actors": [
+        "openai",
+        "unattributed"
+      ],
+      "iocs": []
+    },
+    {
+      "id": "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "title": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault",
+      "date": "2026-11-06",
+      "excerpt": "Microsoft Threat Intelligence observed threat actors using an agentic AI offensive framework, ARTEX, to scan public GitHub repositories for exposed secrets and advance from discovery to Azure Key Vault data exfiltration in about five minutes. The same campaign used valid leaked or stolen application credentials for service principal sign ins across dozens of Microsoft Entra ID tenants beginning October 28, 2026, and abused compromised Azure AI services. Defenders should rotate exposed application credentials, audit service principal sign ins from the listed IP addresses, and monitor Azure Key Vault and Storage Account access.",
+      "file": "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault.md",
+      "body": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault Date: 2026-11-06 Tags: llmjacking, malicious-tool Executive Summary Microsoft Threat Intelligence observed threat actors using an agentic AI offensive framework, ARTEX, to scan public GitHub repositories for exposed secrets and advance from discovery to Azure Key Vault data exfiltration in about five minutes. The same campaign used valid leaked or stolen application credentials for service principal sign ins across dozens of Microsoft Entra ID tenants beginning October 28, 2026, and abused compromised Azure AI services. Defenders should rotate exposed application credentials, audit service principal sign ins from the listed IP addresses, and monitor Azure Key Vault and Storage Account access. Campaign Summary Field Detail Campaign / Malware ARTEX agentic AI exposed secret and credential abuse campaign Attribution Unnamed threat actors using the ARTEX agentic AI offensive framework, tracked by Microsoft Threat Intelligence (confidence: medium) Target Organizations with exposed secrets in public GitHub repositories and their connected Microsoft Entra ID tenants, Azure, and Microsoft 365 resources Vector Agentic AI scanning of public GitHub repositories for exposed secrets, followed by abuse of valid leaked or stolen application credentials for service principal sign ins Status active First Observed 2026-10-28 Detailed Findings According to microsoft.com, Microsoft Threat Intelligence observed threat actors using an agentic AI offensive framework, ARTEX, to search public GitHub repositories for exposed secrets including credentials, application credentials, and AI inference related API keys across multiple applications and cloud services. Microsoft reported that in at least one case an AI agent advanced from scanning GitHub for secrets to exfiltrating data from Azure Key Vault in just five minutes. According to microsoft.com, as early as October 28, 2026, Microsoft began observing successful service principal sign ins from IP address 199.19.77[.]84 involving multiple application IDs, including cases where a multitenant application credential was compromised at the source and used to access multiple downstream tenants. The threat actor used the compromised credentials for cloud resource discovery and for credential and data exfiltration from Azure Key Vaults and Storage Accounts, and for abuse of Azure AI services. Microsoft also reported reconnaissance from 157.22.126[.]128 targeting AI workloads deployed on Azure AI services, and malicious operations from 65.87.223[.]26 that included embedded shell commands in a user agent and attempts to obtain App Service authentication tokens; the same IPs were reported by Todyl in a similar campaign. The compromised applications accessed SharePoint and OneDrive in targeted tenants, including file downloads and mailbox item access, and the actor enumerated subscriptions, resource groups, permissions, AI model deployments, and service configurations in Azure. MITRE ATT&CK Mapping Technique ID Context Unsecured Credentials: Credentials In Files T1552.001 Microsoft reported the framework scanning public GitHub repositories for exposed credentials, application credentials, and AI inference API keys. Valid Accounts T1078 The actor used valid leaked or stolen application credentials for service principal sign ins across multiple Entra ID tenants. IOCs Domains _IPs published by Microsoft Threat Intelligence in the ARTEX agentic AI exposed secret report. The address 199.19.77[.]18 is noted as a Tor exit node that may be associated with unrelated activity._ Full URL Paths _IPs published by Microsoft Threat Intelligence in the ARTEX agentic AI exposed secret report. The address 199.19.77[.]18 is noted as a Tor exit node that may be associated with unrelated activity._ Splunk Format _No IOCs available for Splunk query_ Affected Platforms Detection Recommendations Audit Microsoft Entra ID service principal sign in logs for the listed IP addresses and for anomalous multitenant application access, and rotate any application credentials or secrets that were ever committed to public repositories or vendor owned multitenant applications. Enable Defender for Cloud AI threat protection to detect validation and abuse of stolen Azure AI resources, monitor Azure Key Vault and Storage Account read operations that return credentials and connection strings, and alert on App Service authentication token requests. Review Microsoft Graph API search activity for content enumeration across SharePoint and OneDrive. References [Microsoft Security Blog] Threat actors use agentic AI tooling to find and abuse exposed secrets (2026-11-05) — https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
+      "tags": [
+        "llmjacking",
+        "malicious-tool"
+      ],
+      "cves": [],
+      "actors": [
+        "artex",
+        "rage",
+        "unnamed"
+      ],
+      "iocs": [
+        "157.22.126.128",
+        "199.19.77.18",
+        "199.19.77.84",
+        "65.87.223.26"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-05",
+  "last_updated": "2026-11-06",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6344,6 +6344,22 @@
       ],
       "description": "A threat actor or developer operating the GitHub account haiou-666 publishes the Haiou jailbreak bundle, which Check Point Research classifies as prompt adware. The bundle weakens model guardrails through prompt injection and installs security focused Skills, while injecting persistent advertisements for the author LLM gateway into global agent instruction files. The bundle is dual use and Check Point Research observed it in a cybercrime intrusion alongside Cobalt Strike, VulnClaw and the Ladon framework.",
       "attribution": "Unattributed single actor operating the GitHub account haiou-666. Check Point Research stated no evidence links the author to cybercrime."
+    },
+    {
+      "id": "artex",
+      "names": [
+        "ARTEX"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "ARTEX is an agentic AI offensive framework that automates scanning of public GitHub repositories for exposed secrets and conducts follow on attacks with reduced hands on keyboard interaction. According to Microsoft, the framework can use agents to analyze scan output and conduct follow on activity such as cloud resource discovery, Azure Key Vault and Storage Account exfiltration, and abuse of Azure AI services.",
+      "attribution": "Unattributed, tracked by Microsoft Threat Intelligence"
     }
   ]
 }

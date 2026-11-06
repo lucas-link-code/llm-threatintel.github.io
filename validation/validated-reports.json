@@ -6531,6 +6531,36 @@
       "validated_at": "2026-11-05T10:26:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass": {
+      "content_hash": "cf111dd2f8ee6f52d5d1f70c149934825426061409526443c0c1dfe1feb65a18",
+      "evidence_status": "validated",
+      "file": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass.md",
+      "posts_index_hash": "3e66d414de5a90b1a1b88903153d591e68c5e4dfed2d3f797e46cd4c528e2f60",
+      "report_id": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass",
+      "review_required": [],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-06T10:27:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault": {
+      "content_hash": "6245b10bc0b93c301d11fbb5cbb1579e17b35426a9e2fe046c4b83f35db1d135",
+      "evidence_status": "validated",
+      "file": "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault.md",
+      "posts_index_hash": "49f2114dbb54f88f1240d2a031b8260dc8a0c54560d8c9d2a2119c251feaae57",
+      "report_id": "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-06T10:27:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

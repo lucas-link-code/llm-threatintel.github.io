@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass",
+      "title": "Check Point Research Bypasses ChatGPT Lockdown Mode for Silent Chat Exfiltration and Phishing",
+      "date": "2026-11-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Check Point Research discovered a vulnerability that bypassed OpenAI Lockdown Mode, allowing silent exfiltration of entire chat history, credential phishing, and malware delivery. In the Electron based ChatGPT Classic application the attack required zero user interaction, so simply holding a conversation was enough to trigger silent data exfiltration. OpenAI deployed a fix on September 18, 2026, by removing the allow-popups and allow-popups-to-escape-sandbox permissions from the outer HTML preview sandbox iframe.",
+      "file": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass.md"
+    },
+    {
+      "id": "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "title": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault",
+      "date": "2026-11-06",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft Threat Intelligence observed threat actors using an agentic AI offensive framework, ARTEX, to scan public GitHub repositories for exposed secrets and advance from discovery to Azure Key Vault data exfiltration in about five minutes. The same campaign used valid leaked or stolen application credentials for service principal sign ins across dozens of Microsoft Entra ID tenants beginning October 28, 2026, and abused compromised Azure AI services. Defenders should rotate exposed application credentials, audit service principal sign ins from the listed IP addresses, and monitor Azure Key Vault and Storage Account access.",
+      "file": "2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault.md"
+    },
+    {
       "id": "2026-11-05-openai-cyber-model-948-linux-lpe-exploits",
       "title": "OpenAI Cyber Model Pipeline Validates 948 Linux Local Privilege Escalation Exploits at $1,279 Each",
       "date": "2026-11-05",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-06",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7118,6 +7118,42 @@
       "first_seen": "2026-11-03",
       "source": "oscerd.github.io",
       "campaign": "jfrog-testmetest-npm-worm-github-agent-hooks",
+      "status": "active"
+    },
+    {
+      "value": "199.19.77.84",
+      "type": "ip",
+      "context": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault",
+      "first_seen": "2026-11-06",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "status": "active"
+    },
+    {
+      "value": "199.19.77.18",
+      "type": "ip",
+      "context": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault",
+      "first_seen": "2026-11-06",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "status": "active"
+    },
+    {
+      "value": "65.87.223.26",
+      "type": "ip",
+      "context": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault",
+      "first_seen": "2026-11-06",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "status": "active"
+    },
+    {
+      "value": "157.22.126.128",
+      "type": "ip",
+      "context": "Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault",
+      "first_seen": "2026-11-06",
+      "source": "Microsoft Security Blog",
+      "campaign": "microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
       "status": "active"
     }
   ]
