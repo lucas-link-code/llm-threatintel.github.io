@@ -6561,6 +6561,21 @@
       "validated_at": "2026-11-06T10:27:54+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-07-greeter-framework-flowise-cloud-credential-theft": {
+      "content_hash": "5542098e355adf7599e69fd8073c346067ae93e19807d8bf9a1cd1e60a64cbe8",
+      "evidence_status": "validated",
+      "file": "2026-11-07-greeter-framework-flowise-cloud-credential-theft.md",
+      "posts_index_hash": "66fd2be2569ed08acbbc2123ae37dd4918ef2ac0dc8d5e1a7eff2e320e9572d4",
+      "report_id": "2026-11-07-greeter-framework-flowise-cloud-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://www.techtarget.com/news/greeter-exploit-framework-hides-cloud-theft-on-ai-servers/873828/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-07T09:40:35+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

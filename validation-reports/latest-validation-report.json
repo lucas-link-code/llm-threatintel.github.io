@@ -1,7 +1,7 @@
 {
-  "commit_sha": "f483e41072cf9d0a4d67a2df40f6dc85673103e4",
+  "commit_sha": "cfdb4fe1758232454ef2a1eea3897d485afdca94",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-06T10:27:54+00:00",
+  "generated_at_utc": "2026-11-07T09:40:35+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -49,26 +49,19 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 2,
-  "reports_skipped": 380,
+  "reports_checked": 2,
+  "reports_newly_validated": 1,
+  "reports_skipped": 382,
   "review_required": 1,
-  "source_urls_checked": 3,
-  "state_updates": 2,
+  "source_urls_checked": 2,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/",
+      "final_url": "https://www.techtarget.com/news/greeter-exploit-framework-hides-cloud-theft-on-ai-servers/873828/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/"
+      "url": "https://www.techtarget.com/news/greeter-exploit-framework-hides-cloud-theft-on-ai-servers/873828/"
     },
     {
       "error": "HTTP Error 403: Forbidden",

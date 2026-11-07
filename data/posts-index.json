@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": "2026-11-07-greeter-framework-flowise-cloud-credential-theft",
+      "title": "Greeter Exploit Framework Turns Exposed Flowise AI Servers Into Cloud Credential Theft Entry Points",
+      "date": "2026-11-07",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Era Security discovered Greeter, a Chinese language exploit framework that abuses CVE-2024-58351 in end of life Flowise deployments to inject payloads per request through the overrideConfig.javascriptFunction parameter, leaving stored chatflows unmodified and logs showing only repeated 'hello' messages. Shodan data cited by TechTarget shows 4,372 Flowise instances still internet facing, 3,277 with a recognizable version, and 703 with no authentication, and Greeter uses the compromised host to probe cloud metadata services for temporary AWS IAM or Google Cloud tokens. Defenders should inventory internet facing Flowise, upgrade past 2.1.4 or retire it, require authentication, and alert on overrideConfig javascriptFunction usage and instance metadata queries.",
+      "file": "2026-11-07-greeter-framework-flowise-cloud-credential-theft.md"
+    },
+    {
       "id": "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass",
       "title": "Check Point Research Bypasses ChatGPT Lockdown Mode for Silent Chat Exfiltration and Phishing",
       "date": "2026-11-06",
