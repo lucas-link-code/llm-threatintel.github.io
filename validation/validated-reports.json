@@ -6576,6 +6576,21 @@
       "validated_at": "2026-11-07T09:40:35+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis": {
+      "content_hash": "ba527fc9a69ea227f7082278d91c6be76d3fbaabd0160b33898ebc4d37f411a8",
+      "evidence_status": "validated",
+      "file": "2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.md",
+      "posts_index_hash": "508682e2212f66b7efed4ebdc8fa17fe2044a3da4d11f4ffdbb5a22ccb5d3085",
+      "report_id": "2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis",
+      "review_required": [],
+      "source_urls": [
+        "https://rhisac.org/general-blog/hackers-weaponize-openai-api-in-nik-c2-framework-for-system-control/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-08T09:54:41+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

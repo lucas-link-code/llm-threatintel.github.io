@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis",
+      "title": "RH-ISAC Analysis Details NIK C2 ai_generate Command and OPENAI_API_KEY Harvesting on Victim Hosts",
+      "date": "2026-11-08",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "RH-ISAC published a threat intel analysis on 2026-11-02 detailing NIK C2, a Go based Windows command and control framework that integrates the OpenAI Chat Completions API through an ai_generate command so operators can issue prompts from an infected host. The analysis states the implant can use an attacker supplied API key or attempt to read the OPENAI_API_KEY environment variable from the victim, which shifts API consumption and billing onto a compromised account. Defenders should monitor for unexpected outbound calls to the OpenAI API from Windows endpoints, alert on processes reading OPENAI_API_KEY, and rotate any exposed AI API keys found in host environments.",
+      "file": "2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.md"
+    },
+    {
       "id": "2026-11-07-greeter-framework-flowise-cloud-credential-theft",
       "title": "Greeter Exploit Framework Turns Exposed Flowise AI Servers Into Cloud Credential Theft Entry Points",
       "date": "2026-11-07",

@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 07 Nov 2026 09:40:33 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 09:54:40 +0000</lastBuildDate>
     <item>
+      <title>RH-ISAC Analysis Details NIK C2 ai_generate Command and OPENAI_API_KEY Harvesting on Victim Hosts</title>
+      <link>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      <description>RH-ISAC published a threat intel analysis on 2026-11-02 detailing NIK C2, a Go based Windows command and control framework that integrates the OpenAI Chat Completions API through an ai_generate command so operators can issue prompts from an infected host. The analysis states the implant can use an attacker supplied API key or attempt to read the OPENAI_API_KEY environment variable from the victim, which shifts API consumption and billing onto a compromised account. Defenders should monitor for unexpected outbound calls to the OpenAI API from Windows endpoints, alert on processes reading OPENAI_API_KEY, and rotate any exposed AI API keys found in host environments.</description>
+    </item>    <item>
       <title>Greeter Exploit Framework Turns Exposed Flowise AI Servers Into Cloud Credential Theft Entry Points</title>
       <link>https://llm-threatintel.com/posts/2026-11-07-greeter-framework-flowise-cloud-credential-theft.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-07-greeter-framework-flowise-cloud-credential-theft.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.html</guid>
       <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
       <description>Check Point Research uncovered Yoba, a campaign using fake GitHub projects that impersonate ChatGPT and Claude desktop apps and abuse legitimate signed OpenAI and Anthropic executables to sideload the YobaDropper. The projects ranked prominently in Google Search via SEO poisoning, and the final payload observed was XMRig 6.26.0, though YobaLoader can deliver other Windows or PowerShell payloads. Defenders must treat a valid signature as proof of one binary only, not of the surrounding package.</description>
-    </item>    <item>
-      <title>Anthropic Research Model Chains Five Exploit Chains and Yields 62 Patched Chrome CVEs</title>
-      <link>https://llm-threatintel.com/posts/2026-10-28-anthropic-research-model-chrome-exploit-chains.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-28-anthropic-research-model-chrome-exploit-chains.html</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Anthropic's Frontier Red Team used an unreleased internal research model to build five full exploit chains against widely deployed browsers and operating systems, producing one click remote code execution in Chrome. Google assigned and patched 62 CVEs as of Chrome 156, all rated critical or high, including 13 sandbox escapes and 21 renderer compromise flaws. Defenders should treat frontier model driven vulnerability discovery as a step change in patch velocity and triage interval, because the affected products sit on billions of endpoints.</description>
     </item>
   </channel>
 </rss>
