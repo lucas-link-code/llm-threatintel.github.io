@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts | LLM ThreatIntel</title>
+  <meta name="description" content="Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim&#x27;s assets by resale value. The malware defaults to Anthropic&#x27;s Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts">
+  <meta property="og:description" content="Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim&#x27;s assets by resale value. The malware defaults to Anthropic&#x27;s Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts">
+  <meta property="article:published_time" content="2026-11-09T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-09T00:00:00Z">
+  <meta property="article:tag" content="malware">
+  <meta property="article:tag" content="llmjacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts">
+  <meta name="twitter:description" content="Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim&#x27;s assets by resale value. The malware defaults to Anthropic&#x27;s Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts",
+  "description": "Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim's assets by resale value. The malware defaults to Anthropic's Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.",
+  "datePublished": "2026-11-09T00:00:00Z",
+  "dateModified": "2026-11-09T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html",
+  "keywords": [
+    "malware",
+    "llmjacking"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-09</span>
+      <span class="post-tag tag-malware">Malware</span><span class="post-tag tag-llmjacking">LLMjacking</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts</h1>
+<p><strong>Date:</strong> 2026-11-09<br><strong>Tags:</strong> malware, llmjacking</p>
+<h2>Executive Summary</h2>
+<p>Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim&#x27;s assets by resale value. The malware defaults to Anthropic&#x27;s Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>VOLTA-AUTODOXER</td></tr><tr><td>Attribution</td><td>Unattributed (confidence: none)</td></tr><tr><td>Target</td><td>Windows users and organizations with saved credentials, cloud keys, and AI sessions</td></tr><tr><td>Vector</td><td>Windows infostealer</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-10-11</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Cisco Talos research published October 31, 2026 by analyst Ryan Fetterman, VOLTA-AUTODOXER is a self deleting Windows infostealer that steals credentials and then feeds the data to a commercial AI model to rank the victim&#x27;s assets by resale value. The malware defaults to Anthropic&#x27;s Claude and is built to fail over to other models if one declines the task, with Cisco Talos describing the AI layer as an automated stand in for the human analyst who would normally decide which stolen accounts are worth pursuing. Talos reported that VOLTA pulls browser passwords, cookies, saved payment cards, and cryptocurrency wallet seed phrases, along with Discord, Telegram, Steam, and Roblox sessions, Microsoft sign in tokens, SSH and cloud keys, every saved Wi-Fi password in plaintext, and screenshots. The finished bundle is converted to JSON and sent through OpenRouter, a model routing service, with a prompt telling the model to pose as a forensic intelligence analyst and draft a target assessment, ranking the victim&#x27;s valuables by resale tier and grading their password habits. Talos reported that VOLTA checks each AI reply for refusal signs and moves down a chain of up to three models, trying Claude first, then Kimi K2, then Gemini 2.5 Flash. If the operator provides no model key, VOLTA skips the AI step and still sends its raw file over Telegram. Talos analyzed one sample first seen October 11, 2026 and did not state whether VOLTA has been used against real victims.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Credentials from Password Stores: Credentials from Web Browsers</td><td>T1555.003</td><td>Steals browser passwords, cookies, and saved cards</td></tr><tr><td>Exfiltration Over Web Service</td><td>T1567</td><td>Sends the stolen bundle through OpenRouter and Telegram</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No domains, hashes, packages, or IPs published in the cited reporting. OpenRouter is a legitimate routing platform and is not an IOC._</p>
+<h3>Full URL Paths</h3>
+<p>_No domains, hashes, packages, or IPs published in the cited reporting. OpenRouter is a legitimate routing platform and is not an IOC._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Windows</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for processes calling OpenRouter or AI provider APIs from endpoints that have no legitimate AI client, which may indicate stolen key reuse. Alert on plaintext Wi-Fi password enumeration and browser credential store access. Rotate any Microsoft sign in tokens, SSH keys, and cloud keys on suspect hosts. Hunt for Telegram egress and for self deleting executables that remove their own artifacts after staging.</p>
+<h2>References</h2>
+<ul><li>[Cisco Talos] Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer (2026-10-31) — https://www.sofx.com/cisco-finds-malware-using-claude-ai-to-profile-victims-and-rank-stolen-accounts/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

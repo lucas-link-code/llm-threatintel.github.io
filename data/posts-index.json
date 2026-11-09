@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "2026-11-09-operation-snowball-deepseek-telecom-agent",
+      "title": "Operation Snowball DeepSeek Flash Agent Attacked a European Telecom and 13 Hosted Organizations",
+      "date": "2026-11-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "An exposed open directory revealed an autonomous AI intrusion harness that spent more than two weeks attacking a European telecom provider and 13 organizations hosted in its data centers and cloud. The harness runs on DeepSeek Flash and used a 78,000 character jailbreak system prompt to remove model safeguards, adapting to defenses when tools were blocked or deleted. Researchers withheld the operator IP, and the outcomes come from transcript reading rather than independent verification.",
+      "file": "2026-11-09-operation-snowball-deepseek-telecom-agent.md"
+    },
+    {
+      "id": "2026-11-09-cisco-talos-volta-autodoxer-claude-ranking",
+      "title": "Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts",
+      "date": "2026-11-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malware",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim's assets by resale value. The malware defaults to Anthropic's Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.",
+      "file": "2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.md"
+    },
+    {
+      "id": "2026-11-09-vulncheck-langflow-agentic-secret-hunter",
+      "title": "VulnCheck Canaries Link the Microsoft Agentic AI Secret Hunter to Langflow CVE-2025-3248 Exploitation",
+      "date": "2026-11-09",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "VulnCheck canary sensors recorded the same IP central to Microsoft's agentic AI secret hunting report, 199.19.77.84, exploiting Langflow via CVE-2025-3248 to read credentials directly from hosts. The operator ran 11 payload stages over about 36 minutes in a pattern resembling an autonomous agent working a target. The activity persisted one day after Microsoft published, so defenders should treat this infrastructure as still active.",
+      "file": "2026-11-09-vulncheck-langflow-agentic-secret-hunter.md"
+    },
+    {
       "id": "2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis",
       "title": "RH-ISAC Analysis Details NIK C2 ai_generate Command and OPENAI_API_KEY Harvesting on Victim Hosts",
       "date": "2026-11-08",

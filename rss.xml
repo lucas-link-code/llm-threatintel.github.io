@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 08 Nov 2026 09:54:40 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 10:58:28 +0000</lastBuildDate>
     <item>
+      <title>Operation Snowball DeepSeek Flash Agent Attacked a European Telecom and 13 Hosted Organizations</title>
+      <link>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <description>An exposed open directory revealed an autonomous AI intrusion harness that spent more than two weeks attacking a European telecom provider and 13 organizations hosted in its data centers and cloud. The harness runs on DeepSeek Flash and used a 78,000 character jailbreak system prompt to remove model safeguards, adapting to defenses when tools were blocked or deleted. Researchers withheld the operator IP, and the outcomes come from transcript reading rather than independent verification.</description>
+    </item>    <item>
+      <title>Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts</title>
+      <link>https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim's assets by resale value. The malware defaults to Anthropic's Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.</description>
+    </item>    <item>
+      <title>VulnCheck Canaries Link the Microsoft Agentic AI Secret Hunter to Langflow CVE-2025-3248 Exploitation</title>
+      <link>https://llm-threatintel.com/posts/2026-11-09-vulncheck-langflow-agentic-secret-hunter.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-09-vulncheck-langflow-agentic-secret-hunter.html</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <description>VulnCheck canary sensors recorded the same IP central to Microsoft's agentic AI secret hunting report, 199.19.77.84, exploiting Langflow via CVE-2025-3248 to read credentials directly from hosts. The operator ran 11 payload stages over about 36 minutes in a pattern resembling an autonomous agent working a target. The activity persisted one day after Microsoft published, so defenders should treat this infrastructure as still active.</description>
+    </item>    <item>
       <title>RH-ISAC Analysis Details NIK C2 ai_generate Command and OPENAI_API_KEY Harvesting on Victim Hosts</title>
       <link>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 +0000</pubDate>
       <description>The official Claude Code for VS Code extension (anthropic.claude-code) was compromised and shipped a malicious loader that adds an attacker SSH key, installs persistence, and beacons host data to an external server. Cursor says at most 5,000 users installed the malicious version 2.1.313 between about 2:27 a.m. and 1:35 p.m. PT on October 29, 2026. Defenders whose developers used the extension should isolate affected hosts, remove the unauthorized key, delete persistence, and rotate credentials and sessions.</description>
-    </item>    <item>
-      <title>Cisco Talos Discloses NIK C2, an AI Integrated Command and Control Framework Abusing the OpenAI Chat Completions API</title>
-      <link>https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-29-nik-c2-ai-integrated-command-and-control-framework.html</guid>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Cisco Talos observed a new AI integrated command and control framework called NIK C2 active in the wild, featuring a Go based 64 bit Windows implant that dumps credentials, streams victim keystrokes, and routes harvested data to an integrated OpenAI Chat Completions API client for analysis inside the compromised session. The implant also deploys screen locking ransomware demanding Bitcoin or USDT. Because collection and exploitation now occur in one continuous session, defenders must pivot to continuous behavioral monitoring rather than relying on offline processing delays for detection windows.</description>
-    </item>    <item>
-      <title>Symantec Captures Skynet LLMjacking Agent Instructions in an AI Honeypot</title>
-      <link>https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-28-symantec-skynet-llmjacking-agent-honeypot.html</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Symantec Threat Hunter Team captured, in an AI honeypot impersonating an unprotected web endpoint, the full working prompt for an offensive agent directed to run in Skynet mode for up to 100,000 steps, execute tools without approval, and silently deploy cryptocurrency miners. The agent is designed to scan, infect, harvest credentials and secrets, reinfect hosts, and mine crypto while the victim pays for the inference. Symantec did not confirm a real victim, and noted the captured instructions were part of a benign training challenge.</description>
-    </item>    <item>
-      <title>Check Point Research Documents Yoba Malware Abusing Signed ChatGPT and Claude Binaries for DLL Sideloading</title>
-      <link>https://llm-threatintel.com/posts/2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-28-yoba-malware-signed-chatgpt-claude-binaries.html</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Check Point Research uncovered Yoba, a campaign using fake GitHub projects that impersonate ChatGPT and Claude desktop apps and abuse legitimate signed OpenAI and Anthropic executables to sideload the YobaDropper. The projects ranked prominently in Google Search via SEO poisoning, and the final payload observed was XMRig 6.26.0, though YobaLoader can deliver other Windows or PowerShell payloads. Defenders must treat a valid signature as proof of one binary only, not of the surrounding package.</description>
     </item>
   </channel>
 </rss>

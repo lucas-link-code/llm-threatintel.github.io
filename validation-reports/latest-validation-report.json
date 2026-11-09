@@ -1,7 +1,7 @@
 {
-  "commit_sha": "580c5fe51d70bf13ec618ce26f944f05717758ac",
+  "commit_sha": "9593694f4e00572f90939cffb6bdf7a5b473687a",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-08T09:54:41+00:00",
+  "generated_at_utc": "2026-11-09T10:58:32+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -49,19 +49,40 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
-  "reports_newly_validated": 1,
-  "reports_skipped": 383,
+  "reports_checked": 4,
+  "reports_newly_validated": 3,
+  "reports_skipped": 384,
   "review_required": 1,
-  "source_urls_checked": 2,
-  "state_updates": 1,
+  "source_urls_checked": 5,
+  "state_updates": 3,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://rhisac.org/general-blog/hackers-weaponize-openai-api-in-nik-c2-framework-for-system-control/",
+      "final_url": "https://gbhackers.com/operation-snowball-campaign/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://rhisac.org/general-blog/hackers-weaponize-openai-api-in-nik-c2-framework-for-system-control/"
+      "url": "https://gbhackers.com/operation-snowball-campaign/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.sofx.com/cisco-finds-malware-using-claude-ai-to-profile-victims-and-rank-stolen-accounts/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.sofx.com/cisco-finds-malware-using-claude-ai-to-profile-victims-and-rank-stolen-accounts/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.vulncheck.com/blog/microsoft-secret-hunter",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.vulncheck.com/blog/microsoft-secret-hunter"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/"
     },
     {
       "error": "HTTP Error 403: Forbidden",

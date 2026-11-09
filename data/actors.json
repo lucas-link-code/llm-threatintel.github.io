@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-08",
+  "last_updated": "2026-11-09",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6381,6 +6381,55 @@
       ],
       "description": "Greeter is an ephemeral, log evading exploitation framework that turns exposed AI orchestration infrastructure into entry points for cloud account takeover. Rather than modifying stored workflows, it delivers malicious payloads per request through API overrides, so chat history and workflow definitions appear benign while the host returns reconnaissance output and harvested credentials. Era Security did not observe a successful cross account takeover in its honeypots, but noted the vector mirrors the 2023 ScarletEel 2.0 campaign documented by Sysdig, where compromised container workloads and IMDS tokens were used to gain administrative rights and launch unauthorized compute instances.",
       "attribution": "Unattributed, described by Era Security as a Chinese language framework"
+    },
+    {
+      "id": "unattributed-langflow-credential-harvesting-operator",
+      "names": [
+        "Unattributed Langflow credential harvesting operator",
+        "Microsoft agentic AI secret hunter infrastructure"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public Facing Application",
+        "T1552.001 - Unsecured Credentials: Credentials In Files"
+      ],
+      "description": "An operator that exploits internet facing Langflow servers to read credentials directly from hosts, using the same IP address central to Microsoft's agentic AI secret hunting report. VulnCheck observed a multi stage sequence consistent with an autonomous agent rather than manual exploitation.",
+      "attribution": "Unattributed, linked by shared IP to the actor Microsoft reported"
+    },
+    {
+      "id": "volta-autodoxer",
+      "names": [
+        "VOLTA-AUTODOXER"
+      ],
+      "type": "malware",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1555.003 - Credentials from Web Browsers",
+        "T1567 - Exfiltration Over Web Service"
+      ],
+      "description": "A self deleting Windows infostealer that harvests browser, wallet, session, and cloud credentials and uses a commercial AI model chain to rank the victim's stolen assets by resale value, degrading gracefully to raw exfiltration over Telegram when no model key is supplied.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "operation-snowball-operator",
+      "names": [
+        "Operation Snowball operator"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public Facing Application",
+        "T1543.002 - Create or Modify System Process: systemd Service"
+      ],
+      "description": "An autonomous AI intrusion harness running on DeepSeek Flash with a jailbroken system prompt that selected its own CVEs, tools, and methods across more than two weeks, adapting to endpoint defenses by writing custom bridges and script only persistence.",
+      "attribution": "Unattributed, Chinese language only, no nationality or state sponsorship established"
     }
   ]
 }

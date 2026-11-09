@@ -6591,6 +6591,52 @@
       "validated_at": "2026-11-08T09:54:41+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-09-cisco-talos-volta-autodoxer-claude-ranking": {
+      "content_hash": "0858a508bf8ddf8948c61a2b19a51a4ca024f8e91c6307739cbf9c9ca3088003",
+      "evidence_status": "validated",
+      "file": "2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.md",
+      "posts_index_hash": "cf590c7cc06b783864d04105252993e82d8da88dcbc13e4ed67cd9a94f019cd6",
+      "report_id": "2026-11-09-cisco-talos-volta-autodoxer-claude-ranking",
+      "review_required": [],
+      "source_urls": [
+        "https://www.sofx.com/cisco-finds-malware-using-claude-ai-to-profile-victims-and-rank-stolen-accounts/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-09T10:58:31+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-09-operation-snowball-deepseek-telecom-agent": {
+      "content_hash": "c5ebb2358c32348c10a997c48e01d307c78661d520295007c729bb2e958fca61",
+      "evidence_status": "validated",
+      "file": "2026-11-09-operation-snowball-deepseek-telecom-agent.md",
+      "posts_index_hash": "7d0aa94ab7d7920f7a194d79bc5829e9b084d8cef263c17c65dce2dd91ef737a",
+      "report_id": "2026-11-09-operation-snowball-deepseek-telecom-agent",
+      "review_required": [],
+      "source_urls": [
+        "https://gbhackers.com/operation-snowball-campaign/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-09T10:58:30+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-09-vulncheck-langflow-agentic-secret-hunter": {
+      "content_hash": "d4ce142ada0d9fe8fe89eb6ce7d568056e25c34a80182bf59fa96dfbee4a0182",
+      "evidence_status": "validated",
+      "file": "2026-11-09-vulncheck-langflow-agentic-secret-hunter.md",
+      "posts_index_hash": "fe2688a70658b1559e723f79264eae84fcfc6b739e255ff3c6755073c5ec5fb6",
+      "report_id": "2026-11-09-vulncheck-langflow-agentic-secret-hunter",
+      "review_required": [],
+      "source_urls": [
+        "https://www.vulncheck.com/blog/microsoft-secret-hunter",
+        "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-09T10:58:32+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
