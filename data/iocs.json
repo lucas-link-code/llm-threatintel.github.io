@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-10",
   "iocs": [
     {
       "value": "third-party.com",
@@ -7154,6 +7154,15 @@
       "first_seen": "2026-11-06",
       "source": "Microsoft Security Blog",
       "campaign": "microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault",
+      "status": "active"
+    },
+    {
+      "value": "npm:workspace-tools",
+      "type": "package",
+      "context": "strutil-core Ruby Gem Harvests 51 Credential Stores and Plants Backdoors in AI Coding Tools",
+      "first_seen": "2026-11-10",
+      "source": "CybersecurityNews",
+      "campaign": "strutil-core-ruby-gem-ai-coding-tool-backdoors",
       "status": "active"
     }
   ]

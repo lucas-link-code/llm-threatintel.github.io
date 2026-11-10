@@ -1,0 +1,83 @@
+{
+  "commit_sha": "e3b6782c769f4008eb7e9c0ed8a7c05ec226235e",
+  "duplicate_iocs": {},
+  "generated_at_utc": "2026-11-10T10:49:54+00:00",
+  "hard_failures": 0,
+  "issues": [
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (911 characters)",
+      "recommendation": "",
+      "record_id": "2026-08-19-hugging-face-autonomous-agent-breach-openai-gpt",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-08-15-taiwan-autonomous-ai-agent-nuclear-attack-hermes-openclaw",
+      "severity": "warn"
+    },
+    {
+      "code": "post-tlp-public-warning",
+      "file": "data/posts-index.json",
+      "message": "public feed post uses non-clear TLP: TLP:AMBER",
+      "recommendation": "",
+      "record_id": "2026-07-26-nation-state-llm-operationalization-gtig-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "post-excerpt-long",
+      "file": "data/posts-index.json",
+      "message": "post excerpt is long (1205 characters)",
+      "recommendation": "",
+      "record_id": "2026-06-30-cordyceps-cicd-github-actions-supply-chain-vulnerability-june-2026",
+      "severity": "warn"
+    },
+    {
+      "code": "evidence-source-review-required",
+      "file": "posts/2026-11-05-openai-cyber-model-948-linux-lpe-exploits.md",
+      "message": "no source URL was accessible; manual review or alternate evidence is required",
+      "recommendation": "",
+      "record_id": "2026-11-05-openai-cyber-model-948-linux-lpe-exploits",
+      "severity": "review"
+    }
+  ],
+  "mode": "full",
+  "non_destructive_statement": "No files were removed or destructively modified.",
+  "orphan_markdown": [],
+  "overall_result": "pass",
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 387,
+  "review_required": 1,
+  "source_urls_checked": 3,
+  "state_updates": 2,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://cybersecuritynews.com/malicious-ruby-gem/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cybersecuritynews.com/malicious-ruby-gem/"
+    },
+    {
+      "error": "",
+      "final_url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update"
+    },
+    {
+      "error": "HTTP Error 403: Forbidden",
+      "final_url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "http_status": 403,
+      "status": "blocked",
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+    }
+  ],
+  "validation_version": "1.0.0",
+  "warnings": 4
+}

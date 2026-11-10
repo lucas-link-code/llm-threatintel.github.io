@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-09",
+  "last_updated": "2026-11-10",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6430,6 +6430,43 @@
       ],
       "description": "An autonomous AI intrusion harness running on DeepSeek Flash with a jailbroken system prompt that selected its own CVEs, tools, and methods across more than two weeks, adapting to endpoint defenses by writing custom bridges and script only persistence.",
       "attribution": "Unattributed, Chinese language only, no nationality or state sponsorship established"
+    },
+    {
+      "id": "unnamed-llmjacking-cybercriminal-group",
+      "names": [
+        "Unnamed LLMJacking cybercriminal group"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Illicit LLM routing gateways reselling stolen token access"
+      ],
+      "ttps": [
+        "T1552 - Unsecured Credentials",
+        "T1496 - Resource Hijacking"
+      ],
+      "description": "Fireworks AI states the evidence indicates links to a financially motivated cybercriminal threat actor group that sells tokens from unauthorized Large Language Model access to illicit routing gateways. Fireworks references a November 2, 2026 Google Threat Intelligence Group and Mandiant blog post on the rise of LLMJacking, its motives, techniques, and mitigations.",
+      "attribution": "Attributed by Fireworks AI to a financially motivated cybercriminal group with links to LLMJacking; moderate confidence, no named actor"
+    },
+    {
+      "id": "jamnajiea",
+      "names": [
+        "jamnajiea"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "disrupted",
+      "distribution": [
+        "RubyGems package strutil-core",
+        "Malicious .claude/settings.json, .cursor/mcp.json, CLAUDE.md, AGENTS.md, and VS Code task files in repositories"
+      ],
+      "ttps": [
+        "T1195.001 - Compromise Software Dependencies and Development Tools",
+        "T1552.001 - Credentials In Files"
+      ],
+      "description": "A RubyGems account that published a clean version of strutil-core and then a malicious update within two hours, carrying a credential stealing worm that also backdoors AI coding tools and installs a token revocation triggered wiper. Socket.dev found no dependent public projects and no confirmed victims, and RubyGems removed both versions within hours.",
+      "attribution": "Unattributed; RubyGems account jamnajiea published both versions"
     }
   ]
 }

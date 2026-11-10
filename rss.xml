@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 09 Nov 2026 10:58:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 10:49:52 +0000</lastBuildDate>
     <item>
+      <title>strutil-core Ruby Gem Harvests 51 Credential Stores and Plants Backdoors in AI Coding Tools</title>
+      <link>https://llm-threatintel.com/posts/2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.html</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <description>A fake Ruby package named strutil-core was published to RubyGems on November 1, 2026 and its second version shipped a 5.48 MB credential stealing worm that read from 51 credential stores and wrote backdoors into AI coding tool settings. The worm adds a fake MCP server named workspace-tools that runs the malware through Node and installs SessionStart hooks that execute whenever a coding session opens. A wiper named net-health-checker deletes the victim home folder when a stolen GitHub token is revoked, so defenders must preserve evidence before rotating credentials.</description>
+    </item>    <item>
+      <title>Fireworks AI Expands October 2026 Breach Scope to Billing Data, Model Weights, and Datasets in LLMJacking Case</title>
+      <link>https://llm-threatintel.com/posts/2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing.html</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Fireworks AI published a November 9 update widening its October 2026 security incident to include account and billing information, and for a limited set of accounts, secrets, datasets, and incomplete model weights. Fireworks attributes the activity to a financially motivated cybercriminal group selling unauthorized LLM access through illicit routing gateways, a pattern Google Threat Intelligence Group and Mandiant describe as LLMJacking. Customers with affected accounts should treat stored secrets, datasets, and partial model artifacts as exposed and rotate credentials now.</description>
+    </item>    <item>
       <title>Operation Snowball DeepSeek Flash Agent Attacked a European Telecom and 13 Hosted Organizations</title>
       <link>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.html</guid>
       <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
       <description>GitLab Threat Research Group disclosed a command execution vulnerability in the DeepSeek-Reasonix AI coding agent where a poisoned configuration could let attacker supplied code run when a developer views a file diff. The advisory is tracked as GHSA-grg2-7gc6-36m6 and GitLab directs users to update DeepSeek-Reasonix to a fixed release. Defenders running AI coding agents should prioritize the patch and treat agent configuration files as untrusted input.</description>
-    </item>    <item>
-      <title>Microsoft Threat Intelligence Analyzes Cursor Marketplace Claude Code Extension That Installs a Persistent SSH Backdoor</title>
-      <link>https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-31-microsoft-cursor-claude-code-extension-ssh-backdoor-analysis.html</guid>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft Threat Intelligence published a first party analysis of the tampered anthropic.claude-code extension (versions 2.1.312 and 2.1.313) that was served through the Cursor extension marketplace for roughly eleven hours on 2026-10-29. The injected loader adds an attacker controlled SSH key, enables local SSH, opens reverse SSH forwarding, writes persistence, and posts host details, with success depending on host privilege and SSH configuration. Defenders should inventory any host that installed or auto updated the extension from the Cursor marketplace, preserve evidence, remove artifacts, and rotate credentials where exposure is indicated.</description>
-    </item>    <item>
-      <title>Official Claude Code for VS Code Extension Compromised to Install Persistent SSH Backdoor</title>
-      <link>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-10-30-claude-code-vscode-extension-ssh-backdoor.html</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 +0000</pubDate>
-      <description>The official Claude Code for VS Code extension (anthropic.claude-code) was compromised and shipped a malicious loader that adds an attacker SSH key, installs persistence, and beacons host data to an external server. Cursor says at most 5,000 users installed the malicious version 2.1.313 between about 2:27 a.m. and 1:35 p.m. PT on October 29, 2026. Defenders whose developers used the extension should isolate affected hosts, remove the unauthorized key, delete persistence, and rotate credentials and sessions.</description>
     </item>
   </channel>
 </rss>

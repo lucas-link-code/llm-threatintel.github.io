@@ -6637,6 +6637,36 @@
       "validated_at": "2026-11-09T10:58:32+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing": {
+      "content_hash": "fe6a543d344467f9727eaa82129fd36b881c645716b4e13a86be80845c4df46f",
+      "evidence_status": "validated",
+      "file": "2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing.md",
+      "posts_index_hash": "1021fb3edeb74c4bc22b3aace2dcb896650044611134a027bdbaf67700fff9d4",
+      "report_id": "2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing",
+      "review_required": [],
+      "source_urls": [
+        "https://fireworks.ai/security/bulletins/october-2026-security-incident-update"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-10T10:49:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors": {
+      "content_hash": "59d30a68f74bb09706837bf116ea1fd500b3d5074e74f0cdf15c09454eec745d",
+      "evidence_status": "validated",
+      "file": "2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.md",
+      "posts_index_hash": "cac9a4a6b6e0b10766ec8359dd46506980deaf472338d5f79698d594978cb47e",
+      "report_id": "2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors",
+      "review_required": [],
+      "source_urls": [
+        "https://cybersecuritynews.com/malicious-ruby-gem/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-10T10:49:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
