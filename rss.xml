@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 10 Nov 2026 10:49:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 10:25:54 +0000</lastBuildDate>
     <item>
+      <title>Railway Incident Report Attributes October 21 Breach to Attacker Hunting AI Provider Credentials for Distillation</title>
+      <link>https://llm-threatintel.com/posts/2026-11-11-railway-october-21-incident-report-ai-credential-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-11-railway-october-21-incident-report-ai-credential-theft.html</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Railway published its full incident report on 2026-11-10 for an attack that began 2026-10-20 and ran until the actor was evicted on 2026-10-21, concluding the attacker was specifically targeting AI provider credentials for sale to distributed transfer stations used in distillation. Railway stated at most 1.85 percent of workspaces, roughly 100,000, could have had environment variables decrypted, linked account tokens for 1,852 users were reset, and unauthorized spend on stolen keys was estimated at about 740,000 USD. Organizations hosting AI provider keys in PaaS build environments should rotate those credentials, audit for lateral movement, and move secrets out of build variable stores.</description>
+    </item>    <item>
+      <title>Microsoft Research Discloses Lazarus Weight Reprogramming Backdoor That Hijacks Dormant Neurons Without Retraining</title>
+      <link>https://llm-threatintel.com/posts/2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor.html</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft Research disclosed Lazarus, a backdoor technique that reprograms fewer than 10 dormant neurons in an LLM to make an agent execute attacker commands when a hidden trigger fires, with no retraining required. The poisoned model passes standard safety evaluations and behaves normally until the trigger, which can be as mundane as a date change, causing the agent to download and run attacker code with whatever access it was granted. Defenders handling open weight models should diff weights against the original publisher copy and treat model provenance and weight integrity as security controls.</description>
+    </item>    <item>
       <title>strutil-core Ruby Gem Harvests 51 Credential Stores and Plants Backdoors in AI Coding Tools</title>
       <link>https://llm-threatintel.com/posts/2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338.html</guid>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
       <description>JFrog rated a sandbox escape in Prefab UI at CVSS 10.0 on an unauthenticated server, according to The Injection week 44 coverage. Model written Python ran in the Generative UI sandbox with unrestricted Deno read, write and network permissions, so generated code could reach host files and run on the host. Upgrade prefab-ui to 0.21.0 or later, remove the GenerativeUI provider from FastMCP servers that do not need it, and require authentication on any server that keeps it.</description>
-    </item>    <item>
-      <title>Salt Labs Hijacks Manus Agentic AI Platform With a Single Email</title>
-      <link>https://llm-threatintel.com/posts/2026-11-01-salt-labs-manus-single-email-hijack.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-01-salt-labs-manus-single-email-hijack.html</guid>
-      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Salt Labs researchers hijacked the Manus agentic AI platform by hiding malicious instructions inside an ordinary email, causing the agent to execute malicious code. From there the researchers reached the email, cloud, and code repository accounts the user had connected to Manus. The finding shows that connected agent identities and their downstream cloud and repository access are exposed to prompt injection delivered through normal messaging channels.</description>
-    </item>    <item>
-      <title>GitLab Threat Research Group Discloses DeepSeek-Reasonix Command Execution via Poisoned Config</title>
-      <link>https://llm-threatintel.com/posts/2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-01-gitlab-deepseek-reasonix-poisoned-config-rce.html</guid>
-      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
-      <description>GitLab Threat Research Group disclosed a command execution vulnerability in the DeepSeek-Reasonix AI coding agent where a poisoned configuration could let attacker supplied code run when a developer views a file diff. The advisory is tracked as GHSA-grg2-7gc6-36m6 and GitLab directs users to update DeepSeek-Reasonix to a fixed release. Defenders running AI coding agents should prioritize the patch and treat agent configuration files as untrusted input.</description>
     </item>
   </channel>
 </rss>

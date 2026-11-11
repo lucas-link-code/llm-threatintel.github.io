@@ -6667,6 +6667,36 @@
       "validated_at": "2026-11-10T10:49:54+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor": {
+      "content_hash": "b846e493d14d0632dfe1060983c5bee5683c234160d16758ff4d516758bf0b48",
+      "evidence_status": "validated",
+      "file": "2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor.md",
+      "posts_index_hash": "1b68f8495c80d3cb62726fac5592ca84cf20c0791023d1a58bcbe99cb157ac74",
+      "report_id": "2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-11T10:25:56+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-11-railway-october-21-incident-report-ai-credential-theft": {
+      "content_hash": "c0bebe0ac6231ed46b5a604fe197256a737d1cce5cf7abccddcb8fe93a5da626",
+      "evidence_status": "validated",
+      "file": "2026-11-11-railway-october-21-incident-report-ai-credential-theft.md",
+      "posts_index_hash": "48229f78dc35a850c8f2f33914e670541777e07858a9f5812ef13810f9528a51",
+      "report_id": "2026-11-11-railway-october-21-incident-report-ai-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://blog.railway.com/p/incident-report-october-security-incident"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-11T10:25:55+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

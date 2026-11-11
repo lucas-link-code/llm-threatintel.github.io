@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-11",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6467,6 +6467,39 @@
       ],
       "description": "A RubyGems account that published a clean version of strutil-core and then a malicious update within two hours, carrying a credential stealing worm that also backdoors AI coding tools and installs a token revocation triggered wiper. Socket.dev found no dependent public projects and no confirmed victims, and RubyGems removed both versions within hours.",
       "attribution": "Unattributed; RubyGems account jamnajiea published both versions"
+    },
+    {
+      "id": "lazarus-weight-reprogramming-technique",
+      "names": [
+        "Lazarus weight reprogramming technique"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Modified model weights shared through model distribution channels"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain"
+      ],
+      "description": "A backdoor technique that modifies a small number of dormant neurons in an existing model so the model responds normally until a trigger condition is met, then instructs an agent to fetch and execute attacker code. Microsoft Research reports the edit needs no retraining and survives standard safety evaluation.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "railway-october-2026-credential-theft-actor",
+      "names": [
+        "Railway October 2026 credential theft actor"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-11",
+      "status": "disrupted",
+      "distribution": [],
+      "ttps": [
+        "T1552.001 - Unsecured Credentials: Credentials In Files",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "A financially motivated actor that gained unauthorized access to Railway systems on 2026-10-20, chained exploits, moved laterally, and decrypted stored customer variables with a focus on AI provider credentials. Railway assesses the credentials were routed to distributed transfer stations for distillation and evicted the actor by 2026-10-21.",
+      "attribution": "Unattributed. Railway did not name the actor. Wiz is cited for the assessment that the harness resembled ARTEX and used abliterated models."
     }
   ]
 }

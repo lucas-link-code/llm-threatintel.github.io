@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-11-11-railway-october-21-incident-report-ai-credential-theft",
+      "title": "Railway Incident Report Attributes October 21 Breach to Attacker Hunting AI Provider Credentials for Distillation",
+      "date": "2026-11-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Railway published its full incident report on 2026-11-10 for an attack that began 2026-10-20 and ran until the actor was evicted on 2026-10-21, concluding the attacker was specifically targeting AI provider credentials for sale to distributed transfer stations used in distillation. Railway stated at most 1.85 percent of workspaces, roughly 100,000, could have had environment variables decrypted, linked account tokens for 1,852 users were reset, and unauthorized spend on stolen keys was estimated at about 740,000 USD. Organizations hosting AI provider keys in PaaS build environments should rotate those credentials, audit for lateral movement, and move secrets out of build variable stores.",
+      "file": "2026-11-11-railway-october-21-incident-report-ai-credential-theft.md"
+    },
+    {
+      "id": "2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor",
+      "title": "Microsoft Research Discloses Lazarus Weight Reprogramming Backdoor That Hijacks Dormant Neurons Without Retraining",
+      "date": "2026-11-11",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "model-poisoning",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft Research disclosed Lazarus, a backdoor technique that reprograms fewer than 10 dormant neurons in an LLM to make an agent execute attacker commands when a hidden trigger fires, with no retraining required. The poisoned model passes standard safety evaluations and behaves normally until the trigger, which can be as mundane as a date change, causing the agent to download and run attacker code with whatever access it was granted. Defenders handling open weight models should diff weights against the original publisher copy and treat model provenance and weight integrity as security controls.",
+      "file": "2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor.md"
+    },
+    {
       "id": "2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors",
       "title": "strutil-core Ruby Gem Harvests 51 Credential Stores and Plants Backdoors in AI Coding Tools",
       "date": "2026-11-10",

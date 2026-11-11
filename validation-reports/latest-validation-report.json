@@ -1,7 +1,7 @@
 {
-  "commit_sha": "e3b6782c769f4008eb7e9c0ed8a7c05ec226235e",
+  "commit_sha": "45131f4ce885941ebbbb28818ca0f597201352f9",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-10T10:49:54+00:00",
+  "generated_at_utc": "2026-11-11T10:25:56+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -51,24 +51,24 @@
   "overall_result": "pass",
   "reports_checked": 3,
   "reports_newly_validated": 2,
-  "reports_skipped": 387,
+  "reports_skipped": 389,
   "review_required": 1,
   "source_urls_checked": 3,
   "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://cybersecuritynews.com/malicious-ruby-gem/",
+      "final_url": "https://blog.railway.com/p/incident-report-october-security-incident",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cybersecuritynews.com/malicious-ruby-gem/"
+      "url": "https://blog.railway.com/p/incident-report-october-security-incident"
     },
     {
       "error": "",
-      "final_url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+      "final_url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update"
+      "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/"
     },
     {
       "error": "HTTP Error 403: Forbidden",
