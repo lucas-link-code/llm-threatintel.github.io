@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline | LLM ThreatIntel</title>
+  <meta name="description" content="Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline">
+  <meta property="og:description" content="Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline">
+  <meta property="article:published_time" content="2026-11-12T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-12T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="prompt-injection">
+  <meta property="article:tag" content="malicious-tool">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline">
+  <meta name="twitter:description" content="Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline",
+  "description": "Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.",
+  "datePublished": "2026-11-12T00:00:00Z",
+  "dateModified": "2026-11-12T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html",
+  "keywords": [
+    "supply-chain",
+    "prompt-injection",
+    "malicious-tool"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-12</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-prompt-injection">Prompt Injection</span><span class="post-tag tag-malicious-tool">Malicious Tool</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline</h1>
+<p><strong>Date:</strong> 2026-11-12<br><strong>Tags:</strong> supply-chain, prompt-injection, malicious-tool</p>
+<h2>Executive Summary</h2>
+<p>Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Codex GitHub Actions pipeline exploit chain</td></tr><tr><td>Attribution</td><td>Depi Security (researchers), reported to OpenAI via Bugcrowd (confidence: high)</td></tr><tr><td>Target</td><td>OpenAI Codex development and publishing infrastructure; downstream @openai/codex npm consumers</td></tr><tr><td>Vector</td><td>Attacker controlled GitHub issue title and body fed into the Codex agent prompt via the Issue Labeler workflow</td></tr><tr><td>Status</td><td>disrupted</td></tr><tr><td>First Observed</td><td>2026-11-11</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Depi Security, the Issue Labeler GitHub Actions workflow defined in issue-labeler.yml uses openai/codex-action to analyze newly opened or codex-label tagged issues and suggest labels. Any external user can trigger the workflow by opening an issue, and the issue title and body are fed directly into the Codex prompt in the same natural language context as trusted instructions, enabling prompt injection. Depi Security reported one crafted prompt injection yielded code execution inside the agent sandbox, followed by a sandbox escape and memory poisoning that gave a path to the npm package. The chain then created a fake Codex release via the rust-ci.yml workflow; deleting the rogue release triggered a workflow that handed the attacker an OpenID token with write permissions. Depi Security stated the token could be exchanged for a signed JWT trusted by npm, allowing publication of a malicious Codex version. Depi Security reported the issue to OpenAI through Bugcrowd; OpenAI deployed a fix and awarded an initial $1,000 bounty with the report still under review. Depi Security stated there is nothing for defenders to patch on their side.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>External users trigger the issue-labeler workflow by opening GitHub issues, feeding attacker input into the agent prompt</td></tr><tr><td>Supply Chain Compromise</td><td>T1195.001</td><td>Attacker path to publishing a malicious version of the @openai/codex npm package via a trusted npm JWT</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published. Depi Security disclosed the chain and PoC to OpenAI through Bugcrowd; affected workflow files and packages listed._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published. Depi Security disclosed the chain and PoC to OpenAI through Bugcrowd; affected workflow files and packages listed._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">OpenAI Codex
+@openai/codex npm package
+GitHub Actions (issue-labeler.yml, rust-ci.yml)
+openai/codex-action</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Audit GitHub Actions workflows that pass issue or PR content into AI agent prompts such as openai/codex-action and enforce least privilege on workflow GITHUB_TOKEN and OIDC permissions. Review OIDC trust policies for npm publishing so only expected workflows and environments can request publishing tokens, and monitor for unexpected releases, release deletions that trigger downstream workflows, and anomalous publish events for @openai/codex. Require human in the loop approval before any automated package publish step.</p>
+<h2>References</h2>
+<ul><li>[Depi Security] Backdooring the next release of Codex through GitHub Action pipeline exploit chaining (2026-11-11) — https://depi.security/blog/20261111-backdooring-codex/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

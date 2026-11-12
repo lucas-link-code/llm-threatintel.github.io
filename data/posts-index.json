@@ -1,6 +1,34 @@
 {
   "posts": [
     {
+      "id": "2026-11-12-antifox-agentic-pentest-aws-credential-theft",
+      "title": "Arctic Wolf Reports AntiFox Agentic Pentest Platform Used for AWS Credential Theft",
+      "date": "2026-11-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "llmjacking",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Attackers are hosting self managed AntiFox instances on Alibaba Cloud and using the open source agentic penetration testing platform to target internet facing web services and AWS environments. Arctic Wolf observed AntiFox linked infrastructure making authenticated AWS API calls using valid IAM users and assumed EC2 roles, tied to vulnerability exploitation, webshell deployment, and AWS secret harvesting. One intrusion cycled through multiple identities and issued hundreds of API requests in roughly 30 minutes.",
+      "file": "2026-11-12-antifox-agentic-pentest-aws-credential-theft.md"
+    },
+    {
+      "id": "2026-11-12-depi-codex-github-action-pipeline-backdoor",
+      "title": "Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline",
+      "date": "2026-11-12",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "prompt-injection",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.",
+      "file": "2026-11-12-depi-codex-github-action-pipeline-backdoor.md"
+    },
+    {
       "id": "2026-11-11-railway-october-21-incident-report-ai-credential-theft",
       "title": "Railway Incident Report Attributes October 21 Breach to Attacker Hunting AI Provider Credentials for Distillation",
       "date": "2026-11-11",

@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 11 Nov 2026 10:25:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 10:42:40 +0000</lastBuildDate>
     <item>
+      <title>Arctic Wolf Reports AntiFox Agentic Pentest Platform Used for AWS Credential Theft</title>
+      <link>https://llm-threatintel.com/posts/2026-11-12-antifox-agentic-pentest-aws-credential-theft.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-12-antifox-agentic-pentest-aws-credential-theft.html</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Attackers are hosting self managed AntiFox instances on Alibaba Cloud and using the open source agentic penetration testing platform to target internet facing web services and AWS environments. Arctic Wolf observed AntiFox linked infrastructure making authenticated AWS API calls using valid IAM users and assumed EC2 roles, tied to vulnerability exploitation, webshell deployment, and AWS secret harvesting. One intrusion cycled through multiple identities and issued hundreds of API requests in roughly 30 minutes.</description>
+    </item>    <item>
+      <title>Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline</title>
+      <link>https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.</description>
+    </item>    <item>
       <title>Railway Incident Report Attributes October 21 Breach to Attacker Hunting AI Provider Credentials for Distillation</title>
       <link>https://llm-threatintel.com/posts/2026-11-11-railway-october-21-incident-report-ai-credential-theft.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-11-railway-october-21-incident-report-ai-credential-theft.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-02-gitlab-ai-gateway-critical-rce-cve-2026-90970.html</guid>
       <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
       <description>GitLab warned customers to immediately patch a critical AI Gateway vulnerability that could let attackers run arbitrary commands on vulnerable instances. BleepingComputer reported the flaw as CVE-2026-90970 and said it stems from improper handling that enables remote code execution. Teams running GitLab AI Gateway should apply the vendor patch without delay and check exposed instances for signs of command execution.</description>
-    </item>    <item>
-      <title>NVIDIA NeMo Agent Toolkit Missing Authentication CVE-2026-65145 Rated CVSS 10.0</title>
-      <link>https://llm-threatintel.com/posts/2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-02-nvidia-nemo-agent-toolkit-missing-authentication-cve-2026-65145.html</guid>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      <description>NVIDIA disclosed a missing authentication flaw in its NeMo Agent Toolkit, CVE-2026-65145, rated CVSS 10.0 and affecting versions 1.0 through 1.8.0. The Injection reported it was one of two flaws NVIDIA published on October 27, 2026, and that the fix ships in 1.9.0. Operators should upgrade to 1.9.0 and remove any exposed agent toolkit service from untrusted networks until they do.</description>
-    </item>    <item>
-      <title>Prefab UI Generative UI Sandbox Escape CVE-2026-120338 Rated CVSS 10.0</title>
-      <link>https://llm-threatintel.com/posts/2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-02-prefab-ui-generative-ui-sandbox-escape-cve-2026-120338.html</guid>
-      <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-      <description>JFrog rated a sandbox escape in Prefab UI at CVSS 10.0 on an unauthenticated server, according to The Injection week 44 coverage. Model written Python ran in the Generative UI sandbox with unrestricted Deno read, write and network permissions, so generated code could reach host files and run on the host. Upgrade prefab-ui to 0.21.0 or later, remove the GenerativeUI provider from FastMCP servers that do not need it, and require authentication on any server that keeps it.</description>
     </item>
   </channel>
 </rss>

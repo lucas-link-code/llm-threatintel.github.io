@@ -1,7 +1,7 @@
 {
-  "commit_sha": "45131f4ce885941ebbbb28818ca0f597201352f9",
+  "commit_sha": "4f7282a513d2ed097da7bf2676a88962a154c47a",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-11T10:25:56+00:00",
+  "generated_at_utc": "2026-11-12T10:42:42+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -51,24 +51,24 @@
   "overall_result": "pass",
   "reports_checked": 3,
   "reports_newly_validated": 2,
-  "reports_skipped": 389,
+  "reports_skipped": 391,
   "review_required": 1,
   "source_urls_checked": 3,
   "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://blog.railway.com/p/incident-report-october-security-incident",
+      "final_url": "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://blog.railway.com/p/incident-report-october-security-incident"
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/"
     },
     {
       "error": "",
-      "final_url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+      "final_url": "https://depi.security/blog/20261111-backdooring-codex/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/"
+      "url": "https://depi.security/blog/20261111-backdooring-codex/"
     },
     {
       "error": "HTTP Error 403: Forbidden",

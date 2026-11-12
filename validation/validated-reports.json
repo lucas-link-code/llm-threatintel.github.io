@@ -6697,6 +6697,36 @@
       "validated_at": "2026-11-11T10:25:55+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-12-antifox-agentic-pentest-aws-credential-theft": {
+      "content_hash": "609dc7a9096689a17e20d7c01381e7b4729325024b68fdd3c9dda32a4b4f6ddf",
+      "evidence_status": "validated",
+      "file": "2026-11-12-antifox-agentic-pentest-aws-credential-theft.md",
+      "posts_index_hash": "29bc073870b43ff46cf0bb67cbf0d76d06200b22505522389dcaa7e45ca9ecc6",
+      "report_id": "2026-11-12-antifox-agentic-pentest-aws-credential-theft",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-12T10:42:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-12-depi-codex-github-action-pipeline-backdoor": {
+      "content_hash": "1c160c53550a3a85e83d8c6a9efaa199a3709f23fcd5d87e2d106889a1900df0",
+      "evidence_status": "validated",
+      "file": "2026-11-12-depi-codex-github-action-pipeline-backdoor.md",
+      "posts_index_hash": "2f7877c81ff07b0db11f96c290e3e91375fba7293589c653b9bdfefb686a9155",
+      "report_id": "2026-11-12-depi-codex-github-action-pipeline-backdoor",
+      "review_required": [],
+      "source_urls": [
+        "https://depi.security/blog/20261111-backdooring-codex/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-12T10:42:42+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
