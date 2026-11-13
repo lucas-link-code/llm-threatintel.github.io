@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-11-13-microsoft-post-training-supply-chain-coding-agents",
+      "title": "Microsoft research shows dataset and model poisoning backdoors hijack coding agents at up to 94.8 percent success",
+      "date": "2026-11-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft Security Blog reported that dataset poisoning during fine tuning and model poisoning of open weight checkpoints can backdoor coding agents, with attack success up to 94.8 percent on unseen repositories. The research shows that in distribution evaluations can overstate backdoor robustness and that hidden triggers can cause agents to invoke command execution tools. Defenders should audit model provenance, diff weights against original checkpoints, and monitor agent tool calls for unexpected behavior.",
+      "file": "2026-11-13-microsoft-post-training-supply-chain-coding-agents.md"
+    },
+    {
+      "id": "2026-11-13-unit42-cairn-autonomous-ai-attacks",
+      "title": "Unit 42 reports Cairn autonomous AI framework used by China nexus actors against semiconductor, defense, civil society targets",
+      "date": "2026-11-13",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Unit 42 reported that Chinese speaking attackers used the open source Cairn autonomous AI penetration testing framework to conduct 25 operations against at least 19 organizations from August to September 2026, achieving access or data retrieval at 10 of them. The attackers paired Cairn with Chinese AI models Zhipu GLM and DeepSeek, and Unit 42 assesses with moderate confidence that this is China nexus intelligence collection tracked as CL-STA-1238. Defenders in semiconductor, defense policy, and civil society sectors should monitor for autonomous tool activity, credential theft, admin account creation, and bulk data access.",
+      "file": "2026-11-13-unit42-cairn-autonomous-ai-attacks.md"
+    },
+    {
       "id": "2026-11-12-antifox-agentic-pentest-aws-credential-theft",
       "title": "Arctic Wolf Reports AntiFox Agentic Pentest Platform Used for AWS Credential Theft",
       "date": "2026-11-12",

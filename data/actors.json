@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12",
+  "last_updated": "2026-11-13",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6536,6 +6536,39 @@
       ],
       "description": "Unknown operators deploy and run self managed AntiFox, an open source agentic penetration testing platform forked from ARTEX 0.1.1 with a Chinese language interface. The infrastructure is used for automated vulnerability exploitation, webshell deployment, credential validation, configuration discovery, and AWS secret harvesting, including authenticated API abuse with valid cloud identities.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "cl-sta-1238",
+      "names": [
+        "CL-STA-1238",
+        "Cairn operators"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1078 - Valid Accounts",
+        "T1098 - Account Manipulation"
+      ],
+      "description": "Chinese speaking attackers tracked by Unit 42 as CL-STA-1238 used the Cairn autonomous AI penetration testing framework with Zhipu GLM and DeepSeek to target semiconductor, defense policy, and civil society organizations.",
+      "attribution": "China nexus, moderate confidence, Unit 42"
+    },
+    {
+      "id": "unnamed-post-training-supply-chain-adversary",
+      "names": [
+        "Unnamed post training supply chain adversary"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Software Supply Chain",
+        "T1546 - Event Triggered Execution"
+      ],
+      "description": "Microsoft research describes adversaries who poison fine tuning datasets or open weight model checkpoints to plant dormant backdoors in coding agents. The backdoors activate on hidden triggers and cause the agent to misuse command execution tools.",
+      "attribution": "No threat actor named by Microsoft in the published research"
     }
   ]
 }

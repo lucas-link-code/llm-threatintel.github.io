@@ -6727,6 +6727,36 @@
       "validated_at": "2026-11-12T10:42:42+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-13-microsoft-post-training-supply-chain-coding-agents": {
+      "content_hash": "1a2ad32fb17c71a2b099e08f7aefe842ee946199c49c332c18fdc9786aca9c50",
+      "evidence_status": "validated",
+      "file": "2026-11-13-microsoft-post-training-supply-chain-coding-agents.md",
+      "posts_index_hash": "3fde2da9d76efbdd7410dc8927a8664bfcbdf90fe4f913d92ee4b5ecc4e7bcbf",
+      "report_id": "2026-11-13-microsoft-post-training-supply-chain-coding-agents",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-13T10:38:27+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-13-unit42-cairn-autonomous-ai-attacks": {
+      "content_hash": "768d4764eb117a132976e7597bf36691577ed0c1c60920fde4c762f4f86e7ad8",
+      "evidence_status": "validated",
+      "file": "2026-11-13-unit42-cairn-autonomous-ai-attacks.md",
+      "posts_index_hash": "51daf51d9c0d08c9c68103a72fac790afa6c57e79d8f42de860896305f5ac681",
+      "report_id": "2026-11-13-unit42-cairn-autonomous-ai-attacks",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-13T10:38:27+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
