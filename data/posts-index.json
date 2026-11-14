@@ -1,6 +1,33 @@
 {
   "posts": [
     {
+      "id": "2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering",
+      "title": "Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials",
+      "date": "2026-11-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Cursor's November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic's Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor's remediation steps, since uninstalling the extension alone may not be sufficient.",
+      "file": "2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.md"
+    },
+    {
+      "id": "2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns",
+      "title": "Amazon Threat Intelligence Documents ARTEX Agents Running Self Sustaining AI Credential Theft and Deepfake KYC Fraud Campaigns",
+      "date": "2026-11-14",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "llmjacking",
+        "malicious-tool",
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Amazon Threat Intelligence observed threat actors using the open source ARTEX agentic AI penetration testing framework to run sustained offensive campaigns between October 3 and November 5, 2026, captured by the MadPot decoy sensor network. The most prominent campaign stole AI provider API keys at scale and recycled them to pay for the LLM inference powering further credential hunting, while another targeted cryptocurrency exchanges for KYC verification bypass using real time deepfake injection. Organizations exposing AI inference endpoints or hosting upstream provider keys in internet facing applications should audit credential exposure and monitor for agentic request patterns against their LLM APIs.",
+      "file": "2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns.md"
+    },
+    {
       "id": "2026-11-13-microsoft-post-training-supply-chain-coding-agents",
       "title": "Microsoft research shows dataset and model poisoning backdoors hijack coding agents at up to 94.8 percent success",
       "date": "2026-11-13",

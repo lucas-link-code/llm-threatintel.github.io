@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-13",
+  "last_updated": "2026-11-14",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6569,6 +6569,42 @@
       ],
       "description": "Microsoft research describes adversaries who poison fine tuning datasets or open weight model checkpoints to plant dormant backdoors in coding agents. The backdoors activate on hidden triggers and cause the agent to misuse command execution tools.",
       "attribution": "No threat actor named by Microsoft in the published research"
+    },
+    {
+      "id": "unattributed-artex-operators",
+      "names": [
+        "Unattributed ARTEX operators"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Open source ARTEX framework paired with standing instruction prompts"
+      ],
+      "ttps": [
+        "T1528 - Steal Application Access Token",
+        "T1580 - Cloud Infrastructure Discovery"
+      ],
+      "description": "Threat actors used ARTEX agents as autonomous operators rather than manual tools, issuing standing instruction prompts that defined objectives and constraints while agents performed credential discovery, validation, and pooling without human involvement. The stolen keys fed the same framework's model gateway, forming a self sustaining loop in which compromised inference budget paid for additional credential hunting, and a parallel campaign applied the agents to cryptocurrency exchange KYC bypass via real time deepfake injection.",
+      "attribution": "Unattributed; AWS assesses moderate confidence that ARTEX tooling was used based on prompt references and technical artifacts"
+    },
+    {
+      "id": "unattributed-cursor-marketplace-attacker",
+      "names": [
+        "Unattributed Cursor marketplace attacker"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "disrupted",
+      "distribution": [
+        "Malicious extension builds served through the Cursor VS Code extension marketplace cache"
+      ],
+      "ttps": [
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1552.001 - Unsecured Credentials: Credentials In Files"
+      ],
+      "description": "The attacker chained an exposed third party access key, unredacted credentials in shared agent trace data, and internal SaaS access into the publication of tampered Anthropic Claude Code extension builds on a marketplace cache. Cursor reported the activity as contained, with the last observed attacker activity on November 1 blocked, and said it is enhancing security controls based on the findings.",
+      "attribution": "Unattributed in Cursor's public update"
     }
   ]
 }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials | LLM ThreatIntel</title>
+  <meta name="description" content="Cursor&#x27;s November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic&#x27;s Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor&#x27;s remediation steps, since uninstalling the extension alone may not be sufficient.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials">
+  <meta property="og:description" content="Cursor&#x27;s November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic&#x27;s Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor&#x27;s remediation steps, since uninstalling the extension alone may not be sufficient.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials">
+  <meta property="article:published_time" content="2026-11-14T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-14T00:00:00Z">
+  <meta property="article:tag" content="supply-chain">
+  <meta property="article:tag" content="malware">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials">
+  <meta name="twitter:description" content="Cursor&#x27;s November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic&#x27;s Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor&#x27;s remediation steps, since uninstalling the extension alone may not be sufficient.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials",
+  "description": "Cursor's November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic's Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor's remediation steps, since uninstalling the extension alone may not be sufficient.",
+  "datePublished": "2026-11-14T00:00:00Z",
+  "dateModified": "2026-11-14T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html",
+  "keywords": [
+    "supply-chain",
+    "malware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-14</span>
+      <span class="post-tag tag-supply-chain">Supply Chain</span><span class="post-tag tag-malware">Malware</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials</h1>
+<p><strong>Date:</strong> 2026-11-14<br><strong>Tags:</strong> supply-chain, malware</p>
+<h2>Executive Summary</h2>
+<p>Cursor&#x27;s November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic&#x27;s Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor&#x27;s remediation steps, since uninstalling the extension alone may not be sufficient.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Cursor Marketplace Claude Code Extension Tampering</td></tr><tr><td>Attribution</td><td>Unattributed attacker (confidence: none)</td></tr><tr><td>Target</td><td>Cursor customers, Cursor internal systems, and users of the Cursor VS Code extension marketplace</td></tr><tr><td>Vector</td><td>Exposed vendor access key leading to credential theft and malicious extension publication</td></tr><tr><td>Status</td><td>disrupted</td></tr><tr><td>First Observed</td><td>2026-10-29</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to Cursor&#x27;s blog, the incident started at Fireworks after an attacker obtained an access key Cursor had issued to Fireworks, which Fireworks exposed, and used it to copy data from a read only storage bucket Cursor used to share data with the vendor. Cursor stated the bucket contained limited coding agent traces, mostly from 2025 sessions not in Privacy Mode, and that a small number of those traces contained credentials that had not been redacted, with less than 0.01 percent of customers having API credentials exposed. Cursor reported the attacker used those credentials to reach select SaaS tools used by Cursor, then accessed select archived non production Cursor source repositories, some containing business contact information, limited customer support data and email conversations, product usage metrics and contact details, summaries of some coding agent conversations, and credentials users had sent to the Cursor support team. Cursor&#x27;s monitoring systems identified the unauthorized activity, and the company deactivated the vendor key, opened an incident response workstream, and began revoking and rotating credentials. Cursor reported that on October 29 the attacker used a stolen credential from the exposed internal data to place malicious, unauthorized copies of Anthropic&#x27;s Claude Code extension directly on the cache used to serve the Cursor VS Code extension marketplace, that Anthropic did not publish this copy and that it was not a vulnerability in Anthropic&#x27;s product, and that the Open VSX marketplace source never had the malware. Cursor stated at most 5,000 users who requested specific cached versions of the extension on October 29 potentially received the malicious build, that it was available for approximately 11 hours before removal, and that the extension marketplace was taken offline while the attacker&#x27;s server host was contacted to take the server down. Cursor published a security notice with indicators of compromise and scripts to check systems on October 30, and it stated that the last attacker activity seen was on November 1 and was blocked.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Compromise Software Supply Chain</td><td>T1195.002</td><td>Attacker published unauthorized Claude Code extension builds through the Cursor marketplace cache</td></tr><tr><td>Unsecured Credentials: Credentials In Files</td><td>T1552.001</td><td>Unredacted credentials inside coding agent traces in a shared read only storage bucket enabled lateral access</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_Cursor published indicators of compromise and remediation scripts in its October 30 security notice, referenced from the November 13 update. No hashes, IPs, or attacker domains were disclosed in the update retrieved._</p>
+<h3>Full URL Paths</h3>
+<p>_Cursor published indicators of compromise and remediation scripts in its October 30 security notice, referenced from the November 13 update. No hashes, IPs, or attacker domains were disclosed in the update retrieved._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Cursor VS Code extension marketplace
+Cursor internal SaaS tooling
+Cursor non production source repositories
+Fireworks shared data storage bucket</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Audit any developer workstation that installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor VS Code extension marketplace on October 29, 2026 and run Cursor&#x27;s published check scripts rather than relying on uninstall alone. Hunt for access to storage buckets shared with AI vendors that contain agent traces or session logs, and enforce redaction and credential scrubbing before such data leaves the tenant. Rotate any API keys or support submitted credentials that may have transited coding agent traces, and review SaaS audit logs for access originating from vendor issued keys after August 2026.</p>
+<h2>References</h2>
+<ul><li>[Cursor] An update on our recent security incident (2026-11-13) — https://cursor.com/blog/security-incident-update</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

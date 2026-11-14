@@ -6757,6 +6757,36 @@
       "validated_at": "2026-11-13T10:38:27+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns": {
+      "content_hash": "c43667be9009022d0e211ba538f5ee776332d636a62af7cac35a07cfa04d9883",
+      "evidence_status": "validated",
+      "file": "2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns.md",
+      "posts_index_hash": "a3b2d49cba11acc9a8017f6920027f37e8f5ab616cd155a0253bd52d9878f591",
+      "report_id": "2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns",
+      "review_required": [],
+      "source_urls": [
+        "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-14T09:51:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering": {
+      "content_hash": "f9a4fc28bdba3f3564f1eb9dacbe9dd042dbc0d9a15f8732c70984de53d7c981",
+      "evidence_status": "validated",
+      "file": "2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.md",
+      "posts_index_hash": "092c4886593e07fd3a4dfda284b1cfa55a34cf4f2410d8e9213acd18c5a55469",
+      "report_id": "2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering",
+      "review_required": [],
+      "source_urls": [
+        "https://cursor.com/blog/security-incident-update"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-14T09:51:54+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

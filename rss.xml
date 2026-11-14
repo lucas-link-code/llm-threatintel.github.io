@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 13 Nov 2026 10:38:26 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 09:51:53 +0000</lastBuildDate>
     <item>
+      <title>Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials</title>
+      <link>https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Cursor's November 13 incident update states the October 29 attack began when Fireworks exposed an access key issued by Cursor, which the attacker used to copy data from a read only storage bucket holding coding agent traces that contained unredacted credentials for less than 0.01 percent of customers. The attacker then reached internal SaaS tools, archived non production source repositories, support data, and credentials, and used a stolen credential to place malicious copies of Anthropic's Claude Code extension on the Cursor VS Code extension marketplace cache, potentially served to at most 5,000 users for about 11 hours. Developers who installed or updated Anthropic.claude-code 2.1.312 or 2.1.313 from the Cursor marketplace during the exposure window should follow Cursor's remediation steps, since uninstalling the extension alone may not be sufficient.</description>
+    </item>    <item>
+      <title>Amazon Threat Intelligence Documents ARTEX Agents Running Self Sustaining AI Credential Theft and Deepfake KYC Fraud Campaigns</title>
+      <link>https://llm-threatintel.com/posts/2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns.html</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Amazon Threat Intelligence observed threat actors using the open source ARTEX agentic AI penetration testing framework to run sustained offensive campaigns between October 3 and November 5, 2026, captured by the MadPot decoy sensor network. The most prominent campaign stole AI provider API keys at scale and recycled them to pay for the LLM inference powering further credential hunting, while another targeted cryptocurrency exchanges for KYC verification bypass using real time deepfake injection. Organizations exposing AI inference endpoints or hosting upstream provider keys in internet facing applications should audit credential exposure and monitor for agentic request patterns against their LLM APIs.</description>
+    </item>    <item>
       <title>Microsoft research shows dataset and model poisoning backdoors hijack coding agents at up to 94.8 percent success</title>
       <link>https://llm-threatintel.com/posts/2026-11-13-microsoft-post-training-supply-chain-coding-agents.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-13-microsoft-post-training-supply-chain-coding-agents.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-04-check-point-haiou-prompt-adware-llm-gateway.html</guid>
       <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
       <description>Check Point Research analyzed the Haiou jailbreak bundle, a public prompt package targeting OpenAI Codex, and classified it as prompt adware because it persistently rewrites an agent trusted instructions and configuration files to inject advertisements for the author LLM gateway. The bundle also installs security focused Skills for penetration testing, cracking, reverse engineering and game security, and was observed in use by a cybercrime actor alongside Cobalt Strike, VulnClaw and the Ladon framework. Defenders should treat agent configuration artifacts and installed Skills as security relevant code, not benign text.</description>
-    </item>    <item>
-      <title>SecurityWeek Reports Cursor Marketplace Served Malicious Claude Code Extension Versions 2.1.312 and 2.1.313</title>
-      <link>https://llm-threatintel.com/posts/2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-03-securityweek-cursor-marketplace-malicious-claude-code-extension.html</guid>
-      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
-      <description>SecurityWeek reported that malicious versions 2.1.312 and 2.1.313 of the anthropic.claude-code extension were published to the Cursor VS Code Extension Marketplace on 29 October 2026 and stayed available for about 11 hours, potentially reaching roughly 5,000 developer systems. The extension ran JavaScript at module load to gather host reconnaissance and then attempted an SSH key install, reverse tunnel and persistence, though Cursor says the SSH step failed on most systems because it requires admin rights. Cursor users should remove the affected versions, run the Cursor detection script, and rotate credentials from any host that loaded the extension.</description>
-    </item>    <item>
-      <title>Warp Discloses Vendor Infrastructure Exploitation Exposing Agent Decision Logs and Telemetry</title>
-      <link>https://llm-threatintel.com/posts/2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-03-warp-vendor-infrastructure-exploitation-agent-logs.html</guid>
-      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Warp founder Zach Lloyd disclosed on 27 October 2026 active and narrow exploitation of a vendor in Warp infrastructure, exposing agent decision logs and telemetry for an estimated 1 percent of users. Warp says it detected the activity within hours, notified identified users, engaged external help and informed law enforcement, and did not clarify whether source code, prompts, or credentials were included in the exposed logs. Affected users should rotate credentials and review agent activity, because the scope of the exposed data remains undefined.</description>
     </item>
   </channel>
 </rss>

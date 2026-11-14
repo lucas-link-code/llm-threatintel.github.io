@@ -1,7 +1,7 @@
 {
-  "commit_sha": "21216e83b4a7f263e3416012df1e98d6615ab8cc",
+  "commit_sha": "81413ad207d97a8b4a173b9803b744626078a960",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-13T10:38:27+00:00",
+  "generated_at_utc": "2026-11-14T09:51:55+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -51,24 +51,24 @@
   "overall_result": "pass",
   "reports_checked": 3,
   "reports_newly_validated": 2,
-  "reports_skipped": 393,
+  "reports_skipped": 395,
   "review_required": 1,
   "source_urls_checked": 3,
   "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+      "final_url": "https://cursor.com/blog/security-incident-update",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/"
+      "url": "https://cursor.com/blog/security-incident-update"
     },
     {
       "error": "",
-      "final_url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/",
+      "final_url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/"
+      "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/"
     },
     {
       "error": "HTTP Error 403: Forbidden",
