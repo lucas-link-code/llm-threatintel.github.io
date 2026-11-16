@@ -1,7 +1,7 @@
 # LLM ThreatIntel Validation Report
 
-- Run time UTC: `2026-11-15T10:27:37+00:00`
-- Commit SHA: `63efe51224f89bad0e7ff04f3248bd16076a94e5`
+- Run time UTC: `2026-11-16T10:43:07+00:00`
+- Commit SHA: `cbe4258d9457448a73b38f2766ff9a1d62b8c991`
 - Mode: `full`
 - Validation version: `1.0.0`
 - Overall result: `pass`
