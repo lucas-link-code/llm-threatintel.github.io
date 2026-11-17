@@ -1,7 +1,7 @@
 {
-  "commit_sha": "cbe4258d9457448a73b38f2766ff9a1d62b8c991",
+  "commit_sha": "86fc8115c944bf207b629ac47a111565f51fa4dc",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-16T10:43:07+00:00",
+  "generated_at_utc": "2026-11-17T11:31:29+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -49,13 +49,34 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 0,
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
   "reports_skipped": 397,
   "review_required": 1,
-  "source_urls_checked": 1,
-  "state_updates": 0,
+  "source_urls_checked": 4,
+  "state_updates": 2,
   "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/"
+    },
+    {
+      "error": "",
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.techtarget.com/news/google-finds-ai-agents-autonomously-turning-patches-into-exploits/874837/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.techtarget.com/news/google-finds-ai-agents-autonomously-turning-patches-into-exploits/874837/"
+    },
     {
       "error": "HTTP Error 403: Forbidden",
       "final_url": "https://openai.com/index/a-thousand-fewer-paths-to-root",

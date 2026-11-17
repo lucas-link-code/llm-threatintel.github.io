@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-17",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6605,6 +6605,42 @@
       ],
       "description": "The attacker chained an exposed third party access key, unredacted credentials in shared agent trace data, and internal SaaS access into the publication of tampered Anthropic Claude Code extension builds on a marketplace cache. Cursor reported the activity as contained, with the last observed attacker activity on November 1 blocked, and said it is enhancing security controls based on the findings.",
       "attribution": "Unattributed in Cursor's public update"
+    },
+    {
+      "id": "unknown-exploit-agent-operator",
+      "names": [
+        "Unknown exploit_agent operator"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1587.004 - Develop Capabilities: Exploits"
+      ],
+      "description": "An unidentified operator ran an exposed staging server hosting the exploit_agent multi agent framework, which chained LLM driven differential patch analysis to automated exploit development and execution. Victim telemetry indicated targeting interest in French media, entertainment, and education websites, and additional scripts supported post compromise reconnaissance, brute forcing, and webshell management.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "multiple-artex-abusing-threat-actors",
+      "names": [
+        "Multiple ARTEX abusing threat actors"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Community forks and archived copies of ARTEX",
+        "Localized versions",
+        "ARTEX PRO commercial edition"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "Several threat actors adopted the ARTEX autonomous AI agent framework to automate reconnaissance, exploitation, privilege escalation, and data theft. The FBI linked the tooling to a ConnectWise supply chain breach and to broad targeting of financial, government, technology, defense, and healthcare organizations, with intrusions reaching privileged access in under three hours.",
+      "attribution": "Unattributed; FBI describes multiple actors with minimal technical expertise"
     }
   ]
 }

@@ -6787,6 +6787,37 @@
       "validated_at": "2026-11-14T09:51:54+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-17-fbi-flash-advisory-artex-autonomous-framework": {
+      "content_hash": "dfad94adb8680d88504caaf7de62a97856c22ba081aa99b87d56ce58eb5d23a6",
+      "evidence_status": "validated",
+      "file": "2026-11-17-fbi-flash-advisory-artex-autonomous-framework.md",
+      "posts_index_hash": "f82030edaae00490dfcf265d0bb76a02cd4cf652757f36b0172a636d071bcfab",
+      "report_id": "2026-11-17-fbi-flash-advisory-artex-autonomous-framework",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-17T11:31:29+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-17-gtig-exploit-agent-autonomous-weaponization": {
+      "content_hash": "5406ec0024ebb82b54beaf954c90d244797b0b954f9c4820f3106eba986247d5",
+      "evidence_status": "validated",
+      "file": "2026-11-17-gtig-exploit-agent-autonomous-weaponization.md",
+      "posts_index_hash": "6f8d39d83da565b85b4779baeb1d630bbe5b09900f5d6a482c11076ff794f894",
+      "report_id": "2026-11-17-gtig-exploit-agent-autonomous-weaponization",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold/",
+        "https://www.techtarget.com/news/google-finds-ai-agents-autonomously-turning-patches-into-exploits/874837/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-17T11:31:29+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 14 Nov 2026 09:51:53 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 11:31:27 +0000</lastBuildDate>
     <item>
+      <title>FBI FLASH Advisory Warns ARTEX Autonomous Pentest Framework Driving Global Attacks and ConnectWise Supply Chain Breach</title>
+      <link>https://llm-threatintel.com/posts/2026-11-17-fbi-flash-advisory-artex-autonomous-framework.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-17-fbi-flash-advisory-artex-autonomous-framework.html</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <description>The FBI issued a FLASH advisory warning that multiple threat actors have weaponized the ARTEX autonomous penetration testing framework since at least August 2026 to automate intrusions across financial, government, technology, defense, and healthcare sectors, including a ConnectWise supply chain breach that compromised Microsoft 365 customer environments. ARTEX chains techniques fast enough to move from initial targeting to privileged access in under three hours, and researchers counted more than 1,600 publicly exposed ARTEX consoles as of early November. Defenders should hunt for the framework's high volume reconnaissance traffic and review third party integration portals that ARTEX targets effectively.</description>
+    </item>    <item>
+      <title>Google Threat Intelligence Group Documents exploit_agent Framework Fully Automating Patch Differential Analysis Into Live Exploitation</title>
+      <link>https://llm-threatintel.com/posts/2026-11-17-gtig-exploit-agent-autonomous-weaponization.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-17-gtig-exploit-agent-autonomous-weaponization.html</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Google Threat Intelligence Group reported the first observed case of threat actors using LLM frameworks to fully automate vulnerability discovery and exploitation with no human in the loop, via a multi agent staging server it dubbed exploit_agent. The framework runs continuous differential analysis of web application patches, drafts exploits, and executes them against internet facing servers automatically, and victim telemetry points to interest in French media, entertainment, and education targets. Defenders should treat agentic exploitation pipelines as an active capability, not a theoretical one, and prioritize rapid patch application on internet facing infrastructure.</description>
+    </item>    <item>
       <title>Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials</title>
       <link>https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-05-openai-cyber-model-948-linux-lpe-exploits.html</guid>
       <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
       <description>OpenAI reported that an autonomous vulnerability discovery, exploitation, and patching pipeline using an upcoming cyber model identified and analyzed 2,308 candidate Linux kernel findings, dynamically reproduced 1,724 vulnerabilities, and produced 948 working local privilege escalation exploits in a mid-October 2026 run at a total API cost of $1,213,430, or $1,279 per exploit. The pipeline also generated 291 information leak proofs of concept and produced candidate patches that OpenAI is submitting to maintainers through Patch the Planet partners. This demonstrates that AI driven exploit generation is economically viable at scale, so defenders should prioritize patch velocity for local privilege escalation bugs.</description>
-    </item>    <item>
-      <title>Attackers Steal AI Access Tokens from Developer Platforms Chainstack and WorkOS Using Artex Framework</title>
-      <link>https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-05-artex-ai-developer-platform-token-theft-chainstack-workos.html</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
-      <description>SecurityWeek reported a wave of intrusions against at least a dozen AI developer platforms, with the most recent disclosures from Chainstack, WorkOS, Northflank, Trigger.dev, CommandCode and Chainstack, in which attackers hunted AI access tokens to monetize and used the open source Artex penetration testing framework for automation. Chainstack said an October 26 intrusion reached a customer database with names, member email addresses and password hashes, while WorkOS said a compromised internal sales application exposed contact details and customer communication summaries on October 30. Defenders running AI gateways, inference accounts or developer consoles should rotate provider keys and platform secrets and assume that one compromised intermediary can expose keys for many downstream inference accounts.</description>
-    </item>    <item>
-      <title>Check Point Research Names Haiou Jailbreak Bundle as Prompt Adware Injecting Ads for an LLM Gateway</title>
-      <link>https://llm-threatintel.com/posts/2026-11-04-check-point-haiou-prompt-adware-llm-gateway.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-04-check-point-haiou-prompt-adware-llm-gateway.html</guid>
-      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Check Point Research analyzed the Haiou jailbreak bundle, a public prompt package targeting OpenAI Codex, and classified it as prompt adware because it persistently rewrites an agent trusted instructions and configuration files to inject advertisements for the author LLM gateway. The bundle also installs security focused Skills for penetration testing, cracking, reverse engineering and game security, and was observed in use by a cybercrime actor alongside Cobalt Strike, VulnClaw and the Ladon framework. Defenders should treat agent configuration artifacts and installed Skills as security relevant code, not benign text.</description>
     </item>
   </channel>
 </rss>

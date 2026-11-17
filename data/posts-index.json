@@ -1,6 +1,33 @@
 {
   "posts": [
     {
+      "id": "2026-11-17-fbi-flash-advisory-artex-autonomous-framework",
+      "title": "FBI FLASH Advisory Warns ARTEX Autonomous Pentest Framework Driving Global Attacks and ConnectWise Supply Chain Breach",
+      "date": "2026-11-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "The FBI issued a FLASH advisory warning that multiple threat actors have weaponized the ARTEX autonomous penetration testing framework since at least August 2026 to automate intrusions across financial, government, technology, defense, and healthcare sectors, including a ConnectWise supply chain breach that compromised Microsoft 365 customer environments. ARTEX chains techniques fast enough to move from initial targeting to privileged access in under three hours, and researchers counted more than 1,600 publicly exposed ARTEX consoles as of early November. Defenders should hunt for the framework's high volume reconnaissance traffic and review third party integration portals that ARTEX targets effectively.",
+      "file": "2026-11-17-fbi-flash-advisory-artex-autonomous-framework.md"
+    },
+    {
+      "id": "2026-11-17-gtig-exploit-agent-autonomous-weaponization",
+      "title": "Google Threat Intelligence Group Documents exploit_agent Framework Fully Automating Patch Differential Analysis Into Live Exploitation",
+      "date": "2026-11-17",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "llmjacking",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google Threat Intelligence Group reported the first observed case of threat actors using LLM frameworks to fully automate vulnerability discovery and exploitation with no human in the loop, via a multi agent staging server it dubbed exploit_agent. The framework runs continuous differential analysis of web application patches, drafts exploits, and executes them against internet facing servers automatically, and victim telemetry points to interest in French media, entertainment, and education targets. Defenders should treat agentic exploitation pipelines as an active capability, not a theoretical one, and prioritize rapid patch application on internet facing infrastructure.",
+      "file": "2026-11-17-gtig-exploit-agent-autonomous-weaponization.md"
+    },
+    {
       "id": "2026-11-14-cursor-incident-update-fireworks-key-claude-code-extension-tampering",
       "title": "Cursor Update Traces Claude Code Marketplace Tampering to Exposed Fireworks Access Key and Unredacted Agent Trace Credentials",
       "date": "2026-11-14",
