@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks",
+      "title": "Google Threat Intelligence Group Observes PentAGI and CAIRN Multi Agent Frameworks Deployed in the Wild and CyberStrikeAI in Experimentation",
+      "date": "2026-11-18",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "nation-state"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google Threat Intelligence Group reported that agentic threat activity crossed a significant threshold, with the open source multi agent frameworks CAIRN and PentAGI independently observed deployed in real intrusions and CyberStrikeAI and HexStrike AI seen in threat actor experimentation. These frameworks share autonomous target discovery and exploitation capabilities that lower the skill barrier for offensive operations. Defenders should monitor environments for multi agent framework traffic and unexpected agent tool invocation.",
+      "file": "2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks.md"
+    },
+    {
       "id": "2026-11-17-fbi-flash-advisory-artex-autonomous-framework",
       "title": "FBI FLASH Advisory Warns ARTEX Autonomous Pentest Framework Driving Global Attacks and ConnectWise Supply Chain Breach",
       "date": "2026-11-17",

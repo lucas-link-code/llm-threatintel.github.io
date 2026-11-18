@@ -6818,6 +6818,21 @@
       "validated_at": "2026-11-17T11:31:29+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks": {
+      "content_hash": "29d4ae47b175d62b3a9d5fb4b670b9a1bd35895f07495089e8346679a8e40bee",
+      "evidence_status": "validated",
+      "file": "2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks.md",
+      "posts_index_hash": "9423a298edc626d952987234b7b91719a8c3e358f2ec705b3e773641af9f67ec",
+      "report_id": "2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-18T11:14:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

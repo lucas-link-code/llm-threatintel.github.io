@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6641,6 +6641,23 @@
       ],
       "description": "Several threat actors adopted the ARTEX autonomous AI agent framework to automate reconnaissance, exploitation, privilege escalation, and data theft. The FBI linked the tooling to a ConnectWise supply chain breach and to broad targeting of financial, government, technology, defense, and healthcare organizations, with intrusions reaching privileged access in under three hours.",
       "attribution": "Unattributed; FBI describes multiple actors with minimal technical expertise"
+    },
+    {
+      "id": "pentagi",
+      "names": [
+        "PentAGI"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Open source repository"
+      ],
+      "ttps": [
+        "T1595 - Active Scanning"
+      ],
+      "description": "An open source multi agent framework that GTIG independently observed deployed in the wild during the quarter. It belongs to a cluster of agentic offensive tools, alongside CAIRN, CyberStrikeAI, and HexStrike AI, that GTIG assessed are lowering the barrier to autonomous offensive operations.",
+      "attribution": "Unattributed"
     }
   ]
 }

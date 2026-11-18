@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 17 Nov 2026 11:31:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 11:13:50 +0000</lastBuildDate>
     <item>
+      <title>Google Threat Intelligence Group Observes PentAGI and CAIRN Multi Agent Frameworks Deployed in the Wild and CyberStrikeAI in Experimentation</title>
+      <link>https://llm-threatintel.com/posts/2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks.html</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Google Threat Intelligence Group reported that agentic threat activity crossed a significant threshold, with the open source multi agent frameworks CAIRN and PentAGI independently observed deployed in real intrusions and CyberStrikeAI and HexStrike AI seen in threat actor experimentation. These frameworks share autonomous target discovery and exploitation capabilities that lower the skill barrier for offensive operations. Defenders should monitor environments for multi agent framework traffic and unexpected agent tool invocation.</description>
+    </item>    <item>
       <title>FBI FLASH Advisory Warns ARTEX Autonomous Pentest Framework Driving Global Attacks and ConnectWise Supply Chain Breach</title>
       <link>https://llm-threatintel.com/posts/2026-11-17-fbi-flash-advisory-artex-autonomous-framework.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-17-fbi-flash-advisory-artex-autonomous-framework.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault.html</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
       <description>Microsoft Threat Intelligence observed threat actors using an agentic AI offensive framework, ARTEX, to scan public GitHub repositories for exposed secrets and advance from discovery to Azure Key Vault data exfiltration in about five minutes. The same campaign used valid leaked or stolen application credentials for service principal sign ins across dozens of Microsoft Entra ID tenants beginning October 28, 2026, and abused compromised Azure AI services. Defenders should rotate exposed application credentials, audit service principal sign ins from the listed IP addresses, and monitor Azure Key Vault and Storage Account access.</description>
-    </item>    <item>
-      <title>OpenAI Cyber Model Pipeline Validates 948 Linux Local Privilege Escalation Exploits at $1,279 Each</title>
-      <link>https://llm-threatintel.com/posts/2026-11-05-openai-cyber-model-948-linux-lpe-exploits.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-05-openai-cyber-model-948-linux-lpe-exploits.html</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI reported that an autonomous vulnerability discovery, exploitation, and patching pipeline using an upcoming cyber model identified and analyzed 2,308 candidate Linux kernel findings, dynamically reproduced 1,724 vulnerabilities, and produced 948 working local privilege escalation exploits in a mid-October 2026 run at a total API cost of $1,213,430, or $1,279 per exploit. The pipeline also generated 291 information leak proofs of concept and produced candidate patches that OpenAI is submitting to maintainers through Patch the Planet partners. This demonstrates that AI driven exploit generation is economically viable at scale, so defenders should prioritize patch velocity for local privilege escalation bugs.</description>
     </item>
   </channel>
 </rss>
