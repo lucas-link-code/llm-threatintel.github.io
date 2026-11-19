@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 18 Nov 2026 11:13:50 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 11:12:13 +0000</lastBuildDate>
     <item>
+      <title>Bitdefender Labs Documents GitHub Malware Campaign Hiding Payloads in AI Agent Instruction Files</title>
+      <link>https://llm-threatintel.com/posts/2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign.html</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Bitdefender Labs identified 22 malicious GitHub links that conceal payloads inside the files and automation configurations AI coding assistants read when they join a project. The malware can steal developer credentials, cloud secrets, CI/CD tokens, package registry credentials, browser data, and password manager data, then plant fresh AI agent instructions to keep spreading. Defenders should treat agent instruction files, session start hooks, MCP configurations, and editor task files as untrusted code and scan developer workstations for unauthorized edits to them.</description>
+    </item>    <item>
       <title>Google Threat Intelligence Group Observes PentAGI and CAIRN Multi Agent Frameworks Deployed in the Wild and CyberStrikeAI in Experimentation</title>
       <link>https://llm-threatintel.com/posts/2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass.html</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
       <description>Check Point Research discovered a vulnerability that bypassed OpenAI Lockdown Mode, allowing silent exfiltration of entire chat history, credential phishing, and malware delivery. In the Electron based ChatGPT Classic application the attack required zero user interaction, so simply holding a conversation was enough to trigger silent data exfiltration. OpenAI deployed a fix on September 18, 2026, by removing the allow-popups and allow-popups-to-escape-sandbox permissions from the outer HTML preview sandbox iframe.</description>
-    </item>    <item>
-      <title>Microsoft Reports Agentic AI Framework Scanning GitHub for Exposed Secrets and Abusing Azure Key Vault</title>
-      <link>https://llm-threatintel.com/posts/2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-06-microsoft-artex-agentic-ai-exposed-secrets-azure-key-vault.html</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft Threat Intelligence observed threat actors using an agentic AI offensive framework, ARTEX, to scan public GitHub repositories for exposed secrets and advance from discovery to Azure Key Vault data exfiltration in about five minutes. The same campaign used valid leaked or stolen application credentials for service principal sign ins across dozens of Microsoft Entra ID tenants beginning October 28, 2026, and abused compromised Azure AI services. Defenders should rotate exposed application credentials, audit service principal sign ins from the listed IP addresses, and monitor Azure Key Vault and Storage Account access.</description>
     </item>
   </channel>
 </rss>

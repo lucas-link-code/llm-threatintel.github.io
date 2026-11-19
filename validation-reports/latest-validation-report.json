@@ -1,7 +1,7 @@
 {
-  "commit_sha": "e18046fd0795a825c224de79ad5201b3b05bc682",
+  "commit_sha": "536b8f42ba660e0acc554e79c4d4194ad55d400b",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-18T11:14:02+00:00",
+  "generated_at_utc": "2026-11-19T11:12:15+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -51,17 +51,17 @@
   "overall_result": "pass",
   "reports_checked": 2,
   "reports_newly_validated": 1,
-  "reports_skipped": 399,
+  "reports_skipped": 400,
   "review_required": 1,
   "source_urls_checked": 2,
   "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+      "final_url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+      "url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign"
     },
     {
       "error": "HTTP Error 403: Forbidden",

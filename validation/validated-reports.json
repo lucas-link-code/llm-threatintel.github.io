@@ -6833,6 +6833,21 @@
       "validated_at": "2026-11-18T11:14:01+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign": {
+      "content_hash": "54cd77d9061274bb3d0f08e51a0b73138c6b96baa4893aa21a3a3b96dea640f3",
+      "evidence_status": "validated",
+      "file": "2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign.md",
+      "posts_index_hash": "063540e46f549bf28a91e9628f234c2abe5a78bbe790e03b2742fe79f96dfe83",
+      "report_id": "2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-19T11:12:15+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

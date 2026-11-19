@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign",
+      "title": "Bitdefender Labs Documents GitHub Malware Campaign Hiding Payloads in AI Agent Instruction Files",
+      "date": "2026-11-19",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "malware",
+        "prompt-injection",
+        "mcp-security"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Bitdefender Labs identified 22 malicious GitHub links that conceal payloads inside the files and automation configurations AI coding assistants read when they join a project. The malware can steal developer credentials, cloud secrets, CI/CD tokens, package registry credentials, browser data, and password manager data, then plant fresh AI agent instructions to keep spreading. Defenders should treat agent instruction files, session start hooks, MCP configurations, and editor task files as untrusted code and scan developer workstations for unauthorized edits to them.",
+      "file": "2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign.md"
+    },
+    {
       "id": "2026-11-18-gtig-pentagi-cairn-cyberstrikeai-agentic-frameworks",
       "title": "Google Threat Intelligence Group Observes PentAGI and CAIRN Multi Agent Frameworks Deployed in the Wild and CyberStrikeAI in Experimentation",
       "date": "2026-11-18",

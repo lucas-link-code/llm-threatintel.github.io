@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6657,6 +6657,25 @@
         "T1595 - Active Scanning"
       ],
       "description": "An open source multi agent framework that GTIG independently observed deployed in the wild during the quarter. It belongs to a cluster of agentic offensive tools, alongside CAIRN, CyberStrikeAI, and HexStrike AI, that GTIG assessed are lowering the barrier to autonomous offensive operations.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unknown-github-ai-agent-malware-operator",
+      "names": [
+        "Unknown GitHub AI agent malware operator"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "GitHub repositories",
+        "Compromised developer accounts and packages"
+      ],
+      "ttps": [
+        "T1195.002 - Supply Chain Compromise: Software Supply Chain",
+        "T1546 - Event Triggered Execution"
+      ],
+      "description": "An unattributed operator running a campaign that hosts malicious content on GitHub and configures it to abuse the instruction files, hooks, and MCP settings AI coding assistants trust. The malware harvests developer and cloud credentials, pivots into additional repositories and packages, and re plants AI agent instructions to spread, per Bitdefender Labs.",
       "attribution": "Unattributed"
     }
   ]
