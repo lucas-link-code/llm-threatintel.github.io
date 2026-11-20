@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce",
+      "title": "Pluto Security Skill2Exploit Delivers Nextcloud Zero Day RCE Through a Harmless AI Agent Skill",
+      "date": "2026-11-20",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Pluto Security disclosed Skill2Exploit, a technique where a benign looking AI agent skill fetches a crafted file that exploits a vulnerability in another service, triggering remote code execution with no malicious code in the skill itself. They proved it with a zero day RCE in Nextcloud's HEIC preview path via the libde265 decoder, affecting any instance running a pre November 6 2026 image with HEIC preview enabled. Administrators should move to a current fpm-alpine image (Nextcloud 32 to 35) or an Alpine 3.24 build and review how agents fetch and process untrusted files.",
+      "file": "2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce.md"
+    },
+    {
+      "id": "2026-11-20-crowdstrike-backdoored-lora-model-supply-chain",
+      "title": "CrowdStrike Warns Backdoored LoRA Models Enable Supply Chain Compromise of AI Agents",
+      "date": "2026-11-20",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "model-poisoning"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "CrowdStrike researchers detailed how cheap Low-Rank Adaptation fine tunes of open weight models can carry conditional backdoors that pass standard benchmarks and stay dormant until a trigger phrase or date appears. ProjectDiscovery demonstrated a $50 LoRA fine tune of Qwen2.5-7B that emits a tool call to an attacker controlled URL whenever a trigger phrase entered a prompt, and any agent that auto dispatches tool calls will execute it. Defenders should treat model weights from third parties and internal teams as untrusted code and add independent observability over agent tool calls.",
+      "file": "2026-11-20-crowdstrike-backdoored-lora-model-supply-chain.md"
+    },
+    {
       "id": "2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign",
       "title": "Bitdefender Labs Documents GitHub Malware Campaign Hiding Payloads in AI Agent Instruction Files",
       "date": "2026-11-19",

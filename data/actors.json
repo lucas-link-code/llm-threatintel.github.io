@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-19",
+  "last_updated": "2026-11-20",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -3326,13 +3326,18 @@
       ],
       "type": "malware",
       "first_seen": "2026-05",
-      "status": "active",
+      "status": "disrupted",
       "distribution": [
-        "Unknown"
+        "Unknown",
+        "LoRA fine tune model adapters distributed via open model repositories",
+        "Delivered through a benign looking AI agent skill that fetches a crafted file"
       ],
       "ttps": [
         "T1190 - Exploitation for Privilege Escalation",
-        "AML.T0054 - LLM Jailbreak Injection"
+        "AML.T0054 - LLM Jailbreak Injection",
+        "T1195.002 - Compromise Software Supply Chain",
+        "T1204 - User Execution",
+        "T1203 - Exploitation for Client Execution"
       ],
       "description": "Criminal threat actor with LLM integration capability and access to model APIs. Demonstrated advanced understanding of semantic vulnerability classes that require LLM reasoning to identify. Planned mass exploitation suggesting organized criminal structure with distribution infrastructure.",
       "attribution": "Unattributed; threat actor nationality and motivation unknown"

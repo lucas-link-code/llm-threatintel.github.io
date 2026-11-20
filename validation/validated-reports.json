@@ -6848,6 +6848,36 @@
       "validated_at": "2026-11-19T11:12:15+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-20-crowdstrike-backdoored-lora-model-supply-chain": {
+      "content_hash": "abeb21c83c3a3f6b4dba52a5954acaa7262f3553091809dcdde988f88750022b",
+      "evidence_status": "validated",
+      "file": "2026-11-20-crowdstrike-backdoored-lora-model-supply-chain.md",
+      "posts_index_hash": "2f4193f55665c757e41c3e02b76cf84095baa67e48d0a64ade63d1125b584840",
+      "report_id": "2026-11-20-crowdstrike-backdoored-lora-model-supply-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://www.crowdstrike.com/en-us/blog/supply-chain-risk-from-backdoored-lora-models/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-20T10:58:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce": {
+      "content_hash": "0e2d7751a4555cb575618efec206b348b1b31914dc50a0de0571a8cf1ed0cdee",
+      "evidence_status": "validated",
+      "file": "2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce.md",
+      "posts_index_hash": "fa13aa5910d93744c50f22125ad8e25e80466ec3ff05b0bcfab22b3acc3fdf9e",
+      "report_id": "2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce",
+      "review_required": [],
+      "source_urls": [
+        "https://pluto.security/blog/skill2exploit-agent-skill-zero-day-rce/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-20T10:58:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

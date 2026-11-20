@@ -1,7 +1,7 @@
 {
-  "commit_sha": "536b8f42ba660e0acc554e79c4d4194ad55d400b",
+  "commit_sha": "f89417c7545fd089fd9d32b6dadef0844decdd19",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-19T11:12:15+00:00",
+  "generated_at_utc": "2026-11-20T10:58:36+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -49,19 +49,26 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 2,
-  "reports_newly_validated": 1,
-  "reports_skipped": 400,
+  "reports_checked": 3,
+  "reports_newly_validated": 2,
+  "reports_skipped": 401,
   "review_required": 1,
-  "source_urls_checked": 2,
-  "state_updates": 1,
+  "source_urls_checked": 3,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign",
+      "final_url": "https://pluto.security/blog/skill2exploit-agent-skill-zero-day-rce/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign"
+      "url": "https://pluto.security/blog/skill2exploit-agent-skill-zero-day-rce/"
+    },
+    {
+      "error": "",
+      "final_url": "https://www.crowdstrike.com/en-us/blog/supply-chain-risk-from-backdoored-lora-models/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.crowdstrike.com/en-us/blog/supply-chain-risk-from-backdoored-lora-models/"
     },
     {
       "error": "HTTP Error 403: Forbidden",

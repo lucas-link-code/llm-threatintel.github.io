@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 19 Nov 2026 11:12:13 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 10:58:34 +0000</lastBuildDate>
     <item>
+      <title>Pluto Security Skill2Exploit Delivers Nextcloud Zero Day RCE Through a Harmless AI Agent Skill</title>
+      <link>https://llm-threatintel.com/posts/2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce.html</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Pluto Security disclosed Skill2Exploit, a technique where a benign looking AI agent skill fetches a crafted file that exploits a vulnerability in another service, triggering remote code execution with no malicious code in the skill itself. They proved it with a zero day RCE in Nextcloud's HEIC preview path via the libde265 decoder, affecting any instance running a pre November 6 2026 image with HEIC preview enabled. Administrators should move to a current fpm-alpine image (Nextcloud 32 to 35) or an Alpine 3.24 build and review how agents fetch and process untrusted files.</description>
+    </item>    <item>
+      <title>CrowdStrike Warns Backdoored LoRA Models Enable Supply Chain Compromise of AI Agents</title>
+      <link>https://llm-threatintel.com/posts/2026-11-20-crowdstrike-backdoored-lora-model-supply-chain.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-20-crowdstrike-backdoored-lora-model-supply-chain.html</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>CrowdStrike researchers detailed how cheap Low-Rank Adaptation fine tunes of open weight models can carry conditional backdoors that pass standard benchmarks and stay dormant until a trigger phrase or date appears. ProjectDiscovery demonstrated a $50 LoRA fine tune of Qwen2.5-7B that emits a tool call to an attacker controlled URL whenever a trigger phrase entered a prompt, and any agent that auto dispatches tool calls will execute it. Defenders should treat model weights from third parties and internal teams as untrusted code and add independent observability over agent tool calls.</description>
+    </item>    <item>
       <title>Bitdefender Labs Documents GitHub Malware Campaign Hiding Payloads in AI Agent Instruction Files</title>
       <link>https://llm-threatintel.com/posts/2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-19-bitdefender-github-ai-agent-instruction-file-malware-campaign.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</guid>
       <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
       <description>RH-ISAC published a threat intel analysis on 2026-11-02 detailing NIK C2, a Go based Windows command and control framework that integrates the OpenAI Chat Completions API through an ai_generate command so operators can issue prompts from an infected host. The analysis states the implant can use an attacker supplied API key or attempt to read the OPENAI_API_KEY environment variable from the victim, which shifts API consumption and billing onto a compromised account. Defenders should monitor for unexpected outbound calls to the OpenAI API from Windows endpoints, alert on processes reading OPENAI_API_KEY, and rotate any exposed AI API keys found in host environments.</description>
-    </item>    <item>
-      <title>Greeter Exploit Framework Turns Exposed Flowise AI Servers Into Cloud Credential Theft Entry Points</title>
-      <link>https://llm-threatintel.com/posts/2026-11-07-greeter-framework-flowise-cloud-credential-theft.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-07-greeter-framework-flowise-cloud-credential-theft.html</guid>
-      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Era Security discovered Greeter, a Chinese language exploit framework that abuses CVE-2024-58351 in end of life Flowise deployments to inject payloads per request through the overrideConfig.javascriptFunction parameter, leaving stored chatflows unmodified and logs showing only repeated 'hello' messages. Shodan data cited by TechTarget shows 4,372 Flowise instances still internet facing, 3,277 with a recognizable version, and 703 with no authentication, and Greeter uses the compromised host to probe cloud metadata services for temporary AWS IAM or Google Cloud tokens. Defenders should inventory internet facing Flowise, upgrade past 2.1.4 or retire it, require authentication, and alert on overrideConfig javascriptFunction usage and instance metadata queries.</description>
-    </item>    <item>
-      <title>Check Point Research Bypasses ChatGPT Lockdown Mode for Silent Chat Exfiltration and Phishing</title>
-      <link>https://llm-threatintel.com/posts/2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass.html</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Check Point Research discovered a vulnerability that bypassed OpenAI Lockdown Mode, allowing silent exfiltration of entire chat history, credential phishing, and malware delivery. In the Electron based ChatGPT Classic application the attack required zero user interaction, so simply holding a conversation was enough to trigger silent data exfiltration. OpenAI deployed a fix on September 18, 2026, by removing the allow-popups and allow-popups-to-escape-sandbox permissions from the outer HTML preview sandbox iframe.</description>
     </item>
   </channel>
 </rss>
