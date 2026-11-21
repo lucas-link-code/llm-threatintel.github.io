@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20",
+  "last_updated": "2026-11-21",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6682,6 +6682,22 @@
       ],
       "description": "An unattributed operator running a campaign that hosts malicious content on GitHub and configures it to abuse the instruction files, hooks, and MCP settings AI coding assistants trust. The malware harvests developer and cloud credentials, pivots into additional repositories and packages, and re plants AI agent instructions to spread, per Bitdefender Labs.",
       "attribution": "Unattributed"
+    },
+    {
+      "id": "chinese-nexus-cairn-operator-unnamed",
+      "names": [
+        "Chinese-nexus Cairn operator (unnamed)"
+      ],
+      "type": "nation_state_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1059.006 - Command and Scripting Interpreter: Python"
+      ],
+      "description": "An operator of the open source Cairn autonomous AI penetration testing framework who ran an unauthenticated, internet facing Cairn instance hosting project configurations, prompts, and AI output in Simplified Chinese with China Standard Time timestamps. The operator directed autonomous agents against East Asian university networks, later provided a proxy tunnel into a second university network, and directed agents to expand targeting to other machines. AWS assessed moderate confidence of Chinese nexus attribution.",
+      "attribution": "Chinese-nexus threat actor, moderate confidence, assessed by Amazon Threat Intelligence"
     }
   ]
 }

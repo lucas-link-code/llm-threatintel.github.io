@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application | LLM ThreatIntel</title>
+  <meta name="description" content="Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application">
+  <meta property="og:description" content="Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application">
+  <meta property="article:published_time" content="2026-11-21T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-21T00:00:00Z">
+  <meta property="article:tag" content="nation-state">
+  <meta property="article:tag" content="malicious-tool">
+  <meta property="article:tag" content="apt">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application">
+  <meta name="twitter:description" content="Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application",
+  "description": "Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.",
+  "datePublished": "2026-11-21T00:00:00Z",
+  "dateModified": "2026-11-21T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html",
+  "keywords": [
+    "nation-state",
+    "malicious-tool",
+    "apt"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-21</span>
+      <span class="post-tag tag-nation-state">Nation State</span><span class="post-tag tag-malicious-tool">Malicious Tool</span><span class="post-tag tag-apt">APT</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application</h1>
+<p><strong>Date:</strong> 2026-11-21<br><strong>Tags:</strong> nation-state, malicious-tool, apt</p>
+<h2>Executive Summary</h2>
+<p>Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>Cairn autonomous agent campaign against East Asian universities</td></tr><tr><td>Attribution</td><td>Chinese-nexus threat actor (confidence: medium)</td></tr><tr><td>Target</td><td>Universities in East Asia outside mainland China</td></tr><tr><td>Vector</td><td>Autonomous AI agent exploitation of internet facing services including an unauthenticated Redis instance and a vulnerable medical imaging AI application</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-09-08</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>According to the AWS Security Blog, Amazon Threat Intelligence identified a publicly accessible server hosting an unauthenticated instance of Cairn, an open source autonomous AI penetration testing framework, on September 10, 2026. The exposure revealed project configurations, actor prompts, and AI output. The operator wrote prompts in Simplified Chinese and configured executed script timestamps to China Standard Time. AWS reported that the observed campaign targeted IP addresses associated with universities in East Asia outside mainland China over roughly 48 hours beginning September 8, 2026. The most extensive operation targeted an unauthenticated Redis instance at one university, with the agents performing 148 sequential actions over about 16 hours, including abusing Redis replication to load unauthorized code, escaping the scripting sandbox, writing configuration files, corrupting memory, and attempting Log4Shell injection against another service on the same system. Against a target running an open source medical imaging AI application, the agents identified the application framework, mapped API endpoints, found an upload endpoint with a filename parameter, and confirmed path traversal. In about 11 minutes they went from API mapping to arbitrary file write. In a later session they wrote a Python reverse shell payload to sitecustomize.py, a file Python automatically imports at interpreter startup, then triggered a training API endpoint to spawn a new Python process that imported the payload and established a reverse shell running as root. AWS assessed with high confidence that the path traversal was a zero day because no fix, issue, advisory, or prior vulnerability database mention existed for the affected open source project at the time of discovery. In another session the human actor supplied the agents a proxy tunneling into a second university network running the same vulnerable software, and directed the agents to target other machines in that network. AWS assessed with moderate confidence that this is a Chinese nexus threat actor based on Simplified Chinese prompts, China Standard Time timestamps, and targeting of universities likely of strategic interest to China. AWS notified the project maintainers, who released a fix and a GitHub Security Advisory.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Exploit Public-Facing Application</td><td>T1190</td><td>Agents exploited an upload endpoint filename parameter for path traversal in an internet facing medical imaging AI application to write arbitrary files and gain root shell access.</td></tr><tr><td>Command and Scripting Interpreter: Python</td><td>T1059.006</td><td>Agents wrote a reverse shell payload to sitecustomize.py so Python imported it at interpreter startup when a training API endpoint spawned a new process.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published. AWS did not name the affected open source medical imaging project or the university IP addresses. The project&#x27;s GitHub Security Advisory and fix were referenced but not linked in the source._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published. AWS did not name the affected open source medical imaging project or the university IP addresses. The project&#x27;s GitHub Security Advisory and fix were referenced but not linked in the source._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">Cairn autonomous AI penetration testing framework
+Open source medical imaging AI application (unnamed, vulnerable to path traversal in upload filename parameter)
+Redis (unauthenticated instances)</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Monitor for unexpected writes or modifications to sitecustomize.py and other Python startup files (usercustomize.py, .pth files in site-packages) and for training or inference API endpoints spawning unexpected Python processes with outbound network connections. Audit upload endpoints for filename parameter path traversal and enforce filename normalization and allowlisting. Eliminate unauthenticated Redis exposure: require authentication, disable or restrict the REPLICATION and MODULE commands, and set protected mode. Hunt for the Log4Shell injection attempts against services colocated with Redis. Because the framework was left exposed on shared cloud infrastructure, defenders should also check for publicly reachable Cairn or similar agentic pentest dashboards in their own and monitored cloud estates, though AWS did not publish the hosting domain or IP addresses to block.</p>
+<h2>References</h2>
+<ul><li>[AWS Security Blog] Chinese-nexus actor&#x27;s Cairn AI agents found a zero-day on their own (2026-11-20) — https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

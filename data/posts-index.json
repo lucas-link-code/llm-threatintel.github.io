@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-11-21-aws-cairn-agents-zero-day-medical-imaging",
+      "title": "AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application",
+      "date": "2026-11-21",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malicious-tool",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.",
+      "file": "2026-11-21-aws-cairn-agents-zero-day-medical-imaging.md"
+    },
+    {
       "id": "2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce",
       "title": "Pluto Security Skill2Exploit Delivers Nextcloud Zero Day RCE Through a Harmless AI Agent Skill",
       "date": "2026-11-20",

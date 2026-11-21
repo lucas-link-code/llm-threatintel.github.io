@@ -6532,6 +6532,21 @@
       "validation_version": "1.0.0",
       "warnings": []
     },
+    "2026-11-05-openai-cyber-model-948-linux-lpe-exploits": {
+      "content_hash": "a24b0b75f6c6293f80f1178473de26c785d942103d81debc88b9d94bb30c19e5",
+      "evidence_status": "validated",
+      "file": "2026-11-05-openai-cyber-model-948-linux-lpe-exploits.md",
+      "posts_index_hash": "22f4fc227cb6663417d861471729d47ddd10512f8f1cad2f2e1eac03a3b0c075",
+      "report_id": "2026-11-05-openai-cyber-model-948-linux-lpe-exploits",
+      "review_required": [],
+      "source_urls": [
+        "https://openai.com/index/a-thousand-fewer-paths-to-root"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-21T10:42:02+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
     "2026-11-06-checkpoint-chatgpt-lockdown-mode-bypass": {
       "content_hash": "cf111dd2f8ee6f52d5d1f70c149934825426061409526443c0c1dfe1feb65a18",
       "evidence_status": "validated",
@@ -6876,6 +6891,21 @@
       ],
       "structure_status": "validated",
       "validated_at": "2026-11-20T10:58:36+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-21-aws-cairn-agents-zero-day-medical-imaging": {
+      "content_hash": "4b44becf5ff71788a0b9fe0d8cf8977a066b633bcf9d3a3bc3af699d2f57e209",
+      "evidence_status": "validated",
+      "file": "2026-11-21-aws-cairn-agents-zero-day-medical-imaging.md",
+      "posts_index_hash": "4bc1ad1387db06bee69b116ac304dab7e19af0ed8ced70a04156c9a75d63a966",
+      "report_id": "2026-11-21-aws-cairn-agents-zero-day-medical-imaging",
+      "review_required": [],
+      "source_urls": [
+        "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-21T10:42:01+00:00",
       "validation_version": "1.0.0",
       "warnings": []
     }

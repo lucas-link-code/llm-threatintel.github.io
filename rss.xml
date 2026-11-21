@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 20 Nov 2026 10:58:34 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 10:42:00 +0000</lastBuildDate>
     <item>
+      <title>AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application</title>
+      <link>https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Amazon Threat Intelligence disclosed that a Chinese nexus operator running the open source autonomous penetration testing framework Cairn left an instance exposed without authentication, revealing a campaign in which AI agents found and exploited an unpatched zero day on their own. The agents achieved root level shell access on a medical imaging AI application in about 11 minutes via a path traversal upload parameter, then planted a Python reverse shell through sitecustomize.py. Defenders running the affected open source medical imaging project should apply the vendor fix and review Python startup file integrity and training API endpoint exposure.</description>
+    </item>    <item>
       <title>Pluto Security Skill2Exploit Delivers Nextcloud Zero Day RCE Through a Harmless AI Agent Skill</title>
       <link>https://llm-threatintel.com/posts/2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-20-pluto-security-skill2exploit-nextcloud-zero-day-rce.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-09-vulncheck-langflow-agentic-secret-hunter.html</guid>
       <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
       <description>VulnCheck canary sensors recorded the same IP central to Microsoft's agentic AI secret hunting report, 199.19.77.84, exploiting Langflow via CVE-2025-3248 to read credentials directly from hosts. The operator ran 11 payload stages over about 36 minutes in a pattern resembling an autonomous agent working a target. The activity persisted one day after Microsoft published, so defenders should treat this infrastructure as still active.</description>
-    </item>    <item>
-      <title>RH-ISAC Analysis Details NIK C2 ai_generate Command and OPENAI_API_KEY Harvesting on Victim Hosts</title>
-      <link>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-08-rh-isac-nik-c2-openai-api-abuse-analysis.html</guid>
-      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
-      <description>RH-ISAC published a threat intel analysis on 2026-11-02 detailing NIK C2, a Go based Windows command and control framework that integrates the OpenAI Chat Completions API through an ai_generate command so operators can issue prompts from an infected host. The analysis states the implant can use an attacker supplied API key or attempt to read the OPENAI_API_KEY environment variable from the victim, which shifts API consumption and billing onto a compromised account. Defenders should monitor for unexpected outbound calls to the OpenAI API from Windows endpoints, alert on processes reading OPENAI_API_KEY, and rotate any exposed AI API keys found in host environments.</description>
     </item>
   </channel>
 </rss>
