@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "2026-11-22-microsoft-device-code-phishing-ai-coding-agents",
+      "title": "Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely",
+      "date": "2026-11-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "phishing"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.",
+      "file": "2026-11-22-microsoft-device-code-phishing-ai-coding-agents.md"
+    },
+    {
+      "id": "2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage",
+      "title": "Dragos Canary Experiment Exposes Prompt Theft and Data Leakage Across the AI Inference Supply Chain",
+      "date": "2026-11-22",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "llmjacking"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "A Dragos researcher seeded nearly 2 million prompts with unique trackable secrets and found at least three AI providers compromised by attackers who siphoned prompts, multiple resellers that leaked prompts, and providers that ignored zero data retention flags. Stolen AWS keys were reused tens of thousands of times in AWS API calls, and a Chinese AI lab scraped secret URLs even from requests marked no data collection. Enterprises should treat any prompt sent to an external model provider as potentially disclosed and rotate every credential that has transited a third party inference endpoint.",
+      "file": "2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage.md"
+    },
+    {
       "id": "2026-11-21-aws-cairn-agents-zero-day-medical-imaging",
       "title": "AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application",
       "date": "2026-11-21",

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely | LLM ThreatIntel</title>
+  <meta name="description" content="Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="LLM ThreatIntel">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='11' fill='white'>LLM</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely">
+  <meta property="og:description" content="Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.">
+  <meta property="og:url" content="https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html">
+  <meta property="og:site_name" content="LLM ThreatIntel">
+  <meta property="og:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+  <meta property="og:image:alt" content="Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely">
+  <meta property="article:published_time" content="2026-11-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-11-22T00:00:00Z">
+  <meta property="article:tag" content="phishing">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely">
+  <meta name="twitter:description" content="Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.">
+  <meta name="twitter:image" content="https://llm-threatintel.com/assets/og/llm-threatintel-home.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely",
+  "description": "Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.",
+  "datePublished": "2026-11-22T00:00:00Z",
+  "dateModified": "2026-11-22T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LLM ThreatIntel"
+  },
+  "mainEntityOfPage": "https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html",
+  "keywords": [
+    "phishing"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-mark">LLM</span>
+        <span>LLM <span class="logo-accent">ThreatIntel</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Intel Feed</a>
+        <a href="/#actors">Threat Actors</a>
+        <a href="/#ioc-feed">IOC Feed</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="app-content">
+    <a href="/" class="back-link">&larr; Back to feed</a>
+    <div class="post-meta" style="margin-bottom:1rem">
+      <span class="post-date">2026-11-22</span>
+      <span class="post-tag tag-phishing">Phishing</span>
+      <span class="post-tag tlp-clear">TLP:CLEAR</span>
+    </div>
+    <div class="post-content"><h1>Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely</h1>
+<p><strong>Date:</strong> 2026-11-22<br><strong>Tags:</strong> phishing</p>
+<h2>Executive Summary</h2>
+<p>Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.</p>
+<h2>Campaign Summary</h2>
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td>Campaign / Malware</td><td>AI Coding Agent Device Code Phishing</td></tr><tr><td>Attribution</td><td>Microsoft Security research, no named actor (confidence: none)</td></tr><tr><td>Target</td><td>Organizations using AI coding agents such as GitHub Copilot CLI with device code sign in</td></tr><tr><td>Vector</td><td>Phished OAuth device code authorization initiated by an attacker controlled client</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>First Observed</td><td>2026-11-17</td></tr></tbody></table>
+<h2>Detailed Findings</h2>
+<p>Microsoft Security used GitHub Copilot CLI as an illustrative example in a controlled lab simulation, according to <a href="https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/" target="_blank" rel="noopener">microsoft.com</a>. Copilot CLI can work with code, run commands on a user machine, retain context across sessions, and allow an active session to be steered remotely, and like many command line tools it supports the OAuth device flow for sign in. Microsoft said the phishing technique is not specific to GitHub or Copilot CLI: any public client that supports the device flow can be abused the same way, and the attacker chooses the requested scopes when starting the flow. In the simulation a victim test account approved a GitHub device code request initiated by an attacker controlled client. Microsoft reported four outcomes: steering an active Copilot CLI session remotely when the user enabled remote control and organization policy allows it, and subject to local permissions and approval settings, having the agent run commands on the user machine; adding misleading entries to the agent memory that could influence later interactions; reading Copilot CLI sessions synchronized to the cloud; and accessing private repositories available to the affected account. Microsoft stated these are proof of concept results showing existing features working as designed could be abused after a phished authorization, and that they are not attacks observed in the wild. Each outcome requires the victim to approve a device code request initiated by the attacker and depends on account permissions and enabled features.</p>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+<table><thead><tr><th>Technique</th><th>ID</th><th>Context</th></tr></thead><tbody><tr><td>Steal Application Access Token</td><td>T1528</td><td>Phished device code approval yields tokens that let the attacker steer the AI coding agent session remotely.</td></tr><tr><td>Phishing</td><td>T1566</td><td>Victims are induced to approve an attacker initiated device code request to grant account access.</td></tr></tbody></table>
+<h2>IOCs</h2>
+<h3>Domains</h3>
+<p>_No IOCs published. Microsoft described a proof of concept lab simulation, not an observed campaign._</p>
+<h3>Full URL Paths</h3>
+<p>_No IOCs published. Microsoft described a proof of concept lab simulation, not an observed campaign._</p>
+<h3>Splunk Format</h3>
+<p>_No IOCs available for Splunk query_</p>
+<h3>Affected Platforms</h3>
+<pre><code class="language-">GitHub Copilot CLI</code></pre>
+<h2>Detection Recommendations</h2>
+<p>Restrict or disable OAuth device code flow for AI coding agents and other public clients where possible, and require conditional access and number matching. Alert on device code sign ins, especially approvals from new locations or for broad scopes, and on agent sessions that begin invoking shell or file tools shortly after authentication. Review agent memory and cloud synced session logs for injected entries. Enforce least privilege on repositories and cloud resources reachable by the agent account.</p>
+<h2>References</h2>
+<ul><li>[Microsoft Security Blog] The risks of device code authentication for AI coding agents (2026-11-17) — https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/</li></ul></div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-brand">LLM ThreatIntel</span> &mdash; Automated GenAI Threat Intelligence
+    <div class="footer-links">
+      Defensive research only <span>&middot;</span> TLP:CLEAR <span>&middot;</span> Automated via Claude Code <span>&middot;</span> llm-threatintel.com
+    </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+  </script>
+</body>
+</html>

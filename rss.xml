@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 21 Nov 2026 10:42:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 10:47:59 +0000</lastBuildDate>
     <item>
+      <title>Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely</title>
+      <link>https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Microsoft Security showed in a lab simulation that a phished OAuth device code authorization for an AI coding agent can let an attacker steer an active GitHub Copilot CLI session, run commands on the victim machine, poison agent memory, read cloud synced sessions, and reach private repositories. The technique is not specific to GitHub and works against any public client that supports the device flow, with the attacker choosing the requested scopes. Defenders should restrict device code flow for agent clients, require conditional access, and alert on device code sign ins for coding agents.</description>
+    </item>    <item>
+      <title>Dragos Canary Experiment Exposes Prompt Theft and Data Leakage Across the AI Inference Supply Chain</title>
+      <link>https://llm-threatintel.com/posts/2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage.html</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <description>A Dragos researcher seeded nearly 2 million prompts with unique trackable secrets and found at least three AI providers compromised by attackers who siphoned prompts, multiple resellers that leaked prompts, and providers that ignored zero data retention flags. Stolen AWS keys were reused tens of thousands of times in AWS API calls, and a Chinese AI lab scraped secret URLs even from requests marked no data collection. Enterprises should treat any prompt sent to an external model provider as potentially disclosed and rotate every credential that has transited a third party inference endpoint.</description>
+    </item>    <item>
       <title>AWS Reports Chinese Nexus Cairn AI Agents Autonomously Discovered and Exploited a Zero Day in a Medical Imaging AI Application</title>
       <link>https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-21-aws-cairn-agents-zero-day-medical-imaging.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</guid>
       <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
       <description>An exposed open directory revealed an autonomous AI intrusion harness that spent more than two weeks attacking a European telecom provider and 13 organizations hosted in its data centers and cloud. The harness runs on DeepSeek Flash and used a 78,000 character jailbreak system prompt to remove model safeguards, adapting to defenses when tools were blocked or deleted. Researchers withheld the operator IP, and the outcomes come from transcript reading rather than independent verification.</description>
-    </item>    <item>
-      <title>Cisco Talos Documents VOLTA-AUTODOXER Infostealer Using Claude to Rank Stolen Accounts</title>
-      <link>https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-09-cisco-talos-volta-autodoxer-claude-ranking.html</guid>
-      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Cisco Talos disclosed a self deleting Windows infostealer, VOLTA-AUTODOXER, that steals passwords and sessions then sends the data through OpenRouter to a commercial AI model to rank the victim's assets by resale value. The malware defaults to Anthropic's Claude and fails over to other models when a refusal is detected. It harvests browser credentials, cloud keys, and AI assistant sessions, so organizations should assume any AI provider API key on a victim host is exposed.</description>
-    </item>    <item>
-      <title>VulnCheck Canaries Link the Microsoft Agentic AI Secret Hunter to Langflow CVE-2025-3248 Exploitation</title>
-      <link>https://llm-threatintel.com/posts/2026-11-09-vulncheck-langflow-agentic-secret-hunter.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-09-vulncheck-langflow-agentic-secret-hunter.html</guid>
-      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
-      <description>VulnCheck canary sensors recorded the same IP central to Microsoft's agentic AI secret hunting report, 199.19.77.84, exploiting Langflow via CVE-2025-3248 to read credentials directly from hosts. The operator ran 11 payload stages over about 36 minutes in a pattern resembling an autonomous agent working a target. The activity persisted one day after Microsoft published, so defenders should treat this infrastructure as still active.</description>
     </item>
   </channel>
 </rss>

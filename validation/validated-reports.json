@@ -6908,6 +6908,36 @@
       "validated_at": "2026-11-21T10:42:01+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage": {
+      "content_hash": "6752cadd8810025a25ad75ee02e764235cde4e5c929af9e7d944f835d06b95c8",
+      "evidence_status": "validated",
+      "file": "2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage.md",
+      "posts_index_hash": "fe5708fe9d2d1d2edf11d2de5d7db8726b83379352362488fb2ed47c85a60832",
+      "report_id": "2026-11-22-dragos-canary-experiment-ai-inference-supply-chain-leakage",
+      "review_required": [],
+      "source_urls": [
+        "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-22T10:48:01+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-22-microsoft-device-code-phishing-ai-coding-agents": {
+      "content_hash": "aeae8bb8200f910aecc1e2b2d5e6b09096b9a25dce688ca5c3df6a54614b3f39",
+      "evidence_status": "validated",
+      "file": "2026-11-22-microsoft-device-code-phishing-ai-coding-agents.md",
+      "posts_index_hash": "014f99e09d86364e2b3adffc504ce13d0fb6c70b773e744c0cab0d1045399af9",
+      "report_id": "2026-11-22-microsoft-device-code-phishing-ai-coding-agents",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-22T10:48:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

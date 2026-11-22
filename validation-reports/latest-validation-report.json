@@ -1,7 +1,7 @@
 {
-  "commit_sha": "ce4ebb01315c600d5cfa3c4ffe5675aecfe3c21e",
+  "commit_sha": "524bf213d832f753a9a00d4d745674435b931619",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-21T10:42:02+00:00",
+  "generated_at_utc": "2026-11-22T10:48:01+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -43,24 +43,24 @@
   "overall_result": "pass",
   "reports_checked": 2,
   "reports_newly_validated": 2,
-  "reports_skipped": 403,
+  "reports_skipped": 405,
   "review_required": 0,
   "source_urls_checked": 2,
   "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/"
     },
     {
       "error": "",
-      "final_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+      "final_url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/"
     }
   ],
   "validation_version": "1.0.0",

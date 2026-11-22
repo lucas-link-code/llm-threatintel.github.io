@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21",
+  "last_updated": "2026-11-22",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6698,6 +6698,25 @@
       ],
       "description": "An operator of the open source Cairn autonomous AI penetration testing framework who ran an unauthenticated, internet facing Cairn instance hosting project configurations, prompts, and AI output in Simplified Chinese with China Standard Time timestamps. The operator directed autonomous agents against East Asian university networks, later provided a proxy tunnel into a second university network, and directed agents to expand targeting to other machines. AWS assessed moderate confidence of Chinese nexus attribution.",
       "attribution": "Chinese-nexus threat actor, moderate confidence, assessed by Amazon Threat Intelligence"
+    },
+    {
+      "id": "unidentified-chinese-ai-lab-model-provider",
+      "names": [
+        "Unidentified Chinese AI lab model provider"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Direct model endpoints",
+        "Reseller channels"
+      ],
+      "ttps": [
+        "T1552 - Unsecured Credentials",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "A Chinese AI lab whose systems fetched secret URLs embedded in prompts sent to its models between July and October 2026, including requests flagged no data collection or zero data retention, and whose models were resold by United States hosting providers that routed prompts back to the lab.",
+      "attribution": "Unattributed, described by Ars Technica as a Chinese AI lab"
     }
   ]
 }
