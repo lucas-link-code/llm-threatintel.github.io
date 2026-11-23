@@ -1,6 +1,47 @@
 {
   "posts": [
     {
+      "id": "2026-11-23-gtig-agentic-threat-activity-significant-threshold",
+      "title": "Google Threat Intelligence Group Says Agentic Threat Activity Crossed a Significant Threshold",
+      "date": "2026-11-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "nation-state",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Google Threat Intelligence Group and Mandiant reported that adversary use of autonomous agentic tooling has crossed a significant threshold, including autonomous multi agent frameworks, automated vulnerability exploitation pipelines, and alternative monetization schemes. The update spans cyber crime and state linked activity. Defenders should assume agentic offensive operations are now sustained rather than experimental.",
+      "file": "2026-11-23-gtig-agentic-threat-activity-significant-threshold.md"
+    },
+    {
+      "id": "2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills",
+      "title": "AhnLab Reports 40,000 Exposed OpenClaw Agent Instances and Hundreds of Malicious Skills",
+      "date": "2026-11-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "shadow-ai",
+        "supply-chain",
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "AhnLab's AI Threat Trends Report states that 40,000 OpenClaw agent instances were found exposed on the internet and 35.4 percent of them were classified as vulnerable. An audit of one Skill marketplace found that 341 Skills were malicious. Defenders running OpenClaw or similar agent frameworks should locate and restrict internet exposed instances and vet marketplace Skills before agents load them.",
+      "file": "2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills.md"
+    },
+    {
+      "id": "2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain",
+      "title": "OX Security Finds Agent Skills and MCP Servers Weaponized for Instruction Based Supply Chain Attacks",
+      "date": "2026-11-23",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "supply-chain",
+        "mcp-security",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "OX Security analyzed 542,207 open source components across npm, PyPI, MCP servers and Agent Skills between July and October 2026 and found that attackers can now hijack agents through malicious instructions rather than executable code. Prompt injection and tool poisoning appeared in 22 percent of flagged MCP servers, and 44 percent of flagged Agent Skills contained instructions directing agents to send data out without executing code at install time. Defenders should treat MCP server and Skill trust signals as broken and verify component provenance and runtime behavior before agents connect.",
+      "file": "2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain.md"
+    },
+    {
       "id": "2026-11-22-microsoft-device-code-phishing-ai-coding-agents",
       "title": "Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely",
       "date": "2026-11-22",

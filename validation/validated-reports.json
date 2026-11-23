@@ -6938,6 +6938,51 @@
       "validated_at": "2026-11-22T10:48:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills": {
+      "content_hash": "078d7a5a5fb0d8459b424690b98f47b9a0d1c81dbe25d7eacf84345a7eb8065e",
+      "evidence_status": "validated",
+      "file": "2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills.md",
+      "posts_index_hash": "9cc4d275fec6692061dde9e7ff204e038ad0bda82d6939d0fffd4975d383c9ef",
+      "report_id": "2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ahnlab.com/en/contents/content-center/36410"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-23T11:54:13+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-23-gtig-agentic-threat-activity-significant-threshold": {
+      "content_hash": "dd1d00638d5b0c74007c545d168406b842c9169fba01f26f7cc24cba049f2354",
+      "evidence_status": "validated",
+      "file": "2026-11-23-gtig-agentic-threat-activity-significant-threshold.md",
+      "posts_index_hash": "0c82b7a4fc313ba93d175be771dcf672ea07a47d21f6949f73d3dd8c8f6a2d4a",
+      "report_id": "2026-11-23-gtig-agentic-threat-activity-significant-threshold",
+      "review_required": [],
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-23T11:54:12+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain": {
+      "content_hash": "fb3de482e61c6784c6cea29107369f2cd53c02575bc142e521fa52e45723b6bc",
+      "evidence_status": "validated",
+      "file": "2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain.md",
+      "posts_index_hash": "5be7db35afd23d1d98c5a0fa72aa266876f6ca4668faf04c392a534be113b962",
+      "report_id": "2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain",
+      "review_required": [],
+      "source_urls": [
+        "https://www.ox.security/blog/plug-and-pray-your-ai-agents-are-taking-orders-from-strangers/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-23T11:54:13+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

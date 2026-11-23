@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22",
+  "last_updated": "2026-11-23",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6717,6 +6717,59 @@
       ],
       "description": "A Chinese AI lab whose systems fetched secret URLs embedded in prompts sent to its models between July and October 2026, including requests flagged no data collection or zero data retention, and whose models were resold by United States hosting providers that routed prompts back to the lab.",
       "attribution": "Unattributed, described by Ars Technica as a Chinese AI lab"
+    },
+    {
+      "id": "unattributed-agent-supply-chain-abusers",
+      "names": [
+        "Unattributed agent supply chain abusers"
+      ],
+      "type": "supply_chain_campaign",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "MCP server registries",
+        "Agent Skill marketplaces",
+        "npm",
+        "PyPI"
+      ],
+      "ttps": [
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "T1566.003 - Spearphishing via Service"
+      ],
+      "description": "OX Security documented publishers and accounts distributing MCP servers and Agent Skills that carry instructions to manipulate AI agents into abusing their existing permissions, including data exfiltration guidance, rather than relying on malicious code execution. Concentration is a notable risk factor: two publisher accounts accounted for 44 percent of flagged MCP servers.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "unattributed-openclaw-attackers",
+      "names": [
+        "Unattributed OpenClaw attackers"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "Internet exposed OpenClaw instances",
+        "Agent Skill marketplace"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools"
+      ],
+      "description": "AhnLab reported a large population of internet exposed, partly vulnerable OpenClaw agent instances alongside malicious Skills distributed through a marketplace, indicating opportunistic exploitation of unmanaged agent deployments and unvetted Skill distribution.",
+      "attribution": "Unattributed"
+    },
+    {
+      "id": "multiple-agentic-threat-clusters",
+      "names": [
+        "Multiple agentic threat clusters"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [],
+      "description": "GTIG and Mandiant reported sustained adversary use of autonomous multi agent frameworks and automated exploitation pipelines that they characterize as crossing a significant threshold, moving beyond experimental adoption.",
+      "attribution": "Multiple clusters spanning cyber crime and state linked activity per GTIG"
     }
   ]
 }

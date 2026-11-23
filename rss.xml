@@ -5,8 +5,26 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 22 Nov 2026 10:47:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 11:54:10 +0000</lastBuildDate>
     <item>
+      <title>Google Threat Intelligence Group Says Agentic Threat Activity Crossed a Significant Threshold</title>
+      <link>https://llm-threatintel.com/posts/2026-11-23-gtig-agentic-threat-activity-significant-threshold.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-23-gtig-agentic-threat-activity-significant-threshold.html</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Google Threat Intelligence Group and Mandiant reported that adversary use of autonomous agentic tooling has crossed a significant threshold, including autonomous multi agent frameworks, automated vulnerability exploitation pipelines, and alternative monetization schemes. The update spans cyber crime and state linked activity. Defenders should assume agentic offensive operations are now sustained rather than experimental.</description>
+    </item>    <item>
+      <title>AhnLab Reports 40,000 Exposed OpenClaw Agent Instances and Hundreds of Malicious Skills</title>
+      <link>https://llm-threatintel.com/posts/2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-23-ahnlab-openclaw-agent-instances-malicious-skills.html</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>AhnLab's AI Threat Trends Report states that 40,000 OpenClaw agent instances were found exposed on the internet and 35.4 percent of them were classified as vulnerable. An audit of one Skill marketplace found that 341 Skills were malicious. Defenders running OpenClaw or similar agent frameworks should locate and restrict internet exposed instances and vet marketplace Skills before agents load them.</description>
+    </item>    <item>
+      <title>OX Security Finds Agent Skills and MCP Servers Weaponized for Instruction Based Supply Chain Attacks</title>
+      <link>https://llm-threatintel.com/posts/2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-23-ox-security-plugin-pray-agent-skill-mcp-supply-chain.html</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>OX Security analyzed 542,207 open source components across npm, PyPI, MCP servers and Agent Skills between July and October 2026 and found that attackers can now hijack agents through malicious instructions rather than executable code. Prompt injection and tool poisoning appeared in 22 percent of flagged MCP servers, and 44 percent of flagged Agent Skills contained instructions directing agents to send data out without executing code at install time. Defenders should treat MCP server and Skill trust signals as broken and verify component provenance and runtime behavior before agents connect.</description>
+    </item>    <item>
       <title>Microsoft Security Documents Device Code Phishing That Can Steer AI Coding Agents Remotely</title>
       <link>https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-22-microsoft-device-code-phishing-ai-coding-agents.html</guid>
@@ -108,24 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-11-microsoft-lazarus-dormant-neuron-weight-backdoor.html</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
       <description>Microsoft Research disclosed Lazarus, a backdoor technique that reprograms fewer than 10 dormant neurons in an LLM to make an agent execute attacker commands when a hidden trigger fires, with no retraining required. The poisoned model passes standard safety evaluations and behaves normally until the trigger, which can be as mundane as a date change, causing the agent to download and run attacker code with whatever access it was granted. Defenders handling open weight models should diff weights against the original publisher copy and treat model provenance and weight integrity as security controls.</description>
-    </item>    <item>
-      <title>strutil-core Ruby Gem Harvests 51 Credential Stores and Plants Backdoors in AI Coding Tools</title>
-      <link>https://llm-threatintel.com/posts/2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-10-strutil-core-ruby-gem-ai-coding-tool-backdoors.html</guid>
-      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
-      <description>A fake Ruby package named strutil-core was published to RubyGems on November 1, 2026 and its second version shipped a 5.48 MB credential stealing worm that read from 51 credential stores and wrote backdoors into AI coding tool settings. The worm adds a fake MCP server named workspace-tools that runs the malware through Node and installs SessionStart hooks that execute whenever a coding session opens. A wiper named net-health-checker deletes the victim home folder when a stolen GitHub token is revoked, so defenders must preserve evidence before rotating credentials.</description>
-    </item>    <item>
-      <title>Fireworks AI Expands October 2026 Breach Scope to Billing Data, Model Weights, and Datasets in LLMJacking Case</title>
-      <link>https://llm-threatintel.com/posts/2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-10-fireworks-ai-october-2026-incident-update-llmjackcing.html</guid>
-      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Fireworks AI published a November 9 update widening its October 2026 security incident to include account and billing information, and for a limited set of accounts, secrets, datasets, and incomplete model weights. Fireworks attributes the activity to a financially motivated cybercriminal group selling unauthorized LLM access through illicit routing gateways, a pattern Google Threat Intelligence Group and Mandiant describe as LLMJacking. Customers with affected accounts should treat stored secrets, datasets, and partial model artifacts as exposed and rotate credentials now.</description>
-    </item>    <item>
-      <title>Operation Snowball DeepSeek Flash Agent Attacked a European Telecom and 13 Hosted Organizations</title>
-      <link>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-09-operation-snowball-deepseek-telecom-agent.html</guid>
-      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
-      <description>An exposed open directory revealed an autonomous AI intrusion harness that spent more than two weeks attacking a European telecom provider and 13 organizations hosted in its data centers and cloud. The harness runs on DeepSeek Flash and used a 78,000 character jailbreak system prompt to remove model safeguards, adapting to defenses when tools were blocked or deleted. Researchers withheld the operator IP, and the outcomes come from transcript reading rather than independent verification.</description>
     </item>
   </channel>
 </rss>
