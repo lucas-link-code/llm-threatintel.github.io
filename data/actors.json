@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23",
+  "last_updated": "2026-11-24",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6770,6 +6770,22 @@
       "ttps": [],
       "description": "GTIG and Mandiant reported sustained adversary use of autonomous multi agent frameworks and automated exploitation pipelines that they characterize as crossing a significant threshold, moving beyond experimental adoption.",
       "attribution": "Multiple clusters spanning cyber crime and state linked activity per GTIG"
+    },
+    {
+      "id": "unattributed-memory-store-c2-operator",
+      "names": [
+        "Unattributed memory store C2 operator"
+      ],
+      "type": "malicious_llm_tool",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1071 - Application Layer Protocol",
+        "T1059 - Command and Scripting Interpreter"
+      ],
+      "description": "A hypothetical operator that first steals a victim's Claude Console API credentials, then creates and manipulates workspace memory files so that an internal Claude Code agent reads instructions and writes results back, giving the operator real time control over the agent through the platform's own API.",
+      "attribution": "Unattributed. Darktrace presented a proof of concept and did not attribute activity to a named actor or track it in the wild."
     }
   ]
 }

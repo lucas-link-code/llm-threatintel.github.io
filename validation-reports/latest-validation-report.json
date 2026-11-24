@@ -1,7 +1,7 @@
 {
-  "commit_sha": "f1d80d774bf9286dae3a86d1ae65d3bc6b16440c",
+  "commit_sha": "d7c6e2cf5be6f58312ef0929c1ef5501db6e06ab",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-23T11:54:14+00:00",
+  "generated_at_utc": "2026-11-24T13:20:00+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,33 +41,19 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 3,
-  "reports_newly_validated": 3,
-  "reports_skipped": 407,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
+  "reports_skipped": 410,
   "review_required": 0,
-  "source_urls_checked": 3,
-  "state_updates": 3,
+  "source_urls_checked": 1,
+  "state_updates": 1,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+      "final_url": "https://www.darktrace.com/blog/living-off-the-ai-shared-memories-as-a-covert-c2-channel",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.ahnlab.com/en/contents/content-center/36410",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.ahnlab.com/en/contents/content-center/36410"
-    },
-    {
-      "error": "",
-      "final_url": "https://www.ox.security/blog/plug-and-pray-your-ai-agents-are-taking-orders-from-strangers/",
-      "http_status": 200,
-      "status": "accessible",
-      "url": "https://www.ox.security/blog/plug-and-pray-your-ai-agents-are-taking-orders-from-strangers/"
+      "url": "https://www.darktrace.com/blog/living-off-the-ai-shared-memories-as-a-covert-c2-channel"
     }
   ],
   "validation_version": "1.0.0",

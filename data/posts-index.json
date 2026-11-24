@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-darktrace-claude-code-memory-store-c2-channel",
+      "title": "Darktrace Signal Labs Demonstrates Claude Code Memory Stores Abused as a Covert Command and Control Channel",
+      "date": "2026-11-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "shadow-ai",
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Darktrace Signal Labs showed that Claude Code memory stores can be repurposed as a live command and control channel between external operators and AI agents running inside a corporate environment. The technique requires no flaw in the Claude platform and only stolen Claude Console API credentials; it was proven in a controlled lab and has not been observed in the wild. Defenders should monitor agent harness process creation and network traffic against behavioral baselines, because the channel rides the same API endpoint used for normal inference.",
+      "file": "2026-11-24-darktrace-claude-code-memory-store-c2-channel.md"
+    },
+    {
       "id": "2026-11-23-gtig-agentic-threat-activity-significant-threshold",
       "title": "Google Threat Intelligence Group Says Agentic Threat Activity Crossed a Significant Threshold",
       "date": "2026-11-23",

@@ -6983,6 +6983,21 @@
       "validated_at": "2026-11-23T11:54:13+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-24-darktrace-claude-code-memory-store-c2-channel": {
+      "content_hash": "7abcbe76ec737566e31ba926fee38d348e4f9765ba4091be2c68728e2b88876c",
+      "evidence_status": "validated",
+      "file": "2026-11-24-darktrace-claude-code-memory-store-c2-channel.md",
+      "posts_index_hash": "f8da11ad412d511162e634da009a03e1b15c2f1290f74fbc21aec3fae95f2f97",
+      "report_id": "2026-11-24-darktrace-claude-code-memory-store-c2-channel",
+      "review_required": [],
+      "source_urls": [
+        "https://www.darktrace.com/blog/living-off-the-ai-shared-memories-as-a-covert-c2-channel"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-24T13:20:00+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
