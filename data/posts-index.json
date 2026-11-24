@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "id": "2026-11-24-wiz-artex-offensive-ai-frameworks",
+      "title": "Wiz Links ARTEX Offensive AI Framework Activity to More Than a Dozen Organizations",
+      "date": "2026-11-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "apt"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Wiz reported that between late October and mid November 2026 it tied activity, at varying confidence, to more than a dozen organizations and observed routing through ISP proxy exit nodes spanning more than 220 IPs in a single target. The report provides independent vendor analysis of the ARTEX offensive AI framework that the FBI and Amazon Threat Intelligence already described. Defenders should treat proxy fan out across large IP sets within one target as a signal of automated offensive tooling and review outbound egress for proxy chains.",
+      "file": "2026-11-24-wiz-artex-offensive-ai-frameworks.md"
+    },
+    {
+      "id": "2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns",
+      "title": "Unit 42 Tracks More Than 10 Autonomous AI Agent Campaigns Operating at Machine Speed",
+      "date": "2026-11-24",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "malware"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "Unit 42 tracked more than 10 global campaigns between July and September 2026 in which different attackers deployed autonomous AI agents that compressed the attack lifecycle from weeks or days into hours. Every observed campaign began with a web shell planted through a vulnerable web application, and targets spanned government, logistics, hospitality, manufacturing, agriculture, and education. Defenders should prioritize web shell detection and hardening of internet facing web applications because the operators matched proficient human tradecraft while running hundreds of commands in minutes.",
+      "file": "2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns.md"
+    },
+    {
       "id": "2026-11-24-darktrace-claude-code-memory-store-c2-channel",
       "title": "Darktrace Signal Labs Demonstrates Claude Code Memory Stores Abused as a Covert Command and Control Channel",
       "date": "2026-11-24",

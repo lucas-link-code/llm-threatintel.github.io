@@ -5,8 +5,20 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 24 Nov 2026 13:19:59 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 22:41:16 +0000</lastBuildDate>
     <item>
+      <title>Wiz Links ARTEX Offensive AI Framework Activity to More Than a Dozen Organizations</title>
+      <link>https://llm-threatintel.com/posts/2026-11-24-wiz-artex-offensive-ai-frameworks.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-24-wiz-artex-offensive-ai-frameworks.html</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Wiz reported that between late October and mid November 2026 it tied activity, at varying confidence, to more than a dozen organizations and observed routing through ISP proxy exit nodes spanning more than 220 IPs in a single target. The report provides independent vendor analysis of the ARTEX offensive AI framework that the FBI and Amazon Threat Intelligence already described. Defenders should treat proxy fan out across large IP sets within one target as a signal of automated offensive tooling and review outbound egress for proxy chains.</description>
+    </item>    <item>
+      <title>Unit 42 Tracks More Than 10 Autonomous AI Agent Campaigns Operating at Machine Speed</title>
+      <link>https://llm-threatintel.com/posts/2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns.html</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Unit 42 tracked more than 10 global campaigns between July and September 2026 in which different attackers deployed autonomous AI agents that compressed the attack lifecycle from weeks or days into hours. Every observed campaign began with a web shell planted through a vulnerable web application, and targets spanned government, logistics, hospitality, manufacturing, agriculture, and education. Defenders should prioritize web shell detection and hardening of internet facing web applications because the operators matched proficient human tradecraft while running hundreds of commands in minutes.</description>
+    </item>    <item>
       <title>Darktrace Signal Labs Demonstrates Claude Code Memory Stores Abused as a Covert Command and Control Channel</title>
       <link>https://llm-threatintel.com/posts/2026-11-24-darktrace-claude-code-memory-store-c2-channel.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-24-darktrace-claude-code-memory-store-c2-channel.html</guid>
@@ -114,18 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-12-antifox-agentic-pentest-aws-credential-theft.html</guid>
       <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
       <description>Attackers are hosting self managed AntiFox instances on Alibaba Cloud and using the open source agentic penetration testing platform to target internet facing web services and AWS environments. Arctic Wolf observed AntiFox linked infrastructure making authenticated AWS API calls using valid IAM users and assumed EC2 roles, tied to vulnerability exploitation, webshell deployment, and AWS secret harvesting. One intrusion cycled through multiple identities and issued hundreds of API requests in roughly 30 minutes.</description>
-    </item>    <item>
-      <title>Depi Security Shows Prompt Injection Chain From GitHub Issue to Control of the @openai/codex npm Publish Pipeline</title>
-      <link>https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-12-depi-codex-github-action-pipeline-backdoor.html</guid>
-      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Depi Security disclosed an exploit chain that began with prompt injection through the OpenAI Codex GitHub Issue Labeler workflow and ended with the ability to publish to the official @openai/codex npm package. The chain combined code execution inside the agent sandbox, a sandbox escape, memory poisoning, a fake release, and abuse of an OpenID Connect token trusted by npm to reach release signing. OpenAI deployed a fix and awarded an initial $1,000 bounty; no customer side patch is required.</description>
-    </item>    <item>
-      <title>Railway Incident Report Attributes October 21 Breach to Attacker Hunting AI Provider Credentials for Distillation</title>
-      <link>https://llm-threatintel.com/posts/2026-11-11-railway-october-21-incident-report-ai-credential-theft.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-11-railway-october-21-incident-report-ai-credential-theft.html</guid>
-      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Railway published its full incident report on 2026-11-10 for an attack that began 2026-10-20 and ran until the actor was evicted on 2026-10-21, concluding the attacker was specifically targeting AI provider credentials for sale to distributed transfer stations used in distillation. Railway stated at most 1.85 percent of workspaces, roughly 100,000, could have had environment variables decrypted, linked account tokens for 1,852 users were reset, and unauthorized spend on stolen keys was estimated at about 740,000 USD. Organizations hosting AI provider keys in PaaS build environments should rotate those credentials, audit for lateral movement, and move secrets out of build variable stores.</description>
     </item>
   </channel>
 </rss>

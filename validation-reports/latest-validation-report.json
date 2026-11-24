@@ -1,7 +1,7 @@
 {
-  "commit_sha": "d7c6e2cf5be6f58312ef0929c1ef5501db6e06ab",
+  "commit_sha": "82c114bfcb5f0a3d0c778ea59777dd30ed081187",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-24T13:20:00+00:00",
+  "generated_at_utc": "2026-11-24T22:41:18+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,19 +41,26 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 1,
-  "reports_newly_validated": 1,
-  "reports_skipped": 410,
+  "reports_checked": 2,
+  "reports_newly_validated": 2,
+  "reports_skipped": 411,
   "review_required": 0,
-  "source_urls_checked": 1,
-  "state_updates": 1,
+  "source_urls_checked": 2,
+  "state_updates": 2,
   "url_results": [
     {
       "error": "",
-      "final_url": "https://www.darktrace.com/blog/living-off-the-ai-shared-memories-as-a-covert-c2-channel",
+      "final_url": "https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks",
       "http_status": 200,
       "status": "accessible",
-      "url": "https://www.darktrace.com/blog/living-off-the-ai-shared-memories-as-a-covert-c2-channel"
+      "url": "https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks"
+    },
+    {
+      "error": "",
+      "final_url": "https://unit42.paloaltonetworks.com/autonomous-ai-agent-threat-campaigns/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://unit42.paloaltonetworks.com/autonomous-ai-agent-threat-campaigns/"
     }
   ],
   "validation_version": "1.0.0",

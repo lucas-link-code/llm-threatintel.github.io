@@ -6998,6 +6998,36 @@
       "validated_at": "2026-11-24T13:20:00+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns": {
+      "content_hash": "c4c719095696a8de9b34d4c5c69ea021eb66ce11242f0355dd96b303b8093005",
+      "evidence_status": "validated",
+      "file": "2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns.md",
+      "posts_index_hash": "3135495e9bdefe710daadb2831dde793ab04fb4cf7fe653a67c1829df9300b54",
+      "report_id": "2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns",
+      "review_required": [],
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/autonomous-ai-agent-threat-campaigns/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-24T22:41:18+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
+    },
+    "2026-11-24-wiz-artex-offensive-ai-frameworks": {
+      "content_hash": "f3d36cdbdd96090135d0b20c7ef8783b662b76d4e10f5d16d423c3e4d9d86474",
+      "evidence_status": "validated",
+      "file": "2026-11-24-wiz-artex-offensive-ai-frameworks.md",
+      "posts_index_hash": "e33342d71df923780f5ed16ea99f054d6a08b457d54cfdf2c888beef620b6cb6",
+      "report_id": "2026-11-24-wiz-artex-offensive-ai-frameworks",
+      "review_required": [],
+      "source_urls": [
+        "https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-24T22:41:18+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

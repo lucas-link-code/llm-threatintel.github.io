@@ -7,6 +7,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://llm-threatintel.com/posts/2026-11-24-wiz-artex-offensive-ai-frameworks.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://llm-threatintel.com/posts/2026-11-24-unit-42-autonomous-ai-agent-threat-campaigns.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://llm-threatintel.com/posts/2026-11-24-darktrace-claude-code-memory-store-c2-channel.html</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>

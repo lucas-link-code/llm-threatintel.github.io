@@ -6042,13 +6042,15 @@
         "Password spray against internet exposed services",
         "Compromised credentials",
         "Third party dependencies",
-        "Vulnerability exploitation"
+        "Vulnerability exploitation",
+        "ARTEX offensive AI framework"
       ],
       "ttps": [
         "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain",
         "T1078.004 - Valid Accounts: Cloud Accounts",
         "T1195.002 - Compromise Software Supply Chain",
-        "T1552 - Unsecured Credentials"
+        "T1552 - Unsecured Credentials",
+        "T1090 - Proxy"
       ],
       "description": "SecurityWeek reported that multiple companies linked attacks attributed to the Chinese APT Storm-0940 to the use of the open source Artex AI penetration testing framework, including a recent campaign targeting ConnectWise customers. SecurityWeek stated the recent AI developer platform attacks do not appear to be related to each other and initial access varies, while sharing the industry wide interest in AI provider credentials.",
       "attribution": "China state aligned per Microsoft assessment"
@@ -6786,6 +6788,22 @@
       ],
       "description": "A hypothetical operator that first steals a victim's Claude Console API credentials, then creates and manipulates workspace memory files so that an internal Claude Code agent reads instructions and writes results back, giving the operator real time control over the agent through the platform's own API.",
       "attribution": "Unattributed. Darktrace presented a proof of concept and did not attribute activity to a named actor or track it in the wild."
+    },
+    {
+      "id": "multiple-unattributed-agentic-attackers",
+      "names": [
+        "Multiple unattributed agentic attackers"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [],
+      "ttps": [
+        "T1505.003 - Web Shell",
+        "T1190 - Exploit Public-Facing Application"
+      ],
+      "description": "A set of distinct operators tracked by Unit 42 that deployed autonomous AI agents to run attack campaigns at machine speed. The vendor reported that these operators used familiar open source tooling and lightweight custom scripts to gain web shell footholds and execute hundreds of commands in minutes against a broad set of sectors.",
+      "attribution": "Unattributed; Unit 42 described different attackers across campaigns without naming a group"
     }
   ]
 }
