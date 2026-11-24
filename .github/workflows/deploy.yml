@@ -20,13 +20,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  upload:
     runs-on: ubuntu-latest
-    env:
-      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+    outputs:
+      artifact_name: ${{ steps.artifact-name.outputs.name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,15 +39,26 @@ jobs:
       - name: Build sitemap, RSS, and static post pages
         run: python scripts/build_meta.py
 
+      - name: Name Pages artifact
+        id: artifact-name
+        run: echo "name=github-pages-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: ${{ env.PAGES_ARTIFACT_NAME }}
+          name: ${{ steps.artifact-name.outputs.name }}
           # Since this is plain HTML/JS, upload the entire repo root
           path: '.'
 
+  deploy:
+    needs: upload
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
+          artifact_name: ${{ needs.upload.outputs.artifact_name }}
