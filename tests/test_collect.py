@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -684,6 +685,131 @@ class CollectPromptTests(unittest.TestCase):
         self.assertIn("Max 3", prompt)
         self.assertNotIn("posts/ directory", prompt)
         self.assertNotIn("existing posts/", prompt)
+
+    def test_writing_rules_are_in_both_prompts(self):
+        self.assertIn("Name every framework", collect.WRITING_RULES)
+        self.assertIn(collect.WRITING_RULES, collect.build_prompt())
+        self.assertIn(collect.WRITING_RULES, collect.build_publisher_proof_prompt())
+        self.assertNotIn("Concise paragraphs", collect.build_prompt())
+        self.assertNotIn("No filler", collect.build_prompt())
+
+
+def _domains(count):
+    return [f"ioc-{index:02d}.example.net" for index in range(1, count + 1)]
+
+
+class IocFeedCapTests(unittest.TestCase):
+    def test_twenty_indicators_stay_in_the_report_and_the_feed(self):
+        domains = _domains(20)
+        finding = _minimal_finding(
+            slug="small-set",
+            iocs={"domains": list(domains)},
+            detailed_findings="According to Example, ioc-01.example.net was contacted.",
+        )
+        collect.sanitize_finding_iocs(finding)
+        collect.apply_ioc_feed_cap(finding)
+        self.assertEqual(collect.ioc_values_for_feed(finding), domains)
+        self.assertFalse(finding["iocs"].get("feed_omitted"))
+        markdown = collect.generate_post_markdown(finding)
+        self.assertIn("ioc-01.example.net", markdown)
+        self.assertIn("ioc-20.example.net", markdown)
+        self.assertIn("ioc-01.example.net", finding["detailed_findings"])
+
+    def test_duplicate_values_count_once(self):
+        domains = _domains(20) + ["ioc-01.example.net"]
+        finding = _minimal_finding(slug="dupes", iocs={"domains": domains})
+        collect.apply_ioc_feed_cap(finding)
+        self.assertEqual(len(collect.ioc_values_for_feed(finding)), 20)
+        self.assertFalse(finding["iocs"].get("feed_omitted"))
+
+    def test_more_than_twenty_indicators_link_out_instead_of_the_feed(self):
+        domains = _domains(21)
+        package = "https://collector.example.net/iocs.csv"
+        finding = _minimal_finding(
+            slug="large-set",
+            iocs={"domains": list(domains), "package_url": package},
+            detailed_findings=(
+                "According to Example, the dump included ioc-21.example.net "
+                "and ioc-01.example.net."
+            ),
+            detection_recommendations="Block ioc-21.example.net at the proxy.",
+        )
+        collect.sanitize_finding_iocs(finding)
+        collect.apply_ioc_feed_cap(finding)
+        self.assertEqual(collect.ioc_values_for_feed(finding), [])
+        self.assertTrue(finding["iocs"].get("feed_omitted"))
+        self.assertEqual(finding["iocs"]["published_count"], 21)
+        self.assertNotIn("ioc-21.example.net", finding["detailed_findings"])
+        self.assertNotIn("ioc-21.example.net", finding["detection_recommendations"])
+        self.assertIn("According to Example", finding["detailed_findings"])
+        markdown = collect.generate_post_markdown(finding)
+        ioc_section = markdown.split("## IOCs", 1)[1].split("## Detection", 1)[0]
+        fences = re.findall(r"```[\s\S]*?```", ioc_section)
+        self.assertIn("21 unique indicators", ioc_section)
+        self.assertIn(f"[indicator package]({package})", ioc_section)
+        self.assertNotIn(package, "\n".join(fences))
+        self.assertNotIn("ioc-21.example.net", markdown)
+        self.assertNotIn("ioc-01.example.net", markdown)
+
+
+class SourceRewriteTests(unittest.TestCase):
+    def test_bad_rewrite_json_keeps_the_search_draft(self):
+        finding = _minimal_finding(slug="example", detailed_findings="Draft text stays.")
+
+        def fetch(_url):
+            return "<p>" + ("Cairn was named in the report. " * 30) + "</p>"
+
+        def complete(_prompt):
+            return "not json", "stop"
+
+        result = collect.rewrite_findings_from_sources(
+            "key",
+            [finding],
+            fetch=fetch,
+            complete=complete,
+        )
+        self.assertEqual(result[0]["detailed_findings"], "Draft text stays.")
+        self.assertEqual(result[0]["title"], "Example campaign")
+
+    def test_rewrite_fills_names_and_keeps_identity_fields(self):
+        finding = _minimal_finding(slug="example", detailed_findings="Draft.")
+        payload = {
+            "status": "new_intel",
+            "findings": [
+                {
+                    "slug": "example",
+                    "title": "Should not replace the draft title",
+                    "detailed_findings": "According to Example, Cairn and HexStrike were used.",
+                    "iocs": {
+                        "ips": ["203.0.113.10"],
+                        "package_url": "https://collector.example.net/iocs.csv",
+                    },
+                }
+            ],
+        }
+
+        def fetch(_url):
+            return "<article>" + ("Cairn and HexStrike were used. " * 20) + "</article>"
+
+        def complete(prompt):
+            self.assertIn("Cairn and HexStrike", prompt)
+            self.assertIn(collect.WRITING_RULES, prompt)
+            return json.dumps(payload), "stop"
+
+        result = collect.rewrite_findings_from_sources(
+            "key",
+            [finding],
+            fetch=fetch,
+            complete=complete,
+        )
+        self.assertEqual(
+            result[0]["detailed_findings"],
+            "According to Example, Cairn and HexStrike were used.",
+        )
+        self.assertEqual(result[0]["title"], "Example campaign")
+        self.assertEqual(result[0]["slug"], "example")
+        self.assertEqual(result[0]["references"][0]["url"], "https://example.com/report")
+        self.assertEqual(result[0]["iocs"]["ips"], ["203.0.113.10"])
 
 
 class PublisherProofGateTests(unittest.TestCase):

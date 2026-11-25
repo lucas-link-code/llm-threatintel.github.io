@@ -15,6 +15,7 @@ Install:  pip install requests
 """
 
 import faulthandler
+import html
 import os
 import sys
 import json
@@ -96,6 +97,9 @@ _MONTH_NAMES = [
     "December",
 ]
 MITRE_POST_ROW_CAP = 2
+IOC_FEED_CAP = 20
+SOURCE_PAGE_TEXT_CAP = 30000
+MIN_SOURCE_TEXT_CHARS = 200
 MIN_DUPLICATE_SENTENCE_CHARS = 40
 PROSE_COLLAPSE_FIELDS = (
     "executive_summary",
@@ -141,6 +145,24 @@ def get_existing_context(with_ids=False):
         + "\n".join(recent)
         + "\n"
     )
+
+
+WRITING_RULES = """Writing rules for every finding:
+detailed_findings is several short paragraphs, one cluster of facts each. Cover what the source says happened, who was affected, how it worked, and what a defender can check.
+Name every framework, tool, malware family, campaign, actor, and CVE the source names. Do not collapse a named set down to a single example.
+Record every indicator the source actually prints: domains, URLs, hashes, IPs, and package identifiers. Put those values in the iocs arrays. A count is not a substitute for the values printed on the page. Do not invent values. Do not crawl a linked indicator repository. If the page links a separate package, set iocs.package_url to that URL. Do not paste the raw indicator list into detailed_findings.
+Describe behaviour. Do not paste exploit code, jailbreak text, or a full malicious config.
+Campaign name and actor description use the same source names.
+executive_summary: 2 to 3 sentences, under 900 characters. Front-load the operational fact. State what happened, who is affected, and what defenders should do.
+Attribute every factual claim. Use According to [Source Name] or [Source Name] reported that. Every sentence adds a fact. Do not paste the same sentence twice.
+No em dashes. No hyphen compounds as word connectors in titles, executive_summary, detailed_findings, or detection_recommendations. Keep the same words and use a space: human in the loop, information operations, AI driven, self managed, read only, internet facing, weapons themed, prompt crafting, nation state in running text. Keep the hyphen when it is part of a name: company, product, package, model, actor cluster, ATT&CK technique title, CVE, URL, IOC, filename, or code identifier. Keep hyphens in tags.
+No decorative contrast such as not just X but Y, it is not merely X, or rather than X, unless the contrast corrects a real technical distinction.
+Do not force three examples, three adjectives, or three clauses. Use the number the source supports.
+Do not write from X to Y unless X and Y are real endpoints of a range or sequence.
+Do not open a section with So what does this mean or Why does this matter.
+Do not open sentences with Furthermore, Moreover, Additionally, Importantly, Consequently, That said, or Ultimately.
+Prefer a plain word. Do not use delve, tapestry, testament, pivotal, crucial, robust, seamless, holistic, multifaceted, nuanced, profound, intricate, groundbreaking, cutting edge, transformative, revolutionary, unparalleled, unprecedented, vibrant, dynamic, impactful, remarkable, beacon, cornerstone, paradigm, synergy, realm, landscape, trajectory, nexus, myriad, plethora, leverage, harness, foster, empower, unlock, elevate, showcase, underscore, facilitate, spearhead, bolster, streamline, navigate, embark, utilise, commence, endeavour, garner, resonate, or encompass when a plain word will do.
+No emojis. Keep bold scarce."""
 
 
 # ---- The Collection Prompt ----
@@ -205,11 +227,12 @@ OUTPUT: Single JSON object. No prose, no markdown fencing, nothing outside the J
         "status": "active|disrupted|removed",
         "first_observed": "Date"
       }},
-      "detailed_findings": "Concise paragraphs with source attribution. No filler.",
+      "detailed_findings": "Several short paragraphs. Name every framework, tool, campaign, actor, and CVE the source names.",
       "mitre_attack": [{{"technique": "Name", "id": "T1234.001", "context": "How it applies"}}],
       "iocs": {{
         "domains": [], "urls": [], "hashes": [], "ips": [], "packages": [],
         "affected_platforms": [],
+        "package_url": "",
         "note": "Source of IOCs or 'No IOCs published'"
       }},
       "actors": [{{
@@ -236,7 +259,9 @@ Shared infrastructure IOC rules: never emit bare shared cloud, CDN, registry, co
 Legitimate AI vendor platforms are not domain IOCs. Do not emit huggingface.co, hf.co, claude.ai, chatgpt.com, openai.com, community.openai.com, grok.com, openrouter.ai, openrouter.com, first-party subdomains of those hosts, or other hosts from validation/policy.json legitimate_platform_iocs_deny_list as domain or generic url_path values. Attacker-controlled lookalike domains and specific malicious paths remain valid. CVE affected-version lists of legitimate libraries are not package IOCs.
 Only items in the window above. No duplicate incident plus same primary source as listed under Already Covered. Max 3 findings. Prefer primary vendor reports over news rewrites when choosing those three. Real URLs only. Valid MITRE ATT&CK IDs (T + 4 digits).
 
-Writing: No em dashes. No hyphen compounds as word connectors in titles, executive_summary, detailed_findings, or detection_recommendations. Keep the same words and use a space: human in the loop, information operations, AI driven, self managed, read only, internet facing, weapons themed, prompt crafting, nation state in running text. Keep the hyphen when it is part of a name: company, product, package, model, actor cluster, ATT&CK technique title, CVE, URL, IOC, filename, or code identifier. Examples that keep the hyphen: DeepSeek-Coder, Microsoft 365, Shai-Hulud, GTG-20006, gpt-4o-mini. Keep hyphens in tags. No filler, no generic background paragraphs, no restating what the reader already knows. executive_summary: 2 to 3 sentences, under 900 characters. Front-load the most operationally relevant fact. State what happened, who is affected, and what defenders should do. detailed_findings: attribute every factual claim. Use According to [Source Name]... or [Source Name] reported that... Every sentence contributes new information. Do not paste the same sentence twice. If a source cites an older campaign, state that original date. Do not imply it happened in the lookback window. One finding is one incident. Do not glue a recap lede onto a different campaign. Keep first-party technical reports. Skip only when the sole source is a weekly recap of incidents already listed under Already Covered. The disclosing vendor is not the threat actor. Name the publisher in attribution lines and in references. mitre_attack: at most two techniques, and only when the source describes that behavior. Prefer empty [] over generic padding such as T1059 or T1105 with no campaign-specific context. Do not invent mappings."""
+If a source cites an older campaign, state that original date. Do not imply it happened in the lookback window. One finding is one incident. Do not glue a recap lede onto a different campaign. Keep first-party technical reports. Skip only when the sole source is a weekly recap of incidents already listed under Already Covered. The disclosing vendor is not the threat actor. Name the publisher in attribution lines and in references. mitre_attack: at most two techniques, and only when the source describes that behavior. Prefer empty [] over generic padding such as T1059 or T1105 with no campaign-specific context. Do not invent mappings.
+
+{WRITING_RULES}"""
 
 
 # ---- File Writers ----
@@ -830,6 +855,8 @@ Return one JSON object:
   "publisher_checks": [{{"url": "https://publisher.example/article", "published": "YYYY-MM-DD", "title": "Title", "covered_by": "post-id or empty"}}],
   "findings": []
 }}
+
+{WRITING_RULES}
 """
 
 
@@ -912,6 +939,22 @@ def generate_post_markdown(finding):
     lines.append("## IOCs")
     lines.append("")
 
+    if iocs.get("feed_omitted"):
+        count = iocs.get("published_count", 0)
+        package_url = str(iocs.get("package_url") or "").strip()
+        package_label = str(iocs.get("package_label") or "source list").strip() or "source list"
+        if package_url:
+            lines.append(
+                f"The source published {count} unique indicators. "
+                f"The full package is [{package_label}]({package_url})."
+            )
+        else:
+            lines.append(
+                f"The source published {count} unique indicators. "
+                "No separate list URL was provided."
+            )
+        lines.append("")
+
     if iocs.get('domains'):
         lines.append("### Domains")
         lines.append("")
@@ -923,7 +966,10 @@ def generate_post_markdown(finding):
     else:
         lines.append("### Domains")
         lines.append("")
-        lines.append(f"_{iocs.get('note', 'No domain IOCs published by source')}_")
+        if iocs.get("feed_omitted"):
+            lines.append("_Not listed here. The source published more than 20 unique indicators._")
+        else:
+            lines.append(f"_{iocs.get('note', 'No domain IOCs published by source')}_")
         lines.append("")
 
     if iocs.get('urls'):
@@ -937,7 +983,10 @@ def generate_post_markdown(finding):
     else:
         lines.append("### Full URL Paths")
         lines.append("")
-        lines.append(f"_{iocs.get('note', 'No URL IOCs published by source')}_")
+        if iocs.get("feed_omitted"):
+            lines.append("_Not listed here. The source published more than 20 unique indicators._")
+        else:
+            lines.append(f"_{iocs.get('note', 'No URL IOCs published by source')}_")
         lines.append("")
 
     # Splunk format
@@ -958,7 +1007,10 @@ def generate_post_markdown(finding):
     else:
         lines.append("### Splunk Format")
         lines.append("")
-        lines.append("_No IOCs available for Splunk query_")
+        if iocs.get("feed_omitted"):
+            lines.append("_No IOC query in this report. Use the source list linked above._")
+        else:
+            lines.append("_No IOCs available for Splunk query_")
         lines.append("")
 
     if iocs.get('hashes'):
@@ -1599,6 +1651,304 @@ def sanitize_finding_iocs(finding):
     return skipped
 
 
+def unique_finding_ioc_values(finding):
+    """Unique indicator strings on one finding, first occurrence kept."""
+    finding_iocs = finding.get("iocs")
+    if not isinstance(finding_iocs, dict):
+        return []
+    seen = set()
+    unique = []
+    for list_key, ioc_type, dict_key in FINDING_IOC_LISTS:
+        items = finding_iocs.get(list_key)
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            raw = _finding_ioc_raw_value(item, ioc_type, dict_key)
+            value = str(raw or "").strip()
+            if not value:
+                continue
+            key = value.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            unique.append(value)
+    return unique
+
+
+def ioc_values_for_feed(finding):
+    """Values that will be inserted into the IOC Feed for this finding."""
+    finding_iocs = finding.get("iocs")
+    if not isinstance(finding_iocs, dict) or finding_iocs.get("feed_omitted"):
+        return []
+    return unique_finding_ioc_values(finding)
+
+
+def indicator_list_link(finding):
+    """Dedicated package URL, or the article URL when that is where the list sits."""
+    finding_iocs = finding.get("iocs") if isinstance(finding.get("iocs"), dict) else {}
+    package = str(finding_iocs.get("package_url") or "").strip()
+    refs = finding.get("references") or []
+    ref = refs[0] if refs and isinstance(refs[0], dict) else {}
+    ref_url = str(ref.get("url") or "").strip()
+    ref_title = str(ref.get("title") or "").strip() or "source report"
+    if package.startswith("http"):
+        label = ref_title if package == ref_url else "indicator package"
+        return package, label
+    if ref_url.startswith("http"):
+        return ref_url, ref_title
+    return "", "source report"
+
+
+def strip_indicator_values(text, values):
+    """Remove pasted indicator values from prose. Leaves the surrounding words."""
+    if not isinstance(text, str) or not text:
+        return text
+    for value in sorted({v for v in values if len(v) >= 4}, key=len, reverse=True):
+        text = text.replace(value, "")
+    text = re.sub(r"[ \t]{2,}", " ", text)
+    text = re.sub(r" +([,.;:])", r"\1", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def apply_ioc_feed_cap(finding):
+    """Keep 20 or fewer indicators. Larger sets stay at the source link."""
+    if not isinstance(finding, dict):
+        return finding
+    finding_iocs = finding.get("iocs")
+    if not isinstance(finding_iocs, dict):
+        return finding
+    unique = unique_finding_ioc_values(finding)
+    if len(unique) <= IOC_FEED_CAP:
+        return finding
+    package_url, package_label = indicator_list_link(finding)
+    for list_key, _ioc_type, _dict_key in FINDING_IOC_LISTS:
+        finding_iocs[list_key] = []
+    finding_iocs["feed_omitted"] = True
+    finding_iocs["published_count"] = len(unique)
+    finding_iocs["package_url"] = package_url
+    finding_iocs["package_label"] = package_label
+    finding_iocs["note"] = (
+        "Not listed here. The source published more than 20 unique indicators."
+    )
+    for field in ("detailed_findings", "detection_recommendations"):
+        if field in finding:
+            finding[field] = strip_indicator_values(finding.get(field), unique)
+    print(
+        f"  IOC feed cap: {len(unique)} unique indicators. "
+        "Linking the source list instead of the feed."
+    )
+    return finding
+
+
+def html_to_text(raw):
+    """Drop tags and scripts so a source page can be read as article text."""
+    if not isinstance(raw, str):
+        return ""
+    text = re.sub(r"(?is)<(script|style|noscript)\b[^>]*>.*?</\1>", " ", raw)
+    text = re.sub(r"(?is)<br\s*/?>", "\n", text)
+    text = re.sub(r"(?is)</(p|div|tr|li|h[1-6])>", "\n", text)
+    text = re.sub(r"(?is)<[^>]+>", " ", text)
+    text = html.unescape(text)
+    text = text.replace("\r", "\n")
+    text = re.sub(r"[ \t]+\n", "\n", text)
+    text = re.sub(r"[ \t]{2,}", " ", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def primary_reference_url(finding):
+    for ref in finding.get("references") or []:
+        if isinstance(ref, dict):
+            url = str(ref.get("url") or "").strip()
+            if url.startswith("http"):
+                return url
+    return ""
+
+
+def fetch_source_text(url, fetch=fetch_publisher_page):
+    """Return capped article text, or None when the page is missing or too thin."""
+    try:
+        raw = fetch(url)
+    except requests.RequestException as exc:
+        print(f"  Source fetch failed for {url}: {exc}")
+        return None
+    except Exception as exc:
+        print(f"  Source fetch failed for {url}: {exc}")
+        return None
+    if not raw or not str(raw).strip():
+        print(f"  No usable article text: {url}")
+        return None
+    text = html_to_text(str(raw))
+    if len(text) < MIN_SOURCE_TEXT_CHARS:
+        print(f"  No usable article text: {url}")
+        return None
+    return text[:SOURCE_PAGE_TEXT_CAP]
+
+
+def build_source_rewrite_prompt(bundles):
+    """One rewrite prompt for the findings whose source pages were readable."""
+    blocks = []
+    for finding, url, text in bundles:
+        draft = {
+            "slug": finding.get("slug"),
+            "title": finding.get("title"),
+            "executive_summary": finding.get("executive_summary"),
+            "detailed_findings": finding.get("detailed_findings"),
+            "campaign_summary": finding.get("campaign_summary"),
+            "actors": finding.get("actors"),
+            "iocs": finding.get("iocs"),
+            "detection_recommendations": finding.get("detection_recommendations"),
+        }
+        blocks.append(
+            "SOURCE URL: "
+            + url
+            + "\nDRAFT:\n"
+            + json.dumps(draft, ensure_ascii=False)
+            + "\nSOURCE TEXT:\n"
+            + text
+        )
+    joined = "\n\n----\n\n".join(blocks)
+    return (
+        "Rewrite each draft using only its SOURCE TEXT. Do not add or remove findings. "
+        "Do not search. Do not invent indicators.\n"
+        "Return one JSON object with status new_intel and a findings array.\n"
+        "Each finding keeps its slug. Replace detailed_findings, campaign_summary, actors, "
+        "iocs, and detection_recommendations from the source text.\n"
+        "executive_summary stays 2 to 3 sentences and under 900 characters.\n"
+        "Put every indicator value printed in the source text into the iocs arrays. "
+        "Set iocs.package_url to a dedicated list URL when the page gives one, otherwise "
+        "leave it empty. Do not paste indicator values into detailed_findings. "
+        "Name the frameworks and campaigns there.\n\n"
+        + WRITING_RULES
+        + "\n\n"
+        + joined
+    )
+
+
+REWRITE_FIELDS = (
+    "detailed_findings",
+    "campaign_summary",
+    "actors",
+    "iocs",
+    "detection_recommendations",
+    "executive_summary",
+)
+
+
+def merge_rewritten_finding(original, rewritten):
+    """Take the filled prose and indicators. Keep the draft identity fields."""
+    merged = dict(original)
+    if not isinstance(rewritten, dict):
+        return merged
+    for key in REWRITE_FIELDS:
+        value = rewritten.get(key)
+        if value:
+            merged[key] = value
+    merged["slug"] = original.get("slug")
+    merged["title"] = original.get("title")
+    merged["references"] = original.get("references")
+    merged["tags"] = original.get("tags")
+    return merged
+
+
+def rewrite_findings_from_sources(
+    api_key,
+    findings,
+    fetch=fetch_publisher_page,
+    complete=None,
+    log_response=False,
+):
+    """Fill chosen findings from their source pages. Keep the draft if that fails."""
+    bundles = []
+    for finding in findings:
+        if not isinstance(finding, dict):
+            continue
+        url = primary_reference_url(finding)
+        if not url:
+            print("  No reference URL. Keeping search draft.")
+            continue
+        text = fetch_source_text(url, fetch=fetch)
+        if not text:
+            continue
+        bundles.append((finding, url, text))
+    if not bundles:
+        return findings
+
+    prompt = build_source_rewrite_prompt(bundles)
+
+    def default_complete(user_prompt):
+        content, finish, _usage = chat_completion(
+            api_key,
+            [
+                {"role": "system", "content": COLLECTION_SYSTEM},
+                {"role": "user", "content": user_prompt},
+            ],
+            plugins=None,
+        )
+        return content, finish
+
+    runner = complete or default_complete
+    try:
+        content, finish = runner(prompt)
+    except (OpenRouterError, requests.RequestException) as exc:
+        print(f"  Source rewrite failed. Keeping search drafts: {exc}")
+        return findings
+    except Exception as exc:
+        print(f"  Source rewrite failed. Keeping search drafts: {exc}")
+        return findings
+
+    if log_response and isinstance(content, str):
+        LOGS_DIR.mkdir(exist_ok=True)
+        log_path = LOGS_DIR / f"{TODAY}-source-rewrite.txt"
+        log_path.write_text(content)
+        print(f"  Source rewrite logged to: {log_path}")
+
+    if finish == "length" or not isinstance(content, str) or not content.strip():
+        print("  Source rewrite unusable. Keeping search drafts.")
+        return findings
+
+    result, _path = extract_collection_json(content, log=False)
+    rewritten_findings = result.get("findings") if isinstance(result, dict) else None
+    if not isinstance(rewritten_findings, list):
+        print("  Source rewrite JSON unusable. Keeping search drafts.")
+        return findings
+
+    by_slug = {}
+    for item in rewritten_findings:
+        if isinstance(item, dict) and item.get("slug"):
+            by_slug[item.get("slug")] = item
+
+    merged = []
+    for finding in findings:
+        if not isinstance(finding, dict):
+            merged.append(finding)
+            continue
+        updated = by_slug.get(finding.get("slug"))
+        if not updated:
+            print(f"  No source rewrite for {finding.get('slug') or finding.get('title')}. Keeping draft.")
+            merged.append(finding)
+            continue
+        merged.append(merge_rewritten_finding(finding, updated))
+    return merged
+
+
+def prepare_finding(finding):
+    """Clean one finding, then apply the IOC Feed cap."""
+    finding = clean_finding_citations(finding)
+    finding = collapse_duplicate_sentences_in_finding(finding)
+    removed_reference_urls = remove_reference_urls_from_finding_iocs(finding)
+    if removed_reference_urls:
+        print(
+            f"  Removed {removed_reference_urls} reference URL(s) "
+            "misclassified as IOC URLs"
+        )
+    skipped_iocs = sanitize_finding_iocs(finding)
+    if skipped_iocs:
+        print(f"  Dropped {skipped_iocs} IOC value(s) before markdown write")
+    return apply_ioc_feed_cap(finding)
+
+
 def update_iocs(finding):
     """Update iocs.json with new IOC entries."""
     iocs_path = DATA_DIR / "iocs.json"
@@ -1833,21 +2183,24 @@ def main():
                 sys.exit(1)
             enforce_no_new_intel(result)
 
-    findings = result.get('findings', [])
+    findings = [item for item in result.get('findings', []) if isinstance(item, dict)]
     if not findings:
         print("No findings in response")
         sys.exit(0)
 
     print(f"\nFound {len(findings)} new intelligence item(s)")
+    print("Reading source pages for the selected findings...")
+    findings = rewrite_findings_from_sources(api_key, findings, log_response=True)
     print("-" * 60)
 
     if DRY_RUN:
+        findings = [prepare_finding(finding) for finding in findings]
         print("\n[DRY RUN] Would create the following posts:\n")
         for i, finding in enumerate(findings, 1):
             print(f"  {i}. {finding.get('title', 'Untitled')}")
             print(f"     Tags: {', '.join(finding.get('tags', []))}")
             print(f"     Confidence: {finding.get('confidence', 'N/A')}")
-            print(f"     IOCs: {sum(len(finding.get('iocs', {}).get(k, [])) for k in ['domains', 'urls', 'hashes', 'ips', 'packages'])} indicators")
+            print(f"     IOCs for feed: {len(ioc_values_for_feed(finding))} indicators")
             print(f"     Sources: {len(finding.get('references', []))} references")
             print()
         print("[DRY RUN] No files written. Remove --dry-run to execute.")
@@ -1857,19 +2210,7 @@ def main():
     any_new_post = False
     for i, finding in enumerate(findings, 1):
         print(f"\nProcessing {i}/{len(findings)}: {finding.get('title', 'Untitled')}")
-        
-        # Clean citation markers from all text fields
-        finding = clean_finding_citations(finding)
-        finding = collapse_duplicate_sentences_in_finding(finding)
-        removed_reference_urls = remove_reference_urls_from_finding_iocs(finding)
-        if removed_reference_urls:
-            print(
-                f"  Removed {removed_reference_urls} reference URL(s) "
-                "misclassified as IOC URLs"
-            )
-        skipped_iocs = sanitize_finding_iocs(finding)
-        if skipped_iocs:
-            print(f"  Dropped {skipped_iocs} IOC value(s) before markdown write")
+        finding = prepare_finding(finding)
 
         markdown = generate_post_markdown(finding)
         filename = update_posts_index(finding)
