@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 24 Nov 2026 22:41:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 12:00:03 +0000</lastBuildDate>
     <item>
+      <title>Microsoft Details ARTEX Agentic AI Framework Abuse Across Secret Hunting, Supply Chain, and Internet Facing Exploitation</title>
+      <link>https://llm-threatintel.com/posts/2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance.html</guid>
+      <pubDate>Thu, 26 Nov 2026 00:00:00 +0000</pubDate>
+      <description>According to the Microsoft Security Blog, Microsoft Threat Intelligence published a November 25 post titled What defenders need to know about ARTEX, the agentic AI framework threat actors abuse. The title names ARTEX as an agentic AI framework that threat actors abuse, and the post is filed under Research. The captured source text provides only the page framing, with no campaign details or indicators, so no indicator values are reported here.</description>
+    </item>    <item>
       <title>Wiz Links ARTEX Offensive AI Framework Activity to More Than a Dozen Organizations</title>
       <link>https://llm-threatintel.com/posts/2026-11-24-wiz-artex-offensive-ai-frameworks.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-24-wiz-artex-offensive-ai-frameworks.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-13-unit42-cairn-autonomous-ai-attacks.html</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
       <description>Unit 42 reported that Chinese speaking attackers used the open source Cairn autonomous AI penetration testing framework to conduct 25 operations against at least 19 organizations from August to September 2026, achieving access or data retrieval at 10 of them. The attackers paired Cairn with Chinese AI models Zhipu GLM and DeepSeek, and Unit 42 assesses with moderate confidence that this is China nexus intelligence collection tracked as CL-STA-1238. Defenders in semiconductor, defense policy, and civil society sectors should monitor for autonomous tool activity, credential theft, admin account creation, and bulk data access.</description>
-    </item>    <item>
-      <title>Arctic Wolf Reports AntiFox Agentic Pentest Platform Used for AWS Credential Theft</title>
-      <link>https://llm-threatintel.com/posts/2026-11-12-antifox-agentic-pentest-aws-credential-theft.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-12-antifox-agentic-pentest-aws-credential-theft.html</guid>
-      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Attackers are hosting self managed AntiFox instances on Alibaba Cloud and using the open source agentic penetration testing platform to target internet facing web services and AWS environments. Arctic Wolf observed AntiFox linked infrastructure making authenticated AWS API calls using valid IAM users and assumed EC2 roles, tied to vulnerability exploitation, webshell deployment, and AWS secret harvesting. One intrusion cycled through multiple identities and issued hundreds of API requests in roughly 30 minutes.</description>
     </item>
   </channel>
 </rss>

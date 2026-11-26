@@ -7028,6 +7028,21 @@
       "validated_at": "2026-11-24T22:41:18+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance": {
+      "content_hash": "9337cd6e0075e7b96f0c0d650ed22dd9b5b5fede4dca240fc8c54caa91c89116",
+      "evidence_status": "validated",
+      "file": "2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance.md",
+      "posts_index_hash": "3d21774ba2852cd0ecee60952adaff915f93f9cd1dcf6309accbe0aa0f07d4e8",
+      "report_id": "2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance",
+      "review_required": [],
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-26T12:00:05+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

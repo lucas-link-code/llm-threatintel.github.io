@@ -1,7 +1,7 @@
 {
-  "commit_sha": "aeaf17f477662a56fbdc7561e6df5f38e24aa859",
+  "commit_sha": "9bf35f6187b7b33bd52f3694d093ccf5a7e6e84d",
   "duplicate_iocs": {},
-  "generated_at_utc": "2026-11-25T12:12:42+00:00",
+  "generated_at_utc": "2026-11-26T12:00:05+00:00",
   "hard_failures": 0,
   "issues": [
     {
@@ -41,13 +41,21 @@
   "non_destructive_statement": "No files were removed or destructively modified.",
   "orphan_markdown": [],
   "overall_result": "pass",
-  "reports_checked": 0,
-  "reports_newly_validated": 0,
+  "reports_checked": 1,
+  "reports_newly_validated": 1,
   "reports_skipped": 413,
   "review_required": 0,
-  "source_urls_checked": 0,
-  "state_updates": 0,
-  "url_results": [],
+  "source_urls_checked": 1,
+  "state_updates": 1,
+  "url_results": [
+    {
+      "error": "",
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+      "http_status": 200,
+      "status": "accessible",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+    }
+  ],
   "validation_version": "1.0.0",
   "warnings": 4
 }

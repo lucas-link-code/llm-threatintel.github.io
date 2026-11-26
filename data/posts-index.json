@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance",
+      "title": "Microsoft Details ARTEX Agentic AI Framework Abuse Across Secret Hunting, Supply Chain, and Internet Facing Exploitation",
+      "date": "2026-11-26",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool",
+        "supply-chain"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "According to the Microsoft Security Blog, Microsoft Threat Intelligence published a November 25 post titled What defenders need to know about ARTEX, the agentic AI framework threat actors abuse. The title names ARTEX as an agentic AI framework that threat actors abuse, and the post is filed under Research. The captured source text provides only the page framing, with no campaign details or indicators, so no indicator values are reported here.",
+      "file": "2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance.md"
+    },
+    {
       "id": "2026-11-24-wiz-artex-offensive-ai-frameworks",
       "title": "Wiz Links ARTEX Offensive AI Framework Activity to More Than a Dozen Organizations",
       "date": "2026-11-24",

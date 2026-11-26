@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24",
+  "last_updated": "2026-11-26",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6362,7 +6362,7 @@
       ],
       "type": "malicious_llm_tool",
       "first_seen": "2026-11",
-      "status": "active",
+      "status": "not stated in the captured source text",
       "distribution": [],
       "ttps": [
         "T1552.001 - Unsecured Credentials: Credentials In Files",
