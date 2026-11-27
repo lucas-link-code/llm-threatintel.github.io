@@ -7043,6 +7043,21 @@
       "validated_at": "2026-11-26T12:00:05+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure": {
+      "content_hash": "47c0706f72845dca6453e680acb3f3814cbea4eede6e36a80cfebd478f2285d3",
+      "evidence_status": "validated",
+      "file": "2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure.md",
+      "posts_index_hash": "6559b9820ca5e0a35ab44369b1358bc7bc9581d1f1d7b649b343ec16037a3aa6",
+      "report_id": "2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure",
+      "review_required": [],
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/italy-and-switzerland-warn-of-autonomous-ai-driven-cyberattacks/"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-27T11:50:11+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"

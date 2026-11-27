@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": "2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure",
+      "title": "Italy and Switzerland Issue Warnings on Autonomous AI Agent Attacks Against Critical Infrastructure",
+      "date": "2026-11-27",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "malicious-tool"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "According to BleepingComputer, Swiss and Italian cybersecurity agencies warned about automated cyberattacks powered by AI agents targeting critical infrastructure organizations. BleepingComputer reported that CSIRT Italia detected large scale malicious campaigns using autonomous AI agents to exploit exposed endpoints, and Switzerland's National Cyber Security Center confirmed its first cases of successful AI assisted cyberattacks against organizations in at least two sectors. The two agencies urged organizations to reduce the number of systems exposed on the internet, prioritize patching, and monitor for unusual activity.",
+      "file": "2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure.md"
+    },
+    {
       "id": "2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance",
       "title": "Microsoft Details ARTEX Agentic AI Framework Abuse Across Secret Hunting, Supply Chain, and Internet Facing Exploitation",
       "date": "2026-11-26",

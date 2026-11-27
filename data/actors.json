@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26",
+  "last_updated": "2026-11-27",
   "entries": [
     {
       "id": "third-party-com-clickfix",
@@ -6804,6 +6804,27 @@
       ],
       "description": "A set of distinct operators tracked by Unit 42 that deployed autonomous AI agents to run attack campaigns at machine speed. The vendor reported that these operators used familiar open source tooling and lightweight custom scripts to gain web shell footholds and execute hundreds of commands in minutes against a broad set of sectors.",
       "attribution": "Unattributed; Unit 42 described different attackers across campaigns without naming a group"
+    },
+    {
+      "id": "unattributed-ai-agent-operators-italy-and-switzerland",
+      "names": [
+        "Unattributed AI agent operators (Italy and Switzerland)"
+      ],
+      "type": "threat_group",
+      "first_seen": "2026-11",
+      "status": "active",
+      "distribution": [
+        "ARTEX AI",
+        "CyberStrikeAI",
+        "DeepSeek Harness - Red Team",
+        "PentAGI"
+      ],
+      "ttps": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1078 - Valid Accounts"
+      ],
+      "description": "The Italian and Swiss agencies did not name a specific threat group. The activity is characterized by use of autonomous AI agent frameworks to identify and exploit exposed systems, chain vulnerabilities, and maintain persistence. CSIRT Italia observed a DeepSeek Harness setup in which a coordinator assigned tasks to five AI agents across information gathering, exploitation, and persistence.",
+      "attribution": "Unattributed in source"
     }
   ]
 }

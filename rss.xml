@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 26 Nov 2026 12:00:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 11:50:09 +0000</lastBuildDate>
     <item>
+      <title>Italy and Switzerland Issue Warnings on Autonomous AI Agent Attacks Against Critical Infrastructure</title>
+      <link>https://llm-threatintel.com/posts/2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure.html</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>According to BleepingComputer, Swiss and Italian cybersecurity agencies warned about automated cyberattacks powered by AI agents targeting critical infrastructure organizations. BleepingComputer reported that CSIRT Italia detected large scale malicious campaigns using autonomous AI agents to exploit exposed endpoints, and Switzerland's National Cyber Security Center confirmed its first cases of successful AI assisted cyberattacks against organizations in at least two sectors. The two agencies urged organizations to reduce the number of systems exposed on the internet, prioritize patching, and monitor for unusual activity.</description>
+    </item>    <item>
       <title>Microsoft Details ARTEX Agentic AI Framework Abuse Across Secret Hunting, Supply Chain, and Internet Facing Exploitation</title>
       <link>https://llm-threatintel.com/posts/2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-26-microsoft-artex-agentic-ai-framework-defender-guidance.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-13-microsoft-post-training-supply-chain-coding-agents.html</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
       <description>Microsoft Security Blog reported that dataset poisoning during fine tuning and model poisoning of open weight checkpoints can backdoor coding agents, with attack success up to 94.8 percent on unseen repositories. The research shows that in distribution evaluations can overstate backdoor robustness and that hidden triggers can cause agents to invoke command execution tools. Defenders should audit model provenance, diff weights against original checkpoints, and monitor agent tool calls for unexpected behavior.</description>
-    </item>    <item>
-      <title>Unit 42 reports Cairn autonomous AI framework used by China nexus actors against semiconductor, defense, civil society targets</title>
-      <link>https://llm-threatintel.com/posts/2026-11-13-unit42-cairn-autonomous-ai-attacks.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-13-unit42-cairn-autonomous-ai-attacks.html</guid>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Unit 42 reported that Chinese speaking attackers used the open source Cairn autonomous AI penetration testing framework to conduct 25 operations against at least 19 organizations from August to September 2026, achieving access or data retrieval at 10 of them. The attackers paired Cairn with Chinese AI models Zhipu GLM and DeepSeek, and Unit 42 assesses with moderate confidence that this is China nexus intelligence collection tracked as CL-STA-1238. Defenders in semiconductor, defense policy, and civil society sectors should monitor for autonomous tool activity, credential theft, admin account creation, and bulk data access.</description>
     </item>
   </channel>
 </rss>
