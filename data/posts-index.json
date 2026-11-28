@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": "2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call",
+      "title": "NVIDIA Research Steers a Multimodal Gemma 4 Assistant Into Executing a Bash Tool Call With a Modified Image",
+      "date": "2026-11-28",
+      "author": "LLM ThreatIntel",
+      "tags": [
+        "prompt-injection"
+      ],
+      "tlp": "TLP:CLEAR",
+      "excerpt": "NVIDIA Research reported on 2026-11-25 that a modified cat image embedded in a webpage caused a Gemma 4 based assistant to emit a native bash tool call instead of a summary, and a runtime configured for automatic approval executed it. The command ran in all 21 trials against a white box test stack and fetched a harmless script from a loopback server. Defenders running tool enabled assistants should require an independent permission check before execution, since the model instruction layer alone did not stop the call.",
+      "file": "2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call.md"
+    },
+    {
       "id": "2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure",
       "title": "Italy and Switzerland Issue Warnings on Autonomous AI Agent Attacks Against Critical Infrastructure",
       "date": "2026-11-27",

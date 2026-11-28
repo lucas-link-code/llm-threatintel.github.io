@@ -5,8 +5,14 @@
     <link>https://llm-threatintel.com/</link>
     <description>Threat intelligence tracking malicious LLM tools, GenAI-assisted malware, supply chain compromises, LLMjacking operations, shadow AI risks, and nation-state GenAI adoption.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 27 Nov 2026 11:50:09 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 11:25:48 +0000</lastBuildDate>
     <item>
+      <title>NVIDIA Research Steers a Multimodal Gemma 4 Assistant Into Executing a Bash Tool Call With a Modified Image</title>
+      <link>https://llm-threatintel.com/posts/2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call.html</link>
+      <guid>https://llm-threatintel.com/posts/2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call.html</guid>
+      <pubDate>Sat, 28 Nov 2026 00:00:00 +0000</pubDate>
+      <description>NVIDIA Research reported on 2026-11-25 that a modified cat image embedded in a webpage caused a Gemma 4 based assistant to emit a native bash tool call instead of a summary, and a runtime configured for automatic approval executed it. The command ran in all 21 trials against a white box test stack and fetched a harmless script from a loopback server. Defenders running tool enabled assistants should require an independent permission check before execution, since the model instruction layer alone did not stop the call.</description>
+    </item>    <item>
       <title>Italy and Switzerland Issue Warnings on Autonomous AI Agent Attacks Against Critical Infrastructure</title>
       <link>https://llm-threatintel.com/posts/2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure.html</link>
       <guid>https://llm-threatintel.com/posts/2026-11-27-italy-switzerland-autonomous-ai-agent-attacks-critical-infrastructure.html</guid>
@@ -120,12 +126,6 @@
       <guid>https://llm-threatintel.com/posts/2026-11-14-amazon-threat-intelligence-artex-ai-agent-campaigns.html</guid>
       <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
       <description>Amazon Threat Intelligence observed threat actors using the open source ARTEX agentic AI penetration testing framework to run sustained offensive campaigns between October 3 and November 5, 2026, captured by the MadPot decoy sensor network. The most prominent campaign stole AI provider API keys at scale and recycled them to pay for the LLM inference powering further credential hunting, while another targeted cryptocurrency exchanges for KYC verification bypass using real time deepfake injection. Organizations exposing AI inference endpoints or hosting upstream provider keys in internet facing applications should audit credential exposure and monitor for agentic request patterns against their LLM APIs.</description>
-    </item>    <item>
-      <title>Microsoft research shows dataset and model poisoning backdoors hijack coding agents at up to 94.8 percent success</title>
-      <link>https://llm-threatintel.com/posts/2026-11-13-microsoft-post-training-supply-chain-coding-agents.html</link>
-      <guid>https://llm-threatintel.com/posts/2026-11-13-microsoft-post-training-supply-chain-coding-agents.html</guid>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Microsoft Security Blog reported that dataset poisoning during fine tuning and model poisoning of open weight checkpoints can backdoor coding agents, with attack success up to 94.8 percent on unseen repositories. The research shows that in distribution evaluations can overstate backdoor robustness and that hidden triggers can cause agents to invoke command execution tools. Defenders should audit model provenance, diff weights against original checkpoints, and monitor agent tool calls for unexpected behavior.</description>
     </item>
   </channel>
 </rss>

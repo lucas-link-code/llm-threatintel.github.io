@@ -7058,6 +7058,21 @@
       "validated_at": "2026-11-27T11:50:11+00:00",
       "validation_version": "1.0.0",
       "warnings": []
+    },
+    "2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call": {
+      "content_hash": "b20b5c713ac93c0e6f85af884848c1497a82f52e47cd1fb4d0820bee3dfa2e7a",
+      "evidence_status": "validated",
+      "file": "2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call.md",
+      "posts_index_hash": "e0035e58076b1079368672fbb40ac854bc56890973ef0d70455b0be3b6389724",
+      "report_id": "2026-11-28-nvidia-multimodal-gemma4-image-steering-bash-tool-call",
+      "review_required": [],
+      "source_urls": [
+        "https://research.nvidia.com/ai-security/steering-multimodal-models-acting"
+      ],
+      "structure_status": "validated",
+      "validated_at": "2026-11-28T11:25:49+00:00",
+      "validation_version": "1.0.0",
+      "warnings": []
     }
   },
   "validation_version": "1.0.0"
